@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-24T11:00:00-04:00",
-  "updated": "2026-09-21T22:35:55+0530",
-  "version": 8
+  "updated": "2026-09-21T22:39:41+0530",
+  "version": 10
  },
  "tasks": [
   {
@@ -1567,25 +1567,31 @@
   },
   {
    "id": "T-085",
-   "title": "Decide: 3-day workshop (as built) or 3-day (as the repo is named)?",
+   "title": "Decide the workshop length: 5 days or 3 days",
    "area": "Content",
    "owner": "Adi",
    "priority": "P0",
    "due": "2026-09-19",
-   "status": "blocked",
-   "why": "Every artifact, date, price page and template is built for three days (Sep 24, 25, 28). The repo name you gave says '3 day'. If that is a real change it re-cuts the deck, playbook chapters, survey days, landing page and templates.",
-   "spec": "Answer one word. If 3 days: which three of the current three days survive, and which dates.",
+   "status": "done",
+   "why": "Every artifact, date, price page and template was built for five days. The repo name said '3 day'. Resolving it decided whether the deck, playbook, survey, landing pages and output templates had to be re-cut.",
+   "spec": "Owner answered on 21 Sep: convert to 'The 3-Day AI RevOps Workshop' in all artifacts and documentation.",
    "done_when": [
-    "Owner answers"
+    "Owner answered",
+    "The fold is applied across every artifact and verified"
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "5 days or 3 days? If 3, which days and dates.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-18T20:42:47+0530",
      "who": "claude",
      "note": "Added from owner decisions 2026-09-18."
+    },
+    {
+     "ts": "2026-09-21T22:39:41+0530",
+     "who": "claude",
+     "note": "Owner answered 21 Sep: convert to The 3-Day AI RevOps Workshop. Folded old day 1+2 → Day 1, old 3 → Day 2, old 4+5 → Day 3; dates Thu 24, Fri 25, Mon 28 Sep. Nothing cut."
     }
    ],
    "order": 850
@@ -1628,13 +1634,13 @@
    "area": "Funnel",
    "owner": "Claude",
    "priority": "P0",
-   "due": "2026-09-20",
-   "status": "done",
-   "why": "Owner: no n8n. Three code paths still call it.",
-   "spec": "masterclass-client.tsx lead capture, success-client.tsx survey post, webhook route fulfilment fallback (NEXT_PUBLIC_LEAD_WEBHOOK_URL). Point all three at the local intake service (T-030).",
+   "due": "2026-09-22",
+   "status": "queue",
+   "why": "Owner: no n8n, ever. Three code paths in the app still call it.",
+   "spec": "masterclass-client.tsx lead capture, success-client.tsx survey post, and the Dodo webhook route's fulfilment fallback all read NEXT_PUBLIC_LEAD_WEBHOOK_URL. Point all three at the local intake service (T-030).",
    "done_when": [
     "grep for n8n.growthclub.org returns nothing",
-    "probe-workshop.mjs passes with the intake service stubbed"
+    "probe-workshop passes with the intake service stubbed"
    ],
    "evidence": [],
    "blockers": [],
@@ -1649,6 +1655,16 @@
      "ts": "2026-09-21T22:35:40+0530",
      "who": "claude",
      "note": "Owner answered 21 Sep: convert to 'The 3-Day AI RevOps Workshop' across all artifacts. Folded 5 days → 3 on 21 Sep (owner decision). Day 1 = strategy + conversion engine, Day 2 = build every element, Day 3 = launch + scale. Dates Thu 24, Fri 25, Mon 28 Sep."
+    },
+    {
+     "ts": "2026-09-21T22:39:17+0530",
+     "who": "claude",
+     "note": "Title and spec rewritten — a blanket 5-day→3-day replace had mangled the question into nonsense."
+    },
+    {
+     "ts": "2026-09-21T22:39:41+0530",
+     "who": "claude",
+     "note": "Restored: a mis-targeted edit briefly overwrote this task with the day-count decision (that is T-085) and marked it done. It was never done — the three n8n call sites are still in the code."
     }
    ],
    "order": 870
