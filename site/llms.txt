@@ -1,0 +1,64 @@
+# Tantra
+
+> Tantra is an omnichannel outreach engine. It runs ordered sequences across Gmail, LinkedIn, WhatsApp and Telegram — including social-only sequences — plus Google Calendar campaigns measured by RSVP, with every reply landing in one unified inbox.
+
+Gmail sequence steps and Google Calendar campaigns send through the customer's own Google Workspace service account with domain-wide delegation, so they go out from their real mailboxes rather than a shared pool.
+LinkedIn, WhatsApp and Telegram steps send through the customer's own linked social accounts. Google Workspace is required only for Gmail or Calendar, so a social-only sequence needs no Workspace tenant.
+All three social channels are included in the Pro plan — pricing is per company rather than per inbox, per seat, or per channel.
+AI personalization is optional and runs on the customer's own LLM API key (OpenRouter, Cerebras or Novita); there are no resold AI credits. Templates, merge tags and spintax work without any AI provider, and social messages are template-based.
+There is deliberately no open-pixel tracking. Engagement is measured by clicks on signed links, replies and calendar RSVPs.
+Webinar attendance syncs from Zoom and WebinarGeek for follow-up attribution, as an add-on path for teams that fill events with outreach.
+
+## Key pages
+
+- [Home](https://adisuja.github.io/tantra-workshop-live/site/): Product overview: the engine, the channels, and the add-on paths
+- [Omnichannel Sequences](https://adisuja.github.io/tantra-workshop-live/site/sequences): Ordered Gmail, LinkedIn, WhatsApp and Telegram steps in one flow
+- [Unified Inbox](https://adisuja.github.io/tantra-workshop-live/site/inbox): Every reply, every channel, one queue with intent classification
+- [Deliverability](https://adisuja.github.io/tantra-workshop-live/site/deliverability): Warmup, validation, suppression, pacing — and no open pixels
+- [AI Personalization](https://adisuja.github.io/tantra-workshop-live/site/ai): Bring-your-own-key personalization with template fallback
+- [Developer Platform](https://adisuja.github.io/tantra-workshop-live/site/developers): Webhooks, REST API, and the MCP server
+- [Calendar Campaigns](https://adisuja.github.io/tantra-workshop-live/site/calendar-campaigns): Google Calendar invitations at scale, measured by RSVP
+- [Webinar Attribution](https://adisuja.github.io/tantra-workshop-live/site/webinars): Zoom and WebinarGeek attribution from invite to watch time
+- [Pricing](https://adisuja.github.io/tantra-workshop-live/site/pricing): Per-company plans, what is never metered, and billing FAQ
+- [Integrations](https://adisuja.github.io/tantra-workshop-live/site/integrations): Channels, webinar providers, AI providers, and developer surfaces
+- [Help Center](https://adisuja.github.io/tantra-workshop-live/site/help): Task-oriented documentation, organised by topic
+- [Blog](https://adisuja.github.io/tantra-workshop-live/site/blog): Long-form guides on deliverability and outreach strategy
+- [Contact](https://adisuja.github.io/tantra-workshop-live/site/contact-us): Demo requests, sales and support
+
+## Documentation
+
+- [Getting Started](https://adisuja.github.io/tantra-workshop-live/site/help/getting-started): What Tantra is, which outreach channels you can use, and how to run your first campaign.
+- [Connect Google Workspace](https://adisuja.github.io/tantra-workshop-live/site/help/connect-google-workspace): Set up the Google service account and domain-wide delegation that lets Tantra send as your mailboxes.
+- [Calendar Campaigns](https://adisuja.github.io/tantra-workshop-live/site/help/calendar-campaigns): Reach prospects with Google Calendar invitations and track their RSVPs.
+- [Cold Email](https://adisuja.github.io/tantra-workshop-live/site/help/cold-email): Build multi-step email sequences that send from your mailboxes with per-sender limits.
+- [Multichannel Outreach](https://adisuja.github.io/tantra-workshop-live/site/help/multichannel-outreach): Connect LinkedIn, WhatsApp, and Telegram, then add those channels to your outreach sequences.
+- [Inbox and Replies](https://adisuja.github.io/tantra-workshop-live/site/help/inbox-and-replies): Read replies across your outreach channels and keep conversations organized.
+- [Contacts and Lists](https://adisuja.github.io/tantra-workshop-live/site/help/contacts): Import, organize, validate, and suppress contacts across your campaigns.
+- [Templates and AI](https://adisuja.github.io/tantra-workshop-live/site/help/templates-and-ai): Reusable templates, merge tags, spintax, AI personalization, and connecting your own LLM.
+- [Deliverability and Tracking](https://adisuja.github.io/tantra-workshop-live/site/help/deliverability-and-tracking): Click tracking, custom domains, one-click unsubscribe, domain health, and why opens are not tracked.
+- [Integrations](https://adisuja.github.io/tantra-workshop-live/site/help/integrations): Connect Google Calendar accounts, WebinarGeek, and Google OAuth client credentials.
+- [API, MCP, and Webhooks](https://adisuja.github.io/tantra-workshop-live/site/help/api-and-mcp): Issue API keys, connect the Tantra MCP server to Claude or Cursor, and receive outbound webhooks.
+- [Billing](https://adisuja.github.io/tantra-workshop-live/site/help/billing): Choose a plan, manage your subscription, and control channel add-ons.
+- [Troubleshooting](https://adisuja.github.io/tantra-workshop-live/site/help/troubleshooting): Fix the most common issues across sending, personalization, and connections.
+- [Glossary](https://adisuja.github.io/tantra-workshop-live/site/help/glossary): Plain-language definitions of the terms Tantra uses.
+
+## Legal
+
+- [Privacy Policy](https://adisuja.github.io/tantra-workshop-live/site/privacy-policy)
+- [Terms of Service](https://adisuja.github.io/tantra-workshop-live/site/terms-of-service)
+
+## Contact
+
+- Support: support@usetantra.com
+- Sales: sales@usetantra.com
+- Contact form: https://adisuja.github.io/tantra-workshop-live/site/contact-us
+
+## Machine-readable resources
+
+- Sitemap: https://adisuja.github.io/tantra-workshop-live/site/sitemap.xml
+- Robots: https://adisuja.github.io/tantra-workshop-live/site/robots.txt
+- Blog RSS feed: https://adisuja.github.io/tantra-workshop-live/site/blog/rss.xml
+
+## Full index
+
+- [Complete documentation and article index](https://adisuja.github.io/tantra-workshop-live/site/llms-full.txt)

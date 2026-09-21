@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 308" width="800" height="308" role="img">
+<defs>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0 H0 V40" fill="none" stroke="#182238" stroke-width="1" />
+  </pattern>
+  
+  <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#65728A" />
+  </marker>
+  <marker id="ahb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#3B82F6" />
+  </marker>
+  
+</defs>
+<rect width="800" height="308" fill="#0D1424" />
+<rect width="800" height="308" fill="url(#grid)" opacity="0.55" />
+<text x="28" y="34" fill="#7DAAFB" font-family="Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Fira Sans', Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.4">REPLY RATES</text><text x="28" y="56" fill="#E8EDF7" font-family="Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Fira Sans', Helvetica, Arial, sans-serif" font-size="18" font-weight="700">The middle hollowed out</text><text x="28" y="76" fill="#8A97AE" font-family="Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Fira Sans', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400">The average fell while the top end held. Same channel, different execution.</text>
+<text x="28" y="133" fill="#B7C2D6" font-family="Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Fira Sans', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="500">All B2B, 2024</text><rect x="258" y="122" width="404" height="14" rx="7" fill="#0F1728" /><rect x="258" y="122" width="103.02" height="14" rx="7" fill="#65728A" /><text x="674" y="133.5" fill="#E8EDF7" font-family="Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Fira Sans', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700">5.1%</text><text x="28" y="179" fill="#B7C2D6" font-family="Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Fira Sans', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="500">All B2B, June 2026</text><rect x="258" y="168" width="404" height="14" rx="7" fill="#0F1728" /><rect x="258" y="168" width="69.286" height="14" rx="7" fill="#EF4444" /><text x="674" y="179.5" fill="#E8EDF7" font-family="Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Fira Sans', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700">3.43%</text><text x="28" y="225" fill="#B7C2D6" font-family="Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Fira Sans', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="500">Personalized, signal based</text><rect x="258" y="214" width="404" height="14" rx="7" fill="#0F1728" /><rect x="258" y="214" width="363.6" height="14" rx="7" fill="#10B981" opacity="0.28" /><rect x="258" y="214" width="303" height="14" rx="7" fill="#10B981" /><text x="674" y="225.5" fill="#E8EDF7" font-family="Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Fira Sans', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700">15 to 18%</text><line x1="28" y1="268" x2="772" y2="268" stroke="#1A2438" stroke-width="1" /><text x="28" y="290" fill="#65728A" font-family="Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Fira Sans', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400">Woodpecker across 20M+ emails, and Amplemarket benchmarks. The gap is architecture, not volume.</text>
+</svg>

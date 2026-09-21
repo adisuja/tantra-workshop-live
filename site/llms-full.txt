@@ -1,0 +1,191 @@
+# Tantra
+
+> Tantra is an omnichannel outreach engine. It runs ordered sequences across Gmail, LinkedIn, WhatsApp and Telegram — including social-only sequences — plus Google Calendar campaigns measured by RSVP, with every reply landing in one unified inbox.
+
+Gmail sequence steps and Google Calendar campaigns send through the customer's own Google Workspace service account with domain-wide delegation, so they go out from their real mailboxes rather than a shared pool.
+LinkedIn, WhatsApp and Telegram steps send through the customer's own linked social accounts. Google Workspace is required only for Gmail or Calendar, so a social-only sequence needs no Workspace tenant.
+All three social channels are included in the Pro plan — pricing is per company rather than per inbox, per seat, or per channel.
+AI personalization is optional and runs on the customer's own LLM API key (OpenRouter, Cerebras or Novita); there are no resold AI credits. Templates, merge tags and spintax work without any AI provider, and social messages are template-based.
+There is deliberately no open-pixel tracking. Engagement is measured by clicks on signed links, replies and calendar RSVPs.
+Webinar attendance syncs from Zoom and WebinarGeek for follow-up attribution, as an add-on path for teams that fill events with outreach.
+
+## Key pages
+
+- [Home](https://adisuja.github.io/tantra-workshop-live/site/): Product overview: the engine, the channels, and the add-on paths
+- [Omnichannel Sequences](https://adisuja.github.io/tantra-workshop-live/site/sequences): Ordered Gmail, LinkedIn, WhatsApp and Telegram steps in one flow
+- [Unified Inbox](https://adisuja.github.io/tantra-workshop-live/site/inbox): Every reply, every channel, one queue with intent classification
+- [Deliverability](https://adisuja.github.io/tantra-workshop-live/site/deliverability): Warmup, validation, suppression, pacing — and no open pixels
+- [AI Personalization](https://adisuja.github.io/tantra-workshop-live/site/ai): Bring-your-own-key personalization with template fallback
+- [Developer Platform](https://adisuja.github.io/tantra-workshop-live/site/developers): Webhooks, REST API, and the MCP server
+- [Calendar Campaigns](https://adisuja.github.io/tantra-workshop-live/site/calendar-campaigns): Google Calendar invitations at scale, measured by RSVP
+- [Webinar Attribution](https://adisuja.github.io/tantra-workshop-live/site/webinars): Zoom and WebinarGeek attribution from invite to watch time
+- [Pricing](https://adisuja.github.io/tantra-workshop-live/site/pricing): Per-company plans, what is never metered, and billing FAQ
+- [Integrations](https://adisuja.github.io/tantra-workshop-live/site/integrations): Channels, webinar providers, AI providers, and developer surfaces
+- [Help Center](https://adisuja.github.io/tantra-workshop-live/site/help): Task-oriented documentation, organised by topic
+- [Blog](https://adisuja.github.io/tantra-workshop-live/site/blog): Long-form guides on deliverability and outreach strategy
+- [Contact](https://adisuja.github.io/tantra-workshop-live/site/contact-us): Demo requests, sales and support
+
+## Documentation
+
+### Getting Started
+
+What Tantra is, which outreach channels you can use, and how to run your first campaign.
+
+- [Calendar campaigns vs cold email](https://adisuja.github.io/tantra-workshop-live/site/help/getting-started/calendar-vs-cold-email): Compare Tantra's two outreach engines. Calendar campaigns send Google invitations and track RSVPs. Cold email sends multi-step sequences.
+- [Manage your account and sign-in](https://adisuja.github.io/tantra-workshop-live/site/help/getting-started/manage-your-account): Open your account profile, update your details and security settings, and sign in or out of Tantra.
+- [Quick start, from sign up to first send](https://adisuja.github.io/tantra-workshop-live/site/help/getting-started/quick-start): Set up Tantra, connect the accounts you need, load contacts, and launch your first calendar or multichannel outreach campaign.
+- [What is Tantra](https://adisuja.github.io/tantra-workshop-live/site/help/getting-started/what-is-tantra): Tantra helps teams run calendar, email, LinkedIn, WhatsApp, and Telegram outreach from one place.
+
+### Connect Google Workspace
+
+Set up the Google service account and domain-wide delegation that lets Tantra send as your mailboxes.
+
+- [Add and verify your senders](https://adisuja.github.io/tantra-workshop-live/site/help/connect-google-workspace/verify-your-senders): Paste the mailboxes you want to send from and verify them against your uploaded service accounts using domain-wide delegation.
+- [Add email signatures to your senders](https://adisuja.github.io/tantra-workshop-live/site/help/connect-google-workspace/add-sender-signatures): Create a per-mailbox email signature with merge fields, preview it against a sample contact, and control when it is appended to outgoing email.
+- [Create a Google service account](https://adisuja.github.io/tantra-workshop-live/site/help/connect-google-workspace/create-a-service-account): Create a Google Cloud service account, enable the Gmail and Calendar APIs, and download the JSON key that Tantra uses to send as your mailboxes.
+- [Grant domain-wide delegation and scopes](https://adisuja.github.io/tantra-workshop-live/site/help/connect-google-workspace/grant-domain-wide-delegation): Authorize your Tantra service account in the Google Admin console with the exact OAuth scopes needed to send email and calendar invites.
+- [How Tantra sends as your mailboxes](https://adisuja.github.io/tantra-workshop-live/site/help/connect-google-workspace/how-sending-works): Tantra sends from your own Google Workspace mailboxes using a service account and domain-wide delegation, without ever holding your passwords.
+- [Reconnect a disconnected sender](https://adisuja.github.io/tantra-workshop-live/site/help/connect-google-workspace/reconnect-a-disconnected-sender): Steps to bring a disconnected sender back online, from checking delegation and scopes to re-authenticating all senders at once.
+- [Sender connection states explained](https://adisuja.github.io/tantra-workshop-live/site/help/connect-google-workspace/sender-connection-states): Understand the Connected, Disconnected, Gmail capable, and Calendar-only states Tantra shows for each sender mailbox.
+- [Upload your service account to Tantra](https://adisuja.github.io/tantra-workshop-live/site/help/connect-google-workspace/upload-your-service-account): Upload your service account JSON files to Tantra, tag them, and manage them. Files are encrypted at rest and can be soft-deleted.
+
+### Calendar Campaigns
+
+Reach prospects with Google Calendar invitations and track their RSVPs.
+
+- [Calendar campaign statuses explained](https://adisuja.github.io/tantra-workshop-live/site/help/calendar-campaigns/campaign-statuses): Understand every calendar campaign status in Tantra, from draft to completed, and why a campaign stays active for days.
+- [Create a smart calendar campaign](https://adisuja.github.io/tantra-workshop-live/site/help/calendar-campaigns/create-a-smart-calendar-campaign): Create a Google Calendar invitation campaign in Tantra with the five step wizard. Set the audience, senders, event details, and launch.
+- [How invitations are batched and sent](https://adisuja.github.io/tantra-workshop-live/site/help/calendar-campaigns/how-invites-are-sent): Tantra sends calendar invitations in batches over several days. Learn how batching works and why a campaign takes time to finish.
+- [Personalize your calendar invitations with AI](https://adisuja.github.io/tantra-workshop-live/site/help/calendar-campaigns/personalized-calendar-events): Personalize each calendar invitation with merge tags and optional AI. Learn how Tantra tailors the invite from each prospect's website.
+- [Schedule, start, and pause a campaign](https://adisuja.github.io/tantra-workshop-live/site/help/calendar-campaigns/schedule-start-and-pause): Control when a Tantra calendar campaign runs. Schedule a future start, start it now, or pause and resume sending at any time.
+- [Track RSVPs and campaign results](https://adisuja.github.io/tantra-workshop-live/site/help/calendar-campaigns/track-rsvps): See who accepted, declined, or has not answered your calendar invitations. Learn where RSVP counts appear and how often they refresh.
+- [What are calendar campaigns](https://adisuja.github.io/tantra-workshop-live/site/help/calendar-campaigns/what-are-calendar-campaigns): Calendar campaigns reach prospects with Google Calendar invitations and track their RSVPs. Learn how the engine works and when to use it.
+
+### Cold Email
+
+Build multi-step email sequences that send from your mailboxes with per-sender limits.
+
+- [Build an email sequence](https://adisuja.github.io/tantra-workshop-live/site/help/cold-email/build-an-email-sequence): Use Tantra's six-step wizard to build a cold email sequence, pick senders and audience, set limits, and launch or schedule your campaign.
+- [Enrollment lifecycle and statuses](https://adisuja.github.io/tantra-workshop-live/site/help/cold-email/enrollment-lifecycle): Understand how a contact moves through a Tantra cold email sequence, what each enrollment status means, and how to manage enrollments.
+- [Sending windows and daily limits](https://adisuja.github.io/tantra-workshop-live/site/help/cold-email/sending-windows-and-limits): Control when Tantra sends cold email with a sending window, and cap volume per mailbox with enforced daily and hourly limits.
+- [Sequence steps, delays, and personalization modes](https://adisuja.github.io/tantra-workshop-live/site/help/cold-email/sequence-steps-and-timing): Configure cold email steps in Tantra, set delays between them, choose template or AI personalization, and control reply threading.
+- [Understand your email analytics](https://adisuja.github.io/tantra-workshop-live/site/help/cold-email/understand-your-email-analytics): Read the Email Analytics dashboard in Tantra. Learn what sent, clicked, replied, bounced, and unsubscribed mean and how fresh each number is.
+- [Warm up your sending mailboxes](https://adisuja.github.io/tantra-workshop-live/site/help/cold-email/warmup-your-mailboxes): Warm up new Gmail mailboxes in Tantra with a gradual peer-to-peer ramp that builds sending reputation before you run cold email at volume.
+- [What is cold email outreach](https://adisuja.github.io/tantra-workshop-live/site/help/cold-email/what-is-cold-email-outreach): Learn how Tantra sends multi-step cold email sequences from your own Gmail mailboxes, with per-sender limits, reply detection, and click tracking.
+
+### Multichannel Outreach
+
+Connect LinkedIn, WhatsApp, and Telegram, then add those channels to your outreach sequences.
+
+- [Activate and manage channel add-ons](https://adisuja.github.io/tantra-workshop-live/site/help/multichannel-outreach/activate-and-manage-channel-add-ons): Add LinkedIn, WhatsApp, or Telegram outreach to your Tantra plan, manage renewal, and cancel or resume an add-on.
+- [Build a multichannel outreach sequence](https://adisuja.github.io/tantra-workshop-live/site/help/multichannel-outreach/build-a-multichannel-sequence): Combine email, LinkedIn, WhatsApp, and Telegram steps in one Tantra outreach sequence.
+- [Connect and manage LinkedIn](https://adisuja.github.io/tantra-workshop-live/site/help/multichannel-outreach/connect-and-manage-linkedin): Connect LinkedIn, complete verification, set activity limits, reconnect an account, or remove it from Tantra.
+- [Connect and manage Telegram](https://adisuja.github.io/tantra-workshop-live/site/help/multichannel-outreach/connect-and-manage-telegram): Link Telegram by QR code, understand who can receive messages, adjust limits, reconnect, or remove the account.
+- [Connect and manage WhatsApp](https://adisuja.github.io/tantra-workshop-live/site/help/multichannel-outreach/connect-and-manage-whatsapp): Link WhatsApp by QR code, understand account status, adjust message limits, reconnect, or remove the account.
+
+### Inbox and Replies
+
+Read replies across your outreach channels and keep conversations organized.
+
+- [Manage leads, stages, and scores](https://adisuja.github.io/tantra-workshop-live/site/help/inbox-and-replies/manage-leads): Track prospects in Tantra's leads view, set stages, read the automatic engagement score, and open a lead's activity, notes, and campaigns.
+- [Reply detection and intent classification](https://adisuja.github.io/tantra-workshop-live/site/help/inbox-and-replies/reply-detection): Learn how Tantra polls your mailboxes to detect replies, links them to the right campaign, and classifies each one with AI and a keyword fallback.
+- [Reply intents explained](https://adisuja.github.io/tantra-workshop-live/site/help/inbox-and-replies/reply-intents): Understand the reply intents Tantra assigns, from interested to unsubscribe request, and how they map to the tone badges in your inbox.
+- [Use the unified inbox](https://adisuja.github.io/tantra-workshop-live/site/help/inbox-and-replies/use-the-inbox): Read and filter email, LinkedIn, WhatsApp, and Telegram conversations in one inbox and view every conversation with the same person.
+
+### Contacts and Lists
+
+Import, organize, validate, and suppress contacts across your campaigns.
+
+- [Contact validation and quarantine](https://adisuja.github.io/tantra-workshop-live/site/help/contacts/contact-validation): See how Tantra checks email syntax, role addresses, and MX records before a cold email campaign sends, and why some contacts are quarantined.
+- [Import contacts from CSV](https://adisuja.github.io/tantra-workshop-live/site/help/contacts/import-contacts): Upload a CSV, map its columns to Tantra fields, name a new list, and import up to 50,000 contacts in one file.
+- [Manage contacts and lists](https://adisuja.github.io/tantra-workshop-live/site/help/contacts/manage-contacts-and-lists): Add, filter, and delete contacts, organize them into lists, and use lists to target your calendar and cold email campaigns.
+- [Suppression lists and unsubscribes](https://adisuja.github.io/tantra-workshop-live/site/help/contacts/suppression-and-unsubscribes): Block emails, domains, TLDs, and role mailboxes so Tantra never sends to them, and see how unsubscribes and bounces are suppressed automatically.
+
+### Templates and AI
+
+Reusable templates, merge tags, spintax, AI personalization, and connecting your own LLM.
+
+- [AI personalization for email and calendar](https://adisuja.github.io/tantra-workshop-live/site/help/templates-and-ai/ai-personalization): Tantra rewrites your email and calendar copy per recipient using their website. Turn it on per step or campaign, with template fallback.
+- [Connect your own LLM provider](https://adisuja.github.io/tantra-workshop-live/site/help/templates-and-ai/connect-an-llm-provider): Bring your own Cerebras, OpenRouter, or Novita key to Tantra, test the connection, pick a model, and set the default used for AI personalization.
+- [Create and manage templates](https://adisuja.github.io/tantra-workshop-live/site/help/templates-and-ai/create-and-manage-templates): Build reusable email and calendar templates in Tantra, insert merge fields, and use built-in AI to generate or improve copy.
+- [How website scraping feeds personalization](https://adisuja.github.io/tantra-workshop-live/site/help/templates-and-ai/website-scraping): Tantra reads a text snapshot of each contact's public website to personalize outreach. See how targets are chosen and when it is skipped.
+- [Merge tags and spintax](https://adisuja.github.io/tantra-workshop-live/site/help/templates-and-ai/merge-tags-and-spintax): Personalize outreach in Tantra with merge tags like firstName and company, and add spintax variants that stay stable per recipient.
+
+### Deliverability and Tracking
+
+Click tracking, custom domains, one-click unsubscribe, domain health, and why opens are not tracked.
+
+- [Domain health reports (SPF, DKIM, DMARC)](https://adisuja.github.io/tantra-workshop-live/site/help/deliverability-and-tracking/domain-health-reports): Understand how Tantra scans your sender domains daily for SPF, DKIM, DMARC, and blocklist problems, and how to read the health status and score.
+- [How click tracking works](https://adisuja.github.io/tantra-workshop-live/site/help/deliverability-and-tracking/click-tracking): Learn how Tantra rewrites links, verifies signed click tokens, filters bot clicks, and shows unique click engagement in analytics.
+- [One-click unsubscribe](https://adisuja.github.io/tantra-workshop-live/site/help/deliverability-and-tracking/one-click-unsubscribe): See how Tantra adds RFC 8058 one-click unsubscribe headers and a public confirmation page so recipients can opt out and land on your suppression list.
+- [Set up a custom tracking domain](https://adisuja.github.io/tantra-workshop-live/site/help/deliverability-and-tracking/custom-tracking-domains): Add a CNAME subdomain, verify it, and set it as your default so tracked email links carry your own branding instead of the shared domain.
+- [Set up SPF, DKIM, and DMARC](https://adisuja.github.io/tantra-workshop-live/site/help/deliverability-and-tracking/set-up-spf-dkim-dmarc): Authenticate your sending domain with SPF, DKIM, and DMARC so cold email from your Google Workspace mailboxes reaches the inbox.
+- [Why Tantra does not track email opens](https://adisuja.github.io/tantra-workshop-live/site/help/deliverability-and-tracking/why-tantra-does-not-track-opens): Tantra deliberately does not use open tracking pixels. Learn why, and how clicks, replies, and unsubscribes give you honest engagement signals.
+
+### Integrations
+
+Connect Google Calendar accounts, WebinarGeek, and Google OAuth client credentials.
+
+- [Add Google OAuth client credentials](https://adisuja.github.io/tantra-workshop-live/site/help/integrations/google-oauth-credentials): Store your own Google OAuth Client ID and Client Secret so Tantra can connect Google Calendar accounts for you.
+- [Connect Google Calendar accounts](https://adisuja.github.io/tantra-workshop-live/site/help/integrations/connect-google-calendar-accounts): Review your calendar sender accounts on the Manage Google Calendars page, set per-account options, and disconnect accounts you no longer use.
+- [Sync webinars with WebinarGeek](https://adisuja.github.io/tantra-workshop-live/site/help/integrations/webinargeek-integration): Connect your WebinarGeek API key, sync broadcasts and subscribers, and feed RSVP data into your calendar campaigns and reports.
+- [Sync webinars with Zoom](https://adisuja.github.io/tantra-workshop-live/site/help/integrations/zoom-integration): Connect a Zoom Server-to-Server OAuth app, sync webinars and registrants, register contacts who RSVP, and see which invites turned into attendance.
+
+### API, MCP, and Webhooks
+
+Issue API keys, connect the Tantra MCP server to Claude or Cursor, and receive outbound webhooks.
+
+- [Connect the Tantra MCP server](https://adisuja.github.io/tantra-workshop-live/site/help/api-and-mcp/mcp-server): Install the Tantra MCP server, give it your API key, and use Tantra campaigns, contacts, and templates as tools inside Claude or Cursor.
+- [Create and manage API keys](https://adisuja.github.io/tantra-workshop-live/site/help/api-and-mcp/api-keys): Create a Tantra API key, copy it once at creation, use it in the X-API-Key header, and revoke keys you no longer need.
+- [Receive outbound webhooks](https://adisuja.github.io/tantra-workshop-live/site/help/api-and-mcp/outbound-webhooks): Register an endpoint, select channel actions, inspect payloads, and understand delivery retries.
+- [Webhook event triggers](https://adisuja.github.io/tantra-workshop-live/site/help/api-and-mcp/webhook-event-triggers): Choose calendar, email, LinkedIn, WhatsApp, and Telegram campaign events for each outbound webhook.
+
+### Billing
+
+Choose a plan, manage your subscription, and control channel add-ons.
+
+- [Cancel or change your plan](https://adisuja.github.io/tantra-workshop-live/site/help/billing/cancel-or-change-your-plan): Switch between monthly and yearly billing, cancel at the end of your paid period, or keep a subscription that is scheduled to end.
+- [Plans, pricing, and managing your subscription](https://adisuja.github.io/tantra-workshop-live/site/help/billing/plans-and-billing): Compare Tantra plans, choose monthly or yearly billing, review your payment method, and download invoices.
+
+### Troubleshooting
+
+Fix the most common issues across sending, personalization, and connections.
+
+- [A sender shows as disconnected](https://adisuja.github.io/tantra-workshop-live/site/help/troubleshooting/sender-shows-disconnected): Fix a sender that shows as disconnected. Check domain-wide delegation, Gmail and Calendar scopes, and re-verify the mailbox against your service account.
+- [AI personalization is not working](https://adisuja.github.io/tantra-workshop-live/site/help/troubleshooting/personalization-not-working): Fix AI personalization when recipients get generic copy. Check that AI mode is on, the website is reachable, and an LLM provider is available.
+- [My calendar campaign is not sending invites](https://adisuja.github.io/tantra-workshop-live/site/help/troubleshooting/campaign-not-sending-invites): Fix a calendar campaign that is not sending invitations. Learn how daily batching, campaign status, and sender connection affect delivery.
+- [My contacts were quarantined](https://adisuja.github.io/tantra-workshop-live/site/help/troubleshooting/contacts-quarantined): Learn why contacts are quarantined during a cold email launch and how to fix invalid, role, or no-MX addresses so they can be enrolled.
+- [My emails are not sending](https://adisuja.github.io/tantra-workshop-live/site/help/troubleshooting/emails-not-sending): Fix a cold email sequence that is not sending. Check daily and hourly limits, sending windows, sender status, suppression, and enrollment state.
+
+### Glossary
+
+Plain-language definitions of the terms Tantra uses.
+
+- [Glossary of Tantra terms](https://adisuja.github.io/tantra-workshop-live/site/help/glossary/glossary): Plain-language definitions of the words Tantra uses across calendar campaigns, cold email, sending, and personalization.
+
+## Blog
+
+- [Email open tracking is broken. Here is what to measure instead (Wed Jun 24)](https://adisuja.github.io/tantra-workshop-live/site/blog/why-we-dont-track-email-opens): Pixels now fire for privacy proxies and security scanners, not readers. Why the metric broke, what it still costs, and the three signals to read instead.
+- [Cold email marketing in 2026 with AI: how spam filters actually work (Wed Jun 10)](https://adisuja.github.io/tantra-workshop-live/site/blog/cold-email-marketing-2026-ai-spam-filters): How spam filters evaluate email in 2026, why AI written copy gets flagged, and the psychology that separates a 2% reply rate from 15%.
+- [Google Workspace deliverability: the setup manual and the error codes that tell you what broke (Wed Jul 29)](https://adisuja.github.io/tantra-workshop-live/site/blog/google-workspace-deliverability-setup-manual): How to configure SPF, DKIM and DMARC on Google Workspace, warm a mailbox properly, and read the SMTP error codes that tell you what actually broke.
+- [From registration to revenue: a playbook for B2B webinar attendance (Wed Jul 22)](https://adisuja.github.io/tantra-workshop-live/site/blog/b2b-webinar-attendance-playbook): Why only half your registrants show up, what actually moves that number, and how to run the reminder, live and follow up phases.
+- [How to land in the Gmail Primary inbox during cold outreach (Wed Jul 15)](https://adisuja.github.io/tantra-workshop-live/site/blog/gmail-primary-inbox-cold-outreach-2026): Gmail makes two decisions about your email. The stop words that matter, sorted into three buckets, and the compliance trade off nobody mentions.
+- [Beyond open rates: the outreach KPIs that actually predict revenue (Sun Aug 02)](https://adisuja.github.io/tantra-workshop-live/site/blog/outreach-kpis-beyond-open-rates): The three tier KPI framework for B2B outreach, with 2026 benchmarks and the equation that turns them into a pipeline forecast.
+- [Cold Google Calendar outreach in 2026: hard limits, warmup, and ban triggers (Sun Aug 02)](https://adisuja.github.io/tantra-workshop-live/site/blog/cold-google-calendar-outreach-2026-limits-warmup): Every hard limit for cold calendar outreach in 2026, the warmup protocol, the ban triggers, and the psychology behind a 65% accept rate.
+
+## Legal
+
+- [Privacy Policy](https://adisuja.github.io/tantra-workshop-live/site/privacy-policy)
+- [Terms of Service](https://adisuja.github.io/tantra-workshop-live/site/terms-of-service)
+
+## Contact
+
+- Support: support@usetantra.com
+- Sales: sales@usetantra.com
+- Contact form: https://adisuja.github.io/tantra-workshop-live/site/contact-us
+
+## Machine-readable resources
+
+- Sitemap: https://adisuja.github.io/tantra-workshop-live/site/sitemap.xml
+- Robots: https://adisuja.github.io/tantra-workshop-live/site/robots.txt
+- Blog RSS feed: https://adisuja.github.io/tantra-workshop-live/site/blog/rss.xml

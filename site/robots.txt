@@ -1,0 +1,28 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /debug/
+
+User-Agent: GPTBot
+User-Agent: OAI-SearchBot
+User-Agent: ChatGPT-User
+User-Agent: ClaudeBot
+User-Agent: Claude-Web
+User-Agent: Claude-SearchBot
+User-Agent: Google-Extended
+User-Agent: PerplexityBot
+User-Agent: Perplexity-User
+User-Agent: Applebot-Extended
+User-Agent: Bytespider
+User-Agent: Amazonbot
+User-Agent: meta-externalagent
+User-Agent: cohere-ai
+User-Agent: Diffbot
+User-Agent: Timpibot
+User-Agent: YouBot
+Allow: /
+Disallow: /api/
+Disallow: /debug/
+
+Host: https://adisuja.github.io/tantra-workshop-live/site
+Sitemap: https://adisuja.github.io/tantra-workshop-live/site/sitemap.xml

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Tantra blog</title>
+    <link>https://adisuja.github.io/tantra-workshop-live/site/blog</link>
+    <description>Playbooks for calendar, email, and multichannel outreach, from the team building Tantra.</description>
+    <language>en</language>
+    <atom:link href="https://adisuja.github.io/tantra-workshop-live/site/blog/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Email open tracking is broken. Here is what to measure instead</title>
+      <link>https://adisuja.github.io/tantra-workshop-live/site/blog/why-we-dont-track-email-opens</link>
+      <guid isPermaLink="true">https://adisuja.github.io/tantra-workshop-live/site/blog/why-we-dont-track-email-opens</guid>
+      <pubDate>Wed, 24 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[Pixels now fire for privacy proxies and security scanners, not readers. Why the metric broke, what it still costs, and the three signals to read instead.]]></description>
+      <category>Deliverability</category>
+      <category>Cold Email</category>
+    </item>
+    <item>
+      <title>Cold email marketing in 2026 with AI: how spam filters actually work</title>
+      <link>https://adisuja.github.io/tantra-workshop-live/site/blog/cold-email-marketing-2026-ai-spam-filters</link>
+      <guid isPermaLink="true">https://adisuja.github.io/tantra-workshop-live/site/blog/cold-email-marketing-2026-ai-spam-filters</guid>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[How spam filters evaluate email in 2026, why AI written copy gets flagged, and the psychology that separates a 2% reply rate from 15%.]]></description>
+      <category>Deliverability</category>
+      <category>Cold Email</category>
+    </item>
+    <item>
+      <title>Google Workspace deliverability: the setup manual and the error codes that tell you what broke</title>
+      <link>https://adisuja.github.io/tantra-workshop-live/site/blog/google-workspace-deliverability-setup-manual</link>
+      <guid isPermaLink="true">https://adisuja.github.io/tantra-workshop-live/site/blog/google-workspace-deliverability-setup-manual</guid>
+      <pubDate>Wed, 29 Jul 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[How to configure SPF, DKIM and DMARC on Google Workspace, warm a mailbox properly, and read the SMTP error codes that tell you what actually broke.]]></description>
+      <category>Deliverability</category>
+      <category>Cold Email</category>
+    </item>
+    <item>
+      <title>From registration to revenue: a playbook for B2B webinar attendance</title>
+      <link>https://adisuja.github.io/tantra-workshop-live/site/blog/b2b-webinar-attendance-playbook</link>
+      <guid isPermaLink="true">https://adisuja.github.io/tantra-workshop-live/site/blog/b2b-webinar-attendance-playbook</guid>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[Why only half your registrants show up, what actually moves that number, and how to run the reminder, live and follow up phases.]]></description>
+      <category>Webinars</category>
+      <category>Calendar Outreach</category>
+      <category>Cold Email</category>
+    </item>
+    <item>
+      <title>How to land in the Gmail Primary inbox during cold outreach</title>
+      <link>https://adisuja.github.io/tantra-workshop-live/site/blog/gmail-primary-inbox-cold-outreach-2026</link>
+      <guid isPermaLink="true">https://adisuja.github.io/tantra-workshop-live/site/blog/gmail-primary-inbox-cold-outreach-2026</guid>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[Gmail makes two decisions about your email. The stop words that matter, sorted into three buckets, and the compliance trade off nobody mentions.]]></description>
+      <category>Deliverability</category>
+      <category>Cold Email</category>
+    </item>
+    <item>
+      <title>Beyond open rates: the outreach KPIs that actually predict revenue</title>
+      <link>https://adisuja.github.io/tantra-workshop-live/site/blog/outreach-kpis-beyond-open-rates</link>
+      <guid isPermaLink="true">https://adisuja.github.io/tantra-workshop-live/site/blog/outreach-kpis-beyond-open-rates</guid>
+      <pubDate>Sun, 02 Aug 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[The three tier KPI framework for B2B outreach, with 2026 benchmarks and the equation that turns them into a pipeline forecast.]]></description>
+      <category>Deliverability</category>
+      <category>Cold Email</category>
+    </item>
+    <item>
+      <title>Cold Google Calendar outreach in 2026: hard limits, warmup, and ban triggers</title>
+      <link>https://adisuja.github.io/tantra-workshop-live/site/blog/cold-google-calendar-outreach-2026-limits-warmup</link>
+      <guid isPermaLink="true">https://adisuja.github.io/tantra-workshop-live/site/blog/cold-google-calendar-outreach-2026-limits-warmup</guid>
+      <pubDate>Sun, 02 Aug 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[Every hard limit for cold calendar outreach in 2026, the warmup protocol, the ban triggers, and the psychology behind a 65% accept rate.]]></description>
+      <category>Calendar Outreach</category>
+      <category>Deliverability</category>
+      <category>Cold Email</category>
+    </item>
+  </channel>
+</rss>
