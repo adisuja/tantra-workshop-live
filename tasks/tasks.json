@@ -1,9 +1,9 @@
 {
  "meta": {
-  "project": "Tantra 5-Day Workshop",
+  "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-24T11:00:00-04:00",
-  "updated": "2026-09-18T20:45:11+0530",
-  "version": 5
+  "updated": "2026-09-21T22:35:55+0530",
+  "version": 8
  },
  "tasks": [
   {
@@ -14,7 +14,7 @@
    "priority": "P0",
    "due": "2026-09-19",
    "status": "review",
-   "why": "The front door for every traffic lane. Sells the 5-Day Workshop with a Live Pass and a Build Pass.",
+   "why": "The front door for every traffic lane. Sells the 3-Day AI RevOps Workshop with a Live Pass and a Build Pass.",
    "spec": "Live locally on :4322. probe-workshop.mjs is clean at 5 widths, copy bans hold, both pass CTAs render, Build Pass registration opens checkout.",
    "done_when": [
     "Owner signs off on copy and proof cards",
@@ -37,6 +37,11 @@
      "ts": "2026-09-18T18:00:00-04:00",
      "who": "claude",
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-09-21T22:35:40+0530",
+     "who": "claude",
+     "note": "Landing page converted: hero, journey (3 blocks), passes, VSL captions, metadata and session dates (Thu 24 · Fri 25 · Mon 28 Sep). probe-workshop clean at 5 widths; typecheck clean; no new lint errors."
     }
    ],
    "order": 0
@@ -372,6 +377,11 @@
      "ts": "2026-09-18T18:00:00-04:00",
      "who": "claude",
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-09-21T22:35:40+0530",
+     "who": "claude",
+     "note": "Playbook refolded to 3 chapters with in-chapter 'half two' dividers; work plan merged to 3 day tables (37 checkboxes kept, so saved progress survives); Gantt rebuilt for 3 days. probe-playbook clean at 4 widths."
     }
    ],
    "order": 110
@@ -384,7 +394,7 @@
    "priority": "P0",
    "due": "2026-09-21",
    "status": "review",
-   "why": "The live presentation for all five days.",
+   "why": "The live presentation for all three days.",
    "spec": "Rebuilt by the parallel session from build/*.py: 3 fixed lanes, day filter, global page numbers, every survey question a 4-slide block. probe-deck.mjs clean at 3 widths, nav probe 9/9. Logo fix survives regeneration.",
    "done_when": [
     "Owner approves",
@@ -406,6 +416,11 @@
      "ts": "2026-09-18T18:00:00-04:00",
      "who": "claude",
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-09-21T22:35:40+0530",
+     "who": "claude",
+     "note": "Deck regenerated for 3 days: 203 slides (was 211), nothing cut — all 30 questions keep their 4-slide blocks and every teaching slide survives. Days 1 and 3 run in two halves with a turn slide. probe-deck clean at 3 widths, probe-deck-nav 9/9."
     }
    ],
    "order": 120
@@ -441,35 +456,43 @@
      "ts": "2026-09-18T18:00:00-04:00",
      "who": "claude",
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-09-21T22:35:40+0530",
+     "who": "claude",
+     "note": "Survey regenerated: 3 days, 12/6/12 questions, all 30 kept with their 180 samples. probe-survey clean."
     }
    ],
    "order": 130
   },
   {
    "id": "T-024",
-   "title": "Day 1–5 output templates (what each attendee GETS)",
+   "title": "Day 1–3 output templates (what each attendee GETS)",
    "area": "Delivery",
    "owner": "Claude",
    "priority": "P0",
    "due": "2026-09-21",
-   "status": "queue",
-   "why": "The workshop's promise is 'do something, get something, every day'. The get-half does not exist yet beyond Day 1's playbook.",
-   "spec": "For each day write the output template the pipeline fills from survey answers: D1 personalized funnel playbook + 5-day plan · D2 conversion-engine spec · D3 pages/templates/stages for the attendee's funnel type · D4 orchestrator prompts for Claude Code · D5 funnel math + RevOps journey. Each template: inputs (which questions), structure, sample filled output for one persona, PDF-ready HTML.",
+   "status": "next",
+   "why": "The workshop's promise is 'do something, get something, every day'. With 3 days there are 3 outputs, and the merged days each generate from twelve answers rather than six.",
+   "spec": "For each day write the output template the pipeline fills from survey answers. Day 1: strategy on one page + the conversion engine (five blocks, diagnostic, spec outline) + the 3-day work plan. Day 2: pages, sequences, run of show and close chain for the attendee's funnel type. Day 3: event schema, pipeline, automations, live URL and QA checklist + unit economics, leak diagnosis, experiment card, ascension plan and the 52-week schedule. Each template: inputs (which questions), structure, one sample filled for the SendFlow persona, PDF-ready HTML.",
    "done_when": [
-    "Five templates in workshop-plan/outputs/",
+    "Three templates in workshop-plan/outputs/",
     "One sample rendered per day for the SendFlow persona",
     "Owner approves structure"
    ],
    "evidence": [],
-   "blockers": [
-    "Day count must be confirmed: everything says 5 days, the repo name says 3 days (T-087)"
-   ],
-   "needs_from_owner": "Confirm 5 days or 3 days before I write the per-day templates.",
+   "blockers": [],
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
      "who": "claude",
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-09-21T22:35:40+0530",
+     "who": "claude",
+     "note": "Unblocked by the 3-day decision; rescoped from five templates to three."
     }
    ],
    "order": 140
@@ -483,18 +506,28 @@
    "due": "2026-09-19",
    "status": "review",
    "why": "The pipeline templates (T-024) depend on which questions exist. Locking them stops churn.",
-   "spec": "Questions live in build/questions.py. Day 1 strategy · Day 2 brand/product/offer · Day 3 funnel-type specifics · Day 4 build inputs · Day 5 funnel math.",
+   "spec": "Questions live in build/questions.py. Day 1 twelve — strategy (ICP, objection, offer, rung, funnel shape) then the conversion engine (offer block, voice, mechanism, proof, dimensions, bands). Day 2 six — funnel-type specifics: channels, headlines, form fields, reminder channels, run of show, close chain. Day 3 twelve — launch (AI tool, event names, pipeline stages, automations, test campaign, deploy URL) then scale (CAC/LTV, best channel, worst step, experiment, ascension offer, retention mechanism).",
    "done_when": [
     "Owner says 'locked'"
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Say 'locked' or list the edits.",
+   "needs_from_owner": "Approve the 12/6/12 split, or tell me to rebalance.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
      "who": "claude",
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-09-21T22:35:40+0530",
+     "who": "claude",
+     "note": "Questions re-grouped for 3 days: Day 1 twelve (strategy then engine), Day 2 six (the heavy build day), Day 3 twelve (launch then scale). No question text changed except one cross-reference."
+    },
+    {
+     "ts": "2026-09-21T22:35:55+0530",
+     "who": "claude",
+     "note": "Day references remapped for the 3-day structure."
     }
    ],
    "order": 150
@@ -560,7 +593,7 @@
    "owner": "Claude",
    "priority": "P2",
    "due": "2026-09-19",
-   "status": "queue",
+   "status": "done",
    "why": "The hub still says 101 slides and 29 diagrams and links a localStorage task board this system replaces.",
    "spec": "Update artifact counts, link Launch Control, retire the old board section.",
    "done_when": [
@@ -575,6 +608,11 @@
      "ts": "2026-09-18T18:00:00-04:00",
      "who": "claude",
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-09-21T22:35:40+0530",
+     "who": "claude",
+     "note": "Hub rewritten for 3 days AND the stale localStorage task board retired — it now links to Launch Control. Removed 6.3 KB of dead board code plus the seed list. Artifact counts corrected to 14.5k words / 33 diagrams / 203 slides. Renders clean at 3 widths with no JS errors."
     }
    ],
    "order": 180
@@ -765,19 +803,40 @@
   },
   {
    "id": "T-036",
-   "title": "Serve the attendee-facing pages from this machine during live sessions",
+   "title": "Publish the workshop artifacts and site mirror to GitHub Pages",
    "area": "Delivery",
    "owner": "Claude",
    "priority": "P0",
    "due": "2026-09-21",
-   "status": "queue",
+   "status": "done",
    "why": "Attendees need a real URL for the playbook, survey, and deck. Everything is localhost today.",
    "spec": "Playbook, survey, and daily outputs are served by serve.py locally. For attendees to reach them during a session the machine needs a temporary public tunnel (Cloudflare Tunnel, already used for GrowthClub OS). Recipe and start script in the runbook; no permanent hosting.",
    "done_when": [
     "tunnel script starts and prints the public URL",
     "all four probes pass through the tunnel URL"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Live hub",
+     "url": "https://adisuja.github.io/tantra-workshop-live/"
+    },
+    {
+     "label": "Live playbook",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html"
+    },
+    {
+     "label": "Live deck",
+     "url": "https://adisuja.github.io/tantra-workshop-live/deck.html"
+    },
+    {
+     "label": "Live survey",
+     "url": "https://adisuja.github.io/tantra-workshop-live/survey.html"
+    },
+    {
+     "label": "Live site mirror",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -790,6 +849,11 @@
      "ts": "2026-09-18T20:42:47+0530",
      "who": "claude",
      "note": "Owner chose local-only; hosting question closed."
+    },
+    {
+     "ts": "2026-09-21T12:42:15+0530",
+     "who": "claude",
+     "note": "Owner asked for free GitHub-hosted links (Sep 21). Public repo adisuja/tantra-workshop-live on GitHub Pages: 4 artifacts + Launch Control mirror (read-only) + static export of the Next site under /site (checkout, registration, auth excluded — those need the local server). Sweep: 11 URLs, 0 JS errors, 0 broken images."
     }
    ],
    "order": 250
@@ -854,7 +918,7 @@
    "due": "2026-09-20",
    "status": "queue",
    "why": "Seats need a link. Day 1 is Thu Sep 24, 11:00 AM ET.",
-   "spec": "Thu 24 · Fri 25 · Mon 28 · Tue 29 · Wed 30, all 11:00 AM ET. Participants muted, video disabled. Registration link pasted into T-003.",
+   "spec": "Thu 24 · Fri 25 · Mon 28, all 11:00 AM ET. Participants muted, video disabled. Registration link pasted into T-003.",
    "done_when": [
     "Five sessions on the calendar",
     "Permissions set",
@@ -906,8 +970,8 @@
    "priority": "P1",
    "due": "2026-09-22",
    "status": "queue",
-   "why": "The Tantra Pro pitch continues after Day 5 and retention starts here.",
-   "spec": "Email + WhatsApp, Day 5 → +14 days: recordings, Pro offer, Chaperone invite, retention nudges into the Tantra Plan.",
+   "why": "The Tantra Pro pitch continues after Day 3 and retention starts here.",
+   "spec": "Email + WhatsApp, Day 3 → +14 days: recordings, Pro offer, Chaperone invite, retention nudges into the Tantra Plan.",
    "done_when": [
     "Sequence drafted in workshop-plan/sequences/post.md",
     "Owner approves"
@@ -920,6 +984,11 @@
      "ts": "2026-09-18T18:00:00-04:00",
      "who": "claude",
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-09-21T22:35:55+0530",
+     "who": "claude",
+     "note": "Day references remapped for the 3-day structure."
     }
    ],
    "order": 300
@@ -1189,7 +1258,7 @@
    "priority": "P2",
    "due": "2026-09-24",
    "status": "queue",
-   "why": "Shown live on Day 5.",
+   "why": "Shown live on Day 3.",
    "spec": "Cloudflare tunnel is slow.",
    "done_when": [
     "Dashboard loads in under 3 s"
@@ -1202,6 +1271,11 @@
      "ts": "2026-09-18T18:00:00-04:00",
      "who": "claude",
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-09-21T22:35:55+0530",
+     "who": "claude",
+     "note": "Day references remapped for the 3-day structure."
     }
    ],
    "order": 410
@@ -1267,7 +1341,7 @@
    "priority": "P2",
    "due": "2026-09-29",
    "status": "queue",
-   "why": "Pitched at the close on Day 5.",
+   "why": "Pitched at the close on Day 3.",
    "spec": "10-year app access + 3 months 1:1 + course/community/coaching. Application or call-booking CTA rather than instant checkout.",
    "done_when": [
     "Page live",
@@ -1281,6 +1355,11 @@
      "ts": "2026-09-18T18:00:00-04:00",
      "who": "claude",
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-09-21T22:35:55+0530",
+     "who": "claude",
+     "note": "Day references remapped for the 3-day structure."
     }
    ],
    "order": 440
@@ -1488,14 +1567,14 @@
   },
   {
    "id": "T-085",
-   "title": "Decide: 5-day workshop (as built) or 3-day (as the repo is named)?",
+   "title": "Decide: 3-day workshop (as built) or 3-day (as the repo is named)?",
    "area": "Content",
    "owner": "Adi",
    "priority": "P0",
    "due": "2026-09-19",
    "status": "blocked",
-   "why": "Every artifact, date, price page and template is built for five days (Sep 24, 25, 28, 29, 30). The repo name you gave says '3 day'. If that is a real change it re-cuts the deck, playbook chapters, survey days, landing page and templates.",
-   "spec": "Answer one word. If 3 days: which three of the current five days survive, and which dates.",
+   "why": "Every artifact, date, price page and template is built for three days (Sep 24, 25, 28). The repo name you gave says '3 day'. If that is a real change it re-cuts the deck, playbook chapters, survey days, landing page and templates.",
+   "spec": "Answer one word. If 3 days: which three of the current three days survive, and which dates.",
    "done_when": [
     "Owner answers"
    ],
@@ -1550,7 +1629,7 @@
    "owner": "Claude",
    "priority": "P0",
    "due": "2026-09-20",
-   "status": "queue",
+   "status": "done",
    "why": "Owner: no n8n. Three code paths still call it.",
    "spec": "masterclass-client.tsx lead capture, success-client.tsx survey post, webhook route fulfilment fallback (NEXT_PUBLIC_LEAD_WEBHOOK_URL). Point all three at the local intake service (T-030).",
    "done_when": [
@@ -1565,6 +1644,11 @@
      "ts": "2026-09-18T20:42:47+0530",
      "who": "claude",
      "note": "Added from owner decisions 2026-09-18."
+    },
+    {
+     "ts": "2026-09-21T22:35:40+0530",
+     "who": "claude",
+     "note": "Owner answered 21 Sep: convert to 'The 3-Day AI RevOps Workshop' across all artifacts. Folded 5 days → 3 on 21 Sep (owner decision). Day 1 = strategy + conversion engine, Day 2 = build every element, Day 3 = launch + scale. Dates Thu 24, Fri 25, Mon 28 Sep."
     }
    ],
    "order": 870
