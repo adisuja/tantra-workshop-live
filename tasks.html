@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Launch Control · Tantra 5-Day Workshop</title>
+<style>
+:root{
+  --bg:#f6f7f9; --panel:#ffffff; --panel-2:#fbfcfd; --ink:#111318; --ink-2:#4a4f5a; --ink-3:#8b909b;
+  --line:#e6e8ec; --line-2:#d5d8de; --accent:#5b4bd6; --accent-2:#efedfd; --accent-ink:#3a2fa8;
+  --teal:#0f9e75; --teal-bg:#e3f6ef; --amber:#b8790f; --amber-bg:#fbefda; --pink:#c23a68; --pink-bg:#fbe9f0;
+  --blue:#2f6fd0; --blue-bg:#e8f0fb; --gray-bg:#eef0f3; --gold:#a06a12; --gold-bg:#f8efd8;
+  --shadow:0 1px 2px rgba(16,19,24,.04),0 4px 16px rgba(16,19,24,.06);
+  --radius:14px; --radius-sm:9px;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+[data-theme="dark"]{
+  --bg:#0d0f14; --panel:#161922; --panel-2:#1b1f2a; --ink:#f2f4f8; --ink-2:#b3b9c6; --ink-3:#7b828f;
+  --line:#262b36; --line-2:#333a48; --accent:#8e83f0; --accent-2:#221f3d; --accent-ink:#bcb4fb;
+  --teal:#3ec79b; --teal-bg:#123027; --amber:#e0a63f; --amber-bg:#332612; --pink:#e97aa2; --pink-bg:#331722;
+  --blue:#6aa3ec; --blue-bg:#122237; --gray-bg:#20242e; --gold:#d9ab54; --gold-bg:#2e2513;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-ink)}
+button{font:inherit;cursor:pointer}
+.wrap{max-width:1180px;margin:0 auto;padding:18px 20px 80px}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.tmark{position:relative;width:32px;height:32px;flex:none}
+.tmark img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.tmark .w{display:none}[data-theme="dark"] .tmark .i{display:none}[data-theme="dark"] .tmark .w{display:block}
+.brand h1{font-size:16px;font-weight:700;letter-spacing:-.01em;line-height:1.15}
+.brand p{font-size:12px;color:var(--ink-3)}
+.stats{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);padding:6px 10px;min-width:64px}
+.stat .l{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);white-space:nowrap}
+.stat .v{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
+.stat.next .v{color:var(--accent-ink)} .stat.review .v{color:var(--blue)} .stat.blocked .v{color:var(--pink)} .stat.done .v{color:var(--teal)}
+.ghost{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);padding:6px 10px;color:var(--ink-2);font-size:12.5px}
+.ghost:hover{border-color:var(--line-2)}
+.prog{height:6px;background:var(--gray-bg);border-radius:6px;overflow:hidden;margin:4px 0 18px}
+.prog i{display:block;height:100%;background:var(--teal);width:0;transition:width .5s}
+
+/* NOW strip */
+.now{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:12px;margin-bottom:22px}
+@media(max-width:900px){.now{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 16px;min-width:0}
+.card h2{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.card h2 .n{background:var(--gray-bg);color:var(--ink-2);border-radius:20px;padding:0 7px;font-size:11px;font-weight:700}
+.nowitem{display:block;width:100%;text-align:left;background:transparent;border:0;border-top:1px solid var(--line);padding:8px 0;color:inherit}
+.nowitem:first-of-type{border-top:0;padding-top:0}
+.nowitem b{display:block;font-size:13.5px;font-weight:650;line-height:1.3}
+.nowitem span{display:block;font-size:12px;color:var(--ink-2);margin-top:2px;line-height:1.4}
+.nowitem .ask{color:var(--pink)}
+.nowitem:hover b{color:var(--accent-ink)}
+.empty{font-size:12.5px;color:var(--ink-3)}
+.nextbig b{font-size:16px}
+.nextbig .why{font-size:12.5px;color:var(--ink-2);margin-top:6px}
+
+/* toolbar */
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.seg{display:inline-flex;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden}
+.seg button{background:transparent;border:0;padding:6px 11px;font-size:12.5px;color:var(--ink-2)}
+.seg button.on{background:var(--accent-2);color:var(--accent-ink);font-weight:650}
+select,input[type=text]{font:inherit;font-size:12.5px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);padding:6px 9px;color:var(--ink)}
+input[type=text]{min-width:180px}
+.sp{flex:1}
+
+/* list */
+.group{margin-bottom:18px}
+.group h3{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);margin:0 0 6px 2px;display:flex;gap:8px;align-items:center}
+.group h3 .n{font-weight:600;color:var(--ink-2)}
+.task{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);margin-bottom:6px;overflow:hidden}
+.task.next{border-color:var(--accent)} .task.hasfb{box-shadow:inset 3px 0 0 var(--amber)}
+.row{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:9px 12px;cursor:pointer;min-width:0}
+.row:hover{background:var(--panel-2)}
+.id{font-family:var(--mono);font-size:11px;color:var(--ink-3);width:44px;flex:none}
+.ttl{min-width:0}
+.ttl b{display:block;font-size:13.5px;font-weight:600;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ttl small{display:block;font-size:11.5px;color:var(--ink-3);margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.meta{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.pill{font-size:10.5px;font-weight:650;letter-spacing:.02em;border-radius:20px;padding:2px 8px;white-space:nowrap;background:var(--gray-bg);color:var(--ink-2)}
+.pill.s-queue{background:var(--gray-bg);color:var(--ink-2)}
+.pill.s-next{background:var(--accent-2);color:var(--accent-ink)}
+.pill.s-doing{background:var(--gold-bg);color:var(--gold)}
+.pill.s-blocked{background:var(--pink-bg);color:var(--pink)}
+.pill.s-review{background:var(--blue-bg);color:var(--blue)}
+.pill.s-done{background:var(--teal-bg);color:var(--teal)}
+.pill.s-dropped{background:var(--gray-bg);color:var(--ink-3);text-decoration:line-through}
+.pill.p-P0{background:var(--pink-bg);color:var(--pink)} .pill.p-P1{background:var(--amber-bg);color:var(--amber)} .pill.p-P2{background:var(--gray-bg);color:var(--ink-3)}
+.pill.fb{background:var(--amber-bg);color:var(--amber)}
+.due{font-size:11.5px;color:var(--ink-3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.due.late{color:var(--pink);font-weight:600}
+@media(max-width:640px){.row{grid-template-columns:1fr auto}.id{display:none}.ttl b,.ttl small{white-space:normal}}
+
+/* detail */
+.det{display:none;border-top:1px solid var(--line);padding:12px 14px 14px;background:var(--panel-2)}
+.task.open .det{display:block}
+.det .cols{display:grid;grid-template-columns:1.3fr 1fr;gap:16px}
+@media(max-width:800px){.det .cols{grid-template-columns:1fr}}
+.det h4{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin:10px 0 4px}
+.det h4:first-child{margin-top:0}
+.det p,.det li{font-size:13px;color:var(--ink-2);line-height:1.5}
+.det ul{padding-left:18px}
+.det .ask{background:var(--pink-bg);color:var(--pink);border-radius:var(--radius-sm);padding:8px 10px;font-size:13px;font-weight:500}
+.det .ev a{display:inline-block;margin:2px 6px 2px 0;font-size:12.5px}
+.thread{border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--panel);padding:8px 10px;max-height:260px;overflow:auto}
+.msg{font-size:12.5px;padding:6px 0;border-top:1px solid var(--line)}
+.msg:first-child{border-top:0;padding-top:0}
+.msg .who{font-weight:650;color:var(--ink)} .msg .ts{color:var(--ink-3);font-size:11px;margin-left:6px}
+.msg .act{display:inline-block;font-size:10.5px;font-weight:650;border-radius:20px;padding:0 7px;margin-left:6px;background:var(--gray-bg);color:var(--ink-2)}
+.msg.owner .who{color:var(--amber)} .msg.unread{background:var(--amber-bg);margin:0 -10px;padding-left:10px;padding-right:10px}
+.msg .txt{color:var(--ink-2);white-space:pre-wrap;margin-top:2px}
+.fb{margin-top:10px}
+.fb textarea{width:100%;font:inherit;font-size:13px;min-height:74px;border:1px solid var(--line-2);border-radius:var(--radius-sm);padding:8px 10px;background:var(--panel);color:var(--ink);resize:vertical}
+.fb .acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;align-items:center}
+.btn{border:1px solid var(--line-2);background:var(--panel);color:var(--ink);border-radius:var(--radius-sm);padding:6px 11px;font-size:12.5px;font-weight:600}
+.btn:hover{border-color:var(--accent)}
+.btn.ok{background:var(--teal);border-color:var(--teal);color:#fff}
+.btn.chg{background:var(--amber);border-color:var(--amber);color:#fff}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.mini{padding:3px 8px;font-size:11.5px}
+.sent{font-size:12px;color:var(--teal);font-weight:600}
+.sent.err{color:var(--pink)}
+.hint{font-size:11.5px;color:var(--ink-3);margin-top:6px}
+.att{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.att a,.att .pend{display:inline-flex;align-items:center;gap:6px;max-width:220px;border:1px solid var(--line);border-radius:var(--radius-sm);padding:4px 8px 4px 4px;background:var(--panel);font-size:11.5px;color:var(--ink-2);text-decoration:none;min-width:0}
+.att img{width:36px;height:36px;object-fit:cover;border-radius:5px;flex:none;background:var(--gray-bg)}
+.att .ic{width:36px;height:36px;border-radius:5px;background:var(--gray-bg);display:flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+.att .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.att .x{border:0;background:transparent;color:var(--ink-3);font-size:14px;padding:0 2px;line-height:1}
+.att .x:hover{color:var(--pink)}
+.fb textarea.drag{border-color:var(--accent);background:var(--accent-2)}
+.attbtn{position:relative;overflow:hidden}
+.attbtn input{position:absolute;inset:0;opacity:0;cursor:pointer}
+
+/* kanban */
+.kan{display:grid;grid-template-columns:repeat(6,minmax(180px,1fr));gap:10px;overflow-x:auto;padding-bottom:6px}
+.col h3{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);margin-bottom:6px}
+.kcard{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);padding:8px 10px;margin-bottom:6px;cursor:pointer;min-width:0}
+.kcard b{display:block;font-size:12.5px;font-weight:600;line-height:1.3}
+.kcard small{display:block;font-size:11px;color:var(--ink-3);margin-top:3px}
+.kcard:hover{border-color:var(--accent)}
+
+/* new task */
+.newt{background:var(--panel);border:1px dashed var(--line-2);border-radius:var(--radius);padding:14px 16px;margin-top:24px}
+.newt h2{font-size:13px;font-weight:650;margin-bottom:8px}
+.newt .f{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px}
+@media(max-width:800px){.newt .f{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.newt .f{grid-template-columns:1fr}}
+.newt .f>*{min-width:0;width:100%}
+.newt textarea{grid-column:1/-1;width:100%;font:inherit;font-size:13px;min-height:56px;border:1px solid var(--line-2);border-radius:var(--radius-sm);padding:8px 10px;background:var(--panel);color:var(--ink)}
+footer{margin-top:28px;font-size:11.5px;color:var(--ink-3)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="brand">
+    <span class="tmark"><img class="i" src="brand/tantra-mark-ink.png" alt=""><img class="w" src="brand/tantra-mark-white.png" alt=""></span>
+    <div><h1>Launch Control</h1><p>Tantra 5-Day Workshop · Day 1 <span id="cd">—</span></p></div>
+  </div>
+  <div class="stats">
+    <div class="stat next"><div class="l">Next up</div><div class="v" id="s-next">—</div></div>
+    <div class="stat review"><div class="l">For your review</div><div class="v" id="s-review">0</div></div>
+    <div class="stat blocked"><div class="l">Needs you</div><div class="v" id="s-blocked">0</div></div>
+    <div class="stat done"><div class="l">Done</div><div class="v" id="s-done">0</div></div>
+    <button class="ghost" id="theme" type="button">◐ Theme</button>
+    <a class="ghost" href="index.html" style="text-decoration:none">Hub ↗</a>
+  </div>
+</header>
+<div class="prog"><i id="prog"></i></div>
+
+<section class="now">
+  <div class="card nextbig"><h2>Claude is on</h2><div id="now-next"></div></div>
+  <div class="card"><h2>Waiting on you <span class="n" id="n-you">0</span></h2><div id="now-you"></div></div>
+  <div class="card"><h2>Ready for review <span class="n" id="n-rev">0</span></h2><div id="now-rev"></div></div>
+</section>
+
+<div class="bar">
+  <div class="seg" id="view"><button class="on" data-v="queue">Queue</button><button data-v="area">By area</button><button data-v="kanban">Kanban</button></div>
+  <select id="f-owner"><option value="">All owners</option></select>
+  <select id="f-area"><option value="">All areas</option></select>
+  <select id="f-status"><option value="">All statuses</option><option>next</option><option>doing</option><option>review</option><option>blocked</option><option>queue</option><option>done</option></select>
+  <input type="text" id="q" placeholder="Search tasks…">
+  <span class="sp"></span>
+  <label class="hint" style="margin:0"><input type="checkbox" id="hidedone" checked> hide done</label>
+</div>
+
+<div id="board"></div>
+
+<section class="newt" id="newt">
+  <h2>Add a task for Claude</h2>
+  <div class="f">
+    <input type="text" id="nt-title" placeholder="Title">
+    <select id="nt-area"></select>
+    <select id="nt-pri"><option>P0</option><option selected>P1</option><option>P2</option></select>
+    <input type="text" id="nt-due" placeholder="Due (2026-09-21)">
+    <textarea id="nt-text" placeholder="Context, links, what done looks like…"></textarea>
+  </div>
+  <div class="acts" style="display:flex;gap:8px;align-items:center;margin-top:8px"><button class="btn pri" id="nt-send" type="button">Add to queue</button><span id="nt-sent" class="sent"></span></div>
+</section>
+
+<footer><b>Public read-only mirror.</b> Feedback and attachments only work on the local board. Source of truth: <code>workshop-plan/tasks/tasks.json</code>. Your actions append to <code>tasks/inbox.jsonl</code> and show here immediately; Claude processes the inbox on every pass, updates the task, and marks your note as handled.</footer>
+</div>
+
+<script>
+const AREAS=["Funnel","Content","Delivery","Traffic","Product","Ops","Infra"];
+const ORDER={next:0,doing:1,review:2,blocked:3,queue:4,done:5,dropped:6};
+const LABEL={next:"Next",doing:"In progress",review:"Review",blocked:"Blocked",queue:"Queue",done:"Done",dropped:"Dropped"};
+let DATA={tasks:[]},INBOX=[],view="queue",openId=null;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const bust=u=>/^https?:/.test(u)?u+(u.includes("?")?"&":"?")+"v="+Date.now():u;
+
+async function load(){
+  const v="?v="+Date.now();
+  DATA=await (await fetch("tasks/tasks.json"+v)).json();
+  const raw=await (await fetch("tasks/inbox.jsonl"+v)).text().catch(()=>"");
+  INBOX=raw.split("\n").filter(Boolean).map(l=>{try{return JSON.parse(l)}catch(e){return null}}).filter(Boolean);
+  fill();render();
+}
+function fill(){
+  const owners=[...new Set(DATA.tasks.map(t=>t.owner))].sort();
+  $("#f-owner").innerHTML='<option value="">All owners</option>'+owners.map(o=>`<option>${esc(o)}</option>`).join("");
+  $("#f-area").innerHTML='<option value="">All areas</option>'+AREAS.map(a=>`<option>${a}</option>`).join("");
+  $("#nt-area").innerHTML=AREAS.map(a=>`<option>${a}</option>`).join("");
+}
+function fbFor(id){return INBOX.filter(f=>f.task_id===id)}
+function unread(id){return fbFor(id).filter(f=>!f.processed).length}
+function isLate(t){return t.due&&t.status!=="done"&&t.due<new Date().toISOString().slice(0,10)}
+function filtered(){
+  const o=$("#f-owner").value,a=$("#f-area").value,s=$("#f-status").value,q=$("#q").value.toLowerCase(),hd=$("#hidedone").checked;
+  return DATA.tasks.filter(t=>(!o||t.owner===o)&&(!a||t.area===a)&&(!s||t.status===s)&&(!hd||t.status!=="done")
+    &&(!q||(t.id+" "+t.title+" "+t.why+" "+t.spec).toLowerCase().includes(q)))
+    .sort((x,y)=>(ORDER[x.status]-ORDER[y.status])||x.priority.localeCompare(y.priority)||(x.due||"9").localeCompare(y.due||"9")||x.order-y.order);
+}
+function render(){
+  const T=DATA.tasks;
+  const c=s=>T.filter(t=>t.status===s).length;
+  $("#s-review").textContent=c("review");
+  $("#s-blocked").textContent=T.filter(t=>t.status==="blocked"&&t.needs_from_owner).length;
+  $("#s-done").textContent=c("done")+"/"+T.length;
+  $("#prog").style.width=Math.round(100*c("done")/Math.max(1,T.length))+"%";
+  const nx=T.find(t=>t.status==="next")||T.find(t=>t.status==="doing");
+  $("#s-next").textContent=nx?nx.id:"—";
+  $("#now-next").innerHTML=nx?`<button class="nowitem" onclick="jump('${nx.id}')"><b>${esc(nx.title)}</b><span>${esc(nx.why)}</span></button>`:'<div class="empty">Queue is empty.</div>';
+  const you=T.filter(t=>t.status==="blocked"&&t.needs_from_owner).sort((a,b)=>a.priority.localeCompare(b.priority)).slice(0,8);
+  $("#n-you").textContent=T.filter(t=>t.status==="blocked"&&t.needs_from_owner).length;
+  $("#now-you").innerHTML=you.length?you.map(t=>`<button class="nowitem" onclick="jump('${t.id}')"><b>${esc(t.title)}</b><span class="ask">${esc(t.needs_from_owner)}</span></button>`).join(""):'<div class="empty">Nothing blocked on you.</div>';
+  const rev=T.filter(t=>t.status==="review").sort((a,b)=>a.priority.localeCompare(b.priority)).slice(0,8);
+  $("#n-rev").textContent=c("review");
+  $("#now-rev").innerHTML=rev.length?rev.map(t=>`<button class="nowitem" onclick="jump('${t.id}')"><b>${esc(t.title)}</b><span>${esc((t.evidence[0]||{}).label||"")}${t.evidence[0]?" · ":""}${esc(t.needs_from_owner||"Approve or request changes")}</span></button>`).join(""):'<div class="empty">Nothing waiting for review.</div>';
+  const list=filtered();const b=$("#board");
+  if(view==="kanban"){
+    b.innerHTML='<div class="kan">'+["next","doing","review","blocked","queue","done"].map(s=>`<div class="col"><h3>${LABEL[s]} · ${list.filter(t=>t.status===s).length}</h3>${list.filter(t=>t.status===s).map(t=>`<div class="kcard" onclick="jump('${t.id}')"><b>${esc(t.title)}</b><small>${t.id} · ${esc(t.owner)} · ${t.priority}${t.due?" · "+t.due.slice(5):""}${unread(t.id)?" · ✉ "+unread(t.id):""}</small></div>`).join("")}</div>`).join("")+'</div>';
+    return;
+  }
+  const groups=view==="area"?AREAS.map(a=>[a,list.filter(t=>t.area===a)]):Object.keys(ORDER).map(s=>[LABEL[s],list.filter(t=>t.status===s)]);
+  b.innerHTML=groups.filter(g=>g[1].length).map(([g,ts])=>`<div class="group"><h3>${g} <span class="n">${ts.length}</span></h3>${ts.map(row).join("")}</div>`).join("")||'<div class="empty">No tasks match.</div>';
+  if(openId){const el=document.getElementById("t-"+openId);if(el)el.classList.add("open")}
+}
+function row(t){
+  const u=unread(t.id);
+  return `<div class="task ${t.status}${u?" hasfb":""}" id="t-${t.id}">
+  <div class="row" onclick="toggle('${t.id}')">
+    <span class="id">${t.id}</span>
+    <span class="ttl"><b>${esc(t.title)}</b><small>${esc(t.owner)} · ${esc(t.area)}${t.needs_from_owner&&t.status==="blocked"?" · needs: "+esc(t.needs_from_owner):""}</small></span>
+    <span class="meta">${u?`<span class="pill fb">✉ ${u} new</span>`:""}<span class="pill p-${t.priority}">${t.priority}</span><span class="pill s-${t.status}">${LABEL[t.status]}</span><span class="due${isLate(t)?" late":""}">${t.due||""}</span></span>
+  </div>
+  <div class="det">${detail(t)}</div></div>`;
+}
+function detail(t){
+  const fb=fbFor(t.id);
+  const thread=[...t.log.map(l=>({...l,owner:false})),...fb.map(f=>({ts:f.ts,who:"you",note:f.text,act:f.action,owner:true,unread:!f.processed,attachments:f.attachments}))].sort((a,b)=>String(a.ts).localeCompare(String(b.ts)));
+  return `<div class="cols"><div>
+    <h4>Why it matters</h4><p>${esc(t.why)}</p>
+    <h4>Spec</h4><p>${esc(t.spec)}</p>
+    ${t.done_when.length?`<h4>Done when</h4><ul>${t.done_when.map(d=>`<li>${esc(d)}</li>`).join("")}</ul>`:""}
+    ${t.evidence.length?`<h4>Evidence · open and check</h4><div class="ev">${t.evidence.map(e=>/^https?:/.test(e.url)?`<a href="${esc(bust(e.url))}" target="_blank" rel="noopener">${esc(e.label)} ↗</a>`:`<a href="#" onclick="return false" title="${esc(e.url)}">${esc(e.label)} <code style="font-size:11px;color:var(--ink-3)">${esc(e.url)}</code></a>`).join("")}</div>`:""}
+    ${t.blockers.length?`<h4>Blockers</h4><ul>${t.blockers.map(d=>`<li>${esc(d)}</li>`).join("")}</ul>`:""}
+    ${t.needs_from_owner?`<h4>What Claude needs from you</h4><div class="ask">${esc(t.needs_from_owner)}</div>`:""}
+  </div><div>
+    <h4>Thread</h4><div class="thread">${thread.map(m=>`<div class="msg${m.owner?" owner":""}${m.unread?" unread":""}"><span class="who">${m.owner?"You":"Claude"}</span>${m.act?`<span class="act">${esc(m.act)}</span>`:""}<span class="ts">${esc(String(m.ts).slice(0,16).replace("T"," "))}${m.unread?" · not yet processed":""}</span><div class="txt">${esc(m.note)}</div>${attHtml(m.attachments)}</div>`).join("")}</div>
+    <div class="fb">
+      <textarea id="fb-${t.id}" placeholder="Feedback, context, an answer to the blocker, a link… Paste or drop screenshots here (up to 10 files)." onpaste="onPaste(event,'${t.id}')" ondragover="event.preventDefault();this.classList.add('drag')" ondragleave="this.classList.remove('drag')" ondrop="onDrop(event,'${t.id}')"></textarea>
+      <div class="att" id="att-${t.id}"></div>
+      <div class="acts">
+        <label class="btn mini attbtn">📎 Attach<input type="file" multiple onchange="addFiles('${t.id}',this.files);this.value=''"></label>
+        <button class="btn ok" onclick="send('${t.id}','approve')">✓ Approve</button>
+        <button class="btn chg" onclick="send('${t.id}','changes')">Request changes</button>
+        <button class="btn" onclick="send('${t.id}','context')">Add context</button>
+        ${t.status==="blocked"?`<button class="btn" onclick="send('${t.id}','unblock')">Answer blocker</button>`:""}
+        <button class="btn mini" onclick="send('${t.id}','prioritize')">↑ Do this next</button>
+        <button class="btn mini" onclick="send('${t.id}','drop')">Drop</button>
+        <span class="sent" id="sent-${t.id}"></span>
+      </div>
+      <div class="hint">Approve moves it to Done on Claude's next pass. Request changes or Add context and Claude edits the output, re-verifies, and puts it back in Review.</div>
+    </div>
+  </div></div>`;
+}
+function toggle(id){openId=openId===id?null:id;document.querySelectorAll(".task.open").forEach(e=>e.classList.remove("open"));if(openId){const el=document.getElementById("t-"+id);if(el)el.classList.add("open")}}
+function jump(id){$("#f-owner").value="";$("#f-area").value="";$("#f-status").value="";$("#q").value="";$("#hidedone").checked=false;if(view==="kanban"){view="queue";document.querySelectorAll("#view button").forEach(b=>b.classList.toggle("on",b.dataset.v==="queue"))}openId=id;render();const el=document.getElementById("t-"+id);if(el)el.scrollIntoView({behavior:"smooth",block:"start"})}
+async function post(body){
+  const r=await fetch("/api/inbox",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+  if(!r.ok)throw new Error((await r.json()).error||r.status);return r.json();
+}
+const PENDING={};
+const MAXF=10;
+function attHtml(list){if(!list||!list.length)return"";return '<div class="att">'+list.map(a=>{const img=/^image\//.test(a.type||"")||/\.(png|jpe?g|gif|webp|svg)$/i.test(a.name||"");return `<a href="${esc(a.url)}" target="_blank" rel="noopener" title="${esc(a.name)}">${img?`<img src="${esc(a.url)}" alt="">`:`<span class="ic">📄</span>`}<span class="nm">${esc(a.name)}</span></a>`}).join("")+"</div>"}
+function renderPending(id){const box=document.getElementById("att-"+id);if(!box)return;const list=PENDING[id]||[];box.innerHTML=list.map((f,i)=>`<span class="pend">${/^image\//.test(f.type)?`<img src="${f.preview}" alt="">`:`<span class="ic">📄</span>`}<span class="nm">${esc(f.name)}</span><button class="x" type="button" title="Remove" onclick="rmFile('${id}',${i})">×</button></span>`).join("")}
+function addFiles(id,files){const list=PENDING[id]=PENDING[id]||[];const out=document.getElementById("sent-"+id);for(const f of files){if(list.length>=MAXF){out.className="sent err";out.textContent=`Max ${MAXF} files per note.`;break}const name=f.name||("pasted-"+Date.now()+"."+((f.type.split("/")[1]||"png").replace("jpeg","jpg")));list.push({file:f,name,type:f.type,preview:/^image\//.test(f.type)?URL.createObjectURL(f):""})}renderPending(id)}
+function rmFile(id,i){(PENDING[id]||[]).splice(i,1);renderPending(id)}
+function onPaste(e,id){const items=[...(e.clipboardData?.items||[])].filter(i=>i.kind==="file");if(!items.length)return;e.preventDefault();addFiles(id,items.map(i=>i.getAsFile()).filter(Boolean))}
+function onDrop(e,id){e.preventDefault();e.target.classList.remove("drag");addFiles(id,e.dataTransfer.files)}
+const b64=f=>new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(",")[1]);r.onerror=rej;r.readAsDataURL(f)});
+async function uploadPending(id){const list=PENDING[id]||[];if(!list.length)return[];const files=[];for(const p of list)files.push({name:p.name,type:p.type,data:await b64(p.file)});const r=await fetch("/api/upload",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({task_id:id,files})});const j=await r.json();if(!r.ok)throw new Error(j.error||r.status);return j.files}
+async function send(id,action){
+  const ta=document.getElementById("fb-"+id),out=document.getElementById("sent-"+id);const text=ta.value.trim();
+  const hasFiles=(PENDING[id]||[]).length>0;
+  if(!text&&!hasFiles&&!["approve","prioritize","drop"].includes(action)){out.className="sent err";out.textContent="Write a note or attach a file first.";return}
+  try{out.className="sent";out.textContent=hasFiles?"Uploading…":"";const attachments=await uploadPending(id);const f=await post({task_id:id,action,text,attachments});INBOX.push(f);ta.value="";PENDING[id]=[];out.className="sent";out.textContent="Sent · Claude picks it up on the next pass";openId=id;render()}
+  catch(e){out.className="sent err";out.textContent="Read-only public mirror. Feedback works on the local board at http://localhost:8899/tasks.html"}
+}
+$("#nt-send").onclick=async()=>{
+  const title=$("#nt-title").value.trim(),out=$("#nt-sent");
+  if(!title){out.className="sent err";out.textContent="Title required.";return}
+  try{const f=await post({action:"new",title,area:$("#nt-area").value,priority:$("#nt-pri").value,due:$("#nt-due").value.trim(),text:$("#nt-text").value.trim()});
+    INBOX.push(f);$("#nt-title").value="";$("#nt-text").value="";$("#nt-due").value="";out.className="sent";out.textContent="Queued · Claude adds it as a task on the next pass";}
+  catch(e){out.className="sent err";out.textContent="Read-only public mirror. Feedback works on the local board at http://localhost:8899/tasks.html"}
+};
+document.querySelectorAll("#view button").forEach(b=>b.onclick=()=>{view=b.dataset.v;document.querySelectorAll("#view button").forEach(x=>x.classList.toggle("on",x===b));render()});
+["f-owner","f-area","f-status","hidedone"].forEach(i=>$("#"+i).onchange=render);$("#q").oninput=render;
+$("#theme").onclick=()=>{const h=document.documentElement;h.dataset.theme=h.dataset.theme==="dark"?"light":"dark";localStorage.setItem("lc-theme",h.dataset.theme)};
+if(localStorage.getItem("lc-theme"))document.documentElement.dataset.theme=localStorage.getItem("lc-theme");
+function countdown(){const d1=new Date(DATA.meta?.day1||"2026-09-24T11:00:00-04:00"),ms=d1-Date.now();if(ms<0){$("#cd").textContent="is live";return}const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5);$("#cd").textContent=`in ${d}d ${h}h · Thu Sep 24, 11:00 ET`}
+load().then(countdown);setInterval(countdown,6e4);setInterval(load,9e4);
+</script>
+</body>
+</html>

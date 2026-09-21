@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tantra · 5-Day Workshop — Launch Command Center</title>
+<style>
+:root{
+  --bg:#f6f7f9; --panel:#ffffff; --panel-2:#fbfcfd; --ink:#111318; --ink-2:#4a4f5a; --ink-3:#8b909b;
+  --line:#e6e8ec; --line-2:#d5d8de; --accent:#5b4bd6; --accent-2:#efedfd; --accent-ink:#3a2fa8;
+  --teal:#0f9e75; --teal-bg:#e3f6ef; --amber:#b8790f; --amber-bg:#fbefda; --pink:#c23a68; --pink-bg:#fbe9f0;
+  --blue:#2f6fd0; --blue-bg:#e8f0fb; --gray-bg:#eef0f3; --gold:#a06a12; --gold-bg:#f8efd8;
+  --shadow:0 1px 2px rgba(16,19,24,.04),0 4px 16px rgba(16,19,24,.06);
+  --radius:14px; --radius-sm:9px;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+[data-theme="dark"]{
+  --bg:#0d0f14; --panel:#161922; --panel-2:#1b1f2a; --ink:#f2f4f8; --ink-2:#b3b9c6; --ink-3:#7b828f;
+  --line:#262b36; --line-2:#333a48; --accent:#8e83f0; --accent-2:#221f3d; --accent-ink:#bcb4fb;
+  --teal:#3ec79b; --teal-bg:#123027; --amber:#e0a63f; --amber-bg:#332612; --pink:#e97aa2; --pink-bg:#331722;
+  --blue:#6aa3ec; --blue-bg:#122237; --gray-bg:#20242e; --gold:#d9ab54; --gold-bg:#2e2513;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-ink);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+/* Header */
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hbar{display:flex;align-items:center;gap:16px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:inherit}.tmark{position:relative;display:block;width:34px;height:34px;flex:none}.tmark img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}.tmark .tmk-white{display:none}[data-theme="dark"] .tmark .tmk-ink{display:none}[data-theme="dark"] .tmark .tmk-white{display:block}.tname{font-weight:800;letter-spacing:-.02em;color:var(--ink)}.tdot{color:var(--ink-3);font-weight:400;margin:0 1px}
+.brand h1{font-size:15px;font-weight:650;letter-spacing:-.01em;line-height:1.15}
+.brand p{font-size:12px;color:var(--ink-3)}
+.hspace{flex:1}
+.count{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:7px 12px;box-shadow:var(--shadow)}
+.count .lab{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3)}
+.count .val{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--accent-ink)}
+.iconbtn{width:36px;height:36px;border-radius:9px;border:1px solid var(--line);background:var(--panel);color:var(--ink-2);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center}
+.iconbtn:hover{border-color:var(--line-2)}
+/* Tabs */
+nav{display:flex;gap:3px;overflow-x:auto;border-bottom:1px solid var(--line);padding-bottom:0;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+.tab{border:0;background:none;color:var(--ink-2);font:inherit;font-size:13.5px;font-weight:550;padding:12px 14px;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-1px;display:flex;align-items:center;gap:7px}
+.tab:hover{color:var(--ink)}
+.tab.active{color:var(--accent-ink);border-bottom-color:var(--accent)}
+.tab .cnt{font-size:11px;background:var(--gray-bg);color:var(--ink-3);border-radius:20px;padding:1px 7px;font-weight:600}
+/* Layout */
+main{padding:26px 0 80px}
+section[hidden]{display:none}
+.eyebrow{font-size:11.5px;text-transform:uppercase;letter-spacing:.09em;color:var(--ink-3);font-weight:650;margin-bottom:9px}
+h2.sec{font-size:23px;font-weight:700;letter-spacing:-.02em;margin-bottom:5px}
+.lead{color:var(--ink-2);font-size:15px;max-width:70ch;margin-bottom:22px}
+h3.blk{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);font-weight:650;margin:30px 0 13px;display:flex;align-items:center;gap:9px}
+h3.blk::after{content:"";flex:1;height:1px;background:var(--line)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(165px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow)}
+.card.tint{background:var(--panel-2)}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+.stat .k{font-size:12px;color:var(--ink-3);font-weight:550;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.stat .v{font-size:26px;font-weight:750;letter-spacing:-.02em;line-height:1}
+.stat .s{font-size:12px;color:var(--ink-3);margin-top:5px}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;border-radius:20px;padding:3px 10px;background:var(--gray-bg);color:var(--ink-2)}
+.pill.ac{background:var(--accent-2);color:var(--accent-ink)}
+.pill.te{background:var(--teal-bg);color:var(--teal)}
+.pill.am{background:var(--amber-bg);color:var(--amber)}
+.pill.bl{background:var(--blue-bg);color:var(--blue)}
+.pill.pk{background:var(--pink-bg);color:var(--pink)}
+.pill.gd{background:var(--gold-bg);color:var(--gold)}
+.muted{color:var(--ink-2);font-size:14px}
+.chiprow{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+.note{border-left:3px solid var(--accent);background:var(--accent-2);border-radius:0 10px 10px 0;padding:12px 15px;font-size:13.5px;color:var(--ink-2);margin-top:14px}
+.note.warn{border-color:var(--amber);background:var(--amber-bg)}
+.note b{color:var(--ink)}
+/* Funnel ladder */
+.ladder{display:flex;flex-direction:column;gap:0;align-items:center}
+.rung{width:100%;border-radius:var(--radius);padding:16px 20px;border:1px solid var(--line);position:relative}
+.rung .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.rung .name{font-size:16px;font-weight:680;letter-spacing:-.01em}
+.rung .desc{font-size:13px;color:var(--ink-2);margin-top:4px;max-width:60ch}
+.rung .price{font-size:20px;font-weight:750;white-space:nowrap;font-variant-numeric:tabular-nums}
+.rung .prices{font-size:12px;color:var(--ink-3);text-align:right;margin-top:3px}
+.rung.r0{background:var(--gray-bg);width:96%}
+.rung.r1{background:var(--blue-bg);border-color:transparent;width:100%}
+.rung.r1 .name,.rung.r1 .price{color:var(--blue)}
+.rung.r2{background:var(--teal-bg);border-color:transparent;width:88%}
+.rung.r2 .name,.rung.r2 .price{color:var(--teal)}
+.rung.r3{background:var(--accent-2);border-color:transparent;width:76%}
+.rung.r3 .name,.rung.r3 .price{color:var(--accent-ink)}
+.rung.r4{background:linear-gradient(135deg,var(--accent),#7c3aed);border-color:transparent;width:64%;color:#fff}
+.rung.r4 .name,.rung.r4 .desc,.rung.r4 .price,.rung.r4 .prices{color:#fff}
+.rung.r4 .desc,.rung.r4 .prices{opacity:.9}
+.down{color:var(--ink-3);font-size:17px;line-height:1;padding:5px 0}
+/* Flow steps */
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:9px}
+.fstep{background:var(--panel-2);border:1px solid var(--line);border-radius:var(--radius-sm);padding:13px 14px}
+.fstep .n{font-size:11px;color:var(--ink-3);font-weight:600}
+.fstep .t{font-size:13px;font-weight:560;margin-top:5px;line-height:1.4}
+.fstep .ico{font-size:18px;margin-bottom:3px}
+/* Day cards */
+.day{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow);display:flex;gap:15px;align-items:flex-start;margin-bottom:11px}
+.day .num{flex:none;width:40px;height:40px;border-radius:11px;background:var(--accent-2);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:750}
+.day.build .num{background:var(--teal-bg);color:var(--teal)}
+.day.scale .num{background:var(--gold-bg);color:var(--gold)}
+.day .body{flex:1;min-width:0}
+.day .hd{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.day .hd .t{font-size:16px;font-weight:660}
+.day .dl{font-size:11px;color:var(--ink-3);margin-left:auto;font-weight:600}
+.dg{margin-top:9px;font-size:13.5px;color:var(--ink-2);display:flex;gap:8px}
+.dg .lab{color:var(--ink-3);font-weight:650;flex:none;width:34px}
+/* Timeline */
+.tl{position:relative;margin-left:8px;padding-left:26px;border-left:2px solid var(--line)}
+.tl .ph{position:relative;padding-bottom:20px}
+.tl .dot{position:absolute;left:-35px;top:2px;width:16px;height:16px;border-radius:50%;background:var(--panel);border:2px solid var(--line-2)}
+.tl .dot.now{border-color:var(--accent);background:var(--accent-2)}
+.tl .dot.day{border-color:var(--teal);background:var(--teal-bg)}
+.tl .ph .ht{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.tl .ph .ht b{font-size:15px;font-weight:650}
+.tl .ph .when{font-size:12px;color:var(--accent-ink);font-weight:600;font-variant-numeric:tabular-nums}
+.tl .ph p{font-size:13px;color:var(--ink-2);margin-top:4px}
+/* Tasks */
+.tk-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.progress{flex:1;min-width:200px}
+.progress .track{height:9px;border-radius:20px;background:var(--gray-bg);overflow:hidden}
+.progress .fill{height:100%;background:linear-gradient(90deg,var(--teal),#34d399);border-radius:20px;transition:width .5s ease}
+.progress .lbls{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-3);margin-top:6px}
+input,select{font:inherit;font-size:13px;color:var(--ink);background:var(--panel);border:1px solid var(--line-2);border-radius:9px;padding:8px 11px;outline:none}
+input:focus,select:focus{border-color:var(--accent)}
+input[type=search]{min-width:180px}
+.btn{font:inherit;font-size:13px;font-weight:600;border:1px solid var(--line-2);background:var(--panel);color:var(--ink);border-radius:9px;padding:8px 14px;cursor:pointer}
+.btn:hover{border-color:var(--accent);color:var(--accent-ink)}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.pri:hover{opacity:.9;color:#fff}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.fchip{font:inherit;font-size:12px;font-weight:560;border:1px solid var(--line);background:var(--panel);color:var(--ink-2);border-radius:20px;padding:5px 12px;cursor:pointer}
+.fchip.on{background:var(--accent-2);border-color:var(--accent);color:var(--accent-ink)}
+.tk{display:flex;gap:12px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px 15px;margin-bottom:8px;box-shadow:var(--shadow)}
+.tk.done{opacity:.62}
+.tk .cb{flex:none;width:20px;height:20px;border-radius:6px;border:1.5px solid var(--line-2);cursor:pointer;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;background:var(--panel)}
+.tk.done .cb{background:var(--teal);border-color:var(--teal)}
+.tk .main{flex:1;min-width:0}
+.tk .ttl{font-size:14px;font-weight:580;letter-spacing:-.01em}
+.tk.done .ttl{text-decoration:line-through;color:var(--ink-3)}
+.tk .dsc{font-size:12.5px;color:var(--ink-2);margin-top:3px}
+.tk .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px;align-items:center}
+.tag{font-size:10.5px;font-weight:600;border-radius:6px;padding:2px 8px;background:var(--gray-bg);color:var(--ink-2)}
+.tag.p0{background:var(--pink-bg);color:var(--pink)}
+.tag.p1{background:var(--amber-bg);color:var(--amber)}
+.tag.own{background:var(--accent-2);color:var(--accent-ink)}
+.tag.due{background:transparent;color:var(--ink-3);border:1px solid var(--line)}
+.tk .del{flex:none;border:0;background:none;color:var(--ink-3);cursor:pointer;font-size:15px;opacity:0;transition:opacity .15s}
+.tk:hover .del{opacity:1}
+.tk .del:hover{color:var(--pink)}
+.addbox{background:var(--panel-2);border:1px dashed var(--line-2);border-radius:12px;padding:14px 16px;margin-bottom:16px;display:none;gap:9px;flex-wrap:wrap;align-items:center}
+.addbox.open{display:flex}
+.linkcard{display:flex;align-items:center;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px 15px;box-shadow:var(--shadow)}
+.linkcard .li{width:34px;height:34px;border-radius:9px;background:var(--accent-2);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font-size:16px;flex:none}
+.linkcard .lt{flex:1;min-width:0}
+.linkcard .lt b{font-size:13.5px;font-weight:600;display:block}
+.linkcard .lt span{font-size:11.5px;color:var(--ink-3);word-break:break-all}
+.tofix{font-size:11px;color:var(--pink);font-weight:600}
+/* View toggle */
+.viewtoggle{display:flex;border:1px solid var(--line-2);border-radius:9px;overflow:hidden;flex:none}
+.viewtoggle button{border:0;background:var(--panel);color:var(--ink-2);font:inherit;font-size:13px;font-weight:560;padding:8px 13px;cursor:pointer;display:flex;align-items:center;gap:6px}
+.viewtoggle button.on{background:var(--accent);color:#fff}
+/* Table view */
+.tktable{width:100%;border-collapse:collapse;font-size:13px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.tktable th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);font-weight:650;padding:10px 12px;border-bottom:1px solid var(--line);background:var(--panel-2);cursor:pointer;user-select:none;white-space:nowrap}
+.tktable th .ar{opacity:.5;font-size:9px}
+.tktable td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
+.tktable tr:last-child td{border-bottom:0}
+.tktable tbody tr:hover td{background:var(--panel-2)}
+.tktable .cbcell{width:30px;padding-right:0}
+.tktable .st{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--line-2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;background:var(--panel)}
+.tktable tr.done .st{background:var(--teal);border-color:var(--teal)}
+.tktable tr.doing .st{border-color:var(--blue);color:var(--blue);background:var(--blue-bg)}
+.tktable .tcell{max-width:0;width:46%}
+.tktable .tcell .ttl{font-weight:550;letter-spacing:-.01em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block}
+.tktable tr.done .ttl{text-decoration:line-through;color:var(--ink-3)}
+.tktable .tdel{border:0;background:none;color:var(--ink-3);cursor:pointer;font-size:14px;opacity:0}
+.tktable tr:hover .tdel{opacity:.7}
+.tktable .tdel:hover{color:var(--pink);opacity:1}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.dot.todo{background:var(--ink-3)}.dot.doing{background:var(--blue)}.dot.done{background:var(--teal)}
+/* Kanban view */
+.kb{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;align-items:start}
+.kbcol{background:var(--panel-2);border:1px solid var(--line);border-radius:var(--radius);padding:10px;min-height:140px;transition:outline .1s}
+.kbcol.over{outline:2px dashed var(--accent);outline-offset:-3px;background:var(--accent-2)}
+.kbcol h4{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);font-weight:650;padding:3px 6px 11px;display:flex;justify-content:space-between;align-items:center}
+.kbcol h4 .n{background:var(--panel);border:1px solid var(--line);color:var(--ink-2);border-radius:20px;padding:1px 8px;font-size:11px}
+.kbcard{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 12px;margin-bottom:8px;box-shadow:var(--shadow);cursor:grab}
+.kbcard:active{cursor:grabbing}
+.kbcard.dragging{opacity:.4}
+.kbcard .kt{font-size:13px;font-weight:560;line-height:1.35;letter-spacing:-.01em}
+.kbcard .kd{font-size:11.5px;color:var(--ink-2);margin-top:4px;line-height:1.4}
+.kbcard .km{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px;align-items:center}
+.kbhint{font-size:12px;color:var(--ink-3);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--ink-3);font-size:12.5px;text-align:center}
+@media(max-width:640px){.brand p{display:none}.count .lab{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="hbar">
+      <div class="brand">
+        <span class="tmark"><img class="tmk-ink" src="brand/tantra-mark-ink.png" alt="" width="192" height="192"><img class="tmk-white" src="brand/tantra-mark-white.png" alt="" width="192" height="192"></span>
+        <div><h1>Tantra <span class="tdot">·</span> 5-Day Workshop</h1><p>Funnel launch command center</p></div>
+      </div>
+      <div class="hspace"></div>
+      <div class="count"><span class="lab">Day 1 in</span><span class="val" id="cd">—</span></div>
+      <button class="iconbtn" id="theme" title="Toggle theme">◐</button>
+    </div>
+    <nav id="nav"></nav>
+  </div>
+</header>
+<main class="wrap">
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <div class="eyebrow">Launch brief</div>
+    <h2 class="sec">Turn cold traffic into retained Tantra revenue</h2>
+    <p class="lead">A live 5-day workshop is the front-end that acquires, activates and retains Tantra users. The north star is not workshop revenue — it is <b>growing MRR through month-after-month retention.</b> Day 1 goes live <b>Thursday, Sep 24</b> — then Fri 25, Mon 28, Tue 29, Wed 30 (the weekend is skipped).</p>
+    <div class="grid g4">
+      <div class="stat"><div class="k">Front-end</div><div class="v">$99</div><div class="s">₹9,999 · self-liquidating</div></div>
+      <div class="stat"><div class="k">Upsell · Tantra Pro</div><div class="v">$999</div><div class="s">€997 · ₹99,999 one-time</div></div>
+      <div class="stat"><div class="k">High-ticket · Chaperone</div><div class="v">$9,999</div><div class="s">€9,997 · ₹9,99,999</div></div>
+      <div class="stat"><div class="k">Days to Day 1</div><div class="v" id="cd2">—</div><div class="s">workshop starts Thu Sep 24</div></div>
+    </div>
+    <h3 class="blk">Workshop artifacts</h3>
+    <div class="grid g3">
+      <a class="linkcard" href="playbook.html"><span class="li">📘</span><span class="lt"><b>The Tantra Playbook</b><span>Day-1 deliverable · 13k words · 29 diagrams · 22 task blocks</span></span></a>
+      <a class="linkcard" href="survey.html"><span class="li">📝</span><span class="lt"><b>Daily survey</b><span>5 days · 30 questions · 180 sample answers</span></span></a>
+      <a class="linkcard" href="deck.html"><span class="li">🖥️</span><span class="lt"><b>Workshop deck</b><span>101 slides · generated from the playbook</span></span></a>
+    </div>
+    <h3 class="blk">The strategic thesis</h3>
+    <div class="grid g2">
+      <div class="card"><div class="pill ac">Own the whole journey</div><p class="muted" style="margin-top:10px">If a user doesn't understand or use Tantra, that is <b>our</b> fault, not theirs. The funnel must carry them from cold traffic all the way to active, paying, retained usage.</p></div>
+      <div class="card"><div class="pill te">The ClickFunnels model</div><p class="muted" style="margin-top:10px">Launch via services; use them as a paid feedback loop to build a better product. Front-end must <b>self-liquidate</b> so acquisition costs nothing net.</p></div>
+      <div class="card"><div class="pill am">Differentiate as a workshop</div><p class="muted" style="margin-top:10px">A one-way webinar can't stand out against known players. A 5-day workshop where attendees <b>do and get</b> something daily converts far better — and the recordings become the course.</p></div>
+      <div class="card"><div class="pill pk">Retention is the metric</div><p class="muted" style="margin-top:10px">Every element is designed so that as many attendees as possible keep paying for support and stay retained on Tantra month after month.</p></div>
+    </div>
+    <div class="note ok"><b>Dates locked.</b> Day 1 <b>Thu Sep 24, 11am EST</b>, then Fri 25 · Mon 28 · Tue 29 · Wed 30. This resolves the earlier Wed-23-vs-Thursday conflict and keeps all five sessions off the weekend. The playbook itself stays date-generic so it survives a reschedule.
+  </section>
+
+  <!-- OFFER -->
+  <section id="offer" hidden>
+    <div class="eyebrow">Offer &amp; funnel</div>
+    <h2 class="sec">The value ladder</h2>
+    <p class="lead">Two entry lanes feed one ladder. Publicly this is only ever "the 5-Day Workshop" — never "webinar", "free funnel" or "paid funnel".</p>
+    <div class="grid g2">
+      <div class="card tint"><div class="pill te">Organic lane · zero cost</div><p class="muted" style="margin-top:10px">Content (LinkedIn · Facebook · X), existing-database email, cold email, LinkedIn outreach. No paid traffic — runs fully free.</p></div>
+      <div class="card tint"><div class="pill bl">Paid ads lane · unit economics</div><p class="muted" style="margin-top:10px">Ad traffic carries a per-attendee cost, so the $99 front-end must cover all operating expense before profit.</p></div>
+    </div>
+    <h3 class="blk">Price ladder</h3>
+    <div class="ladder">
+      <div class="rung r0"><div class="top"><div><div class="name">Freebie · Tantra Plan</div><div class="desc">The app subscription, included free — 1 month, worth $99. The only freebie inside the workshop.</div></div><div><div class="price">Free</div><div class="prices">$99 value · 1 month</div></div></div></div>
+      <div class="down">↓</div>
+      <div class="rung r1"><div class="top"><div><div class="name">Front-end · 5-Day Workshop</div><div class="desc">The paid entry. Designed to self-liquidate against ad spend.</div></div><div><div class="price">$99</div><div class="prices">₹9,999 (India) · $99 (US)</div></div></div></div>
+      <div class="down">↓</div>
+      <div class="rung r3"><div class="top"><div><div class="name">Upsell · Tantra Pro</div><div class="desc">One-time fee. Access to the course, community and group coaching calls. Pitched every day of the workshop.</div></div><div><div class="price">$999</div><div class="prices">€997 · ₹99,999 one-time</div></div></div></div>
+      <div class="down">↓</div>
+      <div class="rung r4"><div class="top"><div><div class="name">High-ticket · Tantra Chaperone</div><div class="desc">10-year access to the Tantra app · 1:1 personalized coaching &amp; implementation over 3 months · plus course, community and group coaching calls.</div></div><div><div class="price">$9,999</div><div class="prices">€9,997 · ₹9,99,999</div></div></div></div>
+    </div>
+    <div class="note"><b>Deprioritized:</b> done-for-you services. The direction is the SaaS course — which becomes the crux of the upsell, built from the recorded workshop videos.</div>
+  </section>
+
+  <!-- WORKSHOP -->
+  <section id="workshop" hidden>
+    <div class="eyebrow">Delivery</div>
+    <h2 class="sec">5-day run-of-show</h2>
+    <p class="lead">All sessions live on Zoom with Q&amp;A. Each day, attendees fill a live full-screen survey while watching, and receive a generated output afterward — the do-and-get loop that sells and retains (modeled on Cadma Careers / Alex Stein).</p>
+    <h3 class="blk">The daily loop</h3>
+    <div class="flow">
+      <div class="fstep"><div class="ico">🎥</div><div class="n">01</div><div class="t">Live Zoom session + Q&amp;A</div></div>
+      <div class="fstep"><div class="ico">📝</div><div class="n">02</div><div class="t">Fill full-screen survey in parallel</div></div>
+      <div class="fstep"><div class="ico">🤖</div><div class="n">03</div><div class="t">Claude Code workflow processes answers</div></div>
+      <div class="fstep"><div class="ico">📄</div><div class="n">04</div><div class="t">Output generated: PDF + live link</div></div>
+      <div class="fstep"><div class="ico">📨</div><div class="n">05</div><div class="t">Delivered by WhatsApp + email</div></div>
+    </div>
+    <h3 class="blk">Day by day</h3>
+    <div class="day"><div class="num">1</div><div class="body"><div class="hd"><span class="t">Strategize the offer and audience</span><span class="pill ac">Strategy · mindset</span><span class="dl">Thu Sep 24</span></div>
+      <div class="dg"><span class="lab">Do</span><span>Answer strategy &amp; mindset questions live.</span></div>
+      <div class="dg"><span class="lab">Get</span><span>The Funnel Playbook — a live tabbed interface — plus the full 5-day work plan (PDF / live link).</span></div></div></div>
+    <div class="day"><div class="num">2</div><div class="body"><div class="hd"><span class="t">Conversion engine design</span><span class="pill ac">Strategy · funnels vs campaigns</span><span class="dl">Day 2</span></div>
+      <div class="dg"><span class="lab">Do</span><span>Answer 10–20 questions: brand guidelines, product, offer, funnel vs campaign.</span></div>
+      <div class="dg"><span class="lab">Get</span><span>A conversion engine that encodes your funnel strategy end to end.</span></div></div></div>
+    <div class="day build"><div class="num">3</div><div class="body"><div class="hd"><span class="t">Build every element</span><span class="pill te">Build</span><span class="dl">Day 3</span></div>
+      <div class="dg"><span class="lab">Do</span><span>Answer questions for your specific funnel type.</span></div>
+      <div class="dg"><span class="lab">Get</span><span>All pages, all templates, all stages — AI outreach templates, landing pages, integrations to set up.</span></div></div></div>
+    <div class="day build"><div class="num">4</div><div class="body"><div class="hd"><span class="t">Launch your AI RevOps engine</span><span class="pill te">Build</span><span class="dl">Day 4</span></div>
+      <div class="dg"><span class="lab">Do</span><span>Feed Day 2 + Day 3 outputs into the prompts we give you — in your own AI account.</span></div>
+      <div class="dg"><span class="lab">Get</span><span>Claude Code as orchestrator; start building your AI website. Any AI tool works — Claude Code is the example.</span></div></div></div>
+    <div class="day scale"><div class="num">5</div><div class="body"><div class="hd"><span class="t">Grow to a $1M ARR machine</span><span class="pill gd">Scale</span><span class="dl">Day 5</span></div>
+      <div class="dg"><span class="lab">Do</span><span>Work through unit-economics and funnel-math questions.</span></div>
+      <div class="dg"><span class="lab">Get</span><span>Full RevOps journey — channels · UTM · nurture · CRM — plus the GrowthClub OS dashboard.</span></div></div></div>
+  </section>
+
+  <!-- OPS -->
+  <section id="ops" hidden>
+    <div class="eyebrow">Operations</div>
+    <h2 class="sec">The delivery engine</h2>
+    <p class="lead">A recurring agentic pipeline turns each day's survey answers into a personalized output. Built in Claude Code by Bhaskar Dev.</p>
+    <div class="grid g3">
+      <div class="card"><div class="pill ac">Capture</div><p class="muted" style="margin-top:9px">Custom full-screen survey (not Typeform) on the landing page. Attendee watches Zoom on one screen, fills the form on the other. Sample answers shown for guidance.</p></div>
+      <div class="card"><div class="pill te">Process</div><p class="muted" style="margin-top:9px">Post-session, a Claude Code agentic workflow reads the day's answers and generates the output using our best models and templates.</p></div>
+      <div class="card"><div class="pill am">Deliver</div><p class="muted" style="margin-top:9px">Rendered as a PDF + live link, pushed via WhatsApp and email reminders — same day, before the next session.</p></div>
+    </div>
+    <h3 class="blk">What Bhaskar Dev builds</h3>
+    <div class="grid g2">
+      <div class="card"><b>Interactive survey engine</b><p class="muted" style="margin-top:6px">Full-screen per-day survey + the Funnel Playbook tabbed live interface. Registration + survey data flow to the Tantra Work Tracker.</p></div>
+      <div class="card"><b>Agentic output pipeline</b><p class="muted" style="margin-top:6px">Per-day Claude Code workflow, output templates for days 1–5, PDF + live-link generation, WhatsApp + email delivery.</p></div>
+      <div class="card"><b>Funnel plumbing</b><p class="muted" style="margin-top:6px">Two workflows (organic / ads), CRM + follow-up sequences (email / WhatsApp / SMS), UTM tracking into GrowthClub OS.</p></div>
+      <div class="card"><b>AI personalization</b><p class="muted" style="margin-top:6px">LinkedIn outreach personalization via Tantra, BigHammer-style. Later: introduce the Tantra chat as the knowledge orchestrator.</p></div>
+    </div>
+  </section>
+
+  <!-- TRAFFIC -->
+  <section id="traffic" hidden>
+    <div class="eyebrow">Acquisition</div>
+    <h2 class="sec">Traffic channels</h2>
+    <p class="lead">Everything is UTM-tracked into the Work Tracker so every registration and sale is attributable to a channel and a team member.</p>
+    <div class="grid g2">
+      <div class="card"><div class="pill bl">Content</div><p class="muted" style="margin-top:9px"><b>5 posts/day on each team member's LinkedIn</b>, generated via Claude Code using the content-taxonomy sheet. Tracked by Nelbin's UTM system. Team referral incentive: <b>10–15% of revenue</b> from their profile's traffic (confirm exact terms with Nelbin). Weekly 30-min ideation + review call with Adi, starting this week.</p></div>
+      <div class="card"><div class="pill am">Cold calendar</div><p class="muted" style="margin-top:9px">Reuse existing client lists with by-person overlap if available. Otherwise scrape via <b>Expandi</b> after Adi gets a Sales Navigator subscription.</p></div>
+      <div class="card"><div class="pill ac">LinkedIn outreach</div><p class="muted" style="margin-top:9px">Run through the <b>Tantra</b> app — confirm launch readiness with Bharath. Connect all team profiles, then launch. AI personalization workflow like BigHammer.</p></div>
+      <div class="card"><div class="pill te">Nurture + newsletter</div><p class="muted" style="margin-top:9px">Pre- and post-workshop sequences (email + message + WhatsApp), drafted well then set up by Bhaskar. Newsletter ideated in the weekly content call.</p></div>
+    </div>
+    <h3 class="blk">Registration flow</h3>
+    <div class="flow">
+      <div class="fstep"><div class="t">Landing page<br><span style="font-size:11px;color:var(--ink-3)">usetantra.com/masterclass</span></div></div>
+      <div class="fstep"><div class="t">Register → data to Work Tracker</div></div>
+      <div class="fstep"><div class="t">Thank-you page → join WhatsApp, confirm seat</div></div>
+      <div class="fstep"><div class="t">Nurture until Day 1</div></div>
+    </div>
+  </section>
+
+  <!-- TASKS -->
+  <section id="tasks" hidden>
+    <div class="eyebrow">Execution</div>
+    <h2 class="sec">Task board</h2>
+    <p class="lead">Every build, setup and traffic task to hit Day 1. Check items off, filter, add your own — saved to this browser.</p>
+    <div class="tk-bar">
+      <div class="progress"><div class="track"><div class="fill" id="pfill"></div></div><div class="lbls"><span id="pcount">0 done</span><span id="ppct">0%</span></div></div>
+      <div class="viewtoggle"><button id="vtable" class="on">▤ Table</button><button id="vkanban">▦ Kanban</button></div>
+      <input type="search" id="search" placeholder="Search tasks…">
+      <button class="btn" id="addtoggle">+ Add task</button>
+      <button class="btn" id="reset" title="Restore seed tasks">Reset</button>
+    </div>
+    <div class="addbox" id="addbox">
+      <input id="ntitle" placeholder="Task title" style="flex:2;min-width:200px">
+      <input id="nowner" placeholder="Owner" style="flex:1;min-width:110px">
+      <select id="ncat"></select>
+      <select id="nprio"><option value="P0">P0</option><option value="P1" selected>P1</option><option value="P2">P2</option></select>
+      <button class="btn pri" id="nadd">Add</button>
+    </div>
+    <div class="filters" id="catfilters"></div>
+    <div class="filters" id="ownfilters"></div>
+    <div id="tklist"></div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline" hidden>
+    <div class="eyebrow">Schedule</div>
+    <h2 class="sec">Compressed build to launch</h2>
+    <p class="lead">Everything ships in the next few days. Dates are tight by design — adjust owners' loads on the task board.</p>
+    <div class="tl">
+      <div class="ph"><span class="dot now"></span><div class="ht"><b>Now → Sep 19</b><span class="when">Fri</span></div><p>Lock question sets (days 1–5), landing page live at usetantra.com/masterclass, VSL script, deck update. Stand up survey engine skeleton.</p></div>
+      <div class="ph"><span class="dot"></span><div class="ht"><b>Sep 20 → 21</b><span class="when">Sat–Sun</span></div><p>Agentic output pipeline + Day-1 output template. WhatsApp community (chat + announcement) mirrored from Fintech Circle, admins added. Zoom set up (video off, muted).</p></div>
+      <div class="ph"><span class="dot"></span><div class="ht"><b>Sep 22</b><span class="when">Tue</span></div><p>Traffic live: LinkedIn content + outreach, cold calendar, nurture sequences armed. UTM tracking verified. Full dry run of Day-1 survey → output → delivery.</p></div>
+      <div class="ph"><span class="dot day"></span><div class="ht"><b>Day 1 — Funnel playbook</b><span class="when">Thu Sep 24</span></div><p>First live session. Pipeline runs for real; iterate nightly.</p></div>
+      <div class="ph"><span class="dot day"></span><div class="ht"><b>Days 2–5</b><span class="when">Sep 24–27 · confirm</span></div><p>Conversion engine → funnel elements → AI RevOps engine → scale. Pitch Tantra Pro daily; Chaperone at the close.</p></div>
+      <div class="ph"><span class="dot"></span><div class="ht"><b>Post-launch · ongoing</b><span class="when">weekly</span></div><p>Weekly coaching calls, community moderation, cut session videos into the course, drive retention → MRR.</p></div>
+    </div>
+  </section>
+
+  <!-- ASSETS -->
+  <section id="assets" hidden>
+    <div class="eyebrow">Reference</div>
+    <h2 class="sec">Assets &amp; links</h2>
+    <p class="lead">Everything referenced across the plan, in one place.</p>
+    <h3 class="blk">Docs &amp; trackers</h3>
+    <div class="grid g2" id="links-docs"></div>
+    <h3 class="blk">Live pages &amp; brand</h3>
+    <div class="grid g2" id="links-pages"></div>
+    <h3 class="blk">Decks</h3>
+    <div class="grid g2" id="links-decks"></div>
+    <div class="note warn"><b>Google Docs / Sheets edits.</b> Adding the funnel tabs to the Consolidated Funnel Doc and Work Tracker needs the Google connector authorized — not available in this session. Once connected, those become live tasks.</div>
+  </section>
+</main>
+<footer class="wrap">Built as a standalone file — host it on any static platform (GitHub Pages, Netlify Drop, Cloudflare Pages, Vercel). Tasks persist to this browser's local storage.</footer>
+
+<script>
+const TABS=[["overview","Overview"],["offer","Offer & funnel"],["workshop","5-day workshop"],["ops","Ops engine"],["traffic","Traffic"],["tasks","Tasks"],["timeline","Timeline"],["assets","Assets"]];
+const CATS=["Offer","Web","WhatsApp","Zoom","Ops engine","Content","Cold calendar","LinkedIn","Nurture","CRM","Project"];
+const SEED=[
+ {t:"Lock final offer ladder & pricing (USD/EUR/INR)",d:"Front-end $99/₹9,999; Pro $999/€997/₹99,999; Chaperone $9,999/€9,997/₹9,99,999; Tantra Plan freebie 1 mo.",o:"Adi",c:"Offer",p:"P0",s:"done",due:"done"},
+ {t:"Build & publish landing page",d:"Live at usetantra.com/masterclass on the new site version.",o:"Adi",c:"Web",p:"P0",s:"doing",due:"Sep 19"},
+ {t:"Wire registration data → Tantra Work Tracker",d:"Every registration lands in the Work Tracker sheet, UTM-tagged.",o:"Bhaskar Dev",c:"Web",p:"P0",s:"todo",due:"Sep 20"},
+ {t:"Build thank-you page",d:"Join WhatsApp community, check email inbox, confirm seat for Day 1.",o:"Adi",c:"Web",p:"P0",s:"todo",due:"Sep 19"},
+ {t:"Ship new usetantra.com website version",d:"New site goes live; workshop pages hang off it.",o:"Adi",c:"Web",p:"P1",s:"doing",due:"Sep 20"},
+ {t:"Add new Tantra logos",d:"From Canva (canva.link/ovpsnw5t4ofqgn6) across site + assets; mind optical sizing.",o:"Adi",c:"Web",p:"P1",s:"todo",due:"Sep 20"},
+ {t:"Write VSL script + record",d:"On the registration/thank-you path.",o:"Adi",c:"Web",p:"P1",s:"todo",due:"Sep 19"},
+ {t:"Create WhatsApp community",d:"One Tantra Community group + one announcement (read-only) group, mirrored from Fintech Circle.",o:"Aquila",c:"WhatsApp",p:"P0",s:"todo",due:"Sep 20"},
+ {t:"Add WhatsApp admins to both groups",d:"Aquila, Bhaskar, Adi, Amal, Vaibhavi as admins in chat + announcement groups.",o:"Aquila",c:"WhatsApp",p:"P1",s:"todo",due:"Sep 20"},
+ {t:"Embed community link on thank-you page",d:"And auto-add workshop entrants to the community.",o:"Bhaskar Dev",c:"WhatsApp",p:"P1",s:"todo",due:"Sep 21"},
+ {t:"Set up Zoom meeting",d:"Sign up + schedule 5 sessions: Thu Sep 24, Fri 25, Mon 28, Tue 29, Wed 30 — all 11am EST.",o:"Aquila",c:"Zoom",p:"P0",s:"todo",due:"Sep 20"},
+ {t:"Set Zoom permissions",d:"Participants cannot enable video; muted by default.",o:"Aquila",c:"Zoom",p:"P1",s:"todo",due:"Sep 20"},
+ {t:"Build full-screen survey engine",d:"Custom per-day survey (not Typeform) with sample answers. Watch-Zoom-and-fill.",o:"Bhaskar Dev",c:"Ops engine",p:"P0",s:"todo",due:"Sep 20"},
+ {t:"Build Funnel Playbook tabbed interface",d:"Live interface; attendees open a tab per day.",o:"Bhaskar Dev",c:"Ops engine",p:"P1",s:"todo",due:"Sep 21"},
+ {t:"Write per-day question sets",d:"Day 1 strategy; Day 2 10–20 Qs (brand/product/offer); Day 3 funnel type; Day 4 build inputs; Day 5 funnel math.",o:"Adi",c:"Ops engine",p:"P0",s:"todo",due:"Sep 19"},
+ {t:"Build Claude Code agentic output pipeline",d:"Reads daily answers → generates the day's output.",o:"Bhaskar Dev",c:"Ops engine",p:"P0",s:"todo",due:"Sep 21"},
+ {t:"Create output templates (days 1–5)",d:"Playbook, conversion engine, pages/templates/stages, orchestrator prompts, funnel math.",o:"Adi",c:"Ops engine",p:"P0",s:"todo",due:"Sep 21"},
+ {t:"PDF + live-link generation",d:"Render each output as a downloadable PDF and a live link.",o:"Bhaskar Dev",c:"Ops engine",p:"P1",s:"todo",due:"Sep 21"},
+ {t:"WhatsApp + email delivery automation",d:"Push each day's output as WhatsApp + email reminders, same day.",o:"Bhaskar Dev",c:"Ops engine",p:"P1",s:"todo",due:"Sep 22"},
+ {t:"Set up 5 LinkedIn posts/day/team member",d:"Generate via Claude Code using the content-taxonomy sheet process.",o:"Team",c:"Content",p:"P1",s:"todo",due:"Sep 20"},
+ {t:"Verify UTM tracking",d:"Use Nelbin's existing UTM system across all posts and links.",o:"Nelbin",c:"Content",p:"P1",s:"todo",due:"Sep 20"},
+ {t:"Confirm team referral incentive",d:"10–15% of revenue from a member's profile traffic — check exact terms with Nelbin.",o:"Adi",c:"Content",p:"P2",s:"todo",due:"Sep 19"},
+ {t:"Weekly content ideation + review call",d:"30 min with Adi, starting this week; also covers newsletter.",o:"Adi",c:"Content",p:"P2",s:"todo",due:"this week"},
+ {t:"Find reusable cold-calendar lists",d:"Client lists with by-person overlap for the workshop funnel.",o:"Team",c:"Cold calendar",p:"P2",s:"todo",due:"Sep 20"},
+ {t:"Sales Navigator + Expandi scrape",d:"If no reusable lists: Adi gets Sales Nav, then scrape via Expandi.",o:"Adi",c:"Cold calendar",p:"P2",s:"todo",due:"Sep 21"},
+ {t:"Confirm Tantra LinkedIn app readiness",d:"Check with Bharath whether we can launch outreach campaigns.",o:"Bharath",c:"LinkedIn",p:"P1",s:"todo",due:"Sep 19"},
+ {t:"Connect all team profiles + launch outreach",d:"Via Tantra; then launch the campaigns.",o:"Bhaskar Dev",c:"LinkedIn",p:"P1",s:"todo",due:"Sep 21"},
+ {t:"AI personalization workflow (BigHammer-style)",d:"For LinkedIn outreach messages.",o:"Bhaskar Dev",c:"LinkedIn",p:"P2",s:"todo",due:"Sep 22"},
+ {t:"Draft pre-workshop nurture sequences",d:"Email + message + WhatsApp reminders up to Day 1.",o:"Adi",c:"Nurture",p:"P1",s:"todo",due:"Sep 20"},
+ {t:"Draft post-workshop nurture sequences",d:"Email + message + WhatsApp follow-ups.",o:"Adi",c:"Nurture",p:"P1",s:"todo",due:"Sep 22"},
+ {t:"Set up nurture sequences in tooling",d:"Bhaskar wires the drafted sequences.",o:"Bhaskar",c:"Nurture",p:"P1",s:"todo",due:"Sep 22"},
+ {t:"Update webinar deck",d:"Prioritize new sequences, engines and automations vs the old workflow (ref: staging deck v3).",o:"Adi",c:"Content",p:"P1",s:"todo",due:"Sep 21"},
+ {t:"CRM setup + follow-up sequences",d:"Email / WhatsApp / SMS tracked end to end.",o:"Bhaskar Dev",c:"CRM",p:"P1",s:"todo",due:"Sep 22"},
+ {t:"Two funnel workflows (organic / ads)",d:"Free organic path + paid-ads path with unit economics.",o:"Bhaskar Dev",c:"CRM",p:"P1",s:"todo",due:"Sep 21"},
+ {t:"Fix GrowthClub OS dashboard speed",d:"Cloudflare tunnel is slow; used to show funnel stats on Day 5.",o:"Bhaskar Dev",c:"CRM",p:"P2",s:"todo",due:"Sep 24"},
+ {t:"Add funnel tabs to Consolidated Funnel Doc",d:"Needs Google connector auth (not available this session).",o:"Adi",c:"Project",p:"P2",s:"todo",due:"Sep 22",fix:1},
+ {t:"Add tasks/tabs to Work Tracker sheet",d:"Set the project up formally. Needs Google connector auth.",o:"Adi",c:"Project",p:"P2",s:"todo",due:"Sep 22",fix:1},
+ {t:"Full dry run of Day-1 pipeline",d:"Survey → agentic output → PDF + link → WhatsApp + email, end to end.",o:"Bhaskar Dev",c:"Ops engine",p:"P0",s:"todo",due:"Sep 22"},
+ {t:"Publish this command-center app",d:"Host the plan + task board on a free static host and share the link.",o:"Bhaskar Dev",c:"Project",p:"P2",s:"doing",due:"Sep 19"},
+ {t:"Draft the Tantra Playbook",d:"World-class Day-1 deliverable covering all 5 days + the step-by-step plan, in Backlinko voice.",o:"Adi",c:"Content",p:"P0",s:"done",due:"done"},
+ {t:"Build research-backed playbook visualizations",d:"29 custom animated SVG system diagrams across all 5 chapters: 6-stage master map, three-shapes matrix, value ladder, ICP canvas, offer architecture, 20-type taxonomy, funnel math, nurture flowchart, run of show, CRM pipeline, automation map, leak matrix, weekly loop, 52-week engine and more.",o:"Bhaskar Dev",c:"Ops engine",p:"P1",s:"done",due:"done"},
+ {t:"Draft daily survey + sample answers",d:"5 day-specific forms; every question with 6 sample answers (1 high-ticket B2B, 2 B2B SaaS, 3 B2B consulting).",o:"Adi",c:"Ops engine",p:"P0",s:"done",due:"done"},
+ {t:"Build the 100-slide workshop deck",d:"One deck, a section per day, reusing the playbook diagrams and each day's survey questions + sample answers.",o:"Adi",c:"Content",p:"P0",s:"doing",due:"Sep 21"},
+ {t:"Wire survey forms → Survey Outputs sheet",d:"Post each day's answers to the Survey Outputs tab via Google Apps Script or a Google Form. Needs Google connector auth.",o:"Bhaskar Dev",c:"Ops engine",p:"P0",s:"todo",due:"Sep 20",fix:1}
+];
+const LINKS={docs:[
+  ["Consolidated Funnel Documentation","https://docs.google.com/document/d/1p7-I7hMaHE3uJYw1oKz8VsJdpBwPi4hjzuZ_hgOnx-Q/edit","📄"],
+  ["Tantra — Work Tracker","https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit","📊"],
+  ["GC Webinar — Consolidated Doc","https://docs.google.com/document/d/1qeyyZaLkd9husUOneUtkA7fAIr3Ldia5-xxbFNXnTu4/edit","📄"],
+  ["GC Webinar — Work Tracker","https://docs.google.com/spreadsheets/d/1HBpby7CSYkX8C2tGlxTklnt5Etu6lYxyFeen-D03KJU/edit","📊"]],
+ pages:[
+  ["Landing (to build) · usetantra.com/masterclass","https://usetantra.com/masterclass","🚀"],
+  ["usetantra.com/webinar","https://usetantra.com/webinar","🌐"],
+  ["growthclub.org/webinar","https://growthclub.org/webinar","🌐"],
+  ["New Tantra logos (Canva)","https://canva.link/ovpsnw5t4ofqgn6","🎨"]],
+ decks:[
+  ["Webinar deck v3 (newer)","https://staging.usetantra.com/webinardeckv3","🖼️"],
+  ["Older deck (converted better)","https://www.canva.com/design/DAG6kOfjvNo/Y6rjlTsMIZLcoZvKeK2MJw/edit","🖼️"]]};
+const TARGET=new Date("2026-09-24T11:00:00-04:00");
+
+// nav
+const nav=document.getElementById("nav");
+TABS.forEach(([id,label],i)=>{const b=document.createElement("button");b.className="tab"+(i===0?" active":"");b.dataset.tab=id;b.innerHTML=label+(id==="tasks"?' <span class="cnt" id="navcnt">0</span>':"");b.onclick=()=>{document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));b.classList.add("active");TABS.forEach(([tid])=>document.getElementById(tid).hidden=(tid!==id));window.scrollTo(0,0)};nav.appendChild(b)});
+
+// theme
+const themeBtn=document.getElementById("theme");
+const savedTheme=localStorage.getItem("tantra-theme");if(savedTheme)document.documentElement.dataset.theme=savedTheme;
+themeBtn.onclick=()=>{const n=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=n;localStorage.setItem("tantra-theme",n)};
+
+// countdown
+function tick(){const now=new Date();let ms=TARGET-now;if(ms<0){document.getElementById("cd").textContent="live";document.getElementById("cd2").textContent="0";return}
+ const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);
+ document.getElementById("cd").textContent=d+"d "+h+"h "+m+"m";document.getElementById("cd2").textContent=d}
+tick();setInterval(tick,30000);
+
+// links
+function renderLinks(key,el){document.getElementById(el).innerHTML=LINKS[key].map(([t,u,ic])=>`<a class="linkcard" href="${u}" target="_blank" rel="noopener"><span class="li">${ic}</span><span class="lt"><b>${t}</b><span>${u}</span></span></a>`).join("")}
+renderLinks("docs","links-docs");renderLinks("pages","links-pages");renderLinks("decks","links-decks");
+
+// tasks
+const KEY="tantra-tasks-v2";
+let tasks=load();
+let fCat="All",fOwn="All",fq="";
+function load(){try{const s=localStorage.getItem(KEY);if(s)return JSON.parse(s)}catch(e){}return SEED.map((t,i)=>({id:i+1,...t}))}
+function save(){localStorage.setItem(KEY,JSON.stringify(tasks))}
+document.getElementById("ncat").innerHTML=CATS.map(c=>`<option>${c}</option>`).join("");
+function owners(){return ["All",...Array.from(new Set(tasks.map(t=>t.o)))]}
+function renderFilters(){
+ const cats=["All",...CATS];
+ document.getElementById("catfilters").innerHTML=cats.map(c=>`<button class="fchip${fCat===c?" on":""}" data-c="${c}">${c}${c!=="All"?` <span style="opacity:.6">${tasks.filter(t=>t.c===c).length}</span>`:""}</button>`).join("");
+ document.getElementById("ownfilters").innerHTML=owners().map(o=>`<button class="fchip${fOwn===o?" on":""}" data-o="${o}">${o==="All"?"All owners":o}</button>`).join("");
+ document.querySelectorAll("#catfilters .fchip").forEach(b=>b.onclick=()=>{fCat=b.dataset.c;render()});
+ document.querySelectorAll("#ownfilters .fchip").forEach(b=>b.onclick=()=>{fOwn=b.dataset.o;render()});
+}
+let view=localStorage.getItem("tantra-view")||"table";
+const prioO={P0:0,P1:1,P2:2};
+function filtered(){return tasks.filter(t=>(fCat==="All"||t.c===fCat)&&(fOwn==="All"||t.o===fOwn)&&(!fq||(t.t+(t.d||"")).toLowerCase().includes(fq)))}
+function setStatus(id,s){const t=tasks.find(x=>x.id===id);if(t){t.s=s;save();render()}}
+function delTask(id){tasks=tasks.filter(x=>x.id!==id);save();render()}
+function tagsHTML(t){return `<span class="tag ${t.p==="P0"?"p0":t.p==="P1"?"p1":""}">${t.p}</span><span class="tag own">${esc(t.o)}</span><span class="tag">${t.c}</span><span class="tag due">${esc(t.due)}</span>`}
+function render(){
+ renderFilters();
+ const done=tasks.filter(t=>t.s==="done").length,pct=tasks.length?Math.round(done/tasks.length*100):0;
+ document.getElementById("pfill").style.width=pct+"%";
+ document.getElementById("pcount").textContent=done+" of "+tasks.length+" done";
+ document.getElementById("ppct").textContent=pct+"%";
+ document.getElementById("navcnt").textContent=tasks.filter(t=>t.s!=="done").length;
+ document.getElementById("vtable").classList.toggle("on",view==="table");
+ document.getElementById("vkanban").classList.toggle("on",view==="kanban");
+ view==="table"?renderTable():renderKanban();
+}
+function renderTable(){
+ const list=filtered(),order={doing:0,todo:1,done:2};
+ list.sort((a,b)=>(order[a.s]-order[b.s])||(prioO[a.p]-prioO[b.p]));
+ const rows=list.map(t=>`<tr class="${t.s}" data-id="${t.id}">
+   <td class="cbcell"><div class="st" data-act="toggle" title="Cycle status">${t.s==="done"?"✓":t.s==="doing"?"◐":""}</div></td>
+   <td class="tcell"><span class="ttl" title="${esc(t.d||"")}"><span class="dot ${t.s}"></span>${esc(t.t)}${t.fix?' <span class="tofix">⚑</span>':""}</span></td>
+   <td><span class="tag own">${esc(t.o)}</span></td>
+   <td style="color:var(--ink-2)">${t.c}</td>
+   <td><span class="tag ${t.p==="P0"?"p0":t.p==="P1"?"p1":""}">${t.p}</span></td>
+   <td style="white-space:nowrap;color:var(--ink-3)">${esc(t.due)}</td>
+   <td style="text-align:right"><button class="tdel" data-act="del" title="Delete">✕</button></td>
+  </tr>`).join("");
+ document.getElementById("tklist").innerHTML=list.length?`<table class="tktable"><thead><tr><th></th><th>Task</th><th>Owner</th><th>Category</th><th>Priority</th><th>Due</th><th></th></tr></thead><tbody>${rows}</tbody></table><p class="kbhint" style="margin-top:10px">Click the box to cycle to do → in&nbsp;progress → done. Switch to Kanban to drag cards between columns.</p>`:`<p class="muted" style="padding:20px 0">No tasks match.</p>`;
+ document.querySelectorAll(".tktable tr[data-id]").forEach(tr=>{const id=+tr.dataset.id;
+   tr.querySelector('[data-act="toggle"]').onclick=()=>{const t=tasks.find(x=>x.id===id);setStatus(id,t.s==="todo"?"doing":t.s==="doing"?"done":"todo")};
+   tr.querySelector('[data-act="del"]').onclick=()=>delTask(id);});
+}
+function renderKanban(){
+ const cols=[["todo","To do"],["doing","In progress"],["done","Done"]],list=filtered();
+ document.getElementById("tklist").innerHTML=`<p class="kbhint">✥ Drag a card to another column to change its status.</p><div class="kb">`+cols.map(([s,label])=>{
+   const items=list.filter(t=>t.s===s).sort((a,b)=>prioO[a.p]-prioO[b.p]);
+   return `<div class="kbcol" data-col="${s}"><h4>${label}<span class="n">${items.length}</span></h4>`+items.map(t=>`<div class="kbcard" draggable="true" data-id="${t.id}"><div class="kt">${esc(t.t)}${t.fix?' <span class="tofix">⚑</span>':""}</div>${t.d?`<div class="kd">${esc(t.d)}</div>`:""}<div class="km">${tagsHTML(t)}</div></div>`).join("")+`</div>`;
+ }).join("")+`</div>`;
+ let dragId=null;
+ document.querySelectorAll(".kbcard").forEach(c=>{
+   c.addEventListener("dragstart",e=>{dragId=+c.dataset.id;c.classList.add("dragging");e.dataTransfer.effectAllowed="move";try{e.dataTransfer.setData("text/plain",c.dataset.id)}catch(_){}});
+   c.addEventListener("dragend",()=>c.classList.remove("dragging"));});
+ document.querySelectorAll(".kbcol").forEach(col=>{
+   col.addEventListener("dragover",e=>{e.preventDefault();col.classList.add("over")});
+   col.addEventListener("dragleave",()=>col.classList.remove("over"));
+   col.addEventListener("drop",e=>{e.preventDefault();col.classList.remove("over");if(dragId!=null){setStatus(dragId,col.dataset.col);dragId=null}});});
+}
+document.getElementById("vtable").onclick=()=>{view="table";localStorage.setItem("tantra-view",view);render()};
+document.getElementById("vkanban").onclick=()=>{view="kanban";localStorage.setItem("tantra-view",view);render()};
+function esc(s){return(s+"").replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]))}
+document.getElementById("search").oninput=e=>{fq=e.target.value.toLowerCase();render()};
+document.getElementById("addtoggle").onclick=()=>document.getElementById("addbox").classList.toggle("open");
+document.getElementById("nadd").onclick=()=>{const t=document.getElementById("ntitle").value.trim();if(!t)return;tasks.push({id:Date.now(),t,d:"",o:document.getElementById("nowner").value.trim()||"Unassigned",c:document.getElementById("ncat").value,p:document.getElementById("nprio").value,s:"todo",due:"—"});document.getElementById("ntitle").value="";document.getElementById("nowner").value="";save();render()};
+document.getElementById("reset").onclick=()=>{if(confirm("Restore the original seed tasks? Your changes will be lost.")){localStorage.removeItem(KEY);tasks=load();render()}};
+render();
+</script>
+</body>
+</html>
