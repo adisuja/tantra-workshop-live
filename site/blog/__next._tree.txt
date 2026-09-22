@@ -9,4 +9,4 @@
 :HL["/tantra-workshop-live/site/blog/gmail-primary-inbox-cold-outreach-2026/cover.webp","image"]
 :HL["/tantra-workshop-live/site/blog/outreach-kpis-beyond-open-rates/cover.webp","image"]
 :HL["/tantra-workshop-live/site/blog/cold-google-calendar-outreach-2026-limits-warmup/cover.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"(site)","param":null,"prefetchHints":4128,"slots":{"children":{"name":"blog","param":null,"prefetchHints":4160,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"rZOt0qzRAF271QvVFrrGh"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"(site)","param":null,"prefetchHints":4128,"slots":{"children":{"name":"blog","param":null,"prefetchHints":4160,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"cQn-pCJhc0MMZ3DqH7_Qq"}
