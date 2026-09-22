@@ -204,7 +204,7 @@ footer{margin-top:28px;font-size:11.5px;color:var(--ink-3)}
   <div class="acts" style="display:flex;gap:8px;align-items:center;margin-top:8px"><button class="btn pri" id="nt-send" type="button">Add to queue</button><span id="nt-sent" class="sent"></span></div>
 </section>
 
-<footer><b>Public read-only mirror.</b> Feedback and attachments only work on the local board. Source of truth: <code>workshop-plan/tasks/tasks.json</code>. Your actions append to <code>tasks/inbox.jsonl</code> and show here immediately; Claude processes the inbox on every pass, updates the task, and marks your note as handled.</footer>
+<footer>Source of truth: <code>workshop-plan/tasks/tasks.json</code>. Your actions append to <code>tasks/inbox.jsonl</code> and show here immediately; Claude processes the inbox on every pass, updates the task, and marks your note as handled.</footer>
 </div>
 
 <script>
@@ -323,14 +323,14 @@ async function send(id,action){
   const hasFiles=(PENDING[id]||[]).length>0;
   if(!text&&!hasFiles&&!["approve","prioritize","drop"].includes(action)){out.className="sent err";out.textContent="Write a note or attach a file first.";return}
   try{out.className="sent";out.textContent=hasFiles?"Uploading…":"";const attachments=await uploadPending(id);const f=await post({task_id:id,action,text,attachments});INBOX.push(f);ta.value="";PENDING[id]=[];out.className="sent";out.textContent="Sent · Claude picks it up on the next pass";openId=id;render()}
-  catch(e){out.className="sent err";out.textContent="Read-only public mirror. Feedback works on the local board at http://localhost:8899/tasks.html"}
+  catch(e){out.className="sent err";out.textContent="Failed: "+e.message}
 }
 $("#nt-send").onclick=async()=>{
   const title=$("#nt-title").value.trim(),out=$("#nt-sent");
   if(!title){out.className="sent err";out.textContent="Title required.";return}
   try{const f=await post({action:"new",title,area:$("#nt-area").value,priority:$("#nt-pri").value,due:$("#nt-due").value.trim(),text:$("#nt-text").value.trim()});
     INBOX.push(f);$("#nt-title").value="";$("#nt-text").value="";$("#nt-due").value="";out.className="sent";out.textContent="Queued · Claude adds it as a task on the next pass";}
-  catch(e){out.className="sent err";out.textContent="Read-only public mirror. Feedback works on the local board at http://localhost:8899/tasks.html"}
+  catch(e){out.className="sent err";out.textContent="Failed: "+e.message}
 };
 document.querySelectorAll("#view button").forEach(b=>b.onclick=()=>{view=b.dataset.v;document.querySelectorAll("#view button").forEach(x=>x.classList.toggle("on",x===b));render()});
 ["f-owner","f-area","f-status","hidedone"].forEach(i=>$("#"+i).onchange=render);$("#q").oninput=render;

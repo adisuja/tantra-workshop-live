@@ -1,1673 +1,2051 @@
 {
- "meta": {
-  "project": "The 3-Day AI RevOps Workshop",
-  "day1": "2026-09-24T11:00:00-04:00",
-  "updated": "2026-09-21T22:39:41+0530",
-  "version": 10
- },
- "tasks": [
-  {
-   "id": "T-001",
-   "title": "/masterclass landing page",
-   "area": "Funnel",
-   "owner": "Claude",
-   "priority": "P0",
-   "due": "2026-09-19",
-   "status": "review",
-   "why": "The front door for every traffic lane. Sells the 3-Day AI RevOps Workshop with a Live Pass and a Build Pass.",
-   "spec": "Live locally on :4322. probe-workshop.mjs is clean at 5 widths, copy bans hold, both pass CTAs render, Build Pass registration opens checkout.",
-   "done_when": [
-    "Owner signs off on copy and proof cards",
-    "Deployed to usetantra.com/masterclass (T-006)"
-   ],
-   "evidence": [
+  "meta": {
+    "project": "The 3-Day AI RevOps Workshop",
+    "day1": "2026-09-24T11:00:00-04:00",
+    "updated": "2026-09-23T00:00:57+05:30",
+    "version": 11
+  },
+  "tasks": [
     {
-     "label": "Landing page",
-     "url": "http://localhost:4322/masterclass"
+      "id": "T-001",
+      "title": "/masterclass landing page",
+      "area": "Funnel",
+      "owner": "Claude",
+      "priority": "P0",
+      "due": "2026-09-19",
+      "status": "review",
+      "why": "The front door for every traffic lane. Sells the 3-Day AI RevOps Workshop with a Live Pass and a Build Pass.",
+      "spec": "Live locally on :4322. probe-workshop.mjs is clean at 5 widths, copy bans hold, both pass CTAs render, Build Pass registration opens checkout.",
+      "done_when": [
+        "Owner signs off on copy and proof cards",
+        "Deployed to usetantra.com/masterclass (T-006)"
+      ],
+      "evidence": [
+        {
+          "label": "Landing page",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/"
+        },
+        {
+          "label": "probe-workshop.mjs",
+          "url": "app/scripts/probe-workshop.mjs"
+        }
+      ],
+      "blockers": [],
+      "needs_from_owner": "Review the page and reply with changes, or approve.",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-21T22:35:40+0530",
+          "who": "claude",
+          "note": "Landing page converted: hero, journey (3 blocks), passes, VSL captions, metadata and session dates (Thu 24 · Fri 25 · Mon 28 Sep). probe-workshop clean at 5 widths; typecheck clean; no new lint errors."
+        }
+      ],
+      "order": 0
     },
     {
-     "label": "probe-workshop.mjs",
-     "url": "app/scripts/probe-workshop.mjs"
-    }
-   ],
-   "blockers": [],
-   "needs_from_owner": "Review the page and reply with changes, or approve.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-011",
+      "title": "Fix landing-page proof cards (endCX, Appster, Rhenus, SalesTherapy)",
+      "area": "Funnel",
+      "owner": "Adi",
+      "priority": "P1",
+      "due": "2026-09-19",
+      "status": "blocked",
+      "why": "Four proof cards carry unconfirmed facts; an unsourced claim on the sales page is a rejection risk.",
+      "spec": "endCX client legitimacy unconfirmed · Appster shows $25M ARR but the roster says ~$19M · Rhenus card shows the parent-company logo · SalesTherapy logo identity unconfirmed.",
+      "done_when": [
+        "Owner answers all four",
+        "Cards corrected and probe-workshop re-run"
+      ],
+      "evidence": [],
+      "blockers": [
+        "Needs four factual answers only the owner has"
+      ],
+      "needs_from_owner": "Answer: keep endCX? Appster $25M or $19M? Which Rhenus logo? Which SalesTherapy logo?",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 10
     },
     {
-     "ts": "2026-09-21T22:35:40+0530",
-     "who": "claude",
-     "note": "Landing page converted: hero, journey (3 blocks), passes, VSL captions, metadata and session dates (Thu 24 · Fri 25 · Mon 28 Sep). probe-workshop clean at 5 widths; typecheck clean; no new lint errors."
-    }
-   ],
-   "order": 0
-  },
-  {
-   "id": "T-011",
-   "title": "Fix landing-page proof cards (endCX, Appster, Rhenus, SalesTherapy)",
-   "area": "Funnel",
-   "owner": "Adi",
-   "priority": "P1",
-   "due": "2026-09-19",
-   "status": "blocked",
-   "why": "Four proof cards carry unconfirmed facts; an unsourced claim on the sales page is a rejection risk.",
-   "spec": "endCX client legitimacy unconfirmed · Appster shows $25M ARR but the roster says ~$19M · Rhenus card shows the parent-company logo · SalesTherapy logo identity unconfirmed.",
-   "done_when": [
-    "Owner answers all four",
-    "Cards corrected and probe-workshop re-run"
-   ],
-   "evidence": [],
-   "blockers": [
-    "Needs four factual answers only the owner has"
-   ],
-   "needs_from_owner": "Answer: keep endCX? Appster $25M or $19M? Which Rhenus logo? Which SalesTherapy logo?",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 10
-  },
-  {
-   "id": "T-002",
-   "title": "/masterclass/success (survey + VSL)",
-   "area": "Funnel",
-   "owner": "Claude",
-   "priority": "P0",
-   "due": "2026-09-19",
-   "status": "blocked",
-   "why": "Step 2 of the funnel: qualifies the registrant with an 11-question survey and warms them with the VSL.",
-   "spec": "Page is built and probe-clean. The VSL slot exists with an approved caption track, but VSL_SRC is undefined because no recording exists.",
-   "done_when": [
-    "VSL recorded and wired",
-    "Survey answers land somewhere the team can read (T-010)"
-   ],
-   "evidence": [
-    {
-     "label": "Success page",
-     "url": "http://localhost:4322/masterclass/success"
-    }
-   ],
-   "blockers": [
-    "No VSL recording (T-060)"
-   ],
-   "needs_from_owner": "Record the VSL, or tell me to ship the page without video for launch.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 20
-  },
-  {
-   "id": "T-003",
-   "title": "/masterclass/success/join (community + seat)",
-   "area": "Funnel",
-   "owner": "Claude",
-   "priority": "P0",
-   "due": "2026-09-20",
-   "status": "blocked",
-   "why": "The last funnel step. Sends the registrant to the community and confirms their seat. Right now both links are empty, so the funnel dead-ends here.",
-   "spec": "join-client.tsx reads NEXT_PUBLIC_COMMUNITY_URL and NEXT_PUBLIC_SEAT_URL. Both are unset. Pass-aware Build Pass upgrade block renders correctly.",
-   "done_when": [
-    "WhatsApp community link set",
-    "Zoom/seat link set",
-    "Probe passes with real links"
-   ],
-   "evidence": [
-    {
-     "label": "Join page",
-     "url": "http://localhost:4322/masterclass/success/join"
-    }
-   ],
-   "blockers": [
-    "WhatsApp group not created yet (T-040)",
-    "Zoom sessions not scheduled yet (T-042)"
-   ],
-   "needs_from_owner": "Paste the WhatsApp invite link and the Zoom registration link when Aquila has them.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 30
-  },
-  {
-   "id": "T-004",
-   "title": "Build Pass checkout (Dodo, live)",
-   "area": "Funnel",
-   "owner": "Claude",
-   "priority": "P0",
-   "due": "2026-09-18",
-   "status": "review",
-   "why": "The $99 / ₹9,999 front-end must self-liquidate ad spend, so checkout has to be real and tamper-proof.",
-   "spec": "Hosted checkout minted server-side via /api/checkout; per-currency prices synced by scripts/dodo-setup.mjs; webhook verifies HMAC before parsing. Fulfilment is intentionally left to api.usetantra.com's existing prod webhook.",
-   "done_when": [
-    "Owner confirms the price table per currency",
-    "Keys rotated (T-005)",
-    "Fulfilment confirmed to grant the Tantra Plan month (T-070)"
-   ],
-   "evidence": [
-    {
-     "label": "checkout route",
-     "url": "app/src/app/api/checkout/route.ts"
+      "id": "T-002",
+      "title": "/masterclass/success (survey + VSL)",
+      "area": "Funnel",
+      "owner": "Claude",
+      "priority": "P0",
+      "due": "2026-09-19",
+      "status": "blocked",
+      "why": "Step 2 of the funnel: qualifies the registrant with an 11-question survey and warms them with the VSL.",
+      "spec": "Page is built and probe-clean. The VSL slot exists with an approved caption track, but VSL_SRC is undefined because no recording exists.",
+      "done_when": [
+        "VSL recorded and wired",
+        "Survey answers land somewhere the team can read (T-010)"
+      ],
+      "evidence": [
+        {
+          "label": "Success page",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/"
+        }
+      ],
+      "blockers": [
+        "No VSL recording (T-060)"
+      ],
+      "needs_from_owner": "Record the VSL, or tell me to ship the page without video for launch.",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 20
     },
     {
-     "label": "dodo-setup.mjs",
-     "url": "app/scripts/dodo-setup.mjs"
-    }
-   ],
-   "blockers": [],
-   "needs_from_owner": "Confirm the localized prices (USD 99 base, INR/EUR/GBP/AUD/CAD/SGD/AED rules) are what you want.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 40
-  },
-  {
-   "id": "T-005",
-   "title": "Rotate the Dodo API key and webhook secret (after launch, last task)",
-   "area": "Infra",
-   "owner": "Adi",
-   "priority": "P1",
-   "due": "2026-10-01",
-   "status": "queue",
-   "why": "Both secrets entered a chat transcript on Sep 18. Until rotated, anyone with that transcript can mint checkouts or forge webhooks.",
-   "spec": "In the Dodo dashboard: regenerate the live API key and the webhook signing secret, then paste both into app/.env.local. I will restart the dev server and re-run the checkout probe.",
-   "done_when": [
-    "New key + secret in .env.local",
-    "probe-workshop.mjs checkout + webhook checks pass"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-003",
+      "title": "/masterclass/success/join (community + seat)",
+      "area": "Funnel",
+      "owner": "Claude",
+      "priority": "P0",
+      "due": "2026-09-20",
+      "status": "blocked",
+      "why": "The last funnel step. Sends the registrant to the community and confirms their seat. Right now both links are empty, so the funnel dead-ends here.",
+      "spec": "join-client.tsx reads NEXT_PUBLIC_COMMUNITY_URL and NEXT_PUBLIC_SEAT_URL. Both are unset. Pass-aware Build Pass upgrade block renders correctly.",
+      "done_when": [
+        "WhatsApp community link set",
+        "Zoom/seat link set",
+        "Probe passes with real links"
+      ],
+      "evidence": [
+        {
+          "label": "Join page",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/"
+        }
+      ],
+      "blockers": [
+        "WhatsApp group not created yet (T-040)",
+        "Zoom sessions not scheduled yet (T-042)"
+      ],
+      "needs_from_owner": "Paste the WhatsApp invite link and the Zoom registration link when Aquila has them.",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 30
     },
     {
-     "ts": "2026-09-18T20:42:47+0530",
-     "who": "claude",
-     "note": "Owner decision 2026-09-18: do NOT rotate until every task is done, after the launch. Not to be raised again before then."
-    }
-   ],
-   "order": 50
-  },
-  {
-   "id": "T-006",
-   "title": "Local-first launch runbook + post-launch switch plan",
-   "area": "Infra",
-   "owner": "Claude",
-   "priority": "P1",
-   "due": "2026-09-22",
-   "status": "queue",
-   "why": "Owner decision: run everything on this machine through the launch. Build so the switch to a host after launch is one documented, reversible step.",
-   "spec": "A single runbook (start order, ports, health checks, backups of the intake DB) plus a switch plan: env vars that change, the Dodo webhook URL to register, and a tunnel recipe for the attendee-facing pages during live sessions.",
-   "done_when": [
-    "runbook.md in workshop-plan/ops/",
-    "one command brings every service up and probes it",
-    "switch plan lists every setting that changes"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-004",
+      "title": "Build Pass checkout (Dodo, live)",
+      "area": "Funnel",
+      "owner": "Claude",
+      "priority": "P0",
+      "due": "2026-09-18",
+      "status": "review",
+      "why": "The $99 / ₹9,999 front-end must self-liquidate ad spend, so checkout has to be real and tamper-proof.",
+      "spec": "Hosted checkout minted server-side via /api/checkout; per-currency prices synced by scripts/dodo-setup.mjs; webhook verifies HMAC before parsing. Fulfilment is intentionally left to api.usetantra.com's existing prod webhook.",
+      "done_when": [
+        "Owner confirms the price table per currency",
+        "Keys rotated (T-005)",
+        "Fulfilment confirmed to grant the Tantra Plan month (T-070)"
+      ],
+      "evidence": [
+        {
+          "label": "checkout route",
+          "url": "app/src/app/api/checkout/route.ts"
+        },
+        {
+          "label": "dodo-setup.mjs",
+          "url": "app/scripts/dodo-setup.mjs"
+        }
+      ],
+      "blockers": [],
+      "needs_from_owner": "Confirm the localized prices (USD 99 base, INR/EUR/GBP/AUD/CAD/SGD/AED rules) are what you want.",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 40
     },
     {
-     "ts": "2026-09-18T20:42:47+0530",
-     "who": "claude",
-     "note": "Rewritten from 'deploy to production' after the owner chose local-only."
-    }
-   ],
-   "order": 60
-  },
-  {
-   "id": "T-007",
-   "title": "Commit the masterclass work to git",
-   "area": "Infra",
-   "owner": "Claude",
-   "priority": "P1",
-   "due": "2026-09-19",
-   "status": "done",
-   "why": "32 untracked files and 5 modified files on branch tantra-website-new-copy. A crash or a bad edit loses the funnel.",
-   "spec": "Stage the masterclass routes, components, scripts, and brand assets; leave .env.local and the 3 pre-existing lint errors alone. One commit with a clear message.",
-   "done_when": [
-    "git status clean except intentionally ignored files"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "Say 'commit' and I'll do it. I won't push without T-006.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-005",
+      "title": "Rotate the Dodo API key and webhook secret (after launch, last task)",
+      "area": "Infra",
+      "owner": "Adi",
+      "priority": "P1",
+      "due": "2026-10-01",
+      "status": "queue",
+      "why": "Both secrets entered a chat transcript on Sep 18. Until rotated, anyone with that transcript can mint checkouts or forge webhooks.",
+      "spec": "In the Dodo dashboard: regenerate the live API key and the webhook signing secret, then paste both into app/.env.local. I will restart the dev server and re-run the checkout probe.",
+      "done_when": [
+        "New key + secret in .env.local",
+        "probe-workshop.mjs checkout + webhook checks pass"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-18T20:42:47+0530",
+          "who": "claude",
+          "note": "Owner decision 2026-09-18: do NOT rotate until every task is done, after the launch. Not to be raised again before then."
+        }
+      ],
+      "order": 50
     },
     {
-     "ts": "2026-09-18T20:42:47+0530",
-     "who": "claude",
-     "note": "Superseded by the new repo (T-086)."
-    }
-   ],
-   "order": 70
-  },
-  {
-   "id": "T-008",
-   "title": "Decide: /webinar → 301 to /masterclass?",
-   "area": "Funnel",
-   "owner": "Adi",
-   "priority": "P1",
-   "due": "2026-09-19",
-   "status": "blocked",
-   "why": "Two funnels for the same traffic split conversion data and confuse the team's links.",
-   "spec": "Options: (a) 301 /webinar and /webinar/thank-you to /masterclass, (b) keep /webinar as the evergreen page and point only workshop traffic at /masterclass.",
-   "done_when": [
-    "Decision recorded",
-    "Redirect implemented if (a)"
-   ],
-   "evidence": [],
-   "blockers": [
-    "Owner decision"
-   ],
-   "needs_from_owner": "Pick (a) or (b).",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 80
-  },
-  {
-   "id": "T-010",
-   "title": "Registrations and survey answers exportable to the Work Tracker",
-   "area": "Delivery",
-   "owner": "Claude",
-   "priority": "P1",
-   "due": "2026-09-20",
-   "status": "queue",
-   "why": "Every registration and sale must be attributable to a channel and a team member.",
-   "spec": "Local intake DB (T-030) exports UTM-tagged CSV that matches the Work Tracker's columns. Google connector optional later.",
-   "done_when": [
-    "CSV export matches the sheet's headers"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 90
-  },
-  {
-   "id": "T-012",
-   "title": "Generate audience-room.jpg",
-   "area": "Content",
-   "owner": "Claude",
-   "priority": "P2",
-   "due": "2026-09-21",
-   "status": "blocked",
-   "why": "Placeholder art on the landing page.",
-   "spec": "Kie.ai was out of credits when this was attempted.",
-   "done_when": [
-    "Image generated, optimized, and placed"
-   ],
-   "evidence": [],
-   "blockers": [
-    "Kie.ai credits"
-   ],
-   "needs_from_owner": "Top up Kie.ai or tell me to use a different generator.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 100
-  },
-  {
-   "id": "T-020",
-   "title": "The Tantra Playbook (Day-1 deliverable)",
-   "area": "Content",
-   "owner": "Claude",
-   "priority": "P0",
-   "due": "2026-09-18",
-   "status": "review",
-   "why": "The thing every attendee gets on Day 1 and the spine the deck and survey hang off.",
-   "spec": "13k+ words, 33 SVG diagrams, two new intro sections (#revops, #whyfunnel), funnel-agnostic with .fvar callouts on every step. probe-playbook.mjs clean at 4 widths.",
-   "done_when": [
-    "Owner reads it end to end and approves or lists changes"
-   ],
-   "evidence": [
-    {
-     "label": "Playbook",
-     "url": "http://localhost:8899/playbook.html"
-    }
-   ],
-   "blockers": [],
-   "needs_from_owner": "Read and give feedback section by section here.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-006",
+      "title": "Local-first launch runbook + post-launch switch plan",
+      "area": "Infra",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-22",
+      "status": "queue",
+      "why": "Owner decision: run everything on this machine through the launch. Build so the switch to a host after launch is one documented, reversible step.",
+      "spec": "A single runbook (start order, ports, health checks, backups of the intake DB) plus a switch plan: env vars that change, the Dodo webhook URL to register, and a tunnel recipe for the attendee-facing pages during live sessions.",
+      "done_when": [
+        "runbook.md in workshop-plan/ops/",
+        "one command brings every service up and probes it",
+        "switch plan lists every setting that changes"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-18T20:42:47+0530",
+          "who": "claude",
+          "note": "Rewritten from 'deploy to production' after the owner chose local-only."
+        }
+      ],
+      "order": 60
     },
     {
-     "ts": "2026-09-21T22:35:40+0530",
-     "who": "claude",
-     "note": "Playbook refolded to 3 chapters with in-chapter 'half two' dividers; work plan merged to 3 day tables (37 checkboxes kept, so saved progress survives); Gantt rebuilt for 3 days. probe-playbook clean at 4 widths."
-    }
-   ],
-   "order": 110
-  },
-  {
-   "id": "T-021",
-   "title": "Workshop deck (211 slides)",
-   "area": "Content",
-   "owner": "Claude",
-   "priority": "P0",
-   "due": "2026-09-21",
-   "status": "review",
-   "why": "The live presentation for all three days.",
-   "spec": "Rebuilt by the parallel session from build/*.py: 3 fixed lanes, day filter, global page numbers, every survey question a 4-slide block. probe-deck.mjs clean at 3 widths, nav probe 9/9. Logo fix survives regeneration.",
-   "done_when": [
-    "Owner approves",
-    "Host-intro slide gets a real dated proof point",
-    "Ownership between the two sessions decided"
-   ],
-   "evidence": [
-    {
-     "label": "Deck",
-     "url": "http://localhost:8899/deck.html"
-    }
-   ],
-   "blockers": [
-    "Which session owns deck.html and build/? Both regenerating would clobber each other."
-   ],
-   "needs_from_owner": "Decide deck ownership (this session or the other). Give me one named result with a date for the host-intro slide.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-007",
+      "title": "Commit the masterclass work to git",
+      "area": "Infra",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-19",
+      "status": "done",
+      "why": "32 untracked files and 5 modified files on branch tantra-website-new-copy. A crash or a bad edit loses the funnel.",
+      "spec": "Stage the masterclass routes, components, scripts, and brand assets; leave .env.local and the 3 pre-existing lint errors alone. One commit with a clear message.",
+      "done_when": [
+        "git status clean except intentionally ignored files"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "Say 'commit' and I'll do it. I won't push without T-006.",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-18T20:42:47+0530",
+          "who": "claude",
+          "note": "Superseded by the new repo (T-086)."
+        }
+      ],
+      "order": 70
     },
     {
-     "ts": "2026-09-21T22:35:40+0530",
-     "who": "claude",
-     "note": "Deck regenerated for 3 days: 203 slides (was 211), nothing cut — all 30 questions keep their 4-slide blocks and every teaching slide survives. Days 1 and 3 run in two halves with a turn slide. probe-deck clean at 3 widths, probe-deck-nav 9/9."
-    }
-   ],
-   "order": 120
-  },
-  {
-   "id": "T-022",
-   "title": "Daily survey (30 questions × 6 personas)",
-   "area": "Content",
-   "owner": "Claude",
-   "priority": "P0",
-   "due": "2026-09-18",
-   "status": "review",
-   "why": "The do-half of the do-and-get loop. Attendees fill it while watching Zoom.",
-   "spec": "One question per screen, Typeform style, minimums enforced. probe-survey.mjs walks all 30 on mobile and desktop.",
-   "done_when": [
-    "Owner signs off on the question sets per day",
-    "Answers reach the team (T-030)"
-   ],
-   "evidence": [
-    {
-     "label": "Survey",
-     "url": "http://localhost:8899/survey.html"
+      "id": "T-008",
+      "title": "Decide: /webinar → 301 to /masterclass?",
+      "area": "Funnel",
+      "owner": "Adi",
+      "priority": "P1",
+      "due": "2026-09-19",
+      "status": "blocked",
+      "why": "Two funnels for the same traffic split conversion data and confuse the team's links.",
+      "spec": "Options: (a) 301 /webinar and /webinar/thank-you to /masterclass, (b) keep /webinar as the evergreen page and point only workshop traffic at /masterclass.",
+      "done_when": [
+        "Decision recorded",
+        "Redirect implemented if (a)"
+      ],
+      "evidence": [],
+      "blockers": [
+        "Owner decision"
+      ],
+      "needs_from_owner": "Pick (a) or (b).",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 80
     },
     {
-     "label": "questions.py (source)",
-     "url": "workshop-plan/build/questions.py"
-    }
-   ],
-   "blockers": [],
-   "needs_from_owner": "Approve the questions or list changes by question number.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-010",
+      "title": "Registrations and survey answers exportable to the Work Tracker",
+      "area": "Delivery",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-20",
+      "status": "queue",
+      "why": "Every registration and sale must be attributable to a channel and a team member.",
+      "spec": "Local intake DB (T-030) exports UTM-tagged CSV that matches the Work Tracker's columns. Google connector optional later.",
+      "done_when": [
+        "CSV export matches the sheet's headers"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 90
     },
     {
-     "ts": "2026-09-21T22:35:40+0530",
-     "who": "claude",
-     "note": "Survey regenerated: 3 days, 12/6/12 questions, all 30 kept with their 180 samples. probe-survey clean."
-    }
-   ],
-   "order": 130
-  },
-  {
-   "id": "T-024",
-   "title": "Day 1–3 output templates (what each attendee GETS)",
-   "area": "Delivery",
-   "owner": "Claude",
-   "priority": "P0",
-   "due": "2026-09-21",
-   "status": "next",
-   "why": "The workshop's promise is 'do something, get something, every day'. With 3 days there are 3 outputs, and the merged days each generate from twelve answers rather than six.",
-   "spec": "For each day write the output template the pipeline fills from survey answers. Day 1: strategy on one page + the conversion engine (five blocks, diagnostic, spec outline) + the 3-day work plan. Day 2: pages, sequences, run of show and close chain for the attendee's funnel type. Day 3: event schema, pipeline, automations, live URL and QA checklist + unit economics, leak diagnosis, experiment card, ascension plan and the 52-week schedule. Each template: inputs (which questions), structure, one sample filled for the SendFlow persona, PDF-ready HTML.",
-   "done_when": [
-    "Three templates in workshop-plan/outputs/",
-    "One sample rendered per day for the SendFlow persona",
-    "Owner approves structure"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-012",
+      "title": "Generate audience-room.jpg",
+      "area": "Content",
+      "owner": "Claude",
+      "priority": "P2",
+      "due": "2026-09-21",
+      "status": "blocked",
+      "why": "Placeholder art on the landing page.",
+      "spec": "Kie.ai was out of credits when this was attempted.",
+      "done_when": [
+        "Image generated, optimized, and placed"
+      ],
+      "evidence": [],
+      "blockers": [
+        "Kie.ai credits"
+      ],
+      "needs_from_owner": "Top up Kie.ai or tell me to use a different generator.",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 100
     },
     {
-     "ts": "2026-09-21T22:35:40+0530",
-     "who": "claude",
-     "note": "Unblocked by the 3-day decision; rescoped from five templates to three."
-    }
-   ],
-   "order": 140
-  },
-  {
-   "id": "T-023",
-   "title": "Lock the per-day question sets",
-   "area": "Content",
-   "owner": "Adi",
-   "priority": "P0",
-   "due": "2026-09-19",
-   "status": "review",
-   "why": "The pipeline templates (T-024) depend on which questions exist. Locking them stops churn.",
-   "spec": "Questions live in build/questions.py. Day 1 twelve — strategy (ICP, objection, offer, rung, funnel shape) then the conversion engine (offer block, voice, mechanism, proof, dimensions, bands). Day 2 six — funnel-type specifics: channels, headlines, form fields, reminder channels, run of show, close chain. Day 3 twelve — launch (AI tool, event names, pipeline stages, automations, test campaign, deploy URL) then scale (CAC/LTV, best channel, worst step, experiment, ascension offer, retention mechanism).",
-   "done_when": [
-    "Owner says 'locked'"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "Approve the 12/6/12 split, or tell me to rebalance.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-020",
+      "title": "The Tantra Playbook (Day-1 deliverable)",
+      "area": "Content",
+      "owner": "Claude",
+      "priority": "P0",
+      "due": "2026-09-18",
+      "status": "review",
+      "why": "The thing every attendee gets on Day 1 and the spine the deck and survey hang off.",
+      "spec": "13k+ words, 33 SVG diagrams, two new intro sections (#revops, #whyfunnel), funnel-agnostic with .fvar callouts on every step. probe-playbook.mjs clean at 4 widths.",
+      "done_when": [
+        "Owner reads it end to end and approves or lists changes"
+      ],
+      "evidence": [
+        {
+          "label": "Playbook",
+          "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html"
+        }
+      ],
+      "blockers": [],
+      "needs_from_owner": "Read and give feedback section by section here.",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-21T22:35:40+0530",
+          "who": "claude",
+          "note": "Playbook refolded to 3 chapters with in-chapter 'half two' dividers; work plan merged to 3 day tables (37 checkboxes kept, so saved progress survives); Gantt rebuilt for 3 days. probe-playbook clean at 4 widths."
+        }
+      ],
+      "order": 110
     },
     {
-     "ts": "2026-09-21T22:35:40+0530",
-     "who": "claude",
-     "note": "Questions re-grouped for 3 days: Day 1 twelve (strategy then engine), Day 2 six (the heavy build day), Day 3 twelve (launch then scale). No question text changed except one cross-reference."
+      "id": "T-021",
+      "title": "Workshop deck (211 slides)",
+      "area": "Content",
+      "owner": "Claude",
+      "priority": "P0",
+      "due": "2026-09-21",
+      "status": "review",
+      "why": "The live presentation for all three days.",
+      "spec": "Rebuilt by the parallel session from build/*.py: 3 fixed lanes, day filter, global page numbers, every survey question a 4-slide block. probe-deck.mjs clean at 3 widths, nav probe 9/9. Logo fix survives regeneration.",
+      "done_when": [
+        "Owner approves",
+        "Host-intro slide gets a real dated proof point",
+        "Ownership between the two sessions decided"
+      ],
+      "evidence": [
+        {
+          "label": "Deck",
+          "url": "https://adisuja.github.io/tantra-workshop-live/deck.html"
+        }
+      ],
+      "blockers": [
+        "Which session owns deck.html and build/? Both regenerating would clobber each other."
+      ],
+      "needs_from_owner": "Decide deck ownership (this session or the other). Give me one named result with a date for the host-intro slide.",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-21T22:35:40+0530",
+          "who": "claude",
+          "note": "Deck regenerated for 3 days: 203 slides (was 211), nothing cut — all 30 questions keep their 4-slide blocks and every teaching slide survives. Days 1 and 3 run in two halves with a turn slide. probe-deck clean at 3 widths, probe-deck-nav 9/9."
+        }
+      ],
+      "order": 120
     },
     {
-     "ts": "2026-09-21T22:35:55+0530",
-     "who": "claude",
-     "note": "Day references remapped for the 3-day structure."
-    }
-   ],
-   "order": 150
-  },
-  {
-   "id": "T-025",
-   "title": "Reverse-squeeze content at full whiteboard scope",
-   "area": "Content",
-   "owner": "Claude",
-   "priority": "P1",
-   "due": "2026-09-22",
-   "status": "blocked",
-   "why": "One of the three primary funnel types. It was built from the 20-funnel library definition, not the sibling whiteboard, so it is thinner than webinar and workshop.",
-   "spec": "Needs the RSP / Reverse-VSL whiteboard URL referenced in the main whiteboard's footer.",
-   "done_when": [
-    "Reverse-squeeze sections match the depth of the other two primaries"
-   ],
-   "evidence": [],
-   "blockers": [
-    "RSP whiteboard URL never supplied"
-   ],
-   "needs_from_owner": "Paste the RSP / Reverse-VSL whiteboard link.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 160
-  },
-  {
-   "id": "T-026",
-   "title": "Capture the 109 template and exhibit pages",
-   "area": "Content",
-   "owner": "Claude",
-   "priority": "P2",
-   "due": "2026-09-23",
-   "status": "blocked",
-   "why": "54 templates + 55 case-study exhibits referenced by the whiteboard live on staging, which is down.",
-   "spec": "URL lists are in workshop-plan/sources/. Once staging is up, capture and index them for Day 3.",
-   "done_when": [
-    "All 109 pages captured and linked from the playbook Day 3"
-   ],
-   "evidence": [],
-   "blockers": [
-    "staging.usetantra.com down (T-084)"
-   ],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 170
-  },
-  {
-   "id": "T-028",
-   "title": "Refresh the hub page (index.html) stale numbers",
-   "area": "Content",
-   "owner": "Claude",
-   "priority": "P2",
-   "due": "2026-09-19",
-   "status": "done",
-   "why": "The hub still says 101 slides and 29 diagrams and links a localStorage task board this system replaces.",
-   "spec": "Update artifact counts, link Launch Control, retire the old board section.",
-   "done_when": [
-    "Counts match the real artifacts",
-    "Hub links to tasks.html"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-022",
+      "title": "Daily survey (30 questions × 6 personas)",
+      "area": "Content",
+      "owner": "Claude",
+      "priority": "P0",
+      "due": "2026-09-18",
+      "status": "review",
+      "why": "The do-half of the do-and-get loop. Attendees fill it while watching Zoom.",
+      "spec": "One question per screen, Typeform style, minimums enforced. probe-survey.mjs walks all 30 on mobile and desktop.",
+      "done_when": [
+        "Owner signs off on the question sets per day",
+        "Answers reach the team (T-030)"
+      ],
+      "evidence": [
+        {
+          "label": "Survey",
+          "url": "https://adisuja.github.io/tantra-workshop-live/survey.html"
+        },
+        {
+          "label": "questions.py (source)",
+          "url": "workshop-plan/build/questions.py"
+        }
+      ],
+      "blockers": [],
+      "needs_from_owner": "Approve the questions or list changes by question number.",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-21T22:35:40+0530",
+          "who": "claude",
+          "note": "Survey regenerated: 3 days, 12/6/12 questions, all 30 kept with their 180 samples. probe-survey clean."
+        }
+      ],
+      "order": 130
     },
     {
-     "ts": "2026-09-21T22:35:40+0530",
-     "who": "claude",
-     "note": "Hub rewritten for 3 days AND the stale localStorage task board retired — it now links to Launch Control. Removed 6.3 KB of dead board code plus the seed list. Artifact counts corrected to 14.5k words / 33 diagrams / 203 slides. Renders clean at 3 widths with no JS errors."
-    }
-   ],
-   "order": 180
-  },
-  {
-   "id": "T-027",
-   "title": "Port #revops and #whyfunnel intro sections into the deck",
-   "area": "Content",
-   "owner": "Claude",
-   "priority": "P2",
-   "due": "",
-   "status": "queue",
-   "why": "Not requested. The owner scoped these sections to the playbook only. Parked until asked.",
-   "spec": "Would add ~12 slides before Day 1.",
-   "done_when": [
-    "Owner asks for it"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "Only if you want it.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 190
-  },
-  {
-   "id": "T-030",
-   "title": "Local intake service: registrations, survey answers, payments (no n8n)",
-   "area": "Delivery",
-   "owner": "Claude",
-   "priority": "P0",
-   "due": "2026-09-20",
-   "status": "next",
-   "why": "Owner decision: no n8n anywhere. Every automation is code I build and run here. Today the landing page posts leads to n8n, the survey posts nowhere, and the webhook route falls back to n8n for fulfilment.",
-   "spec": "A small local service (Python, SQLite, served next to serve.py or as its own port) with POST /api/register, POST /api/survey/{day}, and a payments reconciler that polls Dodo's API for this product ID every minute and marks attendees paid. The Next app and survey.html post to it instead of n8n. CSV export for the Work Tracker. The same reconciler code becomes the webhook handler after launch.",
-   "done_when": [
-    "A registration from /masterclass lands in the SQLite DB",
-    "A survey.html submission lands with day + persona + answers",
-    "A Dodo payment for the product ID is reconciled to the registrant within 60 s",
-    "n8n URL removed from the app",
-    "CSV export works"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-024",
+      "title": "Day 1–3 output templates (what each attendee GETS)",
+      "area": "Delivery",
+      "owner": "Claude",
+      "priority": "P0",
+      "due": "2026-09-21",
+      "status": "next",
+      "why": "The workshop's promise is 'do something, get something, every day'. With 3 days there are 3 outputs, and the merged days each generate from twelve answers rather than six.",
+      "spec": "For each day write the output template the pipeline fills from survey answers. Day 1: strategy on one page + the conversion engine (five blocks, diagnostic, spec outline) + the 3-day work plan. Day 2: pages, sequences, run of show and close chain for the attendee's funnel type. Day 3: event schema, pipeline, automations, live URL and QA checklist + unit economics, leak diagnosis, experiment card, ascension plan and the 52-week schedule. Each template: inputs (which questions), structure, one sample filled for the SendFlow persona, PDF-ready HTML.",
+      "done_when": [
+        "Three templates in workshop-plan/outputs/",
+        "One sample rendered per day for the SendFlow persona",
+        "Owner approves structure"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-21T22:35:40+0530",
+          "who": "claude",
+          "note": "Unblocked by the 3-day decision; rescoped from five templates to three."
+        }
+      ],
+      "order": 140
     },
     {
-     "ts": "2026-09-18T20:42:47+0530",
-     "who": "claude",
-     "note": "Rewritten: owner rejected n8n; Claude builds and runs the automation."
-    }
-   ],
-   "order": 200
-  },
-  {
-   "id": "T-031",
-   "title": "Claude Code agentic output pipeline",
-   "area": "Delivery",
-   "owner": "Claude",
-   "priority": "P0",
-   "due": "2026-09-21",
-   "status": "queue",
-   "why": "Turns each day's answers into a personalized output. The core of the delivery engine.",
-   "spec": "Reads the day's rows → fills the day's template (T-024) → renders PDF + live link. I draft the prompts, the per-day spec, and a runnable reference implementation; Bhaskar Dev productionizes.",
-   "done_when": [
-    "Runs end to end for one real survey submission",
-    "Output matches the template for that day"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-023",
+      "title": "Lock the per-day question sets",
+      "area": "Content",
+      "owner": "Adi",
+      "priority": "P0",
+      "due": "2026-09-19",
+      "status": "review",
+      "why": "The pipeline templates (T-024) depend on which questions exist. Locking them stops churn.",
+      "spec": "Questions live in build/questions.py. Day 1 twelve — strategy (ICP, objection, offer, rung, funnel shape) then the conversion engine (offer block, voice, mechanism, proof, dimensions, bands). Day 2 six — funnel-type specifics: channels, headlines, form fields, reminder channels, run of show, close chain. Day 3 twelve — launch (AI tool, event names, pipeline stages, automations, test campaign, deploy URL) then scale (CAC/LTV, best channel, worst step, experiment, ascension offer, retention mechanism).",
+      "done_when": [
+        "Owner says 'locked'"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "Approve the 12/6/12 split, or tell me to rebalance.",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-21T22:35:40+0530",
+          "who": "claude",
+          "note": "Questions re-grouped for 3 days: Day 1 twelve (strategy then engine), Day 2 six (the heavy build day), Day 3 twelve (launch then scale). No question text changed except one cross-reference."
+        },
+        {
+          "ts": "2026-09-21T22:35:55+0530",
+          "who": "claude",
+          "note": "Day references remapped for the 3-day structure."
+        }
+      ],
+      "order": 150
     },
     {
-     "ts": "2026-09-18T20:42:47+0530",
-     "who": "claude",
-     "note": "Owner: build the automation code yourself. Reassigned from Bhaskar Dev to Claude."
-    }
-   ],
-   "order": 210
-  },
-  {
-   "id": "T-032",
-   "title": "PDF + live-link generation",
-   "area": "Delivery",
-   "owner": "Claude",
-   "priority": "P1",
-   "due": "2026-09-21",
-   "status": "queue",
-   "why": "Attendees get a downloadable PDF and a link, same day.",
-   "spec": "Render the filled template HTML to PDF (Playwright print) and host the HTML at a per-attendee link.",
-   "done_when": [
-    "One PDF and one link produced from a test row"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-025",
+      "title": "Reverse-squeeze content at full whiteboard scope",
+      "area": "Content",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-22",
+      "status": "blocked",
+      "why": "One of the three primary funnel types. It was built from the 20-funnel library definition, not the sibling whiteboard, so it is thinner than webinar and workshop.",
+      "spec": "Needs the RSP / Reverse-VSL whiteboard URL referenced in the main whiteboard's footer.",
+      "done_when": [
+        "Reverse-squeeze sections match the depth of the other two primaries"
+      ],
+      "evidence": [],
+      "blockers": [
+        "RSP whiteboard URL never supplied"
+      ],
+      "needs_from_owner": "Paste the RSP / Reverse-VSL whiteboard link.",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 160
     },
     {
-     "ts": "2026-09-18T20:42:47+0530",
-     "who": "claude",
-     "note": "Owner: build the automation code yourself. Reassigned from Bhaskar Dev to Claude."
-    }
-   ],
-   "order": 220
-  },
-  {
-   "id": "T-033",
-   "title": "WhatsApp + email delivery automation",
-   "area": "Delivery",
-   "owner": "Claude",
-   "priority": "P1",
-   "due": "2026-09-22",
-   "status": "queue",
-   "why": "Same-day delivery before the next session is what makes the loop feel magical.",
-   "spec": "Push each attendee's PDF + link via WhatsApp and email; reminders for the next session.",
-   "done_when": [
-    "Test attendee receives both within minutes of the pipeline run"
-   ],
-   "evidence": [],
-   "blockers": [
-    "Email sending needs an SMTP or provider credential",
-    "WhatsApp sending needs a WhatsApp Business API credential"
-   ],
-   "needs_from_owner": "When we get there: an SMTP login (or provider API key) and, if WhatsApp delivery is wanted, the WhatsApp Business API access. Until then outputs queue locally.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-026",
+      "title": "Capture the 109 template and exhibit pages",
+      "area": "Content",
+      "owner": "Claude",
+      "priority": "P2",
+      "due": "2026-09-23",
+      "status": "blocked",
+      "why": "54 templates + 55 case-study exhibits referenced by the whiteboard live on staging, which is down.",
+      "spec": "URL lists are in workshop-plan/sources/. Once staging is up, capture and index them for Day 3.",
+      "done_when": [
+        "All 109 pages captured and linked from the playbook Day 3"
+      ],
+      "evidence": [],
+      "blockers": [
+        "staging.usetantra.com down (T-084)"
+      ],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 170
     },
     {
-     "ts": "2026-09-18T20:42:47+0530",
-     "who": "claude",
-     "note": "Owner: build the automation code yourself. Reassigned from Bhaskar Dev to Claude."
-    }
-   ],
-   "order": 230
-  },
-  {
-   "id": "T-034",
-   "title": "Full dry run of the Day-1 pipeline",
-   "area": "Delivery",
-   "owner": "Claude",
-   "priority": "P0",
-   "due": "2026-09-22",
-   "status": "queue",
-   "why": "First live session is Sep 24. A failed loop on Day 1 kills the retention thesis.",
-   "spec": "Survey → sheet → pipeline → PDF + link → WhatsApp + email, end to end, with three test personas.",
-   "done_when": [
-    "Three personas processed with no manual step",
-    "Timing recorded"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-028",
+      "title": "Refresh the hub page (index.html) stale numbers",
+      "area": "Content",
+      "owner": "Claude",
+      "priority": "P2",
+      "due": "2026-09-19",
+      "status": "done",
+      "why": "The hub still says 101 slides and 29 diagrams and links a localStorage task board this system replaces.",
+      "spec": "Update artifact counts, link Launch Control, retire the old board section.",
+      "done_when": [
+        "Counts match the real artifacts",
+        "Hub links to tasks.html"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-21T22:35:40+0530",
+          "who": "claude",
+          "note": "Hub rewritten for 3 days AND the stale localStorage task board retired — it now links to Launch Control. Removed 6.3 KB of dead board code plus the seed list. Artifact counts corrected to 14.5k words / 33 diagrams / 203 slides. Renders clean at 3 widths with no JS errors."
+        }
+      ],
+      "order": 180
     },
     {
-     "ts": "2026-09-18T20:42:47+0530",
-     "who": "claude",
-     "note": "Owner: build the automation code yourself. Reassigned from Bhaskar Dev to Claude."
-    }
-   ],
-   "order": 240
-  },
-  {
-   "id": "T-036",
-   "title": "Publish the workshop artifacts and site mirror to GitHub Pages",
-   "area": "Delivery",
-   "owner": "Claude",
-   "priority": "P0",
-   "due": "2026-09-21",
-   "status": "done",
-   "why": "Attendees need a real URL for the playbook, survey, and deck. Everything is localhost today.",
-   "spec": "Playbook, survey, and daily outputs are served by serve.py locally. For attendees to reach them during a session the machine needs a temporary public tunnel (Cloudflare Tunnel, already used for GrowthClub OS). Recipe and start script in the runbook; no permanent hosting.",
-   "done_when": [
-    "tunnel script starts and prints the public URL",
-    "all four probes pass through the tunnel URL"
-   ],
-   "evidence": [
-    {
-     "label": "Live hub",
-     "url": "https://adisuja.github.io/tantra-workshop-live/"
+      "id": "T-027",
+      "title": "Port #revops and #whyfunnel intro sections into the deck",
+      "area": "Content",
+      "owner": "Claude",
+      "priority": "P2",
+      "due": "",
+      "status": "queue",
+      "why": "Not requested. The owner scoped these sections to the playbook only. Parked until asked.",
+      "spec": "Would add ~12 slides before Day 1.",
+      "done_when": [
+        "Owner asks for it"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "Only if you want it.",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 190
     },
     {
-     "label": "Live playbook",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html"
+      "id": "T-030",
+      "title": "Local intake service: registrations, survey answers, payments (no n8n)",
+      "area": "Delivery",
+      "owner": "Claude",
+      "priority": "P0",
+      "due": "2026-09-20",
+      "status": "next",
+      "why": "Owner decision: no n8n anywhere. Every automation is code I build and run here. Today the landing page posts leads to n8n, the survey posts nowhere, and the webhook route falls back to n8n for fulfilment.",
+      "spec": "A small local service (Python, SQLite, served next to serve.py or as its own port) with POST /api/register, POST /api/survey/{day}, and a payments reconciler that polls Dodo's API for this product ID every minute and marks attendees paid. The Next app and survey.html post to it instead of n8n. CSV export for the Work Tracker. The same reconciler code becomes the webhook handler after launch.",
+      "done_when": [
+        "A registration from /masterclass lands in the SQLite DB",
+        "A survey.html submission lands with day + persona + answers",
+        "A Dodo payment for the product ID is reconciled to the registrant within 60 s",
+        "n8n URL removed from the app",
+        "CSV export works"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-18T20:42:47+0530",
+          "who": "claude",
+          "note": "Rewritten: owner rejected n8n; Claude builds and runs the automation."
+        }
+      ],
+      "order": 200
     },
     {
-     "label": "Live deck",
-     "url": "https://adisuja.github.io/tantra-workshop-live/deck.html"
+      "id": "T-031",
+      "title": "Claude Code agentic output pipeline",
+      "area": "Delivery",
+      "owner": "Claude",
+      "priority": "P0",
+      "due": "2026-09-21",
+      "status": "queue",
+      "why": "Turns each day's answers into a personalized output. The core of the delivery engine.",
+      "spec": "Reads the day's rows → fills the day's template (T-024) → renders PDF + live link. I draft the prompts, the per-day spec, and a runnable reference implementation; Bhaskar Dev productionizes.",
+      "done_when": [
+        "Runs end to end for one real survey submission",
+        "Output matches the template for that day"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-18T20:42:47+0530",
+          "who": "claude",
+          "note": "Owner: build the automation code yourself. Reassigned from Bhaskar Dev to Claude."
+        }
+      ],
+      "order": 210
     },
     {
-     "label": "Live survey",
-     "url": "https://adisuja.github.io/tantra-workshop-live/survey.html"
+      "id": "T-032",
+      "title": "PDF + live-link generation",
+      "area": "Delivery",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-21",
+      "status": "queue",
+      "why": "Attendees get a downloadable PDF and a link, same day.",
+      "spec": "Render the filled template HTML to PDF (Playwright print) and host the HTML at a per-attendee link.",
+      "done_when": [
+        "One PDF and one link produced from a test row"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-18T20:42:47+0530",
+          "who": "claude",
+          "note": "Owner: build the automation code yourself. Reassigned from Bhaskar Dev to Claude."
+        }
+      ],
+      "order": 220
     },
     {
-     "label": "Live site mirror",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/"
-    }
-   ],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-033",
+      "title": "WhatsApp + email delivery automation",
+      "area": "Delivery",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-22",
+      "status": "queue",
+      "why": "Same-day delivery before the next session is what makes the loop feel magical.",
+      "spec": "Push each attendee's PDF + link via WhatsApp and email; reminders for the next session.",
+      "done_when": [
+        "Test attendee receives both within minutes of the pipeline run"
+      ],
+      "evidence": [],
+      "blockers": [
+        "Email sending needs an SMTP or provider credential",
+        "WhatsApp sending needs a WhatsApp Business API credential"
+      ],
+      "needs_from_owner": "When we get there: an SMTP login (or provider API key) and, if WhatsApp delivery is wanted, the WhatsApp Business API access. Until then outputs queue locally.",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-18T20:42:47+0530",
+          "who": "claude",
+          "note": "Owner: build the automation code yourself. Reassigned from Bhaskar Dev to Claude."
+        }
+      ],
+      "order": 230
     },
     {
-     "ts": "2026-09-18T20:42:47+0530",
-     "who": "claude",
-     "note": "Owner chose local-only; hosting question closed."
+      "id": "T-034",
+      "title": "Full dry run of the Day-1 pipeline",
+      "area": "Delivery",
+      "owner": "Claude",
+      "priority": "P0",
+      "due": "2026-09-22",
+      "status": "queue",
+      "why": "First live session is Sep 24. A failed loop on Day 1 kills the retention thesis.",
+      "spec": "Survey → sheet → pipeline → PDF + link → WhatsApp + email, end to end, with three test personas.",
+      "done_when": [
+        "Three personas processed with no manual step",
+        "Timing recorded"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-18T20:42:47+0530",
+          "who": "claude",
+          "note": "Owner: build the automation code yourself. Reassigned from Bhaskar Dev to Claude."
+        }
+      ],
+      "order": 240
     },
     {
-     "ts": "2026-09-21T12:42:15+0530",
-     "who": "claude",
-     "note": "Owner asked for free GitHub-hosted links (Sep 21). Public repo adisuja/tantra-workshop-live on GitHub Pages: 4 artifacts + Launch Control mirror (read-only) + static export of the Next site under /site (checkout, registration, auth excluded — those need the local server). Sweep: 11 URLs, 0 JS errors, 0 broken images."
-    }
-   ],
-   "order": 250
-  },
-  {
-   "id": "T-040",
-   "title": "Create the WhatsApp community + announcement group",
-   "area": "Ops",
-   "owner": "Aquila",
-   "priority": "P0",
-   "due": "2026-09-20",
-   "status": "queue",
-   "why": "The community is the retention surface and the thank-you page's destination.",
-   "spec": "One chat group + one read-only announcement group, mirrored from Fintech Circle.",
-   "done_when": [
-    "Both groups exist",
-    "Invite link pasted into T-003"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 260
-  },
-  {
-   "id": "T-041",
-   "title": "Add admins to both WhatsApp groups",
-   "area": "Ops",
-   "owner": "Aquila",
-   "priority": "P1",
-   "due": "2026-09-20",
-   "status": "queue",
-   "why": "Moderation from day one.",
-   "spec": "Aquila, Bhaskar, Adi, Amal, Vaibhavi.",
-   "done_when": [
-    "All five are admins in both groups"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 270
-  },
-  {
-   "id": "T-042",
-   "title": "Schedule the 5 Zoom sessions",
-   "area": "Ops",
-   "owner": "Aquila",
-   "priority": "P0",
-   "due": "2026-09-20",
-   "status": "queue",
-   "why": "Seats need a link. Day 1 is Thu Sep 24, 11:00 AM ET.",
-   "spec": "Thu 24 · Fri 25 · Mon 28, all 11:00 AM ET. Participants muted, video disabled. Registration link pasted into T-003.",
-   "done_when": [
-    "Five sessions on the calendar",
-    "Permissions set",
-    "Link in T-003"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 280
-  },
-  {
-   "id": "T-050",
-   "title": "Draft the pre-workshop nurture sequence",
-   "area": "Traffic",
-   "owner": "Claude",
-   "priority": "P1",
-   "due": "2026-09-20",
-   "status": "queue",
-   "why": "Registrants go cold between registration and Day 1. The sequence keeps show-up rate high and sells the Build Pass.",
-   "spec": "Email + WhatsApp, registration → Day 1: confirmation, what-to-prepare, Build Pass upgrade, day-before reminder, 1-hour reminder. Live Pass / Build Pass language only.",
-   "done_when": [
-    "Sequence drafted in workshop-plan/sequences/pre.md",
-    "Owner approves"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 290
-  },
-  {
-   "id": "T-051",
-   "title": "Draft the post-workshop nurture sequence",
-   "area": "Traffic",
-   "owner": "Claude",
-   "priority": "P1",
-   "due": "2026-09-22",
-   "status": "queue",
-   "why": "The Tantra Pro pitch continues after Day 3 and retention starts here.",
-   "spec": "Email + WhatsApp, Day 3 → +14 days: recordings, Pro offer, Chaperone invite, retention nudges into the Tantra Plan.",
-   "done_when": [
-    "Sequence drafted in workshop-plan/sequences/post.md",
-    "Owner approves"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-036",
+      "title": "Publish the workshop artifacts and site mirror to GitHub Pages",
+      "area": "Delivery",
+      "owner": "Claude",
+      "priority": "P0",
+      "due": "2026-09-21",
+      "status": "done",
+      "why": "Attendees need a real URL for the playbook, survey, and deck. Everything is localhost today.",
+      "spec": "Playbook, survey, and daily outputs are served by serve.py locally. For attendees to reach them during a session the machine needs a temporary public tunnel (Cloudflare Tunnel, already used for GrowthClub OS). Recipe and start script in the runbook; no permanent hosting.",
+      "done_when": [
+        "tunnel script starts and prints the public URL",
+        "all four probes pass through the tunnel URL"
+      ],
+      "evidence": [
+        {
+          "label": "Live hub",
+          "url": "https://adisuja.github.io/tantra-workshop-live/"
+        },
+        {
+          "label": "Live playbook",
+          "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html"
+        },
+        {
+          "label": "Live deck",
+          "url": "https://adisuja.github.io/tantra-workshop-live/deck.html"
+        },
+        {
+          "label": "Live survey",
+          "url": "https://adisuja.github.io/tantra-workshop-live/survey.html"
+        },
+        {
+          "label": "Live site mirror",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/"
+        }
+      ],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-18T20:42:47+0530",
+          "who": "claude",
+          "note": "Owner chose local-only; hosting question closed."
+        },
+        {
+          "ts": "2026-09-21T12:42:15+0530",
+          "who": "claude",
+          "note": "Owner asked for free GitHub-hosted links (Sep 21). Public repo adisuja/tantra-workshop-live on GitHub Pages: 4 artifacts + Launch Control mirror (read-only) + static export of the Next site under /site (checkout, registration, auth excluded — those need the local server). Sweep: 11 URLs, 0 JS errors, 0 broken images."
+        }
+      ],
+      "order": 250
     },
     {
-     "ts": "2026-09-21T22:35:55+0530",
-     "who": "claude",
-     "note": "Day references remapped for the 3-day structure."
-    }
-   ],
-   "order": 300
-  },
-  {
-   "id": "T-052",
-   "title": "Set up both sequences in tooling",
-   "area": "Traffic",
-   "owner": "Bhaskar",
-   "priority": "P1",
-   "due": "2026-09-22",
-   "status": "queue",
-   "why": "Drafts don't send themselves.",
-   "spec": "Load T-050 and T-051 into the email/WhatsApp tooling with triggers.",
-   "done_when": [
-    "Test contact receives the full pre sequence"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 310
-  },
-  {
-   "id": "T-053",
-   "title": "LinkedIn content: 5 posts/day/team member",
-   "area": "Traffic",
-   "owner": "Claude",
-   "priority": "P1",
-   "due": "2026-09-20",
-   "status": "blocked",
-   "why": "The organic lane is the zero-cost traffic source.",
-   "spec": "Generate via Claude Code from the content-taxonomy sheet; every link UTM-tagged.",
-   "done_when": [
-    "First 5 days of posts drafted per member",
-    "Owner approves voice"
-   ],
-   "evidence": [],
-   "blockers": [
-    "Content-taxonomy sheet is in Google (no auth)"
-   ],
-   "needs_from_owner": "Export the taxonomy sheet as CSV into workshop-plan/sources/ or grant Google access.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 320
-  },
-  {
-   "id": "T-054",
-   "title": "Verify UTM tracking end to end",
-   "area": "Traffic",
-   "owner": "Nelbin",
-   "priority": "P1",
-   "due": "2026-09-20",
-   "status": "queue",
-   "why": "Attribution per channel and per team member.",
-   "spec": "Nelbin's UTM system on every post and link → Work Tracker.",
-   "done_when": [
-    "Test click from each channel attributed correctly"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 330
-  },
-  {
-   "id": "T-055",
-   "title": "Confirm the team referral incentive terms",
-   "area": "Traffic",
-   "owner": "Adi",
-   "priority": "P2",
-   "due": "2026-09-19",
-   "status": "blocked",
-   "why": "10–15% of revenue from a member's profile traffic was floated; exact terms unconfirmed.",
-   "spec": "Confirm with Nelbin.",
-   "done_when": [
-    "Terms written down"
-   ],
-   "evidence": [],
-   "blockers": [
-    "Owner + Nelbin decision"
-   ],
-   "needs_from_owner": "What is the exact percentage and basis?",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 340
-  },
-  {
-   "id": "T-056",
-   "title": "Cold-calendar lists (reuse or Sales Nav + Expandi)",
-   "area": "Traffic",
-   "owner": "Adi",
-   "priority": "P2",
-   "due": "2026-09-21",
-   "status": "queue",
-   "why": "Second organic lane.",
-   "spec": "Reuse client lists with by-person overlap; otherwise Sales Navigator + Expandi scrape.",
-   "done_when": [
-    "List loaded into the outreach tool"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 350
-  },
-  {
-   "id": "T-057",
-   "title": "Confirm Tantra LinkedIn app readiness for outreach",
-   "area": "Product",
-   "owner": "Bharath",
-   "priority": "P1",
-   "due": "2026-09-19",
-   "status": "queue",
-   "why": "The outreach lane runs through the product itself. If it isn't ready, the lane needs a fallback.",
-   "spec": "Bharath confirms campaigns can launch; if not, fallback is Expandi.",
-   "done_when": [
-    "Yes/no recorded, fallback chosen if no"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 360
-  },
-  {
-   "id": "T-058",
-   "title": "Connect team profiles + launch outreach",
-   "area": "Traffic",
-   "owner": "Bhaskar Dev",
-   "priority": "P1",
-   "due": "2026-09-21",
-   "status": "queue",
-   "why": "Depends on T-057.",
-   "spec": "Connect all team profiles via Tantra, launch campaigns.",
-   "done_when": [
-    "Campaigns running"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 370
-  },
-  {
-   "id": "T-059",
-   "title": "AI personalization for outreach (BigHammer-style)",
-   "area": "Traffic",
-   "owner": "Bhaskar Dev",
-   "priority": "P2",
-   "due": "2026-09-22",
-   "status": "queue",
-   "why": "Higher reply rate on the outreach lane.",
-   "spec": "Personalize first lines from profile + company context.",
-   "done_when": [
-    "Personalized batch sent"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 380
-  },
-  {
-   "id": "T-060",
-   "title": "Record the VSL",
-   "area": "Content",
-   "owner": "Adi",
-   "priority": "P1",
-   "due": "2026-09-19",
-   "status": "blocked",
-   "why": "The success page has a video slot and an approved script but no recording.",
-   "spec": "Record against the approved caption track; I encode, host, and wire VSL_SRC.",
-   "done_when": [
-    "Video plays on /masterclass/success"
-   ],
-   "evidence": [],
-   "blockers": [
-    "Only the host can record it"
-   ],
-   "needs_from_owner": "Record it and drop the file in workshop-plan/sources/, or tell me to ship without video.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 390
-  },
-  {
-   "id": "T-061",
-   "title": "CRM + two funnel workflows (organic / ads)",
-   "area": "Traffic",
-   "owner": "Bhaskar Dev",
-   "priority": "P1",
-   "due": "2026-09-22",
-   "status": "queue",
-   "why": "Two lanes with different economics need separate tracking.",
-   "spec": "Email / WhatsApp / SMS follow-ups tracked; organic path and paid-ads path with unit economics.",
-   "done_when": [
-    "Both workflows live in the CRM"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 400
-  },
-  {
-   "id": "T-062",
-   "title": "Fix GrowthClub OS dashboard speed",
-   "area": "Product",
-   "owner": "Bhaskar Dev",
-   "priority": "P2",
-   "due": "2026-09-24",
-   "status": "queue",
-   "why": "Shown live on Day 3.",
-   "spec": "Cloudflare tunnel is slow.",
-   "done_when": [
-    "Dashboard loads in under 3 s"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-040",
+      "title": "Create the WhatsApp community + announcement group",
+      "area": "Ops",
+      "owner": "Aquila",
+      "priority": "P0",
+      "due": "2026-09-20",
+      "status": "queue",
+      "why": "The community is the retention surface and the thank-you page's destination.",
+      "spec": "One chat group + one read-only announcement group, mirrored from Fintech Circle.",
+      "done_when": [
+        "Both groups exist",
+        "Invite link pasted into T-003"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 260
     },
     {
-     "ts": "2026-09-21T22:35:55+0530",
-     "who": "claude",
-     "note": "Day references remapped for the 3-day structure."
-    }
-   ],
-   "order": 410
-  },
-  {
-   "id": "T-070",
-   "title": "What happens in the Tantra backend when a Build Pass is bought",
-   "area": "Product",
-   "owner": "Bharath",
-   "priority": "P0",
-   "due": "2026-09-20",
-   "status": "blocked",
-   "why": "The Build Pass promises 1 month of the platform. Fulfilment is delegated to api.usetantra.com's Dodo webhook. Nobody has confirmed it provisions the plan for this product ID.",
-   "spec": "Dodo has one live webhook: https://api.usetantra.com/api/v1/webhooks/dodo/prod (registered Aug 18, all payment events). Every Build Pass payment is delivered there and nowhere else. That handler was written for Tantra app plans and has never seen product pdt_0NnpA6EIxXvDvS1F03N8Z. Need to know: does it ignore it, error, or create a plan? And can it grant the promised 1-month Tantra Plan, or do we provision that ourselves from the local attendee list?",
-   "done_when": [
-    "A test purchase (after key rotation) results in a 1-month plan on a test account"
-   ],
-   "evidence": [],
-   "blockers": [
-    "Needs backend confirmation from Bharath"
-   ],
-   "needs_from_owner": "Get Bharath to answer, or give me read access to that handler's code.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 420
-  },
-  {
-   "id": "T-071",
-   "title": "Tantra Pro ($999) offer page + checkout",
-   "area": "Product",
-   "owner": "Claude",
-   "priority": "P1",
-   "due": "2026-09-23",
-   "status": "queue",
-   "why": "Pitched every day from Day 1. There is a /pro page but no way to buy.",
-   "spec": "Align /pro copy with the offer (course + community + group coaching), add a Dodo product via dodo-setup.mjs with USD 999 / EUR 997 / INR 99,999, hosted checkout like the Build Pass.",
-   "done_when": [
-    "/pro sells and checks out",
-    "Prices per currency confirmed by owner"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "Confirm Pro inclusions and prices.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 430
-  },
-  {
-   "id": "T-072",
-   "title": "Tantra Chaperone ($9,999) offer page",
-   "area": "Product",
-   "owner": "Claude",
-   "priority": "P2",
-   "due": "2026-09-29",
-   "status": "queue",
-   "why": "Pitched at the close on Day 3.",
-   "spec": "10-year app access + 3 months 1:1 + course/community/coaching. Application or call-booking CTA rather than instant checkout.",
-   "done_when": [
-    "Page live",
-    "CTA path decided"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "Instant checkout or apply-and-call?",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-041",
+      "title": "Add admins to both WhatsApp groups",
+      "area": "Ops",
+      "owner": "Aquila",
+      "priority": "P1",
+      "due": "2026-09-20",
+      "status": "queue",
+      "why": "Moderation from day one.",
+      "spec": "Aquila, Bhaskar, Adi, Amal, Vaibhavi.",
+      "done_when": [
+        "All five are admins in both groups"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 270
     },
     {
-     "ts": "2026-09-21T22:35:55+0530",
-     "who": "claude",
-     "note": "Day references remapped for the 3-day structure."
-    }
-   ],
-   "order": 440
-  },
-  {
-   "id": "T-073",
-   "title": "Cut session recordings into the Tantra Pro course",
-   "area": "Product",
-   "owner": "Adi",
-   "priority": "P2",
-   "due": "2026-10-07",
-   "status": "queue",
-   "why": "The recordings ARE the course. This is the crux of the upsell.",
-   "spec": "After each session, cut and upload to the course home.",
-   "done_when": [
-    "Five modules published"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 450
-  },
-  {
-   "id": "T-074",
-   "title": "Weekly coaching calls + community moderation cadence",
-   "area": "Product",
-   "owner": "Adi",
-   "priority": "P2",
-   "due": "2026-10-07",
-   "status": "queue",
-   "why": "Retention → MRR.",
-   "spec": "Weekly call, moderation rota, newsletter from the weekly content call.",
-   "done_when": [
-    "Calendar and rota set"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 460
-  },
-  {
-   "id": "T-080",
-   "title": "Launch Control: task system with per-task feedback",
-   "area": "Infra",
-   "owner": "Claude",
-   "priority": "P0",
-   "due": "2026-09-18",
-   "status": "review",
-   "why": "Owner asked for one structured surface: every task, status, next-up, blockers, review requests, and feedback per task that Claude consumes.",
-   "spec": "tasks.json (source of truth) + tasks.html on :8899 + POST /api/inbox in serve.py. Owner actions: approve / request changes / add context / answer blocker / reprioritize / new task. Claude processes the inbox each pass and updates the board.",
-   "done_when": [
-    "Board loads and is probe-clean at 4 widths",
-    "A feedback submission lands in tasks/inbox.jsonl",
-    "Owner uses it"
-   ],
-   "evidence": [
-    {
-     "label": "Launch Control",
-     "url": "http://localhost:8899/tasks.html"
-    }
-   ],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-042",
+      "title": "Schedule the 5 Zoom sessions",
+      "area": "Ops",
+      "owner": "Aquila",
+      "priority": "P0",
+      "due": "2026-09-20",
+      "status": "queue",
+      "why": "Seats need a link. Day 1 is Thu Sep 24, 11:00 AM ET.",
+      "spec": "Thu 24 · Fri 25 · Mon 28, all 11:00 AM ET. Participants muted, video disabled. Registration link pasted into T-003.",
+      "done_when": [
+        "Five sessions on the calendar",
+        "Permissions set",
+        "Link in T-003"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 280
     },
     {
-     "ts": "2026-09-18T20:28:39+0530",
-     "who": "claude",
-     "note": "Board live at /tasks.html. probe-tasks.mjs clean at 4 widths; feedback POST round-trips to inbox.jsonl; light and dark eyeballed."
+      "id": "T-050",
+      "title": "Draft the pre-workshop nurture sequence",
+      "area": "Traffic",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-20",
+      "status": "queue",
+      "why": "Registrants go cold between registration and Day 1. The sequence keeps show-up rate high and sells the Build Pass.",
+      "spec": "Email + WhatsApp, registration → Day 1: confirmation, what-to-prepare, Build Pass upgrade, day-before reminder, 1-hour reminder. Live Pass / Build Pass language only.",
+      "done_when": [
+        "Sequence drafted in workshop-plan/sequences/pre.md",
+        "Owner approves"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 290
     },
     {
-     "ts": "2026-09-18T20:45:11+0530",
-     "who": "claude",
-     "note": "Attachments added: up to 10 files per note via Attach button, paste, or drag-drop; stored under tasks/uploads/<task>/; thumbnails in the thread; probe covers upload, serving, 11-file rejection."
-    }
-   ],
-   "order": 470
-  },
-  {
-   "id": "T-081",
-   "title": "Add funnel tabs to the Consolidated Funnel Doc + Work Tracker",
-   "area": "Infra",
-   "owner": "Adi",
-   "priority": "P2",
-   "due": "2026-09-22",
-   "status": "blocked",
-   "why": "Team-facing project setup.",
-   "spec": "Needs the Google connector.",
-   "done_when": [
-    "Tabs exist"
-   ],
-   "evidence": [],
-   "blockers": [
-    "Google connector auth"
-   ],
-   "needs_from_owner": "Authorize Google in claude.ai connectors, or do this by hand.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 480
-  },
-  {
-   "id": "T-082",
-   "title": "Master Tantra logo from Canva",
-   "area": "Content",
-   "owner": "Adi",
-   "priority": "P2",
-   "due": "2026-09-20",
-   "status": "blocked",
-   "why": "Current marks were reconstructed from two PNGs. Fine at 192px, not a master.",
-   "spec": "Canva link is unreachable.",
-   "done_when": [
-    "Vector or 1024px marks in workshop-plan/brand/"
-   ],
-   "evidence": [],
-   "blockers": [
-    "Canva link unreachable"
-   ],
-   "needs_from_owner": "Export the logo from Canva as SVG or PNG and drop it in workshop-plan/brand/.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 490
-  },
-  {
-   "id": "T-084",
-   "title": "Restore staging.usetantra.com / usetantra.com hosting",
-   "area": "Infra",
-   "owner": "Adi",
-   "priority": "P0",
-   "due": "2026-09-20",
-   "status": "dropped",
-   "why": "Blocks production deploy (T-006), the 109 exhibit pages (T-026), and Dodo webhook registration.",
-   "spec": "The staging box is down. Either bring it back or pick a new host; I will redeploy.",
-   "done_when": [
-    "Both hosts respond"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+      "id": "T-051",
+      "title": "Draft the post-workshop nurture sequence",
+      "area": "Traffic",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-22",
+      "status": "queue",
+      "why": "The Tantra Pro pitch continues after Day 3 and retention starts here.",
+      "spec": "Email + WhatsApp, Day 3 → +14 days: recordings, Pro offer, Chaperone invite, retention nudges into the Tantra Plan.",
+      "done_when": [
+        "Sequence drafted in workshop-plan/sequences/post.md",
+        "Owner approves"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-21T22:35:55+0530",
+          "who": "claude",
+          "note": "Day references remapped for the 3-day structure."
+        }
+      ],
+      "order": 300
     },
     {
-     "ts": "2026-09-18T20:42:47+0530",
-     "who": "claude",
-     "note": "Owner decision: everything runs locally for the far foreseeable future. Also corrected the record: usetantra.com and api.usetantra.com return 200 as of Sep 18 20:40; only staging is down."
-    }
-   ],
-   "order": 500
-  },
-  {
-   "id": "T-083",
-   "title": "3 pre-existing lint errors (parked by decision)",
-   "area": "Infra",
-   "owner": "Claude",
-   "priority": "P2",
-   "due": "",
-   "status": "queue",
-   "why": "animated-shot.tsx, replicas.tsx, useUpcomingBroadcast.ts. Flagged, left alone on purpose.",
-   "spec": "Fix only if asked.",
-   "done_when": [
-    "Owner asks"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    }
-   ],
-   "order": 510
-  },
-  {
-   "id": "T-085",
-   "title": "Decide the workshop length: 5 days or 3 days",
-   "area": "Content",
-   "owner": "Adi",
-   "priority": "P0",
-   "due": "2026-09-19",
-   "status": "done",
-   "why": "Every artifact, date, price page and template was built for five days. The repo name said '3 day'. Resolving it decided whether the deck, playbook, survey, landing pages and output templates had to be re-cut.",
-   "spec": "Owner answered on 21 Sep: convert to 'The 3-Day AI RevOps Workshop' in all artifacts and documentation.",
-   "done_when": [
-    "Owner answered",
-    "The fold is applied across every artifact and verified"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T20:42:47+0530",
-     "who": "claude",
-     "note": "Added from owner decisions 2026-09-18."
+      "id": "T-052",
+      "title": "Set up both sequences in tooling",
+      "area": "Traffic",
+      "owner": "Bhaskar",
+      "priority": "P1",
+      "due": "2026-09-22",
+      "status": "queue",
+      "why": "Drafts don't send themselves.",
+      "spec": "Load T-050 and T-051 into the email/WhatsApp tooling with triggers.",
+      "done_when": [
+        "Test contact receives the full pre sequence"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 310
     },
     {
-     "ts": "2026-09-21T22:39:41+0530",
-     "who": "claude",
-     "note": "Owner answered 21 Sep: convert to The 3-Day AI RevOps Workshop. Folded old day 1+2 → Day 1, old 3 → Day 2, old 4+5 → Day 3; dates Thu 24, Fri 25, Mon 28 Sep. Nothing cut."
+      "id": "T-053",
+      "title": "LinkedIn content: 5 posts/day/team member",
+      "area": "Traffic",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-20",
+      "status": "blocked",
+      "why": "The organic lane is the zero-cost traffic source.",
+      "spec": "Generate via Claude Code from the content-taxonomy sheet; every link UTM-tagged.",
+      "done_when": [
+        "First 5 days of posts drafted per member",
+        "Owner approves voice"
+      ],
+      "evidence": [],
+      "blockers": [
+        "Content-taxonomy sheet is in Google (no auth)"
+      ],
+      "needs_from_owner": "Export the taxonomy sheet as CSV into workshop-plan/sources/ or grant Google access.",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 320
+    },
+    {
+      "id": "T-054",
+      "title": "Verify UTM tracking end to end",
+      "area": "Traffic",
+      "owner": "Nelbin",
+      "priority": "P1",
+      "due": "2026-09-20",
+      "status": "queue",
+      "why": "Attribution per channel and per team member.",
+      "spec": "Nelbin's UTM system on every post and link → Work Tracker.",
+      "done_when": [
+        "Test click from each channel attributed correctly"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 330
+    },
+    {
+      "id": "T-055",
+      "title": "Confirm the team referral incentive terms",
+      "area": "Traffic",
+      "owner": "Adi",
+      "priority": "P2",
+      "due": "2026-09-19",
+      "status": "blocked",
+      "why": "10–15% of revenue from a member's profile traffic was floated; exact terms unconfirmed.",
+      "spec": "Confirm with Nelbin.",
+      "done_when": [
+        "Terms written down"
+      ],
+      "evidence": [],
+      "blockers": [
+        "Owner + Nelbin decision"
+      ],
+      "needs_from_owner": "What is the exact percentage and basis?",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 340
+    },
+    {
+      "id": "T-056",
+      "title": "Cold-calendar lists (reuse or Sales Nav + Expandi)",
+      "area": "Traffic",
+      "owner": "Adi",
+      "priority": "P2",
+      "due": "2026-09-21",
+      "status": "queue",
+      "why": "Second organic lane.",
+      "spec": "Reuse client lists with by-person overlap; otherwise Sales Navigator + Expandi scrape.",
+      "done_when": [
+        "List loaded into the outreach tool"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 350
+    },
+    {
+      "id": "T-057",
+      "title": "Confirm Tantra LinkedIn app readiness for outreach",
+      "area": "Product",
+      "owner": "Bharath",
+      "priority": "P1",
+      "due": "2026-09-19",
+      "status": "queue",
+      "why": "The outreach lane runs through the product itself. If it isn't ready, the lane needs a fallback.",
+      "spec": "Bharath confirms campaigns can launch; if not, fallback is Expandi.",
+      "done_when": [
+        "Yes/no recorded, fallback chosen if no"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 360
+    },
+    {
+      "id": "T-058",
+      "title": "Connect team profiles + launch outreach",
+      "area": "Traffic",
+      "owner": "Bhaskar Dev",
+      "priority": "P1",
+      "due": "2026-09-21",
+      "status": "queue",
+      "why": "Depends on T-057.",
+      "spec": "Connect all team profiles via Tantra, launch campaigns.",
+      "done_when": [
+        "Campaigns running"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 370
+    },
+    {
+      "id": "T-059",
+      "title": "AI personalization for outreach (BigHammer-style)",
+      "area": "Traffic",
+      "owner": "Bhaskar Dev",
+      "priority": "P2",
+      "due": "2026-09-22",
+      "status": "queue",
+      "why": "Higher reply rate on the outreach lane.",
+      "spec": "Personalize first lines from profile + company context.",
+      "done_when": [
+        "Personalized batch sent"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 380
+    },
+    {
+      "id": "T-060",
+      "title": "Record the VSL",
+      "area": "Content",
+      "owner": "Adi",
+      "priority": "P1",
+      "due": "2026-09-19",
+      "status": "blocked",
+      "why": "The success page has a video slot and an approved script but no recording.",
+      "spec": "Record against the approved caption track; I encode, host, and wire VSL_SRC.",
+      "done_when": [
+        "Video plays on /masterclass/success"
+      ],
+      "evidence": [],
+      "blockers": [
+        "Only the host can record it"
+      ],
+      "needs_from_owner": "Record it and drop the file in workshop-plan/sources/, or tell me to ship without video.",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 390
+    },
+    {
+      "id": "T-061",
+      "title": "CRM + two funnel workflows (organic / ads)",
+      "area": "Traffic",
+      "owner": "Bhaskar Dev",
+      "priority": "P1",
+      "due": "2026-09-22",
+      "status": "queue",
+      "why": "Two lanes with different economics need separate tracking.",
+      "spec": "Email / WhatsApp / SMS follow-ups tracked; organic path and paid-ads path with unit economics.",
+      "done_when": [
+        "Both workflows live in the CRM"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 400
+    },
+    {
+      "id": "T-062",
+      "title": "Fix GrowthClub OS dashboard speed",
+      "area": "Product",
+      "owner": "Bhaskar Dev",
+      "priority": "P2",
+      "due": "2026-09-24",
+      "status": "queue",
+      "why": "Shown live on Day 3.",
+      "spec": "Cloudflare tunnel is slow.",
+      "done_when": [
+        "Dashboard loads in under 3 s"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-21T22:35:55+0530",
+          "who": "claude",
+          "note": "Day references remapped for the 3-day structure."
+        }
+      ],
+      "order": 410
+    },
+    {
+      "id": "T-070",
+      "title": "What happens in the Tantra backend when a Build Pass is bought",
+      "area": "Product",
+      "owner": "Bharath",
+      "priority": "P0",
+      "due": "2026-09-20",
+      "status": "blocked",
+      "why": "The Build Pass promises 1 month of the platform. Fulfilment is delegated to api.usetantra.com's Dodo webhook. Nobody has confirmed it provisions the plan for this product ID.",
+      "spec": "Dodo has one live webhook: https://api.usetantra.com/api/v1/webhooks/dodo/prod (registered Aug 18, all payment events). Every Build Pass payment is delivered there and nowhere else. That handler was written for Tantra app plans and has never seen product pdt_0NnpA6EIxXvDvS1F03N8Z. Need to know: does it ignore it, error, or create a plan? And can it grant the promised 1-month Tantra Plan, or do we provision that ourselves from the local attendee list?",
+      "done_when": [
+        "A test purchase (after key rotation) results in a 1-month plan on a test account"
+      ],
+      "evidence": [],
+      "blockers": [
+        "Needs backend confirmation from Bharath"
+      ],
+      "needs_from_owner": "Get Bharath to answer, or give me read access to that handler's code.",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 420
+    },
+    {
+      "id": "T-071",
+      "title": "Tantra Pro ($999) offer page + checkout",
+      "area": "Product",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-23",
+      "status": "queue",
+      "why": "Pitched every day from Day 1. There is a /pro page but no way to buy.",
+      "spec": "Align /pro copy with the offer (course + community + group coaching), add a Dodo product via dodo-setup.mjs with USD 999 / EUR 997 / INR 99,999, hosted checkout like the Build Pass.",
+      "done_when": [
+        "/pro sells and checks out",
+        "Prices per currency confirmed by owner"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "Confirm Pro inclusions and prices.",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 430
+    },
+    {
+      "id": "T-072",
+      "title": "Tantra Chaperone ($9,999) offer page",
+      "area": "Product",
+      "owner": "Claude",
+      "priority": "P2",
+      "due": "2026-09-29",
+      "status": "queue",
+      "why": "Pitched at the close on Day 3.",
+      "spec": "10-year app access + 3 months 1:1 + course/community/coaching. Application or call-booking CTA rather than instant checkout.",
+      "done_when": [
+        "Page live",
+        "CTA path decided"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "Instant checkout or apply-and-call?",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-21T22:35:55+0530",
+          "who": "claude",
+          "note": "Day references remapped for the 3-day structure."
+        }
+      ],
+      "order": 440
+    },
+    {
+      "id": "T-073",
+      "title": "Cut session recordings into the Tantra Pro course",
+      "area": "Product",
+      "owner": "Adi",
+      "priority": "P2",
+      "due": "2026-10-07",
+      "status": "queue",
+      "why": "The recordings ARE the course. This is the crux of the upsell.",
+      "spec": "After each session, cut and upload to the course home.",
+      "done_when": [
+        "Five modules published"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 450
+    },
+    {
+      "id": "T-074",
+      "title": "Weekly coaching calls + community moderation cadence",
+      "area": "Product",
+      "owner": "Adi",
+      "priority": "P2",
+      "due": "2026-10-07",
+      "status": "queue",
+      "why": "Retention → MRR.",
+      "spec": "Weekly call, moderation rota, newsletter from the weekly content call.",
+      "done_when": [
+        "Calendar and rota set"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 460
+    },
+    {
+      "id": "T-080",
+      "title": "Launch Control: task system with per-task feedback",
+      "area": "Infra",
+      "owner": "Claude",
+      "priority": "P0",
+      "due": "2026-09-18",
+      "status": "review",
+      "why": "Owner asked for one structured surface: every task, status, next-up, blockers, review requests, and feedback per task that Claude consumes.",
+      "spec": "tasks.json (source of truth) + tasks.html on :8899 + POST /api/inbox in serve.py. Owner actions: approve / request changes / add context / answer blocker / reprioritize / new task. Claude processes the inbox each pass and updates the board.",
+      "done_when": [
+        "Board loads and is probe-clean at 4 widths",
+        "A feedback submission lands in tasks/inbox.jsonl",
+        "Owner uses it"
+      ],
+      "evidence": [
+        {
+          "label": "Launch Control",
+          "url": "https://adisuja.github.io/tantra-workshop-live/tasks.html"
+        }
+      ],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-18T20:28:39+0530",
+          "who": "claude",
+          "note": "Board live at /tasks.html. probe-tasks.mjs clean at 4 widths; feedback POST round-trips to inbox.jsonl; light and dark eyeballed."
+        },
+        {
+          "ts": "2026-09-18T20:45:11+0530",
+          "who": "claude",
+          "note": "Attachments added: up to 10 files per note via Attach button, paste, or drag-drop; stored under tasks/uploads/<task>/; thumbnails in the thread; probe covers upload, serving, 11-file rejection."
+        }
+      ],
+      "order": 470
+    },
+    {
+      "id": "T-081",
+      "title": "Add funnel tabs to the Consolidated Funnel Doc + Work Tracker",
+      "area": "Infra",
+      "owner": "Adi",
+      "priority": "P2",
+      "due": "2026-09-22",
+      "status": "blocked",
+      "why": "Team-facing project setup.",
+      "spec": "Needs the Google connector.",
+      "done_when": [
+        "Tabs exist"
+      ],
+      "evidence": [],
+      "blockers": [
+        "Google connector auth"
+      ],
+      "needs_from_owner": "Authorize Google in claude.ai connectors, or do this by hand.",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 480
+    },
+    {
+      "id": "T-082",
+      "title": "Master Tantra logo from Canva",
+      "area": "Content",
+      "owner": "Adi",
+      "priority": "P2",
+      "due": "2026-09-20",
+      "status": "blocked",
+      "why": "Current marks were reconstructed from two PNGs. Fine at 192px, not a master.",
+      "spec": "Canva link is unreachable.",
+      "done_when": [
+        "Vector or 1024px marks in workshop-plan/brand/"
+      ],
+      "evidence": [],
+      "blockers": [
+        "Canva link unreachable"
+      ],
+      "needs_from_owner": "Export the logo from Canva as SVG or PNG and drop it in workshop-plan/brand/.",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 490
+    },
+    {
+      "id": "T-084",
+      "title": "Restore staging.usetantra.com / usetantra.com hosting",
+      "area": "Infra",
+      "owner": "Adi",
+      "priority": "P0",
+      "due": "2026-09-20",
+      "status": "dropped",
+      "why": "Blocks production deploy (T-006), the 109 exhibit pages (T-026), and Dodo webhook registration.",
+      "spec": "The staging box is down. Either bring it back or pick a new host; I will redeploy.",
+      "done_when": [
+        "Both hosts respond"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-18T20:42:47+0530",
+          "who": "claude",
+          "note": "Owner decision: everything runs locally for the far foreseeable future. Also corrected the record: usetantra.com and api.usetantra.com return 200 as of Sep 18 20:40; only staging is down."
+        }
+      ],
+      "order": 500
+    },
+    {
+      "id": "T-083",
+      "title": "3 pre-existing lint errors (parked by decision)",
+      "area": "Infra",
+      "owner": "Claude",
+      "priority": "P2",
+      "due": "",
+      "status": "queue",
+      "why": "animated-shot.tsx, replicas.tsx, useUpcomingBroadcast.ts. Flagged, left alone on purpose.",
+      "spec": "Fix only if asked.",
+      "done_when": [
+        "Owner asks"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T18:00:00-04:00",
+          "who": "claude",
+          "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        }
+      ],
+      "order": 510
+    },
+    {
+      "id": "T-085",
+      "title": "Decide the workshop length: 5 days or 3 days",
+      "area": "Content",
+      "owner": "Adi",
+      "priority": "P0",
+      "due": "2026-09-19",
+      "status": "done",
+      "why": "Every artifact, date, price page and template was built for five days. The repo name said '3 day'. Resolving it decided whether the deck, playbook, survey, landing pages and output templates had to be re-cut.",
+      "spec": "Owner answered on 21 Sep: convert to 'The 3-Day AI RevOps Workshop' in all artifacts and documentation.",
+      "done_when": [
+        "Owner answered",
+        "The fold is applied across every artifact and verified"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T20:42:47+0530",
+          "who": "claude",
+          "note": "Added from owner decisions 2026-09-18."
+        },
+        {
+          "ts": "2026-09-21T22:39:41+0530",
+          "who": "claude",
+          "note": "Owner answered 21 Sep: convert to The 3-Day AI RevOps Workshop. Folded old day 1+2 → Day 1, old 3 → Day 2, old 4+5 → Day 3; dates Thu 24, Fri 25, Mon 28 Sep. Nothing cut."
+        }
+      ],
+      "order": 850
+    },
+    {
+      "id": "T-086",
+      "title": "Create the new git repo and commit everything",
+      "area": "Infra",
+      "owner": "Claude",
+      "priority": "P0",
+      "due": "2026-09-18",
+      "status": "done",
+      "why": "Owner: push to a new repo named '3 day Tantra AI RevOps Workshop' instead of the team repo. Nothing was versioned at the root before.",
+      "spec": "Root repo at tantra-redesign covering workshop-plan/ and app/ as plain files; app's old .git set aside (renamed, not deleted) so its team-repo history is untouched. Private GitHub repo 3-day-tantra-ai-revops-workshop under adisuja. .gitignore for node_modules, .next, .env*, screenshots.",
+      "done_when": [
+        "gh repo view works",
+        "git status clean",
+        "app/.git-tantra-website.bak still present"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T20:42:47+0530",
+          "who": "claude",
+          "note": "Added from owner decisions 2026-09-18."
+        },
+        {
+          "ts": "2026-09-18T20:45:11+0530",
+          "who": "claude",
+          "note": "Repo created: https://github.com/adisuja/3-day-tantra-ai-revops-workshop (private). Root repo, 500 files, app's old .git kept at app/.git-tantra-website.bak."
+        }
+      ],
+      "order": 860
+    },
+    {
+      "id": "T-087",
+      "title": "Remove every n8n dependency from the app",
+      "area": "Funnel",
+      "owner": "Claude",
+      "priority": "P0",
+      "due": "2026-09-22",
+      "status": "queue",
+      "why": "Owner: no n8n, ever. Three code paths in the app still call it.",
+      "spec": "masterclass-client.tsx lead capture, success-client.tsx survey post, and the Dodo webhook route's fulfilment fallback all read NEXT_PUBLIC_LEAD_WEBHOOK_URL. Point all three at the local intake service (T-030).",
+      "done_when": [
+        "grep for n8n.growthclub.org returns nothing",
+        "probe-workshop passes with the intake service stubbed"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-18T20:42:47+0530",
+          "who": "claude",
+          "note": "Added from owner decisions 2026-09-18."
+        },
+        {
+          "ts": "2026-09-21T22:35:40+0530",
+          "who": "claude",
+          "note": "Owner answered 21 Sep: convert to 'The 3-Day AI RevOps Workshop' across all artifacts. Folded 5 days → 3 on 21 Sep (owner decision). Day 1 = strategy + conversion engine, Day 2 = build every element, Day 3 = launch + scale. Dates Thu 24, Fri 25, Mon 28 Sep."
+        },
+        {
+          "ts": "2026-09-21T22:39:17+0530",
+          "who": "claude",
+          "note": "Title and spec rewritten — a blanket 5-day→3-day replace had mangled the question into nonsense."
+        },
+        {
+          "ts": "2026-09-21T22:39:41+0530",
+          "who": "claude",
+          "note": "Restored: a mis-targeted edit briefly overwrote this task with the day-count decision (that is T-085) and marked it done. It was never done — the three n8n call sites are still in the code."
+        }
+      ],
+      "order": 870
+    },
+    {
+      "id": "T-090",
+      "title": "Onboarding centre",
+      "area": "Product",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-23",
+      "status": "review",
+      "why": "Where both lanes land after they register or buy. The delivery surface for the whole workshop.",
+      "spec": "Token link exchanges for an HttpOnly cookie and redirects to a clean URL, so the token never sits in history or a Referer header. Free and paid states from one component, no tier wording anywhere. Progress is resolved server-side so ticks survive a reload and follow the attendee between devices.",
+      "done_when": [
+        "Owner approves the layout and the quick-access row",
+        "Session and slide links pasted in (T-040, T-042)"
+      ],
+      "evidence": [
+        {
+          "label": "Onboarding centre (live)",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/"
+        }
+      ],
+      "blockers": [],
+      "needs_from_owner": "Open the links and reply with changes, or approve.",
+      "log": [
+        {
+          "ts": "2026-09-23",
+          "who": "Claude",
+          "note": "Built and published to the review mirror."
+        }
+      ],
+      "order": 880
+    },
+    {
+      "id": "T-091",
+      "title": "Template library — 54 elements, each rendered",
+      "area": "Content",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-23",
+      "status": "review",
+      "why": "The paid module that carries the offer. A spec nobody can see is not a lead magnet.",
+      "spec": "54 build specs across all six funnel stages, abstracted from 18 client trackers and consolidated documents with every client identity stripped. Each element renders as the artefact itself inside the chrome it lives in: iOS LinkedIn DM, feed post, sponsored unit, mail client, messaging thread, calendar invite, browser frame, 16:9 slide, CRM pipeline, form, working document. 12 chromes, 54/54 rendered. One fictional stand-in throughout so the library reads as a single worked example.",
+      "done_when": [
+        "Owner reviews the rendering quality per stage",
+        "Owner confirms the abstraction is complete enough to ship"
+      ],
+      "evidence": [
+        {
+          "label": "Template library (live)",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/"
+        },
+        {
+          "label": "1. Traffic — 19 elements",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/#profile-branding"
+        },
+        {
+          "label": "2. Landing + registration — 5",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/#framework-backronym"
+        },
+        {
+          "label": "3. Nurture — 5",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/#reminder-sequence"
+        },
+        {
+          "label": "4. Live delivery — 9",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/#session-deck"
+        },
+        {
+          "label": "5. Revenue pipeline — 9",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/#offer-template"
+        },
+        {
+          "label": "6. Post-event growth — 7",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/#newsletter-series"
+        },
+        {
+          "label": "iOS LinkedIn DM rendering",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/#dm-invite-script"
+        },
+        {
+          "label": "Landing page rendering",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/#branded-landing-page"
+        },
+        {
+          "label": "CRM pipeline rendering",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/#lead-routing-schema"
+        }
+      ],
+      "blockers": [],
+      "needs_from_owner": "Open the links and reply with changes, or approve.",
+      "log": [
+        {
+          "ts": "2026-09-23",
+          "who": "Claude",
+          "note": "Built and published to the review mirror."
+        }
+      ],
+      "order": 890
+    },
+    {
+      "id": "T-092",
+      "title": "Light / dark theme with time-based auto",
+      "area": "Product",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-23",
+      "status": "review",
+      "why": "Owner request: a toggle plus an intelligent default based on the visitor's own timezone.",
+      "spec": "Three states: Auto, Light, Dark. Auto resolves from the visitor's local hour, light 06:00 to 17:59 and dark otherwise, and flips live at the boundary without a reload. Resolved by an inline script before first paint so there is no flash of the wrong theme. The OS preference is deliberately ignored because the rule is time-based. Applies to the centre and workshop control; the funnel landing pages stay dark at every theme because that design is conversion-tested.",
+      "done_when": [
+        "Owner approves both themes",
+        "Owner confirms the funnel pages should stay dark"
+      ],
+      "evidence": [
+        {
+          "label": "Centre — toggle in the header",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/"
+        },
+        {
+          "label": "Template library — toggle",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/"
+        }
+      ],
+      "blockers": [],
+      "needs_from_owner": "Open the links and reply with changes, or approve.",
+      "log": [
+        {
+          "ts": "2026-09-23",
+          "who": "Claude",
+          "note": "Built and published to the review mirror."
+        }
+      ],
+      "order": 900
+    },
+    {
+      "id": "T-093",
+      "title": "Free-lane funnel pages",
+      "area": "Funnel",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-23",
+      "status": "review",
+      "why": "The free lane is the net-new funnel: registration, survey, confirmation, then the VIP fork.",
+      "spec": "Separate URLs from the paid lane so the two can be tracked and optimised independently. Registration is signup-only with no pass comparison and no price. Thank-you 1 runs the 18-question intake survey before the community link, because anyone who joins the group first never returns to fill it in. Thank-you 2 carries the confirmation links and then offers the VIP seat once, below them.",
+      "done_when": [
+        "Owner approves copy and order across all three",
+        "Community and session links pasted in"
+      ],
+      "evidence": [
+        {
+          "label": "Free registration",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/"
+        },
+        {
+          "label": "Thank-you 1 — survey",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/success/"
+        },
+        {
+          "label": "Thank-you 2 — the fork",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/"
+        }
+      ],
+      "blockers": [],
+      "needs_from_owner": "Open the links and reply with changes, or approve.",
+      "log": [
+        {
+          "ts": "2026-09-23",
+          "who": "Claude",
+          "note": "Built and published to the review mirror."
+        }
+      ],
+      "order": 910
+    },
+    {
+      "id": "T-094",
+      "title": "VIP offer page",
+      "area": "Funnel",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-23",
+      "status": "review",
+      "why": "The only page in the product that takes money from the free lane.",
+      "spec": "Its own URL and its own offer stack so its conversion reads separately from the paid lane. The only surface that uses the word VIP: the paid lane sells the identical product as the Build Pass, and the centre both lanes land in names no tier at all.",
+      "done_when": [
+        "Owner approves the offer stack and the honest-limits section",
+        "VSL recorded and wired (T-060)"
+      ],
+      "evidence": [
+        {
+          "label": "VIP offer page",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/"
+        },
+        {
+          "label": "Order confirmation",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/success/"
+        }
+      ],
+      "blockers": [
+        "No VSL recording (T-060)"
+      ],
+      "needs_from_owner": "Open the links and reply with changes, or approve.",
+      "log": [
+        {
+          "ts": "2026-09-23",
+          "who": "Claude",
+          "note": "Built and published to the review mirror."
+        }
+      ],
+      "order": 920
+    },
+    {
+      "id": "T-095",
+      "title": "Local intake, access and tracking service",
+      "area": "Infra",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-23",
+      "status": "review",
+      "why": "Replaces the n8n webhooks (T-087) and is what every other surface depends on.",
+      "spec": "Python and SQLite, stdlib only. Registration, surveys, payments, opaque access tokens, cookie sessions, first-party event tracking, admin settings and CSV export. The Next app proxies to it server-side so tokens and the admin key never reach client JavaScript. Verified end to end: register, mint token, exchange for a session, track a lesson, submit a survey, reconcile a payment to a paid entitlement.",
+      "done_when": [
+        "Owner confirms the data model",
+        "Google service account supplied so the Work Tracker mirror can run"
+      ],
+      "evidence": [
+        {
+          "label": "workshop-plan/ops/ops.py",
+          "url": "workshop-plan/ops/ops.py"
+        },
+        {
+          "label": "workshop-plan/ops/schema.sql",
+          "url": "workshop-plan/ops/schema.sql"
+        }
+      ],
+      "blockers": [
+        "No Google service account (the OAuth client supplied cannot do unattended writes)"
+      ],
+      "needs_from_owner": "Create a Google service account and share the Work Tracker with it, then tell me the JSON path.",
+      "log": [
+        {
+          "ts": "2026-09-23",
+          "who": "Claude",
+          "note": "Built and published to the review mirror."
+        }
+      ],
+      "order": 930
+    },
+    {
+      "id": "T-096",
+      "title": "Workshop control (admin)",
+      "area": "Ops",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-23",
+      "status": "review",
+      "why": "Per-attendee access settings during the workshop, without a redeploy.",
+      "spec": "Device cap defaults to 20 and is enforced as a flag rather than a block, because locking someone out mid-session is worse than a shared link. Cap and enforcement are editable globally or per attendee. Day 2 and Day 3 open from here. Local only, gated by the ops admin key; it is deliberately not published to the public mirror.",
+      "done_when": [
+        "Owner walks the table and confirms the controls"
+      ],
+      "evidence": [
+        {
+          "label": "Local only — see the handoff for the unlock command",
+          "url": "workshop-plan/ops/.admin-key"
+        }
+      ],
+      "blockers": [],
+      "needs_from_owner": "Reviewed locally, not on the mirror. Ask me for the unlock link when you want to look.",
+      "log": [
+        {
+          "ts": "2026-09-23",
+          "who": "Claude",
+          "note": "Built and published to the review mirror."
+        }
+      ],
+      "order": 940
+    },
+    {
+      "id": "T-097",
+      "title": "Recover the client artefact archive",
+      "area": "Content",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-23",
+      "status": "review",
+      "why": "All 108 artefact URLs the whiteboard links to were dead; staging is down and T-084 was dropped.",
+      "spec": "112 pages recovered from local sources, 18 broken image paths repaired, every link verified 200, index page built. Served by the app at /library. Deliberately NOT published to the public mirror: these are real client deliverables and the filenames encode client identity.",
+      "done_when": [
+        "Owner confirms the archive stays private",
+        "Owner decides whether to re-host it behind the gate for attendees"
+      ],
+      "evidence": [
+        {
+          "label": "workshop-plan/library/index.html",
+          "url": "workshop-plan/library/index.html"
+        }
+      ],
+      "blockers": [],
+      "needs_from_owner": "Confirm this stays out of anything public. It is client work, not ours to publish.",
+      "log": [
+        {
+          "ts": "2026-09-23",
+          "who": "Claude",
+          "note": "Built and published to the review mirror."
+        }
+      ],
+      "order": 950
+    },
+    {
+      "id": "T-098",
+      "title": "Public review mirror",
+      "area": "Infra",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-23",
+      "status": "review",
+      "why": "Owner rule: nothing is reviewed on localhost. Everything is built locally and published for approval.",
+      "spec": "Static export to a public GitHub Pages repo. The gated pages are swapped for unlocked review variants behind a banner, and the token-exchange and admin route handlers are dropped because there is nothing for them to do in a static build. The export removes the client artefact archive before building so it cannot be republished by accident.",
+      "done_when": [
+        "Owner reviews from the live links only"
+      ],
+      "evidence": [
+        {
+          "label": "Mirror root",
+          "url": "https://adisuja.github.io/tantra-workshop-live/"
+        },
+        {
+          "label": "Site root",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/"
+        },
+        {
+          "label": "Playbook",
+          "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html"
+        },
+        {
+          "label": "Deck",
+          "url": "https://adisuja.github.io/tantra-workshop-live/deck.html"
+        }
+      ],
+      "blockers": [],
+      "needs_from_owner": "Open the links and reply with changes, or approve.",
+      "log": [
+        {
+          "ts": "2026-09-23",
+          "who": "Claude",
+          "note": "Built and published to the review mirror."
+        }
+      ],
+      "order": 960
+    },
+    {
+      "id": "T-099",
+      "title": "Rotate the credentials exposed in the client trackers",
+      "area": "Ops",
+      "owner": "Claude",
+      "priority": "P0",
+      "due": "2026-09-23",
+      "status": "blocked",
+      "why": "Reading all 18 sources surfaced plaintext credentials in essentially every client work tracker. This is systemic: it is in the tracker template, not one careless sheet.",
+      "spec": "Every tracker carries a Logins tab. Beyond that: password columns inside Outreach Domains tabs, shared-file passwords in All Docs and Links, and a Log tab holding raw automation webhook payloads with embedded API key and secret pairs. Several consolidated documents also carry registrar, workspace, cloud and model-provider logins, and one holds account backup codes. Two sources contain registrant names, emails and phone numbers. Nothing was copied anywhere and every extraction agent was instructed to skip those tabs.",
+      "done_when": [
+        "Credentials rotated and moved into the password manager",
+        "Credential tabs removed from the tracker template so new clients don't inherit it",
+        "The webhook Log tab purged, since keys in logs are the easiest to miss"
+      ],
+      "evidence": [],
+      "blockers": [
+        "Owner action — credential rotation cannot be delegated"
+      ],
+      "needs_from_owner": "This one is yours: rotate, move to Bitwarden, and strip the credentials section out of the tracker template.",
+      "log": [
+        {
+          "ts": "2026-09-23",
+          "who": "Claude",
+          "note": "Built and published to the review mirror."
+        }
+      ],
+      "order": 970
     }
-   ],
-   "order": 850
-  },
-  {
-   "id": "T-086",
-   "title": "Create the new git repo and commit everything",
-   "area": "Infra",
-   "owner": "Claude",
-   "priority": "P0",
-   "due": "2026-09-18",
-   "status": "done",
-   "why": "Owner: push to a new repo named '3 day Tantra AI RevOps Workshop' instead of the team repo. Nothing was versioned at the root before.",
-   "spec": "Root repo at tantra-redesign covering workshop-plan/ and app/ as plain files; app's old .git set aside (renamed, not deleted) so its team-repo history is untouched. Private GitHub repo 3-day-tantra-ai-revops-workshop under adisuja. .gitignore for node_modules, .next, .env*, screenshots.",
-   "done_when": [
-    "gh repo view works",
-    "git status clean",
-    "app/.git-tantra-website.bak still present"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T20:42:47+0530",
-     "who": "claude",
-     "note": "Added from owner decisions 2026-09-18."
-    },
-    {
-     "ts": "2026-09-18T20:45:11+0530",
-     "who": "claude",
-     "note": "Repo created: https://github.com/adisuja/3-day-tantra-ai-revops-workshop (private). Root repo, 500 files, app's old .git kept at app/.git-tantra-website.bak."
-    }
-   ],
-   "order": 860
-  },
-  {
-   "id": "T-087",
-   "title": "Remove every n8n dependency from the app",
-   "area": "Funnel",
-   "owner": "Claude",
-   "priority": "P0",
-   "due": "2026-09-22",
-   "status": "queue",
-   "why": "Owner: no n8n, ever. Three code paths in the app still call it.",
-   "spec": "masterclass-client.tsx lead capture, success-client.tsx survey post, and the Dodo webhook route's fulfilment fallback all read NEXT_PUBLIC_LEAD_WEBHOOK_URL. Point all three at the local intake service (T-030).",
-   "done_when": [
-    "grep for n8n.growthclub.org returns nothing",
-    "probe-workshop passes with the intake service stubbed"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T20:42:47+0530",
-     "who": "claude",
-     "note": "Added from owner decisions 2026-09-18."
-    },
-    {
-     "ts": "2026-09-21T22:35:40+0530",
-     "who": "claude",
-     "note": "Owner answered 21 Sep: convert to 'The 3-Day AI RevOps Workshop' across all artifacts. Folded 5 days → 3 on 21 Sep (owner decision). Day 1 = strategy + conversion engine, Day 2 = build every element, Day 3 = launch + scale. Dates Thu 24, Fri 25, Mon 28 Sep."
-    },
-    {
-     "ts": "2026-09-21T22:39:17+0530",
-     "who": "claude",
-     "note": "Title and spec rewritten — a blanket 5-day→3-day replace had mangled the question into nonsense."
-    },
-    {
-     "ts": "2026-09-21T22:39:41+0530",
-     "who": "claude",
-     "note": "Restored: a mis-targeted edit briefly overwrote this task with the day-count decision (that is T-085) and marked it done. It was never done — the three n8n call sites are still in the code."
-    }
-   ],
-   "order": 870
-  }
- ]
+  ]
 }
