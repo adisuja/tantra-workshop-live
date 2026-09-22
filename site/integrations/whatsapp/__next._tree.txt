@@ -1,6 +1,6 @@
 :HL["/tantra-workshop-live/site/_next/static/chunks/0ww24cp7j_3og.css","style"]
-:HL["/tantra-workshop-live/site/_next/static/chunks/3bx_tzwtgclob.css","style"]
+:HL["/tantra-workshop-live/site/_next/static/chunks/11-s-fodjeno3.css","style"]
 :HL["/tantra-workshop-live/site/_next/static/media/75affa71d1e2f6a7-s.p.17-aodiw50953.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/tantra-workshop-live/site/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/tantra-workshop-live/site/assets/integrations/whatsapp.svg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"(site)","param":null,"prefetchHints":4128,"slots":{"children":{"name":"integrations","param":null,"prefetchHints":4160,"slots":{"children":{"name":"slug","param":{"type":"d","key":"whatsapp","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}}}},"staleTime":300,"buildId":"FIISzrHh3H8T3iZp7BAQf"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"(site)","param":null,"prefetchHints":4128,"slots":{"children":{"name":"integrations","param":null,"prefetchHints":4160,"slots":{"children":{"name":"slug","param":{"type":"d","key":"whatsapp","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}}}},"staleTime":300,"buildId":"rZOt0qzRAF271QvVFrrGh"}
