@@ -1,5 +1,5 @@
 :HL["/tantra-workshop-live/site/_next/static/chunks/0ww24cp7j_3og.css","style"]
-:HL["/tantra-workshop-live/site/_next/static/chunks/3hsz_qyp3dtg3.css","style"]
+:HL["/tantra-workshop-live/site/_next/static/chunks/0005czek9nw0-.css","style"]
 :HL["/tantra-workshop-live/site/_next/static/media/75affa71d1e2f6a7-s.p.17-aodiw50953.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/tantra-workshop-live/site/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"(site)","param":null,"prefetchHints":4128,"slots":{"children":{"name":"inbox","param":null,"prefetchHints":4160,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"yZKeND91nUkgg86_YPR7s"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"(site)","param":null,"prefetchHints":4096,"slots":{"children":{"name":"inbox","param":null,"prefetchHints":4160,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"9wiz9lhEmb1SFOvPf1H6E"}
