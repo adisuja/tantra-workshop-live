@@ -1,5 +1,5 @@
 :HL["/tantra-workshop-live/site/_next/static/chunks/0ww24cp7j_3og.css","style"]
-:HL["/tantra-workshop-live/site/_next/static/chunks/1ovuuujvl_z_7.css","style"]
+:HL["/tantra-workshop-live/site/_next/static/chunks/0l9dni9f867-f.css","style"]
 :HL["/tantra-workshop-live/site/_next/static/media/75affa71d1e2f6a7-s.p.17-aodiw50953.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/tantra-workshop-live/site/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/tantra-workshop-live/site/blog/why-we-dont-track-email-opens/cover.webp","image"]
@@ -9,4 +9,4 @@
 :HL["/tantra-workshop-live/site/blog/gmail-primary-inbox-cold-outreach-2026/cover.webp","image"]
 :HL["/tantra-workshop-live/site/blog/outreach-kpis-beyond-open-rates/cover.webp","image"]
 :HL["/tantra-workshop-live/site/blog/cold-google-calendar-outreach-2026-limits-warmup/cover.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"(site)","param":null,"prefetchHints":4128,"slots":{"children":{"name":"blog","param":null,"prefetchHints":4160,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"FRbU31oMEabcrttMYQsRU"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"(site)","param":null,"prefetchHints":4128,"slots":{"children":{"name":"blog","param":null,"prefetchHints":4160,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"GT0z4gvEEwR-0j29xj-dj"}
