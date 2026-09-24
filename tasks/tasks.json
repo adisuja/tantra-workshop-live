@@ -2526,6 +2526,11 @@
      "ts": "2026-09-24",
      "who": "Claude",
      "note": "Tested through the app's route and by filling the real /workshop and /masterclass forms in a browser."
+    },
+    {
+     "ts": "2026-09-24",
+     "who": "Claude",
+     "note": "The public mirror's forms now reach the Work Tracker too (T-105)."
     }
    ],
    "order": 1020
@@ -2534,20 +2539,23 @@
    "id": "T-105",
    "title": "Deploy the Apps Script receiver so the PUBLIC site's forms reach the Work Tracker",
    "area": "Ops",
-   "owner": "Owner",
+   "owner": "Claude",
    "priority": "P1",
    "due": "2026-09-24",
-   "status": "blocked",
+   "status": "review",
    "why": "A static host can't write to Sheets without a public receiver.",
    "spec": "workshop-plan/ops/apps-script/Code.gs (generated from funnel_tabs.py) is bound to the Work Tracker and deployed as a web app; its URL goes in NEXT_PUBLIC_SHEETS_WEBHOOK_URL; rebuild and republish.",
    "done_when": [
     "A form submitted on the live mirror appears in its tab"
    ],
-   "evidence": [],
-   "blockers": [
-    "Claude in Chrome is only connected to the boards@fintechcircle.com profile"
+   "evidence": [
+    {
+     "label": "Work Tracker · Funnel · Free Registrations",
+     "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=913055296"
+    }
    ],
-   "needs_from_owner": "Install Claude in Chrome in the Chrome profile signed in as adi@growthclub.org (or add that account to the connected profile) and tell me. The receiver must be deployed from adi@growthclub.org.",
+   "blockers": [],
+   "needs_from_owner": "Approve.",
    "log": [
     {
      "ts": "2026-09-24",
@@ -2558,6 +2566,11 @@
      "ts": "2026-09-24",
      "who": "Claude",
      "note": "Owner: deploy from adi@growthclub.org only. Tried from boards@fintechcircle.com first: Google refused ('You do not have permission') because the Work Tracker is shared with that account, not owned by it. Nothing was deployed. An undeployed copy exists in boards@'s Apps Script and one is attached to the Work Tracker (Extensions → Apps Script). Receiver made standalone-capable (opens the sheet by id). adi@growthclub.org isn't signed in to the connected Chrome profile."
+    },
+    {
+     "ts": "2026-09-24",
+     "who": "Claude",
+     "note": "Deployed from adi@growthclub.org (Chrome profile connected by the owner): standalone Apps Script 'Tantra Funnel', web app, execute as adi@growthclub.org, access Anyone, version 1. Health check lists all six forms. The site's form helper now defaults to it, rebuilt and republished. Verified LIVE: real registrations on the public /workshop and /masterclass pages land in Funnel · Free / Paid Registrations with UTMs (via=apps-script). scripts/probe-live-forms-to-sheet.mjs repeats the test."
     }
    ],
    "order": 1030
@@ -2623,6 +2636,11 @@
      "ts": "2026-09-24",
      "who": "Claude",
      "note": "Also: two undeployed Apps Script projects named 'Tantra funnel forms receiver' under boards@fintechcircle.com (one standalone, one attached to the Work Tracker) can go once adi@'s deployment is live."
+    },
+    {
+     "ts": "2026-09-24",
+     "who": "Claude",
+     "note": "More test rows to delete: apps-script-probe@example.com (Checkout Starts), live-probe+free/paid-…@example.com (Free/Paid Registrations)."
     }
    ],
    "order": 1050
