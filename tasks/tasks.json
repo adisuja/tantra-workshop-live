@@ -2762,6 +2762,141 @@
     }
    ],
    "order": 1070
+  },
+  {
+   "id": "T-110",
+   "title": "Build Guides framework (Lane A): contract, renderer, Day 2 manual, Day 1 mechanism pick, Basic→Tantra Pro rename, integration",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P1",
+   "due": "2026-09-28",
+   "status": "review",
+   "why": "Owner brief (2026-09-24): Day 2 of the onboarding centre becomes the build manual — one guide per stage/channel (S1 Traffic · S2 Tantra Pro Funnel · S3 Tantra Pro Flow · S4 webinar/RSP/challenge · S5 Revenue & Deal Pipeline · S6 52-Week Growth Engine), each with a flowchart, The Task, step-by-step real screenshots, and embedded template examples. No basic funnels or flows anywhere.",
+   "spec": "workshop-plan/coord/CONTRACT.md · LANES.md",
+   "done_when": [
+    "CONTRACT v1/v2 frozen; renderer + Day 2 manual + Day 1 recommendation shipped; zero 'basic' left; all lanes merged; probes clean locally and on the mirror."
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-24",
+     "who": "Claude",
+     "note": "Created by Lane A at programme start."
+    },
+    {
+     "ts": "2026-09-24",
+     "who": "Claude",
+     "note": "CONTRACT v1 09ed0cf, v2 bef06e9. Renderer + Day 2 manual + Day 1 mechanism pick + rename f6ad592. lane/b merged (c7996a4)."
+    }
+   ],
+   "order": 1080
+  },
+  {
+   "id": "T-111",
+   "title": "Template library corpus (Lane B): fields, channel/mechanism tags, TemplateCard, anonymised corpus templates, leak probe",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P1",
+   "due": "2026-09-28",
+   "status": "next",
+   "why": "Owner brief (2026-09-24): Day 2 of the onboarding centre becomes the build manual — one guide per stage/channel (S1 Traffic · S2 Tantra Pro Funnel · S3 Tantra Pro Flow · S4 webinar/RSP/challenge · S5 Revenue & Deal Pipeline · S6 52-Week Growth Engine), each with a flowchart, The Task, step-by-step real screenshots, and embedded template examples. No basic funnels or flows anywhere.",
+   "spec": "workshop-plan/coord/CONTRACT.md · LANES.md",
+   "done_when": [
+    "Every guide example renders from the library; leak probe clean."
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-24",
+     "who": "Claude",
+     "note": "Created by Lane A at programme start."
+    },
+    {
+     "ts": "2026-09-24",
+     "who": "Claude",
+     "note": "Library infra 7b16f11 merged: {snake_case} fields, channel+mechanism tags, contribs folded, TemplateCard, probe-anonymity. Corpus dossiers in progress."
+    }
+   ],
+   "order": 1090
+  },
+  {
+   "id": "T-112",
+   "title": "Build guides S1 Traffic, S2 Tantra Pro Funnel, S3 Tantra Pro Flow (Lane C)",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P1",
+   "due": "2026-09-28",
+   "status": "queue",
+   "why": "Owner brief (2026-09-24): Day 2 of the onboarding centre becomes the build manual — one guide per stage/channel (S1 Traffic · S2 Tantra Pro Funnel · S3 Tantra Pro Flow · S4 webinar/RSP/challenge · S5 Revenue & Deal Pipeline · S6 52-Week Growth Engine), each with a flowchart, The Task, step-by-step real screenshots, and embedded template examples. No basic funnels or flows anywhere.",
+   "spec": "workshop-plan/coord/CONTRACT.md · LANES.md",
+   "done_when": [
+    "All S1–S3 guides merged with real screenshots or marked capture-needed slots."
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-24",
+     "who": "Claude",
+     "note": "Created by Lane A at programme start."
+    }
+   ],
+   "order": 1100
+  },
+  {
+   "id": "T-113",
+   "title": "Build guides S4 conversion mechanisms: webinar · RSP (VSL) · challenge (Lane D)",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P1",
+   "due": "2026-09-28",
+   "status": "queue",
+   "why": "Owner brief (2026-09-24): Day 2 of the onboarding centre becomes the build manual — one guide per stage/channel (S1 Traffic · S2 Tantra Pro Funnel · S3 Tantra Pro Flow · S4 webinar/RSP/challenge · S5 Revenue & Deal Pipeline · S6 52-Week Growth Engine), each with a flowchart, The Task, step-by-step real screenshots, and embedded template examples. No basic funnels or flows anywhere.",
+   "spec": "workshop-plan/coord/CONTRACT.md · LANES.md",
+   "done_when": [
+    "Three S4 guides merged; Day 1 criteria live; VSL script template in the library."
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-24",
+     "who": "Claude",
+     "note": "Created by Lane A at programme start."
+    }
+   ],
+   "order": 1110
+  },
+  {
+   "id": "T-114",
+   "title": "Build guides S5 Revenue & Deal Pipeline and S6 52-Week Growth Engine (Lane E)",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P1",
+   "due": "2026-09-28",
+   "status": "queue",
+   "why": "Owner brief (2026-09-24): Day 2 of the onboarding centre becomes the build manual — one guide per stage/channel (S1 Traffic · S2 Tantra Pro Funnel · S3 Tantra Pro Flow · S4 webinar/RSP/challenge · S5 Revenue & Deal Pipeline · S6 52-Week Growth Engine), each with a flowchart, The Task, step-by-step real screenshots, and embedded template examples. No basic funnels or flows anywhere.",
+   "spec": "workshop-plan/coord/CONTRACT.md · LANES.md",
+   "done_when": [
+    "All S5–S6 guides merged; Day 2 pipeline questions updated."
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-24",
+     "who": "Claude",
+     "note": "Created by Lane A at programme start."
+    }
+   ],
+   "order": 1120
   }
  ]
 }
