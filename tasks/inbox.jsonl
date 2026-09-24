@@ -1,0 +1,2 @@
+{"task_id": "T-080", "action": "context", "text": "probe-1790241204037", "id": "F-fd1f5751", "ts": "2026-09-24T14:43:24+0530", "processed": true, "processed_ts": "2026-09-24T15:11:51+0530"}
+{"task_id": "T-080", "action": "context", "text": "probe-1790241204037-att", "attachments": [{"name": "probe shot.png", "url": "/tasks/uploads/T-080/9ed7fb-probe-shot.png", "type": "image/png", "size": 70}], "id": "F-d2fbd0f1", "ts": "2026-09-24T14:43:24+0530", "processed": true, "processed_ts": "2026-09-24T15:11:51+0530"}

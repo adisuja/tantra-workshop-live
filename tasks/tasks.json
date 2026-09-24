@@ -95,9 +95,9 @@
         }
       ],
       "blockers": [
-        "No VSL recording (T-060)"
+        "Waits on T-060 (the VSL file)"
       ],
-      "needs_from_owner": "Record the VSL, or tell me to ship the page without video for launch.",
+      "needs_from_owner": "",
       "log": [
         {
           "ts": "2026-09-18T18:00:00-04:00",
@@ -108,6 +108,11 @@
           "ts": "2026-09-24",
           "who": "Claude",
           "note": "The page is built and live. The only missing piece is the VSL file (T-060). Paid-lane survey now posts to the local intake service and its Work Tracker tab."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Re-verified 2026-09-24: the page and wiring are complete; the only thing missing is the VSL file, tracked in T-060. It's no longer a separate ask."
         }
       ],
       "order": 20
@@ -134,10 +139,9 @@
         }
       ],
       "blockers": [
-        "WhatsApp group not created yet (T-040)",
-        "Zoom sessions not scheduled yet (T-042)"
+        "Waits on T-040 / T-042 (the WhatsApp and Zoom links)"
       ],
-      "needs_from_owner": "Paste the WhatsApp invite link and the Zoom registration link when Aquila has them.",
+      "needs_from_owner": "",
       "log": [
         {
           "ts": "2026-09-18T18:00:00-04:00",
@@ -148,6 +152,11 @@
           "ts": "2026-09-24",
           "who": "Claude",
           "note": "The page is built and live with step art and the nine-bonus grid. It waits only on the real WhatsApp and Zoom links (T-040 / T-042); placeholders are wired meanwhile."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Re-verified 2026-09-24: the page and wiring are complete; the only thing missing is the WhatsApp and Zoom links, tracked in T-040 / T-042. It's no longer a separate ask."
         }
       ],
       "order": 30
@@ -614,22 +623,25 @@
       "owner": "Claude",
       "priority": "P2",
       "due": "2026-09-23",
-      "status": "blocked",
+      "status": "review",
       "why": "54 templates + 55 case-study exhibits referenced by the whiteboard live on staging, which is down.",
       "spec": "URL lists are in workshop-plan/sources/. Once staging is up, capture and index them for Day 3.",
       "done_when": [
         "All 109 pages captured and linked from the playbook Day 3"
       ],
       "evidence": [],
-      "blockers": [
-        "staging.usetantra.com down (T-084)"
-      ],
-      "needs_from_owner": "",
+      "blockers": [],
+      "needs_from_owner": "Confirm this is covered by T-097's recovered archive (112 pages vs the 109 planned), or tell me what's still missing.",
       "log": [
         {
           "ts": "2026-09-18T18:00:00-04:00",
           "who": "claude",
           "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Re-verified: the blocker (staging down, T-084) is stale because T-084 was dropped. The client artefact archive was recovered locally in T-097 (112 files in workshop-plan/library). Likely superseded."
         }
       ],
       "order": 170
@@ -733,10 +745,10 @@
       "id": "T-031",
       "title": "Claude Code agentic output pipeline",
       "area": "Delivery",
-      "owner": "Claude",
+      "owner": "Owner",
       "priority": "P0",
       "due": "2026-09-21",
-      "status": "queue",
+      "status": "blocked",
       "why": "Turns each day's answers into a personalized output. The core of the delivery engine.",
       "spec": "Reads the day's rows → fills the day's template (T-024) → renders PDF + live link. I draft the prompts, the per-day spec, and a runnable reference implementation; Bhaskar Dev productionizes.",
       "done_when": [
@@ -744,8 +756,10 @@
         "Output matches the template for that day"
       ],
       "evidence": [],
-      "blockers": [],
-      "needs_from_owner": "",
+      "blockers": [
+        "No agent credential: the `claude` CLI is 'Not logged in' and ANTHROPIC_API_KEY is unset (verified 2026-09-24)"
+      ],
+      "needs_from_owner": "Put an ANTHROPIC_API_KEY in workshop-plan/ops (env), or log the Claude CLI in on this Mac. The course-plan pipeline can't run without it, and Day 1 is today.",
       "log": [
         {
           "ts": "2026-09-18T18:00:00-04:00",
@@ -756,6 +770,11 @@
           "ts": "2026-09-18T20:42:47+0530",
           "who": "claude",
           "note": "Owner: build the automation code yourself. Reassigned from Bhaskar Dev to Claude."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Re-verified: ops/courseplan.py (headless Claude Code → per-attendee course plan) and ops/tick.py (10-minute launchd pass) are built. 0 plans generated so far, because there's no credential."
         }
       ],
       "order": 210
@@ -767,14 +786,16 @@
       "owner": "Claude",
       "priority": "P1",
       "due": "2026-09-21",
-      "status": "queue",
+      "status": "blocked",
       "why": "Attendees get a downloadable PDF and a link, same day.",
       "spec": "Render the filled template HTML to PDF (Playwright print) and host the HTML at a per-attendee link.",
       "done_when": [
         "One PDF and one link produced from a test row"
       ],
       "evidence": [],
-      "blockers": [],
+      "blockers": [
+        "Waits on T-031 (agent credential)"
+      ],
       "needs_from_owner": "",
       "log": [
         {
@@ -786,6 +807,11 @@
           "ts": "2026-09-18T20:42:47+0530",
           "who": "claude",
           "note": "Owner: build the automation code yourself. Reassigned from Bhaskar Dev to Claude."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Blocked behind T-031: the pipeline has no agent credential yet."
         }
       ],
       "order": 220
@@ -830,7 +856,7 @@
       "owner": "Claude",
       "priority": "P0",
       "due": "2026-09-22",
-      "status": "queue",
+      "status": "blocked",
       "why": "First live session is Sep 24. A failed loop on Day 1 kills the retention thesis.",
       "spec": "Survey → sheet → pipeline → PDF + link → WhatsApp + email, end to end, with three test personas.",
       "done_when": [
@@ -838,7 +864,9 @@
         "Timing recorded"
       ],
       "evidence": [],
-      "blockers": [],
+      "blockers": [
+        "Waits on T-031 (agent credential)"
+      ],
       "needs_from_owner": "",
       "log": [
         {
@@ -850,6 +878,11 @@
           "ts": "2026-09-18T20:42:47+0530",
           "who": "claude",
           "note": "Owner: build the automation code yourself. Reassigned from Bhaskar Dev to Claude."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Blocked behind T-031: the pipeline has no agent credential yet."
         }
       ],
       "order": 240
@@ -959,9 +992,9 @@
       ],
       "evidence": [],
       "blockers": [
-        "Owner action"
+        "Waits on T-040 (the WhatsApp group existing)"
       ],
-      "needs_from_owner": "Add the admins to both WhatsApp groups once T-040 exists.",
+      "needs_from_owner": "",
       "log": [
         {
           "ts": "2026-09-18T18:00:00-04:00",
@@ -972,6 +1005,11 @@
           "ts": "2026-09-24",
           "who": "Claude",
           "note": "Moved to waiting-on-owner: the pages are wired with placeholders and go live with the real link on the next build."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Re-verified 2026-09-24: the page and wiring are complete; the only thing missing is the WhatsApp group existing, tracked in T-040. It's no longer a separate ask."
         }
       ],
       "order": 270
@@ -1130,20 +1168,30 @@
       "owner": "Nelbin",
       "priority": "P1",
       "due": "2026-09-20",
-      "status": "queue",
+      "status": "review",
       "why": "Attribution per channel and per team member.",
       "spec": "Nelbin's UTM system on every post and link → Work Tracker.",
       "done_when": [
         "Test click from each channel attributed correctly"
       ],
-      "evidence": [],
+      "evidence": [
+        {
+          "label": "Work Tracker · Funnel · Free Registrations (utm columns)",
+          "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=913055296"
+        }
+      ],
       "blockers": [],
-      "needs_from_owner": "",
+      "needs_from_owner": "Approve, or tell me which extra UTM fields to capture.",
       "log": [
         {
           "ts": "2026-09-18T18:00:00-04:00",
           "who": "claude",
           "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Verified end to end: /workshop?utm_source=linkedin&utm_medium=dm&utm_campaign=…&utm_content=post-7 → the registration row carries all four. First-touch UTMs are now kept for the whole visit, so survey and checkout rows carry them too (the funnel's router.push drops the query string)."
         }
       ],
       "order": 330
@@ -1745,6 +1793,11 @@
           "ts": "2026-09-21T22:39:41+0530",
           "who": "claude",
           "note": "Restored: a mis-targeted edit briefly overwrote this task with the day-count decision (that is T-085) and marked it done. It was never done — the three n8n call sites are still in the code."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Re-verified: the funnel pages and API routes have zero n8n calls (the paid-lane lead + survey were moved to the local intake service today). Three remain, all on the old site pages: /webinar, /webinar/thank-you and /pro. If T-008 is (a), the /webinar pair goes away with the redirect."
         }
       ],
       "order": 870
@@ -2445,6 +2498,11 @@
           "ts": "2026-09-24",
           "who": "Claude",
           "note": "Left in place on purpose so the owner can see the wiring working."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Also delete one stray 'placeholder' row in Funnel · Checkout Starts (a bad test POST during re-verification) and the utm-probe rows."
         }
       ],
       "order": 1050
