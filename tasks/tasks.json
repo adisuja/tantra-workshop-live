@@ -2707,13 +2707,13 @@
   },
   {
    "id": "T-109",
-   "title": "Playbook woven into the onboarding course: each day carries its own chapter; one sidebar; Title Case; new logo",
+   "title": "Onboarding centre as one course: daily rhythm per day, playbook woven in, VIP kit + template library in the sidebar",
    "area": "Content",
    "owner": "Claude",
    "priority": "P1",
    "due": "2026-09-24",
    "status": "review",
-   "why": "Owner (2026-09-24): lots of empty space inside the playbook and the interface needs to be far better. Embed the playbook directly into the onboarding centre with one well-highlighted sidebar, colour animations while scrolling, jump links and an index of every section, plus the other centre pages. Add the new Tantra logo properly and fix the empty-space bug that breaks content. Follow-up (2026-09-24): capitalise every heading and subheading properly, comprehensively, in both the playbook and the centre. Follow-up 2 (2026-09-24): the playbook must be integrated into the onboarding flow, not a separate section — each day shows its session recording, slides, questions and the playbook chapter covered that day, inside the centre.",
+   "why": "Owner (2026-09-24): lots of empty space inside the playbook and the interface needs to be far better. Embed the playbook directly into the onboarding centre with one well-highlighted sidebar, colour animations while scrolling, jump links and an index of every section, plus the other centre pages. Add the new Tantra logo properly and fix the empty-space bug that breaks content. Follow-up (2026-09-24): capitalise every heading and subheading properly, comprehensively, in both the playbook and the centre. Follow-up 2 (2026-09-24): the playbook must be integrated into the onboarding flow, not a separate section — each day shows its session recording, slides, questions and the playbook chapter covered that day, inside the centre. Follow-up 3 (2026-09-24): sidebar sections were disjointed from the actual flow — analyse every section, add the template library as its own closing section, and integrate every VIP-page bonus into the sidebar.",
    "spec": "ROOT CAUSE of the blank space: every chapter faded in only once 8% of it was on screen; Day 1–3 are 12–16k px tall, so on a laptop they never reached 8% and stayed invisible. Fixed in the embed (no hidden sections) and in the standalone playbook (threshold 0). build/embed.py lifts playbook.html into the app (scoped CSS + an index of 9 chapters and 43 sections); /onboarding renders it natively under ONE sidebar (centre sections, every chapter, every step, other pages) with scroll-spy, per-chapter hue that the progress bar, sidebar, header chip and page glow animate between, and a mobile drawer. Also: 2 unclosed diagram wrappers, 7 SVG text collisions, 12 diagrams cropped to their content, 2 orphaned grid rows, stale weekday labels. Logo = owner's mark + their own TANTRA wordmark, ink/white by theme. Verify: scripts/probe-onboarding.mjs (5 widths, both themes), probe-svg-text.mjs, probe-orphans.mjs, probe-svg-space.mjs, workshop-plan/probe-playbook.mjs.",
    "done_when": [
     "Owner approves the combined centre"
@@ -2732,8 +2732,12 @@
      "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html#d2"
     },
     {
-     "label": "Template library (Title Case)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/"
+     "label": "Your VIP Kit (in the centre)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/#kit"
+    },
+    {
+     "label": "Template Library section",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/#library"
     }
    ],
    "blockers": [],
@@ -2753,6 +2757,11 @@
      "ts": "2026-09-24",
      "who": "Claude",
      "note": "Restructured the centre as one course: Before Day 1 (first steps + the 5 foundation chapters + the 3-day plan overview) → Day 1 → Day 2 → Day 3, each day = session band with Join, then recording · slides · questions · prompt pack, then that day's playbook chapter inline, then that day's checklist from the work plan (Day 3 ends with 'What you leave with'). No separate playbook block remains; the standalone file is now 'Printable Playbook' under Other pages. Reading a chapter ticks its lesson when you reach the end. Session items lock until the day; chapters are readable ahead. Probes clean at 5 widths (light), 1440/390 dark, and free-seat + locked-day states; 261 headings Title Case; 6 deep links land from a cold load."
+    },
+    {
+     "ts": "2026-09-24",
+     "who": "Claude",
+     "note": "Rebuilt around the playbook's own daily rhythm. Sidebar = Your Workshop (Welcome → Before Day 1: 7 numbered steps — welcome, personal plan, join the channel, calendar (.ics + Google), get set up incl. platform claim + domain warm-up, foundations, 3-day plan → Day 1–3: 1 Watch · 2 Fill · 3 Get · 4 Do (chapter + its steps) · 5 Prove (checklist) · 6 Ship (post to the review channel)) → Your VIP Kit (all nine /vip bonuses, same data file as /vip: playbook, automation vault, template library, landing page & form kit, copy arsenal, prompt packs, recordings, platform pass, build review channel — each delivered in its card or linked to where it lives in the days) → Template Library (54 templates by the 6 stages + finished examples). Free seat: playbook + cohort group open, the other seven show 'Not in your seat'. 84 sidebar entries each resolve, land and highlight at 5 widths; dark, free and locked-day states clean; 0 orphaned rows; Title Case holds."
     }
    ],
    "order": 1070

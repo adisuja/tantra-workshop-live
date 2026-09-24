@@ -202,6 +202,8 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
 .half .hh{margin:12px 0 0;font-size:clamp(21px,2.4vw,29px);line-height:1.16;letter-spacing:-.02em}
 .half .hl{margin-top:9px;font-size:16px;line-height:1.62;color:var(--ink-2)}
 .grid:has(>:nth-child(4):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}
+.fvar .fb{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:639px){.fvar .fb{grid-template-columns:1fr}.fvar .fc{border-right:none}}
 @media(max-width:560px){.grid:has(>:nth-child(4):last-child){grid-template-columns:1fr}}
 .stats:has(>:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr))}
 .chkday tr.sub td{padding-top:16px;border-top:1px solid var(--line-2);color:var(--accent-ink);font-size:13px}
