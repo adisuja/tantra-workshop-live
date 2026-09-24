@@ -2671,8 +2671,8 @@
    "priority": "P1",
    "due": "2026-09-24",
    "status": "review",
-   "why": "Owner: each funnel needs a visualisation with the depth of the /masterclass cinematic — every stage, every tool named — animated, in the playbook's 'What are funnels' section.",
-   "spec": "build/funnels.py generates a self-contained section (data + scoped CSS + JS, logos embedded) between FUNNELS markers in playbook.html, plus a nav link. Webinar data from FunnelOS (whiteboard v12); RSP data from the RSP whiteboard scene; challenge = the 3-day workshop as built (structural facts only, planned items dashed).",
+   "why": "Owner (2026-09-24, correction): replicate the /masterclass FunnelOS funnel visualisation exactly, and create the same for the reverse squeeze page and challenge funnels — all three animated in the playbook's 'What are funnels' section. The first attempt (custom cards) was rejected.",
+   "spec": "FunnelOS (app/src/components/masterclass/funnel-os.tsx) is now a spec-driven engine; the webinar spec is unchanged on /masterclass. funnel-os-rsp.tsx = the RSP whiteboard (5 stages, its funnel maths, 52-week grid, every tool named). funnel-os-challenge.tsx = the 3-day workshop as built (structural facts only; planned items live in the V2 layer). Pages /funnels/webinar|rsp|challenge; build/funnels.py frames them in the playbook. Verify: scripts/probe-funnel-boards.mjs (5 widths) + scripts/shoot-playbook-funnels.mjs.",
    "done_when": [
     "Owner approves all three"
    ],
@@ -2680,6 +2680,18 @@
     {
      "label": "Playbook · What are funnels",
      "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html#funnels"
+    },
+    {
+     "label": "Webinar funnel (full screen)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/webinar/"
+    },
+    {
+     "label": "Reverse squeeze page funnel (full screen)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/rsp/"
+    },
+    {
+     "label": "Challenge funnel (full screen)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/challenge/"
     }
    ],
    "blockers": [],
