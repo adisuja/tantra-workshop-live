@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[98785,["/tantra-workshop-live/site/_next/static/chunks/19wxvr81nv14p.js","/tantra-workshop-live/site/_next/static/chunks/3biwtz631yz04.js","/tantra-workshop-live/site/_next/static/chunks/07dbfjrvi42dd.js","/tantra-workshop-live/site/_next/static/chunks/24c8hcv_blj_s.js","/tantra-workshop-live/site/_next/static/chunks/2xqqe4cfwp9_q.js"],"default"]
-3:T54d31,<section style="--hue:#8B5CF6;--hue-ink:color-mix(in srgb,#8B5CF6 70%,var(--ink))" id="start">
+2:I[98785,["/tantra-workshop-live/site/_next/static/chunks/19wxvr81nv14p.js","/tantra-workshop-live/site/_next/static/chunks/3a73t51lrpsv8.js","/tantra-workshop-live/site/_next/static/chunks/2zu8644accogk.js","/tantra-workshop-live/site/_next/static/chunks/24c8hcv_blj_s.js","/tantra-workshop-live/site/_next/static/chunks/2xqqe4cfwp9_q.js"],"default"]
+3:T13046,<section style="--hue:#8B5CF6;--hue-ink:color-mix(in srgb,#8B5CF6 70%,var(--ink))" id="start">
       <span class="pill">The 3-day AI RevOps operating system</span>
       <h1 style="margin-top:16px">Build a Funnel That Turns Strangers Into Retained Customers — In 3 Days.</h1>
       <p class="sub">This is the exact system we use to take someone who's never heard of you and walk them all the way to <strong>money in the bank — and then keep them paying month after month.</strong></p>
@@ -14,8 +14,8 @@
         <div class="stat"><div class="v">$1M</div><div class="k">ARR target machine</div></div>
       </div>
     </section>
-    <div class="divider"></div>
-    <section style="--hue:#6366F1;--hue-ink:color-mix(in srgb,#6366F1 70%,var(--ink))" id="revops">
+<div class="divider"></div>
+<section style="--hue:#6366F1;--hue-ink:color-mix(in srgb,#6366F1 70%,var(--ink))" id="revops">
       <div class="chap"><span class="no">Foundations</span><span class="tag">The Thing You're Actually Building</span></div>
       <h2>What Is AI RevOps?</h2>
       <p class="lead">RevOps is one word for something most companies run as two departments — and the gap between those two departments is where most revenue quietly dies.</p>
@@ -94,8 +94,8 @@
       <div class="box do"><div class="h">◆ Where you'll be by Friday</div>
         <p>You'll have the knowledge, the tools, the prompts, the workflows and the automations to stand this entire system up on your own — cold stranger to cleared payment, instrumented end to end, with an agent operating it.</p></div>
     </section>
-    <div class="divider"></div>
-    <section style="--hue:#3B82F6;--hue-ink:color-mix(in srgb,#3B82F6 70%,var(--ink))" id="whyfunnel">
+<div class="divider"></div>
+<section style="--hue:#3B82F6;--hue-ink:color-mix(in srgb,#3B82F6 70%,var(--ink))" id="whyfunnel">
       <div class="chap"><span class="no">Foundations</span><span class="tag">Why This Shape, and Not Just a Better Product</span></div>
       <h2>Why Do You Need a Funnel — A Conversion Engine?</h2>
       <p class="lead">Here's the deal: people <strong>buy on a promise</strong> and <strong>stay on a result.</strong> Those are two different forces, and almost every funnel ever built addresses only the first one.</p>
@@ -230,7 +230,7 @@
       <div class="box do"><div class="h">◆ What this means for the next three days</div>
         <p>Every page, sequence and automation you build is in service of one thing: <strong>moving the value crossing earlier</strong> and then continuing to deliver value on the far side of the sale. If a thing you're about to build does neither, it's decoration — cut it.</p></div>
     </section>
-    <div class="divider"></div>
+<div class="divider"></div>
 <section style="--hue:#06B6D4;--hue-ink:color-mix(in srgb,#06B6D4 70%,var(--ink))" id="funnels">
   <div class="chap"><span class="no">Foundations</span><span class="tag">Three Shapes, Every Stage, Every Tool</span></div>
   <h2>What Are Funnels?</h2>
@@ -258,7 +258,8 @@
   <div class="fo-frame"><iframe title="The challenge funnel, animated"></iframe><span class="fo-hint">Scroll inside to play it stage by stage ↓</span></div>
 </div>
 </section>
-    <section style="--hue:#10B981;--hue-ink:color-mix(in srgb,#10B981 70%,var(--ink))" id="bigpic">
+<div class="divider"></div>
+<section style="--hue:#10B981;--hue-ink:color-mix(in srgb,#10B981 70%,var(--ink))" id="bigpic">
       <div class="chap"><span class="no">Foundations</span><span class="tag">Read This First</span></div>
       <h2>The Big Picture: One System, Three Shapes</h2>
       <p class="lead">Strip away the jargon and every funnel on earth — a live workshop, a quiz, a video sales letter, an Amazon product page — does the same four things in the same order. What changes is the <em>shape</em>, not the system.</p>
@@ -549,9 +550,74 @@
       <p>That's the version you can hold in your head. But it has a flaw: <em>"conversion rate" is a guess.</em> On Day 1 you'll replace every symbol in that equation with a number your funnel actually reports — a counted event with a named source — and by Day 3 you'll be reading those numbers weekly and fixing whichever one is lowest.</p>
       <div class="box deep"><div class="h">◆ The rule that runs through the whole week</div>
         <p><strong>Never model your funnel with invented rates.</strong> Every step you build gets instrumented as an event. The count of that event is the metric. A "conversion rate" is just one count divided by another. If you can't fetch it, you can't fix it — and you'll be optimising by vibes.</p></div>
-    </section>
-    <div class="divider"></div>
-    <section style="--hue:#F59E0B;--hue-ink:color-mix(in srgb,#F59E0B 70%,var(--ink))" id="d1">
+    </section>13:X
+18:X
+18:C
+0:{"buildId":"Y2UC0riZ6sYpzSu5ynyDD","data":[{"rsc":["$","$1","c",{"children":[[["$","div",null,{"style":{"background":"#facc15","color":"#0b0d12","padding":"7px 16px","font":"600 12px/1.4 system-ui, sans-serif","textAlign":"center"},"children":"Review mirror — fully unlocked for approval. The live centre is gated by a personal access link and records your progress."}],["$","$L2",null,{"attendee":{"id":0,"firstName":"Alex","email":"you@example.com","entitlement":"paid","lane":"paid"},"settings":{"onboarding_open":"1","paid_modules_open":"1","day2_unlocked":"1","day3_unlocked":"1"},"completed":[],"playbook":{"foundations":["$","div",null,{"className":"pbk","data-part":"foundations","dangerouslySetInnerHTML":{"__html":"$3"}}],"overview":"$L4","d1":"$L5","d2":"$L6","d3":"$L7","outcome":"$L8","d1-checklist":"$L9","d2-checklist":"$La","d3-checklist":"$Lb"}}]],["$Lc","$Ld","$Le","$Lf","$L10"],"$L11"]}],"isPartial":"$@12","staleTime":"$13","varyParams":null},{"rsc":"$L14","isPartial":"$@15","staleTime":"$13","varyParams":null},{"rsc":"$L16","isPartial":"$@17","staleTime":"$13","varyParams":"$18"}],"isUpgradeableISRFallback":false,"a":"$@19","rootVaryParams":null,"needsRuntimeRequest":"$@1a"}
+22:I[36222,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"OutletBoundary"]
+23:"$Sreact.suspense"
+25:I[36222,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"ViewportBoundary"]
+26:I[36222,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"MetadataBoundary"]
+27:I[52089,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"IconMark"]
+28:I[83706,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"default"]
+29:I[79404,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"default"]
+:HL["/tantra-workshop-live/site/_next/static/chunks/2eg2by03zi5yj.css","style"]
+1b:T19b4,<section style="--hue:#22C55E;--hue-ink:color-mix(in srgb,#22C55E 70%,var(--ink))" id="plan">
+      <div class="chap"><span class="no">The plan</span><span class="tag">What You Actually Do, Hour by Hour</span></div>
+      <h2>Your 3-Day Work Plan</h2>
+      <p class="lead">Same rhythm every day: <strong>watch, fill, get, do.</strong> Below is every task, who owns it, which tool it needs, how long it takes, what you end up with, and the number that proves it worked. Tick them off as you go — your progress is saved on this device.</p>
+      <div class="viz wide">
+        <div class="vtitle">What runs on which day — and the one thing you must start early</div>
+        <svg viewBox="0 0 860 452" role="img" aria-label="Three-day build schedule as a Gantt chart. Workstreams: strategy and the conversion engine on day one; pages and sequences on day two; build, instrument and launch on day three; traffic test spanning day three and beyond; the optimisation loop starting day three and continuing weekly; and domain warm-up starting day one and running for two to three weeks past the workshop. A footer row shows the hands-on hours per day.">
+          <defs>
+            <marker id="w1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <marker id="w2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          </defs>
+          <g text-anchor="middle" font-size="11">
+            <rect x="144" y="26" width="220" height="28" rx="8" fill="var(--accent-2)"/><text x="254" y="41" fill="var(--accent-ink)" font-weight="700">Day 1</text>
+            <rect x="376" y="26" width="220" height="28" rx="8" fill="var(--accent-2)"/><text x="486" y="41" fill="var(--accent-ink)" font-weight="700">Day 2</text>
+            <rect x="608" y="26" width="220" height="28" rx="8" fill="var(--accent-2)"/><text x="718" y="41" fill="var(--accent-ink)" font-weight="700">Day 3</text>
+          </g>
+          <g stroke="var(--line)" stroke-width="1">
+            <line x1="140" y1="62" x2="140" y2="372"/><line x1="372" y1="62" x2="372" y2="372"/>
+            <line x1="604" y1="62" x2="604" y2="372"/><line x1="836" y1="62" x2="836" y2="372"/>
+          </g>
+          <g font-size="10">
+            <text x="16" y="88" class="svlabel" font-size="10.5">Strategy</text>
+            <rect x="144" y="74" width="104" height="30" rx="7" fill="var(--accent)"/><text x="196" y="93" text-anchor="middle" class="svwhite" font-size="10">ICP · offer · shape</text>
+            <text x="16" y="134" class="svlabel" font-size="10.5">Engine</text>
+            <rect x="256" y="120" width="108" height="30" rx="7" fill="var(--accent)"/><text x="310" y="139" text-anchor="middle" class="svwhite" font-size="10">5 blocks · diagnostic</text>
+            <text x="16" y="180" class="svlabel" font-size="10.5">Assets</text>
+            <rect x="376" y="166" width="220" height="30" rx="7" fill="var(--accent)"/><text x="486" y="185" text-anchor="middle" class="svwhite" font-size="10">pages · sequences · run of show · close chain</text>
+            <text x="16" y="226" class="svlabel" font-size="10.5">Build</text>
+            <rect x="608" y="212" width="124" height="30" rx="7" fill="var(--accent)"/><text x="670" y="231" text-anchor="middle" class="svwhite" font-size="10">agent · CRM · events</text>
+            <text x="16" y="272" class="svlabel" font-size="10.5">Traffic test</text>
+            <rect x="660" y="258" width="168" height="30" rx="7" fill="#0f9e75"/><text x="744" y="277" text-anchor="middle" class="svwhite" font-size="10">launch small, then let it run</text>
+            <text x="16" y="318" class="svlabel" font-size="10.5">Optimise</text>
+            <rect x="720" y="304" width="108" height="30" rx="7" fill="#0f9e75"/><text x="774" y="323" text-anchor="middle" class="svwhite" font-size="10">first lap</text>
+            <path d="M832 319 H852" fill="none" stroke="var(--teal)" stroke-width="2" marker-end="url(#w1)"/>
+            <text x="838" y="342" text-anchor="end" class="svmute" font-size="9">weekly, forever</text>
+            <text x="16" y="364" fill="var(--amber)" font-weight="700" font-size="10.5">Warm-up</text>
+            <rect x="144" y="350" width="684" height="30" rx="7" fill="var(--amber-bg)" stroke="var(--amber)" stroke-dasharray="4 4"/>
+            <text x="486" y="369" text-anchor="middle" fill="var(--amber)" font-size="10">start your sending domains on day one — they need 2–3 weeks and will not be rushed</text>
+            <path d="M832 365 H852" fill="none" stroke="var(--amber)" stroke-width="2" marker-end="url(#w2)"/>
+          </g>
+          <line x1="16" y1="392" x2="844" y2="392" class="gridline"/>
+          <g text-anchor="middle" font-size="10">
+            <text x="16" y="414" text-anchor="start" class="svmute" font-size="10">Hands-on hours,</text>
+            <text x="16" y="428" text-anchor="start" class="svmute" font-size="10">outside the session:</text>
+            <text x="254" y="420" class="svlabel" font-size="12">4–6 h</text>
+            <text x="486" y="420" class="svlabel" font-size="12">8–12 h</text>
+            <text x="718" y="420" class="svlabel" font-size="12">8–12 h</text>
+          </g>
+          <text x="16" y="446" class="svmute" font-size="9.5">Day 2 is the heavy one. If you only protect one block of time this week, protect that one — everything downstream is blocked on it.</text>
+        </svg>
+        <div class="cap"><b>The amber bar is the trap.</b> Domain warm-up is the only task with a hard external wait, and it's the one people start last. Begin it on day one and it's ready when your funnel is; begin it on day four and you'll be sitting on a finished funnel with nowhere to send from.</div>
+      </div>
+      <div class="box tip"><div class="h">◆ How the daily loop works</div>
+        <p><strong>Watch</strong> the live session · <strong>fill</strong> the survey in parallel while it's fresh · <strong>get</strong> your generated output by message and email the same day · <strong>do</strong> the short homework that unblocks tomorrow. Skipping the homework is the single biggest reason people fall behind, because each day's session assumes yesterday's output exists.</p></div>
+</section>4:["$","div",null,{"className":"pbk","data-part":"overview","dangerouslySetInnerHTML":{"__html":"$1b"}}]
+1c:T13838,<section style="--hue:#F59E0B;--hue-ink:color-mix(in srgb,#F59E0B 70%,var(--ink))" id="d1">
       <div class="chap"><span class="no">Day 1</span><span class="tag">Strategize · The Offer, the Audience and the Engine</span></div>
       <h2>Decide What You Sell, and Exactly Who You Sell It To</h2>
       <p class="lead">Day 1 uses zero tools and decides 90% of the outcome. Everything you build on Days 2 and 3 is generated <em>from</em> today's answers — so a vague answer today becomes a vague landing page on Wednesday and a dead campaign next month.</p>
@@ -1190,9 +1256,8 @@
         <p>A <strong>conversion engine</strong>: five context blocks filled, a diagnostic designed (axes, statements, bands, mapping rule), and a spec outline that tomorrow's build reads directly. This is the single source of truth every asset on Day 2 gets generated from.</p></div>
       <div class="box tip"><div class="h">◆ Tonight's homework · 30 minutes</div>
         <p>Gather your proof assets into one folder — screenshots, numbers, testimonials, logos, links. Tomorrow you'll be generating pages that need them, and hunting for a testimonial mid-build is how people lose an hour. Name each file after the objection it answers.</p></div>
-    </section>
-    <div class="divider"></div>
-    <section style="--hue:#EC4899;--hue-ink:color-mix(in srgb,#EC4899 70%,var(--ink))" id="d2">
+    </section>5:["$","div",null,{"className":"pbk","data-part":"d1","dangerouslySetInnerHTML":{"__html":"$1c"}}]
+1d:T13c0e,<section style="--hue:#EC4899;--hue-ink:color-mix(in srgb,#EC4899 70%,var(--ink))" id="d2">
       <div class="chap"><span class="no">Day 2</span><span class="tag">Funnel Elements · Every Page, Template and Stage</span></div>
       <h2>Build Every Element — The Whole Funnel, Assembled</h2>
       <p class="lead">Today the engine becomes assets. You work stage by stage, S1 to S6, and at the end of it every page, every message and every automation trigger exists as something you could hand to someone else.</p>
@@ -1776,9 +1841,8 @@
         <p>Every element, built: authenticated sending infrastructure, two variants per channel, both capture pages plus the thank-you, the full nurture sequence with its two post-event branches, the run of show with named roles, the complete close chain from booking to onboarding, and the four tags everything else keys off.</p></div>
       <div class="box tip"><div class="h">◆ Tonight's homework · 30 minutes</div>
         <p>Pick your stack and get the credentials in one place. Tomorrow you connect everything, and hunting for an API key mid-build is how a two-hour job becomes a five-hour one.</p></div>
-    </section>
-    <div class="divider"></div>
-    <section style="--hue:#EF4444;--hue-ink:color-mix(in srgb,#EF4444 70%,var(--ink))" id="d3">
+    </section>6:["$","div",null,{"className":"pbk","data-part":"d2","dangerouslySetInnerHTML":{"__html":"$1d"}}]
+1e:T163f4,<section style="--hue:#EF4444;--hue-ink:color-mix(in srgb,#EF4444 70%,var(--ink))" id="d3">
       <div class="chap"><span class="no">Day 3</span><span class="tag">Launch the AI RevOps Engine · Test It, Then Grow It</span></div>
       <h2>Make an AI Run the Whole Thing — Then Prove It Works</h2>
       <p class="lead">Today the funnel stops being a stack of files and becomes a <em>living system</em>: built by an agent, instrumented end to end, wired into a CRM and a set of automations, and then pointed at a small amount of real traffic to find out whether any of it is true.</p>
@@ -2541,64 +2605,9 @@
       </div>
       <div class="box do"><div class="h">◆ Your Day 3 output — half two</div>
         <p>Your scale plan: unit economics you fetched rather than guessed, a channel budget ranked by cost per buyer, one live experiment on your worst step, the 52-week engine segmented and scheduled, and a standing weekly review in the calendar.</p></div>
-    </section>
-    <div class="divider"></div>
-    <section style="--hue:#22C55E;--hue-ink:color-mix(in srgb,#22C55E 70%,var(--ink))" id="plan">
-      <div class="chap"><span class="no">The plan</span><span class="tag">What You Actually Do, Hour by Hour</span></div>
-      <h2>Your 3-Day Work Plan</h2>
-      <p class="lead">Same rhythm every day: <strong>watch, fill, get, do.</strong> Below is every task, who owns it, which tool it needs, how long it takes, what you end up with, and the number that proves it worked. Tick them off as you go — your progress is saved on this device.</p>
-      <div class="viz wide">
-        <div class="vtitle">What runs on which day — and the one thing you must start early</div>
-        <svg viewBox="0 0 860 452" role="img" aria-label="Three-day build schedule as a Gantt chart. Workstreams: strategy and the conversion engine on day one; pages and sequences on day two; build, instrument and launch on day three; traffic test spanning day three and beyond; the optimisation loop starting day three and continuing weekly; and domain warm-up starting day one and running for two to three weeks past the workshop. A footer row shows the hands-on hours per day.">
-          <defs>
-            <marker id="w1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
-            <marker id="w2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
-          </defs>
-          <g text-anchor="middle" font-size="11">
-            <rect x="144" y="26" width="220" height="28" rx="8" fill="var(--accent-2)"/><text x="254" y="41" fill="var(--accent-ink)" font-weight="700">Day 1</text>
-            <rect x="376" y="26" width="220" height="28" rx="8" fill="var(--accent-2)"/><text x="486" y="41" fill="var(--accent-ink)" font-weight="700">Day 2</text>
-            <rect x="608" y="26" width="220" height="28" rx="8" fill="var(--accent-2)"/><text x="718" y="41" fill="var(--accent-ink)" font-weight="700">Day 3</text>
-          </g>
-          <g stroke="var(--line)" stroke-width="1">
-            <line x1="140" y1="62" x2="140" y2="372"/><line x1="372" y1="62" x2="372" y2="372"/>
-            <line x1="604" y1="62" x2="604" y2="372"/><line x1="836" y1="62" x2="836" y2="372"/>
-          </g>
-          <g font-size="10">
-            <text x="16" y="88" class="svlabel" font-size="10.5">Strategy</text>
-            <rect x="144" y="74" width="104" height="30" rx="7" fill="var(--accent)"/><text x="196" y="93" text-anchor="middle" class="svwhite" font-size="10">ICP · offer · shape</text>
-            <text x="16" y="134" class="svlabel" font-size="10.5">Engine</text>
-            <rect x="256" y="120" width="108" height="30" rx="7" fill="var(--accent)"/><text x="310" y="139" text-anchor="middle" class="svwhite" font-size="10">5 blocks · diagnostic</text>
-            <text x="16" y="180" class="svlabel" font-size="10.5">Assets</text>
-            <rect x="376" y="166" width="220" height="30" rx="7" fill="var(--accent)"/><text x="486" y="185" text-anchor="middle" class="svwhite" font-size="10">pages · sequences · run of show · close chain</text>
-            <text x="16" y="226" class="svlabel" font-size="10.5">Build</text>
-            <rect x="608" y="212" width="124" height="30" rx="7" fill="var(--accent)"/><text x="670" y="231" text-anchor="middle" class="svwhite" font-size="10">agent · CRM · events</text>
-            <text x="16" y="272" class="svlabel" font-size="10.5">Traffic test</text>
-            <rect x="660" y="258" width="168" height="30" rx="7" fill="#0f9e75"/><text x="744" y="277" text-anchor="middle" class="svwhite" font-size="10">launch small, then let it run</text>
-            <text x="16" y="318" class="svlabel" font-size="10.5">Optimise</text>
-            <rect x="720" y="304" width="108" height="30" rx="7" fill="#0f9e75"/><text x="774" y="323" text-anchor="middle" class="svwhite" font-size="10">first lap</text>
-            <path d="M832 319 H852" fill="none" stroke="var(--teal)" stroke-width="2" marker-end="url(#w1)"/>
-            <text x="838" y="342" text-anchor="end" class="svmute" font-size="9">weekly, forever</text>
-            <text x="16" y="364" fill="var(--amber)" font-weight="700" font-size="10.5">Warm-up</text>
-            <rect x="144" y="350" width="684" height="30" rx="7" fill="var(--amber-bg)" stroke="var(--amber)" stroke-dasharray="4 4"/>
-            <text x="486" y="369" text-anchor="middle" fill="var(--amber)" font-size="10">start your sending domains on day one — they need 2–3 weeks and will not be rushed</text>
-            <path d="M832 365 H852" fill="none" stroke="var(--amber)" stroke-width="2" marker-end="url(#w2)"/>
-          </g>
-          <line x1="16" y1="392" x2="844" y2="392" class="gridline"/>
-          <g text-anchor="middle" font-size="10">
-            <text x="16" y="414" text-anchor="start" class="svmute" font-size="10">Hands-on hours,</text>
-            <text x="16" y="428" text-anchor="start" class="svmute" font-size="10">outside the session:</text>
-            <text x="254" y="420" class="svlabel" font-size="12">4–6 h</text>
-            <text x="486" y="420" class="svlabel" font-size="12">8–12 h</text>
-            <text x="718" y="420" class="svlabel" font-size="12">8–12 h</text>
-          </g>
-          <text x="16" y="446" class="svmute" font-size="9.5">Day 2 is the heavy one. If you only protect one block of time this week, protect that one — everything downstream is blocked on it.</text>
-        </svg>
-        <div class="cap"><b>The amber bar is the trap.</b> Domain warm-up is the only task with a hard external wait, and it's the one people start last. Begin it on day one and it's ready when your funnel is; begin it on day four and you'll be sitting on a finished funnel with nowhere to send from.</div>
-      </div>
-      <div class="box tip"><div class="h">◆ How the daily loop works</div>
-        <p><strong>Watch</strong> the live session · <strong>fill</strong> the survey in parallel while it's fresh · <strong>get</strong> your generated output by message and email the same day · <strong>do</strong> the short homework that unblocks tomorrow. Skipping the homework is the single biggest reason people fall behind, because each day's session assumes yesterday's output exists.</p></div>
-      <div class="chkwrap" id="chk">
-        <div class="chkday">
+    </section>7:["$","div",null,{"className":"pbk","data-part":"d3","dangerouslySetInnerHTML":{"__html":"$1e"}}]
+8:["$","div",null,{"className":"pbk","data-part":"outcome","dangerouslySetInnerHTML":{"__html":"<div class=\"box do\"><div class=\"h\">◆ What you leave with</div>\n        <p>A strategy on one page · a conversion engine that generates every asset · all your funnel pages, sequences and templates · a live funnel at a real URL, built from a spec you can edit · eleven instrumented events and a pipeline that updates itself · real traffic flowing through it · two reports that tell you exactly what to fix next · and a weekly loop that keeps improving it long after the three days are over.</p></div>"}}]
+1f:Tee6,<div class="chkwrap" id="d1-checklist-list" data-day="1"><div class="chkday">
           <div class="chkh"><span class="pill">Day 1</span><b>Strategy, Then Your Conversion Engine</b><span class="chkmeta">4–6 h outside the session</span></div>
           <div class="tbl"><table>
             <thead><tr><th></th><th>Task</th><th>Tool</th><th>Time</th><th>Proof it worked</th></tr></thead>
@@ -2620,8 +2629,8 @@
               <tr><td><input type="checkbox" data-k="d2e"></td><td><span class="hw">Homework</span> <b>Gather proof assets</b>, each named after the objection it answers</td><td>Folder</td><td class="num">30 min</td><td>One folder, nothing left to hunt for</td></tr>
             </tbody>
           </table></div>
-        </div>
-        <div class="chkday">
+        </div></div>9:["$","div",null,{"className":"pbk","data-part":"d1-checklist","dangerouslySetInnerHTML":{"__html":"$1f"}}]
+20:T9aa,<div class="chkwrap" id="d2-checklist-list" data-day="2"><div class="chkday">
           <div class="chkh"><span class="pill te">Day 2</span><b>All Your Funnel Elements</b><span class="chkmeta">8–12 h — the heavy day</span></div>
           <div class="tbl"><table>
             <thead><tr><th></th><th>Task</th><th>Tool</th><th>Time</th><th>Proof it worked</th></tr></thead>
@@ -2636,8 +2645,8 @@
               <tr><td><input type="checkbox" data-k="d3h"></td><td><span class="hw">Homework</span> <b>Collect every credential into one place</b></td><td>Password manager</td><td class="num">30 min</td><td>Nothing to hunt for tomorrow</td></tr>
             </tbody>
           </table></div>
-        </div>
-        <div class="chkday">
+        </div></div>a:["$","div",null,{"className":"pbk","data-part":"d2-checklist","dangerouslySetInnerHTML":{"__html":"$20"}}]
+21:T1048,<div class="chkwrap" id="d3-checklist-list" data-day="3"><div class="chkday">
           <div class="chkh"><span class="pill te">Day 3</span><b>Your AI Engine Live, Then Your Scale Plan</b><span class="chkmeta">8–12 h, then weekly forever</span></div>
           <div class="tbl"><table>
             <thead><tr><th></th><th>Task</th><th>Tool</th><th>Time</th><th>Proof it worked</th></tr></thead>
@@ -2660,35 +2669,20 @@
               <tr><td><input type="checkbox" data-k="d5h"></td><td><b>Put the weekly review in your calendar</b> as a recurring event</td><td>Calendar</td><td class="num">5 min</td><td>It repeats. A loop you don't schedule runs twice</td></tr>
             </tbody>
           </table></div>
-        </div>
-      </div>
-      <div class="box do"><div class="h">◆ What you leave with</div>
-        <p>A strategy on one page · a conversion engine that generates every asset · all your funnel pages, sequences and templates · a live funnel at a real URL, built from a spec you can edit · eleven instrumented events and a pipeline that updates itself · real traffic flowing through it · two reports that tell you exactly what to fix next · and a weekly loop that keeps improving it long after the three days are over.</p></div>
-    </section>b:X
-10:X
-10:C
-0:{"buildId":"NrahAqlcFVwxD-ZbnkOTI","data":[{"rsc":["$","$1","c",{"children":[[["$","div",null,{"style":{"background":"#facc15","color":"#0b0d12","padding":"7px 16px","font":"600 12px/1.4 system-ui, sans-serif","textAlign":"center"},"children":"Review mirror — fully unlocked for approval. The live centre is gated by a personal access link and records your progress."}],["$","$L2",null,{"attendee":{"id":0,"firstName":"Alex","email":"you@example.com","entitlement":"paid","lane":"paid"},"settings":{"onboarding_open":"1","paid_modules_open":"1","day2_unlocked":"1","day3_unlocked":"1"},"completed":[],"playbook":["$","div",null,{"id":"playbook-body","className":"pbk","dangerouslySetInnerHTML":{"__html":"$3"}}]}]],["$L4","$L5","$L6","$L7","$L8"],"$L9"]}],"isPartial":"$@a","staleTime":"$b","varyParams":null},{"rsc":"$Lc","isPartial":"$@d","staleTime":"$b","varyParams":null},{"rsc":"$Le","isPartial":"$@f","staleTime":"$b","varyParams":"$10"}],"isUpgradeableISRFallback":false,"a":"$@11","rootVaryParams":null,"needsRuntimeRequest":"$@12"}
-13:I[36222,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"OutletBoundary"]
-14:"$Sreact.suspense"
-16:I[36222,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"ViewportBoundary"]
-17:I[36222,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"MetadataBoundary"]
-18:I[52089,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"IconMark"]
-19:I[83706,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"default"]
-1a:I[79404,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"default"]
-:HL["/tantra-workshop-live/site/_next/static/chunks/3o9-kdcajc47y.css","style"]
-4:["$","link","0",{"rel":"stylesheet","href":"/tantra-workshop-live/site/_next/static/chunks/3o9-kdcajc47y.css","precedence":"next"}]
-5:["$","script","script-0",{"src":"/tantra-workshop-live/site/_next/static/chunks/3biwtz631yz04.js","async":true}]
-6:["$","script","script-1",{"src":"/tantra-workshop-live/site/_next/static/chunks/07dbfjrvi42dd.js","async":true}]
-7:["$","script","script-2",{"src":"/tantra-workshop-live/site/_next/static/chunks/24c8hcv_blj_s.js","async":true}]
-8:["$","script","script-3",{"src":"/tantra-workshop-live/site/_next/static/chunks/2xqqe4cfwp9_q.js","async":true}]
-9:["$","$L13",null,{"children":["$","$14",null,{"name":"Next.MetadataOutlet","children":"$@15"}]}]
-c:["$","$1","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#f7f8fb"}],["$","meta","3",{"name":"color-scheme","content":"light"}]]}],["$","div",null,{"hidden":true,"children":["$","$L17",null,{"children":["$","$14",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Your Onboarding Centre | The 3-Day AI RevOps Workshop | Tantra"}],["$","meta","1",{"name":"description","content":"Run outreach sequences across email, LinkedIn, WhatsApp, Telegram, and calendar invites — with every reply in one inbox and webinar attribution built in."}],["$","meta","2",{"name":"application-name","content":"Tantra"}],["$","link","3",{"rel":"author","href":"https://adisuja.github.io/tantra-workshop-live/site"}],["$","meta","4",{"name":"author","content":"Tantra"}],["$","link","5",{"rel":"manifest","href":"/tantra-workshop-live/site/manifest.webmanifest"}],["$","meta","6",{"name":"referrer","content":"origin-when-cross-origin"}],["$","meta","7",{"name":"creator","content":"Tantra"}],["$","meta","8",{"name":"publisher","content":"Tantra"}],["$","meta","9",{"name":"robots","content":"noindex, nofollow"}],["$","meta","10",{"name":"category","content":"technology"}],["$","link","11",{"rel":"canonical","href":"https://adisuja.github.io/tantra-workshop-live/site/"}],["$","meta","12",{"name":"format-detection","content":"telephone=no, address=no, email=no"}],["$","meta","13",{"property":"og:title","content":"Tantra | The Omnichannel Outreach Engine"}],["$","meta","14",{"property":"og:description","content":"Run outreach sequences across email, LinkedIn, WhatsApp, Telegram, and calendar invites — with every reply in one inbox and webinar attribution built in."}],["$","meta","15",{"property":"og:url","content":"https://adisuja.github.io/tantra-workshop-live/site/"}],["$","meta","16",{"property":"og:site_name","content":"Tantra"}],["$","meta","17",{"property":"og:locale","content":"en_US"}],["$","meta","18",{"property":"og:image","content":"https://adisuja.github.io/tantra-workshop-live/site/opengraph-image?aec9b2dd8884f91a"}],["$","meta","19",{"property":"og:image:type","content":"image/png"}],["$","meta","20",{"property":"og:image:width","content":"1200"}],["$","meta","21",{"property":"og:image:height","content":"630"}],["$","meta","22",{"property":"og:image:alt","content":"Tantra — the omnichannel outreach engine"}],["$","meta","23",{"property":"og:type","content":"website"}],["$","meta","24",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","25",{"name":"twitter:title","content":"Tantra | The Omnichannel Outreach Engine"}],["$","meta","26",{"name":"twitter:description","content":"Run outreach sequences across email, LinkedIn, WhatsApp, Telegram, and calendar invites — with every reply in one inbox and webinar attribution built in."}],["$","meta","27",{"name":"twitter:image","content":"https://adisuja.github.io/tantra-workshop-live/site/twitter-image?b2bbbbe9c1b8d140"}],["$","meta","28",{"name":"twitter:image:alt","content":"Tantra — the omnichannel outreach engine"}],["$","meta","29",{"name":"twitter:image:type","content":"image/png"}],["$","meta","30",{"name":"twitter:image:width","content":"1200"}],["$","meta","31",{"name":"twitter:image:height","content":"630"}],["$","link","32",{"rel":"icon","href":"/tantra-workshop-live/site/icon","type":"image/png"}],["$","link","33",{"rel":"apple-touch-icon","href":"/tantra-workshop-live/site/apple-icon","type":"image/png"}],["$","$L18","34",{}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
-e:["$","$1","c",{"children":[null,["$","$L19",null,{"parallelRouterKey":"children","template":["$","$L1a",null,{}]}]]}]
-12:true
-15:null
-b:300
-b:C
-11:0
-d:"$undefined"
-f:"$undefined"
-a:"$undefined"
+        </div></div>b:["$","div",null,{"className":"pbk","data-part":"d3-checklist","dangerouslySetInnerHTML":{"__html":"$21"}}]
+c:["$","link","0",{"rel":"stylesheet","href":"/tantra-workshop-live/site/_next/static/chunks/2eg2by03zi5yj.css","precedence":"next"}]
+d:["$","script","script-0",{"src":"/tantra-workshop-live/site/_next/static/chunks/3a73t51lrpsv8.js","async":true}]
+e:["$","script","script-1",{"src":"/tantra-workshop-live/site/_next/static/chunks/2zu8644accogk.js","async":true}]
+f:["$","script","script-2",{"src":"/tantra-workshop-live/site/_next/static/chunks/24c8hcv_blj_s.js","async":true}]
+10:["$","script","script-3",{"src":"/tantra-workshop-live/site/_next/static/chunks/2xqqe4cfwp9_q.js","async":true}]
+11:["$","$L22",null,{"children":["$","$23",null,{"name":"Next.MetadataOutlet","children":"$@24"}]}]
+14:["$","$1","h",{"children":[null,["$","$L25",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#f7f8fb"}],["$","meta","3",{"name":"color-scheme","content":"light"}]]}],["$","div",null,{"hidden":true,"children":["$","$L26",null,{"children":["$","$23",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Your Onboarding Centre | The 3-Day AI RevOps Workshop | Tantra"}],["$","meta","1",{"name":"description","content":"Run outreach sequences across email, LinkedIn, WhatsApp, Telegram, and calendar invites — with every reply in one inbox and webinar attribution built in."}],["$","meta","2",{"name":"application-name","content":"Tantra"}],["$","link","3",{"rel":"author","href":"https://adisuja.github.io/tantra-workshop-live/site"}],["$","meta","4",{"name":"author","content":"Tantra"}],["$","link","5",{"rel":"manifest","href":"/tantra-workshop-live/site/manifest.webmanifest"}],["$","meta","6",{"name":"referrer","content":"origin-when-cross-origin"}],["$","meta","7",{"name":"creator","content":"Tantra"}],["$","meta","8",{"name":"publisher","content":"Tantra"}],["$","meta","9",{"name":"robots","content":"noindex, nofollow"}],["$","meta","10",{"name":"category","content":"technology"}],["$","link","11",{"rel":"canonical","href":"https://adisuja.github.io/tantra-workshop-live/site/"}],["$","meta","12",{"name":"format-detection","content":"telephone=no, address=no, email=no"}],["$","meta","13",{"property":"og:title","content":"Tantra | The Omnichannel Outreach Engine"}],["$","meta","14",{"property":"og:description","content":"Run outreach sequences across email, LinkedIn, WhatsApp, Telegram, and calendar invites — with every reply in one inbox and webinar attribution built in."}],["$","meta","15",{"property":"og:url","content":"https://adisuja.github.io/tantra-workshop-live/site/"}],["$","meta","16",{"property":"og:site_name","content":"Tantra"}],["$","meta","17",{"property":"og:locale","content":"en_US"}],["$","meta","18",{"property":"og:image","content":"https://adisuja.github.io/tantra-workshop-live/site/opengraph-image?aec9b2dd8884f91a"}],["$","meta","19",{"property":"og:image:type","content":"image/png"}],["$","meta","20",{"property":"og:image:width","content":"1200"}],["$","meta","21",{"property":"og:image:height","content":"630"}],["$","meta","22",{"property":"og:image:alt","content":"Tantra — the omnichannel outreach engine"}],["$","meta","23",{"property":"og:type","content":"website"}],["$","meta","24",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","25",{"name":"twitter:title","content":"Tantra | The Omnichannel Outreach Engine"}],["$","meta","26",{"name":"twitter:description","content":"Run outreach sequences across email, LinkedIn, WhatsApp, Telegram, and calendar invites — with every reply in one inbox and webinar attribution built in."}],["$","meta","27",{"name":"twitter:image","content":"https://adisuja.github.io/tantra-workshop-live/site/twitter-image?b2bbbbe9c1b8d140"}],["$","meta","28",{"name":"twitter:image:alt","content":"Tantra — the omnichannel outreach engine"}],["$","meta","29",{"name":"twitter:image:type","content":"image/png"}],["$","meta","30",{"name":"twitter:image:width","content":"1200"}],["$","meta","31",{"name":"twitter:image:height","content":"630"}],["$","link","32",{"rel":"icon","href":"/tantra-workshop-live/site/icon","type":"image/png"}],["$","link","33",{"rel":"apple-touch-icon","href":"/tantra-workshop-live/site/apple-icon","type":"image/png"}],["$","$L27","34",{}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+16:["$","$1","c",{"children":[null,["$","$L28",null,{"parallelRouterKey":"children","template":["$","$L29",null,{}]}]]}]
+1a:true
+24:null
+13:300
+13:C
+19:0
+15:"$undefined"
+17:"$undefined"
+12:"$undefined"
