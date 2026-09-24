@@ -29,7 +29,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1
 /* top bar */
 header{position:sticky;top:0;z-index:60;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .hb{max-width:1120px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:12px}
-.brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:inherit}.tmark{position:relative;display:block;width:30px;height:30px;flex:none}.tmark img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}.tmark .tmk-white{display:none}[data-theme="dark"] .tmark .tmk-ink{display:none}[data-theme="dark"] .tmark .tmk-white{display:block}.tname{font-weight:800;letter-spacing:-.02em;color:var(--ink)}.tdot{color:var(--ink-3);font-weight:400;margin:0 1px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:inherit}.tmark{position:relative;display:block;width:46px;height:31px;flex:none}.tword{position:relative;display:block;width:66px;height:13px;flex:none}.tword img{position:absolute;inset:0;width:100%;height:100%}.tword .tmk-white{display:none}[data-theme="dark"] .tword .tmk-ink{display:none}[data-theme="dark"] .tword .tmk-white{display:block}.tsep{width:1px;height:20px;background:var(--line-2);flex:none}.tmark img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}.tmark .tmk-white{display:none}[data-theme="dark"] .tmark .tmk-ink{display:none}[data-theme="dark"] .tmark .tmk-white{display:block}.tname{font-weight:800;letter-spacing:-.02em;color:var(--ink)}.tdot{color:var(--ink-3);font-weight:400;margin:0 1px}
 .brand b{font-size:14px;font-weight:650;letter-spacing:-.01em}
 .hb .sp{flex:1}
 .hb a.back{font-size:13px;color:var(--ink-2);text-decoration:none;font-weight:550}
@@ -109,7 +109,7 @@ section.reveal.in{opacity:1;transform:none}
 .calc .res .k{font-size:12.5px;color:var(--ink-3)}
 .calc .res .v{font-size:28px;font-weight:800;letter-spacing:-.02em;color:var(--accent-ink)}
 .calc .res .b.g .v{color:var(--teal)}
-.calc .res{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.calc .res{grid-template-columns:repeat(3,minmax(0,1fr))}
 .calcnote{margin-top:16px;padding:12px 14px;border-radius:10px;font-size:14px;line-height:1.55;background:var(--panel-2);color:var(--ink-2)}
 .calcnote.g{background:var(--teal-bg);color:var(--teal)}
 .calcnote.a{background:var(--amber-bg);color:var(--amber)}
@@ -192,7 +192,7 @@ svg text{font-family:var(--sans);dominant-baseline:middle}
 .srcnote{font-size:12.5px;color:var(--ink-3);border-left:2px solid var(--line-2);padding:3px 0 3px 13px;margin:-6px 0 22px;line-height:1.6}
 .srcnote b{color:var(--ink-2);font-weight:650}
 footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;color:var(--ink-3);font-size:13.5px}
-@media(max-width:560px){.calc{padding:16px}.calc .row{flex-wrap:wrap;gap:8px}.calc label{flex:1 0 100%;width:auto}.calc input[type=range]{flex:1 1 auto;min-width:0}.calc .out{width:60px}.calc .res{grid-template-columns:1fr}}
+@media(max-width:560px){.calc{padding:16px}.calc .row{flex-wrap:wrap;gap:8px}.calc label{flex:1 0 100%;width:auto}.calc input[type=range]{flex:1 1 auto;min-width:0}.calc .out{width:60px}.calc .res{grid-template-columns:repeat(2,minmax(0,1fr))}.calc .res .v{font-size:22px}}
 @media(max-width:860px){.shell{grid-template-columns:1fr}nav.toc{display:none}h1{font-size:34px}main{padding-top:26px}}
 
 /* An in-chapter divider. Days 1 and 3 each run in two halves; they stay one
@@ -201,13 +201,16 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
 .half .hn{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent-ink);background:var(--accent-2);border-radius:20px;padding:4px 12px}
 .half .hh{margin:12px 0 0;font-size:clamp(21px,2.4vw,29px);line-height:1.16;letter-spacing:-.02em}
 .half .hl{margin-top:9px;font-size:16px;line-height:1.62;color:var(--ink-2)}
+.grid:has(>:nth-child(4):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:560px){.grid:has(>:nth-child(4):last-child){grid-template-columns:1fr}}
+.stats:has(>:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr))}
 .chkday tr.sub td{padding-top:16px;border-top:1px solid var(--line-2);color:var(--accent-ink);font-size:13px}
 </style>
 </head>
 <body>
 <div class="prog" id="prog"></div>
 <header><div class="hb">
-  <a class="brand" href="index.html" aria-label="Tantra — the Playbook"><span class="tmark"><img class="tmk-ink" src="brand/tantra-mark-ink.png" alt="" width="192" height="192"><img class="tmk-white" src="brand/tantra-mark-white.png" alt="" width="192" height="192"></span><span><span class="tname">Tantra</span> <span class="tdot">·</span> <b>The Playbook</b></span></a>
+  <a class="brand" href="index.html" aria-label="Tantra — the Playbook"><span class="tmark"><img class="tmk-ink" src="brand/tantra-mark-ink.png" alt="" width="889" height="600"><img class="tmk-white" src="brand/tantra-mark-white.png" alt="" width="714" height="600"></span><span class="tword"><img class="tmk-ink" src="brand/tantra-word-ink.png" alt="Tantra" width="434" height="86"><img class="tmk-white" src="brand/tantra-word-white.png" alt="Tantra" width="434" height="86"></span><span class="tsep"></span><b>The Playbook</b></a>
   <div class="sp"></div>
   <a class="back" href="index.html">← Command center</a>
   <button class="iconbtn" id="theme" title="Theme">◐</button>
@@ -355,7 +358,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
 
       <div class="viz wide">
         <div class="vtitle">Excitement peaks at purchase. Value arrives later. The gap is the churn window.</div>
-        <svg viewBox="0 0 860 452" role="img" aria-label="A chart over ninety days from purchase. One curve shows excitement peaking at the moment of purchase then decaying. A second curve shows experienced value starting at zero and rising slowly, crossing the excitement curve late; the shaded area before that crossing is labelled the churn window. A third dashed curve shows value rising far faster when an on-ramp is in place, crossing early and leaving a much narrower window.">
+        <svg viewBox="0 38 860 414" role="img" aria-label="A chart over ninety days from purchase. One curve shows excitement peaking at the moment of purchase then decaying. A second curve shows experienced value starting at zero and rising slowly, crossing the excitement curve late; the shaded area before that crossing is labelled the churn window. A third dashed curve shows value rising far faster when an on-ramp is in place, crossing early and leaving a much narrower window.">
           <defs>
             <linearGradient id="wfWide" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stop-color="var(--pink)" stop-opacity=".22"/><stop offset="100%" stop-color="var(--pink)" stop-opacity=".04"/>
@@ -419,7 +422,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
 
       <div class="viz wide">
         <div class="vtitle">Four different mechanisms — they need four different assets</div>
-        <svg viewBox="0 0 860 300" role="img" aria-label="Four mechanisms by which a conversion engine retains customers: it compresses time to value, it manufactures the switching cost, it fixes the skill gap before it is misread as a product defect, and it turns a transaction into an identity. Each is shown with the asset that delivers it.">
+        <svg viewBox="0 6 860 294" role="img" aria-label="Four mechanisms by which a conversion engine retains customers: it compresses time to value, it manufactures the switching cost, it fixes the skill gap before it is misread as a product defect, and it turns a transaction into an identity. Each is shown with the asset that delivers it.">
           <g font-size="10">
             <rect x="16" y="20" width="198" height="238" rx="12" class="node"/>
             <rect x="16" y="20" width="198" height="5" rx="2.5" fill="var(--accent)"/>
@@ -464,7 +467,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
 
       <div class="viz wide">
         <div class="vtitle">The same five assets, working both sides of the sale</div>
-        <svg viewBox="0 0 860 396" role="img" aria-label="Five assets — content, live sessions, a book, workshops and events, and community — each shown with the job it does before the sale on the left and the job it does after the sale on the right, arranged around a central spine labelled the same asset.">
+        <svg viewBox="0 0 860 383" role="img" aria-label="Five assets — content, live sessions, a book, workshops and events, and community — each shown with the job it does before the sale on the left and the job it does after the sale on the right, arranged around a central spine labelled the same asset.">
           <defs>
             <marker id="wfL" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
             <marker id="wfR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
@@ -605,7 +608,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
       <p>Traffic, capture, convert, retain. That's it. Every tool, page and automation you will build this week exists to do one of those four things — and the reason funnels beat "post and pray" is that you can see which of the four is broken.</p>
       <div class="viz wide">
         <div class="vtitle">The funnel as one system — traffic in, retention out</div>
-        <svg viewBox="0 0 860 566" role="img" aria-label="End-to-end funnel system: five traffic channels converge into a four-stage conversion cascade, with drop-off at each stage and a retention loop feeding referrals back to the top.">
+        <svg viewBox="0 23 860 543" role="img" aria-label="End-to-end funnel system: five traffic channels converge into a four-stage conversion cascade, with drop-off at each stage and a retention loop feeding referrals back to the top.">
           <defs>
             <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
             <marker id="arrT" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
@@ -1046,7 +1049,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
       <p>An offer is not a price list. It's an argument: <em>this outcome, by this method, in this time, and here's who carries the risk if it doesn't work.</em> There's a clean way to pressure-test that argument before you spend a rupee or a dollar on traffic.</p>
       <div class="viz wide">
         <div class="vtitle">Pressure-test the value, then stack the offer</div>
-        <svg viewBox="0 0 860 552" role="img" aria-label="Offer architecture. Top: the value equation shown as a fraction — dream outcome times perceived likelihood, over time delay times effort and sacrifice — with four levers on the right showing which direction to push each. Bottom: five stacked components — transformation, mechanism, proof, guarantee, bonuses — assembling into a single offer statement with a three-tier price strip.">
+        <svg viewBox="0 2 860 529" role="img" aria-label="Offer architecture. Top: the value equation shown as a fraction — dream outcome times perceived likelihood, over time delay times effort and sacrifice — with four levers on the right showing which direction to push each. Bottom: five stacked components — transformation, mechanism, proof, guarantee, bonuses — assembling into a single offer statement with a three-tier price strip.">
           <defs>
             <marker id="oa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
           </defs>
@@ -1237,7 +1240,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
       <p>This is the single biggest difference between a funnel that gets optimised and one that gets abandoned. A rate you invented can never be wrong, so it never teaches you anything. A counted event can be wrong tomorrow, which is exactly what makes it useful.</p>
       <div class="viz wide">
         <div class="vtitle">Every term is a counted event with a named source</div>
-        <svg viewBox="0 0 860 452" role="img" aria-label="Funnel math in fetched quantities. A left-to-right rail of eight instrumented steps — visit, opt-in, qualified, engaged, offer seen, checkout started, purchase, renewal — each labelled with the system that reports it, with seven ratio markers between them. Below, a panel of five equations for buyers, revenue, customer acquisition cost, return on ad spend, and lifetime value.">
+        <svg viewBox="0 16 860 433" role="img" aria-label="Funnel math in fetched quantities. A left-to-right rail of eight instrumented steps — visit, opt-in, qualified, engaged, offer seen, checkout started, purchase, renewal — each labelled with the system that reports it, with seven ratio markers between them. Below, a panel of five equations for buyers, revenue, customer acquisition cost, return on ad spend, and lifetime value.">
           <line x1="70" y1="132" x2="784" y2="132" stroke="var(--line-2)" stroke-width="2"/>
           <g fill="var(--accent-2)" stroke="var(--accent)" stroke-width="2">
             <circle cx="70" cy="132" r="12"/><circle cx="172" cy="132" r="12"/><circle cx="274" cy="132" r="12"/><circle cx="376" cy="132" r="12"/>
@@ -1333,7 +1336,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
       <p>Here's the insight most people miss: your landing page, your emails, your ads, your outreach — they all draw from the <strong>same well.</strong> Define it once and every asset stays consistent. Change it once and everything downstream updates.</p>
       <div class="viz">
         <div class="vtitle">Define 5 inputs once → generate every asset</div>
-        <svg viewBox="0 0 800 400" role="img" aria-label="Hub and spoke diagram: five context blocks feed a central conversion engine, which generates six funnel assets.">
+        <svg viewBox="0 8 800 327" role="img" aria-label="Hub and spoke diagram: five context blocks feed a central conversion engine, which generates six funnel assets.">
           <defs>
             <marker id="ain" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
             <marker id="aout" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
@@ -1621,7 +1624,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
       <h3>The path a visitor actually moves through</h3>
       <div class="viz wide">
         <div class="vtitle">The path a visitor actually moves through — with the branch that matters</div>
-        <svg viewBox="0 0 860 400" role="img" aria-label="Journey flowchart: organic and paid lanes converge into landing, thank-you and content pages, then a ready-or-not decision branches to a sales page and checkout, or into a nurture loop that feeds back.">
+        <svg viewBox="0 106 860 247" role="img" aria-label="Journey flowchart: organic and paid lanes converge into landing, thank-you and content pages, then a ready-or-not decision branches to a sales page and checkout, or into a nurture loop that feeds back.">
           <defs>
             <marker id="ja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--accent)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
             <marker id="jt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--teal)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
@@ -1640,8 +1643,8 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
           <path d="M765 170 L765 250" fill="none" stroke="var(--teal)" stroke-width="1.8" marker-end="url(#jt)" class="flowline"/>
           <path d="M600 226 C600 280 600 300 568 300" fill="none" stroke="var(--amber)" stroke-width="1.8" marker-end="url(#jm)" class="flowline"/>
           <path d="M470 312 C360 330 360 250 500 230" fill="none" stroke="var(--amber)" stroke-width="1.6" stroke-dasharray="5 6" marker-end="url(#jm)" opacity=".8"/>
-          <rect x="14" y="120" width="130" height="44" rx="11" fill="var(--teal-bg)"/><text x="30" y="137" fill="var(--teal)" font-weight="700" font-size="12.5">Organic</text><text x="28" y="152" class="svmute" font-size="9.5">content · email · LinkedIn</text>
-          <rect x="14" y="230" width="130" height="44" rx="11" fill="var(--blue-bg)"/><text x="30" y="247" fill="var(--blue)" font-weight="700" font-size="12.5">Paid ads</text><text x="30" y="262" class="svmute" font-size="10.5">must self-liquidate</text>
+          <rect x="14" y="120" width="138" height="44" rx="11" fill="var(--teal-bg)"/><text x="30" y="137" fill="var(--teal)" font-weight="700" font-size="12.5">Organic</text><text x="30" y="152" class="svmute" font-size="9.5">content · email · LinkedIn</text>
+          <rect x="14" y="230" width="138" height="44" rx="11" fill="var(--blue-bg)"/><text x="30" y="247" fill="var(--blue)" font-weight="700" font-size="12.5">Paid ads</text><text x="30" y="262" class="svmute" font-size="10.5">must self-liquidate</text>
           <g font-size="12.5">
             <rect x="170" y="176" width="118" height="52" rx="11" fill="var(--accent-2)"/><text x="229" y="197" text-anchor="middle" fill="var(--accent-ink)" font-weight="700">Landing</text><text x="229" y="213" text-anchor="middle" class="svmute" font-size="10.5">promise + opt-in</text>
             <rect x="310" y="176" width="118" height="52" rx="11" fill="var(--accent-2)"/><text x="369" y="197" text-anchor="middle" fill="var(--accent-ink)" font-weight="700">Thank-you</text><text x="369" y="213" text-anchor="middle" class="svmute" font-size="10.5">join the group</text>
@@ -1669,37 +1672,37 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
           </defs>
           <text x="16" y="22" class="svsub" font-size="11">DAILY OPERATING LIMITS · exceed these and you burn the asset, not just the campaign</text>
           <line x1="16" y1="36" x2="844" y2="36" stroke="var(--line-2)" stroke-width="1.5"/>
-          <text x="32" y="52" class="svmute" font-size="9.5">CHANNEL</text><text x="200" y="52" class="svmute" font-size="9.5">THE LIMITS</text><text x="626" y="52" class="svmute" font-size="9.5">WHAT BREAKS IF YOU IGNORE THEM</text>
+          <text x="32" y="52" class="svmute" font-size="9.5">CHANNEL</text><text x="200" y="52" class="svmute" font-size="9.5">THE LIMITS</text><text x="832" y="52" text-anchor="end" class="svmute" font-size="9.5">WHAT BREAKS IF YOU IGNORE THEM</text>
           <g font-size="10.5">
             <rect x="16" y="62" width="828" height="44" rx="8" fill="var(--panel-2)"/>
             <text x="32" y="80" class="svlabel" font-size="11">Cold calendar</text><text x="32" y="96" class="svmute" font-size="9.5">invites from service accounts</text>
             <text x="200" y="80" class="svsub">20/day per cold inbox · 50/day once warmed · SPF + DKIM + DMARC before the first send</text>
             <text x="200" y="96" class="svmute" font-size="9.5">anonymous domains only — never your main brand domain</text>
-            <text x="626" y="88" fill="var(--pink)" font-size="10">the domain, permanently</text>
+            <text x="832" y="96" text-anchor="end" fill="var(--pink)" font-size="10">the domain, permanently</text>
 
             <rect x="16" y="112" width="828" height="44" rx="8" fill="var(--panel)"/>
             <text x="32" y="130" class="svlabel" font-size="11">Cold email</text><text x="32" y="146" class="svmute" font-size="9.5">sequenced outreach</text>
             <text x="200" y="130" class="svsub">20/day unwarmed → 50/day warmed · 2–3 weeks of warm-up · verify the list below 1% bounce</text>
             <text x="200" y="146" class="svmute" font-size="9.5">reject any purchased list with more than 1–2% duplicates</text>
-            <text x="626" y="138" fill="var(--pink)" font-size="10">inbox placement for every domain</text>
+            <text x="832" y="146" text-anchor="end" fill="var(--pink)" font-size="10">inbox placement for every domain</text>
 
             <rect x="16" y="162" width="828" height="44" rx="8" fill="var(--panel-2)"/>
             <text x="32" y="180" class="svlabel" font-size="11">LinkedIn outreach</text><text x="32" y="196" class="svmute" font-size="9.5">connect · message · InMail</text>
             <text x="200" y="180" class="svsub">connects ramp 15 → 75/day · messages 50/day · InMail 30/day · event invites 140–150/day</text>
             <text x="200" y="196" class="svmute" font-size="9.5">75/day is the total messaging cap across campaigns · lists export in chunks of 2,500</text>
-            <text x="626" y="188" fill="var(--pink)" font-size="10">the account, with no appeal</text>
+            <text x="832" y="196" text-anchor="end" fill="var(--pink)" font-size="10">the account, with no appeal</text>
 
             <rect x="16" y="212" width="828" height="44" rx="8" fill="var(--panel)"/>
             <text x="32" y="230" class="svlabel" font-size="11">Paid ads</text><text x="32" y="246" class="svmute" font-size="9.5">cold + retargeting</text>
             <text x="200" y="230" class="svsub">smallest viable budget first · one variable per test · retargeting pool live from day one</text>
             <text x="200" y="246" class="svmute" font-size="9.5">prove the funnel converts on cheap learning traffic before you scale spend</text>
-            <text x="626" y="238" fill="var(--pink)" font-size="10">your budget, fastest of all</text>
+            <text x="832" y="246" text-anchor="end" fill="var(--pink)" font-size="10">your budget, fastest of all</text>
 
             <rect x="16" y="262" width="828" height="44" rx="8" fill="var(--panel-2)"/>
             <text x="32" y="280" class="svlabel" font-size="11">Content · organic</text><text x="32" y="296" class="svmute" font-size="9.5">the only channel that compounds</text>
             <text x="200" y="280" class="svsub">batch, never improvise · 1 pillar → 5 clips → quotes · post to the event every 3 days</text>
             <text x="200" y="296" class="svmute" font-size="9.5">every link UTM-tagged, or none of this is attributable</text>
-            <text x="626" y="288" fill="var(--amber)" font-size="10">nothing — it just quietly stops</text>
+            <text x="832" y="296" text-anchor="end" fill="var(--amber)" font-size="10">nothing — it just quietly stops</text>
           </g>
           <!-- decision gate -->
           <line x1="16" y1="320" x2="844" y2="320" stroke="var(--line-2)" stroke-width="1.5"/>
@@ -2254,7 +2257,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
       <p>Here's the deal: the difference between an AI that builds you a funnel and an AI that builds you a generic template is <strong>what you give it before you ask.</strong> Handing an agent "build me a funnel" gets you a template. Handing it your conversion engine, your spec outline and a build checklist gets you <em>your</em> funnel.</p>
       <div class="viz wide">
         <div class="vtitle">Eight phases — and the agent refuses to skip ahead</div>
-        <svg viewBox="0 0 860 486" role="img" aria-label="The build ritual as eight phases: load the context, run the interview, author and approve the spec, scaffold and theme, build the funnel core, wire commerce and lifecycle, instrument every step, then quality-assure and deploy. A gate between phase two and three shows that no code is written until the spec is approved. A feedback arrow returns from deploy to the spec.">
+        <svg viewBox="0 50 860 436" role="img" aria-label="The build ritual as eight phases: load the context, run the interview, author and approve the spec, scaffold and theme, build the funnel core, wire commerce and lifecycle, instrument every step, then quality-assure and deploy. A gate between phase two and three shows that no code is written until the spec is approved. A feedback arrow returns from deploy to the spec.">
           <defs>
             <marker id="b1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
             <marker id="b2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
@@ -2310,7 +2313,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
           <text x="330" y="166" text-anchor="middle" class="svmute" font-size="10">↓ no code is written above this line ↓</text>
           <path d="M820 268 C844 268 852 300 852 330 L852 344" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-dasharray="6 6" class="flowline"/>
           <path d="M852 344 C852 356 844 362 832 362 L60 362 C40 362 32 356 32 344 L32 320" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-dasharray="6 6" marker-end="url(#b2)" class="flowline"/>
-          <text x="440" y="356" text-anchor="middle" class="svmute" font-size="10">every later change goes back through the spec — never straight into the code</text>
+          <text x="440" y="356" text-anchor="middle" class="svmute" font-size="10" style="paint-order:stroke;stroke:var(--panel);stroke-width:7px;stroke-linejoin:round">every later change goes back through the spec — never straight into the code</text>
           <rect x="16" y="384" width="828" height="88" rx="12" fill="var(--panel-2)" stroke="var(--line-2)"/>
           <text x="36" y="408" class="svlabel" font-size="11.5">THE SIX RULES THE AGENT IS GIVEN UP FRONT</text>
           <text x="36" y="428" class="svmute" font-size="10">1 · Build the funnel core first, traffic second.   2 · Traffic is upstream and variable — it only feeds one URL.</text>
@@ -2340,7 +2343,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
       <p>Once it's built, the agent doesn't go away. It keeps the context — your offer, your ICP, your pages, your templates, your numbers — and becomes the thing you and your team ask questions of and give instructions to.</p>
 <div class="viz wide">
         <div class="vtitle">The RevOps orchestrator — context in, operations out</div>
-        <svg viewBox="0 0 800 372" role="img" aria-label="Architecture: context inputs feed a central AI orchestrator with state and knowledge, which drives read, write and compute tools to produce live outputs.">
+        <svg viewBox="0 1 800 330" role="img" aria-label="Architecture: context inputs feed a central AI orchestrator with state and knowledge, which drives read, write and compute tools to produce live outputs.">
           <defs>
             <marker id="mkOffer2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
             <marker id="ob" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
@@ -2409,6 +2412,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
           <rect x="470" y="286" width="322" height="30" rx="15" fill="var(--amber-bg)"/><text x="486" y="302" fill="var(--amber)" font-weight="700" font-size="11.5">Any team question → answered in 2 seconds</text>
         </svg>
         <div class="cap"><b>The retention unlock:</b> a central orchestrator that holds all your funnel knowledge is what turns a pile of files into a system anyone on the team can query instantly.</div>
+      </div>
       <div class="box why"><div class="h">◆ The real unlock — most people get this wrong</div>
         <p>The biggest problem isn't making the orchestrator "perfect." You can refine that forever. The real problem is <strong>instant access to every piece of knowledge in your funnel.</strong> When anyone on your team can ask "what's our offer for cold LinkedIn leads?" and get an answer in two seconds, that speed becomes a retention advantage. Knowledge you can reach beats knowledge you merely have.</p></div>
 
@@ -2486,10 +2490,10 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
             <text x="440" y="175">score threshold, then hand-off</text>
             <text x="440" y="235">call recording + notes sync</text>
             <text x="440" y="295">nurture between calls</text>
-            <text x="440" y="355">proposal watchdog — pings if unopened</text>
+            <text x="440" y="349">proposal watchdog —</text><text x="440" y="362">pings if unopened</text>
             <text x="440" y="415">move straight to closing</text>
             <text x="440" y="475">payment webhook → finance</text>
-            <text x="440" y="535">welcome, day-one check-in, review scheduler</text>
+            <text x="440" y="529">welcome, day-one check-in,</text><text x="440" y="542">review scheduler</text>
           </g>
           <!-- exits -->
           <path d="M406 111 C440 111 440 126 440 148 L440 556 C440 570 434 576 424 576" fill="none" stroke="var(--amber)" stroke-width="1.6" stroke-dasharray="5 6" opacity=".5"/>
@@ -2802,7 +2806,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
       <h3>Step 3 — Run the loop every week</h3>
       <div class="viz wide">
         <div class="vtitle">Six steps, one lap per week, forever</div>
-        <svg viewBox="0 0 860 432" role="img" aria-label="The weekly optimisation loop drawn as a ring of six steps: observe, locate, hypothesise, experiment, measure, and keep or revert, with the ring returning to observe. Side panels list the daily, weekly, monthly and quarterly cadence and the four signs the loop is working.">
+        <svg viewBox="0 22 860 410" role="img" aria-label="The weekly optimisation loop drawn as a ring of six steps: observe, locate, hypothesise, experiment, measure, and keep or revert, with the ring returning to observe. Side panels list the daily, weekly, monthly and quarterly cadence and the four signs the loop is working.">
           <defs>
             <marker id="l1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
           </defs>
@@ -2997,22 +3001,22 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
       <p>Not from one enormous month. From a wheel that gets slightly easier to turn each time: a new customer joins, gets a fast win, asks for more, gets it, stays, and refers. Every turn adds recurring revenue and lowers the cost of the next customer.</p>
 <div class="viz wide">
         <div class="vtitle">The flywheel — customers never exit, they re-enter</div>
-        <svg viewBox="0 0 720 520" role="img" aria-label="RevOps flywheel: three arcs — attract, engage, delight — rotate around RevOps at the hub; retained customers re-enter through referrals, renewals and expansion.">
+        <svg viewBox="0 0 720 506" role="img" aria-label="RevOps flywheel: three arcs — attract, engage, delight — rotate around RevOps at the hub; retained customers re-enter through referrals, renewals and expansion.">
           <defs>
             <marker id="fm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--ink-2)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
             <marker id="fmg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
           </defs>
           <!-- outer re-entry loop -->
           <path d="M143.5 375 A250 250 0 0 1 360 0" fill="none" stroke="var(--teal)" stroke-width="2" stroke-dasharray="8 8" class="flowline" marker-end="url(#fmg)" opacity=".85"/>
-          <text x="120" y="250" text-anchor="middle" transform="rotate(-90 120 250)" class="svsub" font-size="12">retained customers re-enter the top</text>
+          <text x="92" y="250" text-anchor="middle" transform="rotate(-90 92 250)" class="svsub" font-size="12">retained customers re-enter the top</text>
           <!-- three stage arcs -->
           <circle cx="360" cy="250" r="175" fill="none" stroke="#6366f1" stroke-width="46" stroke-dasharray="350 750" transform="rotate(212.7 360 250)"/>
           <circle cx="360" cy="250" r="175" fill="none" stroke="#9333ea" stroke-width="46" stroke-dasharray="350 750" transform="rotate(332.7 360 250)"/>
           <circle cx="360" cy="250" r="175" fill="none" stroke="#0f9e75" stroke-width="46" stroke-dasharray="350 750" transform="rotate(92.7 360 250)"/>
           <!-- on-arc labels -->
-          <text x="360" y="228" text-anchor="middle" class="svwhite" font-size="16">Attract</text>
-          <text x="475" y="330" text-anchor="middle" class="svwhite" font-size="16" transform="rotate(60 475 330)">Engage</text>
-          <text x="245" y="330" text-anchor="middle" class="svwhite" font-size="16" transform="rotate(-60 245 330)">Delight</text>
+          <text x="360" y="76" text-anchor="middle" class="svwhite" font-size="16">Attract</text>
+          <text x="511.6" y="338.5" text-anchor="middle" class="svwhite" font-size="16" transform="rotate(-60 511.6 338.5)">Engage</text>
+          <text x="208.4" y="338.5" text-anchor="middle" class="svwhite" font-size="16" transform="rotate(60 208.4 338.5)">Delight</text>
           <!-- momentum arrows at gaps (clockwise) -->
           <g fill="none" stroke="var(--ink-2)" stroke-width="2" marker-end="url(#fm)" opacity=".7">
             <path d="M497.9 142.2 A175 175 0 0 1 522.2 184.4"/>
@@ -3041,6 +3045,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
           </g>
         </svg>
         <div class="legend2"><span><i style="background:#6366f1"></i>Attract</span><span><i style="background:#9333ea"></i>Engage</span><span><i style="background:#0f9e75"></i>Delight</span><span><i style="background:var(--accent)"></i>RevOps at the hub</span></div>
+      </div>
       <div class="tbl"><table>
         <thead><tr><th>Lever</th><th>What you change</th><th>Why it compounds</th></tr></thead>
         <tbody>
@@ -3097,9 +3102,9 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
             <marker id="w2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
           </defs>
           <g text-anchor="middle" font-size="11">
-            <rect x="144" y="26" width="220" height="28" rx="8" fill="var(--accent-2)"/><text x="254" y="41" fill="var(--accent-ink)" font-weight="700">Day 1 · Thu</text>
-            <rect x="376" y="26" width="220" height="28" rx="8" fill="var(--accent-2)"/><text x="486" y="41" fill="var(--accent-ink)" font-weight="700">Day 2 · Fri</text>
-            <rect x="608" y="26" width="220" height="28" rx="8" fill="var(--accent-2)"/><text x="718" y="41" fill="var(--accent-ink)" font-weight="700">Day 3 · Mon</text>
+            <rect x="144" y="26" width="220" height="28" rx="8" fill="var(--accent-2)"/><text x="254" y="41" fill="var(--accent-ink)" font-weight="700">Day 1</text>
+            <rect x="376" y="26" width="220" height="28" rx="8" fill="var(--accent-2)"/><text x="486" y="41" fill="var(--accent-ink)" font-weight="700">Day 2</text>
+            <rect x="608" y="26" width="220" height="28" rx="8" fill="var(--accent-2)"/><text x="718" y="41" fill="var(--accent-ink)" font-weight="700">Day 3</text>
           </g>
           <g stroke="var(--line)" stroke-width="1">
             <line x1="140" y1="62" x2="140" y2="372"/><line x1="372" y1="62" x2="372" y2="372"/>
@@ -3230,7 +3235,10 @@ document.getElementById("theme").onclick=()=>{const n=document.documentElement.d
 const prog=document.getElementById("prog");
 addEventListener("scroll",()=>{const h=document.documentElement;const p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;prog.style.width=p+"%"},{passive:true});
 // reveal on scroll
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in")}),{threshold:.08});
+// threshold 0, never a ratio: Day 1-3 are 12-16k px tall, so an 8% ratio could
+// never be reached on a laptop and whole chapters stayed invisible.
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in")}),{threshold:0});
+if(location.hash){const t=document.querySelector(location.hash);const s=t&&t.closest("section.reveal");if(s)s.classList.add("in")}
 document.querySelectorAll("section.reveal").forEach(s=>io.observe(s));
 // scrollspy
 const links=[...document.querySelectorAll("nav.toc a")];
