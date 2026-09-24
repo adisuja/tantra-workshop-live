@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Referral dashboard · The 3-Day AI RevOps Workshop</title>
+<!--
+  T-055 · Team referral dashboard. Static page on the free GitHub Pages mirror.
+  The numbers live in referrals.data.json, ENCRYPTED (AES-256-GCM, key from the
+  team passphrase via PBKDF2-SHA256) by workshop-plan/ops/referrals.py, which the
+  local ops tick refreshes every 10 minutes. Nothing readable is public: without
+  the passphrase the file is noise, and it never contains buyer emails or names.
+-->
+<style>
+:root{--bg:#05050f;--panel:#0b0b1f;--line:rgb(255 255 255/.09);--ink:#f4f4fb;--dim:rgb(244 244 251/.6);--faint:rgb(244 244 251/.38);
+--green:#00D55A;--yellow:#FFF200;--violet:#A47BFF;--cyan:#22D3EE;--pink:#FF4FD8;--amber:#FFC53D}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,sans-serif}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:36px 20px 80px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:34px}
+h1{font-size:clamp(26px,4vw,38px);line-height:1.08;letter-spacing:-.02em;margin:22px 0 6px;font-weight:800}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--amber),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--dim);max-width:720px;margin:0}
+.meta{color:var(--faint);font-size:12.5px;margin-top:10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:20px}
+.gate{max-width:440px;margin:60px auto 0;padding:26px}
+.gate h2{margin:0 0 6px;font-size:19px}.gate p{margin:0 0 16px;color:var(--dim);font-size:14px}
+input,select{width:100%;background:#07071a;border:1px solid rgb(255 255 255/.16);color:var(--ink);border-radius:12px;padding:12px 14px;font:inherit;outline:none}
+input:focus,select:focus{border-color:var(--violet)}
+button{cursor:pointer;border:0;border-radius:999px;padding:12px 20px;font:inherit;font-weight:800;background:var(--green);color:#05050f}
+button.ghost{background:rgb(255 255 255/.06);color:var(--ink);border:1px solid var(--line);font-weight:600;padding:9px 14px}
+.err{color:#ff6b6b;font-size:13px;min-height:18px;margin-top:10px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:28px 0}
+.kpi{padding:18px}.kpi .l{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.kpi .v{font-size:30px;font-weight:800;letter-spacing:-.02em;margin-top:6px;font-variant-numeric:tabular-nums}
+.kpi:nth-child(1) .v{color:var(--cyan)}.kpi:nth-child(2) .v{color:var(--violet)}.kpi:nth-child(3) .v{color:var(--amber)}.kpi:nth-child(4) .v{color:var(--green)}
+h3{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:34px 0 12px}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;vertical-align:top}
+th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:700}
+tr.m{cursor:pointer}tr.m:hover td{background:rgb(255 255 255/.025)}
+td.n{font-weight:700}.rank{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:rgb(255 255 255/.07);font-size:12px;margin-right:10px;font-weight:800}
+tr.m:nth-child(1) .rank{background:var(--amber);color:#05050f}
+.bar{height:6px;border-radius:99px;background:rgb(255 255 255/.07);margin-top:8px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--violet),var(--pink))}
+.muted{color:var(--faint)}
+.detail td{background:rgb(255 255 255/.02)}
+.detail .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chip{display:inline-block;padding:3px 9px;border-radius:99px;background:rgb(255 255 255/.07);font-size:12px;margin:0 6px 6px 0}
+.tbl-wrap{overflow-x:auto}
+.two{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}
+.box{padding:20px}.box p{color:var(--dim);font-size:14px;margin:6px 0}
+.out{margin-top:12px;display:grid;gap:8px}
+.out code{display:block;background:#07071a;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:12.5px;word-break:break-all;color:#d8d8f0}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.empty{padding:26px;text-align:center;color:var(--dim)}
+@media (max-width:760px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.two,.detail .grid,.row2{grid-template-columns:1fr}th.h-sm,td.h-sm{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><img src="site/brand/tantra-lockup.png" alt="Tantra"></div>
+  <h1>Team referral <em>dashboard</em></h1>
+  <p class="sub">Every registration and sale that came through your posts and tracked links — and what it has earned you. The 3-Day AI RevOps Workshop.</p>
+  <div class="meta" id="meta"></div>
+
+  <div class="card gate" id="gate">
+    <h2>Team passphrase</h2>
+    <p>The numbers are encrypted. Enter the passphrase Adi shared with the team.</p>
+    <form id="unlock"><input id="pass" type="password" autocomplete="current-password" placeholder="four-words-and-a-number" autofocus>
+      <div style="margin-top:12px"><button type="submit">Unlock dashboard</button></div></form>
+    <div class="err" id="err"></div>
+  </div>
+
+  <div id="app" hidden>
+    <div class="kpis">
+      <div class="card kpi"><div class="l">Registrations</div><div class="v" id="k-reg">0</div></div>
+      <div class="card kpi"><div class="l">Buyers</div><div class="v" id="k-buy">0</div></div>
+      <div class="card kpi"><div class="l">Revenue (USD eq.)</div><div class="v" id="k-rev">$0</div></div>
+      <div class="card kpi"><div class="l">Commission earned</div><div class="v" id="k-com">$0</div></div>
+    </div>
+
+    <h3>Leaderboard</h3>
+    <div class="card tbl-wrap">
+      <table>
+        <thead><tr><th>Member</th><th>Registrations</th><th class="h-sm">Buyers</th><th class="h-sm">Conv.</th><th>Revenue</th><th class="h-sm">Rate</th><th>Commission</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <p class="muted" style="font-size:12.5px;margin-top:8px" id="unattr"></p>
+
+    <div class="two" style="margin-top:34px">
+      <div class="card box">
+        <h3 style="margin-top:0">Make your tracked link</h3>
+        <p>Use one link per post, so you can see which posts sell.</p>
+        <div class="row2">
+          <select id="lb-member"></select>
+          <input id="lb-post" placeholder="post id, e.g. p014" value="p001">
+        </div>
+        <div class="row2">
+          <select id="lb-source"><option value="linkedin">LinkedIn</option><option value="x">X</option><option value="whatsapp">WhatsApp</option><option value="email">Email</option><option value="instagram">Instagram</option></select>
+          <select id="lb-medium"><option value="post">Post</option><option value="dm">DM</option><option value="comment">Comment</option><option value="story">Story</option></select>
+        </div>
+        <div class="out" id="lb-out"></div>
+      </div>
+      <div class="card box">
+        <h3 style="margin-top:0">How it's calculated</h3>
+        <div id="terms"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const $=s=>document.querySelector(s);
+const SITE="https://adisuja.github.io/tantra-workshop-live/site";
+const b64=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+const money=(v,c="USD")=>new Intl.NumberFormat(c==="INR"?"en-IN":"en-US",{style:"currency",currency:c,maximumFractionDigits:v%1?2:0}).format(v);
+const esc=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let DATA=null, open=null;
+
+async function decrypt(pass){
+  const blob=await (await fetch("referrals.data.json?v="+Date.now(),{cache:"no-store"})).json();
+  const base=await crypto.subtle.importKey("raw",new TextEncoder().encode(pass),"PBKDF2",false,["deriveKey"]);
+  const key=await crypto.subtle.deriveKey({name:"PBKDF2",hash:"SHA-256",salt:b64(blob.salt),iterations:blob.iter},base,{name:"AES-GCM",length:256},false,["decrypt"]);
+  const pt=await crypto.subtle.decrypt({name:"AES-GCM",iv:b64(blob.iv)},key,b64(blob.ct));
+  return JSON.parse(new TextDecoder().decode(pt));
+}
+function perCur(o){const e=Object.entries(o||{});return e.length?e.map(([c,v])=>money(v,c)).join(" · "):"—"}
+function render(){
+  const d=DATA,t=d.totals;
+  $("#meta").textContent="Updated "+d.generated_at+" · refreshes every 10 minutes";
+  $("#k-reg").textContent=t.registrations;$("#k-buy").textContent=t.buyers;
+  $("#k-rev").textContent=money(t.revenue_usd_eq);$("#k-com").textContent=money(t.commission_usd_eq);
+  const max=Math.max(1,...d.members.map(m=>m.revenue_usd_eq||m.registrations.free+m.registrations.paid));
+  $("#rows").innerHTML=d.members.map((m,i)=>{
+    const regs=m.registrations.free+m.registrations.paid, conv=regs?Math.round(m.buyers/regs*100)+"%":"—";
+    const w=Math.round(((m.revenue_usd_eq||regs)/max)*100);
+    const row=`<tr class="m" data-s="${m.slug}"><td class="n"><span class="rank">${i+1}</span>${esc(m.name)}<div class="bar"><i style="width:${w}%"></i></div></td>
+      <td>${regs}<div class="muted" style="font-size:12px">${m.registrations.free} free · ${m.registrations.paid} paid</div></td>
+      <td class="h-sm">${m.buyers}</td><td class="h-sm">${conv}</td>
+      <td>${perCur(m.revenue)}${Object.keys(m.revenue).length>1||Object.keys(m.revenue)[0]!=="USD"&&m.revenue_usd_eq?`<div class="muted" style="font-size:12px">≈ ${money(m.revenue_usd_eq)}</div>`:""}</td>
+      <td class="h-sm">${Math.round(m.rate*100)}%</td>
+      <td><b>${perCur(m.commission)}</b>${m.commission_usd_eq&&Object.keys(m.commission)[0]!=="USD"?`<div class="muted" style="font-size:12px">≈ ${money(m.commission_usd_eq)}</div>`:""}</td></tr>`;
+    if(open!==m.slug)return row;
+    const posts=m.posts.length?m.posts.map(p=>`<span class="chip">${esc(p.post)} · ${p.registrations} reg · ${p.buyers} sold</span>`).join(""):'<span class="muted">No tracked activity yet.</span>';
+    const recent=m.recent.length?m.recent.map(r=>`<div style="font-size:13px"><span class="muted">${esc(r.at)}</span> · ${esc(r.what)} <span class="muted">via ${esc(r.post)}</span></div>`).join(""):'<span class="muted">Nothing yet.</span>';
+    return row+`<tr class="detail"><td colspan="7"><div class="grid"><div><div class="muted" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px">By post</div>${posts}</div><div><div class="muted" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px">Recent</div>${recent}</div></div></td></tr>`;
+  }).join("");
+  document.querySelectorAll("tr.m").forEach(r=>r.onclick=()=>{open=open===r.dataset.s?null:r.dataset.s;render()});
+  const u=d.unattributed;$("#unattr").textContent=`Not credited to anyone: ${u.registrations} registration(s), ${u.buyers} buyer(s) — arrived without a member's tracked link.`;
+  const T=d.terms;
+  $("#terms").innerHTML=`<p><b>${Math.round(T.rate_min*100)}–${Math.round(T.rate_max*100)}%</b> of revenue from buyers who arrived through your posts. Default rate ${Math.round(T.rate_default*100)}%; your rate is in the table.</p>
+    <p><b>Revenue</b> is what the buyer actually paid (tax-inclusive), with refunded purchases removed. Shown in the currency they paid; the ≈ figure converts at the seat price (₹9,999 = $99).</p>
+    <p><b>Who gets credit:</b> the member whose tag is in <code style="background:#07071a;padding:1px 6px;border-radius:6px">${esc(T.link_param)}</code> of the buyer's <b>first</b> registration. Later clicks on someone else's link don't move it.</p>
+    <p class="muted">Payouts follow the owner's schedule. Numbers refresh every 10 minutes.</p>`;
+  const sel=$("#lb-member");if(!sel.options.length){sel.innerHTML=d.members.map(m=>`<option value="${m.slug}">${esc(m.name)}</option>`).join("")}
+  buildLinks();
+}
+function buildLinks(){
+  const slug=$("#lb-member").value, post=($("#lb-post").value||"p001").trim().toLowerCase().replace(/[^a-z0-9-]/g,"");
+  const q=`utm_source=${$("#lb-source").value}&utm_medium=${$("#lb-medium").value}&utm_campaign=cohort-2026-09-30&utm_content=${slug}-${post}`;
+  $("#lb-out").innerHTML=[["Free workshop","/workshop/"],["Paid seat ($99)","/masterclass/"]].map(([l,p])=>{const u=`${SITE}${p}?${q}`;return `<div><div class="muted" style="font-size:12px;margin-bottom:4px">${l}</div><code>${u}</code></div>`}).join("")+`<div><button class="ghost" type="button" id="copy">Copy free-workshop link</button></div>`;
+  $("#copy").onclick=()=>{navigator.clipboard.writeText(`${SITE}/workshop/?${q}`);$("#copy").textContent="Copied ✓"};
+}
+["#lb-member","#lb-post","#lb-source","#lb-medium"].forEach(s=>document.addEventListener("input",e=>{if(e.target.matches(s)&&DATA)buildLinks()}));
+async function unlock(pass,remember){
+  try{DATA=await decrypt(pass);$("#gate").hidden=true;$("#app").hidden=false;if(remember)sessionStorage.setItem("ref-pass",pass);render();
+    setInterval(async()=>{try{DATA=await decrypt(pass);render()}catch(e){}},600000);}
+  catch(e){$("#err").textContent="That passphrase didn't unlock it. Check with Adi.";sessionStorage.removeItem("ref-pass")}
+}
+$("#unlock").onsubmit=e=>{e.preventDefault();$("#err").textContent="";unlock($("#pass").value.trim(),true)};
+const saved=sessionStorage.getItem("ref-pass");if(saved)unlock(saved,false);
+</script>
+</body>
+</html>
