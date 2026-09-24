@@ -1,8 +1,8 @@
 1:"$Sreact.fragment"
-2:I[98785,["/tantra-workshop-live/site/_next/static/chunks/19wxvr81nv14p.js","/tantra-workshop-live/site/_next/static/chunks/3xdf93soyp6hj.js","/tantra-workshop-live/site/_next/static/chunks/2xqqe4cfwp9_q.js","/tantra-workshop-live/site/_next/static/chunks/24c8hcv_blj_s.js"],"default"]
+2:I[98785,["/tantra-workshop-live/site/_next/static/chunks/19wxvr81nv14p.js","/tantra-workshop-live/site/_next/static/chunks/3biwtz631yz04.js","/tantra-workshop-live/site/_next/static/chunks/07dbfjrvi42dd.js","/tantra-workshop-live/site/_next/static/chunks/24c8hcv_blj_s.js","/tantra-workshop-live/site/_next/static/chunks/2xqqe4cfwp9_q.js"],"default"]
 3:T54d31,<section style="--hue:#8B5CF6;--hue-ink:color-mix(in srgb,#8B5CF6 70%,var(--ink))" id="start">
       <span class="pill">The 3-day AI RevOps operating system</span>
-      <h1 style="margin-top:16px">Build a funnel that turns strangers into retained customers — in 3 days.</h1>
+      <h1 style="margin-top:16px">Build a Funnel That Turns Strangers Into Retained Customers — In 3 Days.</h1>
       <p class="sub">This is the exact system we use to take someone who's never heard of you and walk them all the way to <strong>money in the bank — and then keep them paying month after month.</strong></p>
       <p class="lead" style="margin-top:20px">Here's the deal: most people build funnels backwards. They obsess over the logo, the colors, the "perfect" landing page — and never stop to ask the only question that matters: <em>what has to be true for a stranger to pay me?</em></p>
       <p>Over the next 3 days, you'll answer that question with a real, working funnel. Not theory. Not a course you'll never finish. An actual engine — pages, templates, automations, and an AI orchestrator — that runs while you sleep.</p>
@@ -16,8 +16,8 @@
     </section>
     <div class="divider"></div>
     <section style="--hue:#6366F1;--hue-ink:color-mix(in srgb,#6366F1 70%,var(--ink))" id="revops">
-      <div class="chap"><span class="no">Foundations</span><span class="tag">The thing you're actually building</span></div>
-      <h2>What is AI RevOps?</h2>
+      <div class="chap"><span class="no">Foundations</span><span class="tag">The Thing You're Actually Building</span></div>
+      <h2>What Is AI RevOps?</h2>
       <p class="lead">RevOps is one word for something most companies run as two departments — and the gap between those two departments is where most revenue quietly dies.</p>
       <p><strong>Marketing owns the top.</strong> The ads, the content, the posts, the emails you send, the messages you send, the billboard, the spot on TV. <strong>Sales owns the bottom.</strong> The call, the demo, the proposal, the close. Between them sits a handoff: marketing counts leads, sales counts deals, and nobody owns the distance in between. Ask both teams why a quarter missed and you'll get two confident answers that don't touch each other.</p>
       <p><strong>Revenue operations is the decision to stop running it as two jobs.</strong> One system, one owner, one set of numbers — from the first second a total stranger sees your name, to the moment money clears your bank account.</p>
@@ -96,8 +96,8 @@
     </section>
     <div class="divider"></div>
     <section style="--hue:#3B82F6;--hue-ink:color-mix(in srgb,#3B82F6 70%,var(--ink))" id="whyfunnel">
-      <div class="chap"><span class="no">Foundations</span><span class="tag">Why this shape, and not just a better product</span></div>
-      <h2>Why do you need a funnel — a conversion engine?</h2>
+      <div class="chap"><span class="no">Foundations</span><span class="tag">Why This Shape, and Not Just a Better Product</span></div>
+      <h2>Why Do You Need a Funnel — A Conversion Engine?</h2>
       <p class="lead">Here's the deal: people <strong>buy on a promise</strong> and <strong>stay on a result.</strong> Those are two different forces, and almost every funnel ever built addresses only the first one.</p>
       <p>You can be genuinely excellent at earning the yes and still lose the customer — because nothing you built does anything about the gap between the moment they pay and the moment the thing actually works for them. That gap is where churn lives. It is also, almost always, invisible on the dashboard that told you the campaign was a success.</p>
       <p>So a conversion engine is not a machine for getting a yes. <strong>It's a machine for delivering value continuously</strong> — before the sale, to earn the yes, and after it, to make the yes hold.</p>
@@ -144,7 +144,7 @@
           <text x="16" y="432" class="svmute" font-size="10.5">crosses before the excitement runs out. Everything you build this week is, underneath, an attempt to move that crossing point earlier.</text>
         </svg>
       </div>
-      <h3 id="whyfunnel-why-the-sale-alone-doesn-t-hold-it">Why the sale alone doesn't hold it</h3>
+      <h3 id="whyfunnel-why-the-sale-alone-doesn-t-hold-it">Why the Sale Alone Doesn't Hold It</h3>
       <p>Software is supposed to be stickier than a course. It isn't — not on its own. Russell Brunson puts the mechanism precisely, crediting it to Bill Glazer: what he calls the <em>pain of disconnect</em> is not a property of the software at all. It's a property of <strong>what the customer has built inside it.</strong> Someone who never deployed anything churns exactly like a course they never opened. What creates the switching cost is usage — and what creates usage is being taught.</p>
       <p>Alex Hormozi's SaaS case study is the cleanest version of this. His team replaced a 25-person group onboarding call with a one-to-one session that restated the customer's own goal, delivered a single quick win, and booked the next meeting from inside that meeting so nobody was left in no-man's-land. Ascension to the next offer went from 20% to 48%. His principle is worth writing down: <em>the best way to get someone to expect value in the future is to give them value today.</em></p>
       <p>Dan Martell's version is blunter. His own company ran 12% monthly churn — a nine-month customer. A client of his went from 18% to 4% monthly by building an on-ramp (teach the movements before the first class), a peer community so people feel part of something rather than merely using a tool, visible case studies, and a member-at-risk monitor.</p>
@@ -184,7 +184,7 @@
           <text x="16" y="284" class="svmute" font-size="10.5">These are four separate jobs. A library of tutorials only does the first and third — which is why tutorial-only retention strategies plateau.</text>
         </svg>
       </div>
-      <h3 id="whyfunnel-why-every-brand-you-can-name-already-does-this">Why every brand you can name already does this</h3>
+      <h3 id="whyfunnel-why-every-brand-you-can-name-already-does-this">Why Every Brand You Can Name Already Does This</h3>
       <p>Look at any well-known software or service brand and you will find the same set of things, without exception. They <strong>publish content continuously.</strong> They <strong>run webinars and live sessions.</strong> They <strong>write books.</strong> They <strong>run workshops and events.</strong> They <strong>host a community.</strong></p>
       <p>None of that is charity and none of it is "brand awareness." Every one of those is a <strong>carefully built conversion engine</strong> — a mechanism that takes someone cold, gives them something genuinely useful, and moves them one step closer to buying. And then keeps running after they've bought, because staying on top of mind is what turns a customer into a member of a tribe. The same asset does two jobs depending on which side of the sale the reader is standing on.</p>
       <div class="viz wide">
@@ -232,26 +232,26 @@
     </section>
     <div class="divider"></div>
 <section style="--hue:#06B6D4;--hue-ink:color-mix(in srgb,#06B6D4 70%,var(--ink))" id="funnels">
-  <div class="chap"><span class="no">Foundations</span><span class="tag">Three shapes, every stage, every tool</span></div>
-  <h2>What are funnels?</h2>
+  <div class="chap"><span class="no">Foundations</span><span class="tag">Three Shapes, Every Stage, Every Tool</span></div>
+  <h2>What Are Funnels?</h2>
   <p class="lead">A funnel is the path a stranger walks to become a paying customer — and then a returning one. Every funnel has the same jobs: get attention, capture it, keep it warm, convert it, get paid, and keep them. What changes is the <strong>shape</strong>: the moment and the format in which you ask.</p>
   <p>These are the three shapes this programme builds in depth, each played as the same machine you saw on the masterclass page: every stage, the tools that run it and the maths between stages, then the Pro layer (V2), the AI engine (V3) and the finished system. <strong>Scroll inside each frame to play it.</strong></p>
   <div class="fo" data-funnel="webinar">
-  <div class="fo-top"><div><div class="fo-k">Funnel 1 of 3 · 6 stages</div><h4 id="funnels-the-webinar-funnel">The webinar funnel</h4></div>
+  <div class="fo-top"><div><div class="fo-k">Funnel 1 of 3 · 6 stages</div><h4 id="funnels-the-webinar-funnel">The Webinar Funnel</h4></div>
     <a class="fo-open" target="_blank" rel="noopener">Open full screen ↗</a></div>
   <p>Invite named people to one dated live session. Teach the mechanism, then make the offer once, live, near the end.</p>
   <div class="fo-pills"><span><b>Use it when</b> Your buyer is list-addressable — you can build a searchable list of them and invite them by name.</span><span><b>Mechanism</b> One live session → booked calls</span></div>
   <div class="fo-frame"><iframe title="The webinar funnel, animated"></iframe><span class="fo-hint">Scroll inside to play it stage by stage ↓</span></div>
 </div>
   <div class="fo" data-funnel="rsp">
-  <div class="fo-top"><div><div class="fo-k">Funnel 2 of 3 · 5 stages</div><h4 id="funnels-the-reverse-squeeze-page-funnel">The reverse squeeze page funnel</h4></div>
+  <div class="fo-top"><div><div class="fo-k">Funnel 2 of 3 · 5 stages</div><h4 id="funnels-the-reverse-squeeze-page-funnel">The Reverse Squeeze Page Funnel</h4></div>
     <a class="fo-open" target="_blank" rel="noopener">Open full screen ↗</a></div>
   <p>Lead with value to strangers — a VSL on the page, no opt-in wall — and only then ask. The page squeezes after it gives.</p>
   <div class="fo-pills"><span><b>Use it when</b> Your buyer is content-reachable — they already gather somewhere you can put value in front of them.</span><span><b>Mechanism</b> VSL landing page → qualified booked calls</span></div>
   <div class="fo-frame"><iframe title="The reverse squeeze page funnel, animated"></iframe><span class="fo-hint">Scroll inside to play it stage by stage ↓</span></div>
 </div>
   <div class="fo" data-funnel="challenge">
-  <div class="fo-top"><div><div class="fo-k">Funnel 3 of 3 · 6 stages</div><h4 id="funnels-the-challenge-funnel">The challenge funnel</h4></div>
+  <div class="fo-top"><div><div class="fo-k">Funnel 3 of 3 · 6 stages</div><h4 id="funnels-the-challenge-funnel">The Challenge Funnel</h4></div>
     <a class="fo-open" target="_blank" rel="noopener">Open full screen ↗</a></div>
   <p>A short live cohort — here, three days — where people build alongside you each day. Commitment grows day by day, and the offer lands on someone who has already done the work.</p>
   <div class="fo-pills"><span><b>Use it when</b> Your buyer can show up three days running — a cohort needs repeated attention.</span><span><b>Mechanism</b> 3 live days → build → upgrade</span></div>
@@ -259,19 +259,19 @@
 </div>
 </section>
     <section style="--hue:#10B981;--hue-ink:color-mix(in srgb,#10B981 70%,var(--ink))" id="bigpic">
-      <div class="chap"><span class="no">Foundations</span><span class="tag">Read this first</span></div>
-      <h2>The big picture: one system, three shapes</h2>
+      <div class="chap"><span class="no">Foundations</span><span class="tag">Read This First</span></div>
+      <h2>The Big Picture: One System, Three Shapes</h2>
       <p class="lead">Strip away the jargon and every funnel on earth — a live workshop, a quiz, a video sales letter, an Amazon product page — does the same four things in the same order. What changes is the <em>shape</em>, not the system.</p>
-      <h3 id="bigpic-the-daily-rhythm-watch-fill-get-do">The daily rhythm: watch → fill → get → do</h3>
+      <h3 id="bigpic-the-daily-rhythm-watch-fill-get-do">The Daily Rhythm: Watch → Fill → Get → Do</h3>
       <p>Every day of the workshop runs the same four beats.</p>
       <div class="grid g2">
-        <div class="card"><div class="n">1 · Watch</div><b>The live session</b><span>Teaching plus Q&amp;A, live. No recording-only days — you're building alongside everyone else.</span></div>
-        <div class="card"><div class="n">2 · Fill</div><b>The survey, in parallel</b><span>A full-screen form open next to the session. Every question has sample answers so you always know what "good" looks like.</span></div>
-        <div class="card"><div class="n">3 · Get</div><b>Your generated output</b><span>Your answers run through an AI workflow and come back as a PDF plus a live link — by WhatsApp and email, same day.</span></div>
-        <div class="card"><div class="n">4 · Do</div><b>The short homework</b><span>One small task that unblocks tomorrow. Skipping it is the single biggest reason people fall behind.</span></div>
+        <div class="card"><div class="n">1 · Watch</div><b>The Live Session</b><span>Teaching plus Q&amp;A, live. No recording-only days — you're building alongside everyone else.</span></div>
+        <div class="card"><div class="n">2 · Fill</div><b>The Survey, in Parallel</b><span>A full-screen form open next to the session. Every question has sample answers so you always know what "good" looks like.</span></div>
+        <div class="card"><div class="n">3 · Get</div><b>Your Generated Output</b><span>Your answers run through an AI workflow and come back as a PDF plus a live link — by WhatsApp and email, same day.</span></div>
+        <div class="card"><div class="n">4 · Do</div><b>The Short Homework</b><span>One small task that unblocks tomorrow. Skipping it is the single biggest reason people fall behind.</span></div>
       </div>
       <div class="srcnote"><b>A note on the numbers.</b> The figures in the diagrams are <b>working teaching models</b>, not client results. They come from a reference funnel spec and exist to show you the <em>shape</em> of a healthy funnel and the arithmetic that connects the stages. Your numbers will differ. The whole point of Day 3 is that you fetch your own.</div>
-      <h3 id="bigpic-every-funnel-has-4-jobs">Every funnel has 4 jobs</h3>
+      <h3 id="bigpic-every-funnel-has-4-jobs">Every Funnel Has 4 Jobs</h3>
       <p>Traffic, capture, convert, retain. That's it. Every tool, page and automation you will build this week exists to do one of those four things — and the reason funnels beat "post and pray" is that you can see which of the four is broken.</p>
       <div class="viz wide">
         <div class="vtitle">The funnel as one system — traffic in, retention out</div>
@@ -329,7 +329,7 @@
         </svg>
         <div class="cap"><b>Read it as a diagnostic:</b> the sharpest narrowing (−92% from lead to buyer) is where the funnel leaks — so that's where nurture and the conversion engine earn their keep. The teal loop is why retention compounds.</div>
       </div>
-      <h3 id="bigpic-the-whole-machine-on-one-page">The whole machine, on one page</h3>
+      <h3 id="bigpic-the-whole-machine-on-one-page">The Whole Machine, on One Page</h3>
       <p>Those four jobs get delivered by <strong>six stages</strong>. This is the master map — the thing you'll be building for the rest of the week. Print it. Everything in Days 1–5 is a zoom-in on one of these bands.</p>
       <div class="viz wide">
         <div class="vtitle">The 6-stage funnel system — traffic in, retained revenue out</div>
@@ -441,7 +441,7 @@
       </div>
       <div class="box why"><div class="h">◆ Why six stages and not four</div>
         <p>The four jobs are the <strong>theory</strong>. The six stages are the <strong>build</strong>. "Capture" sounds like one thing until you realise a landing page (S2) and a show-up sequence (S3) are entirely different assets with entirely different failure modes — and that a funnel with a great page and no nurture loses more than half its registrations before the event even starts.</p></div>
-      <h3 id="bigpic-one-funnel-three-shapes">One funnel, three shapes</h3>
+      <h3 id="bigpic-one-funnel-three-shapes">One Funnel, Three Shapes</h3>
       <p>You're not all building the same funnel. Some of you need a live webinar. Some need a multi-day workshop. Some need a reverse squeeze page that gives value before it asks for anything. <strong>Same six stages. Different shape at each one.</strong></p>
       <div class="viz wide">
         <div class="vtitle">The same six stages, expressed three ways</div>
@@ -484,12 +484,12 @@
       <div class="fvar">
         <div class="fh">◆ And the other 17 types?</div>
         <div class="fb">
-          <div class="fc w"><b>They're recombinations</b><span>A product launch is a webinar funnel stretched over four videos. A book funnel is a reverse squeeze where Part 1 is 200 pages. A challenge is a webinar that refuses to end.</span></div>
-          <div class="fc k"><b>Same six stages</b><span>Every one of the 20 types in the library maps onto S1–S6. What differs is which stage carries the weight — and how many hours it costs you to build.</span></div>
-          <div class="fc r"><b>You pick yours on Day 1</b><span>All 20 are laid out grouped by the job they do, with a build-hour estimate attached to each — so the choice is made against real cost, not vibes.</span></div>
+          <div class="fc w"><b>They're Recombinations</b><span>A product launch is a webinar funnel stretched over four videos. A book funnel is a reverse squeeze where Part 1 is 200 pages. A challenge is a webinar that refuses to end.</span></div>
+          <div class="fc k"><b>Same Six Stages</b><span>Every one of the 20 types in the library maps onto S1–S6. What differs is which stage carries the weight — and how many hours it costs you to build.</span></div>
+          <div class="fc r"><b>You Pick Yours on Day 1</b><span>All 20 are laid out grouped by the job they do, with a build-hour estimate attached to each — so the choice is made against real cost, not vibes.</span></div>
         </div>
       </div>
-      <h3 id="bigpic-where-your-offers-live-the-value-ladder">Where your offers live: the value ladder</h3>
+      <h3 id="bigpic-where-your-offers-live-the-value-ladder">Where Your Offers Live: The Value Ladder</h3>
       <p>Before you pick a funnel type, you need to know <strong>what the funnel is selling into.</strong> Almost nobody buys the expensive thing first. They buy a small thing, it works, and they climb.</p>
       <p>Here's the deal: a funnel isn't a machine for selling one product. It's a machine for <em>moving someone up a ladder.</em> And the ladder has a shape — each rung asks for more commitment and returns more value, while the crowd on each rung gets smaller.</p>
       <div class="viz wide">
@@ -541,7 +541,7 @@
       <p>Most businesses are great at one of these and terrible at the rest. A "viral" post with no capture step leaks every visitor. A beautiful sales page with no traffic is a billboard in the desert. <strong>The funnel's job is to make all four work together.</strong></p>
       <div class="box why"><div class="h">◆ Why retention is the whole game</div>
         <p>Acquiring a customer costs money. Keeping one costs almost nothing. That's why the north star of this entire system isn't the first sale — it's <strong>MRR: recurring revenue that compounds month after month.</strong> Everything before it exists to earn Day 3's retention.</p></div>
-      <h3 id="bigpic-the-one-equation-to-memorize">The one equation to memorize</h3>
+      <h3 id="bigpic-the-one-equation-to-memorize">The One Equation to Memorize</h3>
       <p>You don't need an MBA. You need this:</p>
       <div class="box eg"><div class="h">The funnel equation</div>
         <p style="font-size:19px;font-weight:600;color:var(--ink)">Profit = (Traffic × Conversion rate × Price) − Cost to deliver</p>
@@ -552,21 +552,21 @@
     </section>
     <div class="divider"></div>
     <section style="--hue:#F59E0B;--hue-ink:color-mix(in srgb,#F59E0B 70%,var(--ink))" id="d1">
-      <div class="chap"><span class="no">Day 1</span><span class="tag">Strategize · the offer, the audience and the engine</span></div>
-      <h2>Decide what you sell, and exactly who you sell it to</h2>
+      <div class="chap"><span class="no">Day 1</span><span class="tag">Strategize · The Offer, the Audience and the Engine</span></div>
+      <h2>Decide What You Sell, and Exactly Who You Sell It To</h2>
       <p class="lead">Day 1 uses zero tools and decides 90% of the outcome. Everything you build on Days 2 and 3 is generated <em>from</em> today's answers — so a vague answer today becomes a vague landing page on Wednesday and a dead campaign next month.</p>
-      <h3 id="d1-funnel-vs-random-marketing">Funnel vs. random marketing</h3>
+      <h3 id="d1-funnel-vs-random-marketing">Funnel vs. Random Marketing</h3>
       <p>Random marketing is post-and-pray. You publish, you boost, you hope. A funnel is different: <strong>every step has one job, and each step earns the next.</strong> If a visitor doesn't take the next action, that step is broken — and you know exactly which one.</p>
       <div class="box why"><div class="h">◆ The mindset shift</div>
         <p>If a customer doesn't understand or use what you sell, that's <strong>not their fault — it's yours.</strong> Your funnel owns the whole journey, from "who are you?" to "I can't run my business without this." Own the whole journey and retention stops being a department.</p></div>
-      <h3 id="d1-the-three-questions-every-funnel-answers">The three questions every funnel answers</h3>
+      <h3 id="d1-the-three-questions-every-funnel-answers">The Three Questions Every Funnel Answers</h3>
       <ol>
         <li><strong>Who is this for?</strong> Specific enough that the right person reads it and thinks <em>this is me</em> — and the wrong person leaves without wasting your money.</li>
         <li><strong>What transformation do they get?</strong> Nobody buys a tool. They buy the after-state: the version of their business that exists once the problem is gone.</li>
         <li><strong>Why now, and why you?</strong> The mechanism. The reason your way works when everything they've already tried hasn't.</li>
       </ol>
       <p>The rest of this half is just answering those three properly. Question one is your ICP. Question two and three are your offer. Then you pick the funnel shape that carries them, and you write down the arithmetic that says whether it can work.</p>
-      <h3 id="d1-step-1-define-who-you-re-actually-for">Step 1 — Define who you're actually for</h3>
+      <h3 id="d1-step-1-define-who-you-re-actually-for">Step 1 — Define Who You're Actually For</h3>
       <p>Here's the deal: "small businesses" is not an audience. It's a way of avoiding a decision. A usable definition has two halves — <strong>the account</strong> you're selling to, and <strong>the person inside it</strong> who signs. Most people write the second and skip the first, then wonder why their outreach lists are garbage.</p>
       <div class="viz wide">
         <div class="vtitle">From a whole market to one winnable account — then to one person</div>
@@ -613,7 +613,7 @@
         </svg>
         <div class="cap"><b>Both halves or neither.</b> The account definition tells you <b>where to find them</b> — it's what you type into a list-building filter. The persona tells you <b>what to say</b> — it's what your copy is written to.</div>
       </div>
-      <h4>The ten fields. Fill every one.</h4>
+      <h4>The Ten Fields. Fill Every One.</h4>
       <p>Write an actual value in each row. If you can't, that's not a formatting problem — it's the thing you have to go find out.</p>
       <div class="tbl"><table>
         <thead><tr><th>#</th><th>Field</th><th>What "good" looks like</th><th>Where the answer comes from</th></tr></thead>
@@ -632,7 +632,7 @@
       </table></div>
       <div class="srcnote"><b>Fields</b> 1–4 are what you paste into a list-building filter; 5–9 are what your copy is written to; field 10 is the one almost everyone skips and the one that decides your timing.</div>
       <div class="task">
-        <div class="th"><span class="tn">Task 1.1</span><b>Find the pattern in your best customers</b></div>
+        <div class="th"><span class="tn">Task 1.1</span><b>Find the Pattern in Your Best Customers</b></div>
         <div class="tm">
           <p>Don't invent an ICP. Extract one. Pull your 20 best accounts — best by <em>revenue, retention and how easy they were to serve</em>, not just revenue — and look for what they share across fields 1–4.</p>
           <ol>
@@ -645,7 +645,7 @@
         <div class="meta"><span><i>Owner</i>You</span><span><i>Tool</i>Spreadsheet or your CRM</span><span><i>Time</i>45 min</span><span class="dl"><i>Deliverable</i>ICP one-pager, fields 1–4</span><span class="pv"><i>Proof</i>Every value traced to a real account, not an opinion</span></div>
       </div>
       <div class="task">
-        <div class="th"><span class="tn">Task 1.2</span><b>Write the person, and the objection</b></div>
+        <div class="th"><span class="tn">Task 1.2</span><b>Write the Person, and the Objection</b></div>
         <div class="tm">
           <p>Fields 5–9. If you've spoken to ten customers this year you can write these from memory. If you haven't, <strong>send five messages before tomorrow's session</strong> — one question each: <em>"what number are you personally judged on this quarter, and what's in the way?"</em></p>
           <p>Field 9's answer must include the sentence that kills your deals. Write it verbatim. You'll be answering it on every page you build on Day 2.</p>
@@ -655,13 +655,13 @@
       <div class="fvar">
         <div class="fh">◆ What changes per funnel type · the ICP</div>
         <div class="fb">
-          <div class="fc w"><b>Webinar funnel</b><span>Your ICP has to be <em>list-addressable</em> — you must be able to build a searchable list of them, because you'll be inviting named people to a dated event.</span></div>
-          <div class="fc k"><b>Workshop · challenge</b><span>Add one field: <em>can they show up three days running?</em> A cohort demands repeated attention, which rules out audiences that are structurally too busy.</span></div>
-          <div class="fc r"><b>Reverse squeeze</b><span>Your ICP must be <em>content-reachable</em>. You're leading with value to strangers, so you need a place they already gather — a feed, a community, a search term.</span></div>
+          <div class="fc w"><b>Webinar Funnel</b><span>Your ICP has to be <em>list-addressable</em> — you must be able to build a searchable list of them, because you'll be inviting named people to a dated event.</span></div>
+          <div class="fc k"><b>Workshop · Challenge</b><span>Add one field: <em>can they show up three days running?</em> A cohort demands repeated attention, which rules out audiences that are structurally too busy.</span></div>
+          <div class="fc r"><b>Reverse Squeeze</b><span>Your ICP must be <em>content-reachable</em>. You're leading with value to strangers, so you need a place they already gather — a feed, a community, a search term.</span></div>
         </div>
         <div class="fo"><b>Other types:</b> a book funnel needs an audience that still reads long-form · free-plus-shipping needs a shipping address you can serve · a JV funnel doesn't need an ICP you can reach at all — it needs a <b>partner</b> who already reaches them.</div>
       </div>
-      <h3 id="d1-step-2-design-the-offer">Step 2 — Design the offer</h3>
+      <h3 id="d1-step-2-design-the-offer">Step 2 — Design the Offer</h3>
       <p>An offer is not a price list. It's an argument: <em>this outcome, by this method, in this time, and here's who carries the risk if it doesn't work.</em> There's a clean way to pressure-test that argument before you spend a rupee or a dollar on traffic.</p>
       <div class="viz wide">
         <div class="vtitle">Pressure-test the value, then stack the offer</div>
@@ -726,7 +726,7 @@
       <div class="box tip"><div class="h">◆ Pro tip · sell the transformation, not the tool</div>
         <p>"Omnichannel outreach software" is a yawn. "Never wonder where your next ten clients are coming from" is a sale. Same product, completely different funnel. The tool belongs in the <strong>mechanism</strong> line, never the headline.</p></div>
       <div class="task">
-        <div class="th"><span class="tn">Task 1.3</span><b>Score your offer on all four levers</b></div>
+        <div class="th"><span class="tn">Task 1.3</span><b>Score Your Offer on All Four Levers</b></div>
         <div class="tm">
           <p>Four rows, honest scores out of 10, and — this is the part people skip — <strong>one specific change written next to each</strong>.</p>
           <ul>
@@ -740,7 +740,7 @@
         <div class="meta"><span><i>Owner</i>You</span><span><i>Tool</i>None</span><span><i>Time</i>30 min</span><span class="dl"><i>Deliverable</i>Scored offer + two committed changes</span><span class="pv"><i>Proof</i>Each lever has a concrete change, not a score alone</span></div>
       </div>
       <div class="task">
-        <div class="th"><span class="tn">Task 1.4</span><b>Write the one-sentence offer, then place it on the ladder</b></div>
+        <div class="th"><span class="tn">Task 1.4</span><b>Write the One-Sentence Offer, Then Place It on the Ladder</b></div>
         <div class="tm">
           <p>Fill the template from the diagram. Then read it out loud to someone who doesn't know your business. If they have to ask a follow-up question, it isn't done.</p>
           <p>Then place it: which rung is this — entry, core, or flagship? And <strong>name the rung above it</strong>, even if you haven't built that yet. A ladder with one rung forces your traffic to be profitable on the first transaction, which is the hardest game there is.</p>
@@ -750,13 +750,13 @@
       <div class="fvar">
         <div class="fh">◆ What changes per funnel type · the offer</div>
         <div class="fb">
-          <div class="fc w"><b>Webinar funnel</b><span>The offer arrives once, live, near the end. It has to survive being heard <em>once</em> with no scroll-back — so the guarantee does a lot of work.</span></div>
-          <div class="fc k"><b>Workshop · challenge</b><span>Two offers: the entry price that gets them in, and the ascension offer on the final day. The first one's real job is to <em>qualify</em>, not to profit.</span></div>
-          <div class="fc r"><b>Reverse squeeze</b><span>The offer is never spoken until Part 2. Part 1's only job is to make the mechanism believable — so your mechanism has to be demonstrable, not just describable.</span></div>
+          <div class="fc w"><b>Webinar Funnel</b><span>The offer arrives once, live, near the end. It has to survive being heard <em>once</em> with no scroll-back — so the guarantee does a lot of work.</span></div>
+          <div class="fc k"><b>Workshop · Challenge</b><span>Two offers: the entry price that gets them in, and the ascension offer on the final day. The first one's real job is to <em>qualify</em>, not to profit.</span></div>
+          <div class="fc r"><b>Reverse Squeeze</b><span>The offer is never spoken until Part 2. Part 1's only job is to make the mechanism believable — so your mechanism has to be demonstrable, not just describable.</span></div>
         </div>
         <div class="fo"><b>Other types:</b> tripwire and free-plus-shipping funnels put the profit entirely in the upsell, so the front offer can lose money on purpose · a book funnel's offer is the <b>call</b>, not the book · a downsell funnel needs a second offer written <em>before</em> launch, not after the first one underperforms.</div>
       </div>
-      <h3 id="d1-step-3-pick-your-funnel-type">Step 3 — Pick your funnel type</h3>
+      <h3 id="d1-step-3-pick-your-funnel-type">Step 3 — Pick Your Funnel Type</h3>
       <p>There's no "best" funnel — only the right one for your offer, your price, and how much your audience already believes. Twenty types, four families. Find the family first; the type inside it is a detail.</p>
       <div class="viz wide">
         <div class="vtitle">Twenty funnel types, grouped by the job they do</div>
@@ -827,14 +827,14 @@
       <div class="box eg"><div class="h">◆ Example · same offer, three different types</div>
         <p>A consultant selling a $999 programme could run any of three. <strong>Webinar</strong> if their audience is list-addressable and needs one idea reframed. <strong>Workshop</strong> if the product <em>is</em> the implementation and they can charge a small entry price to filter. <strong>Reverse squeeze</strong> if nobody's heard of them and the mechanism can be demonstrated in a single piece of content. Same offer. The choice is about <em>belief</em> and <em>reach</em>, not about the product.</p></div>
       <div class="task">
-        <div class="th"><span class="tn">Task 1.5</span><b>Choose your type — and write down why</b></div>
+        <div class="th"><span class="tn">Task 1.5</span><b>Choose Your Type — and Write Down Why</b></div>
         <div class="tm">
           <p>Answer the three questions across the top of the diagram, in order. Then name your type and write <strong>one sentence saying which answer decided it.</strong> That sentence is what you'll check against on Friday when you're tempted to change everything.</p>
           <p>Budget the hours honestly. The estimate next to your type is one-time build, before any traffic. Add the weekly running load: roughly 8–12 h/week for a webinar funnel, 10–15 during a live workshop cohort, 4–8 for a reverse squeeze.</p>
         </div>
         <div class="meta"><span><i>Owner</i>You</span><span><i>Tool</i>None</span><span><i>Time</i>15 min</span><span class="dl"><i>Deliverable</i>Named funnel type + the deciding reason</span><span class="pv"><i>Proof</i>Build hours are in your calendar, not just your notes</span></div>
       </div>
-      <h3 id="d1-step-4-write-down-the-arithmetic">Step 4 — Write down the arithmetic</h3>
+      <h3 id="d1-step-4-write-down-the-arithmetic">Step 4 — Write Down the Arithmetic</h3>
       <p>Last thing today. Before you build anything, you write the equation that says whether this can work — and you write it in <strong>quantities you will actually be able to fetch</strong>, not in conversion rates you made up.</p>
       <p>This is the single biggest difference between a funnel that gets optimised and one that gets abandoned. A rate you invented can never be wrong, so it never teaches you anything. A counted event can be wrong tomorrow, which is exactly what makes it useful.</p>
       <div class="viz wide">
@@ -885,7 +885,7 @@
       <div class="box do"><div class="h">◆ Do this · the honest baseline</div>
         <p>Write the equation out with your own numbers. For every term you have real data for, <strong>put the number and where it came from.</strong> For every term you don't, write <strong>"unknown — will measure"</strong> and move on. Do not fill a gap with a benchmark you read somewhere. A funnel modelled on borrowed averages will be optimised toward someone else's business.</p></div>
       <div class="task">
-        <div class="th"><span class="tn">Task 1.6</span><b>Set your baseline and your target</b></div>
+        <div class="th"><span class="tn">Task 1.6</span><b>Set Your Baseline and Your Target</b></div>
         <div class="tm">
           <p>Two lines of arithmetic, working backwards:</p>
           <ol>
@@ -901,9 +901,9 @@
       <div class="fvar">
         <div class="fh">◆ What changes per funnel type · the math</div>
         <div class="fb">
-          <div class="fc w"><b>Webinar funnel</b><span>An extra term almost everyone forgets: <em>show-up rate</em>. Registrations are not attendees, and the gap between them is the single most improvable number in the whole model.</span></div>
-          <div class="fc k"><b>Workshop · challenge</b><span>Two purchase events, not one — entry and ascension. Model them separately or the entry price will look like a failure when it's doing its actual job.</span></div>
-          <div class="fc r"><b>Reverse squeeze</b><span>The leak moves upstream: your r1 isn't opt-in rate, it's <em>consumption depth</em>. Measure how far into Part 1 they get, because that's what predicts everything after it.</span></div>
+          <div class="fc w"><b>Webinar Funnel</b><span>An extra term almost everyone forgets: <em>show-up rate</em>. Registrations are not attendees, and the gap between them is the single most improvable number in the whole model.</span></div>
+          <div class="fc k"><b>Workshop · Challenge</b><span>Two purchase events, not one — entry and ascension. Model them separately or the entry price will look like a failure when it's doing its actual job.</span></div>
+          <div class="fc r"><b>Reverse Squeeze</b><span>The leak moves upstream: your r1 isn't opt-in rate, it's <em>consumption depth</em>. Measure how far into Part 1 they get, because that's what predicts everything after it.</span></div>
         </div>
         <div class="fo"><b>Other types:</b> tripwire and free-plus-shipping funnels are modelled on <b>contribution margin, not revenue</b> — the front end is allowed to lose money · a book funnel's real conversion event is the booked call · JV funnels need the revenue-share percentage inside the equation from day one, not bolted on after.</div>
       </div>
@@ -913,18 +913,18 @@
         <p>Send the five ICP questions to five real customers. Tomorrow you turn today's decisions into the <strong>conversion engine</strong> — the single source of context every page, email and ad gets generated from. Thin answers today make a thin engine tomorrow.</p></div>
       <div class="half" id="d1b">
         <span class="hn">Half two · the conversion engine</span>
-        <h2 class="hh" id="d1-turn-those-decisions-into-a-machine-that-writes">Turn those decisions into a machine that writes everything</h2>
+        <h2 class="hh" id="d1-turn-those-decisions-into-a-machine-that-writes">Turn Those Decisions Into a Machine That Writes Everything</h2>
         <p class="hl">The first half gave you answers: who, what, which shape. On their own they are a document. This half turns them into <strong>one structured source of truth</strong> that every page, email, ad and outreach message gets generated from — so your funnel tells one story instead of nine.</p>
       </div>
-      <h3 id="d1-funnel-vs-campaign-know-the-difference">Funnel vs. campaign — know the difference</h3>
+      <h3 id="d1-funnel-vs-campaign-know-the-difference">Funnel vs. Campaign — Know the Difference</h3>
       <div class="grid g2">
-        <div class="card"><span class="pill bl">Campaign</span><b style="margin-top:8px">A moment</b><span>A launch, a promo, a burst. Has a start and an end. Great for spikes, useless for stability.</span></div>
-        <div class="card"><span class="pill te">Funnel</span><b style="margin-top:8px">A machine</b><span>Always on. A stranger can enter today, next week or next year and get the same journey. This is the asset.</span></div>
+        <div class="card"><span class="pill bl">Campaign</span><b style="margin-top:8px">A Moment</b><span>A launch, a promo, a burst. Has a start and an end. Great for spikes, useless for stability.</span></div>
+        <div class="card"><span class="pill te">Funnel</span><b style="margin-top:8px">A Machine</b><span>Always on. A stranger can enter today, next week or next year and get the same journey. This is the asset.</span></div>
       </div>
       <p>Campaigns give you a good week. Funnels give you a predictable business. You'll run campaigns <em>into</em> your funnel — but the funnel is what you own.</p>
       <div class="box why"><div class="h">◆ Why this distinction costs people money</div>
         <p>Most businesses rebuild their messaging every campaign. New launch, new deck, new landing page, new emails — all written from scratch, all slightly different. Three campaigns later nobody can say what the company actually promises. <strong>A conversion engine makes that impossible</strong>, because every asset is derived from the same block of context rather than re-invented.</p></div>
-      <h3 id="d1-step-1-write-the-five-context-blocks">Step 1 — Write the five context blocks</h3>
+      <h3 id="d1-step-1-write-the-five-context-blocks">Step 1 — Write the Five Context Blocks</h3>
       <p>Here's the insight most people miss: your landing page, your emails, your ads, your outreach — they all draw from the <strong>same well.</strong> Define it once and every asset stays consistent. Change it once and everything downstream updates.</p>
       <div class="viz">
         <div class="vtitle">Define 5 inputs once → generate every asset</div>
@@ -984,14 +984,14 @@
       <div class="box tip"><div class="h">◆ Pro tip · name your mechanism</div>
         <p>An unnamed method is a commodity. A named one is intellectual property. "We do outreach" is a service anyone sells; "The Compounding Invite System — four steps, and here's why step three is the one everyone skips" is a <strong>reason to choose you.</strong> Name it today. You'll use that name on every page you build tomorrow.</p></div>
       <div class="task">
-        <div class="th"><span class="tn">Task 2.1</span><b>Fill all five blocks in one document</b></div>
+        <div class="th"><span class="tn">Task 2.1</span><b>Fill All Five Blocks in One Document</b></div>
         <div class="tm">
           <p>One file, five headings, no design. Paste yesterday's Day-1 output straight into blocks 1 and 2 — that's what it was for. Then write blocks 3, 4 and 5 fresh.</p>
           <p>Block 5 is where people cheat. Do not write "great results." Write <strong>a number, a name, and a date</strong>. If you have none, say so honestly and use borrowed proof — third-party research, a public case study, your own before-and-after — and label it as borrowed. An empty proof block is a survivable problem. A fake one is not.</p>
         </div>
         <div class="meta"><span><i>Owner</i>You</span><span><i>Tool</i>Any doc, filled live during the session</span><span><i>Time</i>60 min</span><span class="dl"><i>Deliverable</i>Conversion engine document</span><span class="pv"><i>Proof</i>Every objection in block 2 has a matching proof in block 5</span></div>
       </div>
-      <h3 id="d1-step-2-build-the-diagnose-then-prescribe-engine">Step 2 — Build the diagnose-then-prescribe engine</h3>
+      <h3 id="d1-step-2-build-the-diagnose-then-prescribe-engine">Step 2 — Build the Diagnose-Then-Prescribe Engine</h3>
       <p>Here's the deal: the highest-converting thing you can do to a stranger is not <em>pitch</em> them. It's <strong>diagnose</strong> them — and then prescribe. People don't argue with a conclusion they helped produce.</p>
       <p>This mechanic works everywhere. It's a poll inside a live session, a qualification form on a registration page, an opt-in question on a reverse squeeze bridge, or a full scored assessment. Same engine, different wrapper.</p>
       <div class="viz wide">
@@ -1065,7 +1065,7 @@
       <div class="box eg"><div class="h">◆ Example · the same engine in four wrappers</div>
         <p><strong>In a live session:</strong> three polls, and the poll answers segment your follow-up. <strong>On a registration page:</strong> two qualification fields that route registrants into different reminder sequences. <strong>On a reverse squeeze bridge:</strong> one question between Part 1 and Part 2 that decides which Part 2 they get. <strong>As a standalone assessment:</strong> the full scored quiz with a gauge and a paywall. Same ask → score → band → prescribe. The only thing that changes is how many questions you can get away with.</p></div>
       <div class="task">
-        <div class="th"><span class="tn">Task 2.2</span><b>Design your diagnostic</b></div>
+        <div class="th"><span class="tn">Task 2.2</span><b>Design Your Diagnostic</b></div>
         <div class="tm">
           <ol>
             <li><strong>Name 3–5 score axes.</strong> These are the dimensions your offer actually improves. If your offer fixes conversion, one axis is conversion. Don't invent axes you can't help with.</li>
@@ -1080,13 +1080,13 @@
       <div class="fvar">
         <div class="fh">◆ What changes per funnel type · the diagnostic</div>
         <div class="fb">
-          <div class="fc w"><b>Webinar funnel</b><span>It becomes <em>polls</em> — three of them, run live. Poll answers are the highest-intent segmentation signal you'll get all week, so tag them into the CRM the moment they're cast.</span></div>
-          <div class="fc k"><b>Workshop · challenge</b><span>It becomes the <em>daily survey</em>. You get five chances to ask instead of one — so spread it, and let each day's answers personalise the next day's output.</span></div>
-          <div class="fc r"><b>Reverse squeeze</b><span>It becomes the <em>opt-in bridge</em>. One or two questions maximum, placed between Part 1 and Part 2, where the value has already been delivered and they owe you an answer.</span></div>
+          <div class="fc w"><b>Webinar Funnel</b><span>It becomes <em>polls</em> — three of them, run live. Poll answers are the highest-intent segmentation signal you'll get all week, so tag them into the CRM the moment they're cast.</span></div>
+          <div class="fc k"><b>Workshop · Challenge</b><span>It becomes the <em>daily survey</em>. You get five chances to ask instead of one — so spread it, and let each day's answers personalise the next day's output.</span></div>
+          <div class="fc r"><b>Reverse Squeeze</b><span>It becomes the <em>opt-in bridge</em>. One or two questions maximum, placed between Part 1 and Part 2, where the value has already been delivered and they owe you an answer.</span></div>
         </div>
         <div class="fo"><b>Other types:</b> a book-a-call funnel puts the diagnostic on the <b>booking form</b>, where it doubles as call prep · tripwire and free-plus-shipping funnels diagnose <b>after</b> purchase, to pick which upsell to show · a community funnel diagnoses on join, to route people to the right channel.</div>
       </div>
-      <h3 id="d1-step-3-put-it-all-in-one-file">Step 3 — Put it all in one file</h3>
+      <h3 id="d1-step-3-put-it-all-in-one-file">Step 3 — Put It All in One File</h3>
       <p>Now the part that turns a document into an engine. Everything you just wrote — brand, ICP, offer, pricing, the statements, the bands, the rule — goes into <strong>one structured file.</strong> Not five documents. One.</p>
       <p>Why it matters: a page built from a file can be changed by editing the file. A page built by hand can only be changed by whoever built it, in the place they built it, if they remember where. <strong>One file is the difference between a funnel you can tune and a funnel you have to rebuild.</strong></p>
       <div class="viz wide">
@@ -1162,7 +1162,7 @@
       <div class="box deep"><div class="h">◆ The rule that makes this work</div>
         <p><strong>Nothing per-brand gets hardcoded.</strong> If a headline, a price, a question or an event name lives inside the page code rather than the spec, you've just created work for your future self — and guaranteed that changing it needs a developer. Copy, prices, questions, score rules, event names and experiment variants all live in the file. The code only knows how to <em>render</em>.</p></div>
       <div class="task">
-        <div class="th"><span class="tn">Task 2.3</span><b>Write the spec outline — keys only</b></div>
+        <div class="th"><span class="tn">Task 2.3</span><b>Write the Spec Outline — Keys Only</b></div>
         <div class="tm">
           <p>You're not writing JSON today. You're writing the <strong>outline</strong>: the list of keys and what each one holds. Nine top-level sections is plenty:</p>
           <ul>
@@ -1180,9 +1180,9 @@
       <div class="fvar">
         <div class="fh">◆ What changes per funnel type · the spec</div>
         <div class="fb">
-          <div class="fc w"><b>Webinar funnel</b><span>Add an <code>event</code> section: date, time, duration, timezone handling, and the replay window. Everything in S3 reads its timings from that one place — change the date once, every reminder moves.</span></div>
-          <div class="fc k"><b>Workshop · challenge</b><span>Add a <code>days[]</code> array — five entries, each with its session, its survey questions, and the output it generates. The daily loop is data, not five hand-built pages.</span></div>
-          <div class="fc r"><b>Reverse squeeze</b><span>Add <code>contentParts[]</code> with watch-depth thresholds. Your whole branching logic keys off "how far did they get", so those thresholds belong in the spec where you can tune them.</span></div>
+          <div class="fc w"><b>Webinar Funnel</b><span>Add an <code>event</code> section: date, time, duration, timezone handling, and the replay window. Everything in S3 reads its timings from that one place — change the date once, every reminder moves.</span></div>
+          <div class="fc k"><b>Workshop · Challenge</b><span>Add a <code>days[]</code> array — five entries, each with its session, its survey questions, and the output it generates. The daily loop is data, not five hand-built pages.</span></div>
+          <div class="fc r"><b>Reverse Squeeze</b><span>Add <code>contentParts[]</code> with watch-depth thresholds. Your whole branching logic keys off "how far did they get", so those thresholds belong in the spec where you can tune them.</span></div>
         </div>
         <div class="fo"><b>Other types:</b> product-launch funnels add a dated <b>open/close cart window</b> · free-plus-shipping adds <b>shipping zones and COGS</b> so margin is computable · JV funnels add a <b>partners[]</b> block with revenue-share percentages, because attribution has to be unambiguous before money moves.</div>
       </div>
@@ -1193,12 +1193,12 @@
     </section>
     <div class="divider"></div>
     <section style="--hue:#EC4899;--hue-ink:color-mix(in srgb,#EC4899 70%,var(--ink))" id="d2">
-      <div class="chap"><span class="no">Day 2</span><span class="tag">Funnel elements · every page, template and stage</span></div>
-      <h2>Build every element — the whole funnel, assembled</h2>
+      <div class="chap"><span class="no">Day 2</span><span class="tag">Funnel Elements · Every Page, Template and Stage</span></div>
+      <h2>Build Every Element — The Whole Funnel, Assembled</h2>
       <p class="lead">Today the engine becomes assets. You work stage by stage, S1 to S6, and at the end of it every page, every message and every automation trigger exists as something you could hand to someone else.</p>
       <div class="box why"><div class="h">◆ Build in this order, and only this order</div>
         <p><strong>The funnel core before the traffic.</strong> Build S2 through S5 first — the pages, the sequences, the close — then attach S1 on top. People do it backwards, switch on traffic into a half-built funnel, and burn a list they can never un-burn. Traffic is the cheapest thing to add and the most expensive thing to waste.</p></div>
-      <h3 id="d2-the-path-a-visitor-actually-moves-through">The path a visitor actually moves through</h3>
+      <h3 id="d2-the-path-a-visitor-actually-moves-through">The Path a Visitor Actually Moves Through</h3>
       <div class="viz wide">
         <div class="vtitle">The path a visitor actually moves through — with the branch that matters</div>
         <svg viewBox="0 106 860 247" role="img" aria-label="Journey flowchart: organic and paid lanes converge into landing, thank-you and content pages, then a ready-or-not decision branches to a sales page and checkout, or into a nurture loop that feeds back.">
@@ -1237,7 +1237,7 @@
         </svg>
         <div class="cap"><b>The branch is the point.</b> A drip sends everyone the same five emails. A funnel checks "are they ready?" and routes accordingly — buyers to checkout, everyone else into a loop that re-offers when the timing's right.</div>
       </div>
-      <h3 id="d2-s1-the-traffic-engine">S1 — The traffic engine</h3>
+      <h3 id="d2-s1-the-traffic-engine">S1 — The Traffic Engine</h3>
       <p>Five channels. Each one has hard operating limits, and each limit exists because someone learned it the expensive way — a burned domain, a restricted account, a list that can never be emailed again.</p>
       <div class="viz wide">
         <div class="vtitle">Daily operating limits, and the weekly scale-or-fix gate</div>
@@ -1309,7 +1309,7 @@
         <div class="cap"><b>The diagnosis is in which number is low.</b> A weak open rate is a deliverability problem — a domain and warm-up issue. A weak click-through is an <em>offer</em> problem, and no amount of inbox tuning will fix it.</div>
       </div>
       <div class="task">
-        <div class="th"><span class="tn">Task 3.1</span><b>Stand up the sending infrastructure before you write a word</b></div>
+        <div class="th"><span class="tn">Task 3.1</span><b>Stand Up the Sending Infrastructure Before You Write a Word</b></div>
         <div class="tm">
           <ol>
             <li>Buy <strong>separate domains</strong> for outreach. Never your main brand domain — if it gets flagged, your invoices stop arriving too.</li>
@@ -1321,7 +1321,7 @@
         <div class="meta"><span><i>Owner</i>You</span><span><i>Tool</i>Domain registrar · DNS · sending platform</span><span><i>Time</i>90 min setup, then 2–3 weeks of waiting</span><span class="dl"><i>Deliverable</i>Authenticated domains in warm-up</span><span class="pv"><i>Proof</i>A test send lands in the primary inbox, not promotions</span></div>
       </div>
       <div class="task">
-        <div class="th"><span class="tn">Task 3.2</span><b>Write two variants per channel, not one</b></div>
+        <div class="th"><span class="tn">Task 3.2</span><b>Write Two Variants per Channel, Not One</b></div>
         <div class="tm">
           <p>One variant gives you a result. Two give you a <em>comparison</em> — and a comparison is the only thing that teaches you anything. Generate both from your conversion engine so they share the offer and differ only in angle:</p>
           <ul>
@@ -1335,13 +1335,13 @@
       <div class="fvar">
         <div class="fh">◆ What changes per funnel type · traffic</div>
         <div class="fb">
-          <div class="fc w"><b>Webinar funnel</b><span>Traffic is <em>dated</em> — every asset carries a date and expires. Run the invite push in a concentrated window, and change the event date a few minutes before you go live so the listing re-ranks for the next cycle.</span></div>
-          <div class="fc k"><b>Workshop · challenge</b><span>Traffic is <em>cohort-shaped</em>, and peer referral is a real channel: participants recruit participants. Give them a shareable link with their own tag on it from day one.</span></div>
-          <div class="fc r"><b>Reverse squeeze</b><span>Traffic points at <em>content</em>, not a form — so it never expires and it accumulates. The same link works for the next twelve months, which changes what a click is worth.</span></div>
+          <div class="fc w"><b>Webinar Funnel</b><span>Traffic is <em>dated</em> — every asset carries a date and expires. Run the invite push in a concentrated window, and change the event date a few minutes before you go live so the listing re-ranks for the next cycle.</span></div>
+          <div class="fc k"><b>Workshop · Challenge</b><span>Traffic is <em>cohort-shaped</em>, and peer referral is a real channel: participants recruit participants. Give them a shareable link with their own tag on it from day one.</span></div>
+          <div class="fc r"><b>Reverse Squeeze</b><span>Traffic points at <em>content</em>, not a form — so it never expires and it accumulates. The same link works for the next twelve months, which changes what a click is worth.</span></div>
         </div>
         <div class="fo"><b>Other types:</b> product launches concentrate everything into a <b>dated open-cart window</b> · hub-and-spoke and community funnels run permanently-on evergreen traffic · JV funnels replace your traffic entirely with a <b>partner's list</b>, which means your real S1 work is partner recruitment, not ad creative.</div>
       </div>
-      <h3 id="d2-s2-the-landing-and-registration-page">S2 — The landing and registration page</h3>
+      <h3 id="d2-s2-the-landing-and-registration-page">S2 — The Landing and Registration Page</h3>
       <p>Two versions, always. A plain one for cold traffic that doesn't know you, and a branded one for warm traffic that does. Sending both to the same page wastes one of them.</p>
       <div class="viz wide">
         <div class="vtitle">Page anatomy — what each version has, and what it must not have</div>
@@ -1389,7 +1389,7 @@
       <div class="box tip"><div class="h">◆ Pro tip · the form abandon number is the one nobody watches</div>
         <p>People obsess over the conversion rate and ignore <strong>form abandonment</strong> — the visitors who started typing and stopped. That number tells you something conversion rate can't: they <em>wanted</em> to, and something in the form stopped them. Usually it's a field you didn't need. Every field you remove is a measurable lift.</p></div>
       <div class="task">
-        <div class="th"><span class="tn">Task 3.3</span><b>Build both pages and the thank-you page</b></div>
+        <div class="th"><span class="tn">Task 3.3</span><b>Build Both Pages and the Thank-You Page</b></div>
         <div class="tm">
           <p>Three pages, generated from the spec:</p>
           <ol>
@@ -1404,13 +1404,13 @@
       <div class="fvar">
         <div class="fh">◆ What changes per funnel type · the capture page</div>
         <div class="fb">
-          <div class="fc w"><b>Webinar funnel</b><span>The date block is load-bearing — timezone handling, an add-to-calendar button, and a countdown. Get the timezone wrong and your show-up rate collapses for reasons you'll never diagnose.</span></div>
-          <div class="fc k"><b>Workshop · challenge</b><span>The page is a <em>checkout</em>, not a form. Wallets first, card below, order summary on top — and the three-day commitment stated plainly, because setting the expectation is what protects your completion rate.</span></div>
-          <div class="fc r"><b>Reverse squeeze</b><span>There is no form on the entry page at all. The page <em>is</em> Part 1, and the opt-in bridge only appears once they've consumed enough of it to owe you an answer.</span></div>
+          <div class="fc w"><b>Webinar Funnel</b><span>The date block is load-bearing — timezone handling, an add-to-calendar button, and a countdown. Get the timezone wrong and your show-up rate collapses for reasons you'll never diagnose.</span></div>
+          <div class="fc k"><b>Workshop · Challenge</b><span>The page is a <em>checkout</em>, not a form. Wallets first, card below, order summary on top — and the three-day commitment stated plainly, because setting the expectation is what protects your completion rate.</span></div>
+          <div class="fc r"><b>Reverse Squeeze</b><span>There is no form on the entry page at all. The page <em>is</em> Part 1, and the opt-in bridge only appears once they've consumed enough of it to owe you an answer.</span></div>
         </div>
         <div class="fo"><b>Other types:</b> book-a-call funnels replace the form with a <b>calendar embed plus qualification fields</b> · free-plus-shipping needs a full address form, so every removable field matters twice as much · a final-funnel has no page at all — the "capture" is a reply in an inbox.</div>
       </div>
-      <h3 id="d2-s3-the-nurture-engine-where-show-up-is-won">S3 — The nurture engine (where show-up is won)</h3>
+      <h3 id="d2-s3-the-nurture-engine-where-show-up-is-won">S3 — The Nurture Engine (Where Show-Up Is Won)</h3>
       <p>Here's the number nobody wants to hear: <strong>roughly half the people who register never turn up.</strong> Not because your content is bad — they haven't seen it yet. Because life happened and nothing reminded them hard enough.</p>
       <p>Nurture is the cheapest lift in the entire funnel. You already paid to acquire these people. Every reminder that converts a registration into an attendee costs you almost nothing and is worth exactly as much as a new lead.</p>
       <div class="viz wide">
@@ -1495,7 +1495,7 @@
       <div class="box do"><div class="h">◆ Do this · send the T−24h reminder at 8am in their timezone</div>
         <p>Not 8am in yours. A reminder that lands at 3am is a reminder that gets buried under everything that arrived after it. If your tool can't send by recipient timezone, that's a reason to change tools — this single setting moves show-up more than most copy changes will.</p></div>
       <div class="task">
-        <div class="th"><span class="tn">Task 3.4</span><b>Write both sequences and set the send windows</b></div>
+        <div class="th"><span class="tn">Task 3.4</span><b>Write Both Sequences and Set the Send Windows</b></div>
         <div class="tm">
           <p>Generate all of it from the engine, then set the mechanics by hand:</p>
           <ul>
@@ -1510,13 +1510,13 @@
       <div class="fvar">
         <div class="fh">◆ What changes per funnel type · nurture</div>
         <div class="fb">
-          <div class="fc w"><b>Webinar funnel</b><span>Purely time-triggered off one date. Build it once and every future run reuses it — change the date in the spec and all six touches move together.</span></div>
-          <div class="fc k"><b>Workshop · challenge</b><span>Five nested copies of the same shape, plus the daily delivery loop: recap → the artifact they generated → what tomorrow needs. Non-completion on day two is your early-warning signal for churn.</span></div>
-          <div class="fc r"><b>Reverse squeeze</b><span>Not time-triggered at all — <em>depth-triggered</em>. Under 25% of Part 1 gets a re-engage; 25–75% gets the missing-piece nudge; over 75% goes straight to the Part 2 bridge.</span></div>
+          <div class="fc w"><b>Webinar Funnel</b><span>Purely time-triggered off one date. Build it once and every future run reuses it — change the date in the spec and all six touches move together.</span></div>
+          <div class="fc k"><b>Workshop · Challenge</b><span>Five nested copies of the same shape, plus the daily delivery loop: recap → the artifact they generated → what tomorrow needs. Non-completion on day two is your early-warning signal for churn.</span></div>
+          <div class="fc r"><b>Reverse Squeeze</b><span>Not time-triggered at all — <em>depth-triggered</em>. Under 25% of Part 1 gets a re-engage; 25–75% gets the missing-piece nudge; over 75% goes straight to the Part 2 bridge.</span></div>
         </div>
         <div class="fo"><b>Other types:</b> book-a-call funnels replace show-up nurture with <b>no-show rebooking</b>, which recovers a meaningful slice of bookings · product launches run a dated open-cart countdown · free-plus-shipping switches nurture to <b>post-purchase</b> entirely, because the sale already happened.</div>
       </div>
-      <h3 id="d2-s4-the-live-delivery">S4 — The live delivery</h3>
+      <h3 id="d2-s4-the-live-delivery">S4 — The Live Delivery</h3>
       <p>Everything so far was preparation for sixty minutes. Run those sixty minutes off a script and a clock, not off vibes — because the moments that produce bookings happen at specific times, and if you're improvising you'll miss them.</p>
       <div class="viz wide">
         <div class="vtitle">Run of show — sixty minutes, four lanes, nothing improvised</div>
@@ -1574,7 +1574,7 @@
         <div class="cap"><b>Do a full dry run.</b> Same platform, same slides, same polls, a test attendee on a second device. Every failure you find in rehearsal costs you nothing; the same failure live costs you the room.</div>
       </div>
       <div class="task">
-        <div class="th"><span class="tn">Task 3.5</span><b>Write the run of show, the script and the three polls</b></div>
+        <div class="th"><span class="tn">Task 3.5</span><b>Write the Run of Show, the Script and the Three Polls</b></div>
         <div class="tm">
           <p>Three artifacts, all generated from the engine and then hand-tuned:</p>
           <ol>
@@ -1589,13 +1589,13 @@
       <div class="fvar">
         <div class="fh">◆ What changes per funnel type · delivery</div>
         <div class="fb">
-          <div class="fc w"><b>Webinar funnel</b><span>One shot. The offer lands once, near the end, and has to survive being heard without scroll-back — so repeat the link in chat on a cadence and put it on the slide too.</span></div>
-          <div class="fc k"><b>Workshop · challenge</b><span>Five shots, and the offer is only on day five. Days one to four have to <em>earn</em> day five by shipping something real each time — the artifact is the proof that the method works.</span></div>
-          <div class="fc r"><b>Reverse squeeze</b><span>Nothing is live at all. Part 2 is recorded and delivered instantly, which means the "run of show" is an edit decision list — where the proof lands, where the offer lands, and where you cut.</span></div>
+          <div class="fc w"><b>Webinar Funnel</b><span>One shot. The offer lands once, near the end, and has to survive being heard without scroll-back — so repeat the link in chat on a cadence and put it on the slide too.</span></div>
+          <div class="fc k"><b>Workshop · Challenge</b><span>Five shots, and the offer is only on day five. Days one to four have to <em>earn</em> day five by shipping something real each time — the artifact is the proof that the method works.</span></div>
+          <div class="fc r"><b>Reverse Squeeze</b><span>Nothing is live at all. Part 2 is recorded and delivered instantly, which means the "run of show" is an edit decision list — where the proof lands, where the offer lands, and where you cut.</span></div>
         </div>
         <div class="fo"><b>Other types:</b> product launches run this four times across a video sequence · a sideways sales letter spreads the same beats over multiple pages instead of minutes · book-a-call funnels have no delivery stage at all — the call <b>is</b> the delivery, which is why the qualification form matters so much more there.</div>
       </div>
-      <h3 id="d2-s5-the-close-offer-booking-payment">S5 — The close: offer, booking, payment</h3>
+      <h3 id="d2-s5-the-close-offer-booking-payment">S5 — The Close: Offer, Booking, Payment</h3>
       <p>A booked call is not revenue. A proposal is not revenue. Money in the account is revenue, and between the offer and the money there are five places people quietly fall out. Build all five now, not after you lose someone at each.</p>
       <div class="viz wide">
         <div class="vtitle">From offer to money — what they do, what your system does, what the record says</div>
@@ -1644,7 +1644,7 @@
         <div class="cap"><b>Assets this stage needs before launch:</b> discovery script · demo script · close script · objection battlecards · proposal template · pricing calculator · no-show recovery sequence · welcome and onboarding sequence.</div>
       </div>
       <div class="task">
-        <div class="th"><span class="tn">Task 3.6</span><b>Build the close assets and wire the booking flow</b></div>
+        <div class="th"><span class="tn">Task 3.6</span><b>Build the Close Assets and Wire the Booking Flow</b></div>
         <div class="tm">
           <p>Generated from the engine, in this order — each one blocks the next:</p>
           <ol>
@@ -1661,18 +1661,18 @@
       <div class="fvar">
         <div class="fh">◆ What changes per funnel type · the close</div>
         <div class="fb">
-          <div class="fc w"><b>Webinar funnel</b><span>The close is a <em>booked call</em> for high ticket, or direct checkout below roughly a thousand. Above that, a page rarely carries the objection alone.</span></div>
-          <div class="fc k"><b>Workshop · challenge</b><span>Two closes. The entry checkout on day zero — which is really a qualifier — and the ascension offer on day five, sold to people who have already paid you once and seen the method work.</span></div>
-          <div class="fc r"><b>Reverse squeeze</b><span>The close is a page, routed by engagement depth. Deep consumers see the premium branch; shallow ones see the low-ticket branch. Same page template, two prices, decided by data.</span></div>
+          <div class="fc w"><b>Webinar Funnel</b><span>The close is a <em>booked call</em> for high ticket, or direct checkout below roughly a thousand. Above that, a page rarely carries the objection alone.</span></div>
+          <div class="fc k"><b>Workshop · Challenge</b><span>Two closes. The entry checkout on day zero — which is really a qualifier — and the ascension offer on day five, sold to people who have already paid you once and seen the method work.</span></div>
+          <div class="fc r"><b>Reverse Squeeze</b><span>The close is a page, routed by engagement depth. Deep consumers see the premium branch; shallow ones see the low-ticket branch. Same page template, two prices, decided by data.</span></div>
         </div>
         <div class="fo"><b>Other types:</b> tripwire and unlock-all funnels close <b>inside the checkout</b> with an order bump — no second page at all · downsell funnels close on the <b>decline</b>, which means the second offer must exist before launch · JV funnels need the revenue split resolved at checkout, automatically, or you'll be reconciling spreadsheets for months.</div>
       </div>
-      <h3 id="d2-s6-what-happens-to-everyone-who-didn-t-buy">S6 — What happens to everyone who didn't buy</h3>
+      <h3 id="d2-s6-what-happens-to-everyone-who-didn-t-buy">S6 — What Happens to Everyone Who Didn't Buy</h3>
       <p>Most of your list, on any given cycle, will not buy. That is normal and it is not failure — it's timing. The mistake is letting them go quiet, because a warm list that goes silent for six months is a cold list again.</p>
       <p>You'll build the full 52-week engine on Day 3. Today you only need the <strong>hand-off</strong>: the tag that says "this person finished the funnel without buying" and the sequence that catches them. One tag, one entry point. Get that wrong and Day 3 has nothing to build on.</p>
       <div class="box do"><div class="h">◆ Do this · define the four tags now and never rename them</div>
         <p><strong>registered · attended · no-show · purchased.</strong> Every automation, every report and every audience you build for the rest of the year keys off these four. Name them today, write them into the spec, and treat renaming one as a breaking change — because it is.</p></div>
-      <h3 id="d2-the-reverse-squeeze-funnel-end-to-end">The reverse squeeze funnel, end to end</h3>
+      <h3 id="d2-the-reverse-squeeze-funnel-end-to-end">The Reverse Squeeze Funnel, End to End</h3>
       <p>Everything above assumed a dated event. A reverse squeeze has no date, no registration and no live moment — and it still runs all six stages. Here's the whole thing, at the same depth, because "it's just a landing page with a video" is how people build one that doesn't work.</p>
       <p>The core idea: <strong>you give the valuable thing away before you ask for anything.</strong> Not a teaser. Not a preview. The actual thing. The opt-in comes afterwards, and it converts far better because by then you've earned it.</p>
       <div class="viz wide">
@@ -1759,7 +1759,7 @@
       <div class="box tip"><div class="h">◆ Pro tip · the threshold is your highest-leverage variable</div>
         <p>Where you place the opt-in bridge decides everything downstream. Too early and you're a squeeze page wearing a costume — you lose the trust the format exists to build. Too late and people finish, feel satisfied, and leave. <strong>Put it in the spec, start around three-quarters through, and treat it as your first A/B test.</strong></p></div>
       <div class="task">
-        <div class="th"><span class="tn">Task 3.7</span><b>If you're building a reverse squeeze, build it in this order</b></div>
+        <div class="th"><span class="tn">Task 3.7</span><b>If You're Building a Reverse Squeeze, Build It in This Order</b></div>
         <div class="tm">
           <ol>
             <li><strong>Make Part 1 first</strong>, and make it genuinely good enough that you'd have charged for it. This is not negotiable — the entire mechanism rests on the value being real.</li>
@@ -1779,11 +1779,11 @@
     </section>
     <div class="divider"></div>
     <section style="--hue:#EF4444;--hue-ink:color-mix(in srgb,#EF4444 70%,var(--ink))" id="d3">
-      <div class="chap"><span class="no">Day 3</span><span class="tag">Launch the AI RevOps engine · test it, then grow it</span></div>
-      <h2>Make an AI run the whole thing — then prove it works</h2>
+      <div class="chap"><span class="no">Day 3</span><span class="tag">Launch the AI RevOps Engine · Test It, Then Grow It</span></div>
+      <h2>Make an AI Run the Whole Thing — Then Prove It Works</h2>
       <p class="lead">Today the funnel stops being a stack of files and becomes a <em>living system</em>: built by an agent, instrumented end to end, wired into a CRM and a set of automations, and then pointed at a small amount of real traffic to find out whether any of it is true.</p>
       <p>We'll use <strong>Claude Code</strong> as the worked example throughout. The system is AI-agnostic — the same context and the same prompts work in any agentic coding tool. What matters is the <em>ritual</em>, not the vendor.</p>
-      <h3 id="d3-step-1-the-build-ritual">Step 1 — The build ritual</h3>
+      <h3 id="d3-step-1-the-build-ritual">Step 1 — The Build Ritual</h3>
       <p>Here's the deal: the difference between an AI that builds you a funnel and an AI that builds you a generic template is <strong>what you give it before you ask.</strong> Handing an agent "build me a funnel" gets you a template. Handing it your conversion engine, your spec outline and a build checklist gets you <em>your</em> funnel.</p>
       <div class="viz wide">
         <div class="vtitle">Eight phases — and the agent refuses to skip ahead</div>
@@ -1849,7 +1849,7 @@
         <p>Your first message should <strong>forbid code</strong>. Load the context, then say: <em>"Read these in full. Confirm you've read them. Then interview me — brand and story, the diagnostic, offer and pricing, traffic channels, tech and deploy target — a few questions at a time, and wait for my answers. Restate the complete spec for my approval. Do not write any code until I approve it."</em></p>
         <p>It feels slower. It is dramatically faster, because you are not debugging a funnel built on a guess.</p></div>
       <div class="task">
-        <div class="th"><span class="tn">Task 4.1</span><b>Run the ritual end to end</b></div>
+        <div class="th"><span class="tn">Task 4.1</span><b>Run the Ritual End to End</b></div>
         <div class="tm">
           <ol>
             <li>Put your Day-2 engine, your spec outline and your Day-3 asset list in one folder.</li>
@@ -1861,7 +1861,7 @@
         </div>
         <div class="meta"><span><i>Owner</i>You · agent builds</span><span><i>Tool</i>Claude Code, or any agentic tool</span><span><i>Time</i>3–5 h</span><span class="dl"><i>Deliverable</i>A live URL and a spec file you can edit</span><span class="pv"><i>Proof</i>You change a price in the spec and the live page updates</span></div>
       </div>
-      <h3 id="d3-what-the-orchestrator-actually-is">What the orchestrator actually is</h3>
+      <h3 id="d3-what-the-orchestrator-actually-is">What the Orchestrator Actually Is</h3>
       <p>Once it's built, the agent doesn't go away. It keeps the context — your offer, your ICP, your pages, your templates, your numbers — and becomes the thing you and your team ask questions of and give instructions to.</p>
 <div class="viz wide">
         <div class="vtitle">The RevOps orchestrator — context in, operations out</div>
@@ -1928,7 +1928,7 @@
       </div>
       <div class="box why"><div class="h">◆ The real unlock — most people get this wrong</div>
         <p>The biggest problem isn't making the orchestrator "perfect." You can refine that forever. The real problem is <strong>instant access to every piece of knowledge in your funnel.</strong> When anyone on your team can ask "what's our offer for cold LinkedIn leads?" and get an answer in two seconds, that speed becomes a retention advantage. Knowledge you can reach beats knowledge you merely have.</p></div>
-      <h3 id="d3-step-2-instrument-every-step-or-the-second-half">Step 2 — Instrument every step, or the second half of today does not work</h3>
+      <h3 id="d3-step-2-instrument-every-step-or-the-second-half">Step 2 — Instrument Every Step, or the Second Half of Today Does Not Work</h3>
       <p>This is the part people skip, and it's the part that decides whether you have a funnel you can improve or a funnel you can only rebuild. <strong>Every step fires one event. The count of that event is the metric. A rate is one count divided by another.</strong></p>
       <div class="tbl"><table>
         <thead><tr><th>#</th><th>Event</th><th>Fires when</th><th>Where the count comes from</th></tr></thead>
@@ -1950,7 +1950,7 @@
       <div class="box tip"><div class="h">◆ Pro tip · event number 4 is the one that pays for itself</div>
         <p>Per-question and per-milestone drop-off is how you find out that <em>question seven</em> is costing you a fifth of your completions. Aggregate completion rate tells you something is wrong. Per-step drop-off tells you <strong>exactly what to delete.</strong></p></div>
       <div class="task">
-        <div class="th"><span class="tn">Task 4.2</span><b>Fire all eleven, then prove they arrive</b></div>
+        <div class="th"><span class="tn">Task 4.2</span><b>Fire All Eleven, Then Prove They Arrive</b></div>
         <div class="tm">
           <p>Instrument, then verify — the verification is the task.</p>
           <ol>
@@ -1962,7 +1962,7 @@
         </div>
         <div class="meta"><span><i>Owner</i>You · agent wires it</span><span><i>Tool</i>Analytics · recordings · your event endpoint</span><span><i>Time</i>2–3 h</span><span class="dl"><i>Deliverable</i>11 events live, queryable by API</span><span class="pv"><i>Proof</i>One real session produces all 11 in order</span></div>
       </div>
-      <h3 id="d3-step-3-wire-the-pipeline">Step 3 — Wire the pipeline</h3>
+      <h3 id="d3-step-3-wire-the-pipeline">Step 3 — Wire the Pipeline</h3>
       <p>Events tell you what happened on a page. The pipeline tells you what happened to a <em>person</em>. You need both, and the pipeline is what makes forecasting possible.</p>
       <div class="viz wide">
         <div class="vtitle">Eleven stages, two exits, and the automation that guards each one</div>
@@ -2034,7 +2034,7 @@
           <text x="60" y="576" class="svmute" font-size="9.5">Counts and percentages shown are a teaching model, not client results — yours will differ and that's the point.</text>
         </svg>
       </div>
-      <h3 id="d3-step-4-the-eight-automations">Step 4 — The eight automations</h3>
+      <h3 id="d3-step-4-the-eight-automations">Step 4 — The Eight Automations</h3>
       <p>These are the ones that carry the load. Each is a <strong>trigger, a condition and an action</strong> — and each one replaces a thing a human would otherwise forget to do.</p>
       <div class="viz wide">
         <div class="vtitle">Trigger → condition → action, eight times</div>
@@ -2086,7 +2086,7 @@
         <div class="cap">Automations 1–6 are event-driven and fire instantly. 7 and 8 are polled, because inboxes and clocks don't send webhooks — and the polling interval is a cost decision, not a technical one.<br><b>Build them in this order.</b> 1, 3 and 4 are the minimum viable set — confirm, capture, and tag. Everything else is leverage you add once the first three are provably reliable.</div>
       </div>
       <div class="task">
-        <div class="th"><span class="tn">Task 4.3</span><b>Wire the pipeline and the first three automations</b></div>
+        <div class="th"><span class="tn">Task 4.3</span><b>Wire the Pipeline and the First Three Automations</b></div>
         <div class="tm">
           <p>Don't try to build all eight today. Build the three that stop you losing data, and test each one with a real contact before moving on.</p>
           <ul>
@@ -2100,13 +2100,13 @@
       <div class="fvar">
         <div class="fh">◆ What changes per funnel type · the automations</div>
         <div class="fb">
-          <div class="fc w"><b>Webinar funnel</b><span>All eight apply as written. Automation 8 is the heaviest lifter — the timed reminder engine is what turns a 42% show-up into an 89% one.</span></div>
-          <div class="fc k"><b>Workshop · challenge</b><span>Add a ninth: the <em>daily generation loop</em>. Survey submitted → agent generates the day's output → PDF and link delivered. It runs once a day, three days running, and it is the product.</span></div>
-          <div class="fc r"><b>Reverse squeeze</b><span>Automation 8 disappears entirely — there's no clock. It's replaced by depth-threshold triggers, which fire per person rather than per schedule.</span></div>
+          <div class="fc w"><b>Webinar Funnel</b><span>All eight apply as written. Automation 8 is the heaviest lifter — the timed reminder engine is what turns a 42% show-up into an 89% one.</span></div>
+          <div class="fc k"><b>Workshop · Challenge</b><span>Add a ninth: the <em>daily generation loop</em>. Survey submitted → agent generates the day's output → PDF and link delivered. It runs once a day, three days running, and it is the product.</span></div>
+          <div class="fc r"><b>Reverse Squeeze</b><span>Automation 8 disappears entirely — there's no clock. It's replaced by depth-threshold triggers, which fire per person rather than per schedule.</span></div>
         </div>
         <div class="fo"><b>Other types:</b> tripwire and free-plus-shipping funnels need a <b>fulfilment trigger</b> on purchase · product launches need a hard <b>cart-close job</b> that actually disables checkout · JV funnels need <b>attribution and payout splitting</b> at the moment of sale, because reconciling it later is how partnerships end.</div>
       </div>
-      <h3 id="d3-step-5-point-real-traffic-at-it">Step 5 — Point real traffic at it</h3>
+      <h3 id="d3-step-5-point-real-traffic-at-it">Step 5 — Point Real Traffic at It</h3>
       <p>Everything up to now is a hypothesis. The only thing that turns it into knowledge is strangers. Today you run a <strong>deliberately small test</strong> — small enough that being wrong is cheap, big enough that the result isn't noise.</p>
       <div class="viz wide">
         <div class="vtitle">The test campaign — what to spend, what to watch, what it means</div>
@@ -2186,7 +2186,7 @@
         <div class="cap"><b>The point of today's traffic is not sales.</b> It's to find out which of yesterday's assumptions was wrong, while being wrong is still cheap.</div>
       </div>
       <div class="task">
-        <div class="th"><span class="tn">Task 4.4</span><b>Run the test and write down what broke</b></div>
+        <div class="th"><span class="tn">Task 4.4</span><b>Run the Test and Write Down What Broke</b></div>
         <div class="tm">
           <ol>
             <li><strong>QA first.</strong> Every page at 375, 768 and 1280px. A real purchase. Every event firing. Do not send traffic to a funnel you haven't walked yourself.</li>
@@ -2204,12 +2204,12 @@
         <p>Let the traffic run overnight. Don't touch anything. Tomorrow is about reading what it tells you and deciding what to change — and you cannot read a signal you keep interrupting.</p></div>
       <div class="half" id="d3b">
         <span class="hn">Half two · grow it</span>
-        <h2 class="hh" id="d3-read-the-numbers-fix-the-worst-one-repeat">Read the numbers, fix the worst one, repeat</h2>
+        <h2 class="hh" id="d3-read-the-numbers-fix-the-worst-one-repeat">Read the Numbers, Fix the Worst One, Repeat</h2>
         <p class="hl">You have a funnel and you have data. This half is the discipline that turns those into a business: know your unit economics, find the single worst step, change one thing, measure, keep or revert. Every week, forever.</p>
       </div>
       <div class="box why"><div class="h">◆ Why one leak at a time</div>
         <p>Fixing five things at once feels productive and teaches you nothing — if the number moves you can't say which change did it, and if it drops you can't say which to undo. <strong>One change per leak is slower per week and vastly faster per quarter.</strong></p></div>
-      <h3 id="d3-step-1-know-what-a-customer-costs-and-what-they">Step 1 — Know what a customer costs and what they're worth</h3>
+      <h3 id="d3-step-1-know-what-a-customer-costs-and-what-they">Step 1 — Know What a Customer Costs and What They're Worth</h3>
       <p>Two numbers decide whether you have a business or an expensive hobby: <strong>what it costs to acquire a customer</strong>, and <strong>what that customer is worth over their life.</strong> If the second is comfortably bigger than the first, you can buy growth. If it isn't, more traffic just loses money faster.</p>
       <div class="calc" id="calc">
         <div class="row"><label>Monthly visitors</label><input type="range" id="c1" min="500" max="50000" step="500" value="10000"><span class="out" id="o1">10,000</span></div>
@@ -2233,7 +2233,7 @@
         <p>A $600 cost per customer is not "high" or "low" on its own. Against a $400 lifetime value it's a business that dies; against a $4,000 one it's a business you should be pouring money into. <strong>Watch the ratio.</strong> Roughly 3× is the conventional floor for a healthy funnel, and below about 1× you are paying for the privilege of having customers.</p></div>
       <div class="box do"><div class="h">◆ Do this · replace every slider with your own fetched number</div>
         <p>The sliders are for building intuition. The real version has your numbers in it, pulled from the reports you assembled yesterday — and any term you still can't fetch stays marked <em>unknown</em> until you instrument it. A model built on plausible-looking guesses is worse than no model, because you'll trust it.</p></div>
-      <h3 id="d3-step-2-find-the-leak-then-fix-the-right-thing">Step 2 — Find the leak, then fix the right thing</h3>
+      <h3 id="d3-step-2-find-the-leak-then-fix-the-right-thing">Step 2 — Find the Leak, Then Fix the Right Thing</h3>
       <p>Compare every step rate to the rest of <em>your</em> funnel, and to itself last week. The lowest one — or the one that dropped — is where you work. Here's what each leak usually means and what to change.</p>
       <div class="viz wide">
         <div class="vtitle">Leak diagnosis — the symptom, the likely cause, the one thing to change</div>
@@ -2280,7 +2280,7 @@
         </svg>
         <div class="cap">Note the difference between the last row and every other row: the first seven are <b>funnel</b> problems, the last is a <b>traffic</b> problem. Fixing the wrong category is the most common wasted week.</div>
       </div>
-      <h3 id="d3-step-3-run-the-loop-every-week">Step 3 — Run the loop every week</h3>
+      <h3 id="d3-step-3-run-the-loop-every-week">Step 3 — Run the Loop Every Week</h3>
       <div class="viz wide">
         <div class="vtitle">Six steps, one lap per week, forever</div>
         <svg viewBox="0 22 860 410" role="img" aria-label="The weekly optimisation loop drawn as a ring of six steps: observe, locate, hypothesise, experiment, measure, and keep or revert, with the ring returning to observe. Side panels list the daily, weekly, monthly and quarterly cadence and the four signs the loop is working.">
@@ -2320,7 +2320,7 @@
         <div class="cap">The loop can run semi-autonomously: the agent fetches both reports on a schedule, flags the worst leak and proposes a variant — you still decide what ships.<br><b>And the bottleneck always moves.</b> Fix the worst step and a different one becomes the worst. That's the loop working, and it's why this is a weekly habit, not a project with an end date.</div>
       </div>
       <div class="task">
-        <div class="th"><span class="tn">Task 5.1</span><b>Run one full lap today</b></div>
+        <div class="th"><span class="tn">Task 5.1</span><b>Run One Full Lap Today</b></div>
         <div class="tm">
           <ol>
             <li><strong>Observe</strong> — pull both reports from yesterday's traffic.</li>
@@ -2332,7 +2332,7 @@
         </div>
         <div class="meta"><span><i>Owner</i>You · agent fetches</span><span><i>Tool</i>Both reports + your spec</span><span><i>Time</i>60 min</span><span class="dl"><i>Deliverable</i>One live experiment + an experiment log</span><span class="pv"><i>Proof</i>Both arms are being served and counted separately</span></div>
       </div>
-      <h3 id="d3-step-4-move-the-money-to-the-channel-that-actual">Step 4 — Move the money to the channel that actually buys</h3>
+      <h3 id="d3-step-4-move-the-money-to-the-channel-that-actual">Step 4 — Move the Money to the Channel That Actually Buys</h3>
       <p>Here's the rule that saves the most money: <strong>reallocate toward the lowest cost per buyer, not the lowest cost per click.</strong> A cheap click that never converts is the most expensive traffic you own.</p>
       <div class="viz wide">
         <div class="vtitle">Same spend, redistributed by cost per buyer</div>
@@ -2392,7 +2392,7 @@
       </div>
       <div class="box tip"><div class="h">◆ Pro tip · never cut a channel to zero</div>
         <p>Leave a small always-on test budget everywhere. Channels change — an audience gets cheaper, a platform changes its algorithm, a competitor stops bidding. If you cut to zero you'll never find out, and you'll be the last to know when the cheapest channel in your market becomes available again.</p></div>
-      <h3 id="d3-step-5-the-52-week-engine">Step 5 — The 52-week engine</h3>
+      <h3 id="d3-step-5-the-52-week-engine">Step 5 — The 52-Week Engine</h3>
       <p>Most of your list won't buy this month. The engine is what keeps them warm until the month they do — and what turns your existing customers into the cheapest traffic you'll ever get.</p>
       <div class="viz wide">
         <div class="vtitle">A year of contact, on four rails, from one topic rotation</div>
@@ -2462,7 +2462,7 @@
           </g>
         </svg>
       </div>
-      <h3 id="d3-step-6-where-1m-arr-actually-comes-from">Step 6 — Where $1M ARR actually comes from</h3>
+      <h3 id="d3-step-6-where-1m-arr-actually-comes-from">Step 6 — Where $1M ARR Actually Comes From</h3>
       <p>Not from one enormous month. From a wheel that gets slightly easier to turn each time: a new customer joins, gets a fast win, asks for more, gets it, stays, and refers. Every turn adds recurring revenue and lowers the cost of the next customer.</p>
 <div class="viz wide">
         <div class="vtitle">The flywheel — customers never exit, they re-enter</div>
@@ -2517,7 +2517,7 @@
       <div class="box why"><div class="h">◆ Retention is the only lever that multiplies the others</div>
         <p>Doubling your traffic doubles your buyers. Doubling your retention doubles the value of <em>every</em> buyer you have ever acquired and every one you will acquire. That's why the north star here is recurring revenue, not the first sale — and why the 48 hours after someone pays deserve more of your attention than the 48 days before.</p></div>
       <div class="task">
-        <div class="th"><span class="tn">Task 5.2</span><b>Write the scale plan</b></div>
+        <div class="th"><span class="tn">Task 5.2</span><b>Write the Scale Plan</b></div>
         <div class="tm">
           <p>One page, five lines. Then put the weekly review in your calendar as a recurring event, because a loop that isn't scheduled is a loop that runs twice and stops.</p>
           <ol>
@@ -2533,9 +2533,9 @@
       <div class="fvar">
         <div class="fh">◆ What changes per funnel type · scaling</div>
         <div class="fb">
-          <div class="fc w"><b>Webinar funnel</b><span>Scale by <em>frequency</em> — run it monthly rather than occasionally. The assets are already built, so each additional run costs mostly promotion. Watch show-up rate as volume grows; it usually dips first.</span></div>
-          <div class="fc k"><b>Workshop · challenge</b><span>Scale by <em>cohort size and cadence</em>, but completion rate is the constraint. A cohort too large to feel personal converts worse on day five — and day five is where the money is.</span></div>
-          <div class="fc r"><b>Reverse squeeze</b><span>Scale by <em>content volume</em>. Each new Part 1 is a permanent new entrance, and old ones keep producing. Slowest to start, best compounding of the three.</span></div>
+          <div class="fc w"><b>Webinar Funnel</b><span>Scale by <em>frequency</em> — run it monthly rather than occasionally. The assets are already built, so each additional run costs mostly promotion. Watch show-up rate as volume grows; it usually dips first.</span></div>
+          <div class="fc k"><b>Workshop · Challenge</b><span>Scale by <em>cohort size and cadence</em>, but completion rate is the constraint. A cohort too large to feel personal converts worse on day five — and day five is where the money is.</span></div>
+          <div class="fc r"><b>Reverse Squeeze</b><span>Scale by <em>content volume</em>. Each new Part 1 is a permanent new entrance, and old ones keep producing. Slowest to start, best compounding of the three.</span></div>
         </div>
         <div class="fo"><b>Other types:</b> tripwire and free-plus-shipping funnels scale on <b>ad spend</b>, limited only by how fast the upsell recovers acquisition cost · community funnels scale on <b>member-driven referral</b> and stall if the community goes quiet · JV funnels scale by <b>adding partners</b>, so partner recruitment becomes the growth function.</div>
       </div>
@@ -2544,8 +2544,8 @@
     </section>
     <div class="divider"></div>
     <section style="--hue:#22C55E;--hue-ink:color-mix(in srgb,#22C55E 70%,var(--ink))" id="plan">
-      <div class="chap"><span class="no">The plan</span><span class="tag">What you actually do, hour by hour</span></div>
-      <h2>Your 3-day work plan</h2>
+      <div class="chap"><span class="no">The plan</span><span class="tag">What You Actually Do, Hour by Hour</span></div>
+      <h2>Your 3-Day Work Plan</h2>
       <p class="lead">Same rhythm every day: <strong>watch, fill, get, do.</strong> Below is every task, who owns it, which tool it needs, how long it takes, what you end up with, and the number that proves it worked. Tick them off as you go — your progress is saved on this device.</p>
       <div class="viz wide">
         <div class="vtitle">What runs on which day — and the one thing you must start early</div>
@@ -2599,7 +2599,7 @@
         <p><strong>Watch</strong> the live session · <strong>fill</strong> the survey in parallel while it's fresh · <strong>get</strong> your generated output by message and email the same day · <strong>do</strong> the short homework that unblocks tomorrow. Skipping the homework is the single biggest reason people fall behind, because each day's session assumes yesterday's output exists.</p></div>
       <div class="chkwrap" id="chk">
         <div class="chkday">
-          <div class="chkh"><span class="pill">Day 1</span><b>Strategy, then your conversion engine</b><span class="chkmeta">4–6 h outside the session</span></div>
+          <div class="chkh"><span class="pill">Day 1</span><b>Strategy, Then Your Conversion Engine</b><span class="chkmeta">4–6 h outside the session</span></div>
           <div class="tbl"><table>
             <thead><tr><th></th><th>Task</th><th>Tool</th><th>Time</th><th>Proof it worked</th></tr></thead>
             <tbody>
@@ -2622,7 +2622,7 @@
           </table></div>
         </div>
         <div class="chkday">
-          <div class="chkh"><span class="pill te">Day 2</span><b>All your funnel elements</b><span class="chkmeta">8–12 h — the heavy day</span></div>
+          <div class="chkh"><span class="pill te">Day 2</span><b>All Your Funnel Elements</b><span class="chkmeta">8–12 h — the heavy day</span></div>
           <div class="tbl"><table>
             <thead><tr><th></th><th>Task</th><th>Tool</th><th>Time</th><th>Proof it worked</th></tr></thead>
             <tbody>
@@ -2638,7 +2638,7 @@
           </table></div>
         </div>
         <div class="chkday">
-          <div class="chkh"><span class="pill te">Day 3</span><b>Your AI engine live, then your scale plan</b><span class="chkmeta">8–12 h, then weekly forever</span></div>
+          <div class="chkh"><span class="pill te">Day 3</span><b>Your AI Engine Live, Then Your Scale Plan</b><span class="chkmeta">8–12 h, then weekly forever</span></div>
           <div class="tbl"><table>
             <thead><tr><th></th><th>Task</th><th>Tool</th><th>Time</th><th>Proof it worked</th></tr></thead>
             <tbody>
@@ -2664,30 +2664,31 @@
       </div>
       <div class="box do"><div class="h">◆ What you leave with</div>
         <p>A strategy on one page · a conversion engine that generates every asset · all your funnel pages, sequences and templates · a live funnel at a real URL, built from a spec you can edit · eleven instrumented events and a pipeline that updates itself · real traffic flowing through it · two reports that tell you exactly what to fix next · and a weekly loop that keeps improving it long after the three days are over.</p></div>
-    </section>a:X
-f:X
-f:C
-0:{"buildId":"BZ0DJ-uKoRPYCvqFDFT73","data":[{"rsc":["$","$1","c",{"children":[[["$","div",null,{"style":{"background":"#facc15","color":"#0b0d12","padding":"7px 16px","font":"600 12px/1.4 system-ui, sans-serif","textAlign":"center"},"children":"Review mirror — fully unlocked for approval. The live centre is gated by a personal access link and records your progress."}],["$","$L2",null,{"attendee":{"id":0,"firstName":"Alex","email":"you@example.com","entitlement":"paid","lane":"paid"},"settings":{"onboarding_open":"1","paid_modules_open":"1","day2_unlocked":"1","day3_unlocked":"1"},"completed":[],"playbook":["$","div",null,{"id":"playbook-body","className":"pbk","dangerouslySetInnerHTML":{"__html":"$3"}}]}]],["$L4","$L5","$L6","$L7"],"$L8"]}],"isPartial":"$@9","staleTime":"$a","varyParams":null},{"rsc":"$Lb","isPartial":"$@c","staleTime":"$a","varyParams":null},{"rsc":"$Ld","isPartial":"$@e","staleTime":"$a","varyParams":"$f"}],"isUpgradeableISRFallback":false,"a":"$@10","rootVaryParams":null,"needsRuntimeRequest":"$@11"}
-12:I[36222,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"OutletBoundary"]
-13:"$Sreact.suspense"
-15:I[36222,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"ViewportBoundary"]
-16:I[36222,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"MetadataBoundary"]
-17:I[52089,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"IconMark"]
-18:I[83706,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"default"]
-19:I[79404,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"default"]
+    </section>b:X
+10:X
+10:C
+0:{"buildId":"NrahAqlcFVwxD-ZbnkOTI","data":[{"rsc":["$","$1","c",{"children":[[["$","div",null,{"style":{"background":"#facc15","color":"#0b0d12","padding":"7px 16px","font":"600 12px/1.4 system-ui, sans-serif","textAlign":"center"},"children":"Review mirror — fully unlocked for approval. The live centre is gated by a personal access link and records your progress."}],["$","$L2",null,{"attendee":{"id":0,"firstName":"Alex","email":"you@example.com","entitlement":"paid","lane":"paid"},"settings":{"onboarding_open":"1","paid_modules_open":"1","day2_unlocked":"1","day3_unlocked":"1"},"completed":[],"playbook":["$","div",null,{"id":"playbook-body","className":"pbk","dangerouslySetInnerHTML":{"__html":"$3"}}]}]],["$L4","$L5","$L6","$L7","$L8"],"$L9"]}],"isPartial":"$@a","staleTime":"$b","varyParams":null},{"rsc":"$Lc","isPartial":"$@d","staleTime":"$b","varyParams":null},{"rsc":"$Le","isPartial":"$@f","staleTime":"$b","varyParams":"$10"}],"isUpgradeableISRFallback":false,"a":"$@11","rootVaryParams":null,"needsRuntimeRequest":"$@12"}
+13:I[36222,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"OutletBoundary"]
+14:"$Sreact.suspense"
+16:I[36222,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"ViewportBoundary"]
+17:I[36222,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"MetadataBoundary"]
+18:I[52089,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"IconMark"]
+19:I[83706,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"default"]
+1a:I[79404,["/tantra-workshop-live/site/_next/static/chunks/0e3veyux5lr-o.js"],"default"]
 :HL["/tantra-workshop-live/site/_next/static/chunks/3o9-kdcajc47y.css","style"]
 4:["$","link","0",{"rel":"stylesheet","href":"/tantra-workshop-live/site/_next/static/chunks/3o9-kdcajc47y.css","precedence":"next"}]
-5:["$","script","script-0",{"src":"/tantra-workshop-live/site/_next/static/chunks/3xdf93soyp6hj.js","async":true}]
-6:["$","script","script-1",{"src":"/tantra-workshop-live/site/_next/static/chunks/2xqqe4cfwp9_q.js","async":true}]
+5:["$","script","script-0",{"src":"/tantra-workshop-live/site/_next/static/chunks/3biwtz631yz04.js","async":true}]
+6:["$","script","script-1",{"src":"/tantra-workshop-live/site/_next/static/chunks/07dbfjrvi42dd.js","async":true}]
 7:["$","script","script-2",{"src":"/tantra-workshop-live/site/_next/static/chunks/24c8hcv_blj_s.js","async":true}]
-8:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
-b:["$","$1","h",{"children":[null,["$","$L15",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#f7f8fb"}],["$","meta","3",{"name":"color-scheme","content":"light"}]]}],["$","div",null,{"hidden":true,"children":["$","$L16",null,{"children":["$","$13",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Your onboarding centre | The 3-Day AI RevOps Workshop | Tantra"}],["$","meta","1",{"name":"description","content":"Run outreach sequences across email, LinkedIn, WhatsApp, Telegram, and calendar invites — with every reply in one inbox and webinar attribution built in."}],["$","meta","2",{"name":"application-name","content":"Tantra"}],["$","link","3",{"rel":"author","href":"https://adisuja.github.io/tantra-workshop-live/site"}],["$","meta","4",{"name":"author","content":"Tantra"}],["$","link","5",{"rel":"manifest","href":"/tantra-workshop-live/site/manifest.webmanifest"}],["$","meta","6",{"name":"referrer","content":"origin-when-cross-origin"}],["$","meta","7",{"name":"creator","content":"Tantra"}],["$","meta","8",{"name":"publisher","content":"Tantra"}],["$","meta","9",{"name":"robots","content":"noindex, nofollow"}],["$","meta","10",{"name":"category","content":"technology"}],["$","link","11",{"rel":"canonical","href":"https://adisuja.github.io/tantra-workshop-live/site/"}],["$","meta","12",{"name":"format-detection","content":"telephone=no, address=no, email=no"}],["$","meta","13",{"property":"og:title","content":"Tantra | The Omnichannel Outreach Engine"}],["$","meta","14",{"property":"og:description","content":"Run outreach sequences across email, LinkedIn, WhatsApp, Telegram, and calendar invites — with every reply in one inbox and webinar attribution built in."}],["$","meta","15",{"property":"og:url","content":"https://adisuja.github.io/tantra-workshop-live/site/"}],["$","meta","16",{"property":"og:site_name","content":"Tantra"}],["$","meta","17",{"property":"og:locale","content":"en_US"}],["$","meta","18",{"property":"og:image","content":"https://adisuja.github.io/tantra-workshop-live/site/opengraph-image?aec9b2dd8884f91a"}],["$","meta","19",{"property":"og:image:type","content":"image/png"}],["$","meta","20",{"property":"og:image:width","content":"1200"}],["$","meta","21",{"property":"og:image:height","content":"630"}],["$","meta","22",{"property":"og:image:alt","content":"Tantra — the omnichannel outreach engine"}],["$","meta","23",{"property":"og:type","content":"website"}],["$","meta","24",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","25",{"name":"twitter:title","content":"Tantra | The Omnichannel Outreach Engine"}],["$","meta","26",{"name":"twitter:description","content":"Run outreach sequences across email, LinkedIn, WhatsApp, Telegram, and calendar invites — with every reply in one inbox and webinar attribution built in."}],["$","meta","27",{"name":"twitter:image","content":"https://adisuja.github.io/tantra-workshop-live/site/twitter-image?b2bbbbe9c1b8d140"}],["$","meta","28",{"name":"twitter:image:alt","content":"Tantra — the omnichannel outreach engine"}],["$","meta","29",{"name":"twitter:image:type","content":"image/png"}],["$","meta","30",{"name":"twitter:image:width","content":"1200"}],["$","meta","31",{"name":"twitter:image:height","content":"630"}],["$","link","32",{"rel":"icon","href":"/tantra-workshop-live/site/icon","type":"image/png"}],["$","link","33",{"rel":"apple-touch-icon","href":"/tantra-workshop-live/site/apple-icon","type":"image/png"}],["$","$L17","34",{}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
-d:["$","$1","c",{"children":[null,["$","$L18",null,{"parallelRouterKey":"children","template":["$","$L19",null,{}]}]]}]
-11:true
-14:null
-a:300
-a:C
-10:0
-c:"$undefined"
-e:"$undefined"
-9:"$undefined"
+8:["$","script","script-3",{"src":"/tantra-workshop-live/site/_next/static/chunks/2xqqe4cfwp9_q.js","async":true}]
+9:["$","$L13",null,{"children":["$","$14",null,{"name":"Next.MetadataOutlet","children":"$@15"}]}]
+c:["$","$1","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#f7f8fb"}],["$","meta","3",{"name":"color-scheme","content":"light"}]]}],["$","div",null,{"hidden":true,"children":["$","$L17",null,{"children":["$","$14",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Your Onboarding Centre | The 3-Day AI RevOps Workshop | Tantra"}],["$","meta","1",{"name":"description","content":"Run outreach sequences across email, LinkedIn, WhatsApp, Telegram, and calendar invites — with every reply in one inbox and webinar attribution built in."}],["$","meta","2",{"name":"application-name","content":"Tantra"}],["$","link","3",{"rel":"author","href":"https://adisuja.github.io/tantra-workshop-live/site"}],["$","meta","4",{"name":"author","content":"Tantra"}],["$","link","5",{"rel":"manifest","href":"/tantra-workshop-live/site/manifest.webmanifest"}],["$","meta","6",{"name":"referrer","content":"origin-when-cross-origin"}],["$","meta","7",{"name":"creator","content":"Tantra"}],["$","meta","8",{"name":"publisher","content":"Tantra"}],["$","meta","9",{"name":"robots","content":"noindex, nofollow"}],["$","meta","10",{"name":"category","content":"technology"}],["$","link","11",{"rel":"canonical","href":"https://adisuja.github.io/tantra-workshop-live/site/"}],["$","meta","12",{"name":"format-detection","content":"telephone=no, address=no, email=no"}],["$","meta","13",{"property":"og:title","content":"Tantra | The Omnichannel Outreach Engine"}],["$","meta","14",{"property":"og:description","content":"Run outreach sequences across email, LinkedIn, WhatsApp, Telegram, and calendar invites — with every reply in one inbox and webinar attribution built in."}],["$","meta","15",{"property":"og:url","content":"https://adisuja.github.io/tantra-workshop-live/site/"}],["$","meta","16",{"property":"og:site_name","content":"Tantra"}],["$","meta","17",{"property":"og:locale","content":"en_US"}],["$","meta","18",{"property":"og:image","content":"https://adisuja.github.io/tantra-workshop-live/site/opengraph-image?aec9b2dd8884f91a"}],["$","meta","19",{"property":"og:image:type","content":"image/png"}],["$","meta","20",{"property":"og:image:width","content":"1200"}],["$","meta","21",{"property":"og:image:height","content":"630"}],["$","meta","22",{"property":"og:image:alt","content":"Tantra — the omnichannel outreach engine"}],["$","meta","23",{"property":"og:type","content":"website"}],["$","meta","24",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","25",{"name":"twitter:title","content":"Tantra | The Omnichannel Outreach Engine"}],["$","meta","26",{"name":"twitter:description","content":"Run outreach sequences across email, LinkedIn, WhatsApp, Telegram, and calendar invites — with every reply in one inbox and webinar attribution built in."}],["$","meta","27",{"name":"twitter:image","content":"https://adisuja.github.io/tantra-workshop-live/site/twitter-image?b2bbbbe9c1b8d140"}],["$","meta","28",{"name":"twitter:image:alt","content":"Tantra — the omnichannel outreach engine"}],["$","meta","29",{"name":"twitter:image:type","content":"image/png"}],["$","meta","30",{"name":"twitter:image:width","content":"1200"}],["$","meta","31",{"name":"twitter:image:height","content":"630"}],["$","link","32",{"rel":"icon","href":"/tantra-workshop-live/site/icon","type":"image/png"}],["$","link","33",{"rel":"apple-touch-icon","href":"/tantra-workshop-live/site/apple-icon","type":"image/png"}],["$","$L18","34",{}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+e:["$","$1","c",{"children":[null,["$","$L19",null,{"parallelRouterKey":"children","template":["$","$L1a",null,{}]}]]}]
+12:true
+15:null
+b:300
+b:C
+11:0
+d:"$undefined"
+f:"$undefined"
+a:"$undefined"
