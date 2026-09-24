@@ -81,7 +81,7 @@
       "owner": "Claude",
       "priority": "P0",
       "due": "2026-09-19",
-      "status": "blocked",
+      "status": "review",
       "why": "Step 2 of the funnel: qualifies the registrant with an 11-question survey and warms them with the VSL.",
       "spec": "Page is built and probe-clean. The VSL slot exists with an approved caption track, but VSL_SRC is undefined because no recording exists.",
       "done_when": [
@@ -94,10 +94,8 @@
           "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/"
         }
       ],
-      "blockers": [
-        "Waits on T-060 (the VSL file)"
-      ],
-      "needs_from_owner": "",
+      "blockers": [],
+      "needs_from_owner": "Approve.",
       "log": [
         {
           "ts": "2026-09-18T18:00:00-04:00",
@@ -113,6 +111,16 @@
           "ts": "2026-09-24",
           "who": "Claude",
           "note": "Re-verified 2026-09-24: the page and wiring are complete; the only thing missing is the VSL file, tracked in T-060. It's no longer a separate ask."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Owner (typed on the live board; the button failed, relayed in chat)",
+          "note": "ship the page- we will update VSL before launch later"
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Applied: the page ships as-is. The VSL slot renders the designed poster until the file exists; the recording is tracked in T-060 and no longer blocks this page."
         }
       ],
       "order": 20
@@ -1340,12 +1348,17 @@
       "blockers": [
         "Only the host can record it"
       ],
-      "needs_from_owner": "Record it and drop the file in workshop-plan/sources/, or tell me to ship without video.",
+      "needs_from_owner": "Record the VSL before launch and drop the file in workshop-plan/sources/. Pages ship with the poster meanwhile (your call, 2026-09-24).",
       "log": [
         {
           "ts": "2026-09-18T18:00:00-04:00",
           "who": "claude",
           "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Owner decision 2026-09-24: ship the pages now; the VSL gets updated before launch."
         }
       ],
       "order": 390
