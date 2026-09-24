@@ -318,7 +318,7 @@ function issueUrl(body){
   return `https://github.com/${ISSUE_REPO}/issues/new?labels=board-feedback&title=${encodeURIComponent(title)}&body=${encodeURIComponent(md)}`;
 }
 function viaIssue(body,out){
-  const url=issueUrl(body);const w=window.open(url,"_blank","noopener");
+  const url=issueUrl(body);const w=window.open(url,"_blank");if(w)try{w.opener=null}catch(e){}
   out.className="sent";
   out.innerHTML=(w?"Opened on GitHub in a new tab — press <b>Submit new issue</b> there. ":"")+`<a href="${url}" target="_blank" rel="noopener">${w?"Reopen it":"Open it on GitHub"}</a> · Claude picks it up on the next pass.`;
 }
