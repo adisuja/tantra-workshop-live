@@ -2399,14 +2399,14 @@
     },
     {
       "id": "T-106",
-      "title": "Roll the cohort dates (every countdown reads zero)",
+      "title": "Registration deadline has passed — extend it for this cohort, or roll to the next",
       "area": "Funnel",
       "owner": "Owner",
       "priority": "P0",
       "due": "2026-09-24",
       "status": "blocked",
-      "why": "EVENT_DATE is Thu 24 Sep 11:00 ET and the deadline was the 23rd, so the countdowns have run out.",
-      "spec": "Update EVENT_DATE, DEADLINE, SESSION_DAYS in app/src/lib/funnel.ts and the per-day dates in lib/sessions.ts, rebuild, republish.",
+      "why": "DEADLINE was 23 Sep 23:59 ET, so every registration countdown reads zero. Day 1 itself is TODAY, Thu 24 Sep 11:00 ET.",
+      "spec": "Either move DEADLINE (app/src/lib/funnel.ts) so registrations stay open through the cohort, or set EVENT_DATE / DEADLINE / SESSION_DAYS and lib/sessions.ts to the next cohort. Rebuild, republish.",
       "done_when": [
         "Every page shows the next cohort's dates and a live countdown"
       ],
@@ -2414,12 +2414,12 @@
       "blockers": [
         "Next cohort dates"
       ],
-      "needs_from_owner": "Give me the next cohort's three session dates and the registration deadline.",
+      "needs_from_owner": "Pick one: (a) keep registrations open until a new deadline you name, or (b) give me the next cohort's three dates and deadline.",
       "log": [
         {
           "ts": "2026-09-24",
           "who": "Claude",
-          "note": "Owner decision needed; the change itself takes minutes."
+          "note": "Correction: the event hasn't passed; the registration deadline has. The change itself takes minutes once you pick."
         }
       ],
       "order": 1040
