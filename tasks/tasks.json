@@ -2,7 +2,7 @@
   "meta": {
     "project": "The 3-Day AI RevOps Workshop",
     "day1": "2026-09-24T11:00:00-04:00",
-    "updated": "2026-09-23T00:00:57+05:30",
+    "updated": "2026-09-24",
     "version": 11
   },
   "tasks": [
@@ -103,6 +103,11 @@
           "ts": "2026-09-18T18:00:00-04:00",
           "who": "claude",
           "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "The page is built and live. The only missing piece is the VSL file (T-060). Paid-lane survey now posts to the local intake service and its Work Tracker tab."
         }
       ],
       "order": 20
@@ -138,13 +143,18 @@
           "ts": "2026-09-18T18:00:00-04:00",
           "who": "claude",
           "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "The page is built and live with step art and the nine-bonus grid. It waits only on the real WhatsApp and Zoom links (T-040 / T-042); placeholders are wired meanwhile."
         }
       ],
       "order": 30
     },
     {
       "id": "T-004",
-      "title": "Build Pass checkout (Dodo, live)",
+      "title": "Seat checkout (Dodo, live) — geo-priced",
       "area": "Funnel",
       "owner": "Claude",
       "priority": "P0",
@@ -168,12 +178,17 @@
         }
       ],
       "blockers": [],
-      "needs_from_owner": "Confirm the localized prices (USD 99 base, INR/EUR/GBP/AUD/CAD/SGD/AED rules) are what you want.",
+      "needs_from_owner": "Confirm the price table (USD 99 · INR 9,999 · EUR 89 · GBP 79 · AUD 149 · CAD 139 · SGD 129 · AED 369) and the checkout product name 'The 3-Day AI RevOps Workshop'.",
       "log": [
         {
           "ts": "2026-09-18T18:00:00-04:00",
           "who": "claude",
           "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Dodo product renamed from 'The 5-Day Workshop — Build Pass' to 'The 3-Day AI RevOps Workshop'; the description now lists the seat plus the nine bonuses. The name is lane-neutral because VIP is banned on the paid lane. Prices unchanged. Checkout now works on a static host through Dodo's hosted link (prefilled email). Paid-lane checkout returns to its own confirmation page. It charges in the currency the page showed (T-103). scripts/dodo-setup.mjs reads app/src/lib/prices.json."
         }
       ],
       "order": 40
@@ -306,20 +321,50 @@
       "owner": "Claude",
       "priority": "P1",
       "due": "2026-09-20",
-      "status": "queue",
+      "status": "review",
       "why": "Every registration and sale must be attributable to a channel and a team member.",
       "spec": "Local intake DB (T-030) exports UTM-tagged CSV that matches the Work Tracker's columns. Google connector optional later.",
       "done_when": [
         "CSV export matches the sheet's headers"
       ],
-      "evidence": [],
+      "evidence": [
+        {
+          "label": "Work Tracker · Funnel · Free Registrations",
+          "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=913055296"
+        },
+        {
+          "label": "Work Tracker · Funnel · Free Intake Survey",
+          "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=1807702128"
+        },
+        {
+          "label": "Work Tracker · Funnel · Paid Registrations",
+          "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=806589780"
+        },
+        {
+          "label": "Work Tracker · Funnel · Paid Intake Survey",
+          "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=1557185116"
+        },
+        {
+          "label": "Work Tracker · Funnel · Checkout Starts",
+          "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=13402888"
+        },
+        {
+          "label": "Work Tracker · Funnel · Checkout Returns",
+          "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=1309425153"
+        }
+      ],
       "blockers": [],
-      "needs_from_owner": "",
+      "needs_from_owner": "Open the six tabs and approve the columns.",
       "log": [
         {
           "ts": "2026-09-18T18:00:00-04:00",
           "who": "claude",
           "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Done without a service account: the intake service writes to six new Work Tracker tabs using the existing Sheets OAuth token on this machine. Proved by filling the real forms in a browser (scripts/probe-forms-to-sheet.mjs). The public mirror path is T-105."
         }
       ],
       "order": 90
@@ -331,22 +376,25 @@
       "owner": "Claude",
       "priority": "P2",
       "due": "2026-09-21",
-      "status": "blocked",
+      "status": "done",
       "why": "Placeholder art on the landing page.",
       "spec": "Kie.ai was out of credits when this was attempted.",
       "done_when": [
         "Image generated, optimized, and placed"
       ],
       "evidence": [],
-      "blockers": [
-        "Kie.ai credits"
-      ],
-      "needs_from_owner": "Top up Kie.ai or tell me to use a different generator.",
+      "blockers": [],
+      "needs_from_owner": "",
       "log": [
         {
           "ts": "2026-09-18T18:00:00-04:00",
           "who": "claude",
           "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Stale record: audience-room.jpg was generated and shipped on 2026-09-23 (final CTA backdrop)."
         }
       ],
       "order": 100
@@ -649,7 +697,7 @@
       "owner": "Claude",
       "priority": "P0",
       "due": "2026-09-20",
-      "status": "next",
+      "status": "review",
       "why": "Owner decision: no n8n anywhere. Every automation is code I build and run here. Today the landing page posts leads to n8n, the survey posts nowhere, and the webhook route falls back to n8n for fulfilment.",
       "spec": "A small local service (Python, SQLite, served next to serve.py or as its own port) with POST /api/register, POST /api/survey/{day}, and a payments reconciler that polls Dodo's API for this product ID every minute and marks attendees paid. The Next app and survey.html post to it instead of n8n. CSV export for the Work Tracker. The same reconciler code becomes the webhook handler after launch.",
       "done_when": [
@@ -661,7 +709,7 @@
       ],
       "evidence": [],
       "blockers": [],
-      "needs_from_owner": "",
+      "needs_from_owner": "Nothing to decide. Review the Work Tracker tabs (T-104) if you want to see the rows.",
       "log": [
         {
           "ts": "2026-09-18T18:00:00-04:00",
@@ -672,6 +720,11 @@
           "ts": "2026-09-18T20:42:47+0530",
           "who": "claude",
           "note": "Rewritten: owner rejected n8n; Claude builds and runs the automation."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Both lanes now post to the local intake service (the paid lane was still posting to n8n). A new /api/form route writes every funnel form to a local JSONL and then to its Work Tracker tab. Started and tested end to end. ops.db, its journals, ops.log and form-log.jsonl are now git-ignored (attendee PII)."
         }
       ],
       "order": 200
@@ -862,10 +915,10 @@
       "id": "T-040",
       "title": "Create the WhatsApp community + announcement group",
       "area": "Ops",
-      "owner": "Aquila",
+      "owner": "Owner",
       "priority": "P0",
       "due": "2026-09-20",
-      "status": "queue",
+      "status": "blocked",
       "why": "The community is the retention surface and the thank-you page's destination.",
       "spec": "One chat group + one read-only announcement group, mirrored from Fintech Circle.",
       "done_when": [
@@ -873,13 +926,20 @@
         "Invite link pasted into T-003"
       ],
       "evidence": [],
-      "blockers": [],
-      "needs_from_owner": "",
+      "blockers": [
+        "Owner action"
+      ],
+      "needs_from_owner": "Create the WhatsApp community + announcement group and paste the invite link.",
       "log": [
         {
           "ts": "2026-09-18T18:00:00-04:00",
           "who": "claude",
           "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Moved to waiting-on-owner: the pages are wired with placeholders and go live with the real link on the next build."
         }
       ],
       "order": 260
@@ -888,35 +948,42 @@
       "id": "T-041",
       "title": "Add admins to both WhatsApp groups",
       "area": "Ops",
-      "owner": "Aquila",
+      "owner": "Owner",
       "priority": "P1",
       "due": "2026-09-20",
-      "status": "queue",
+      "status": "blocked",
       "why": "Moderation from day one.",
       "spec": "Aquila, Bhaskar, Adi, Amal, Vaibhavi.",
       "done_when": [
         "All five are admins in both groups"
       ],
       "evidence": [],
-      "blockers": [],
-      "needs_from_owner": "",
+      "blockers": [
+        "Owner action"
+      ],
+      "needs_from_owner": "Add the admins to both WhatsApp groups once T-040 exists.",
       "log": [
         {
           "ts": "2026-09-18T18:00:00-04:00",
           "who": "claude",
           "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Moved to waiting-on-owner: the pages are wired with placeholders and go live with the real link on the next build."
         }
       ],
       "order": 270
     },
     {
       "id": "T-042",
-      "title": "Schedule the 5 Zoom sessions",
+      "title": "Schedule the 3 Zoom sessions",
       "area": "Ops",
-      "owner": "Aquila",
+      "owner": "Owner",
       "priority": "P0",
       "due": "2026-09-20",
-      "status": "queue",
+      "status": "blocked",
       "why": "Seats need a link. Day 1 is Thu Sep 24, 11:00 AM ET.",
       "spec": "Thu 24 · Fri 25 · Mon 28, all 11:00 AM ET. Participants muted, video disabled. Registration link pasted into T-003.",
       "done_when": [
@@ -925,13 +992,20 @@
         "Link in T-003"
       ],
       "evidence": [],
-      "blockers": [],
-      "needs_from_owner": "",
+      "blockers": [
+        "Owner action"
+      ],
+      "needs_from_owner": "Create the Zoom link(s) for the three sessions and paste them (one link for all three is fine).",
       "log": [
         {
           "ts": "2026-09-18T18:00:00-04:00",
           "who": "claude",
           "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Moved to waiting-on-owner: the pages are wired with placeholders and go live with the real link on the next build."
         }
       ],
       "order": 280
@@ -1025,7 +1099,7 @@
       "owner": "Claude",
       "priority": "P1",
       "due": "2026-09-20",
-      "status": "blocked",
+      "status": "queue",
       "why": "The organic lane is the zero-cost traffic source.",
       "spec": "Generate via Claude Code from the content-taxonomy sheet; every link UTM-tagged.",
       "done_when": [
@@ -1033,15 +1107,18 @@
         "Owner approves voice"
       ],
       "evidence": [],
-      "blockers": [
-        "Content-taxonomy sheet is in Google (no auth)"
-      ],
-      "needs_from_owner": "Export the taxonomy sheet as CSV into workshop-plan/sources/ or grant Google access.",
+      "blockers": [],
+      "needs_from_owner": "",
       "log": [
         {
           "ts": "2026-09-18T18:00:00-04:00",
           "who": "claude",
           "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Unblocked: Google Sheets access is available on this machine now, and the 'LinkedIn Creator Taxonomy' tab lives in the Work Tracker, so no CSV export is needed."
         }
       ],
       "order": 320
@@ -1463,22 +1540,25 @@
       "owner": "Adi",
       "priority": "P2",
       "due": "2026-09-22",
-      "status": "blocked",
+      "status": "queue",
       "why": "Team-facing project setup.",
       "spec": "Needs the Google connector.",
       "done_when": [
         "Tabs exist"
       ],
       "evidence": [],
-      "blockers": [
-        "Google connector auth"
-      ],
-      "needs_from_owner": "Authorize Google in claude.ai connectors, or do this by hand.",
+      "blockers": [],
+      "needs_from_owner": "",
       "log": [
         {
           "ts": "2026-09-18T18:00:00-04:00",
           "who": "claude",
           "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Half done: six funnel tabs were added to the Work Tracker (see T-104). The Consolidated Funnel Doc half is now possible too, because a Google Docs token exists on this machine. Unblocked; no action from the owner needed."
         }
       ],
       "order": 480
@@ -1696,6 +1776,11 @@
           "ts": "2026-09-23",
           "who": "Claude",
           "note": "Built and published to the review mirror."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Welcome banner (key art) with the heading set on it, image cards for playbook / template library / example outputs, and image headers on the paid modules. FIXED: all 10 resource links (slides, day questions, playbook, library) and the 'See what's in it' upsell 404'd on the mirror (missing base path)."
         }
       ],
       "order": 880
@@ -1828,6 +1913,10 @@
         {
           "label": "Thank-you 2 — the fork",
           "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/"
+        },
+        {
+          "label": "Paid join page",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/"
         }
       ],
       "blockers": [],
@@ -1837,6 +1926,11 @@
           "ts": "2026-09-23",
           "who": "Claude",
           "note": "Built and published to the review mirror."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "The join page leads each step with generated art (group, calendar, sunrise); the VIP fork shows the nine bonus images instead of a checklist. The paid-lane join page got the same treatment and a copy fix (a garbled 'The Your seat ($99)' line). The live click test passes: VIP fork, a bonus tile and 'No thanks' all land correctly."
         }
       ],
       "order": 910
@@ -1852,7 +1946,7 @@
       "why": "The only page in the product that takes money from the free lane.",
       "spec": "Its own URL and its own offer stack so its conversion reads separately from the paid lane. The only surface that uses the word VIP: the paid lane sells the identical product as the Build Pass, and the centre both lanes land in names no tier at all.",
       "done_when": [
-        "Owner approves the offer stack and the honest-limits section",
+        "Owner approves the nine-bonus stack, the key art and the offer recap",
         "VSL recorded and wired (T-060)"
       ],
       "evidence": [
@@ -1863,17 +1957,26 @@
         {
           "label": "Order confirmation",
           "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/success/"
+        },
+        {
+          "label": "Before / after of the stack",
+          "url": "https://adisuja.github.io/tantra-workshop-live/vip-before-after.png"
         }
       ],
       "blockers": [
         "No VSL recording (T-060)"
       ],
-      "needs_from_owner": "Open the links and reply with changes, or approve.",
+      "needs_from_owner": "Review /vip (the nine VIP bonuses, the key art, the recap) and approve or reply with changes.",
       "log": [
         {
           "ts": "2026-09-23",
           "who": "Claude",
           "note": "Built and published to the review mirror."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Rebuilt 'Everything you walk out holding' as nine branded bonuses, each led by its own generated key art and colour, with a purpose-built visual (book, workflow canvas, 54-tile library, page miniatures, channel phone, prompt forge, recordings, platform, build channel). Added the bundle grid, offer recap and guarantee seal. Removed 'how it works', 'five modules' (its 18 links 404'd on the static site), 'what this doesn't do' and the duplicate logo. Prices are now geo-aware (T-103)."
         }
       ],
       "order": 920
@@ -2005,6 +2108,14 @@
         {
           "label": "Deck",
           "url": "https://adisuja.github.io/tantra-workshop-live/deck.html"
+        },
+        {
+          "label": "VIP page",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/"
+        },
+        {
+          "label": "Onboarding centre",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/"
         }
       ],
       "blockers": [],
@@ -2014,6 +2125,11 @@
           "ts": "2026-09-23",
           "who": "Claude",
           "note": "Built and published to the review mirror."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Republished several times today. `node app/scripts/probe-live-wiring.mjs` clicks the real buttons on the live mirror, follows checkout to Dodo, fetches every link and fails on any 4xx request. All pass."
         }
       ],
       "order": 960
@@ -2037,15 +2153,301 @@
       "blockers": [
         "Owner action — credential rotation cannot be delegated"
       ],
-      "needs_from_owner": "This one is yours: rotate, move to Bitwarden, and strip the credentials section out of the tracker template.",
+      "needs_from_owner": "This one is yours: rotate, move to Bitwarden, and strip the credentials section out of the tracker template. Also rotate: the Kie.ai API key and the Google OAuth client (both pasted in chat), and note the Work Tracker itself has 'Logins' and 'Keys' tabs with plaintext credentials.",
       "log": [
         {
           "ts": "2026-09-23",
           "who": "Claude",
           "note": "Built and published to the review mirror."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "While wiring the Work Tracker I saw it holds 'Logins' and 'Keys' tabs. I didn't open them. Added the Kie.ai key and the Google OAuth client to the rotation list."
         }
       ],
       "order": 970
+    },
+    {
+      "id": "T-100",
+      "title": "VIP bonus stack: nine branded bonuses with generated key art",
+      "area": "Funnel",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-24",
+      "status": "review",
+      "why": "The stack IS the VIP sell; nine text cards didn't sell it.",
+      "spec": "Each bonus: a VIP Bonus badge, a gradient name, one hook, a count, its own Kie key art and colour, and a purpose-built visual. No invented valuations: every figure is a count from the template library.",
+      "done_when": [
+        "Owner approves the names, the hooks and the key art",
+        "Probes clean at 7 widths"
+      ],
+      "evidence": [
+        {
+          "label": "VIP page",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/"
+        },
+        {
+          "label": "Before / after",
+          "url": "https://adisuja.github.io/tantra-workshop-live/vip-before-after.png"
+        }
+      ],
+      "blockers": [],
+      "needs_from_owner": "Review /vip and approve, or reply with changes per bonus.",
+      "log": [
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Nine key-art images (108 credits) + 7 supporting images (96). Kie balance ~1,740."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Names: The AI RevOps Playbook · The Automation Vault · The Complete Funnel Template Library · The Landing Page & Form Kit · The Omnichannel Copy Arsenal · Your Daily Custom Prompt Packs · The Full Session Recordings · The Two-Month Platform Pass · The Private Build Review Channel."
+        }
+      ],
+      "order": 980
+    },
+    {
+      "id": "T-101",
+      "title": "Key-art system across join, confirmation and onboarding pages",
+      "area": "Funnel",
+      "owner": "Claude",
+      "priority": "P2",
+      "due": "2026-09-24",
+      "status": "review",
+      "why": "Post-signup pages were flat black text; the funnel should read as one campaign.",
+      "spec": "Step art on both join pages, a vault hero + nine 'Unlocked' bonuses on /vip/success, a welcome banner and image cards in onboarding, a guarantee seal on /vip.",
+      "done_when": [
+        "Owner approves"
+      ],
+      "evidence": [
+        {
+          "label": "Payment confirmed",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/success/"
+        },
+        {
+          "label": "Free join",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/"
+        },
+        {
+          "label": "Paid join",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/"
+        },
+        {
+          "label": "Onboarding",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/"
+        }
+      ],
+      "blockers": [],
+      "needs_from_owner": "Open the four links and approve or reply.",
+      "log": [
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "The step-group image was regenerated because the model drew a WhatsApp logo."
+        }
+      ],
+      "order": 990
+    },
+    {
+      "id": "T-102",
+      "title": "Live wiring audit and fixes",
+      "area": "Funnel",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-24",
+      "status": "review",
+      "why": "Every button and link on the live site must go somewhere real.",
+      "spec": "Audit every page and link on the live mirror; fix base-path 404s, checkout on static hosts, lane return targets, and any n8n calls.",
+      "done_when": [
+        "probe-live-wiring.mjs passes on the live mirror"
+      ],
+      "evidence": [
+        {
+          "label": "Live VIP page",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/"
+        }
+      ],
+      "blockers": [],
+      "needs_from_owner": "Nothing to decide.",
+      "log": [
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Fixed: footer Privacy/Terms 404; 10 onboarding resource links 404; onboarding upsell 404; checkout impossible on a static host (now Dodo hosted link); paid-lane checkout returned to the VIP confirmation page; paid-lane forms posted to n8n; 3 onboarding images 404."
+        },
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Only the WhatsApp and Zoom placeholders remain (T-040 / T-042)."
+        }
+      ],
+      "order": 1000
+    },
+    {
+      "id": "T-103",
+      "title": "Geo-aware pricing: INR in India, EUR across the EU, USD elsewhere",
+      "area": "Funnel",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-24",
+      "status": "review",
+      "why": "Owner directive: price shown in the visitor's own currency.",
+      "spec": "Every currency is in the HTML and CSS shows the visitor's. Before first paint: saved choice → cached IP → timezone; then confirmed by IP. Manual 'Prices in' switch. Dodo charges the same currency.",
+      "done_when": [
+        "probe-currency.mjs (9 profiles) and probe-checkout-currency.mjs pass on the live mirror"
+      ],
+      "evidence": [
+        {
+          "label": "VIP page (shows your currency)",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/"
+        },
+        {
+          "label": "Paid landing price card",
+          "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/"
+        }
+      ],
+      "blockers": [],
+      "needs_from_owner": "Confirm the price table in T-004.",
+      "log": [
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Verified live: DE €89 → Dodo €89, PL €89 → Dodo €89, IN ₹9,999 → Dodo ₹9,999, US $99 → Dodo $99. No flash at first paint."
+        }
+      ],
+      "order": 1010
+    },
+    {
+      "id": "T-104",
+      "title": "Every funnel form → its own Work Tracker tab",
+      "area": "Ops",
+      "owner": "Claude",
+      "priority": "P1",
+      "due": "2026-09-24",
+      "status": "review",
+      "why": "The team works from the Work Tracker, not from a local database.",
+      "spec": "Six tabs: Free / Paid Registrations, Free / Paid Intake Survey, Checkout Starts, Checkout Returns (unverified). One helper (lib/form-log.ts) sends each submission to exactly one place.",
+      "done_when": [
+        "Rows from real form submissions appear in the right tab",
+        "Public mirror posts too (T-105)"
+      ],
+      "evidence": [
+        {
+          "label": "Funnel · Free Registrations",
+          "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=913055296"
+        },
+        {
+          "label": "Funnel · Free Intake Survey",
+          "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=1807702128"
+        },
+        {
+          "label": "Funnel · Paid Registrations",
+          "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=806589780"
+        },
+        {
+          "label": "Funnel · Paid Intake Survey",
+          "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=1557185116"
+        },
+        {
+          "label": "Funnel · Checkout Starts",
+          "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=13402888"
+        },
+        {
+          "label": "Funnel · Checkout Returns",
+          "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=1309425153"
+        }
+      ],
+      "blockers": [],
+      "needs_from_owner": "Open the tabs and approve the columns. Test rows are named 'wiring-probe' / 'ui-probe' and are safe to delete.",
+      "log": [
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Tested through the app's route and by filling the real /workshop and /masterclass forms in a browser."
+        }
+      ],
+      "order": 1020
+    },
+    {
+      "id": "T-105",
+      "title": "Deploy the Apps Script receiver so the PUBLIC site's forms reach the Work Tracker",
+      "area": "Ops",
+      "owner": "Owner",
+      "priority": "P1",
+      "due": "2026-09-24",
+      "status": "blocked",
+      "why": "A static host can't write to Sheets without a public receiver.",
+      "spec": "workshop-plan/ops/apps-script/Code.gs (generated from funnel_tabs.py) is bound to the Work Tracker and deployed as a web app; its URL goes in NEXT_PUBLIC_SHEETS_WEBHOOK_URL; rebuild and republish.",
+      "done_when": [
+        "A form submitted on the live mirror appears in its tab"
+      ],
+      "evidence": [],
+      "blockers": [
+        "Claude in Chrome extension offline"
+      ],
+      "needs_from_owner": "Reconnect the Claude in Chrome extension (https://chromewebstore.google.com/detail/fcoeoabgfenejglbffodgkkbkcdhcgfn) and tell me. I'll do the rest; you'll only approve Google's consent screen for your own script.",
+      "log": [
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "The receiver is written and syntax-checked. Deployment needs your signed-in Chrome, which was offline all session."
+        }
+      ],
+      "order": 1030
+    },
+    {
+      "id": "T-106",
+      "title": "Roll the cohort dates (every countdown reads zero)",
+      "area": "Funnel",
+      "owner": "Owner",
+      "priority": "P0",
+      "due": "2026-09-24",
+      "status": "blocked",
+      "why": "EVENT_DATE is Thu 24 Sep 11:00 ET and the deadline was the 23rd, so the countdowns have run out.",
+      "spec": "Update EVENT_DATE, DEADLINE, SESSION_DAYS in app/src/lib/funnel.ts and the per-day dates in lib/sessions.ts, rebuild, republish.",
+      "done_when": [
+        "Every page shows the next cohort's dates and a live countdown"
+      ],
+      "evidence": [],
+      "blockers": [
+        "Next cohort dates"
+      ],
+      "needs_from_owner": "Give me the next cohort's three session dates and the registration deadline.",
+      "log": [
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Owner decision needed; the change itself takes minutes."
+        }
+      ],
+      "order": 1040
+    },
+    {
+      "id": "T-107",
+      "title": "Delete wiring test rows (ops.db + Work Tracker)",
+      "area": "Ops",
+      "owner": "Claude",
+      "priority": "P3",
+      "due": "2026-09-24",
+      "status": "queue",
+      "why": "Test rows should not reach real reporting.",
+      "spec": "Remove wiring-probe@example.com, ui-probe+…@example.com and currency-probe@example.com rows from the six tabs and the probe attendee in ops.db (via the ops admin route), right before launch.",
+      "done_when": [
+        "No test rows remain"
+      ],
+      "evidence": [],
+      "blockers": [],
+      "needs_from_owner": "",
+      "log": [
+        {
+          "ts": "2026-09-24",
+          "who": "Claude",
+          "note": "Left in place on purpose so the owner can see the wiring working."
+        }
+      ],
+      "order": 1050
     }
   ]
 }
