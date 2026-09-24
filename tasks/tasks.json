@@ -662,6 +662,11 @@
      "ts": "2026-09-24",
      "who": "Owner",
      "note": "Owner supplied the RSP / reverse-squeeze whiteboard link. Unblocked; the build is queued."
+    },
+    {
+     "ts": "2026-09-24",
+     "who": "Claude",
+     "note": "The RSP funnel's stage-by-stage visual now exists (T-108). This task remains for the reverse-squeeze teaching content at full whiteboard scope."
     }
    ],
    "order": 160
@@ -1272,22 +1277,25 @@
   },
   {
    "id": "T-055",
-   "title": "Confirm the team referral incentive terms",
+   "title": "Team referral incentive: tracking + dashboard",
    "area": "Traffic",
-   "owner": "Adi",
+   "owner": "Claude",
    "priority": "P2",
    "due": "2026-09-19",
-   "status": "blocked",
+   "status": "review",
    "why": "10–15% of revenue from a member's profile traffic was floated; exact terms unconfirmed.",
    "spec": "Confirm with Nelbin.",
    "done_when": [
     "Terms written down"
    ],
-   "evidence": [],
-   "blockers": [
-    "Owner + Nelbin decision"
+   "evidence": [
+    {
+     "label": "Referral dashboard (passphrase-protected)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/referrals.html"
+    }
    ],
-   "needs_from_owner": "Pick the terms, or approve Claude's default: 10% of NET seat revenue (after tax, Dodo fees and refunds), attributed by the first-touch utm_content of each member's posts, paid after the 7-day guarantee window, seats only (not Pro/Chaperone).",
+   "blockers": [],
+   "needs_from_owner": "Open the dashboard with the team passphrase (sent in chat, not stored here), check the member list and rates in workshop-plan/ops/referrals.json, and approve.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -1298,6 +1306,16 @@
      "ts": "2026-09-24",
      "who": "Claude",
      "note": "Owner asked what this means. It's the incentive for team members posting 5 LinkedIn posts a day: 10–15% of revenue from buyers who arrived through their posts was floated but never fixed. Open: which percentage; net or gross revenue; seats only or upsells too; first- or last-touch attribution; when it's paid. First-touch UTMs now reach the Work Tracker, so the payout can be computed automatically once the terms are set."
+    },
+    {
+     "ts": "2026-09-24",
+     "who": "Owner",
+     "note": "10–15% of revenue from buyers who arrived through their posts / UTM links; track it and show it on a free dashboard the team can see."
+    },
+    {
+     "ts": "2026-09-24",
+     "who": "Claude",
+     "note": "Built. ops/referrals.py joins Work Tracker registrations (first-touch utm_content) with Dodo's succeeded workshop payments (picked out by our checkout metadata; the Dodo brand is shared with the SaaS). Revenue is the amount paid, refunds excluded, per currency plus a USD equivalent at seat parity. Commission uses a per-member rate (default 10%, clamped 10–15%, set in ops/referrals.json). Aggregates only (no buyer emails), encrypted AES-256-GCM with the team passphrase, published to the free GitHub Pages mirror, refreshed by the 10-minute ops tick and pushed only when numbers change. The dashboard has a leaderboard, per-post breakdown, recent activity and a tracked-link builder. Link scheme: utm_content=<member>-<post>. 9 synthetic attribution tests pass (ops/test_referrals.py). Live: 0 attributed so far (only test registrations exist)."
     }
    ],
    "order": 340
@@ -2644,6 +2662,36 @@
     }
    ],
    "order": 1050
+  },
+  {
+   "id": "T-108",
+   "title": "Three animated funnels in the playbook: webinar · reverse squeeze page · challenge",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P1",
+   "due": "2026-09-24",
+   "status": "review",
+   "why": "Owner: each funnel needs a visualisation with the depth of the /masterclass cinematic — every stage, every tool named — animated, in the playbook's 'What are funnels' section.",
+   "spec": "build/funnels.py generates a self-contained section (data + scoped CSS + JS, logos embedded) between FUNNELS markers in playbook.html, plus a nav link. Webinar data from FunnelOS (whiteboard v12); RSP data from the RSP whiteboard scene; challenge = the 3-day workshop as built (structural facts only, planned items dashed).",
+   "done_when": [
+    "Owner approves all three"
+   ],
+   "evidence": [
+    {
+     "label": "Playbook · What are funnels",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html#funnels"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "Open the playbook section and approve, or reply per funnel.",
+   "log": [
+    {
+     "ts": "2026-09-24",
+     "who": "Claude",
+     "note": "17 stages across the three funnels, 22 real logos plus named wordmark chips. Animated: people-dots flowing down a tapering rail with drop-offs at each stage, stage reveal, count-up metrics, a tool highlight scan. Reduced motion = static final state. Verified at 390/1280 in dark + light: 0 overflow, 0 clipped, 0 errors; probe-playbook clean at 360–1440. Also fixed two stale 'five times' lines (now three days)."
+    }
+   ],
+   "order": 1060
   }
  ]
 }
