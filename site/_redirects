@@ -1,0 +1,8 @@
+# Cloudflare Pages redirects (production host). Static export ignores next.config redirects.
+/webinar              /masterclass  301
+/webinar/             /masterclass  301
+/webinar/thank-you    /masterclass  301
+/webinar/thank-you/   /masterclass  301
+/integrations/tracking-domain  /integrations/custom-tracking-domain  301
+/features             /sequences    301
+/how-it-works         /sequences    301

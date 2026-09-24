@@ -89,6 +89,8 @@ input[type=text]{min-width:180px}
 .pill.s-blocked{background:var(--pink-bg);color:var(--pink)}
 .pill.s-review{background:var(--blue-bg);color:var(--blue)}
 .pill.s-done{background:var(--teal-bg);color:var(--teal)}
+.pill.s-hold{background:#fff4e0;color:#9a5b00}
+[data-theme="dark"] .pill.s-hold{background:#3a2a10;color:#f5b94a}
 .pill.s-dropped{background:var(--gray-bg);color:var(--ink-3);text-decoration:line-through}
 .pill.p-P0{background:var(--pink-bg);color:var(--pink)} .pill.p-P1{background:var(--amber-bg);color:var(--amber)} .pill.p-P2{background:var(--gray-bg);color:var(--ink-3)}
 .pill.fb{background:var(--amber-bg);color:var(--amber)}
@@ -138,7 +140,7 @@ input[type=text]{min-width:180px}
 .attbtn input{position:absolute;inset:0;opacity:0;cursor:pointer}
 
 /* kanban */
-.kan{display:grid;grid-template-columns:repeat(6,minmax(180px,1fr));gap:10px;overflow-x:auto;padding-bottom:6px}
+.kan{display:grid;grid-template-columns:repeat(7,minmax(170px,1fr));gap:10px;overflow-x:auto;padding-bottom:6px}
 .col h3{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);margin-bottom:6px}
 .kcard{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);padding:8px 10px;margin-bottom:6px;cursor:pointer;min-width:0}
 .kcard b{display:block;font-size:12.5px;font-weight:600;line-height:1.3}
@@ -184,7 +186,7 @@ footer{margin-top:28px;font-size:11.5px;color:var(--ink-3)}
   <div class="seg" id="view"><button class="on" data-v="queue">Queue</button><button data-v="area">By area</button><button data-v="kanban">Kanban</button></div>
   <select id="f-owner"><option value="">All owners</option></select>
   <select id="f-area"><option value="">All areas</option></select>
-  <select id="f-status"><option value="">All statuses</option><option>next</option><option>doing</option><option>review</option><option>blocked</option><option>queue</option><option>done</option></select>
+  <select id="f-status"><option value="">All statuses</option><option>next</option><option>doing</option><option>review</option><option>blocked</option><option value="hold">on hold</option><option>queue</option><option>done</option></select>
   <input type="text" id="q" placeholder="Search tasks…">
   <span class="sp"></span>
   <label class="hint" style="margin:0"><input type="checkbox" id="hidedone" checked> hide done</label>
@@ -209,8 +211,8 @@ footer{margin-top:28px;font-size:11.5px;color:var(--ink-3)}
 
 <script>
 const AREAS=["Funnel","Content","Delivery","Traffic","Product","Ops","Infra"];
-const ORDER={next:0,doing:1,review:2,blocked:3,queue:4,done:5,dropped:6};
-const LABEL={next:"Next",doing:"In progress",review:"Review",blocked:"Blocked",queue:"Queue",done:"Done",dropped:"Dropped"};
+const ORDER={next:0,doing:1,review:2,blocked:3,hold:4,queue:5,done:6,dropped:7};
+const LABEL={next:"Next",doing:"In progress",review:"Review",blocked:"Blocked",hold:"On hold",queue:"Queue",done:"Done",dropped:"Dropped"};
 let DATA={tasks:[]},INBOX=[],view="queue",openId=null;
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -256,7 +258,7 @@ function render(){
   $("#now-rev").innerHTML=rev.length?rev.map(t=>`<button class="nowitem" onclick="jump('${t.id}')"><b>${esc(t.title)}</b><span>${esc((t.evidence[0]||{}).label||"")}${t.evidence[0]?" · ":""}${esc(t.needs_from_owner||"Approve or request changes")}</span></button>`).join(""):'<div class="empty">Nothing waiting for review.</div>';
   const list=filtered();const b=$("#board");
   if(view==="kanban"){
-    b.innerHTML='<div class="kan">'+["next","doing","review","blocked","queue","done"].map(s=>`<div class="col"><h3>${LABEL[s]} · ${list.filter(t=>t.status===s).length}</h3>${list.filter(t=>t.status===s).map(t=>`<div class="kcard" onclick="jump('${t.id}')"><b>${esc(t.title)}</b><small>${t.id} · ${esc(t.owner)} · ${t.priority}${t.due?" · "+t.due.slice(5):""}${unread(t.id)?" · ✉ "+unread(t.id):""}</small></div>`).join("")}</div>`).join("")+'</div>';
+    b.innerHTML='<div class="kan">'+["next","doing","review","blocked","hold","queue","done"].map(s=>`<div class="col"><h3>${LABEL[s]} · ${list.filter(t=>t.status===s).length}</h3>${list.filter(t=>t.status===s).map(t=>`<div class="kcard" onclick="jump('${t.id}')"><b>${esc(t.title)}</b><small>${t.id} · ${esc(t.owner)} · ${t.priority}${t.due?" · "+t.due.slice(5):""}${unread(t.id)?" · ✉ "+unread(t.id):""}</small></div>`).join("")}</div>`).join("")+'</div>';
     return;
   }
   const groups=view==="area"?AREAS.map(a=>[a,list.filter(t=>t.area===a)]):Object.keys(ORDER).map(s=>[LABEL[s],list.filter(t=>t.status===s)]);
@@ -360,7 +362,7 @@ document.querySelectorAll("#view button").forEach(b=>b.onclick=()=>{view=b.datas
 ["f-owner","f-area","f-status","hidedone"].forEach(i=>$("#"+i).onchange=render);$("#q").oninput=render;
 $("#theme").onclick=()=>{const h=document.documentElement;h.dataset.theme=h.dataset.theme==="dark"?"light":"dark";localStorage.setItem("lc-theme",h.dataset.theme)};
 if(localStorage.getItem("lc-theme"))document.documentElement.dataset.theme=localStorage.getItem("lc-theme");
-function countdown(){const d1=new Date(DATA.meta?.day1||"2026-09-24T11:00:00-04:00"),ms=d1-Date.now();if(ms<0){$("#cd").textContent="is live";return}const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5);$("#cd").textContent=`in ${d}d ${h}h · Thu Sep 24, 11:00 ET`}
+function countdown(){const d1=new Date(DATA.meta?.day1||"2026-09-30T11:00:00-04:00"),ms=d1-Date.now();if(ms<0){$("#cd").textContent="is live";return}const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5);$("#cd").textContent=`in ${d}d ${h}h · Wed Sep 30, 11:00 ET`}
 load().then(countdown);setInterval(countdown,6e4);setInterval(load,9e4);
 </script>
 </body>
