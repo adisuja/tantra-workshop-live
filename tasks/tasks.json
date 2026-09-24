@@ -2704,6 +2704,44 @@
     }
    ],
    "order": 1060
+  },
+  {
+   "id": "T-109",
+   "title": "Playbook embedded in the onboarding centre: one sidebar, scroll colour, blank chapters fixed, new logo",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P1",
+   "due": "2026-09-24",
+   "status": "review",
+   "why": "Owner (2026-09-24): lots of empty space inside the playbook and the interface needs to be far better. Embed the playbook directly into the onboarding centre with one well-highlighted sidebar, colour animations while scrolling, jump links and an index of every section, plus the other centre pages. Add the new Tantra logo properly and fix the empty-space bug that breaks content.",
+   "spec": "ROOT CAUSE of the blank space: every chapter faded in only once 8% of it was on screen; Day 1–3 are 12–16k px tall, so on a laptop they never reached 8% and stayed invisible. Fixed in the embed (no hidden sections) and in the standalone playbook (threshold 0). build/embed.py lifts playbook.html into the app (scoped CSS + an index of 9 chapters and 43 sections); /onboarding renders it natively under ONE sidebar (centre sections, every chapter, every step, other pages) with scroll-spy, per-chapter hue that the progress bar, sidebar, header chip and page glow animate between, and a mobile drawer. Also: 2 unclosed diagram wrappers, 7 SVG text collisions, 12 diagrams cropped to their content, 2 orphaned grid rows, stale weekday labels. Logo = owner's mark + their own TANTRA wordmark, ink/white by theme. Verify: scripts/probe-onboarding.mjs (5 widths, both themes), probe-svg-text.mjs, probe-orphans.mjs, probe-svg-space.mjs, workshop-plan/probe-playbook.mjs.",
+   "done_when": [
+    "Owner approves the combined centre"
+   ],
+   "evidence": [
+    {
+     "label": "Onboarding centre + playbook",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/"
+    },
+    {
+     "label": "Jump straight to Day 2 · S1",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/#d2-s1-the-traffic-engine"
+    },
+    {
+     "label": "Standalone playbook (fixed)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html#d2"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "Open the centre, scroll through it and use the sidebar; approve or reply with changes.",
+   "log": [
+    {
+     "ts": "2026-09-24",
+     "who": "Claude",
+     "note": "63 sections and steps each jumped to and screenshotted at 1440 and 390 in light and dark: all visible, land at the top, highlighted in the sidebar. probe-onboarding clean at 1440/1366/1024/768/390; 0 SVG text collisions, 0 orphaned grid rows, 0 console errors."
+    }
+   ],
+   "order": 1070
   }
  ]
 }
