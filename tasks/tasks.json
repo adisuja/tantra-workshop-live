@@ -3704,6 +3704,35 @@
     }
    ],
    "order": 1382
+  },
+  {
+   "id": "T-141",
+   "title": "Decide: keep searchable client figures in the public template library?",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P0",
+   "due": "2026-09-26",
+   "status": "blocked",
+   "why": "Two owner instructions conflict. The standing anonymisation rule (LANES.md) bans case-study numbers and prices attributable to a client anywhere public. For the library rebuild the owner told Lane B2 to 'retain everything else and only remove brand names and specific links', so verbatim figures stay. Several are searchable, e.g. '$2.74M', 'cut … costs by up to 75%', 'cut customer service costs by 70%', £1,450/£2,950/£7,200, '260,000+ members', '1,400+ businesses', '25M ARR in 2 years'. Anyone who searches one could identify the client. Full private list: workshop-plan/library/clients/_raw_v2/CHECKPOINT1_NUMBERS.md.",
+   "spec": "Lane A holds publishing of the rebuilt library to the public mirror until this is decided; merging and local verification can proceed.",
+   "done_when": [
+    "Owner picks keep / strip / per-figure",
+    "LANES.md anonymisation rule updated to match",
+    "Mirror publish of the rebuilt library unblocked"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Owner decision; the library rebuild is not published until then"
+   ],
+   "needs_from_owner": "Choose: (A) keep every figure verbatim, and Lane A updates the anonymisation rule to 'names, people, domains, links only'; (B) strip or generalise the searchable figures (e.g. '$2.74M' → '{result_metric}'), keep the rest; or (C) go through the list in CHECKPOINT1_NUMBERS.md and mark keep or strip per figure.",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Raised by Lane A after B2 confirmed it keeps all figures per the owner's rebuild instruction."
+    }
+   ],
+   "order": 1392
   }
  ]
 }
