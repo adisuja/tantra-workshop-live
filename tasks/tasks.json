@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-09-25T19:38:41+0530",
-  "version": 14
+  "updated": "2026-09-25",
+  "version": 15
  },
  "tasks": [
   {
@@ -2879,6 +2879,11 @@
      "ts": "2026-09-25",
      "who": "Claude",
      "note": "Merged: 9 guides (S1 overview + 6 channels, S2 Tantra Pro Funnel, S3 Tantra Pro Flow). 79 real shots; 26 capture-needed slots need the owner's signed-in sessions (Meta, LinkedIn page, live Tantra dashboard, CRM)."
+    },
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Lane C complete and live (main 10e5579, mirror f8af8d9f): 9 guides, 79 real shots, probes clean. Open follow-ups: T-115 (screenshots), T-138, T-139, T-140."
     }
    ],
    "order": 1100
@@ -2981,7 +2986,7 @@
     "Claude in Chrome (Browser 1) was disconnected on the last pass",
     "LinkedIn and Meta are never opened by browser tools (global rule)"
    ],
-   "needs_from_owner": "Pick one: (A) connect Claude in Chrome 'Browser 1' (adi@growthclub.org) and be signed in to Tantra dashboard, Google Workspace/Sheets, GoHighLevel and Beehiiv — Claude captures and redacts those; or (B) take the LinkedIn company-page and Meta Ads/Events Manager screenshots yourself (list in status/c.md) and drop them in a folder — Claude crops, redacts and files them. Also tell us whether you have GoHighLevel and Beehiiv accounts at all; if not, those steps stay on the vendors' public help-centre shots. Lane D's two slots also need these answers: (C) s4-rsp step 7, the Part 2 page: no reverse squeeze page exists in our funnel yet. Reply 'build it' (Claude builds a working anonymised Part 2 page from the rsp-part2-access-page template and captures it) or 'wait' (until a real RSP runs, T-025). (D) s4-challenge step 15, the referral dashboard: it only opens with the team passphrase, which Claude never types. Unlock …/tantra-workshop-live/referrals.html yourself, take one full-width screenshot and drop it in tasks/uploads; cover any revenue you don't want shown, and Claude blurs names. (E, optional) If you have WebinarGeek or Zoom Webinars, sign in on Browser 1 and Claude re-shoots s4-webinar from our own room; otherwise its vendor help-centre shots stay.",
+   "needs_from_owner": "Pick one: (A) connect Claude in Chrome 'Browser 1' (adi@growthclub.org) and be signed in to Tantra dashboard, Google Workspace/Sheets, GoHighLevel and Beehiiv — Claude captures and redacts those; or (B) take the LinkedIn company-page and Meta Ads/Events Manager screenshots yourself (list in status/c.md) and drop them in a folder — Claude crops, redacts and files them. Also tell us whether you have GoHighLevel and Beehiiv accounts at all; if not, those steps stay on the vendors' public help-centre shots. Lane D's two slots also need these answers: (C) s4-rsp step 7, the Part 2 page: no reverse squeeze page exists in our funnel yet. Reply 'build it' (Claude builds a working anonymised Part 2 page from the rsp-part2-access-page template and captures it) or 'wait' (until a real RSP runs, T-025). (D) s4-challenge step 15, the referral dashboard: it only opens with the team passphrase, which Claude never types. Unlock …/tantra-workshop-live/referrals.html yourself, take one full-width screenshot and drop it in tasks/uploads; cover any revenue you don't want shown, and Claude blurs names. (E, optional) If you have WebinarGeek or Zoom Webinars, sign in on Browser 1 and Claude re-shoots s4-webinar from our own room; otherwise its vendor help-centre shots stay.\n\nLane C (26 slots): (F) the six Meta/LinkedIn shots, dropped in workshop-plan/tasks/uploads/ with these names: meta-create-pixel.png (Events Manager → Connect data → Web → Create pixel) · meta-custom-audience.png (Audiences → Create audience → Custom audience → Website) · meta-leads-campaign.png (Ads Manager → Create campaign, Leads objective) · meta-test-events.png (Events Manager → Test events with a live Lead event) · meta-results-columns.png (results for two ads: CTR, cost per result) · linkedin-create-event.png (Company Page → Admin tools → Create event). (G) Tell us which content tools you actually use: blog CMS (WordPress?), SEO plugin (Yoast?), scheduler (Metricool?), design (Canva?). The guides name the sources' suggestions; Claude rewrites any step whose tool isn't yours. (H) For Browser 1, also be signed in to Google Cloud console + Google Admin (the outreach Workspace org) and GA4, for s1-cold-calendar step 3 and s1-ads step 1.",
    "log": [
     {
      "ts": "2026-09-25",
@@ -2997,6 +3002,11 @@
      "ts": "2026-09-25T19:38:41+0530",
      "who": "claude",
      "note": "Lane E's 26 slots: 6 need GoHighLevel (s5-pipeline #7; s5-webinar-stages #1, #3; s5-rsp-stages #3, #4; s5-challenge-stages #1) and 1 needs Beehiiv (s6-newsletter #6), covered here. The rest are split out: T-135 (5, Claude now), T-132 (5, Claude Code), T-133 (5, WhatsApp/SMS), T-134 (3, planned crm-starter), T-136 (1, waits on delivery). Also tell us your Beehiiv plan: s6-ai-newsletter step 8 says the Create Post API needs Max or Enterprise."
+    },
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Lane C: added the exact asks for its 26 slots (F: six named Meta/LinkedIn shots; G: which content tools you use; H: Cloud console + GA4 sign-ins). Tantra facts → T-138; the unreadable automation doc → T-139; screens that can't exist yet → T-140."
     }
    ],
    "order": 1130
@@ -3607,6 +3617,93 @@
     }
    ],
    "order": 1370
+  },
+  {
+   "id": "T-138",
+   "title": "Tantra app: confirm the import limit and daily cap, and give the app URL (Cold Calendar guide)",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P2",
+   "due": "2026-09-29",
+   "status": "blocked",
+   "why": "The Cold Calendar guide teaches Tantra. Your SOP and Tantra's live help centre disagree on two numbers, so the guide currently says 'follow what the screen shows'. One step (the dashboard with invitations sent and meetings booked) also has no screenshot, because the app hosts don't resolve.",
+   "spec": "workshop-plan/coord/status/c.md · app/src/content/guides/s1-traffic, s2-landing, s3-nurture",
+   "done_when": [
+    "s1-cold-calendar states the confirmed import limit and daily cap, and status/c.md records the resolution",
+    "The s1-cold-calendar step 12 dashboard screenshot is captured, redacted and merged"
+   ],
+   "evidence": [],
+   "blockers": [
+    "SOP §6.2 says 10,000 contacts per file; Tantra's live import screen says up to 50,000 per upload",
+    "SOP §1.5 says 'Max Calendar Requests / Day' = 200 (default 250); the live Accounts screen shows 'Guests/day · Emails/day'",
+    "calendar.usetantra.com and app.usetantra.com don't resolve"
+   ],
+   "needs_from_owner": "Three answers: (1) the real per-upload import limit: 10,000 or 50,000? (2) Is 'Guests/day' the per-inbox cap the SOP calls 'Max Calendar Requests / Day', and is 200 still the agreed cap? (3) The URL the Tantra app runs on now. Either be signed in there in Browser 1, or drop one screenshot of Dashboard → Calendar Campaigns in workshop-plan/tasks/uploads/tantra-dashboard.png.",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Added by Lane C at the owner's request: pending Stage 1–3 work, split by what unblocks it."
+    }
+   ],
+   "order": 1380
+  },
+  {
+   "id": "T-139",
+   "title": "Read the 'Webinar Funnel Automations' Claude doc and reconcile the S2/S3 guides with it",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P3",
+   "due": "2026-09-29",
+   "status": "blocked",
+   "why": "Your Lane C brief named claude.ai/artifact/4wu7b37yzQCByRLSPiTWkp as the full scope of the automation setups. Claude couldn't open it: the Docs connector says it isn't shared with this account, and Claude in Chrome rendered it blank. The guides were written from the repo's copy of Doc 2 (sources/playbooks/2_growthclub_funnel_automations.txt, the canonical 8 automations). The artifact may be newer.",
+   "spec": "workshop-plan/coord/status/c.md · app/src/content/guides/s1-traffic, s2-landing, s3-nurture",
+   "done_when": [
+    "The artifact is read in full",
+    "Every automation, step or number that differs is either fixed in s2-tantra-pro-funnel, s3-tantra-pro-flow and s1-cold-calendar, or logged as a conflict in status/c.md"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Claude Docs connector: access denied",
+    "Claude in Chrome: blank frame, and now disconnected"
+   ],
+   "needs_from_owner": "One of: share the artifact with the account the Claude Docs connector uses; export it (Markdown or PDF) to workshop-plan/tasks/uploads/webinar-funnel-automations.md; or reply 'the repo copy is current' and Claude closes this task.",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Added by Lane C at the owner's request: pending Stage 1–3 work, split by what unblocks it."
+    }
+   ],
+   "order": 1381
+  },
+  {
+   "id": "T-140",
+   "title": "Stage 1–3 guides: 6 screenshots that can only be taken later",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P3",
+   "due": "2026-10-03",
+   "status": "queue",
+   "why": "Six guide steps show screens that don't exist yet. Claude captures each one as its source appears. No input from you.",
+   "spec": "workshop-plan/coord/status/c.md · app/src/content/guides/s1-traffic, s2-landing, s3-nurture",
+   "done_when": [
+    "s1-blog step 2: a real Claude Code run drafting a post from an engine file (can be done any time)",
+    "s3-tantra-pro-flow step 7: the reminder scheduler's run log (after the scheduler is built; see T-123)",
+    "s1-social steps 1–3: pillar beside the calendar, the five-clip timeline, the 60-second captioned export (from the Day 1 recording, after 30 Sep)",
+    "s1-overview step 2: an approved persona card (from the owner's Day 1 output), or drop the slot, since the template is already embedded"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Added by Lane C at the owner's request: pending Stage 1–3 work, split by what unblocks it."
+    }
+   ],
+   "order": 1382
   }
  ]
 }
