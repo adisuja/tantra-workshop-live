@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-09-25",
-  "version": 15
+  "updated": "2026-09-25T21:47:25+0530",
+  "version": 24
  },
  "tasks": [
   {
@@ -571,7 +571,7 @@
    "owner": "Claude",
    "priority": "P0",
    "due": "2026-09-21",
-   "status": "next",
+   "status": "review",
    "why": "The workshop's promise is 'do something, get something, every day'. With 3 days there are 3 outputs, and the merged days each generate from twelve answers rather than six.",
    "spec": "For each day write the output template the pipeline fills from survey answers. Day 1: strategy on one page + the conversion engine (five blocks, diagnostic, spec outline) + the 3-day work plan. Day 2: pages, sequences, run of show and close chain for the attendee's funnel type. Day 3: event schema, pipeline, automations, live URL and QA checklist + unit economics, leak diagnosis, experiment card, ascension plan and the 52-week schedule. Each template: inputs (which questions), structure, one sample filled for the SendFlow persona, PDF-ready HTML.",
    "done_when": [
@@ -579,7 +579,24 @@
     "One sample rendered per day for the SendFlow persona",
     "Owner approves structure"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Day 1 output (SendFlow)",
+     "url": "workshop-plan/outputs/day1.html"
+    },
+    {
+     "label": "Day 2 output (SendFlow)",
+     "url": "workshop-plan/outputs/day2.html"
+    },
+    {
+     "label": "Day 3 output (SendFlow)",
+     "url": "workshop-plan/outputs/day3.html"
+    },
+    {
+     "label": "probe (all PASS)",
+     "url": "workshop-plan/outputs/probe-outputs.mjs"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -592,6 +609,11 @@
      "ts": "2026-09-21T22:35:40+0530",
      "who": "claude",
      "note": "Unblocked by the 3-day decision; rescoped from five templates to three."
+    },
+    {
+     "ts": "2026-09-25T21:25:48+0530",
+     "who": "claude",
+     "note": "Built the three Day 1–3 output templates in workshop-plan/outputs/ (build.py generator → day1/2/3.html, self-contained + PDF-ready via @media print). Each section is tagged with the survey questions it fills from, and each day carries a fully worked SendFlow sample. Day1: strategy-on-a-page + five-block engine + diagnostic + spec outline + 3-day plan. Day2: reverse-squeeze pages, 6-touch reminders, run of show, close chain, pipelines, weekly letter. Day3: 11-event schema, pipeline+triggers, 3 automations, live URL + QA checklist, unit economics, leak+experiment, ascension, 52-week schedule. Verified with outputs/probe-outputs.mjs (headless chromium): all sections render, every source line present, SendFlow phrases land, zero horizontal overflow; screenshots written. Open the three files to approve structure."
     }
    ],
    "order": 140
@@ -2849,6 +2871,11 @@
      "ts": "2026-09-25",
      "who": "Claude",
      "note": "Corpus (112 templates) + Phone Board merged. Owner-directed rework in progress: 322 elements × 4 industries, interactive phones, redesigned library page. Open: preview headings not Title Case, clipped Gmail snippets."
+    },
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "B2 verbatim rebuild merged to main (lane/lib 5b92879): 679 real client examples, 0 written; SaaS/Consulting/Services + niche. 93 templates now show 'No real example yet' (72 used in guides). Verified on main: probe-onboarding ALL CLEAN (paid light, free+locked dark), probe-guides PASS, headings, fidelity, anonymity. NOT published to the mirror until T-141 is answered."
     }
    ],
    "order": 1090
@@ -3239,14 +3266,27 @@
    "owner": "Claude",
    "priority": "P0",
    "due": "2026-09-26",
-   "status": "next",
+   "status": "review",
    "why": "Launch-critical: checkout-client reads location.search instead of the stored first-touch UTMs (tantra_first_touch_utm), so /vip purchases lose attribution and referral credit (T-055) survives only via the email join.",
    "spec": "",
    "done_when": [
     "Dodo checkout URL carries utm_* from first touch",
     "probe-checkout-currency + a referral test purchase attribute correctly"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "probe-checkout-utm.mjs (both paths PASS)",
+     "url": "app/scripts/probe-checkout-utm.mjs"
+    },
+    {
+     "label": "checkout-client.ts fix",
+     "url": "app/src/lib/checkout-client.ts"
+    },
+    {
+     "label": "resolveUtm() in form-log.ts",
+     "url": "app/src/lib/form-log.ts"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -3254,6 +3294,11 @@
      "ts": "2026-09-25",
      "who": "Claude",
      "note": "Created from the Build Guides integration pass (Lane A)."
+    },
+    {
+     "ts": "2026-09-25T21:33:13+0530",
+     "who": "claude",
+     "note": "checkout-client read location.search (empty on /vip, reached via router.push) so purchases dropped their UTMs. Both the server-session POST body and the static hosted-link fallback now use resolveUtm() = first-touch tantra_first_touch_utm else this URL. Verified with new app/scripts/probe-checkout-utm.mjs (server POST body + hosted URL both carry utm_source/medium/campaign/content = first touch, PASS) and probe-checkout-currency (DE/PL/IN/US mint correct-currency Dodo sessions, no regression). Committed 777b084. Owner sign-off: a completed live referral purchase landing this metadata in the Dodo dashboard."
     }
    ],
    "order": 1220
@@ -3265,14 +3310,31 @@
    "owner": "Claude",
    "priority": "P1",
    "due": "2026-09-26",
-   "status": "next",
+   "status": "review",
    "why": "Calendar adds (Google + .ics) exist only in /onboarding; /workshop/join and /masterclass/success/join lack them and 'Save your session link' points at the Zoom placeholder.",
    "spec": "",
    "done_when": [
     "Both join pages offer Google Calendar + .ics for all 3 sessions",
     "Session link shows 'arrives before Day 1' until the Zoom links exist"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "workshop/join screenshot",
+     "url": "/tmp/workshop-join.png"
+    },
+    {
+     "label": "masterclass/success/join screenshot",
+     "url": "/tmp/masterclass-success-join.png"
+    },
+    {
+     "label": "live: /workshop/join",
+     "url": "http://localhost:4322/workshop/join?v=t125"
+    },
+    {
+     "label": "live: /masterclass/success/join",
+     "url": "http://localhost:4322/masterclass/success/join?v=t125"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -3280,6 +3342,11 @@
      "ts": "2026-09-25",
      "who": "Claude",
      "note": "Created from the Build Guides integration pass (Lane A)."
+    },
+    {
+     "ts": "2026-09-25T21:47:25+0530",
+     "who": "claude",
+     "note": "Both join pages now offer Google Calendar (per day) + one .ics for all 3 sessions via a shared SessionCalendar component, mirroring /onboarding. The session-link CTA no longer points at the Zoom placeholder: while SEAT_PENDING it shows 'Your session link ... arrives before Day 1'. Verified with tsc (clean), eslint (only pre-existing img warnings), curl (3 google-cal links + 1 ics on each page), and headless screenshots (no console errors). probe-workshop failures are pre-existing (stale copy checks) — confirmed identical with my changes stashed."
     }
    ],
    "order": 1230
@@ -3733,6 +3800,90 @@
     }
    ],
    "order": 1392
+  },
+  {
+   "id": "T-142",
+   "title": "Agent smoke test: voice note drives the autonomous agent",
+   "area": "Infra",
+   "owner": "Claude",
+   "priority": "P2",
+   "due": "",
+   "status": "done",
+   "why": "",
+   "spec": "Throwaway task used to prove that a voice note on the board is transcribed and acted on by the unattended agent. Drop after the test.",
+   "done_when": [],
+   "evidence": [
+    {
+     "label": "agent-smoke.txt",
+     "url": "workshop-plan/tasks/agent-smoke.txt"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-25T21:09:50+0530",
+     "who": "claude",
+     "note": "Created to smoke-test the Launch Control agent."
+    },
+    {
+     "ts": "2026-09-25T21:10:15+0530",
+     "who": "claude",
+     "note": "Voice note transcribed and acted on: created workshop-plan/tasks/agent-smoke.txt with one sentence confirming voice feedback reached Claude. Smoke test passed; task ready to drop."
+    },
+    {
+     "ts": "2026-09-25T21:18:38+0530",
+     "who": "claude",
+     "note": "Appended 'approved note handled' as the second line of workshop-plan/tasks/agent-smoke.txt per gh-test1; file now reads two lines. Verified by reading the file back."
+    },
+    {
+     "ts": "2026-09-25T21:19:24+0530",
+     "who": "claude",
+     "note": "Smoke test passed twice on the real agent: a voice-only note (transcribed locally) and an owner-approved non-collaborator note were each acted on in about 15 seconds, with the task moved to review and the notes acked."
+    }
+   ],
+   "order": 1420
+  },
+  {
+   "id": "T-143",
+   "title": "Voice notes + autonomous agent on the Launch Control board",
+   "area": "Infra",
+   "owner": "Claude",
+   "priority": "P0",
+   "due": "",
+   "status": "review",
+   "why": "",
+   "spec": "Record or attach a voice note in any task's feedback box; it is transcribed on this Mac (faster-whisper) and shown under the player. Every note, from the owner on the local board or from teammates via the public board's GitHub issues, is picked up by tasks/runner.py, which runs headless Claude on the owner's subscription, then moves the task to review / blocked / done. Queue mode continues one Claude-owned next task when no feedback is waiting. Non-collaborator notes wait for a one-click owner approval.",
+   "done_when": [
+    "Record → transcript in thread, probe-tasks.mjs clean",
+    "A note is acted on without the owner doing anything",
+    "Notes from non-collaborators need owner approval",
+    "Owner uses it"
+   ],
+   "evidence": [
+    {
+     "label": "Launch Control board",
+     "url": "http://localhost:8899/tasks.html"
+    },
+    {
+     "label": "Agent log",
+     "url": "workshop-plan/tasks/runner.log"
+    },
+    {
+     "label": "Runner",
+     "url": "workshop-plan/tasks/runner.py"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-25T21:19:24+0530",
+     "who": "claude",
+     "note": "Built and verified: probe-tasks.mjs clean at 4 widths (incl. real mic recording + transcription and 6 security checks); two real agent runs on T-142; the critic's 13 findings fixed."
+    }
+   ],
+   "order": 1430
   }
  ]
 }
