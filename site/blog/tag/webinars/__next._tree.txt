@@ -1,5 +1,5 @@
 :HL["/tantra-workshop-live/site/_next/static/chunks/0ww24cp7j_3og.css","style"]
-:HL["/tantra-workshop-live/site/_next/static/chunks/3stahq6snejc3.css","style"]
+:HL["/tantra-workshop-live/site/_next/static/chunks/2n90nmtauzju0.css","style"]
 :HL["/tantra-workshop-live/site/_next/static/media/75affa71d1e2f6a7-s.p.17-aodiw50953.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/tantra-workshop-live/site/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"(site)","param":null,"prefetchHints":4096,"slots":{"children":{"name":"blog","param":null,"prefetchHints":4160,"slots":{"children":{"name":"tag","param":null,"prefetchHints":4192,"slots":{"children":{"name":"tag","param":{"type":"d","key":"webinars","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}}}}}},"staleTime":300,"buildId":"pW_8h3LqPSUZugvDF3Sak"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"(site)","param":null,"prefetchHints":4096,"slots":{"children":{"name":"blog","param":null,"prefetchHints":4160,"slots":{"children":{"name":"tag","param":null,"prefetchHints":4192,"slots":{"children":{"name":"tag","param":{"type":"d","key":"webinars","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}}}}}},"staleTime":300,"buildId":"5TqOP1Zwms9stDoVgwLm2"}
