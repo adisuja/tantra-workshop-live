@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-09-25T21:47:25+0530",
-  "version": 24
+  "updated": "2026-09-26T00:17:50+0530",
+  "version": 34
  },
  "tasks": [
   {
@@ -1429,7 +1429,7 @@
   },
   {
    "id": "T-059",
-   "title": "AI personalization for outreach (BigHammer-style)",
+   "title": "AI personalization for outreach (in the style of a proven client playbook)",
    "area": "Traffic",
    "owner": "Bhaskar Dev",
    "priority": "P2",
@@ -1448,6 +1448,11 @@
      "ts": "2026-09-18T18:00:00-04:00",
      "who": "claude",
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-09-26T00:17:27+0530",
+     "who": "claude",
+     "note": "Title no longer names the client (tasks.json is public on the mirror)."
     }
    ],
    "order": 380
@@ -3358,7 +3363,7 @@
    "owner": "Claude",
    "priority": "P1",
    "due": "2026-09-27",
-   "status": "next",
+   "status": "review",
    "why": "survey.html keeps answers only on the attendee's device and posts nothing, so prompt packs can't be generated; links like survey.html#day-2 and deck.html#day-2 from the centre open Day 1.",
    "spec": "",
    "done_when": [
@@ -3366,7 +3371,24 @@
     "#day-2 / #day-3 open the right day in survey and deck",
     "probe-survey passes"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "survey #day-2 opens Day 2 (cache-busted)",
+     "url": "http://localhost:8899/survey.html?v=t126#day-2"
+    },
+    {
+     "label": "deck #day-2 opens Day 2",
+     "url": "http://localhost:8899/deck.html#day-2"
+    },
+    {
+     "label": "commit",
+     "url": "bf0c9f6"
+    },
+    {
+     "label": "probe (deep-links always; device-survival via OPS_BASE=127.0.0.1:port)",
+     "url": "workshop-plan/probe-survey.mjs"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -3374,6 +3396,11 @@
      "ts": "2026-09-25",
      "who": "Claude",
      "note": "Created from the Build Guides integration pass (Lane A)."
+    },
+    {
+     "ts": "2026-09-25T22:25:21+0530",
+     "who": "claude",
+     "note": "Survey now mirrors each day's answers to the ops service and hydrates them on a fresh device (proven with a two-device headless round-trip in probe-survey); the ops POST merges rather than replaces, so a second/offline device can't wipe another's answers. #day-2 and #day-3 now open the right day in both survey.html and deck.html (was always Day 1). probe-survey is clean. Two operational follow-ups before it's live for real attendees, flagged for your call: (a) the attendee entry point must open survey.html?sid=<session> (or ?email=) so identity reaches the page — the internal centre links it with no params; (b) restart the production ops service (:8787) to load the new GET /api/survey endpoint (I left it stopped because its launchd tick spawns headless claude runs). Open http://localhost:8899/survey.html?v=t126#day-2 and http://localhost:8899/deck.html#day-2."
     }
    ],
    "order": 1240
@@ -3385,14 +3412,27 @@
    "owner": "Claude",
    "priority": "P1",
    "due": "2026-09-27",
-   "status": "next",
+   "status": "review",
    "why": "Ops generates an intake course plan per attendee but plan_url is never surfaced and nothing serves /plans/*. The centre's 'Read Your Personal Plan' step has nothing behind it.",
    "spec": "",
    "done_when": [
     "Before Day 1 step 2 opens the attendee's own plan",
     "Plan also linked in the plan email once T-123 lands"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Onboarding centre — Before Day 1 → step 2 (needs your session)",
+     "url": "http://localhost:4322/onboarding?v=t127"
+    },
+    {
+     "label": "Plan route (session-gated)",
+     "url": "http://localhost:4322/onboarding/plan?v=t127"
+    },
+    {
+     "label": "New route handler",
+     "url": "app/src/app/onboarding/plan/route.ts"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -3400,6 +3440,11 @@
      "ts": "2026-09-25",
      "who": "Claude",
      "note": "Created from the Build Guides integration pass (Lane A)."
+    },
+    {
+     "ts": "2026-09-25T22:40:10+0530",
+     "who": "claude",
+     "note": "Built a session-gated /onboarding/plan route that streams each attendee's own generated plan HTML (the plan file is named after the access token, so it is never served from a raw /plans URL). Verified live on :4322: Ellie's session serves her plan, attendee 8's session serves a different plan, and a no-cookie request shows a sign-in interstitial with zero plan content leaked; resolve now returns planUrl only when delivered. Before Day 1 step 2 ('Read Your Personal Plan') now links to it — confirmed the href renders in the centre. Done_when #2 (link in the plan email) waits on T-123, which hasn't landed. Review: open /onboarding with your access link, go to Before Day 1 → step 2."
     }
    ],
    "order": 1250
@@ -3780,7 +3825,7 @@
    "priority": "P0",
    "due": "2026-09-26",
    "status": "blocked",
-   "why": "Two owner instructions conflict. The standing anonymisation rule (LANES.md) bans case-study numbers and prices attributable to a client anywhere public. For the library rebuild the owner told Lane B2 to 'retain everything else and only remove brand names and specific links', so verbatim figures stay. Several are searchable, e.g. '$2.74M', 'cut … costs by up to 75%', 'cut customer service costs by 70%', £1,450/£2,950/£7,200, '260,000+ members', '1,400+ businesses', '25M ARR in 2 years'. Anyone who searches one could identify the client. Full private list: workshop-plan/library/clients/_raw_v2/CHECKPOINT1_NUMBERS.md.",
+   "why": "Two owner instructions conflict. The standing anonymisation rule (LANES.md) bans case-study numbers and prices attributable to a client anywhere public. For the library rebuild the owner told Lane B2 to 'retain everything else and only remove brand names and specific links', so verbatim figures stay. Several are searchable (money amounts, percentage savings, prices, member and customer counts), and anyone who searches one could identify the client. The full list is private: workshop-plan/library/clients/_raw_v2/CHECKPOINT1_NUMBERS.md.",
    "spec": "Lane A holds publishing of the rebuilt library to the public mirror until this is decided; merging and local verification can proceed.",
    "done_when": [
     "Owner picks keep / strip / per-figure",
@@ -3791,12 +3836,17 @@
    "blockers": [
     "Owner decision; the library rebuild is not published until then"
    ],
-   "needs_from_owner": "Choose: (A) keep every figure verbatim, and Lane A updates the anonymisation rule to 'names, people, domains, links only'; (B) strip or generalise the searchable figures (e.g. '$2.74M' → '{result_metric}'), keep the rest; or (C) go through the list in CHECKPOINT1_NUMBERS.md and mark keep or strip per figure.",
+   "needs_from_owner": "Choose: (A) keep every figure verbatim, and Lane A updates the anonymisation rule to 'names, people, domains, links only'; (B) strip or generalise the searchable figures (e.g. a dollar amount → '{result_metric}'), keep the rest; or (C) go through the private list in CHECKPOINT1_NUMBERS.md and mark keep or strip per figure.",
    "log": [
     {
      "ts": "2026-09-25",
      "who": "Claude",
      "note": "Raised by Lane A after B2 confirmed it keeps all figures per the owner's rebuild instruction."
+    },
+    {
+     "ts": "2026-09-26T00:17:27+0530",
+     "who": "claude",
+     "note": "Redacted the example client figures from this task's text: tasks.json is published on the public mirror, so the task itself was leaking the figures it asks about. The list stays in the private CHECKPOINT1_NUMBERS.md."
     }
    ],
    "order": 1392
@@ -3884,6 +3934,189 @@
     }
    ],
    "order": 1430
+  },
+  {
+   "id": "T-144",
+   "title": "Hub Review tab: every funnel element with preview, source and approve/feedback",
+   "area": "Infra",
+   "owner": "Claude",
+   "priority": "P0",
+   "due": "",
+   "status": "review",
+   "why": "The owner wanted one shareable link for the team to review all 401 funnel elements one by one and reach the source to keep building.",
+   "spec": "Review tab on the hub (#review): 10 categories, live preview + private-repo source per element, Approve / Request changes open prefilled issues on the review repo, team status read back from them, one-by-one reviewer. Generated by workshop-plan/build/review_hub.py.",
+   "done_when": [
+    "Owner reviews the tab and approves or requests changes",
+    "Teammates can open Source links (needs repo access: see the access task)"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-26T00:17:50+0530",
+     "who": "claude",
+     "note": "Built and verified: 573 GitHub source links via API, 575 preview links/anchors live, all 182 Template Library cards land on cold load."
+    }
+   ],
+   "order": 1440
+  },
+  {
+   "id": "T-145",
+   "title": "Decide: rewrite the public mirror repo's history to remove the leaked library commit",
+   "area": "Infra",
+   "owner": "Adi",
+   "priority": "P0",
+   "due": "",
+   "status": "blocked",
+   "why": "On 2026-09-25 ~22:15 a side session republished the mirror from main while the rebuilt library was held for T-141; the verbatim client figures were public for ~25 min. It was reverted, but commit 5b9f57d6 still exists in adisuja/tantra-workshop-live history. The public board's own T-141 text also carried the figures until 2026-09-26.",
+   "spec": "Option A: leave history as is. Option B: rewrite history (force-push) to drop 5b9f57d6 and the T-141 board text, then ask GitHub support to purge cached commits.",
+   "done_when": [
+    "Owner picks A or B",
+    "If B: history rewritten and GitHub asked to purge"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Pick A or B. B rewrites a public repo's history, so it needs your explicit OK.",
+   "log": [
+    {
+     "ts": "2026-09-26T00:17:50+0530",
+     "who": "claude",
+     "note": "Raised after the incident; logged in coord/LOG.md."
+    }
+   ],
+   "order": 1450
+  },
+  {
+   "id": "T-146",
+   "title": "Give teammates access to both GitHub repos",
+   "area": "Ops",
+   "owner": "Adi",
+   "priority": "P0",
+   "due": "",
+   "status": "blocked",
+   "why": "The main repo is private, so every Source link on the hub shows GitHub's 'Page not found' to anyone not added. Approvals on the hub only count from collaborators of the review repo.",
+   "spec": "Add each teammate to adisuja/3-day-tantra-ai-revops-workshop (write) and adisuja/tantra-workshop-live (triage or write).",
+   "done_when": [
+    "Every teammate can open a Source link on the hub",
+    "Their approvals show on the hub"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Send the teammates' GitHub usernames; Claude sends the invites.",
+   "log": [
+    {
+     "ts": "2026-09-26T00:17:50+0530",
+     "who": "claude",
+     "note": "The hub's 'Request repo access' button files an issue with the username."
+    }
+   ],
+   "order": 1460
+  },
+  {
+   "id": "T-147",
+   "title": "calendar.usetantra.com (the Tantra app) is not responding",
+   "area": "Product",
+   "owner": "Bharath",
+   "priority": "P0",
+   "due": "",
+   "status": "blocked",
+   "why": "Sign-ups redirect to calendar.usetantra.com after registering (APP_ENTRY_URL). On 2026-09-25 the host resolved (20.197.48.26) but every request timed out, over https and http.",
+   "spec": "",
+   "done_when": [
+    "calendar.usetantra.com answers 200",
+    "Sign-up lands inside the app"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Who runs the app server, and is the outage known?",
+   "log": [
+    {
+     "ts": "2026-09-26T00:17:50+0530",
+     "who": "claude",
+     "note": "Found during the link audit; usetantra.com and api.usetantra.com answered normally."
+    }
+   ],
+   "order": 1470
+  },
+  {
+   "id": "T-148",
+   "title": "Webinar deck v3: the Tantra logo image is missing (404)",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "usetantra.github.io/tantra-webinar-deck shows a blank white box where tantra-logo.png should be.",
+   "spec": "Add the logo file to the usetantra/tantra-webinar-deck repo (or fix the path) and verify the cover slide.",
+   "done_when": [
+    "Cover slide shows the Tantra logo",
+    "No 404 in the console"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-26T00:17:50+0530",
+     "who": "claude",
+     "note": "Found during the link audit."
+    }
+   ],
+   "order": 1480
+  },
+  {
+   "id": "T-149",
+   "title": "Re-authenticate the Codex CLI so the critic gives a second-model opinion",
+   "area": "Infra",
+   "owner": "Adi",
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "The critic sub-agent is meant to be Codex (a different model). Its token refresh fails with 401, so reviews fall back to Claude reviewing Claude.",
+   "spec": "",
+   "done_when": [
+    "codex exec answers",
+    "critic reports a Codex verdict"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Run `codex login` once on this Mac (needs your OpenAI login).",
+   "log": [
+    {
+     "ts": "2026-09-26T00:17:50+0530",
+     "who": "claude",
+     "note": "Seen on the Review tab critic pass, 2026-09-26."
+    }
+   ],
+   "order": 1490
+  },
+  {
+   "id": "T-150",
+   "title": "Hub: free and paid user-flow maps + post-workshop workflows, and a live task list",
+   "area": "Infra",
+   "owner": "Claude",
+   "priority": "P0",
+   "due": "",
+   "status": "doing",
+   "why": "Owner, 2026-09-26: the hub must show how the whole user flow works for the free and the paid lane, with every step linked to its element, the post-workshop workflows, and a task list (pending / done / in review…) kept current across the project.",
+   "spec": "Flows tab: overview map + step-by-step lanes (free, paid, pre-event nurture, the three days, post-workshop branches), each node linked to its preview, its Review entry and its source; planned steps marked planned. Tasks tab: renders tasks/tasks.json by status with filters; the board syncs to the mirror automatically behind a leak guard.",
+   "done_when": [
+    "Both tabs live on the hub",
+    "Every flow link verified",
+    "Board syncs automatically and refuses to publish denylisted text"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-26T00:17:50+0530",
+     "who": "claude",
+     "note": "Started."
+    }
+   ],
+   "order": 1500
   }
  ]
 }
