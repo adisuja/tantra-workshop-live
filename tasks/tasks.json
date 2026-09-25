@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-09-25",
-  "version": 12
+  "updated": "2026-09-25T19:38:41+0530",
+  "version": 14
  },
  "tasks": [
   {
@@ -2896,9 +2896,12 @@
    "done_when": [
     "Three S4 guides merged; Day 1 criteria live; VSL script template in the library."
    ],
-   "evidence": [],
+   "evidence": [
+    "https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=6#d2-stage-4",
+    "workshop-plan/coord/D_MECHANISM_COMPARISON.md"
+   ],
    "blockers": [],
-   "needs_from_owner": "",
+   "needs_from_owner": "Review: open Day 2 → Stage 4 on the live link, read one mechanism guide end to end, and approve or reply per guide.",
    "log": [
     {
      "ts": "2026-09-24",
@@ -2909,6 +2912,11 @@
      "ts": "2026-09-25",
      "who": "Claude",
      "note": "Merged: s4-webinar, s4-rsp, s4-challenge (45 real captures, 2 capture-needed) + 15 templates incl. the 32-beat VSL script. Day 1 criteria live."
+    },
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Merged and live (mirror f7d8612e): s4-webinar 14 steps / 18 real shots; s4-rsp 11 / 11 (1 capture needed); s4-challenge 15 / 15 (1 capture needed). 15 templates, including the abstracted 32-beat VSL script. Open: 2 screenshots (asks in T-115); audit defects tracked in T-121, T-122, T-124–T-127; pitch cadence in T-129."
     }
    ],
    "order": 1110
@@ -2927,7 +2935,12 @@
     "All S5–S6 guides merged; Day 2 pipeline questions updated."
    ],
    "evidence": [],
-   "blockers": [],
+   "blockers": [
+    "T-132 Claude Code screens",
+    "T-133 WhatsApp/SMS screens",
+    "T-134 starter-CRM reference build",
+    "T-137 cadence decision"
+   ],
    "needs_from_owner": "",
    "log": [
     {
@@ -2939,6 +2952,11 @@
      "ts": "2026-09-25",
      "who": "Claude",
      "note": "Merged: 8 S5 + 4 S6 guides, crm-starter, 8 Day-2 pipeline questions (survey now 37). 61 real shots, 26 capture-needed (GHL/Beehiiv not signed in)."
+    },
+    {
+     "ts": "2026-09-25T19:38:41+0530",
+     "who": "claude",
+     "note": "Lane E pending work split into tasks: T-135 (Claude, no input needed), T-132 (Claude Code screens + CLI update), T-133 (WhatsApp/SMS provider screens), T-134 (starter-CRM reference build), T-136 (waits on T-024/T-032/T-033), T-137 (cadence decision). GHL + Beehiiv sign-in gaps stay under T-115; the stage count is T-119; GoHighLevel placement is T-120; the last E commit is T-128."
     }
    ],
    "order": 1120
@@ -2963,12 +2981,22 @@
     "Claude in Chrome (Browser 1) was disconnected on the last pass",
     "LinkedIn and Meta are never opened by browser tools (global rule)"
    ],
-   "needs_from_owner": "Pick one: (A) connect Claude in Chrome 'Browser 1' (adi@growthclub.org) and be signed in to Tantra dashboard, Google Workspace/Sheets, GoHighLevel and Beehiiv — Claude captures and redacts those; or (B) take the LinkedIn company-page and Meta Ads/Events Manager screenshots yourself (list in status/c.md) and drop them in a folder — Claude crops, redacts and files them. Also tell us whether you have GoHighLevel and Beehiiv accounts at all; if not, those steps stay on the vendors' public help-centre shots.",
+   "needs_from_owner": "Pick one: (A) connect Claude in Chrome 'Browser 1' (adi@growthclub.org) and be signed in to Tantra dashboard, Google Workspace/Sheets, GoHighLevel and Beehiiv — Claude captures and redacts those; or (B) take the LinkedIn company-page and Meta Ads/Events Manager screenshots yourself (list in status/c.md) and drop them in a folder — Claude crops, redacts and files them. Also tell us whether you have GoHighLevel and Beehiiv accounts at all; if not, those steps stay on the vendors' public help-centre shots. Lane D's two slots also need these answers: (C) s4-rsp step 7, the Part 2 page: no reverse squeeze page exists in our funnel yet. Reply 'build it' (Claude builds a working anonymised Part 2 page from the rsp-part2-access-page template and captures it) or 'wait' (until a real RSP runs, T-025). (D) s4-challenge step 15, the referral dashboard: it only opens with the team passphrase, which Claude never types. Unlock …/tantra-workshop-live/referrals.html yourself, take one full-width screenshot and drop it in tasks/uploads; cover any revenue you don't want shown, and Claude blurs names. (E, optional) If you have WebinarGeek or Zoom Webinars, sign in on Browser 1 and Claude re-shoots s4-webinar from our own room; otherwise its vendor help-centre shots stay.",
    "log": [
     {
      "ts": "2026-09-25",
      "who": "Claude",
      "note": "Created from the Build Guides integration pass (Lane A)."
+    },
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Lane D: added the exact asks for its 2 slots (RSP Part 2 build-or-wait; referral dashboard screenshot by owner) and the optional own-account webinar re-shoot."
+    },
+    {
+     "ts": "2026-09-25T19:38:41+0530",
+     "who": "claude",
+     "note": "Lane E's 26 slots: 6 need GoHighLevel (s5-pipeline #7; s5-webinar-stages #1, #3; s5-rsp-stages #3, #4; s5-challenge-stages #1) and 1 needs Beehiiv (s6-newsletter #6), covered here. The rest are split out: T-135 (5, Claude now), T-132 (5, Claude Code), T-133 (5, WhatsApp/SMS), T-134 (3, planned crm-starter), T-136 (1, waits on delivery). Also tell us your Beehiiv plan: s6-ai-newsletter step 8 says the Create Post API needs Max or Enterprise."
     }
    ],
    "order": 1130
@@ -3331,20 +3359,27 @@
    "owner": "Claude",
    "priority": "P3",
    "due": "2026-09-26",
-   "status": "queue",
+   "status": "blocked",
    "why": "T-050 still says 'Build Pass'; T-042 has the old dates and 'five sessions'; T-071 says Pro is pitched every day from Day 1, but the deck and s4-challenge pitch only at the close.",
    "spec": "",
    "done_when": [
     "Those three tasks describe the current 3-day cohort and offer"
    ],
    "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
+   "blockers": [
+    "T-071's pitch cadence is the owner's decision, not a text fix"
+   ],
+   "needs_from_owner": "Confirm when Tantra Pro ($999) is offered: (A) only at the close of the last day, as the deck and the challenge guide teach now; or (B) every day from Day 1, as T-071 says. Claude then aligns T-071, the deck and the guide. T-050 and T-042 text gets fixed either way.",
    "log": [
     {
      "ts": "2026-09-25",
      "who": "Claude",
      "note": "Created from the Build Guides integration pass (Lane A)."
+    },
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Lane D: pitch cadence needs an owner decision, so this is marked blocked with the exact question."
     }
    ],
    "order": 1270
@@ -3400,6 +3435,178 @@
     }
    ],
    "order": 1290
+  },
+  {
+   "id": "T-132",
+   "title": "Stage 5–6 guides: real Claude Code screenshots (5 steps) + update the Claude Code CLI",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P2",
+   "due": "2026-09-28",
+   "status": "blocked",
+   "why": "Five Stage 5–6 steps need Claude Code's own screens, and Claude can't operate the Claude desktop app (computer-use can't reach it). The Mac's Claude Code CLI is 2.1.185: too old for Opus 5.5, and its interactive screen rejected every model, so the AI-newsletter demo had to run headless on Sonnet 5.",
+   "spec": "Steps: s6-ai-newsletter #1 (new Code session with the weekly-letter folder), #2 (setup prompt pasted with inputs), #6 (Code → Routines → task page: Run now · Status · Edit · Review history); s5-follow-ups #2 (follow-up prompt running + follow-ups/ folder); s5-crm-starter #3 (prompt 01 pasted in the crm-starter folder). Plan: Claude creates a demo 'weekly-letter' routine in /tmp/e-demo (fictional survey persona), you put the Claude app on the Routines page when pinged, Claude captures the screen with screencapture, redacts the sidebar, then deletes the demo routine.",
+   "done_when": [
+    "All 5 steps show a real, redacted capture",
+    "check-guides capture-needed drops by 5",
+    "The demo routine is deleted afterwards"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Claude app not reachable by computer-use",
+    "CLI 2.1.185 too old for Opus 5.5"
+   ],
+   "needs_from_owner": "(1) Run `claude update` in a terminal, or reply 'OK to update' and Claude runs it. (2) Reply 'OK demo routine': Claude may create a temporary weekly routine in the Claude desktop app for the screenshots and delete it afterwards. (3) When Claude pings, open the Claude app → Code → Routines and leave it on screen for about a minute.",
+   "log": [
+    {
+     "ts": "2026-09-25T19:38:41+0530",
+     "who": "claude",
+     "note": "Added by Lane E at the owner's request: pending Stage 5–6 work, split by what unblocks it."
+    }
+   ],
+   "order": 1320
+  },
+  {
+   "id": "T-133",
+   "title": "Stage 6 guides: real WhatsApp + SMS provider screenshots (5 steps)",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P2",
+   "due": "2026-09-28",
+   "status": "blocked",
+   "why": "The WhatsApp-twin and SMS-nudge guides need screens from a real WhatsApp Business provider and an SMS composer. No provider is signed in, and the provider choice is still open in T-123.",
+   "spec": "Steps: s6-whatsapp #1 (pointer + compressed twin in a chat on a phone), #2 (WhatsApp Manager template category notice), #4 (provider broadcast/campaign scheduler with a send time); s6-sms #2 (composer with the live character/segment counter), #3 (drafted SMS with merge fields). If GoHighLevel is your SMS tool, its Conversations composer covers #2 and #3.",
+   "done_when": [
+    "All 5 steps show real, redacted captures",
+    "No personal phone numbers or names visible"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Provider decision pending (T-123)",
+    "No WhatsApp Business / SMS account signed in on Browser 1"
+   ],
+   "needs_from_owner": "(1) Name the WhatsApp Business provider you'll use (WATI, Twilio, Meta Cloud API or GoHighLevel) and your SMS provider. (2) Sign in to them in Chrome 'Browser 1' and reply 'signed in'. Claude only drafts and never sends. (3) For the on-phone chat view: OK for Claude to send the two demo twins to a test chat with yourself in the WhatsApp desktop app?",
+   "log": [
+    {
+     "ts": "2026-09-25T19:38:41+0530",
+     "who": "claude",
+     "note": "Added by Lane E at the owner's request: pending Stage 5–6 work, split by what unblocks it."
+    }
+   ],
+   "order": 1330
+  },
+  {
+   "id": "T-134",
+   "title": "Starter CRM: build the reference connections (prompts 01–06) so the planned steps get real screenshots",
+   "area": "Product",
+   "owner": "Claude",
+   "priority": "P3",
+   "due": "2026-09-29",
+   "status": "blocked",
+   "why": "In the starter CRM, only the core is built (pipeline, fields, crm.py). Intake, payments, the follow-up runner, the board and the schedule are PLANNED: readers build them with the six prompts. Three guide steps (s5-crm-starter #4 payments, #5 runner --dry-run, #6 board) have nothing real to capture until someone runs those prompts once.",
+   "spec": "Claude runs prompts 01–06 in a copy of workshop-plan/crm-starter against TEST-MODE accounts only, keeps the result as a reference build (not shipped to readers), captures the three screens, and updates the README status table only if the prompts worked as written. No n8n.",
+   "done_when": [
+    "payments.py records a test-mode payment → Payment Completed",
+    "runner.py --dry-run lists the next 24h of messages",
+    "The board renders at localhost:8765 with test deals",
+    "3 capture-needed slots replaced"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Needs test-mode keys, which only the owner can put in .env"
+   ],
+   "needs_from_owner": "(1) Say 'build it' or 'skip: leave those 3 steps as planned'. (2) If building: put TEST-mode keys yourself in workshop-plan/crm-starter/.env (git-ignored; Claude never types keys) for your booking tool (Cal.com or Calendly), payments (Dodo test mode), email (Resend) and, optionally, SMS (Twilio test credentials).",
+   "log": [
+    {
+     "ts": "2026-09-25T19:38:41+0530",
+     "who": "claude",
+     "note": "Added by Lane E at the owner's request: pending Stage 5–6 work, split by what unblocks it."
+    }
+   ],
+   "order": 1340
+  },
+  {
+   "id": "T-135",
+   "title": "Stage 5–6 guides: 5 screenshots Claude can capture now from our own pages and the demo run",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P2",
+   "due": "2026-09-27",
+   "status": "queue",
+   "why": "Five capture-needed steps need no owner account: they can come from our own funnel pages and the Claude Code demo output already on disk.",
+   "spec": "s5-webinar-stages #2 (our /masterclass offer link with ?src=live opening checkout: no purchase), s5-challenge-stages #3 (the final-day offer link opening checkout), s5-rsp-stages #1 and #2 (depth tags and bridge opt-in on our RSP pages / FunnelOS RSP, whichever is real), s6-sms #1 (the demo's rotation.md 52-week calendar with SMS weeks marked). Real captures only; redact anything personal.",
+   "done_when": [
+    "5 slots replaced with real WebP captures",
+    "check-guides PASS, probe-guides clean at 5 widths × 2 themes"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-25T19:38:41+0530",
+     "who": "claude",
+     "note": "Added by Lane E: no owner input needed. Claude picks this up next pass."
+    }
+   ],
+   "order": 1350
+  },
+  {
+   "id": "T-136",
+   "title": "s5-challenge-stages step 2: capture the daily-output loop once it exists",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P3",
+   "due": "2026-10-02",
+   "status": "hold",
+   "why": "The step shows attended-day-N plus a 'Day N Output Delivered' event. True attendance tracking and the daily output delivery (automation 9) aren't built yet, so there is nothing real to capture.",
+   "spec": "",
+   "done_when": [
+    "Contact timeline shows attended-day-N and output_delivered_day{N} for a test attendee",
+    "Slot replaced"
+   ],
+   "evidence": [],
+   "blockers": [
+    "T-024 Day 1–3 output templates",
+    "T-032 PDF + live-link generation",
+    "T-033 WhatsApp + email delivery"
+   ],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-25T19:38:41+0530",
+     "who": "claude",
+     "note": "Added by Lane E at the owner's request: pending Stage 5–6 work, split by what unblocks it."
+    }
+   ],
+   "order": 1360
+  },
+  {
+   "id": "T-137",
+   "title": "Decide the Stage 6 messaging cadence (brief vs playbook)",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P2",
+   "due": "2026-09-27",
+   "status": "blocked",
+   "why": "The two sources disagree. The playbook's 52-week engine says email weekly, messaging (WhatsApp) fortnightly, SMS rare, newsletter MONTHLY. Your Lane E brief says every email gets a WhatsApp twin, and the AI newsletter is WEEKLY. The Stage 6 guides currently follow your brief; the playbook text still says the other thing.",
+   "spec": "After your answer: Lane E aligns s6-newsletter / s6-whatsapp / s6-sms / s6-ai-newsletter, and Lane A aligns the playbook's Day 3 Step 5 rails text.",
+   "done_when": [
+    "Guides and playbook state the same cadence"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Needs owner decision"
+   ],
+   "needs_from_owner": "Pick one: (A) keep the brief: weekly newsletter + a WhatsApp twin for every email (Lane A updates the playbook); or (B) keep the playbook: weekly email, WhatsApp fortnightly, a monthly deep-dive newsletter (Lane E updates 4 guides); or (C) your own cadence.",
+   "log": [
+    {
+     "ts": "2026-09-25T19:38:41+0530",
+     "who": "claude",
+     "note": "Added by Lane E at the owner's request: pending Stage 5–6 work, split by what unblocks it."
+    }
+   ],
+   "order": 1370
   }
  ]
 }
