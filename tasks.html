@@ -483,7 +483,7 @@ document.querySelectorAll("#view button").forEach(b=>b.onclick=()=>{view=b.datas
 $("#theme").onclick=()=>{const h=document.documentElement;h.dataset.theme=h.dataset.theme==="dark"?"light":"dark";localStorage.setItem("lc-theme",h.dataset.theme)};
 if(localStorage.getItem("lc-theme"))document.documentElement.dataset.theme=localStorage.getItem("lc-theme");
 function countdown(){const d1=new Date(DATA.meta?.day1||"2026-09-30T11:00:00-04:00"),ms=d1-Date.now();if(ms<0){$("#cd").textContent="is live";return}const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5);$("#cd").textContent=`in ${d}d ${h}h · Wed Sep 30, 11:00 ET`}
-load().then(countdown).then(pollAgent);setInterval(countdown,6e4);setInterval(load,9e4);setInterval(pollAgent,8e3);
+load().then(countdown).then(()=>{const m=/^#(T-\d+)$/.exec(location.hash);if(m)jump(m[1])}).then(pollAgent);setInterval(countdown,6e4);setInterval(load,9e4);setInterval(pollAgent,8e3);
 </script>
 </body>
 </html>
