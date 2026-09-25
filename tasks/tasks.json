@@ -2778,7 +2778,7 @@
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "",
+   "needs_from_owner": "Open Day 2 in the centre and read one guide per stage; decide the Tantra Pro name clash with the $999 offer (T-071).",
    "log": [
     {
      "ts": "2026-09-24",
@@ -2789,6 +2789,11 @@
      "ts": "2026-09-24",
      "who": "Claude",
      "note": "CONTRACT v1 09ed0cf, v2 bef06e9. Renderer + Day 2 manual + Day 1 mechanism pick + rename f6ad592. lane/b merged (c7996a4)."
+    },
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Resumed after overnight stall (rate limit + all dev servers died). Merged C 023ea36/bf4962f, D 2f12ee5/948d0c3, E f0d1499. 24 guides live in Day 2. FlowChart: phone lane blocks, gutter routing, label placement along the real path with a sticky tag fallback. D's consistency list applied (four polls, three-day challenge, RSP value-first labels, Calendar Invites, 48.6%). probe-guides PASS 5 widths × 2 themes (250 renders)."
     }
    ],
    "order": 1080
@@ -2819,6 +2824,11 @@
      "ts": "2026-09-24",
      "who": "Claude",
      "note": "Library infra 7b16f11 merged: {snake_case} fields, channel+mechanism tags, contribs folded, TemplateCard, probe-anonymity. Corpus dossiers in progress."
+    },
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Corpus (112 templates) + Phone Board merged. Owner-directed rework in progress: 322 elements × 4 industries, interactive phones, redesigned library page. Open: preview headings not Title Case, clipped Gmail snippets."
     }
    ],
    "order": 1090
@@ -2830,7 +2840,7 @@
    "owner": "Claude",
    "priority": "P1",
    "due": "2026-09-28",
-   "status": "queue",
+   "status": "review",
    "why": "Owner brief (2026-09-24): Day 2 of the onboarding centre becomes the build manual — one guide per stage/channel (S1 Traffic · S2 Tantra Pro Funnel · S3 Tantra Pro Flow · S4 webinar/RSP/challenge · S5 Revenue & Deal Pipeline · S6 52-Week Growth Engine), each with a flowchart, The Task, step-by-step real screenshots, and embedded template examples. No basic funnels or flows anywhere.",
    "spec": "workshop-plan/coord/CONTRACT.md · LANES.md",
    "done_when": [
@@ -2844,6 +2854,11 @@
      "ts": "2026-09-24",
      "who": "Claude",
      "note": "Created by Lane A at programme start."
+    },
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Merged: 9 guides (S1 overview + 6 channels, S2 Tantra Pro Funnel, S3 Tantra Pro Flow). 79 real shots; 26 capture-needed slots need the owner's signed-in sessions (Meta, LinkedIn page, live Tantra dashboard, CRM)."
     }
    ],
    "order": 1100
@@ -2855,7 +2870,7 @@
    "owner": "Claude",
    "priority": "P1",
    "due": "2026-09-28",
-   "status": "queue",
+   "status": "review",
    "why": "Owner brief (2026-09-24): Day 2 of the onboarding centre becomes the build manual — one guide per stage/channel (S1 Traffic · S2 Tantra Pro Funnel · S3 Tantra Pro Flow · S4 webinar/RSP/challenge · S5 Revenue & Deal Pipeline · S6 52-Week Growth Engine), each with a flowchart, The Task, step-by-step real screenshots, and embedded template examples. No basic funnels or flows anywhere.",
    "spec": "workshop-plan/coord/CONTRACT.md · LANES.md",
    "done_when": [
@@ -2869,6 +2884,11 @@
      "ts": "2026-09-24",
      "who": "Claude",
      "note": "Created by Lane A at programme start."
+    },
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Merged: s4-webinar, s4-rsp, s4-challenge (45 real captures, 2 capture-needed) + 15 templates incl. the 32-beat VSL script. Day 1 criteria live."
     }
    ],
    "order": 1110
@@ -2880,7 +2900,7 @@
    "owner": "Claude",
    "priority": "P1",
    "due": "2026-09-28",
-   "status": "queue",
+   "status": "review",
    "why": "Owner brief (2026-09-24): Day 2 of the onboarding centre becomes the build manual — one guide per stage/channel (S1 Traffic · S2 Tantra Pro Funnel · S3 Tantra Pro Flow · S4 webinar/RSP/challenge · S5 Revenue & Deal Pipeline · S6 52-Week Growth Engine), each with a flowchart, The Task, step-by-step real screenshots, and embedded template examples. No basic funnels or flows anywhere.",
    "spec": "workshop-plan/coord/CONTRACT.md · LANES.md",
    "done_when": [
@@ -2894,6 +2914,11 @@
      "ts": "2026-09-24",
      "who": "Claude",
      "note": "Created by Lane A at programme start."
+    },
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Merged: 8 S5 + 4 S6 guides, crm-starter, 8 Day-2 pipeline questions (survey now 37). 61 real shots, 26 capture-needed (GHL/Beehiiv not signed in)."
     }
    ],
    "order": 1120

@@ -1,0 +1,1161 @@
+{
+ "title": "Sample Attendee Outputs · Day 2 Build",
+ "subtitle": "Every element rendered as the recipient sees it on an iPhone",
+ "app": "mixed",
+ "people": {
+  "me": {
+   "name": "{first_name} {last_name}",
+   "initials": "SK",
+   "color": "#0b6e4f",
+   "email": "{first_name}.{last_name}@mail.example",
+   "headline": "{icp_role} at {prospect_company}"
+  },
+  "sender": {
+   "name": "{host_name}",
+   "color": "#5b3fa0",
+   "headline": "{host_role} at {company_name}",
+   "email": "{sender_email}"
+  },
+  "team": {
+   "name": "{company_name}",
+   "color": "#0d1b2a"
+  },
+  "company": {
+   "name": "{company_name}",
+   "color": "#0d1b2a",
+   "company": true,
+   "followers": "4,812"
+  },
+  "business": {
+   "name": "{company_name}",
+   "color": "#0d1b2a",
+   "verified": true,
+   "sub": "Business account"
+  }
+ },
+ "campaigns": [
+  {
+   "id": "cold-calendar-invite-long",
+   "title": "Cold calendar invite, long form",
+   "columns": [
+    {
+     "id": "c1",
+     "label": "Step 1",
+     "title": "Invite lands in Gmail"
+    },
+    {
+     "id": "c2",
+     "label": "Step 2",
+     "title": "Accepted: event in Calendar"
+    },
+    {
+     "id": "c3",
+     "label": "Step 3",
+     "title": "3-day view"
+    }
+   ],
+   "rows": [
+    {
+     "id": "cold-calendar-invite-long-r1",
+     "label": "Cold calendar invite, long form",
+     "cells": [
+      {
+       "id": "cold-calendar-invite-long-inv",
+       "app": "gmail",
+       "from": "sender",
+       "kinds": [
+        "invite"
+       ],
+       "subtitle": "Invite lands in Gmail",
+       "subject": "{event_title}",
+       "invite": {
+        "title": "{event_title}",
+        "when": "{date} · {time} · {duration}",
+        "icsName": "invite.ics"
+       },
+       "body": "Hi {first_name},\n\nThis is the month most {icp_industry} teams decide how they'll handle {topic} for the rest of the year.\n\nMost are still talking about it. A smaller group has already stopped relying on {old_way} and put a system in its place, and the distance between those two groups gets wider every quarter.\n\nWhat's changed: for the teams ahead of you, this isn't an experiment any more. They already have {desired_outcome}, while everyone else is still {pain_point}.\n\nWe're running a focused {duration} live session on {date} at {time}. Your calendar shows it in your own time zone.\n\nWHAT WE'LL COVER\n\n— The {mechanism_name}: the steps ({mechanism_steps}) and the order that makes them stick.\n\n— The economics: what {old_way} really costs a team your size, against {benchmark}.\n\n— The build: the templates, checklists and scripts we use, yours to put in place the same week.\n\n— A live walkthrough: {deliverable} built on screen, start to finish, with your questions answered as we go.\n\nWHY NOW\n\nPut this in place this month and it compounds for the rest of the year. Wait a quarter and you're catching up with teams who didn't.\n\nWHAT YOU GET AFTERWARDS\n\n{deliverables}, plus the full recording.\n\nDESIGNED FOR\n\n{icp_role} and their teams at {icp_size} companies in {icp_region} who want {desired_outcome} without adding headcount.\n\nHOSTED BY\n\n{host_name}, {host_role} at {company_name}. {social_proof}\n\nSave your seat: {registration_link}\n\nHow to reply: Yes or Maybe and we'll send you the join link and reminders. No, and you won't hear from us about this event again.\n\nP.S. {first_name}, if your team has already tried to fix {pain_point} and it didn't hold, the session covers the part most vendors skip: how the pieces connect."
+      },
+      {
+       "id": "cold-calendar-invite-long-ev",
+       "app": "gcal",
+       "view": "event",
+       "kinds": [
+        "event"
+       ],
+       "subtitle": "Accepted: the event in Google Calendar",
+       "title": "{event_title}",
+       "when": "{date} · {time} · {duration}",
+       "location": "Registration link in the description",
+       "description": "Hi {first_name},\n\nThis is the month most {icp_industry} teams decide how they'll handle {topic} for the rest of the year.\n\nMost are still talking about it. A smaller group has already stopped relying on {old_way} and put a system in its place, and the distance between those two groups gets wider every quarter.\n\nWhat's changed: for the teams ahead of you, this isn't an experiment any more. They already have {desired_outcome}, while everyone else is still {pain_point}.\n\nWe're running a focused {duration} live session on {date} at {time}. Your calendar shows it in your own time zone.\n\nWHAT WE'LL COVER\n\n— The {mechanism_name}: the steps ({mechanism_steps}) and the order that makes them stick.\n\n— The economics: what {old_way} really costs a team your size, against {benchmark}.\n\n— The build: the templates, checklists and scripts we use, yours to put in place the same week.\n\n— A live walkthrough: {deliverable} built on screen, start to finish, with your questions answered as we go.\n\nWHY NOW\n\nPut this in place this month and it compounds for the rest of the year. Wait a quarter and you're catching up with teams who didn't.\n\nWHAT YOU GET AFTERWARDS\n\n{deliverables}, plus the full recording.\n\nDESIGNED FOR\n\n{icp_role} and their teams at {icp_size} companies in {icp_region} who want {desired_outcome} without adding headcount.\n\nHOSTED BY\n\n{host_name}, {host_role} at {company_name}. {social_proof}\n\nSave your seat: {registration_link}\n\nHow to reply: Yes or Maybe and we'll send you the join link and reminders. No, and you won't hear from us about this event again.\n\nP.S. {first_name}, if your team has already tried to fix {pain_point} and it didn't hold, the session covers the part most vendors skip: how the pieces connect.",
+       "guests": [
+        {
+         "name": "{host_name}",
+         "color": "#5b3fa0",
+         "headline": "{host_role} at {company_name}",
+         "email": "{sender_email}",
+         "sub": "Organiser"
+        },
+        {
+         "name": "{first_name} {last_name}",
+         "initials": "SK",
+         "color": "#0b6e4f",
+         "email": "{first_name}.{last_name}@mail.example",
+         "headline": "{icp_role} at {prospect_company}"
+        }
+       ],
+       "guestSummary": "1 yes, 1 awaiting"
+      },
+      {
+       "id": "cold-calendar-invite-long-3d",
+       "app": "gcal",
+       "view": "threeday",
+       "kinds": [
+        "event"
+       ],
+       "subtitle": "How the title truncates in the 3-day view",
+       "title": "{event_title}",
+       "days": [
+        {
+         "dow": "TUE",
+         "num": "29",
+         "items": [
+          {
+           "title": "Team sync",
+           "time": "10 – 11am",
+           "start": 10,
+           "dur": 1,
+           "color": "#7986cb"
+          }
+         ]
+        },
+        {
+         "dow": "WED",
+         "num": "30",
+         "today": true,
+         "items": [
+          {
+           "title": "{event_title}",
+           "time": "11am – 12pm",
+           "start": 11,
+           "dur": 1,
+           "color": "#039be5"
+          }
+         ]
+        },
+        {
+         "dow": "THU",
+         "num": "1",
+         "items": [
+          {
+           "title": "Quarterly review",
+           "time": "2 – 3pm",
+           "start": 14,
+           "dur": 1,
+           "color": "#33b679"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cold-email-value-ladder",
+   "title": "Value ladder · 5 emails · Day 0 / 3 / 6 / 9 / 13",
+   "columns": [
+    {
+     "id": "c1",
+     "label": "what {icp_role} keep telling me",
+     "title": "",
+     "day": "Day 0"
+    },
+    {
+     "id": "c2",
+     "label": "Email 2 · reply in thread",
+     "title": "",
+     "day": "Day 3 · reply"
+    },
+    {
+     "id": "c3",
+     "label": "Email 3 · reply in thread",
+     "title": "",
+     "day": "Day 6 · reply"
+    },
+    {
+     "id": "c4",
+     "label": "Email 4 · reply in thread",
+     "title": "",
+     "day": "Day 9 · reply"
+    },
+    {
+     "id": "c5",
+     "label": "closing the loop",
+     "title": "",
+     "day": "Day 13"
+    }
+   ],
+   "rows": [
+    {
+     "id": "cold-email-value-ladder-r1",
+     "label": "Value ladder · 5 emails · Day 0 / 3 / 6 / 9 / 13",
+     "cells": [
+      {
+       "id": "cold-email-value-ladder-s0",
+       "kinds": [
+        "cold-email"
+       ],
+       "subtitle": "Day 0 · what {icp_role} keep telling me",
+       "app": "gmail",
+       "from": "sender",
+       "subject": "what {icp_role} keep telling me",
+       "body": "{first_name},\n\n{personal_line}\n\nSlight swerve, but related. I host a live session for {icp_role} teams on {topic}, and one line from attendees keeps coming back almost word for word:\n\n\"{hook}\"\n\nNobody has a {category} problem. They have a number they can't explain upstairs, and a list of projects it's quietly blocking.\n\nLast time I put one {client_type}'s real numbers on screen ({result_metric}).\n\nNext session is {date}. Most of it is teardown, the last part is your questions. No slides about us, just the numbers: {registration_link}\n\nCan't make the time? Sign up regardless and the recording lands in your inbox the next day.\n\n{host_first_name}\n{host_role}, {company_name}",
+       "unsubscribe": false
+      },
+      {
+       "id": "cold-email-value-ladder-s1",
+       "kinds": [
+        "follow-up"
+       ],
+       "subtitle": "Day 3 · reply · (reply in thread)",
+       "app": "gmail",
+       "from": "sender",
+       "subject": "(reply in thread)",
+       "body": "{first_name}, here are the three leaks from the session, for anyone who'd rather read than watch:\n\n1. The idle tax. {pain_cost}, paid every day whether or not anything changed.\n2. The default nobody revisited. A setting switched on for everything, including the work that gets nothing from it.\n3. The slow failure. Work that runs for hours before it breaks, and gets paid for anyway.\n\nYou won't find any of them on the invoice. You find them a quarter later, when someone asks why the number went up.\n\nFull teardown {date}: {registration_link}\n\n{host_first_name}",
+       "unsubscribe": false,
+       "threadSubject": "what {icp_role} keep telling me",
+       "prior": [
+        {
+         "id": "cold-email-value-ladder-s0",
+         "kinds": [
+          "cold-email"
+         ],
+         "subtitle": "Day 0 · what {icp_role} keep telling me",
+         "app": "gmail",
+         "from": "sender",
+         "subject": "what {icp_role} keep telling me",
+         "body": "{first_name},\n\n{personal_line}\n\nSlight swerve, but related. I host a live session for {icp_role} teams on {topic}, and one line from attendees keeps coming back almost word for word:\n\n\"{hook}\"\n\nNobody has a {category} problem. They have a number they can't explain upstairs, and a list of projects it's quietly blocking.\n\nLast time I put one {client_type}'s real numbers on screen ({result_metric}).\n\nNext session is {date}. Most of it is teardown, the last part is your questions. No slides about us, just the numbers: {registration_link}\n\nCan't make the time? Sign up regardless and the recording lands in your inbox the next day.\n\n{host_first_name}\n{host_role}, {company_name}",
+         "unsubscribe": false
+        }
+       ]
+      },
+      {
+       "id": "cold-email-value-ladder-s2",
+       "kinds": [
+        "follow-up"
+       ],
+       "subtitle": "Day 6 · reply · (reply in thread)",
+       "app": "gmail",
+       "from": "sender",
+       "subject": "(reply in thread)",
+       "body": "{first_name},\n\nMost teams argue about the wrong number.\n\nThe expensive part isn't the invoice. It's that low-value work quietly eats the budget, and the projects that were meant to justify it slip to next quarter.\n\nFor one {client_type}, fixing that unblocked the backlog first; the savings came second ({result_metric}).\n\nI walk through how to sort the work (keep, fix, retire or move) and how to prove nothing breaks before you switch.\n\n{date}: {registration_link}\n\n{host_first_name}",
+       "unsubscribe": false,
+       "threadSubject": "what {icp_role} keep telling me",
+       "prior": [
+        {
+         "id": "cold-email-value-ladder-s0",
+         "kinds": [
+          "cold-email"
+         ],
+         "subtitle": "Day 0 · what {icp_role} keep telling me",
+         "app": "gmail",
+         "from": "sender",
+         "subject": "what {icp_role} keep telling me",
+         "body": "{first_name},\n\n{personal_line}\n\nSlight swerve, but related. I host a live session for {icp_role} teams on {topic}, and one line from attendees keeps coming back almost word for word:\n\n\"{hook}\"\n\nNobody has a {category} problem. They have a number they can't explain upstairs, and a list of projects it's quietly blocking.\n\nLast time I put one {client_type}'s real numbers on screen ({result_metric}).\n\nNext session is {date}. Most of it is teardown, the last part is your questions. No slides about us, just the numbers: {registration_link}\n\nCan't make the time? Sign up regardless and the recording lands in your inbox the next day.\n\n{host_first_name}\n{host_role}, {company_name}",
+         "unsubscribe": false
+        },
+        {
+         "id": "cold-email-value-ladder-s1",
+         "kinds": [
+          "follow-up"
+         ],
+         "subtitle": "Day 3 · reply · (reply in thread)",
+         "app": "gmail",
+         "from": "sender",
+         "subject": "(reply in thread)",
+         "body": "{first_name}, here are the three leaks from the session, for anyone who'd rather read than watch:\n\n1. The idle tax. {pain_cost}, paid every day whether or not anything changed.\n2. The default nobody revisited. A setting switched on for everything, including the work that gets nothing from it.\n3. The slow failure. Work that runs for hours before it breaks, and gets paid for anyway.\n\nYou won't find any of them on the invoice. You find them a quarter later, when someone asks why the number went up.\n\nFull teardown {date}: {registration_link}\n\n{host_first_name}",
+         "unsubscribe": false,
+         "threadSubject": "what {icp_role} keep telling me"
+        }
+       ]
+      },
+      {
+       "id": "cold-email-value-ladder-s3",
+       "kinds": [
+        "follow-up"
+       ],
+       "subtitle": "Day 9 · reply · (reply in thread)",
+       "app": "gmail",
+       "from": "sender",
+       "subject": "(reply in thread)",
+       "body": "{first_name}, prefer to skip the live session? There's a faster route.\n\nWe publish the check we run ourselves: {lead_magnet}. Read-only, nothing installed, about an hour, and you'll see your own version of the three leaks.\n\n{link}\n\nReply with what it finds and I'll point at the first fix worth making, session or no session. Or watch someone else's numbers get taken apart first: {date}, {registration_link}\n\n{host_first_name}",
+       "unsubscribe": false,
+       "threadSubject": "what {icp_role} keep telling me",
+       "prior": [
+        {
+         "id": "cold-email-value-ladder-s0",
+         "kinds": [
+          "cold-email"
+         ],
+         "subtitle": "Day 0 · what {icp_role} keep telling me",
+         "app": "gmail",
+         "from": "sender",
+         "subject": "what {icp_role} keep telling me",
+         "body": "{first_name},\n\n{personal_line}\n\nSlight swerve, but related. I host a live session for {icp_role} teams on {topic}, and one line from attendees keeps coming back almost word for word:\n\n\"{hook}\"\n\nNobody has a {category} problem. They have a number they can't explain upstairs, and a list of projects it's quietly blocking.\n\nLast time I put one {client_type}'s real numbers on screen ({result_metric}).\n\nNext session is {date}. Most of it is teardown, the last part is your questions. No slides about us, just the numbers: {registration_link}\n\nCan't make the time? Sign up regardless and the recording lands in your inbox the next day.\n\n{host_first_name}\n{host_role}, {company_name}",
+         "unsubscribe": false
+        },
+        {
+         "id": "cold-email-value-ladder-s1",
+         "kinds": [
+          "follow-up"
+         ],
+         "subtitle": "Day 3 · reply · (reply in thread)",
+         "app": "gmail",
+         "from": "sender",
+         "subject": "(reply in thread)",
+         "body": "{first_name}, here are the three leaks from the session, for anyone who'd rather read than watch:\n\n1. The idle tax. {pain_cost}, paid every day whether or not anything changed.\n2. The default nobody revisited. A setting switched on for everything, including the work that gets nothing from it.\n3. The slow failure. Work that runs for hours before it breaks, and gets paid for anyway.\n\nYou won't find any of them on the invoice. You find them a quarter later, when someone asks why the number went up.\n\nFull teardown {date}: {registration_link}\n\n{host_first_name}",
+         "unsubscribe": false,
+         "threadSubject": "what {icp_role} keep telling me"
+        },
+        {
+         "id": "cold-email-value-ladder-s2",
+         "kinds": [
+          "follow-up"
+         ],
+         "subtitle": "Day 6 · reply · (reply in thread)",
+         "app": "gmail",
+         "from": "sender",
+         "subject": "(reply in thread)",
+         "body": "{first_name},\n\nMost teams argue about the wrong number.\n\nThe expensive part isn't the invoice. It's that low-value work quietly eats the budget, and the projects that were meant to justify it slip to next quarter.\n\nFor one {client_type}, fixing that unblocked the backlog first; the savings came second ({result_metric}).\n\nI walk through how to sort the work (keep, fix, retire or move) and how to prove nothing breaks before you switch.\n\n{date}: {registration_link}\n\n{host_first_name}",
+         "unsubscribe": false,
+         "threadSubject": "what {icp_role} keep telling me"
+        }
+       ]
+      },
+      {
+       "id": "cold-email-value-ladder-s4",
+       "kinds": [
+        "breakup"
+       ],
+       "subtitle": "Day 13 · closing the loop",
+       "app": "gmail",
+       "from": "sender",
+       "subject": "closing the loop",
+       "body": "{first_name},\n\nThis is my last note. Sounds like cost isn't on the agenda this quarter, and that's a good place to be.\n\nTwo things worth keeping either way:\n— {lead_magnet}: {link}\n— The live session, if it ever becomes urgent: {registration_link}\n\nAnd if the number ever jumps and someone upstairs wants an answer, just reply here. I'll send over the checklist we use.\n\n{host_first_name}\n{host_role}, {company_name}",
+       "unsubscribe": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "linkedin-connector-sequence",
+   "title": "LinkedIn connector sequence",
+   "columns": [
+    {
+     "id": "c1",
+     "label": "LinkedIn message",
+     "title": ""
+    }
+   ],
+   "rows": [
+    {
+     "id": "linkedin-connector-sequence-r1",
+     "label": "LinkedIn connector sequence",
+     "cells": [
+      {
+       "id": "linkedin-connector-sequence-1",
+       "app": "li-dm",
+       "person": "sender",
+       "role": "{icp_role} at {prospect_company}",
+       "messages": [
+        {
+         "body": "{first_name}, {personal_line} I spend my days with {icp_role} teams on {pillar}. No pitch, it just looks like we work on the same headaches. Worth connecting?",
+         "time": "Connection note",
+         "from": "them"
+        },
+        {
+         "body": "Good to be connected, {first_name}.\n\nNothing to sell you here. Most of my conversations with people in your seat come back to a single question: why {pillar} keeps costing more than it gives back.\n\nThe line I hear most: \"{hook}\"\n\nDoes that sound like {prospect_company}, or is it handled?",
+         "time": "Day 0 after accept",
+         "from": "them"
+        },
+        {
+         "body": "{first_name}, even if this isn't a live issue for you, here's a quick check.\n\nTake last month's {pillar} numbers and mark every day that ended in {pain_cost}. Then ask who could have seen it coming at 7am.\n\nThe count usually surprises people.\n\nNothing to click and no ask. It takes ten minutes and one export.",
+         "time": "Day 3",
+         "from": "them"
+        },
+        {
+         "body": "That quick check comes from a longer one we use with clients. Rather than gate it behind a sales call, we put the whole thing online: {lead_magnet}.\n\n{link}\n\nNothing attached to it. Lots of people use it and never hear from us. I'd be curious which section hits closest to home.",
+         "time": "Day 7",
+         "from": "them"
+        },
+        {
+         "body": "{first_name}, final message from me.\n\nIf you'd rather not do it alone, we do a 30-minute working session on your own numbers. You bring last month's data, that's all.\n\n{booking_link}\n\nAnd if this quarter is already full, that's fine. The {lead_magnet} is yours regardless.",
+         "time": "Day 12",
+         "from": "them"
+        }
+       ],
+       "kinds": [
+        "dm"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "confirmation-email",
+   "title": "Confirmation email (T+0 on registration)",
+   "columns": [
+    {
+     "id": "c1",
+     "label": "Email",
+     "title": ""
+    }
+   ],
+   "rows": [
+    {
+     "id": "confirmation-email-r1",
+     "label": "Confirmation email (T+0 on registration)",
+     "cells": [
+      {
+       "id": "confirmation-email-1",
+       "app": "gmail",
+       "from": "sender",
+       "subject": "You're confirmed: {event_title}",
+       "preheader": "Your session details, plus the bonuses for live attendees",
+       "body": "Hi {first_name},\n\nYour seat is confirmed for {event_title}, live.\n\nDate: {date}\n\nTime: {time}\n\nYour join link: {join_link} (it comes again shortly before we go live)\n\nWhat you'll learn:\n\n→ {mechanism_name}: all {n} steps, in the order to implement them\n\n→ How to replace {old_way} without a rip-and-replace project\n\n→ A live build on screen, not slides about it\n\n→ Real examples: {client_type}, {result_metric}\n\nFor people who attend live: {lead_magnet} and {bonus_name}. They unlock in the last ten minutes of the session, so stay to the end.\n\nBefore we meet: the first six questions of {lead_magnet} are below. They take three minutes, and your answers make the session twice as useful.\n\nAdd it to your calendar now so it doesn't slide. The invite is attached.\n\nQuestions before then? Just reply to this email; it comes to me.\n\nP.S. Reply with the one question you most want answered live. I read every one, and the best ones shape the Q&A.\n\nYou registered for {event_title}, which is why this reached you. {unsubscribe}\n\nAdd to calendar: {link}\n\nSee you live, {host_name}, {host_role}, {company_name}",
+       "kinds": [
+        "nurture"
+       ],
+       "unsubscribe": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "omnichannel-reminder-matrix",
+   "title": "Show-up matrix: every touch, every channel",
+   "columns": [
+    {
+     "id": "c1",
+     "label": "Confirmation email · You're confirmed: {event_title}",
+     "title": "",
+     "day": "T+0"
+    },
+    {
+     "id": "c2",
+     "label": "SMS confirmation (≤160)",
+     "title": "",
+     "day": "T+0"
+    },
+    {
+     "id": "c3",
+     "label": "WhatsApp confirmation (≤1,024)",
+     "title": "",
+     "day": "T+0"
+    },
+    {
+     "id": "c4",
+     "label": "Email · Tomorrow: {event_title} (live)",
+     "title": "",
+     "day": "T-1d"
+    },
+    {
+     "id": "c5",
+     "label": "SMS (≤160)",
+     "title": "",
+     "day": "T-1d"
+    },
+    {
+     "id": "c6",
+     "label": "WhatsApp",
+     "title": "",
+     "day": "T-1d"
+    },
+    {
+     "id": "c7",
+     "label": "Email · [Starting in 1 hour] {event_title}",
+     "title": "",
+     "day": "T-1h"
+    },
+    {
+     "id": "c8",
+     "label": "SMS (≤160)",
+     "title": "",
+     "day": "T-1h"
+    },
+    {
+     "id": "c9",
+     "label": "WhatsApp",
+     "title": "",
+     "day": "T-1h"
+    },
+    {
+     "id": "c10",
+     "label": "Email · [15 minutes] Your link for {event_title}",
+     "title": "",
+     "day": "T-15m"
+    },
+    {
+     "id": "c11",
+     "label": "SMS (≤160)",
+     "title": "",
+     "day": "T-15m"
+    },
+    {
+     "id": "c12",
+     "label": "WhatsApp",
+     "title": "",
+     "day": "T-15m"
+    },
+    {
+     "id": "c13",
+     "label": "Email · [Live now] {event_title}",
+     "title": "",
+     "day": "T+0"
+    },
+    {
+     "id": "c14",
+     "label": "SMS (≤160)",
+     "title": "",
+     "day": "T+0"
+    },
+    {
+     "id": "c15",
+     "label": "WhatsApp",
+     "title": "",
+     "day": "T+0"
+    },
+    {
+     "id": "c16",
+     "label": "Missed-it email · You missed it; here's what happened (and the replay)",
+     "title": "",
+     "day": "End"
+    },
+    {
+     "id": "c17",
+     "label": "Missed-it WhatsApp",
+     "title": "",
+     "day": "End"
+    }
+   ],
+   "rows": [
+    {
+     "id": "omnichannel-reminder-matrix-r1",
+     "label": "Show-up matrix: every touch, every channel",
+     "cells": [
+      {
+       "id": "omnichannel-reminder-matrix-s0",
+       "kinds": [
+        "nurture"
+       ],
+       "subtitle": "T+0 · Confirmation email · You're confirmed: {event_title}",
+       "app": "gmail",
+       "from": "sender",
+       "subject": "You're confirmed: {event_title}",
+       "preheader": "Your details, plus the bonus for live attendees",
+       "body": "Hi {first_name},\n\nYou're confirmed for the {event_type}: {event_title}.\n\n📅 {date}\n🕐 {time}\n🔗 Join link: {join_link}\n\nWhat you'll learn:\n→ The {mechanism_name}, all of it: {mechanism_steps}\n→ How {client_type} used it to get {result_metric}\n→ A live build you can copy the same afternoon\n\nFor live attendees only: {bonus_name}.\n\nAdd it to your calendar now, and reply with the one question you want answered.\n\nSee you live,\n{host_name}\n\nYou're receiving this because you registered for {event_title}. Unsubscribe: {unsubscribe}",
+       "unsubscribe": false
+      },
+      {
+       "id": "omnichannel-reminder-matrix-s1",
+       "kinds": [
+        "sms"
+       ],
+       "subtitle": "T+0 · SMS confirmation (≤160)",
+       "app": "sms",
+       "sender": "{company_name}",
+       "messages": [
+        {
+         "body": "Confirmed! {event_title}, {date} at {time}. Link: {join_link} Reply STOP to opt out - {host_first_name}",
+         "from": "them"
+        }
+       ]
+      },
+      {
+       "id": "omnichannel-reminder-matrix-s2",
+       "kinds": [
+        "wa-utility"
+       ],
+       "subtitle": "T+0 · WhatsApp confirmation (≤1,024)",
+       "app": "whatsapp",
+       "messages": [
+        {
+         "body": "Hi {first_name},\n\nYou're confirmed for *{event_title}* 🎯\n\n📅 {date}\n🕐 {time}\n🔗 {join_link}\n\n*What you'll get:*\n→ The {mechanism_name}, step by step\n→ A live build you can copy\n→ How {client_type} got {result_metric}\n\n*For live attendees:* {bonus_name}\n\nSave the date. The bonus is only for people in the room.\n\n{host_first_name}",
+         "from": "them"
+        }
+       ]
+      },
+      {
+       "id": "omnichannel-reminder-matrix-s3",
+       "kinds": [
+        "nurture"
+       ],
+       "subtitle": "T-1d · Email · Tomorrow: {event_title} (live)",
+       "app": "gmail",
+       "from": "sender",
+       "subject": "Tomorrow: {event_title} (live)",
+       "preheader": "What to expect, and how to prepare",
+       "body": "Hi {first_name},\n\nWe're live tomorrow at {time}.\n\n{event_title}\n🔗 {join_link}\n\nWhat to expect: we'll open up the exact systems behind these results:\n→ {client_type}: {result_metric}\n→ {social_proof}\n\nNo theory. You'll watch the build happen live, with the real numbers on screen.\n\nFor everyone who stays to the end: {bonus_name}.\n\nThree things before tomorrow:\n1. Add it to your calendar\n2. Block {duration} with nothing after it\n3. Write down the question you want answered\n\nSee you tomorrow,\n{host_name}",
+       "unsubscribe": false
+      },
+      {
+       "id": "omnichannel-reminder-matrix-s4",
+       "kinds": [
+        "sms"
+       ],
+       "subtitle": "T-1d · SMS (≤160)",
+       "app": "sms",
+       "sender": "{company_name}",
+       "messages": [
+        {
+         "body": "Tomorrow! {event_title} at {time}. Stay to the end for a free bonus. Join: {join_link} - {host_first_name}",
+         "from": "them"
+        }
+       ]
+      },
+      {
+       "id": "omnichannel-reminder-matrix-s5",
+       "kinds": [
+        "wa-utility"
+       ],
+       "subtitle": "T-1d · WhatsApp",
+       "app": "whatsapp",
+       "messages": [
+        {
+         "body": "Hi {first_name},\n\nYou're on for *tomorrow* at {time} ⏰\n\n*{event_title}*\n🔗 {join_link}\n\n*You'll see live:*\n→ How {client_type} got {result_metric}\n→ The {mechanism_name}, built on screen\n\n*Stay to the end for:* {bonus_name}\n\n*To prepare:*\n→ Block {duration}\n→ Bring one question\n→ Join on time, the method comes first\n\n{host_first_name}",
+         "from": "them"
+        }
+       ]
+      },
+      {
+       "id": "omnichannel-reminder-matrix-s6",
+       "kinds": [
+        "nurture"
+       ],
+       "subtitle": "T-1h · Email · [Starting in 1 hour] {event_title}",
+       "app": "gmail",
+       "from": "sender",
+       "subject": "[Starting in 1 hour] {event_title}",
+       "preheader": "Your link is inside; we start at {time}",
+       "body": "Hi {first_name},\n\nWe go live in one hour.\n\n🕐 {time}\n🔗 {join_link}\n\nBefore you join:\n→ Open the link five minutes early so your audio is sorted\n→ Stay to the end; that's where {bonus_name} is unlocked\n→ Keep your question ready for the Q&A\n\nOn the agenda:\n✓ The {mechanism_name}, step by step\n✓ A live build\n✓ A real case, end to end\n\nSee you in an hour,\n{host_name}",
+       "unsubscribe": false
+      },
+      {
+       "id": "omnichannel-reminder-matrix-s7",
+       "kinds": [
+        "sms"
+       ],
+       "subtitle": "T-1h · SMS (≤160)",
+       "app": "sms",
+       "sender": "{company_name}",
+       "messages": [
+        {
+         "body": "LIVE IN 1 HOUR: {event_title} at {time}. Come a few minutes early: {join_link} - {host_first_name}",
+         "from": "them"
+        }
+       ]
+      },
+      {
+       "id": "omnichannel-reminder-matrix-s8",
+       "kinds": [
+        "wa-utility"
+       ],
+       "subtitle": "T-1h · WhatsApp",
+       "app": "whatsapp",
+       "messages": [
+        {
+         "body": "Hi {first_name},\n\n*Starting in ONE HOUR* ⏰\n{event_title}\n🔗 {join_link}\n\n*Join 5 minutes early to:*\n→ check your sound\n→ settle in before we start\n→ get into the chat\n\nStay to the end for {bonus_name}.\n\n{host_first_name}",
+         "from": "them"
+        }
+       ]
+      },
+      {
+       "id": "omnichannel-reminder-matrix-s9",
+       "kinds": [
+        "nurture"
+       ],
+       "subtitle": "T-15m · Email · [15 minutes] Your link for {event_title}",
+       "app": "gmail",
+       "from": "sender",
+       "subject": "[15 minutes] Your link for {event_title}",
+       "preheader": "We're about to start",
+       "body": "Hi {first_name},\n\nWe start in 15 minutes.\n\n🔗 Join now: {join_link}\n\nClick through and get comfortable. We begin on time at {time}.\n\nSee you inside,\n{host_first_name}",
+       "unsubscribe": false
+      },
+      {
+       "id": "omnichannel-reminder-matrix-s10",
+       "kinds": [
+        "sms"
+       ],
+       "subtitle": "T-15m · SMS (≤160)",
+       "app": "sms",
+       "sender": "{company_name}",
+       "messages": [
+        {
+         "body": "STARTING IN 15: {join_link} - {event_title} - {host_first_name}",
+         "from": "them"
+        }
+       ]
+      },
+      {
+       "id": "omnichannel-reminder-matrix-s11",
+       "kinds": [
+        "wa-utility"
+       ],
+       "subtitle": "T-15m · WhatsApp",
+       "app": "whatsapp",
+       "messages": [
+        {
+         "body": "Hi {first_name}, *we start in 15 minutes* 🚀\n\n🔗 {join_link}\n\nClick through and get settled. We begin on time.\n\n{host_first_name}",
+         "from": "them"
+        }
+       ]
+      },
+      {
+       "id": "omnichannel-reminder-matrix-s12",
+       "kinds": [
+        "nurture"
+       ],
+       "subtitle": "T+0 · Email · [Live now] {event_title}",
+       "app": "gmail",
+       "from": "sender",
+       "subject": "[Live now] {event_title}",
+       "preheader": "We've started",
+       "body": "Hi {first_name},\n\nWe're live right now.\n\n🔗 Join: {join_link}\n\nWe're opening with the {mechanism_name}. Get in before the first case.\n\n{host_first_name}",
+       "unsubscribe": false
+      },
+      {
+       "id": "omnichannel-reminder-matrix-s13",
+       "kinds": [
+        "sms"
+       ],
+       "subtitle": "T+0 · SMS (≤160)",
+       "app": "sms",
+       "sender": "{company_name}",
+       "messages": [
+        {
+         "body": "WE'RE LIVE: {join_link} - {event_title} - {host_first_name}",
+         "from": "them"
+        }
+       ]
+      },
+      {
+       "id": "omnichannel-reminder-matrix-s14",
+       "kinds": [
+        "wa-utility"
+       ],
+       "subtitle": "T+0 · WhatsApp",
+       "app": "whatsapp",
+       "messages": [
+        {
+         "body": "Hi {first_name}, *WE'RE LIVE* 🔴\n\n🔗 {join_link}\n\nWe're opening with the method right now. Jump in.\n\n{host_first_name}",
+         "from": "them"
+        }
+       ]
+      },
+      {
+       "id": "omnichannel-reminder-matrix-s15",
+       "kinds": [
+        "nurture"
+       ],
+       "subtitle": "End · Missed-it email · You missed it; here's what happened (and the replay)",
+       "app": "gmail",
+       "from": "sender",
+       "subject": "You missed it; here's what happened (and the replay)",
+       "preheader": "The replay, for a limited time",
+       "body": "Hi {first_name},\n\nYou registered for {event_title} but couldn't make it live. Diaries win sometimes.\n\nHere's what you missed:\n→ The {mechanism_name}: {mechanism_steps}\n→ A live build, start to finish\n→ How {client_type} got {result_metric}\n\nThe replay is up for a limited time: {replay_link}\n\nYour next step: if you're serious about {desired_outcome}, book a free call. We'll look at where {pain_point} is costing you, find the first thing to fix, and map the next {timeframe}.\n\nBook here: {booking_link}\n\nReplay viewers who book still get {bonus_name}.\n\n{host_name}",
+       "unsubscribe": false
+      },
+      {
+       "id": "omnichannel-reminder-matrix-s16",
+       "kinds": [
+        "wa-utility"
+       ],
+       "subtitle": "End · Missed-it WhatsApp",
+       "app": "whatsapp",
+       "messages": [
+        {
+         "body": "Hi {first_name},\n\nYou registered for *{event_title}* but couldn't join live.\n\n*What you missed:*\n→ The {mechanism_name}\n→ A live build\n→ How {client_type} got {result_metric}\n\n*Replay:* {replay_link}\n\n*Next step:* a free call to map this onto your own {pain_point}: {booking_link}\n\nBook this week and {bonus_name} is still yours.\n\n{host_first_name}",
+         "from": "them"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sms-reminder-set",
+   "title": "SMS reminder set",
+   "columns": [
+    {
+     "id": "c1",
+     "label": "Text message",
+     "title": ""
+    }
+   ],
+   "rows": [
+    {
+     "id": "sms-reminder-set-r1",
+     "label": "SMS reminder set",
+     "cells": [
+      {
+       "id": "sms-reminder-set-1",
+       "app": "sms",
+       "sender": "{host_first_name} · {company_name}",
+       "messages": [
+        {
+         "body": "CONFIRMED: {event_title}, {date} at {time}. Your join link arrives before we start. Reply STOP to opt out. - {host_first_name}",
+         "time": "Mon 14:06",
+         "from": "them"
+        },
+        {
+         "body": "TOMORROW: {event_title} at {time}. Stay to the end for a free bonus. Join: {join_link} - {host_first_name}",
+         "time": "Tue 11:00",
+         "from": "them"
+        },
+        {
+         "body": "Thanks, I'll be there",
+         "time": "Tue 11:24",
+         "from": "me"
+        },
+        {
+         "body": "LIVE IN 1 HOUR: {event_title}. Come a few minutes early: {join_link} - {host_first_name}",
+         "time": "Wed 10:00",
+         "from": "them"
+        },
+        {
+         "body": "STARTING IN 15: {join_link} See you inside. - {host_first_name}",
+         "time": "Wed 10:45",
+         "from": "them"
+        },
+        {
+         "body": "WE'RE LIVE: {join_link} We're opening with the method now. - {host_first_name}",
+         "time": "Wed 11:00",
+         "from": "them"
+        }
+       ],
+       "kinds": [
+        "sms"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "whatsapp-reminder",
+   "title": "Messaging-channel reminder",
+   "columns": [
+    {
+     "id": "c1",
+     "label": "WhatsApp",
+     "title": ""
+    }
+   ],
+   "rows": [
+    {
+     "id": "whatsapp-reminder-r1",
+     "label": "Messaging-channel reminder",
+     "cells": [
+      {
+       "id": "whatsapp-reminder-1",
+       "app": "whatsapp",
+       "messages": [
+        {
+         "body": "Hi {first_name}, it's {host_first_name} from {company_name}. You're confirmed for *{event_title}* ✅\n\n📅 {date}\n🕐 {time}\n\nIn {duration} you'll get:\n• the {mechanism_name}, step by step\n• where {pain_cost} is really coming from\n• the first move to make the next morning\n\nReply *YES* so these messages reach you. I'll send the link on the day. (Reply STOP any time to opt out.)",
+         "time": "Mon 14:06",
+         "from": "them"
+        },
+        {
+         "body": "YES",
+         "time": "Mon 14:07",
+         "from": "me"
+        },
+        {
+         "body": "Hi {first_name}, three days to go until {event_title}.\n\nA quick one to think about before then: if {pain_point} disappeared tomorrow, what would your team do with the time?\n\nThat's what the session is about. We'll build the {mechanism_name} live ({mechanism_steps}) so you leave with {deliverable}, not a list of ideas.\n\nThe link comes on the day. Bring the question you'd most like answered.\n\n{host_first_name}",
+         "time": "Sun 10:00",
+         "from": "them"
+        },
+        {
+         "body": "Evening {first_name}, a note for tomorrow's plan: *{event_title}* is at {time}.\n\nIt's {duration}, and the aim is simple: you leave with {desired_outcome} mapped out for your own team.\n\nIf you haven't yet, block the slot now so nothing lands on top of it.\n\n{host_first_name}",
+         "time": "Tue 18:00",
+         "from": "them"
+        },
+        {
+         "body": "Morning {first_name}. {hook}\n\nToday at {time} I'll show you why, and what to do about it.\n\n🔗 {join_link}\n\n{host_first_name}",
+         "time": "Wed 08:30",
+         "from": "them"
+        },
+        {
+         "body": "We start in 15 minutes, {first_name}.\n🔗 {join_link}\n{host_first_name}",
+         "time": "Wed 10:45",
+         "from": "them"
+        }
+       ],
+       "kinds": [
+        "wa-utility"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "post-event-followup-sequence",
+   "title": "Post-session follow-up: 72 hours, three channels",
+   "columns": [
+    {
+     "id": "c1",
+     "label": "Thanks for joining: your replay and the resources I promised",
+     "title": "",
+     "day": "0h"
+    },
+    {
+     "id": "c2",
+     "label": "Image card: thanks for being there + what the call gives you",
+     "title": "",
+     "day": "0h"
+    },
+    {
+     "id": "c3",
+     "label": "Have you watched the replay yet?",
+     "title": "",
+     "day": "24h"
+    },
+    {
+     "id": "c4",
+     "label": "Replay + call",
+     "title": "",
+     "day": "24h"
+    },
+    {
+     "id": "c5",
+     "label": "Case 1: {client_type} → {result_metric}",
+     "title": "",
+     "day": "24h"
+    },
+    {
+     "id": "c6",
+     "label": "The mistake I see most {icp_role}s make",
+     "title": "",
+     "day": "48h"
+    },
+    {
+     "id": "c7",
+     "label": "Feedback question",
+     "title": "",
+     "day": "48h"
+    },
+    {
+     "id": "c8",
+     "label": "Case 2: a {testimonial} pull-quote",
+     "title": "",
+     "day": "48h"
+    },
+    {
+     "id": "c9",
+     "label": "Last note on the {call_name}",
+     "title": "",
+     "day": "72h"
+    },
+    {
+     "id": "c10",
+     "label": "Last call",
+     "title": "",
+     "day": "72h"
+    },
+    {
+     "id": "c11",
+     "label": "Final call + availability rule",
+     "title": "",
+     "day": "72h"
+    },
+    {
+     "id": "c12",
+     "label": "Booked → out of every channel · no booking by 72h → newsletter",
+     "title": "",
+     "day": "Exit"
+    }
+   ],
+   "rows": [
+    {
+     "id": "post-event-followup-sequence-r1",
+     "label": "Post-session follow-up: 72 hours, three channels",
+     "cells": [
+      {
+       "id": "post-event-followup-sequence-s0",
+       "kinds": [
+        "nurture"
+       ],
+       "subtitle": "0h · Thanks for joining: your replay and the resources I promised",
+       "app": "gmail",
+       "from": "sender",
+       "subject": "Thanks for joining: your replay and the resources I promised",
+       "body": "Hi {first_name}, thanks for being at {event_title}. Replay: {replay_link}. Resources as promised: {lead_magnet} and {bonus_name}. Quick recap: why {old_way} breaks, the {mechanism_name} ({mechanism_steps}), where to start. Your next step is a {call_name}: we review how you do this today, find the bottleneck, sketch a plan and tell you honestly whether {offer_name} fits. {booking_link}. {host_first_name}. P.S. Reply with any questions; I read every one.",
+       "unsubscribe": false
+      },
+      {
+       "id": "post-event-followup-sequence-s1",
+       "kinds": [
+        "wa-utility"
+       ],
+       "subtitle": "0h · Image card: thanks for being there + what the call gives you",
+       "app": "whatsapp",
+       "messages": [
+        {
+         "body": "Hi {first_name}! Hope today changed how you think about {pain_point}. The next step is doing it. On the {call_name} we look at your current process, map what fits, plan the route to {desired_outcome}, and say so if we can't help. 👉 {booking_link}. P.S. Something in the way? Just reply. {host_first_name}",
+         "from": "them"
+        }
+       ]
+      },
+      {
+       "id": "post-event-followup-sequence-s2",
+       "kinds": [
+        "nurture"
+       ],
+       "subtitle": "24h · Have you watched the replay yet?",
+       "app": "gmail",
+       "from": "sender",
+       "subject": "Have you watched the replay yet?",
+       "body": "Hi {first_name}, a quick follow-up from yesterday. Have you had a chance to watch the replay ({replay_link}), open the resources, or think about where you'd start? Here's the honest pattern: most people leave a session fired up and then go back to {old_way}. The teams that get {desired_outcome} are the ones that put a system in place. That's what {offer_name} is: we build it with you, around your team. Our record: a {client_type}, {result_metric}. Want to see whether it would work for you? Book a {call_name}: {booking_link}. {host_first_name}. P.S. Planning to do it yourself? That's fine. Just ask how long it will take, and what waiting costs.",
+       "unsubscribe": false
+      },
+      {
+       "id": "post-event-followup-sequence-s3",
+       "kinds": [
+        "sms"
+       ],
+       "subtitle": "24h · Replay + call",
+       "app": "sms",
+       "sender": "{company_name}",
+       "messages": [
+        {
+         "body": "Hi {first_name}, the replay is up: {replay_link}. To apply it to your team, book a call: {booking_link} - {host_first_name}",
+         "from": "them"
+        }
+       ]
+      },
+      {
+       "id": "post-event-followup-sequence-s4",
+       "kinds": [
+        "wa-utility"
+       ],
+       "subtitle": "24h · Case 1: {client_type} → {result_metric}",
+       "app": "whatsapp",
+       "messages": [
+        {
+         "body": "Name the objection ('this won't work for us, we're different'), concede it, then one case: where they started ({old_way}), the goal ({desired_outcome}), the three moves, the result ({result_metric}). Replay link + booking link.",
+         "from": "them"
+        }
+       ]
+      },
+      {
+       "id": "post-event-followup-sequence-s5",
+       "kinds": [
+        "nurture"
+       ],
+       "subtitle": "48h · The mistake I see most {icp_role}s make",
+       "app": "gmail",
+       "from": "sender",
+       "subject": "The mistake I see most {icp_role}s make",
+       "body": "Hi {first_name}, after years of looking at teams like yours, the same mistake keeps coming up: trying to build all of it alone. The session gets you excited, and then months go into learning tools, patching things together and writing steps that don't land, while a competitor who brought in help is already seeing results. Your time is worth more than the cost of doing it right. Your job is to lead the team and win the work, not to become the in-house expert on {category}. That's why we built {offer_name}: {deliverables}. {guarantee}. Want to see whether you're a fit? {booking_link}. {host_first_name}",
+       "unsubscribe": false
+      },
+      {
+       "id": "post-event-followup-sequence-s6",
+       "kinds": [
+        "sms"
+       ],
+       "subtitle": "48h · Feedback question",
+       "app": "sms",
+       "sender": "{company_name}",
+       "messages": [
+        {
+         "body": "Thanks for joining, {first_name}. What was your biggest takeaway? Just reply here. Plan for your team: {booking_link} - {host_first_name}",
+         "from": "them"
+        }
+       ]
+      },
+      {
+       "id": "post-event-followup-sequence-s7",
+       "kinds": [
+        "wa-utility"
+       ],
+       "subtitle": "48h · Case 2: a {testimonial} pull-quote",
+       "app": "whatsapp",
+       "messages": [
+        {
+         "body": "Your competitors are already moving off {old_way}. Here's how a {client_type} put it: \"{testimonial}\". Three things you'll see on the call. Booking link.",
+         "from": "them"
+        }
+       ]
+      },
+      {
+       "id": "post-event-followup-sequence-s8",
+       "kinds": [
+        "nurture"
+       ],
+       "subtitle": "72h · Last note on the {call_name}",
+       "app": "gmail",
+       "from": "sender",
+       "subject": "Last note on the {call_name}",
+       "body": "Hi {first_name}, this is my last email about the {call_name}. After this I'll assume one of three things: it's not the right time, you're building it yourself, or you already have someone helping. All of those are fine. But if you've been on the fence: the call is free, with no obligation. In 30 minutes we cover how you handle this today, your biggest bottleneck, a plan to {desired_outcome}, and whether {offer_name} fits. Even if we never work together, you'll leave knowing where the process breaks, what to fix first and a realistic timeline. {booking_link}. {host_first_name}. P.S. What does another quarter of {pain_point} cost you?",
+       "unsubscribe": false
+      },
+      {
+       "id": "post-event-followup-sequence-s9",
+       "kinds": [
+        "sms"
+       ],
+       "subtitle": "72h · Last call",
+       "app": "sms",
+       "sender": "{company_name}",
+       "messages": [
+        {
+         "body": "Last one from me: call slots for this round close tonight. {booking_link} - {host_first_name}, {company_name}. Reply STOP to opt out",
+         "from": "them"
+        }
+       ]
+      },
+      {
+       "id": "post-event-followup-sequence-s10",
+       "kinds": [
+        "wa-utility"
+       ],
+       "subtitle": "72h · Final call + availability rule",
+       "app": "whatsapp",
+       "messages": [
+        {
+         "body": "Last message on this. Don't wait for perfect conditions. Four things you leave the call with. If the slots are gone, the next ones open after the {next_date} session. Risk reversal: {guarantee}. Booking link.",
+         "from": "them"
+        }
+       ]
+      },
+      {
+       "id": "post-event-followup-sequence-s11",
+       "kinds": [
+        "page"
+       ],
+       "subtitle": "Exit · Booked → out of every channel · no booking by 72h → newsletter",
+       "app": "safari",
+       "url": "{website}",
+       "blocks": [
+        {
+         "kind": "text",
+         "title": "Booked → out of every channel · no booking by 72h → newsletter",
+         "body": "Clicked the CTA but didn't book: alert {host_first_name} for a personal message (hot-lead-booking-dm)."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "tokens": {}
+}

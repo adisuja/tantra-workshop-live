@@ -830,7 +830,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
             <!-- row 4 -->
             <text x="20" y="348" class="svlabel" font-size="11.5">S4 Delivery</text><text x="20" y="363" class="svmute" font-size="9.5">the main event</text>
             <rect x="136" y="330" width="228" height="74" rx="10" class="node"/><text x="150" y="354" class="svlabel" font-size="11.5">One 60-minute session</text><text x="150" y="372" class="svmute" font-size="10">45 teach + 15 Q&amp;A</text><text x="150" y="388" class="svmute" font-size="10">offer lands near the end</text>
-            <rect x="376" y="330" width="228" height="74" rx="10" class="node"/><text x="390" y="354" class="svlabel" font-size="11.5">5 sessions + 5 artifacts</text><text x="390" y="372" class="svmute" font-size="10">each day: survey in parallel →</text><text x="390" y="388" class="svmute" font-size="10">generated output → delivered</text>
+            <rect x="376" y="330" width="228" height="74" rx="10" class="node"/><text x="390" y="354" class="svlabel" font-size="11.5">3 sessions + 3 artifacts</text><text x="390" y="372" class="svmute" font-size="10">each day: survey in parallel →</text><text x="390" y="388" class="svmute" font-size="10">generated output → delivered</text>
             <rect x="616" y="330" width="228" height="74" rx="10" class="node"/><text x="630" y="354" class="svlabel" font-size="11.5">Part 2, on demand</text><text x="630" y="372" class="svmute" font-size="10">gated, delivered instantly</text><text x="630" y="388" class="svmute" font-size="10">no scheduled moment at all</text>
             <!-- row 5 -->
             <text x="20" y="436" class="svlabel" font-size="11.5">S5 Revenue</text><text x="20" y="451" class="svmute" font-size="9.5">how it closes</text>
@@ -1479,7 +1479,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
         <div class="cap"><b>The band is the story, the score is the hook.</b> A number gets attention. The <em>band</em> — "you're conversion-limited" — is what makes the recommendation feel inevitable rather than sold.</div>
       </div>
       <div class="box eg"><div class="h">◆ Example · the same engine in four wrappers</div>
-        <p><strong>In a live session:</strong> three polls, and the poll answers segment your follow-up. <strong>On a registration page:</strong> two qualification fields that route registrants into different reminder sequences. <strong>On a reverse squeeze bridge:</strong> one question between Part 1 and Part 2 that decides which Part 2 they get. <strong>As a standalone assessment:</strong> the full scored quiz with a gauge and a paywall. Same ask → score → band → prescribe. The only thing that changes is how many questions you can get away with.</p></div>
+        <p><strong>In a live session:</strong> four polls, and the poll answers segment your follow-up. <strong>On a registration page:</strong> two qualification fields that route registrants into different reminder sequences. <strong>On a reverse squeeze bridge:</strong> one question between Part 1 and Part 2 that decides which Part 2 they get. <strong>As a standalone assessment:</strong> the full scored quiz with a gauge and a paywall. Same ask → score → band → prescribe. The only thing that changes is how many questions you can get away with.</p></div>
       <div class="task">
         <div class="th"><span class="tn">Task 2.2</span><b>Design Your Diagnostic</b></div>
         <div class="tm">
@@ -1497,7 +1497,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
         <div class="fh">◆ What changes per funnel type · the diagnostic</div>
         <div class="fb">
           <div class="fc w"><b>Webinar Funnel</b><span>It becomes <em>polls</em> — three of them, run live. Poll answers are the highest-intent segmentation signal you'll get all week, so tag them into the CRM the moment they're cast.</span></div>
-          <div class="fc k"><b>Workshop · Challenge</b><span>It becomes the <em>daily survey</em>. You get five chances to ask instead of one — so spread it, and let each day's answers personalise the next day's output.</span></div>
+          <div class="fc k"><b>Workshop · Challenge</b><span>It becomes the <em>daily survey</em>. You get three chances to ask instead of one — so spread it, and let each day's answers personalise the next day's output.</span></div>
           <div class="fc r"><b>Reverse Squeeze</b><span>It becomes the <em>opt-in bridge</em>. One or two questions maximum, placed between Part 1 and Part 2, where the value has already been delivered and they owe you an answer.</span></div>
         </div>
         <div class="fo"><b>Other types:</b> a book-a-call funnel puts the diagnostic on the <b>booking form</b>, where it doubles as call prep · tripwire and free-plus-shipping funnels diagnose <b>after</b> purchase, to pick which upsell to show · a community funnel diagnoses on join, to route people to the right channel.</div>
@@ -1600,7 +1600,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
         <div class="fh">◆ What changes per funnel type · the spec</div>
         <div class="fb">
           <div class="fc w"><b>Webinar Funnel</b><span>Add an <code>event</code> section: date, time, duration, timezone handling, and the replay window. Everything in S3 reads its timings from that one place — change the date once, every reminder moves.</span></div>
-          <div class="fc k"><b>Workshop · Challenge</b><span>Add a <code>days[]</code> array — five entries, each with its session, its survey questions, and the output it generates. The daily loop is data, not five hand-built pages.</span></div>
+          <div class="fc k"><b>Workshop · Challenge</b><span>Add a <code>days[]</code> array — three entries, each with its session, its survey questions, and the output it generates. The daily loop is data, not three hand-built pages.</span></div>
           <div class="fc r"><b>Reverse Squeeze</b><span>Add <code>contentParts[]</code> with watch-depth thresholds. Your whole branching logic keys off "how far did they get", so those thresholds belong in the spec where you can tune them.</span></div>
         </div>
         <div class="fo"><b>Other types:</b> product-launch funnels add a dated <b>open/close cart window</b> · free-plus-shipping adds <b>shipping zones and COGS</b> so margin is computable · JV funnels add a <b>partners[]</b> block with revenue-share percentages, because attribution has to be unambiguous before money moves.</div>
@@ -1953,7 +1953,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
         <div class="fh">◆ What changes per funnel type · nurture</div>
         <div class="fb">
           <div class="fc w"><b>Webinar Funnel</b><span>Purely time-triggered off one date. Build it once and every future run reuses it — change the date in the spec and all six touches move together.</span></div>
-          <div class="fc k"><b>Workshop · Challenge</b><span>Five nested copies of the same shape, plus the daily delivery loop: recap → the artifact they generated → what tomorrow needs. Non-completion on day two is your early-warning signal for churn.</span></div>
+          <div class="fc k"><b>Workshop · Challenge</b><span>Three nested copies of the same shape, plus the daily delivery loop: recap → the artifact they generated → what tomorrow needs. Non-completion on day two is your early-warning signal for churn.</span></div>
           <div class="fc r"><b>Reverse Squeeze</b><span>Not time-triggered at all — <em>depth-triggered</em>. Under 25% of Part 1 gets a re-engage; 25–75% gets the missing-piece nudge; over 75% goes straight to the Part 2 bridge.</span></div>
         </div>
         <div class="fo"><b>Other types:</b> book-a-call funnels replace show-up nurture with <b>no-show rebooking</b>, which recovers a meaningful slice of bookings · product launches run a dated open-cart countdown · free-plus-shipping switches nurture to <b>post-purchase</b> entirely, because the sale already happened.</div>
@@ -2023,13 +2023,13 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
         <div class="cap"><b>Do a full dry run.</b> Same platform, same slides, same polls, a test attendee on a second device. Every failure you find in rehearsal costs you nothing; the same failure live costs you the room.</div>
       </div>
       <div class="task">
-        <div class="th"><span class="tn">Task 3.5</span><b>Write the Run of Show, the Script and the Three Polls</b></div>
+        <div class="th"><span class="tn">Task 3.5</span><b>Write the Run of Show, the Script and the Four Polls</b></div>
         <div class="tm">
           <p>Three artifacts, all generated from the engine and then hand-tuned:</p>
           <ol>
             <li><strong>Run of show</strong> — the timeline above, with your actual slide numbers written against each marker.</li>
             <li><strong>The script</strong> — not word-for-word, but every transition written out. The three places people fumble are the open, the move from teaching into the offer, and the close of Q&amp;A. Write those three verbatim.</li>
-            <li><strong>Three polls</strong> — these are your diagnostic from Day 1, in live form. Poll answers are the strongest intent signal of the whole session, so make sure they land in the CRM tagged, not in a screenshot.</li>
+            <li><strong>Four polls</strong>, in this order: persona, challenge, investment priority, discovery-call interest — these are your diagnostic from Day 1, in live form. Poll answers are the strongest intent signal of the whole session, so make sure they land in the CRM tagged, not in a screenshot.</li>
           </ol>
           <p>Then assign the five roles to actual names. A role with nobody's name on it is a role nobody does.</p>
         </div>
@@ -2039,7 +2039,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
         <div class="fh">◆ What changes per funnel type · delivery</div>
         <div class="fb">
           <div class="fc w"><b>Webinar Funnel</b><span>One shot. The offer lands once, near the end, and has to survive being heard without scroll-back — so repeat the link in chat on a cadence and put it on the slide too.</span></div>
-          <div class="fc k"><b>Workshop · Challenge</b><span>Five shots, and the offer is only on day five. Days one to four have to <em>earn</em> day five by shipping something real each time — the artifact is the proof that the method works.</span></div>
+          <div class="fc k"><b>Workshop · Challenge</b><span>Three shots, and the offer is only on the last day. Days one and two have to <em>earn</em> day three by shipping something real each time — the artifact is the proof that the method works.</span></div>
           <div class="fc r"><b>Reverse Squeeze</b><span>Nothing is live at all. Part 2 is recorded and delivered instantly, which means the "run of show" is an edit decision list — where the proof lands, where the offer lands, and where you cut.</span></div>
         </div>
         <div class="fo"><b>Other types:</b> product launches run this four times across a video sequence · a sideways sales letter spreads the same beats over multiple pages instead of minutes · book-a-call funnels have no delivery stage at all — the call <b>is</b> the delivery, which is why the qualification form matters so much more there.</div>
@@ -2114,7 +2114,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
         <div class="fh">◆ What changes per funnel type · the close</div>
         <div class="fb">
           <div class="fc w"><b>Webinar Funnel</b><span>The close is a <em>booked call</em> for high ticket, or direct checkout below roughly a thousand. Above that, a page rarely carries the objection alone.</span></div>
-          <div class="fc k"><b>Workshop · Challenge</b><span>Two closes. The entry checkout on day zero — which is really a qualifier — and the ascension offer on day five, sold to people who have already paid you once and seen the method work.</span></div>
+          <div class="fc k"><b>Workshop · Challenge</b><span>Two closes. The entry checkout on day zero — which is really a qualifier — and the ascension offer on the last day, sold to people who have already paid you once and seen the method work.</span></div>
           <div class="fc r"><b>Reverse Squeeze</b><span>The close is a page, routed by engagement depth. Deep consumers see the premium branch; shallow ones see the low-ticket branch. Same page template, two prices, decided by data.</span></div>
         </div>
         <div class="fo"><b>Other types:</b> tripwire and unlock-all funnels close <b>inside the checkout</b> with an order bump — no second page at all · downsell funnels close on the <b>decline</b>, which means the second offer must exist before launch · JV funnels need the revenue split resolved at checkout, automatically, or you'll be reconciling spreadsheets for months.</div>
@@ -2527,7 +2527,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
 
       <!-- ===================== AUTOMATIONS ===================== -->
       <h3>Step 4 — The Eight Automations</h3>
-      <p>These are the ones that carry the load. Each is a <strong>trigger, a condition and an action</strong> — and each one replaces a thing a human would otherwise forget to do.</p>
+      <p>These are the eight a webinar needs (an RSP and a challenge shift the count; see below), and they carry the load. Each is a <strong>trigger, a condition and an action</strong> — and each one replaces a thing a human would otherwise forget to do.</p>
       <div class="viz wide">
         <div class="vtitle">Trigger → condition → action, eight times</div>
         <svg viewBox="0 0 860 600" role="img" aria-label="Eight automations laid out as trigger, condition and action rows: registration confirmation and reminders, event page to registration to CRM sync, the landing page API, behavioural sync back to the CRM, calendar outreach import, the pipeline stage tracker, the reply and bounce parser polling every sixty seconds, and the messaging reminder engine polling every five minutes.">
@@ -3073,7 +3073,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
         <div class="fh">◆ What changes per funnel type · scaling</div>
         <div class="fb">
           <div class="fc w"><b>Webinar Funnel</b><span>Scale by <em>frequency</em> — run it monthly rather than occasionally. The assets are already built, so each additional run costs mostly promotion. Watch show-up rate as volume grows; it usually dips first.</span></div>
-          <div class="fc k"><b>Workshop · Challenge</b><span>Scale by <em>cohort size and cadence</em>, but completion rate is the constraint. A cohort too large to feel personal converts worse on day five — and day five is where the money is.</span></div>
+          <div class="fc k"><b>Workshop · Challenge</b><span>Scale by <em>cohort size and cadence</em>, but completion rate is the constraint. A cohort too large to feel personal converts worse on the last day — and the last day is where the money is.</span></div>
           <div class="fc r"><b>Reverse Squeeze</b><span>Scale by <em>content volume</em>. Each new Part 1 is a permanent new entrance, and old ones keep producing. Slowest to start, best compounding of the three.</span></div>
         </div>
         <div class="fo"><b>Other types:</b> tripwire and free-plus-shipping funnels scale on <b>ad spend</b>, limited only by how fast the upsell recovers acquisition cost · community funnels scale on <b>member-driven referral</b> and stall if the community goes quiet · JV funnels scale by <b>adding partners</b>, so partner recruitment becomes the growth function.</div>
@@ -3183,7 +3183,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
               <tr><td><input type="checkbox" data-k="d3b"></td><td><b>Two variants per live channel</b> — benefit-led and problem-led</td><td>AI agent</td><td class="num">60 min</td><td>Both trace back to a block in the engine</td></tr>
               <tr><td><input type="checkbox" data-k="d3c"></td><td><b>Build the Tantra Pro Funnel page and the thank-you page</b></td><td>AI agent · host</td><td class="num">3–5 h</td><td>A real registration lands in the CRM, from a phone</td></tr>
               <tr><td><input type="checkbox" data-k="d3d"></td><td><b>Write the Tantra Pro Flow</b> and set the send windows</td><td>Email · messaging</td><td class="num">3 h</td><td>A test contact receives every touch, on time</td></tr>
-              <tr><td><input type="checkbox" data-k="d3e"></td><td><b>Run of show, script and three polls</b>; assign the five roles to names</td><td>Slides · session platform</td><td class="num">6–8 h</td><td>A full dry run completes with no unknowns</td></tr>
+              <tr><td><input type="checkbox" data-k="d3e"></td><td><b>Run of show, script and four polls</b>; assign the five roles to names</td><td>Slides · session platform</td><td class="num">6–8 h</td><td>A full dry run completes with no unknowns</td></tr>
               <tr><td><input type="checkbox" data-k="d3f"></td><td><b>Build the close chain</b> — booking, reminders, scripts, proposal, checkout, onboarding</td><td>Booking · payments</td><td class="num">5–7 h</td><td>A test purchase completes and onboarding arrives</td></tr>
               <tr><td><input type="checkbox" data-k="d3g"></td><td><b>Define the four tags</b> and write them into the spec</td><td>Spec</td><td class="num">15 min</td><td>registered · attended · no-show · purchased</td></tr>
               <tr><td><input type="checkbox" data-k="d3h"></td><td><span class="hw">Homework</span> <b>Collect every credential into one place</b></td><td>Password manager</td><td class="num">30 min</td><td>Nothing to hunt for tomorrow</td></tr>
