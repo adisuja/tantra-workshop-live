@@ -139,6 +139,36 @@ input[type=text]{min-width:180px}
 .attbtn{position:relative;overflow:hidden}
 .attbtn input{position:absolute;inset:0;opacity:0;cursor:pointer}
 
+/* voice notes */
+.recbtn{display:inline-flex;align-items:center;gap:6px}
+.recbtn.on{background:var(--pink);border-color:var(--pink);color:#fff}
+.recbtn .dot{width:8px;height:8px;border-radius:50%;background:var(--pink);flex:none}
+.recbtn.on .dot{background:#fff}
+.recbtn.on .dot{animation:blink 1s steps(2,start) infinite}
+@keyframes blink{to{visibility:hidden}}
+@media(prefers-reduced-motion:reduce){.recbtn.on .dot{animation:none}}
+.att .pend.aud{max-width:320px;padding:4px 6px}
+.att .pend audio{height:30px;width:190px;min-width:0}
+.voice{margin-top:6px;border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--panel-2);padding:6px 8px;max-width:100%}
+.voice audio{display:block;width:100%;max-width:340px;height:32px}
+.voice .tx{font-size:12.5px;color:var(--ink);margin-top:4px;white-space:pre-wrap;overflow-wrap:anywhere}
+.voice .tx.wait{color:var(--ink-3);font-style:italic}
+.voice .tx.err{color:var(--pink)}
+.voice .lab{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);font-weight:650}
+.msg .st{display:inline-block;font-size:10.5px;font-weight:650;border-radius:20px;padding:0 7px;margin-left:6px}
+.msg .st.q{background:var(--amber-bg);color:var(--amber)} .msg .st.w{background:var(--accent-2);color:var(--accent-ink)} .msg .st.h{background:var(--teal-bg);color:var(--teal)}
+
+/* agent strip */
+.agent{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);padding:7px 12px;margin:-6px 0 16px;font-size:12.5px;min-width:0}
+.agent .ad{width:9px;height:9px;border-radius:50%;background:var(--ink-3);flex:none}
+.agent.working .ad{background:var(--accent);box-shadow:0 0 0 4px var(--accent-2)} .agent.idle .ad{background:var(--teal)}
+.agent.paused .ad,.agent.disabled .ad{background:var(--amber)} .agent.offline .ad{background:var(--pink)}
+.agent b{font-weight:650;white-space:nowrap}
+.agent .am{color:var(--ink-2);flex:1 1 220px;min-width:0;overflow-wrap:anywhere}
+.agent .who{display:flex;align-items:center;gap:6px;color:var(--ink-3);white-space:nowrap}
+.agent .who input{width:130px;font:inherit;font-size:12.5px;border:1px solid var(--line-2);border-radius:7px;padding:3px 7px;background:var(--panel);color:var(--ink)}
+.agent .who input.need{border-color:var(--pink);box-shadow:0 0 0 3px var(--pink-bg)}
+
 /* kanban */
 .kan{display:grid;grid-template-columns:repeat(7,minmax(170px,1fr));gap:10px;overflow-x:auto;padding-bottom:6px}
 .col h3{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);margin-bottom:6px}
@@ -175,6 +205,7 @@ footer{margin-top:28px;font-size:11.5px;color:var(--ink-3)}
   </div>
 </header>
 <div class="prog"><i id="prog"></i></div>
+<div class="agent" id="agent"><span class="ad"></span><b>Claude agent</b><span class="am" id="agent-msg">Checking…</span><button class="btn mini" id="agent-tog" type="button" hidden>Pause</button><label class="who">Your name <input id="who" type="text" placeholder="shown on your notes" maxlength="40" autocomplete="name"></label></div>
 
 <section class="now">
   <div class="card nextbig"><h2>Claude is on</h2><div id="now-next"></div></div>
@@ -206,7 +237,7 @@ footer{margin-top:28px;font-size:11.5px;color:var(--ink-3)}
   <div class="acts" style="display:flex;gap:8px;align-items:center;margin-top:8px"><button class="btn pri" id="nt-send" type="button">Add to queue</button><span id="nt-sent" class="sent"></span></div>
 </section>
 
-<footer>Source of truth: <code>workshop-plan/tasks/tasks.json</code>. Your actions append to <code>tasks/inbox.jsonl</code> and show here immediately; Claude processes the inbox on every pass, updates the task, and marks your note as handled.</footer>
+<footer>Source of truth: <code>workshop-plan/tasks/tasks.json</code>. Notes and voice notes from anyone on the team append to <code>tasks/inbox.jsonl</code> and show here immediately. Voice notes are transcribed on this Mac. The Claude agent picks every note up within seconds whenever Claude is signed in, works the task, and moves it to Review, Blocked or Done, with no action needed from you.</footer>
 </div>
 
 <script>
@@ -257,6 +288,7 @@ function render(){
   $("#n-rev").textContent=c("review");
   $("#now-rev").innerHTML=rev.length?rev.map(t=>`<button class="nowitem" onclick="jump('${t.id}')"><b>${esc(t.title)}</b><span>${esc((t.evidence[0]||{}).label||"")}${t.evidence[0]?" · ":""}${esc(t.needs_from_owner||"Approve or request changes")}</span></button>`).join(""):'<div class="empty">Nothing waiting for review.</div>';
   const list=filtered();const b=$("#board");
+  const typed={};document.querySelectorAll('textarea[id^="fb-"]').forEach(t=>{if(t.value)typed[t.id]=t.value});
   if(view==="kanban"){
     b.innerHTML='<div class="kan">'+["next","doing","review","blocked","hold","queue","done"].map(s=>`<div class="col"><h3>${LABEL[s]} · ${list.filter(t=>t.status===s).length}</h3>${list.filter(t=>t.status===s).map(t=>`<div class="kcard" onclick="jump('${t.id}')"><b>${esc(t.title)}</b><small>${t.id} · ${esc(t.owner)} · ${t.priority}${t.due?" · "+t.due.slice(5):""}${unread(t.id)?" · ✉ "+unread(t.id):""}</small></div>`).join("")}</div>`).join("")+'</div>';
     return;
@@ -264,6 +296,8 @@ function render(){
   const groups=view==="area"?AREAS.map(a=>[a,list.filter(t=>t.area===a)]):Object.keys(ORDER).map(s=>[LABEL[s],list.filter(t=>t.status===s)]);
   b.innerHTML=groups.filter(g=>g[1].length).map(([g,ts])=>`<div class="group"><h3>${g} <span class="n">${ts.length}</span></h3>${ts.map(row).join("")}</div>`).join("")||'<div class="empty">No tasks match.</div>';
   if(openId){const el=document.getElementById("t-"+openId);if(el)el.classList.add("open")}
+  for(const [k,v] of Object.entries(typed)){const t=document.getElementById(k);if(t)t.value=v}
+  Object.keys(PENDING).forEach(renderPending);fillTranscripts();
 }
 function row(t){
   const u=unread(t.id);
@@ -277,7 +311,7 @@ function row(t){
 }
 function detail(t){
   const fb=fbFor(t.id);
-  const thread=[...t.log.map(l=>({...l,owner:false})),...fb.map(f=>({ts:f.ts,who:"you",note:f.text,act:f.action,owner:true,unread:!f.processed,attachments:f.attachments}))].sort((a,b)=>String(a.ts).localeCompare(String(b.ts)));
+  const thread=[...t.log.map(l=>({...l,owner:false})),...fb.map(f=>({ts:f.ts,who:(f.who||"You")+(f.gh_login&&f.gh_login.toLowerCase()!==String(f.who||"").toLowerCase()?` (@${f.gh_login})`:""),id:f.id,note:f.text,act:f.action,owner:true,unread:!f.processed,trusted:f.trusted,attachments:f.attachments}))].sort((a,b)=>String(a.ts).localeCompare(String(b.ts)));
   return `<div class="cols"><div>
     <h4>Why it matters</h4><p>${esc(t.why)}</p>
     <h4>Spec</h4><p>${esc(t.spec)}</p>
@@ -286,11 +320,12 @@ function detail(t){
     ${t.blockers.length?`<h4>Blockers</h4><ul>${t.blockers.map(d=>`<li>${esc(d)}</li>`).join("")}</ul>`:""}
     ${t.needs_from_owner?`<h4>What Claude needs from you</h4><div class="ask">${esc(t.needs_from_owner)}</div>`:""}
   </div><div>
-    <h4>Thread</h4><div class="thread">${thread.map(m=>`<div class="msg${m.owner?" owner":""}${m.unread?" unread":""}"><span class="who">${m.owner?"You":"Claude"}</span>${m.act?`<span class="act">${esc(m.act)}</span>`:""}<span class="ts">${esc(String(m.ts).slice(0,16).replace("T"," "))}${m.unread?" · not yet processed":""}</span><div class="txt">${esc(m.note)}</div>${attHtml(m.attachments)}</div>`).join("")}</div>
+    <h4>Thread</h4><div class="thread">${thread.map(m=>`<div class="msg${m.owner?" owner":""}${m.unread?" unread":""}"><span class="who">${m.owner?esc(m.who):"Claude"}</span>${m.act?`<span class="act">${esc(m.act)}</span>`:""}${m.owner?noteState(m):""}<span class="ts">${esc(String(m.ts).slice(0,16).replace("T"," "))}</span>${m.note?`<div class="txt">${esc(m.note)}</div>`:""}${attHtml(m.attachments)}</div>`).join("")}</div>
     <div class="fb">
-      <textarea id="fb-${t.id}" placeholder="Feedback, context, an answer to the blocker, a link… Paste or drop screenshots here (up to 10 files)." onpaste="onPaste(event,'${t.id}')" ondragover="event.preventDefault();this.classList.add('drag')" ondragleave="this.classList.remove('drag')" ondrop="onDrop(event,'${t.id}')"></textarea>
+      <textarea id="fb-${t.id}" placeholder="Feedback, context, an answer to the blocker, a link… Paste or drop screenshots here, or record a voice note." onpaste="onPaste(event,'${t.id}')" ondragover="event.preventDefault();this.classList.add('drag')" ondragleave="this.classList.remove('drag')" ondrop="onDrop(event,'${t.id}')"></textarea>
       <div class="att" id="att-${t.id}"></div>
       <div class="acts">
+        <button class="btn mini recbtn${REC&&REC.id===t.id?" on":""}" id="rec-${t.id}" type="button" onclick="toggleRec('${t.id}')">${REC&&REC.id===t.id?`<span class="dot"></span>Stop ${fmtT(REC.secs)}`:`<span class="dot"></span>Record`}</button>
         <label class="btn mini attbtn">📎 Attach<input type="file" multiple onchange="addFiles('${t.id}',this.files);this.value=''"></label>
         <button class="btn ok" onclick="send('${t.id}','approve')">✓ Approve</button>
         <button class="btn chg" onclick="send('${t.id}','changes')">Request changes</button>
@@ -300,7 +335,7 @@ function detail(t){
         <button class="btn mini" onclick="send('${t.id}','drop')">Drop</button>
         <span class="sent" id="sent-${t.id}"></span>
       </div>
-      <div class="hint">Approve moves it to Done on Claude's next pass. Request changes or Add context and Claude edits the output, re-verifies, and puts it back in Review.</div>
+      <div class="hint">Record a voice note or type; it is transcribed and the Claude agent acts on it by itself within a minute. Approve moves the task to Done. Request changes or Add context and Claude reworks it, re-verifies, and puts it back in Review.</div>
     </div>
   </div></div>`;
 }
@@ -332,9 +367,13 @@ async function post(body){
 }
 const PENDING={};
 const MAXF=10;
-function attHtml(list){if(!list||!list.length)return"";return '<div class="att">'+list.map(a=>{const img=/^image\//.test(a.type||"")||/\.(png|jpe?g|gif|webp|svg)$/i.test(a.name||"");return `<a href="${esc(a.url)}" target="_blank" rel="noopener" title="${esc(a.name)}">${img?`<img src="${esc(a.url)}" alt="">`:`<span class="ic">📄</span>`}<span class="nm">${esc(a.name)}</span></a>`}).join("")+"</div>"}
-function renderPending(id){const box=document.getElementById("att-"+id);if(!box)return;const list=PENDING[id]||[];box.innerHTML=list.map((f,i)=>`<span class="pend">${/^image\//.test(f.type)?`<img src="${f.preview}" alt="">`:`<span class="ic">📄</span>`}<span class="nm">${esc(f.name)}</span><button class="x" type="button" title="Remove" onclick="rmFile('${id}',${i})">×</button></span>`).join("")}
-function addFiles(id,files){const list=PENDING[id]=PENDING[id]||[];const out=document.getElementById("sent-"+id);for(const f of files){if(list.length>=MAXF){out.className="sent err";out.textContent=`Max ${MAXF} files per note.`;break}const name=f.name||("pasted-"+Date.now()+"."+((f.type.split("/")[1]||"png").replace("jpeg","jpg")));list.push({file:f,name,type:f.type,preview:/^image\//.test(f.type)?URL.createObjectURL(f):""})}renderPending(id)}
+const safeUrl=u=>/^(\/tasks\/uploads\/|https:\/\/)/.test(String(u||""))?String(u):"#";
+const isAud=a=>/^(audio|video)\//.test(a.type||"")||/\.(webm|weba|ogg|oga|opus|mp3|m4a|aac|wav|flac|aiff?|caf)$/i.test(a.name||"");
+function attHtml(list){if(!list||!list.length)return"";const aud=list.filter(isAud),rest=list.filter(a=>!isAud(a));
+  return aud.map(a=>`<div class="voice"><div class="lab">Voice note</div><audio controls preload="none" src="${esc(safeUrl(a.url))}"></audio><div class="tx wait" data-tx="${esc(safeUrl(a.transcript||a.url+".transcript.json"))}">Transcribing…</div></div>`).join("")+(rest.length?attHtmlFiles(rest):"")}
+function attHtmlFiles(list){return '<div class="att">'+list.map(a=>{const img=/^image\//.test(a.type||"")||/\.(png|jpe?g|gif|webp|svg)$/i.test(a.name||"");return `<a href="${esc(safeUrl(a.url))}" target="_blank" rel="noopener" title="${esc(a.name)}">${img?`<img src="${esc(safeUrl(a.url))}" alt="">`:`<span class="ic">📄</span>`}<span class="nm">${esc(a.name)}</span></a>`}).join("")+"</div>"}
+function renderPending(id){const box=document.getElementById("att-"+id);if(!box)return;const list=PENDING[id]||[];box.innerHTML=list.map((f,i)=>f.audio?`<span class="pend aud"><span class="ic">🎙</span><audio controls src="${f.audio}"></audio><button class="x" type="button" title="Remove" onclick="rmFile('${id}',${i})">×</button></span>`:`<span class="pend">${/^image\//.test(f.type)?`<img src="${f.preview}" alt="">`:`<span class="ic">📄</span>`}<span class="nm">${esc(f.name)}</span><button class="x" type="button" title="Remove" onclick="rmFile('${id}',${i})">×</button></span>`).join("")}
+function addFiles(id,files){const list=PENDING[id]=PENDING[id]||[];const out=document.getElementById("sent-"+id);for(const f of files){if(list.length>=MAXF){out.className="sent err";out.textContent=`Max ${MAXF} files per note.`;break}const name=f.name||("pasted-"+Date.now()+"."+((f.type.split("/")[1]||"png").replace("jpeg","jpg")));list.push({file:f,name,type:f.type,preview:/^image\//.test(f.type)?URL.createObjectURL(f):"",audio:isAud({type:f.type,name})?URL.createObjectURL(f):""})}renderPending(id)}
 function rmFile(id,i){(PENDING[id]||[]).splice(i,1);renderPending(id)}
 function onPaste(e,id){const items=[...(e.clipboardData?.items||[])].filter(i=>i.kind==="file");if(!items.length)return;e.preventDefault();addFiles(id,items.map(i=>i.getAsFile()).filter(Boolean))}
 function onDrop(e,id){e.preventDefault();e.target.classList.remove("drag");addFiles(id,e.dataTransfer.files)}
@@ -342,28 +381,109 @@ const b64=f=>new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(S
 async function uploadPending(id){const list=PENDING[id]||[];if(!list.length)return[];const files=[];for(const p of list)files.push({name:p.name,type:p.type,data:await b64(p.file)});const r=await fetch("/api/upload",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({task_id:id,files})});const j=await r.json();if(!r.ok)throw new Error(j.error||r.status);return j.files}
 async function send(id,action){
   const ta=document.getElementById("fb-"+id),out=document.getElementById("sent-"+id);const text=ta.value.trim();
+  if(REC&&REC.id===id){out.className="sent err";out.textContent="Stop the recording first.";return}
   const hasFiles=(PENDING[id]||[]).length>0;
+  const who=needWho(out);if(!who)return;
   if(!text&&!hasFiles&&!["approve","prioritize","drop"].includes(action)){out.className="sent err";out.textContent="Write a note or attach a file first.";return}
   // Static host: open the issue synchronously inside the click so no popup blocker fires.
-  if(STATIC){viaIssue({task_id:id,action,text},out);if(hasFiles)out.innerHTML+=" Drag your attachments into the GitHub issue.";return}
-  try{out.className="sent";out.textContent=hasFiles?"Uploading…":"";const attachments=await uploadPending(id);const f=await post({task_id:id,action,text,attachments});INBOX.push(f);ta.value="";PENDING[id]=[];out.className="sent";out.textContent="Sent · Claude picks it up on the next pass";openId=id;render()}
-  catch(e){if(e.static){viaIssue({task_id:id,action,text},out);return}out.className="sent err";out.textContent="Failed: "+e.message}
+  if(STATIC){viaIssue({task_id:id,action,text,who},out);if(hasFiles){saveLocal(id);out.innerHTML+=" Your files were saved to Downloads: drag them into the GitHub issue (voice notes included).";}return}
+  try{out.className="sent";out.textContent=hasFiles?"Uploading…":"";const attachments=await uploadPending(id);const f=await post({task_id:id,action,text,attachments,who});INBOX.push(f);ta.value="";PENDING[id]=[];openId=id;render();const o2=document.getElementById("sent-"+id);if(o2){o2.className="sent";o2.textContent="Sent · the Claude agent is picking it up"}setTimeout(pollAgent,1500)}
+  catch(e){if(e.static){viaIssue({task_id:id,action,text,who},out);return}out.className="sent err";out.textContent="Failed: "+e.message}
 }
 $("#nt-send").onclick=async()=>{
   const title=$("#nt-title").value.trim(),out=$("#nt-sent");
   if(!title){out.className="sent err";out.textContent="Title required.";return}
-  const nb={action:"new",title,area:$("#nt-area").value,priority:$("#nt-pri").value,due:$("#nt-due").value.trim(),text:$("#nt-text").value.trim()};
+  const who=needWho(out);if(!who)return;
+  const nb={action:"new",who,title,area:$("#nt-area").value,priority:$("#nt-pri").value,due:$("#nt-due").value.trim(),text:$("#nt-text").value.trim()};
   if(STATIC){viaIssue(nb,out);return}
   try{const f=await post(nb);
     INBOX.push(f);$("#nt-title").value="";$("#nt-text").value="";$("#nt-due").value="";out.className="sent";out.textContent="Queued · Claude adds it as a task on the next pass";}
   catch(e){if(e.static){viaIssue(nb,out);return}out.className="sent err";out.textContent="Failed: "+e.message}
 };
+/* ---- who is giving feedback (the board is shared with the team) ---- */
+const WHO=$("#who");WHO.value=localStorage.getItem("lc-who")||"";
+WHO.oninput=()=>{localStorage.setItem("lc-who",WHO.value.trim());WHO.classList.remove("need")};
+function needWho(out){const w=WHO.value.trim();if(w)return w;WHO.classList.add("need");WHO.focus();WHO.scrollIntoView({block:"center"});out.className="sent err";out.textContent="Add your name at the top first, so the team knows who said it.";return""}
+
+/* ---- note status in the thread: queued → Claude working → handled ---- */
+let AGENT={};
+function noteState(m){
+  if(m.trusted===false&&m.unread)return `<span class="st q">not a collaborator · waiting for owner approval</span>${STATIC?"":`<button class="btn mini" style="margin-left:6px" onclick="trustNote('${esc(m.id)}')">Let Claude act on this</button>`}`;
+  if(m.unread&&AGENT.state==="working"&&(AGENT.entries||[]).includes(m.id))return '<span class="st w">Claude is on it</span>';
+  if(m.unread)return '<span class="st q">queued for Claude</span>';
+  return '<span class="st h">handled</span>';
+}
+
+async function trustNote(fid){const r=await fetch("/api/trust",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({id:fid})});if(r.ok){const f=INBOX.find(x=>x.id===fid);if(f)f.trusted=true;render();setTimeout(pollAgent,1500)}}
+
+/* ---- voice notes: record in the browser, upload as an attachment, transcript shown under the player ---- */
+let REC=null;
+const fmtT=s=>Math.floor(s/60)+":"+String(s%60).padStart(2,"0");
+const REC_MAX=600;
+function recMime(){for(const m of ["audio/webm;codecs=opus","audio/webm","audio/mp4","audio/ogg;codecs=opus"])if(window.MediaRecorder&&MediaRecorder.isTypeSupported(m))return m;return""}
+function paintRec(){if(!REC)return;const b=document.getElementById("rec-"+REC.id);if(b){b.classList.add("on");b.innerHTML=`<span class="dot"></span>Stop ${fmtT(REC.secs)}`}}
+async function toggleRec(id){
+  const out=document.getElementById("sent-"+id);
+  if(REC){if(REC.id===id){REC.stop()}else{out.className="sent err";out.textContent=`Finish the recording on ${REC.id} first.`}return}
+  if(!window.isSecureContext){out.className="sent err";out.textContent="Recording needs the board at http://localhost:8899 (or the public https board).";return}
+  if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){out.className="sent err";out.textContent="This browser cannot record audio. Attach an audio file instead.";return}
+  if((PENDING[id]||[]).length>=MAXF){out.className="sent err";out.textContent=`Max ${MAXF} files per note.`;return}
+  let stream;try{stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true}})}
+  catch(e){out.className="sent err";out.textContent="Microphone blocked: allow mic access for this page, then try again.";return}
+  const mime=recMime(),chunks=[];let rec;
+  try{rec=new MediaRecorder(stream,mime?{mimeType:mime}:{})}catch(e){stream.getTracks().forEach(t=>t.stop());out.className="sent err";out.textContent="Could not start recording: "+e.message;return}
+  // everything below closes over this session `r`, never the global, so a late onstop cannot touch a newer recording
+  const r={id,secs:0,stream,stop(){if(rec.state!=="inactive")rec.stop()}};
+  r.timer=setInterval(()=>{r.secs++;paintRec();if(r.secs>=REC_MAX)r.stop()},1000);
+  rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
+  rec.onstop=()=>{clearInterval(r.timer);r.stream.getTracks().forEach(t=>t.stop());if(REC===r)REC=null;
+    const b=document.getElementById("rec-"+id);if(b){b.classList.remove("on");b.innerHTML='<span class="dot"></span>Record'}
+    const o=document.getElementById("sent-"+id)||out;
+    const type=(rec.mimeType||mime||"audio/webm").split(";")[0],ext=type.includes("mp4")?"m4a":type.includes("ogg")?"ogg":"webm";
+    const blob=new Blob(chunks,{type});
+    if(!blob.size||r.secs<1){o.className="sent err";o.textContent="Recording was empty. Hold it for at least a second.";return}
+    const stamp=new Date().toISOString().slice(0,16).replace(/[-:T]/g,"");
+    addFiles(id,[new File([blob],`voice-${id}-${stamp}.${ext}`,{type})]);
+    o.className="sent";o.textContent=`Voice note ready (${fmtT(r.secs)}). Add a note if you like, then pick an action to send.`};
+  try{rec.start(1000)}catch(e){clearInterval(r.timer);stream.getTracks().forEach(t=>t.stop());out.className="sent err";out.textContent="Could not start recording: "+e.message;return}
+  REC=r;paintRec();out.className="sent";out.textContent="Recording… press Stop when you're done.";
+}
+/* Public (static) board: no upload server, so files are saved locally for dragging into the GitHub issue. */
+function saveLocal(id){for(const p of PENDING[id]||[]){const a=document.createElement("a");a.href=URL.createObjectURL(p.file);a.download=p.name;document.body.appendChild(a);a.click();a.remove()}}
+const TX={};
+async function fillTranscripts(){
+  const els=[...document.querySelectorAll(".voice .tx[data-tx]")];let pending=false;
+  for(const el of els){const u=el.dataset.tx;let t=TX[u];
+    if(!t||t.status==="pending"){try{const r=await fetch(u+"?v="+Date.now());t=r.ok?await r.json():{status:STATIC?"none":"pending"}}catch(e){t={status:"pending"}}TX[u]=t}
+    if(t.status==="done"){el.className="tx";el.textContent=t.text?`“${t.text}”`:"(no speech detected)"}
+    else if(t.status==="error"){el.className="tx err";el.textContent="Transcription failed; Claude will retry: "+(t.error||"")}
+    else if(t.status==="none"){el.className="tx wait";el.textContent="Transcript is on the local board."}
+    else{el.className="tx wait";el.textContent="Transcribing…";pending=true}}
+  clearTimeout(fillTranscripts.t);if(pending)fillTranscripts.t=setTimeout(fillTranscripts,3000);
+}
+
+/* ---- the autonomous agent's live status (tasks/runner.json written by tasks/runner.py) ---- */
+const AGENT_TEXT={working:"Working",idle:"Idle",paused:"Paused",offline:"Offline",disabled:"Paused by you"};
+let agentSig="";
+async function pollAgent(){
+  if(STATIC){$("#agent-msg").textContent="Runs on the owner's Mac; notes sent here reach it as GitHub issues.";return}
+  let st={},cf={};
+  try{const r=await fetch("tasks/runner.json?v="+Date.now());if(r.ok)st=await r.json()}catch(e){}
+  try{const r=await fetch("tasks/agent.json?v="+Date.now());if(r.ok)cf=await r.json()}catch(e){}
+  AGENT=st;const s=cf.enabled===false?"disabled":(st.state||"idle");
+  $("#agent").className="agent "+s;
+  const last=(st.history||[])[0];
+  $("#agent-msg").textContent=`${AGENT_TEXT[s]||s} · ${s==="working"?st.message:(st.message||"Waiting for notes.")}${s!=="working"&&last?` Last: ${last.task_id} → ${last.status} (${String(last.ts).slice(5,16).replace("T"," ")}).`:""}`;
+  const tog=$("#agent-tog");tog.hidden=false;tog.textContent=cf.enabled===false?"Resume":"Pause";
+  const sig=[st.state,st.task_id,st.updated].join("|");if(agentSig&&sig!==agentSig)load();agentSig=sig;
+}
+$("#agent-tog").onclick=async()=>{const on=$("#agent-tog").textContent==="Resume";await fetch("/api/agent",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({enabled:on})});pollAgent()};
 document.querySelectorAll("#view button").forEach(b=>b.onclick=()=>{view=b.dataset.v;document.querySelectorAll("#view button").forEach(x=>x.classList.toggle("on",x===b));render()});
 ["f-owner","f-area","f-status","hidedone"].forEach(i=>$("#"+i).onchange=render);$("#q").oninput=render;
 $("#theme").onclick=()=>{const h=document.documentElement;h.dataset.theme=h.dataset.theme==="dark"?"light":"dark";localStorage.setItem("lc-theme",h.dataset.theme)};
 if(localStorage.getItem("lc-theme"))document.documentElement.dataset.theme=localStorage.getItem("lc-theme");
 function countdown(){const d1=new Date(DATA.meta?.day1||"2026-09-30T11:00:00-04:00"),ms=d1-Date.now();if(ms<0){$("#cd").textContent="is live";return}const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5);$("#cd").textContent=`in ${d}d ${h}h · Wed Sep 30, 11:00 ET`}
-load().then(countdown);setInterval(countdown,6e4);setInterval(load,9e4);
+load().then(countdown).then(pollAgent);setInterval(countdown,6e4);setInterval(load,9e4);setInterval(pollAgent,8e3);
 </script>
 </body>
 </html>
