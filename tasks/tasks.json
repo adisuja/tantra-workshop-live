@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-09-24",
-  "version": 11
+  "updated": "2026-09-25",
+  "version": 12
  },
  "tasks": [
   {
@@ -906,6 +906,11 @@
      "ts": "2026-09-18T20:42:47+0530",
      "who": "claude",
      "note": "Owner: build the automation code yourself. Reassigned from Bhaskar Dev to Claude."
+    },
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Blocks T-123 (launch-critical messages)."
     }
    ],
    "order": 230
@@ -1123,6 +1128,11 @@
      "ts": "2026-09-24",
      "who": "Owner",
      "note": "Owner: keep maintaining the placeholder (like the VSL / Zoom / WhatsApp links). Moved to On hold."
+    },
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Zoom links also needed by T-123 and T-125."
     }
    ],
    "order": 280
@@ -1540,6 +1550,11 @@
      "ts": "2026-09-24",
      "who": "Owner",
      "note": "This will be done and integrated later. Keep it on hold."
+    },
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Blocks T-122 (payment grants nothing). See T-122 for a local-only path that needs only your yes."
     }
    ],
    "order": 420
@@ -1566,6 +1581,11 @@
      "ts": "2026-09-18T18:00:00-04:00",
      "who": "claude",
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Name clash with Tantra Pro Funnel/Flow — see T-116."
     }
    ],
    "order": 430
@@ -2778,7 +2798,7 @@
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Open Day 2 in the centre and read one guide per stage; decide the Tantra Pro name clash with the $999 offer (T-071).",
+   "needs_from_owner": "Review Day 2 in the centre; answer T-115 (screenshots), T-116 (name clash), T-117 (numbers).",
    "log": [
     {
      "ts": "2026-09-24",
@@ -2922,6 +2942,464 @@
     }
    ],
    "order": 1120
+  },
+  {
+   "id": "T-115",
+   "title": "Real screenshots for the 54 'Capture Needed' guide steps",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P1",
+   "due": "2026-09-28",
+   "status": "blocked",
+   "why": "Owner rule: every guide step shows a real screenshot, never a mock-up. 54 of 201 steps across the Day 2 guides still show a marked 'Capture Needed' slot because they can only be captured inside your own signed-in accounts. Exact list of what each shot must show: workshop-plan/coord/status/c.md (26), d.md (2), e.md (26).",
+   "spec": "coord/status/{c,d,e}.md list every slot with the exact screen needed.",
+   "done_when": [
+    "Every capture_needed slot replaced by a real, redacted WebP",
+    "check-guides reports capture-needed 0"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Needs owner's signed-in sessions — Claude never logs in or enters credentials",
+    "Claude in Chrome (Browser 1) was disconnected on the last pass",
+    "LinkedIn and Meta are never opened by browser tools (global rule)"
+   ],
+   "needs_from_owner": "Pick one: (A) connect Claude in Chrome 'Browser 1' (adi@growthclub.org) and be signed in to Tantra dashboard, Google Workspace/Sheets, GoHighLevel and Beehiiv — Claude captures and redacts those; or (B) take the LinkedIn company-page and Meta Ads/Events Manager screenshots yourself (list in status/c.md) and drop them in a folder — Claude crops, redacts and files them. Also tell us whether you have GoHighLevel and Beehiiv accounts at all; if not, those steps stay on the vendors' public help-centre shots.",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Created from the Build Guides integration pass (Lane A)."
+    }
+   ],
+   "order": 1130
+  },
+  {
+   "id": "T-116",
+   "title": "Decide the 'Tantra Pro' name clash (Tantra Pro Funnel/Flow vs the $999 Tantra Pro offer)",
+   "area": "Product",
+   "owner": "Claude",
+   "priority": "P1",
+   "due": "2026-09-28",
+   "status": "blocked",
+   "why": "Your 2026-09-24 direction renamed the funnel and nurture to 'Tantra Pro Funnel' and 'Tantra Pro Flow' everywhere. The $999 upsell (T-071) is also called 'Tantra Pro'. On Day 3 and the offer slides an attendee will read both and may think the funnel IS the $999 product.",
+   "spec": "",
+   "done_when": [
+    "One naming decision recorded and applied everywhere (centre, playbook, deck, FunnelOS, library, /vip, T-071)"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Naming decision is the owner's"
+   ],
+   "needs_from_owner": "Choose: (1) keep both as-is; (2) rename the $999 offer (give the new name); or (3) rename the funnel/flow (give the new names). Claude applies it everywhere and re-runs every probe.",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Created from the Build Guides integration pass (Lane A)."
+    }
+   ],
+   "order": 1140
+  },
+  {
+   "id": "T-117",
+   "title": "Re-source the /masterclass FunnelOS webinar numbers",
+   "area": "Funnel",
+   "owner": "Claude",
+   "priority": "P1",
+   "due": "2026-09-28",
+   "status": "blocked",
+   "why": "After Basic was removed, the cinematic's funnel-maths chips still use the old combined totals (11.4K visitors → 368 registered → 179 live · 6.89% avg CVR) while the Tantra Pro Funnel card shows 825 registrations and 9.6% CVR. 825 > 368 contradicts itself on the page. Owner rule: no invented numbers, so Claude cannot make up replacements.",
+   "spec": "",
+   "done_when": [
+    "Every figure on the webinar FunnelOS board traces to one source and agrees with the others"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Needs the owner's source numbers or a decision to drop the combined chips"
+   ],
+   "needs_from_owner": "Either send the real Pro-only figures for that webinar (visitors, registrations, live attendance) or say 'drop the combined chips' and Claude removes them, keeping only the Pro card's 9.6% / 825 / 89% show-up.",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Created from the Build Guides integration pass (Lane A)."
+    }
+   ],
+   "order": 1150
+  },
+  {
+   "id": "T-118",
+   "title": "Pick one lead-qualification scale",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P2",
+   "due": "2026-09-28",
+   "status": "blocked",
+   "why": "Sources disagree: whiteboard >80, FunnelOS RSP >70 / 40–70 / <40, library 'HOT ≥ 8'. The guides currently use top / middle / bottom bands with no numbers so nothing is invented.",
+   "spec": "",
+   "done_when": [
+    "One scale shown consistently in playbook, FunnelOS, library and S5 guides (or bands everywhere)"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Needs owner decision"
+   ],
+   "needs_from_owner": "Pick: 0–100 with thresholds (which ones?), 1–10 with HOT ≥ 8, or keep number-free bands everywhere.",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Created from the Build Guides integration pass (Lane A)."
+    }
+   ],
+   "order": 1160
+  },
+  {
+   "id": "T-119",
+   "title": "Confirm the Day 3 pipeline diagram count ('Eleven stages, two exits')",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P3",
+   "due": "2026-09-28",
+   "status": "blocked",
+   "why": "The whiteboard source numbers 11 stages INCLUDING Unqualified, with No Show as an unnumbered exit '2b'. The playbook diagram title says 'Eleven stages, two exits', which counts 12 if both exits are extra.",
+   "spec": "",
+   "done_when": [
+    "Diagram title and the S5 guides count stages the same way"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Needs owner confirmation of the canonical count"
+   ],
+   "needs_from_owner": "Confirm: 'Eleven stages (incl. Unqualified) plus a No Show exit' — or tell us the count you teach.",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Created from the Build Guides integration pass (Lane A)."
+    }
+   ],
+   "order": 1170
+  },
+  {
+   "id": "T-120",
+   "title": "GoHighLevel in the stacks — confirm where it belongs",
+   "area": "Product",
+   "owner": "Claude",
+   "priority": "P3",
+   "due": "2026-09-28",
+   "status": "blocked",
+   "why": "GoHighLevel appears in the RSP funnel and in an S5 guide (s5-gohighlevel), but is deliberately excluded from the webinar stack. Guides need one clear answer on which mechanisms use it.",
+   "spec": "",
+   "done_when": [
+    "Stack lists in FunnelOS, playbook and S5 guides agree"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Needs owner decision"
+   ],
+   "needs_from_owner": "Say whether GoHighLevel is: an option for all three mechanisms, RSP-only, or an alternative to the starter CRM only.",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Created from the Build Guides integration pass (Lane A)."
+    }
+   ],
+   "order": 1180
+  },
+  {
+   "id": "T-121",
+   "title": "Seat counter (847/1000): make it real or remove it",
+   "area": "Funnel",
+   "owner": "Claude",
+   "priority": "P1",
+   "due": "2026-09-28",
+   "status": "blocked",
+   "why": "The registration pages show a static 847/1000 seat counter. Scarcity must be real (owner rule: no invented numbers).",
+   "spec": "",
+   "done_when": [
+    "Counter reads live registrations from ops, or is removed"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Needs owner decision (and the real cap if kept)"
+   ],
+   "needs_from_owner": "Choose: (A) real counter — tell us the true seat cap; Claude wires it to the ops registration count; or (B) remove it.",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Created from the Build Guides integration pass (Lane A)."
+    }
+   ],
+   "order": 1190
+  },
+  {
+   "id": "T-122",
+   "title": "Payment grants access (Dodo → entitlement)",
+   "area": "Ops",
+   "owner": "Claude",
+   "priority": "P0",
+   "due": "2026-09-27",
+   "status": "blocked",
+   "why": "Launch-critical (Lane D audit): a paid VIP purchase unlocks nothing. The Dodo webhook only logs because DODO_FULFILMENT_WEBHOOK_URL is intentionally empty, and nothing calls ops /api/payment. /vip/success says 'Everything's unlocked' with nothing behind it. Related hold: T-070.",
+   "spec": "",
+   "done_when": [
+    "A test purchase flips the attendee to paid in ops within 1 minute and the centre shows the paid seat",
+    "Refund/failed payments do not grant access"
+   ],
+   "evidence": [],
+   "blockers": [
+    "T-070 is on hold by the owner (backend fulfilment 'integrated later')"
+   ],
+   "needs_from_owner": "Approve Claude building the local path now: verified Dodo webhook → ops entitlement (plus a tick.py polling fallback), keeping api.usetantra.com out of it until you integrate — yes / no. No new credentials needed; uses the existing Dodo webhook secret.",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Created from the Build Guides integration pass (Lane A)."
+    }
+   ],
+   "order": 1200
+  },
+  {
+   "id": "T-123",
+   "title": "Transactional + reminder messages actually send",
+   "area": "Delivery",
+   "owner": "Claude",
+   "priority": "P0",
+   "due": "2026-09-27",
+   "status": "blocked",
+   "why": "Launch-critical: pages promise an 'Action required' email, the plan email, the join link an hour before each session and daily reminders, but nothing is sent anywhere. Depends on T-033 (delivery) and T-050/T-052 (sequences).",
+   "spec": "",
+   "done_when": [
+    "Registration → confirmation email + WhatsApp within 1 min",
+    "T-1h join-link message sent for each session",
+    "Plan email sent when the course plan is generated"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Email needs an SMTP login or provider API key",
+    "WhatsApp needs a WhatsApp Business API credential (or approve email + SMS only)",
+    "Zoom join links still placeholders (T-042)"
+   ],
+   "needs_from_owner": "Provide: (1) sending provider + credential for the 'from' address (SMTP or Resend/SendGrid key) — put it in app/.env.local yourself, Claude never types credentials; (2) WhatsApp Business API provider or say 'email only for this cohort'; (3) the three Zoom links when scheduled (T-042).",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Created from the Build Guides integration pass (Lane A)."
+    }
+   ],
+   "order": 1210
+  },
+  {
+   "id": "T-124",
+   "title": "/vip checkout keeps first-touch UTMs",
+   "area": "Funnel",
+   "owner": "Claude",
+   "priority": "P0",
+   "due": "2026-09-26",
+   "status": "next",
+   "why": "Launch-critical: checkout-client reads location.search instead of the stored first-touch UTMs (tantra_first_touch_utm), so /vip purchases lose attribution and referral credit (T-055) survives only via the email join.",
+   "spec": "",
+   "done_when": [
+    "Dodo checkout URL carries utm_* from first touch",
+    "probe-checkout-currency + a referral test purchase attribute correctly"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Created from the Build Guides integration pass (Lane A)."
+    }
+   ],
+   "order": 1220
+  },
+  {
+   "id": "T-125",
+   "title": "Calendar adds + session link on the join pages",
+   "area": "Funnel",
+   "owner": "Claude",
+   "priority": "P1",
+   "due": "2026-09-26",
+   "status": "next",
+   "why": "Calendar adds (Google + .ics) exist only in /onboarding; /workshop/join and /masterclass/success/join lack them and 'Save your session link' points at the Zoom placeholder.",
+   "spec": "",
+   "done_when": [
+    "Both join pages offer Google Calendar + .ics for all 3 sessions",
+    "Session link shows 'arrives before Day 1' until the Zoom links exist"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Created from the Build Guides integration pass (Lane A)."
+    }
+   ],
+   "order": 1230
+  },
+  {
+   "id": "T-126",
+   "title": "Survey answers are saved to ops, and #day-N deep links open the right day",
+   "area": "Delivery",
+   "owner": "Claude",
+   "priority": "P1",
+   "due": "2026-09-27",
+   "status": "next",
+   "why": "survey.html keeps answers only on the attendee's device and posts nothing, so prompt packs can't be generated; links like survey.html#day-2 and deck.html#day-2 from the centre open Day 1.",
+   "spec": "",
+   "done_when": [
+    "Answers POST to ops and survive a device change",
+    "#day-2 / #day-3 open the right day in survey and deck",
+    "probe-survey passes"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Created from the Build Guides integration pass (Lane A)."
+    }
+   ],
+   "order": 1240
+  },
+  {
+   "id": "T-127",
+   "title": "Serve and link each attendee's generated course plan",
+   "area": "Delivery",
+   "owner": "Claude",
+   "priority": "P1",
+   "due": "2026-09-27",
+   "status": "next",
+   "why": "Ops generates an intake course plan per attendee but plan_url is never surfaced and nothing serves /plans/*. The centre's 'Read Your Personal Plan' step has nothing behind it.",
+   "spec": "",
+   "done_when": [
+    "Before Day 1 step 2 opens the attendee's own plan",
+    "Plan also linked in the plan email once T-123 lands"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Created from the Build Guides integration pass (Lane A)."
+    }
+   ],
+   "order": 1250
+  },
+  {
+   "id": "T-128",
+   "title": "Merge Lane E's last commit and republish",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P2",
+   "due": "2026-09-26",
+   "status": "next",
+   "why": "lane/e has one unannounced commit (70f3f4c: case-study preview reads right with B's customer_role sample).",
+   "spec": "",
+   "done_when": [
+    "Merged, full probe suite clean, mirror republished"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Created from the Build Guides integration pass (Lane A)."
+    }
+   ],
+   "order": 1260
+  },
+  {
+   "id": "T-129",
+   "title": "Board hygiene: T-050, T-042, T-071 text is stale",
+   "area": "Ops",
+   "owner": "Claude",
+   "priority": "P3",
+   "due": "2026-09-26",
+   "status": "queue",
+   "why": "T-050 still says 'Build Pass'; T-042 has the old dates and 'five sessions'; T-071 says Pro is pitched every day from Day 1, but the deck and s4-challenge pitch only at the close.",
+   "spec": "",
+   "done_when": [
+    "Those three tasks describe the current 3-day cohort and offer"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Created from the Build Guides integration pass (Lane A)."
+    }
+   ],
+   "order": 1270
+  },
+  {
+   "id": "T-130",
+   "title": "Make the busiest guide flowcharts easier to read",
+   "area": "Content",
+   "owner": "Claude",
+   "priority": "P3",
+   "due": "2026-09-28",
+   "status": "queue",
+   "why": "s5-follow-ups (and similar multi-branch flows) pass every overlap probe but read busy: many cross-lane edges. Options: split into two flows, or smarter edge routing in the FlowChart.",
+   "spec": "",
+   "done_when": [
+    "Owner can follow every branch at 1440 and 390 without tracing lines"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Created from the Build Guides integration pass (Lane A)."
+    }
+   ],
+   "order": 1280
+  },
+  {
+   "id": "T-131",
+   "title": "Confirm the RSP 52-week grid rows",
+   "area": "Funnel",
+   "owner": "Claude",
+   "priority": "P3",
+   "due": "2026-09-28",
+   "status": "blocked",
+   "why": "funnel-os-rsp.tsx's 52-week rows still say 'Webinar invite / Event reminder / Replay nudge' (warm-list events inside the RSP year). Could read as the RSP being a live event.",
+   "spec": "",
+   "done_when": [
+    "Rows confirmed or relabelled"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Needs owner confirmation"
+   ],
+   "needs_from_owner": "Keep as warm-list live events inside the RSP year, or relabel them to on-demand touches?",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Created from the Build Guides integration pass (Lane A)."
+    }
+   ],
+   "order": 1290
   }
  ]
 }
