@@ -1,0 +1,50 @@
+{
+ "history": [
+  {
+   "ts": "2026-09-25T22:40:14+0530",
+   "task_id": "T-127",
+   "mode": "queue",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-127 → **review**: `/onboarding/plan` now serves each attendee's own generated plan (session-gated, no token in URL) and Before Day 1 step 2 links to it — verified live that each session gets its own plan and no-cookie leaks nothing; the email link stays open on T-123."
+  },
+  {
+   "ts": "2026-09-25T22:25:37+0530",
+   "task_id": "T-126",
+   "mode": "queue",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-126 → **review**. Done and verified this pass:\n\n- **Survey answers sync to ops + survive a device change** — each day POSTs to ops `/api/survey` (debounced) and hydrates on a fresh device; the POST now *merges* so a second/offline device can't overwrite another's answers. Proven with a two-device "
+  },
+  {
+   "ts": "2026-09-25T21:47:29+0530",
+   "task_id": "T-125",
+   "mode": "queue",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-125 → review. Both join pages now offer Google Calendar + one-file .ics for all three sessions, and the session link shows \"arrives before Day 1\" while the Zoom link is still pending; verified via tsc, eslint, curl, and clean headless screenshots (`/tmp/workshop-join.png`, `/tmp/masterclass-succes"
+  },
+  {
+   "ts": "2026-09-25T21:33:17+0530",
+   "task_id": "T-124",
+   "mode": "queue",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-124 → **review**. Fixed `/vip` checkout dropping first-touch UTMs (both server-session POST and static hosted-link now use `resolveUtm()`); verified with new `probe-checkout-utm.mjs` (both paths PASS) and `probe-checkout-currency` (no regression); committed 777b084 — owner sign-off is a completed "
+  },
+  {
+   "ts": "2026-09-25T21:25:51+0530",
+   "task_id": "T-024",
+   "mode": "queue",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-024 → **review**. Built three PDF-ready output templates in `workshop-plan/outputs/` (day1/2/3.html via `build.py`), each section tagged with its source survey questions and filled with a worked SendFlow sample; verified all three with `probe-outputs.mjs` (sections render, source lines present, Se"
+  }
+ ],
+ "state": "idle",
+ "message": "Nothing waiting.",
+ "task_id": null,
+ "entries": [],
+ "mode": null,
+ "started": "2026-09-27T23:03:56+0530"
+}

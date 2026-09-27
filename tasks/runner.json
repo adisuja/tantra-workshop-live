@@ -1,0 +1,18 @@
+{
+ "history": [
+  {
+   "ts": "2026-09-27T22:30:45+0530",
+   "task_id": "T-143",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "Confirmed and logged. T-143 stays in **review** for your sign-off.\n\n**Yes — confirmed, and this run is the proof.** Your voice note (F-6bae831b, 22:24) was transcribed locally, the runner's feedback lane picked it up (`start [feedback] T-143 notes=['F-6bae831b'] trigger=board` in runner.log) and spa"
+  }
+ ],
+ "state": "idle",
+ "message": "Nothing waiting.",
+ "task_id": null,
+ "entries": [],
+ "mode": null,
+ "started": "2026-09-27T23:06:14+0530"
+}
