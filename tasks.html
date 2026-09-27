@@ -786,7 +786,7 @@ async function pollAgent(){
   const parts=[];
   if(s==="disabled")parts.push("Paused by you.");
   else{
-    parts.push(st.state==="working"?"Feedback: "+st.message:st.state&&!["idle","disabled"].includes(st.state)?`${AGENT_TEXT[st.state]||st.state} · ${st.message||""}`:"Feedback: ready, notes are picked up within seconds.");
+    parts.push(st.state==="working"?"Feedback: "+st.message:st.state&&!["idle","disabled"].includes(st.state)?`${AGENT_TEXT[st.state]||st.state} · ${st.message||""}`:(STATIC?"Feedback: ready.":"Feedback: ready, notes are picked up within seconds."));
     if(cf.queue!==false)parts.push(qs.state==="working"?"Queue: "+qs.message:["paused","offline"].includes(qs.state)?`Queue: ${AGENT_TEXT[qs.state]} · ${qs.message||""}`:"Queue: idle.");
   }
   if(s!=="working"&&last)parts.push(`Last: ${last.task_id} → ${last.status} (${String(last.ts).slice(5,16).replace("T"," ")}).`);
