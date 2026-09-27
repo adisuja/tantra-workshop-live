@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-09-27T23:06:39+0530",
-  "version": 121,
+  "updated": "2026-09-28T00:58:08+0530",
+  "version": 122,
   "last_id": 178,
   "team": [
    {
@@ -4446,6 +4446,11 @@
      "ts": "2026-09-27T22:30:36+0530",
      "who": "claude",
      "note": "Confirmed — yes. This very run IS the answer: your voice note (F-6bae831b, recorded 22:24) was transcribed locally, the runner's feedback lane picked it up (runner.log: 'start [feedback] T-143 notes=[F-6bae831b] trigger=board') and spawned headless Claude on your subscription with no one watching. Because you're a collaborator it skipped the approval gate; a non-collaborator note would wait for your one-click OK. So after any voice note requesting changes, the rework runs fully autonomously on that task and lands back in review/blocked/done. Nothing to rebuild — the mechanism executed live to reply to you."
+    },
+    {
+     "ts": "2026-09-28T00:58:08+0530",
+     "who": "claude",
+     "note": "Public board now mirrors this board automatically: every task, owner, note, attachment and the agent status publish within about a minute of any change (sync_board.py), and teammates' notes come back within 60 s."
     }
    ],
    "order": 1430,
