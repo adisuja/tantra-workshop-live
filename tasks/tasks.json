@@ -2,15 +2,53 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-09-26T00:37:52+0530",
-  "version": 36
+  "updated": "2026-09-27T22:54:38+0530",
+  "version": 109,
+  "last_id": 175,
+  "team": [
+   {
+    "name": "Adi",
+    "role": "Main owner",
+    "covers": "Final decisions, the workshop curriculum, anything only the owner can do"
+   },
+   {
+    "name": "Bhaskar",
+    "role": "CMO",
+    "covers": "All marketing: funnel pages and copy, offers, traffic, outreach, content"
+   },
+   {
+    "name": "Nelbin",
+    "role": "Head of operations",
+    "covers": "All operational tasks: sessions, groups, tracking, data hygiene, credentials"
+   },
+   {
+    "name": "Aquila",
+    "role": "Automation",
+    "covers": "All automation: pipelines, sequences, integrations, the Launch Control agent"
+   },
+   {
+    "name": "Amal",
+    "role": "Project manager",
+    "covers": "PM, client-related and client-facing work: attendees, client material, coordination"
+   },
+   {
+    "name": "Ben",
+    "role": "Developer",
+    "covers": "Hardcore development the team cannot hand to the AI: backend, payments, data services"
+   },
+   {
+    "name": "Bharath",
+    "role": "CTO",
+    "covers": "Head of all development: architecture, infrastructure, technical decisions"
+   }
+  ]
  },
  "tasks": [
   {
    "id": "T-001",
    "title": "/masterclass landing page",
    "area": "Funnel",
-   "owner": "Claude",
+   "owner": "Bhaskar",
    "priority": "P0",
    "due": "2026-09-19",
    "status": "review",
@@ -44,13 +82,17 @@
      "note": "Landing page converted: hero, journey (3 blocks), passes, VSL captions, metadata and session dates (Thu 24 · Fri 25 · Mon 28 Sep). probe-workshop clean at 5 widths; typecheck clean; no new lint errors."
     }
    ],
-   "order": 0
+   "order": 0,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-011",
    "title": "Fix landing-page proof cards (endCX, Appster, Rhenus, SalesTherapy)",
    "area": "Funnel",
-   "owner": "Adi",
+   "owner": "Amal",
    "priority": "P1",
    "due": "2026-09-19",
    "status": "review",
@@ -85,13 +127,18 @@
      "note": "Applied: endCX kept; Appster → '$19M ARR in 2 years' on its card and in both landing pages' proof line (the quote untouched); Rhenus → the supplied 'Automation by Rhenus' mark; SalesTherapy → the supplied mark (tagline dropped; it's illegible at card size). Both extracted onto transparency, because the cards render logos as single-colour silhouettes and a solid-background PNG would become a black box."
     }
    ],
-   "order": 10
+   "order": 10,
+   "assignee": "Amal",
+   "reviewers": [
+    "Amal",
+    "Adi"
+   ]
   },
   {
    "id": "T-002",
    "title": "/masterclass/success (survey + VSL)",
    "area": "Funnel",
-   "owner": "Claude",
+   "owner": "Bhaskar",
    "priority": "P0",
    "due": "2026-09-19",
    "status": "review",
@@ -136,13 +183,17 @@
      "note": "Applied: the page ships as-is. The VSL slot renders the designed poster until the file exists; the recording is tracked in T-060 and no longer blocks this page."
     }
    ],
-   "order": 20
+   "order": 20,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-003",
    "title": "/masterclass/success/join (community + seat)",
    "area": "Funnel",
-   "owner": "Claude",
+   "owner": "Bhaskar",
    "priority": "P0",
    "due": "2026-09-20",
    "status": "review",
@@ -183,13 +234,17 @@
      "note": "Its only blockers (T-040/T-042) are on hold by owner decision, so the page is complete as built."
     }
    ],
-   "order": 30
+   "order": 30,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-004",
    "title": "Seat checkout (Dodo, live) — geo-priced",
    "area": "Funnel",
-   "owner": "Claude",
+   "owner": "Ben",
    "priority": "P0",
    "due": "2026-09-18",
    "status": "review",
@@ -229,7 +284,12 @@
      "note": "Owner asked whether each country needs its own product or page. Researched in Dodo's docs: no. One product with Localized Pricing (by_currency) is the intended setup. Each listed currency pays exactly its rule; Dodo absorbs its FX fee on those. Unlisted currencies get the USD base, and we pass paymentCurrency=USD, so there's no 2–4% adaptive surcharge. Prices are tax-inclusive (GST/VAT inside, Dodo files them as merchant of record)."
     }
    ],
-   "order": 40
+   "order": 40,
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ]
   },
   {
    "id": "T-005",
@@ -260,13 +320,17 @@
      "note": "Owner decision 2026-09-18: do NOT rotate until every task is done, after the launch. Not to be raised again before then."
     }
    ],
-   "order": 50
+   "order": 50,
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-006",
    "title": "Local-first launch runbook + post-launch switch plan",
    "area": "Infra",
-   "owner": "Claude",
+   "owner": "Bharath",
    "priority": "P1",
    "due": "2026-09-22",
    "status": "queue",
@@ -292,13 +356,18 @@
      "note": "Rewritten from 'deploy to production' after the owner chose local-only."
     }
    ],
-   "order": 60
+   "order": 60,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bharath",
+    "Adi"
+   ]
   },
   {
    "id": "T-007",
    "title": "Commit the masterclass work to git",
    "area": "Infra",
-   "owner": "Claude",
+   "owner": "Ben",
    "priority": "P1",
    "due": "2026-09-19",
    "status": "done",
@@ -322,13 +391,18 @@
      "note": "Superseded by the new repo (T-086)."
     }
    ],
-   "order": 70
+   "order": 70,
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ]
   },
   {
    "id": "T-008",
    "title": "Decide: /webinar → 301 to /masterclass?",
    "area": "Funnel",
-   "owner": "Adi",
+   "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-19",
    "status": "review",
@@ -363,13 +437,17 @@
      "note": "Done three ways: next.config 301s (server builds), public/_redirects (Cloudflare Pages, the production host), and a browser redirect page at /webinar and /webinar/thank-you for any other static host. UTMs are preserved. The old webinar pages and their two n8n calls are deleted; site nav 'Webinar' → 'Live workshop' pointing at /masterclass."
     }
    ],
-   "order": 80
+   "order": 80,
+   "assignee": "Bhaskar",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-010",
    "title": "Registrations and survey answers exportable to the Work Tracker",
    "area": "Delivery",
-   "owner": "Claude",
+   "owner": "Nelbin",
    "priority": "P1",
    "due": "2026-09-20",
    "status": "review",
@@ -418,13 +496,17 @@
      "note": "Done without a service account: the intake service writes to six new Work Tracker tabs using the existing Sheets OAuth token on this machine. Proved by filling the real forms in a browser (scripts/probe-forms-to-sheet.mjs). The public mirror path is T-105."
     }
    ],
-   "order": 90
+   "order": 90,
+   "assignee": "Claude",
+   "reviewers": [
+    "Nelbin"
+   ]
   },
   {
    "id": "T-012",
    "title": "Generate audience-room.jpg",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Bhaskar",
    "priority": "P2",
    "due": "2026-09-21",
    "status": "done",
@@ -448,13 +530,17 @@
      "note": "Stale record: audience-room.jpg was generated and shipped on 2026-09-23 (final CTA backdrop)."
     }
    ],
-   "order": 100
+   "order": 100,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-020",
    "title": "The Tantra Playbook (Day-1 deliverable)",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Adi",
    "priority": "P0",
    "due": "2026-09-18",
    "status": "review",
@@ -483,13 +569,17 @@
      "note": "Playbook refolded to 3 chapters with in-chapter 'half two' dividers; work plan merged to 3 day tables (37 checkboxes kept, so saved progress survives); Gantt rebuilt for 3 days. probe-playbook clean at 4 widths."
     }
    ],
-   "order": 110
+   "order": 110,
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-021",
    "title": "Workshop deck (211 slides)",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Adi",
    "priority": "P0",
    "due": "2026-09-21",
    "status": "review",
@@ -522,13 +612,17 @@
      "note": "Deck regenerated for 3 days: 203 slides (was 211), nothing cut — all 30 questions keep their 4-slide blocks and every teaching slide survives. Days 1 and 3 run in two halves with a turn slide. probe-deck clean at 3 widths, probe-deck-nav 9/9."
     }
    ],
-   "order": 120
+   "order": 120,
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-022",
    "title": "Daily survey (30 questions × 6 personas)",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Adi",
    "priority": "P0",
    "due": "2026-09-18",
    "status": "review",
@@ -562,13 +656,17 @@
      "note": "Survey regenerated: 3 days, 12/6/12 questions, all 30 kept with their 180 samples. probe-survey clean."
     }
    ],
-   "order": 130
+   "order": 130,
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-024",
    "title": "Day 1–3 output templates (what each attendee GETS)",
    "area": "Delivery",
-   "owner": "Claude",
+   "owner": "Adi",
    "priority": "P0",
    "due": "2026-09-21",
    "status": "review",
@@ -616,7 +714,11 @@
      "note": "Built the three Day 1–3 output templates in workshop-plan/outputs/ (build.py generator → day1/2/3.html, self-contained + PDF-ready via @media print). Each section is tagged with the survey questions it fills from, and each day carries a fully worked SendFlow sample. Day1: strategy-on-a-page + five-block engine + diagnostic + spec outline + 3-day plan. Day2: reverse-squeeze pages, 6-touch reminders, run of show, close chain, pipelines, weekly letter. Day3: 11-event schema, pipeline+triggers, 3 automations, live URL + QA checklist, unit economics, leak+experiment, ascension, 52-week schedule. Verified with outputs/probe-outputs.mjs (headless chromium): all sections render, every source line present, SendFlow phrases land, zero horizontal overflow; screenshots written. Open the three files to approve structure."
     }
    ],
-   "order": 140
+   "order": 140,
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-023",
@@ -651,13 +753,17 @@
      "note": "Day references remapped for the 3-day structure."
     }
    ],
-   "order": 150
+   "order": 150,
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-025",
    "title": "Reverse-squeeze content at full whiteboard scope",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Adi",
    "priority": "P1",
    "due": "2026-09-22",
    "status": "queue",
@@ -691,13 +797,17 @@
      "note": "The RSP funnel's stage-by-stage visual now exists (T-108). This task remains for the reverse-squeeze teaching content at full whiteboard scope."
     }
    ],
-   "order": 160
+   "order": 160,
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-026",
    "title": "Capture the 109 template and exhibit pages",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Amal",
    "priority": "P2",
    "due": "2026-09-23",
    "status": "review",
@@ -721,13 +831,17 @@
      "note": "Re-verified: the blocker (staging down, T-084) is stale because T-084 was dropped. The client artefact archive was recovered locally in T-097 (112 files in workshop-plan/library). Likely superseded."
     }
    ],
-   "order": 170
+   "order": 170,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
   },
   {
    "id": "T-028",
    "title": "Refresh the hub page (index.html) stale numbers",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Amal",
    "priority": "P2",
    "due": "2026-09-19",
    "status": "done",
@@ -752,13 +866,17 @@
      "note": "Hub rewritten for 3 days AND the stale localStorage task board retired — it now links to Launch Control. Removed 6.3 KB of dead board code plus the seed list. Artifact counts corrected to 14.5k words / 33 diagrams / 203 slides. Renders clean at 3 widths with no JS errors."
     }
    ],
-   "order": 180
+   "order": 180,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
   },
   {
    "id": "T-027",
    "title": "Port #revops and #whyfunnel intro sections into the deck",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Adi",
    "priority": "P2",
    "due": "",
    "status": "queue",
@@ -777,13 +895,17 @@
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
     }
    ],
-   "order": 190
+   "order": 190,
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-030",
    "title": "Local intake service: registrations, survey answers, payments (no n8n)",
    "area": "Delivery",
-   "owner": "Claude",
+   "owner": "Ben",
    "priority": "P0",
    "due": "2026-09-20",
    "status": "review",
@@ -816,13 +938,18 @@
      "note": "Both lanes now post to the local intake service (the paid lane was still posting to n8n). A new /api/form route writes every funnel form to a local JSONL and then to its Work Tracker tab. Started and tested end to end. ops.db, its journals, ops.log and form-log.jsonl are now git-ignored (attendee PII)."
     }
    ],
-   "order": 200
+   "order": 200,
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ]
   },
   {
    "id": "T-031",
    "title": "Claude Code agentic output pipeline",
    "area": "Delivery",
-   "owner": "Claude",
+   "owner": "Aquila",
    "priority": "P0",
    "due": "2026-09-21",
    "status": "review",
@@ -857,13 +984,17 @@
      "note": "Owner re-logged the Claude CLI (`claude auth login`). The pipeline now pins standard-context Opus (OPS_CLAUDE_MODEL=opus; the CLI default 1M-context model needs usage credits) and the exact binary (~/.local/bin/claude). The launchd scheduler com.tantra.ops was never installed: it's now installed, running every 10 minutes, and its first tick delivered a course plan and mirrored 4 intake rows to the Work Tracker. `--one` runs are now recorded as deliveries. Remove with: launchctl bootout gui/$(id -u)/com.tantra.ops"
     }
    ],
-   "order": 210
+   "order": 210,
+   "assignee": "Claude",
+   "reviewers": [
+    "Aquila"
+   ]
   },
   {
    "id": "T-032",
    "title": "PDF + live-link generation",
    "area": "Delivery",
-   "owner": "Claude",
+   "owner": "Aquila",
    "priority": "P1",
    "due": "2026-09-21",
    "status": "queue",
@@ -897,13 +1028,17 @@
      "note": "Unblocked: T-031 has a working agent now."
     }
    ],
-   "order": 220
+   "order": 220,
+   "assignee": "Claude",
+   "reviewers": [
+    "Aquila"
+   ]
   },
   {
    "id": "T-033",
    "title": "WhatsApp + email delivery automation",
    "area": "Delivery",
-   "owner": "Claude",
+   "owner": "Aquila",
    "priority": "P1",
    "due": "2026-09-22",
    "status": "queue",
@@ -935,13 +1070,17 @@
      "note": "Blocks T-123 (launch-critical messages)."
     }
    ],
-   "order": 230
+   "order": 230,
+   "assignee": "Claude",
+   "reviewers": [
+    "Aquila"
+   ]
   },
   {
    "id": "T-034",
    "title": "Full dry run of the Day-1 pipeline",
    "area": "Delivery",
-   "owner": "Claude",
+   "owner": "Aquila",
    "priority": "P0",
    "due": "2026-09-22",
    "status": "queue",
@@ -976,13 +1115,17 @@
      "note": "Unblocked: T-031 has a working agent now."
     }
    ],
-   "order": 240
+   "order": 240,
+   "assignee": "Claude",
+   "reviewers": [
+    "Aquila"
+   ]
   },
   {
    "id": "T-036",
    "title": "Publish the workshop artifacts and site mirror to GitHub Pages",
    "area": "Delivery",
-   "owner": "Claude",
+   "owner": "Ben",
    "priority": "P0",
    "due": "2026-09-21",
    "status": "done",
@@ -1033,13 +1176,18 @@
      "note": "Owner asked for free GitHub-hosted links (Sep 21). Public repo adisuja/tantra-workshop-live on GitHub Pages: 4 artifacts + Launch Control mirror (read-only) + static export of the Next site under /site (checkout, registration, auth excluded — those need the local server). Sweep: 11 URLs, 0 JS errors, 0 broken images."
     }
    ],
-   "order": 250
+   "order": 250,
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ]
   },
   {
    "id": "T-040",
    "title": "Create the WhatsApp community + announcement group",
    "area": "Ops",
-   "owner": "Owner",
+   "owner": "Nelbin",
    "priority": "P0",
    "due": "2026-09-20",
    "status": "hold",
@@ -1071,13 +1219,17 @@
      "note": "Owner: keep maintaining the placeholder (like the VSL / Zoom / WhatsApp links). Moved to On hold."
     }
    ],
-   "order": 260
+   "order": 260,
+   "assignee": "Nelbin",
+   "reviewers": [
+    "Nelbin"
+   ]
   },
   {
    "id": "T-041",
    "title": "Add admins to both WhatsApp groups",
    "area": "Ops",
-   "owner": "Owner",
+   "owner": "Nelbin",
    "priority": "P1",
    "due": "2026-09-20",
    "status": "hold",
@@ -1113,13 +1265,17 @@
      "note": "Owner: keep maintaining the placeholder (like the VSL / Zoom / WhatsApp links). Moved to On hold."
     }
    ],
-   "order": 270
+   "order": 270,
+   "assignee": "Nelbin",
+   "reviewers": [
+    "Nelbin"
+   ]
   },
   {
    "id": "T-042",
    "title": "Schedule the 3 Zoom sessions",
    "area": "Ops",
-   "owner": "Owner",
+   "owner": "Nelbin",
    "priority": "P0",
    "due": "2026-09-20",
    "status": "hold",
@@ -1157,13 +1313,17 @@
      "note": "Zoom links also needed by T-123 and T-125."
     }
    ],
-   "order": 280
+   "order": 280,
+   "assignee": "Nelbin",
+   "reviewers": [
+    "Nelbin"
+   ]
   },
   {
    "id": "T-050",
    "title": "Draft the pre-workshop nurture sequence",
    "area": "Traffic",
-   "owner": "Claude",
+   "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-20",
    "status": "queue",
@@ -1183,13 +1343,17 @@
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
     }
    ],
-   "order": 290
+   "order": 290,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-051",
    "title": "Draft the post-workshop nurture sequence",
    "area": "Traffic",
-   "owner": "Claude",
+   "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-22",
    "status": "queue",
@@ -1214,13 +1378,17 @@
      "note": "Day references remapped for the 3-day structure."
     }
    ],
-   "order": 300
+   "order": 300,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-052",
    "title": "Set up both sequences in tooling",
    "area": "Traffic",
-   "owner": "Bhaskar",
+   "owner": "Aquila",
    "priority": "P1",
    "due": "2026-09-22",
    "status": "queue",
@@ -1239,13 +1407,17 @@
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
     }
    ],
-   "order": 310
+   "order": 310,
+   "assignee": "Aquila",
+   "reviewers": [
+    "Aquila"
+   ]
   },
   {
    "id": "T-053",
    "title": "LinkedIn content: 5 posts/day/team member",
    "area": "Traffic",
-   "owner": "Claude",
+   "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-20",
    "status": "queue",
@@ -1270,7 +1442,11 @@
      "note": "Unblocked: Google Sheets access is available on this machine now, and the 'LinkedIn Creator Taxonomy' tab lives in the Work Tracker, so no CSV export is needed."
     }
    ],
-   "order": 320
+   "order": 320,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-054",
@@ -1305,13 +1481,17 @@
      "note": "Verified end to end: /workshop?utm_source=linkedin&utm_medium=dm&utm_campaign=…&utm_content=post-7 → the registration row carries all four. First-touch UTMs are now kept for the whole visit, so survey and checkout rows carry them too (the funnel's router.push drops the query string)."
     }
    ],
-   "order": 330
+   "order": 330,
+   "assignee": "Nelbin",
+   "reviewers": [
+    "Nelbin"
+   ]
   },
   {
    "id": "T-055",
    "title": "Team referral incentive: tracking + dashboard",
    "area": "Traffic",
-   "owner": "Claude",
+   "owner": "Nelbin",
    "priority": "P2",
    "due": "2026-09-19",
    "status": "review",
@@ -1350,13 +1530,17 @@
      "note": "Built. ops/referrals.py joins Work Tracker registrations (first-touch utm_content) with Dodo's succeeded workshop payments (picked out by our checkout metadata; the Dodo brand is shared with the SaaS). Revenue is the amount paid, refunds excluded, per currency plus a USD equivalent at seat parity. Commission uses a per-member rate (default 10%, clamped 10–15%, set in ops/referrals.json). Aggregates only (no buyer emails), encrypted AES-256-GCM with the team passphrase, published to the free GitHub Pages mirror, refreshed by the 10-minute ops tick and pushed only when numbers change. The dashboard has a leaderboard, per-post breakdown, recent activity and a tracked-link builder. Link scheme: utm_content=<member>-<post>. 9 synthetic attribution tests pass (ops/test_referrals.py). Live: 0 attributed so far (only test registrations exist)."
     }
    ],
-   "order": 340
+   "order": 340,
+   "assignee": "Claude",
+   "reviewers": [
+    "Nelbin"
+   ]
   },
   {
    "id": "T-056",
    "title": "Cold-calendar lists (reuse or Sales Nav + Expandi)",
    "area": "Traffic",
-   "owner": "Adi",
+   "owner": "Bhaskar",
    "priority": "P2",
    "due": "2026-09-21",
    "status": "queue",
@@ -1375,7 +1559,11 @@
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
     }
    ],
-   "order": 350
+   "order": 350,
+   "assignee": "Bhaskar",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-057",
@@ -1400,13 +1588,18 @@
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
     }
    ],
-   "order": 360
+   "order": 360,
+   "assignee": "Bharath",
+   "reviewers": [
+    "Bharath",
+    "Adi"
+   ]
   },
   {
    "id": "T-058",
    "title": "Connect team profiles + launch outreach",
    "area": "Traffic",
-   "owner": "Bhaskar Dev",
+   "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-21",
    "status": "queue",
@@ -1425,13 +1618,17 @@
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
     }
    ],
-   "order": 370
+   "order": 370,
+   "assignee": "Bhaskar",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-059",
    "title": "AI personalization for outreach (in the style of a proven client playbook)",
    "area": "Traffic",
-   "owner": "Bhaskar Dev",
+   "owner": "Aquila",
    "priority": "P2",
    "due": "2026-09-22",
    "status": "queue",
@@ -1455,7 +1652,11 @@
      "note": "Title no longer names the client (tasks.json is public on the mirror)."
     }
    ],
-   "order": 380
+   "order": 380,
+   "assignee": "Aquila",
+   "reviewers": [
+    "Aquila"
+   ]
   },
   {
    "id": "T-060",
@@ -1492,13 +1693,18 @@
      "note": "Owner: keep maintaining the placeholder (like the VSL / Zoom / WhatsApp links). Moved to On hold."
     }
    ],
-   "order": 390
+   "order": 390,
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi",
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-061",
    "title": "CRM + two funnel workflows (organic / ads)",
    "area": "Traffic",
-   "owner": "Bhaskar Dev",
+   "owner": "Aquila",
    "priority": "P1",
    "due": "2026-09-22",
    "status": "queue",
@@ -1517,13 +1723,17 @@
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
     }
    ],
-   "order": 400
+   "order": 400,
+   "assignee": "Aquila",
+   "reviewers": [
+    "Aquila"
+   ]
   },
   {
    "id": "T-062",
    "title": "Fix GrowthClub OS dashboard speed",
    "area": "Product",
-   "owner": "Bhaskar Dev",
+   "owner": "Ben",
    "priority": "P2",
    "due": "2026-09-24",
    "status": "queue",
@@ -1547,7 +1757,12 @@
      "note": "Day references remapped for the 3-day structure."
     }
    ],
-   "order": 410
+   "order": 410,
+   "assignee": "Ben",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ]
   },
   {
    "id": "T-070",
@@ -1584,13 +1799,18 @@
      "note": "Blocks T-122 (payment grants nothing). See T-122 for a local-only path that needs only your yes."
     }
    ],
-   "order": 420
+   "order": 420,
+   "assignee": "Bharath",
+   "reviewers": [
+    "Bharath",
+    "Adi"
+   ]
   },
   {
    "id": "T-071",
    "title": "Tantra Pro ($999) offer page + checkout",
    "area": "Product",
-   "owner": "Claude",
+   "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-23",
    "status": "queue",
@@ -1615,13 +1835,17 @@
      "note": "Name clash with Tantra Pro Funnel/Flow — see T-116."
     }
    ],
-   "order": 430
+   "order": 430,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-072",
    "title": "Tantra Chaperone ($9,999) offer page",
    "area": "Product",
-   "owner": "Claude",
+   "owner": "Bhaskar",
    "priority": "P2",
    "due": "2026-09-29",
    "status": "queue",
@@ -1646,13 +1870,17 @@
      "note": "Day references remapped for the 3-day structure."
     }
    ],
-   "order": 440
+   "order": 440,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-073",
    "title": "Cut session recordings into the Tantra Pro course",
    "area": "Product",
-   "owner": "Adi",
+   "owner": "Amal",
    "priority": "P2",
    "due": "2026-10-07",
    "status": "queue",
@@ -1671,13 +1899,17 @@
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
     }
    ],
-   "order": 450
+   "order": 450,
+   "assignee": "Amal",
+   "reviewers": [
+    "Amal"
+   ]
   },
   {
    "id": "T-074",
    "title": "Weekly coaching calls + community moderation cadence",
    "area": "Product",
-   "owner": "Adi",
+   "owner": "Amal",
    "priority": "P2",
    "due": "2026-10-07",
    "status": "queue",
@@ -1696,13 +1928,17 @@
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
     }
    ],
-   "order": 460
+   "order": 460,
+   "assignee": "Amal",
+   "reviewers": [
+    "Amal"
+   ]
   },
   {
    "id": "T-080",
    "title": "Launch Control: task system with per-task feedback",
    "area": "Infra",
-   "owner": "Claude",
+   "owner": "Aquila",
    "priority": "P0",
    "due": "2026-09-18",
    "status": "review",
@@ -1738,13 +1974,17 @@
      "note": "Attachments added: up to 10 files per note via Attach button, paste, or drag-drop; stored under tasks/uploads/<task>/; thumbnails in the thread; probe covers upload, serving, 11-file rejection."
     }
    ],
-   "order": 470
+   "order": 470,
+   "assignee": "Claude",
+   "reviewers": [
+    "Aquila"
+   ]
   },
   {
    "id": "T-081",
    "title": "Add funnel tabs to the Consolidated Funnel Doc + Work Tracker",
    "area": "Infra",
-   "owner": "Adi",
+   "owner": "Nelbin",
    "priority": "P2",
    "due": "2026-09-22",
    "status": "queue",
@@ -1768,13 +2008,17 @@
      "note": "Half done: six funnel tabs were added to the Work Tracker (see T-104). The Consolidated Funnel Doc half is now possible too, because a Google Docs token exists on this machine. Unblocked; no action from the owner needed."
     }
    ],
-   "order": 480
+   "order": 480,
+   "assignee": "Nelbin",
+   "reviewers": [
+    "Nelbin"
+   ]
   },
   {
    "id": "T-082",
    "title": "Master Tantra logo from Canva",
    "area": "Content",
-   "owner": "Adi",
+   "owner": "Bhaskar",
    "priority": "P2",
    "due": "2026-09-20",
    "status": "review",
@@ -1798,13 +2042,17 @@
      "note": "Owner attached the Canva exports (three variants: mark on white, mark with glow on black, stacked lockup). It's a new design: a circuit tree over a glowing head. Built the four transparent files apply-logo.py needs: dark variants unblended from the black export (glow kept), ink variant from the white export, and a horizontal lockup from the owner's mark + 'TANTRA' wordmark (white). Applied to 7 destinations plus regenerated the deck, playbook and survey. The favicon/OG image, headers and footers all read these files."
     }
    ],
-   "order": 490
+   "order": 490,
+   "assignee": "Adi",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-084",
    "title": "Restore staging.usetantra.com / usetantra.com hosting",
    "area": "Infra",
-   "owner": "Adi",
+   "owner": "Bharath",
    "priority": "P0",
    "due": "2026-09-20",
    "status": "dropped",
@@ -1828,13 +2076,18 @@
      "note": "Owner decision: everything runs locally for the far foreseeable future. Also corrected the record: usetantra.com and api.usetantra.com return 200 as of Sep 18 20:40; only staging is down."
     }
    ],
-   "order": 500
+   "order": 500,
+   "assignee": "Bharath",
+   "reviewers": [
+    "Bharath",
+    "Adi"
+   ]
   },
   {
    "id": "T-083",
    "title": "3 pre-existing lint errors (parked by decision)",
    "area": "Infra",
-   "owner": "Claude",
+   "owner": "Ben",
    "priority": "P2",
    "due": "",
    "status": "queue",
@@ -1853,7 +2106,12 @@
      "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
     }
    ],
-   "order": 510
+   "order": 510,
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ]
   },
   {
    "id": "T-085",
@@ -1884,13 +2142,17 @@
      "note": "Owner answered 21 Sep: convert to The 3-Day AI RevOps Workshop. Folded old day 1+2 → Day 1, old 3 → Day 2, old 4+5 → Day 3; dates Thu 24, Fri 25, Mon 28 Sep. Nothing cut."
     }
    ],
-   "order": 850
+   "order": 850,
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-086",
    "title": "Create the new git repo and commit everything",
    "area": "Infra",
-   "owner": "Claude",
+   "owner": "Ben",
    "priority": "P0",
    "due": "2026-09-18",
    "status": "done",
@@ -1916,13 +2178,18 @@
      "note": "Repo created: https://github.com/adisuja/3-day-tantra-ai-revops-workshop (private). Root repo, 500 files, app's old .git kept at app/.git-tantra-website.bak."
     }
    ],
-   "order": 860
+   "order": 860,
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ]
   },
   {
    "id": "T-087",
    "title": "Remove every n8n dependency from the app",
    "area": "Funnel",
-   "owner": "Claude",
+   "owner": "Ben",
    "priority": "P0",
    "due": "2026-09-22",
    "status": "queue",
@@ -1967,13 +2234,18 @@
      "note": "Now only ONE n8n call remains: the lead form on the old /pro page (the /webinar pair went with T-008)."
     }
    ],
-   "order": 870
+   "order": 870,
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ]
   },
   {
    "id": "T-090",
    "title": "Onboarding centre",
    "area": "Product",
-   "owner": "Claude",
+   "owner": "Amal",
    "priority": "P1",
    "due": "2026-09-23",
    "status": "review",
@@ -2003,13 +2275,17 @@
      "note": "Welcome banner (key art) with the heading set on it, image cards for playbook / template library / example outputs, and image headers on the paid modules. FIXED: all 10 resource links (slides, day questions, playbook, library) and the 'See what's in it' upsell 404'd on the mirror (missing base path)."
     }
    ],
-   "order": 880
+   "order": 880,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
   },
   {
    "id": "T-091",
    "title": "Template library — 54 elements, each rendered",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Amal",
    "priority": "P1",
    "due": "2026-09-23",
    "status": "review",
@@ -2070,13 +2346,17 @@
      "note": "Built and published to the review mirror."
     }
    ],
-   "order": 890
+   "order": 890,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
   },
   {
    "id": "T-092",
    "title": "Light / dark theme with time-based auto",
    "area": "Product",
-   "owner": "Claude",
+   "owner": "Ben",
    "priority": "P1",
    "due": "2026-09-23",
    "status": "review",
@@ -2105,13 +2385,18 @@
      "note": "Built and published to the review mirror."
     }
    ],
-   "order": 900
+   "order": 900,
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ]
   },
   {
    "id": "T-093",
    "title": "Free-lane funnel pages",
    "area": "Funnel",
-   "owner": "Claude",
+   "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-23",
    "status": "review",
@@ -2153,13 +2438,17 @@
      "note": "The join page leads each step with generated art (group, calendar, sunrise); the VIP fork shows the nine bonus images instead of a checklist. The paid-lane join page got the same treatment and a copy fix (a garbled 'The Your seat ($99)' line). The live click test passes: VIP fork, a bonus tile and 'No thanks' all land correctly."
     }
    ],
-   "order": 910
+   "order": 910,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-094",
    "title": "VIP offer page",
    "area": "Funnel",
-   "owner": "Claude",
+   "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-23",
    "status": "review",
@@ -2199,13 +2488,17 @@
      "note": "Rebuilt 'Everything you walk out holding' as nine branded bonuses, each led by its own generated key art and colour, with a purpose-built visual (book, workflow canvas, 54-tile library, page miniatures, channel phone, prompt forge, recordings, platform, build channel). Added the bundle grid, offer recap and guarantee seal. Removed 'how it works', 'five modules' (its 18 links 404'd on the static site), 'what this doesn't do' and the duplicate logo. Prices are now geo-aware (T-103)."
     }
    ],
-   "order": 920
+   "order": 920,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-095",
    "title": "Local intake, access and tracking service",
    "area": "Infra",
-   "owner": "Claude",
+   "owner": "Ben",
    "priority": "P1",
    "due": "2026-09-23",
    "status": "review",
@@ -2236,13 +2529,18 @@
      "note": "Built and published to the review mirror."
     }
    ],
-   "order": 930
+   "order": 930,
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ]
   },
   {
    "id": "T-096",
    "title": "Workshop control (admin)",
    "area": "Ops",
-   "owner": "Claude",
+   "owner": "Nelbin",
    "priority": "P1",
    "due": "2026-09-23",
    "status": "review",
@@ -2266,13 +2564,17 @@
      "note": "Built and published to the review mirror."
     }
    ],
-   "order": 940
+   "order": 940,
+   "assignee": "Claude",
+   "reviewers": [
+    "Nelbin"
+   ]
   },
   {
    "id": "T-097",
    "title": "Recover the client artefact archive",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Amal",
    "priority": "P1",
    "due": "2026-09-23",
    "status": "review",
@@ -2297,13 +2599,17 @@
      "note": "Built and published to the review mirror."
     }
    ],
-   "order": 950
+   "order": 950,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
   },
   {
    "id": "T-098",
    "title": "Public review mirror",
    "area": "Infra",
-   "owner": "Claude",
+   "owner": "Ben",
    "priority": "P1",
    "due": "2026-09-23",
    "status": "review",
@@ -2352,13 +2658,18 @@
      "note": "Republished several times today. `node app/scripts/probe-live-wiring.mjs` clicks the real buttons on the live mirror, follows checkout to Dodo, fetches every link and fails on any 4xx request. All pass."
     }
    ],
-   "order": 960
+   "order": 960,
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ]
   },
   {
    "id": "T-099",
    "title": "Rotate the credentials exposed in the client trackers",
    "area": "Ops",
-   "owner": "Claude",
+   "owner": "Nelbin",
    "priority": "P0",
    "due": "2026-09-23",
    "status": "hold",
@@ -2391,13 +2702,17 @@
      "note": "On hold - will do at the end."
     }
    ],
-   "order": 970
+   "order": 970,
+   "assignee": "Nelbin",
+   "reviewers": [
+    "Nelbin"
+   ]
   },
   {
    "id": "T-100",
    "title": "VIP bonus stack: nine branded bonuses with generated key art",
    "area": "Funnel",
-   "owner": "Claude",
+   "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-24",
    "status": "review",
@@ -2431,13 +2746,17 @@
      "note": "Names: The AI RevOps Playbook · The Automation Vault · The Complete Funnel Template Library · The Landing Page & Form Kit · The Omnichannel Copy Arsenal · Your Daily Custom Prompt Packs · The Full Session Recordings · The Two-Month Platform Pass · The Private Build Review Channel."
     }
    ],
-   "order": 980
+   "order": 980,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-101",
    "title": "Key-art system across join, confirmation and onboarding pages",
    "area": "Funnel",
-   "owner": "Claude",
+   "owner": "Bhaskar",
    "priority": "P2",
    "due": "2026-09-24",
    "status": "review",
@@ -2473,13 +2792,17 @@
      "note": "The step-group image was regenerated because the model drew a WhatsApp logo."
     }
    ],
-   "order": 990
+   "order": 990,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-102",
    "title": "Live wiring audit and fixes",
    "area": "Funnel",
-   "owner": "Claude",
+   "owner": "Ben",
    "priority": "P1",
    "due": "2026-09-24",
    "status": "review",
@@ -2508,13 +2831,18 @@
      "note": "Only the WhatsApp and Zoom placeholders remain (T-040 / T-042)."
     }
    ],
-   "order": 1000
+   "order": 1000,
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ]
   },
   {
    "id": "T-103",
    "title": "Geo-aware pricing: INR in India, EUR across the EU, USD elsewhere",
    "area": "Funnel",
-   "owner": "Claude",
+   "owner": "Ben",
    "priority": "P1",
    "due": "2026-09-24",
    "status": "review",
@@ -2542,13 +2870,18 @@
      "note": "Verified live: DE €89 → Dodo €89, PL €89 → Dodo €89, IN ₹9,999 → Dodo ₹9,999, US $99 → Dodo $99. No flash at first paint."
     }
    ],
-   "order": 1010
+   "order": 1010,
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ]
   },
   {
    "id": "T-104",
    "title": "Every funnel form → its own Work Tracker tab",
    "area": "Ops",
-   "owner": "Claude",
+   "owner": "Aquila",
    "priority": "P1",
    "due": "2026-09-24",
    "status": "review",
@@ -2598,13 +2931,17 @@
      "note": "The public mirror's forms now reach the Work Tracker too (T-105)."
     }
    ],
-   "order": 1020
+   "order": 1020,
+   "assignee": "Claude",
+   "reviewers": [
+    "Aquila"
+   ]
   },
   {
    "id": "T-105",
    "title": "Deploy the Apps Script receiver so the PUBLIC site's forms reach the Work Tracker",
    "area": "Ops",
-   "owner": "Claude",
+   "owner": "Aquila",
    "priority": "P1",
    "due": "2026-09-24",
    "status": "review",
@@ -2638,13 +2975,17 @@
      "note": "Deployed from adi@growthclub.org (Chrome profile connected by the owner): standalone Apps Script 'Tantra Funnel', web app, execute as adi@growthclub.org, access Anyone, version 1. Health check lists all six forms. The site's form helper now defaults to it, rebuilt and republished. Verified LIVE: real registrations on the public /workshop and /masterclass pages land in Funnel · Free / Paid Registrations with UTMs (via=apps-script). scripts/probe-live-forms-to-sheet.mjs repeats the test."
     }
    ],
-   "order": 1030
+   "order": 1030,
+   "assignee": "Claude",
+   "reviewers": [
+    "Aquila"
+   ]
   },
   {
    "id": "T-106",
    "title": "Registration deadline has passed — extend it for this cohort, or roll to the next",
    "area": "Funnel",
-   "owner": "Owner",
+   "owner": "Adi",
    "priority": "P0",
    "due": "2026-09-24",
    "status": "review",
@@ -2668,13 +3009,17 @@
      "note": "Owner: the next cohort is next Wednesday to Friday. Set to Wed 30 Sep · Thu 1 · Fri 2 Oct, 11:00 AM ET; registration closes Tue 29 Sep 11:59 PM ET. Updated funnel.ts (plus a new START_LABEL: four hard-coded 'Starts Thu 24 Sep' strings now read from it), sessions.ts, the template library samples, the workshop hub, the board countdown, and the deck line 'after Monday' → 'after Friday' (regenerated)."
     }
    ],
-   "order": 1040
+   "order": 1040,
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-107",
    "title": "Delete wiring test rows (ops.db + Work Tracker)",
    "area": "Ops",
-   "owner": "Claude",
+   "owner": "Nelbin",
    "priority": "P3",
    "due": "2026-09-24",
    "status": "queue",
@@ -2708,13 +3053,17 @@
      "note": "More test rows to delete: apps-script-probe@example.com (Checkout Starts), live-probe+free/paid-…@example.com (Free/Paid Registrations)."
     }
    ],
-   "order": 1050
+   "order": 1050,
+   "assignee": "Claude",
+   "reviewers": [
+    "Nelbin"
+   ]
   },
   {
    "id": "T-108",
    "title": "Three animated funnels in the playbook: webinar · reverse squeeze page · challenge",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Adi",
    "priority": "P1",
    "due": "2026-09-24",
    "status": "review",
@@ -2750,13 +3099,17 @@
      "note": "17 stages across the three funnels, 22 real logos plus named wordmark chips. Animated: people-dots flowing down a tapering rail with drop-offs at each stage, stage reveal, count-up metrics, a tool highlight scan. Reduced motion = static final state. Verified at 390/1280 in dark + light: 0 overflow, 0 clipped, 0 errors; probe-playbook clean at 360–1440. Also fixed two stale 'five times' lines (now three days)."
     }
    ],
-   "order": 1060
+   "order": 1060,
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-109",
    "title": "Onboarding centre: big-tab sidebar (VIP ticket + Day 1–3 journey); every VIP template embedded in the step that uses it",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Amal",
    "priority": "P1",
    "due": "2026-09-24",
    "status": "review",
@@ -2808,13 +3161,17 @@
      "note": "Sidebar is now 13 big tabs and nothing nested: YOUR VIP TICKET (the nine bonuses by name, with key art) on top, then YOUR JOURNEY (Before Day 1 · Day 1 · Day 2 · Day 3, 68px tabs with date and theme; the active day shows a progress bar). Page order matches: welcome → VIP ticket (nine cards, each with 'where it shows up' jumps into the days) → Before Day 1 → Days. All 54 templates are placed under the exact playbook step that uses them (lib/vip-embeds.ts, 15 strips, build fails if one is unplaced): e.g. Day 2 S1 traffic = 14 traffic assets, S2 = landing page + form + thank-you + confirmation, Day 3 52-week step = newsletter/calendar/loop. Recording, prompt pack, platform and channel carry their VIP name where they appear. Separate kit and library sections removed. Probes clean at 5 widths, dark, free + locked."
     }
    ],
-   "order": 1070
+   "order": 1070,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
   },
   {
    "id": "T-110",
    "title": "Build Guides framework (Lane A): contract, renderer, Day 2 manual, Day 1 mechanism pick, Basic→Tantra Pro rename, integration",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Adi",
    "priority": "P1",
    "due": "2026-09-28",
    "status": "review",
@@ -2843,13 +3200,17 @@
      "note": "Resumed after overnight stall (rate limit + all dev servers died). Merged C 023ea36/bf4962f, D 2f12ee5/948d0c3, E f0d1499. 24 guides live in Day 2. FlowChart: phone lane blocks, gutter routing, label placement along the real path with a sticky tag fallback. D's consistency list applied (four polls, three-day challenge, RSP value-first labels, Calendar Invites, 48.6%). probe-guides PASS 5 widths × 2 themes (250 renders)."
     }
    ],
-   "order": 1080
+   "order": 1080,
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-111",
    "title": "Template library corpus (Lane B): fields, channel/mechanism tags, TemplateCard, anonymised corpus templates, leak probe",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Amal",
    "priority": "P1",
    "due": "2026-09-28",
    "status": "next",
@@ -2883,13 +3244,17 @@
      "note": "B2 verbatim rebuild merged to main (lane/lib 5b92879): 679 real client examples, 0 written; SaaS/Consulting/Services + niche. 93 templates now show 'No real example yet' (72 used in guides). Verified on main: probe-onboarding ALL CLEAN (paid light, free+locked dark), probe-guides PASS, headings, fidelity, anonymity. NOT published to the mirror until T-141 is answered."
     }
    ],
-   "order": 1090
+   "order": 1090,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
   },
   {
    "id": "T-112",
    "title": "Build guides S1 Traffic, S2 Tantra Pro Funnel, S3 Tantra Pro Flow (Lane C)",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Adi",
    "priority": "P1",
    "due": "2026-09-28",
    "status": "review",
@@ -2918,13 +3283,17 @@
      "note": "Lane C complete and live (main 10e5579, mirror f8af8d9f): 9 guides, 79 real shots, probes clean. Open follow-ups: T-115 (screenshots), T-138, T-139, T-140."
     }
    ],
-   "order": 1100
+   "order": 1100,
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-113",
    "title": "Build guides S4 conversion mechanisms: webinar · RSP (VSL) · challenge (Lane D)",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Adi",
    "priority": "P1",
    "due": "2026-09-28",
    "status": "review",
@@ -2956,13 +3325,17 @@
      "note": "Merged and live (mirror f7d8612e): s4-webinar 14 steps / 18 real shots; s4-rsp 11 / 11 (1 capture needed); s4-challenge 15 / 15 (1 capture needed). 15 templates, including the abstracted 32-beat VSL script. Open: 2 screenshots (asks in T-115); audit defects tracked in T-121, T-122, T-124–T-127; pitch cadence in T-129."
     }
    ],
-   "order": 1110
+   "order": 1110,
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-114",
    "title": "Build guides S5 Revenue & Deal Pipeline and S6 52-Week Growth Engine (Lane E)",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Adi",
    "priority": "P1",
    "due": "2026-09-28",
    "status": "review",
@@ -2996,13 +3369,17 @@
      "note": "Lane E pending work split into tasks: T-135 (Claude, no input needed), T-132 (Claude Code screens + CLI update), T-133 (WhatsApp/SMS provider screens), T-134 (starter-CRM reference build), T-136 (waits on T-024/T-032/T-033), T-137 (cadence decision). GHL + Beehiiv sign-in gaps stay under T-115; the stage count is T-119; GoHighLevel placement is T-120; the last E commit is T-128."
     }
    ],
-   "order": 1120
+   "order": 1120,
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-115",
    "title": "Real screenshots for the 54 'Capture Needed' guide steps",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Amal",
    "priority": "P1",
    "due": "2026-09-28",
    "status": "blocked",
@@ -3041,13 +3418,17 @@
      "note": "Lane C: added the exact asks for its 26 slots (F: six named Meta/LinkedIn shots; G: which content tools you use; H: Cloud console + GA4 sign-ins). Tantra facts → T-138; the unreadable automation doc → T-139; screens that can't exist yet → T-140."
     }
    ],
-   "order": 1130
+   "order": 1130,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
   },
   {
    "id": "T-116",
    "title": "Decide the 'Tantra Pro' name clash (Tantra Pro Funnel/Flow vs the $999 Tantra Pro offer)",
    "area": "Product",
-   "owner": "Claude",
+   "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-28",
    "status": "blocked",
@@ -3068,13 +3449,18 @@
      "note": "Created from the Build Guides integration pass (Lane A)."
     }
    ],
-   "order": 1140
+   "order": 1140,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar",
+    "Adi"
+   ]
   },
   {
    "id": "T-117",
    "title": "Re-source the /masterclass FunnelOS webinar numbers",
    "area": "Funnel",
-   "owner": "Claude",
+   "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-28",
    "status": "blocked",
@@ -3095,13 +3481,17 @@
      "note": "Created from the Build Guides integration pass (Lane A)."
     }
    ],
-   "order": 1150
+   "order": 1150,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-118",
    "title": "Pick one lead-qualification scale",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Adi",
    "priority": "P2",
    "due": "2026-09-28",
    "status": "blocked",
@@ -3122,13 +3512,17 @@
      "note": "Created from the Build Guides integration pass (Lane A)."
     }
    ],
-   "order": 1160
+   "order": 1160,
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-119",
    "title": "Confirm the Day 3 pipeline diagram count ('Eleven stages, two exits')",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Adi",
    "priority": "P3",
    "due": "2026-09-28",
    "status": "blocked",
@@ -3149,13 +3543,17 @@
      "note": "Created from the Build Guides integration pass (Lane A)."
     }
    ],
-   "order": 1170
+   "order": 1170,
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-120",
    "title": "GoHighLevel in the stacks — confirm where it belongs",
    "area": "Product",
-   "owner": "Claude",
+   "owner": "Bharath",
    "priority": "P3",
    "due": "2026-09-28",
    "status": "blocked",
@@ -3176,13 +3574,18 @@
      "note": "Created from the Build Guides integration pass (Lane A)."
     }
    ],
-   "order": 1180
+   "order": 1180,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bharath",
+    "Adi"
+   ]
   },
   {
    "id": "T-121",
    "title": "Seat counter (847/1000): make it real or remove it",
    "area": "Funnel",
-   "owner": "Claude",
+   "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-28",
    "status": "blocked",
@@ -3203,13 +3606,18 @@
      "note": "Created from the Build Guides integration pass (Lane A)."
     }
    ],
-   "order": 1190
+   "order": 1190,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar",
+    "Adi"
+   ]
   },
   {
    "id": "T-122",
    "title": "Payment grants access (Dodo → entitlement)",
    "area": "Ops",
-   "owner": "Claude",
+   "owner": "Ben",
    "priority": "P0",
    "due": "2026-09-27",
    "status": "blocked",
@@ -3231,13 +3639,18 @@
      "note": "Created from the Build Guides integration pass (Lane A)."
     }
    ],
-   "order": 1200
+   "order": 1200,
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ]
   },
   {
    "id": "T-123",
    "title": "Transactional + reminder messages actually send",
    "area": "Delivery",
-   "owner": "Claude",
+   "owner": "Aquila",
    "priority": "P0",
    "due": "2026-09-27",
    "status": "blocked",
@@ -3262,13 +3675,17 @@
      "note": "Created from the Build Guides integration pass (Lane A)."
     }
    ],
-   "order": 1210
+   "order": 1210,
+   "assignee": "Claude",
+   "reviewers": [
+    "Aquila"
+   ]
   },
   {
    "id": "T-124",
    "title": "/vip checkout keeps first-touch UTMs",
    "area": "Funnel",
-   "owner": "Claude",
+   "owner": "Ben",
    "priority": "P0",
    "due": "2026-09-26",
    "status": "review",
@@ -3306,13 +3723,18 @@
      "note": "checkout-client read location.search (empty on /vip, reached via router.push) so purchases dropped their UTMs. Both the server-session POST body and the static hosted-link fallback now use resolveUtm() = first-touch tantra_first_touch_utm else this URL. Verified with new app/scripts/probe-checkout-utm.mjs (server POST body + hosted URL both carry utm_source/medium/campaign/content = first touch, PASS) and probe-checkout-currency (DE/PL/IN/US mint correct-currency Dodo sessions, no regression). Committed 777b084. Owner sign-off: a completed live referral purchase landing this metadata in the Dodo dashboard."
     }
    ],
-   "order": 1220
+   "order": 1220,
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ]
   },
   {
    "id": "T-125",
    "title": "Calendar adds + session link on the join pages",
    "area": "Funnel",
-   "owner": "Claude",
+   "owner": "Ben",
    "priority": "P1",
    "due": "2026-09-26",
    "status": "review",
@@ -3354,13 +3776,18 @@
      "note": "Both join pages now offer Google Calendar (per day) + one .ics for all 3 sessions via a shared SessionCalendar component, mirroring /onboarding. The session-link CTA no longer points at the Zoom placeholder: while SEAT_PENDING it shows 'Your session link ... arrives before Day 1'. Verified with tsc (clean), eslint (only pre-existing img warnings), curl (3 google-cal links + 1 ics on each page), and headless screenshots (no console errors). probe-workshop failures are pre-existing (stale copy checks) — confirmed identical with my changes stashed."
     }
    ],
-   "order": 1230
+   "order": 1230,
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ]
   },
   {
    "id": "T-126",
    "title": "Survey answers are saved to ops, and #day-N deep links open the right day",
    "area": "Delivery",
-   "owner": "Claude",
+   "owner": "Ben",
    "priority": "P1",
    "due": "2026-09-27",
    "status": "review",
@@ -3403,13 +3830,18 @@
      "note": "Survey now mirrors each day's answers to the ops service and hydrates them on a fresh device (proven with a two-device headless round-trip in probe-survey); the ops POST merges rather than replaces, so a second/offline device can't wipe another's answers. #day-2 and #day-3 now open the right day in both survey.html and deck.html (was always Day 1). probe-survey is clean. Two operational follow-ups before it's live for real attendees, flagged for your call: (a) the attendee entry point must open survey.html?sid=<session> (or ?email=) so identity reaches the page — the internal centre links it with no params; (b) restart the production ops service (:8787) to load the new GET /api/survey endpoint (I left it stopped because its launchd tick spawns headless claude runs). Open http://localhost:8899/survey.html?v=t126#day-2 and http://localhost:8899/deck.html#day-2."
     }
    ],
-   "order": 1240
+   "order": 1240,
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ]
   },
   {
    "id": "T-127",
    "title": "Serve and link each attendee's generated course plan",
    "area": "Delivery",
-   "owner": "Claude",
+   "owner": "Ben",
    "priority": "P1",
    "due": "2026-09-27",
    "status": "review",
@@ -3447,13 +3879,18 @@
      "note": "Built a session-gated /onboarding/plan route that streams each attendee's own generated plan HTML (the plan file is named after the access token, so it is never served from a raw /plans URL). Verified live on :4322: Ellie's session serves her plan, attendee 8's session serves a different plan, and a no-cookie request shows a sign-in interstitial with zero plan content leaked; resolve now returns planUrl only when delivered. Before Day 1 step 2 ('Read Your Personal Plan') now links to it — confirmed the href renders in the centre. Done_when #2 (link in the plan email) waits on T-123, which hasn't landed. Review: open /onboarding with your access link, go to Before Day 1 → step 2."
     }
    ],
-   "order": 1250
+   "order": 1250,
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ]
   },
   {
    "id": "T-128",
    "title": "Merge Lane E's last commit and republish",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Amal",
    "priority": "P2",
    "due": "2026-09-26",
    "status": "next",
@@ -3472,13 +3909,17 @@
      "note": "Created from the Build Guides integration pass (Lane A)."
     }
    ],
-   "order": 1260
+   "order": 1260,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
   },
   {
    "id": "T-129",
    "title": "Board hygiene: T-050, T-042, T-071 text is stale",
    "area": "Ops",
-   "owner": "Claude",
+   "owner": "Amal",
    "priority": "P3",
    "due": "2026-09-26",
    "status": "blocked",
@@ -3504,13 +3945,17 @@
      "note": "Lane D: pitch cadence needs an owner decision, so this is marked blocked with the exact question."
     }
    ],
-   "order": 1270
+   "order": 1270,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
   },
   {
    "id": "T-130",
    "title": "Make the busiest guide flowcharts easier to read",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Adi",
    "priority": "P3",
    "due": "2026-09-28",
    "status": "queue",
@@ -3529,13 +3974,17 @@
      "note": "Created from the Build Guides integration pass (Lane A)."
     }
    ],
-   "order": 1280
+   "order": 1280,
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-131",
    "title": "Confirm the RSP 52-week grid rows",
    "area": "Funnel",
-   "owner": "Claude",
+   "owner": "Adi",
    "priority": "P3",
    "due": "2026-09-28",
    "status": "blocked",
@@ -3556,13 +4005,17 @@
      "note": "Created from the Build Guides integration pass (Lane A)."
     }
    ],
-   "order": 1290
+   "order": 1290,
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-132",
    "title": "Stage 5–6 guides: real Claude Code screenshots (5 steps) + update the Claude Code CLI",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Amal",
    "priority": "P2",
    "due": "2026-09-28",
    "status": "blocked",
@@ -3586,13 +4039,17 @@
      "note": "Added by Lane E at the owner's request: pending Stage 5–6 work, split by what unblocks it."
     }
    ],
-   "order": 1320
+   "order": 1320,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
   },
   {
    "id": "T-133",
    "title": "Stage 6 guides: real WhatsApp + SMS provider screenshots (5 steps)",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Amal",
    "priority": "P2",
    "due": "2026-09-28",
    "status": "blocked",
@@ -3615,13 +4072,17 @@
      "note": "Added by Lane E at the owner's request: pending Stage 5–6 work, split by what unblocks it."
     }
    ],
-   "order": 1330
+   "order": 1330,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
   },
   {
    "id": "T-134",
    "title": "Starter CRM: build the reference connections (prompts 01–06) so the planned steps get real screenshots",
    "area": "Product",
-   "owner": "Claude",
+   "owner": "Aquila",
    "priority": "P3",
    "due": "2026-09-29",
    "status": "blocked",
@@ -3645,13 +4106,17 @@
      "note": "Added by Lane E at the owner's request: pending Stage 5–6 work, split by what unblocks it."
     }
    ],
-   "order": 1340
+   "order": 1340,
+   "assignee": "Claude",
+   "reviewers": [
+    "Aquila"
+   ]
   },
   {
    "id": "T-135",
    "title": "Stage 5–6 guides: 5 screenshots Claude can capture now from our own pages and the demo run",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Amal",
    "priority": "P2",
    "due": "2026-09-27",
    "status": "queue",
@@ -3671,13 +4136,17 @@
      "note": "Added by Lane E: no owner input needed. Claude picks this up next pass."
     }
    ],
-   "order": 1350
+   "order": 1350,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
   },
   {
    "id": "T-136",
    "title": "s5-challenge-stages step 2: capture the daily-output loop once it exists",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Amal",
    "priority": "P3",
    "due": "2026-10-02",
    "status": "hold",
@@ -3701,13 +4170,17 @@
      "note": "Added by Lane E at the owner's request: pending Stage 5–6 work, split by what unblocks it."
     }
    ],
-   "order": 1360
+   "order": 1360,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
   },
   {
    "id": "T-137",
    "title": "Decide the Stage 6 messaging cadence (brief vs playbook)",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Bhaskar",
    "priority": "P2",
    "due": "2026-09-27",
    "status": "blocked",
@@ -3728,13 +4201,17 @@
      "note": "Added by Lane E at the owner's request: pending Stage 5–6 work, split by what unblocks it."
     }
    ],
-   "order": 1370
+   "order": 1370,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-138",
    "title": "Tantra app: confirm the import limit and daily cap, and give the app URL (Cold Calendar guide)",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Bharath",
    "priority": "P2",
    "due": "2026-09-29",
    "status": "blocked",
@@ -3758,13 +4235,18 @@
      "note": "Added by Lane C at the owner's request: pending Stage 1–3 work, split by what unblocks it."
     }
    ],
-   "order": 1380
+   "order": 1380,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bharath",
+    "Adi"
+   ]
   },
   {
    "id": "T-139",
    "title": "Read the 'Webinar Funnel Automations' Claude doc and reconcile the S2/S3 guides with it",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Aquila",
    "priority": "P3",
    "due": "2026-09-29",
    "status": "blocked",
@@ -3787,13 +4269,17 @@
      "note": "Added by Lane C at the owner's request: pending Stage 1–3 work, split by what unblocks it."
     }
    ],
-   "order": 1381
+   "order": 1381,
+   "assignee": "Claude",
+   "reviewers": [
+    "Aquila"
+   ]
   },
   {
    "id": "T-140",
    "title": "Stage 1–3 guides: 6 screenshots that can only be taken later",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Amal",
    "priority": "P3",
    "due": "2026-10-03",
    "status": "queue",
@@ -3815,13 +4301,17 @@
      "note": "Added by Lane C at the owner's request: pending Stage 1–3 work, split by what unblocks it."
     }
    ],
-   "order": 1382
+   "order": 1382,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
   },
   {
    "id": "T-141",
    "title": "Decide: keep searchable client figures in the public template library?",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Amal",
    "priority": "P0",
    "due": "2026-09-26",
    "status": "blocked",
@@ -3849,13 +4339,18 @@
      "note": "Redacted the example client figures from this task's text: tasks.json is published on the public mirror, so the task itself was leaking the figures it asks about. The list stays in the private CHECKPOINT1_NUMBERS.md."
     }
    ],
-   "order": 1392
+   "order": 1392,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal",
+    "Adi"
+   ]
   },
   {
    "id": "T-142",
    "title": "Agent smoke test: voice note drives the autonomous agent",
    "area": "Infra",
-   "owner": "Claude",
+   "owner": "Aquila",
    "priority": "P2",
    "due": "",
    "status": "done",
@@ -3890,15 +4385,29 @@
      "ts": "2026-09-25T21:19:24+0530",
      "who": "claude",
      "note": "Smoke test passed twice on the real agent: a voice-only note (transcribed locally) and an owner-approved non-collaborator note were each acted on in about 15 seconds, with the task moved to review and the notes acked."
+    },
+    {
+     "ts": "2026-09-27T22:44:47+0530",
+     "who": "probe",
+     "note": "People: reviewers Aquila → Aquila/Bharath (by probe)."
+    },
+    {
+     "ts": "2026-09-27T22:44:47+0530",
+     "who": "probe",
+     "note": "People: reviewers Aquila/Bharath → Aquila (by probe)."
     }
    ],
-   "order": 1420
+   "order": 1420,
+   "assignee": "Claude",
+   "reviewers": [
+    "Aquila"
+   ]
   },
   {
    "id": "T-143",
    "title": "Voice notes + autonomous agent on the Launch Control board",
    "area": "Infra",
-   "owner": "Claude",
+   "owner": "Aquila",
    "priority": "P0",
    "due": "",
    "status": "review",
@@ -3912,16 +4421,12 @@
    ],
    "evidence": [
     {
-     "label": "Launch Control board",
-     "url": "http://localhost:8899/tasks.html"
-    },
-    {
-     "label": "Agent log",
+     "label": "Runner log (this run auto-triggered)",
      "url": "workshop-plan/tasks/runner.log"
     },
     {
-     "label": "Runner",
-     "url": "workshop-plan/tasks/runner.py"
+     "label": "Board",
+     "url": "http://localhost:8899/tasks.html"
     }
    ],
    "blockers": [],
@@ -3931,15 +4436,29 @@
      "ts": "2026-09-25T21:19:24+0530",
      "who": "claude",
      "note": "Built and verified: probe-tasks.mjs clean at 4 widths (incl. real mic recording + transcription and 6 security checks); two real agent runs on T-142; the critic's 13 findings fixed."
+    },
+    {
+     "ts": "2026-09-26T05:30:00+0530",
+     "who": "claude",
+     "note": "Voice UX v2: live level meter + can't-hear warning, auto-upload on Stop with the transcript shown BEFORE sending, one 'Send voice note' button, accurate durations (ffmpeg remux), drafts survive reloads and are never hidden. Agent: feedback and queue now run in separate lanes, so a voice note is acted on in ~12 s even during a 30-min queue pass. Verified: probe-voice.mjs (129 checks, 5 accents, 6 formats) x3 and probe-voice-agent.mjs (real agent, 3 spoken instructions each) x3, all clean."
+    },
+    {
+     "ts": "2026-09-27T22:30:36+0530",
+     "who": "claude",
+     "note": "Confirmed — yes. This very run IS the answer: your voice note (F-6bae831b, recorded 22:24) was transcribed locally, the runner's feedback lane picked it up (runner.log: 'start [feedback] T-143 notes=[F-6bae831b] trigger=board') and spawned headless Claude on your subscription with no one watching. Because you're a collaborator it skipped the approval gate; a non-collaborator note would wait for your one-click OK. So after any voice note requesting changes, the rework runs fully autonomously on that task and lands back in review/blocked/done. Nothing to rebuild — the mechanism executed live to reply to you."
     }
    ],
-   "order": 1430
+   "order": 1430,
+   "assignee": "Claude",
+   "reviewers": [
+    "Aquila"
+   ]
   },
   {
    "id": "T-144",
    "title": "Hub Review tab: every funnel element with preview, source and approve/feedback",
    "area": "Infra",
-   "owner": "Claude",
+   "owner": "Amal",
    "priority": "P0",
    "due": "",
    "status": "review",
@@ -3968,13 +4487,17 @@
      "note": "Built and verified: 573 GitHub source links via API, 575 preview links/anchors live, all 182 Template Library cards land on cold load."
     }
    ],
-   "order": 1440
+   "order": 1440,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
   },
   {
    "id": "T-145",
    "title": "Decide: rewrite the public mirror repo's history to remove the leaked library commit",
    "area": "Infra",
-   "owner": "Adi",
+   "owner": "Bharath",
    "priority": "P0",
    "due": "",
    "status": "blocked",
@@ -3994,7 +4517,12 @@
      "note": "Raised after the incident; logged in coord/LOG.md."
     }
    ],
-   "order": 1450
+   "order": 1450,
+   "assignee": "Adi",
+   "reviewers": [
+    "Bharath",
+    "Adi"
+   ]
   },
   {
    "id": "T-146",
@@ -4020,7 +4548,11 @@
      "note": "The hub's 'Request repo access' button files an issue with the username."
     }
    ],
-   "order": 1460
+   "order": 1460,
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-147",
@@ -4046,13 +4578,18 @@
      "note": "Found during the link audit; usetantra.com and api.usetantra.com answered normally."
     }
    ],
-   "order": 1470
+   "order": 1470,
+   "assignee": "Bharath",
+   "reviewers": [
+    "Bharath",
+    "Adi"
+   ]
   },
   {
    "id": "T-148",
    "title": "Webinar deck v3: the Tantra logo image is missing (404)",
    "area": "Content",
-   "owner": "Claude",
+   "owner": "Bhaskar",
    "priority": "P2",
    "due": "",
    "status": "queue",
@@ -4072,7 +4609,11 @@
      "note": "Found during the link audit."
     }
    ],
-   "order": 1480
+   "order": 1480,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar"
+   ]
   },
   {
    "id": "T-149",
@@ -4098,13 +4639,17 @@
      "note": "Seen on the Review tab critic pass, 2026-09-26."
     }
    ],
-   "order": 1490
+   "order": 1490,
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ]
   },
   {
    "id": "T-150",
    "title": "Hub: free and paid user-flow maps + post-workshop workflows, and a live task list",
    "area": "Infra",
-   "owner": "Claude",
+   "owner": "Amal",
    "priority": "P0",
    "due": "",
    "status": "review",
@@ -4147,7 +4692,336 @@
      "note": "Live. Flows: overview map + 6 flows, 51 steps, 77 task links; every element/template/task reference validated at build. Tasks: live from tasks.json, grouped by status. Board publishes every 5 min via launchd behind the client denylist + figures guard. Verified: 791 hub links OK live, 573 GitHub source links OK via API, 0 overlaps at 1440/768/390, light+dark."
     }
    ],
-   "order": 1500
+   "order": 1500,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
+  },
+  {
+   "id": "T-151",
+   "title": "Feedback intake: one queue for every Tantra bug report and feature request",
+   "area": "Product",
+   "owner": "Amal",
+   "priority": "P1",
+   "due": "2026-10-06",
+   "status": "queue",
+   "why": "Owner voice notes, 2026-09-26: the funnel's job is to get everyone using Tantra and reporting every bug and feature request; both get resolved through a fast agentic dev cycle so customers stay for the business results. Owner assigned all of this to Claude end to end.",
+   "spec": "One place all feedback lands (in-app widget, form, team channel all feed it). Required fields: type (bug/feature), brand/workspace, reporter, severity, steps to reproduce, screenshot or Loom. A triage agent labels bug vs feature, merges duplicates, sets severity and routes to the right pipeline. Reporter gets an automatic acknowledgement and a 'shipped' message. One-page how-to-report guide. Tantra product code is not in this repo; locate it before building, and run it locally (no n8n; Claude-built automation).",
+   "done_when": [
+    "Every report from widget, form and channel lands in one queue",
+    "Required fields enforced",
+    "Triage agent 90%+ correct on a test batch of 30 real reports",
+    "Acknowledgement and shipped messages fire",
+    "How-to-report guide linked in the app and pinned in team channels"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-26T03:21:41+0530",
+     "who": "claude",
+     "note": "Added from owner voice notes 2026-09-26."
+    }
+   ],
+   "order": 1510,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
+  },
+  {
+   "id": "T-152",
+   "title": "Bug pipeline: severity levels, agent reproduces and proposes the fix, human review, deploy",
+   "area": "Product",
+   "owner": "Bharath",
+   "priority": "P1",
+   "due": "2026-10-09",
+   "status": "queue",
+   "why": "Owner voice notes, 2026-09-26: the funnel's job is to get everyone using Tantra and reporting every bug and feature request; both get resolved through a fast agentic dev cycle so customers stay for the business results. Owner assigned all of this to Claude end to end.",
+   "spec": "Severity levels with deadlines (P0 same day, P1 within 24h, P2 within the week). Agent flow: reproduce, write a failing test, open a fix PR, human review, deploy, notify reporter. Every fix carries a regression test. Weekly report: open bugs by severity, time to fix, bugs that came back. Tantra product code is not in this repo; locate it before building, and run it locally (no n8n; Claude-built automation).",
+   "done_when": [
+    "Severity levels written and agreed",
+    "Flow run end to end on 5 real bugs",
+    "PRs without a regression test cannot merge",
+    "First weekly bug report posted"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-26T03:21:41+0530",
+     "who": "claude",
+     "note": "Added from owner voice notes 2026-09-26."
+    }
+   ],
+   "order": 1520,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bharath",
+    "Adi"
+   ]
+  },
+  {
+   "id": "T-153",
+   "title": "Feature request pipeline: combine, score by revenue and retention impact, weekly decision, changelog",
+   "area": "Product",
+   "owner": "Amal",
+   "priority": "P1",
+   "due": "2026-10-09",
+   "status": "queue",
+   "why": "Owner voice notes, 2026-09-26: the funnel's job is to get everyone using Tantra and reporting every bug and feature request; both get resolved through a fast agentic dev cycle so customers stay for the business results. Owner assigned all of this to Claude end to end.",
+   "spec": "Merge duplicate requests and count demand. Score by revenue/retention impact, not by who asked loudest. Weekly slot decides build now (24h agentic cycle) / write a spec / park. Changelog per release and a note to everyone who asked.",
+   "done_when": [
+    "Each request shows a demand count",
+    "Scoring rubric written and used",
+    "First weekly decision logged",
+    "Changelog entry for every release"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-26T03:21:41+0530",
+     "who": "claude",
+     "note": "Added from owner voice notes 2026-09-26."
+    }
+   ],
+   "order": 1530,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
+  },
+  {
+   "id": "T-154",
+   "title": "24-hour agentic dev cycle: pitch to engineering, 3-5 request pilot, review steps, metrics",
+   "area": "Product",
+   "owner": "Bharath",
+   "priority": "P1",
+   "due": "2026-10-13",
+   "status": "queue",
+   "why": "Owner voice notes, 2026-09-26: the funnel's job is to get everyone using Tantra and reporting every bug and feature request; both get resolved through a fast agentic dev cycle so customers stay for the business results. Owner assigned all of this to Claude end to end.",
+   "spec": "Benchmark: Opus Clip-style ~24h request-to-release (verify the claim before any public use). One-page case for the engineering lead (Bhaskar): retention argument + pilot proposal. Pilot 3-5 recent feature requests through the agentic flow and measure request->PR->live. Define the review steps (product, code, QA) and their time limits. Basics: CI, preview environment per change, enough test coverage for agents to work safely. Stop quoting '2 days' by default; pilot numbers set the new standard. Tantra product code is not in this repo; locate it before building, and run it locally (no n8n; Claude-built automation).",
+   "done_when": [
+    "One-page pitch written",
+    "Pilot run on 3-5 real requests with timings",
+    "Review steps written and agreed with the dev team",
+    "24h ship rate, PR-to-live time and regression rate tracked on the dashboard"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-26T03:21:41+0530",
+     "who": "claude",
+     "note": "Added from owner voice notes 2026-09-26."
+    }
+   ],
+   "order": 1540,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bharath",
+    "Adi"
+   ]
+  },
+  {
+   "id": "T-155",
+   "title": "Dogfooding: run Tantra on our own funnel and on one client account and FintechCircle, with team-wide feedback",
+   "area": "Ops",
+   "owner": "Amal",
+   "priority": "P1",
+   "due": "2026-10-13",
+   "status": "queue",
+   "why": "Owner voice notes, 2026-09-26: the funnel's job is to get everyone using Tantra and reporting every bug and feature request; both get resolved through a fast agentic dev cycle so customers stay for the business results. Owner assigned all of this to Claude end to end.",
+   "spec": "Run Tantra's own funnel fully on Tantra. One live experiment each on one client account and FintechCircle. Backlog of at least 5 more growth ideas to run on Tantra. Team members across every line of business use or promote Tantra and report what they find, against a weekly feedback-volume target.",
+   "done_when": [
+    "Tantra's funnel live on Tantra, team logging its own feedback",
+    "one client account and FintechCircle experiments live",
+    "Growth-idea backlog of 5+",
+    "Weekly feedback-volume target set and tracked"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-26T03:21:41+0530",
+     "who": "claude",
+     "note": "Added from owner voice notes 2026-09-26."
+    },
+    {
+     "ts": "2026-09-27T22:51:15+0530",
+     "who": "claude",
+     "note": "Reworded so the public board names no client (the publish leak guard was blocking every board update since v34); meaning unchanged, the reference URL moved to coord/private-refs.md."
+    }
+   ],
+   "order": 1550,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
+  },
+  {
+   "id": "T-156",
+   "title": "Retention: define each customer's business result and send a monthly results report",
+   "area": "Product",
+   "owner": "Amal",
+   "priority": "P2",
+   "due": "2026-10-20",
+   "status": "queue",
+   "why": "Owner voice notes, 2026-09-26: the funnel's job is to get everyone using Tantra and reporting every bug and feature request; both get resolved through a fast agentic dev cycle so customers stay for the business results. Owner assigned all of this to Claude end to end.",
+   "spec": "Customers stay month after month only if Tantra produces real revenue/business outcomes. Define the result metric per customer type (revenue influenced, hours saved, processes automated), send a monthly results report, and feed the retention signal into feature scoring.",
+   "done_when": [
+    "Result metric defined per customer type",
+    "First monthly reports sent",
+    "Feature scoring rubric includes retention"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-26T03:21:41+0530",
+     "who": "claude",
+     "note": "Added from owner voice notes 2026-09-26."
+    }
+   ],
+   "order": 1560,
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal"
+   ]
+  },
+  {
+   "id": "T-157",
+   "title": "Three products: define SaaS / Pro / Enterprise, one traffic experiment each, tier qualifier in every funnel",
+   "area": "Traffic",
+   "owner": "Bhaskar",
+   "priority": "P2",
+   "due": "2026-10-20",
+   "status": "queue",
+   "why": "Owner voice notes, 2026-09-26: the funnel's job is to get everyone using Tantra and reporting every bug and feature request; both get resolved through a fast agentic dev cycle so customers stay for the business results. Owner assigned all of this to Claude end to end.",
+   "spec": "Tantra SaaS (software only), Tantra Pro (software + course + training), Tantra Enterprise (service-level support). Run traffic experiments for all three. Whichever product a funnel targets, buyers spread across all three tiers, so every funnel carries a qualifier that routes each buyer to the right tier. Track the tier mix per 100 customers. Packaging page shows all three side by side.",
+   "done_when": [
+    "One-pager per product with inclusions and price",
+    "3 live traffic experiments",
+    "Qualifier live on every funnel",
+    "Tier-mix report after the first 100 customers",
+    "Packaging page live"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-26T03:21:41+0530",
+     "who": "claude",
+     "note": "Added from owner voice notes 2026-09-26."
+    }
+   ],
+   "order": 1570,
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar"
+   ]
+  },
+  {
+   "id": "T-158",
+   "title": "Pipeline dashboard modelled on a client's webinar desk",
+   "area": "Infra",
+   "owner": "Ben",
+   "priority": "P1",
+   "due": "2026-10-09",
+   "status": "queue",
+   "why": "Owner voice notes, 2026-09-26: the funnel's job is to get everyone using Tantra and reporting every bug and feature request; both get resolved through a fast agentic dev cycle so customers stay for the business results. Owner assigned all of this to Claude end to end.",
+   "spec": "Management view in the style of the reference dashboard (URL in workshop-plan/coord/private-refs.md, not public) grouped bands, KPI cards labelled live/derived with a plain-English caption under each, tables of recent items, notes that say exactly what each number counts. Bands: feedback volume by source/brand, bug pipeline by severity and age, feature pipeline by decision, 24h ship rate and PR-to-live time, dogfooding experiments, customer tier mix.",
+   "done_when": [
+    "Dashboard live locally with every band",
+    "Every figure labelled live or derived with its definition",
+    "Reviewed weekly"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-26T03:21:41+0530",
+     "who": "claude",
+     "note": "Added from owner voice notes 2026-09-26."
+    },
+    {
+     "ts": "2026-09-27T22:51:15+0530",
+     "who": "claude",
+     "note": "Reworded so the public board names no client (the publish leak guard was blocking every board update since v34); meaning unchanged, the reference URL moved to coord/private-refs.md."
+    }
+   ],
+   "order": 1580,
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ]
+  },
+  {
+   "id": "T-174",
+   "title": "People QA sandbox: marketing copy tweak",
+   "area": "Infra",
+   "owner": "Ben",
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "review",
+   "why": "",
+   "spec": "Sandbox for probe-people-agent.py. Touch no files.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-27T22:54:38+0530",
+     "who": "claude",
+     "note": "Created by probe-people-agent.py."
+    }
+   ],
+   "order": 1740
+  },
+  {
+   "id": "T-175",
+   "title": "People QA sandbox: direct assign",
+   "area": "Infra",
+   "owner": "Ben",
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "",
+   "spec": "Sandbox for probe-people-agent.py.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-27T22:54:38+0530",
+     "who": "claude",
+     "note": "Created by probe-people-agent.py."
+    }
+   ],
+   "order": 1750
   }
  ]
 }
