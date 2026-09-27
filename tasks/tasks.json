@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-09-27T22:54:56+0530",
-  "version": 114,
-  "last_id": 176,
+  "updated": "2026-09-27T23:04:45+0530",
+  "version": 117,
+  "last_id": 178,
   "team": [
    {
     "name": "Adi",
@@ -4966,6 +4966,72 @@
     "Ben",
     "Bharath"
    ]
+  },
+  {
+   "id": "T-177",
+   "title": "Voice QA sandbox la4w: feedback lane",
+   "area": "Infra",
+   "owner": "Ben",
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "review",
+   "why": "",
+   "spec": "Sandbox for probe-voice-agent.mjs. Act exactly on the voice notes; they only ask for files under /tmp.",
+   "done_when": [],
+   "evidence": [
+    {
+     "label": "/tmp/Voice QA1.txt",
+     "url": "file:///tmp/Voice%20QA1.txt"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-27T23:03:55+0530",
+     "who": "claude",
+     "note": "Created by probe-voice-agent.mjs."
+    },
+    {
+     "ts": "2026-09-27T23:04:45+0530",
+     "who": "claude",
+     "note": "Created /tmp/Voice QA1.txt containing the single word 'pineapple' (verified: cat shows pineapple, 10 bytes). Moved to review per the voice note."
+    }
+   ],
+   "order": 1770
+  },
+  {
+   "id": "T-178",
+   "title": "Voice QA sandbox la4w: slow queue task",
+   "area": "Infra",
+   "owner": "Ben",
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "next",
+   "why": "",
+   "spec": "Sandbox for probe-voice-agent.mjs. Run the shell command `sleep 150`, then create /tmp/voice-qa-queue-la4w.txt containing the word queue, then set this task to review. Change nothing else.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-27T23:03:55+0530",
+     "who": "claude",
+     "note": "Created by probe-voice-agent.mjs."
+    }
+   ],
+   "order": 1780
   }
  ]
 }
