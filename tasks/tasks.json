@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-09-27T22:54:38+0530",
-  "version": 109,
-  "last_id": 175,
+  "updated": "2026-09-27T22:54:56+0530",
+  "version": 114,
+  "last_id": 176,
   "team": [
    {
     "name": "Adi",
@@ -4966,62 +4966,6 @@
     "Ben",
     "Bharath"
    ]
-  },
-  {
-   "id": "T-174",
-   "title": "People QA sandbox: marketing copy tweak",
-   "area": "Infra",
-   "owner": "Ben",
-   "assignee": "Claude",
-   "reviewers": [
-    "Ben",
-    "Bharath"
-   ],
-   "priority": "P2",
-   "due": "",
-   "status": "review",
-   "why": "",
-   "spec": "Sandbox for probe-people-agent.py. Touch no files.",
-   "done_when": [],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-27T22:54:38+0530",
-     "who": "claude",
-     "note": "Created by probe-people-agent.py."
-    }
-   ],
-   "order": 1740
-  },
-  {
-   "id": "T-175",
-   "title": "People QA sandbox: direct assign",
-   "area": "Infra",
-   "owner": "Ben",
-   "assignee": "Claude",
-   "reviewers": [
-    "Ben",
-    "Bharath"
-   ],
-   "priority": "P2",
-   "due": "",
-   "status": "queue",
-   "why": "",
-   "spec": "Sandbox for probe-people-agent.py.",
-   "done_when": [],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-27T22:54:38+0530",
-     "who": "claude",
-     "note": "Created by probe-people-agent.py."
-    }
-   ],
-   "order": 1750
   }
  ]
 }
