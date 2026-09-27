@@ -1078,19 +1078,20 @@ function renderTasks(){
   const cnt={};ORDER.forEach(k=>cnt[k]=0);TASKS.forEach(t=>cnt[bucket(t.status)]=(cnt[bucket(t.status)]||0)+1);
   $("#tq-stats").innerHTML=ORDER.map(k=>`<button class="tq-stat ${tqFilter===k?"on":""}" style="--sc:${ST[k][1]}" data-tq="${k}"><div class="k">${ST[k][0]}</div><div class="v">${cnt[k]}</div></button>`).join("");
   $("#tq-bar").innerHTML=ORDER.map(k=>cnt[k]?`<i style="width:${cnt[k]/TASKS.length*100}%;background:${ST[k][1]}" title="${ST[k][0]}: ${cnt[k]}"></i>`:"").join("");
-  const own=[...new Set(TASKS.map(t=>t.owner).filter(Boolean))].sort(), area=[...new Set(TASKS.map(t=>t.area).filter(Boolean))].sort();
+  const roster=(META.team||[]).map(m=>m.name);
+  const own=[...roster,...[...new Set(TASKS.map(t=>t.owner).filter(Boolean))].filter(o=>!roster.includes(o)).sort()], area=[...new Set(TASKS.map(t=>t.area).filter(Boolean))].sort();
   const so=$("#tq-owner"),sa=$("#tq-area");const ov=so.value,av=sa.value;
   so.innerHTML=`<option value="">Every owner</option>`+own.map(o=>`<option ${o===ov?"selected":""}>${esc(o)}</option>`).join("");
   sa.innerHTML=`<option value="">Every area</option>`+area.map(o=>`<option ${o===av?"selected":""}>${esc(o)}</option>`).join("");
   const q=$("#tq-q").value.trim().toLowerCase();
-  const pass=t=>(!ov||t.owner===ov)&&(!av||t.area===av)&&(!q||(t.id+" "+t.title+" "+(t.owner||"")+" "+(t.area||"")+" "+(t.why||"")).toLowerCase().includes(q));
+  const pass=t=>(!ov||t.owner===ov)&&(!av||t.area===av)&&(!q||(t.id+" "+t.title+" "+(t.owner||"")+" "+(t.assignee||"")+" "+(t.reviewers||[]).join(" ")+" "+(t.area||"")+" "+(t.why||"")).toLowerCase().includes(q));
   const groups=ORDER.filter(k=>tqFilter?k===tqFilter:(tqAll||!["dropped"].includes(k)));
   const html=groups.map(k=>{const list=TASKS.filter(t=>bucket(t.status)===k&&pass(t)).sort((a,b)=>(a.priority||"P9").localeCompare(b.priority||"P9")||(a.order||0)-(b.order||0));
     if(!list.length)return"";
     return `<div class="tq-grp" style="--sc:${ST[k][1]}"><h3><i></i>${ST[k][0]} <span class="n">${list.length}</span> <span class="hint">— ${ST[k][2]}</span></h3><div class="tq-list">${list.map(t=>{
       const last=(t.log||[]).slice(-1)[0];
       return `<details class="tq" style="--sc:${ST[k][1]}" id="tq-${esc(t.id)}"><summary><span class="id">${esc(t.id)}</span><span class="tt">${esc(t.title)}${t.status==="blocked"&&t.needs_from_owner?`<div class="ask">→ ${esc(t.needs_from_owner)}</div>`:""}</span>
-        <span class="mt">${t.priority?`<span class="tag ${t.priority==="P0"?"p0":t.priority==="P1"?"p1":""}">${esc(t.priority)}</span>`:""}${t.owner?`<span class="tag own">${esc(t.owner)}</span>`:""}${t.area?`<span class="tag">${esc(t.area)}</span>`:""}${t.due?`<span class="tag due">${esc(t.due)}</span>`:""}</span></summary>
+        <span class="mt">${t.priority?`<span class="tag ${t.priority==="P0"?"p0":t.priority==="P1"?"p1":""}">${esc(t.priority)}</span>`:""}${t.owner?`<span class="tag own" title="Owner">${esc(t.owner)}</span>`:""}${t.assignee?`<span class="tag" title="Doing the work">${t.assignee==="Claude"?"AI: ":"Doing: "}${esc(t.assignee)}</span>`:""}${(t.reviewers||[]).length?`<span class="tag" title="Reviewers">Review: ${t.reviewers.map(esc).join(", ")}</span>`:""}${t.area?`<span class="tag">${esc(t.area)}</span>`:""}${t.due?`<span class="tag due">${esc(t.due)}</span>`:""}</span></summary>
         <div class="body">${t.why?`<div><b>Why:</b> ${esc(t.why)}</div>`:""}${t.spec?`<div><b>What:</b> ${esc(t.spec)}</div>`:""}
         ${(t.done_when||[]).length?`<div><b>Done when:</b><ul>${t.done_when.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`:""}
         ${(t.blockers||[]).length?`<div><b>Blocked by:</b> ${t.blockers.map(esc).join("; ")}</div>`:""}
