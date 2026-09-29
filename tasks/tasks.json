@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-09-28T02:55:22+0530",
-  "version": 130,
+  "updated": "2026-09-29T20:19:22+0530",
+  "version": 131,
   "last_id": 180,
   "team": [
    {
@@ -4531,33 +4531,25 @@
   },
   {
    "id": "T-146",
-   "title": "Give teammates access to both GitHub repos",
-   "area": "Ops",
-   "owner": "Adi",
-   "priority": "P0",
-   "due": "",
    "status": "blocked",
-   "why": "The main repo is private, so every Source link on the hub shows GitHub's 'Page not found' to anyone not added. Approvals on the hub only count from collaborators of the review repo.",
-   "spec": "Add each teammate to adisuja/3-day-tantra-ai-revops-workshop (write) and adisuja/tantra-workshop-live (triage or write).",
-   "done_when": [
-    "Every teammate can open a Source link on the hub",
-    "Their approvals show on the hub"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "Send the teammates' GitHub usernames; Claude sends the invites.",
-   "log": [
-    {
-     "ts": "2026-09-26T00:17:50+0530",
-     "who": "claude",
-     "note": "The hub's 'Request repo access' button files an issue with the username."
-    }
-   ],
-   "order": 1460,
+   "owner": "Adi",
    "assignee": "Adi",
    "reviewers": [
     "Adi"
-   ]
+   ],
+   "priority": "P0",
+   "due": "",
+   "area": "Ops",
+   "order": 1460,
+   "title": "T-146: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-147",
