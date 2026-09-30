@@ -41,8 +41,8 @@
    "summary": "T-024 → **review**. Built three PDF-ready output templates in `workshop-plan/outputs/` (day1/2/3.html via `build.py`), each section tagged with its source survey questions and filled with a worked SendFlow sample; verified all three with `probe-outputs.mjs` (sections render, source lines present, Se"
   }
  ],
- "state": "idle",
- "message": "Nothing waiting.",
+ "state": "offline",
+ "message": "Claude is not signed in on this Mac (Command '['/Users/adithyamurali/.local/bin/claude', 'auth', 'status']' timed out after 60 seconds). Notes wait until it is.",
  "task_id": null,
  "entries": [],
  "mode": null,
