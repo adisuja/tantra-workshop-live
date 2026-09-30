@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-01T02:57:00+0530",
-  "version": 158,
+  "updated": "2026-10-01T02:58:24+0530",
+  "version": 166,
   "last_id": 193,
   "team": [
    {
@@ -649,6 +649,11 @@
      "ts": "2026-09-21T22:35:40+0530",
      "who": "claude",
      "note": "Landing page converted: hero, journey (3 blocks), passes, VSL captions, metadata and session dates (Thu 24 · Fri 25 · Mon 28 Sep). probe-workshop clean at 5 widths; typecheck clean; no new lint errors."
+    },
+    {
+     "ts": "2026-10-01T02:58:24+0530",
+     "who": "claude",
+     "note": "2026-10-01: Nelbin's content pass (PRs #2 to #4, not merged yet) changes this; review in T-186."
     }
    ],
    "order": 0,
@@ -1136,6 +1141,11 @@
      "ts": "2026-09-21T22:35:40+0530",
      "who": "claude",
      "note": "Playbook refolded to 3 chapters with in-chapter 'half two' dividers; work plan merged to 3 day tables (37 checkboxes kept, so saved progress survives); Gantt rebuilt for 3 days. probe-playbook clean at 4 widths."
+    },
+    {
+     "ts": "2026-10-01T02:58:24+0530",
+     "who": "claude",
+     "note": "2026-10-01: Nelbin's content pass (PRs #2 to #4, not merged yet) changes this; review in T-181, T-182, T-184."
     }
    ],
    "order": 110,
@@ -1179,6 +1189,11 @@
      "ts": "2026-09-21T22:35:40+0530",
      "who": "claude",
      "note": "Deck regenerated for 3 days: 203 slides (was 211), nothing cut — all 30 questions keep their 4-slide blocks and every teaching slide survives. Days 1 and 3 run in two halves with a turn slide. probe-deck clean at 3 widths, probe-deck-nav 9/9."
+    },
+    {
+     "ts": "2026-10-01T02:58:24+0530",
+     "who": "claude",
+     "note": "2026-10-01: Nelbin's content pass (PRs #2 to #4, not merged yet) changes this; review in T-188."
     }
    ],
    "order": 120,
@@ -1223,6 +1238,11 @@
      "ts": "2026-09-21T22:35:40+0530",
      "who": "claude",
      "note": "Survey regenerated: 3 days, 12/6/12 questions, all 30 kept with their 180 samples. probe-survey clean."
+    },
+    {
+     "ts": "2026-10-01T02:58:24+0530",
+     "who": "claude",
+     "note": "2026-10-01: Nelbin's content pass (PRs #2 to #4, not merged yet) changes this; review in T-183."
     }
    ],
    "order": 130,
@@ -2842,6 +2862,11 @@
      "ts": "2026-09-24",
      "who": "Claude",
      "note": "Welcome banner (key art) with the heading set on it, image cards for playbook / template library / example outputs, and image headers on the paid modules. FIXED: all 10 resource links (slides, day questions, playbook, library) and the 'See what's in it' upsell 404'd on the mirror (missing base path)."
+    },
+    {
+     "ts": "2026-10-01T02:58:24+0530",
+     "who": "claude",
+     "note": "2026-10-01: Nelbin's content pass (PRs #2 to #4, not merged yet) changes this; review in T-181."
     }
    ],
    "order": 880,
@@ -2913,6 +2938,11 @@
      "ts": "2026-09-23",
      "who": "Claude",
      "note": "Built and published to the review mirror."
+    },
+    {
+     "ts": "2026-10-01T02:58:24+0530",
+     "who": "claude",
+     "note": "2026-10-01: Nelbin's content pass (PRs #2 to #4, not merged yet) changes this; review in T-187."
     }
    ],
    "order": 890,
@@ -3850,6 +3880,11 @@
      "ts": "2026-09-25",
      "who": "Claude",
      "note": "Lane C complete and live (main 10e5579, mirror f8af8d9f): 9 guides, 79 real shots, probes clean. Open follow-ups: T-115 (screenshots), T-138, T-139, T-140."
+    },
+    {
+     "ts": "2026-10-01T02:58:24+0530",
+     "who": "claude",
+     "note": "2026-10-01: Nelbin's content pass (PRs #2 to #4, not merged yet) changes this; review in T-185."
     }
    ],
    "order": 1100,
@@ -4906,6 +4941,11 @@
      "ts": "2026-09-26T00:17:27+0530",
      "who": "claude",
      "note": "Redacted the example client figures from this task's text: tasks.json is published on the public mirror, so the task itself was leaking the figures it asks about. The list stays in the private CHECKPOINT1_NUMBERS.md."
+    },
+    {
+     "ts": "2026-10-01T02:58:24+0530",
+     "who": "claude",
+     "note": "2026-10-01: Nelbin's content pass (PRs #2 to #4, not merged yet) changes this; review in T-190, T-191."
     }
    ],
    "order": 1392,
