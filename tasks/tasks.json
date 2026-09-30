@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-09-29T20:19:22+0530",
-  "version": 131,
-  "last_id": 180,
+  "updated": "2026-10-01T02:57:00+0530",
+  "version": 158,
+  "last_id": 193,
   "team": [
    {
     "name": "Adi",
@@ -44,6 +44,575 @@
   ]
  },
  "tasks": [
+  {
+   "id": "T-191",
+   "title": "Decide the open calls from Nelbin's content pass (blocks merging PRs #2 to #4)",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "2026-10-01",
+   "status": "blocked",
+   "why": "",
+   "spec": "Collected from PR #2 and PR #3 'Needs Adi' sections. Nelbin did not decide any of these.",
+   "done_when": [],
+   "evidence": [
+    {
+     "label": "PR #3 'Needs Adi' list",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/pull/3"
+    },
+    {
+     "label": "PR #2 'Needs Adi' list",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/pull/2"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "Decide: session split · platform pass 1 or 2 months · kit name (VIP vs Kit) · Day 1 title · keep the cut Day 1 second half · Day 2 hours (19 to 25 h vs 8 to 12 h) · Day 3 hours · which dashboard attendees use · which deck to present · /masterclass paid-lane flow · proof claims and logos · client content in the library (T-141) · Instantly vs Tantra for cold email · GoHighLevel vs DenchClaw. Links still needed: Zoom, WhatsApp invite, welcome video, platform claim.",
+   "log": [
+    {
+     "ts": "2026-10-01T02:57:00+0530",
+     "who": "claude",
+     "note": "Added from PR #3."
+    }
+   ],
+   "order": 1
+  },
+  {
+   "id": "T-181",
+   "title": "Review 1/10 · Day 0: Before Day 1 steps + Foundations chapters (Nelbin, PR #2)",
+   "area": "Content",
+   "owner": "Nelbin",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "2026-10-01",
+   "status": "review",
+   "why": "",
+   "spec": "Before Day 1 steps rewritten as task, why, numbered steps. Unbuilt lessons (welcome video, plan, platform claim, recordings, prompt packs) show 'Not ready yet' and no longer tick green. Missing WhatsApp/Zoom links show 'not published yet'. VIP labels renamed 'Kit'. Foundations cut 3,125 to about 2,330 words: invented $1M ARR tile, 'Here's the deal', unsourced guru figures and the Forrester/TSIA block removed. Preview links run from Adi's Mac (Cloudflare tunnels) and show Nelbin's branch before merge; the live site still shows the old version, linked as 'Before'.",
+   "done_when": [],
+   "evidence": [
+    {
+     "label": "Preview: Before Day 1",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#m-start"
+    },
+    {
+     "label": "Preview: Foundations step",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#start-foundations"
+    },
+    {
+     "label": "Preview: Foundations chapters (playbook)",
+     "url": "https://theater-toronto-automotive-vote.trycloudflare.com/playbook.html#start"
+    },
+    {
+     "label": "Before: live Before Day 1",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/#m-start"
+    },
+    {
+     "label": "PR #2",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/pull/2"
+    },
+    {
+     "label": "PR #2 changed files",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/pull/2/files"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-01T02:57:00+0530",
+     "who": "claude",
+     "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    }
+   ],
+   "order": 2
+  },
+  {
+   "id": "T-182",
+   "title": "Review 2/10 · Day 1 rewrite: 8 steps in Adi's order (Nelbin, PR #3)",
+   "area": "Content",
+   "owner": "Nelbin",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "2026-10-01",
+   "status": "review",
+   "why": "",
+   "spec": "Day 1 is now 8 steps: offer, positioning with a named method, value equation score, buyer persona, prospect list with data vendors, funnel choice, webinar topic/date/time, connect every channel (Cloudflare domains, Workspace + MX, SPF/DKIM/DMARC, warm-up, LinkedIn, WhatsApp Business, Cloudflare API tokens). About 4,150 to 2,260 words. The old second half (five context blocks, diagnostic, spec outline) is cut. The Day 1 title is unchanged pending Adi's call. Preview links run from Adi's Mac (Cloudflare tunnels) and show Nelbin's branch before merge; the live site still shows the old version, linked as 'Before'.",
+   "done_when": [],
+   "evidence": [
+    {
+     "label": "Preview: Day 1 in the onboarding centre",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#m-day1"
+    },
+    {
+     "label": "Preview: Day 1 chapter (playbook)",
+     "url": "https://theater-toronto-automotive-vote.trycloudflare.com/playbook.html#d1"
+    },
+    {
+     "label": "Before: live Day 1 chapter",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html#d1"
+    },
+    {
+     "label": "PR #3",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/pull/3"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-01T02:57:00+0530",
+     "who": "claude",
+     "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    }
+   ],
+   "order": 3
+  },
+  {
+   "id": "T-183",
+   "title": "Review 3/10 · Survey v5: 37 to 25 questions, one per output (Nelbin, PR #3)",
+   "area": "Content",
+   "owner": "Nelbin",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "2026-10-01",
+   "status": "review",
+   "why": "",
+   "spec": "Each question maps to one output of that day; Day 1 has 8 questions following the 8 steps. New storage key so old answers never show under new questions. This is the served survey once merged. Preview links run from Adi's Mac (Cloudflare tunnels) and show Nelbin's branch before merge; the live site still shows the old version, linked as 'Before'.",
+   "done_when": [],
+   "evidence": [
+    {
+     "label": "Preview: survey v5",
+     "url": "https://theater-toronto-automotive-vote.trycloudflare.com/survey.html"
+    },
+    {
+     "label": "Before: live survey",
+     "url": "https://adisuja.github.io/tantra-workshop-live/survey.html"
+    },
+    {
+     "label": "Question source on the branch",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/content-pass/workshop-plan/build/questions.py"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-01T02:57:00+0530",
+     "who": "claude",
+     "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    }
+   ],
+   "order": 4
+  },
+  {
+   "id": "T-184",
+   "title": "Review 4/10 · Day 3 rewrite: 8 tasks, Claude Code runs the funnel (Nelbin, PR #3)",
+   "area": "Content",
+   "owner": "Nelbin",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "2026-10-01",
+   "status": "review",
+   "why": "",
+   "spec": "Connect Claude Code to every tool (Tantra MCP + API + webhooks, GoHighLevel or Cloudflare Workers, Google Sheets, GA4, Dodo), write the spec, check automations fire, build the dashboard, test run, find the worst step, weekly experiment, scale plan. Setup added: Claude Code install, service account, GA4 Data API. Preview links run from Adi's Mac (Cloudflare tunnels) and show Nelbin's branch before merge; the live site still shows the old version, linked as 'Before'.",
+   "done_when": [],
+   "evidence": [
+    {
+     "label": "Preview: Day 3 in the onboarding centre",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#m-day3"
+    },
+    {
+     "label": "Preview: Day 3 chapter (playbook)",
+     "url": "https://theater-toronto-automotive-vote.trycloudflare.com/playbook.html#d3"
+    },
+    {
+     "label": "Before: live Day 3 chapter",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html#d3"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-01T02:57:00+0530",
+     "who": "claude",
+     "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    }
+   ],
+   "order": 5
+  },
+  {
+   "id": "T-185",
+   "title": "Review 5/10 · Day 2 intro + Stage 1 traffic guides, 11 new screenshots (Nelbin, PR #3)",
+   "area": "Content",
+   "owner": "Nelbin",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "2026-10-01",
+   "status": "review",
+   "why": "",
+   "spec": "Build order fixed; S1 guides rewritten as task, why, how; invented limits and benchmarks removed (LinkedIn: about 15 to 20 a day, no official limit); setup corrected (single SMTP.GOOGLE.COM MX, WebinarGeek to Tantra, Google Ads optional); 11 screenshots with sources. Stages 2 to 6 are NOT rewritten (Aquila's area). Preview links run from Adi's Mac (Cloudflare tunnels) and show Nelbin's branch before merge; the live site still shows the old version, linked as 'Before'.",
+   "done_when": [],
+   "evidence": [
+    {
+     "label": "Preview: Day 2",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#m-day2"
+    },
+    {
+     "label": "Preview: Stage 1 intro",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#d2-stage-1"
+    },
+    {
+     "label": "Preview: Cold Calendar",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#g-s1-cold-calendar"
+    },
+    {
+     "label": "Preview: Cold Email",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#g-s1-cold-email"
+    },
+    {
+     "label": "Preview: LinkedIn",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#g-s1-linkedin"
+    },
+    {
+     "label": "Preview: Blog",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#g-s1-blog"
+    },
+    {
+     "label": "Preview: Social",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#g-s1-social"
+    },
+    {
+     "label": "Preview: Paid Ads",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#g-s1-ads"
+    },
+    {
+     "label": "Before: live Stage 1",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/#d2-stage-1"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-01T02:57:00+0530",
+     "who": "claude",
+     "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    }
+   ],
+   "order": 6
+  },
+  {
+   "id": "T-186",
+   "title": "Review 6/10 · Sign-up pages: free, paid and VIP (Nelbin, PR #3)",
+   "area": "Content",
+   "owner": "Nelbin",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "2026-10-01",
+   "status": "review",
+   "why": "",
+   "spec": "Fake seat counter and '0 DAYS' countdown removed; both join pages link to the onboarding centre; wrong maths fixed (6.89% to 3.2%, win rate, Stage 6 figures); no 'webinar' on /masterclass; price row no longer overflows phones. Testimonial quotes unchanged. The /masterclass paid-lane flow change was reverted: it is Adi's decision. Preview links run from Adi's Mac (Cloudflare tunnels) and show Nelbin's branch before merge; the live site still shows the old version, linked as 'Before'.",
+   "done_when": [],
+   "evidence": [
+    {
+     "label": "Preview: free registration",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/workshop/"
+    },
+    {
+     "label": "Preview: free seat confirmed",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/workshop/success/"
+    },
+    {
+     "label": "Preview: free join",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/workshop/join/"
+    },
+    {
+     "label": "Preview: paid landing",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/masterclass/"
+    },
+    {
+     "label": "Preview: paid survey + VSL",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/masterclass/success/"
+    },
+    {
+     "label": "Preview: paid join",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/masterclass/success/join/"
+    },
+    {
+     "label": "Preview: VIP",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/vip/"
+    },
+    {
+     "label": "Before: live paid landing",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-01T02:57:00+0530",
+     "who": "claude",
+     "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    }
+   ],
+   "order": 7
+  },
+  {
+   "id": "T-187",
+   "title": "Review 7/10 · Template library: unsourced limits, placeholders and dashes fixed (Nelbin, PR #3)",
+   "area": "Content",
+   "owner": "Nelbin",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "2026-10-01",
+   "status": "review",
+   "why": "",
+   "spec": "Unsourced limits, gates and 'Result metric' placeholders fixed; 219 dashes removed; '4813 comments' bug fixed; raw {tokens} removed from card descriptions. Preview links run from Adi's Mac (Cloudflare tunnels) and show Nelbin's branch before merge; the live site still shows the old version, linked as 'Before'.",
+   "done_when": [],
+   "evidence": [
+    {
+     "label": "Preview: template library",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/templates/"
+    },
+    {
+     "label": "Before: live template library",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-01T02:57:00+0530",
+     "who": "claude",
+     "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    }
+   ],
+   "order": 8
+  },
+  {
+   "id": "T-188",
+   "title": "Review 8/10 · Deck: choose the rebuilt 161-slide deck or keep the served 230-slide deck (Nelbin, PR #3)",
+   "area": "Content",
+   "owner": "Nelbin",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "2026-10-01",
+   "status": "review",
+   "why": "",
+   "spec": "Nelbin rebuilt the deck sources for the new Day 1 and Day 3 (230 to 161 slides, #day-N links) but deliberately left the served deck unchanged because which deck is presented is Adi's call. The rebuilt deck below was generated from his branch for this review only. Preview links run from Adi's Mac (Cloudflare tunnels) and show Nelbin's branch before merge; the live site still shows the old version, linked as 'Before'.",
+   "done_when": [],
+   "evidence": [
+    {
+     "label": "Preview: rebuilt deck (161 slides)",
+     "url": "https://theater-toronto-automotive-vote.trycloudflare.com/deck-rebuilt-preview.html"
+    },
+    {
+     "label": "Served deck on the branch (230, unchanged)",
+     "url": "https://theater-toronto-automotive-vote.trycloudflare.com/deck.html"
+    },
+    {
+     "label": "Deck sources on the branch",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/content-pass/workshop-plan/build/content.py"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-01T02:57:00+0530",
+     "who": "claude",
+     "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    }
+   ],
+   "order": 9
+  },
+  {
+   "id": "T-189",
+   "title": "Review 9/10 · Command centre hub: dates moved to 30 Sep to 2 Oct, board updates (Nelbin, PR #3)",
+   "area": "Content",
+   "owner": "Nelbin",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "2026-10-01",
+   "status": "review",
+   "why": "",
+   "spec": "Hub dates were a week out; the countdown follows all three sessions. Nelbin's branch also edits tasks.json and tasks.html, which conflict with the newer Launch Control changes on Adi's main (owner/assignee/reviewers, auto public sync); those two files need a manual merge. Preview links run from Adi's Mac (Cloudflare tunnels) and show Nelbin's branch before merge; the live site still shows the old version, linked as 'Before'.",
+   "done_when": [],
+   "evidence": [
+    {
+     "label": "Preview: hub on the branch",
+     "url": "https://theater-toronto-automotive-vote.trycloudflare.com/index.html"
+    },
+    {
+     "label": "Before: live hub",
+     "url": "https://adisuja.github.io/tantra-workshop-live/"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-01T02:57:00+0530",
+     "who": "claude",
+     "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    }
+   ],
+   "order": 10
+  },
+  {
+   "id": "T-190",
+   "title": "Review 10/10 · Remove real client content from Day 2 Stage 2 to 6 guide examples (Nelbin for Aquila, PR #4)",
+   "area": "Content",
+   "owner": "Aquila",
+   "assignee": "Adi",
+   "reviewers": [
+    "Aquila",
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "2026-10-01",
+   "status": "review",
+   "why": "",
+   "spec": "Aquila approves first (her area), then Adi. Removes copied client offer pages, a client board-education programme, a newsletter roadmap built from client material, internal ticket notes and editor notes; fixes 95 broken {{field} merge tags. The example files say 'generated, do not hand-edit', so the generator must exclude these too or the next rebuild brings them back. Preview is PR #4's branch (based on the content pass). Preview links run from Adi's Mac (Cloudflare tunnels) and show Nelbin's branch before merge; the live site still shows the old version, linked as 'Before'.",
+   "done_when": [],
+   "evidence": [
+    {
+     "label": "Preview: Stage 2",
+     "url": "https://power-donald-pet-responsible.trycloudflare.com/onboarding/#d2-stage-2"
+    },
+    {
+     "label": "Preview: Stage 3",
+     "url": "https://power-donald-pet-responsible.trycloudflare.com/onboarding/#d2-stage-3"
+    },
+    {
+     "label": "Preview: Stage 4",
+     "url": "https://power-donald-pet-responsible.trycloudflare.com/onboarding/#d2-stage-4"
+    },
+    {
+     "label": "Preview: Stage 5",
+     "url": "https://power-donald-pet-responsible.trycloudflare.com/onboarding/#d2-stage-5"
+    },
+    {
+     "label": "Preview: Stage 6",
+     "url": "https://power-donald-pet-responsible.trycloudflare.com/onboarding/#d2-stage-6"
+    },
+    {
+     "label": "Before (content pass, without PR #4)",
+     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#d2-stage-2"
+    },
+    {
+     "label": "PR #4",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/pull/4"
+    },
+    {
+     "label": "PR #4 changed files",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/pull/4/files"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-01T02:57:00+0530",
+     "who": "claude",
+     "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    }
+   ],
+   "order": 11
+  },
+  {
+   "id": "T-192",
+   "title": "Merge Nelbin's PRs in order #2, then #3, then #4, and republish",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi",
+    "Nelbin"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Merge order is #2, #3, #4 (each is based on the previous). Adi's local main has 7 unpushed commits (onboarding tabs T-180, Launch Control people and public sync) that conflict with the branch in 3 files: app/src/app/onboarding/onboarding-client.tsx, workshop-plan/tasks.html, workshop-plan/tasks/tasks.json. Push main first, then rebase or merge the PRs and resolve those files, re-run the probes, then republish the mirror (check coord/LOG.md for publish holds).",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Approve Reviews 1 to 10 (or say which to hold), then say 'merge'.",
+   "log": [
+    {
+     "ts": "2026-10-01T02:57:00+0530",
+     "who": "claude",
+     "note": "Conflicts found with git merge-tree against local main."
+    }
+   ],
+   "order": 12
+  },
+  {
+   "id": "T-193",
+   "title": "Delete two probe test rows from the live Work Tracker (Paid Registrations row 6, Checkout Starts row 16)",
+   "area": "Ops",
+   "owner": "Nelbin",
+   "assignee": "Nelbin",
+   "reviewers": [
+    "Nelbin"
+   ],
+   "priority": "P1",
+   "due": "2026-10-01",
+   "status": "queue",
+   "why": "",
+   "spec": "A probe run on 30 Sep 12:27 UTC wrote test rows with adi@example.com to 'Funnel · Paid Registrations' row 6 and 'Funnel · Checkout Starts' row 16. Delete both rows.",
+   "done_when": [],
+   "evidence": [
+    {
+     "label": "Tantra Work Tracker",
+     "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-01T02:57:00+0530",
+     "who": "claude",
+     "note": "From PR #3."
+    }
+   ],
+   "order": 13
+  },
   {
    "id": "T-001",
    "title": "/masterclass landing page",
