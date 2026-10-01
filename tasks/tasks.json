@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-01T02:58:24+0530",
-  "version": 166,
-  "last_id": 193,
+  "updated": "2026-10-02T00:06:45+0530",
+  "version": 178,
+  "last_id": 194,
   "team": [
    {
     "name": "Adi",
@@ -97,16 +97,8 @@
    "done_when": [],
    "evidence": [
     {
-     "label": "Preview: Before Day 1",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#m-start"
-    },
-    {
-     "label": "Preview: Foundations step",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#start-foundations"
-    },
-    {
-     "label": "Preview: Foundations chapters (playbook)",
-     "url": "https://theater-toronto-automotive-vote.trycloudflare.com/playbook.html#start"
+     "label": "RevOps Workshop Series sheet (newest version of every element)",
+     "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=1133663049"
     },
     {
      "label": "Before: live Before Day 1",
@@ -128,6 +120,11 @@
      "ts": "2026-10-01T02:57:00+0530",
      "who": "claude",
      "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    },
+    {
+     "ts": "2026-10-02T00:06:45+0530",
+     "who": "claude",
+     "note": "2026-10-02: preview links moved to the RevOps Workshop Series sheet (refreshes every 10 minutes); the temporary tunnel links are retired."
     }
    ],
    "order": 2
@@ -149,12 +146,8 @@
    "done_when": [],
    "evidence": [
     {
-     "label": "Preview: Day 1 in the onboarding centre",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#m-day1"
-    },
-    {
-     "label": "Preview: Day 1 chapter (playbook)",
-     "url": "https://theater-toronto-automotive-vote.trycloudflare.com/playbook.html#d1"
+     "label": "RevOps Workshop Series sheet (newest version of every element)",
+     "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=1133663049"
     },
     {
      "label": "Before: live Day 1 chapter",
@@ -172,6 +165,11 @@
      "ts": "2026-10-01T02:57:00+0530",
      "who": "claude",
      "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    },
+    {
+     "ts": "2026-10-02T00:06:45+0530",
+     "who": "claude",
+     "note": "2026-10-02: preview links moved to the RevOps Workshop Series sheet (refreshes every 10 minutes); the temporary tunnel links are retired."
     }
    ],
    "order": 3
@@ -193,8 +191,8 @@
    "done_when": [],
    "evidence": [
     {
-     "label": "Preview: survey v5",
-     "url": "https://theater-toronto-automotive-vote.trycloudflare.com/survey.html"
+     "label": "RevOps Workshop Series sheet (newest version of every element)",
+     "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=1133663049"
     },
     {
      "label": "Before: live survey",
@@ -212,6 +210,11 @@
      "ts": "2026-10-01T02:57:00+0530",
      "who": "claude",
      "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    },
+    {
+     "ts": "2026-10-02T00:06:45+0530",
+     "who": "claude",
+     "note": "2026-10-02: preview links moved to the RevOps Workshop Series sheet (refreshes every 10 minutes); the temporary tunnel links are retired."
     }
    ],
    "order": 4
@@ -233,12 +236,8 @@
    "done_when": [],
    "evidence": [
     {
-     "label": "Preview: Day 3 in the onboarding centre",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#m-day3"
-    },
-    {
-     "label": "Preview: Day 3 chapter (playbook)",
-     "url": "https://theater-toronto-automotive-vote.trycloudflare.com/playbook.html#d3"
+     "label": "RevOps Workshop Series sheet (newest version of every element)",
+     "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=1133663049"
     },
     {
      "label": "Before: live Day 3 chapter",
@@ -252,6 +251,11 @@
      "ts": "2026-10-01T02:57:00+0530",
      "who": "claude",
      "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    },
+    {
+     "ts": "2026-10-02T00:06:45+0530",
+     "who": "claude",
+     "note": "2026-10-02: preview links moved to the RevOps Workshop Series sheet (refreshes every 10 minutes); the temporary tunnel links are retired."
     }
    ],
    "order": 5
@@ -273,36 +277,8 @@
    "done_when": [],
    "evidence": [
     {
-     "label": "Preview: Day 2",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#m-day2"
-    },
-    {
-     "label": "Preview: Stage 1 intro",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#d2-stage-1"
-    },
-    {
-     "label": "Preview: Cold Calendar",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#g-s1-cold-calendar"
-    },
-    {
-     "label": "Preview: Cold Email",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#g-s1-cold-email"
-    },
-    {
-     "label": "Preview: LinkedIn",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#g-s1-linkedin"
-    },
-    {
-     "label": "Preview: Blog",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#g-s1-blog"
-    },
-    {
-     "label": "Preview: Social",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#g-s1-social"
-    },
-    {
-     "label": "Preview: Paid Ads",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#g-s1-ads"
+     "label": "RevOps Workshop Series sheet (newest version of every element)",
+     "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=1133663049"
     },
     {
      "label": "Before: live Stage 1",
@@ -316,6 +292,11 @@
      "ts": "2026-10-01T02:57:00+0530",
      "who": "claude",
      "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    },
+    {
+     "ts": "2026-10-02T00:06:45+0530",
+     "who": "claude",
+     "note": "2026-10-02: preview links moved to the RevOps Workshop Series sheet (refreshes every 10 minutes); the temporary tunnel links are retired."
     }
    ],
    "order": 6
@@ -337,32 +318,8 @@
    "done_when": [],
    "evidence": [
     {
-     "label": "Preview: free registration",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/workshop/"
-    },
-    {
-     "label": "Preview: free seat confirmed",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/workshop/success/"
-    },
-    {
-     "label": "Preview: free join",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/workshop/join/"
-    },
-    {
-     "label": "Preview: paid landing",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/masterclass/"
-    },
-    {
-     "label": "Preview: paid survey + VSL",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/masterclass/success/"
-    },
-    {
-     "label": "Preview: paid join",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/masterclass/success/join/"
-    },
-    {
-     "label": "Preview: VIP",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/vip/"
+     "label": "RevOps Workshop Series sheet (newest version of every element)",
+     "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=1133663049"
     },
     {
      "label": "Before: live paid landing",
@@ -376,6 +333,11 @@
      "ts": "2026-10-01T02:57:00+0530",
      "who": "claude",
      "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    },
+    {
+     "ts": "2026-10-02T00:06:45+0530",
+     "who": "claude",
+     "note": "2026-10-02: preview links moved to the RevOps Workshop Series sheet (refreshes every 10 minutes); the temporary tunnel links are retired."
     }
    ],
    "order": 7
@@ -397,8 +359,8 @@
    "done_when": [],
    "evidence": [
     {
-     "label": "Preview: template library",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/templates/"
+     "label": "RevOps Workshop Series sheet (newest version of every element)",
+     "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=1133663049"
     },
     {
      "label": "Before: live template library",
@@ -412,6 +374,11 @@
      "ts": "2026-10-01T02:57:00+0530",
      "who": "claude",
      "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    },
+    {
+     "ts": "2026-10-02T00:06:45+0530",
+     "who": "claude",
+     "note": "2026-10-02: preview links moved to the RevOps Workshop Series sheet (refreshes every 10 minutes); the temporary tunnel links are retired."
     }
    ],
    "order": 8
@@ -433,12 +400,8 @@
    "done_when": [],
    "evidence": [
     {
-     "label": "Preview: rebuilt deck (161 slides)",
-     "url": "https://theater-toronto-automotive-vote.trycloudflare.com/deck-rebuilt-preview.html"
-    },
-    {
-     "label": "Served deck on the branch (230, unchanged)",
-     "url": "https://theater-toronto-automotive-vote.trycloudflare.com/deck.html"
+     "label": "RevOps Workshop Series sheet (newest version of every element)",
+     "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=1133663049"
     },
     {
      "label": "Deck sources on the branch",
@@ -452,6 +415,11 @@
      "ts": "2026-10-01T02:57:00+0530",
      "who": "claude",
      "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    },
+    {
+     "ts": "2026-10-02T00:06:45+0530",
+     "who": "claude",
+     "note": "2026-10-02: preview links moved to the RevOps Workshop Series sheet (refreshes every 10 minutes); the temporary tunnel links are retired."
     }
    ],
    "order": 9
@@ -473,8 +441,8 @@
    "done_when": [],
    "evidence": [
     {
-     "label": "Preview: hub on the branch",
-     "url": "https://theater-toronto-automotive-vote.trycloudflare.com/index.html"
+     "label": "RevOps Workshop Series sheet (newest version of every element)",
+     "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=1133663049"
     },
     {
      "label": "Before: live hub",
@@ -488,6 +456,11 @@
      "ts": "2026-10-01T02:57:00+0530",
      "who": "claude",
      "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    },
+    {
+     "ts": "2026-10-02T00:06:45+0530",
+     "who": "claude",
+     "note": "2026-10-02: preview links moved to the RevOps Workshop Series sheet (refreshes every 10 minutes); the temporary tunnel links are retired."
     }
    ],
    "order": 10
@@ -510,28 +483,8 @@
    "done_when": [],
    "evidence": [
     {
-     "label": "Preview: Stage 2",
-     "url": "https://power-donald-pet-responsible.trycloudflare.com/onboarding/#d2-stage-2"
-    },
-    {
-     "label": "Preview: Stage 3",
-     "url": "https://power-donald-pet-responsible.trycloudflare.com/onboarding/#d2-stage-3"
-    },
-    {
-     "label": "Preview: Stage 4",
-     "url": "https://power-donald-pet-responsible.trycloudflare.com/onboarding/#d2-stage-4"
-    },
-    {
-     "label": "Preview: Stage 5",
-     "url": "https://power-donald-pet-responsible.trycloudflare.com/onboarding/#d2-stage-5"
-    },
-    {
-     "label": "Preview: Stage 6",
-     "url": "https://power-donald-pet-responsible.trycloudflare.com/onboarding/#d2-stage-6"
-    },
-    {
-     "label": "Before (content pass, without PR #4)",
-     "url": "https://satisfaction-anniversary-hill-lightning.trycloudflare.com/onboarding/#d2-stage-2"
+     "label": "RevOps Workshop Series sheet (newest version of every element)",
+     "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=1133663049"
     },
     {
      "label": "PR #4",
@@ -549,6 +502,11 @@
      "ts": "2026-10-01T02:57:00+0530",
      "who": "claude",
      "note": "Added from Nelbin's PRs #2 to #4; previews verified to load."
+    },
+    {
+     "ts": "2026-10-02T00:06:45+0530",
+     "who": "claude",
+     "note": "2026-10-02: preview links moved to the RevOps Workshop Series sheet (refreshes every 10 minutes); the temporary tunnel links are retired."
     }
    ],
    "order": 11
@@ -5608,6 +5566,38 @@
     }
    ],
    "order": 1800
+  },
+  {
+   "id": "T-194",
+   "title": "Decide: share branch previews outside Adi's Mac (private tunnel with an access key)",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Previews of every open branch are built every 10 minutes and served on Adi's Mac behind an access key. Sharing them needs a public tunnel to this Mac; it was switched off pending Adi's decision. Turning it on: launchctl bootstrap gui/$UID ~/Library/LaunchAgents/com.tantra.preview-tunnel.plist (the sheet then fills in the preview links by itself).",
+   "done_when": [],
+   "evidence": [
+    {
+     "label": "RevOps Workshop Series sheet",
+     "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=1133663049"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "Say yes to turn on the key-protected preview address, so teammates can open the newest unmerged version of every element from the sheet. Until then those previews open only on Adi's Mac.",
+   "log": [
+    {
+     "ts": "2026-10-02T00:06:45+0530",
+     "who": "claude",
+     "note": "Added."
+    }
+   ],
+   "order": 1940
   }
  ]
 }
