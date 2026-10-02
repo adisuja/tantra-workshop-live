@@ -1,0 +1,335 @@
+<section style="--hue:#EF4444;--hue-ink:color-mix(in srgb,#EF4444 70%,var(--ink))" id="d3">
+      <div class="chap"><span class="no">Day 3</span><span class="tag">Orchestrate · Measure · Experiment</span></div>
+      <h2>Make an AI Run It, Then Prove It Works</h2>
+      <p class="lead">The last session. Claude Code takes over the running of your funnel through each tool's API or MCP server, one dashboard shows every number, and a weekly loop swaps one page or template at a time and keeps the winner.</p>
+      <p>Claude Code is the worked example. Any agentic coding tool that supports MCP works the same way.</p>
+      <p><b>When:</b> Steps 1 to 5 happen now. Steps 6 to 8 happen after your first run finishes (your event date from Day 1 Step 7), because they read that run's numbers.</p>
+      <h3 id="d3-step-1-connect-claude-code-to-every-tool">Step 1: Connect Claude Code to Every Tool</h3>
+      <div class="task">
+        <div class="th"><span class="tn">Task 3.1</span><b>Connect Claude Code to Every Tool</b></div>
+        <div class="tm">
+          <p><b>Why:</b> Claude Code can only run what it can reach. Connected to each tool, it reads live numbers, makes changes, and answers your team from real data instead of memory.</p>
+          <ol>
+            <li>Install Claude Code (<a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener">docs.anthropic.com/en/docs/claude-code</a>). It needs a paid Claude plan or API billing. Open it in one folder that holds your Day 1 decisions (offer, persona, funnel choice, webinar date), your Day 2 assets, and a <code>.env</code> file with the credentials from Day 1 and Day 2.</li>
+            <li>Connect Tantra: create a dedicated API key (see <a href="https://usetantra.com/developers" target="_blank" rel="noopener">usetantra.com/developers</a>). Then follow the <a href="https://usetantra.com/integrations/mcp-server" target="_blank" rel="noopener">MCP Server page</a> to add Tantra to Claude Code with <code>claude mcp add</code>, over hosted HTTP or local stdio, and ask it to call <code>whoami</code> to confirm. Keep the same key in <code>.env</code> for REST API calls.</li>
+            <li>Add every other tool from the table below. One key or token per tool, all in <code>.env</code>, never pasted into the chat.</li>
+            <li>Create one Google service account: in Google Cloud, <b>IAM &amp; Admin → Service Accounts → Create service account</b>. Open it, then <b>Keys → Add key → Create new key → JSON</b>. Save the file in the folder and its path in <code>.env</code>.</li>
+            <li>For Sheets and GA4: enable the <b>Google Sheets API</b> and the <b>Google Analytics Data API</b> in that Google Cloud project. Then in GA4, open <b>Admin → Property access management</b>, add the service account's email and give it the <b>Viewer</b> role.</li>
+            <li>Test it. Ask: <em>"List my Tantra campaigns with sends, RSVPs and replies for the last seven days."</em> The answer must match Tantra's own dashboard.</li>
+          </ol>
+          <p><b>Example:</b> for a SaaS company on route B, the folder holds the Day 1 and Day 2 files, a Tantra key, the Cloudflare API token from Day 1 and one Google service account that covers Sheets and GA4.</p>
+        </div>
+        <div class="meta"><span><i>Owner</i>You · agent connects</span><span><i>Tool</i>Claude Code</span><span><i>Time</i>1 h</span><span class="dl"><i>Deliverable</i>Every tool reachable from one folder</span><span class="pv"><i>Proof</i>Claude Code quotes last week's Tantra numbers correctly</span></div>
+      </div>
+      <div class="tbl"><table>
+        <thead><tr><th>Tool</th><th>Connect with</th><th>Claude Code uses it to</th></tr></thead>
+        <tbody>
+          <tr><td><b>Tantra</b></td><td>MCP server · REST API key · outbound webhooks (11 event types)</td><td>Read campaigns, sends, RSVPs and replies; draft campaigns and step templates; push replies and RSVPs to your CRM</td></tr>
+          <tr><td><b>GoHighLevel</b> (route A)</td><td>API with a Private Integration token</td><td>Read and update contacts, tags, opportunities and pipeline stages</td></tr>
+          <tr><td><b>Cloudflare Workers</b> (route B)</td><td>API token · the <code>wrangler</code> CLI</td><td>Deploy your pages and automation Workers; run scheduled jobs with Cron Triggers</td></tr>
+          <tr><td><b>Google Sheets and Drive</b></td><td>A service account JSON, with the sheet shared to it</td><td>Write the dashboard</td></tr>
+          <tr><td><b>Google Analytics 4</b></td><td>Analytics Data API, same service account, added as Viewer on the property</td><td>Visits and registrations by page variant and UTM</td></tr>
+          <tr><td><b>Dodo Payments</b></td><td>API key · payment webhook</td><td>Sales and revenue</td></tr>
+          <tr><td><b>Zoom or WebinarGeek</b></td><td>Through Tantra's integration</td><td>Attendance, once you refresh it in Tantra after each session</td></tr>
+        </tbody>
+      </table></div>
+      <div class="viz wide">
+        <div class="vtitle">Claude Code in the middle: context in, operations out</div>
+        <svg viewBox="0 1 800 330" role="img" aria-label="Architecture: context inputs feed a central AI orchestrator with state and knowledge, which drives read, write and compute tools to produce live outputs.">
+          <defs>
+            <marker id="mkOffer2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <marker id="ob" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          </defs>
+          <text x="82" y="24" text-anchor="middle" class="svmute" font-size="11" font-weight="700" letter-spacing=".05em">CONTEXT IN</text>
+          <text x="303" y="24" text-anchor="middle" class="svmute" font-size="11" font-weight="700" letter-spacing=".05em">ORCHESTRATOR</text>
+          <text x="544" y="24" text-anchor="middle" class="svmute" font-size="11" font-weight="700" letter-spacing=".05em">TOOLS</text>
+          <text x="721" y="24" text-anchor="middle" class="svmute" font-size="11" font-weight="700" letter-spacing=".05em">OUTPUTS</text>
+          <g fill="none" stroke="var(--accent)" stroke-width="1.5" opacity=".6" marker-end="url(#mkOffer2)">
+            <path d="M158 65 C182 65 178 96 196 100"/>
+            <path d="M158 119 C182 119 182 128 196 132"/>
+            <path d="M158 173 C182 173 182 168 196 172"/>
+            <path d="M158 227 C182 227 178 208 196 204"/>
+          </g>
+          <g fill="none" stroke-width="1.6" marker-end="url(#ob)" opacity=".75">
+            <path d="M416 110 C446 96 448 84 468 84" stroke="var(--teal)" class="flowline"/>
+            <path d="M416 158 C446 158 448 165 468 165" stroke="var(--teal)" class="flowline"/>
+            <path d="M416 206 C446 220 448 246 468 247" stroke="var(--teal)" class="flowline"/>
+          </g>
+          <g fill="none" stroke="var(--ink-3)" stroke-width="1" opacity=".4" stroke-dasharray="3 4">
+            <path d="M468 96 C448 108 446 120 418 124"/>
+            <path d="M468 177 C448 177 446 178 418 176"/>
+            <path d="M468 235 C448 208 446 200 418 220"/>
+          </g>
+          <g fill="none" stroke="var(--teal)" stroke-width="1.6" opacity=".7" marker-end="url(#ob)">
+            <path d="M620 84 C640 84 628 84 648 84" class="flowline"/>
+            <path d="M620 165 C640 165 628 165 648 165" class="flowline"/>
+            <path d="M620 247 C640 247 628 247 648 247" class="flowline"/>
+          </g>
+          <g font-size="12.5">
+            <rect x="8" y="44" width="150" height="42" rx="10" fill="var(--accent-2)"/><text x="24" y="60" fill="var(--accent-ink)" font-weight="700" font-size="12.5">Offer + persona</text><text x="24" y="75" class="svmute" font-size="10.5">from Day 1</text>
+            <rect x="8" y="98" width="150" height="42" rx="10" fill="var(--accent-2)"/><text x="24" y="114" fill="var(--accent-ink)" font-weight="700" font-size="12.5">Pages + templates</text><text x="24" y="129" class="svmute" font-size="10.5">from Day 2</text>
+            <rect x="8" y="152" width="150" height="42" rx="10" fill="var(--accent-2)"/><text x="24" y="168" fill="var(--accent-ink)" font-weight="700" font-size="12.5">Brand + proof</text><text x="24" y="183" class="svmute" font-size="10.5">Day 1 positioning</text>
+            <rect x="8" y="206" width="150" height="42" rx="10" fill="var(--accent-2)"/><text x="24" y="222" fill="var(--accent-ink)" font-weight="700" font-size="12.5">Live funnel data</text><text x="24" y="237" class="svmute" font-size="10.5">UTM · CRM feeds</text>
+          </g>
+          <rect x="196" y="44" width="214" height="212" rx="16" fill="var(--panel)" stroke="var(--accent)" stroke-width="1.5"/>
+          <rect x="196" y="44" width="214" height="34" rx="16" fill="var(--accent)"/>
+          <rect x="196" y="62" width="214" height="16" fill="var(--accent)"/>
+          <text x="303" y="61" text-anchor="middle" class="svwhite" font-size="13">AI orchestrator · Claude Code</text>
+          <g font-size="11.5">
+            <rect x="208" y="88" width="190" height="34" rx="8" fill="var(--accent-2)"/><text x="222" y="105" fill="var(--accent-ink)" font-weight="600">Routing &amp; planning</text>
+            <rect x="208" y="128" width="190" height="34" rx="8" fill="var(--accent-2)"/><text x="222" y="145" fill="var(--accent-ink)" font-weight="600">State + memory store</text>
+            <rect x="208" y="168" width="190" height="34" rx="8" fill="var(--accent-2)"/><text x="218" y="185" fill="var(--accent-ink)" font-weight="600">Knowledge: all funnel context</text>
+            <rect x="208" y="208" width="190" height="34" rx="8" fill="var(--accent-2)"/><text x="222" y="225" fill="var(--accent-ink)" font-weight="600">Approval gates · retries</text>
+          </g>
+          <g font-size="12">
+            <rect x="470" y="60" width="150" height="48" rx="10" class="node" stroke="var(--teal)"/><text x="486" y="79" class="svlabel" font-size="12.5">Read</text><text x="486" y="95" class="svmute" font-size="10.5">Tantra · GA4 · Sheets</text>
+            <rect x="470" y="141" width="150" height="48" rx="10" class="node" stroke="var(--teal)"/><text x="486" y="160" class="svlabel" font-size="12.5">Write</text><text x="486" y="176" class="svmute" font-size="10.5">GHL or Workers · Tantra</text>
+            <rect x="470" y="223" width="150" height="48" rx="10" class="node" stroke="var(--teal)"/><text x="486" y="242" class="svlabel" font-size="12.5">Compute</text><text x="486" y="258" class="svmute" font-size="10.5">code · funnel math</text>
+          </g>
+          <g font-size="12">
+            <rect x="648" y="60" width="146" height="48" rx="10" fill="var(--teal-bg)"/><text x="664" y="79" fill="var(--teal)" font-weight="700" font-size="12.5">Live AI website</text><text x="664" y="95" class="svmute" font-size="10.5">built &amp; deployed</text>
+            <rect x="648" y="141" width="146" height="48" rx="10" fill="var(--teal-bg)"/><text x="664" y="160" fill="var(--teal)" font-weight="700" font-size="12.5">Automations live</text><text x="664" y="176" class="svmute" font-size="10.5">tested with a contact</text>
+            <rect x="648" y="223" width="146" height="48" rx="10" fill="var(--teal-bg)"/><text x="664" y="242" fill="var(--teal)" font-weight="700" font-size="12.5">Live answers</text><text x="664" y="258" class="svmute" font-size="10.5">from real numbers</text>
+          </g>
+          <path d="M303 256 L303 300 L470 300" fill="none" stroke="var(--amber)" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#mkOffer2)" opacity=".7"/>
+          <rect x="470" y="286" width="322" height="30" rx="15" fill="var(--amber-bg)"/><text x="486" y="302" fill="var(--amber)" font-weight="700" font-size="11.5">Any team question → answered from live data</text>
+        </svg>
+        <div class="cap">Claude Code holds your context and reaches each tool through its API or MCP server, so anyone on the team can ask it a question or give it an instruction.</div>
+      </div>
+      <div class="vipslot" data-step="d3-step-1-connect-claude-code-to-every-tool"></div>
+<h3 id="d3-step-2-brief-it-before-it-changes-anything">Step 2: Brief It Before It Changes Anything</h3>
+      <div class="box do"><div class="h">◆ Copy this as your first message</div>
+        <p><em>"Read every file in this folder in full. Confirm you've read them. Then interview me, a few questions at a time, about brand and story, offer and pricing, buyer, traffic channels, and the tools connected here. Wait for my answers. Then write one spec file that holds every page, template, price and automation, and restate it for my approval. Do not change anything live until I approve it."</em></p></div>
+      <div class="task">
+        <div class="th"><span class="tn">Task 3.2</span><b>Run the Interview, Then Approve the Spec</b></div>
+        <div class="tm">
+          <p><b>Why:</b> What you give the agent before you ask decides whether it runs your funnel or a generic one. Having it write the spec and restate it gives you one cheap chance to catch a misunderstanding before anything live changes.</p>
+          <ol>
+            <li>Send the prompt above as your first message.</li>
+            <li>Answer honestly. "I don't know yet" beats a made-up answer.</li>
+            <li>Read the restated spec line by line and correct it.</li>
+            <li>Approve. From then on every change goes into the spec first, and Claude Code applies it to the live pages and campaigns. On route A, GoHighLevel page content can't be edited through its API, so Claude Code gives you the page changes to paste in, and applies the rest itself.</li>
+          </ol>
+          <p><b>Example:</b> for a SaaS company, the interview catches a trial length that differs between the landing page and the reminder email.</p>
+        </div>
+        <div class="meta"><span><i>Owner</i>You · agent builds</span><span><i>Tool</i>Claude Code</span><span><i>Time</i>3 to 5 h</span><span class="dl"><i>Deliverable</i>An approved spec file and a live URL</span><span class="pv"><i>Proof</i>You change a line in the spec and it goes live without you touching a tool: the Worker-served page on route B, a Tantra step template on route A</span></div>
+      </div>
+      <div class="vipslot" data-step="d3-step-2-brief-it-before-it-changes-anything"></div>
+<h3 id="d3-step-4-the-eight-automations">Step 3: Check Every Automation Fires</h3>
+      <div class="task">
+        <div class="th"><span class="tn">Task 3.3</span><b>Prove the Automations With a Real Contact</b></div>
+        <div class="tm">
+          <p><b>Why:</b> The automations built on Day 2 do the follow-up nobody remembers to do. One that never fires loses leads silently, and you only notice weeks later on the dashboard.</p>
+          <ol>
+            <li>Ask Claude Code to fill the automation register (the template under this step in the onboarding centre): each automation's trigger, action, tool and honest status. On route A they are GoHighLevel workflows; on route B they are Cloudflare Workers.</li>
+            <li>Point Tantra's outbound webhooks (RSVP, reply, bounce, unsubscribe) at your workflow or Worker, so every response lands on the contact. Webhook setup is documented on <a href="https://usetantra.com/developers" target="_blank" rel="noopener">usetantra.com/developers</a>.</li>
+            <li>Test three automations from the diagram: 1 (confirmation and reminders), 3 (your own page's form) and 4 (the <code>webinar attended</code> or <code>live webinar not watched</code> tag). Use a short test session (10 minutes in Zoom or WebinarGeek): register yourself and attend, register a second address and don't show, then refresh attendance in Tantra.</li>
+            <li>Ask Claude Code to read both contacts back and confirm every tag and stage.</li>
+          </ol>
+          <p><b>Example:</b> for a SaaS company, the no-show test shows the replay email firing but the <code>live webinar not watched</code> tag missing, so the next-day follow-up never sends.</p>
+        </div>
+        <div class="meta"><span><i>Owner</i>You · agent wires it</span><span><i>Tool</i>GoHighLevel or Cloudflare Workers · Tantra webhooks</span><span><i>Time</i>4 to 6 h</span><span class="dl"><i>Deliverable</i>A register with honest statuses, three automations proven</span><span class="pv"><i>Proof</i>The no-show contact gets its tag without you touching anything</span></div>
+      </div>
+      <div class="viz wide">
+        <div class="vtitle">Trigger → condition → action, eight times</div>
+        <svg viewBox="0 0 860 600" role="img" aria-label="Eight automations laid out as trigger, condition and action rows: registration confirmation and reminders, event page to registration to CRM sync, the landing page API, behavioural sync back to the CRM, calendar outreach import, the pipeline stage tracker, the reply and bounce parser polling every sixty seconds, and the messaging reminder engine polling every five minutes.">
+          <defs>
+            <marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--ink-3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          </defs>
+          <text x="40" y="24" class="svmute" font-size="9.5">TRIGGER</text>
+          <text x="330" y="24" class="svmute" font-size="9.5">CONDITION</text>
+          <text x="600" y="24" class="svmute" font-size="9.5">ACTION</text>
+          <line x1="16" y1="34" x2="844" y2="34" stroke="var(--line-2)" stroke-width="1.5"/>
+          <g fill="none" stroke="var(--ink-3)" stroke-width="1.4" opacity=".45" marker-end="url(#a1)">
+            <path d="M300 62 L322 62"/><path d="M566 62 L588 62"/>
+            <path d="M300 134 L322 134"/><path d="M566 134 L588 134"/>
+            <path d="M300 206 L322 206"/><path d="M566 206 L588 206"/>
+            <path d="M300 278 L322 278"/><path d="M566 278 L588 278"/>
+            <path d="M300 350 L322 350"/><path d="M566 350 L588 350"/>
+            <path d="M300 422 L322 422"/><path d="M566 422 L588 422"/>
+            <path d="M300 494 L322 494"/><path d="M566 494 L588 494"/>
+            <path d="M300 566 L322 566"/><path d="M566 566 L588 566"/>
+          </g>
+          <g font-size="10">
+            <rect x="16" y="44" width="284" height="36" rx="8" fill="var(--accent-2)"/><text x="30" y="60" fill="var(--accent-ink)" font-weight="700" font-size="10.5">1 · Someone registers</text><text x="30" y="74" class="svmute" font-size="9">native to your event platform</text>
+            <rect x="322" y="44" width="244" height="36" rx="8" class="node"/><text x="336" y="66" class="svsub">always</text>
+            <rect x="588" y="44" width="256" height="36" rx="8" class="node" stroke="var(--teal)"/><text x="602" y="60" class="svlabel" font-size="10.5">Confirmation + the reminder set</text><text x="602" y="74" class="svmute" font-size="9">T−24h · T−1h · live · replay at +24h</text>
+            <rect x="16" y="116" width="284" height="36" rx="8" fill="var(--accent-2)"/><text x="30" y="132" fill="var(--accent-ink)" font-weight="700" font-size="10.5">2 · A lead form is submitted</text><text x="30" y="146" class="svmute" font-size="9">from a social event page</text>
+            <rect x="322" y="116" width="244" height="36" rx="8" class="node"/><text x="336" y="132" class="svsub">not already registered</text><text x="336" y="145" class="svmute" font-size="9">dedupe on email</text>
+            <rect x="588" y="116" width="256" height="36" rx="8" class="node" stroke="var(--teal)"/><text x="602" y="132" class="svlabel" font-size="10.5">Register them · create the contact</text><text x="602" y="146" class="svmute" font-size="9">· calendar hold · log the row</text>
+            <rect x="16" y="188" width="284" height="36" rx="8" fill="var(--accent-2)"/><text x="30" y="204" fill="var(--accent-ink)" font-weight="700" font-size="10.5">3 · Your own page posts a form</text><text x="30" y="218" class="svmute" font-size="9">the branded funnel page</text>
+            <rect x="322" y="188" width="244" height="36" rx="8" class="node"/><text x="336" y="204" class="svsub">passes validation</text><text x="336" y="217" class="svmute" font-size="9">server-side, never trust the browser</text>
+            <rect x="588" y="188" width="256" height="36" rx="8" class="node" stroke="var(--teal)"/><text x="602" y="204" class="svlabel" font-size="10.5">Same three writes, then redirect</text><text x="602" y="218" class="svmute" font-size="9">to the thank-you page</text>
+            <rect x="16" y="260" width="284" height="36" rx="8" fill="var(--accent-2)"/><text x="30" y="276" fill="var(--accent-ink)" font-weight="700" font-size="10.5">4 · A behavioural event fires</text><text x="30" y="290" class="svmute" font-size="9">joined live · watched replay · no-show · voted</text>
+            <rect x="322" y="260" width="244" height="36" rx="8" class="node"/><text x="336" y="276" class="svsub">route by event type</text><text x="336" y="289" class="svmute" font-size="9">bulk imports skip the sheet write</text>
+            <rect x="588" y="260" width="256" height="36" rx="8" class="node" stroke="var(--teal)"/><text x="602" y="276" class="svlabel" font-size="10.5">Apply the tag · update the row</text><text x="602" y="290" class="svmute" font-size="9">this is what the four tags are for</text>
+            <rect x="16" y="332" width="284" height="36" rx="8" fill="var(--accent-2)"/><text x="30" y="348" fill="var(--accent-ink)" font-weight="700" font-size="10.5">5 · You run the outreach import</text><text x="30" y="362" class="svmute" font-size="9">manual, from your outreach sheet</text>
+            <rect x="322" y="332" width="244" height="36" rx="8" class="node"/><text x="336" y="348" class="svsub">contact exists?</text><text x="336" y="361" class="svmute" font-size="9">update if yes, create if no</text>
+            <rect x="588" y="332" width="256" height="36" rx="8" class="node" stroke="var(--teal)"/><text x="602" y="348" class="svlabel" font-size="10.5">Write back status + contact id</text><text x="602" y="362" class="svmute" font-size="9">so the sheet never double-sends</text>
+            <rect x="16" y="404" width="284" height="36" rx="8" fill="var(--accent-2)"/><text x="30" y="420" fill="var(--accent-ink)" font-weight="700" font-size="10.5">6 · A tag is added to a contact</text><text x="30" y="434" class="svmute" font-size="9">or an appointment is confirmed</text>
+            <rect x="322" y="404" width="244" height="36" rx="8" class="node"/><text x="336" y="420" class="svsub">match tag → stage</text><text x="336" y="433" class="svmute" font-size="9">remove the trigger tag after</text>
+            <rect x="588" y="404" width="256" height="36" rx="8" class="node" stroke="var(--teal)"/><text x="602" y="420" class="svlabel" font-size="10.5">Move the pipeline stage</text><text x="602" y="434" class="svmute" font-size="9">removing the tag prevents re-firing</text>
+            <rect x="16" y="476" width="284" height="36" rx="8" fill="var(--amber-bg)"/><text x="30" y="492" fill="var(--amber)" font-weight="700" font-size="10.5">7 · Inbox poll · every 60 seconds</text><text x="30" y="506" class="svmute" font-size="9">replies and delivery failures</text>
+            <rect x="322" y="476" width="244" height="36" rx="8" class="node"/><text x="336" y="492" class="svsub">parse: accepted / declined /</text><text x="336" y="505" class="svsub" font-size="9.5">tentative / bounced</text>
+            <rect x="588" y="476" width="256" height="36" rx="8" class="node" stroke="var(--teal)"/><text x="602" y="492" class="svlabel" font-size="10.5">Set reply status · flag bounces</text><text x="602" y="506" class="svmute" font-size="9">a bounce you don't record gets re-sent</text>
+            <rect x="16" y="548" width="284" height="36" rx="8" fill="var(--amber-bg)"/><text x="30" y="564" fill="var(--amber)" font-weight="700" font-size="10.5">8 · Scheduler · every 5 minutes</text><text x="30" y="578" class="svmute" font-size="9">compares now against event time</text>
+            <rect x="322" y="548" width="244" height="36" rx="8" class="node"/><text x="336" y="564" class="svsub">±3 min window · not yet tagged sent</text><text x="336" y="577" class="svmute" font-size="9">24h · 1h · 15m · live · +1/2/3 days</text>
+            <rect x="588" y="548" width="256" height="36" rx="8" class="node" stroke="var(--teal)"/><text x="602" y="564" class="svlabel" font-size="10.5">Tag the contact → messaging sends</text><text x="602" y="578" class="svmute" font-size="9">wait-nodes between sends, or you get flagged</text>
+          </g>
+        </svg>
+        <div class="cap">Automations 1 to 6 fire the moment their event happens. 7 and 8 run on a schedule, because inboxes and clocks send no webhooks; on route B that schedule is a Cloudflare Cron Trigger. <b>Prove 1, 3 and 4 first:</b> confirm, capture, tag.</div>
+      </div>
+      <div class="vipslot" data-step="d3-step-4-the-eight-automations"></div>
+<h3 id="d3-step-2-instrument-every-step-or-the-second-half">Step 4: Build the Dashboard</h3>
+      <p><b>What it shows:</b> one row per run and per source, with every count from first touch to sale: sends or invites, RSVPs, landing visits, registrations, attendees, CTA clicks, calls booked, sales, revenue, and the page variant. Rates sit between each pair. <b>Where it lives:</b> a Google Sheet in your Drive, copied from the Per-Run Session Analytics Sheet template (under this step in the onboarding centre). Tantra's own dashboard keeps the outreach detail; the sheet is where every tool's numbers meet.</p>
+      <div class="task">
+        <div class="th"><span class="tn">Task 3.4</span><b>Build the Dashboard and Let It Fill Itself</b></div>
+        <div class="tm">
+          <p><b>Why:</b> The dashboard is how you find the leak. A number that isn't on it gets guessed, and a guessed number becomes a fact in next month's review.</p>
+          <ol>
+            <li>Copy the template into your Drive and share it with your service account.</li>
+            <li>Tag every link with UTMs, using <code>utm_content</code> for the page or template variant. Install GA4 and Microsoft Clarity (both free) on every page.</li>
+            <li>Ask Claude Code to write the job that fills one row per run from Tantra, GA4, your CRM and Dodo Payments. On route B, schedule it nightly with a Cron Trigger; on route A, ask Claude Code to run it before each weekly review.</li>
+            <li>Walk the funnel on your phone as a test contact, run the job, and check your row. Leave a cell blank rather than estimate it.</li>
+          </ol>
+          <p><b>Example:</b> for a SaaS company, the cold calendar run and the LinkedIn run sit on separate rows, so cost per trial for each channel is side by side.</p>
+        </div>
+        <div class="meta"><span><i>Owner</i>You · agent wires it</span><span><i>Tool</i>Google Sheets · GA4 · Clarity · Claude Code</span><span><i>Time</i>2 to 3 h</span><span class="dl"><i>Deliverable</i>A dashboard that fills without typing</span><span class="pv"><i>Proof</i>Your test registration appears as a row you never typed</span></div>
+      </div>
+      <div class="vipslot" data-step="d3-step-2-instrument-every-step-or-the-second-half"></div>
+<h3 id="d3-step-5-send-one-small-test-run">Step 5: Send One Small Test Run</h3>
+      <div class="task">
+        <div class="th"><span class="tn">Task 3.5</span><b>Send One Small Test Run</b></div>
+        <div class="tm">
+          <p><b>Why:</b> Until strangers go through it, every page and template is a guess. A small run keeps being wrong cheap and gives the dashboard its first real row.</p>
+          <ol>
+            <li>QA first: every page at 375, 768 and 1280px, one real purchase, every dashboard column filling.</li>
+            <li>Launch the smallest version of each live channel, every link UTM tagged, all pointing at one registration page. Cold email and calendar invites wait until the Day 1 inboxes have warmed for 2 to 3 weeks (about 14 to 21 October); until then, run LinkedIn inside its daily caps and email people who already know you.</li>
+            <li>Read nothing until the run has finished. Numbers read after a few hours kill things that were working.</li>
+          </ol>
+          <p><b>Example:</b> for a SaaS company, one LinkedIn batch and one email to past trial users feed the same session; cold calendar invites join once warm-up is done.</p>
+        </div>
+        <div class="meta"><span><i>Owner</i>You</span><span><i>Tool</i>Tantra · your channels</span><span><i>Time</i>2 h to launch</span><span class="dl"><i>Deliverable</i>The first full run on the dashboard</span><span class="pv"><i>Proof</i>Every buyer traces back to a channel via their UTM</span></div>
+      </div>
+      <div class="vipslot" data-step="d3-step-5-send-one-small-test-run"></div>
+<h3 id="d3-step-6-read-the-dashboard">Step 6: Read the Dashboard and Find the Worst Step</h3>
+      <div class="task">
+        <div class="th"><span class="tn">Task 3.6</span><b>Name the One Step to Fix</b></div>
+        <div class="tm">
+          <p><b>Why:</b> The weakest rate is where the week's work goes. Change five things at once and you can't tell which one moved the number.</p>
+          <ol>
+            <li>When the run finishes, read five numbers: registration rate, show rate, CTA click rate, buyers, and cost per buyer.</li>
+            <li>Compare each rate with the rest of your funnel and with the last run. The lowest, or the one that dropped, is the worst step.</li>
+            <li>Find that row in the table below. It names the one page or template to swap.</li>
+            <li>Put your fetched numbers into the calculator to see cost per buyer against lifetime value.</li>
+          </ol>
+          <p><b>Example:</b> for a SaaS company, most registrants show up but almost nobody clicks the CTA, so the offer slide gets swapped, not the reminders.</p>
+        </div>
+        <div class="meta"><span><i>Owner</i>You · agent fetches</span><span><i>Tool</i>The dashboard · the calculator</span><span><i>Time</i>30 min</span><span class="dl"><i>Deliverable</i>One named step</span><span class="pv"><i>Proof</i>One step named, not three</span></div>
+      </div>
+      <div class="tbl"><table>
+        <thead><tr><th>The dashboard shows</th><th>Usually means</th><th>Swap this</th></tr></thead>
+        <tbody>
+          <tr><td><b>Sends go out, few visits</b></td><td>Wrong list or weak hook: a traffic problem, not a funnel one</td><td>The outreach template in Tantra, or the list</td></tr>
+          <tr><td><b>Visits, few registrations</b></td><td>The page isn't earning the click</td><td>The landing page headline and hero</td></tr>
+          <tr><td><b>Registrations, low show rate</b></td><td>Reminders aren't landing</td><td>One reminder template, or its timing</td></tr>
+          <tr><td><b>Attendees, few CTA clicks</b></td><td>The offer isn't landing</td><td>The offer slide and the CTA</td></tr>
+          <tr><td><b>CTA clicks, few calls or sales</b></td><td>Friction after the click</td><td>The booking page or the follow-up email</td></tr>
+          <tr><td><b>One channel's cost per buyer is high</b></td><td>The funnel is fine; that channel's traffic isn't</td><td>Move budget to the cheapest channel</td></tr>
+        </tbody>
+      </table></div>
+      <div class="calc" id="calc">
+        <div class="row"><label>Monthly visitors</label><input type="range" id="c1" min="500" max="50000" step="500" value="10000"><span class="out" id="o1">10,000</span></div>
+        <div class="row"><label>Opt-in rate</label><input type="range" id="c2" min="5" max="60" step="1" value="25"><span class="out" id="o2">25%</span></div>
+        <div class="row"><label>Show-up / engage</label><input type="range" id="c3" min="10" max="95" step="1" value="40"><span class="out" id="o3">40%</span></div>
+        <div class="row"><label>Buy rate</label><input type="range" id="c4" min="1" max="40" step="1" value="8"><span class="out" id="o4">8%</span></div>
+        <div class="row"><label>Price</label><input type="range" id="c5" min="49" max="9999" step="50" value="999"><span class="out" id="o5">$999</span></div>
+        <div class="row"><label>Monthly spend</label><input type="range" id="c6" min="0" max="50000" step="500" value="6000"><span class="out" id="o6">$6,000</span></div>
+        <div class="row"><label>Repeat purchases</label><input type="range" id="c7" min="0" max="400" step="10" value="60"><span class="out" id="o7">0.6×</span></div>
+        <div class="res">
+          <div class="b"><div class="k">Buyers / month</div><div class="v" id="rBuyers">0</div></div>
+          <div class="b g"><div class="k">Annual run-rate</div><div class="v" id="rARR">0</div></div>
+          <div class="b"><div class="k">Cost per buyer (CAC)</div><div class="v" id="rCAC">0</div></div>
+          <div class="b g"><div class="k">Lifetime value (LTV)</div><div class="v" id="rLTV">0</div></div>
+          <div class="b"><div class="k">LTV ÷ CAC</div><div class="v" id="rRatio">0</div></div>
+          <div class="b g"><div class="k">Return on spend</div><div class="v" id="rROAS">0</div></div>
+        </div>
+        <div class="calcnote" id="calcVerdict"></div>
+      </div>
+      <div class="srcnote"><b>The sliders start on a teaching model.</b> Replace each one with your dashboard number, and leave anything you can't fetch marked unknown. As a rule of thumb, lifetime value around 3× cost per buyer is healthy; below 1× every customer costs more than they return.</div>
+      <div class="vipslot" data-step="d3-step-6-read-the-dashboard"></div>
+<h3 id="d3-step-7-run-the-experiment-loop-every-week">Step 7: Run the Experiment Loop Every Week</h3>
+      <div class="task">
+        <div class="th"><span class="tn">Task 3.7</span><b>Swap One Thing, Read the Dashboard, Keep the Winner</b></div>
+        <div class="tm">
+          <p><b>Why:</b> One swap per week, judged on the dashboard, is how the funnel improves without guessing. The worst step moves once you fix it, so this is a weekly habit, not a project.</p>
+          <ol>
+            <li>Ask Claude Code for one variant of the element the table named: a second landing page, or a second version of the Tantra step template.</li>
+            <li>Split the next run in half. Half the list gets variant A, half gets B, each link carrying its own <code>utm_content</code>, so the dashboard counts them separately.</li>
+            <li>When the run finishes, read both rows. If the gap is only a handful of people, run the same test again before you call it.</li>
+            <li>Keep the winner, revert the loser in the spec, and log the change, the date, the metric you expected to move and the result.</li>
+            <li>Put the weekly review in your calendar as a recurring event.</li>
+          </ol>
+          <p><b>Example:</b> for a SaaS company, variant B's headline names the integration buyers kept asking about. B wins on registration rate, becomes the page, and next week's experiment moves to show rate.</p>
+        </div>
+        <div class="meta"><span><i>Owner</i>You · agent fetches</span><span><i>Tool</i>Claude Code · the dashboard · the spec</span><span><i>Time</i>60 min</span><span class="dl"><i>Deliverable</i>One live experiment and an experiment log</span><span class="pv"><i>Proof</i>Both halves are counted separately on the dashboard</span></div>
+      </div>
+      <div class="viz wide">
+        <div class="vtitle">Six steps, one lap per week</div>
+        <svg viewBox="0 22 860 410" role="img" aria-label="The weekly optimisation loop drawn as a ring of six steps: observe, locate, hypothesise, experiment, measure, and keep or revert, with the ring returning to observe. Side panels list the daily, weekly, monthly and quarterly cadence and the four signs the loop is working.">
+          <defs>
+            <marker id="l1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          </defs>
+          <circle cx="262" cy="232" r="150" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="7 9" class="flowline" opacity=".5"/>
+          <g font-size="10.5">
+            <circle cx="262" cy="82" r="46" fill="var(--accent)"/><text x="262" y="78" text-anchor="middle" class="svwhite" font-size="11.5">OBSERVE</text><text x="262" y="94" text-anchor="middle" class="svwhite2" font-size="9">read the dashboard</text>
+            <circle cx="392" cy="157" r="46" fill="var(--accent-2)"/><text x="392" y="153" text-anchor="middle" fill="var(--accent-ink)" font-weight="700" font-size="11.5">LOCATE</text><text x="392" y="169" text-anchor="middle" class="svmute" font-size="9">the single worst step</text>
+            <circle cx="392" cy="307" r="46" fill="var(--accent-2)"/><text x="392" y="299" text-anchor="middle" fill="var(--accent-ink)" font-weight="700" font-size="11">HYPOTH-</text><text x="392" y="313" text-anchor="middle" fill="var(--accent-ink)" font-weight="700" font-size="11">ESISE</text><text x="392" y="329" text-anchor="middle" class="svmute" font-size="9">one reason, one fix</text>
+            <circle cx="262" cy="382" r="46" fill="var(--accent-2)"/><text x="262" y="378" text-anchor="middle" fill="var(--accent-ink)" font-weight="700" font-size="11">EXPERIMENT</text><text x="262" y="394" text-anchor="middle" class="svmute" font-size="9">50 / 50, one change</text>
+            <circle cx="132" cy="307" r="46" fill="var(--accent-2)"/><text x="132" y="303" text-anchor="middle" fill="var(--accent-ink)" font-weight="700" font-size="11.5">MEASURE</text><text x="132" y="319" text-anchor="middle" class="svmute" font-size="9">wait for a real sample</text>
+            <circle cx="132" cy="157" r="46" fill="#0f9e75"/><text x="132" y="150" text-anchor="middle" class="svwhite" font-size="11">KEEP OR</text><text x="132" y="164" text-anchor="middle" class="svwhite" font-size="11">REVERT</text><text x="132" y="180" text-anchor="middle" class="svwhite2" font-size="9">then log it</text>
+          </g>
+          <text x="262" y="226" text-anchor="middle" class="svlabel" font-size="12">ONE LAP</text>
+          <text x="262" y="244" text-anchor="middle" class="svmute" font-size="10.5">per week</text>
+          <rect x="452" y="40" width="392" height="184" rx="12" class="node"/>
+          <text x="472" y="66" class="svlabel" font-size="11.5">THE CADENCE</text>
+          <g font-size="10">
+            <text x="472" y="90" class="svsub" font-size="10.5">Daily · automated</text><text x="472" y="106" class="svmute">refresh the dashboard; alert if a step rate falls sharply</text>
+            <text x="472" y="124" class="svsub" font-size="10.5">Weekly · you and the agent</text><text x="472" y="140" class="svmute">confirm the bottleneck, launch one experiment, read last week's</text>
+            <text x="472" y="158" class="svsub" font-size="10.5">Monthly</text><text x="472" y="174" class="svmute">re-pull spend, rebalance budget, retire losing variants</text>
+            <text x="472" y="192" class="svsub" font-size="10.5">Quarterly</text><text x="472" y="208" class="svmute">revisit the offer and persona: still the right ones?</text>
+          </g>
+          <rect x="452" y="240" width="392" height="184" rx="12" fill="var(--teal-bg)"/>
+          <text x="472" y="266" fill="var(--teal)" font-weight="700" font-size="11.5">YOU'RE DOING IT RIGHT WHEN</text>
+          <g font-size="10.5" class="svsub">
+            <text x="472" y="292">· Every step rate is fetched, never guessed</text>
+            <text x="472" y="316">· You know today's bottleneck without thinking</text>
+            <text x="472" y="340">· Every buyer maps to a channel, and budget</text>
+            <text x="486" y="356">follows cost-per-buyer, not cost-per-click</text>
+            <text x="472" y="380">· Exactly one experiment runs per leak</text>
+            <text x="472" y="404">· This month's worst step beats last month's</text>
+          </g>
+        </svg>
+        <div class="cap">Claude Code can refresh the dashboard, flag the worst step and propose a variant before the review. You decide what ships. Fix the worst step and a different one becomes the worst: that is the loop working.</div>
+      </div>
+      <div class="vipslot" data-step="d3-step-7-run-the-experiment-loop-every-week"></div>
+<h3 id="d3-step-5-the-52-week-engine">Step 8: Write the Scale Plan</h3>
+      <div class="task">
+        <div class="th"><span class="tn">Task 3.8</span><b>Write the Scale Plan</b></div>
+        <div class="tm">
+          <p><b>Why:</b> Five lines on one page turn the dashboard into next month's decisions. The first two must be fetched numbers, not estimates.</p>
+          <ol>
+            <li><strong>My cost per buyer is ___ and my lifetime value is ___.</strong></li>
+            <li><strong>My cheapest channel by cost per buyer is ___, so next month's budget moves toward it.</strong> Keep a small test budget on every other channel.</li>
+            <li><strong>My worst step is ___ and this week's experiment is ___.</strong></li>
+            <li><strong>My ascension offer is ___:</strong> the rung above what they just bought.</li>
+            <li><strong>My retention mechanism is ___:</strong> what produces the first win, and by when. Everyone else stays warm through the five tags (webinar registrant, webinar attended, live webinar not watched, watched webinar replay, purchased): each tag triggers its own follow-up.</li>
+          </ol>
+          <p><b>Example:</b> for a SaaS company, line 3 reads "show rate; this week we test a WhatsApp reminder at one hour before."</p>
+        </div>
+        <div class="meta"><span><i>Owner</i>You</span><span><i>Tool</i>One page</span><span><i>Time</i>45 min</span><span class="dl"><i>Deliverable</i>The scale plan</span><span class="pv"><i>Proof</i>Lines 1 and 2 contain fetched numbers</span></div>
+      </div>
+      <div class="box do"><div class="h">◆ Your Day 3 output</div>
+        <p>Claude Code connected to Tantra and every other tool, an approved spec, three automations proven with a real contact, a dashboard that fills itself, a first test run, a weekly experiment loop in the calendar, and a five-line scale plan.</p></div>
+    <div class="vipslot" data-step="d3-step-5-the-52-week-engine"></div>
+</section>

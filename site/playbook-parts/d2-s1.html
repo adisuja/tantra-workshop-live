@@ -1,0 +1,109 @@
+<section style="--hue:#EC4899;--hue-ink:color-mix(in srgb,#EC4899 70%,var(--ink))">
+<h3 id="d2-s1-the-traffic-engine">S1: The Traffic Engine</h3>
+      <p>Six channels: cold calendar, cold email, LinkedIn, blog, social and paid ads. Stay inside each one's daily limits and read its numbers once a week.</p>
+      <div class="viz wide">
+        <div class="vtitle">Daily operating limits, and the weekly scale-or-fix gate</div>
+        <svg viewBox="0 0 860 560" role="img" aria-label="Traffic channel operating limits table for cold calendar, cold email, LinkedIn outreach, paid ads and content (blog and social), each with its daily caps and the failure that breaks it. Below, a weekly decision gate splitting into three outcomes: scale when click-through is at least three percent and conversion at least one and a half percent with bounce at or under two percent; hold and change one variable otherwise; and fix immediately when open rate is under fifteen percent, click-through under one percent, or bounce over five percent.">
+          <defs>
+            <marker id="t1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--ink-3)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          </defs>
+          <text x="16" y="22" class="svsub" font-size="11">DAILY OPERATING LIMITS · go over them and you lose the asset, not just the campaign</text>
+          <line x1="16" y1="36" x2="844" y2="36" stroke="var(--line-2)" stroke-width="1.5"/>
+          <text x="32" y="52" class="svmute" font-size="9.5">CHANNEL</text><text x="200" y="52" class="svmute" font-size="9.5">THE LIMITS</text><text x="832" y="52" text-anchor="end" class="svmute" font-size="9.5">WHAT BREAKS IF YOU IGNORE THEM</text>
+          <g font-size="10.5">
+            <rect x="16" y="62" width="828" height="44" rx="8" fill="var(--panel-2)"/>
+            <text x="32" y="80" class="svlabel" font-size="11">Cold calendar</text><text x="32" y="96" class="svmute" font-size="9.5">invites from outreach inboxes</text>
+            <text x="200" y="80" class="svsub">20/day per cold inbox · 50/day once warmed · never above 200/day · SPF + DKIM + DMARC first</text>
+            <text x="200" y="96" class="svmute" font-size="9.5">outreach domains only, never your main brand domain</text>
+            <text x="832" y="96" text-anchor="end" fill="var(--pink)" font-size="10">the domain, permanently</text>
+            <rect x="16" y="112" width="828" height="44" rx="8" fill="var(--panel)"/>
+            <text x="32" y="130" class="svlabel" font-size="11">Cold email</text><text x="32" y="146" class="svmute" font-size="9.5">sequenced outreach</text>
+            <text x="200" y="130" class="svsub">20/day unwarmed → 50/day warmed · 2 to 3 weeks of warm-up · verify the list below 1% bounce</text>
+            <text x="200" y="146" class="svmute" font-size="9.5">reject any purchased list with more than 2% duplicates</text>
+            <text x="832" y="146" text-anchor="end" fill="var(--pink)" font-size="10">inbox placement for every domain</text>
+            <rect x="16" y="162" width="828" height="44" rx="8" fill="var(--panel-2)"/>
+            <text x="32" y="180" class="svlabel" font-size="11">LinkedIn outreach</text><text x="32" y="196" class="svmute" font-size="9.5">connect · message · InMail</text>
+            <text x="200" y="180" class="svsub">connection requests about 15 to 20/day to start · keep HeyReach's defaults for messages and InMail</text>
+            <text x="200" y="196" class="svmute" font-size="9.5">LinkedIn publishes no exact limits · limits are per account, across every campaign</text>
+            <text x="832" y="196" text-anchor="end" fill="var(--pink)" font-size="10">the account, with no appeal</text>
+            <rect x="16" y="212" width="828" height="44" rx="8" fill="var(--panel)"/>
+            <text x="32" y="230" class="svlabel" font-size="11">Paid ads</text><text x="32" y="246" class="svmute" font-size="9.5">cold + retargeting</text>
+            <text x="200" y="230" class="svsub">smallest viable budget first · one variable per test · retargeting pool live from day one</text>
+            <text x="200" y="246" class="svmute" font-size="9.5">prove the funnel converts on cheap learning traffic before you scale spend</text>
+            <text x="832" y="246" text-anchor="end" fill="var(--pink)" font-size="10">your budget, fastest of all</text>
+            <rect x="16" y="262" width="828" height="44" rx="8" fill="var(--panel-2)"/>
+            <text x="32" y="280" class="svlabel" font-size="11">Blog and social</text><text x="32" y="296" class="svmute" font-size="9.5">the only channel that compounds</text>
+            <text x="200" y="280" class="svsub">batch, never improvise · 1 pillar → 5 clips → quotes · post to the event every 3 days</text>
+            <text x="200" y="296" class="svmute" font-size="9.5">every link UTM-tagged, or none of this is attributable</text>
+            <text x="832" y="296" text-anchor="end" fill="var(--amber)" font-size="10">nothing; it just quietly stops</text>
+          </g>
+          <line x1="16" y1="320" x2="844" y2="320" stroke="var(--line-2)" stroke-width="1.5"/>
+          <rect x="330" y="334" width="200" height="44" rx="11" fill="var(--accent)"/>
+          <text x="430" y="352" text-anchor="middle" class="svwhite" font-size="12">EVERY WEEK, PER CHANNEL</text>
+          <text x="430" y="368" text-anchor="middle" class="svwhite2" font-size="10">read the numbers, then pick one</text>
+          <g fill="none" stroke="var(--ink-3)" stroke-width="1.6" opacity=".6" marker-end="url(#t1)">
+            <path d="M380 378 C380 400 220 396 150 410"/>
+            <path d="M430 378 L430 410"/>
+            <path d="M480 378 C480 400 640 396 710 410"/>
+          </g>
+          <rect x="16" y="416" width="268" height="128" rx="12" fill="var(--teal-bg)"/>
+          <text x="150" y="440" text-anchor="middle" fill="var(--teal)" font-weight="700" font-size="12.5">SCALE IT</text>
+          <text x="150" y="462" text-anchor="middle" class="svsub" font-size="10.5">CTR ≥ 3%  AND  conv ≥ 1.5%</text>
+          <text x="150" y="479" text-anchor="middle" class="svsub" font-size="10.5">AND  bounce ≤ 2%</text>
+          <line x1="44" y1="494" x2="256" y2="494" stroke="var(--teal)" opacity=".3"/>
+          <text x="150" y="514" text-anchor="middle" class="svmute" font-size="10">Add volume. Add inboxes or</text>
+          <text x="150" y="530" text-anchor="middle" class="svmute" font-size="10">budget, not new variables.</text>
+          <rect x="296" y="416" width="268" height="128" rx="12" fill="var(--amber-bg)"/>
+          <text x="430" y="440" text-anchor="middle" fill="var(--amber)" font-weight="700" font-size="12.5">HOLD AND TUNE</text>
+          <text x="430" y="462" text-anchor="middle" class="svsub" font-size="10.5">anywhere between the two</text>
+          <text x="430" y="479" text-anchor="middle" class="svsub" font-size="10.5">bands on either side</text>
+          <line x1="324" y1="494" x2="536" y2="494" stroke="var(--amber)" opacity=".3"/>
+          <text x="430" y="514" text-anchor="middle" class="svmute" font-size="10">Change exactly one variable.</text>
+          <text x="430" y="530" text-anchor="middle" class="svmute" font-size="10">Re-measure before touching another.</text>
+          <rect x="576" y="416" width="268" height="128" rx="12" fill="var(--pink-bg)"/>
+          <text x="710" y="440" text-anchor="middle" fill="var(--pink)" font-weight="700" font-size="12.5">FIX IT TODAY</text>
+          <text x="710" y="462" text-anchor="middle" class="svsub" font-size="10.5">open &lt; 15%  OR  bounce &gt; 5%</text>
+          <text x="710" y="479" text-anchor="middle" class="svsub" font-size="10.5">stop sending on that inbox now</text>
+          <line x1="604" y1="494" x2="816" y2="494" stroke="var(--pink)" opacity=".3"/>
+          <text x="710" y="514" text-anchor="middle" class="svmute" font-size="10">CTR &lt; 1%: the inbox is fine.</text>
+          <text x="710" y="530" text-anchor="middle" class="svmute" font-size="10">Rewrite the offer, keep sending.</text>
+        </svg>
+        <div class="cap">Low open rate: fix domains and warm-up. Low click-through: fix the offer. Open rate applies to email only. The thresholds are this playbook's starting points.</div>
+      </div>
+      <div class="task">
+        <div class="th"><span class="tn">Task S1.1</span><b>Confirm Your Sending Domains Are Authenticated and Warming</b></div>
+        <div class="tm">
+          <p>New inboxes need 2 to 3 weeks of warm-up. Gmail, Yahoo and Outlook require SPF, DKIM and DMARC from bulk senders; a domain missing one lands in spam or is rejected.</p>
+          <ol>
+            <li>Check you own separate outreach domains. If you didn't set them up on Day 1, do it now (Cold Email guide, step 1). Never use your main brand domain.</li>
+            <li>Run every domain through the Google Admin Toolbox check. SPF, DKIM, DMARC and MX must all pass.</li>
+            <li>Open your sending tool and confirm warm-up is on for every inbox, with the daily limit at 20.</li>
+            <li>Verify your lead list: under 1% bounce, and reject any bought file with more than 2% duplicates.</li>
+          </ol>
+        </div>
+        <div class="meta"><span><i>Owner</i>You</span><span><i>Tool</i>Domain registrar · DNS · sending platform</span><span><i>Time</i>30 min if connected on Day 1, 90 min if not; then 2 to 3 weeks of warm-up</span><span class="dl"><i>Deliverable</i>Authenticated domains in warm-up</span><span class="pv"><i>Proof</i>A test send lands in the primary inbox, not promotions</span></div>
+      </div>
+      <div class="task">
+        <div class="th"><span class="tn">Task S1.2</span><b>Write the Outreach Templates for Every Channel, Two Versions Each</b></div>
+        <div class="tm">
+          <p>Two versions give you a comparison, so you learn what to keep. Writing every channel today means traffic switches on the day the funnel is ready.</p>
+          <ol>
+            <li>Paste your Day 2 prompt pack into your AI tool.</li>
+            <li>For each channel you'll run, generate Version A (benefit-led: the outcome your buyer wants) and Version B (problem-led: their objection, in their words). Cold calendar: the invite title and description. Cold email: the five-step thread. LinkedIn: the connection note and follow-up messages. Blog and social: the posts. Ads: headline, body and image brief.</li>
+            <li>Tag every link with your UTM scheme: <code>utm_source</code> per channel, <code>utm_content=variant_a</code> or <code>variant_b</code>.</li>
+            <li>Check each pair makes the same offer and differs only in the opening angle.</li>
+          </ol>
+          <p>For a SaaS company, Version A of the cold email opens with "cut onboarding time in half"; Version B opens with "your trial users stall on day two".</p>
+        </div>
+        <div class="meta"><span><i>Owner</i>You · AI drafts from the prompt pack</span><span><i>Tool</i>Claude Code, or any AI</span><span><i>Time</i>60 min</span><span class="dl"><i>Deliverable</i>2 versions × every live channel, UTM-tagged</span><span class="pv"><i>Proof</i>Both versions trace back to your offer and persona</span></div>
+      </div>
+      <div class="fvar">
+        <div class="fh">◆ What Changes per Funnel Type · Traffic</div>
+        <div class="fb">
+          <div class="fc w"><b>Webinar Funnel</b><span>Traffic is <em>dated</em>: every asset carries the event date and expires with it. Run the invite push in a short window before the session.</span></div>
+          <div class="fc k"><b>Workshop · Challenge</b><span>Participants recruit participants. Give each registrant a shareable link with their own UTM tag from day one.</span></div>
+          <div class="fc r"><b>Reverse Squeeze</b><span>Traffic points at <em>content</em>, not a form, so the same link keeps working after any date passes.</span></div>
+        </div>
+      </div>
+      <div class="vipslot" data-step="d2-s1-the-traffic-engine"></div>
+</section>
