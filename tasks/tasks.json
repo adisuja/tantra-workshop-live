@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-04T01:08:28+0530",
-  "version": 198,
+  "updated": "2026-10-04T01:09:03+0530",
+  "version": 200,
   "last_id": 211,
   "team": [
    {
@@ -774,7 +774,7 @@
   },
   {
    "id": "T-004",
-   "title": "Seat checkout (Dodo, live) — geo-priced",
+   "title": "Seat checkout (Dodo, live), geo-priced",
    "area": "Funnel",
    "owner": "Ben",
    "priority": "P0",
@@ -1211,7 +1211,7 @@
   },
   {
    "id": "T-024",
-   "title": "Day 1–3 output templates (what each attendee GETS)",
+   "title": "Day 1 to 3 output templates (what each attendee GETS)",
    "area": "Delivery",
    "owner": "Adi",
    "priority": "P0",
@@ -1276,7 +1276,7 @@
    "due": "2026-09-19",
    "status": "review",
    "why": "The pipeline templates (T-024) depend on which questions exist. Locking them stops churn.",
-   "spec": "Questions live in build/questions.py. Day 1 twelve — strategy (ICP, objection, offer, rung, funnel shape) then the conversion engine (offer block, voice, mechanism, proof, dimensions, bands). Day 2 six — funnel-type specifics: channels, headlines, form fields, reminder channels, run of show, close chain. Day 3 twelve — launch (AI tool, event names, pipeline stages, automations, test campaign, deploy URL) then scale (CAC/LTV, best channel, worst step, experiment, ascension offer, retention mechanism).",
+   "spec": "Questions live in build/questions.py. Day 1 twelve, strategy (ICP, objection, offer, rung, funnel shape) then the conversion engine (offer block, voice, mechanism, proof, dimensions, bands). Day 2 six, funnel-type specifics: channels, headlines, form fields, reminder channels, run of show, close chain. Day 3 twelve, launch (AI tool, event names, pipeline stages, automations, test campaign, deploy URL) then scale (CAC/LTV, best channel, worst step, experiment, ascension offer, retention mechanism).",
    "done_when": [
     "Owner says 'locked'"
    ],
@@ -2042,7 +2042,7 @@
    "priority": "P2",
    "due": "2026-09-19",
    "status": "review",
-   "why": "10–15% of revenue from a member's profile traffic was floated; exact terms unconfirmed.",
+   "why": "10 to 15% of revenue from a member's profile traffic was floated; exact terms unconfirmed.",
    "spec": "Confirm with Nelbin.",
    "done_when": [
     "Terms written down"
@@ -2835,7 +2835,7 @@
   },
   {
    "id": "T-091",
-   "title": "Template library — 54 elements, each rendered",
+   "title": "Template library, 54 elements, each rendered",
    "area": "Content",
    "owner": "Amal",
    "priority": "P1",
@@ -2853,27 +2853,27 @@
      "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/"
     },
     {
-     "label": "1. Traffic — 19 elements",
+     "label": "1. Traffic, 19 elements",
      "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/#profile-branding"
     },
     {
-     "label": "2. Landing + registration — 5",
+     "label": "2. Landing + registration, 5",
      "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/#framework-backronym"
     },
     {
-     "label": "3. Nurture — 5",
+     "label": "3. Nurture, 5",
      "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/#reminder-sequence"
     },
     {
-     "label": "4. Live delivery — 9",
+     "label": "4. Live delivery, 9",
      "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/#session-deck"
     },
     {
-     "label": "5. Revenue pipeline — 9",
+     "label": "5. Revenue pipeline, 9",
      "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/#offer-template"
     },
     {
-     "label": "6. Post-event growth — 7",
+     "label": "6. Post-event growth, 7",
      "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/#newsletter-series"
     },
     {
@@ -2925,11 +2925,11 @@
    ],
    "evidence": [
     {
-     "label": "Centre — toggle in the header",
+     "label": "Centre, toggle in the header",
      "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/"
     },
     {
-     "label": "Template library — toggle",
+     "label": "Template library, toggle",
      "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/"
     }
    ],
@@ -2969,11 +2969,11 @@
      "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/"
     },
     {
-     "label": "Thank-you 1 — survey",
+     "label": "Thank-you 1, survey",
      "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/success/"
     },
     {
-     "label": "Thank-you 2 — the fork",
+     "label": "Thank-you 2, the fork",
      "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/"
     },
     {
@@ -3108,7 +3108,7 @@
    ],
    "evidence": [
     {
-     "label": "Local only — see the handoff for the unlock command",
+     "label": "Local only, see the handoff for the unlock command",
      "url": "workshop-plan/ops/.admin-key"
     }
    ],
@@ -3540,7 +3540,7 @@
   },
   {
    "id": "T-106",
-   "title": "Registration deadline has passed — extend it for this cohort, or roll to the next",
+   "title": "Registration deadline has passed, extend it for this cohort, or roll to the next",
    "area": "Funnel",
    "owner": "Adi",
    "priority": "P0",
@@ -3624,7 +3624,7 @@
    "priority": "P1",
    "due": "2026-09-24",
    "status": "review",
-   "why": "Owner (2026-09-24, correction): replicate the /masterclass FunnelOS funnel visualisation exactly, and create the same for the reverse squeeze page and challenge funnels — all three animated in the playbook's 'What are funnels' section. The first attempt (custom cards) was rejected.",
+   "why": "Owner (2026-09-24, correction): replicate the /masterclass FunnelOS funnel visualisation exactly, and create the same for the reverse squeeze page and challenge funnels, all three animated in the playbook's 'What are funnels' section. The first attempt (custom cards) was rejected.",
    "spec": "FunnelOS (app/src/components/masterclass/funnel-os.tsx) is now a spec-driven engine; the webinar spec is unchanged on /masterclass. funnel-os-rsp.tsx = the RSP whiteboard (5 stages, its funnel maths, 52-week grid, every tool named). funnel-os-challenge.tsx = the 3-day workshop as built (structural facts only; planned items live in the V2 layer). Pages /funnels/webinar|rsp|challenge; build/funnels.py frames them in the playbook. Verify: scripts/probe-funnel-boards.mjs (5 widths) + scripts/shoot-playbook-funnels.mjs.",
    "done_when": [
     "Owner approves all three"
@@ -3664,14 +3664,14 @@
   },
   {
    "id": "T-109",
-   "title": "Onboarding centre: big-tab sidebar (VIP ticket + Day 1–3 journey); every VIP template embedded in the step that uses it",
+   "title": "Onboarding centre: big-tab sidebar (VIP ticket + Day 1 to 3 journey); every VIP template embedded in the step that uses it",
    "area": "Content",
    "owner": "Amal",
    "priority": "P1",
    "due": "2026-09-24",
    "status": "review",
-   "why": "Owner (2026-09-24): lots of empty space inside the playbook and the interface needs to be far better. Embed the playbook directly into the onboarding centre with one well-highlighted sidebar, colour animations while scrolling, jump links and an index of every section, plus the other centre pages. Add the new Tantra logo properly and fix the empty-space bug that breaks content. Follow-up (2026-09-24): capitalise every heading and subheading properly, comprehensively, in both the playbook and the centre. Follow-up 2 (2026-09-24): the playbook must be integrated into the onboarding flow, not a separate section — each day shows its session recording, slides, questions and the playbook chapter covered that day, inside the centre. Follow-up 3 (2026-09-24): sidebar sections were disjointed from the actual flow — analyse every section, add the template library as its own closing section, and integrate every VIP-page bonus into the sidebar. Follow-up 4 (2026-09-24): sidebar too nested — big tabs, very simple Day 1→3 structure; VIP kit at the very top, each bonus labelled by its own name; specific templates / landing page examples embedded inside the day-by-day journey; the journey is the only thing to look at.",
-   "spec": "ROOT CAUSE of the blank space: every chapter faded in only once 8% of it was on screen; Day 1–3 are 12–16k px tall, so on a laptop they never reached 8% and stayed invisible. Fixed in the embed (no hidden sections) and in the standalone playbook (threshold 0). build/embed.py lifts playbook.html into the app (scoped CSS + an index of 9 chapters and 43 sections); /onboarding renders it natively under ONE sidebar (centre sections, every chapter, every step, other pages) with scroll-spy, per-chapter hue that the progress bar, sidebar, header chip and page glow animate between, and a mobile drawer. Also: 2 unclosed diagram wrappers, 7 SVG text collisions, 12 diagrams cropped to their content, 2 orphaned grid rows, stale weekday labels. Logo = owner's mark + their own TANTRA wordmark, ink/white by theme. Verify: scripts/probe-onboarding.mjs (5 widths, both themes), probe-svg-text.mjs, probe-orphans.mjs, probe-svg-space.mjs, workshop-plan/probe-playbook.mjs.",
+   "why": "Owner (2026-09-24): lots of empty space inside the playbook and the interface needs to be far better. Embed the playbook directly into the onboarding centre with one well-highlighted sidebar, colour animations while scrolling, jump links and an index of every section, plus the other centre pages. Add the new Tantra logo properly and fix the empty-space bug that breaks content. Follow-up (2026-09-24): capitalise every heading and subheading properly, comprehensively, in both the playbook and the centre. Follow-up 2 (2026-09-24): the playbook must be integrated into the onboarding flow, not a separate section, each day shows its session recording, slides, questions and the playbook chapter covered that day, inside the centre. Follow-up 3 (2026-09-24): sidebar sections were disjointed from the actual flow, analyse every section, add the template library as its own closing section, and integrate every VIP-page bonus into the sidebar. Follow-up 4 (2026-09-24): sidebar too nested, big tabs, very simple Day 1→3 structure; VIP kit at the very top, each bonus labelled by its own name; specific templates / landing page examples embedded inside the day-by-day journey; the journey is the only thing to look at.",
+   "spec": "ROOT CAUSE of the blank space: every chapter faded in only once 8% of it was on screen; Day 1 to 3 are 12 to 16k px tall, so on a laptop they never reached 8% and stayed invisible. Fixed in the embed (no hidden sections) and in the standalone playbook (threshold 0). build/embed.py lifts playbook.html into the app (scoped CSS + an index of 9 chapters and 43 sections); /onboarding renders it natively under ONE sidebar (centre sections, every chapter, every step, other pages) with scroll-spy, per-chapter hue that the progress bar, sidebar, header chip and page glow animate between, and a mobile drawer. Also: 2 unclosed diagram wrappers, 7 SVG text collisions, 12 diagrams cropped to their content, 2 orphaned grid rows, stale weekday labels. Logo = owner's mark + their own TANTRA wordmark, ink/white by theme. Verify: scripts/probe-onboarding.mjs (5 widths, both themes), probe-svg-text.mjs, probe-orphans.mjs, probe-svg-space.mjs, workshop-plan/probe-playbook.mjs.",
    "done_when": [
     "Owner approves the combined centre"
    ],
@@ -3732,7 +3732,7 @@
    "priority": "P1",
    "due": "2026-09-28",
    "status": "review",
-   "why": "Owner brief (2026-09-24): Day 2 of the onboarding centre becomes the build manual — one guide per stage/channel (S1 Traffic · S2 Tantra Pro Funnel · S3 Tantra Pro Flow · S4 webinar/RSP/challenge · S5 Revenue & Deal Pipeline · S6 52-Week Growth Engine), each with a flowchart, The Task, step-by-step real screenshots, and embedded template examples. No basic funnels or flows anywhere.",
+   "why": "Owner brief (2026-09-24): Day 2 of the onboarding centre becomes the build manual, one guide per stage/channel (S1 Traffic · S2 Tantra Pro Funnel · S3 Tantra Pro Flow · S4 webinar/RSP/challenge · S5 Revenue & Deal Pipeline · S6 52-Week Growth Engine), each with a flowchart, The Task, step-by-step real screenshots, and embedded template examples. No basic funnels or flows anywhere.",
    "spec": "workshop-plan/coord/CONTRACT.md · LANES.md",
    "done_when": [
     "CONTRACT v1/v2 frozen; renderer + Day 2 manual + Day 1 recommendation shipped; zero 'basic' left; all lanes merged; probes clean locally and on the mirror."
@@ -3770,8 +3770,8 @@
    "owner": "Amal",
    "priority": "P1",
    "due": "2026-09-28",
-   "status": "next",
-   "why": "Owner brief (2026-09-24): Day 2 of the onboarding centre becomes the build manual — one guide per stage/channel (S1 Traffic · S2 Tantra Pro Funnel · S3 Tantra Pro Flow · S4 webinar/RSP/challenge · S5 Revenue & Deal Pipeline · S6 52-Week Growth Engine), each with a flowchart, The Task, step-by-step real screenshots, and embedded template examples. No basic funnels or flows anywhere.",
+   "status": "queue",
+   "why": "Owner brief (2026-09-24): Day 2 of the onboarding centre becomes the build manual, one guide per stage/channel (S1 Traffic · S2 Tantra Pro Funnel · S3 Tantra Pro Flow · S4 webinar/RSP/challenge · S5 Revenue & Deal Pipeline · S6 52-Week Growth Engine), each with a flowchart, The Task, step-by-step real screenshots, and embedded template examples. No basic funnels or flows anywhere.",
    "spec": "workshop-plan/coord/CONTRACT.md · LANES.md",
    "done_when": [
     "Every guide example renders from the library; leak probe clean."
@@ -3815,10 +3815,10 @@
    "priority": "P1",
    "due": "2026-09-28",
    "status": "review",
-   "why": "Owner brief (2026-09-24): Day 2 of the onboarding centre becomes the build manual — one guide per stage/channel (S1 Traffic · S2 Tantra Pro Funnel · S3 Tantra Pro Flow · S4 webinar/RSP/challenge · S5 Revenue & Deal Pipeline · S6 52-Week Growth Engine), each with a flowchart, The Task, step-by-step real screenshots, and embedded template examples. No basic funnels or flows anywhere.",
+   "why": "Owner brief (2026-09-24): Day 2 of the onboarding centre becomes the build manual, one guide per stage/channel (S1 Traffic · S2 Tantra Pro Funnel · S3 Tantra Pro Flow · S4 webinar/RSP/challenge · S5 Revenue & Deal Pipeline · S6 52-Week Growth Engine), each with a flowchart, The Task, step-by-step real screenshots, and embedded template examples. No basic funnels or flows anywhere.",
    "spec": "workshop-plan/coord/CONTRACT.md · LANES.md",
    "done_when": [
-    "All S1–S3 guides merged with real screenshots or marked capture-needed slots."
+    "All S1 to S3 guides merged with real screenshots or marked capture-needed slots."
    ],
    "evidence": [],
    "blockers": [],
@@ -3859,7 +3859,7 @@
    "priority": "P1",
    "due": "2026-09-28",
    "status": "review",
-   "why": "Owner brief (2026-09-24): Day 2 of the onboarding centre becomes the build manual — one guide per stage/channel (S1 Traffic · S2 Tantra Pro Funnel · S3 Tantra Pro Flow · S4 webinar/RSP/challenge · S5 Revenue & Deal Pipeline · S6 52-Week Growth Engine), each with a flowchart, The Task, step-by-step real screenshots, and embedded template examples. No basic funnels or flows anywhere.",
+   "why": "Owner brief (2026-09-24): Day 2 of the onboarding centre becomes the build manual, one guide per stage/channel (S1 Traffic · S2 Tantra Pro Funnel · S3 Tantra Pro Flow · S4 webinar/RSP/challenge · S5 Revenue & Deal Pipeline · S6 52-Week Growth Engine), each with a flowchart, The Task, step-by-step real screenshots, and embedded template examples. No basic funnels or flows anywhere.",
    "spec": "workshop-plan/coord/CONTRACT.md · LANES.md",
    "done_when": [
     "Three S4 guides merged; Day 1 criteria live; VSL script template in the library."
@@ -3901,10 +3901,10 @@
    "priority": "P1",
    "due": "2026-09-28",
    "status": "review",
-   "why": "Owner brief (2026-09-24): Day 2 of the onboarding centre becomes the build manual — one guide per stage/channel (S1 Traffic · S2 Tantra Pro Funnel · S3 Tantra Pro Flow · S4 webinar/RSP/challenge · S5 Revenue & Deal Pipeline · S6 52-Week Growth Engine), each with a flowchart, The Task, step-by-step real screenshots, and embedded template examples. No basic funnels or flows anywhere.",
+   "why": "Owner brief (2026-09-24): Day 2 of the onboarding centre becomes the build manual, one guide per stage/channel (S1 Traffic · S2 Tantra Pro Funnel · S3 Tantra Pro Flow · S4 webinar/RSP/challenge · S5 Revenue & Deal Pipeline · S6 52-Week Growth Engine), each with a flowchart, The Task, step-by-step real screenshots, and embedded template examples. No basic funnels or flows anywhere.",
    "spec": "workshop-plan/coord/CONTRACT.md · LANES.md",
    "done_when": [
-    "All S5–S6 guides merged; Day 2 pipeline questions updated."
+    "All S5 to S6 guides merged; Day 2 pipeline questions updated."
    ],
    "evidence": [],
    "blockers": [
@@ -3957,7 +3957,7 @@
     "Claude in Chrome (Browser 1) was disconnected on the last pass",
     "LinkedIn and Meta are never opened by browser tools (global rule)"
    ],
-   "needs_from_owner": "Pick one: (A) connect Claude in Chrome 'Browser 1' (adi@growthclub.org) and be signed in to Tantra dashboard, Google Workspace/Sheets, GoHighLevel and Beehiiv — Claude captures and redacts those; or (B) take the LinkedIn company-page and Meta Ads/Events Manager screenshots yourself (list in status/c.md) and drop them in a folder — Claude crops, redacts and files them. Also tell us whether you have GoHighLevel and Beehiiv accounts at all; if not, those steps stay on the vendors' public help-centre shots. Lane D's two slots also need these answers: (C) s4-rsp step 7, the Part 2 page: no reverse squeeze page exists in our funnel yet. Reply 'build it' (Claude builds a working anonymised Part 2 page from the rsp-part2-access-page template and captures it) or 'wait' (until a real RSP runs, T-025). (D) s4-challenge step 15, the referral dashboard: it only opens with the team passphrase, which Claude never types. Unlock …/tantra-workshop-live/referrals.html yourself, take one full-width screenshot and drop it in tasks/uploads; cover any revenue you don't want shown, and Claude blurs names. (E, optional) If you have WebinarGeek or Zoom Webinars, sign in on Browser 1 and Claude re-shoots s4-webinar from our own room; otherwise its vendor help-centre shots stay.\n\nLane C (26 slots): (F) the six Meta/LinkedIn shots, dropped in workshop-plan/tasks/uploads/ with these names: meta-create-pixel.png (Events Manager → Connect data → Web → Create pixel) · meta-custom-audience.png (Audiences → Create audience → Custom audience → Website) · meta-leads-campaign.png (Ads Manager → Create campaign, Leads objective) · meta-test-events.png (Events Manager → Test events with a live Lead event) · meta-results-columns.png (results for two ads: CTR, cost per result) · linkedin-create-event.png (Company Page → Admin tools → Create event). (G) Tell us which content tools you actually use: blog CMS (WordPress?), SEO plugin (Yoast?), scheduler (Metricool?), design (Canva?). The guides name the sources' suggestions; Claude rewrites any step whose tool isn't yours. (H) For Browser 1, also be signed in to Google Cloud console + Google Admin (the outreach Workspace org) and GA4, for s1-cold-calendar step 3 and s1-ads step 1.",
+   "needs_from_owner": "Pick one: (A) connect Claude in Chrome 'Browser 1' (adi@growthclub.org) and be signed in to Tantra dashboard, Google Workspace/Sheets, GoHighLevel and Beehiiv, Claude captures and redacts those; or (B) take the LinkedIn company-page and Meta Ads/Events Manager screenshots yourself (list in status/c.md) and drop them in a folder, Claude crops, redacts and files them. Also tell us whether you have GoHighLevel and Beehiiv accounts at all; if not, those steps stay on the vendors' public help-centre shots. Lane D's two slots also need these answers: (C) s4-rsp step 7, the Part 2 page: no reverse squeeze page exists in our funnel yet. Reply 'build it' (Claude builds a working anonymised Part 2 page from the rsp-part2-access-page template and captures it) or 'wait' (until a real RSP runs, T-025). (D) s4-challenge step 15, the referral dashboard: it only opens with the team passphrase, which Claude never types. Unlock …/tantra-workshop-live/referrals.html yourself, take one full-width screenshot and drop it in tasks/uploads; cover any revenue you don't want shown, and Claude blurs names. (E, optional) If you have WebinarGeek or Zoom Webinars, sign in on Browser 1 and Claude re-shoots s4-webinar from our own room; otherwise its vendor help-centre shots stay.\n\nLane C (26 slots): (F) the six Meta/LinkedIn shots, dropped in workshop-plan/tasks/uploads/ with these names: meta-create-pixel.png (Events Manager → Connect data → Web → Create pixel) · meta-custom-audience.png (Audiences → Create audience → Custom audience → Website) · meta-leads-campaign.png (Ads Manager → Create campaign, Leads objective) · meta-test-events.png (Events Manager → Test events with a live Lead event) · meta-results-columns.png (results for two ads: CTR, cost per result) · linkedin-create-event.png (Company Page → Admin tools → Create event). (G) Tell us which content tools you actually use: blog CMS (WordPress?), SEO plugin (Yoast?), scheduler (Metricool?), design (Canva?). The guides name the sources' suggestions; Claude rewrites any step whose tool isn't yours. (H) For Browser 1, also be signed in to Google Cloud console + Google Admin (the outreach Workspace org) and GA4, for s1-cold-calendar step 3 and s1-ads step 1.",
    "log": [
     {
      "ts": "2026-09-25",
@@ -4057,7 +4057,7 @@
    "priority": "P2",
    "due": "2026-09-28",
    "status": "blocked",
-   "why": "Sources disagree: whiteboard >80, FunnelOS RSP >70 / 40–70 / <40, library 'HOT ≥ 8'. The guides currently use top / middle / bottom bands with no numbers so nothing is invented.",
+   "why": "Sources disagree: whiteboard >80, FunnelOS RSP >70 / 40 to 70 / <40, library 'HOT ≥ 8'. The guides currently use top / middle / bottom bands with no numbers so nothing is invented.",
    "spec": "",
    "done_when": [
     "One scale shown consistently in playbook, FunnelOS, library and S5 guides (or bands everywhere)"
@@ -4066,7 +4066,7 @@
    "blockers": [
     "Needs owner decision"
    ],
-   "needs_from_owner": "Pick: 0–100 with thresholds (which ones?), 1–10 with HOT ≥ 8, or keep number-free bands everywhere.",
+   "needs_from_owner": "Pick: 0 to 100 with thresholds (which ones?), 1 to 10 with HOT ≥ 8, or keep number-free bands everywhere.",
    "log": [
     {
      "ts": "2026-09-25",
@@ -4097,7 +4097,7 @@
    "blockers": [
     "Needs owner confirmation of the canonical count"
    ],
-   "needs_from_owner": "Confirm: 'Eleven stages (incl. Unqualified) plus a No Show exit' — or tell us the count you teach.",
+   "needs_from_owner": "Confirm: 'Eleven stages (incl. Unqualified) plus a No Show exit', or tell us the count you teach.",
    "log": [
     {
      "ts": "2026-09-25",
@@ -4113,7 +4113,7 @@
   },
   {
    "id": "T-120",
-   "title": "GoHighLevel in the stacks — confirm where it belongs",
+   "title": "GoHighLevel in the stacks, confirm where it belongs",
    "area": "Product",
    "owner": "Bharath",
    "priority": "P3",
@@ -4160,7 +4160,7 @@
    "blockers": [
     "Needs owner decision (and the real cap if kept)"
    ],
-   "needs_from_owner": "Choose: (A) real counter — tell us the true seat cap; Claude wires it to the ops registration count; or (B) remove it.",
+   "needs_from_owner": "Choose: (A) real counter, tell us the true seat cap; Claude wires it to the ops registration count; or (B) remove it.",
    "log": [
     {
      "ts": "2026-09-25",
@@ -4193,7 +4193,7 @@
    "blockers": [
     "T-070 is on hold by the owner (backend fulfilment 'integrated later')"
    ],
-   "needs_from_owner": "Approve Claude building the local path now: verified Dodo webhook → ops entitlement (plus a tick.py polling fallback), keeping api.usetantra.com out of it until you integrate — yes / no. No new credentials needed; uses the existing Dodo webhook secret.",
+   "needs_from_owner": "Approve Claude building the local path now: verified Dodo webhook → ops entitlement (plus a tick.py polling fallback), keeping api.usetantra.com out of it until you integrate, yes / no. No new credentials needed; uses the existing Dodo webhook secret.",
    "log": [
     {
      "ts": "2026-09-25",
@@ -4229,7 +4229,7 @@
     "WhatsApp needs a WhatsApp Business API credential (or approve email + SMS only)",
     "Zoom join links still placeholders (T-042)"
    ],
-   "needs_from_owner": "Provide: (1) sending provider + credential for the 'from' address (SMTP or Resend/SendGrid key) — put it in app/.env.local yourself, Claude never types credentials; (2) WhatsApp Business API provider or say 'email only for this cohort'; (3) the three Zoom links when scheduled (T-042).",
+   "needs_from_owner": "Provide: (1) sending provider + credential for the 'from' address (SMTP or Resend/SendGrid key), put it in app/.env.local yourself, Claude never types credentials; (2) WhatsApp Business API provider or say 'email only for this cohort'; (3) the three Zoom links when scheduled (T-042).",
    "log": [
     {
      "ts": "2026-09-25",
@@ -4415,7 +4415,7 @@
    ],
    "evidence": [
     {
-     "label": "Onboarding centre — Before Day 1 → step 2 (needs your session)",
+     "label": "Onboarding centre, Before Day 1 → step 2 (needs your session)",
      "url": "http://localhost:4322/onboarding?v=t127"
     },
     {
@@ -4455,7 +4455,7 @@
    "owner": "Amal",
    "priority": "P2",
    "due": "2026-09-26",
-   "status": "next",
+   "status": "queue",
    "why": "lane/e has one unannounced commit (70f3f4c: case-study preview reads right with B's customer_role sample).",
    "spec": "",
    "done_when": [
@@ -4575,13 +4575,13 @@
   },
   {
    "id": "T-132",
-   "title": "Stage 5–6 guides: real Claude Code screenshots (5 steps) + update the Claude Code CLI",
+   "title": "Stage 5 to 6 guides: real Claude Code screenshots (5 steps) + update the Claude Code CLI",
    "area": "Content",
    "owner": "Amal",
    "priority": "P2",
    "due": "2026-09-28",
    "status": "blocked",
-   "why": "Five Stage 5–6 steps need Claude Code's own screens, and Claude can't operate the Claude desktop app (computer-use can't reach it). The Mac's Claude Code CLI is 2.1.185: too old for Opus 5.5, and its interactive screen rejected every model, so the AI-newsletter demo had to run headless on Sonnet 5.",
+   "why": "Five Stage 5 to 6 steps need Claude Code's own screens, and Claude can't operate the Claude desktop app (computer-use can't reach it). The Mac's Claude Code CLI is 2.1.185: too old for Opus 5.5, and its interactive screen rejected every model, so the AI-newsletter demo had to run headless on Sonnet 5.",
    "spec": "Steps: s6-ai-newsletter #1 (new Code session with the weekly-letter folder), #2 (setup prompt pasted with inputs), #6 (Code → Routines → task page: Run now · Status · Edit · Review history); s5-follow-ups #2 (follow-up prompt running + follow-ups/ folder); s5-crm-starter #3 (prompt 01 pasted in the crm-starter folder). Plan: Claude creates a demo 'weekly-letter' routine in /tmp/e-demo (fictional survey persona), you put the Claude app on the Routines page when pinged, Claude captures the screen with screencapture, redacts the sidebar, then deletes the demo routine.",
    "done_when": [
     "All 5 steps show a real, redacted capture",
@@ -4642,14 +4642,14 @@
   },
   {
    "id": "T-134",
-   "title": "Starter CRM: build the reference connections (prompts 01–06) so the planned steps get real screenshots",
+   "title": "Starter CRM: build the reference connections (prompts 01 to 06) so the planned steps get real screenshots",
    "area": "Product",
    "owner": "Aquila",
    "priority": "P3",
    "due": "2026-09-29",
    "status": "blocked",
    "why": "In the starter CRM, only the core is built (pipeline, fields, crm.py). Intake, payments, the follow-up runner, the board and the schedule are PLANNED: readers build them with the six prompts. Three guide steps (s5-crm-starter #4 payments, #5 runner --dry-run, #6 board) have nothing real to capture until someone runs those prompts once.",
-   "spec": "Claude runs prompts 01–06 in a copy of workshop-plan/crm-starter against TEST-MODE accounts only, keeps the result as a reference build (not shipped to readers), captures the three screens, and updates the README status table only if the prompts worked as written. No n8n.",
+   "spec": "Claude runs prompts 01 to 06 in a copy of workshop-plan/crm-starter against TEST-MODE accounts only, keeps the result as a reference build (not shipped to readers), captures the three screens, and updates the README status table only if the prompts worked as written. No n8n.",
    "done_when": [
     "payments.py records a test-mode payment → Payment Completed",
     "runner.py --dry-run lists the next 24h of messages",
@@ -4676,7 +4676,7 @@
   },
   {
    "id": "T-135",
-   "title": "Stage 5–6 guides: 5 screenshots Claude can capture now from our own pages and the demo run",
+   "title": "Stage 5 to 6 guides: 5 screenshots Claude can capture now from our own pages and the demo run",
    "area": "Content",
    "owner": "Amal",
    "priority": "P2",
@@ -4839,7 +4839,7 @@
   },
   {
    "id": "T-140",
-   "title": "Stage 1–3 guides: 6 screenshots that can only be taken later",
+   "title": "Stage 1 to 3 guides: 6 screenshots that can only be taken later",
    "area": "Content",
    "owner": "Amal",
    "priority": "P3",
@@ -4850,7 +4850,7 @@
    "done_when": [
     "s1-blog step 2: a real Claude Code run drafting a post from an engine file (can be done any time)",
     "s3-tantra-pro-flow step 7: the reminder scheduler's run log (after the scheduler is built; see T-123)",
-    "s1-social steps 1–3: pillar beside the calendar, the five-clip timeline, the 60-second captioned export (from the Day 1 recording, after 30 Sep)",
+    "s1-social steps 1 to 3: pillar beside the calendar, the five-clip timeline, the 60-second captioned export (from the Day 1 recording, after 30 Sep)",
     "s1-overview step 2: an approved persona card (from the owner's Day 1 output), or drop the slot, since the template is already embedded"
    ],
    "evidence": [],
@@ -5667,7 +5667,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "doing",
+   "status": "next",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
