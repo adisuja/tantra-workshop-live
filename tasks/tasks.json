@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-03T23:51:04+0530",
-  "version": 195,
+  "updated": "2026-10-04T01:08:28+0530",
+  "version": 198,
   "last_id": 211,
   "team": [
    {
@@ -5679,6 +5679,11 @@
      "ts": "2026-10-03T23:51:04+0530",
      "who": "claude",
      "note": "Added by Lane A (Integrator) at the start of round 5."
+    },
+    {
+     "ts": "2026-10-04T01:08:28+0530",
+     "who": "claude",
+     "note": "AUDIT.md: 688 findings (63 P0) in /Users/adithyamurali/tantra-round5-coord/AUDIT.md, one REQUEST per finding in LOG.md; probe-details.mjs + audit-shoot.mjs + run-chain.sh committed on onboarding-v2."
     }
    ],
    "order": 1970
@@ -5956,6 +5961,11 @@
      "ts": "2026-10-03T23:51:04+0530",
      "who": "claude",
      "note": "Added by Lane A (Integrator) at the start of round 5."
+    },
+    {
+     "ts": "2026-10-04T01:08:28+0530",
+     "who": "claude",
+     "note": "Automation matrix v1+v2 merged (0518cdc): all 1,227 steps classified; connector work continues in Lanes F and G."
     }
    ],
    "order": 2070
@@ -6056,7 +6066,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
@@ -6068,6 +6078,11 @@
      "ts": "2026-10-03T23:51:04+0530",
      "who": "claude",
      "note": "Added by Lane A (Integrator) at the start of round 5."
+    },
+    {
+     "ts": "2026-10-04T01:08:28+0530",
+     "who": "claude",
+     "note": "Lane H merged into onboarding-v2 (b7e844c): public dashboard, personal free/paid links for every teammate, first-touch visit Worker. Publishes with the next mirror publish."
     }
    ],
    "order": 2110
