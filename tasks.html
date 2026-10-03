@@ -283,11 +283,11 @@ footer{margin-top:28px;font-size:11.5px;color:var(--ink-3)}
   <select id="f-rev" aria-label="Reviewer"><option value="">Any reviewer</option></select>
   <button class="ghost minebtn" id="f-mine" type="button" title="Tasks you own, do or review (uses Your name)">Mine</button>
   <button class="ghost teambtn" id="f-team" type="button">Team</button>
-  <select id="f-area"><option value="">All areas</option></select>
-  <select id="f-status"><option value="">All statuses</option><option>next</option><option>doing</option><option>review</option><option>blocked</option><option value="hold">on hold</option><option>queue</option><option>done</option></select>
-  <input type="text" id="q" placeholder="Search tasks…">
+  <select id="f-area" aria-label="Area"><option value="">All areas</option></select>
+  <select id="f-status" aria-label="Status"><option value="">All statuses</option><option value="next">Next</option><option value="doing">In progress</option><option value="review">Review</option><option value="blocked">Blocked</option><option value="hold">On hold</option><option value="queue">Queue</option><option value="done">Done</option></select>
+  <input type="text" id="q" aria-label="Search tasks" placeholder="Search tasks…">
   <span class="sp"></span>
-  <label class="hint" style="margin:0"><input type="checkbox" id="hidedone" checked> hide done</label>
+  <label class="hint" style="margin:0"><input type="checkbox" id="hidedone" checked> Hide done</label>
 </div>
 
 <div class="team" id="team" hidden></div>
@@ -380,7 +380,7 @@ function filtered(){
   const dg=$("#f-doing").value,rv=$("#f-rev").value,mine=MINE&&me();
   // the open task and any task holding an unsent voice note stay visible, so a status change by the
   // agent (e.g. to done while "hide done" is on) can never hide a recording or a draft
-  return DATA.tasks.filter(t=>t.id===openId||VN[t.id]||((!o||t.owner===o)&&(!dg||(t.assignee||"Claude")===dg)&&(!rv||(t.reviewers||[]).includes(rv))&&(!mine||involves(t,mine))&&(!a||t.area===a)&&(!s||t.status===s)&&(!hd||t.status!=="done")
+  return DATA.tasks.filter(t=>t.id===openId||VN[t.id]||((!o||t.owner===o)&&(!dg||(t.assignee||"Claude")===dg)&&(!rv||(t.reviewers||[]).includes(rv))&&(!mine||involves(t,mine))&&(!a||t.area===a)&&(!s||t.status===s)&&(!hd||s==="done"||t.status!=="done")
     &&(!q||(t.id+" "+t.title+" "+t.why+" "+t.spec+" "+t.owner+" "+(t.assignee||"")+" "+(t.reviewers||[]).join(" ")).toLowerCase().includes(q))))
     .sort((x,y)=>(ORDER[x.status]-ORDER[y.status])||x.priority.localeCompare(y.priority)||(x.due||"9").localeCompare(y.due||"9")||x.order-y.order);
 }
