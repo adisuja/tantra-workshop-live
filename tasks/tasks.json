@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-02T00:06:45+0530",
-  "version": 178,
-  "last_id": 194,
+  "updated": "2026-10-03T23:51:04+0530",
+  "version": 195,
+  "last_id": 211,
   "team": [
    {
     "name": "Adi",
@@ -5598,6 +5598,479 @@
     }
    ],
    "order": 1940
+  },
+  {
+   "id": "T-195",
+   "title": "Round 5 #1 (Lane C): Sidebar: Your Journey above the VIP ticket bonuses, in the old centre's order",
+   "area": "Delivery",
+   "owner": "Aquila",
+   "assignee": "Claude",
+   "reviewers": [
+    "Aquila",
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "doing",
+   "why": "",
+   "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-03T23:51:04+0530",
+     "who": "claude",
+     "note": "Added by Lane A (Integrator) at the start of round 5."
+    }
+   ],
+   "order": 1950
+  },
+  {
+   "id": "T-196",
+   "title": "Round 5 #2 (Lane D): Calendar invites: crafted descriptions and reminders at 5, 10, 15 and 30 minutes, everywhere",
+   "area": "Ops",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Nelbin",
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "doing",
+   "why": "",
+   "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-03T23:51:04+0530",
+     "who": "claude",
+     "note": "Added by Lane A (Integrator) at the start of round 5."
+    }
+   ],
+   "order": 1960
+  },
+  {
+   "id": "T-197",
+   "title": "Round 5 #3 (Lane A): Epic full-system audit: every element, question, card and section (AUDIT.md + probe-details.mjs)",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Bharath",
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "doing",
+   "why": "",
+   "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-03T23:51:04+0530",
+     "who": "claude",
+     "note": "Added by Lane A (Integrator) at the start of round 5."
+    }
+   ],
+   "order": 1970
+  },
+  {
+   "id": "T-198",
+   "title": "Round 5 #4 (Lane B): New centre educates: five UX variants with the why and how beside every card",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "doing",
+   "why": "",
+   "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-03T23:51:04+0530",
+     "who": "claude",
+     "note": "Added by Lane A (Integrator) at the start of round 5."
+    }
+   ],
+   "order": 1980
+  },
+  {
+   "id": "T-199",
+   "title": "Round 5 #5 (Lane F): Workflows after every credential (Cloudflare, Tantra, Namecheap, Cal.com, Resend and the rest): infrastructure connectors",
+   "area": "Delivery",
+   "owner": "Aquila",
+   "assignee": "Claude",
+   "reviewers": [
+    "Aquila",
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "doing",
+   "why": "",
+   "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-03T23:51:04+0530",
+     "who": "claude",
+     "note": "Added by Lane A (Integrator) at the start of round 5."
+    }
+   ],
+   "order": 1990
+  },
+  {
+   "id": "T-200",
+   "title": "Round 5 #5 (Lane G): Workflows after every credential: event, CRM, booking, outreach, payments and content connectors",
+   "area": "Delivery",
+   "owner": "Aquila",
+   "assignee": "Claude",
+   "reviewers": [
+    "Aquila",
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "doing",
+   "why": "",
+   "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-03T23:51:04+0530",
+     "who": "claude",
+     "note": "Added by Lane A (Integrator) at the start of round 5."
+    }
+   ],
+   "order": 2000
+  },
+  {
+   "id": "T-201",
+   "title": "Round 5 #6 (Lane C): 3-day work plan moves to the start of each day (playbook and both centres)",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "doing",
+   "why": "",
+   "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-03T23:51:04+0530",
+     "who": "claude",
+     "note": "Added by Lane A (Integrator) at the start of round 5."
+    }
+   ],
+   "order": 2010
+  },
+  {
+   "id": "T-202",
+   "title": "Round 5 #7 (Lane D): Landing page day visuals sized like the rest of the page on /workshop and /masterclass",
+   "area": "Funnel",
+   "owner": "Bhaskar",
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar",
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "doing",
+   "why": "",
+   "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-03T23:51:04+0530",
+     "who": "claude",
+     "note": "Added by Lane A (Integrator) at the start of round 5."
+    }
+   ],
+   "order": 2020
+  },
+  {
+   "id": "T-203",
+   "title": "Round 5 #8 (Lane D): Restore the VSL on /workshop/success and /masterclass/success",
+   "area": "Funnel",
+   "owner": "Bhaskar",
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar",
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "doing",
+   "why": "",
+   "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-03T23:51:04+0530",
+     "who": "claude",
+     "note": "Added by Lane A (Integrator) at the start of round 5."
+    }
+   ],
+   "order": 2030
+  },
+  {
+   "id": "T-204",
+   "title": "Round 5 #9 (Lane D): One link adds the whole session series to a calendar (join pages and both centres)",
+   "area": "Ops",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Nelbin",
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "doing",
+   "why": "",
+   "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-03T23:51:04+0530",
+     "who": "claude",
+     "note": "Added by Lane A (Integrator) at the start of round 5."
+    }
+   ],
+   "order": 2040
+  },
+  {
+   "id": "T-205",
+   "title": "Round 5 #10 (Lane E): Every guide flowchart shows the real stage to stage traffic and automation flow",
+   "area": "Delivery",
+   "owner": "Aquila",
+   "assignee": "Claude",
+   "reviewers": [
+    "Aquila",
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "doing",
+   "why": "",
+   "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-03T23:51:04+0530",
+     "who": "claude",
+     "note": "Added by Lane A (Integrator) at the start of round 5."
+    }
+   ],
+   "order": 2050
+  },
+  {
+   "id": "T-206",
+   "title": "Round 5 #11 (Lane C): One screenshot sizing system across the playbook, both centres and the guides",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "doing",
+   "why": "",
+   "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-03T23:51:04+0530",
+     "who": "claude",
+     "note": "Added by Lane A (Integrator) at the start of round 5."
+    }
+   ],
+   "order": 2060
+  },
+  {
+   "id": "T-207",
+   "title": "Round 5 #12 (Lane F): Automate everything an API or MCP allows; the centre asks only for sign-ups, keys, top-ups and decisions (automation matrix)",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Bharath",
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "doing",
+   "why": "",
+   "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-03T23:51:04+0530",
+     "who": "claude",
+     "note": "Added by Lane A (Integrator) at the start of round 5."
+    }
+   ],
+   "order": 2070
+  },
+  {
+   "id": "T-208",
+   "title": "Round 5 #13 (Lane E): S5 pipeline guide rewritten automation first, fewest manual steps per funnel",
+   "area": "Delivery",
+   "owner": "Aquila",
+   "assignee": "Claude",
+   "reviewers": [
+    "Aquila",
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "doing",
+   "why": "",
+   "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-03T23:51:04+0530",
+     "who": "claude",
+     "note": "Added by Lane A (Integrator) at the start of round 5."
+    }
+   ],
+   "order": 2080
+  },
+  {
+   "id": "T-209",
+   "title": "Round 5 #14 (Lane A): Hub index updated with every round 5 version and change",
+   "area": "Ops",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Nelbin",
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "doing",
+   "why": "",
+   "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-03T23:51:04+0530",
+     "who": "claude",
+     "note": "Added by Lane A (Integrator) at the start of round 5."
+    }
+   ],
+   "order": 2090
+  },
+  {
+   "id": "T-210",
+   "title": "Round 5 #15 (Lane A): Launch Control carries every round 5 item with owner, assignee, reviewers and status",
+   "area": "Ops",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Nelbin",
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "doing",
+   "why": "",
+   "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-03T23:51:04+0530",
+     "who": "claude",
+     "note": "Added by Lane A (Integrator) at the start of round 5."
+    }
+   ],
+   "order": 2100
+  },
+  {
+   "id": "T-211",
+   "title": "Round 5 #16 (Lane H): Referral dashboard: personal links per teammate, one public dashboard, no passphrase",
+   "area": "Funnel",
+   "owner": "Bhaskar",
+   "assignee": "Claude",
+   "reviewers": [
+    "Bhaskar",
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "doing",
+   "why": "",
+   "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-03T23:51:04+0530",
+     "who": "claude",
+     "note": "Added by Lane A (Integrator) at the start of round 5."
+    }
+   ],
+   "order": 2110
   }
  ]
 }
