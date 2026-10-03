@@ -255,7 +255,7 @@ footer{margin-top:28px;font-size:11.5px;color:var(--ink-3)}
 <header class="top">
   <div class="brand">
     <span class="tmark"><img class="i" src="brand/tantra-mark-ink.png" alt=""><img class="w" src="brand/tantra-mark-white.png" alt=""></span>
-    <div><h1>Launch Control</h1><p>The 3-Day AI RevOps Workshop · Day 1 <span id="cd">—</span></p></div>
+    <div><h1>Launch Control</h1><p>The 3-Day AI RevOps Workshop · Day <span id="cdn">1</span> <span id="cd">…</span></p></div>
   </div>
   <div class="stats">
     <div class="stat next"><div class="l">Next up</div><div class="v" id="s-next">—</div></div>
@@ -803,7 +803,13 @@ document.querySelectorAll("#view button").forEach(b=>b.onclick=()=>{view=b.datas
 $("#nt-area").addEventListener("change",paintNewPeople);$("#q").oninput=render;
 $("#theme").onclick=()=>{const h=document.documentElement;h.dataset.theme=h.dataset.theme==="dark"?"light":"dark";localStorage.setItem("lc-theme",h.dataset.theme)};
 if(localStorage.getItem("lc-theme"))document.documentElement.dataset.theme=localStorage.getItem("lc-theme");
-function countdown(){const d1=new Date(DATA.meta?.day1||"2026-09-30T11:00:00-04:00"),ms=d1-Date.now();if(ms<0){$("#cd").textContent="is live";return}const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5);$("#cd").textContent=`in ${d}d ${h}h · Wed Sep 30, 11:00 ET`}
+// the weekly schedule (owner, 2026-10-03; twin of app/src/lib/cohort.ts): every Wed to Fri, 11:00 New York time,
+// next week's once Friday's session ends; first cohort Wed 7 Oct 2026
+function cohortStarts(now){const NY="America/New_York",DAY=864e5,parts=t=>{const p={};for(const x of new Intl.DateTimeFormat("en-US",{timeZone:NY,year:"numeric",month:"numeric",day:"numeric",hour:"numeric",minute:"numeric",hourCycle:"h23"}).formatToParts(t))p[x.type]=+x.value;return p},
+ at=(d,h,m)=>{const want=d+(h*60+m)*6e4;let t=want;for(let i=0;i<3;i++){const p=parts(new Date(t));t+=want-Date.UTC(p.year,p.month-1,p.day,p.hour%24,p.minute)}return new Date(t)};
+ const p=parts(now),today=Date.UTC(p.year,p.month-1,p.day);let wed=today-((new Date(today).getUTCDay()+4)%7)*DAY;
+ if(+now>=+at(wed+2*DAY,12,0))wed+=7*DAY;wed=Math.max(wed,Date.UTC(2026,9,7));return[0,1,2].map(i=>at(wed+i*DAY,11,0))}
+function countdown(){const now=Date.now(),S=cohortStarts(new Date(now)),i=S.findIndex(s=>now<+s+36e5),n=i+1,_=($("#cdn")&&($("#cdn").textContent=n)),ms=S[i]-now,when=S[i].toLocaleDateString("en-US",{weekday:"short",day:"numeric",month:"short",timeZone:"America/New_York"});if(ms<=0){$("#cd").textContent="is live now";return}const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5);$("#cd").textContent=`in ${d}d ${h}h · ${when}, 11:00 ET`}
 loadDrafts();load().then(countdown).then(()=>{const m=/^#(T-\d+)$/.exec(location.hash);if(m)jump(m[1])}).then(pollAgent);setInterval(countdown,6e4);setInterval(load,STATIC?3e4:9e4);setInterval(pollAgent,STATIC?3e4:8e3);
 </script>
 </body>
