@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-04T01:09:03+0530",
-  "version": 200,
+  "updated": "2026-10-04T06:01:01+0530",
+  "version": 217,
   "last_id": 211,
   "team": [
    {
@@ -5611,7 +5611,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
@@ -5623,6 +5623,11 @@
      "ts": "2026-10-03T23:51:04+0530",
      "who": "claude",
      "note": "Added by Lane A (Integrator) at the start of round 5."
+    },
+    {
+     "ts": "2026-10-04T06:01:00+0530",
+     "who": "claude",
+     "note": "Old centre sidebar: Your Journey above the VIP ticket. Merged into onboarding-v2, Worker deployed (6cb4a0b4), mirror published (148392c8)."
     }
    ],
    "order": 1950
@@ -5639,7 +5644,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
@@ -5651,6 +5656,11 @@
      "ts": "2026-10-03T23:51:04+0530",
      "who": "claude",
      "note": "Added by Lane A (Integrator) at the start of round 5."
+    },
+    {
+     "ts": "2026-10-04T06:01:00+0530",
+     "who": "claude",
+     "note": "Calendar files carry a written description and reminders 5, 10, 15 and 30 minutes before; the new centre's own file and the funnel Worker's invites still lack them (AUDIT requests to B/D and G). Merged into onboarding-v2, Worker deployed (6cb4a0b4), mirror published (148392c8)."
     }
    ],
    "order": 1960
@@ -5667,7 +5677,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "next",
+   "status": "review",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
@@ -5684,6 +5694,11 @@
      "ts": "2026-10-04T01:08:28+0530",
      "who": "claude",
      "note": "AUDIT.md: 688 findings (63 P0) in /Users/adithyamurali/tantra-round5-coord/AUDIT.md, one REQUEST per finding in LOG.md; probe-details.mjs + audit-shoot.mjs + run-chain.sh committed on onboarding-v2."
+    },
+    {
+     "ts": "2026-10-04T06:01:01+0530",
+     "who": "claude",
+     "note": "AUDIT.md 630 findings; P0 recheck 29 fixed, 8 partly, 26 open (owners in LOG.md). probe-details.mjs guards the classes Adi listed. Merged into onboarding-v2, Worker deployed (6cb4a0b4), mirror published (148392c8)."
     }
    ],
    "order": 1970
@@ -5699,7 +5714,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
@@ -5711,6 +5726,11 @@
      "ts": "2026-10-03T23:51:04+0530",
      "who": "claude",
      "note": "Added by Lane A (Integrator) at the start of round 5."
+    },
+    {
+     "ts": "2026-10-04T06:01:00+0530",
+     "who": "claude",
+     "note": "Five learning layouts beside every card on the new centre: /onboarding/?learn=1 to 5. Merged into onboarding-v2, Worker deployed (6cb4a0b4), mirror published (148392c8)."
     }
    ],
    "order": 1980
@@ -5727,7 +5747,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
@@ -5739,6 +5759,11 @@
      "ts": "2026-10-03T23:51:04+0530",
      "who": "claude",
      "note": "Added by Lane A (Integrator) at the start of round 5."
+    },
+    {
+     "ts": "2026-10-04T06:01:01+0530",
+     "who": "claude",
+     "note": "Infrastructure connectors (Cloudflare, Namecheap, Microsoft 365, SendGrid, Instantly, GA4). Open P0s: N023, X006, X013. Merged into onboarding-v2, Worker deployed (6cb4a0b4), mirror published (148392c8)."
     }
    ],
    "order": 1990
@@ -5755,7 +5780,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
@@ -5767,6 +5792,11 @@
      "ts": "2026-10-03T23:51:04+0530",
      "who": "claude",
      "note": "Added by Lane A (Integrator) at the start of round 5."
+    },
+    {
+     "ts": "2026-10-04T06:01:01+0530",
+     "who": "claude",
+     "note": "Event, CRM, booking, outreach, payment and content connectors. Open P0s in AUDIT.md (13 for Lane G). Merged into onboarding-v2, Worker deployed (6cb4a0b4), mirror published (148392c8)."
     }
    ],
    "order": 2000
@@ -5782,7 +5812,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
@@ -5794,6 +5824,11 @@
      "ts": "2026-10-03T23:51:04+0530",
      "who": "claude",
      "note": "Added by Lane A (Integrator) at the start of round 5."
+    },
+    {
+     "ts": "2026-10-04T06:01:01+0530",
+     "who": "claude",
+     "note": "Each day opens on its own work plan in the playbook and the old centre. Merged into onboarding-v2, Worker deployed (6cb4a0b4), mirror published (148392c8)."
     }
    ],
    "order": 2010
@@ -5810,7 +5845,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
@@ -5822,6 +5857,11 @@
      "ts": "2026-10-03T23:51:04+0530",
      "who": "claude",
      "note": "Added by Lane A (Integrator) at the start of round 5."
+    },
+    {
+     "ts": "2026-10-04T06:01:01+0530",
+     "who": "claude",
+     "note": "DayEngine sized like the rest of the page on /workshop and /masterclass. Merged into onboarding-v2, Worker deployed (6cb4a0b4), mirror published (148392c8)."
     }
    ],
    "order": 2020
@@ -5838,18 +5878,23 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "doing",
+   "status": "blocked",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "",
+   "needs_from_owner": "Record the VSL (MP4 1080p, under 60 MB, captions or the timed script) or say to keep the scripted-caption preview.",
    "log": [
     {
      "ts": "2026-10-03T23:51:04+0530",
      "who": "claude",
      "note": "Added by Lane A (Integrator) at the start of round 5."
+    },
+    {
+     "ts": "2026-10-04T06:01:01+0530",
+     "who": "claude",
+     "note": "Player is back with the poster and scripted captions; no recorded VSL exists anywhere. Needs the MP4 (T-060). Merged into onboarding-v2, Worker deployed (6cb4a0b4), mirror published (148392c8)."
     }
    ],
    "order": 2030
@@ -5866,7 +5911,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
@@ -5878,6 +5923,11 @@
      "ts": "2026-10-03T23:51:04+0530",
      "who": "claude",
      "note": "Added by Lane A (Integrator) at the start of round 5."
+    },
+    {
+     "ts": "2026-10-04T06:01:01+0530",
+     "who": "claude",
+     "note": "One link adds the whole weekly series: /cal/<week>.ics on the join pages, /vip/success and the old centre. Merged into onboarding-v2, Worker deployed (6cb4a0b4), mirror published (148392c8)."
     }
    ],
    "order": 2040
@@ -5894,7 +5944,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
@@ -5906,6 +5956,11 @@
      "ts": "2026-10-03T23:51:04+0530",
      "who": "claude",
      "note": "Added by Lane A (Integrator) at the start of round 5."
+    },
+    {
+     "ts": "2026-10-04T06:01:01+0530",
+     "who": "claude",
+     "note": "All 24 guide flowcharts rebuilt from one journey model; probe-flows green. Merged into onboarding-v2, Worker deployed (6cb4a0b4), mirror published (148392c8)."
     }
    ],
    "order": 2050
@@ -5921,7 +5976,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
@@ -5933,6 +5988,11 @@
      "ts": "2026-10-03T23:51:04+0530",
      "who": "claude",
      "note": "Added by Lane A (Integrator) at the start of round 5."
+    },
+    {
+     "ts": "2026-10-04T06:01:01+0530",
+     "who": "claude",
+     "note": "One screenshot sizing rule (SCREENSHOTS.md) for playbook, centres and guides. Merged into onboarding-v2, Worker deployed (6cb4a0b4), mirror published (148392c8)."
     }
    ],
    "order": 2060
@@ -5949,7 +6009,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
@@ -5966,6 +6026,11 @@
      "ts": "2026-10-04T01:08:28+0530",
      "who": "claude",
      "note": "Automation matrix v1+v2 merged (0518cdc): all 1,227 steps classified; connector work continues in Lanes F and G."
+    },
+    {
+     "ts": "2026-10-04T06:01:01+0530",
+     "who": "claude",
+     "note": "automation-matrix.md: 1,227 steps classified. Merged into onboarding-v2, Worker deployed (6cb4a0b4), mirror published (148392c8)."
     }
    ],
    "order": 2070
@@ -5982,7 +6047,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
@@ -5994,6 +6059,11 @@
      "ts": "2026-10-03T23:51:04+0530",
      "who": "claude",
      "note": "Added by Lane A (Integrator) at the start of round 5."
+    },
+    {
+     "ts": "2026-10-04T06:01:01+0530",
+     "who": "claude",
+     "note": "S5 pipeline guide automation first. Open P0s for Lane E in AUDIT.md. Merged into onboarding-v2, Worker deployed (6cb4a0b4), mirror published (148392c8)."
     }
    ],
    "order": 2080
@@ -6010,7 +6080,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
@@ -6022,6 +6092,11 @@
      "ts": "2026-10-03T23:51:04+0530",
      "who": "claude",
      "note": "Added by Lane A (Integrator) at the start of round 5."
+    },
+    {
+     "ts": "2026-10-04T06:01:01+0530",
+     "who": "claude",
+     "note": "Hub lists the agentic centre, round 5 changes and both registration lanes; no dashes. Merged into onboarding-v2, Worker deployed (6cb4a0b4), mirror published (148392c8)."
     }
    ],
    "order": 2090
@@ -6038,7 +6113,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "doing",
+   "status": "done",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
@@ -6050,6 +6125,11 @@
      "ts": "2026-10-03T23:51:04+0530",
      "who": "claude",
      "note": "Added by Lane A (Integrator) at the start of round 5."
+    },
+    {
+     "ts": "2026-10-04T06:01:01+0530",
+     "who": "claude",
+     "note": "Every round 5 item tracked here with owner, assignee and reviewers. Merged into onboarding-v2, Worker deployed (6cb4a0b4), mirror published (148392c8)."
     }
    ],
    "order": 2100
