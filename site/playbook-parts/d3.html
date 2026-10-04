@@ -115,7 +115,7 @@
         <div class="meta"><span><i>Owner</i>You · agent builds</span><span><i>Tool</i>Claude Code</span><span><i>Time</i>3 to 5 h</span><span class="dl"><i>Deliverable</i>An approved spec file and a live URL</span><span class="pv"><i>Proof</i>You change a line in the spec and it goes live without you touching a tool: the Worker-served page on route B, a Tantra step template on route A</span></div>
       </div>
       <div class="vipslot" data-step="d3-step-2-brief-it-before-it-changes-anything"></div>
-<h3 id="d3-step-4-the-eight-automations">Step 3: Check Every Automation Fires</h3>
+<h3 id="d3-step-3-check-every-automation-fires">Step 3: Check Every Automation Fires</h3>
       <div class="task">
         <div class="th"><span class="tn">Task 3.3</span><b>Prove the Automations With a Real Contact</b></div>
         <div class="tm">
@@ -179,8 +179,8 @@
         </svg>
         <div class="cap">Automations 1 to 6 fire the moment their event happens. 7 and 8 run on a schedule, because inboxes and clocks send no webhooks; on route B that schedule is a Cloudflare Cron Trigger. <b>Prove 1, 3 and 4 first:</b> confirm, capture, tag.</div>
       </div>
-      <div class="vipslot" data-step="d3-step-4-the-eight-automations"></div>
-<h3 id="d3-step-2-instrument-every-step-or-the-second-half">Step 4: Build the Dashboard</h3>
+      <div class="vipslot" data-step="d3-step-3-check-every-automation-fires"></div>
+<h3 id="d3-step-4-build-the-dashboard">Step 4: Build the Dashboard</h3>
       <p><b>What it shows:</b> one row per run and per source, with every count from first touch to sale: sends or invites, RSVPs, landing visits, registrations, attendees, CTA clicks, calls booked, sales, revenue, and the page variant. Rates sit between each pair. <b>Where it lives:</b> a Google Sheet in your Drive, copied from the Per-Run Session Analytics Sheet template (under this step in the onboarding centre). Tantra's own dashboard keeps the outreach detail; the sheet is where every tool's numbers meet.</p>
       <div class="task">
         <div class="th"><span class="tn">Task 3.4</span><b>Build the Dashboard and Let It Fill Itself</b></div>
@@ -196,7 +196,7 @@
         </div>
         <div class="meta"><span><i>Owner</i>You · agent wires it</span><span><i>Tool</i>Google Sheets · GA4 · Clarity · Claude Code</span><span><i>Time</i>2 to 3 h</span><span class="dl"><i>Deliverable</i>A dashboard that fills without typing</span><span class="pv"><i>Proof</i>Your test registration appears as a row you never typed</span></div>
       </div>
-      <div class="vipslot" data-step="d3-step-2-instrument-every-step-or-the-second-half"></div>
+      <div class="vipslot" data-step="d3-step-4-build-the-dashboard"></div>
 <h3 id="d3-step-5-send-one-small-test-run">Step 5: Send One Small Test Run</h3>
       <div class="task">
         <div class="th"><span class="tn">Task 3.5</span><b>Send One Small Test Run</b></div>
@@ -204,7 +204,7 @@
           <p><b>Why:</b> Until strangers go through it, every page and template is a guess. A small run keeps being wrong cheap and gives the dashboard its first real row.</p>
           <ol>
             <li>QA first: every page at 375, 768 and 1280px, one real purchase, every dashboard column filling.</li>
-            <li>Launch the smallest version of each live channel, every link UTM tagged, all pointing at one registration page. Cold email and calendar invites wait until the Day 1 inboxes have warmed for 2 to 3 weeks (about 14 to 21 October); until then, run LinkedIn inside its daily caps and email people who already know you.</li>
+            <li>Launch the smallest version of each live channel, every link UTM tagged, all pointing at one registration page. Cold email and calendar invites wait until the Day 1 inboxes have warmed for 2 to 3 weeks (about the week after your workshop); until then, run LinkedIn inside its daily caps and email people who already know you.</li>
             <li>Read nothing until the run has finished. Numbers read after a few hours kill things that were working.</li>
           </ol>
           <p><b>Example:</b> for a SaaS company, one LinkedIn batch and one email to past trial users feed the same session; cold calendar invites join once warm-up is done.</p>
@@ -212,7 +212,7 @@
         <div class="meta"><span><i>Owner</i>You</span><span><i>Tool</i>Tantra · your channels</span><span><i>Time</i>2 h to launch</span><span class="dl"><i>Deliverable</i>The first full run on the dashboard</span><span class="pv"><i>Proof</i>Every buyer traces back to a channel via their UTM</span></div>
       </div>
       <div class="vipslot" data-step="d3-step-5-send-one-small-test-run"></div>
-<h3 id="d3-step-6-read-the-dashboard">Step 6: Read the Dashboard and Find the Worst Step</h3>
+<h3 id="d3-step-6-read-the-dashboard-and-find-the-worst-step">Step 6: Read the Dashboard and Find the Worst Step</h3>
       <div class="task">
         <div class="th"><span class="tn">Task 3.6</span><b>Name the One Step to Fix</b></div>
         <div class="tm">
@@ -257,7 +257,7 @@
         <div class="calcnote" id="calcVerdict"></div>
       </div>
       <div class="srcnote"><b>The sliders start on a teaching model.</b> Replace each one with your dashboard number, and leave anything you can't fetch marked unknown. As a rule of thumb, lifetime value around 3× cost per buyer is healthy; below 1× every customer costs more than they return.</div>
-      <div class="vipslot" data-step="d3-step-6-read-the-dashboard"></div>
+      <div class="vipslot" data-step="d3-step-6-read-the-dashboard-and-find-the-worst-step"></div>
 <h3 id="d3-step-7-run-the-experiment-loop-every-week">Step 7: Run the Experiment Loop Every Week</h3>
       <div class="task">
         <div class="th"><span class="tn">Task 3.7</span><b>Swap One Thing, Read the Dashboard, Keep the Winner</b></div>
@@ -313,7 +313,7 @@
         <div class="cap">Claude Code can refresh the dashboard, flag the worst step and propose a variant before the review. You decide what ships. Fix the worst step and a different one becomes the worst: that is the loop working.</div>
       </div>
       <div class="vipslot" data-step="d3-step-7-run-the-experiment-loop-every-week"></div>
-<h3 id="d3-step-5-the-52-week-engine">Step 8: Write the Scale Plan</h3>
+<h3 id="d3-step-8-write-the-scale-plan">Step 8: Write the Scale Plan</h3>
       <div class="task">
         <div class="th"><span class="tn">Task 3.8</span><b>Write the Scale Plan</b></div>
         <div class="tm">
@@ -331,5 +331,5 @@
       </div>
       <div class="box do"><div class="h">◆ Your Day 3 output</div>
         <p>Claude Code connected to Tantra and every other tool, an approved spec, three automations proven with a real contact, a dashboard that fills itself, a first test run, a weekly experiment loop in the calendar, and a five-line scale plan.</p></div>
-    <div class="vipslot" data-step="d3-step-5-the-52-week-engine"></div>
+<div class="vipslot" data-step="d3-step-8-write-the-scale-plan"></div>
 </section>

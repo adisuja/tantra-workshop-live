@@ -115,6 +115,8 @@ section.reveal.in{opacity:1;transform:none}
 .calcnote.a{background:var(--amber-bg);color:var(--amber)}
 .calcnote.r{background:var(--pink-bg);color:var(--pink)}
 .chkwrap{margin:26px 0}
+.chkwrap.dayplan{margin:22px 0 34px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.chkwrap.dayplan .chkday{margin-bottom:0}
 .chkday{margin-bottom:26px}
 .chkh{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap;margin-bottom:2px}
 .chkh b{font-size:17px;letter-spacing:-.01em}
@@ -130,6 +132,11 @@ section.reveal.in{opacity:1;transform:none}
 .viz{margin:28px 0;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px 20px 16px;box-shadow:var(--shadow);overflow:hidden}
 .viz.wide{background:linear-gradient(180deg,var(--panel-2),var(--panel))}
 .viz svg{width:100%;height:auto;display:block;overflow:visible}
+/* figure sizing (round 5, #11): a diagram never draws below 640px (about 75% of its size), so its
+   labels stay readable; on phones the frame scrolls sideways instead of shrinking the type. Same rule
+   as the onboarding centre (build/embed.py). */
+@media(max-width:700px){.viz{overflow-x:auto;-webkit-overflow-scrolling:touch}.viz svg{min-width:640px}
+  .viz::after{content:"Swipe the diagram sideways →";display:block;margin-top:8px;font-size:11.5px;color:var(--ink-3);text-align:center}}
 .viz .cap{font-size:12.5px;color:var(--ink-3);margin-top:12px;text-align:center;line-height:1.5}
 .viz .cap b{color:var(--ink-2);font-weight:650}
 .vtitle{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px}
@@ -215,7 +222,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
   <a class="brand" href="index.html" aria-label="Tantra, the Playbook"><span class="tmark"><img class="tmk-ink" src="brand/tantra-mark-ink.png" alt="" width="889" height="600"><img class="tmk-white" src="brand/tantra-mark-white.png" alt="" width="714" height="600"></span><span class="tword"><img class="tmk-ink" src="brand/tantra-word-ink.png" alt="Tantra" width="434" height="86"><img class="tmk-white" src="brand/tantra-word-white.png" alt="Tantra" width="434" height="86"></span><span class="tsep"></span><b>The Playbook</b></a>
   <div class="sp"></div>
   <a class="back" href="index.html">← Command center</a>
-  <button class="iconbtn" id="theme" title="Theme">◐</button>
+  <button class="iconbtn" id="theme" title="Theme" aria-label="Switch theme">◐</button>
 </div></header>
 
 <div class="shell">
@@ -226,10 +233,10 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
     <a href="#whyfunnel">Why a Conversion Engine</a>
     <a href="#funnels">What Are Funnels</a>
     <a href="#bigpic">The Big Picture</a>
+    <a href="#plan">The 3 Days at a Glance</a>
     <a href="#d1">Day 1 · Offer, Buyer &amp; Channels</a>
     <a href="#d2">Day 2 · Build Every Element</a>
     <a href="#d3">Day 3 · Orchestrate, Measure, Experiment</a>
-    <a href="#plan">The 3-Day Work Plan</a>
   </nav>
 
   <main>
@@ -913,14 +920,99 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
 
     <div class="divider"></div>
 
+    <!-- THE THREE DAYS AT A GLANCE -->
+    <section class="reveal" id="plan">
+      <div class="chap"><span class="no">The plan</span><span class="tag">How the Three Days Fit Together</span></div>
+      <h2>The 3 Days at a Glance</h2>
+      <p class="lead">Each day opens with its own work plan: every task, the tool it needs, how long it takes, and the proof it worked. Tick tasks off as you go; the ticks stay in this browser. This chart shows how the three days connect, and the one task you must start early.</p>
+
+      <div class="viz wide">
+        <div class="vtitle">What runs on which day, and the one thing you must start early</div>
+        <svg viewBox="0 0 860 452" role="img" aria-label="Three-day build schedule as a Gantt chart. Workstreams: offer, persona, prospect list, funnel choice and webinar date on day one; pages and sequences on day two; Claude Code, automations, the dashboard and a test run on day three; traffic test spanning day three and beyond; the optimisation loop starting day three and continuing weekly; and domain warm-up starting day one and running for two to three weeks past the workshop. A footer row shows the hands-on hours per day.">
+          <defs>
+            <marker id="w1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <marker id="w2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          </defs>
+          <g text-anchor="middle" font-size="11">
+            <rect x="144" y="26" width="220" height="28" rx="8" fill="var(--accent-2)"/><text x="254" y="41" fill="var(--accent-ink)" font-weight="700">Day 1</text>
+            <rect x="376" y="26" width="220" height="28" rx="8" fill="var(--accent-2)"/><text x="486" y="41" fill="var(--accent-ink)" font-weight="700">Day 2</text>
+            <rect x="608" y="26" width="220" height="28" rx="8" fill="var(--accent-2)"/><text x="718" y="41" fill="var(--accent-ink)" font-weight="700">Day 3</text>
+          </g>
+          <g stroke="var(--line)" stroke-width="1">
+            <line x1="140" y1="62" x2="140" y2="372"/><line x1="372" y1="62" x2="372" y2="372"/>
+            <line x1="604" y1="62" x2="604" y2="372"/><line x1="836" y1="62" x2="836" y2="372"/>
+          </g>
+          <g font-size="10">
+            <text x="16" y="88" class="svlabel" font-size="10.5">Strategy</text>
+            <rect x="144" y="74" width="104" height="30" rx="7" fill="var(--accent)"/><text x="196" y="93" text-anchor="middle" class="svwhite" font-size="10">offer · persona</text>
+
+            <text x="16" y="134" class="svlabel" font-size="10.5">Plan</text>
+            <rect x="256" y="120" width="108" height="30" rx="7" fill="var(--accent)"/><text x="310" y="139" text-anchor="middle" class="svwhite" font-size="10">list · funnel · date</text>
+
+            <text x="16" y="180" class="svlabel" font-size="10.5">Assets</text>
+            <rect x="376" y="166" width="220" height="30" rx="7" fill="var(--accent)"/><text x="486" y="185" text-anchor="middle" class="svwhite" font-size="10">pages · sequences · run of show · close chain</text>
+
+            <text x="16" y="226" class="svlabel" font-size="10.5">Build</text>
+            <rect x="608" y="212" width="124" height="30" rx="7" fill="var(--accent)"/><text x="670" y="231" text-anchor="middle" class="svwhite" font-size="10">agent · dashboard</text>
+
+            <text x="16" y="272" class="svlabel" font-size="10.5">Traffic test</text>
+            <rect x="660" y="258" width="168" height="30" rx="7" fill="#0f9e75"/><text x="744" y="277" text-anchor="middle" class="svwhite" font-size="10">launch small, then let it run</text>
+
+            <text x="16" y="318" class="svlabel" font-size="10.5">Optimise</text>
+            <rect x="720" y="304" width="108" height="30" rx="7" fill="#0f9e75"/><text x="774" y="323" text-anchor="middle" class="svwhite" font-size="10">first lap</text>
+            <path d="M832 319 H852" fill="none" stroke="var(--teal)" stroke-width="2" marker-end="url(#w1)"/>
+            <text x="838" y="342" text-anchor="end" class="svmute" font-size="9">weekly, forever</text>
+
+            <text x="16" y="364" fill="var(--amber)" font-weight="700" font-size="10.5">Warm-up</text>
+            <rect x="144" y="350" width="684" height="30" rx="7" fill="var(--amber-bg)" stroke="var(--amber)" stroke-dasharray="4 4"/>
+            <text x="486" y="369" text-anchor="middle" fill="var(--amber)" font-size="10">start your sending domains on day one: they need 2 to 3 weeks and will not be rushed</text>
+            <path d="M832 365 H852" fill="none" stroke="var(--amber)" stroke-width="2" marker-end="url(#w2)"/>
+          </g>
+          <line x1="16" y1="392" x2="844" y2="392" class="gridline"/>
+          <g text-anchor="middle" font-size="10">
+            <text x="16" y="414" text-anchor="start" class="svmute" font-size="10">Hands-on hours,</text>
+            <text x="16" y="428" text-anchor="start" class="svmute" font-size="10">outside the session:</text>
+            <text x="254" y="420" class="svlabel" font-size="12">4 to 6 h</text>
+            <text x="486" y="420" class="svlabel" font-size="12">13 to 17 h</text>
+            <text x="718" y="420" class="svlabel" font-size="12">14 to 19 h</text>
+          </g>
+          <text x="16" y="446" class="svmute" font-size="9.5">Day 3 takes the most hours, but Day 2 is the one to protect: every Day 3 task runs on what you build there.</text>
+        </svg>
+        <div class="cap"><b>The amber bar is the trap.</b> Domain warm-up is the only task with a hard external wait, and it's the one people start last. Begin it on day one and it's ready when your funnel is; begin it after the workshop ends and you'll be sitting on a finished funnel with nowhere to send from.</div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
     <!-- DAY 1 -->
     <section class="reveal" id="d1">
       <div class="chap"><span class="no">Day 1</span><span class="tag">Strategize · Offer, Buyer, List and Channels</span></div>
       <h2>Decide What You Sell, and Exactly Who You Sell It To</h2>
       <p class="lead">Eight tasks, in order. Each adds a section to one strategy doc, and Day 2 builds every asset from it. Open a blank doc now (Google Docs, Word or Notion) and write every step there, not on this page. The Day 1 questions are separate: they produce your prompt pack.</p>
+      <div class="chkwrap dayplan" id="d1-work-plan">
+        <div class="chkday">
+          <div class="chkh"><b>Your Day 1 Work Plan</b><span class="chkmeta">4 to 6 h outside the session</span></div>
+          <div class="tbl"><table>
+            <thead><tr><th></th><th>Task</th><th>Tool</th><th>Time</th><th>Proof it worked</th></tr></thead>
+            <tbody>
+              <tr><td><input type="checkbox" data-k="d1e" aria-label="Write the offer"></td><td><b>Write the offer</b> and place it on the ladder</td><td>Doc</td><td class="num">20 min</td><td>A stranger repeats it back; two rungs named and priced</td></tr>
+              <tr><td><input type="checkbox" data-k="d1j" aria-label="Name your method"></td><td><b>Name your method</b> and write your voice</td><td>Doc</td><td class="num">20 min</td><td>Named steps, a reason for each</td></tr>
+              <tr><td><input type="checkbox" data-k="d1d" aria-label="Score the offer"></td><td><b>Score the offer</b> on the value equation</td><td>Doc</td><td class="num">30 min</td><td>Each lever has a change; the two lowest are made</td></tr>
+              <tr><td><input type="checkbox" data-k="d1a" aria-label="Define the buyer persona"></td><td><b>Define the buyer persona</b> from your 20 best customers</td><td>Sheet / CRM</td><td class="num">60 min</td><td>Objection quoted; three exclusions written</td></tr>
+              <tr><td><input type="checkbox" data-k="d1k" aria-label="Build the prospect list"></td><td><b>Build the prospect list</b> and verify every email</td><td>Apollo or Sales Navigator · verifier</td><td class="num">60 min</td><td>A sheet of named, verified people</td></tr>
+              <tr><td><input type="checkbox" data-k="d1f" aria-label="Pick your funnel"></td><td><b>Pick your funnel</b> and the reason that decided it</td><td>Doc</td><td class="num">15 min</td><td>Build hours are in your calendar</td></tr>
+              <tr><td><input type="checkbox" data-k="d1l" aria-label="Set the webinar topic, date and time"></td><td><b>Set the webinar topic, date and time</b></td><td>Calendar</td><td class="num">15 min</td><td>One line: title, date, time zone, length, platform</td></tr>
+              <tr><td><input type="checkbox" data-k="d1h" aria-label="Connect every channel and the Cloudflare API"></td><td><b>Connect every channel and the Cloudflare API</b>, start warm-up</td><td>Registrar · Cloudflare · sending tool</td><td class="num">90 to 120 min</td><td>SPF, DKIM and DMARC pass in Google Admin Toolbox; token test says valid</td></tr>
+              <tr><td><input type="checkbox" data-k="d1i" aria-label="Send the question to five customers"></td><td><span class="hw">Homework</span> <b>Send the question to five customers</b></td><td>Email / DM</td><td class="num">20 min</td><td>Five sent, not five drafted</td></tr>
+              <tr><td><input type="checkbox" data-k="d1m" aria-label="Gather proof assets"></td><td><span class="hw">Homework</span> <b>Gather proof assets</b>, each named after the objection it answers</td><td>Folder</td><td class="num">10 min</td><td>One folder, nothing left to hunt for</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+
 
       <!-- ===================== 1 · OFFER ===================== -->
-      <h3 id="d1-step-2-design-the-offer">Step 1: Write the Offer</h3>
+      <h3 id="d1-step-1-write-the-offer">Step 1: Write the Offer</h3>
       <p><b>Why:</b> every Day 2 page, email and invite repeats this sentence. If a stranger cannot repeat it back, no channel will fix it.</p>
       <div class="tbl"><table>
         <thead><tr><th>Slot</th><th>What goes in it</th><th>Example, for a SaaS company</th></tr></thead>
@@ -947,7 +1039,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
       </div>
 
       <!-- ===================== 2 · POSITIONING ===================== -->
-      <h3 id="d1-step-1-write-the-five-context-blocks">Step 2: Position It With a Named Method and Voice</h3>
+      <h3 id="d1-step-2-position-it-with-a-named-method-and-voice">Step 2: Position It With a Named Method and Voice</h3>
       <p><b>Why:</b> an unnamed method sounds like every competitor. A named one gives buyers a reason to choose you, and gives Day 2 one name and one voice for every asset.</p>
       <div class="task">
         <div class="tm">
@@ -1042,7 +1134,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
       </div>
 
       <!-- ===================== 4 · PERSONA ===================== -->
-      <h3 id="d1-step-1-define-who-you-re-actually-for">Step 4: Define the Buyer Persona</h3>
+      <h3 id="d1-step-4-define-the-buyer-persona">Step 4: Define the Buyer Persona</h3>
       <p><b>Why:</b> the account (fields 1 to 4) plus the role (field 5) is what you type into a data vendor in Step 5. The person (fields 5 to 9) is who your copy speaks to. The trigger (field 10) says when to reach them.</p>
       <div class="viz wide">
         <div class="vtitle">From a whole market to one winnable account, then to one person</div>
@@ -1254,7 +1346,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
             <li>Write it as one line: title, date, time with time zone, length, platform.</li>
           </ol>
           <p>Reverse squeeze: set the day the video goes live. Challenge: set the date of day one.</p>
-          <p><b>Example, for a SaaS company:</b> "How B2B Software Teams Fill Their Demo Calendar Without Ads. Thursday 22 October, 11:00 ET (16:00 UK), 60 minutes, on Zoom."</p>
+          <p><b>Example, for a SaaS company:</b> "How B2B Software Teams Fill Their Demo Calendar Without Ads. the Thursday after your workshop, 11:00 ET (16:00 UK), 60 minutes, on Zoom."</p>
         </div>
         <div class="meta"><span><i>Tool</i>Your calendar</span><span><i>Time</i>15 min</span><span class="pv"><i>Proof</i>One line with title, date, time zone, length and platform</span></div>
       </div>
@@ -1298,6 +1390,26 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
       <div class="chap"><span class="no">Day 2</span><span class="tag">Funnel Elements · Every Page, Template and Stage</span></div>
       <h2>Build Every Element: The Whole Funnel</h2>
       <p class="lead">Today you build every element in one go: outreach templates for every channel, the registration page, reminders, the live session, follow-ups, the newsletter and the post-event sequence. Work stage by stage, S1 to S6. You're done when every page, message and trigger exists and someone else could run it.</p>
+      <div class="chkwrap dayplan" id="d2-work-plan">
+        <div class="chkday">
+          <div class="chkh"><b>Your Day 2 Work Plan</b><span class="chkmeta">13 to 17 h, Day 3 depends on it</span></div>
+          <div class="tbl"><table>
+            <thead><tr><th></th><th>Task</th><th>Tool</th><th>Time</th><th>Proof it worked</th></tr></thead>
+            <tbody>
+              <tr><td><input type="checkbox" data-k="d3a" aria-label="Confirm sending infrastructure"></td><td><b>Confirm sending infrastructure</b> is authenticated and warming</td><td>DNS · sending platform</td><td class="num">30 min</td><td>A test send reaches the primary inbox</td></tr>
+              <tr><td><input type="checkbox" data-k="d3b" aria-label="Two variants per live channel"></td><td><b>Two variants per live channel</b>: benefit-led and problem-led</td><td>AI agent</td><td class="num">60 min</td><td>Both trace back to your Day 1 offer and persona</td></tr>
+              <tr><td><input type="checkbox" data-k="d3c" aria-label="Build the Tantra Pro Funnel page and the thank-you page"></td><td><b>Build the Tantra Pro Funnel page and the thank-you page</b></td><td>Claude Code · Vercel</td><td class="num">2 to 3 h</td><td>A real registration lands in the CRM, from a phone</td></tr>
+              <tr><td><input type="checkbox" data-k="d3d" aria-label="Write the Tantra Pro Flow"></td><td><b>Write the Tantra Pro Flow</b> and set the send windows</td><td>GoHighLevel · WhatsApp · Twilio</td><td class="num">2 to 3 h</td><td>A test contact receives every touch, on time</td></tr>
+              <tr><td><input type="checkbox" data-k="d3e" aria-label="Run of show, script and four polls"></td><td><b>Run of show, script and four polls</b>; assign the five roles to names</td><td>Slides · WebinarGeek</td><td class="num">3 h</td><td>A full dry run completes with no unknowns</td></tr>
+              <tr><td><input type="checkbox" data-k="d3f" aria-label="Build the close chain"></td><td><b>Build the close chain</b>: booking, reminders, scripts, proposal, checkout, onboarding</td><td>Cal.com · Dodo Payments</td><td class="num">3 to 4 h</td><td>A test purchase completes and onboarding arrives</td></tr>
+              <tr><td><input type="checkbox" data-k="d3i" aria-label="Set up the weekly newsletter"></td><td><b>Set up the weekly newsletter</b> and its WhatsApp twin</td><td>Claude Code · Beehiiv</td><td class="num">60 to 90 min</td><td>First letter scheduled; the weekly task shows as active</td></tr>
+             <tr><td><input type="checkbox" data-k="d3g" aria-label="Define the five tags"></td><td><b>Define the five tags</b> and write them down</td><td>Doc</td><td class="num">15 min</td><td>webinar registrant · webinar attended · live webinar not watched · watched webinar replay · purchased</td></tr>
+              <tr><td><input type="checkbox" data-k="d3h" aria-label="Collect every credential into one place"></td><td><span class="hw">Homework</span> <b>Collect every credential into one place</b>: Tantra, GoHighLevel or Cloudflare, Google service account, Dodo</td><td>Password manager</td><td class="num">30 min</td><td>Nothing to hunt for tomorrow</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+
       <div class="box why"><div class="h">◆ Build Order</div>
         <p><strong>Warm the domains now, switch traffic on last.</strong> New sending domains need 2 to 3 weeks of warm-up, so that clock starts today. But traffic sent into a half-built funnel burns a list you can't email again.</p>
         <ol>
@@ -1945,6 +2057,25 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
       <div class="chap"><span class="no">Day 3</span><span class="tag">Orchestrate · Measure · Experiment</span></div>
       <h2>Make an AI Run It, Then Prove It Works</h2>
       <p class="lead">The last session. Claude Code takes over the running of your funnel through each tool's API or MCP server, one dashboard shows every number, and a weekly loop swaps one page or template at a time and keeps the winner.</p>
+      <div class="chkwrap dayplan" id="d3-work-plan">
+        <div class="chkday">
+          <div class="chkh"><b>Your Day 3 Work Plan</b><span class="chkmeta">14 to 19 h, then weekly</span></div>
+          <div class="tbl"><table>
+            <thead><tr><th></th><th>Task</th><th>Tool</th><th>Time</th><th>Proof it worked</th></tr></thead>
+            <tbody>
+              <tr><td><input type="checkbox" data-k="d6a" aria-label="Connect Claude Code to every tool"></td><td><b>Connect Claude Code to every tool</b>: Tantra MCP, then one key per tool in <code>.env</code></td><td>Claude Code</td><td class="num">1 h</td><td>Claude Code quotes last week's Tantra numbers correctly</td></tr>
+              <tr><td><input type="checkbox" data-k="d4a" aria-label="Brief it"></td><td><b>Brief it</b>: run the interview, then approve the spec</td><td>Claude Code</td><td class="num">3 to 5 h</td><td>A spec change goes live: Worker page (route B) or Tantra template (route A)</td></tr>
+              <tr><td><input type="checkbox" data-k="d4d" aria-label="Check three automations fire"></td><td><b>Check three automations fire</b> (confirmation, form capture, webinar attended or live webinar not watched tag) with a real contact</td><td>GoHighLevel or Cloudflare Workers · Tantra webhooks</td><td class="num">4 to 6 h</td><td>A deliberate no-show gets tagged automatically</td></tr>
+              <tr><td><input type="checkbox" data-k="d6b" aria-label="Build the dashboard"></td><td><b>Build the dashboard</b> as a Google Sheet that fills itself</td><td>Google Sheets · GA4 · Clarity · Claude Code</td><td class="num">2 to 3 h</td><td>Your test registration appears as a row you never typed</td></tr>
+              <tr><td><input type="checkbox" data-k="d4f" aria-label="Send one small test run"></td><td><b>Send one small test run</b>: QA first, every link UTM tagged, cold email only once warm-up is done</td><td>Tantra · your channels</td><td class="num">2 h</td><td>Every buyer traces to a channel</td></tr>
+              <tr><td><input type="checkbox" data-k="d5c" aria-label="Read the dashboard"></td><td><b>Read the dashboard</b> and name the single worst step</td><td>Dashboard · calculator</td><td class="num">30 min</td><td>One step named, not three</td></tr>
+              <tr><td><input type="checkbox" data-k="d5d" aria-label="Run one experiment"></td><td><b>Run one experiment</b> on that step and put the weekly review in your calendar</td><td>Claude Code · dashboard · spec</td><td class="num">60 min</td><td>Both halves counted separately on the dashboard</td></tr>
+              <tr><td><input type="checkbox" data-k="d5g" aria-label="Write the five-line scale plan"></td><td><b>Write the five-line scale plan</b></td><td>One page</td><td class="num">45 min</td><td>Lines one and two contain fetched numbers</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+
       <p>Claude Code is the worked example. Any agentic coding tool that supports MCP works the same way.</p>
       <p><b>When:</b> Steps 1 to 5 happen now. Steps 6 to 8 happen after your first run finishes (your event date from Day 1 Step 7), because they read that run's numbers.</p>
 
@@ -2068,7 +2199,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
         <div class="meta"><span><i>Owner</i>You · agent builds</span><span><i>Tool</i>Claude Code</span><span><i>Time</i>3 to 5 h</span><span class="dl"><i>Deliverable</i>An approved spec file and a live URL</span><span class="pv"><i>Proof</i>You change a line in the spec and it goes live without you touching a tool: the Worker-served page on route B, a Tantra step template on route A</span></div>
       </div>
 
-      <h3 id="d3-step-4-the-eight-automations">Step 3: Check Every Automation Fires</h3>
+      <h3 id="d3-step-3-check-every-automation-fires">Step 3: Check Every Automation Fires</h3>
       <div class="task">
         <div class="th"><span class="tn">Task 3.3</span><b>Prove the Automations With a Real Contact</b></div>
         <div class="tm">
@@ -2140,7 +2271,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
         <div class="cap">Automations 1 to 6 fire the moment their event happens. 7 and 8 run on a schedule, because inboxes and clocks send no webhooks; on route B that schedule is a Cloudflare Cron Trigger. <b>Prove 1, 3 and 4 first:</b> confirm, capture, tag.</div>
       </div>
 
-      <h3 id="d3-step-2-instrument-every-step-or-the-second-half">Step 4: Build the Dashboard</h3>
+      <h3 id="d3-step-4-build-the-dashboard">Step 4: Build the Dashboard</h3>
       <p><b>What it shows:</b> one row per run and per source, with every count from first touch to sale: sends or invites, RSVPs, landing visits, registrations, attendees, CTA clicks, calls booked, sales, revenue, and the page variant. Rates sit between each pair. <b>Where it lives:</b> a Google Sheet in your Drive, copied from the Per-Run Session Analytics Sheet template (under this step in the onboarding centre). Tantra's own dashboard keeps the outreach detail; the sheet is where every tool's numbers meet.</p>
       <div class="task">
         <div class="th"><span class="tn">Task 3.4</span><b>Build the Dashboard and Let It Fill Itself</b></div>
@@ -2164,7 +2295,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
           <p><b>Why:</b> Until strangers go through it, every page and template is a guess. A small run keeps being wrong cheap and gives the dashboard its first real row.</p>
           <ol>
             <li>QA first: every page at 375, 768 and 1280px, one real purchase, every dashboard column filling.</li>
-            <li>Launch the smallest version of each live channel, every link UTM tagged, all pointing at one registration page. Cold email and calendar invites wait until the Day 1 inboxes have warmed for 2 to 3 weeks (about 14 to 21 October); until then, run LinkedIn inside its daily caps and email people who already know you.</li>
+            <li>Launch the smallest version of each live channel, every link UTM tagged, all pointing at one registration page. Cold email and calendar invites wait until the Day 1 inboxes have warmed for 2 to 3 weeks (about the week after your workshop); until then, run LinkedIn inside its daily caps and email people who already know you.</li>
             <li>Read nothing until the run has finished. Numbers read after a few hours kill things that were working.</li>
           </ol>
           <p><b>Example:</b> for a SaaS company, one LinkedIn batch and one email to past trial users feed the same session; cold calendar invites join once warm-up is done.</p>
@@ -2172,7 +2303,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
         <div class="meta"><span><i>Owner</i>You</span><span><i>Tool</i>Tantra · your channels</span><span><i>Time</i>2 h to launch</span><span class="dl"><i>Deliverable</i>The first full run on the dashboard</span><span class="pv"><i>Proof</i>Every buyer traces back to a channel via their UTM</span></div>
       </div>
 
-      <h3 id="d3-step-6-read-the-dashboard">Step 6: Read the Dashboard and Find the Worst Step</h3>
+      <h3 id="d3-step-6-read-the-dashboard-and-find-the-worst-step">Step 6: Read the Dashboard and Find the Worst Step</h3>
       <div class="task">
         <div class="th"><span class="tn">Task 3.6</span><b>Name the One Step to Fix</b></div>
         <div class="tm">
@@ -2273,7 +2404,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
         <div class="cap">Claude Code can refresh the dashboard, flag the worst step and propose a variant before the review. You decide what ships. Fix the worst step and a different one becomes the worst: that is the loop working.</div>
       </div>
 
-      <h3 id="d3-step-5-the-52-week-engine">Step 8: Write the Scale Plan</h3>
+      <h3 id="d3-step-8-write-the-scale-plan">Step 8: Write the Scale Plan</h3>
       <div class="task">
         <div class="th"><span class="tn">Task 3.8</span><b>Write the Scale Plan</b></div>
         <div class="tm">
@@ -2292,130 +2423,11 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
 
       <div class="box do"><div class="h">◆ Your Day 3 output</div>
         <p>Claude Code connected to Tantra and every other tool, an approved spec, three automations proven with a real contact, a dashboard that fills itself, a first test run, a weekly experiment loop in the calendar, and a five-line scale plan.</p></div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- THE PLAN -->
-    <section class="reveal" id="plan">
-      <div class="chap"><span class="no">The plan</span><span class="tag">What You Do Each Day</span></div>
-      <h2>Your 3-Day Work Plan</h2>
-      <p class="lead">Same rhythm every day: <strong>watch, fill, get, do.</strong> Each day has its own task table: every task, the tool it needs, how long it takes, and the proof it worked. Tick them off as you go. Ticks in the task tables are saved in this browser only, so they stay on this device; your core-item progress in the onboarding centre is saved against your access link and follows you between devices.</p>
-
-      <div class="viz wide">
-        <div class="vtitle">What runs on which day, and the one thing you must start early</div>
-        <svg viewBox="0 0 860 452" role="img" aria-label="Three-day build schedule as a Gantt chart. Workstreams: offer, persona, prospect list, funnel choice and webinar date on day one; pages and sequences on day two; Claude Code, automations, the dashboard and a test run on day three; traffic test spanning day three and beyond; the optimisation loop starting day three and continuing weekly; and domain warm-up starting day one and running for two to three weeks past the workshop. A footer row shows the hands-on hours per day.">
-          <defs>
-            <marker id="w1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
-            <marker id="w2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
-          </defs>
-          <g text-anchor="middle" font-size="11">
-            <rect x="144" y="26" width="220" height="28" rx="8" fill="var(--accent-2)"/><text x="254" y="41" fill="var(--accent-ink)" font-weight="700">Day 1</text>
-            <rect x="376" y="26" width="220" height="28" rx="8" fill="var(--accent-2)"/><text x="486" y="41" fill="var(--accent-ink)" font-weight="700">Day 2</text>
-            <rect x="608" y="26" width="220" height="28" rx="8" fill="var(--accent-2)"/><text x="718" y="41" fill="var(--accent-ink)" font-weight="700">Day 3</text>
-          </g>
-          <g stroke="var(--line)" stroke-width="1">
-            <line x1="140" y1="62" x2="140" y2="372"/><line x1="372" y1="62" x2="372" y2="372"/>
-            <line x1="604" y1="62" x2="604" y2="372"/><line x1="836" y1="62" x2="836" y2="372"/>
-          </g>
-          <g font-size="10">
-            <text x="16" y="88" class="svlabel" font-size="10.5">Strategy</text>
-            <rect x="144" y="74" width="104" height="30" rx="7" fill="var(--accent)"/><text x="196" y="93" text-anchor="middle" class="svwhite" font-size="10">offer · persona</text>
-
-            <text x="16" y="134" class="svlabel" font-size="10.5">Plan</text>
-            <rect x="256" y="120" width="108" height="30" rx="7" fill="var(--accent)"/><text x="310" y="139" text-anchor="middle" class="svwhite" font-size="10">list · funnel · date</text>
-
-            <text x="16" y="180" class="svlabel" font-size="10.5">Assets</text>
-            <rect x="376" y="166" width="220" height="30" rx="7" fill="var(--accent)"/><text x="486" y="185" text-anchor="middle" class="svwhite" font-size="10">pages · sequences · run of show · close chain</text>
-
-            <text x="16" y="226" class="svlabel" font-size="10.5">Build</text>
-            <rect x="608" y="212" width="124" height="30" rx="7" fill="var(--accent)"/><text x="670" y="231" text-anchor="middle" class="svwhite" font-size="10">agent · dashboard</text>
-
-            <text x="16" y="272" class="svlabel" font-size="10.5">Traffic test</text>
-            <rect x="660" y="258" width="168" height="30" rx="7" fill="#0f9e75"/><text x="744" y="277" text-anchor="middle" class="svwhite" font-size="10">launch small, then let it run</text>
-
-            <text x="16" y="318" class="svlabel" font-size="10.5">Optimise</text>
-            <rect x="720" y="304" width="108" height="30" rx="7" fill="#0f9e75"/><text x="774" y="323" text-anchor="middle" class="svwhite" font-size="10">first lap</text>
-            <path d="M832 319 H852" fill="none" stroke="var(--teal)" stroke-width="2" marker-end="url(#w1)"/>
-            <text x="838" y="342" text-anchor="end" class="svmute" font-size="9">weekly, forever</text>
-
-            <text x="16" y="364" fill="var(--amber)" font-weight="700" font-size="10.5">Warm-up</text>
-            <rect x="144" y="350" width="684" height="30" rx="7" fill="var(--amber-bg)" stroke="var(--amber)" stroke-dasharray="4 4"/>
-            <text x="486" y="369" text-anchor="middle" fill="var(--amber)" font-size="10">start your sending domains on day one: they need 2 to 3 weeks and will not be rushed</text>
-            <path d="M832 365 H852" fill="none" stroke="var(--amber)" stroke-width="2" marker-end="url(#w2)"/>
-          </g>
-          <line x1="16" y1="392" x2="844" y2="392" class="gridline"/>
-          <g text-anchor="middle" font-size="10">
-            <text x="16" y="414" text-anchor="start" class="svmute" font-size="10">Hands-on hours,</text>
-            <text x="16" y="428" text-anchor="start" class="svmute" font-size="10">outside the session:</text>
-            <text x="254" y="420" class="svlabel" font-size="12">4 to 6 h</text>
-            <text x="486" y="420" class="svlabel" font-size="12">13 to 17 h</text>
-            <text x="718" y="420" class="svlabel" font-size="12">14 to 19 h</text>
-          </g>
-          <text x="16" y="446" class="svmute" font-size="9.5">Day 3 takes the most hours, but Day 2 is the one to protect: every Day 3 task runs on what you build there.</text>
-        </svg>
-        <div class="cap"><b>The amber bar is the trap.</b> Domain warm-up is the only task with a hard external wait, and it's the one people start last. Begin it on day one and it's ready when your funnel is; begin it after the workshop ends and you'll be sitting on a finished funnel with nowhere to send from.</div>
-      </div>
-
-      <div class="chkwrap" id="chk">
-        <div class="chkday">
-          <div class="chkh"><span class="pill">Day 1</span><b>Offer, Buyer, List and Channels</b><span class="chkmeta">4 to 6 h outside the session</span></div>
-          <div class="tbl"><table>
-            <thead><tr><th></th><th>Task</th><th>Tool</th><th>Time</th><th>Proof it worked</th></tr></thead>
-            <tbody>
-              <tr><td><input type="checkbox" data-k="d1e"></td><td><b>Write the offer</b> and place it on the ladder</td><td>Doc</td><td class="num">20 min</td><td>A stranger repeats it back; two rungs named and priced</td></tr>
-              <tr><td><input type="checkbox" data-k="d1j"></td><td><b>Name your method</b> and write your voice</td><td>Doc</td><td class="num">20 min</td><td>Named steps, a reason for each</td></tr>
-              <tr><td><input type="checkbox" data-k="d1d"></td><td><b>Score the offer</b> on the value equation</td><td>Doc</td><td class="num">30 min</td><td>Each lever has a change; the two lowest are made</td></tr>
-              <tr><td><input type="checkbox" data-k="d1a"></td><td><b>Define the buyer persona</b> from your 20 best customers</td><td>Sheet / CRM</td><td class="num">60 min</td><td>Objection quoted; three exclusions written</td></tr>
-              <tr><td><input type="checkbox" data-k="d1k"></td><td><b>Build the prospect list</b> and verify every email</td><td>Apollo or Sales Navigator · verifier</td><td class="num">60 min</td><td>A sheet of named, verified people</td></tr>
-              <tr><td><input type="checkbox" data-k="d1f"></td><td><b>Pick your funnel</b> and the reason that decided it</td><td>Doc</td><td class="num">15 min</td><td>Build hours are in your calendar</td></tr>
-              <tr><td><input type="checkbox" data-k="d1l"></td><td><b>Set the webinar topic, date and time</b></td><td>Calendar</td><td class="num">15 min</td><td>One line: title, date, time zone, length, platform</td></tr>
-              <tr><td><input type="checkbox" data-k="d1h"></td><td><b>Connect every channel and the Cloudflare API</b>, start warm-up</td><td>Registrar · Cloudflare · sending tool</td><td class="num">90 to 120 min</td><td>SPF, DKIM and DMARC pass in Google Admin Toolbox; token test says valid</td></tr>
-              <tr><td><input type="checkbox" data-k="d1i"></td><td><span class="hw">Homework</span> <b>Send the question to five customers</b></td><td>Email / DM</td><td class="num">20 min</td><td>Five sent, not five drafted</td></tr>
-              <tr><td><input type="checkbox" data-k="d1m"></td><td><span class="hw">Homework</span> <b>Gather proof assets</b>, each named after the objection it answers</td><td>Folder</td><td class="num">10 min</td><td>One folder, nothing left to hunt for</td></tr>
-            </tbody>
-          </table></div>
-        </div>
-
-        <div class="chkday">
-          <div class="chkh"><span class="pill te">Day 2</span><b>All Your Funnel Elements</b><span class="chkmeta">13 to 17 h, Day 3 depends on it</span></div>
-          <div class="tbl"><table>
-            <thead><tr><th></th><th>Task</th><th>Tool</th><th>Time</th><th>Proof it worked</th></tr></thead>
-            <tbody>
-              <tr><td><input type="checkbox" data-k="d3a"></td><td><b>Confirm sending infrastructure</b> is authenticated and warming</td><td>DNS · sending platform</td><td class="num">30 min</td><td>A test send reaches the primary inbox</td></tr>
-              <tr><td><input type="checkbox" data-k="d3b"></td><td><b>Two variants per live channel</b>: benefit-led and problem-led</td><td>AI agent</td><td class="num">60 min</td><td>Both trace back to your Day 1 offer and persona</td></tr>
-              <tr><td><input type="checkbox" data-k="d3c"></td><td><b>Build the Tantra Pro Funnel page and the thank-you page</b></td><td>Claude Code · Vercel</td><td class="num">2 to 3 h</td><td>A real registration lands in the CRM, from a phone</td></tr>
-              <tr><td><input type="checkbox" data-k="d3d"></td><td><b>Write the Tantra Pro Flow</b> and set the send windows</td><td>GoHighLevel · WhatsApp · Twilio</td><td class="num">2 to 3 h</td><td>A test contact receives every touch, on time</td></tr>
-              <tr><td><input type="checkbox" data-k="d3e"></td><td><b>Run of show, script and four polls</b>; assign the five roles to names</td><td>Slides · WebinarGeek</td><td class="num">3 h</td><td>A full dry run completes with no unknowns</td></tr>
-              <tr><td><input type="checkbox" data-k="d3f"></td><td><b>Build the close chain</b>: booking, reminders, scripts, proposal, checkout, onboarding</td><td>Cal.com · Dodo Payments</td><td class="num">3 to 4 h</td><td>A test purchase completes and onboarding arrives</td></tr>
-              <tr><td><input type="checkbox" data-k="d3i"></td><td><b>Set up the weekly newsletter</b> and its WhatsApp twin</td><td>Claude Code · Beehiiv</td><td class="num">60 to 90 min</td><td>First letter scheduled; the weekly task shows as active</td></tr>
-             <tr><td><input type="checkbox" data-k="d3g"></td><td><b>Define the five tags</b> and write them down</td><td>Doc</td><td class="num">15 min</td><td>webinar registrant · webinar attended · live webinar not watched · watched webinar replay · purchased</td></tr>
-              <tr><td><input type="checkbox" data-k="d3h"></td><td><span class="hw">Homework</span> <b>Collect every credential into one place</b>: Tantra, GoHighLevel or Cloudflare, Google service account, Dodo</td><td>Password manager</td><td class="num">30 min</td><td>Nothing to hunt for tomorrow</td></tr>
-            </tbody>
-          </table></div>
-        </div>
-
-        <div class="chkday">
-          <div class="chkh"><span class="pill te">Day 3</span><b>Orchestrate, Measure, Experiment</b><span class="chkmeta">14 to 19 h, then weekly</span></div>
-          <div class="tbl"><table>
-            <thead><tr><th></th><th>Task</th><th>Tool</th><th>Time</th><th>Proof it worked</th></tr></thead>
-            <tbody>
-              <tr><td><input type="checkbox" data-k="d6a"></td><td><b>Connect Claude Code to every tool</b>: Tantra MCP, then one key per tool in <code>.env</code></td><td>Claude Code</td><td class="num">1 h</td><td>Claude Code quotes last week's Tantra numbers correctly</td></tr>
-              <tr><td><input type="checkbox" data-k="d4a"></td><td><b>Brief it</b>: run the interview, then approve the spec</td><td>Claude Code</td><td class="num">3 to 5 h</td><td>A spec change goes live: Worker page (route B) or Tantra template (route A)</td></tr>
-              <tr><td><input type="checkbox" data-k="d4d"></td><td><b>Check three automations fire</b> (confirmation, form capture, webinar attended or live webinar not watched tag) with a real contact</td><td>GoHighLevel or Cloudflare Workers · Tantra webhooks</td><td class="num">4 to 6 h</td><td>A deliberate no-show gets tagged automatically</td></tr>
-              <tr><td><input type="checkbox" data-k="d6b"></td><td><b>Build the dashboard</b> as a Google Sheet that fills itself</td><td>Google Sheets · GA4 · Clarity · Claude Code</td><td class="num">2 to 3 h</td><td>Your test registration appears as a row you never typed</td></tr>
-              <tr><td><input type="checkbox" data-k="d4f"></td><td><b>Send one small test run</b>: QA first, every link UTM tagged, cold email only once warm-up is done</td><td>Tantra · your channels</td><td class="num">2 h</td><td>Every buyer traces to a channel</td></tr>
-              <tr><td><input type="checkbox" data-k="d5c"></td><td><b>Read the dashboard</b> and name the single worst step</td><td>Dashboard · calculator</td><td class="num">30 min</td><td>One step named, not three</td></tr>
-              <tr><td><input type="checkbox" data-k="d5d"></td><td><b>Run one experiment</b> on that step and put the weekly review in your calendar</td><td>Claude Code · dashboard · spec</td><td class="num">60 min</td><td>Both halves counted separately on the dashboard</td></tr>
-              <tr><td><input type="checkbox" data-k="d5g"></td><td><b>Write the five-line scale plan</b></td><td>One page</td><td class="num">45 min</td><td>Lines one and two contain fetched numbers</td></tr>
-            </tbody>
-          </table></div>
-        </div>
-      </div>
 
       <div class="box do"><div class="h">◆ What you leave with</div>
         <p>A running, measured funnel, and a weekly loop that improves it.</p></div>
     </section>
+
   </main>
 </div>
 <footer>Figures shown in diagrams are working teaching models, not client results.</footer>
@@ -2467,7 +2479,7 @@ function calc(){
 // work-plan checklist — ticks persist per device
 const CHK="tantra-playbook-chk";
 const chkState=JSON.parse(localStorage.getItem(CHK)||"{}");
-document.querySelectorAll("#chk input[type=checkbox]").forEach(box=>{
+document.querySelectorAll(".chkwrap input[type=checkbox]").forEach(box=>{
   const k=box.dataset.k;
   const paint=()=>box.closest("tr").classList.toggle("done",box.checked);
   box.checked=!!chkState[k]; paint();
@@ -2476,6 +2488,10 @@ document.querySelectorAll("#chk input[type=checkbox]").forEach(box=>{
 // until a slider moves, the verdict is on the teaching model and says so
 let calcTouched=false;
 ["c1","c2","c3","c4","c5","c6","c7"].forEach(id=>document.getElementById(id).addEventListener("input",()=>{calcTouched=true;calc();}));calc();
+// old step ids still work as links
+const OLDIDS={"d1-step-2-design-the-offer":"d1-step-1-write-the-offer","d1-step-1-write-the-five-context-blocks":"d1-step-2-position-it-with-a-named-method-and-voice","d1-step-1-define-who-you-re-actually-for":"d1-step-4-define-the-buyer-persona","d3-step-4-the-eight-automations":"d3-step-3-check-every-automation-fires","d3-step-2-instrument-every-step-or-the-second-half":"d3-step-4-build-the-dashboard","d3-step-6-read-the-dashboard":"d3-step-6-read-the-dashboard-and-find-the-worst-step","d3-step-5-the-52-week-engine":"d3-step-8-write-the-scale-plan"};
+const goOld=()=>{const n=OLDIDS[location.hash.slice(1)];const e=n&&document.getElementById(n);if(e)e.scrollIntoView();};
+goOld();addEventListener("hashchange",goOld);
 </script>
 </body>
 </html>

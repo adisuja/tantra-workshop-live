@@ -4,174 +4,245 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Referral dashboard · The 3-Day AI RevOps Workshop</title>
+<title>Team Referral Dashboard · The 3-Day AI RevOps Workshop</title>
 <!--
-  T-055 · Team referral dashboard. Static page on the free GitHub Pages mirror.
-  The numbers live in referrals.data.json, ENCRYPTED (AES-256-GCM, key from the
-  team passphrase via PBKDF2-SHA256) by workshop-plan/ops/referrals.py, which the
-  local ops tick refreshes every 10 minutes. Nothing readable is public: without
-  the passphrase the file is noise, and it never contains buyer emails or names.
+  Team referral dashboard (T-055, round 5). Public on purpose: no passphrase.
+  Every member's referral code, their two ready links, and the visits,
+  registrations, sales and commission those links brought in, per cohort week
+  and all-time. Data: referrals.stats.json, aggregates only, written by
+  workshop-plan/ops/referrals.py (launchd ops tick, every 10 minutes, publishes
+  only when the numbers change). Never put names, emails or phone numbers of
+  registrants or buyers in that file; referrals.py leak_check() refuses them.
 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#05050f;--panel:#0b0b1f;--line:rgb(255 255 255/.09);--ink:#f4f4fb;--dim:rgb(244 244 251/.6);--faint:rgb(244 244 251/.38);
---green:#00D55A;--yellow:#FFF200;--violet:#A47BFF;--cyan:#22D3EE;--pink:#FF4FD8;--amber:#FFC53D}
-*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,sans-serif}
-a{color:inherit}
-.wrap{max-width:1120px;margin:0 auto;padding:36px 20px 80px}
-.brand{display:flex;align-items:center;gap:12px}
-.brand img{height:34px}
-h1{font-size:clamp(26px,4vw,38px);line-height:1.08;letter-spacing:-.02em;margin:22px 0 6px;font-weight:800}
-h1 em{font-style:normal;background:linear-gradient(90deg,var(--amber),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
-.sub{color:var(--dim);max-width:720px;margin:0}
-.meta{color:var(--faint);font-size:12.5px;margin-top:10px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:20px}
-.gate{max-width:440px;margin:60px auto 0;padding:26px}
-.gate h2{margin:0 0 6px;font-size:19px}.gate p{margin:0 0 16px;color:var(--dim);font-size:14px}
-input,select{width:100%;background:#07071a;border:1px solid rgb(255 255 255/.16);color:var(--ink);border-radius:12px;padding:12px 14px;font:inherit;outline:none}
-input:focus,select:focus{border-color:var(--violet)}
-button{cursor:pointer;border:0;border-radius:999px;padding:12px 20px;font:inherit;font-weight:800;background:var(--green);color:#05050f}
-button.ghost{background:rgb(255 255 255/.06);color:var(--ink);border:1px solid var(--line);font-weight:600;padding:9px 14px}
-.err{color:#ff6b6b;font-size:13px;min-height:18px;margin-top:10px}
-.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:28px 0}
-.kpi{padding:18px}.kpi .l{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
-.kpi .v{font-size:30px;font-weight:800;letter-spacing:-.02em;margin-top:6px;font-variant-numeric:tabular-nums}
-.kpi:nth-child(1) .v{color:var(--cyan)}.kpi:nth-child(2) .v{color:var(--violet)}.kpi:nth-child(3) .v{color:var(--amber)}.kpi:nth-child(4) .v{color:var(--green)}
-h3{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:34px 0 12px}
-table{width:100%;border-collapse:collapse}
-th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;vertical-align:top}
-th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:700}
-tr.m{cursor:pointer}tr.m:hover td{background:rgb(255 255 255/.025)}
-td.n{font-weight:700}.rank{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:rgb(255 255 255/.07);font-size:12px;margin-right:10px;font-weight:800}
-tr.m:nth-child(1) .rank{background:var(--amber);color:#05050f}
-.bar{height:6px;border-radius:99px;background:rgb(255 255 255/.07);margin-top:8px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--violet),var(--pink))}
-.muted{color:var(--faint)}
-.detail td{background:rgb(255 255 255/.02)}
-.detail .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.chip{display:inline-block;padding:3px 9px;border-radius:99px;background:rgb(255 255 255/.07);font-size:12px;margin:0 6px 6px 0}
-.tbl-wrap{overflow-x:auto}
-.two{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}
-.box{padding:20px}.box p{color:var(--dim);font-size:14px;margin:6px 0}
-.out{margin-top:12px;display:grid;gap:8px}
-.out code{display:block;background:#07071a;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:12.5px;word-break:break-all;color:#d8d8f0}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-.empty{padding:26px;text-align:center;color:var(--dim)}
-@media (max-width:760px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.two,.detail .grid,.row2{grid-template-columns:1fr}th.h-sm,td.h-sm{display:none}}
+:root{--bg:#05050f;--panel:#0b0b1f;--panel2:#0f0f27;--line:rgb(255 255 255/.09);--line2:rgb(255 255 255/.16);--ink:#f4f4fb;--dim:rgb(244 244 251/.68);--faint:rgb(244 244 251/.5);
+--green:#00D55A;--violet:#A47BFF;--amber:#FFC53D;--cyan:#22D3EE;--r:16px}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Archivo,ui-sans-serif,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:rgb(164 123 255/.45);color:#fff}
+:focus-visible{outline:2px solid var(--violet);outline-offset:2px;border-radius:8px}
+html{scrollbar-color:rgb(255 255 255/.18) var(--bg)}
+.wrap{max-width:1140px;margin:0 auto;padding:36px 20px 96px}
+.brand img{height:32px;display:block}
+h1{font-family:Archivo,sans-serif;font-size:clamp(28px,4.2vw,42px);line-height:1.06;letter-spacing:-.025em;margin:26px 0 8px;font-weight:800;text-wrap:balance}
+.sub{color:var(--dim);max-width:68ch;margin:0}
+.meta{color:var(--faint);font-size:13px;margin-top:10px;font-variant-numeric:tabular-nums}
+
+/* period switch */
+.bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:30px 0 14px}
+.seg{display:flex;gap:4px;padding:4px;background:var(--panel);border:1px solid var(--line);border-radius:999px;overflow-x:auto;max-width:100%;scrollbar-width:none}
+.seg button{all:unset;cursor:pointer;white-space:nowrap;padding:8px 14px;border-radius:999px;font-size:13.5px;font-weight:600;color:var(--dim);transition:background .2s,color .2s}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-pressed=true]{background:var(--ink);color:#05050f}
+.seg button:focus-visible{outline:2px solid var(--violet);outline-offset:1px}
+.seg small{font-weight:600;color:inherit;opacity:.7;margin-left:6px}
+.total{color:var(--dim);font-size:14px;font-variant-numeric:tabular-nums}
+.total b{color:var(--ink)}
+
+/* leaderboard */
+.board{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);overflow:hidden}
+.head,.row .top{display:grid;grid-template-columns:minmax(220px,1.6fr) repeat(4,minmax(0,1fr));gap:16px;align-items:start}
+.head{padding:12px 20px;border-bottom:1px solid var(--line);font-size:12px;font-weight:600;color:var(--faint)}
+.head span:not(:first-child),.num{text-align:right}
+.row{padding:18px 20px;border-bottom:1px solid var(--line)}
+.row:last-of-type{border-bottom:0}
+.who{display:flex;gap:12px;align-items:flex-start;min-width:0}
+.rank{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:rgb(255 255 255/.07);font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+.row.lead .rank{background:var(--amber);color:#05050f}
+.name{font-weight:700;font-size:16px;line-height:1.25}
+.role{color:var(--faint);font-size:13px}
+.code{display:inline-flex;align-items:center;gap:6px;margin-top:6px;font-size:12.5px;color:var(--dim)}
+.code kbd{font:600 12.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink);background:rgb(164 123 255/.16);border:1px solid rgb(164 123 255/.35);padding:4px 7px;border-radius:7px}
+.num{font-variant-numeric:tabular-nums;font-size:20px;font-weight:700;line-height:1.2}
+.num .s{display:block;font-size:12.5px;font-weight:500;color:var(--faint);margin-top:2px}
+.num.zero{color:var(--faint);font-weight:600}
+.num.money{color:var(--green)}.num.money.zero{color:var(--faint)}
+.lbl{display:none}
+
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 0 40px}
+.lk{display:flex;align-items:center;gap:10px;min-width:0;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:6px 6px 6px 12px}
+.lk .t{flex:none;font-size:12px;font-weight:700;color:var(--dim);width:34px}
+.lk a{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:12.5px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--dim);text-decoration:none}
+.lk a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.copy{flex:none;display:inline-flex;align-items:center;gap:6px;cursor:pointer;border:1px solid var(--line2);background:rgb(255 255 255/.04);color:var(--ink);border-radius:9px;padding:7px 11px;font:600 13px/1 Archivo,sans-serif;transition:background .2s,border-color .2s,color .2s}
+.copy:hover{background:rgb(255 255 255/.09)}
+.copy svg{width:14px;height:14px}
+.copy.ok{border-color:rgb(0 213 90/.6);color:var(--green);background:rgb(0 213 90/.08)}
+.posts{margin:10px 0 0 40px;font-size:12.5px;color:var(--faint)}
+.posts span{color:var(--dim)}
+
+.foot{display:grid;grid-template-columns:minmax(220px,1.6fr) repeat(4,minmax(0,1fr));gap:16px;padding:16px 20px;border-top:1px solid var(--line2);background:rgb(255 255 255/.025)}
+.foot .who{font-weight:700;padding-left:40px}
+
+.note{color:var(--faint);font-size:13px;margin:12px 2px 0}
+.state{padding:40px 20px;text-align:center;color:var(--dim)}
+.state button{margin-top:12px;cursor:pointer;border:0;border-radius:999px;padding:10px 18px;font:700 14px/1 Archivo,sans-serif;background:var(--green);color:#05050f}
+
+/* terms */
+.terms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:44px;padding-top:28px;border-top:1px solid var(--line)}
+.terms h2{font-family:Archivo,sans-serif;font-size:17px;font-weight:600;margin:0 0 8px;letter-spacing:-.01em}
+.terms p{margin:0;color:var(--dim);font-size:14px;max-width:46ch}
+.terms code{font:12.5px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink);background:rgb(255 255 255/.06);padding:1px 6px;border-radius:6px}
+
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+@media (max-width:900px){
+  .head{display:none}
+  .row .top,.foot{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:14px}
+  .row .who,.foot .who{grid-column:1/-1}
+  .foot .who{padding-left:0}
+  .num{text-align:left;font-size:18px}
+  .lbl{display:block;font-size:11.5px;font-weight:600;color:var(--faint);margin-bottom:2px}
+  .links,.posts{margin-left:0}
+}
+@media (max-width:640px){
+  .wrap{padding:24px 14px 72px}
+  .row .top,.foot{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .links{grid-template-columns:1fr}
+  .terms{grid-template-columns:1fr;gap:20px}
+  .bar{flex-direction:column;align-items:stretch}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="brand"><img src="site/brand/tantra-lockup.png" alt="Tantra"></div>
-  <h1>Team referral <em>dashboard</em></h1>
-  <p class="sub">Every registration and sale that came through your posts and tracked links — and what it has earned you. The 3-Day AI RevOps Workshop.</p>
+  <div class="brand"><img src="site/brand/tantra-lockup.png" alt="Tantra" width="150" height="32"></div>
+  <h1>Team Referral Dashboard</h1>
+  <p class="sub">Every team member's referral code and links for the free and paid workshop, with the visits, registrations, sales and commission each one has brought in.</p>
   <div class="meta" id="meta"></div>
 
-  <div class="card gate" id="gate">
-    <h2>Team passphrase</h2>
-    <p>The numbers are encrypted. Enter the passphrase Adi shared with the team.</p>
-    <form id="unlock"><input id="pass" type="password" autocomplete="current-password" placeholder="four-words-and-a-number" autofocus>
-      <div style="margin-top:12px"><button type="submit">Unlock dashboard</button></div></form>
-    <div class="err" id="err"></div>
+  <div class="bar">
+    <div class="seg" id="seg" role="group" aria-label="Period"></div>
+    <div class="total" id="total" aria-live="polite"></div>
   </div>
 
-  <div id="app" hidden>
-    <div class="kpis">
-      <div class="card kpi"><div class="l">Registrations</div><div class="v" id="k-reg">0</div></div>
-      <div class="card kpi"><div class="l">Buyers</div><div class="v" id="k-buy">0</div></div>
-      <div class="card kpi"><div class="l">Revenue (USD eq.)</div><div class="v" id="k-rev">$0</div></div>
-      <div class="card kpi"><div class="l">Commission earned</div><div class="v" id="k-com">$0</div></div>
-    </div>
-
-    <h3>Leaderboard</h3>
-    <div class="card tbl-wrap">
-      <table>
-        <thead><tr><th>Member</th><th>Registrations</th><th class="h-sm">Buyers</th><th class="h-sm">Conv.</th><th>Revenue</th><th class="h-sm">Rate</th><th>Commission</th></tr></thead>
-        <tbody id="rows"></tbody>
-      </table>
-    </div>
-    <p class="muted" style="font-size:12.5px;margin-top:8px" id="unattr"></p>
-
-    <div class="two" style="margin-top:34px">
-      <div class="card box">
-        <h3 style="margin-top:0">Make your tracked link</h3>
-        <p>Use one link per post, so you can see which posts sell.</p>
-        <div class="row2">
-          <select id="lb-member"></select>
-          <input id="lb-post" placeholder="post id, e.g. p014" value="p001">
-        </div>
-        <div class="row2">
-          <select id="lb-source"><option value="linkedin">LinkedIn</option><option value="x">X</option><option value="whatsapp">WhatsApp</option><option value="email">Email</option><option value="instagram">Instagram</option></select>
-          <select id="lb-medium"><option value="post">Post</option><option value="dm">DM</option><option value="comment">Comment</option><option value="story">Story</option></select>
-        </div>
-        <div class="out" id="lb-out"></div>
-      </div>
-      <div class="card box">
-        <h3 style="margin-top:0">How it's calculated</h3>
-        <div id="terms"></div>
-      </div>
-    </div>
+  <div class="board" id="board">
+    <div class="state" id="state">Loading the numbers…</div>
   </div>
+  <p class="note" id="unattr"></p>
+
+  <section class="terms" aria-label="How it works">
+    <div>
+      <h2>Your Links</h2>
+      <p>Share either link as it is. The free link opens the free workshop page, the paid link the paid one. Both carry your code, and the cohort tag updates itself every week. To compare posts, add a label to your code, for example <code id="ex-code">adi-p014</code>; it still counts as yours.</p>
+    </div>
+    <div>
+      <h2>Who Gets Credit</h2>
+      <p>A visit counts once per browser, for the first referral link it arrived through. A registration or sale is credited to the code on the person's first registration, or, when that registration carried no code, the code they paid through. A later click on someone else's link doesn't move it. Each week is the cohort the person signed up for.</p>
+    </div>
+    <div>
+      <h2>Commission</h2>
+      <p id="terms-rate">A share of what the buyer actually paid, tax included, with refunds removed. Payouts follow Adi's schedule.</p>
+    </div>
+  </section>
+  <p class="sr" id="live" aria-live="polite"></p>
 </div>
 
 <script>
-const $=s=>document.querySelector(s);
-const SITE="https://adisuja.github.io/tantra-workshop-live/site";
-const b64=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
-const money=(v,c="USD")=>new Intl.NumberFormat(c==="INR"?"en-IN":"en-US",{style:"currency",currency:c,maximumFractionDigits:v%1?2:0}).format(v);
-const esc=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-let DATA=null, open=null;
+/* ---- the weekly schedule: a copy of app/src/lib/cohort.ts (cohortFor, saleCohortFor); keep in step ---- */
+const TZ="America/New_York",HOUR=11,MINUTES=60,FIRST=Date.UTC(2026,9,7),DAY=864e5;
+function nyParts(t){const p=Object.fromEntries(new Intl.DateTimeFormat("en-US",{timeZone:TZ,year:"numeric",month:"numeric",day:"numeric",hour:"numeric",minute:"numeric",hourCycle:"h23"}).formatToParts(t).map(x=>[x.type,x.value]));return{y:+p.year,m:+p.month,d:+p.day,h:+p.hour%24,min:+p.minute}}
+function nyInstant(dayUtc,hour,minute=0){const want=dayUtc+(hour*60+minute)*6e4;let t=want;for(let i=0;i<3;i++){const p=nyParts(new Date(t));t+=want-Date.UTC(p.y,p.m-1,p.d,p.h,p.min)}return new Date(t)}
+function cohortWed(now){const p=nyParts(now),today=Date.UTC(p.y,p.m-1,p.d);let wed=today-((new Date(today).getUTCDay()-3+7)%7)*DAY;
+  if(now.getTime()>=nyInstant(wed+2*DAY,HOUR,MINUTES).getTime())wed+=7*DAY;return Math.max(wed,FIRST)}
+function saleWeek(now=new Date()){const wed=cohortWed(now);if(now.getTime()<=nyInstant(wed-DAY,23,59).getTime())return new Date(wed).toISOString().slice(0,10);
+  return new Date(cohortWed(new Date(nyInstant(wed+2*DAY,HOUR).getTime()+MINUTES*6e4))).toISOString().slice(0,10)}
+const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function weekLabel(w){const d=new Date(w+"T00:00:00Z"),f=new Date(d.getTime()+2*DAY);
+  return d.getUTCMonth()===f.getUTCMonth()?`${d.getUTCDate()} to ${f.getUTCDate()} ${MON[f.getUTCMonth()]}`:`${d.getUTCDate()} ${MON[d.getUTCMonth()]} to ${f.getUTCDate()} ${MON[f.getUTCMonth()]}`}
 
-async function decrypt(pass){
-  const blob=await (await fetch("referrals.data.json?v="+Date.now(),{cache:"no-store"})).json();
-  const base=await crypto.subtle.importKey("raw",new TextEncoder().encode(pass),"PBKDF2",false,["deriveKey"]);
-  const key=await crypto.subtle.deriveKey({name:"PBKDF2",hash:"SHA-256",salt:b64(blob.salt),iterations:blob.iter},base,{name:"AES-GCM",length:256},false,["decrypt"]);
-  const pt=await crypto.subtle.decrypt({name:"AES-GCM",iv:b64(blob.iv)},key,b64(blob.ct));
-  return JSON.parse(new TextDecoder().decode(pt));
+/* ---- page ---- */
+const $=s=>document.querySelector(s);
+const esc=t=>String(t??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const money=(v,c="USD")=>new Intl.NumberFormat(c==="INR"?"en-IN":"en-US",{style:"currency",currency:c,maximumFractionDigits:v%1?2:0}).format(v);
+const int=n=>new Intl.NumberFormat("en-US").format(n);
+const plural=(n,w)=>`${int(n)} ${w}${n===1?"":"s"}`;
+const COPY='<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="1.8"/><path d="M10.5 5.5V3.8A1.3 1.3 0 0 0 9.2 2.5H3.8a1.3 1.3 0 0 0-1.3 1.3v5.4a1.3 1.3 0 0 0 1.3 1.3h1.7"/></svg>';
+const DONE='<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg>';
+let DATA=null,PERIOD=(location.hash.match(/^#week=(\d{4}-\d\d-\d\d)$/)||[])[1]||"all";
+
+function linkFor(code,funnel,week){const L=DATA.links;
+  return `${L.site}${L.paths[funnel]}?`+L.params.replace("{funnel}",funnel).replace("{week}",week).replace("{code}",encodeURIComponent(code))}
+// what a person needs to recognise their link: the page and their code (the full address is copied)
+function shortLink(u){const x=new URL(u);return `${x.pathname.replace(/^.*?(\/(workshop|masterclass)\/)$/,"$1")} · utm_content=${x.searchParams.get("utm_content")}`}
+function stats(m){return PERIOD==="all"?m.all:(m.weeks[PERIOD]||null)}
+function blank(){return{visits:{free:0,paid:0},registrations:{free:0,paid:0},sales:0,revenue:{},revenue_usd_eq:0,commission:{},commission_usd_eq:0}}
+function perCur(o){const e=Object.entries(o||{});return e.length?e.map(([c,v])=>money(v,c)).join(" + "):money(0)}
+function cell(label,main,sub,cls=""){return `<div class="num ${cls}"><span class="lbl">${label}</span>${main}${sub?`<span class="s">${sub}</span>`:""}</div>`}
+
+function renderSeg(){
+  const sale=saleWeek(),weeks=[...new Set([sale,...DATA.weeks])].sort().reverse();
+  const opts=[["all","All time"],...weeks.map(w=>[w,weekLabel(w),w===sale?"on sale":""])];
+  $("#seg").innerHTML=opts.map(([v,l,tag])=>`<button type="button" data-p="${v}" aria-pressed="${v===PERIOD}">${esc(l)}${tag?`<small>${tag}</small>`:""}</button>`).join("");
+  $("#seg").querySelectorAll("button").forEach(b=>b.onclick=()=>{PERIOD=b.dataset.p;history.replaceState(null,"",PERIOD==="all"?location.pathname+location.search:"#week="+PERIOD);render()});
 }
-function perCur(o){const e=Object.entries(o||{});return e.length?e.map(([c,v])=>money(v,c)).join(" · "):"—"}
+
 function render(){
-  const d=DATA,t=d.totals;
-  $("#meta").textContent="Updated "+d.generated_at+" · refreshes every 10 minutes";
-  $("#k-reg").textContent=t.registrations;$("#k-buy").textContent=t.buyers;
-  $("#k-rev").textContent=money(t.revenue_usd_eq);$("#k-com").textContent=money(t.commission_usd_eq);
-  const max=Math.max(1,...d.members.map(m=>m.revenue_usd_eq||m.registrations.free+m.registrations.paid));
-  $("#rows").innerHTML=d.members.map((m,i)=>{
-    const regs=m.registrations.free+m.registrations.paid, conv=regs?Math.round(m.buyers/regs*100)+"%":"—";
-    const w=Math.round(((m.revenue_usd_eq||regs)/max)*100);
-    const row=`<tr class="m" data-s="${m.slug}"><td class="n"><span class="rank">${i+1}</span>${esc(m.name)}<div class="bar"><i style="width:${w}%"></i></div></td>
-      <td>${regs}<div class="muted" style="font-size:12px">${m.registrations.free} free · ${m.registrations.paid} paid</div></td>
-      <td class="h-sm">${m.buyers}</td><td class="h-sm">${conv}</td>
-      <td>${perCur(m.revenue)}${Object.keys(m.revenue).length>1||Object.keys(m.revenue)[0]!=="USD"&&m.revenue_usd_eq?`<div class="muted" style="font-size:12px">≈ ${money(m.revenue_usd_eq)}</div>`:""}</td>
-      <td class="h-sm">${Math.round(m.rate*100)}%</td>
-      <td><b>${perCur(m.commission)}</b>${m.commission_usd_eq&&Object.keys(m.commission)[0]!=="USD"?`<div class="muted" style="font-size:12px">≈ ${money(m.commission_usd_eq)}</div>`:""}</td></tr>`;
-    if(open!==m.slug)return row;
-    const posts=m.posts.length?m.posts.map(p=>`<span class="chip">${esc(p.post)} · ${p.registrations} reg · ${p.buyers} sold</span>`).join(""):'<span class="muted">No tracked activity yet.</span>';
-    const recent=m.recent.length?m.recent.map(r=>`<div style="font-size:13px"><span class="muted">${esc(r.at)}</span> · ${esc(r.what)} <span class="muted">via ${esc(r.post)}</span></div>`).join(""):'<span class="muted">Nothing yet.</span>';
-    return row+`<tr class="detail"><td colspan="7"><div class="grid"><div><div class="muted" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px">By post</div>${posts}</div><div><div class="muted" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px">Recent</div>${recent}</div></div></td></tr>`;
-  }).join("");
-  document.querySelectorAll("tr.m").forEach(r=>r.onclick=()=>{open=open===r.dataset.s?null:r.dataset.s;render()});
-  const u=d.unattributed;$("#unattr").textContent=`Not credited to anyone: ${u.registrations} registration(s), ${u.buyers} buyer(s) — arrived without a member's tracked link.`;
-  const T=d.terms;
-  $("#terms").innerHTML=`<p><b>${Math.round(T.rate_min*100)}–${Math.round(T.rate_max*100)}%</b> of revenue from buyers who arrived through your posts. Default rate ${Math.round(T.rate_default*100)}%; your rate is in the table.</p>
-    <p><b>Revenue</b> is what the buyer actually paid (tax-inclusive), with refunded purchases removed. Shown in the currency they paid; the ≈ figure converts at the seat price (₹9,999 = $99).</p>
-    <p><b>Who gets credit:</b> the member whose tag is in <code style="background:#07071a;padding:1px 6px;border-radius:6px">${esc(T.link_param)}</code> of the buyer's <b>first</b> registration. Later clicks on someone else's link don't move it.</p>
-    <p class="muted">Payouts follow the owner's schedule. Numbers refresh every 10 minutes.</p>`;
-  const sel=$("#lb-member");if(!sel.options.length){sel.innerHTML=d.members.map(m=>`<option value="${m.slug}">${esc(m.name)}</option>`).join("")}
-  buildLinks();
+  if(!DATA)return;
+  const sale=saleWeek(),T=DATA.terms;
+  renderSeg();
+  const rows=DATA.members.map(m=>({m,s:stats(m)||blank()}));
+  const score=({s})=>[s.commission_usd_eq,s.sales,s.registrations.free+s.registrations.paid,s.visits.free+s.visits.paid];
+  rows.sort((a,b)=>{const x=score(a),y=score(b);for(let i=0;i<x.length;i++)if(y[i]!==x[i])return y[i]-x[i];return 0});
+  const active=rows.some(r=>score(r).some(v=>v>0));
+  const tot=PERIOD==="all"?DATA.totals.all:(DATA.totals.weeks[PERIOD]||{visits:0,registrations:0,sales:0,revenue_usd_eq:0,commission_usd_eq:0});
+  $("#total").innerHTML=`<b>${plural(tot.visits,"visit")}</b> · <b>${plural(tot.registrations,"registration")}</b> · <b>${plural(tot.sales,"sale")}</b>`;
+  const head=`<div class="head" aria-hidden="true"><span>Member, code and links</span><span>Visits</span><span>Registrations</span><span>Sales</span><span>Commission</span></div>`;
+  const body=rows.map(({m,s},i)=>{
+    const v=s.visits.free+s.visits.paid,r=s.registrations.free+s.registrations.paid,lead=active&&i===0&&score(rows[0]).some(x=>x>0);
+    const posts=(PERIOD==="all"?m.posts:[]).filter(p=>p.post!==m.code);
+    return `<article class="row${lead?" lead":""}" aria-label="${esc(m.name)}">
+      <div class="top">
+        <div class="who"><span class="rank" aria-label="Rank ${i+1}">${i+1}</span><div style="min-width:0">
+          <div class="name">${esc(m.name)}</div><div class="role">${esc(m.role)}</div>
+          <div class="code">Code <kbd>${esc(m.code)}</kbd></div></div></div>
+        ${cell("Visits",int(v),`${int(s.visits.free)} free · ${int(s.visits.paid)} paid`,v?"":"zero")}
+        ${cell("Registrations",int(r),`${int(s.registrations.free)} free · ${int(s.registrations.paid)} paid`,r?"":"zero")}
+        ${cell("Sales",int(s.sales),s.sales?`${perCur(s.revenue)} revenue`:"",s.sales?"":"zero")}
+        ${cell("Commission",perCur(s.commission),`${Math.round(m.rate*100)}% rate${s.commission_usd_eq&&Object.keys(s.commission)[0]!=="USD"?` · about ${money(s.commission_usd_eq)}`:""}`,"money"+(s.commission_usd_eq?"":" zero"))}
+      </div>
+      <div class="links">${[["free","Free"],["paid","Paid"]].map(([f,l])=>{const u=linkFor(m.code,f,sale);
+        return `<div class="lk"><span class="t">${l}</span><a href="${esc(u)}" target="_blank" rel="noopener" title="${esc(u)}">${esc(shortLink(u))}</a>
+        <button type="button" class="copy" data-u="${esc(u)}" aria-label="Copy ${esc(m.name)}'s ${l.toLowerCase()} workshop link">${COPY}<span>Copy</span></button></div>`}).join("")}</div>
+      ${posts.length?`<div class="posts">By label: ${posts.slice(0,6).map(p=>`<span>${esc(p.post)}</span> ${plural(p.visits,"visit")}, ${plural(p.registrations,"registration")}, ${plural(p.sales,"sale")}`).join(" · ")}</div>`:""}
+    </article>`}).join("");
+  const foot=`<div class="foot"><div class="who">Whole team${PERIOD==="all"?"":", "+esc(weekLabel(PERIOD))}</div>
+    ${cell("Visits",int(tot.visits))}${cell("Registrations",int(tot.registrations))}${cell("Sales",int(tot.sales))}${cell("Commission",money(tot.commission_usd_eq),"in USD at seat parity","money"+(tot.commission_usd_eq?"":" zero"))}</div>`;
+  $("#board").innerHTML=head+body+foot;
+  $("#board").querySelectorAll(".copy").forEach(b=>b.onclick=()=>copy(b));
+  const u=PERIOD==="all"?DATA.unattributed.all:(DATA.unattributed.weeks[PERIOD]||{visits:0,registrations:0,sales:0});
+  $("#unattr").textContent=(active?"":"No referral activity in this period yet. ")+`Not credited to anyone${PERIOD==="all"?"":" this week"}: ${plural(u.visits,"visit")}, ${plural(u.registrations,"registration")} and ${plural(u.sales,"sale")} that arrived without a member's code.`;
+  $("#terms-rate").textContent=`${Math.round(T.rate_min*100)} to ${Math.round(T.rate_max*100)}% (default ${Math.round(T.rate_default*100)}%) of what the buyer actually paid, tax included, with refunds removed. Shown in the buyer's currency; team totals convert at the seat price. Payouts follow Adi's schedule.`;
+  $("#ex-code").textContent=(rows[0]?.m.code||"adi")+"-p014";
+  const src=DATA.sources||{},stale=src.visits&&src.visits!=="live"?` Visits ${src.visits}.`:"";
+  $("#meta").textContent=`Numbers last changed ${DATA.generated_at}, checked every 10 minutes.${stale}`;
 }
-function buildLinks(){
-  const slug=$("#lb-member").value, post=($("#lb-post").value||"p001").trim().toLowerCase().replace(/[^a-z0-9-]/g,"");
-  const q=`utm_source=${$("#lb-source").value}&utm_medium=${$("#lb-medium").value}&utm_campaign=cohort-2026-09-30&utm_content=${slug}-${post}`;
-  $("#lb-out").innerHTML=[["Free workshop","/workshop/"],["Paid seat ($99)","/masterclass/"]].map(([l,p])=>{const u=`${SITE}${p}?${q}`;return `<div><div class="muted" style="font-size:12px;margin-bottom:4px">${l}</div><code>${u}</code></div>`}).join("")+`<div><button class="ghost" type="button" id="copy">Copy free-workshop link</button></div>`;
-  $("#copy").onclick=()=>{navigator.clipboard.writeText(`${SITE}/workshop/?${q}`);$("#copy").textContent="Copied ✓"};
+
+async function copy(b){
+  const u=b.dataset.u;
+  try{await navigator.clipboard.writeText(u)}catch{const t=document.createElement("textarea");t.value=u;t.setAttribute("readonly","");t.style.position="fixed";t.style.opacity="0";document.body.append(t);t.select();document.execCommand("copy");t.remove()}
+  b.classList.add("ok");b.innerHTML=DONE+"<span>Copied</span>";$("#live").textContent="Link copied";
+  clearTimeout(b._t);b._t=setTimeout(()=>{b.classList.remove("ok");b.innerHTML=COPY+"<span>Copy</span>"},1800);
 }
-["#lb-member","#lb-post","#lb-source","#lb-medium"].forEach(s=>document.addEventListener("input",e=>{if(e.target.matches(s)&&DATA)buildLinks()}));
-async function unlock(pass,remember){
-  try{DATA=await decrypt(pass);$("#gate").hidden=true;$("#app").hidden=false;if(remember)sessionStorage.setItem("ref-pass",pass);render();
-    setInterval(async()=>{try{DATA=await decrypt(pass);render()}catch(e){}},600000);}
-  catch(e){$("#err").textContent="That passphrase didn't unlock it. Check with Adi.";sessionStorage.removeItem("ref-pass")}
+
+async function load(){
+  try{
+    const r=await fetch("referrals.stats.json?v="+Date.now(),{cache:"no-store"});
+    if(!r.ok)throw new Error(r.status);
+    DATA=await r.json();
+    if(PERIOD!=="all"&&!DATA.weeks.includes(PERIOD)&&PERIOD!==saleWeek())PERIOD="all";
+    render();
+  }catch(e){
+    if(DATA)return; // keep showing the last good numbers
+    $("#board").innerHTML=`<div class="state">The numbers didn't load. Check your connection and try again.<br><button type="button" id="retry">Try again</button></div>`;
+    $("#retry").onclick=()=>{$("#board").innerHTML='<div class="state">Loading the numbers…</div>';load()};
+  }
 }
-$("#unlock").onsubmit=e=>{e.preventDefault();$("#err").textContent="";unlock($("#pass").value.trim(),true)};
-const saved=sessionStorage.getItem("ref-pass");if(saved)unlock(saved,false);
+load();setInterval(load,300000);
 </script>
 </body>
 </html>
