@@ -1421,7 +1421,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
 
       <div class="viz wide">
         <div class="vtitle">The Path a Visitor Moves Through</div>
-        <svg viewBox="0 106 860 247" role="img" aria-label="Journey flowchart: organic and paid lanes converge into landing, thank-you and content pages, then a ready-or-not decision branches to a sales page and checkout, or into a nurture loop that feeds back.">
+        <svg viewBox="0 106 860 247" role="img" aria-label="Journey flowchart: organic and paid lanes converge into landing, thank-you and content pages, then a ready-or-not decision branches to a sales page, which sends the buyer to checkout for an offer under about $1K or to a booked call for $1K or more, or into a nurture loop that feeds back.">
           <defs>
             <marker id="ja" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--accent)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
             <marker id="jt" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--teal)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
@@ -1453,9 +1453,12 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
           <text x="628" y="272" text-anchor="middle" fill="var(--amber)" font-size="10.5" font-weight="700">not yet</text>
           <rect x="690" y="122" width="150" height="48" rx="11" fill="var(--teal-bg)"/><text x="765" y="141" text-anchor="middle" fill="var(--teal)" font-weight="700" font-size="12.5">Offer</text><text x="765" y="156" text-anchor="middle" class="svmute" font-size="10.5">make the ask</text>
           <rect x="690" y="250" width="150" height="50" rx="11" fill="#0f9e75"/><text x="765" y="270" text-anchor="middle" class="svwhite" font-size="13">Checkout</text><text x="765" y="286" text-anchor="middle" class="svwhite2" font-size="10.5">money in the bank</text>
+          <text x="775" y="214" fill="var(--teal)" font-size="10" font-weight="700">under about $1K</text>
+          <path d="M840 150 C856 150 856 330 842 330" fill="none" stroke="var(--teal)" stroke-width="1.8" marker-end="url(#jt)" class="flowline"/>
+          <rect x="690" y="312" width="150" height="40" rx="11" fill="var(--teal-bg)"/><text x="765" y="329" text-anchor="middle" fill="var(--teal)" font-weight="700" font-size="12">Booked Call</text><text x="765" y="343" text-anchor="middle" class="svmute" font-size="10">about $1K or more</text>
           <rect x="374" y="286" width="194" height="52" rx="11" fill="var(--panel)" stroke="var(--amber)" stroke-width="1.4"/><text x="471" y="306" text-anchor="middle" fill="var(--amber)" font-weight="700" font-size="12.5">Nurture sequence</text><text x="471" y="323" text-anchor="middle" class="svmute" font-size="10.5">email · WhatsApp · SMS → loop back</text>
         </svg>
-        <div class="cap">Buyers go to checkout. Everyone else loops back through nurture to the next offer.</div>
+        <div class="cap">Under about $1K, buyers go to checkout. About $1K or more books a call first. Everyone else loops back through nurture to the next offer.</div>
       </div>
 
       <!-- ===================== S1 ===================== -->
@@ -1878,12 +1881,12 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
             <rect x="716" y="152" width="112" height="52" rx="9" class="node"/><text x="772" y="172" text-anchor="middle" class="svsub" font-size="9.5">checkout + receipt</text><text x="772" y="188" text-anchor="middle" class="svmute" font-size="9">webhook verified</text>
           </g>
           <g font-size="9.5">
-            <rect x="116" y="244" width="112" height="38" rx="8" fill="var(--panel-2)"/><text x="172" y="267" text-anchor="middle" class="svmute" font-size="9.5">Form filled</text>
-            <rect x="236" y="244" width="112" height="38" rx="8" fill="var(--panel-2)"/><text x="292" y="267" text-anchor="middle" class="svmute" font-size="9.5">Call scheduled</text>
-            <rect x="356" y="244" width="112" height="38" rx="8" fill="var(--panel-2)"/><text x="412" y="267" text-anchor="middle" class="svmute" font-size="9.5">Qualified / not</text>
-            <rect x="476" y="244" width="112" height="38" rx="8" fill="var(--panel-2)"/><text x="532" y="267" text-anchor="middle" class="svmute" font-size="9.5">Call held</text>
-            <rect x="596" y="244" width="112" height="38" rx="8" fill="var(--panel-2)"/><text x="652" y="267" text-anchor="middle" class="svmute" font-size="9.5">Proposal sent</text>
-            <rect x="716" y="244" width="112" height="38" rx="8" fill="var(--teal-bg)"/><text x="772" y="267" text-anchor="middle" fill="var(--teal)" font-weight="700" font-size="9.5">Payment completed</text>
+            <rect x="116" y="244" width="112" height="38" rx="8" fill="var(--panel-2)"/><text x="172" y="267" text-anchor="middle" class="svmute" font-size="9.5">Form Filled</text>
+            <rect x="236" y="244" width="112" height="38" rx="8" fill="var(--panel-2)"/><text x="292" y="267" text-anchor="middle" class="svmute" font-size="9.5">Eval Call Scheduled</text>
+            <rect x="356" y="244" width="112" height="38" rx="8" fill="var(--panel-2)"/><text x="412" y="267" text-anchor="middle" class="svmute" font-size="9.5">Qualified or Not</text>
+            <rect x="476" y="244" width="112" height="38" rx="8" fill="var(--panel-2)"/><text x="532" y="267" text-anchor="middle" class="svmute" font-size="9.5">Sales Call Held</text>
+            <rect x="596" y="244" width="112" height="38" rx="8" fill="var(--panel-2)"/><text x="652" y="267" text-anchor="middle" class="svmute" font-size="9.5">Proposal Sent</text>
+            <rect x="716" y="244" width="112" height="38" rx="8" fill="var(--teal-bg)"/><text x="772" y="260" text-anchor="middle" fill="var(--teal)" font-weight="700" font-size="9">Proposal Accepted,</text><text x="772" y="273" text-anchor="middle" fill="var(--teal)" font-weight="700" font-size="9">Payment Completed</text>
           </g>
           <path d="M532 112 C532 126 500 130 500 140 V318 C500 330 506 336 516 336" fill="none" stroke="var(--amber)" stroke-width="1.6" stroke-dasharray="5 6" marker-end="url(#mkCloseAmber)" opacity=".9"/>
           <rect x="520" y="316" width="324" height="54" rx="9" fill="var(--amber-bg)"/>
@@ -1999,7 +2002,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:34px 22px;colo
           <rect x="44" y="518" width="800" height="114" rx="14" fill="var(--panel-2)" stroke="var(--line-2)"/>
           <rect x="60" y="530" width="32" height="21" rx="6" fill="var(--pink)"/><text x="76" y="541" text-anchor="middle" class="svwhite" font-size="11.5">S5</text>
           <text x="102" y="541" class="svlabel" font-size="14">Backend offer: routed by engagement, not by date</text>
-          <text x="102" y="558" class="svmute" font-size="10.5">the dual-path variant: same funnel, two prices, chosen by behaviour</text>
+          <text x="102" y="558" class="svmute" font-size="10.5">depth picks the follow-up and the offer; /apply picks the call band by score</text>
           <g font-size="10">
             <rect x="60" y="570" width="380" height="50" rx="9" class="node"/><text x="74" y="590" class="svlabel" font-size="10.5">Shallow branch → low-ticket offer</text><text x="74" y="606" class="svmute" font-size="9">self-serve checkout, no call, order bump on top</text>
             <rect x="452" y="570" width="390" height="50" rx="9" class="node" stroke="var(--teal)"/><text x="466" y="590" fill="var(--teal)" font-weight="700" font-size="10.5">Deep branch → premium offer</text><text x="466" y="606" class="svmute" font-size="9">booked call or high-ticket page: they've consumed everything</text>
