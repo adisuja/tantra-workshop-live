@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-04T06:01:01+0530",
-  "version": 217,
+  "updated": "2026-10-05T18:56:23+0530",
+  "version": 220,
   "last_id": 211,
   "team": [
    {
@@ -5661,6 +5661,11 @@
      "ts": "2026-10-04T06:01:00+0530",
      "who": "claude",
      "note": "Calendar files carry a written description and reminders 5, 10, 15 and 30 minutes before; the new centre's own file and the funnel Worker's invites still lack them (AUDIT requests to B/D and G). Merged into onboarding-v2, Worker deployed (6cb4a0b4), mirror published (148392c8)."
+    },
+    {
+     "ts": "2026-10-05T18:56:23+0530",
+     "who": "claude",
+     "note": "Every calendar file now has a description and 5/10/15/30 minute reminders: series feed, new centre, funnel Worker invites. Close-out merged (onboarding-v2 5516dbe), Worker bf4e43f7, mirror 649d6d2."
     }
    ],
    "order": 1960
@@ -5699,6 +5704,11 @@
      "ts": "2026-10-04T06:01:01+0530",
      "who": "claude",
      "note": "AUDIT.md 630 findings; P0 recheck 29 fixed, 8 partly, 26 open (owners in LOG.md). probe-details.mjs guards the classes Adi listed. Merged into onboarding-v2, Worker deployed (6cb4a0b4), mirror published (148392c8)."
+    },
+    {
+     "ts": "2026-10-05T18:56:23+0530",
+     "who": "claude",
+     "note": "P0s: 56 fixed, 7 open (Wistia upload route x3, Meta Ads, calendar-invite domain auto-buy, Zoom join URL, attendee creation). probe-details 0 failures. Close-out merged (onboarding-v2 5516dbe), Worker bf4e43f7, mirror 649d6d2."
     }
    ],
    "order": 1970
@@ -5961,6 +5971,11 @@
      "ts": "2026-10-04T06:01:01+0530",
      "who": "claude",
      "note": "All 24 guide flowcharts rebuilt from one journey model; probe-flows green. Merged into onboarding-v2, Worker deployed (6cb4a0b4), mirror published (148392c8)."
+    },
+    {
+     "ts": "2026-10-05T18:56:23+0530",
+     "who": "claude",
+     "note": "Guide charts: probe-flows and probe-details agree, 0 flowchart failures; 113 of 129 screenshots re-cropped. Close-out merged (onboarding-v2 5516dbe), Worker bf4e43f7, mirror 649d6d2."
     }
    ],
    "order": 2050
