@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-05T18:56:23+0530",
-  "version": 220,
-  "last_id": 211,
+  "updated": "2026-10-05T21:22:15+0530",
+  "version": 221,
+  "last_id": 212,
   "team": [
    {
     "name": "Adi",
@@ -6181,6 +6181,33 @@
     }
    ],
    "order": 2110
+  },
+  {
+   "id": "T-212",
+   "title": "Personal plan from the survey + Live Q&A and review submissions (Lane A)",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "review",
+   "why": "",
+   "spec": "Survey on Thank You Page 1 feeds the agentic centre; start-plan shows a plan generated from the answers (funnel, reason, every Day 0 to Day 3 task with times and hours). Questions for the live Q&A and work for review from both centres land in admin Live Q&A and /admin/live.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-05T21:22:15+0530",
+     "who": "claude",
+     "note": "Live: Worker ccb818b7, mirror 53e10ea, migration 0009 applied remotely; tested as an attendee on the live site."
+    }
+   ],
+   "order": 2120
   }
  ]
 }
