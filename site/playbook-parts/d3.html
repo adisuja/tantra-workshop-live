@@ -1,7 +1,7 @@
 <section style="--hue:#EF4444;--hue-ink:color-mix(in srgb,#EF4444 70%,var(--ink))" id="d3">
       <div class="chap"><span class="no">Day 3</span><span class="tag">Orchestrate · Measure · Experiment</span></div>
-      <h2>Make an AI Run It, Then Prove It Works</h2>
-      <p class="lead">The last session. Claude Code takes over the running of your funnel through each tool's API or MCP server, one dashboard shows every number, and a weekly loop swaps one page or template at a time and keeps the winner.</p>
+      <h2>Hand the Funnel to an AI Agent, Then Prove Every Number</h2>
+      <p class="lead">This is where the system becomes agentic. Claude Code takes over the running of your funnel through each tool's API or MCP server, one dashboard shows every number from the first touch to the cleared payment, and a weekly loop replaces one page or template at a time and keeps the winner. What you leave with is a revenue engine that improves itself every week.</p>
       <p>Claude Code is the worked example. Any agentic coding tool that supports MCP works the same way.</p>
       <p><b>When:</b> Steps 1 to 5 happen now. Steps 6 to 8 happen after your first run finishes (your event date from Day 1 Step 7), because they read that run's numbers.</p>
       <h3 id="d3-step-1-connect-claude-code-to-every-tool">Step 1: Connect Claude Code to Every Tool</h3>
@@ -17,20 +17,20 @@
             <li>For Sheets and GA4: enable the <b>Google Sheets API</b> and the <b>Google Analytics Data API</b> in that Google Cloud project. Then in GA4, open <b>Admin → Property access management</b>, add the service account's email and give it the <b>Viewer</b> role.</li>
             <li>Test it. Ask: <em>"List my Tantra campaigns with sends, RSVPs and replies for the last seven days."</em> The answer must match Tantra's own dashboard.</li>
           </ol>
-          <p><b>Example:</b> for a SaaS company on route B, the folder holds the Day 1 and Day 2 files, a Tantra key, the Cloudflare API token from Day 1 and one Google service account that covers Sheets and GA4.</p>
+          <p><b>Example:</b> for a software company on route B, the folder holds the Day 1 and Day 2 files, a Tantra key, the Cloudflare API token from Day 1 and one Google service account that covers Sheets and GA4.</p>
         </div>
         <div class="meta"><span><i>Owner</i>You · agent connects</span><span><i>Tool</i>Claude Code</span><span><i>Time</i>1 h</span><span class="dl"><i>Deliverable</i>Every tool reachable from one folder</span><span class="pv"><i>Proof</i>Claude Code quotes last week's Tantra numbers correctly</span></div>
       </div>
       <div class="tbl"><table>
         <thead><tr><th>Tool</th><th>Connect with</th><th>Claude Code uses it to</th></tr></thead>
         <tbody>
-          <tr><td><b>Tantra</b></td><td>MCP server · REST API key · outbound webhooks (11 event types)</td><td>Read campaigns, sends, RSVPs and replies; draft campaigns and step templates; push replies and RSVPs to your CRM</td></tr>
-          <tr><td><b>GoHighLevel</b> (route A)</td><td>API with a Private Integration token</td><td>Read and update contacts, tags, opportunities and pipeline stages</td></tr>
-          <tr><td><b>Cloudflare Workers</b> (route B)</td><td>API token · the <code>wrangler</code> CLI</td><td>Deploy your pages and automation Workers; run scheduled jobs with Cron Triggers</td></tr>
-          <tr><td><b>Google Sheets and Drive</b></td><td>A service account JSON, with the sheet shared to it</td><td>Write the dashboard</td></tr>
-          <tr><td><b>Google Analytics 4</b></td><td>Analytics Data API, same service account, added as Viewer on the property</td><td>Visits and registrations by page variant and UTM</td></tr>
-          <tr><td><b>Dodo Payments</b></td><td>API key · payment webhook</td><td>Sales and revenue</td></tr>
-          <tr><td><b>Zoom or WebinarGeek</b></td><td>Through Tantra's integration</td><td>Attendance, once you refresh it in Tantra after each session</td></tr>
+          <tr><td data-label="Tool"><b>Tantra</b></td><td data-label="Connect with">MCP server · REST API key · outbound webhooks (11 event types)</td><td data-label="Claude Code uses it to">Read campaigns, sends, RSVPs and replies; draft campaigns and step templates; push replies and RSVPs to your CRM</td></tr>
+          <tr><td data-label="Tool"><b>GoHighLevel</b> (route A)</td><td data-label="Connect with">API with a Private Integration token</td><td data-label="Claude Code uses it to">Read and update contacts, tags, opportunities and pipeline stages</td></tr>
+          <tr><td data-label="Tool"><b>Cloudflare Workers</b> (route B)</td><td data-label="Connect with">API token · the <code>wrangler</code> CLI</td><td data-label="Claude Code uses it to">Deploy your pages and automation Workers; run scheduled jobs with Cron Triggers</td></tr>
+          <tr><td data-label="Tool"><b>Google Sheets and Drive</b></td><td data-label="Connect with">A service account JSON, with the sheet shared to it</td><td data-label="Claude Code uses it to">Write the dashboard</td></tr>
+          <tr><td data-label="Tool"><b>Google Analytics 4</b></td><td data-label="Connect with">Analytics Data API, same service account, added as Viewer on the property</td><td data-label="Claude Code uses it to">Visits and registrations by page variant and UTM</td></tr>
+          <tr><td data-label="Tool"><b>Dodo Payments</b></td><td data-label="Connect with">API key · payment webhook</td><td data-label="Claude Code uses it to">Sales and revenue</td></tr>
+          <tr><td data-label="Tool"><b>Zoom or WebinarGeek</b></td><td data-label="Connect with">Through Tantra's integration</td><td data-label="Claude Code uses it to">Attendance, once you refresh it in Tantra after each session</td></tr>
         </tbody>
       </table></div>
       <div class="viz wide">
@@ -98,7 +98,7 @@
       </div>
       <div class="vipslot" data-step="d3-step-1-connect-claude-code-to-every-tool"></div>
 <h3 id="d3-step-2-brief-it-before-it-changes-anything">Step 2: Brief It Before It Changes Anything</h3>
-      <div class="box do"><div class="h">◆ Copy this as your first message</div>
+      <div class="box do"><div class="h">Copy This as Your First Message</div>
         <p><em>"Read every file in this folder in full. Confirm you've read them. Then interview me, a few questions at a time, about brand and story, offer and pricing, buyer, traffic channels, and the tools connected here. Wait for my answers. Then write one spec file that holds every page, template, price and automation, and restate it for my approval. Do not change anything live until I approve it."</em></p></div>
       <div class="task">
         <div class="th"><span class="tn">Task 3.2</span><b>Run the Interview, Then Approve the Spec</b></div>
@@ -110,7 +110,7 @@
             <li>Read the restated spec line by line and correct it.</li>
             <li>Approve. From then on every change goes into the spec first, and Claude Code applies it to the live pages and campaigns. On route A, GoHighLevel page content can't be edited through its API, so Claude Code gives you the page changes to paste in, and applies the rest itself.</li>
           </ol>
-          <p><b>Example:</b> for a SaaS company, the interview catches a trial length that differs between the landing page and the reminder email.</p>
+          <p><b>Example:</b> for a course business, the interview catches a cohort start date that differs between the landing page and the reminder email.</p>
         </div>
         <div class="meta"><span><i>Owner</i>You · agent builds</span><span><i>Tool</i>Claude Code</span><span><i>Time</i>3 to 5 h</span><span class="dl"><i>Deliverable</i>An approved spec file and a live URL</span><span class="pv"><i>Proof</i>You change a line in the spec and it goes live without you touching a tool: the Worker-served page on route B, a Tantra step template on route A</span></div>
       </div>
@@ -126,7 +126,7 @@
             <li>Test three automations from the diagram: 1 (confirmation and reminders), 3 (your own page's form) and 4 (the <code>webinar attended</code> or <code>live webinar not watched</code> tag). Use a short test session (10 minutes in Zoom or WebinarGeek): register yourself and attend, register a second address and don't show, then refresh attendance in Tantra.</li>
             <li>Ask Claude Code to read both contacts back and confirm every tag and stage.</li>
           </ol>
-          <p><b>Example:</b> for a SaaS company, the no-show test shows the replay email firing but the <code>live webinar not watched</code> tag missing, so the next-day follow-up never sends.</p>
+          <p><b>Example:</b> for a consultancy, the no-show test shows the replay email firing but the <code>live webinar not watched</code> tag missing, so the next-day follow-up never sends.</p>
         </div>
         <div class="meta"><span><i>Owner</i>You · agent wires it</span><span><i>Tool</i>GoHighLevel or Cloudflare Workers · Tantra webhooks</span><span><i>Time</i>4 to 6 h</span><span class="dl"><i>Deliverable</i>A register with honest statuses, three automations proven</span><span class="pv"><i>Proof</i>The no-show contact gets its tag without you touching anything</span></div>
       </div>
@@ -192,7 +192,7 @@
             <li>Ask Claude Code to write the job that fills one row per run from Tantra, GA4, your CRM and Dodo Payments. On route B, schedule it nightly with a Cron Trigger; on route A, ask Claude Code to run it before each weekly review.</li>
             <li>Walk the funnel on your phone as a test contact, run the job, and check your row. Leave a cell blank rather than estimate it.</li>
           </ol>
-          <p><b>Example:</b> for a SaaS company, the cold calendar run and the LinkedIn run sit on separate rows, so cost per trial for each channel is side by side.</p>
+          <p><b>Example:</b> for a consultancy, the cold calendar run and the LinkedIn run sit on separate rows, so the cost per booked consultation for each channel is side by side.</p>
         </div>
         <div class="meta"><span><i>Owner</i>You · agent wires it</span><span><i>Tool</i>Google Sheets · GA4 · Clarity · Claude Code</span><span><i>Time</i>2 to 3 h</span><span class="dl"><i>Deliverable</i>A dashboard that fills without typing</span><span class="pv"><i>Proof</i>Your test registration appears as a row you never typed</span></div>
       </div>
@@ -207,7 +207,7 @@
             <li>Launch the smallest version of each live channel, every link UTM tagged, all pointing at one registration page. Cold email and calendar invites wait until the Day 1 inboxes have warmed for 2 to 3 weeks (about the week after your workshop); until then, run LinkedIn inside its daily caps and email people who already know you.</li>
             <li>Read nothing until the run has finished. Numbers read after a few hours kill things that were working.</li>
           </ol>
-          <p><b>Example:</b> for a SaaS company, one LinkedIn batch and one email to past trial users feed the same session; cold calendar invites join once warm-up is done.</p>
+          <p><b>Example:</b> for a course business, one LinkedIn batch and one email to past course buyers feed the same session; cold calendar invites join once warm-up is done.</p>
         </div>
         <div class="meta"><span><i>Owner</i>You</span><span><i>Tool</i>Tantra · your channels</span><span><i>Time</i>2 h to launch</span><span class="dl"><i>Deliverable</i>The first full run on the dashboard</span><span class="pv"><i>Proof</i>Every buyer traces back to a channel via their UTM</span></div>
       </div>
@@ -223,19 +223,19 @@
             <li>Find that row in the table below. It names the one page or template to swap.</li>
             <li>Put your fetched numbers into the calculator to see cost per buyer against lifetime value.</li>
           </ol>
-          <p><b>Example:</b> for a SaaS company, most registrants show up but almost nobody clicks the CTA, so the offer slide gets swapped, not the reminders.</p>
+          <p><b>Example:</b> for a software company, most registrants show up but almost nobody clicks the CTA, so the offer slide gets swapped, not the reminders.</p>
         </div>
         <div class="meta"><span><i>Owner</i>You · agent fetches</span><span><i>Tool</i>The dashboard · the calculator</span><span><i>Time</i>30 min</span><span class="dl"><i>Deliverable</i>One named step</span><span class="pv"><i>Proof</i>One step named, not three</span></div>
       </div>
       <div class="tbl"><table>
         <thead><tr><th>The dashboard shows</th><th>Usually means</th><th>Swap this</th></tr></thead>
         <tbody>
-          <tr><td><b>Sends go out, few visits</b></td><td>Wrong list or weak hook: a traffic problem, not a funnel one</td><td>The outreach template in Tantra, or the list</td></tr>
-          <tr><td><b>Visits, few registrations</b></td><td>The page isn't earning the click</td><td>The landing page headline and hero</td></tr>
-          <tr><td><b>Registrations, low show rate</b></td><td>Reminders aren't landing</td><td>One reminder template, or its timing</td></tr>
-          <tr><td><b>Attendees, few CTA clicks</b></td><td>The offer isn't landing</td><td>The offer slide and the CTA</td></tr>
-          <tr><td><b>CTA clicks, few calls or sales</b></td><td>Friction after the click</td><td>The booking page or the follow-up email</td></tr>
-          <tr><td><b>One channel's cost per buyer is high</b></td><td>The funnel is fine; that channel's traffic isn't</td><td>Move budget to the cheapest channel</td></tr>
+          <tr><td data-label="The dashboard shows"><b>Sends go out, few visits</b></td><td data-label="Usually means">Wrong list or weak hook: a traffic problem, not a funnel one</td><td data-label="Swap this">The outreach template in Tantra, or the list</td></tr>
+          <tr><td data-label="The dashboard shows"><b>Visits, few registrations</b></td><td data-label="Usually means">The page isn't earning the click</td><td data-label="Swap this">The landing page headline and hero</td></tr>
+          <tr><td data-label="The dashboard shows"><b>Registrations, low show rate</b></td><td data-label="Usually means">Reminders aren't landing</td><td data-label="Swap this">One reminder template, or its timing</td></tr>
+          <tr><td data-label="The dashboard shows"><b>Attendees, few CTA clicks</b></td><td data-label="Usually means">The offer isn't landing</td><td data-label="Swap this">The offer slide and the CTA</td></tr>
+          <tr><td data-label="The dashboard shows"><b>CTA clicks, few calls or sales</b></td><td data-label="Usually means">Friction after the click</td><td data-label="Swap this">The booking page or the follow-up email</td></tr>
+          <tr><td data-label="The dashboard shows"><b>One channel's cost per buyer is high</b></td><td data-label="Usually means">The funnel is fine; that channel's traffic isn't</td><td data-label="Swap this">Move budget to the cheapest channel</td></tr>
         </tbody>
       </table></div>
       <div class="calc" id="calc">
@@ -270,7 +270,7 @@
             <li>Keep the winner, revert the loser in the spec, and log the change, the date, the metric you expected to move and the result.</li>
             <li>Put the weekly review in your calendar as a recurring event.</li>
           </ol>
-          <p><b>Example:</b> for a SaaS company, variant B's headline names the integration buyers kept asking about. B wins on registration rate, becomes the page, and next week's experiment moves to show rate.</p>
+          <p><b>Example:</b> for a software company, variant B's headline names the integration buyers kept asking about. B wins on registration rate, becomes the page, and next week's experiment moves to show rate.</p>
         </div>
         <div class="meta"><span><i>Owner</i>You · agent fetches</span><span><i>Tool</i>Claude Code · the dashboard · the spec</span><span><i>Time</i>60 min</span><span class="dl"><i>Deliverable</i>One live experiment and an experiment log</span><span class="pv"><i>Proof</i>Both halves are counted separately on the dashboard</span></div>
       </div>
@@ -325,11 +325,16 @@
             <li><strong>My ascension offer is ___:</strong> the rung above what they just bought.</li>
             <li><strong>My retention mechanism is ___:</strong> what produces the first win, and by when. Everyone else stays warm through the five tags (webinar registrant, webinar attended, live webinar not watched, watched webinar replay, purchased): each tag triggers its own follow-up.</li>
           </ol>
-          <p><b>Example:</b> for a SaaS company, line 3 reads "show rate; this week we test a WhatsApp reminder at one hour before."</p>
+          <p><b>Example:</b> for a consultancy, line 3 reads "show rate; this week we test a WhatsApp reminder at one hour before."</p>
         </div>
         <div class="meta"><span><i>Owner</i>You</span><span><i>Tool</i>One page</span><span><i>Time</i>45 min</span><span class="dl"><i>Deliverable</i>The scale plan</span><span class="pv"><i>Proof</i>Lines 1 and 2 contain fetched numbers</span></div>
       </div>
-      <div class="box do"><div class="h">◆ Your Day 3 output</div>
-        <p>Claude Code connected to Tantra and every other tool, an approved spec, three automations proven with a real contact, a dashboard that fills itself, a first test run, a weekly experiment loop in the calendar, and a five-line scale plan.</p></div>
+      <div class="box sum"><div class="h">Your Day 3 Summary</div>
+        <ol>
+          <li>Claude Code connected to Tantra and every other tool, working from an approved spec.</li>
+          <li>Three automations proven with a real contact.</li>
+          <li>A dashboard that fills itself, with a first test run on it.</li>
+          <li>A weekly experiment loop in your calendar, and a five-line scale plan.</li>
+        </ol></div>
 <div class="vipslot" data-step="d3-step-8-write-the-scale-plan"></div>
 </section>
