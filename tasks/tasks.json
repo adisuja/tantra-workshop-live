@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-05T21:22:15+0530",
-  "version": 221,
-  "last_id": 212,
+  "updated": "2026-10-05T21:31:06+0530",
+  "version": 222,
+  "last_id": 213,
   "team": [
    {
     "name": "Adi",
@@ -6208,6 +6208,34 @@
     }
    ],
    "order": 2120
+  },
+  {
+   "id": "T-213",
+   "title": "Set up the Endy Inboxes white-label partnership",
+   "area": "Ops",
+   "owner": "Nelbin",
+   "assignee": "Nelbin",
+   "reviewers": [
+    "Nelbin",
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "",
+   "spec": "Attendees who pick the partner mailbox option in Choose Your Tools (Google Workspace through our partner) are recorded automatically as leads in the Inbox Partner Leads tab of the Tantra Work Tracker, and the card tells them the partner team contacts them. Agree the white-label or affiliate partnership with Endy Inboxes: an automatic lead hand-off to Endy (give them the sheet tab or send an email per lead), a revenue share on every attendee referred, and one call with Endy to agree it. No per-attendee work for the team. Endy is never named to the attendee.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-05T21:31:06+0530",
+     "who": "claude",
+     "note": "Added."
+    }
+   ],
+   "order": 2130
   }
  ]
 }
