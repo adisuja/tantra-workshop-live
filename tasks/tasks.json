@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-05T21:31:06+0530",
-  "version": 222,
+  "updated": "2026-10-06T01:37:57+0530",
+  "version": 226,
   "last_id": 213,
   "team": [
    {
@@ -1529,6 +1529,11 @@
      "ts": "2026-09-24",
      "who": "Claude",
      "note": "Owner re-logged the Claude CLI (`claude auth login`). The pipeline now pins standard-context Opus (OPS_CLAUDE_MODEL=opus; the CLI default 1M-context model needs usage credits) and the exact binary (~/.local/bin/claude). The launchd scheduler com.tantra.ops was never installed: it's now installed, running every 10 minutes, and its first tick delivered a course plan and mirrored 4 intake rows to the Work Tracker. `--one` runs are now recorded as deliveries. Remove with: launchctl bootout gui/$(id -u)/com.tantra.ops"
+    },
+    {
+     "ts": "2026-10-06T01:37:57+0530",
+     "who": "claude",
+     "note": "Owner 2026-10-06: the playbook and both centres promise each day's answers run through an AI workflow and come back the same day as a PDF and a live link by WhatsApp and email, for every attendee. Not built yet (no PDF generation or WhatsApp/email delivery in cloud/src); keep this open until it runs end to end per attendee."
     }
    ],
    "order": 210,
@@ -1573,6 +1578,11 @@
      "ts": "2026-09-24",
      "who": "Claude",
      "note": "Unblocked: T-031 has a working agent now."
+    },
+    {
+     "ts": "2026-10-06T01:37:57+0530",
+     "who": "claude",
+     "note": "Owner 2026-10-06: the playbook and both centres promise each day's answers run through an AI workflow and come back the same day as a PDF and a live link by WhatsApp and email, for every attendee. Not built yet (no PDF generation or WhatsApp/email delivery in cloud/src); keep this open until it runs end to end per attendee."
     }
    ],
    "order": 220,
@@ -1615,6 +1625,11 @@
      "ts": "2026-09-25",
      "who": "Claude",
      "note": "Blocks T-123 (launch-critical messages)."
+    },
+    {
+     "ts": "2026-10-06T01:37:57+0530",
+     "who": "claude",
+     "note": "Owner 2026-10-06: the playbook and both centres promise each day's answers run through an AI workflow and come back the same day as a PDF and a live link by WhatsApp and email, for every attendee. Not built yet (no PDF generation or WhatsApp/email delivery in cloud/src); keep this open until it runs end to end per attendee."
     }
    ],
    "order": 230,
@@ -1660,6 +1675,11 @@
      "ts": "2026-09-24",
      "who": "Claude",
      "note": "Unblocked: T-031 has a working agent now."
+    },
+    {
+     "ts": "2026-10-06T01:37:57+0530",
+     "who": "claude",
+     "note": "Owner 2026-10-06: the playbook and both centres promise each day's answers run through an AI workflow and come back the same day as a PDF and a live link by WhatsApp and email, for every attendee. Not built yet (no PDF generation or WhatsApp/email delivery in cloud/src); keep this open until it runs end to end per attendee."
     }
    ],
    "order": 240,
