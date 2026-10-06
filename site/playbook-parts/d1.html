@@ -352,6 +352,42 @@
         </div>
         <div class="meta"><span><i>Tool</i>GoDaddy or Cloudflare Registrar, Cloudflare, Google Workspace, Tantra, Cal.com</span><span><i>Time</i>90 to 120 min, then warm-up runs on its own</span><span class="pv"><i>Proof</i>MX, SPF, DKIM and DMARC pass in Google Admin Toolbox (Check MX); warm-up is on; LinkedIn, WhatsApp and calendar show connected; the token test says valid</span></div>
       </div>
+      <details class="wt" id="wt-cloudflare"><summary>Watch how to connect Cloudflare<span class="len">1:13</span></summary>
+        <div class="wtb">
+          <video controls playsinline preload="none" poster="../walkthroughs/cloudflare/poster.jpg"><source src="../walkthroughs/cloudflare/cloudflare.mp4" type="video/mp4"><track kind="captions" src="../walkthroughs/cloudflare/captions.vtt" srclang="en" label="English"></video>
+          <h4>Which Plan</h4><p>The free Cloudflare plan is enough. Domains you register are charged at Cloudflare's cost price, on the card in your Cloudflare account.</p>
+          <h4>Permissions to Grant</h4><ul><li>Zone, DNS, Workers Scripts and D1, each at Edit (the link on your card ticks these for you).</li><li>Account, Registrar: Domains, Admin (only on the Cloudflare Registrar path; Cloudflare offers only Read or Admin here).</li><li>Zone, Single Redirect, Edit.</li><li>Account Resources: All accounts. Zone Resources: All zones, so domains you buy later are covered.</li></ul>
+          <h4>Where the Key Appears</h4><p>After Create Token, Cloudflare shows the token once on the success page. Copy it there with the copy icon; it never appears again.</p>
+          <h4>Common Errors</h4><dl><dt>The card says a permission is missing</dt><dd>Edit the token in Cloudflare under My Profile, API Tokens and add the permission it names, then click Connect again.</dd><dt>No domain can be registered</dt><dd>Registrar: Domains must be at Admin. Read lets the agent look, not buy.</dd><dt>Your token reaches more than one account</dt><dd>Paste the Account ID from the right side of your Cloudflare overview page into the second field.</dd></dl>
+        </div>
+      </details>
+      <details class="wt" id="wt-calcom"><summary>Watch how to connect Cal.com<span class="len">0:50</span></summary>
+        <div class="wtb">
+          <video controls playsinline preload="none" poster="../walkthroughs/calcom/poster.jpg"><source src="../walkthroughs/calcom/calcom.mp4" type="video/mp4"><track kind="captions" src="../walkthroughs/calcom/captions.vtt" srclang="en" label="English"></video>
+          <h4>Which Plan</h4><p>Your current Cal.com plan works: the key acts on your own account and event types.</p>
+          <h4>Permissions to Grant</h4><ul><li>Cal.com keys have no scopes and carry your account's rights. Name the key so you can find and delete it later.</li></ul>
+          <h4>Where the Key Appears</h4><p>Settings, Developer, API keys, New. Turn on Never expires and click Create. Cal.com shows the key once, starting cal_live_.</p>
+          <h4>Common Errors</h4><dl><dt>401 when you click Connect</dt><dd>The key was cut short when copying. Create a new one and use the clipboard icon.</dd><dt>Bookings stop after a month</dt><dd>The key had an expiry date. Create one with Never expires and replace the key on your card.</dd><dt>Too many requests</dt><dd>Cal.com allows 120 calls a minute per key. Wait a minute and click Connect again.</dd></dl>
+        </div>
+      </details>
+      <details class="wt" id="wt-tantra"><summary>Watch how to connect Tantra<span class="len">0:50</span></summary>
+        <div class="wtb">
+          <video controls playsinline preload="none" poster="../walkthroughs/tantra/poster.jpg"><source src="../walkthroughs/tantra/tantra.mp4" type="video/mp4"><track kind="captions" src="../walkthroughs/tantra/captions.vtt" srclang="en" label="English"></video>
+          <h4>Which Plan</h4><p>Tantra Pro, $99 a month with a 7-day free trial, includes the REST API, webhooks and the MCP server.</p>
+          <h4>Permissions to Grant</h4><ul><li>Tantra keys reach the whole account; there are no scopes yet. Give the agent its own named key so you can revoke just that one.</li></ul>
+          <h4>Where the Key Appears</h4><p>Connectors, then API Keys under Platform, then Create API Key. Leave the expiry empty. Tantra shows the key once, starting tk_live_.</p>
+          <h4>Common Errors</h4><dl><dt>Invalid API key</dt><dd>The key was mistyped or revoked. Create a new one and paste it with the copy icon.</dd><dt>API key has expired</dt><dd>An expiry date was set. Create a new key with the expiry left empty.</dd><dt>You lost the key</dt><dd>It can't be shown again. Revoke it with the bin icon and create a new one.</dd></dl>
+        </div>
+      </details>
+      <details class="wt" id="wt-workspace"><summary>Watch how to connect Google Workspace<span class="len">1:02</span></summary>
+        <div class="wtb">
+          <video controls playsinline preload="none" poster="../walkthroughs/workspace/poster.jpg"><source src="../walkthroughs/workspace/workspace.mp4" type="video/mp4"><track kind="captions" src="../walkthroughs/workspace/captions.vtt" srclang="en" label="English"></video>
+          <h4>Which Plan</h4><p>Any Google Workspace plan with you as super admin. Business Starter is the smallest; every mailbox the agent creates is a paid seat.</p>
+          <h4>Permissions to Grant</h4><ul><li>Domain-wide delegation for the Client ID on your card, with exactly the scopes on your card: Directory domains, Directory users and Site Verification.</li><li>Nothing that reads mail, Drive or Calendar.</li></ul>
+          <h4>Where the Key Appears</h4><p>No key to copy. admin.google.com, Security, Access and data control, API controls, Manage Domain Wide Delegation, Add new. Your centre card shows the Client ID, the scopes and the proof value.</p>
+          <h4>Common Errors</h4><dl><dt>Authorize fails in the Admin console</dt><dd>The Client ID was cut short or a scope was pasted twice. Copy both again from your card.</dd><dt>The card still says not authorized</dt><dd>Google can take up to 24 hours to apply it, usually minutes. Wait, then click Connect again.</dd><dt>You don't see API controls</dt><dd>Only a super admin can set this up. Ask whoever owns the Workspace to sign in.</dd></dl>
+        </div>
+      </details>
       <div class="box sum"><div class="h">Your Day 1 Summary</div>
         <ol>
           <li>Your offer is one sentence a stranger can repeat, scored on the value equation and placed on a ladder.</li>

@@ -1,0 +1,33 @@
+WEBVTT
+
+1
+00:00:03.000 --> 00:00:11.000
+Step 1: Use a Standard key: it reaches everything the agent needs, but not your account settings or other keys.
+
+2
+00:00:11.000 --> 00:00:18.000
+Step 2: In the Twilio Console open Settings, Account settings, API keys and auth tokens.
+
+3
+00:00:18.000 --> 00:00:24.000
+Step 3: Pick your region, then click Create API key.
+
+4
+00:00:24.000 --> 00:00:31.000
+Step 4: Name it, for example RevOps agent, choose Standard and click Next.
+
+5
+00:00:31.000 --> 00:00:38.000
+Step 5: Copy the key's SID (starts SK) and its secret. Twilio shows the secret once.
+
+6
+00:00:38.000 --> 00:00:45.000
+Step 6: In your centre, paste the Account SID from your Console home page (starts AC).
+
+7
+00:00:45.000 --> 00:00:51.000
+Step 7: Paste the key's SID and its secret.
+
+8
+00:00:51.000 --> 00:00:57.000
+Step 8: Click Connect Twilio. The agent checks the key by listing your numbers.

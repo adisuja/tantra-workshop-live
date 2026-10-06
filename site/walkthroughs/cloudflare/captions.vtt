@@ -1,0 +1,41 @@
+WEBVTT
+
+1
+00:00:03.000 --> 00:00:10.000
+Step 1: Open Cloudflare from your centre card. Zone, DNS, Workers Scripts and D1 arrive set to Edit.
+
+2
+00:00:10.000 --> 00:00:17.000
+Step 2: Click Add more. In the new Account row, type Registrar and pick Registrar: Domains.
+
+3
+00:00:17.000 --> 00:00:24.000
+Step 3: Set it to Admin. There is no Edit level here, and registering a domain needs Admin.
+
+4
+00:00:24.000 --> 00:00:31.000
+Step 4: Click Add more again, switch the row to Zone, type Single Redirect and pick it.
+
+5
+00:00:31.000 --> 00:00:37.000
+Step 5: Set Single Redirect to Edit. The token now has the six permissions the agent needs.
+
+6
+00:00:37.000 --> 00:00:44.000
+Step 6: Keep All accounts and All zones, so domains you buy later are covered. Click Continue to summary.
+
+7
+00:00:44.000 --> 00:00:50.000
+Step 7: Check the summary lists all six, then click Create Token.
+
+8
+00:00:50.000 --> 00:00:57.000
+Step 8: Click the copy icon. Cloudflare shows the token once, so keep it in your password manager.
+
+9
+00:00:57.000 --> 00:01:04.000
+Step 9: In your centre, paste it into API token. Leave Account ID empty unless the token reaches several accounts.
+
+10
+00:01:04.000 --> 00:01:10.000
+Step 10: Click Connect Cloudflare. The agent checks every permission before it does anything.

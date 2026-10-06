@@ -105,5 +105,23 @@
           <div class="fc r"><b>Reverse Squeeze</b><span>Traffic points at <em>content</em>, not a form, so the same link keeps working after any date passes.</span></div>
         </div>
       </div>
+      <details class="wt" id="wt-kie"><summary>Watch how to connect Kie.ai<span class="len">0:40</span></summary>
+        <div class="wtb">
+          <video controls playsinline preload="none" poster="../walkthroughs/kie/poster.jpg"><source src="../walkthroughs/kie/kie.mp4" type="video/mp4"><track kind="captions" src="../walkthroughs/kie/captions.vtt" srclang="en" label="English"></video>
+          <h4>Which Plan</h4><p>No plan: Kie sells credits, and each image or text call uses some. Top up under Billing before you connect.</p>
+          <h4>Permissions to Grant</h4><ul><li>Keys have no scopes, but each one can be limited: set Allowed Models to the models you use, a Safe-Spend limit, and an IP whitelist if you have one.</li></ul>
+          <h4>Where the Key Appears</h4><p>kie.ai/api-key, Create New Key. Copy the key from the table and paste it into your card.</p>
+          <h4>Common Errors</h4><dl><dt>401: You do not have access permissions</dt><dd>The key was copied wrong or the IP whitelist blocks the centre. Copy it again or clear the whitelist.</dd><dt>402: Insufficient credits</dt><dd>Top up under Billing. The card shows your balance once connected.</dd><dt>429: Rate limited</dt><dd>More than 20 new requests in 10 seconds. Rejected requests aren't queued, so wait a moment and send them again.</dd></dl>
+        </div>
+      </details>
+      <details class="wt" id="wt-metricool"><summary>Watch how to connect Metricool<span class="len">0:51</span></summary>
+        <div class="wtb">
+          <video controls playsinline preload="none" poster="../walkthroughs/metricool/poster.jpg"><source src="../walkthroughs/metricool/metricool.mp4" type="video/mp4"><track kind="captions" src="../walkthroughs/metricool/captions.vtt" srclang="en" label="English"></video>
+          <h4>Which Plan</h4><p>The API needs Metricool's Advanced or Custom plan. Free and Starter have no API access.</p>
+          <h4>Permissions to Grant</h4><ul><li>One token for the whole account, with no scopes. The agent only posts what you approve, to the brand you name.</li></ul>
+          <h4>Where the Key Appears</h4><p>Account Settings, API. The userId and blogId are the numbers in the address bar when you open your brand.</p>
+          <h4>Common Errors</h4><dl><dt>Access denied</dt><dd>The token was copied wrong, or the blogId belongs to another account. Copy both again from your own brand.</dd><dt>The request must include blogId and userId</dt><dd>One of the two numbers is missing. Open your brand and read both from the address bar.</dd><dt>A post goes out without its image</dt><dd>The image link was private or expired. The agent uploads its own images, so this only happens with links you add.</dd></dl>
+        </div>
+      </details>
       <div class="vipslot" data-step="d2-s1-the-traffic-engine"></div>
 </section>

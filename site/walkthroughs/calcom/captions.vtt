@@ -1,0 +1,29 @@
+WEBVTT
+
+1
+00:00:03.000 --> 00:00:10.000
+Step 1: In Cal.com open Settings, then Developer, then API keys, and click New.
+
+2
+00:00:10.000 --> 00:00:16.000
+Step 2: Keep API key selected and name it, for example RevOps agent.
+
+3
+00:00:16.000 --> 00:00:23.000
+Step 3: Turn on Never expires, so bookings keep flowing after the workshop.
+
+4
+00:00:23.000 --> 00:00:28.000
+Step 4: Click Create.
+
+5
+00:00:28.000 --> 00:00:35.000
+Step 5: Copy the key with the clipboard icon. Cal.com shows it once.
+
+6
+00:00:35.000 --> 00:00:41.000
+Step 6: In your centre, paste it into Cal.com API key.
+
+7
+00:00:41.000 --> 00:00:47.000
+Step 7: Click Connect Cal.com. The agent checks the key by reading your profile.

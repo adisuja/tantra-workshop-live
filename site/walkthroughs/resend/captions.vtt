@@ -1,0 +1,29 @@
+WEBVTT
+
+1
+00:00:03.000 --> 00:00:09.000
+Step 1: In Resend open API keys and click Create API key.
+
+2
+00:00:09.000 --> 00:00:16.000
+Step 2: Name it, for example RevOps agent.
+
+3
+00:00:16.000 --> 00:00:23.000
+Step 3: Keep Full access and All domains. The agent needs it once, to add your domain.
+
+4
+00:00:23.000 --> 00:00:28.000
+Step 4: Click Add.
+
+5
+00:00:28.000 --> 00:00:35.000
+Step 5: Copy the key with the copy icon. Resend shows it once.
+
+6
+00:00:35.000 --> 00:00:41.000
+Step 6: In your centre, paste it into Resend API key.
+
+7
+00:00:41.000 --> 00:00:48.000
+Step 7: Click Connect Resend. The agent adds your domain and writes its records in Cloudflare.

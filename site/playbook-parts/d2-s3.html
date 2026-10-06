@@ -104,5 +104,23 @@
         </div>
         <div class="fo"><b>Other types:</b> book-a-call funnels replace show-up nurture with <b>no-show rebooking</b>, which recovers a meaningful slice of bookings · product launches run a dated open-cart countdown · free-plus-shipping switches nurture to <b>post-purchase</b> entirely, because the sale already happened.</div>
       </div>
+      <details class="wt" id="wt-resend"><summary>Watch how to connect Resend<span class="len">0:51</span></summary>
+        <div class="wtb">
+          <video controls playsinline preload="none" poster="../walkthroughs/resend/poster.jpg"><source src="../walkthroughs/resend/resend.mp4" type="video/mp4"><track kind="captions" src="../walkthroughs/resend/captions.vtt" srclang="en" label="English"></video>
+          <h4>Which Plan</h4><p>The free plan sends 3,000 emails a month, up to 100 a day, from up to 3 domains. Pro is $20 a month for 50,000 emails with no daily cap.</p>
+          <h4>Permissions to Grant</h4><ul><li>Full access, all domains, used once so the agent can add your sending domain.</li><li>The agent then creates a Sending access key for that one domain and works from it.</li></ul>
+          <h4>Where the Key Appears</h4><p>API Keys, Create API key. Resend shows the key once, starting re_.</p>
+          <h4>Common Errors</h4><dl><dt>This API key is restricted to only send emails</dt><dd>A Sending access key was pasted. Create a Full access key for the first connection.</dd><dt>You can only send testing emails to your own address</dt><dd>The domain isn't verified yet. The agent writes the records; verification can take up to 72 hours.</dd><dt>Daily quota exceeded</dt><dd>The free plan stops at 100 emails a day. Upgrade, or spread reminders out.</dd></dl>
+        </div>
+      </details>
+      <details class="wt" id="wt-twilio"><summary>Watch how to connect Twilio<span class="len">1:00</span></summary>
+        <div class="wtb">
+          <video controls playsinline preload="none" poster="../walkthroughs/twilio/poster.jpg"><source src="../walkthroughs/twilio/twilio.mp4" type="video/mp4"><track kind="captions" src="../walkthroughs/twilio/captions.vtt" srclang="en" label="English"></video>
+          <h4>Which Plan</h4><p>Upgrade from the trial and add balance first. A trial can only text up to 5 verified numbers in your own country, and toll-free verification needs a paid account.</p>
+          <h4>Permissions to Grant</h4><ul><li>A Standard API key: every resource except managing accounts and other keys. Never paste your Auth Token or a Main key.</li></ul>
+          <h4>Where the Key Appears</h4><p>Settings, Account settings, API keys and auth tokens, Create API key. Twilio shows the secret once; the Account SID is on the Console home page.</p>
+          <h4>Common Errors</h4><dl><dt>20003 Authenticate</dt><dd>The SID and secret don't match, the key was deleted, or it was made in another region. Create a new key in your account's region.</dd><dt>21608: the number is unverified</dt><dd>The account is still on the trial. Upgrade it, then try again.</dd><dt>30032: toll-free number not verified</dt><dd>Texts from a toll-free number wait for Twilio's verification, usually 3 to 5 business days. The agent submits it for you.</dd></dl>
+        </div>
+      </details>
       <div class="vipslot" data-step="d2-s3-the-nurture-engine-where-show-up-is-won"></div>
 </section>

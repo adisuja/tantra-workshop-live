@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:03.000 --> 00:00:09.000
+Step 1: Open kie.ai/api-key and sign in with Google or Microsoft.
+
+2
+00:00:09.000 --> 00:00:16.000
+Step 2: Open Billing and buy credits. Kie has no plans: each image uses a few credits.
+
+3
+00:00:16.000 --> 00:00:24.000
+Step 3: Open API Keys and click Create New Key. Limit it to the models you use and set a Safe-Spend limit.
+
+4
+00:00:24.000 --> 00:00:30.000
+Step 4: Copy the key and paste it into Kie.ai API key in your centre.
+
+5
+00:00:30.000 --> 00:00:37.000
+Step 5: The agent reads your credit balance to check the key. The card shows what is left.

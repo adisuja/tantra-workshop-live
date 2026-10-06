@@ -1,0 +1,33 @@
+WEBVTT
+
+1
+00:00:03.000 --> 00:00:12.000
+Step 1: Sign in to admin.google.com as a super admin. Open Security, Access and data control, API controls, then Manage Domain Wide Delegation.
+
+2
+00:00:12.000 --> 00:00:17.000
+Step 2: Click Add new.
+
+3
+00:00:17.000 --> 00:00:23.000
+Step 3: Paste the Client ID from your centre card.
+
+4
+00:00:23.000 --> 00:00:32.000
+Step 4: Paste the scopes from your card exactly. They cover domains, users and site verification only: the agent can't read email.
+
+5
+00:00:32.000 --> 00:00:39.000
+Step 5: Click Authorize. Google usually applies it in minutes, sometimes up to 24 hours.
+
+6
+00:00:39.000 --> 00:00:45.000
+Step 6: Your card shows the Client ID and the scopes to paste.
+
+7
+00:00:45.000 --> 00:00:53.000
+Step 7: Add the proof value as a TXT record on your main domain. If that domain is in your Cloudflare, the agent adds it.
+
+8
+00:00:53.000 --> 00:00:59.000
+Step 8: Paste your super-admin email and connect.

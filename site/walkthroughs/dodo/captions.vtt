@@ -1,0 +1,25 @@
+WEBVTT
+
+1
+00:00:03.000 --> 00:00:11.000
+Step 1: In your Dodo dashboard switch to Test mode, then open Developer, API Keys and click Add API Key.
+
+2
+00:00:11.000 --> 00:00:18.000
+Step 2: Keep Enable write access ticked: the agent creates your product, prices and checkout.
+
+3
+00:00:18.000 --> 00:00:24.000
+Step 3: Copy the key straight away. Dodo shows it once.
+
+4
+00:00:24.000 --> 00:00:32.000
+Step 4: A test key works only in test mode, where nothing is charged. Each mode has its own keys and products.
+
+5
+00:00:32.000 --> 00:00:38.000
+Step 5: In your centre, paste it into Test API key.
+
+6
+00:00:38.000 --> 00:00:44.000
+Step 6: Click Connect Dodo Payments. The agent checks the key by reading your products.
