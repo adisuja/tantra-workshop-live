@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-07T03:45:48+0530",
-  "version": 238,
+  "updated": "2026-10-07T05:15:27+0530",
+  "version": 247,
   "last_id": 222,
   "team": [
    {
@@ -6259,7 +6259,7 @@
   },
   {
    "id": "T-214",
-   "status": "review",
+   "status": "done",
    "owner": "Aquila",
    "assignee": "Claude",
    "reviewers": [
@@ -6292,7 +6292,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Owner decisions 2026-10-06",
    "spec": "Claude drives Adi's Chrome to create each key with least privilege (Adi does sign-ins, 2FA, payments); each flow recorded as an MP4/WebM under 2 minutes with labelled call-outs and blurred secrets, plus a short step guide per tool.",
    "done_when": [
@@ -6311,6 +6311,11 @@
      "ts": "2026-10-07T03:45:48+0530",
      "who": "claude",
      "note": "Merged into main 8794f55 and live on Worker 412bd464 (2026-10-07). Vendor sign-ins Adi still owes are in the blockers list."
+    },
+    {
+     "ts": "2026-10-07T05:15:27+0530",
+     "who": "claude",
+     "note": "Landed: main b08eeed, Worker aee6fd0a, mirror 1ab2e61 (2026-10-07). Real-account steps are in the Integrator's blockers list."
     }
    ],
    "order": 2150
@@ -6327,7 +6332,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Owner decisions 2026-10-06",
    "spec": "Agentic centre connect cards get Watch how video + guide (card-education.ts); old centre and playbook day chapters get the same at the matching steps; videos under app/public/walkthroughs/<tool>/; render and play at 1440 and 390 px.",
    "done_when": [
@@ -6346,6 +6351,11 @@
      "ts": "2026-10-07T03:45:48+0530",
      "who": "claude",
      "note": "Merged into main 8794f55 and live on Worker 412bd464 (2026-10-07). Vendor sign-ins Adi still owes are in the blockers list."
+    },
+    {
+     "ts": "2026-10-07T05:15:27+0530",
+     "who": "claude",
+     "note": "Landed: main b08eeed, Worker aee6fd0a, mirror 1ab2e61 (2026-10-07). Real-account steps are in the Integrator's blockers list."
     }
    ],
    "order": 2160
@@ -6362,7 +6372,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Owner decisions 2026-10-06",
    "spec": "Per-contact timed reminder sends through Tantra (or our scheduler calling Tantra at send time; endpoint spec for Tantra devs if none exists, built against the simulator); Tantra re-enabled in REMINDER_EMAIL; the test run's not-built note removed; probed end to end.",
    "done_when": [
@@ -6381,6 +6391,11 @@
      "ts": "2026-10-07T00:13:08+0530",
      "who": "claude",
      "note": "Merged into main and live on Worker 0e8a89c7 (2026-10-07). Real-account steps listed as blockers."
+    },
+    {
+     "ts": "2026-10-07T05:15:27+0530",
+     "who": "claude",
+     "note": "Landed: main b08eeed, Worker aee6fd0a, mirror 1ab2e61 (2026-10-07). Real-account steps are in the Integrator's blockers list."
     }
    ],
    "order": 2170
@@ -6397,7 +6412,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Owner decisions 2026-10-06",
    "spec": "Our own workshop payments stay Dodo; attendee funnels default to Dodo with Stripe on Decide how buyers pay: connect card, checkout creation, signed webhook into the funnel, simulator test-mode keys, probe.",
    "done_when": [
@@ -6421,6 +6436,11 @@
      "ts": "2026-10-07T02:20:54+0530",
      "who": "claude",
      "note": "Round 2 live (Worker 7ec9b430): after-payment page /paid (webhook-confirmed), Dodo status on our success pages; Tantra Tracker sync from main every 5 min (sheet live; MongoDB down until Docker starts)."
+    },
+    {
+     "ts": "2026-10-07T05:15:27+0530",
+     "who": "claude",
+     "note": "Landed: main b08eeed, Worker aee6fd0a, mirror 1ab2e61 (2026-10-07). Real-account steps are in the Integrator's blockers list."
     }
    ],
    "order": 2180
@@ -6437,7 +6457,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Owner decisions 2026-10-06",
    "spec": "Owner decision final: biz_postal and every [POSTAL ADDRESS] requirement removed from cards, LIMITS, AI drafting rules, outreachFill, KNOWN_PLACEHOLDERS, funnel footers, guides, playbook and probes; outreach never stops for a missing address.",
    "done_when": [
@@ -6456,6 +6476,11 @@
      "ts": "2026-10-07T00:13:08+0530",
      "who": "claude",
      "note": "Merged into main and live on Worker 0e8a89c7 (2026-10-07). Real-account steps listed as blockers."
+    },
+    {
+     "ts": "2026-10-07T05:15:27+0530",
+     "who": "claude",
+     "note": "Landed: main b08eeed, Worker aee6fd0a, mirror 1ab2e61 (2026-10-07). Real-account steps are in the Integrator's blockers list."
     }
    ],
    "order": 2190
@@ -6472,7 +6497,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Owner decisions 2026-10-06",
    "spec": "Unguessable revocable feed per attendee carrying their own join link, used by every Add all three sessions link, join pages, /vip/success and confirmation emails; public week feed keeps an outline with no join links.",
    "done_when": [
@@ -6491,6 +6516,11 @@
      "ts": "2026-10-07T00:13:08+0530",
      "who": "claude",
      "note": "Merged into main and live on Worker 0e8a89c7 (2026-10-07). Real-account steps listed as blockers."
+    },
+    {
+     "ts": "2026-10-07T05:15:27+0530",
+     "who": "claude",
+     "note": "Landed: main b08eeed, Worker aee6fd0a, mirror 1ab2e61 (2026-10-07). Real-account steps are in the Integrator's blockers list."
     }
    ],
    "order": 2200
@@ -6507,7 +6537,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Owner decisions 2026-10-06",
    "spec": "events.insert from the organiser Workspace calendar with attendees, sendUpdates, 5/10/15/30 reminders, agenda and personal join link; on attendee create or cohort change; updated when the admin edits a session; simulator routes; real-account setup listed as a blocker.",
    "done_when": [
@@ -6526,6 +6556,11 @@
      "ts": "2026-10-07T00:13:08+0530",
      "who": "claude",
      "note": "Merged into main and live on Worker 0e8a89c7 (2026-10-07). Real-account steps listed as blockers."
+    },
+    {
+     "ts": "2026-10-07T05:15:27+0530",
+     "who": "claude",
+     "note": "Landed: main b08eeed, Worker aee6fd0a, mirror 1ab2e61 (2026-10-07). Real-account steps are in the Integrator's blockers list."
     }
    ],
    "order": 2210
@@ -6542,7 +6577,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Owner decisions 2026-10-06",
    "spec": "Registrants API registers each attendee, stores their personal join URL into feed and invite; admin setting for meeting/webinar id; built on vendor-sim Zoom routes until Adi supplies the account and link.",
    "done_when": [
@@ -6561,6 +6596,11 @@
      "ts": "2026-10-07T00:13:09+0530",
      "who": "claude",
      "note": "Merged into main and live on Worker 0e8a89c7 (2026-10-07). Real-account steps listed as blockers."
+    },
+    {
+     "ts": "2026-10-07T05:15:27+0530",
+     "who": "claude",
+     "note": "Landed: main b08eeed, Worker aee6fd0a, mirror 1ab2e61 (2026-10-07). Real-account steps are in the Integrator's blockers list."
     }
    ],
    "order": 2220
