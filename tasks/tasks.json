@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-06T01:37:57+0530",
-  "version": 226,
-  "last_id": 213,
+  "updated": "2026-10-06T23:27:01+0530",
+  "version": 228,
+  "last_id": 222,
   "team": [
    {
     "name": "Adi",
@@ -6256,6 +6256,269 @@
     }
    ],
    "order": 2130
+  },
+  {
+   "id": "T-214",
+   "status": "queue",
+   "owner": "Aquila",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bhaskar"
+   ],
+   "priority": "P0",
+   "due": "",
+   "area": "Product",
+   "order": 2140,
+   "title": "T-214: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
+  },
+  {
+   "id": "T-215",
+   "title": "Over-the-shoulder API key walkthrough videos for every approved tool (S1 tantra-walkthroughs)",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "queue",
+   "why": "Owner decisions 2026-10-06",
+   "spec": "Claude drives Adi's Chrome to create each key with least privilege (Adi does sign-ins, 2FA, payments); each flow recorded as an MP4/WebM under 2 minutes with labelled call-outs and blurred secrets, plus a short step guide per tool.",
+   "done_when": [
+    "Branch READY in LOG.md, merged into main by the Integrator, deployed and verified live"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-06T23:40:00+0530",
+     "who": "claude",
+     "note": "Created by the Integrator; closes when its branch lands on main and deploys."
+    }
+   ],
+   "order": 2150
+  },
+  {
+   "id": "T-216",
+   "title": "Walkthrough videos and guides in both onboarding centres (S1 tantra-walkthroughs)",
+   "area": "Product",
+   "owner": "Amal",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Nelbin"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "queue",
+   "why": "Owner decisions 2026-10-06",
+   "spec": "Agentic centre connect cards get Watch how video + guide (card-education.ts); old centre and playbook day chapters get the same at the matching steps; videos under app/public/walkthroughs/<tool>/; render and play at 1440 and 390 px.",
+   "done_when": [
+    "Branch READY in LOG.md, merged into main by the Integrator, deployed and verified live"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-06T23:40:00+0530",
+     "who": "claude",
+     "note": "Created by the Integrator; closes when its branch lands on main and deploys."
+    }
+   ],
+   "order": 2160
+  },
+  {
+   "id": "T-217",
+   "title": "Tantra as a working reminder email provider (S2 tantra-email-stripe)",
+   "area": "Product",
+   "owner": "Aquila",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "queue",
+   "why": "Owner decisions 2026-10-06",
+   "spec": "Per-contact timed reminder sends through Tantra (or our scheduler calling Tantra at send time; endpoint spec for Tantra devs if none exists, built against the simulator); Tantra re-enabled in REMINDER_EMAIL; the test run's not-built note removed; probed end to end.",
+   "done_when": [
+    "Branch READY in LOG.md, merged into main by the Integrator, deployed and verified live"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-06T23:40:00+0530",
+     "who": "claude",
+     "note": "Created by the Integrator; closes when its branch lands on main and deploys."
+    }
+   ],
+   "order": 2170
+  },
+  {
+   "id": "T-218",
+   "title": "Stripe as an attendee payment option beside Dodo (S2 tantra-email-stripe)",
+   "area": "Product",
+   "owner": "Ben",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "queue",
+   "why": "Owner decisions 2026-10-06",
+   "spec": "Our own workshop payments stay Dodo; attendee funnels default to Dodo with Stripe on Decide how buyers pay: connect card, checkout creation, signed webhook into the funnel, simulator test-mode keys, probe.",
+   "done_when": [
+    "Branch READY in LOG.md, merged into main by the Integrator, deployed and verified live"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-06T23:40:00+0530",
+     "who": "claude",
+     "note": "Created by the Integrator; closes when its branch lands on main and deploys."
+    }
+   ],
+   "order": 2180
+  },
+  {
+   "id": "T-219",
+   "title": "No postal address anywhere in cold email (S2 tantra-email-stripe)",
+   "area": "Product",
+   "owner": "Bhaskar",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "queue",
+   "why": "Owner decisions 2026-10-06",
+   "spec": "Owner decision final: biz_postal and every [POSTAL ADDRESS] requirement removed from cards, LIMITS, AI drafting rules, outreachFill, KNOWN_PLACEHOLDERS, funnel footers, guides, playbook and probes; outreach never stops for a missing address.",
+   "done_when": [
+    "Branch READY in LOG.md, merged into main by the Integrator, deployed and verified live"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-06T23:40:00+0530",
+     "who": "claude",
+     "note": "Created by the Integrator; closes when its branch lands on main and deploys."
+    }
+   ],
+   "order": 2190
+  },
+  {
+   "id": "T-220",
+   "title": "Private personal calendar feed per attendee (S3 calendar-feeds)",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "queue",
+   "why": "Owner decisions 2026-10-06",
+   "spec": "Unguessable revocable feed per attendee carrying their own join link, used by every Add all three sessions link, join pages, /vip/success and confirmation emails; public week feed keeps an outline with no join links.",
+   "done_when": [
+    "Branch READY in LOG.md, merged into main by the Integrator, deployed and verified live"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-06T23:40:00+0530",
+     "who": "claude",
+     "note": "Created by the Integrator; closes when its branch lands on main and deploys."
+    }
+   ],
+   "order": 2200
+  },
+  {
+   "id": "T-221",
+   "title": "Google Calendar invites for the three sessions (S3 calendar-feeds)",
+   "area": "Product",
+   "owner": "Aquila",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Nelbin"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "queue",
+   "why": "Owner decisions 2026-10-06",
+   "spec": "events.insert from the organiser Workspace calendar with attendees, sendUpdates, 5/10/15/30 reminders, agenda and personal join link; on attendee create or cohort change; updated when the admin edits a session; simulator routes; real-account setup listed as a blocker.",
+   "done_when": [
+    "Branch READY in LOG.md, merged into main by the Integrator, deployed and verified live"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-06T23:40:00+0530",
+     "who": "claude",
+     "note": "Created by the Integrator; closes when its branch lands on main and deploys."
+    }
+   ],
+   "order": 2210
+  },
+  {
+   "id": "T-222",
+   "title": "Zoom registration per attendee (S3 calendar-feeds)",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "queue",
+   "why": "Owner decisions 2026-10-06",
+   "spec": "Registrants API registers each attendee, stores their personal join URL into feed and invite; admin setting for meeting/webinar id; built on vendor-sim Zoom routes until Adi supplies the account and link.",
+   "done_when": [
+    "Branch READY in LOG.md, merged into main by the Integrator, deployed and verified live"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-06T23:40:00+0530",
+     "who": "claude",
+     "note": "Created by the Integrator; closes when its branch lands on main and deploys."
+    }
+   ],
+   "order": 2220
   }
  ]
 }
