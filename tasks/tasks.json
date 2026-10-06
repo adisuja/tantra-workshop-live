@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-07T00:13:09+0530",
-  "version": 234,
+  "updated": "2026-10-07T02:20:54+0530",
+  "version": 235,
   "last_id": 222,
   "team": [
    {
@@ -6406,6 +6406,11 @@
      "ts": "2026-10-07T00:13:09+0530",
      "who": "claude",
      "note": "Stripe for attendees merged into main, live on Worker 0e8a89c7; probe-email-stripe ALL PASS."
+    },
+    {
+     "ts": "2026-10-07T02:20:54+0530",
+     "who": "claude",
+     "note": "Round 2 live (Worker 7ec9b430): after-payment page /paid (webhook-confirmed), Dodo status on our success pages; Tantra Tracker sync from main every 5 min (sheet live; MongoDB down until Docker starts)."
     }
    ],
    "order": 2180
