@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-06T23:27:01+0530",
-  "version": 228,
+  "updated": "2026-10-07T00:13:09+0530",
+  "version": 234,
   "last_id": 222,
   "team": [
    {
@@ -6352,7 +6352,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Owner decisions 2026-10-06",
    "spec": "Per-contact timed reminder sends through Tantra (or our scheduler calling Tantra at send time; endpoint spec for Tantra devs if none exists, built against the simulator); Tantra re-enabled in REMINDER_EMAIL; the test run's not-built note removed; probed end to end.",
    "done_when": [
@@ -6366,6 +6366,11 @@
      "ts": "2026-10-06T23:40:00+0530",
      "who": "claude",
      "note": "Created by the Integrator; closes when its branch lands on main and deploys."
+    },
+    {
+     "ts": "2026-10-07T00:13:08+0530",
+     "who": "claude",
+     "note": "Merged into main and live on Worker 0e8a89c7 (2026-10-07). Real-account steps listed as blockers."
     }
    ],
    "order": 2170
@@ -6382,7 +6387,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Owner decisions 2026-10-06",
    "spec": "Our own workshop payments stay Dodo; attendee funnels default to Dodo with Stripe on Decide how buyers pay: connect card, checkout creation, signed webhook into the funnel, simulator test-mode keys, probe.",
    "done_when": [
@@ -6396,6 +6401,11 @@
      "ts": "2026-10-06T23:40:00+0530",
      "who": "claude",
      "note": "Created by the Integrator; closes when its branch lands on main and deploys."
+    },
+    {
+     "ts": "2026-10-07T00:13:09+0530",
+     "who": "claude",
+     "note": "Stripe for attendees merged into main, live on Worker 0e8a89c7; probe-email-stripe ALL PASS."
     }
    ],
    "order": 2180
@@ -6412,7 +6422,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Owner decisions 2026-10-06",
    "spec": "Owner decision final: biz_postal and every [POSTAL ADDRESS] requirement removed from cards, LIMITS, AI drafting rules, outreachFill, KNOWN_PLACEHOLDERS, funnel footers, guides, playbook and probes; outreach never stops for a missing address.",
    "done_when": [
@@ -6426,6 +6436,11 @@
      "ts": "2026-10-06T23:40:00+0530",
      "who": "claude",
      "note": "Created by the Integrator; closes when its branch lands on main and deploys."
+    },
+    {
+     "ts": "2026-10-07T00:13:08+0530",
+     "who": "claude",
+     "note": "Merged into main and live on Worker 0e8a89c7 (2026-10-07). Real-account steps listed as blockers."
     }
    ],
    "order": 2190
@@ -6442,7 +6457,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Owner decisions 2026-10-06",
    "spec": "Unguessable revocable feed per attendee carrying their own join link, used by every Add all three sessions link, join pages, /vip/success and confirmation emails; public week feed keeps an outline with no join links.",
    "done_when": [
@@ -6456,6 +6471,11 @@
      "ts": "2026-10-06T23:40:00+0530",
      "who": "claude",
      "note": "Created by the Integrator; closes when its branch lands on main and deploys."
+    },
+    {
+     "ts": "2026-10-07T00:13:08+0530",
+     "who": "claude",
+     "note": "Merged into main and live on Worker 0e8a89c7 (2026-10-07). Real-account steps listed as blockers."
     }
    ],
    "order": 2200
@@ -6472,7 +6492,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Owner decisions 2026-10-06",
    "spec": "events.insert from the organiser Workspace calendar with attendees, sendUpdates, 5/10/15/30 reminders, agenda and personal join link; on attendee create or cohort change; updated when the admin edits a session; simulator routes; real-account setup listed as a blocker.",
    "done_when": [
@@ -6486,6 +6506,11 @@
      "ts": "2026-10-06T23:40:00+0530",
      "who": "claude",
      "note": "Created by the Integrator; closes when its branch lands on main and deploys."
+    },
+    {
+     "ts": "2026-10-07T00:13:08+0530",
+     "who": "claude",
+     "note": "Merged into main and live on Worker 0e8a89c7 (2026-10-07). Real-account steps listed as blockers."
     }
    ],
    "order": 2210
@@ -6502,7 +6527,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Owner decisions 2026-10-06",
    "spec": "Registrants API registers each attendee, stores their personal join URL into feed and invite; admin setting for meeting/webinar id; built on vendor-sim Zoom routes until Adi supplies the account and link.",
    "done_when": [
@@ -6516,6 +6541,11 @@
      "ts": "2026-10-06T23:40:00+0530",
      "who": "claude",
      "note": "Created by the Integrator; closes when its branch lands on main and deploys."
+    },
+    {
+     "ts": "2026-10-07T00:13:09+0530",
+     "who": "claude",
+     "note": "Merged into main and live on Worker 0e8a89c7 (2026-10-07). Real-account steps listed as blockers."
     }
    ],
    "order": 2220
