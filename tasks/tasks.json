@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-07T02:20:54+0530",
-  "version": 235,
+  "updated": "2026-10-07T03:45:48+0530",
+  "version": 238,
   "last_id": 222,
   "team": [
    {
@@ -6259,7 +6259,7 @@
   },
   {
    "id": "T-214",
-   "status": "queue",
+   "status": "review",
    "owner": "Aquila",
    "assignee": "Claude",
    "reviewers": [
@@ -6292,7 +6292,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Owner decisions 2026-10-06",
    "spec": "Claude drives Adi's Chrome to create each key with least privilege (Adi does sign-ins, 2FA, payments); each flow recorded as an MP4/WebM under 2 minutes with labelled call-outs and blurred secrets, plus a short step guide per tool.",
    "done_when": [
@@ -6306,6 +6306,11 @@
      "ts": "2026-10-06T23:40:00+0530",
      "who": "claude",
      "note": "Created by the Integrator; closes when its branch lands on main and deploys."
+    },
+    {
+     "ts": "2026-10-07T03:45:48+0530",
+     "who": "claude",
+     "note": "Merged into main 8794f55 and live on Worker 412bd464 (2026-10-07). Vendor sign-ins Adi still owes are in the blockers list."
     }
    ],
    "order": 2150
@@ -6322,7 +6327,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Owner decisions 2026-10-06",
    "spec": "Agentic centre connect cards get Watch how video + guide (card-education.ts); old centre and playbook day chapters get the same at the matching steps; videos under app/public/walkthroughs/<tool>/; render and play at 1440 and 390 px.",
    "done_when": [
@@ -6336,6 +6341,11 @@
      "ts": "2026-10-06T23:40:00+0530",
      "who": "claude",
      "note": "Created by the Integrator; closes when its branch lands on main and deploys."
+    },
+    {
+     "ts": "2026-10-07T03:45:48+0530",
+     "who": "claude",
+     "note": "Merged into main 8794f55 and live on Worker 412bd464 (2026-10-07). Vendor sign-ins Adi still owes are in the blockers list."
     }
    ],
    "order": 2160
