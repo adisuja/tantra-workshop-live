@@ -7308,7 +7308,7 @@
    "blockers": [
     "The request has to come from the Zoom account owner (Adi)"
    ],
-   "needs_from_owner": "Send this from https://support.zoom.com while signed in as the owner's Google test identity (Contact Support, submit a request):\n\nSubject: Enable host mute control and participant video disable for meetings on our Pro account\n\nHello Zoom Support,\n\nWe run a weekly three-day workshop on our Pro account as recurring meetings created through the REST API (Server-to-Server OAuth app). Attendees should join muted with cameras off and stay that way unless the host allows otherwise. Please enable these two meeting settings for our account so we can set them when meetings are created through the API: allow_host_control_participant_mute_state and disable_participant_video.\n\nAccount owner email: the owner's Google test identity\nAccount number: 5018326609\n\nThank you.\n\nThen paste Zoom's answer here. If they agree, Claude sets Zoom Support locks to Granted at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key> (Cohort Settings) and presses Re-apply room settings; no bot is needed (T-226 stays parked).",
+   "needs_from_owner": "Send this from https://support.zoom.com while signed in as the owner's Google test identity (Contact Support, submit a request):\n\nSubject: Enable host mute control and participant video disable for meetings on our Pro account\n\nHello Zoom Support,\n\nWe run a weekly three-day workshop on our Pro account as recurring meetings created through the REST API (Server-to-Server OAuth app). Attendees should join muted with cameras off and stay that way unless the host allows otherwise. Please enable these two meeting settings for our account so we can set them when meetings are created through the API: allow_host_control_participant_mute_state and disable_participant_video.\n\nAccount owner email: <the email you sign in to Zoom with>\nAccount number: 5018326609\n\nThank you.\n\nThen paste Zoom's answer here. If they agree, Claude sets Zoom Support locks to Granted at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key> (Cohort Settings) and presses Re-apply room settings; no bot is needed (T-226 stays parked).",
    "log": [
     {
      "ts": "2026-10-07T20:46:43+0530",
@@ -7626,7 +7626,7 @@
    "due": "",
    "status": "queue",
    "why": "Alternative hosts let a teammate start the cohort meeting if Adi cannot; co-hosts only matter once the Meeting SDK bot (T-226) exists to promote them.",
-   "spec": "Admin centre https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, tab Cohort Settings, Zoom row: field 'Alternative hosts' (zoom_alt_hosts: comma separated emails of LICENSED users on the the owner's Google test identity Zoom Pro account 5018326609; applied when the next week's meeting is created or when room settings are re-applied with the 'Re-apply settings' action) and field 'Co-hosts' (zoom_cohosts: stored now, made co-host by the bot from T-226 on join; nothing happens with them before then). Save. Recommended: leave both empty for now unless a second licensed Zoom user exists; Pro has one licence, so alternative hosts need a second paid licence first. Claude then re-applies settings and confirms with 'Check in Zoom' that the next meeting lists the alternative hosts.",
+   "spec": "Admin centre https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, tab Cohort Settings, Zoom row: field 'Alternative hosts' (zoom_alt_hosts: comma separated emails of LICENSED users on the Zoom Pro account 5018326609; applied when the next week's meeting is created or when room settings are re-applied with the 'Re-apply settings' action) and field 'Co-hosts' (zoom_cohosts: stored now, made co-host by the bot from T-226 on join; nothing happens with them before then). Save. Recommended: leave both empty for now unless a second licensed Zoom user exists; Pro has one licence, so alternative hosts need a second paid licence first. Claude then re-applies settings and confirms with 'Check in Zoom' that the next meeting lists the alternative hosts.",
    "done_when": [
     "zoom_alt_hosts saved (or Adi says none) and Check in Zoom shows them on the next cohort meeting",
     "Co-host emails saved for T-226, or explicitly none"
@@ -7667,7 +7667,7 @@
    "due": "",
    "status": "queue",
    "why": "Zoom's 100 limit is people in the room at once, not registrations; with typical no-shows a cap of 98 turns people away from a room that will be half empty.",
-   "spec": "Decision for Adi, then Claude applies it. Field: admin https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Cohort Settings, 'Registrations per meeting' (zoom_cap, default 98 from docs/onboarding-v3/analysis/zoom-pro-meetings.md section 1). Registrants past the cap get status 'waitlist' in session_sync and no join link (cloud/src/invites.ts). The Integrator suggested 150 to 180. Recommended: 150 now (first cohort 7 to 9 Oct has 5 real sign-ups, so nothing is at risk this week), revisit after two cohorts' show rates from zoom_engagement. Note: past 100 people in the room at once, late joiners are refused by Zoom.",
+   "spec": "Decision for Adi, then Claude applies it. Field: admin https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Cohort Settings, 'Registrations per meeting' (zoom_cap, default 98 from docs/onboarding-v3/analysis/zoom-pro-meetings.md section 1). Registrants past the cap get status 'waitlist' in session_sync and no join link (cloud/src/invites.ts). The Integrator suggested 150 to 180. Recommended: 150 now (the live centre has no real sign-ups yet, so nothing is at risk), revisit after two cohorts' show rates from zoom_engagement. Note: past 100 people in the room at once, late joiners are refused by Zoom.",
    "done_when": [
     "zoom_cap set to the decided value in production Cohort Settings",
     "A probe or admin check shows a registrant past the cap gets 'waitlist' and no join link"
@@ -7690,6 +7690,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: production zoom_cap still 98; turned into a one-line decision with the exact field and a recommended value."
+    },
+    {
+     "ts": "2026-10-08T01:16:56+0530",
+     "who": "claude",
+     "note": "Corrected: no real sign-ups yet (not 5)."
     }
    ],
    "order": 2310
