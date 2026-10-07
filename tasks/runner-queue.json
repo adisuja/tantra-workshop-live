@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-08T03:07:47+0530",
+   "task_id": "T-234",
+   "mode": "queue",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-234 is blocked on you: reminders are built and pass 51/51 checks against the local simulator (commit 534c607, not deployed), but sending from the real Tantra workspace needs the workspace and mailbox, an API key, and a deploy of 534c607 including database migration 0017. Once those are in, I creat"
+  },
+  {
    "ts": "2026-09-25T22:40:14+0530",
    "task_id": "T-127",
    "mode": "queue",
@@ -41,10 +49,10 @@
    "summary": "T-024 → **review**. Built three PDF-ready output templates in `workshop-plan/outputs/` (day1/2/3.html via `build.py`), each section tagged with its source survey questions and filled with a worked SendFlow sample; verified all three with `probe-outputs.mjs` (sections render, source lines present, Se"
   }
  ],
- "state": "working",
- "message": "Continuing T-234: Workshop reminders through Tantra omni-channel campaigns: import every registrant with their own join and calendar links",
- "task_id": "T-234",
+ "state": "idle",
+ "message": "Last sweep handled 1 task(s).",
+ "task_id": null,
  "entries": [],
- "mode": "queue",
+ "mode": null,
  "started": "2026-10-08T02:52:32+0530"
 }

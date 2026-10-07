@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-08T00:49:40+0530",
-  "version": 278,
+  "updated": "2026-10-08T03:07:41+0530",
+  "version": 280,
   "last_id": 281,
   "team": [
    {
@@ -7835,50 +7835,27 @@
   },
   {
    "id": "T-234",
-   "title": "Workshop reminders through Tantra omni-channel campaigns: import every registrant with their own join and calendar links",
-   "area": "Product",
+   "status": "blocked",
    "owner": "Aquila",
    "assignee": "Claude",
    "reviewers": [
     "Adi",
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ],
    "priority": "P0",
    "due": "",
-   "status": "next",
-   "why": "Nothing sends session reminders, so the first real cohort would run without them: Zoom sends none for meetings and attendees only have the calendar feed. The owner's model is Tantra omni-channel campaigns fed by registrant import, which is live in Tantra today.",
-   "spec": "Owner model 2026-10-07 (memory google-and-reminder-model): reminders run on Tantra omni-channel campaigns and registrants are imported into them programmatically; no home-built sender, no Resend/SendGrid for this, WhatsApp only through Tantra.\nWHAT EXISTS (main f6aeb7e): (a) a Tantra API client for an ATTENDEE's own account in cloud/src/jobs-tantra.ts (tn() with X-API-Key via cloud/src/connectors/stack.ts tantraUrl/tantraHeaders; POST /contacts/import with custom fields; POST /email-campaigns + /email-campaigns/:id/steps; start in cloud/src/connectors/launch.ts tantraStart). (b) The full API contract in docs/onboarding-v3/analysis/integrations-tantra-api.md: base https://api.usetantra.com/api/v1; section 3 omni-channel campaigns (steps with channel email|linkedin|whatsapp, sendingWindow, perMailboxDailyCap); section 5 POST /email-campaigns/:id/contacts (shipped 2026-10-01, API-key route: up to 1,000 contacts a call, each with email, firstName, whatsappPhone, timezone and customFields of scalars; idempotent upsert; step 1 runs when the contact is added; 409 means retry). (c) Per-attendee data: joinsFor() in cloud/src/invites.ts gives each day's own Zoom join_url (or the admin's shared link, null when waitlisted); personalFeedPath(feedTokenOf()) in cloud/src/calendar.ts gives the private calendar link; the Worker has a scheduled() cron in cloud/src/index.ts. (d) S1 recorded a walkthrough of this exact model on the unmerged branch (/Users/adithyamurali/tantra-walkthroughs/app/public/walkthroughs/tantra-reminders, untracked): one omni-channel campaign per reminder moment, sending window open every day and hour, the agent adds each registrant through the API when the reminder is due.\nWHAT DOES NOT EXIST: no code imports OUR workshop registrants into Tantra; no workshop Tantra key or settings in the centre; the vendor simulator (cloud/scripts/vendor-sim.py) has no /email-campaigns/:id/contacts route.\nBUILD: 1) Settings in admin Cohort Settings: tantra_key (stored encrypted like other secrets), sender mailbox, optional WhatsApp channel account, campaign ids. 2) A 'Create reminder campaigns' admin action that, with that key, creates (never starts without the probe passing) omni-channel campaigns: Registered (confirmation: centre link, private calendar link, each day's join link; can absorb T-228), Day before, 1 hour before, We're live, each with sendingWindow all days 0 to 23 in America/New_York, an email step and a WhatsApp step when a WhatsApp account is connected, merge fields {{firstName}} plus customFields join_day1..3, calendar_url, centre_url, cohort_dates. Copy follows workshop-plan/COPY_RULES.md, no dashes. 3) On sign-up (/cal/issue, /intake, admin add) and on cohort move or new join link, POST /email-campaigns/<Registered>/contacts with those fields. 4) In scheduled(), for every non-test, non-revoked attendee whose session is due, append them to the matching campaign once (claim a row per attendee, day and reminder in D1 before calling, so a retry never double-sends). 5) Add the contacts route to vendor-sim.py and a probe app/scripts/probe-tantra-reminders.mjs. 6) Skip placeholder addresses (T-229 helper). Daily volume is bounded by the mailbox caps (perMailboxDailyCap), so set it from the cohort size.",
-   "done_when": [
-    "probe-tantra-reminders passes against the simulator: a test sign-up lands in Registered with join_day1..3 and calendar_url, and is appended once to Day before, 1 hour before and We're live at the right times; a second scheduler run adds nobody",
-    "In production, a test attendee (the owner's Google test identity) receives the Registered message and a reminder with their own join link, then is reverted per the revert ledger",
-    "Admin Cohort Settings shows the four campaign ids and the last import result per attendee"
-   ],
+   "area": "Product",
+   "order": 2340,
+   "title": "T-234: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "One Tantra API key from the workspace that should send workshop reminders: in the Tantra app go to Connectors, API Keys, Create Key (help: https://usetantra.com/help/api-and-mcp/api-keys), then paste it at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Cohort Settings, 'Tantra API key' (field added by this task; until then Claude builds against the simulator). Say which workspace and mailbox it should send from if not the FintechCircle workspace S1 used for the recordings.",
-   "log": [
-    {
-     "ts": "2026-10-07T23:25:35+0530",
-     "who": "claude",
-     "note": "Added by the Integrator's pending-work sweep."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review: context updated. Urgent: the first cohort (Wed 7 to Fri 9 Oct) is running now and nothing sends session reminders. Overlaps T-123 done_when 'T-1h join-link message'; this task is the build, T-123 holds the sender decision."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: rewritten to the owner's Tantra omni-channel campaign model (google-and-reminder-model 2026-10-07); dropped the home-built sender and the T-123/T-236 /emails/batch blocker. Verified what exists in cloud/src/jobs-tantra.ts, integrations-tantra-api.md s3 and s5, invites.ts joinsFor, calendar.ts, and S1's unmerged tantra-reminders walkthrough. UNVERIFIED: which Tantra workspace Adi wants as the sender."
-    },
-    {
-     "ts": "2026-10-08T00:49:40+0530",
-     "who": "claude",
-     "note": "Pass 2 correction: no real cohort is running yet."
-    }
-   ],
-   "order": 2340
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-235",
