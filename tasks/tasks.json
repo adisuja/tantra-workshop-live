@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-07T23:07:21+0530",
-  "version": 265,
-  "last_id": 229,
+  "updated": "2026-10-07T23:07:42+0530",
+  "version": 248,
+  "last_id": 222,
   "team": [
    {
     "name": "Adi",
@@ -1845,7 +1845,7 @@
    "owner": "Nelbin",
    "priority": "P0",
    "due": "2026-09-20",
-   "status": "dropped",
+   "status": "hold",
    "why": "Seats need a link. Day 1 is Thu Sep 24, 11:00 AM ET.",
    "spec": "Thu 24 · Fri 25 · Mon 28, all 11:00 AM ET. Participants muted, video disabled. Registration link pasted into T-003.",
    "done_when": [
@@ -1854,8 +1854,10 @@
     "Link in T-003"
    ],
    "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
+   "blockers": [
+    "On hold — placeholder in use"
+   ],
+   "needs_from_owner": "On hold (owner, 2026-09-24): the placeholder stays until you supply the Zoom link before launch.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -1876,11 +1878,6 @@
      "ts": "2026-09-25",
      "who": "Claude",
      "note": "Zoom links also needed by T-123 and T-125."
-    },
-    {
-     "ts": "2026-10-07T22:53:58+0530",
-     "who": "claude",
-     "note": "Superseded (2026-10-07): the workshop runs every week, and the centre now creates each cohort's Zoom meeting itself and registers every attendee with a personal link (T-222, T-223). The only Zoom input left is the app and webhook in T-224. The September dates in this task's spec no longer apply."
     }
    ],
    "order": 280,
@@ -4244,26 +4241,20 @@
    "done_when": [
     "Registration → confirmation email + WhatsApp within 1 min",
     "T-1h join-link message sent for each session",
-    "Plan email sent when the course plan is generated",
-    "Welcome email carries the centre link and private calendar link (T-228)"
+    "Plan email sent when the course plan is generated"
    ],
    "evidence": [],
    "blockers": [
     "Email needs an SMTP login or provider API key",
     "WhatsApp needs a WhatsApp Business API credential (or approve email + SMS only)",
-    "Per-attendee Zoom join links arrive once T-224 is done (T-042 superseded)"
+    "Zoom join links still placeholders (T-042)"
    ],
-   "needs_from_owner": "Provide: (1) sending provider + credential for the 'from' address (SMTP or Resend/SendGrid key), put it in app/.env.local yourself, Claude never types credentials; (2) WhatsApp Business API provider or say 'email only for this cohort'; (3) the Zoom app and webhook (T-224); the meetings and links are then created automatically.",
+   "needs_from_owner": "Provide: (1) sending provider + credential for the 'from' address (SMTP or Resend/SendGrid key), put it in app/.env.local yourself, Claude never types credentials; (2) WhatsApp Business API provider or say 'email only for this cohort'; (3) the three Zoom links when scheduled (T-042).",
    "log": [
     {
      "ts": "2026-09-25",
      "who": "Claude",
      "note": "Created from the Build Guides integration pass (Lane A)."
-    },
-    {
-     "ts": "2026-10-07T22:53:58+0530",
-     "who": "claude",
-     "note": "Updated 2026-10-07: Zoom links now come per attendee via T-222/T-223 (needs T-224); the welcome email with the private calendar link is T-228."
     }
    ],
    "order": 1210,
@@ -4365,11 +4356,6 @@
      "ts": "2026-09-25T21:47:25+0530",
      "who": "claude",
      "note": "Both join pages now offer Google Calendar (per day) + one .ics for all 3 sessions via a shared SessionCalendar component, mirroring /onboarding. The session-link CTA no longer points at the Zoom placeholder: while SEAT_PENDING it shows 'Your session link ... arrives before Day 1'. Verified with tsc (clean), eslint (only pre-existing img warnings), curl (3 google-cal links + 1 ics on each page), and headless screenshots (no console errors). probe-workshop failures are pre-existing (stale copy checks) — confirmed identical with my changes stashed."
-    },
-    {
-     "ts": "2026-10-07T22:53:58+0530",
-     "who": "claude",
-     "note": "Superseded in part (2026-10-07): the per-day Google buttons were replaced by one 'Add all three sessions' link (T-204), which points at the attendee's private feed when known (T-220). The evidence screenshots above predate that."
     }
    ],
    "order": 1230,
@@ -6535,11 +6521,6 @@
      "ts": "2026-10-07T05:15:27+0530",
      "who": "claude",
      "note": "Landed: main b08eeed, Worker aee6fd0a, mirror 1ab2e61 (2026-10-07). Real-account steps are in the Integrator's blockers list."
-    },
-    {
-     "ts": "2026-10-07T22:53:58+0530",
-     "who": "claude",
-     "note": "Follow-ups moved onto the board (2026-10-07): Google real-account setup T-227, welcome email with the private calendar link T-228, Zoom app and webhook T-224, Zoom per-registrant limit T-229. Live check: /cal/<week>.ics serves the outline with no join links; unknown feed tokens 404."
     }
    ],
    "order": 2200
@@ -6580,11 +6561,6 @@
      "ts": "2026-10-07T05:15:27+0530",
      "who": "claude",
      "note": "Landed: main b08eeed, Worker aee6fd0a, mirror 1ab2e61 (2026-10-07). Real-account steps are in the Integrator's blockers list."
-    },
-    {
-     "ts": "2026-10-07T22:53:58+0530",
-     "who": "claude",
-     "note": "Follow-ups moved onto the board (2026-10-07): Google real-account setup T-227, welcome email with the private calendar link T-228, Zoom app and webhook T-224, Zoom per-registrant limit T-229. Live check: /cal/<week>.ics serves the outline with no join links; unknown feed tokens 404."
     }
    ],
    "order": 2210
@@ -6625,11 +6601,6 @@
      "ts": "2026-10-07T05:15:27+0530",
      "who": "claude",
      "note": "Landed: main b08eeed, Worker aee6fd0a, mirror 1ab2e61 (2026-10-07). Real-account steps are in the Integrator's blockers list."
-    },
-    {
-     "ts": "2026-10-07T22:53:58+0530",
-     "who": "claude",
-     "note": "Follow-ups moved onto the board (2026-10-07): Google real-account setup T-227, welcome email with the private calendar link T-228, Zoom app and webhook T-224, Zoom per-registrant limit T-229. Live check: /cal/<week>.ics serves the outline with no join links; unknown feed tokens 404."
     }
    ],
    "order": 2220
@@ -6677,46 +6648,20 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "blocked",
+   "status": "todo",
    "why": "Adi's Zoom Pro research, 2026-10-07 (docs/onboarding-v3/analysis/zoom-pro-meetings.md)",
    "spec": "Zoom App Marketplace, Server-to-Server OAuth app 'Tantra Centre' with the scopes in the doc section 3; Event Subscriptions to /hooks/zoom; paste the secret token, then credentials, in the admin; switch on Create meetings per cohort.",
    "done_when": [
     "The admin's Zoom Sessions panel shows this week's meeting and the host is ready"
    ],
-   "evidence": [
-    {
-     "label": "Zoom Pro research and setup doc (section 3: what Adi does)",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/docs/onboarding-v3/analysis/zoom-pro-meetings.md"
-    },
-    {
-     "label": "Admin centre: Cohort Settings, Invite Status",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=t227"
-    }
-   ],
-   "blockers": [
-    "Zoom Server-to-Server app scopes and Event Subscriptions webhook (secret token) not set up yet"
-   ],
+   "evidence": [],
+   "blockers": [],
    "needs_from_owner": "Adi: create the app and paste its values in the admin (steps in the doc, section 3)",
    "log": [
     {
      "ts": "2026-10-07T20:46:43+0530",
      "who": "claude",
      "note": "Created by the Integrator."
-    },
-    {
-     "ts": "2026-10-07T22:53:58+0530",
-     "who": "claude",
-     "note": "Context from S3 (2026-10-07): the same Server-to-Server app powers per-attendee Zoom registration (T-222): each attendee's personal join link goes into their private calendar feed and Google invite. Live admin already shows Zoom credentials saved and registration switched on; the open part here is the webhook and turning on the per-cohort meetings, after which no meeting ID needs entering. See also T-229 (a placeholder attendee hitting Zoom's per-registrant limit)."
-    },
-    {
-     "ts": "2026-10-07T23:07:14+0530",
-     "who": "claude",
-     "note": "Where the steps are: docs/onboarding-v3/analysis/zoom-pro-meetings.md section 3 (linked above). Live state 2026-10-07: Zoom credentials are saved in production and registration is switched on (Invite Status). Open: the Event Subscriptions webhook to /hooks/zoom with its secret token pasted in the admin, and switching on per-cohort meetings. After that no meeting ID is typed anywhere."
-    },
-    {
-     "ts": "2026-10-07T23:07:21+0530",
-     "who": "claude",
-     "note": "Moved to blocked so it shows under Waiting on you."
     }
    ],
    "order": 2240
@@ -6733,20 +6678,32 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "todo",
+   "status": "blocked",
    "why": "Adi's Zoom Pro research, 2026-10-07 (docs/onboarding-v3/analysis/zoom-pro-meetings.md)",
    "spec": "One email to Zoom Support; if granted, set Zoom Support locks to Granted in the admin and press Re-apply room settings.",
    "done_when": [
     "Support's answer recorded; locks on or the bot path chosen"
    ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "Adi: send the request to Zoom Support (text in the Integrator's message)",
+   "evidence": [
+    {
+     "label": "Zoom Pro doc: why these two fields (section 1, row 'No REST setting locks mic and camera'; section 3 step 4)",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/docs/onboarding-v3/analysis/zoom-pro-meetings.md"
+    }
+   ],
+   "blockers": [
+    "The request has to come from the Zoom account owner (Adi)"
+   ],
+   "needs_from_owner": "Send this to Zoom Support from the Pro owner account (support.zoom.com, Contact support), filling the two bracketed fields:\n\nSubject: Enable host mute control and participant video disable for meetings on our Pro account\n\nHello Zoom Support,\n\nWe run a weekly three-day workshop on our Pro account as recurring meetings created through the REST API (Server-to-Server OAuth app). Attendees should join muted with cameras off and stay that way unless the host allows otherwise. Please enable these two meeting settings for our account so we can set them when meetings are created through the API: allow_host_control_participant_mute_state and disable_participant_video.\n\nAccount owner email: [the Pro owner account email]\nAccount ID: [shown in the Zoom app, App Credentials]\n\nThank you.\n\nThen paste Zoom's answer here. If they agree, the centre sets both locks when it creates each meeting and no bot is needed (T-226 stays parked).",
    "log": [
     {
      "ts": "2026-10-07T20:46:43+0530",
      "who": "claude",
      "note": "Created by the Integrator."
+    },
+    {
+     "ts": "2026-10-07T23:07:42+0530",
+     "who": "claude",
+     "note": "The request text was only in the Integrator's chat message; it now lives on this task (2026-10-07). Moved to blocked so it shows under Waiting on you."
     }
    ],
    "order": 2250
@@ -6782,119 +6739,6 @@
     }
    ],
    "order": 2260
-  },
-  {
-   "id": "T-227",
-   "status": "blocked",
-   "owner": "Adi",
-   "assignee": "Adi",
-   "reviewers": [
-    "Adi",
-    "Aquila"
-   ],
-   "priority": "P0",
-   "due": "",
-   "area": "Delivery",
-   "order": 2270,
-   "title": "T-227: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [],
-   "held": true
-  },
-  {
-   "id": "T-228",
-   "title": "Welcome email: every new attendee gets their centre link and private calendar link",
-   "area": "Delivery",
-   "owner": "Aquila",
-   "assignee": "Claude",
-   "reviewers": [
-    "Aquila",
-    "Adi"
-   ],
-   "priority": "P0",
-   "due": "",
-   "status": "blocked",
-   "why": "Since the 2026-10-07 security fix (main b08eeed) the marketing pages never receive a feed token, so a sign-up's join page shows the public outline (no join link). Nothing on main emails a new attendee their centre link (/enter?t=) or their private calendar link (/cal/p/<token>.ics): no welcome or confirmation sender exists in cloud/src or app/src. The admin's Add attendees response and the attendee drawer already return both links, ready to merge into an email.",
-   "spec": "On attendee creation (admin add, /cal/issue, /intake), send one email: centre link, private calendar link with the one-click Google, Apple and Outlook paths, the cohort's three dates at 11:00 ET, and the reminder that the link is personal. Idempotent per attendee (event 'welcome_sent'). Revoking the calendar link (admin) resends the new one. Uses the sender T-123 settles (Tantra email from T-217 once its endpoint ships, else Resend). Copy follows COPY_RULES.md, no dashes.",
-   "done_when": [
-    "A new sign-up receives exactly one email with both links within a minute",
-    "The calendar link in it opens their private feed with their own join link",
-    "Rotating the calendar link in the admin sends the new link"
-   ],
-   "evidence": [
-    {
-     "label": "Calendar feeds handoff (how it works, setup, blockers)",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/SESSION_HANDOFF_2026_10_06_CALENDAR_FEEDS.md"
-    }
-   ],
-   "blockers": [
-    "Sending provider and from-address (T-123); Tantra's /emails/batch endpoint not shipped yet (T-217)"
-   ],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-10-07T22:53:58+0530",
-     "who": "claude",
-     "note": "Gap found while consolidating the S3 calendar-feeds follow-ups (2026-10-07)."
-    },
-    {
-     "ts": "2026-10-07T23:07:14+0530",
-     "who": "claude",
-     "note": "For the next session: code in cloud/src/invites.ts (Google and Zoom sync), cloud/src/calendar.ts (feeds, /cal/issue), cloud/admin-ui/admin.js (Calendar Invites panel). Live status read-only: GET /admin/api/calendar with the key in ~/.config/tantra/revops-admin-key. Local test: SIM_PORT=8902 vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs (BROWSER=1 for pages). Links to send: the admin's POST /admin/api/attendees response already returns link (/enter?t=) and calendar (/cal/p/<token>.ics) per person, and GET /admin/api/attendees/<id> returns attendee.feed. /cal/issue (sign-ups) deliberately never returns a token to the browser (Integrator fix b08eeed), so the email is the only way a marketing sign-up receives their private link. Inputs it waits on are tracked in T-123 (sending provider and from-address) and T-217 (Tantra /emails/batch endpoint)."
-    }
-   ],
-   "order": 2280
-  },
-  {
-   "id": "T-229",
-   "title": "Zoom registrations: respect Zoom's 3-a-day limit per registrant and keep placeholder emails out",
-   "area": "Product",
-   "owner": "Nelbin",
-   "assignee": "Claude",
-   "reviewers": [
-    "Nelbin",
-    "Aquila"
-   ],
-   "priority": "P1",
-   "due": "",
-   "status": "queue",
-   "why": "Live check 2026-10-07: production attendee #5 is a non-test sign-up with the placeholder address you@example.com. Its three Zoom registrations fail with HTTP 429: Zoom allows 3 Add meeting registrant calls per registrant email per day, and the sync retries failed rows every hour, so it can never succeed and keeps spending calls.",
-   "spec": "1) Mark attendee #5 as test (admin). 2) /cal/issue and /intake refuse reserved and placeholder domains (example.com/.net/.org, *.test, *.invalid, *.localhost). 3) In invites.ts, a Zoom 429 for a registrant waits until the next 00:00 GMT instead of the hourly retry. 4) probe-calendar-feeds gains a check for each.",
-   "done_when": [
-    "No failed Zoom rows in Invite Status after the next cron",
-    "A sign-up with an example.com address is refused",
-    "A simulated 429 is retried only after 00:00 GMT"
-   ],
-   "evidence": [
-    {
-     "label": "Calendar feeds handoff (how it works, setup, blockers)",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/SESSION_HANDOFF_2026_10_06_CALENDAR_FEEDS.md"
-    },
-    {
-     "label": "Admin centre: Cohort Settings, Invite Status",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=t227"
-    }
-   ],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-10-07T22:53:58+0530",
-     "who": "claude",
-     "note": "Found reading the production admin (read-only) while consolidating S3 follow-ups."
-    },
-    {
-     "ts": "2026-10-07T23:07:14+0530",
-     "who": "claude",
-     "note": "For the next session: code in cloud/src/invites.ts (Google and Zoom sync), cloud/src/calendar.ts (feeds, /cal/issue), cloud/admin-ui/admin.js (Calendar Invites panel). Live status read-only: GET /admin/api/calendar with the key in ~/.config/tantra/revops-admin-key. Local test: SIM_PORT=8902 vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs (BROWSER=1 for pages). Production facts (2026-10-07): attendee id 5, test=0, email you@example.com, three zoom rows failed with Zoom 429 'daily rate limit of (3) for Add meeting registrant API requests for the registrant'. Retry rule today: RETRY_MS (1 hour) in invites.ts. No input needed from Adi."
-    }
-   ],
-   "order": 2290
   }
  ]
 }
