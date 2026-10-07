@@ -1,0 +1,29 @@
+WEBVTT
+
+1
+00:00:03.000 --> 00:00:11.000
+Step 1: In the sub-account you'll use, open Settings and scroll to Other Settings. Click Private Integrations.
+
+2
+00:00:11.000 --> 00:00:18.000
+Step 2: Not in the list? GoHighLevel says to switch the feature on in Labs first.
+
+3
+00:00:18.000 --> 00:00:23.000
+Step 3: Click Create new Integration.
+
+4
+00:00:23.000 --> 00:00:29.000
+Step 4: Name it RevOps Workshop, add a short description, and click Next.
+
+5
+00:00:29.000 --> 00:00:39.000
+Step 5: Pick only the card's scopes: contacts, tags, custom fields, opportunities, pipelines, locations and workflows.
+
+6
+00:00:39.000 --> 00:00:46.000
+Step 6: Click Copy. The token starts pit- and GoHighLevel won't show it again.
+
+7
+00:00:46.000 --> 00:00:53.000
+Step 7: Open Settings, then Business Profile. Copy the Location ID with the copy icon.

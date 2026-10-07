@@ -1,0 +1,29 @@
+WEBVTT
+
+1
+00:00:03.000 --> 00:00:09.000
+Step 1: In HubSpot, open Development in the left menu.
+
+2
+00:00:09.000 --> 00:00:14.000
+Step 2: Open Keys, then Service Keys.
+
+3
+00:00:14.000 --> 00:00:19.000
+Step 3: Click Create service key in the top right.
+
+4
+00:00:19.000 --> 00:00:25.000
+Step 4: Name it RevOps Workshop. The name must be unique in your account.
+
+5
+00:00:25.000 --> 00:00:35.000
+Step 5: Click Add new scope. Add read and write for crm.objects.contacts, crm.objects.deals, crm.schemas.contacts and crm.schemas.deals.
+
+6
+00:00:35.000 --> 00:00:42.000
+Step 6: Check the list holds those eight, click Create, then confirm in the dialog.
+
+7
+00:00:42.000 --> 00:00:50.000
+Step 7: Open the key, click Show, then Copy. It starts pat-. Paste it into your centre.

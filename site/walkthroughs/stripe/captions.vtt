@@ -1,0 +1,29 @@
+WEBVTT
+
+1
+00:00:03.000 --> 00:00:12.000
+Step 1: Sign in to Stripe and switch to test mode. Nothing is charged there, and its restricted keys start rk_test_.
+
+2
+00:00:12.000 --> 00:00:18.000
+Step 2: Open the Developers menu and click Workbench.
+
+3
+00:00:18.000 --> 00:00:24.000
+Step 3: In the API keys box, click Manage to open your API keys.
+
+4
+00:00:24.000 --> 00:00:34.000
+Step 4: On the API keys page, click Create restricted key. Asked how you'll use it? Pick Authorizing agent access to your account.
+
+5
+00:00:34.000 --> 00:00:44.000
+Step 5: Name the key. Set Write on Products, Prices, Payment Links and Webhook Endpoints. Leave every other permission at None.
+
+6
+00:00:44.000 --> 00:00:53.000
+Step 6: Click Create key and finish Stripe's two-step check. Click the key to copy it and save it safely.
+
+7
+00:00:53.000 --> 00:01:01.000
+Step 7: Never paste your secret key (sk_). It can do anything in your account, and the centre refuses it.

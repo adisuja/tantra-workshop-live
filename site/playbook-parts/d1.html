@@ -208,12 +208,11 @@
       <div class="tbl"><table>
         <thead><tr><th>Tool</th><th>What it is for</th><th>Use it when</th></tr></thead>
         <tbody>
-          <tr><td data-label="Tool"><b>Apollo</b></td><td data-label="What it is for">B2B contacts with work emails, filtered by title, headcount, industry and location</td><td data-label="Use it when">Your first list, on most budgets</td></tr>
+          <tr><td data-label="Tool"><b>Our data partners</b></td><td data-label="What it is for">Pull the rows from ZoomInfo or Sales Navigator for you and quote before anything is bought</td><td data-label="Use it when">You have no account on those platforms</td></tr>
           <tr><td data-label="Tool"><b>LinkedIn Sales Navigator</b></td><td data-label="What it is for">LinkedIn members by role, company size, geography and recent activity; no email export</td><td data-label="Use it when">You will run LinkedIn outreach, or want people who are active now</td></tr>
           <tr><td data-label="Tool"><b>ZoomInfo</b></td><td data-label="What it is for">Large company and contact database with buying-intent signals</td><td data-label="Use it when">Mid-market or enterprise buyers, and a larger budget</td></tr>
           <tr><td data-label="Tool"><b>Clay</b></td><td data-label="What it is for">Combines many data providers; adds funding, hiring and tech stack; tries several sources per email</td><td data-label="Use it when">You need the trigger (field 10), or better email coverage</td></tr>
-          <tr><td data-label="Tool"><b>BuiltWith</b></td><td data-label="What it is for">Shows which websites run a given piece of software</td><td data-label="Use it when">Your buyers are defined by a tool they already pay for</td></tr>
-          <tr><td data-label="Tool"><b>An email verifier</b></td><td data-label="What it is for">NeverBounce, ZeroBounce, or your sending tool's built-in check</td><td data-label="Use it when">Always, before any cold email</td></tr>
+          <tr><td data-label="Tool"><b>An email verifier</b></td><td data-label="What it is for">Checks every address can receive mail before you send</td><td data-label="Use it when">Always, before any cold email</td></tr>
         </tbody>
       </table></div>
       <div class="srcnote"><b>Prices</b> change often. Check each vendor's pricing page before you buy.</div>
@@ -227,9 +226,9 @@
             <li>Verify every email and keep only the valid ones.</li>
             <li>Check the rules on cold outreach in your buyers' countries (for example GDPR in the EU and UK) before anything sends.</li>
           </ol>
-          <p><b>Example, for a consultancy:</b> in Apollo, titles "Managing Partner" and "Partner", 25 to 120 employees, Accounting, United Kingdom. Export, remove existing clients, verify, save as the Day 2 invite list.</p>
+          <p><b>Example, for a consultancy:</b> titles "Managing Partner" and "Partner", 25 to 120 employees, Accounting, United Kingdom. Export, remove existing clients, verify, save as the Day 2 invite list.</p>
         </div>
-        <div class="meta"><span><i>Tool</i>Apollo or Sales Navigator, a sheet, a verifier</span><span><i>Time</i>60 min</span><span class="pv"><i>Proof</i>A sheet of named people, every email verified</span></div>
+        <div class="meta"><span><i>Tool</i>Our data partners or Sales Navigator, a sheet, a verifier</span><span><i>Time</i>60 min</span><span class="pv"><i>Proof</i>A sheet of named people, every email verified</span></div>
       </div>
       <div class="vipslot" data-step="d1-step-5-build-the-prospect-list"></div>
 <h3 id="d1-step-6-pick-your-funnel">Step 6: Pick Your Funnel</h3>
@@ -337,8 +336,8 @@
       <div class="task">
         <div class="tm">
           <ol>
-            <li><b>Get domains:</b> two or three outreach domains that resemble your main one: ones you own at GoDaddy, or new ones registered at Cloudflare Registrar. Never send cold email from your main domain. Later, redirect each one to your main website (a Redirect Rule in Cloudflare), so anyone who types it lands somewhere real.</li>
-            <li><b>DNS in Cloudflare:</b> domains registered at Cloudflare Registrar are there already. For GoDaddy domains, add each as a site in Cloudflare, then switch its nameservers in GoDaddy to the two Cloudflare shows. Do this first: the DNS token in item 11 can only cover domains already in Cloudflare.</li>
+            <li><b>Get domains:</b> two or three outreach domains that resemble your main one, registered at Cloudflare Registrar. Never send cold email from your main domain. Later, redirect each one to your main website (a Redirect Rule in Cloudflare), so anyone who types it lands somewhere real.</li>
+            <li><b>DNS in Cloudflare:</b> domains registered at Cloudflare Registrar are there already, which matters: the DNS token in item 11 can only cover domains already in Cloudflare.</li>
             <li><b>Add them to Google Workspace</b> (a paid plan; every mailbox is a paid seat)<b>:</b> in the Admin console, <b>Account → Domains → Manage domains → Add a domain</b>, as a secondary domain. Add the verification TXT record it shows in Cloudflare under <b>DNS → Records</b>, then click Verify.</li>
             <li><b>Add the MX record</b> in Cloudflare so replies arrive: type MX, name <code>@</code>, mail server <code>SMTP.GOOGLE.COM</code>, priority 1.</li>
             <li><b>Create mailboxes:</b> a few per domain.</li>
@@ -353,13 +352,13 @@
           <p>Click-by-click screens: the Day 2 Cold Email guide, steps 1 to 6.</p>
           <p><b>Example, for a software company:</b> it sells from northwind.io, buys northwindhq.com and trynorthwind.com, creates two mailboxes on each, and starts warm-up today for a webinar three weeks out.</p>
         </div>
-        <div class="meta"><span><i>Tool</i>GoDaddy or Cloudflare Registrar, Cloudflare, Google Workspace, Tantra, Cal.com</span><span><i>Time</i>90 to 120 min, then warm-up runs on its own</span><span class="pv"><i>Proof</i>MX, SPF, DKIM and DMARC pass in Google Admin Toolbox (Check MX); warm-up is on; LinkedIn, WhatsApp and calendar show connected; the token test says valid</span></div>
+        <div class="meta"><span><i>Tool</i>Cloudflare Registrar, Cloudflare, Google Workspace, Tantra, Cal.com</span><span><i>Time</i>90 to 120 min, then warm-up runs on its own</span><span class="pv"><i>Proof</i>MX, SPF, DKIM and DMARC pass in Google Admin Toolbox (Check MX); warm-up is on; LinkedIn, WhatsApp and calendar show connected; the token test says valid</span></div>
       </div>
       <details class="wt" id="wt-cloudflare"><summary>Watch how to connect Cloudflare<span class="len">1:13</span></summary>
         <div class="wtb">
           <video controls playsinline preload="none" poster="../walkthroughs/cloudflare/poster.jpg"><source src="../walkthroughs/cloudflare/cloudflare.mp4" type="video/mp4"><track kind="captions" src="../walkthroughs/cloudflare/captions.vtt" srclang="en" label="English"></video>
           <h4>Which Plan</h4><p>The free Cloudflare plan is enough. Domains you register are charged at Cloudflare's cost price, on the card in your Cloudflare account.</p>
-          <h4>Permissions to Grant</h4><ul><li>Zone, DNS, Workers Scripts and D1, each at Edit (the link on your card ticks these for you).</li><li>Account, Registrar: Domains, Admin (only on the Cloudflare Registrar path; Cloudflare offers only Read or Admin here).</li><li>Zone, Single Redirect, Edit.</li><li>Account Resources: All accounts. Zone Resources: All zones, so domains you buy later are covered.</li></ul>
+          <h4>Permissions to Grant</h4><ul><li>Zone, DNS, Workers Scripts and D1, each at Edit (the link on your card ticks these for you).</li><li>Account, Registrar: Domains, Admin (Cloudflare offers only Read or Admin here).</li><li>Zone, Single Redirect, Edit.</li><li>Account Resources: All accounts. Zone Resources: All zones, so domains you buy later are covered.</li></ul>
           <h4>Where the Key Appears</h4><p>After Create Token, Cloudflare shows the token once on the success page. Copy it there with the copy icon; it never appears again.</p>
           <h4>Common Errors</h4><dl><dt>The card says a permission is missing</dt><dd>Edit the token in Cloudflare under My Profile, API Tokens and add the permission it names, then click Connect again.</dd><dt>No domain can be registered</dt><dd>Registrar: Domains must be at Admin. Read lets the agent look, not buy.</dd><dt>Your token reaches more than one account</dt><dd>Paste the Account ID from the right side of your Cloudflare overview page into the second field.</dd></dl>
         </div>

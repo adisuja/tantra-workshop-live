@@ -1,0 +1,33 @@
+WEBVTT
+
+1
+00:00:03.000 --> 00:00:11.000
+Step 1: Open the Zoho API Console for your region, sign in with your Zoho CRM login, and click Get Started.
+
+2
+00:00:11.000 --> 00:00:17.000
+Step 2: Under Choose a Client Type, find Self Client and click Create Now.
+
+3
+00:00:17.000 --> 00:00:23.000
+Step 3: Click Create, then OK in the pop-up to switch the Self Client on.
+
+4
+00:00:23.000 --> 00:00:31.000
+Step 4: On the Client Secret tab, copy the Client ID and Client Secret into your card first.
+
+5
+00:00:31.000 --> 00:00:40.000
+Step 5: Open Generate Code. In Scope, paste ZohoCRM.modules.ALL,ZohoCRM.settings.ALL,ZohoCRM.org.ALL exactly.
+
+6
+00:00:40.000 --> 00:00:47.000
+Step 6: Set Time Duration to 10 minutes, add a short description, and click Create.
+
+7
+00:00:47.000 --> 00:00:54.000
+Step 7: Pick ZohoCRM, then your Production org, and click Create.
+
+8
+00:00:54.000 --> 00:01:02.000
+Step 8: Copy the code. Paste it with your region (us, eu, in, au, jp or ca) within 10 minutes.

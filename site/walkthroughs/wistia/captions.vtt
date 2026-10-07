@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:03.000 --> 00:00:13.000
+Step 1: Sign in as the Account Owner. Open Settings, then API Home, and click New token.
+
+2
+00:00:13.000 --> 00:00:22.000
+Step 2: Give it a nickname. Tick Read, update & delete anything and Upload video, then create it.
+
+3
+00:00:22.000 --> 00:00:30.000
+Step 3: Copy the token straight away. Once you leave or refresh the page, Wistia won't let you copy it.
+
+4
+00:00:30.000 --> 00:00:37.000
+Step 4: Click Copy Password and paste it into Wistia API token in your centre.
+
+5
+00:00:37.000 --> 00:00:44.000
+Step 5: Lost it? Use the ... menu to delete the token, then create a new one.

@@ -1,0 +1,57 @@
+WEBVTT
+
+1
+00:00:03.000 --> 00:00:09.000
+Step 1: Open zoom.us/profile/setting, Meeting tab. Meeting Passcode stays on: Zoom requires a passcode, a waiting room or sign-in on every meeting.
+
+2
+00:00:09.000 --> 00:00:14.000
+Step 2: Embed passcode in invite link: on. The passcode rides inside each person's link, so nobody types it.
+
+3
+00:00:14.000 --> 00:00:19.000
+Step 3: Only authenticated participants can join: off. Left on, Zoom turns away every registrant without a Zoom account.
+
+4
+00:00:19.000 --> 00:00:23.000
+Step 4: Mute all participants when they join: on.
+
+5
+00:00:23.000 --> 00:00:27.000
+Step 5: Co-host: on, so a teammate can run the room with you.
+
+6
+00:00:27.000 --> 00:00:32.000
+Step 6: Focus Mode: on, with Allow host to enable focus mode when scheduling ticked. Attendees see only you.
+
+7
+00:00:32.000 --> 00:00:38.000
+Step 7: Request permission to unmute: on. A greyed switch is locked for the account: change it at zoom.us/account/setting.
+
+8
+00:00:38.000 --> 00:00:43.000
+Step 8: Recording tab: Cloud recording on, with Create audio transcript ticked further down.
+
+9
+00:00:43.000 --> 00:00:48.000
+Step 9: Now the app. In the Zoom App Marketplace click the plus, Build app, and pick Server-to-Server OAuth.
+
+10
+00:00:48.000 --> 00:00:52.000
+Step 10: On Scopes, add the twelve scopes listed on your card, exactly as written.
+
+11
+00:00:52.000 --> 00:00:57.000
+Step 11: Day 2: on Feature, turn on Event Subscriptions, paste the address the agent gives you, then Add Events.
+
+12
+00:00:57.000 --> 00:01:02.000
+Step 12: Tick Recording, All Recordings have completed. The four Meeting events are optional live tracking.
+
+13
+00:01:02.000 --> 00:01:06.000
+Step 13: Copy the Secret Token on the Feature page into the optional field on your card.
+
+14
+00:01:06.000 --> 00:01:11.000
+Step 14: Activate the app, then copy the Account ID, Client ID and Client Secret from App Credentials.

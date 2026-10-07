@@ -1,0 +1,41 @@
+WEBVTT
+
+1
+00:00:03.000 --> 00:00:10.000
+Step 1: In Google Cloud open IAM and Admin, Service Accounts, Create service account. Add a JSON key and note its numeric client ID.
+
+2
+00:00:10.000 --> 00:00:16.000
+Step 2: In admin.google.com as a super admin: Security, Access and data control, API controls, Manage domain-wide delegation.
+
+3
+00:00:16.000 --> 00:00:19.000
+Step 3: Click Add new.
+
+4
+00:00:19.000 --> 00:00:24.000
+Step 4: Paste the service account's numeric client ID, not its email.
+
+5
+00:00:24.000 --> 00:00:31.000
+Step 5: Paste gmail.send, gmail.modify and calendar, comma separated. Invites need calendar; cold email needs the two Gmail scopes.
+
+6
+00:00:31.000 --> 00:00:35.000
+Step 6: Click Authorise. One entry covers every mailbox in that Workspace.
+
+7
+00:00:35.000 --> 00:00:39.000
+Step 7: In Tantra open Connectors, Google Service Accounts.
+
+8
+00:00:39.000 --> 00:00:45.000
+Step 8: Drop the JSON key here, up to 30 at once, add a tag and click Upload. Tantra stores it encrypted.
+
+9
+00:00:45.000 --> 00:00:51.000
+Step 9: On Accounts, paste every mailbox in that Workspace and click Verify & Add.
+
+10
+00:00:51.000 --> 00:00:57.000
+Step 10: Each one should show Connected and Gmail capable. Calendar-only means the Gmail scopes are missing.
