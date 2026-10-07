@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-07T22:54:25+0530",
-  "version": 260,
+  "updated": "2026-10-07T23:07:21+0530",
+  "version": 265,
   "last_id": 229,
   "team": [
    {
@@ -6677,14 +6677,25 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "todo",
+   "status": "blocked",
    "why": "Adi's Zoom Pro research, 2026-10-07 (docs/onboarding-v3/analysis/zoom-pro-meetings.md)",
    "spec": "Zoom App Marketplace, Server-to-Server OAuth app 'Tantra Centre' with the scopes in the doc section 3; Event Subscriptions to /hooks/zoom; paste the secret token, then credentials, in the admin; switch on Create meetings per cohort.",
    "done_when": [
     "The admin's Zoom Sessions panel shows this week's meeting and the host is ready"
    ],
-   "evidence": [],
-   "blockers": [],
+   "evidence": [
+    {
+     "label": "Zoom Pro research and setup doc (section 3: what Adi does)",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/docs/onboarding-v3/analysis/zoom-pro-meetings.md"
+    },
+    {
+     "label": "Admin centre: Cohort Settings, Invite Status",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=t227"
+    }
+   ],
+   "blockers": [
+    "Zoom Server-to-Server app scopes and Event Subscriptions webhook (secret token) not set up yet"
+   ],
    "needs_from_owner": "Adi: create the app and paste its values in the admin (steps in the doc, section 3)",
    "log": [
     {
@@ -6696,6 +6707,16 @@
      "ts": "2026-10-07T22:53:58+0530",
      "who": "claude",
      "note": "Context from S3 (2026-10-07): the same Server-to-Server app powers per-attendee Zoom registration (T-222): each attendee's personal join link goes into their private calendar feed and Google invite. Live admin already shows Zoom credentials saved and registration switched on; the open part here is the webhook and turning on the per-cohort meetings, after which no meeting ID needs entering. See also T-229 (a placeholder attendee hitting Zoom's per-registrant limit)."
+    },
+    {
+     "ts": "2026-10-07T23:07:14+0530",
+     "who": "claude",
+     "note": "Where the steps are: docs/onboarding-v3/analysis/zoom-pro-meetings.md section 3 (linked above). Live state 2026-10-07: Zoom credentials are saved in production and registration is switched on (Invite Status). Open: the Event Subscriptions webhook to /hooks/zoom with its secret token pasted in the admin, and switching on per-cohort meetings. After that no meeting ID is typed anywhere."
+    },
+    {
+     "ts": "2026-10-07T23:07:21+0530",
+     "who": "claude",
+     "note": "Moved to blocked so it shows under Waiting on you."
     }
    ],
    "order": 2240
@@ -6805,7 +6826,12 @@
     "The calendar link in it opens their private feed with their own join link",
     "Rotating the calendar link in the admin sends the new link"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Calendar feeds handoff (how it works, setup, blockers)",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/SESSION_HANDOFF_2026_10_06_CALENDAR_FEEDS.md"
+    }
+   ],
    "blockers": [
     "Sending provider and from-address (T-123); Tantra's /emails/batch endpoint not shipped yet (T-217)"
    ],
@@ -6815,6 +6841,11 @@
      "ts": "2026-10-07T22:53:58+0530",
      "who": "claude",
      "note": "Gap found while consolidating the S3 calendar-feeds follow-ups (2026-10-07)."
+    },
+    {
+     "ts": "2026-10-07T23:07:14+0530",
+     "who": "claude",
+     "note": "For the next session: code in cloud/src/invites.ts (Google and Zoom sync), cloud/src/calendar.ts (feeds, /cal/issue), cloud/admin-ui/admin.js (Calendar Invites panel). Live status read-only: GET /admin/api/calendar with the key in ~/.config/tantra/revops-admin-key. Local test: SIM_PORT=8902 vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs (BROWSER=1 for pages). Links to send: the admin's POST /admin/api/attendees response already returns link (/enter?t=) and calendar (/cal/p/<token>.ics) per person, and GET /admin/api/attendees/<id> returns attendee.feed. /cal/issue (sign-ups) deliberately never returns a token to the browser (Integrator fix b08eeed), so the email is the only way a marketing sign-up receives their private link. Inputs it waits on are tracked in T-123 (sending provider and from-address) and T-217 (Tantra /emails/batch endpoint)."
     }
    ],
    "order": 2280
@@ -6839,7 +6870,16 @@
     "A sign-up with an example.com address is refused",
     "A simulated 429 is retried only after 00:00 GMT"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Calendar feeds handoff (how it works, setup, blockers)",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/SESSION_HANDOFF_2026_10_06_CALENDAR_FEEDS.md"
+    },
+    {
+     "label": "Admin centre: Cohort Settings, Invite Status",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=t227"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -6847,6 +6887,11 @@
      "ts": "2026-10-07T22:53:58+0530",
      "who": "claude",
      "note": "Found reading the production admin (read-only) while consolidating S3 follow-ups."
+    },
+    {
+     "ts": "2026-10-07T23:07:14+0530",
+     "who": "claude",
+     "note": "For the next session: code in cloud/src/invites.ts (Google and Zoom sync), cloud/src/calendar.ts (feeds, /cal/issue), cloud/admin-ui/admin.js (Calendar Invites panel). Live status read-only: GET /admin/api/calendar with the key in ~/.config/tantra/revops-admin-key. Local test: SIM_PORT=8902 vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs (BROWSER=1 for pages). Production facts (2026-10-07): attendee id 5, test=0, email you@example.com, three zoom rows failed with Zoom 429 'daily rate limit of (3) for Add meeting registrant API requests for the registrant'. Retry rule today: RETRY_MS (1 hour) in invites.ts. No input needed from Adi."
     }
    ],
    "order": 2290
