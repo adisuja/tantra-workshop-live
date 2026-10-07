@@ -1,33 +1,41 @@
 WEBVTT
 
 1
-00:00:03.000 --> 00:00:11.000
-Step 1: Use a Standard key: it reaches everything the agent needs, but not your account settings or other keys.
+00:00:03.000 --> 00:00:10.000
+Step 1: Upgrade from the trial and add balance. A trial can only text up to 5 verified numbers.
 
 2
-00:00:11.000 --> 00:00:18.000
-Step 2: In the Twilio Console open Settings, Account settings, API keys and auth tokens.
+00:00:10.000 --> 00:00:17.000
+Step 2: In the Console open Account, API keys and tokens, and click Create API key.
 
 3
-00:00:18.000 --> 00:00:24.000
-Step 3: Pick your region, then click Create API key.
+00:00:17.000 --> 00:00:22.000
+Step 3: Name it, for example RevOps agent.
 
 4
-00:00:24.000 --> 00:00:31.000
-Step 4: Name it, for example RevOps agent, choose Standard and click Next.
+00:00:22.000 --> 00:00:29.000
+Step 4: Set Key type to Standard. It can't manage your keys, account settings or subaccounts.
 
 5
-00:00:31.000 --> 00:00:38.000
-Step 5: Copy the key's SID (starts SK) and its secret. Twilio shows the secret once.
+00:00:29.000 --> 00:00:34.000
+Step 5: Click Create.
 
 6
-00:00:38.000 --> 00:00:45.000
-Step 6: In your centre, paste the Account SID from your Console home page (starts AC).
+00:00:34.000 --> 00:00:40.000
+Step 6: Copy the SID (it starts SK).
 
 7
-00:00:45.000 --> 00:00:51.000
-Step 7: Paste the key's SID and its secret.
+00:00:40.000 --> 00:00:46.000
+Step 7: Copy the secret now. Twilio shows it once.
 
 8
-00:00:51.000 --> 00:00:57.000
-Step 8: Click Connect Twilio. The agent checks the key by listing your numbers.
+00:00:46.000 --> 00:00:52.000
+Step 8: Your Account SID (it starts AC) is on the same page, under Live credentials.
+
+9
+00:00:52.000 --> 00:00:58.000
+Step 9: In your centre, paste the Account SID, the key SID and the secret.
+
+10
+00:00:58.000 --> 00:01:04.000
+Step 10: Click Connect Twilio. The agent checks the key by listing your numbers.

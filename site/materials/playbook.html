@@ -1775,7 +1775,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
             <li>Write it as one line: title, date, time with time zone, length, platform.</li>
           </ol>
           <p>Reverse squeeze: set the day the video goes live. Challenge: set the date of day one.</p>
-          <p><b>Example, for a consultancy:</b> "How Accounting Firms Win New Retainers Without Waiting for Referrals. A Thursday at least three weeks out, 08:00 London, 45 minutes, on Zoom."</p>
+          <p><b>Example, for a consultancy:</b> "How Accounting Firms Win New Retainers Without Waiting for Referrals. A Thursday, 08:00 London, 45 minutes, on Zoom."</p>
         </div>
         <div class="meta"><span><i>Tool</i>Your calendar</span><span><i>Time</i>15 min</span><span class="pv"><i>Proof</i>One line with title, date, time zone, length and platform</span></div>
       </div>
@@ -1851,6 +1851,17 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
         </div>
       </details>
 <!-- /wt:workspace -->
+      <!-- wt:google-signin -->
+      <details class="wt" id="wt-google-signin"><summary>Watch how to connect Sign in with Google<span class="len">1:22</span></summary>
+        <div class="wtb">
+          <video controls playsinline preload="none" poster="../walkthroughs/google-signin/poster.jpg"><source src="../walkthroughs/google-signin/google-signin.mp4" type="video/mp4"><track kind="captions" src="../walkthroughs/google-signin/captions.vtt" srclang="en" label="English"></video>
+          <h4>Which Plan</h4><p>Google Cloud is free for this. The OAuth client lives in the centre owner's Google Cloud project; attendees only sign in.</p>
+          <h4>Permissions to Grant</h4><ul><li>OAuth client of type Web application, with the centre's address plus /api/google/callback as an authorized redirect URI.</li><li>Scopes asked at sign-in: Directory domains, Directory users, Site Verification and Analytics edit, plus your email.</li><li>While the app is in testing, every account that signs in must be listed under Audience, Test users.</li></ul>
+          <h4>Where the Key Appears</h4><p>Google Auth platform, Clients, Create Client. Google shows the client ID and the client secret when you create it; the centre's settings hold both.</p>
+          <h4>Common Errors</h4><dl><dt>Access blocked: the app has not completed Google verification</dt><dd>The account isn't a test user. Add it under Audience, Test users, or publish the app.</dd><dt>redirect_uri_mismatch</dt><dd>The centre's /api/google/callback address isn't on the client's authorized redirect URIs. Add it exactly.</dd><dt>Google didn't grant every permission</dt><dd>A box was unticked on the consent screen. Sign in again and leave every box ticked.</dd></dl>
+        </div>
+      </details>
+<!-- /wt:google-signin -->
       <div class="box sum"><div class="h">Your Day 1 Summary</div>
         <ol>
           <li>Your offer is one sentence a stranger can repeat, scored on the value equation and placed on a ladder.</li>
@@ -2138,12 +2149,12 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
       </details>
 <!-- /wt:kie -->
       <!-- wt:metricool -->
-      <details class="wt" id="wt-metricool"><summary>Watch how to connect Metricool<span class="len">0:51</span></summary>
+      <details class="wt" id="wt-metricool"><summary>Watch how to connect Metricool<span class="len">0:57</span></summary>
         <div class="wtb">
           <video controls playsinline preload="none" poster="../walkthroughs/metricool/poster.jpg"><source src="../walkthroughs/metricool/metricool.mp4" type="video/mp4"><track kind="captions" src="../walkthroughs/metricool/captions.vtt" srclang="en" label="English"></video>
           <h4>Which Plan</h4><p>The API needs Metricool's Advanced or Custom plan. Free and Starter have no API access.</p>
           <h4>Permissions to Grant</h4><ul><li>One token for the whole account, with no scopes. The agent only posts what you approve, to the brand you name.</li></ul>
-          <h4>Where the Key Appears</h4><p>Account Settings, API. The userId and blogId are the numbers in the address bar when you open your brand.</p>
+          <h4>Where the Key Appears</h4><p>Menu at the top right, Account settings, API tab, Copy. The userId and blogId are the numbers in the address bar when you open your brand.</p>
           <h4>Common Errors</h4><dl><dt>Access denied</dt><dd>The token was copied wrong, or the blogId belongs to another account. Copy both again from your own brand.</dd><dt>The request must include blogId and userId</dt><dd>One of the two numbers is missing. Open your brand and read both from the address bar.</dd><dt>A post goes out without its image</dt><dd>The image link was private or expired. The agent uploads its own images, so this only happens with links you add.</dd></dl>
         </div>
       </details>
@@ -2346,12 +2357,12 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
       </details>
 <!-- /wt:resend -->
       <!-- wt:twilio -->
-      <details class="wt" id="wt-twilio"><summary>Watch how to connect Twilio<span class="len">1:00</span></summary>
+      <details class="wt" id="wt-twilio"><summary>Watch how to connect Twilio<span class="len">1:07</span></summary>
         <div class="wtb">
           <video controls playsinline preload="none" poster="../walkthroughs/twilio/poster.jpg"><source src="../walkthroughs/twilio/twilio.mp4" type="video/mp4"><track kind="captions" src="../walkthroughs/twilio/captions.vtt" srclang="en" label="English"></video>
           <h4>Which Plan</h4><p>Upgrade from the trial and add balance first. A trial can only text up to 5 verified numbers in your own country, and toll-free verification needs a paid account.</p>
           <h4>Permissions to Grant</h4><ul><li>A Standard API key: every resource except managing accounts and other keys. Never paste your Auth Token or a Main key.</li></ul>
-          <h4>Where the Key Appears</h4><p>Settings, Account settings, API keys and auth tokens, Create API key. Twilio shows the secret once; the Account SID is on the Console home page.</p>
+          <h4>Where the Key Appears</h4><p>Account, API keys and tokens, Create API key, Key type Standard. Twilio shows the secret once; the Account SID is on the same page under Live credentials.</p>
           <h4>Common Errors</h4><dl><dt>20003 Authenticate</dt><dd>The SID and secret don't match, the key was deleted, or it was made in another region. Create a new key in your account's region.</dd><dt>21608: the number is unverified</dt><dd>The account is still on the trial. Upgrade it, then try again.</dd><dt>30032: toll-free number not verified</dt><dd>Texts from a toll-free number wait for Twilio's verification, usually 3 to 5 business days. The agent submits it for you.</dd></dl>
         </div>
       </details>

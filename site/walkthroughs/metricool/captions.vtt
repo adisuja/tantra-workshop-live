@@ -5,25 +5,29 @@ WEBVTT
 Step 1: The API comes with Metricool's Advanced and Custom plans. Free and Starter have no API access.
 
 2
-00:00:11.000 --> 00:00:17.000
-Step 2: In Metricool open Account Settings, then API.
+00:00:11.000 --> 00:00:18.000
+Step 2: In Metricool open the menu at the top right, then Account settings.
 
 3
-00:00:17.000 --> 00:00:23.000
-Step 3: Copy your API access token.
+00:00:18.000 --> 00:00:23.000
+Step 3: Open the API tab.
 
 4
-00:00:23.000 --> 00:00:31.000
-Step 4: Open your brand in Metricool. The numbers after userId= and blogId= in the address are the two IDs.
+00:00:23.000 --> 00:00:29.000
+Step 4: Copy your REST API access token with Copy.
 
 5
-00:00:31.000 --> 00:00:36.000
-Step 5: In your centre, paste the token.
+00:00:29.000 --> 00:00:37.000
+Step 5: Open your brand in Metricool. The numbers after userId= and blogId= in the address are the two IDs.
 
 6
-00:00:36.000 --> 00:00:42.000
-Step 6: Paste the two numbers into userId and blogId.
+00:00:37.000 --> 00:00:42.000
+Step 6: In your centre, paste the token.
 
 7
 00:00:42.000 --> 00:00:48.000
-Step 7: Click Connect Metricool. The agent checks that the brand belongs to your account.
+Step 7: Paste the two numbers into userId and blogId.
+
+8
+00:00:48.000 --> 00:00:54.000
+Step 8: Click Connect Metricool. The agent checks that the brand belongs to your account.
