@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-07T23:07:42+0530",
-  "version": 248,
+  "updated": "2026-10-07T05:15:27+0530",
+  "version": 247,
   "last_id": 222,
   "team": [
    {
@@ -6678,32 +6678,20 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "blocked",
+   "status": "todo",
    "why": "Adi's Zoom Pro research, 2026-10-07 (docs/onboarding-v3/analysis/zoom-pro-meetings.md)",
    "spec": "One email to Zoom Support; if granted, set Zoom Support locks to Granted in the admin and press Re-apply room settings.",
    "done_when": [
     "Support's answer recorded; locks on or the bot path chosen"
    ],
-   "evidence": [
-    {
-     "label": "Zoom Pro doc: why these two fields (section 1, row 'No REST setting locks mic and camera'; section 3 step 4)",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/docs/onboarding-v3/analysis/zoom-pro-meetings.md"
-    }
-   ],
-   "blockers": [
-    "The request has to come from the Zoom account owner (Adi)"
-   ],
-   "needs_from_owner": "Send this to Zoom Support from the Pro owner account (support.zoom.com, Contact support), filling the two bracketed fields:\n\nSubject: Enable host mute control and participant video disable for meetings on our Pro account\n\nHello Zoom Support,\n\nWe run a weekly three-day workshop on our Pro account as recurring meetings created through the REST API (Server-to-Server OAuth app). Attendees should join muted with cameras off and stay that way unless the host allows otherwise. Please enable these two meeting settings for our account so we can set them when meetings are created through the API: allow_host_control_participant_mute_state and disable_participant_video.\n\nAccount owner email: [the Pro owner account email]\nAccount ID: [shown in the Zoom app, App Credentials]\n\nThank you.\n\nThen paste Zoom's answer here. If they agree, the centre sets both locks when it creates each meeting and no bot is needed (T-226 stays parked).",
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Adi: send the request to Zoom Support (text in the Integrator's message)",
    "log": [
     {
      "ts": "2026-10-07T20:46:43+0530",
      "who": "claude",
      "note": "Created by the Integrator."
-    },
-    {
-     "ts": "2026-10-07T23:07:42+0530",
-     "who": "claude",
-     "note": "The request text was only in the Integrator's chat message; it now lives on this task (2026-10-07). Moved to blocked so it shows under Waiting on you."
     }
    ],
    "order": 2250
