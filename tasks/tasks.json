@@ -7742,18 +7742,19 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "queue",
+   "status": "blocked",
    "why": "Zoom Pro has about 5 GB of cloud storage, enough for one or two sessions. Adi 2026-10-08: after every session the recording must be saved to the team@growthclub.org Google Drive by a proper integration, and only then deleted from Zoom so no data is lost.",
-   "spec": "On Zoom's recording.completed webhook (already handled in cloud/src/zoom-pro.ts saveRecording), copy every file of the recording (video, audio, chat, transcript) into a Drive folder 'Tantra Workshop Recordings/<cohort week>/Day N' owned by team@growthclub.org, streaming from Zoom's download_url into a Drive resumable upload (no full file in memory). Record the Drive file ids and links in zoom_recordings and point the attendee replay link at the Drive copy (shared to anyone with the link, view only). Only after every file's size matches, delete the recording from Zoom (needs scope cloud_recording:delete:recording_file:admin added to the Tantra Centre app) and log it. Admin: a Backups list with status and a Retry button. Probe against the simulator (vendor-sim gets Drive upload and Zoom delete). Drive access: Google OAuth consent once as team@growthclub.org (Drive file scope, refresh token stored encrypted in the centre).",
+   "spec": "BUILT AND LIVE 2026-10-08: rec-backup 647d638 merged (main 8ca0a5d), migration 0016 applied remotely, Worker f71a029d. probe-rec-backup 37/37, probe-zoom-pro 54/54. Flow: on recording.completed (and recording.transcript_completed) every file (video, audio, chat, transcript, timeline) streams from Zoom into Google Drive 'Tantra Workshop Recordings/<cohort week>/Day N' in 8 MB chunks; a file counts only at Zoom's exact size; video shared view only by link and becomes the attendee replay link; then, 2 hours after the last ready event and only if every file is verified, each file is moved to Zoom's trash (30 days to restore). Admin: Cohort Settings, Recording Backups (OAuth client, Connect Google Drive, delete mode) and Zoom Sessions, Backups list with Retry. Zoom side done by Claude 2026-10-08: scope cloud_recording:delete:recording_file:admin added and event 'Recording Transcript files have completed' subscribed on the Tantra Centre app. Remaining (Adi, Google sign-in needed): 1) Google Cloud project on growthclub.org: enable Drive API at https://console.cloud.google.com/apis/library/drive.googleapis.com ; 2) https://console.cloud.google.com/apis/credentials : Create credentials, OAuth client ID, Web application, authorised redirect URI https://revops-centre.growthcluborg.workers.dev/admin/api/drive/callback (consent screen Internal, scope drive.file); 3) admin https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Cohort Settings, Recording Backups: paste client ID and secret, Save, then 'Connect Google Drive as team@growthclub.org' and Allow. Then Claude runs a test recording end to end.",
    "done_when": [
-    "A test recording appears in the team Drive folder with matching sizes and the admin shows it backed up",
-    "Only then is it deleted from Zoom (Zoom storage drops)",
-    "Attendee replay link opens the Drive copy",
-    "Probe covers upload, size check, delete-after-backup and retry"
+    "Admin shows Drive connected as team@growthclub.org",
+    "A test recording lands in the Drive folder at matching sizes, then leaves Zoom",
+    "Attendee replay link opens the Drive copy"
    ],
    "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "Once built: one Google sign-in as team@growthclub.org on the consent link Claude sends, and adding the delete-recording scope in the Zoom Marketplace app (exact link and buttons supplied).",
+   "blockers": [
+    "Google OAuth client and one sign-in as team@growthclub.org (Adi)"
+   ],
+   "needs_from_owner": "The three Google steps in the spec (about 5 minutes).",
    "log": [
     {
      "ts": "2026-10-07T23:25:35+0530",
@@ -7774,6 +7775,11 @@
      "ts": "2026-10-08T01:43:21+0530",
      "who": "claude",
      "note": "Adi 2026-10-08: about 5 GB in Zoom; back up each recording to the team@growthclub.org Drive by integration, then delete from Zoom. Rewritten as a build task for Claude."
+    },
+    {
+     "ts": "2026-10-08T02:46:17+0530",
+     "who": "claude",
+     "note": "Built, merged, deployed (Worker f71a029d, migration 0016). Zoom scope and transcript event added. Waiting on the Google OAuth client and the team@ sign-in."
     }
    ],
    "order": 2320
