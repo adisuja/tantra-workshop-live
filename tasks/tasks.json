@@ -7780,6 +7780,11 @@
      "ts": "2026-10-08T02:46:17+0530",
      "who": "claude",
      "note": "Built, merged, deployed (Worker f71a029d, migration 0016). Zoom scope and transcript event added. Waiting on the Google OAuth client and the team@ sign-in."
+    },
+    {
+     "ts": "2026-10-08T05:13:03+0530",
+     "who": "claude",
+     "note": "Fresh-stack verification on merged main: probe-rec-backup 37/37 twice. Live on Worker e6ac0806."
     }
    ],
    "order": 2320
@@ -7834,6 +7839,11 @@
      "ts": "2026-10-08T05:03:55+0530",
      "who": "claude",
      "note": "Merged into main 91af003 (tantra-walkthroughs 978559b): the Zoom Pro setup walkthrough is on d1-zoom, the playbook d2-s4 section and the old centre Day 0. Goes live with the next Worker deploy and mirror publish."
+    },
+    {
+     "ts": "2026-10-08T05:13:03+0530",
+     "who": "claude",
+     "note": "Live on Worker e6ac0806."
     }
    ],
    "order": 2330
@@ -7885,7 +7895,9 @@
      "url": "app/scripts/probe-tantra-reminders.mjs"
     }
    ],
-   "blockers": [],
+   "blockers": [
+    "Sending Tantra workspace, mailbox and API key (Adi)"
+   ],
    "needs_from_owner": "Which Tantra workspace and connected mailbox should send the workshop reminders? Recommended: the same dedicated sender chosen for the calendar invites (T-227), not one of the 20 cold calendar mailboxes. Then in Tantra (https://usetantra.com, that workspace) create an API key (Connectors, API Keys, Create Key) and paste it with the mailbox at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Cohort Settings, Session Reminders. Claude then creates the 8 campaigns, runs Check and does the test send.",
    "log": [
     {
@@ -7917,6 +7929,11 @@
      "ts": "2026-10-08T03:07:41+0530",
      "who": "claude",
      "note": "Built the reminder engine: admin Cohort Settings has a Session Reminders section (sealed Tantra key, sender mailbox, WhatsApp account), 'Create reminder campaigns' makes 8 draft Tantra campaigns (Registered, Day before, then 1 hour before and Live for each day, since Tantra enrolls a contact only once per campaign), and the 10-minute cron appends each due registrant once with their own join, calendar and centre links. Verified with app/scripts/probe-tantra-reminders.mjs against the simulator: 51/51 pass, including one send per reminder at the right times, a second run adding nobody, a 409 retry sending once, and a changed join link reaching the next reminder. Tantra's own backend shows a campaign add never updates an existing contact's custom fields, so the engine rewrites the contact through /contacts/import first. Commit 534c607, not deployed. Still to do: the production test with the owner's test identity."
+    },
+    {
+     "ts": "2026-10-08T05:13:03+0530",
+     "who": "claude",
+     "note": "Deployed: migration 0017 remote, Worker e6ac0806 (main 517574e). Reminders are OFF live (tantra_reminders 0) until the key is saved. Fresh-stack verification: probe-tantra-reminders 51/51 twice; a 1 in 5 probe flake (sim bounce bucket) fixed in 517574e."
     }
    ],
    "order": 2340
@@ -8543,6 +8560,11 @@
      "ts": "2026-10-08T05:03:55+0530",
      "who": "claude",
      "note": "Merged into main 91af003: ruled-out tools removed from both centres and the playbook (e4bd0b8), probes, walker profiles and fixtures moved to the approved stack; takeover agent's run-chain had no new failures. Live with the next deploy."
+    },
+    {
+     "ts": "2026-10-08T05:13:03+0530",
+     "who": "claude",
+     "note": "Live on Worker e6ac0806."
     }
    ],
    "order": 2510
