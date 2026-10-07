@@ -7283,7 +7283,7 @@
   },
   {
    "id": "T-225",
-   "title": "Ask Zoom Support for host mute control and participant video disable",
+   "title": "Zoom Support ticket: host mute control and participant video disable (waiting on Zoom's reply)",
    "area": "Product",
    "owner": "Nelbin",
    "assignee": "Adi",
@@ -7294,10 +7294,12 @@
    "priority": "P1",
    "due": "",
    "status": "blocked",
-   "why": "Adi's Zoom Pro research, 2026-10-07 (docs/onboarding-v3/analysis/zoom-pro-meetings.md)",
-   "spec": "One email to Zoom Support; if granted, set Zoom Support locks to Granted in the admin and press Re-apply room settings.",
+   "why": "Without these two hidden Zoom settings attendees can unmute and turn video on in a 100 person room; Zoom Support is the only way to switch them on.",
+   "spec": "Adi opened a Zoom Support ticket on 2026-10-08 asking for allow_host_control_participant_mute_state and disable_participant_video on Pro account 5018326609. Zoom replies on the ticket to the Zoom account's Gmail (Adi: 'growthclub@gmail.com'; the Zoom login is the GrowthClub Gmail). Watch that inbox for the ticket update: enabled, refused, or more details needed. If enabled: Claude sets Zoom Support locks to Granted in https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key> (Cohort Settings) and presses Re-apply room settings, then Check in Zoom confirms both fields on meeting 87002851906 and the next week's meeting. If refused: the Zoom bot (T-226) enforces mute and video instead. If Zoom asks for details: answer the same day.",
    "done_when": [
-    "Support's answer recorded; locks on or the bot path chosen"
+    "Zoom's reply recorded in this task's log",
+    "If granted: Check in Zoom shows both fields on the current cohort meeting",
+    "If refused: T-226 covers mute and video enforcement"
    ],
    "evidence": [
     {
@@ -7306,9 +7308,9 @@
     }
    ],
    "blockers": [
-    "The request has to come from the Zoom account owner (Adi)"
+    "Waiting on Zoom Support's reply to the ticket"
    ],
-   "needs_from_owner": "Send this from https://support.zoom.com while signed in as the owner's Google test identity (Contact Support, submit a request):\n\nSubject: Enable host mute control and participant video disable for meetings on our Pro account\n\nHello Zoom Support,\n\nWe run a weekly three-day workshop on our Pro account as recurring meetings created through the REST API (Server-to-Server OAuth app). Attendees should join muted with cameras off and stay that way unless the host allows otherwise. Please enable these two meeting settings for our account so we can set them when meetings are created through the API: allow_host_control_participant_mute_state and disable_participant_video.\n\nAccount owner email: <the email you sign in to Zoom with>\nAccount number: 5018326609\n\nThank you.\n\nThen paste Zoom's answer here. If they agree, Claude sets Zoom Support locks to Granted at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key> (Cohort Settings) and presses Re-apply room settings; no bot is needed (T-226 stays parked).",
+   "needs_from_owner": "Forward or paste Zoom Support's reply on the ticket when it arrives (or tell Claude it came) so nothing is missed.",
    "log": [
     {
      "ts": "2026-10-07T20:46:43+0530",
@@ -7334,13 +7336,18 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still open (production zoom_support_locks = 0 on 2026-10-08); filled in the two bracketed fields from the live account facts (owner the owner's Google test identity, account number 5018326609) so Adi can send it as is."
+    },
+    {
+     "ts": "2026-10-08T01:43:21+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-08: ticket already opened with Zoom Support; the reply goes to the GrowthClub Gmail. Tracked here until it arrives."
     }
    ],
    "order": 2250
   },
   {
    "id": "T-226",
-   "title": "Zoom Meeting SDK bot: locks, co-hosts, live control (phase 3)",
+   "title": "Zoom bot for every workshop session: chat posts, polls, call-to-action prompts, mute and video control, co-hosts",
    "area": "Product",
    "owner": "Nelbin",
    "assignee": "Claude",
@@ -7348,20 +7355,20 @@
     "Adi",
     "Aquila"
    ],
-   "priority": "P2",
+   "priority": "P0",
    "due": "",
-   "status": "queue",
-   "why": "Adi's Zoom Pro research, 2026-10-07 (docs/onboarding-v3/analysis/zoom-pro-meetings.md)",
-   "spec": "Headless Linux Meeting SDK bot in Docker on the workshop Mac (launchd), using /bot/zoom/plan, /bot/zoom/zak, /bot/zoom/events. Only if Zoom Support declines the switches or live control is wanted.",
+   "status": "next",
+   "why": "Adi 2026-10-08: everything the REST API and our Zoom app cannot do live must still be automated in every Day 1, 2 and 3 session: posting chat messages, running polls, posting call-to-action links at the right moments, keeping attendees muted with video off, and promoting co-hosts.",
+   "spec": "Build the bot that joins each cohort meeting as a participant on our own Zoom account (Meeting SDK on our own account needs no Marketplace review). Contract already live in the centre: /bot/zoom/plan, /bot/zoom/zak, /bot/zoom/events behind ZOOM_BOT_KEY (cloud/src/zoom-pro.ts). Phase 1: research spike that verifies with Zoom docs which of chat send, poll launch, mute/video control and co-host promotion the Meeting SDK (Linux or Web, headless) supports, and how polls are created (REST POST /meetings/{id}/polls) versus launched live; write docs/onboarding-v3/analysis/zoom-bot.md with the verified answers and the run plan (runs on this Mac under launchd, local first). Phase 2: build the runner (joins at session start with the host ZAK, posts the per-day chat script and CTA links from the centre's session plan, launches the day's polls, enforces mute and video, makes listed co-hosts co-host), the admin editor for each day's chat script, CTAs and polls, and a probe. The bot takes one of the 100 seats (cap stays 98 registrants: T-231).",
    "done_when": [
-    "Bot starts a test session as host, applies both locks, assigns a co-host, streams joins to the live board"
+    "zoom-bot.md lists each capability as verified supported or not, with Zoom doc links",
+    "In a test meeting the bot posts the scripted chat and CTA messages at their times, launches a poll and the answers reach zoom_polls",
+    "Bot mutes a self-unmuted attendee and stops their video, and promotes a listed co-host",
+    "Admin lets Adi edit each day's chat script, CTAs and polls; probe green"
    ],
    "evidence": [],
-   "blockers": [
-    "Zoom Support's answer on host mute control and video disable (T-225)",
-    "Meeting SDK app credentials and the Linux SDK download (Adi)"
-   ],
-   "needs_from_owner": "",
+   "blockers": [],
+   "needs_from_owner": "After the spike: a Meeting SDK app in the Zoom Marketplace on the same account (Claude will give the exact link and buttons) and the co-host emails.",
    "log": [
     {
      "ts": "2026-10-07T20:46:43+0530",
@@ -7377,6 +7384,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): checked, current. pass 2: still accurate; parked behind T-225."
+    },
+    {
+     "ts": "2026-10-08T01:43:21+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-08: build the bot now; it must also post chat messages, run polls and post CTA links in every session. Promoted to next."
     }
    ],
    "order": 2260
@@ -7395,7 +7407,7 @@
    "due": "",
    "status": "blocked",
    "why": "Live check 2026-10-07: Google invites are switched on in production but no attendee gets one. The admin shows no organiser email and no service account saved (Cohort Settings, Invite Status: 'no organiser email set'). The code is live since T-221 (Worker aee6fd0a onward). The same service account also powers the attendees' own Google Workspace card (domain-wide delegation), which says 'Google isn't ready on our side yet' until it is saved.",
-   "spec": "How it works once set: for every attendee, the centre adds three events (Day 1, 2, 3) to the organiser's Google Calendar with the attendee as the only guest (events.insert, sendUpdates=all). Each carries the day's agenda, the attendee's own Zoom join link and reminders at 5, 10, 15 and 30 minutes. A session change, a cohort move or a new join link patches the same events; revoking access cancels them. Google applies reminders to the organiser's copy only; guests' copies follow their own defaults, and the private .ics link (T-220) carries all four for everyone.\n\nSteps (Adi):\n1. Google Cloud console, the project that should own the key: IAM and admin, Service accounts, Create (name: revops-centre). Keys, Add key, JSON. Enable the Google Calendar API in the same project (APIs and services, Library). For the attendee Workspace card also enable Admin SDK API and Site Verification API.\n2. Admin centre https://revops-centre.growthcluborg.workers.dev/admin/ , Human Gates, Google identity: paste the whole JSON file. Claude never types keys (owner rule).\n3. Google Workspace Admin console of the organiser's domain, Security, Access and data control, API controls, Domain-wide delegation, Add new: the service account's client ID (shown in the admin after step 2) with scope https://www.googleapis.com/auth/calendar.events. Takes minutes, sometimes up to 24 hours.\n4. Tell Claude (or type in Cohort Settings) the organiser email: the Workspace user the invites come from.\n\nClaude then: sets the organiser, runs Sync now, invites the test identity the owner's Google test identity once, checks agenda, join link, reminders and that a second sync sends nothing, and reports any delegation error the admin shows.",
+   "spec": "Keys already exist (given by Adi in the 'Tantra demo funnel walkthroughs' session, 2026-10-07): two service accounts, fintech@fintech-488411 and fintech-2@fintech-2-502117 (files in ~/.config/tantra/keys/), both uploaded to Tantra's Google Service Accounts connector for the FintechCircle Tantra account. Verified 2026-10-08 (read only, token minted): both have domain-wide delegation for calendar and calendar.events on the Tantra sender mailboxes (checked 6 of the 20, all OK). So the centre can send each registrant their three invites with no new Google setup. Remaining: (1) Adi picks the organiser mailbox the workshop invites come from (the 20 senders are FintechCircle's cold calendar mailboxes on webinar domains, warmed, 250 a day each); (2) the JSON goes into the live centre at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Human Gates, Google identity (Claude may not enter keys into a deployed site; Adi pastes the file once, or Claude loads it if Adi says so); (3) Claude sets the organiser, runs Sync now, sends one invite to the owner's Google test identity, checks agenda, own Zoom link and reminders, confirms no duplicate on a second sync, then deletes the test event.",
    "done_when": [
     "Cohort Settings, Invite Status names the service account and the organiser, no 'off' reason",
     "The test identity receives three invites (Day 1 to 3) with the agenda, its own join link and no duplicates after a second sync",
@@ -7412,11 +7424,9 @@
     }
    ],
    "blockers": [
-    "No service account saved in production (google_sa_enc empty)",
-    "Domain-wide delegation for calendar.events not yet granted",
-    "Organiser email not set"
+    "Organiser mailbox choice"
    ],
-   "needs_from_owner": "1) Google Cloud: https://console.cloud.google.com/iam-admin/serviceaccounts (pick the project that should own it), Create service account (name revops-centre), then Keys, Add key, JSON. In the same project enable the Google Calendar API at https://console.cloud.google.com/apis/library/calendar-json.googleapis.com (for the attendees' Workspace card also Admin SDK API and Site Verification API). 2) Paste the whole JSON file at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Human Gates, Google identity. 3) Google Admin console of the organiser's domain: https://admin.google.com/ac/owl/domainwidedelegation, Add new, client ID shown in the centre admin after step 2, scope https://www.googleapis.com/auth/calendar.events. 4) Tell Claude the organiser email (the Workspace user the invites come from). 5) Decision with a default: marketing sign-ups get invites straight away (default, rate-limited) or only after they first open their centre.",
+   "needs_from_owner": "Which mailbox should the workshop invites come from? Recommended: one dedicated sender, not one of the 20 cold calendar mailboxes, so workshop invites never eat into cold outreach capacity or reputation; if one of the 20 is fine, name it. Then paste ~/.config/tantra/keys/fintech-488411-a9fbe01f1b39.json at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Human Gates, Google identity.",
    "log": [
     {
      "ts": "2026-10-07T22:53:58+0530",
@@ -7457,6 +7467,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: re-read the live admin 2026-10-08 00:40 IST: google enabled, organizer None, service_account None, last sync 'off: no organiser email set'; rewrote the owner ask with full clickable URLs and the admin entry link."
+    },
+    {
+     "ts": "2026-10-08T01:43:21+0530",
+     "who": "claude",
+     "note": "Context gathered from the walkthroughs session: the two FintechCircle service accounts already have calendar delegation (verified 2026-10-08). No new Google setup needed; only the organiser choice and the one paste."
     }
    ],
    "order": 2270
@@ -7624,16 +7639,16 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "done",
    "why": "Alternative hosts let a teammate start the cohort meeting if Adi cannot; co-hosts only matter once the Meeting SDK bot (T-226) exists to promote them.",
-   "spec": "Admin centre https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, tab Cohort Settings, Zoom row: field 'Alternative hosts' (zoom_alt_hosts: comma separated emails of LICENSED users on the Zoom Pro account 5018326609; applied when the next week's meeting is created or when room settings are re-applied with the 'Re-apply settings' action) and field 'Co-hosts' (zoom_cohosts: stored now, made co-host by the bot from T-226 on join; nothing happens with them before then). Save. Recommended: leave both empty for now unless a second licensed Zoom user exists; Pro has one licence, so alternative hosts need a second paid licence first. Claude then re-applies settings and confirms with 'Check in Zoom' that the next meeting lists the alternative hosts.",
+   "spec": "Decided 2026-10-08: no alternative hosts (Pro has one licence). Co-hosts are made by the Zoom bot, so the co-host emails are collected under T-226.",
    "done_when": [
     "zoom_alt_hosts saved (or Adi says none) and Check in Zoom shows them on the next cohort meeting",
     "Co-host emails saved for T-226, or explicitly none"
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Decide: who (if anyone) should be able to start the workshop meeting without you. Alternative hosts must be licensed users on your Zoom account (Zoom web portal https://zoom.us/account/user, Users). Enter them at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key> then Cohort Settings, 'Alternative hosts' and 'Co-hosts', Save. Recommended: none until a second licence exists.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-07T23:25:35+0530",
@@ -7649,13 +7664,18 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: production zoom_cohosts and zoom_alt_hosts still empty; added the exact admin path, what each field does today and a recommended answer."
+    },
+    {
+     "ts": "2026-10-08T01:43:21+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-08: the bot handles co-hosting; folded into T-226. Alternative hosts: none."
     }
    ],
    "order": 2300
   },
   {
    "id": "T-231",
-   "title": "Decide the Zoom registration cap (98 now, 150 to 180 suggested)",
+   "title": "Zoom registration cap: stay inside the Pro plan's 100 person room",
    "area": "Product",
    "owner": "Adi",
    "assignee": "Adi",
@@ -7665,16 +7685,15 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
-   "why": "Zoom's 100 limit is people in the room at once, not registrations; with typical no-shows a cap of 98 turns people away from a room that will be half empty.",
-   "spec": "Decision for Adi, then Claude applies it. Field: admin https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Cohort Settings, 'Registrations per meeting' (zoom_cap, default 98 from docs/onboarding-v3/analysis/zoom-pro-meetings.md section 1). Registrants past the cap get status 'waitlist' in session_sync and no join link (cloud/src/invites.ts). The Integrator suggested 150 to 180. Recommended: 150 now (the live centre has no real sign-ups yet, so nothing is at risk), revisit after two cohorts' show rates from zoom_engagement. Note: past 100 people in the room at once, late joiners are refused by Zoom.",
+   "status": "done",
+   "why": "Adi 2026-10-08: 100 people in the meeting is the plan's limit and the workshop is designed around it; a bigger plan is considered only once real attendance passes 100.",
+   "spec": "Cap stays at 98 registrants per cohort meeting (zoom_cap 98): 98 attendees plus the host plus the Zoom bot (T-226) is 100. Past the cap people are waitlisted with no join link (cloud/src/invites.ts). Revisit only when actual attendance exceeds 100.",
    "done_when": [
-    "zoom_cap set to the decided value in production Cohort Settings",
-    "A probe or admin check shows a registrant past the cap gets 'waitlist' and no join link"
+    "zoom_cap is 98 in production Cohort Settings"
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Decide the registration cap (recommended 150). Set it at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Cohort Settings, 'Registrations per meeting', Save, or reply with the number and Claude sets it.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-07T23:25:35+0530",
@@ -7695,33 +7714,39 @@
      "ts": "2026-10-08T01:16:56+0530",
      "who": "claude",
      "note": "Corrected: no real sign-ups yet (not 5)."
+    },
+    {
+     "ts": "2026-10-08T01:43:21+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-08: no cap increase; design within the 100 person limit. Cap 98 kept (host and bot take the other two seats)."
     }
    ],
    "order": 2310
   },
   {
    "id": "T-232",
-   "title": "Set the Zoom cloud recording quota and retention policy",
+   "title": "Back up every Zoom recording to the team Google Drive, then delete it from Zoom",
    "area": "Product",
    "owner": "Adi",
-   "assignee": "Adi",
+   "assignee": "Claude",
    "reviewers": [
     "Adi",
     "Aquila"
    ],
-   "priority": "P1",
+   "priority": "P0",
    "due": "",
    "status": "queue",
-   "why": "Each cohort's replay link in the attendee centre is Zoom's own share link; if Zoom's storage fills or auto-delete runs, the replay disappears for attendees.",
-   "spec": "State today: the centre stores per recording the viewer link and passcode (zoom_recordings), parsed chat (zoom_chat) and the transcript (R2); the video itself stays only in Zoom cloud storage (commit 2190bd0). Adi checks the storage used and limit on the Zoom Pro account (Zoom web portal https://zoom.us/recording, Cloud Recordings, storage shown at the bottom; auto-delete under https://zoom.us/profile/setting?tab=recording, 'Delete cloud recordings after a specified number of days') and decides how long recordings stay. Claude then writes the policy into zoom-pro-meetings.md section 7 and, if Adi wants copies kept longer than Zoom keeps them, adds a task to copy each recording to R2 before deletion. UNVERIFIED: the exact storage included with this Pro plan.",
+   "why": "Zoom Pro has about 5 GB of cloud storage, enough for one or two sessions. Adi 2026-10-08: after every session the recording must be saved to the team@growthclub.org Google Drive by a proper integration, and only then deleted from Zoom so no data is lost.",
+   "spec": "On Zoom's recording.completed webhook (already handled in cloud/src/zoom-pro.ts saveRecording), copy every file of the recording (video, audio, chat, transcript) into a Drive folder 'Tantra Workshop Recordings/<cohort week>/Day N' owned by team@growthclub.org, streaming from Zoom's download_url into a Drive resumable upload (no full file in memory). Record the Drive file ids and links in zoom_recordings and point the attendee replay link at the Drive copy (shared to anyone with the link, view only). Only after every file's size matches, delete the recording from Zoom (needs scope cloud_recording:delete:recording_file:admin added to the Tantra Centre app) and log it. Admin: a Backups list with status and a Retry button. Probe against the simulator (vendor-sim gets Drive upload and Zoom delete). Drive access: Google OAuth consent once as team@growthclub.org (Drive file scope, refresh token stored encrypted in the centre).",
    "done_when": [
-    "Storage used and limit recorded in zoom-pro-meetings.md",
-    "Retention period decided and set in Zoom's recording settings",
-    "Policy written into the doc (and a follow-up task added if a copy to R2 is wanted)"
+    "A test recording appears in the team Drive folder with matching sizes and the admin shows it backed up",
+    "Only then is it deleted from Zoom (Zoom storage drops)",
+    "Attendee replay link opens the Drive copy",
+    "Probe covers upload, size check, delete-after-backup and retry"
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Open https://zoom.us/recording (storage used and limit) and decide how many days recordings, chat and transcripts stay in Zoom. Recommended: auto-delete after 90 days, so each cohort keeps its replay for three months.",
+   "needs_from_owner": "Once built: one Google sign-in as team@growthclub.org on the consent link Claude sends, and adding the delete-recording scope in the Zoom Marketplace app (exact link and buttons supplied).",
    "log": [
     {
      "ts": "2026-10-07T23:25:35+0530",
@@ -7737,6 +7762,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still no retention decision in docs/onboarding-v3/analysis/zoom-pro-meetings.md or LOG.md; spec now says what the centre keeps itself and what breaks if Zoom deletes a recording."
+    },
+    {
+     "ts": "2026-10-08T01:43:21+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-08: about 5 GB in Zoom; back up each recording to the team@growthclub.org Drive by integration, then delete from Zoom. Rewritten as a build task for Claude."
     }
    ],
    "order": 2320
@@ -7802,7 +7832,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "next",
+   "status": "queue",
    "why": "Nothing sends session reminders, so the first real cohort would run without them: Zoom sends none for meetings and attendees only have the calendar feed. The owner's model is Tantra omni-channel campaigns fed by registrant import, which is live in Tantra today.",
    "spec": "Owner model 2026-10-07 (memory google-and-reminder-model): reminders run on Tantra omni-channel campaigns and registrants are imported into them programmatically; no home-built sender, no Resend/SendGrid for this, WhatsApp only through Tantra.\nWHAT EXISTS (main f6aeb7e): (a) a Tantra API client for an ATTENDEE's own account in cloud/src/jobs-tantra.ts (tn() with X-API-Key via cloud/src/connectors/stack.ts tantraUrl/tantraHeaders; POST /contacts/import with custom fields; POST /email-campaigns + /email-campaigns/:id/steps; start in cloud/src/connectors/launch.ts tantraStart). (b) The full API contract in docs/onboarding-v3/analysis/integrations-tantra-api.md: base https://api.usetantra.com/api/v1; section 3 omni-channel campaigns (steps with channel email|linkedin|whatsapp, sendingWindow, perMailboxDailyCap); section 5 POST /email-campaigns/:id/contacts (shipped 2026-10-01, API-key route: up to 1,000 contacts a call, each with email, firstName, whatsappPhone, timezone and customFields of scalars; idempotent upsert; step 1 runs when the contact is added; 409 means retry). (c) Per-attendee data: joinsFor() in cloud/src/invites.ts gives each day's own Zoom join_url (or the admin's shared link, null when waitlisted); personalFeedPath(feedTokenOf()) in cloud/src/calendar.ts gives the private calendar link; the Worker has a scheduled() cron in cloud/src/index.ts. (d) S1 recorded a walkthrough of this exact model on the unmerged branch (/Users/adithyamurali/tantra-walkthroughs/app/public/walkthroughs/tantra-reminders, untracked): one omni-channel campaign per reminder moment, sending window open every day and hour, the agent adds each registrant through the API when the reminder is due.\nWHAT DOES NOT EXIST: no code imports OUR workshop registrants into Tantra; no workshop Tantra key or settings in the centre; the vendor simulator (cloud/scripts/vendor-sim.py) has no /email-campaigns/:id/contacts route.\nBUILD: 1) Settings in admin Cohort Settings: tantra_key (stored encrypted like other secrets), sender mailbox, optional WhatsApp channel account, campaign ids. 2) A 'Create reminder campaigns' admin action that, with that key, creates (never starts without the probe passing) omni-channel campaigns: Registered (confirmation: centre link, private calendar link, each day's join link; can absorb T-228), Day before, 1 hour before, We're live, each with sendingWindow all days 0 to 23 in America/New_York, an email step and a WhatsApp step when a WhatsApp account is connected, merge fields {{firstName}} plus customFields join_day1..3, calendar_url, centre_url, cohort_dates. Copy follows workshop-plan/COPY_RULES.md, no dashes. 3) On sign-up (/cal/issue, /intake, admin add) and on cohort move or new join link, POST /email-campaigns/<Registered>/contacts with those fields. 4) In scheduled(), for every non-test, non-revoked attendee whose session is due, append them to the matching campaign once (claim a row per attendee, day and reminder in D1 before calling, so a retry never double-sends). 5) Add the contacts route to vendor-sim.py and a probe app/scripts/probe-tantra-reminders.mjs. 6) Skip placeholder addresses (T-229 helper). Daily volume is bounded by the mailbox caps (perMailboxDailyCap), so set it from the cohort size.",
    "done_when": [
