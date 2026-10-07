@@ -6865,7 +6865,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Adi's Zoom Pro research, 2026-10-07 (docs/onboarding-v3/analysis/zoom-pro-meetings.md)",
    "spec": "Headless Linux Meeting SDK bot in Docker on the workshop Mac (launchd), using /bot/zoom/plan, /bot/zoom/zak, /bot/zoom/events. Only if Zoom Support declines the switches or live control is wanted.",
    "done_when": [
@@ -7040,7 +7040,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Integrator sweep 2026-10-07 (docs/onboarding-v3/analysis/zoom-pro-meetings.md s4)",
    "spec": "Admin, Cohort Settings: Co-hosts (made co-host by the bot on join) and Alternative hosts (licensed users on the account only).",
    "done_when": [
@@ -7070,7 +7070,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Integrator sweep 2026-10-07 (zoom-pro-meetings.md s1)",
    "spec": "Zoom's 100 is people in the room at once, not registrations; with typical show rates a higher cap fills the room. Set it in Cohort Settings.",
    "done_when": [
@@ -7100,7 +7100,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Integrator sweep 2026-10-07 (zoom-pro-meetings.md s7)",
    "spec": "Check the Pro plan's cloud storage; decide how long recordings, chat and transcripts are kept and whether old ones are downloaded first.",
    "done_when": [
@@ -7130,7 +7130,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Integrator sweep 2026-10-07 (Integrator request 2026-10-07)",
    "spec": "Walkthroughs session (Tantra demo funnel walkthroughs) records account settings, the Server-to-Server app, scopes and Event Subscriptions on Adi's account, change nothing, blur secrets.",
    "done_when": [
@@ -7160,7 +7160,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Integrator sweep 2026-10-07 (Integrator notes; zoom-pro-meetings.md s1)",
    "spec": "Zoom sends no reminders for meetings. Needs a sender (Resend API key on Adi's domain, or Tantra's endpoint once shipped); each email carries the person's own Zoom link.",
    "done_when": [
@@ -7190,7 +7190,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Integrator sweep 2026-10-07 (Integrator notes)",
    "spec": "Use zoom_attendance and zoom_engagement (recording link per cohort day) to trigger messages after each session.",
    "done_when": [
@@ -7220,7 +7220,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Integrator sweep 2026-10-07 (handoff TANTRA_EMAIL_STRIPE)",
    "spec": "Spec docs/onboarding-v3/analysis/tantra-reminder-endpoint.md; runnable contract test cloud/scripts/tantra-send-contract.mjs (10 checks, sandbox).",
    "done_when": [
@@ -7252,7 +7252,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Integrator sweep 2026-10-07 (Integrator notes)",
    "spec": "Today people reach the webinar meeting only by admin import; a public page should register them (batch or single) with their own link.",
    "done_when": [
@@ -7282,7 +7282,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Integrator sweep 2026-10-07 (handoff TANTRA_EMAIL_STRIPE)",
    "spec": "Add payment_intent_data[metadata] to the payment link so charge.refunded identifies the product, then reverse the entitlement.",
    "done_when": [
@@ -7312,7 +7312,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Integrator sweep 2026-10-07 (LOG 2026-10-07 04:40 and 04:51)",
    "spec": "Set Worker secrets GOOGLE_OAUTH_CLIENT_ID and _SECRET (~/.config/tantra/google-oauth-client.env), add test users and the production redirect URI in Google Cloud (client is in testing mode).",
    "done_when": [
@@ -7342,7 +7342,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Integrator sweep 2026-10-07 (run-chain 2026-10-07)",
    "spec": "masterclass/audience-room-1440.avif, s1-cold-email/18.webp, s4-rsp/13.webp fill a different share of their column than their siblings.",
    "done_when": [
@@ -7372,7 +7372,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Integrator sweep 2026-10-07 (handoff INTEGRATOR 2026-10-07)",
    "spec": "During a live cohort, /masterclass/success/join and a newcomer's success page show the running cohort, not the one probe-cohort and probe-workshop expect (time-dependent logic in app/src/lib/cohort.ts consumers).",
    "done_when": [
@@ -7402,7 +7402,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Integrator sweep 2026-10-07 (run-chain 2026-10-07)",
    "spec": "All three walkers end with content-schedule waiting on Kie.ai; the walker should wait for the job or the job should finish in the simulator.",
    "done_when": [
@@ -7432,7 +7432,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Integrator sweep 2026-10-07 (run-chain 2026-10-07)",
    "spec": "probe-anonymity reports hits outside the published export (playbook vendor URLs such as usetantra.com/developers and kie.ai/api-key, guide strings); fix or allow-list each.",
    "done_when": [
@@ -7462,7 +7462,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Integrator sweep 2026-10-07 (handoff CALENDAR_FEEDS blocker 4)",
    "spec": "Anyone can type someone else's email at sign-up and trigger an organiser invite (limits: Origin, 20 per IP per hour, 500 per hour).",
    "done_when": [
@@ -7492,7 +7492,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Integrator sweep 2026-10-07 (Integrator notes 2026-10-07)",
    "spec": "The deleted test meeting 89781893618 still sits in production zoom_* tables and the Tracker; add a guarded admin action instead of editing the database by hand.",
    "done_when": [
@@ -7522,7 +7522,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Integrator sweep 2026-10-07 (Integrator notes 2026-10-07)",
    "spec": "Funnels deployed before the signed Zoom URL check keep the old worker until their next deploy-funnel job.",
    "done_when": [
@@ -7552,7 +7552,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Integrator sweep 2026-10-07 (handoff INTEGRATOR notes)",
    "spec": "Docker will not start (disk); tantra-mongo is down, so tracker_sync.py writes the Sheet only. Docker.raw is the big user.",
    "done_when": [
@@ -7582,7 +7582,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "todo",
+   "status": "queue",
    "why": "Integrator sweep 2026-10-07 (Integrator audit 2026-10-07)",
    "spec": "int is superseded (all 84 files are in main); r5/B and r5/G hold scratch files.",
    "done_when": [
