@@ -7347,7 +7347,7 @@
   },
   {
    "id": "T-226",
-   "title": "Zoom bot for every workshop session: chat posts, polls, call-to-action prompts, mute and video control, co-hosts",
+   "title": "Tantra Host Console: Adi hosts every session from a Mac app that runs chat posts, polls, call-to-action links, mute and video control, co-hosts",
    "area": "Product",
    "owner": "Nelbin",
    "assignee": "Claude",
@@ -7357,18 +7357,20 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "next",
+   "status": "blocked",
    "why": "Adi 2026-10-08: everything the REST API and our Zoom app cannot do live must still be automated in every Day 1, 2 and 3 session: posting chat messages, running polls, posting call-to-action links at the right moments, keeping attendees muted with video off, and promoting co-hosts.",
-   "spec": "Build the bot that joins each cohort meeting as a participant on our own Zoom account (Meeting SDK on our own account needs no Marketplace review). Contract already live in the centre: /bot/zoom/plan, /bot/zoom/zak, /bot/zoom/events behind ZOOM_BOT_KEY (cloud/src/zoom-pro.ts). Phase 1: research spike that verifies with Zoom docs which of chat send, poll launch, mute/video control and co-host promotion the Meeting SDK (Linux or Web, headless) supports, and how polls are created (REST POST /meetings/{id}/polls) versus launched live; write docs/onboarding-v3/analysis/zoom-bot.md with the verified answers and the run plan (runs on this Mac under launchd, local first). Phase 2: build the runner (joins at session start with the host ZAK, posts the per-day chat script and CTA links from the centre's session plan, launches the day's polls, enforces mute and video, makes listed co-hosts co-host), the admin editor for each day's chat script, CTAs and polls, and a probe. The bot takes one of the 100 seats (cap stays 98 registrants: T-231).",
+   "spec": "Spike done (branch zoom-bot 465d59d, docs/onboarding-v3/analysis/zoom-bot.md, sources cited). Findings: Zoom states the Meeting SDK 'is designed for human use cases and does not support bots' (verified 2026-10-08 on developers.zoom.us/docs/meeting-sdk/linux/), and only the native macOS (or Windows) Meeting SDK can launch polls; Web and Linux cannot. So no unattended bot. Plan: a Swift 'Tantra Host Console' on Adi's Mac, opened by launchd 20 minutes before each Wed to Fri 11:00 ET session; Adi presses Start and hosts from it (Zoom's normal meeting window). It locks the room (mute all, no self-unmute, no video, focus mode), runs the day's script from the centre (/bot/zoom/plan): timed chat posts, CTA links, polls created ahead by REST and launched live, makes listed co-hosts co-host, re-mutes anyone not allowed, and posts joins, leaves and poll results to /bot/zoom/events. Admin gets a per-day script editor (chat, CTAs, polls). UNVERIFIED until the first test meeting: REST polls appearing on every occurrence, stopping another person's video, co-host matching by email.",
    "done_when": [
-    "zoom-bot.md lists each capability as verified supported or not, with Zoom doc links",
-    "In a test meeting the bot posts the scripted chat and CTA messages at their times, launches a poll and the answers reach zoom_polls",
-    "Bot mutes a self-unmuted attendee and stops their video, and promotes a listed co-host",
-    "Admin lets Adi edit each day's chat script, CTAs and polls; probe green"
+    "A test meeting hosted from the console shows the scripted chat and CTA posts at their times and a poll launched live whose answers reach zoom_polls",
+    "Self-unmute and video are blocked; a listed co-host is promoted",
+    "Admin edits each day's script, CTAs and polls; probe green",
+    "Opens automatically before each session via launchd"
    ],
    "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "After the spike: a Meeting SDK app in the Zoom Marketplace on the same account (Claude will give the exact link and buttons) and the co-host emails.",
+   "blockers": [
+    "Adi's confirmation to host from the console, and the Meeting SDK app credentials"
+   ],
+   "needs_from_owner": "1) Confirm you will host the sessions from the Tantra Host Console instead of the normal Zoom app. 2) Meeting SDK app: https://marketplace.zoom.us/ (signed in to the GrowthClub Zoom), Develop, Build App, General App, Create, name 'Tantra Host Console', Admin-managed, redirect URL https://revops-centre.growthcluborg.workers.dev/ ; Features, Embed, switch on Meeting SDK; do not publish; paste Client ID and Client Secret in the centre admin (or let Claude do these clicks in the Zoom-signed-in browser profile). 3) On the Tantra Centre app, Scopes, Add Scopes: meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin. 4) Co-host emails.",
    "log": [
     {
      "ts": "2026-10-07T20:46:43+0530",
@@ -7389,6 +7391,11 @@
      "ts": "2026-10-08T01:43:21+0530",
      "who": "claude",
      "note": "Adi 2026-10-08: build the bot now; it must also post chat messages, run polls and post CTA links in every session. Promoted to next."
+    },
+    {
+     "ts": "2026-10-08T01:51:59+0530",
+     "who": "claude",
+     "note": "Spike: unattended bot not possible (Zoom policy; polls only in the native desktop SDK). Plan is a Mac host console Adi hosts from. Waiting on Adi's yes and the SDK app."
     }
    ],
    "order": 2260
@@ -7832,7 +7839,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "queue",
+   "status": "next",
    "why": "Nothing sends session reminders, so the first real cohort would run without them: Zoom sends none for meetings and attendees only have the calendar feed. The owner's model is Tantra omni-channel campaigns fed by registrant import, which is live in Tantra today.",
    "spec": "Owner model 2026-10-07 (memory google-and-reminder-model): reminders run on Tantra omni-channel campaigns and registrants are imported into them programmatically; no home-built sender, no Resend/SendGrid for this, WhatsApp only through Tantra.\nWHAT EXISTS (main f6aeb7e): (a) a Tantra API client for an ATTENDEE's own account in cloud/src/jobs-tantra.ts (tn() with X-API-Key via cloud/src/connectors/stack.ts tantraUrl/tantraHeaders; POST /contacts/import with custom fields; POST /email-campaigns + /email-campaigns/:id/steps; start in cloud/src/connectors/launch.ts tantraStart). (b) The full API contract in docs/onboarding-v3/analysis/integrations-tantra-api.md: base https://api.usetantra.com/api/v1; section 3 omni-channel campaigns (steps with channel email|linkedin|whatsapp, sendingWindow, perMailboxDailyCap); section 5 POST /email-campaigns/:id/contacts (shipped 2026-10-01, API-key route: up to 1,000 contacts a call, each with email, firstName, whatsappPhone, timezone and customFields of scalars; idempotent upsert; step 1 runs when the contact is added; 409 means retry). (c) Per-attendee data: joinsFor() in cloud/src/invites.ts gives each day's own Zoom join_url (or the admin's shared link, null when waitlisted); personalFeedPath(feedTokenOf()) in cloud/src/calendar.ts gives the private calendar link; the Worker has a scheduled() cron in cloud/src/index.ts. (d) S1 recorded a walkthrough of this exact model on the unmerged branch (/Users/adithyamurali/tantra-walkthroughs/app/public/walkthroughs/tantra-reminders, untracked): one omni-channel campaign per reminder moment, sending window open every day and hour, the agent adds each registrant through the API when the reminder is due.\nWHAT DOES NOT EXIST: no code imports OUR workshop registrants into Tantra; no workshop Tantra key or settings in the centre; the vendor simulator (cloud/scripts/vendor-sim.py) has no /email-campaigns/:id/contacts route.\nBUILD: 1) Settings in admin Cohort Settings: tantra_key (stored encrypted like other secrets), sender mailbox, optional WhatsApp channel account, campaign ids. 2) A 'Create reminder campaigns' admin action that, with that key, creates (never starts without the probe passing) omni-channel campaigns: Registered (confirmation: centre link, private calendar link, each day's join link; can absorb T-228), Day before, 1 hour before, We're live, each with sendingWindow all days 0 to 23 in America/New_York, an email step and a WhatsApp step when a WhatsApp account is connected, merge fields {{firstName}} plus customFields join_day1..3, calendar_url, centre_url, cohort_dates. Copy follows workshop-plan/COPY_RULES.md, no dashes. 3) On sign-up (/cal/issue, /intake, admin add) and on cohort move or new join link, POST /email-campaigns/<Registered>/contacts with those fields. 4) In scheduled(), for every non-test, non-revoked attendee whose session is due, append them to the matching campaign once (claim a row per attendee, day and reminder in D1 before calling, so a retry never double-sends). 5) Add the contacts route to vendor-sim.py and a probe app/scripts/probe-tantra-reminders.mjs. 6) Skip placeholder addresses (T-229 helper). Daily volume is bounded by the mailbox caps (perMailboxDailyCap), so set it from the cohort size.",
    "done_when": [
