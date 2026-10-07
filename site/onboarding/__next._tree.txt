@@ -8,4 +8,4 @@
 :HL["/tantra-workshop-live/site/_next/static/chunks/312nyw6gp5ox2.css","style"]
 :HL["/tantra-workshop-live/site/_next/static/chunks/1wnmhcqc_ilrk.css","style"]
 :HL["/tantra-workshop-live/site/_next/static/chunks/1_dkop6c1t_kg.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"onboarding","param":null,"prefetchHints":4160,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"TqttYuVsEPx4efT-IYruL"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"onboarding","param":null,"prefetchHints":4160,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"5r9eE3SHChKcXuOW8e28Z"}
