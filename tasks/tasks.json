@@ -6604,6 +6604,129 @@
     }
    ],
    "order": 2220
+  },
+  {
+   "id": "T-223",
+   "title": "Zoom Pro meetings in the centre: per-cohort meeting, presentation room, cap and waitlist, live board, attendance",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "review",
+   "why": "Adi's Zoom Pro research, 2026-10-07 (docs/onboarding-v3/analysis/zoom-pro-meetings.md)",
+   "spec": "One recurring Zoom Pro meeting per cohort week (one link for all three days), presentation-room settings at creation, registration cap with waitlist, signed webhooks and a live board, attendance after each session, webinar meetings with batch import, the bot's contract. probe-zoom-pro.mjs.",
+   "done_when": [
+    "Merged and deployed (main cd7a90e onward, Worker 4bdce626)",
+    "Live on Adi's real Zoom once T-224 is done"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-07T20:46:43+0530",
+     "who": "claude",
+     "note": "Built, Fable-reviewed (1 P0 fixed), deployed to Worker 4bdce626 with migration 0014. probe-zoom-pro 43/43 on the shared stack."
+    }
+   ],
+   "order": 2230
+  },
+  {
+   "id": "T-224",
+   "title": "Create the Zoom Server-to-Server app and webhook for the centre",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "todo",
+   "why": "Adi's Zoom Pro research, 2026-10-07 (docs/onboarding-v3/analysis/zoom-pro-meetings.md)",
+   "spec": "Zoom App Marketplace, Server-to-Server OAuth app 'Tantra Centre' with the scopes in the doc section 3; Event Subscriptions to /hooks/zoom; paste the secret token, then credentials, in the admin; switch on Create meetings per cohort.",
+   "done_when": [
+    "The admin's Zoom Sessions panel shows this week's meeting and the host is ready"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Adi: create the app and paste its values in the admin (steps in the doc, section 3)",
+   "log": [
+    {
+     "ts": "2026-10-07T20:46:43+0530",
+     "who": "claude",
+     "note": "Created by the Integrator."
+    }
+   ],
+   "order": 2240
+  },
+  {
+   "id": "T-225",
+   "title": "Ask Zoom Support for host mute control and participant video disable",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "todo",
+   "why": "Adi's Zoom Pro research, 2026-10-07 (docs/onboarding-v3/analysis/zoom-pro-meetings.md)",
+   "spec": "One email to Zoom Support; if granted, set Zoom Support locks to Granted in the admin and press Re-apply room settings.",
+   "done_when": [
+    "Support's answer recorded; locks on or the bot path chosen"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Adi: send the request to Zoom Support (text in the Integrator's message)",
+   "log": [
+    {
+     "ts": "2026-10-07T20:46:43+0530",
+     "who": "claude",
+     "note": "Created by the Integrator."
+    }
+   ],
+   "order": 2250
+  },
+  {
+   "id": "T-226",
+   "title": "Zoom Meeting SDK bot: locks, co-hosts, live control (phase 3)",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "todo",
+   "why": "Adi's Zoom Pro research, 2026-10-07 (docs/onboarding-v3/analysis/zoom-pro-meetings.md)",
+   "spec": "Headless Linux Meeting SDK bot in Docker on the workshop Mac (launchd), using /bot/zoom/plan, /bot/zoom/zak, /bot/zoom/events. Only if Zoom Support declines the switches or live control is wanted.",
+   "done_when": [
+    "Bot starts a test session as host, applies both locks, assigns a co-host, streams joins to the live board"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Meeting SDK app credentials and the Linux SDK download (Adi)"
+   ],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-07T20:46:43+0530",
+     "who": "claude",
+     "note": "Created by the Integrator."
+    }
+   ],
+   "order": 2260
   }
  ]
 }
