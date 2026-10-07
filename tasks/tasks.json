@@ -4,7 +4,7 @@
   "day1": "2026-09-30T11:00:00-04:00",
   "updated": "2026-10-08T03:07:41+0530",
   "version": 280,
-  "last_id": 281,
+  "last_id": 282,
   "team": [
    {
     "name": "Adi",
@@ -7796,7 +7796,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Attendees who run their event on Zoom need to see the exact Zoom Pro setup once; the 74 s walkthrough exists but is not merged, so nobody can watch it.",
    "spec": "S1 session ('Tantra demo funnel walkthroughs'), branch tantra-walkthroughs, worktree /Users/adithyamurali/tantra-walkthroughs, now at aa22a3f (e4757fb video, e4bd0b8 ruled-out tools removed, 043b5ab probes follow the removed tools, aa22a3f probe-day1 date rule). Left: finish any remaining probe, walker profile (app/scripts/walk-ui.mjs, walk-scenarios.mjs) and fill-preview fixture (app/scripts/fill-preview.mjs) updates, rebase on origin/main (f6aeb7e), run the full run-chain, post READY with its summary in /Users/adithyamurali/tantra-round5-coord/LOG.md. Integrator merges, deploys the Worker and republishes the mirror. The video goes on the d1-zoom card in both centres, playbook d2-s4 'Set Up Zoom Pro Step by Step' and old centre Day 0. The same merge closes part 1 of T-251. The branch also holds uncommitted new walkthroughs (tantra-reminders, google-senders, ghl, hubspot, stripe, wistia, zoho): commit or drop them before READY; wistia, ghl, hubspot and zoho depend on the T-260 decision.",
    "done_when": [
@@ -7829,6 +7829,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: in progress by S1, not review: video e4757fb fine, merge held on probes; S1 has 043b5ab and aa22a3f but no READY in LOG.md yet. Status set to next."
+    },
+    {
+     "ts": "2026-10-08T05:03:55+0530",
+     "who": "claude",
+     "note": "Merged into main 91af003 (tantra-walkthroughs 978559b): the Zoom Pro setup walkthrough is on d1-zoom, the playbook d2-s4 section and the old centre Day 0. Goes live with the next Worker deploy and mirror publish."
     }
    ],
    "order": 2330
@@ -8510,7 +8515,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "done",
    "why": "Attendees must only be offered the approved stack; offering a ruled-out tool sends them to vendors the owner rejected and contradicts the playbook.",
    "spec": "Owner ruling 2026-10-07 (approved-vendor-stack): GoDaddy, Microsoft 365, Instantly, SendGrid, ZeroBounce, NeverBounce, BuiltWith, HeyReach, Calendly, Apollo, the WhatsApp Cloud API card, n8n, Make and Namecheap are out. Part 1 (S1, branch tantra-walkthroughs, worktree /Users/adithyamurali/tantra-walkthroughs at aa22a3f): e4bd0b8 removes 19 cards and the choices from both centres and the playbook; 043b5ab moves probe-domain-chain to Cloudflare Registrar, probe-day1 to the data-partner CSV, probe-stack to Tantra reminder email, and trims walk-ui, probe-infra, probe-clients and probe-email-stripe; aa22a3f fixes the probe-day1 date rule. Left: fill-preview fixtures (app/scripts/fill-preview.mjs) and walk-scenarios.mjs if still naming removed tools, rebase on origin/main, full run-chain, READY in /Users/adithyamurali/tantra-round5-coord/LOG.md; Integrator merges, deploys and republishes (shared with T-233). Part 2 (after the merge): git grep -il over app/src and cloud/src for each ruled-out name and remove every place we recommend or connect them (connectors such as cloud/src/connectors/instantly.ts, jobs-m365.ts, guides, FunnelOS stacks, tool chips, 'sendgrid-domain' job name in cloud/admin-ui/admin.js). Verbatim client library elements stay verbatim (no-invented-funnel-elements). Tools not on the approved list but not ruled out (GoHighLevel, Wistia, Beehiiv and others) belong to T-260. Part 3: add the ruled-out names to app/scripts/probe-visual-tools.mjs so they cannot come back.",
    "done_when": [
@@ -8533,6 +8538,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: in progress by S1 (043b5ab and aa22a3f probe fixes, no READY yet); status next. Recounted on 2026-10-08: S1 branch still has hits (SendGrid 11, HeyReach 11, Instantly 29, Apollo 23, Calendly 4, GoDaddy 2 files in app/src+cloud/src) so part 2 is still real."
+    },
+    {
+     "ts": "2026-10-08T05:03:55+0530",
+     "who": "claude",
+     "note": "Merged into main 91af003: ruled-out tools removed from both centres and the playbook (e4bd0b8), probes, walker profiles and fixtures moved to the approved stack; takeover agent's run-chain had no new failures. Live with the next deploy."
     }
    ],
    "order": 2510
@@ -9631,6 +9641,38 @@
     }
    ],
    "order": 2810
+  },
+  {
+   "id": "T-282",
+   "title": "Review the seven new walkthrough videos before they go on the centres and playbook",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "blocked",
+   "why": "Owner brief 2026-10-08 (scripts/walkthroughs/WORKFLOW.md v2): no walkthrough ships to the centres or the playbook before it passes verification and Adi's review page. Seven were recorded before that brief: Tantra reminder campaigns, Google senders, Stripe, GoHighLevel, HubSpot, Zoho CRM, Wistia.",
+   "spec": "They are merged on main but held: app/src/lib/walkthroughs.ts HELD_FOR_REVIEW keeps them off every card and the playbook (main 86096c7). The 4K re-render session (working in /Users/adithyamurali/tantra-walkthroughs per WORKFLOW.md v2) produces the review page. When Adi approves a video, Claude removes its tool from HELD_FOR_REVIEW, reruns app/scripts/embed-walkthroughs.mjs then workshop-plan/build/titlecase.py, embed.py, generate.py, copies the playbook to app/public/materials, deploys and publishes. GoHighLevel, HubSpot, Zoho and Wistia also depend on T-260 (approved tools).",
+   "done_when": [
+    "Adi's verdict per video recorded here",
+    "Approved videos show on their cards and in the playbook; rejected ones re-recorded or dropped"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Review page from the 4K walkthrough session"
+   ],
+   "needs_from_owner": "Review each video on the walkthrough review page when it is ready and say approve or redo per video.",
+   "log": [
+    {
+     "ts": "2026-10-08T05:03:55+0530",
+     "who": "claude",
+     "note": "Added by the Integrator: seven videos held per the v2 workflow brief."
+    }
+   ],
+   "order": 2820
   }
  ]
 }
