@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-07T22:53:58+0530",
-  "version": 259,
+  "updated": "2026-10-07T22:54:25+0530",
+  "version": 260,
   "last_id": 229,
   "team": [
    {
@@ -6765,7 +6765,7 @@
   {
    "id": "T-227",
    "status": "blocked",
-   "owner": "Aquila",
+   "owner": "Adi",
    "assignee": "Adi",
    "reviewers": [
     "Adi",
