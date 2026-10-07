@@ -1233,47 +1233,127 @@
   },
   {
    "id": "T-033",
-   "status": "blocked",
+   "title": "WhatsApp + email delivery automation",
+   "area": "Delivery",
    "owner": "Aquila",
+   "priority": "P1",
+   "due": "2026-09-22",
+   "status": "blocked",
+   "why": "Same-day delivery before the next session is what makes the loop feel magical.",
+   "spec": "After T-031 (day outputs) and T-032 (PDF and link), send each attendee their output link the same day by email and WhatsApp. Owner model (google-and-reminder-model, 2026-10-07): attendee messages run on Tantra omni-channel campaigns, and contacts are imported into the campaign programmatically by webhook; Tantra sending is live. So: on each delivered output, push or update the attendee contact in the Tantra campaign with the output link as a contact field, and let the campaign's email and WhatsApp steps send it. UNVERIFIED that a Tantra campaign step can insert a per-contact link field; if it cannot, send the email through Resend (approved) and keep WhatsApp on Tantra. Never Twilio for WhatsApp. Reuse the same webhook import as the reminders (T-234) and the umbrella T-123; recipients come from the centre attendee records; test identity the owner's Google test identity.",
+   "done_when": [
+    "the owner's Google test identity receives the Day 1 output link by email and WhatsApp within 10 minutes of a pipeline run",
+    "The send is idempotent per attendee and day (no duplicate on the next tick)",
+    "No Twilio WhatsApp, n8n or SendGrid call in the path"
+   ],
+   "evidence": [],
+   "blockers": [
+    "T-032 PDF and link not built",
+    "T-031 day outputs not built"
+   ],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-18T18:00:00-04:00",
+     "who": "claude",
+     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-09-18T20:42:47+0530",
+     "who": "claude",
+     "note": "Owner: build the automation code yourself. Reassigned from Bhaskar Dev to Claude."
+    },
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Blocks T-123 (launch-critical messages)."
+    },
+    {
+     "ts": "2026-10-06T01:37:57+0530",
+     "who": "claude",
+     "note": "Owner 2026-10-06: the playbook and both centres promise each day's answers run through an AI workflow and come back the same day as a PDF and a live link by WhatsApp and email, for every attendee. Not built yet (no PDF generation or WhatsApp/email delivery in cloud/src); keep this open until it runs end to end per attendee."
+    },
+    {
+     "ts": "2026-10-08T00:21:42+0530",
+     "who": "claude",
+     "note": "Task Command Center review: context updated. Blockers stale: approved senders are now Tantra email or Resend for email and Tantra (WhatsApp) or Twilio; Tantra per-contact send endpoint is still pending (tantra-reminder-endpoint-pending)."
+    },
+    {
+     "ts": "2026-10-08T00:48:49+0530",
+     "who": "claude",
+     "note": "Pass 2 (2026-10-08): pass 2: dropped the stale T-236 /emails/batch blocker and Twilio WhatsApp; per the owner model (2026-10-07) attendee messages run on Tantra omni-channel campaigns with contacts imported by webhook, WhatsApp never via Twilio."
+    }
+   ],
+   "order": 230,
    "assignee": "Claude",
    "reviewers": [
     "Aquila"
-   ],
-   "priority": "P1",
-   "due": "2026-09-22",
-   "area": "Delivery",
-   "order": 230,
-   "title": "T-033: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [],
-   "held": true
+   ]
   },
   {
    "id": "T-034",
-   "status": "blocked",
+   "title": "Full dry run of the Day-1 pipeline",
+   "area": "Delivery",
    "owner": "Aquila",
+   "priority": "P0",
+   "due": "2026-09-22",
+   "status": "blocked",
+   "why": "Each weekly cohort's Day 1 depends on the loop; a failed loop breaks the do-and-get promise.",
+   "spec": "End-to-end dry run before the next weekly cohort (Wed to Fri 11:00 ET): daily survey on the Worker (POST /api/survey) to day output (T-031) to PDF and link (T-032) to email and WhatsApp through Tantra (T-033), with three test personas (SendFlow, Apex Growth, Sarah Chen from workshop-plan/build/questions.py) on the test identity the owner's Google test identity and plus-addressed variants, tagged test so they stay out of real counts. Record the time from submit to delivery per persona in workshop-plan/ops/runbook.md (T-006).",
+   "done_when": [
+    "Three personas processed with no manual step",
+    "Submit to delivery time recorded per persona",
+    "Test rows removed or tagged test in the Tantra Tracker afterwards"
+   ],
+   "evidence": [],
+   "blockers": [
+    "T-031",
+    "T-032",
+    "T-033"
+   ],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-18T18:00:00-04:00",
+     "who": "claude",
+     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-09-18T20:42:47+0530",
+     "who": "claude",
+     "note": "Owner: build the automation code yourself. Reassigned from Bhaskar Dev to Claude."
+    },
+    {
+     "ts": "2026-09-24",
+     "who": "Claude",
+     "note": "Blocked behind T-031: the pipeline has no agent credential yet."
+    },
+    {
+     "ts": "2026-09-24",
+     "who": "Claude",
+     "note": "Unblocked: T-031 has a working agent now."
+    },
+    {
+     "ts": "2026-10-06T01:37:57+0530",
+     "who": "claude",
+     "note": "Owner 2026-10-06: the playbook and both centres promise each day's answers run through an AI workflow and come back the same day as a PDF and a live link by WhatsApp and email, for every attendee. Not built yet (no PDF generation or WhatsApp/email delivery in cloud/src); keep this open until it runs end to end per attendee."
+    },
+    {
+     "ts": "2026-10-08T00:21:42+0530",
+     "who": "claude",
+     "note": "Task Command Center review: context updated. 'First live session is Sep 24' is stale; cohorts now run weekly Wed to Fri 11:00 ET. Still not possible end to end until T-032 and T-033 exist."
+    },
+    {
+     "ts": "2026-10-08T00:48:49+0530",
+     "who": "claude",
+     "note": "Pass 2 (2026-10-08): pass 2: blockers now name the whole chain (T-031, T-032, T-033); dates follow the weekly cohort."
+    }
+   ],
+   "order": 240,
    "assignee": "Claude",
    "reviewers": [
     "Aquila"
-   ],
-   "priority": "P0",
-   "due": "2026-09-22",
-   "area": "Delivery",
-   "order": 240,
-   "title": "T-034: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [],
-   "held": true
+   ]
   },
   {
    "id": "T-036",
@@ -1553,25 +1633,46 @@
   },
   {
    "id": "T-052",
-   "status": "queue",
+   "title": "Load both nurture sequences into Tantra campaigns",
+   "area": "Traffic",
    "owner": "Aquila",
+   "priority": "P1",
+   "due": "2026-09-22",
+   "status": "queue",
+   "why": "Drafts do not send themselves; the sequences must fire automatically for every weekly cohort.",
+   "spec": "Owner model (google-and-reminder-model, 2026-10-07): attendee messaging runs on Tantra omni-channel campaigns (email, WhatsApp, LinkedIn), with registrants imported into the campaign programmatically by webhook; this is live in Tantra. Steps: (1) create two campaigns in our own Tantra workspace, 'Pre-workshop' and 'Post-workshop', with the T-050 and T-051 copy; (2) from the centre Worker (cloud/src), on sign-up push the attendee into the pre campaign and at Day 3 end push them into the post campaign, using the same webhook import as the reminders (T-234), idempotent per attendee; (3) test with the owner's Google test identity. No n8n, Instantly, SendGrid or Twilio WhatsApp. Resend is the email fallback only if Tantra cannot carry a needed per-contact field (UNVERIFIED).",
+   "done_when": [
+    "A test attendee is imported into the pre campaign on sign-up and receives its messages on schedule",
+    "The same attendee enters the post campaign after Day 3 and receives its first message",
+    "No n8n, Instantly, SendGrid or Twilio WhatsApp call anywhere in the path"
+   ],
+   "evidence": [],
+   "blockers": [
+    "T-050 and T-051 copy"
+   ],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-18T18:00:00-04:00",
+     "who": "claude",
+     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-10-08T00:21:42+0530",
+     "who": "claude",
+     "note": "Task Command Center review: context updated. Tooling is now fixed by the approved list (Tantra email or Resend, WhatsApp via Twilio or WhatsApp); n8n and Instantly ruled out. Linked to the send infrastructure tasks T-123, T-234, T-236."
+    },
+    {
+     "ts": "2026-10-08T00:48:49+0530",
+     "who": "claude",
+     "note": "Pass 2 (2026-10-08): pass 2: replaced the stale sender plan (T-236 /emails/batch, Twilio WhatsApp) with the owner model: Tantra omni-channel campaigns fed by webhook import from the centre."
+    }
+   ],
+   "order": 310,
    "assignee": "Claude",
    "reviewers": [
     "Aquila"
-   ],
-   "priority": "P1",
-   "due": "2026-09-22",
-   "area": "Traffic",
-   "order": 310,
-   "title": "T-052: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [],
-   "held": true
+   ]
   },
   {
    "id": "T-053",
@@ -1620,25 +1721,54 @@
   },
   {
    "id": "T-054",
-   "status": "review",
+   "title": "Verify UTM tracking end to end",
+   "area": "Traffic",
    "owner": "Nelbin",
+   "priority": "P1",
+   "due": "2026-09-20",
+   "status": "review",
+   "why": "Attribution per channel and per team member.",
+   "spec": "Verified 2026-09-24 for one channel: /workshop?utm_source=linkedin&utm_medium=dm&utm_content=post-7 put all four UTMs on the registration row, and first-touch UTMs persist through survey and checkout. Remaining: run one test visit per channel to both /workshop and /masterclass (LinkedIn post, LinkedIn DM, WhatsApp, email, cold calendar invite, and a teammate referral link from the referral dashboard, T-211, utm_source=referral, utm_content=<member code>), register with a plus-addressed the owner's Google test identity, and confirm each row in the Work Tracker 'Funnel, Free Registrations' and paid tabs and in the Tantra Tracker carries the right source, medium, campaign and content. Then delete the test rows (T-107).",
+   "done_when": [
+    "One attributed test row per channel in the Work Tracker with all four UTMs",
+    "Referral test row credits the right member code",
+    "Test rows deleted afterwards"
+   ],
+   "evidence": [
+    {
+     "label": "Work Tracker · Funnel · Free Registrations (utm columns)",
+     "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=913055296"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-18T18:00:00-04:00",
+     "who": "claude",
+     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-09-24",
+     "who": "Claude",
+     "note": "Verified end to end: /workshop?utm_source=linkedin&utm_medium=dm&utm_campaign=…&utm_content=post-7 → the registration row carries all four. First-touch UTMs are now kept for the whole visit, so survey and checkout rows carry them too (the funnel's router.push drops the query string)."
+    },
+    {
+     "ts": "2026-10-08T00:21:42+0530",
+     "who": "claude",
+     "note": "Task Command Center review 2026-10-08: still accurate. Verified 2026-09-24 for one channel (LinkedIn DM to registration row with all four UTMs); remaining done_when (every channel) is still open and awaits Nelbin's review."
+    },
+    {
+     "ts": "2026-10-08T00:48:49+0530",
+     "who": "claude",
+     "note": "Pass 2 (2026-10-08): pass 2: made the remaining check concrete and assigned to Claude (it can run every channel test itself); Nelbin reviews. One channel was verified 2026-09-24."
+    }
+   ],
+   "order": 330,
    "assignee": "Claude",
    "reviewers": [
     "Nelbin"
-   ],
-   "priority": "P1",
-   "due": "2026-09-20",
-   "area": "Traffic",
-   "order": 330,
-   "title": "T-054: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [],
-   "held": true
+   ]
   },
   {
    "id": "T-056",
@@ -1772,25 +1902,49 @@
   },
   {
    "id": "T-059",
-   "status": "queue",
+   "title": "AI-personalised first lines for our workshop outreach on Tantra campaigns",
+   "area": "Traffic",
    "owner": "Aquila",
-   "assignee": "Aquila",
-   "reviewers": [
-    "Aquila"
-   ],
    "priority": "P2",
    "due": "2026-09-22",
-   "area": "Traffic",
-   "order": 380,
-   "title": "T-059: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
+   "status": "queue",
+   "why": "Personalised first lines lift reply and registration rates on the outreach that fills each weekly cohort; today every prospect gets the same opener.",
+   "spec": "Our own outreach for the weekly cohort runs as Tantra omni-channel campaigns (email from vendor-bought inboxes connected to Tantra, LinkedIn through Tantra; owner model in memory google-and-reminder-model.md). Prospect lists come pre-verified from the data vendors (no Apollo, no paid verification). Steps: (1) confirm in Tantra whether a campaign step can use a per-contact custom field (for example {first_line}); (2) write a small script that takes a lead CSV (name, title, company, profile and company summary) and generates one first line per lead with Claude or OpenAI, in the style of the proven client playbook (no client name in public files); (3) import the leads with the first_line field into a test Tantra campaign and send to the the owner's Google test identity test identity first; (4) run one real batch against a control batch without personalisation. Approved tools only; no HeyReach, Instantly or Apollo.",
+   "done_when": [
+    "A script in the repo turns a lead CSV into per-lead first lines (path recorded in the task log)",
+    "A test Tantra campaign shows the personalised first line in the received test email",
+    "One real batch and one control batch sent, with reply rates of both recorded in the task log"
+   ],
    "evidence": [],
    "blockers": [],
    "needs_from_owner": "",
-   "log": [],
-   "held": true
+   "log": [
+    {
+     "ts": "2026-09-18T18:00:00-04:00",
+     "who": "claude",
+     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-09-26T00:17:27+0530",
+     "who": "claude",
+     "note": "Title no longer names the client (tasks.json is public on the mirror)."
+    },
+    {
+     "ts": "2026-10-08T00:21:42+0530",
+     "who": "claude",
+     "note": "Task Command Center review 2026-10-08: still accurate. Still a valid P2 outreach improvement; no newer task covers it."
+    },
+    {
+     "ts": "2026-10-08T00:48:49+0530",
+     "who": "claude",
+     "note": "Pass 2 (2026-10-08): pass 2: rewritten onto the approved stack (Tantra omni-channel campaigns, Claude/OpenAI for first lines, data-vendor lists); assignee Aquila kept. UNVERIFIED whether Tantra campaigns accept a per-contact custom first-line variable (cloud/src/jobs-tantra.ts shows no custom-variable use)."
+    }
+   ],
+   "order": 380,
+   "assignee": "Aquila",
+   "reviewers": [
+    "Aquila"
+   ]
   },
   {
    "id": "T-060",
@@ -2079,25 +2233,46 @@
   },
   {
    "id": "T-074",
-   "status": "queue",
+   "title": "Weekly coaching call and community moderation rota for Tantra Pro members",
+   "area": "Product",
    "owner": "Amal",
+   "priority": "P2",
+   "due": "2026-10-07",
+   "status": "queue",
+   "why": "The $999 Tantra Pro course promises group coaching and a community; members stay (and pay) only if both run every week.",
+   "spec": "(1) Create a recurring weekly Zoom Pro meeting on the the owner's Google test identity account for Pro coaching (same room settings as the workshop meetings, T-223). (2) Write a moderation rota from the team roster (Amal lead, plus Nelbin and Bhaskar) for the WhatsApp community (T-040 creates it). (3) Send a weekly member newsletter drawn from the coaching call via Resend or Tantra email (no Beehiiv). Start once the Pro course is on sale (T-071).",
+   "done_when": [
+    "Recurring coaching meeting exists and its link is in the Pro course home",
+    "Rota published to the team (written in the task log)",
+    "First weekly newsletter sent"
+   ],
+   "evidence": [],
+   "blockers": [
+    "T-071 Pro course not on sale yet"
+   ],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-09-18T18:00:00-04:00",
+     "who": "claude",
+     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-10-08T00:21:42+0530",
+     "who": "claude",
+     "note": "Task Command Center review 2026-10-08: still accurate. Still needed; no newer task covers coaching cadence or moderation rota."
+    },
+    {
+     "ts": "2026-10-08T00:48:49+0530",
+     "who": "claude",
+     "note": "Pass 2 (2026-10-08): pass 2: made actionable against current tools: coaching on a recurring Zoom Pro meeting, community in the WhatsApp group (T-040, on hold), newsletter on Resend or Tantra email (Beehiiv is not approved, T-260). Depends on the Pro course existing (T-071)."
+    }
+   ],
+   "order": 460,
    "assignee": "Amal",
    "reviewers": [
     "Amal"
-   ],
-   "priority": "P2",
-   "due": "2026-10-07",
-   "area": "Product",
-   "order": 460,
-   "title": "T-074: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [],
-   "held": true
+   ]
   },
   {
    "id": "T-080",
@@ -5045,25 +5220,59 @@
   },
   {
    "id": "T-146",
-   "status": "blocked",
+   "title": "Give teammates access to both GitHub repos",
+   "area": "Ops",
    "owner": "Adi",
+   "priority": "P0",
+   "due": "",
+   "status": "blocked",
+   "why": "Hub Source links and issue #1 point at the private repo adisuja/3-day-tantra-ai-revops-workshop, which most teammates cannot open (404).",
+   "spec": "GitHub API 2026-10-08: adisuja/3-day-tantra-ai-revops-workshop (private) has adisuja, nelbinxav (Nelbin), growthclub-ai; no pending invites. adisuja/tantra-workshop-live is public, so reading and opening review issues needs no access. When usernames arrive Claude runs gh api repos/adisuja/3-day-tantra-ai-revops-workshop/collaborators/<login> -X PUT -f permission=push for each, confirms the invite, and logs it here. Closes audit H034.",
+   "done_when": [
+    "gh api repos/adisuja/3-day-tantra-ai-revops-workshop/collaborators lists every teammate who needs access",
+    "Each added teammate opens a hub Source link",
+    "H034 marked fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Send the GitHub usernames for Aquila, Bhaskar, Amal, Ben and Bharath, or say who does not need access.",
+   "log": [
+    {
+     "ts": "2026-09-26T00:17:50+0530",
+     "who": "claude",
+     "note": "The hub's 'Request repo access' button files an issue with the username."
+    },
+    {
+     "ts": "2026-09-29T20:19:22+0530",
+     "who": "claude",
+     "note": "2026-09-29: Nelbin (GitHub nelbinxav) invited with write access to adisuja/3-day-tantra-ai-revops-workshop, tantra-workshop-live, two other private repos (invites pending his acceptance). Already on Usetantra/content-engine (admin) and pro-workflows-suite (write). Other teammates still to add."
+    },
+    {
+     "ts": "2026-09-30T14:57:14+0530",
+     "who": "claude",
+     "note": "2026-09-30: growthclub-ai invited with write access to adisuja/3-day-tantra-ai-revops-workshop and tantra-workshop-live (pending acceptance). 2026-09-29: Nelbin (nelbinxav) invited to all four adisuja project repos."
+    },
+    {
+     "ts": "2026-10-08T00:21:42+0530",
+     "who": "claude",
+     "note": "Task Command Center review: context updated. GitHub API 2026-10-08: nelbinxav and growthclub-ai are now collaborators (invites accepted) on both repos; no pending invites. Aquila, Bhaskar, Amal, Ben and Bharath are not added."
+    },
+    {
+     "ts": "2026-10-08T00:21:42+0530",
+     "who": "claude",
+     "note": "Task Command Center import: Linked audit H034, still open on main 2026-10-08."
+    },
+    {
+     "ts": "2026-10-08T00:48:49+0530",
+     "who": "claude",
+     "note": "Pass 2 (2026-10-08): pass 2: tantra-workshop-live is public, so only the private repo blocks Source links; Claude adds people once usernames arrive."
+    }
+   ],
+   "order": 1460,
    "assignee": "Claude",
    "reviewers": [
     "Adi"
-   ],
-   "priority": "P0",
-   "due": "",
-   "area": "Ops",
-   "order": 1460,
-   "title": "T-146: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [],
-   "held": true
+   ]
   },
   {
    "id": "T-147",
@@ -6434,7 +6643,8 @@
   },
   {
    "id": "T-214",
-   "status": "done",
+   "title": "Tantra demo webinar funnel built end to end in the live agentic centre (S1 tantra-walkthroughs)",
+   "area": "Product",
    "owner": "Aquila",
    "assignee": "Claude",
    "reviewers": [
@@ -6443,17 +6653,48 @@
    ],
    "priority": "P0",
    "due": "",
-   "area": "Product",
-   "order": 2140,
-   "title": "T-214: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
+   "status": "done",
+   "why": "Owner decisions 2026-10-06",
+   "spec": "Brand Tantra webinar funnel for the 3-Day AI RevOps Workshop, Tantra platform and Tantra Pro, filled through the /preview attendee UI with the deck's proof verbatim, usetantra.com brand, the owner's Google test identity test identity, Dodo payments; every background job runs.",
+   "done_when": [
+    "Branch READY in LOG.md, merged into main by the Integrator, deployed and verified live"
+   ],
    "evidence": [],
    "blockers": [],
    "needs_from_owner": "",
-   "log": [],
-   "held": true
+   "log": [
+    {
+     "ts": "2026-10-06T23:27:01+0530",
+     "who": "claude",
+     "note": "Integrator watching LOG.md for READY tantra-walkthroughs"
+    },
+    {
+     "ts": "2026-10-06T23:40:00+0530",
+     "who": "claude",
+     "note": "Created by the Integrator; closes when its branch lands on main and deploys."
+    },
+    {
+     "ts": "2026-10-07T03:45:48+0530",
+     "who": "claude",
+     "note": "Merged into main 8794f55 and live on Worker 412bd464 (2026-10-07). Vendor sign-ins Adi still owes are in the blockers list."
+    },
+    {
+     "ts": "2026-10-07T05:15:27+0530",
+     "who": "claude",
+     "note": "Landed: main b08eeed, Worker aee6fd0a, mirror 1ab2e61 (2026-10-07). Real-account steps are in the Integrator's blockers list."
+    },
+    {
+     "ts": "2026-10-08T00:21:42+0530",
+     "who": "claude",
+     "note": "Task Command Center review 2026-10-08: still accurate. Already done; landed main b08eeed, Worker aee6fd0a, mirror 1ab2e61."
+    },
+    {
+     "ts": "2026-10-08T00:48:49+0530",
+     "who": "claude",
+     "note": "Pass 2 (2026-10-08): checked, current. pass 2: evidence on main/LOG confirmed."
+    }
+   ],
+   "order": 2140
   },
   {
    "id": "T-215",
@@ -7042,7 +7283,8 @@
   },
   {
    "id": "T-225",
-   "status": "blocked",
+   "title": "Ask Zoom Support for host mute control and participant video disable",
+   "area": "Product",
    "owner": "Nelbin",
    "assignee": "Adi",
    "reviewers": [
@@ -7051,17 +7293,50 @@
    ],
    "priority": "P1",
    "due": "",
-   "area": "Product",
-   "order": 2250,
-   "title": "T-225: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [],
-   "held": true
+   "status": "blocked",
+   "why": "Adi's Zoom Pro research, 2026-10-07 (docs/onboarding-v3/analysis/zoom-pro-meetings.md)",
+   "spec": "One email to Zoom Support; if granted, set Zoom Support locks to Granted in the admin and press Re-apply room settings.",
+   "done_when": [
+    "Support's answer recorded; locks on or the bot path chosen"
+   ],
+   "evidence": [
+    {
+     "label": "Zoom Pro doc: why these two fields (section 1, row 'No REST setting locks mic and camera'; section 3 step 4)",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/docs/onboarding-v3/analysis/zoom-pro-meetings.md"
+    }
+   ],
+   "blockers": [
+    "The request has to come from the Zoom account owner (Adi)"
+   ],
+   "needs_from_owner": "Send this from https://support.zoom.com while signed in as the owner's Google test identity (Contact Support, submit a request):\n\nSubject: Enable host mute control and participant video disable for meetings on our Pro account\n\nHello Zoom Support,\n\nWe run a weekly three-day workshop on our Pro account as recurring meetings created through the REST API (Server-to-Server OAuth app). Attendees should join muted with cameras off and stay that way unless the host allows otherwise. Please enable these two meeting settings for our account so we can set them when meetings are created through the API: allow_host_control_participant_mute_state and disable_participant_video.\n\nAccount owner email: the owner's Google test identity\nAccount number: 5018326609\n\nThank you.\n\nThen paste Zoom's answer here. If they agree, Claude sets Zoom Support locks to Granted at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key> (Cohort Settings) and presses Re-apply room settings; no bot is needed (T-226 stays parked).",
+   "log": [
+    {
+     "ts": "2026-10-07T20:46:43+0530",
+     "who": "claude",
+     "note": "Created by the Integrator."
+    },
+    {
+     "ts": "2026-10-07T23:07:42+0530",
+     "who": "claude",
+     "note": "The request text was only in the Integrator's chat message; it now lives on this task (2026-10-07). Moved to blocked so it shows under Waiting on you."
+    },
+    {
+     "ts": "2026-10-07T23:09:19+0530",
+     "who": "claude",
+     "note": "The request text was only in the Integrator's chat message; it now lives on this task (2026-10-07). Moved to blocked so it shows under Waiting on you."
+    },
+    {
+     "ts": "2026-10-08T00:21:42+0530",
+     "who": "claude",
+     "note": "Task Command Center review 2026-10-08: still accurate. Still open: production setting zoom_support_locks has not been granted and no Support answer is recorded in LOG.md."
+    },
+    {
+     "ts": "2026-10-08T00:48:49+0530",
+     "who": "claude",
+     "note": "Pass 2 (2026-10-08): pass 2: still open (production zoom_support_locks = 0 on 2026-10-08); filled in the two bracketed fields from the live account facts (owner the owner's Google test identity, account number 5018326609) so Adi can send it as is."
+    }
+   ],
+   "order": 2250
   },
   {
    "id": "T-226",
@@ -7108,7 +7383,8 @@
   },
   {
    "id": "T-227",
-   "status": "blocked",
+   "title": "Google Calendar invites: save the organiser's service account and authorise it for Calendar",
+   "area": "Delivery",
    "owner": "Adi",
    "assignee": "Adi",
    "reviewers": [
@@ -7117,21 +7393,78 @@
    ],
    "priority": "P0",
    "due": "",
-   "area": "Delivery",
-   "order": 2270,
-   "title": "T-227: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [],
-   "held": true
+   "status": "blocked",
+   "why": "Live check 2026-10-07: Google invites are switched on in production but no attendee gets one. The admin shows no organiser email and no service account saved (Cohort Settings, Invite Status: 'no organiser email set'). The code is live since T-221 (Worker aee6fd0a onward). The same service account also powers the attendees' own Google Workspace card (domain-wide delegation), which says 'Google isn't ready on our side yet' until it is saved.",
+   "spec": "How it works once set: for every attendee, the centre adds three events (Day 1, 2, 3) to the organiser's Google Calendar with the attendee as the only guest (events.insert, sendUpdates=all). Each carries the day's agenda, the attendee's own Zoom join link and reminders at 5, 10, 15 and 30 minutes. A session change, a cohort move or a new join link patches the same events; revoking access cancels them. Google applies reminders to the organiser's copy only; guests' copies follow their own defaults, and the private .ics link (T-220) carries all four for everyone.\n\nSteps (Adi):\n1. Google Cloud console, the project that should own the key: IAM and admin, Service accounts, Create (name: revops-centre). Keys, Add key, JSON. Enable the Google Calendar API in the same project (APIs and services, Library). For the attendee Workspace card also enable Admin SDK API and Site Verification API.\n2. Admin centre https://revops-centre.growthcluborg.workers.dev/admin/ , Human Gates, Google identity: paste the whole JSON file. Claude never types keys (owner rule).\n3. Google Workspace Admin console of the organiser's domain, Security, Access and data control, API controls, Domain-wide delegation, Add new: the service account's client ID (shown in the admin after step 2) with scope https://www.googleapis.com/auth/calendar.events. Takes minutes, sometimes up to 24 hours.\n4. Tell Claude (or type in Cohort Settings) the organiser email: the Workspace user the invites come from.\n\nClaude then: sets the organiser, runs Sync now, invites the test identity the owner's Google test identity once, checks agenda, join link, reminders and that a second sync sends nothing, and reports any delegation error the admin shows.",
+   "done_when": [
+    "Cohort Settings, Invite Status names the service account and the organiser, no 'off' reason",
+    "The test identity receives three invites (Day 1 to 3) with the agenda, its own join link and no duplicates after a second sync",
+    "Changing the session length in the admin updates the same three invites"
+   ],
+   "evidence": [
+    {
+     "label": "Calendar feeds handoff (how it works, setup, blockers)",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/SESSION_HANDOFF_2026_10_06_CALENDAR_FEEDS.md"
+    },
+    {
+     "label": "Admin centre: Cohort Settings, Invite Status",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=t227"
+    }
+   ],
+   "blockers": [
+    "No service account saved in production (google_sa_enc empty)",
+    "Domain-wide delegation for calendar.events not yet granted",
+    "Organiser email not set"
+   ],
+   "needs_from_owner": "1) Google Cloud: https://console.cloud.google.com/iam-admin/serviceaccounts (pick the project that should own it), Create service account (name revops-centre), then Keys, Add key, JSON. In the same project enable the Google Calendar API at https://console.cloud.google.com/apis/library/calendar-json.googleapis.com (for the attendees' Workspace card also Admin SDK API and Site Verification API). 2) Paste the whole JSON file at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Human Gates, Google identity. 3) Google Admin console of the organiser's domain: https://admin.google.com/ac/owl/domainwidedelegation, Add new, client ID shown in the centre admin after step 2, scope https://www.googleapis.com/auth/calendar.events. 4) Tell Claude the organiser email (the Workspace user the invites come from). 5) Decision with a default: marketing sign-ups get invites straight away (default, rate-limited) or only after they first open their centre.",
+   "log": [
+    {
+     "ts": "2026-10-07T22:53:58+0530",
+     "who": "claude",
+     "note": "Created from the S3 calendar-feeds handoff: these real-account steps were only in chat. Live state read from the production admin (read-only) on 2026-10-07."
+    },
+    {
+     "ts": "2026-10-07T22:54:25+0530",
+     "who": "claude",
+     "note": "People: owner Aquila → Adi (by claude)."
+    },
+    {
+     "ts": "2026-10-07T23:07:14+0530",
+     "who": "claude",
+     "note": "For the next session: code in cloud/src/invites.ts (Google and Zoom sync), cloud/src/calendar.ts (feeds, /cal/issue), cloud/admin-ui/admin.js (Calendar Invites panel). Live status read-only: GET /admin/api/calendar with the key in ~/.config/tantra/revops-admin-key. Local test: SIM_PORT=8902 vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs (BROWSER=1 for pages). Once Adi supplies items 1 to 3: set gcal_organizer in Cohort Settings (Google invites are already switched on), press Sync now, add the test identity the owner's Google test identity as a test attendee and check its three invites, then a second Sync sends nothing. Errors show under Invite Status and on the attendee's drawer (per-day rows). Item 4 is a decision with a default in place: immediate invites stay unless Adi says otherwise; switching to 'after first open' means gating syncSessions on first_seen for source='signup'."
+    },
+    {
+     "ts": "2026-10-07T23:08:48+0530",
+     "who": "claude",
+     "note": "Created from the S3 calendar-feeds handoff: these real-account steps were only in chat. Live state read from the production admin (read-only) on 2026-10-07."
+    },
+    {
+     "ts": "2026-10-07T23:08:48+0530",
+     "who": "claude",
+     "note": "For the next session: code in cloud/src/invites.ts (Google and Zoom sync), cloud/src/calendar.ts (feeds, /cal/issue), cloud/admin-ui/admin.js (Calendar Invites panel). Live status read-only: GET /admin/api/calendar with the key in ~/.config/tantra/revops-admin-key. Local test: SIM_PORT=8902 vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs (BROWSER=1 for pages). Once Adi supplies items 1 to 3: set gcal_organizer in Cohort Settings (Google invites are already switched on), press Sync now, add the test identity the owner's Google test identity as a test attendee and check its three invites, then a second Sync sends nothing. Errors show under Invite Status and on the attendee's drawer (per-day rows). Item 4 is a decision with a default in place: immediate invites stay unless Adi says otherwise; switching to 'after first open' means gating syncSessions on first_seen for source='signup'."
+    },
+    {
+     "ts": "2026-10-07T23:09:19+0530",
+     "who": "claude",
+     "note": "For the next session: code in cloud/src/invites.ts (Google and Zoom sync), cloud/src/calendar.ts (feeds, /cal/issue), cloud/admin-ui/admin.js (Calendar Invites panel). Live status read-only: GET /admin/api/calendar with the key in ~/.config/tantra/revops-admin-key. Local test: SIM_PORT=8902 vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs (BROWSER=1 for pages). Once Adi supplies items 1 to 3: set gcal_organizer in Cohort Settings (Google invites are already switched on), press Sync now, add the test identity the owner's Google test identity as a test attendee and check its three invites, then a second Sync sends nothing. Errors show under Invite Status and on the attendee's drawer (per-day rows). Item 4 is a decision with a default in place: immediate invites stay unless Adi says otherwise; switching to 'after first open' means gating syncSessions on first_seen for source='signup'."
+    },
+    {
+     "ts": "2026-10-08T00:21:42+0530",
+     "who": "claude",
+     "note": "Task Command Center review 2026-10-08: still accurate. Verified on 2026-10-08: production settings have gcal_organizer empty and no Google service account saved; T-244's decision is item 4 of this task's owner ask."
+    },
+    {
+     "ts": "2026-10-08T00:48:49+0530",
+     "who": "claude",
+     "note": "Pass 2 (2026-10-08): pass 2: re-read the live admin 2026-10-08 00:40 IST: google enabled, organizer None, service_account None, last sync 'off: no organiser email set'; rewrote the owner ask with full clickable URLs and the admin entry link."
+    }
+   ],
+   "order": 2270
   },
   {
    "id": "T-228",
-   "status": "queue",
+   "title": "Welcome email: every new attendee gets their centre link and private calendar link",
+   "area": "Delivery",
    "owner": "Aquila",
    "assignee": "Claude",
    "reviewers": [
@@ -7140,17 +7473,68 @@
    ],
    "priority": "P0",
    "due": "",
-   "area": "Delivery",
-   "order": 2280,
-   "title": "T-228: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [],
-   "held": true
+   "status": "queue",
+   "why": "Since the 2026-10-07 security fix (b08eeed) /cal/issue never returns a feed token to the browser, so a marketing sign-up only gets their centre link (/enter?t=) and private calendar link (/cal/p/<token>.ics) if we send them; nothing on main sends them, so the first real attendee would get no links.",
+   "spec": "Owner model (memory google-and-reminder-model, 2026-10-07): attendee messages (email, WhatsApp, LinkedIn) run on a Tantra omni-channel campaign, and registrants are imported into it programmatically. Build: (1) In the centre Worker (cloud/src), on attendee creation (admin add in index.ts ~478, /cal/issue sign-up and /intake in cloud/src/calendar.ts), POST the attendee to the workshop's Tantra campaign: POST /email-campaigns/:id/contacts with {contacts:[{email, firstName, lastName, phone or whatsappPhone, tags:['workshop', week], customFields:{centre_link, calendar_link, google_cal_link, cohort_dates, zoom_join}}]} (contract: docs/onboarding-v3/analysis/integrations-tantra-api.md section 5; upserts by email, idempotent, 409 means retry). Reuse tantraUrl/tantraHeaders from cloud/src/connectors/stack.ts. Record event 'welcome_enrolled' per attendee; a revoked calendar link re-posts the contact with the new calendar_link. (2) Admin field for the workshop's Tantra API key and campaign id (secret stored like other vault keys, never in the repo). (3) Campaign step 1 in Tantra is the welcome email using those custom fields (copy per workshop-plan/COPY_RULES.md, no dashes), WhatsApp step if a phone is present (through Tantra, never Twilio). (4) Probe against vendor-sim first (add the route if missing), then live with the test identity the owner's Google test identity. Shares the same import with the per-day reminders (T-234).",
+   "done_when": [
+    "A new sign-up appears as an enrolled contact in the workshop Tantra campaign within a minute, with centre_link and calendar_link filled",
+    "The test identity receives exactly one welcome email whose calendar link opens its private feed with its own Zoom join link",
+    "Rotating the calendar link in the admin updates the contact and the next message carries the new link",
+    "Probe against vendor-sim passes and is added to the centre chain"
+   ],
+   "evidence": [
+    {
+     "label": "Calendar feeds handoff (how it works, setup, blockers)",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/SESSION_HANDOFF_2026_10_06_CALENDAR_FEEDS.md"
+    }
+   ],
+   "blockers": [
+    "Go-live only: the workshop Tantra campaign id and its API key saved in the centre admin (build and probe against vendor-sim does not wait)"
+   ],
+   "needs_from_owner": "Which Tantra workspace and campaign run the workshop messages: create an API key at https://usetantra.com/api-keys in that workspace and paste it, with the campaign id, at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key> once Claude adds the field (Claude will name the exact section here when it ships).",
+   "log": [
+    {
+     "ts": "2026-10-07T22:53:58+0530",
+     "who": "claude",
+     "note": "Gap found while consolidating the S3 calendar-feeds follow-ups (2026-10-07)."
+    },
+    {
+     "ts": "2026-10-07T23:07:14+0530",
+     "who": "claude",
+     "note": "For the next session: code in cloud/src/invites.ts (Google and Zoom sync), cloud/src/calendar.ts (feeds, /cal/issue), cloud/admin-ui/admin.js (Calendar Invites panel). Live status read-only: GET /admin/api/calendar with the key in ~/.config/tantra/revops-admin-key. Local test: SIM_PORT=8902 vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs (BROWSER=1 for pages). Links to send: the admin's POST /admin/api/attendees response already returns link (/enter?t=) and calendar (/cal/p/<token>.ics) per person, and GET /admin/api/attendees/<id> returns attendee.feed. /cal/issue (sign-ups) deliberately never returns a token to the browser (Integrator fix b08eeed), so the email is the only way a marketing sign-up receives their private link. Inputs it waits on are tracked in T-123 (sending provider and from-address) and T-217 (Tantra /emails/batch endpoint)."
+    },
+    {
+     "ts": "2026-10-07T23:08:48+0530",
+     "who": "claude",
+     "note": "Gap found while consolidating the S3 calendar-feeds follow-ups (2026-10-07)."
+    },
+    {
+     "ts": "2026-10-07T23:08:48+0530",
+     "who": "claude",
+     "note": "For the next session: code in cloud/src/invites.ts (Google and Zoom sync), cloud/src/calendar.ts (feeds, /cal/issue), cloud/admin-ui/admin.js (Calendar Invites panel). Live status read-only: GET /admin/api/calendar with the key in ~/.config/tantra/revops-admin-key. Local test: SIM_PORT=8902 vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs (BROWSER=1 for pages). Links to send: the admin's POST /admin/api/attendees response already returns link (/enter?t=) and calendar (/cal/p/<token>.ics) per person, and GET /admin/api/attendees/<id> returns attendee.feed. /cal/issue (sign-ups) deliberately never returns a token to the browser (Integrator fix b08eeed), so the email is the only way a marketing sign-up receives their private link. Inputs it waits on are tracked in T-123 (sending provider and from-address) and T-217 (Tantra /emails/batch endpoint)."
+    },
+    {
+     "ts": "2026-10-07T23:09:19+0530",
+     "who": "claude",
+     "note": "For the next session: code in cloud/src/invites.ts (Google and Zoom sync), cloud/src/calendar.ts (feeds, /cal/issue), cloud/admin-ui/admin.js (Calendar Invites panel). Live status read-only: GET /admin/api/calendar with the key in ~/.config/tantra/revops-admin-key. Local test: SIM_PORT=8902 vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs (BROWSER=1 for pages). Links to send: the admin's POST /admin/api/attendees response already returns link (/enter?t=) and calendar (/cal/p/<token>.ics) per person, and GET /admin/api/attendees/<id> returns attendee.feed. /cal/issue (sign-ups) deliberately never returns a token to the browser (Integrator fix b08eeed), so the email is the only way a marketing sign-up receives their private link. Inputs it waits on are tracked in T-123 (sending provider and from-address) and T-217 (Tantra /emails/batch endpoint)."
+    },
+    {
+     "ts": "2026-10-08T00:21:42+0530",
+     "who": "claude",
+     "note": "Task Command Center review 2026-10-08: still accurate. Verified: no welcome sender exists on main; cloud/src/index.ts line 478 only returns the links in the admin response. The first cohort is live now (Wed 7 to Fri 9 Oct), so this stays P0."
+    },
+    {
+     "ts": "2026-10-08T00:48:49+0530",
+     "who": "claude",
+     "note": "Pass 2 (2026-10-08): pass 2: rewritten to the owner's 2026-10-07 reminder model: the welcome goes out as step 1 of the workshop's Tantra omni-channel campaign, with the centre registering each new attendee into that campaign (POST /email-campaigns/:id/contacts, live in tantra-backend-v2 since PR #142, 2026-10-01); no home-built sender, no dependency on T-123/T-217/T-236 /emails/batch or Resend."
+    },
+    {
+     "ts": "2026-10-08T00:49:40+0530",
+     "who": "claude",
+     "note": "Pass 2 correction: no real cohort is running yet."
+    }
+   ],
+   "order": 2280
   },
   {
    "id": "T-229",
@@ -7230,7 +7614,8 @@
   },
   {
    "id": "T-230",
-   "status": "queue",
+   "title": "Enter co-host and alternative-host emails for the workshop meetings",
+   "area": "Product",
    "owner": "Adi",
    "assignee": "Adi",
    "reviewers": [
@@ -7239,17 +7624,34 @@
    ],
    "priority": "P1",
    "due": "",
-   "area": "Product",
-   "order": 2300,
-   "title": "T-230: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
+   "status": "queue",
+   "why": "Alternative hosts let a teammate start the cohort meeting if Adi cannot; co-hosts only matter once the Meeting SDK bot (T-226) exists to promote them.",
+   "spec": "Admin centre https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, tab Cohort Settings, Zoom row: field 'Alternative hosts' (zoom_alt_hosts: comma separated emails of LICENSED users on the the owner's Google test identity Zoom Pro account 5018326609; applied when the next week's meeting is created or when room settings are re-applied with the 'Re-apply settings' action) and field 'Co-hosts' (zoom_cohosts: stored now, made co-host by the bot from T-226 on join; nothing happens with them before then). Save. Recommended: leave both empty for now unless a second licensed Zoom user exists; Pro has one licence, so alternative hosts need a second paid licence first. Claude then re-applies settings and confirms with 'Check in Zoom' that the next meeting lists the alternative hosts.",
+   "done_when": [
+    "zoom_alt_hosts saved (or Adi says none) and Check in Zoom shows them on the next cohort meeting",
+    "Co-host emails saved for T-226, or explicitly none"
+   ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "",
-   "log": [],
-   "held": true
+   "needs_from_owner": "Decide: who (if anyone) should be able to start the workshop meeting without you. Alternative hosts must be licensed users on your Zoom account (Zoom web portal https://zoom.us/account/user, Users). Enter them at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key> then Cohort Settings, 'Alternative hosts' and 'Co-hosts', Save. Recommended: none until a second licence exists.",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    },
+    {
+     "ts": "2026-10-08T00:21:42+0530",
+     "who": "claude",
+     "note": "Task Command Center review: context updated. Verified: production zoom_cohosts and zoom_alt_hosts are both empty. Co-hosts are only promoted by the Meeting SDK bot (T-226), which does not exist yet, so alternative hosts are the part that works today."
+    },
+    {
+     "ts": "2026-10-08T00:48:49+0530",
+     "who": "claude",
+     "note": "Pass 2 (2026-10-08): pass 2: production zoom_cohosts and zoom_alt_hosts still empty; added the exact admin path, what each field does today and a recommended answer."
+    }
+   ],
+   "order": 2300
   },
   {
    "id": "T-231",
@@ -7385,7 +7787,8 @@
   },
   {
    "id": "T-234",
-   "status": "next",
+   "title": "Workshop reminders through Tantra omni-channel campaigns: import every registrant with their own join and calendar links",
+   "area": "Product",
    "owner": "Aquila",
    "assignee": "Claude",
    "reviewers": [
@@ -7394,17 +7797,40 @@
    ],
    "priority": "P0",
    "due": "",
-   "area": "Product",
-   "order": 2340,
-   "title": "T-234: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
+   "status": "next",
+   "why": "Nothing sends session reminders, so the first real cohort would run without them: Zoom sends none for meetings and attendees only have the calendar feed. The owner's model is Tantra omni-channel campaigns fed by registrant import, which is live in Tantra today.",
+   "spec": "Owner model 2026-10-07 (memory google-and-reminder-model): reminders run on Tantra omni-channel campaigns and registrants are imported into them programmatically; no home-built sender, no Resend/SendGrid for this, WhatsApp only through Tantra.\nWHAT EXISTS (main f6aeb7e): (a) a Tantra API client for an ATTENDEE's own account in cloud/src/jobs-tantra.ts (tn() with X-API-Key via cloud/src/connectors/stack.ts tantraUrl/tantraHeaders; POST /contacts/import with custom fields; POST /email-campaigns + /email-campaigns/:id/steps; start in cloud/src/connectors/launch.ts tantraStart). (b) The full API contract in docs/onboarding-v3/analysis/integrations-tantra-api.md: base https://api.usetantra.com/api/v1; section 3 omni-channel campaigns (steps with channel email|linkedin|whatsapp, sendingWindow, perMailboxDailyCap); section 5 POST /email-campaigns/:id/contacts (shipped 2026-10-01, API-key route: up to 1,000 contacts a call, each with email, firstName, whatsappPhone, timezone and customFields of scalars; idempotent upsert; step 1 runs when the contact is added; 409 means retry). (c) Per-attendee data: joinsFor() in cloud/src/invites.ts gives each day's own Zoom join_url (or the admin's shared link, null when waitlisted); personalFeedPath(feedTokenOf()) in cloud/src/calendar.ts gives the private calendar link; the Worker has a scheduled() cron in cloud/src/index.ts. (d) S1 recorded a walkthrough of this exact model on the unmerged branch (/Users/adithyamurali/tantra-walkthroughs/app/public/walkthroughs/tantra-reminders, untracked): one omni-channel campaign per reminder moment, sending window open every day and hour, the agent adds each registrant through the API when the reminder is due.\nWHAT DOES NOT EXIST: no code imports OUR workshop registrants into Tantra; no workshop Tantra key or settings in the centre; the vendor simulator (cloud/scripts/vendor-sim.py) has no /email-campaigns/:id/contacts route.\nBUILD: 1) Settings in admin Cohort Settings: tantra_key (stored encrypted like other secrets), sender mailbox, optional WhatsApp channel account, campaign ids. 2) A 'Create reminder campaigns' admin action that, with that key, creates (never starts without the probe passing) omni-channel campaigns: Registered (confirmation: centre link, private calendar link, each day's join link; can absorb T-228), Day before, 1 hour before, We're live, each with sendingWindow all days 0 to 23 in America/New_York, an email step and a WhatsApp step when a WhatsApp account is connected, merge fields {{firstName}} plus customFields join_day1..3, calendar_url, centre_url, cohort_dates. Copy follows workshop-plan/COPY_RULES.md, no dashes. 3) On sign-up (/cal/issue, /intake, admin add) and on cohort move or new join link, POST /email-campaigns/<Registered>/contacts with those fields. 4) In scheduled(), for every non-test, non-revoked attendee whose session is due, append them to the matching campaign once (claim a row per attendee, day and reminder in D1 before calling, so a retry never double-sends). 5) Add the contacts route to vendor-sim.py and a probe app/scripts/probe-tantra-reminders.mjs. 6) Skip placeholder addresses (T-229 helper). Daily volume is bounded by the mailbox caps (perMailboxDailyCap), so set it from the cohort size.",
+   "done_when": [
+    "probe-tantra-reminders passes against the simulator: a test sign-up lands in Registered with join_day1..3 and calendar_url, and is appended once to Day before, 1 hour before and We're live at the right times; a second scheduler run adds nobody",
+    "In production, a test attendee (the owner's Google test identity) receives the Registered message and a reminder with their own join link, then is reverted per the revert ledger",
+    "Admin Cohort Settings shows the four campaign ids and the last import result per attendee"
+   ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "",
-   "log": [],
-   "held": true
+   "needs_from_owner": "One Tantra API key from the workspace that should send workshop reminders: in the Tantra app go to Connectors, API Keys, Create Key (help: https://usetantra.com/help/api-and-mcp/api-keys), then paste it at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Cohort Settings, 'Tantra API key' (field added by this task; until then Claude builds against the simulator). Say which workspace and mailbox it should send from if not the FintechCircle workspace S1 used for the recordings.",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    },
+    {
+     "ts": "2026-10-08T00:21:42+0530",
+     "who": "claude",
+     "note": "Task Command Center review: context updated. Urgent: the first cohort (Wed 7 to Fri 9 Oct) is running now and nothing sends session reminders. Overlaps T-123 done_when 'T-1h join-link message'; this task is the build, T-123 holds the sender decision."
+    },
+    {
+     "ts": "2026-10-08T00:48:49+0530",
+     "who": "claude",
+     "note": "Pass 2 (2026-10-08): pass 2: rewritten to the owner's Tantra omni-channel campaign model (google-and-reminder-model 2026-10-07); dropped the home-built sender and the T-123/T-236 /emails/batch blocker. Verified what exists in cloud/src/jobs-tantra.ts, integrations-tantra-api.md s3 and s5, invites.ts joinsFor, calendar.ts, and S1's unmerged tantra-reminders walkthrough. UNVERIFIED: which Tantra workspace Adi wants as the sender."
+    },
+    {
+     "ts": "2026-10-08T00:49:40+0530",
+     "who": "claude",
+     "note": "Pass 2 correction: no real cohort is running yet."
+    }
+   ],
+   "order": 2340
   },
   {
    "id": "T-235",
