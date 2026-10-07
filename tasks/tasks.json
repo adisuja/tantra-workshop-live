@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-07T23:25:35+0530",
-  "version": 275,
+  "updated": "2026-10-07T23:35:57+0530",
+  "version": 276,
   "last_id": 229,
   "team": [
    {
@@ -7130,7 +7130,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Integrator sweep 2026-10-07 (Integrator request 2026-10-07)",
    "spec": "Walkthroughs session (Tantra demo funnel walkthroughs) records account settings, the Server-to-Server app, scopes and Event Subscriptions on Adi's account, change nothing, blur secrets.",
    "done_when": [
@@ -7144,6 +7144,11 @@
      "ts": "2026-10-07T23:25:35+0530",
      "who": "claude",
      "note": "Added by the Integrator's pending-work sweep."
+    },
+    {
+     "ts": "2026-10-07T23:35:57+0530",
+     "who": "claude",
+     "note": "Walkthrough recorded by the walkthroughs session (e4757fb, 74 s, view only). Held: its branch also removes ruled-out tools, which breaks the chain probes; sent back to update probes and rerun run-chain."
     }
    ],
    "order": 2330
