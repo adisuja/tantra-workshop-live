@@ -1,7 +1,10 @@
 <section style="--hue:#EF4444;--hue-ink:color-mix(in srgb,#EF4444 70%,var(--ink))" id="d3">
-      <div class="chap"><span class="no">Day 3</span><span class="tag">Orchestrate · Measure · Experiment</span></div>
-      <h2>Hand the Funnel to an AI Agent, Then Prove Every Number</h2>
-      <p class="lead">This is where the system becomes agentic. Claude Code takes over the running of your funnel through each tool's API or MCP server, one dashboard shows every number from the first touch to the cleared payment, and a weekly loop replaces one page or template at a time and keeps the winner. What you leave with is a revenue engine that improves itself every week.</p>
+      <div class="chap"><span class="no">Day 3</span></div>
+      <h2>Put an AI Agent in Charge of Your Funnel, Then Find the One Number to Fix</h2>
+      <p class="lead">Let me ask you something: right now, could you tell me which step of your funnel is losing you the most money?</p>
+      <p>Most founders can't. Not because they're careless, but because the numbers live in six different tools and nobody has time to stitch them together.</p>
+      <p>Today that changes. <strong>Claude Code takes over the running of your funnel</strong> through each tool's API, one dashboard shows every number from the first touch to the cleared payment, and a weekly loop fixes the weakest step and keeps whatever wins.</p>
+      <p>By the end of today, you'll have a revenue engine that improves itself every week. Here's how.</p>
       <p>Claude Code is the worked example. Any agentic coding tool that supports MCP works the same way.</p>
       <p><b>When:</b> Steps 1 to 5 happen now. Steps 6 to 8 happen after your first run finishes (your event date from Day 1 Step 7), because they read that run's numbers.</p>
       <h3 id="d3-step-1-connect-claude-code-to-every-tool">Step 1: Connect Claude Code to Every Tool</h3>
@@ -205,6 +208,7 @@
         </div>
         <div class="meta"><span><i>Owner</i>You · agent wires it</span><span><i>Tool</i>Google Sheets · GA4 · Clarity · Claude Code</span><span><i>Time</i>2 to 3 h</span><span class="dl"><i>Deliverable</i>A dashboard that fills without typing</span><span class="pv"><i>Proof</i>Your test registration appears as a row you never typed</span></div>
       </div>
+<div class="box tip"><div class="h">The Columns, Stage by Stage</div><p>One column for every input in The Funnel Equations.</p><ul><li><b>Stage 1:</b> ACTR, AI, APVR, CIS, EDR, ELCR, EOR, ICR, IDR, LAR, LCR, LMR, LRS, PE, PI, PLCR, PLR</li><li><b>Stage 2:</b> ASR, CIS, EDR, EEOR, EIS, ERR, FCR, FSR, FVR, HR, IDR, IMR, IRR, LAR, LIS, LMR, LRR, LRS, MR, NASR, PE, PER, PI, PSR, TAR, VPR, YR</li><li><b>Stage 3:</b> CACR, CAR, CCR, D2RR, D3RR, DJR, ECCR, EJCR, PCCR, PS, REDR, REOR, RHR, SCCR, SDR, SJCR, SRR, SSR, WCCR, WDR, WJCR, WOR, WRR</li><li><b>Stage 4:</b> ABR, ACR, AFR, BCR, BRR, D1BR, D2BR, D3BR, EOCR, ES, FUCR, OSR, QOCR, RCR, RWR</li><li><b>Stage 5:</b> BPS, BSR, BWR, CRDR, CROR, CSCR, DF1R, DF2R, DF3R, ESCR, NF1R, NF2R, NF3R, NF4R, NF5R, OCR, PCR, PR, QR, RCAR, SDR, SSCR, USR, WDR, WRR, WSCR, WWC</li><li><b>Stage 6:</b> ANCR, ANDR, ANOR, ANR, ANS, CBR, CIAR, CIBR, CIC, CICR, NSCR, NSDR, NSR, NSS, NWCR, NWDR, NWR, NWRR, NWS, WECR, WEDR, WEOR, WER, WES</li></ul></div>
       <div class="vipslot" data-step="d3-step-4-build-the-dashboard"></div>
 <h3 id="d3-step-5-send-one-small-test-run">Step 5: Send One Small Test Run</h3>
       <div class="task">
@@ -230,11 +234,11 @@
             <li>When the run finishes, read five numbers: registration rate, show rate, CTA click rate, buyers, and cost per buyer.</li>
             <li>Compare each rate with the rest of your funnel and with the last run. The lowest, or the one that dropped, is the worst step.</li>
             <li>Find that row in the table below. It names the one page or template to swap.</li>
-            <li>Put your fetched numbers into the calculator to see cost per buyer against lifetime value.</li>
+            <li>Put your fetched numbers into the Funnel Equation Model below. It recalculates every stage and ranks each KPI by the booked calls it would add.</li>
           </ol>
           <p><b>Example:</b> for a software company, most registrants show up but almost nobody clicks the CTA, so the offer slide gets swapped, not the reminders.</p>
         </div>
-        <div class="meta"><span><i>Owner</i>You · agent fetches</span><span><i>Tool</i>The dashboard · the calculator</span><span><i>Time</i>30 min</span><span class="dl"><i>Deliverable</i>One named step</span><span class="pv"><i>Proof</i>One step named, not three</span></div>
+        <div class="meta"><span><i>Owner</i>You · agent fetches</span><span><i>Tool</i>The dashboard · the Funnel Equation Model</span><span><i>Time</i>30 min</span><span class="dl"><i>Deliverable</i>One named step</span><span class="pv"><i>Proof</i>One step named, not three</span></div>
       </div>
       <div class="tbl"><table>
         <thead><tr><th>The dashboard shows</th><th>Usually means</th><th>Swap this</th></tr></thead>
@@ -247,25 +251,7 @@
           <tr><td data-label="The dashboard shows"><b>One channel's cost per buyer is high</b></td><td data-label="Usually means">The funnel is fine; that channel's traffic isn't</td><td data-label="Swap this">Move budget to the cheapest channel</td></tr>
         </tbody>
       </table></div>
-      <div class="calc" id="calc">
-        <div class="row"><label>Monthly visitors</label><input type="range" id="c1" min="500" max="50000" step="500" value="10000"><span class="out" id="o1">10,000</span></div>
-        <div class="row"><label>Opt-in rate</label><input type="range" id="c2" min="5" max="60" step="1" value="25"><span class="out" id="o2">25%</span></div>
-        <div class="row"><label>Show-up / engage</label><input type="range" id="c3" min="10" max="95" step="1" value="40"><span class="out" id="o3">40%</span></div>
-        <div class="row"><label>Buy rate</label><input type="range" id="c4" min="1" max="40" step="1" value="8"><span class="out" id="o4">8%</span></div>
-        <div class="row"><label>Price</label><input type="range" id="c5" min="49" max="9999" step="50" value="999"><span class="out" id="o5">$999</span></div>
-        <div class="row"><label>Monthly spend</label><input type="range" id="c6" min="0" max="50000" step="500" value="6000"><span class="out" id="o6">$6,000</span></div>
-        <div class="row"><label>Repeat purchases</label><input type="range" id="c7" min="0" max="400" step="10" value="60"><span class="out" id="o7">0.6×</span></div>
-        <div class="res">
-          <div class="b"><div class="k">Buyers / month</div><div class="v" id="rBuyers">0</div></div>
-          <div class="b g"><div class="k">Annual run-rate</div><div class="v" id="rARR">0</div></div>
-          <div class="b"><div class="k">Cost per buyer (CAC)</div><div class="v" id="rCAC">0</div></div>
-          <div class="b g"><div class="k">Lifetime value (LTV)</div><div class="v" id="rLTV">0</div></div>
-          <div class="b"><div class="k">LTV ÷ CAC</div><div class="v" id="rRatio">0</div></div>
-          <div class="b g"><div class="k">Return on spend</div><div class="v" id="rROAS">0</div></div>
-        </div>
-        <div class="calcnote" id="calcVerdict"></div>
-      </div>
-      <div class="srcnote"><b>The sliders start on a teaching model.</b> Replace each one with your dashboard number, and leave anything you can't fetch marked unknown. As a rule of thumb, lifetime value around 3× cost per buyer is healthy; below 1× every customer costs more than they return.</div>
+<div class="eqmodel" data-funnel="webinar"></div>
       <div class="vipslot" data-step="d3-step-6-read-the-dashboard-and-find-the-worst-step"></div>
 <h3 id="d3-step-7-run-the-experiment-loop-every-week">Step 7: Run the Experiment Loop Every Week</h3>
       <div class="task">

@@ -1,0 +1,3028 @@
+{
+ "version": 3,
+ "about": "One metric per stage, per funnel. Only + - * /. Every rate is one count divided by another.",
+ "funnels": {
+  "webinar": "Webinar",
+  "rsp": "Reverse Squeeze Page",
+  "workshop": "Workshop Series"
+ },
+ "stages": {
+  "S1": "Traffic",
+  "S2": "Landing and Sign-Up",
+  "S3": "Reminders and Nurture",
+  "S4": "Booking the Call",
+  "S5": "The Sales Pipeline",
+  "S6": "The Next 52 Weeks"
+ },
+ "variables": {
+  "vr": {
+   "id": "vr",
+   "short": "VR",
+   "name": "Visit Rate",
+   "text": "Visit Rate: page visits ÷ people reached, across every channel",
+   "value": null,
+   "rng": null,
+   "full": "Visit Rate"
+  },
+  "v": {
+   "id": "v",
+   "short": "PV",
+   "name": "page visits",
+   "text": "page visits",
+   "value": null,
+   "rng": null,
+   "full": "Page Visits"
+  },
+  "vr_e": {
+   "id": "vr_e",
+   "short": "VRCE",
+   "name": "visit rate of cold email",
+   "text": "visit rate of cold email",
+   "value": null,
+   "rng": null,
+   "full": "Visit Rate, Cold Email"
+  },
+  "vr_c": {
+   "id": "vr_c",
+   "short": "VRCI",
+   "name": "visit rate of calendar invites",
+   "text": "visit rate of calendar invites",
+   "value": null,
+   "rng": null,
+   "full": "Visit Rate, Calendar Invites"
+  },
+  "vr_l": {
+   "id": "vr_l",
+   "short": "VRL",
+   "name": "visit rate of LinkedIn",
+   "text": "visit rate of LinkedIn",
+   "value": null,
+   "rng": null,
+   "full": "Visit Rate, LinkedIn"
+  },
+  "vr_a": {
+   "id": "vr_a",
+   "short": "VRA",
+   "name": "visit rate of ads",
+   "text": "visit rate of ads",
+   "value": null,
+   "rng": null,
+   "full": "Visit Rate, Ads"
+  },
+  "vr_o": {
+   "id": "vr_o",
+   "short": "VRP",
+   "name": "visit rate of posts",
+   "text": "visit rate of posts",
+   "value": null,
+   "rng": null,
+   "full": "Visit Rate, Posts"
+  },
+  "n_e": {
+   "id": "n_e",
+   "short": "PE",
+   "name": "people emailed",
+   "text": "people emailed",
+   "value": 20000,
+   "rng": null,
+   "full": "People Emailed"
+  },
+  "n_c": {
+   "id": "n_c",
+   "short": "CIS",
+   "name": "calendar invites sent",
+   "text": "calendar invites sent",
+   "value": 100000,
+   "rng": null,
+   "full": "Calendar Invites Sent"
+  },
+  "n_l": {
+   "id": "n_l",
+   "short": "LRS",
+   "name": "LinkedIn requests sent",
+   "text": "LinkedIn requests sent: connection requests",
+   "value": 5000,
+   "rng": null,
+   "full": "LinkedIn Requests Sent"
+  },
+  "n_a": {
+   "id": "n_a",
+   "short": "AI",
+   "name": "ad impressions",
+   "text": "ad impressions",
+   "value": 333000,
+   "rng": null,
+   "full": "Ad Impressions"
+  },
+  "n_o": {
+   "id": "n_o",
+   "short": "PI",
+   "name": "post impressions",
+   "text": "post impressions",
+   "value": 300000,
+   "rng": null,
+   "full": "Post Impressions"
+  },
+  "dr_e": {
+   "id": "dr_e",
+   "short": "EDR",
+   "name": "email delivered rate",
+   "text": "email delivered rate: emails delivered ÷ emails sent",
+   "value": 0.98,
+   "rng": [
+    0.98,
+    0.995
+   ],
+   "full": "Email Delivery Rate"
+  },
+  "or_e": {
+   "id": "or_e",
+   "short": "EOR",
+   "name": "email open rate",
+   "text": "email open rate: people who opened ÷ people who received it",
+   "value": 0.3,
+   "rng": [
+    0.15,
+    0.35
+   ],
+   "full": "Email Open Rate"
+  },
+  "cr_e": {
+   "id": "cr_e",
+   "short": "ELCR",
+   "name": "email click rate",
+   "text": "email click rate: people who clicked ÷ people who opened",
+   "value": 0.04,
+   "rng": [
+    0.02,
+    0.08
+   ],
+   "full": "Email Link Click Rate"
+  },
+  "lr": {
+   "id": "lr",
+   "short": "PLR",
+   "name": "page load rate",
+   "text": "page load rate: page visits ÷ link clicks (set by page speed)",
+   "value": 0.9,
+   "rng": [
+    0.75,
+    0.95
+   ],
+   "full": "Page Load Rate"
+  },
+  "dr_c": {
+   "id": "dr_c",
+   "short": "IDR",
+   "name": "invite delivered rate",
+   "text": "invite delivered rate: invites delivered ÷ invites sent",
+   "value": 0.97,
+   "rng": [
+    0.95,
+    0.99
+   ],
+   "full": "Invite Delivery Rate"
+  },
+  "cl_c": {
+   "id": "cl_c",
+   "short": "ICR",
+   "name": "invite link click rate",
+   "text": "invite link click rate: clicks on the invite link ÷ invites delivered",
+   "value": 0.002,
+   "rng": [
+    0.001,
+    0.005
+   ],
+   "full": "Invite Click Rate"
+  },
+  "ac_l": {
+   "id": "ac_l",
+   "short": "LAR",
+   "name": "acceptance rate",
+   "text": "acceptance rate: requests accepted ÷ requests sent",
+   "value": 0.22,
+   "rng": [
+    0.2075,
+    0.3
+   ],
+   "full": "LinkedIn Acceptance Rate"
+  },
+  "ms_l": {
+   "id": "ms_l",
+   "short": "LMR",
+   "name": "message reach",
+   "text": "message reach: people messaged ÷ people who accepted",
+   "value": 0.9,
+   "rng": [
+    0.85,
+    0.98
+   ],
+   "full": "LinkedIn Message Rate"
+  },
+  "cr_l": {
+   "id": "cr_l",
+   "short": "LCR",
+   "name": "LinkedIn click rate",
+   "text": "LinkedIn click rate: link clicks ÷ people messaged",
+   "value": 0.04,
+   "rng": [
+    0.02,
+    0.06
+   ],
+   "full": "LinkedIn Click Rate"
+  },
+  "ct_a": {
+   "id": "ct_a",
+   "short": "ACTR",
+   "name": "ad click-through rate",
+   "text": "ad click-through rate: ad clicks ÷ impressions",
+   "value": 0.012,
+   "rng": [
+    0.0045,
+    0.0259
+   ],
+   "full": "Ad Click-Through Rate"
+  },
+  "lv_a": {
+   "id": "lv_a",
+   "short": "APVR",
+   "name": "ad page view rate",
+   "text": "ad page view rate: page views ÷ ad clicks",
+   "value": 0.8,
+   "rng": [
+    0.7,
+    0.9
+   ],
+   "full": "Ad Page View Rate"
+  },
+  "ct_o": {
+   "id": "ct_o",
+   "short": "PLCR",
+   "name": "post click-through rate",
+   "text": "post click-through rate: link clicks ÷ post impressions",
+   "value": 0.0008,
+   "rng": [
+    0.0005,
+    0.003
+   ],
+   "full": "Post Link Click Rate"
+  },
+  "pa": {
+   "id": "pa",
+   "short": "PAR",
+   "name": "Page-to-Attendee Rate",
+   "text": "Page-to-Attendee Rate: attendees who signed up on the page ÷ page visits",
+   "value": null,
+   "rng": null,
+   "full": "Page-to-Attendee Rate"
+  },
+  "hw": {
+   "id": "hw",
+   "short": "HWR",
+   "name": "Half-Watch Rate",
+   "text": "Half-Watch Rate: people who watched more than half of the video on their first visit ÷ page visits",
+   "value": null,
+   "rng": null,
+   "full": "Half-Watch Rate"
+  },
+  "pq": {
+   "id": "pq",
+   "short": "PDHR",
+   "name": "Page-to-1.5-Day Rate",
+   "text": "Page-to-1.5-Day Rate: people who signed up on the page and attended 1.5 days or more ÷ page visits",
+   "value": null,
+   "rng": null,
+   "full": "Page-to-Day-and-a-Half Rate"
+  },
+  "rr": {
+   "id": "rr",
+   "short": "RR",
+   "name": "registration rate",
+   "text": "registration rate: sign-ups ÷ page visits",
+   "value": null,
+   "rng": null,
+   "full": "Registration Rate"
+  },
+  "st": {
+   "id": "st",
+   "short": "PSR",
+   "name": "stay rate",
+   "text": "stay rate: visits that stayed 10 seconds or more ÷ page visits (100% minus bounce rate)",
+   "value": 0.55,
+   "rng": [
+    0.45,
+    0.7
+   ],
+   "full": "Page Stay Rate"
+  },
+  "fs": {
+   "id": "fs",
+   "short": "FVR",
+   "name": "form seen rate",
+   "text": "form seen rate: people who scrolled to the form ÷ people who stayed",
+   "value": 0.7,
+   "rng": [
+    0.6,
+    0.9
+   ],
+   "full": "Form View Rate"
+  },
+  "ft": {
+   "id": "ft",
+   "short": "FSR",
+   "name": "form start rate",
+   "text": "form start rate: people who started the form ÷ people who saw it",
+   "value": 0.35,
+   "rng": [
+    0.25,
+    0.5
+   ],
+   "full": "Form Start Rate"
+  },
+  "fc": {
+   "id": "fc",
+   "short": "FCR",
+   "name": "form finish rate",
+   "text": "form finish rate: people who submitted ÷ people who started",
+   "value": 0.7,
+   "rng": [
+    0.6,
+    0.85
+   ],
+   "full": "Form Completion Rate"
+  },
+  "su_f": {
+   "id": "su_f",
+   "short": "PSSR",
+   "name": "show-up rate of page sign-ups",
+   "text": "show-up rate of page sign-ups: page sign-ups who attended ÷ page sign-ups",
+   "value": null,
+   "rng": null,
+   "full": "Page Sign-Up Show Rate"
+  },
+  "su_0": {
+   "id": "su_0",
+   "short": "NASR",
+   "name": "show-up rate of page sign-ups who skipped the thank you page action",
+   "text": "show-up rate of page sign-ups who skipped the thank you page action",
+   "value": 0.3,
+   "rng": [
+    0.25,
+    0.4
+   ],
+   "full": "No-Action Show Rate"
+  },
+  "su_1": {
+   "id": "su_1",
+   "short": "ASR",
+   "name": "show-up rate of page sign-ups who did the thank you page action (add to calendar, join WhatsApp)",
+   "text": "show-up rate of page sign-ups who did the thank you page action (add to calendar, join WhatsApp)",
+   "value": 0.55,
+   "rng": [
+    0.45,
+    0.7
+   ],
+   "full": "Action Show Rate"
+  },
+  "t1": {
+   "id": "t1",
+   "short": "TAR",
+   "name": "thank you page action rate",
+   "text": "thank you page action rate: people who did the action ÷ people who saw the thank you page",
+   "value": 0.4,
+   "rng": [
+    0.3,
+    0.6
+   ],
+   "full": "Thank You Action Rate"
+  },
+  "ar": {
+   "id": "ar",
+   "short": "AR",
+   "name": "auto-registrants",
+   "text": "auto-registrants: people registered without the form (calendar Yes or Maybe, interested replies, inbound messages)",
+   "value": null,
+   "rng": null,
+   "full": "Auto-Registrants"
+  },
+  "ar_c": {
+   "id": "ar_c",
+   "short": "CSU",
+   "name": "registered by a Yes or Maybe on the calendar invite",
+   "text": "registered by a Yes or Maybe on the calendar invite",
+   "value": null,
+   "rng": null,
+   "full": "Calendar Sign-Ups"
+  },
+  "ar_e": {
+   "id": "ar_e",
+   "short": "ESU",
+   "name": "registered by an interested reply to cold email",
+   "text": "registered by an interested reply to cold email",
+   "value": null,
+   "rng": null,
+   "full": "Email Sign-Ups"
+  },
+  "ar_l": {
+   "id": "ar_l",
+   "short": "LSU",
+   "name": "registered by an interested reply on LinkedIn",
+   "text": "registered by an interested reply on LinkedIn",
+   "value": null,
+   "rng": null,
+   "full": "LinkedIn Sign-Ups"
+  },
+  "ar_o": {
+   "id": "ar_o",
+   "short": "ISU",
+   "name": "registered from inbound messages after posts",
+   "text": "registered from inbound messages after posts",
+   "value": null,
+   "rng": null,
+   "full": "Inbound Sign-Ups"
+  },
+  "ys": {
+   "id": "ys",
+   "short": "YR",
+   "name": "RSVP Yes rate",
+   "text": "RSVP Yes rate: Yes ÷ invites delivered",
+   "value": 0.005,
+   "rng": [
+    0.003,
+    0.013
+   ],
+   "full": "Yes Rate"
+  },
+  "my": {
+   "id": "my",
+   "short": "MR",
+   "name": "RSVP Maybe rate",
+   "text": "RSVP Maybe rate: Maybe ÷ invites delivered",
+   "value": 0.004,
+   "rng": [
+    0.002,
+    0.01
+   ],
+   "full": "Maybe Rate"
+  },
+  "rp_e": {
+   "id": "rp_e",
+   "short": "ERR",
+   "name": "email reply rate",
+   "text": "email reply rate: people who replied ÷ people who received the email",
+   "value": 0.04,
+   "rng": [
+    0.034,
+    0.055
+   ],
+   "full": "Email Reply Rate"
+  },
+  "ye": {
+   "id": "ye",
+   "short": "EIS",
+   "name": "email interested share",
+   "text": "email interested share: interested replies ÷ all email replies",
+   "value": 0.25,
+   "rng": [
+    0.2,
+    0.4
+   ],
+   "full": "Email Interested Share"
+  },
+  "rp_l": {
+   "id": "rp_l",
+   "short": "LRR",
+   "name": "LinkedIn reply rate",
+   "text": "LinkedIn reply rate: people who replied ÷ people messaged",
+   "value": 0.25,
+   "rng": [
+    0.2222,
+    0.4
+   ],
+   "full": "LinkedIn Reply Rate"
+  },
+  "yl": {
+   "id": "yl",
+   "short": "LIS",
+   "name": "LinkedIn interested share",
+   "text": "LinkedIn interested share: interested replies ÷ all LinkedIn replies",
+   "value": 0.3,
+   "rng": [
+    0.2,
+    0.4
+   ],
+   "full": "LinkedIn Interested Share"
+  },
+  "eg": {
+   "id": "eg",
+   "short": "PER",
+   "name": "post engagement rate",
+   "text": "post engagement rate: likes, comments and shares ÷ post impressions",
+   "value": 0.023,
+   "rng": [
+    0.0229,
+    0.0765
+   ],
+   "full": "Post Engagement Rate"
+  },
+  "mg": {
+   "id": "mg",
+   "short": "IMR",
+   "name": "inbound message rate",
+   "text": "inbound message rate: inbound messages ÷ engagements",
+   "value": 0.02,
+   "rng": [
+    0.005,
+    0.03
+   ],
+   "full": "Inbound Message Rate"
+  },
+  "ir": {
+   "id": "ir",
+   "short": "IRR",
+   "name": "inbound registered rate",
+   "text": "inbound registered rate: inbound people registered ÷ inbound messages",
+   "value": 0.5,
+   "rng": [
+    0.4,
+    0.8
+   ],
+   "full": "Inbound Registration Rate"
+  },
+  "r": {
+   "id": "r",
+   "short": "R",
+   "name": "registrants",
+   "text": "registrants: page sign-ups plus auto-registrants",
+   "value": null,
+   "rng": null,
+   "full": "Registrants"
+  },
+  "pl": {
+   "id": "pl",
+   "short": "VPR",
+   "name": "play rate",
+   "text": "play rate: people who pressed play ÷ people who stayed",
+   "value": 0.65,
+   "rng": [
+    0.6,
+    0.8
+   ],
+   "full": "Video Play Rate"
+  },
+  "hh": {
+   "id": "hh",
+   "short": "HR",
+   "name": "half-watch rate of plays",
+   "text": "half-watch rate of plays: people who passed halfway ÷ people who pressed play",
+   "value": 0.3,
+   "rng": [
+    0.25,
+    0.45
+   ],
+   "full": "Halfway Rate"
+  },
+  "h_1": {
+   "id": "h_1",
+   "short": "FVHW",
+   "name": "people who watched more than half on their first visit",
+   "text": "people who watched more than half on their first visit",
+   "value": null,
+   "rng": null,
+   "full": "First-Visit Half-Watchers"
+  },
+  "os": {
+   "id": "os",
+   "short": "EEOR",
+   "name": "early-exit opt-in rate",
+   "text": "early-exit opt-in rate: people who left before halfway and gave their email ÷ people who left before halfway",
+   "value": 0.04,
+   "rng": [
+    0.02,
+    0.08
+   ],
+   "full": "Early Exit Opt-In Rate"
+  },
+  "p": {
+   "id": "p",
+   "short": "RP",
+   "name": "people you can remind",
+   "text": "people you can remind: early leavers who gave their email, plus auto-registrants",
+   "value": null,
+   "rng": null,
+   "full": "Remindable People"
+  },
+  "su": {
+   "id": "su",
+   "short": "SUR",
+   "name": "Show-Up Rate",
+   "text": "Show-Up Rate: attendees ÷ registrants",
+   "value": null,
+   "rng": null,
+   "full": "Show-Up Rate"
+  },
+  "nh": {
+   "id": "nh",
+   "short": "NHWR",
+   "name": "Nurtured Half-Watch Rate",
+   "text": "Nurtured Half-Watch Rate: people brought past halfway by reminders ÷ people you can remind",
+   "value": null,
+   "rng": null,
+   "full": "Nurtured Half-Watch Rate"
+  },
+  "qd": {
+   "id": "qd",
+   "short": "DHR",
+   "name": "1.5-Day Rate",
+   "text": "1.5-Day Rate: people who attended 1.5 days or more ÷ registrants",
+   "value": null,
+   "rng": null,
+   "full": "Day-and-a-Half Rate"
+  },
+  "su_d": {
+   "id": "su_d",
+   "short": "D1SR",
+   "name": "Day 1 show-up rate",
+   "text": "Day 1 show-up rate: Day 1 attendees ÷ registrants",
+   "value": null,
+   "rng": null,
+   "full": "Day 1 Show-Up Rate"
+  },
+  "dj": {
+   "id": "dj",
+   "short": "DJR",
+   "name": "direct join rate",
+   "text": "direct join rate: people who joined without clicking any reminder ÷ registrants",
+   "value": 0.08,
+   "rng": [
+    0.06,
+    0.12
+   ],
+   "full": "Direct Join Rate"
+  },
+  "j_e": {
+   "id": "j_e",
+   "short": "EJ",
+   "name": "joins from reminder email",
+   "text": "joins from reminder email: people whose first join came from an email link ÷ registrants",
+   "value": null,
+   "rng": null,
+   "full": "Email Joins"
+  },
+  "j_w": {
+   "id": "j_w",
+   "short": "WJ",
+   "name": "joins from WhatsApp",
+   "text": "joins from WhatsApp: people whose first join came from a WhatsApp link ÷ registrants",
+   "value": null,
+   "rng": null,
+   "full": "WhatsApp Joins"
+  },
+  "j_s": {
+   "id": "j_s",
+   "short": "SJ",
+   "name": "joins from SMS",
+   "text": "joins from SMS: people whose first join came from a text link ÷ registrants",
+   "value": null,
+   "rng": null,
+   "full": "SMS Joins"
+  },
+  "j_v": {
+   "id": "j_v",
+   "short": "CJ",
+   "name": "joins after an AI call",
+   "text": "joins after an AI call: people who joined after confirming on the call ÷ registrants",
+   "value": null,
+   "rng": null,
+   "full": "Call Joins"
+  },
+  "dr_m": {
+   "id": "dr_m",
+   "short": "REDR",
+   "name": "reminder email delivered rate",
+   "text": "reminder email delivered rate: delivered ÷ sent",
+   "value": 0.97,
+   "rng": [
+    0.95,
+    0.99
+   ],
+   "full": "Reminder Email Delivery Rate"
+  },
+  "or_m": {
+   "id": "or_m",
+   "short": "REOR",
+   "name": "reminder email open rate",
+   "text": "reminder email open rate: people who opened a reminder ÷ people who got one",
+   "value": 0.45,
+   "rng": [
+    0.35,
+    0.6
+   ],
+   "full": "Reminder Email Open Rate"
+  },
+  "jc_m": {
+   "id": "jc_m",
+   "short": "EJCR",
+   "name": "email join click rate",
+   "text": "email join click rate: people who joined from an email link ÷ people who opened",
+   "value": 0.15,
+   "rng": [
+    0.1,
+    0.3
+   ],
+   "full": "Email Join Click Rate"
+  },
+  "wo": {
+   "id": "wo",
+   "short": "WOR",
+   "name": "WhatsApp opt-in rate",
+   "text": "WhatsApp opt-in rate: people who opted in ÷ registrants",
+   "value": 0.45,
+   "rng": [
+    0.3,
+    0.7
+   ],
+   "full": "WhatsApp Opt-In Rate"
+  },
+  "dr_w": {
+   "id": "dr_w",
+   "short": "WDR",
+   "name": "WhatsApp delivered rate",
+   "text": "WhatsApp delivered rate: delivered ÷ sent",
+   "value": 0.96,
+   "rng": [
+    0.92,
+    0.99
+   ],
+   "full": "WhatsApp Delivery Rate"
+  },
+  "rd_w": {
+   "id": "rd_w",
+   "short": "WRR",
+   "name": "WhatsApp read rate",
+   "text": "WhatsApp read rate: read ÷ delivered",
+   "value": 0.75,
+   "rng": [
+    0.65,
+    0.8
+   ],
+   "full": "WhatsApp Read Rate"
+  },
+  "jc_w": {
+   "id": "jc_w",
+   "short": "WJCR",
+   "name": "WhatsApp join click rate",
+   "text": "WhatsApp join click rate: people who joined from a WhatsApp link ÷ people who read",
+   "value": 0.12,
+   "rng": [
+    0.05,
+    0.15
+   ],
+   "full": "WhatsApp Join Click Rate"
+  },
+  "sr_s": {
+   "id": "sr_s",
+   "short": "SRR",
+   "name": "SMS reach",
+   "text": "SMS reach: registrants with a phone and text consent ÷ registrants",
+   "value": 0.6,
+   "rng": [
+    0.5,
+    0.9
+   ],
+   "full": "SMS Reach Rate"
+  },
+  "dr_s": {
+   "id": "dr_s",
+   "short": "SDR",
+   "name": "SMS delivered rate",
+   "text": "SMS delivered rate: delivered ÷ sent",
+   "value": 0.95,
+   "rng": [
+    0.92,
+    0.98
+   ],
+   "full": "SMS Delivery Rate"
+  },
+  "jc_s": {
+   "id": "jc_s",
+   "short": "SJCR",
+   "name": "SMS join click rate",
+   "text": "SMS join click rate: people who joined from a text link ÷ texts delivered",
+   "value": 0.09,
+   "rng": [
+    0.087,
+    0.2
+   ],
+   "full": "SMS Join Click Rate"
+  },
+  "ph": {
+   "id": "ph",
+   "short": "PS",
+   "name": "phone share",
+   "text": "phone share: registrants the AI caller can ring ÷ registrants",
+   "value": 0.6,
+   "rng": [
+    0.5,
+    0.9
+   ],
+   "full": "Phone Share"
+  },
+  "an": {
+   "id": "an",
+   "short": "CAR",
+   "name": "answer rate",
+   "text": "answer rate: calls answered by a person ÷ people called",
+   "value": 0.35,
+   "rng": [
+    0.2,
+    0.45
+   ],
+   "full": "Call Answer Rate"
+  },
+  "cf": {
+   "id": "cf",
+   "short": "CCR",
+   "name": "confirm rate",
+   "text": "confirm rate: people who said they will come ÷ calls answered",
+   "value": 0.5,
+   "rng": [
+    0.4,
+    0.7
+   ],
+   "full": "Call Confirm Rate"
+  },
+  "cc": {
+   "id": "cc",
+   "short": "CACR",
+   "name": "confirmed-and-came rate",
+   "text": "confirmed-and-came rate: people who joined ÷ people who confirmed",
+   "value": 0.6,
+   "rng": [
+    0.5,
+    0.8
+   ],
+   "full": "Came After Confirming Rate"
+  },
+  "a": {
+   "id": "a",
+   "short": "A",
+   "name": "attendees",
+   "text": "attendees",
+   "value": null,
+   "rng": null,
+   "full": "Attendees"
+  },
+  "bb_e": {
+   "id": "bb_e",
+   "short": "EC",
+   "name": "brought back by email",
+   "text": "brought back by email: people who returned to the video from an email ÷ people you can remind",
+   "value": null,
+   "rng": null,
+   "full": "Email Comebacks"
+  },
+  "bb_w": {
+   "id": "bb_w",
+   "short": "WC",
+   "name": "brought back by WhatsApp ÷ people you can remind",
+   "text": "brought back by WhatsApp ÷ people you can remind",
+   "value": null,
+   "rng": null,
+   "full": "WhatsApp Comebacks"
+  },
+  "bb_s": {
+   "id": "bb_s",
+   "short": "SC",
+   "name": "brought back by SMS ÷ people you can remind",
+   "text": "brought back by SMS ÷ people you can remind",
+   "value": null,
+   "rng": null,
+   "full": "SMS Comebacks"
+  },
+  "bb_v": {
+   "id": "bb_v",
+   "short": "CC",
+   "name": "brought back by an AI call ÷ people you can remind",
+   "text": "brought back by an AI call ÷ people you can remind",
+   "value": null,
+   "rng": null,
+   "full": "Call Comebacks"
+  },
+  "bc_e": {
+   "id": "bc_e",
+   "short": "ECCR",
+   "name": "email return click rate",
+   "text": "email return click rate: people who clicked back to the video ÷ people who opened",
+   "value": 0.12,
+   "rng": [
+    0.08,
+    0.25
+   ],
+   "full": "Email Comeback Click Rate"
+  },
+  "bc_w": {
+   "id": "bc_w",
+   "short": "WCCR",
+   "name": "WhatsApp return click rate",
+   "text": "WhatsApp return click rate: clicked back ÷ read",
+   "value": 0.1,
+   "rng": [
+    0.05,
+    0.15
+   ],
+   "full": "WhatsApp Comeback Click Rate"
+  },
+  "bc_s": {
+   "id": "bc_s",
+   "short": "SCCR",
+   "name": "SMS return click rate",
+   "text": "SMS return click rate: clicked back ÷ delivered",
+   "value": 0.08,
+   "rng": [
+    0.05,
+    0.15
+   ],
+   "full": "SMS Comeback Click Rate"
+  },
+  "bc_v": {
+   "id": "bc_v",
+   "short": "PCCR",
+   "name": "call return rate",
+   "text": "call return rate: people who went back to the video after the call ÷ calls answered",
+   "value": 0.3,
+   "rng": [
+    0.2,
+    0.45
+   ],
+   "full": "Post-Call Comeback Rate"
+  },
+  "hr": {
+   "id": "hr",
+   "short": "RHR",
+   "name": "half-on-return rate",
+   "text": "half-on-return rate: people who passed halfway this time ÷ people who came back",
+   "value": 0.45,
+   "rng": [
+    0.3,
+    0.6
+   ],
+   "full": "Return Halfway Rate"
+  },
+  "h": {
+   "id": "h",
+   "short": "THW",
+   "name": "people who watched more than half, first visit plus reminders",
+   "text": "people who watched more than half, first visit plus reminders",
+   "value": null,
+   "rng": null,
+   "full": "Total Half-Watchers"
+  },
+  "sk": {
+   "id": "sk",
+   "short": "SSR",
+   "name": "stick rate",
+   "text": "stick rate: people who attended 1.5 days or more ÷ Day 1 attendees",
+   "value": 0.6,
+   "rng": [
+    0.5,
+    0.75
+   ],
+   "full": "Series Stick Rate"
+  },
+  "d_1": {
+   "id": "d_1",
+   "short": "D1A",
+   "name": "Day 1 attendees",
+   "text": "Day 1 attendees",
+   "value": null,
+   "rng": null,
+   "full": "Day 1 Attendees"
+  },
+  "d_2": {
+   "id": "d_2",
+   "short": "D2A",
+   "name": "Day 2 attendees",
+   "text": "Day 2 attendees",
+   "value": null,
+   "rng": null,
+   "full": "Day 2 Attendees"
+  },
+  "d_3": {
+   "id": "d_3",
+   "short": "D3A",
+   "name": "Day 3 attendees",
+   "text": "Day 3 attendees",
+   "value": null,
+   "rng": null,
+   "full": "Day 3 Attendees"
+  },
+  "ret_2": {
+   "id": "ret_2",
+   "short": "D2RR",
+   "name": "Day 2 return rate",
+   "text": "Day 2 return rate: Day 2 attendees ÷ Day 1 attendees",
+   "value": 0.7,
+   "rng": [
+    0.6,
+    0.85
+   ],
+   "full": "Day 2 Return Rate"
+  },
+  "ret_3": {
+   "id": "ret_3",
+   "short": "D3RR",
+   "name": "Day 3 return rate",
+   "text": "Day 3 return rate: Day 3 attendees ÷ Day 2 attendees",
+   "value": 0.8,
+   "rng": [
+    0.7,
+    0.9
+   ],
+   "full": "Day 3 Return Rate"
+  },
+  "q": {
+   "id": "q",
+   "short": "DHA",
+   "name": "people who attended 1.5 days or more",
+   "text": "people who attended 1.5 days or more",
+   "value": null,
+   "rng": null,
+   "full": "Day-and-a-Half Attendees"
+  },
+  "br": {
+   "id": "br",
+   "short": "BR",
+   "name": "Booking Rate",
+   "text": "Booking Rate: calls booked ÷ attendees",
+   "value": null,
+   "rng": null,
+   "full": "Booking Rate"
+  },
+  "br_h": {
+   "id": "br_h",
+   "short": "BR",
+   "name": "Booking Rate",
+   "text": "Booking Rate: calls booked ÷ people who watched more than half",
+   "value": null,
+   "rng": null,
+   "full": "Booking Rate"
+  },
+  "bq": {
+   "id": "bq",
+   "short": "BR",
+   "name": "Booking Rate",
+   "text": "Booking Rate: calls booked ÷ people who attended 1.5 days or more",
+   "value": null,
+   "rng": null,
+   "full": "Booking Rate"
+  },
+  "so": {
+   "id": "so",
+   "short": "OSR",
+   "name": "stayed for the offer",
+   "text": "stayed for the offer: people present at the offer minute ÷ attendees",
+   "value": 0.55,
+   "rng": [
+    0.45,
+    0.7
+   ],
+   "full": "Offer Stay Rate"
+  },
+  "en": {
+   "id": "en",
+   "short": "ES",
+   "name": "engaged share",
+   "text": "engaged share: people who answered a poll, asked a question or chatted ÷ people at the offer",
+   "value": 0.5,
+   "rng": [
+    0.25,
+    0.9
+   ],
+   "full": "Engaged Share"
+  },
+  "ce": {
+   "id": "ce",
+   "short": "EOCR",
+   "name": "engaged click rate",
+   "text": "engaged click rate: offer clicks ÷ engaged people at the offer",
+   "value": 0.25,
+   "rng": [
+    0.15,
+    0.3
+   ],
+   "full": "Engaged Offer Click Rate"
+  },
+  "cq": {
+   "id": "cq",
+   "short": "QOCR",
+   "name": "quiet click rate",
+   "text": "quiet click rate: offer clicks ÷ quiet people at the offer",
+   "value": 0.05,
+   "rng": [
+    0.03,
+    0.08
+   ],
+   "full": "Quiet Offer Click Rate"
+  },
+  "ct": {
+   "id": "ct",
+   "short": "OCTR",
+   "name": "offer click rate",
+   "text": "offer click rate: offer clicks ÷ people at the offer",
+   "value": null,
+   "rng": null,
+   "full": "Offer Click-Through Rate"
+  },
+  "bf": {
+   "id": "bf",
+   "short": "BCR",
+   "name": "booking finish rate",
+   "text": "booking finish rate: calls booked ÷ offer clicks",
+   "value": 0.5,
+   "rng": [
+    0.35,
+    0.6
+   ],
+   "full": "Booking Completion Rate"
+  },
+  "bl": {
+   "id": "bl",
+   "short": "LBR",
+   "name": "live booking rate",
+   "text": "live booking rate: calls booked during the event ÷ attendees",
+   "value": null,
+   "rng": null,
+   "full": "Live Booking Rate"
+  },
+  "fu": {
+   "id": "fu",
+   "short": "FUCR",
+   "name": "follow-up click rate",
+   "text": "follow-up click rate: booking-link clicks from follow-up messages ÷ people who had not booked",
+   "value": 0.06,
+   "rng": [
+    0.03,
+    0.1
+   ],
+   "full": "Follow-Up Click Rate"
+  },
+  "ns": {
+   "id": "ns",
+   "short": "NSA",
+   "name": "no-shows per attendee",
+   "text": "no-shows per attendee: (registrants − attendees) ÷ attendees",
+   "value": null,
+   "rng": null,
+   "full": "No-Shows per Attendee"
+  },
+  "rw": {
+   "id": "rw",
+   "short": "RWR",
+   "name": "replay watch rate",
+   "text": "replay watch rate: replay viewers ÷ no-shows",
+   "value": 0.15,
+   "rng": [
+    0.1,
+    0.25
+   ],
+   "full": "Replay Watch Rate"
+  },
+  "rc": {
+   "id": "rc",
+   "short": "RCR",
+   "name": "replay click rate",
+   "text": "replay click rate: offer clicks from the replay ÷ replay viewers",
+   "value": 0.03,
+   "rng": [
+    0.02,
+    0.06
+   ],
+   "full": "Replay Click Rate"
+  },
+  "b": {
+   "id": "b",
+   "short": "CB",
+   "name": "calls booked",
+   "text": "calls booked",
+   "value": null,
+   "rng": null,
+   "full": "Calls Booked"
+  },
+  "rt": {
+   "id": "rt",
+   "short": "BRR",
+   "name": "reached the button",
+   "text": "reached the button: people who reached the button's minute ÷ people who watched more than half",
+   "value": 0.75,
+   "rng": [
+    0.6,
+    0.9
+   ],
+   "full": "Button Reach Rate"
+  },
+  "ap": {
+   "id": "ap",
+   "short": "ACR",
+   "name": "apply click rate",
+   "text": "apply click rate: clicks on Apply ÷ people who reached the button",
+   "value": 0.15,
+   "rng": [
+    0.05,
+    0.2
+   ],
+   "full": "Apply Click Rate"
+  },
+  "af": {
+   "id": "af",
+   "short": "AFR",
+   "name": "application finish rate",
+   "text": "application finish rate: applications sent ÷ application page visits",
+   "value": 0.4,
+   "rng": [
+    0.3,
+    0.6
+   ],
+   "full": "Application Finish Rate"
+  },
+  "ab": {
+   "id": "ab",
+   "short": "ABR",
+   "name": "application-to-booking rate",
+   "text": "application-to-booking rate: calls booked ÷ applications",
+   "value": 0.6,
+   "rng": [
+    0.5,
+    0.8
+   ],
+   "full": "Application Booking Rate"
+  },
+  "b_1": {
+   "id": "b_1",
+   "short": "D1BR",
+   "name": "first-time booking rate on Day 1",
+   "text": "first-time booking rate on Day 1: first-time bookings ÷ Day 1 attendees",
+   "value": 0.03,
+   "rng": [
+    0.02,
+    0.05
+   ],
+   "full": "Day 1 Booking Rate"
+  },
+  "b_2": {
+   "id": "b_2",
+   "short": "D2BR",
+   "name": "first-time booking rate on Day 2",
+   "text": "first-time booking rate on Day 2: first-time bookings ÷ Day 2 attendees",
+   "value": 0.05,
+   "rng": [
+    0.03,
+    0.08
+   ],
+   "full": "Day 2 Booking Rate"
+  },
+  "b_3": {
+   "id": "b_3",
+   "short": "D3BR",
+   "name": "first-time booking rate on Day 3",
+   "text": "first-time booking rate on Day 3: first-time bookings ÷ Day 3 attendees",
+   "value": 0.1,
+   "rng": [
+    0.06,
+    0.15
+   ],
+   "full": "Day 3 Booking Rate"
+  },
+  "bd": {
+   "id": "bd",
+   "short": "LB",
+   "name": "calls booked live across the three days",
+   "text": "calls booked live across the three days",
+   "value": null,
+   "rng": null,
+   "full": "Live Bookings"
+  },
+  "fb": {
+   "id": "fb",
+   "short": "FUB",
+   "name": "calls booked from follow-ups",
+   "text": "calls booked from follow-ups",
+   "value": null,
+   "rng": null,
+   "full": "Follow-Up Bookings"
+  },
+  "cl": {
+   "id": "cl",
+   "short": "CR",
+   "name": "Close Rate",
+   "text": "Close Rate: onboarded customers ÷ calls booked",
+   "value": null,
+   "rng": null,
+   "full": "Close Rate"
+  },
+  "sh": {
+   "id": "sh",
+   "short": "CSR",
+   "name": "call show rate",
+   "text": "call show rate: calls held the first time ÷ calls booked",
+   "value": null,
+   "rng": null,
+   "full": "Call Show Rate"
+  },
+  "sh_0": {
+   "id": "sh_0",
+   "short": "USR",
+   "name": "showed with no reminder click ÷ calls booked",
+   "text": "showed with no reminder click ÷ calls booked",
+   "value": 0.55,
+   "rng": [
+    0.5,
+    0.65
+   ],
+   "full": "Unprompted Show Rate"
+  },
+  "sh_e": {
+   "id": "sh_e",
+   "short": "ECS",
+   "name": "showed after confirming from the email reminder ÷ calls booked",
+   "text": "showed after confirming from the email reminder ÷ calls booked",
+   "value": null,
+   "rng": null,
+   "full": "Email Confirmed Shows"
+  },
+  "sh_w": {
+   "id": "sh_w",
+   "short": "WCS",
+   "name": "showed after confirming from the WhatsApp reminder ÷ calls booked",
+   "text": "showed after confirming from the WhatsApp reminder ÷ calls booked",
+   "value": null,
+   "rng": null,
+   "full": "WhatsApp Confirmed Shows"
+  },
+  "sh_s": {
+   "id": "sh_s",
+   "short": "SCS",
+   "name": "showed after confirming from the SMS reminder ÷ calls booked",
+   "text": "showed after confirming from the SMS reminder ÷ calls booked",
+   "value": null,
+   "rng": null,
+   "full": "SMS Confirmed Shows"
+  },
+  "sh_v": {
+   "id": "sh_v",
+   "short": "CCS",
+   "name": "showed after confirming on the AI call ÷ calls booked",
+   "text": "showed after confirming on the AI call ÷ calls booked",
+   "value": null,
+   "rng": null,
+   "full": "Call Confirmed Shows"
+  },
+  "dr_r": {
+   "id": "dr_r",
+   "short": "CRDR",
+   "name": "call reminder email delivered rate",
+   "text": "call reminder email delivered rate: delivered ÷ sent",
+   "value": 0.97,
+   "rng": [
+    0.95,
+    0.99
+   ],
+   "full": "Call Reminder Delivery Rate"
+  },
+  "or_r": {
+   "id": "or_r",
+   "short": "CROR",
+   "name": "call reminder email open rate",
+   "text": "call reminder email open rate: opened ÷ delivered",
+   "value": 0.6,
+   "rng": [
+    0.45,
+    0.75
+   ],
+   "full": "Call Reminder Open Rate"
+  },
+  "cs_e": {
+   "id": "cs_e",
+   "short": "ESCR",
+   "name": "email confirm rate",
+   "text": "email confirm rate: confirmed and showed ÷ people who opened",
+   "value": 0.15,
+   "rng": [
+    0.1,
+    0.25
+   ],
+   "full": "Email Show Confirm Rate"
+  },
+  "wp": {
+   "id": "wp",
+   "short": "BWR",
+   "name": "WhatsApp reach for calls",
+   "text": "WhatsApp reach for calls: booked contacts with WhatsApp ÷ calls booked",
+   "value": 0.5,
+   "rng": [
+    0.3,
+    0.8
+   ],
+   "full": "Booked WhatsApp Reach"
+  },
+  "cs_w": {
+   "id": "cs_w",
+   "short": "WSCR",
+   "name": "WhatsApp confirm rate",
+   "text": "WhatsApp confirm rate: confirmed and showed ÷ read",
+   "value": 0.2,
+   "rng": [
+    0.1,
+    0.3
+   ],
+   "full": "WhatsApp Show Confirm Rate"
+  },
+  "sp": {
+   "id": "sp",
+   "short": "BSR",
+   "name": "SMS reach for calls",
+   "text": "SMS reach for calls: booked contacts with a phone and consent ÷ calls booked",
+   "value": 0.7,
+   "rng": [
+    0.5,
+    0.95
+   ],
+   "full": "Booked SMS Reach"
+  },
+  "cs_s": {
+   "id": "cs_s",
+   "short": "SSCR",
+   "name": "SMS confirm rate",
+   "text": "SMS confirm rate: confirmed and showed ÷ delivered",
+   "value": 0.1,
+   "rng": [
+    0.05,
+    0.2
+   ],
+   "full": "SMS Show Confirm Rate"
+  },
+  "pv": {
+   "id": "pv",
+   "short": "BPS",
+   "name": "phone share for calls",
+   "text": "phone share for calls: booked contacts the AI caller can ring ÷ calls booked",
+   "value": 0.7,
+   "rng": [
+    0.5,
+    0.95
+   ],
+   "full": "Booked Phone Share"
+  },
+  "av": {
+   "id": "av",
+   "short": "RCAR",
+   "name": "confirmation call answer rate",
+   "text": "confirmation call answer rate: answered ÷ called",
+   "value": 0.4,
+   "rng": [
+    0.3,
+    0.6
+   ],
+   "full": "Reminder Call Answer Rate"
+  },
+  "cs_v": {
+   "id": "cs_v",
+   "short": "CSCR",
+   "name": "call confirm rate",
+   "text": "call confirm rate: confirmed and showed ÷ answered",
+   "value": 0.3,
+   "rng": [
+    0.2,
+    0.45
+   ],
+   "full": "Call Show Confirm Rate"
+  },
+  "rb": {
+   "id": "rb",
+   "short": "RBR",
+   "name": "rebook rate",
+   "text": "rebook rate: no-shows who rebooked ÷ no-shows (the five follow-ups added)",
+   "value": null,
+   "rng": null,
+   "full": "Rebook Rate"
+  },
+  "f_1": {
+   "id": "f_1",
+   "short": "NF1R",
+   "name": "rebooked after no-show follow-up 1 (sent right away) ÷ no-shows",
+   "text": "rebooked after no-show follow-up 1 (sent right away) ÷ no-shows",
+   "value": 0.12,
+   "rng": [
+    0.06,
+    0.2
+   ],
+   "full": "No-Show Follow-Up 1 Rate"
+  },
+  "f_2": {
+   "id": "f_2",
+   "short": "NF2R",
+   "name": "rebooked after follow-up 2 (3 days later) ÷ no-shows",
+   "text": "rebooked after follow-up 2 (3 days later) ÷ no-shows",
+   "value": 0.06,
+   "rng": [
+    0.03,
+    0.1
+   ],
+   "full": "No-Show Follow-Up 2 Rate"
+  },
+  "f_3": {
+   "id": "f_3",
+   "short": "NF3R",
+   "name": "rebooked after follow-up 3 (3 days after that) ÷ no-shows",
+   "text": "rebooked after follow-up 3 (3 days after that) ÷ no-shows",
+   "value": 0.04,
+   "rng": [
+    0.02,
+    0.06
+   ],
+   "full": "No-Show Follow-Up 3 Rate"
+  },
+  "f_4": {
+   "id": "f_4",
+   "short": "NF4R",
+   "name": "rebooked after follow-up 4 (3 days after that) ÷ no-shows",
+   "text": "rebooked after follow-up 4 (3 days after that) ÷ no-shows",
+   "value": 0.03,
+   "rng": [
+    0.01,
+    0.05
+   ],
+   "full": "No-Show Follow-Up 4 Rate"
+  },
+  "f_5": {
+   "id": "f_5",
+   "short": "NF5R",
+   "name": "rebooked after follow-up 5 (a week after that) ÷ no-shows",
+   "text": "rebooked after follow-up 5 (a week after that) ÷ no-shows",
+   "value": 0.02,
+   "rng": [
+    0.01,
+    0.04
+   ],
+   "full": "No-Show Follow-Up 5 Rate"
+  },
+  "hd": {
+   "id": "hd",
+   "short": "CHR",
+   "name": "held rate",
+   "text": "held rate: calls held, including rebooked ones ÷ calls booked",
+   "value": null,
+   "rng": null,
+   "full": "Calls Held Rate"
+  },
+  "qr": {
+   "id": "qr",
+   "short": "QR",
+   "name": "qualified rate",
+   "text": "qualified rate: qualified ÷ calls held",
+   "value": 0.75,
+   "rng": [
+    0.6,
+    0.85
+   ],
+   "full": "Qualified Rate"
+  },
+  "pr": {
+   "id": "pr",
+   "short": "PR",
+   "name": "proposal rate",
+   "text": "proposal rate: proposals sent ÷ qualified",
+   "value": 0.7,
+   "rng": [
+    0.5,
+    0.8
+   ],
+   "full": "Proposal Rate"
+  },
+  "wn": {
+   "id": "wn",
+   "short": "WR",
+   "name": "win rate",
+   "text": "win rate: proposals accepted ÷ proposals sent",
+   "value": null,
+   "rng": null,
+   "full": "Win Rate"
+  },
+  "w_0": {
+   "id": "w_0",
+   "short": "WWC",
+   "name": "accepted with no chasing ÷ proposals sent",
+   "text": "accepted with no chasing ÷ proposals sent",
+   "value": 0.3,
+   "rng": [
+    0.15,
+    0.35
+   ],
+   "full": "Win Without Chasing"
+  },
+  "d_1f": {
+   "id": "d_1f",
+   "short": "DF1R",
+   "name": "accepted after deal follow-up 1 (day 3) ÷ proposals sent",
+   "text": "accepted after deal follow-up 1 (day 3) ÷ proposals sent",
+   "value": 0.06,
+   "rng": [
+    0.03,
+    0.1
+   ],
+   "full": "Deal Follow-Up 1 Rate"
+  },
+  "d_2f": {
+   "id": "d_2f",
+   "short": "DF2R",
+   "name": "accepted after deal follow-up 2 (day 7) ÷ proposals sent",
+   "text": "accepted after deal follow-up 2 (day 7) ÷ proposals sent",
+   "value": 0.04,
+   "rng": [
+    0.02,
+    0.06
+   ],
+   "full": "Deal Follow-Up 2 Rate"
+  },
+  "d_3f": {
+   "id": "d_3f",
+   "short": "DF3R",
+   "name": "accepted after deal follow-up 3 (day 12) ÷ proposals sent",
+   "text": "accepted after deal follow-up 3 (day 12) ÷ proposals sent",
+   "value": 0.03,
+   "rng": [
+    0.01,
+    0.05
+   ],
+   "full": "Deal Follow-Up 3 Rate"
+  },
+  "py": {
+   "id": "py",
+   "short": "PCR",
+   "name": "payment rate",
+   "text": "payment rate: payments completed ÷ proposals accepted",
+   "value": 0.9,
+   "rng": [
+    0.85,
+    0.98
+   ],
+   "full": "Payment Completion Rate"
+  },
+  "ob": {
+   "id": "ob",
+   "short": "OCR",
+   "name": "onboarding rate",
+   "text": "onboarding rate: customers onboarded ÷ customers who paid",
+   "value": 0.95,
+   "rng": [
+    0.9,
+    1.0
+   ],
+   "full": "Onboarding Completion Rate"
+  },
+  "c": {
+   "id": "c",
+   "short": "OC",
+   "name": "onboarded customers",
+   "text": "onboarded customers",
+   "value": null,
+   "rng": null,
+   "full": "Onboarded Customers"
+  },
+  "yb": {
+   "id": "yb",
+   "short": "YRR",
+   "name": "Yearly Rebooking Rate",
+   "text": "Yearly Rebooking Rate: calls booked from the 52-week messages ÷ people on the list",
+   "value": null,
+   "rng": null,
+   "full": "Yearly Rebooking Rate"
+  },
+  "l": {
+   "id": "l",
+   "short": "LS",
+   "name": "people on the list",
+   "text": "people on the list: everyone known who did not become a customer",
+   "value": null,
+   "rng": null,
+   "full": "List Size"
+  },
+  "y_n": {
+   "id": "y_n",
+   "short": "WEB",
+   "name": "calls booked from weekly email ÷ people on the list (its share of the credit)",
+   "text": "calls booked from weekly email ÷ people on the list (its share of the credit)",
+   "value": null,
+   "rng": null,
+   "full": "Weekly Email Bookings"
+  },
+  "rc_n": {
+   "id": "rc_n",
+   "short": "WER",
+   "name": "weekly email reach",
+   "text": "weekly email reach: people who can get weekly email ÷ people on the list",
+   "value": 1.0,
+   "rng": [
+    0.3,
+    1.0
+   ],
+   "full": "Weekly Email Reach"
+  },
+  "sn_n": {
+   "id": "sn_n",
+   "short": "WES",
+   "name": "weekly email sends per person per year",
+   "text": "weekly email sends per person per year",
+   "value": 52,
+   "rng": null,
+   "full": "Weekly Email Sends"
+  },
+  "dl_n": {
+   "id": "dl_n",
+   "short": "WEDR",
+   "name": "weekly email delivered rate",
+   "text": "weekly email delivered rate: delivered ÷ sent",
+   "value": 0.97,
+   "rng": [
+    0.92,
+    0.99
+   ],
+   "full": "Weekly Email Delivery Rate"
+  },
+  "op_n": {
+   "id": "op_n",
+   "short": "WEOR",
+   "name": "weekly email open rate",
+   "text": "weekly email open rate: opened ÷ delivered",
+   "value": 0.38,
+   "rng": [
+    0.3,
+    0.45
+   ],
+   "full": "Weekly Email Open Rate"
+  },
+  "ck_n": {
+   "id": "ck_n",
+   "short": "WECR",
+   "name": "weekly email click rate",
+   "text": "weekly email click rate: clicks ÷ messages opened",
+   "value": 0.015,
+   "rng": [
+    0.0115,
+    0.0262
+   ],
+   "full": "Weekly Email Click Rate"
+  },
+  "y_i": {
+   "id": "y_i",
+   "short": "ANB",
+   "name": "calls booked from AI newsletter ÷ people on the list (its share of the credit)",
+   "text": "calls booked from AI newsletter ÷ people on the list (its share of the credit)",
+   "value": null,
+   "rng": null,
+   "full": "AI Newsletter Bookings"
+  },
+  "rc_i": {
+   "id": "rc_i",
+   "short": "ANR",
+   "name": "AI newsletter reach",
+   "text": "AI newsletter reach: people who can get AI newsletter ÷ people on the list",
+   "value": 0.6,
+   "rng": [
+    0.3,
+    1.0
+   ],
+   "full": "AI Newsletter Reach"
+  },
+  "sn_i": {
+   "id": "sn_i",
+   "short": "ANS",
+   "name": "AI newsletter sends per person per year",
+   "text": "AI newsletter sends per person per year",
+   "value": 52,
+   "rng": null,
+   "full": "AI Newsletter Sends"
+  },
+  "dl_i": {
+   "id": "dl_i",
+   "short": "ANDR",
+   "name": "AI newsletter delivered rate",
+   "text": "AI newsletter delivered rate: delivered ÷ sent",
+   "value": 0.97,
+   "rng": [
+    0.92,
+    0.99
+   ],
+   "full": "AI Newsletter Delivery Rate"
+  },
+  "op_i": {
+   "id": "op_i",
+   "short": "ANOR",
+   "name": "AI newsletter open rate",
+   "text": "AI newsletter open rate: opened ÷ delivered",
+   "value": 0.4,
+   "rng": [
+    0.3,
+    0.45
+   ],
+   "full": "AI Newsletter Open Rate"
+  },
+  "ck_i": {
+   "id": "ck_i",
+   "short": "ANCR",
+   "name": "AI newsletter click rate",
+   "text": "AI newsletter click rate: clicks ÷ messages opened",
+   "value": 0.015,
+   "rng": [
+    0.0115,
+    0.0262
+   ],
+   "full": "AI Newsletter Click Rate"
+  },
+  "y_w": {
+   "id": "y_w",
+   "short": "NWB",
+   "name": "calls booked from WhatsApp ÷ people on the list (its share of the credit)",
+   "text": "calls booked from WhatsApp ÷ people on the list (its share of the credit)",
+   "value": null,
+   "rng": null,
+   "full": "Nurture WhatsApp Bookings"
+  },
+  "rc_w": {
+   "id": "rc_w",
+   "short": "NWR",
+   "name": "WhatsApp reach",
+   "text": "WhatsApp reach: people who can get WhatsApp ÷ people on the list",
+   "value": 0.4,
+   "rng": [
+    0.3,
+    1.0
+   ],
+   "full": "Nurture WhatsApp Reach"
+  },
+  "sn_w": {
+   "id": "sn_w",
+   "short": "NWS",
+   "name": "WhatsApp sends per person per year",
+   "text": "WhatsApp sends per person per year",
+   "value": 26,
+   "rng": null,
+   "full": "Nurture WhatsApp Sends"
+  },
+  "dl_w": {
+   "id": "dl_w",
+   "short": "NWDR",
+   "name": "WhatsApp delivered rate",
+   "text": "WhatsApp delivered rate: delivered ÷ sent",
+   "value": 0.96,
+   "rng": [
+    0.92,
+    0.99
+   ],
+   "full": "Nurture WhatsApp Delivery Rate"
+  },
+  "op_w": {
+   "id": "op_w",
+   "short": "NWRR",
+   "name": "WhatsApp read rate",
+   "text": "WhatsApp read rate: read ÷ delivered",
+   "value": 0.7,
+   "rng": [
+    0.65,
+    0.8
+   ],
+   "full": "Nurture WhatsApp Read Rate"
+  },
+  "ck_w": {
+   "id": "ck_w",
+   "short": "NWCR",
+   "name": "WhatsApp click rate",
+   "text": "WhatsApp click rate: clicks ÷ messages read",
+   "value": 0.05,
+   "rng": [
+    0.05,
+    0.15
+   ],
+   "full": "Nurture WhatsApp Click Rate"
+  },
+  "y_s": {
+   "id": "y_s",
+   "short": "NSB",
+   "name": "calls booked from SMS ÷ people on the list (its share of the credit)",
+   "text": "calls booked from SMS ÷ people on the list (its share of the credit)",
+   "value": null,
+   "rng": null,
+   "full": "Nurture SMS Bookings"
+  },
+  "rc_s": {
+   "id": "rc_s",
+   "short": "NSR",
+   "name": "SMS reach",
+   "text": "SMS reach: people who can get SMS ÷ people on the list",
+   "value": 0.5,
+   "rng": [
+    0.3,
+    1.0
+   ],
+   "full": "Nurture SMS Reach"
+  },
+  "sn_s": {
+   "id": "sn_s",
+   "short": "NSS",
+   "name": "SMS sends per person per year",
+   "text": "SMS sends per person per year",
+   "value": 6,
+   "rng": null,
+   "full": "Nurture SMS Sends"
+  },
+  "dl_s": {
+   "id": "dl_s",
+   "short": "NSDR",
+   "name": "SMS delivered rate",
+   "text": "SMS delivered rate: delivered ÷ sent",
+   "value": 0.95,
+   "rng": [
+    0.92,
+    0.99
+   ],
+   "full": "Nurture SMS Delivery Rate"
+  },
+  "ck_s": {
+   "id": "ck_s",
+   "short": "NSCR",
+   "name": "SMS click rate",
+   "text": "SMS click rate: clicks ÷ texts delivered",
+   "value": 0.09,
+   "rng": [
+    0.05,
+    0.15
+   ],
+   "full": "Nurture SMS Click Rate"
+  },
+  "y_v": {
+   "id": "y_v",
+   "short": "CICB",
+   "name": "calls booked from AI check-in calls ÷ people on the list",
+   "text": "calls booked from AI check-in calls ÷ people on the list",
+   "value": null,
+   "rng": null,
+   "full": "Check-In Call Bookings"
+  },
+  "rc_v": {
+   "id": "rc_v",
+   "short": "CICR",
+   "name": "AI call reach",
+   "text": "AI call reach: people the AI caller can ring ÷ people on the list",
+   "value": 0.4,
+   "rng": [
+    0.3,
+    0.8
+   ],
+   "full": "Check-In Call Reach"
+  },
+  "sn_v": {
+   "id": "sn_v",
+   "short": "CIC",
+   "name": "AI check-in calls per person per year",
+   "text": "AI check-in calls per person per year",
+   "value": 4,
+   "rng": null,
+   "full": "Check-In Calls"
+  },
+  "an_v": {
+   "id": "an_v",
+   "short": "CIAR",
+   "name": "check-in call answer rate",
+   "text": "check-in call answer rate: answered ÷ called",
+   "value": 0.2,
+   "rng": [
+    0.12,
+    0.35
+   ],
+   "full": "Check-In Answer Rate"
+  },
+  "bv": {
+   "id": "bv",
+   "short": "CIBR",
+   "name": "booked on the call",
+   "text": "booked on the call: calls booked ÷ check-in calls answered",
+   "value": 0.03,
+   "rng": [
+    0.02,
+    0.06
+   ],
+   "full": "Check-In Booking Rate"
+  },
+  "bk": {
+   "id": "bk",
+   "short": "CBR",
+   "name": "book-from-click rate",
+   "text": "book-from-click rate: calls booked ÷ clicks from 52-week messages",
+   "value": 0.02,
+   "rng": [
+    0.02,
+    0.05
+   ],
+   "full": "Click-to-Booking Rate"
+  },
+  "b_y": {
+   "id": "b_y",
+   "short": "YCB",
+   "name": "calls booked from the 52 weeks",
+   "text": "calls booked from the 52 weeks",
+   "value": null,
+   "rng": null,
+   "full": "Yearly Calls Booked"
+  },
+  "c_y": {
+   "id": "c_y",
+   "short": "YC",
+   "name": "customers from the 52 weeks",
+   "text": "customers from the 52 weeks",
+   "value": null,
+   "rng": null,
+   "full": "Yearly Customers"
+  }
+ },
+ "equations": [
+  {
+   "result": "vr_e",
+   "expr": "dr_e * or_e * cr_e * lr",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S1"
+  },
+  {
+   "result": "vr_c",
+   "expr": "dr_c * cl_c * lr",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S1"
+  },
+  {
+   "result": "vr_l",
+   "expr": "ac_l * ms_l * cr_l * lr",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S1"
+  },
+  {
+   "result": "vr_a",
+   "expr": "ct_a * lv_a",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S1"
+  },
+  {
+   "result": "vr_o",
+   "expr": "ct_o * lr",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S1"
+  },
+  {
+   "result": "v",
+   "expr": "n_e * vr_e + n_c * vr_c + n_l * vr_l + n_a * vr_a + n_o * vr_o",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S1"
+  },
+  {
+   "result": "vr",
+   "expr": "v / (n_e + n_c + n_l + n_a + n_o)",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S1"
+  },
+  {
+   "result": "ar_c",
+   "expr": "n_c * dr_c * (ys + my)",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S2"
+  },
+  {
+   "result": "ar_e",
+   "expr": "n_e * dr_e * rp_e * ye",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S2"
+  },
+  {
+   "result": "ar_l",
+   "expr": "n_l * ac_l * ms_l * rp_l * yl",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S2"
+  },
+  {
+   "result": "ar_o",
+   "expr": "n_o * eg * mg * ir",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S2"
+  },
+  {
+   "result": "ar",
+   "expr": "ar_c + ar_e + ar_l + ar_o",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S2"
+  },
+  {
+   "result": "rr",
+   "expr": "st * fs * ft * fc",
+   "fn": [
+    "webinar",
+    "workshop"
+   ],
+   "stage": "S2"
+  },
+  {
+   "result": "su_f",
+   "expr": "su_0 * (1 - t1) + su_1 * t1",
+   "fn": [
+    "webinar"
+   ],
+   "stage": "S2"
+  },
+  {
+   "result": "pa",
+   "expr": "rr * su_f",
+   "fn": [
+    "webinar"
+   ],
+   "stage": "S2"
+  },
+  {
+   "result": "r",
+   "expr": "v * rr + ar",
+   "fn": [
+    "webinar",
+    "workshop"
+   ],
+   "stage": "S2"
+  },
+  {
+   "result": "hw",
+   "expr": "st * pl * hh",
+   "fn": [
+    "rsp"
+   ],
+   "stage": "S2"
+  },
+  {
+   "result": "h_1",
+   "expr": "v * hw",
+   "fn": [
+    "rsp"
+   ],
+   "stage": "S2"
+  },
+  {
+   "result": "p",
+   "expr": "v * st * pl * (1 - hh) * os + ar",
+   "fn": [
+    "rsp"
+   ],
+   "stage": "S2"
+  },
+  {
+   "result": "j_e",
+   "expr": "dr_m * or_m * jc_m",
+   "fn": [
+    "webinar",
+    "workshop"
+   ],
+   "stage": "S3"
+  },
+  {
+   "result": "j_w",
+   "expr": "wo * dr_w * rd_w * jc_w",
+   "fn": [
+    "webinar",
+    "workshop"
+   ],
+   "stage": "S3"
+  },
+  {
+   "result": "j_s",
+   "expr": "sr_s * dr_s * jc_s",
+   "fn": [
+    "webinar",
+    "workshop"
+   ],
+   "stage": "S3"
+  },
+  {
+   "result": "j_v",
+   "expr": "ph * an * cf * cc",
+   "fn": [
+    "webinar",
+    "workshop"
+   ],
+   "stage": "S3"
+  },
+  {
+   "result": "su",
+   "expr": "dj + j_e + j_w + j_s + j_v",
+   "fn": [
+    "webinar"
+   ],
+   "stage": "S3"
+  },
+  {
+   "result": "a",
+   "expr": "r * su",
+   "fn": [
+    "webinar"
+   ],
+   "stage": "S3"
+  },
+  {
+   "result": "su_d",
+   "expr": "dj + j_e + j_w + j_s + j_v",
+   "fn": [
+    "workshop"
+   ],
+   "stage": "S3"
+  },
+  {
+   "result": "d_1",
+   "expr": "r * su_d",
+   "fn": [
+    "workshop"
+   ],
+   "stage": "S3"
+  },
+  {
+   "result": "d_2",
+   "expr": "d_1 * ret_2",
+   "fn": [
+    "workshop"
+   ],
+   "stage": "S3"
+  },
+  {
+   "result": "d_3",
+   "expr": "d_2 * ret_3",
+   "fn": [
+    "workshop"
+   ],
+   "stage": "S3"
+  },
+  {
+   "result": "qd",
+   "expr": "su_d * sk",
+   "fn": [
+    "workshop"
+   ],
+   "stage": "S3"
+  },
+  {
+   "result": "q",
+   "expr": "r * qd",
+   "fn": [
+    "workshop"
+   ],
+   "stage": "S3"
+  },
+  {
+   "result": "pq",
+   "expr": "rr * qd",
+   "fn": [
+    "workshop"
+   ],
+   "stage": "S2"
+  },
+  {
+   "result": "bb_e",
+   "expr": "dr_m * or_m * bc_e",
+   "fn": [
+    "rsp"
+   ],
+   "stage": "S3"
+  },
+  {
+   "result": "bb_w",
+   "expr": "wo * dr_w * rd_w * bc_w",
+   "fn": [
+    "rsp"
+   ],
+   "stage": "S3"
+  },
+  {
+   "result": "bb_s",
+   "expr": "sr_s * dr_s * bc_s",
+   "fn": [
+    "rsp"
+   ],
+   "stage": "S3"
+  },
+  {
+   "result": "bb_v",
+   "expr": "ph * an * bc_v",
+   "fn": [
+    "rsp"
+   ],
+   "stage": "S3"
+  },
+  {
+   "result": "nh",
+   "expr": "(bb_e + bb_w + bb_s + bb_v) * hr",
+   "fn": [
+    "rsp"
+   ],
+   "stage": "S3"
+  },
+  {
+   "result": "h",
+   "expr": "h_1 + p * nh",
+   "fn": [
+    "rsp"
+   ],
+   "stage": "S3"
+  },
+  {
+   "result": "ct",
+   "expr": "en * ce + (1 - en) * cq",
+   "fn": [
+    "webinar"
+   ],
+   "stage": "S4"
+  },
+  {
+   "result": "bl",
+   "expr": "so * ct * bf",
+   "fn": [
+    "webinar"
+   ],
+   "stage": "S4"
+  },
+  {
+   "result": "ns",
+   "expr": "(r - a) / a",
+   "fn": [
+    "webinar"
+   ],
+   "stage": "S4"
+  },
+  {
+   "result": "br",
+   "expr": "bl + (1 - bl) * fu * bf + ns * rw * rc * bf",
+   "fn": [
+    "webinar"
+   ],
+   "stage": "S4"
+  },
+  {
+   "result": "b",
+   "expr": "a * br",
+   "fn": [
+    "webinar"
+   ],
+   "stage": "S4"
+  },
+  {
+   "result": "br_h",
+   "expr": "rt * ap * af * ab",
+   "fn": [
+    "rsp"
+   ],
+   "stage": "S4"
+  },
+  {
+   "result": "b",
+   "expr": "h * br_h",
+   "fn": [
+    "rsp"
+   ],
+   "stage": "S4"
+  },
+  {
+   "result": "bd",
+   "expr": "d_1 * b_1 + d_2 * b_2 + d_3 * b_3",
+   "fn": [
+    "workshop"
+   ],
+   "stage": "S4"
+  },
+  {
+   "result": "fb",
+   "expr": "(q - bd) * fu * bf",
+   "fn": [
+    "workshop"
+   ],
+   "stage": "S4"
+  },
+  {
+   "result": "b",
+   "expr": "bd + fb",
+   "fn": [
+    "workshop"
+   ],
+   "stage": "S4"
+  },
+  {
+   "result": "bq",
+   "expr": "b / q",
+   "fn": [
+    "workshop"
+   ],
+   "stage": "S4"
+  },
+  {
+   "result": "sh_e",
+   "expr": "dr_r * or_r * cs_e",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S5"
+  },
+  {
+   "result": "sh_w",
+   "expr": "wp * dr_w * rd_w * cs_w",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S5"
+  },
+  {
+   "result": "sh_s",
+   "expr": "sp * dr_s * cs_s",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S5"
+  },
+  {
+   "result": "sh_v",
+   "expr": "pv * av * cs_v",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S5"
+  },
+  {
+   "result": "sh",
+   "expr": "sh_0 + sh_e + sh_w + sh_s + sh_v",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S5"
+  },
+  {
+   "result": "rb",
+   "expr": "f_1 + f_2 + f_3 + f_4 + f_5",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S5"
+  },
+  {
+   "result": "hd",
+   "expr": "sh + (1 - sh) * rb * sh",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S5"
+  },
+  {
+   "result": "wn",
+   "expr": "w_0 + d_1f + d_2f + d_3f",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S5"
+  },
+  {
+   "result": "cl",
+   "expr": "hd * qr * pr * wn * py * ob",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S5"
+  },
+  {
+   "result": "c",
+   "expr": "b * cl",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S5"
+  },
+  {
+   "result": "l",
+   "expr": "r - c",
+   "fn": [
+    "webinar",
+    "workshop"
+   ],
+   "stage": "S6"
+  },
+  {
+   "result": "l",
+   "expr": "p - c",
+   "fn": [
+    "rsp"
+   ],
+   "stage": "S6"
+  },
+  {
+   "result": "y_n",
+   "expr": "rc_n * sn_n * dl_n * op_n * ck_n * bk",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S6"
+  },
+  {
+   "result": "y_i",
+   "expr": "rc_i * sn_i * dl_i * op_i * ck_i * bk",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S6"
+  },
+  {
+   "result": "y_w",
+   "expr": "rc_w * sn_w * dl_w * op_w * ck_w * bk",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S6"
+  },
+  {
+   "result": "y_s",
+   "expr": "rc_s * sn_s * dl_s * ck_s * bk",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S6"
+  },
+  {
+   "result": "y_v",
+   "expr": "rc_v * sn_v * an_v * bv",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S6"
+  },
+  {
+   "result": "yb",
+   "expr": "y_n + y_i + y_w + y_s + y_v",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S6"
+  },
+  {
+   "result": "b_y",
+   "expr": "l * yb",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S6"
+  },
+  {
+   "result": "c_y",
+   "expr": "b_y * cl",
+   "fn": [
+    "webinar",
+    "rsp",
+    "workshop"
+   ],
+   "stage": "S6"
+  }
+ ],
+ "whole": {
+  "webinar": "(v * rr + ar) * su * br * cl",
+  "rsp": "(h_1 + p * nh) * br_h * cl",
+  "workshop": "(v * rr + ar) * qd * bq * cl"
+ },
+ "metrics": {
+  "webinar": [
+   {
+    "stage": "S1",
+    "metric": "vr",
+    "shown": [
+     "vr",
+     "v",
+     "vr_e",
+     "vr_c",
+     "vr_l",
+     "vr_a",
+     "vr_o"
+    ]
+   },
+   {
+    "stage": "S2",
+    "metric": "pa",
+    "shown": [
+     "pa",
+     "rr",
+     "su_f",
+     "r",
+     "ar",
+     "ar_c",
+     "ar_e",
+     "ar_l",
+     "ar_o"
+    ]
+   },
+   {
+    "stage": "S3",
+    "metric": "su",
+    "shown": [
+     "su",
+     "a",
+     "j_e",
+     "j_w",
+     "j_s",
+     "j_v"
+    ]
+   },
+   {
+    "stage": "S4",
+    "metric": "br",
+    "shown": [
+     "br",
+     "bl",
+     "ct",
+     "ns",
+     "b"
+    ]
+   },
+   {
+    "stage": "S5",
+    "metric": "cl",
+    "shown": [
+     "cl",
+     "hd",
+     "sh",
+     "sh_e",
+     "sh_w",
+     "sh_s",
+     "sh_v",
+     "rb",
+     "wn",
+     "c"
+    ]
+   },
+   {
+    "stage": "S6",
+    "metric": "yb",
+    "shown": [
+     "yb",
+     "y_n",
+     "y_i",
+     "y_w",
+     "y_s",
+     "y_v",
+     "l",
+     "b_y"
+    ]
+   }
+  ],
+  "rsp": [
+   {
+    "stage": "S1",
+    "metric": "vr",
+    "shown": [
+     "vr",
+     "v",
+     "vr_e",
+     "vr_c",
+     "vr_l",
+     "vr_a",
+     "vr_o"
+    ]
+   },
+   {
+    "stage": "S2",
+    "metric": "hw",
+    "shown": [
+     "hw",
+     "h_1",
+     "p",
+     "ar",
+     "ar_c",
+     "ar_e",
+     "ar_l",
+     "ar_o"
+    ]
+   },
+   {
+    "stage": "S3",
+    "metric": "nh",
+    "shown": [
+     "nh",
+     "bb_e",
+     "bb_w",
+     "bb_s",
+     "bb_v",
+     "h"
+    ]
+   },
+   {
+    "stage": "S4",
+    "metric": "br_h",
+    "shown": [
+     "br_h",
+     "b"
+    ]
+   },
+   {
+    "stage": "S5",
+    "metric": "cl",
+    "shown": [
+     "cl",
+     "hd",
+     "sh",
+     "sh_e",
+     "sh_w",
+     "sh_s",
+     "sh_v",
+     "rb",
+     "wn",
+     "c"
+    ]
+   },
+   {
+    "stage": "S6",
+    "metric": "yb",
+    "shown": [
+     "yb",
+     "y_n",
+     "y_i",
+     "y_w",
+     "y_s",
+     "y_v",
+     "l",
+     "b_y"
+    ]
+   }
+  ],
+  "workshop": [
+   {
+    "stage": "S1",
+    "metric": "vr",
+    "shown": [
+     "vr",
+     "v",
+     "vr_e",
+     "vr_c",
+     "vr_l",
+     "vr_a",
+     "vr_o"
+    ]
+   },
+   {
+    "stage": "S2",
+    "metric": "pq",
+    "shown": [
+     "pq",
+     "rr",
+     "r",
+     "ar",
+     "ar_c",
+     "ar_e",
+     "ar_l",
+     "ar_o"
+    ]
+   },
+   {
+    "stage": "S3",
+    "metric": "qd",
+    "shown": [
+     "qd",
+     "su_d",
+     "d_1",
+     "d_2",
+     "d_3",
+     "q",
+     "j_e",
+     "j_w",
+     "j_s",
+     "j_v"
+    ]
+   },
+   {
+    "stage": "S4",
+    "metric": "bq",
+    "shown": [
+     "bq",
+     "b",
+     "bd",
+     "fb"
+    ]
+   },
+   {
+    "stage": "S5",
+    "metric": "cl",
+    "shown": [
+     "cl",
+     "hd",
+     "sh",
+     "sh_e",
+     "sh_w",
+     "sh_s",
+     "sh_v",
+     "rb",
+     "wn",
+     "c"
+    ]
+   },
+   {
+    "stage": "S6",
+    "metric": "yb",
+    "shown": [
+     "yb",
+     "y_n",
+     "y_i",
+     "y_w",
+     "y_s",
+     "y_v",
+     "l",
+     "b_y"
+    ]
+   }
+  ]
+ },
+ "tiles": {
+  "webinar": [
+   [
+    "Stage 1",
+    "vr"
+   ],
+   [
+    "Stage 2",
+    "pa"
+   ],
+   [
+    "Stage 3",
+    "su"
+   ],
+   [
+    "Stage 4",
+    "br"
+   ],
+   [
+    "Stage 5",
+    "cl"
+   ],
+   [
+    "Stage 6",
+    "yb"
+   ]
+  ],
+  "rsp": [
+   [
+    "Stage 1",
+    "vr"
+   ],
+   [
+    "Stage 2",
+    "hw"
+   ],
+   [
+    "Stage 3",
+    "nh"
+   ],
+   [
+    "Stage 4",
+    "br_h"
+   ],
+   [
+    "Stage 5",
+    "cl"
+   ],
+   [
+    "Stage 6",
+    "yb"
+   ]
+  ],
+  "workshop": [
+   [
+    "Stage 1",
+    "vr"
+   ],
+   [
+    "Stage 2",
+    "pq"
+   ],
+   [
+    "Stage 3",
+    "qd"
+   ],
+   [
+    "Stage 4",
+    "bq"
+   ],
+   [
+    "Stage 5",
+    "cl"
+   ],
+   [
+    "Stage 6",
+    "yb"
+   ]
+  ]
+ },
+ "counts": {
+  "webinar": [
+   "v",
+   "r",
+   "a",
+   "b",
+   "c",
+   "c_y"
+  ],
+  "rsp": [
+   "v",
+   "p",
+   "h",
+   "b",
+   "c",
+   "c_y"
+  ],
+  "workshop": [
+   "v",
+   "r",
+   "q",
+   "b",
+   "c",
+   "c_y"
+  ]
+ }
+}
