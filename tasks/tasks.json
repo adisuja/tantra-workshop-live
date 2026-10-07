@@ -2,7 +2,7 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-08T00:48:49+0530",
+  "updated": "2026-10-08T00:49:40+0530",
   "version": 278,
   "last_id": 281,
   "team": [
@@ -1367,7 +1367,7 @@
    "blockers": [
     "On hold by owner (2026-09-24); placeholder in use"
    ],
-   "needs_from_owner": "On hold by your choice (2026-09-24). The first cohort (Wed 7 to Fri 9 Oct) is live while the join pages still show the placeholder. When ready, reply on this task with the WhatsApp community invite link (WhatsApp > Communities > your community > Invite members > Copy link).",
+   "needs_from_owner": "On hold by your choice (2026-09-24). The join pages still show the placeholder link, and the weekly cohorts start as soon as real sign-ups arrive. When ready, reply on this task with the WhatsApp community invite link (WhatsApp > Communities > your community > Invite members > Copy link).",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -1393,6 +1393,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: 'paste into T-003' was stale (T-003 is done); the first real cohort (Wed 7 to Fri 9 Oct) is running with the placeholder link, so the ask now says exactly what is needed. Owner hold kept."
+    },
+    {
+     "ts": "2026-10-08T00:49:40+0530",
+     "who": "claude",
+     "note": "Pass 2 correction: no real cohort is running yet in the centre."
     }
    ],
    "order": 260,
@@ -3945,7 +3950,7 @@
    "blockers": [
     "Adi's yes to build fulfilment in the centre while T-070 (Tantra backend) stays on hold"
    ],
-   "needs_from_owner": "Reply yes or no on this task: build payment-to-seat fulfilment in the centre Worker now. Recommended: yes (the first paid cohort is running and nothing upgrades buyers today).",
+   "needs_from_owner": "Reply yes or no on this task: build payment-to-seat fulfilment in the centre Worker now. Recommended: yes (nothing upgrades buyers today, so the first paid sign-up would get no access).",
    "log": [
     {
      "ts": "2026-09-25",
@@ -3966,6 +3971,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: removed duplicate done_when items, named the D1 seat field and the missing route, added the recommended answer."
+    },
+    {
+     "ts": "2026-10-08T00:49:40+0530",
+     "who": "claude",
+     "note": "Pass 2 correction: no paid cohort is running yet."
     }
    ],
    "order": 1200,
@@ -3983,7 +3993,7 @@
    "priority": "P0",
    "due": "2026-09-27",
    "status": "queue",
-   "why": "Pages promise a confirmation, the centre and calendar links, daily reminders with the join link, the plan email and follow-ups. The first cohort (7 to 9 Oct) is running without them.",
+   "why": "Pages promise a confirmation, the centre and calendar links, daily reminders with the join link, the plan email and follow-ups. Nothing sends them yet, so the first real cohort would run without them.",
    "spec": "Umbrella. Owner model (google-and-reminder-model, 2026-10-07): email, WhatsApp and LinkedIn reminders run on Tantra omni-channel campaigns; the centre imports each registrant into the campaign by webhook on sign-up; WhatsApp never through Twilio. Tantra sending is live, so nothing waits on T-236 (the per-contact /emails/batch spec was our own invention) and the centre's 'held until Tantra ships its per-contact send' note in cloud/src/jobs-day2.ts must move to the campaign-import model. Children: T-234 (per-day reminders with each person's own Zoom link), T-228 (welcome with centre and private calendar link), T-235 (post-session follow-ups), plan email when the personal plan is generated (T-212 output), payment confirmation (T-122). Close this when the children are done.",
    "done_when": [
     "A test sign-up lands in the Tantra campaign within 1 minute and gets the confirmation email and WhatsApp",
@@ -4028,6 +4038,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: moved to the owner's 2026-10-07 model: reminders run on Tantra omni-channel campaigns fed by webhook import (live); the T-236 /emails/batch blocker and the Resend question are dropped."
+    },
+    {
+     "ts": "2026-10-08T00:49:40+0530",
+     "who": "claude",
+     "note": "Pass 2 correction: no real cohort is running yet."
     }
    ],
    "order": 1210,
@@ -6905,13 +6920,13 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "next",
-   "why": "The first real cohort (Wed 7 to Fri 9 Oct, meeting 87002851906) is running, but no real attendee is registered on the Zoom meeting yet, so the live board and attendance cannot show anything for real sessions.",
-   "spec": "Code live: main cd7a90e, a3db29a, 99b8083, d31a7e3; Worker 06ee20f9; probe-zoom-pro.mjs. Live state 2026-10-08 00:40 IST: settings zoom_enabled 1, zoom_cap 98, zoom_support_locks 0; meeting 87002851906 registered 0, attended empty for all three days; last sync: zoom failed 3. Do now, before Day 2 (Thu 8 Oct 11:00 ET): (1) open https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Cohort Settings, read the three failed registrations (likely Zoom's 3-registrations-per-day limit, 429, or placeholder emails covered by T-229) and fix the cause; (2) confirm each real attendee has an ok row in session_sync and their own join link; (3) after Day 2 ends, press Pull attendance (POST /admin/api/zoom/attendance) and check the admin live board, the zoom_attendance rows and the Tracker's Zoom Attendance tab.",
+   "status": "review",
+   "why": "Our workshop and the Tantra webinar run on Zoom Pro meetings: each registrant needs their own join link, and attendance, recordings, chat and polls must land in the centre and the Tantra Tracker. The live centre has no real attendees yet (D1 read 2026-10-08 00:50 IST: attendees 1 to 4 are test, attendee 5 'Alex' you@example.com is a placeholder), so the live proof so far is the 2026-10-07 test session 89781893618 (webhooks, 119 s attendance, recording and chat saved, then deleted in Zoom).",
+   "spec": "Code live: main cd7a90e, a3db29a, 99b8083, d31a7e3; Worker 06ee20f9; probe-zoom-pro.mjs (57 own stack, 54 shared). Live: zoom_enabled 1, cap 98, Support locks 0, meeting 87002851906 for 7 to 9 Oct carries all room settings. The 'zoom failed 3' on the admin is the placeholder attendee 5 (you@example.com) hitting Zoom's 3-per-day registrant limit: fixed by T-229 (never send placeholder emails to Zoom), not a real failure. Remaining: when the first real attendee signs up, confirm in https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key> (Zoom Sessions panel) that they are registered with their own join link, then after their session press Read attendance and check the live board, zoom_attendance and the Tracker's Zoom Attendance tab.",
    "done_when": [
-    "Every real attendee of the 7 to 9 Oct cohort is registered on meeting 87002851906 (admin shows registered equal to real attendees, failed 0)",
+    "The first real attendee is registered on their cohort's meeting with their own join link (admin Zoom Sessions shows registered 1 or more, failed 0)",
     "A real session shows its joins on the admin live board",
-    "zoom_attendance holds rows for that real session and the Tracker's Zoom Attendance tab shows them"
+    "zoom_attendance holds rows for that session and the Tracker's Zoom Attendance tab shows them"
    ],
    "evidence": [],
    "blockers": [],
@@ -6936,6 +6951,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: read the live admin (GET /admin/api/zoom and /admin/api/calendar, read-only) at 2026-10-08 00:40 IST: production meeting 87002851906 shows registered 0 and no attendance for Day 1 (Wed 7 Oct 11:00 ET has passed), and the last invite sync reports zoom failed 3, registered 0; only the deleted test meeting 89781893618 has attendance. The code is live, the real-session proof is not."
+    },
+    {
+     "ts": "2026-10-08T00:49:40+0530",
+     "who": "claude",
+     "note": "Pass 2 correction: The live centre has no real attendees yet (D1 read 2026-10-08 00:50 IST: attendees 1 to 4 are test, attendee 5 'Alex' you@example.com is a placeholder). The 3 failures are that placeholder (T-229). Back to review; next is T-234."
     }
    ],
    "order": 2230
@@ -7146,7 +7166,7 @@
    "due": "",
    "status": "queue",
    "why": "Production attendee 5 signed up as you@example.com (not marked test) and its three Zoom registrations hit Zoom's 3-per-person-per-day limit (HTTP 429). The 429 back-off shipped in c106985; what is left is keeping placeholder addresses away from Zoom, Google and the coming Tantra reminder import (T-234).",
-   "spec": "1) In the admin (https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Attendees, attendee 5, tick the Test checkbox: #testChk sends PATCH /admin/api/attendees/5 {test:true}) so Invite Status stops counting its failed Zoom rows. 2) Refuse reserved and placeholder domains (example.com, example.net, example.org, *.test, *.invalid, *.localhost, *.example) at every sign-up door: POST /cal/issue (cloud/src/calendar.ts, issue()), POST /intake (cloud/src/live.ts) and the admin add form (cloud/src/index.ts), answering with the same shape as today so nothing leaks. Put the check in one helper in cloud/src/util.ts and reuse it in the T-234 Tantra import. 3) Add a check to app/scripts/probe-calendar-feeds.mjs that an example.com sign-up is refused (local: SIM_PORT=8902 python3 cloud/scripts/vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs).",
+   "spec": "1) In the admin (https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Attendees, attendee 5, tick the Test checkbox: #testChk sends PATCH /admin/api/attendees/5 {test:true}) so Invite Status stops counting its failed Zoom rows. 2) Refuse reserved and placeholder domains (example.com, example.net, example.org, *.test, *.invalid, *.localhost, *.example) at every sign-up door: POST /cal/issue (cloud/src/calendar.ts, issue()), POST /intake (cloud/src/live.ts) and the admin add form (cloud/src/index.ts), answering with the same shape as today so nothing leaks. Put the check in one helper in cloud/src/util.ts and reuse it in the T-234 Tantra import. 3) Add a check to app/scripts/probe-calendar-feeds.mjs that an example.com sign-up is refused (local: SIM_PORT=8902 python3 cloud/scripts/vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs). Live evidence 2026-10-08: attendee 5 (you@example.com, test 0) produced 3 failed Zoom rows (429 daily registrant limit). Also clean that row up through the admin (mark it test) rather than editing D1.",
    "done_when": [
     "Attendee 5 shows as test in the admin and no failed Zoom rows for non-test attendees remain under Invite Status",
     "POST /cal/issue and /intake with an example.com address create no attendee and no session_sync row",
@@ -7199,6 +7219,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still open (no placeholder refusal in cloud/src; attendee 5 you@example.com test=0 on 2026-10-08); spec now names the admin test checkbox and the real route files."
+    },
+    {
+     "ts": "2026-10-08T00:49:40+0530",
+     "who": "claude",
+     "note": "Pass 2 correction: live admin shows the placeholder you@example.com failing on Zoom 3 times."
     }
    ],
    "order": 2290
@@ -7360,7 +7385,7 @@
   },
   {
    "id": "T-234",
-   "status": "queue",
+   "status": "next",
    "owner": "Aquila",
    "assignee": "Claude",
    "reviewers": [
@@ -7606,7 +7631,7 @@
    "due": "",
    "status": "queue",
    "why": "During a running cohort a newcomer may see this week's dates on the success and join pages while they were actually sold next week, which is a wrong-date promise at the moment of purchase.",
-   "spec": "Rule in app/src/lib/cohort.ts (5ab3f7b, 1db8ad1): sign-ups after Day 1 starts join the next week; attendees keep the cohort they joined. During a live cohort /masterclass/success, /masterclass/success/join and the VIP pages show the running cohort to a newcomer, while app/scripts/probe-cohort.mjs and probe-workshop.mjs expect the next one on sale. Confirm the rule against weekly-cohort-schedule (owner: rolling weekly, Wed to Fri 11:00 ET), then fix the consumers (success, join, VIP) so a visitor without a stamp sees the cohort on sale, keeping a stamped attendee on their own week. Test now while the 7 to 9 Oct cohort is live, or with the probes' clock override.",
+   "spec": "Rule in app/src/lib/cohort.ts (5ab3f7b, 1db8ad1): sign-ups after Day 1 starts join the next week; attendees keep the cohort they joined. During a live cohort /masterclass/success, /masterclass/success/join and the VIP pages show the running cohort to a newcomer, while app/scripts/probe-cohort.mjs and probe-workshop.mjs expect the next one on sale. Confirm the rule against weekly-cohort-schedule (owner: rolling weekly, Wed to Fri 11:00 ET), then fix the consumers (success, join, VIP) so a visitor without a stamp sees the cohort on sale, keeping a stamped attendee on their own week. Test with the probes' clock override (no real cohort is live in the centre yet).",
    "done_when": [
     "probe-cohort and probe-workshop pass while a cohort is live",
     "A newcomer on /masterclass/success during a live cohort sees next week's dates; a stamped attendee still sees their own"
@@ -7629,6 +7654,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still reproduces (first cohort live now; LOG 2026-10-07 00:21 and 01:41 call probe-cohort newcomer FAIL pre-existing); cohort.ts last changed in 044af79."
+    },
+    {
+     "ts": "2026-10-08T00:49:40+0530",
+     "who": "claude",
+     "note": "Pass 2 correction: no real cohort is live."
     }
    ],
    "order": 2410
