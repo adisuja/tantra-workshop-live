@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-07T23:09:19+0530",
-  "version": 272,
+  "updated": "2026-10-07T23:25:35+0530",
+  "version": 275,
   "last_id": 229,
   "team": [
    {
@@ -4284,6 +4284,11 @@
      "ts": "2026-10-07T23:09:19+0530",
      "who": "claude",
      "note": "Updated 2026-10-07: Zoom links now come per attendee via T-222/T-223 (needs T-224); the welcome email with the private calendar link is T-228."
+    },
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Remaining blockers: a reminder sender (new task) and Tantra's /emails/batch endpoint (new task)."
     }
    ],
    "order": 1210,
@@ -6721,6 +6726,11 @@
      "ts": "2026-10-07T20:46:43+0530",
      "who": "claude",
      "note": "Built, Fable-reviewed (1 P0 fixed), deployed to Worker 4bdce626 with migration 0014. probe-zoom-pro 43/43 on the shared stack."
+    },
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Round 2 live (Worker 06ee20f9): recordings, chat, transcript, polls, engagement per registrant, Tracker tabs (migration 0015), meeting passcodes, Zoom 3-per-day backoff, deleted meetings recreated. Live account test passed."
     }
    ],
    "order": 2230
@@ -6737,7 +6747,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "blocked",
+   "status": "done",
    "why": "Adi's Zoom Pro research, 2026-10-07 (docs/onboarding-v3/analysis/zoom-pro-meetings.md)",
    "spec": "Zoom App Marketplace, Server-to-Server OAuth app 'Tantra Centre' with the scopes in the doc section 3; Event Subscriptions to /hooks/zoom; paste the secret token, then credentials, in the admin; switch on Create meetings per cohort.",
    "done_when": [
@@ -6787,6 +6797,11 @@
      "ts": "2026-10-07T23:09:19+0530",
      "who": "claude",
      "note": "Context from S3 (2026-10-07): the same Server-to-Server app powers per-attendee Zoom registration (T-222): each attendee's personal join link goes into their private calendar feed and Google invite. Steps: docs/onboarding-v3/analysis/zoom-pro-meetings.md section 3 (linked). Live state: Zoom credentials are saved in production and registration is switched on (Invite Status). Open: the Event Subscriptions webhook to /hooks/zoom with its secret token pasted in the admin, and switching on per-cohort meetings; after that no meeting ID is typed anywhere. Moved to blocked so it shows under Waiting on you."
+    },
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Done 2026-10-07: Adi created the Tantra Centre Server-to-Server app and webhook; the Integrator added the batch registrants scope, set the account settings (passcode on, authentication off, focus mode scheduling, request permission to unmute, mute on entry, audio transcript) and ran a live test: events, attendance, recording and chat all arrived."
     }
    ],
    "order": 2240
@@ -7012,6 +7027,578 @@
     }
    ],
    "order": 2290
+  },
+  {
+   "id": "T-230",
+   "title": "Enter co-host and alternative-host emails for the workshop meetings",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "todo",
+   "why": "Integrator sweep 2026-10-07 (docs/onboarding-v3/analysis/zoom-pro-meetings.md s4)",
+   "spec": "Admin, Cohort Settings: Co-hosts (made co-host by the bot on join) and Alternative hosts (licensed users on the account only).",
+   "done_when": [
+    "Emails saved and the next cohort meeting shows the alternative hosts"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Adi: Admin, Cohort Settings: Co-hosts (made co-host by the bot on join) and Alternative hosts (licensed users on the account only).",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    }
+   ],
+   "order": 2300
+  },
+  {
+   "id": "T-231",
+   "title": "Decide the Zoom registration cap (98 now, 150 to 180 suggested)",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "todo",
+   "why": "Integrator sweep 2026-10-07 (zoom-pro-meetings.md s1)",
+   "spec": "Zoom's 100 is people in the room at once, not registrations; with typical show rates a higher cap fills the room. Set it in Cohort Settings.",
+   "done_when": [
+    "Cap value set and the waitlist behaviour confirmed"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Adi: Zoom's 100 is people in the room at once, not registrations; with typical show rates a higher cap fills the room. Set it in Cohort Settings.",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    }
+   ],
+   "order": 2310
+  },
+  {
+   "id": "T-232",
+   "title": "Set the Zoom cloud recording quota and retention policy",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "todo",
+   "why": "Integrator sweep 2026-10-07 (zoom-pro-meetings.md s7)",
+   "spec": "Check the Pro plan's cloud storage; decide how long recordings, chat and transcripts are kept and whether old ones are downloaded first.",
+   "done_when": [
+    "Quota checked and retention written into the doc"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Adi: Check the Pro plan's cloud storage; decide how long recordings, chat and transcripts are kept and whether old ones are downloaded first.",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    }
+   ],
+   "order": 2320
+  },
+  {
+   "id": "T-233",
+   "title": "Record the Zoom Pro setup walkthrough video",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "todo",
+   "why": "Integrator sweep 2026-10-07 (Integrator request 2026-10-07)",
+   "spec": "Walkthroughs session (Tantra demo funnel walkthroughs) records account settings, the Server-to-Server app, scopes and Event Subscriptions on Adi's account, change nothing, blur secrets.",
+   "done_when": [
+    "Video on the d1-zoom card in both centres and in the playbook; READY merged"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    }
+   ],
+   "order": 2330
+  },
+  {
+   "id": "T-234",
+   "title": "Send pre-workshop reminder emails for each day",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "todo",
+   "why": "Integrator sweep 2026-10-07 (Integrator notes; zoom-pro-meetings.md s1)",
+   "spec": "Zoom sends no reminders for meetings. Needs a sender (Resend API key on Adi's domain, or Tantra's endpoint once shipped); each email carries the person's own Zoom link.",
+   "done_when": [
+    "A test attendee receives the day-before and 1-hour reminders with their own link"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    }
+   ],
+   "order": 2340
+  },
+  {
+   "id": "T-235",
+   "title": "Build post-session follow-ups: replay to no-shows, nudges on low engagement",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "todo",
+   "why": "Integrator sweep 2026-10-07 (Integrator notes)",
+   "spec": "Use zoom_attendance and zoom_engagement (recording link per cohort day) to trigger messages after each session.",
+   "done_when": [
+    "A no-show and a low-engagement test attendee each get the right message"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    }
+   ],
+   "order": 2350
+  },
+  {
+   "id": "T-236",
+   "title": "Tantra developers ship POST /api/v1/emails/batch",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "todo",
+   "why": "Integrator sweep 2026-10-07 (handoff TANTRA_EMAIL_STRIPE)",
+   "spec": "Spec docs/onboarding-v3/analysis/tantra-reminder-endpoint.md; runnable contract test cloud/scripts/tantra-send-contract.mjs (10 checks, sandbox).",
+   "done_when": [
+    "Contract test passes 10 of 10 against the real API and held emails send"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Tantra developers own this; Adi to pass on the spec"
+   ],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    }
+   ],
+   "order": 2360
+  },
+  {
+   "id": "T-237",
+   "title": "Give the Tantra webinar a public registration page",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "todo",
+   "why": "Integrator sweep 2026-10-07 (Integrator notes)",
+   "spec": "Today people reach the webinar meeting only by admin import; a public page should register them (batch or single) with their own link.",
+   "done_when": [
+    "A public sign-up registers into the Zoom webinar meeting and gets Zoom's confirmation"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    }
+   ],
+   "order": 2370
+  },
+  {
+   "id": "T-238",
+   "title": "Wire Stripe refunds (parked by Adi)",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "todo",
+   "why": "Integrator sweep 2026-10-07 (handoff TANTRA_EMAIL_STRIPE)",
+   "spec": "Add payment_intent_data[metadata] to the payment link so charge.refunded identifies the product, then reverse the entitlement.",
+   "done_when": [
+    "A test Stripe refund reverses the entitlement"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    }
+   ],
+   "order": 2380
+  },
+  {
+   "id": "T-239",
+   "title": "Switch on Sign in with Google in production",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "todo",
+   "why": "Integrator sweep 2026-10-07 (LOG 2026-10-07 04:40 and 04:51)",
+   "spec": "Set Worker secrets GOOGLE_OAUTH_CLIENT_ID and _SECRET (~/.config/tantra/google-oauth-client.env), add test users and the production redirect URI in Google Cloud (client is in testing mode).",
+   "done_when": [
+    "Workspace and GA4 cards complete the consent flow live"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Adi: Set Worker secrets GOOGLE_OAUTH_CLIENT_ID and _SECRET (~/.config/tantra/google-oauth-client.env), add test users and the production redirect URI in Google Cloud (client is in testing mode).",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    }
+   ],
+   "order": 2390
+  },
+  {
+   "id": "T-240",
+   "title": "Fix the 3 probe-details screenshot-fill failures",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "todo",
+   "why": "Integrator sweep 2026-10-07 (run-chain 2026-10-07)",
+   "spec": "masterclass/audience-room-1440.avif, s1-cold-email/18.webp, s4-rsp/13.webp fill a different share of their column than their siblings.",
+   "done_when": [
+    "probe-details reports 0 FAIL"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    }
+   ],
+   "order": 2400
+  },
+  {
+   "id": "T-241",
+   "title": "Fix the cohort date shown after Day 1 starts",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "todo",
+   "why": "Integrator sweep 2026-10-07 (handoff INTEGRATOR 2026-10-07)",
+   "spec": "During a live cohort, /masterclass/success/join and a newcomer's success page show the running cohort, not the one probe-cohort and probe-workshop expect (time-dependent logic in app/src/lib/cohort.ts consumers).",
+   "done_when": [
+    "probe-cohort and probe-workshop pass while a cohort is live"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    }
+   ],
+   "order": 2410
+  },
+  {
+   "id": "T-242",
+   "title": "Make the walkers wait for the Kie.ai image job",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "todo",
+   "why": "Integrator sweep 2026-10-07 (run-chain 2026-10-07)",
+   "spec": "All three walkers end with content-schedule waiting on Kie.ai; the walker should wait for the job or the job should finish in the simulator.",
+   "done_when": [
+    "Walkers finish with every job done and 0 findings"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    }
+   ],
+   "order": 2420
+  },
+  {
+   "id": "T-243",
+   "title": "Clear the 28 non-export hits in the anonymity probe",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "todo",
+   "why": "Integrator sweep 2026-10-07 (run-chain 2026-10-07)",
+   "spec": "probe-anonymity reports hits outside the published export (playbook vendor URLs such as usetantra.com/developers and kie.ai/api-key, guide strings); fix or allow-list each.",
+   "done_when": [
+    "probe-anonymity reports 0"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    }
+   ],
+   "order": 2430
+  },
+  {
+   "id": "T-244",
+   "title": "Decide whether /cal/issue invites wait for the first centre visit",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "todo",
+   "why": "Integrator sweep 2026-10-07 (handoff CALENDAR_FEEDS blocker 4)",
+   "spec": "Anyone can type someone else's email at sign-up and trigger an organiser invite (limits: Origin, 20 per IP per hour, 500 per hour).",
+   "done_when": [
+    "Decision recorded; invites gated if yes"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Adi: Anyone can type someone else's email at sign-up and trigger an organiser invite (limits: Origin, 20 per IP per hour, 500 per hour).",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    }
+   ],
+   "order": 2440
+  },
+  {
+   "id": "T-245",
+   "title": "Add an admin way to forget a Zoom test session",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "todo",
+   "why": "Integrator sweep 2026-10-07 (Integrator notes 2026-10-07)",
+   "spec": "The deleted test meeting 89781893618 still sits in production zoom_* tables and the Tracker; add a guarded admin action instead of editing the database by hand.",
+   "done_when": [
+    "Test session gone from the admin and the Tracker"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    }
+   ],
+   "order": 2450
+  },
+  {
+   "id": "T-246",
+   "title": "Redeploy attendee funnels that run the old funnel worker",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "todo",
+   "why": "Integrator sweep 2026-10-07 (Integrator notes 2026-10-07)",
+   "spec": "Funnels deployed before the signed Zoom URL check keep the old worker until their next deploy-funnel job.",
+   "done_when": [
+    "Every live attendee funnel runs the current worker"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    }
+   ],
+   "order": 2460
+  },
+  {
+   "id": "T-247",
+   "title": "Free disk and restore the Tantra Tracker MongoDB copy",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "todo",
+   "why": "Integrator sweep 2026-10-07 (handoff INTEGRATOR notes)",
+   "spec": "Docker will not start (disk); tantra-mongo is down, so tracker_sync.py writes the Sheet only. Docker.raw is the big user.",
+   "done_when": [
+    "Container up and tracker_sync.py writes MongoDB and the Sheet"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Adi: Docker will not start (disk); tantra-mongo is down, so tracker_sync.py writes the Sheet only. Docker.raw is the big user.",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    }
+   ],
+   "order": 2470
+  },
+  {
+   "id": "T-248",
+   "title": "Delete branch int and clean the r5/B and r5/G worktrees",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "todo",
+   "why": "Integrator sweep 2026-10-07 (Integrator audit 2026-10-07)",
+   "spec": "int is superseded (all 84 files are in main); r5/B and r5/G hold scratch files.",
+   "done_when": [
+    "Branch deleted; worktrees clean or removed"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-07T23:25:35+0530",
+     "who": "claude",
+     "note": "Added by the Integrator's pending-work sweep."
+    }
+   ],
+   "order": 2480
   }
  ]
 }
