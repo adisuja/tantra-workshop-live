@@ -50,7 +50,7 @@
   }
  ],
  "state": "idle",
- "message": "Last sweep handled 1 task(s).",
+ "message": "Nothing waiting.",
  "task_id": null,
  "entries": [],
  "mode": null,
