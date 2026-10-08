@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T02:13:21+0530",
+   "task_id": "T-005",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "ok",
+   "summary": "I updated T-005's spec and done_when so the rotation also covers the Dodo webhook secret stored in the centre Worker, which belongs to the disabled staging endpoint. T-005 stays in queue until after launch, R-835b0027 is acked and the change is committed."
+  },
+  {
+   "ts": "2026-10-09T02:13:04+0530",
+   "task_id": "T-070",
+   "mode": "feedback",
+   "status": "hold",
+   "result": "ok",
+   "summary": "T-070 is still on hold: I logged that the centre's Dodo webhook from T-122 is now live and only needs Dodo's endpoint and its signing secret, but Bharath still has to say what api.usetantra.com does with these payments. I acked note R-e9193f50 and committed the change."
+  },
+  {
    "ts": "2026-10-09T02:12:43+0530",
    "task_id": "T-146",
    "mode": "feedback",
@@ -65,12 +81,10 @@
    "summary": "I built T-122 payment-to-seat fulfilment in the centre Worker and proved it locally (probe 28/28, commit `f7c7777`), but it isn't live, so the task is blocked on Adi approving a deploy, the Worker secret and a new Dodo webhook endpoint.\n\nWhat it does now:\n- **Paying makes the buyer a VIP attendee.**"
   }
  ],
- "state": "working",
- "message": "Acting on 1 note(s) for T-070: What the Tantra backend does when a workshop seat or VIP is paid",
- "task_id": "T-070",
- "entries": [
-  "R-e9193f50"
- ],
- "mode": "feedback",
- "started": "2026-10-09T02:12:47+0530"
+ "state": "idle",
+ "message": "Last sweep handled 4 task(s).",
+ "task_id": null,
+ "entries": [],
+ "mode": null,
+ "started": "2026-10-09T02:13:04+0530"
 }

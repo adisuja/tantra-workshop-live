@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T02:12:40+0530",
-  "version": 400,
+  "updated": "2026-10-09T02:13:18+0530",
+  "version": 402,
   "last_id": 331,
   "team": [
    {
@@ -458,10 +458,12 @@
    "due": "2026-10-01",
    "status": "queue",
    "why": "Both secrets entered a chat transcript on Sep 18. Until rotated, anyone with that transcript can mint checkouts or forge webhooks.",
-   "spec": "In the Dodo dashboard: regenerate the live API key and the webhook signing secret, then paste both into app/.env.local. I will restart the dev server and re-run the checkout probe.",
+   "spec": "In the Dodo dashboard: regenerate the live API key and the webhook signing secret, then paste both into app/.env.local. I will restart the dev server and re-run the checkout probe. The onboarding centre Worker (revops-centre) also stores a Dodo webhook secret for its /hooks/dodo route: update it there too, or /hooks/dodo will fail signature checks. The secret it holds today belongs to the disabled staging endpoint; when the live Dodo endpoint for /hooks/dodo is created it brings its own secret, so store that one in the Worker.",
    "done_when": [
     "New key + secret in .env.local",
-    "probe-workshop.mjs checkout + webhook checks pass"
+    "Centre Worker Dodo webhook secret updated to the current endpoint secret",
+    "probe-workshop.mjs checkout + webhook checks pass",
+    "Centre /hooks/dodo accepts a signed Dodo test event"
    ],
    "evidence": [],
    "blockers": [],
@@ -486,6 +488,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): checked, current. pass 2: still accurate; owner rule (2026-09-18) keeps Dodo key rotation as the very last task after launch."
+    },
+    {
+     "ts": "2026-10-09T02:13:18+0530",
+     "who": "claude",
+     "note": "Ripple from T-122: added the centre Worker's stored Dodo webhook secret to the rotation steps and done_when (the stored one is for the disabled staging endpoint). Still held until after launch per the owner's 2026-09-18 rule."
     }
    ],
    "order": 50,
@@ -2089,6 +2096,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: title no longer says Build Pass (retired; two funnels, memory two-funnel-structure.md). Still on owner hold; local path is T-122. Stripe attendee path (T-218) is done, so it is named as a payment source."
+    },
+    {
+     "ts": "2026-10-09T02:12:58+0530",
+     "who": "claude",
+     "note": "Ripple from T-122 recorded: the centre's /hooks/dodo is deployed and verified (version ec4b49cd, migration 0018 applied), so the centre can grant the seat or VIP access once a Dodo endpoint with its own new signing secret is added and stored in the centre (asked on T-122). Nothing else in this task changes: what api.usetantra.com does with pdt_0NnpA6EIxXvDvS1F03N8Z is still Bharath's question, and it stays on your hold."
     }
    ],
    "order": 420,
