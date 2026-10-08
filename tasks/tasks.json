@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T01:39:23+0530",
-  "version": 375,
-  "last_id": 325,
+  "updated": "2026-10-09T01:50:19+0530",
+  "version": 395,
+  "last_id": 331,
   "team": [
    {
     "name": "Adi",
@@ -10669,7 +10669,7 @@
    "due": "",
    "status": "review",
    "why": "Approving or commenting on the public board opened a GitHub issue that needed GitHub sign-in and a Submit click.",
-   "spec": "Every public-board action (note, approve, request changes, voice note, files, people, new task) saves in one click to the tantra-board Worker (cloud/board/worker.js). The owner's Mac pulls new notes every 15 s (tasks/pass.py import) and wakes the agent. Personal links (tasks/board_keys.py, #k=<key>) sign a teammate in once per browser; notes without a link wait for the owner's approval.",
+   "spec": "Every public-board action saves in one click to the tantra-board Worker, which also serves the board at its own address (https://tantra-board.growthcluborg.workers.dev/tasks.html; the old github.io address forwards there) so personal keys never sit where other github.io pages could read them. The owner's Mac pulls notes every 15 s. Personal links sign a teammate in once per browser; keyless notes arrive as 'Visitor: <name>', untrusted. Only key hashes are stored on the Mac. Security review 2026-10-09: keyless/GitHub name spoofing closed, LAN posts refused, 'trust all' refused, non-media uploads download, global keyless cap, all links rotated.",
    "done_when": [
     "No board action opens GitHub",
     "A note sent on the public board reaches the Mac inbox within seconds",
@@ -10678,7 +10678,7 @@
    "evidence": [
     {
      "label": "Public board",
-     "url": "https://adisuja.github.io/tantra-workshop-live/tasks.html?v=20261009f"
+     "url": "https://tantra-board.growthcluborg.workers.dev/tasks.html?v=20261009g"
     },
     {
      "label": "Probe",
@@ -10692,6 +10692,11 @@
      "ts": "2026-10-09T01:39:23+0530",
      "who": "claude",
      "note": "Built and verified 2026-10-09; waiting for Adi's sign-off."
+    },
+    {
+     "ts": "2026-10-09T01:50:19+0530",
+     "who": "claude",
+     "note": "Hardened after a security review (see spec); all personal links rotated."
     }
    ],
    "order": 3220
@@ -10718,7 +10723,7 @@
    "evidence": [
     {
      "label": "Public board",
-     "url": "https://adisuja.github.io/tantra-workshop-live/tasks.html?v=20261009f"
+     "url": "https://tantra-board.growthcluborg.workers.dev/tasks.html?v=20261009g"
     },
     {
      "label": "Probe",
@@ -10757,7 +10762,7 @@
    "evidence": [
     {
      "label": "Public board",
-     "url": "https://adisuja.github.io/tantra-workshop-live/tasks.html?v=20261009f"
+     "url": "https://tantra-board.growthcluborg.workers.dev/tasks.html?v=20261009g"
     },
     {
      "label": "Probe",
@@ -10788,7 +10793,7 @@
    "due": "",
    "status": "review",
    "why": "Notes left on Waiting-on-you tasks were acted on, but the board never showed it, tasks came back with no sign of a reply, and an owner yes to a deploy was asked again because the agent's rules banned deploys outright.",
-   "spec": "Claude is on lists the task being worked now, then every task with notes not yet handled in the order it will take them; those tasks leave Waiting on you and Ready for review meanwhile. Tasks that came back after a note carry a Claude replied to your note label and sort first. When the owner's own note says yes to the exact outward step a task was blocked on, the agent carries out that step (never key rotation, purchases, messages or deletions).",
+   "spec": "Claude is on lists the task being worked now, then every task with notes not yet handled, in order; those tasks leave Waiting on you and Ready for review meanwhile. Tasks that came back after a note carry a 'Claude replied to your note' label and sort first. The owner's yes unlocks the exact outward step a task was blocked on ONLY when the Worker confirms the note was sent with the owner's personal link in answer to the question the task is asking now; the approval carries a per-run code so text in notes cannot fake one. Never key rotation, purchases, messages or deletions.",
    "done_when": [
     "A note shows in Claude is on within seconds",
     "A task returned to the owner is labelled as a reply",
@@ -10797,7 +10802,7 @@
    "evidence": [
     {
      "label": "Public board",
-     "url": "https://adisuja.github.io/tantra-workshop-live/tasks.html?v=20261009f"
+     "url": "https://tantra-board.growthcluborg.workers.dev/tasks.html?v=20261009g"
     }
    ],
    "blockers": [],
@@ -10807,6 +10812,11 @@
      "ts": "2026-10-09T01:39:23+0530",
      "who": "claude",
      "note": "Built and verified 2026-10-09; waiting for Adi's sign-off."
+    },
+    {
+     "ts": "2026-10-09T01:50:19+0530",
+     "who": "claude",
+     "note": "Owner approval made unforgeable after a security review: verified owner link + same question + per-run code."
     }
    ],
    "order": 3250
