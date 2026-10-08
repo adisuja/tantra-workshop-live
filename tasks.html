@@ -55,6 +55,13 @@ header.top{display:flex;align-items:center;justify-content:space-between;gap:14p
 .nowitem b{display:block;font-size:13.5px;font-weight:650;line-height:1.3}
 .nowitem>span:not(.people){display:block;font-size:12px;color:var(--ink-2);margin-top:2px;line-height:1.4}
 .nowitem .ask{color:var(--pink)}
+.nowitem .on{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:650;letter-spacing:.02em;color:var(--accent-ink);margin-bottom:3px}
+.nowitem .on.q{color:var(--ink-3)}
+.nowitem .on i{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:lcpulse 1.4s ease-in-out infinite}
+.nowitem .on.q i{background:var(--line-2);animation:none}
+@keyframes lcpulse{50%{opacity:.35}}
+@media(prefers-reduced-motion:reduce){.nowitem .on i{animation:none}}
+.nowitem .fu{display:inline-block;font-size:11px;font-weight:650;color:var(--accent-ink);background:var(--accent-2);border-radius:999px;padding:1px 8px;margin-bottom:3px}
 .nowitem .people{margin:4px 0 2px}
 .nowitem:hover b{color:var(--accent-ink)}
 .empty{font-size:12.5px;color:var(--ink-3)}
@@ -302,7 +309,7 @@ footer{margin-top:28px;font-size:11.5px;color:var(--ink-3)}
 <div class="agent" id="agent"><span class="ad"></span><b>Claude agent</b><span class="am" id="agent-msg">Checking…</span><button class="btn mini" id="agent-tog" type="button" hidden>Pause</button><label class="who">Your name <input id="who" type="text" placeholder="shown on your notes" maxlength="40" autocomplete="name"></label></div>
 
 <section class="now">
-  <div class="card nextbig"><h2>Claude is on</h2><div id="now-next"></div></div>
+  <div class="card nextbig"><h2>Claude is on <span class="n" id="n-on">0</span></h2><div id="now-next"></div></div>
   <div class="card"><h2>Waiting on you <span class="n" id="n-you">0</span></h2><div id="now-you"></div></div>
   <div class="card"><h2>Ready for review <span class="n" id="n-rev">0</span></h2><div id="now-rev"></div></div>
 </section>
@@ -399,6 +406,11 @@ function fill(){
   paintNewPeople();paintTeam();
 }
 function fbFor(id){return INBOX.filter(f=>f.task_id===id)}
+const tms=ts=>{const d=Date.parse(String(ts||"").replace(/([+-]\d\d)(\d\d)$/,"$1:$2"));return isNaN(d)?0:d};
+const isProbeNote=f=>["probe","Voice QA","People QA"].includes(f.who)||String(f.text||"").startsWith("probe-");
+/* 1 when Claude logged on the task after the latest note a person left on it (the task came back to you with a reply) */
+function followUp(t){const notes=fbFor(t.id).filter(f=>f.processed&&f.source!=="ripple"&&f.who!=="Claude"&&!isProbeNote(f));if(!notes.length)return 0;
+  const last=Math.max(...notes.map(f=>tms(f.ts))),lg=(t.log||[]).filter(l=>!l.who||l.who==="claude").map(l=>tms(l.ts));return lg.length&&Math.max(...lg)>last?1:0}
 function unread(id){return fbFor(id).filter(f=>!f.processed).length}
 function isLate(t){return t.due&&t.status!=="done"&&t.due<new Date().toISOString().slice(0,10)}
 function filtered(){
@@ -417,15 +429,29 @@ function render(){
   $("#s-blocked").textContent=T.filter(t=>t.status==="blocked"&&t.needs_from_owner).length;
   $("#s-done").textContent=c("done")+"/"+T.length;
   $("#prog").style.width=Math.round(100*c("done")/Math.max(1,T.length))+"%";
+  /* "Claude is on" = what the agent is working right now (either lane), then every task with notes it has not
+     acted on yet in the order it will take them, then the next queue task. Those tasks leave "Waiting on you" and
+     "Ready for review" until the agent is done with them, so a note never looks ignored. */
   const nx=T.find(t=>t.status==="next")||T.find(t=>t.status==="doing");
+  const live=[];const seen=new Set();const put=(t,label,q)=>{if(t&&!seen.has(t.id)){seen.add(t.id);live.push({t,label,q})}};
+  const byId=id=>T.find(t=>t.id===id);
+  if(AGENT.state==="working")put(byId(AGENT.task_id),AGENT.mode==="queue"?"Working now · continuing it":"Working now · acting on your note");
+  if(QAGENT.state==="working")put(byId(QAGENT.task_id),"Working now · continuing it");
+  const waitingNotes=INBOX.filter(f=>!f.processed&&f.trusted!==false&&!isProbeNote(f)&&f.task_id&&byId(f.task_id)).sort((a,b)=>tms(a.ts)-tms(b.ts));
+  for(const f of waitingNotes)put(byId(f.task_id),f.action==="ripple"?"Queued · updating for a related change":"Queued · your note is next in line",true);
+  if(nx)put(nx,"Next in the queue",true);
+  const onIds=new Set(live.map(x=>x.t.id));
+  $("#n-on").textContent=live.length;
   $("#s-next").textContent=nx?nx.id:"—";
-  $("#now-next").innerHTML=nx?`<button class="nowitem" onclick="jump('${nx.id}')"><b>${esc(nx.title)}</b>${peopleLine(nx)}<span>${esc(nx.why)}</span></button>`:'<div class="empty">Queue is empty.</div>';
-  const you=T.filter(t=>t.status==="blocked"&&t.needs_from_owner).sort((a,b)=>a.priority.localeCompare(b.priority)).slice(0,8);
-  $("#n-you").textContent=T.filter(t=>t.status==="blocked"&&t.needs_from_owner).length;
-  $("#now-you").innerHTML=you.length?you.map(t=>`<button class="nowitem" onclick="jump('${t.id}')"><b>${esc(t.title)}</b>${peopleLine(t)}<span class="ask">${esc(t.needs_from_owner)}</span></button>`).join(""):'<div class="empty">Nothing blocked on you.</div>';
-  const rev=T.filter(t=>t.status==="review").sort((a,b)=>a.priority.localeCompare(b.priority)).slice(0,8);
-  $("#n-rev").textContent=c("review");
-  $("#now-rev").innerHTML=rev.length?rev.map(t=>`<button class="nowitem" onclick="jump('${t.id}')"><b>${esc(t.title)}</b>${peopleLine(t)}<span>${esc((t.evidence[0]||{}).label||"")}${t.evidence[0]?" · ":""}${esc(t.needs_from_owner||"Approve or request changes")}</span></button>`).join(""):'<div class="empty">Nothing waiting for review.</div>';
+  $("#now-next").innerHTML=live.length?live.slice(0,6).map(({t,label,q})=>`<button class="nowitem" onclick="jump('${t.id}')"><span class="on${q?" q":""}"><i></i>${label}</span><b>${esc(t.title)}</b>${peopleLine(t)}${t===nx&&!q?`<span>${esc(t.why)}</span>`:""}</button>`).join("")+(live.length>6?`<div class="empty">+${live.length-6} more queued</div>`:""):'<div class="empty">Nothing in progress. Notes you send are picked up within seconds.</div>';
+  const youAll=T.filter(t=>t.status==="blocked"&&t.needs_from_owner&&!onIds.has(t.id));
+  const you=youAll.sort((a,b)=>followUp(b)-followUp(a)||a.priority.localeCompare(b.priority)).slice(0,8);
+  $("#n-you").textContent=youAll.length;$("#s-blocked").textContent=youAll.length;
+  $("#now-you").innerHTML=you.length?you.map(t=>`<button class="nowitem" onclick="jump('${t.id}')">${followUp(t)?`<span class="fu">Claude replied to your note</span>`:""}<b>${esc(t.title)}</b>${peopleLine(t)}<span class="ask">${esc(t.needs_from_owner)}</span></button>`).join(""):'<div class="empty">Nothing blocked on you.</div>';
+  const revAll=T.filter(t=>t.status==="review"&&!onIds.has(t.id));
+  const rev=revAll.sort((a,b)=>followUp(b)-followUp(a)||a.priority.localeCompare(b.priority)).slice(0,8);
+  $("#n-rev").textContent=revAll.length;
+  $("#now-rev").innerHTML=rev.length?rev.map(t=>`<button class="nowitem" onclick="jump('${t.id}')">${followUp(t)?`<span class="fu">Claude replied to your note</span>`:""}<b>${esc(t.title)}</b>${peopleLine(t)}<span>${esc((t.evidence[0]||{}).label||"")}${t.evidence[0]?" · ":""}${esc(t.needs_from_owner||"Approve or request changes")}</span></button>`).join(""):'<div class="empty">Nothing waiting for review.</div>';
   const list=filtered();const b=$("#board");
   {const d=document.querySelector(".task.open .det");if(d)DSCROLL=d.scrollTop}
   const typed={};document.querySelectorAll('textarea[id^="fb-"]').forEach(t=>{if(t.value)typed[t.id]=t.value});
@@ -688,7 +714,7 @@ function saveWho(key){const a=WHOASK[key],inp=document.getElementById("whoin-"+k
 function cancelWho(key){delete WHOASK[key];paintWho(key);const out=document.getElementById(key==="nt"?"nt-sent":"sent-"+key);if(out)out.textContent=""}
 
 /* ---- note status in the thread: queued → Claude working → handled ---- */
-let AGENT={};
+let AGENT={},QAGENT={};
 function noteState(m){
   if(m.pending&&m.trusted!==false)return `<span class="st q">saved · reaching Claude within seconds</span>`;
   if(m.trusted===false&&m.unread)return `<span class="st q">sent without a team link · waiting for Adi's approval</span>${STATIC&&!ME.owner?"":`<button class="btn mini" style="margin-left:6px" onclick="trustNote('${esc(m.id)}')">Let Claude act on this</button>`}`;
@@ -855,7 +881,7 @@ let agentSig="";
 async function pollAgent(){
   const get=async u=>{try{const r=await fetch(u+"?v="+Date.now());return r.ok?await r.json():{}}catch(e){return{}}};
   const [st,qs,cf,sync]=await Promise.all([get("tasks/runner.json"),get("tasks/runner-queue.json"),get("tasks/agent.json"),get(STATIC?"tasks/sync.json":"tasks/.board-sync.json")]);
-  AGENT={...st,entries:[...(st.entries||[])]};
+  AGENT={...st,entries:[...(st.entries||[])]};QAGENT=qs||{};
   const bad=["paused","offline"].includes(st.state)?st.state:null;
   const s=cf.enabled===false?"disabled":bad||(st.state==="working"||qs.state==="working"?"working":"idle");
   $("#agent").className="agent "+s;
@@ -873,7 +899,7 @@ async function pollAgent(){
   else if(sync.ts)parts.push(sync.ok===false?`Public board: NOT published (${sync.reason||"error"})`:`Public board: ${sync.published?"published":"in sync"} ${hhmm(sync.ts)}${(sync.held||[]).length?` · held for privacy: ${sync.held.map(h=>h.task||h.id).join(", ")} (reword to publish)`:""}`);
   $("#agent-msg").textContent=parts.join(" · ");
   const tog=$("#agent-tog");tog.hidden=STATIC&&!ME.owner;tog.textContent=cf.enabled===false?"Resume":"Pause";
-  const sig=[st.state,st.task_id,st.updated,qs.state,qs.task_id,qs.updated].join("|");if(agentSig&&sig!==agentSig)load();agentSig=sig;
+  const sig=[st.state,st.task_id,st.updated,qs.state,qs.task_id,qs.updated].join("|");if(agentSig&&sig!==agentSig)load();else if(!agentSig)render();agentSig=sig;
 }
 $("#agent-tog").onclick=async()=>{const on=$("#agent-tog").textContent==="Resume";try{STATIC?await post({action:"agent",enabled:on}):await api("/api/agent",{enabled:on})}catch(e){alert(e.message)}pollAgent()};
 document.querySelectorAll("#view button").forEach(b=>b.onclick=()=>{view=b.dataset.v;document.querySelectorAll("#view button").forEach(x=>x.classList.toggle("on",x===b));render()});
