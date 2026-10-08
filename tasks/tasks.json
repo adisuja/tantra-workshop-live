@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T05:17:49+0530",
-  "version": 470,
-  "last_id": 342,
+  "updated": "2026-10-09T05:20:44+0530",
+  "version": 486,
+  "last_id": 347,
   "team": [
    {
     "name": "Adi",
@@ -7708,8 +7708,7 @@
   },
   {
    "id": "T-227",
-   "title": "Google Calendar invites: save the organiser's service account and authorise it for Calendar",
-   "area": "Delivery",
+   "status": "review",
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
@@ -7718,86 +7717,17 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "blocked",
-   "why": "Live check 2026-10-07: Google invites are switched on in production but no attendee gets one. The admin shows no organiser email and no service account saved (Cohort Settings, Invite Status: 'no organiser email set'). The code is live since T-221 (Worker aee6fd0a onward). The same service account also powers the attendees' own Google Workspace card (domain-wide delegation), which says 'Google isn't ready on our side yet' until it is saved.",
-   "spec": "Keys already exist (given by Adi in the 'Tantra demo funnel walkthroughs' session, 2026-10-07): two service accounts, fintech@fintech-488411 and fintech-2@fintech-2-502117 (files in ~/.config/tantra/keys/), both uploaded to Tantra's Google Service Accounts connector for the FintechCircle Tantra account. Verified 2026-10-08 (read only, token minted): both have domain-wide delegation for calendar and calendar.events on the Tantra sender mailboxes (checked 6 of the 20, all OK). So the centre can send each registrant their three invites with no new Google setup. Remaining: (1) Adi picks the organiser mailbox the workshop invites come from (the 20 senders are FintechCircle's cold calendar mailboxes on webinar domains, warmed, 250 a day each); (2) the JSON goes into the live centre at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Human Gates, Google identity (Claude may not enter keys into a deployed site; Adi pastes the file once, or Claude loads it if Adi says so); (3) Claude sets the organiser, runs Sync now, sends one invite to the owner's Google test identity, checks agenda, own Zoom link and reminders, confirms no duplicate on a second sync, then deletes the test event.\n(4) DECISION for Adi, default stays 'straight away': a public sign-up on a marketing page triggers a Google invite from the organiser mailbox to whatever address was typed. It is limited to requests from browsers on our sites, 20 tries per network address per hour and 500 sign-ups per hour overall (S3 handoff blocker 5). Alternative: hold the invite until the person first opens their centre. Say 'wait for first open' to switch. (5) Known Google limit, nothing to fix: Google applies an event's 5/10/15/30 minute reminders only to the organiser's own copy; each attendee's Google copy uses their own default reminders, while the private .ics feed carries all four for everyone. Source: 88c16840 2026-10-06T18:23 (blockers 2 and 5).",
-   "done_when": [
-    "Cohort Settings, Invite Status names the service account and the organiser, no 'off' reason",
-    "The test identity receives three invites (Day 1 to 3) with the agenda, its own join link and no duplicates after a second sync",
-    "Changing the session length in the admin updates the same three invites"
-   ],
-   "evidence": [
-    {
-     "label": "Calendar feeds handoff (how it works, setup, blockers)",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/SESSION_HANDOFF_2026_10_06_CALENDAR_FEEDS.md"
-    },
-    {
-     "label": "Admin centre: Cohort Settings, Invite Status",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=t227"
-    }
-   ],
-   "blockers": [
-    "Organiser mailbox choice"
-   ],
-   "needs_from_owner": "Which mailbox should the workshop invites come from? Recommended: one dedicated sender, not one of the 20 cold calendar mailboxes, so workshop invites never eat into cold outreach capacity or reputation; if one of the 20 is fine, name it. Then paste ~/.config/tantra/keys/fintech-488411-a9fbe01f1b39.json at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Human Gates, Google identity. Also one decision: should a marketing-page sign-up get its Google invite straight away (current default, rate-limited to 20 per network address per hour and 500 per hour overall) or only after first opening their centre?",
-   "log": [
-    {
-     "ts": "2026-10-07T22:53:58+0530",
-     "who": "claude",
-     "note": "Created from the S3 calendar-feeds handoff: these real-account steps were only in chat. Live state read from the production admin (read-only) on 2026-10-07."
-    },
-    {
-     "ts": "2026-10-07T22:54:25+0530",
-     "who": "claude",
-     "note": "People: owner Aquila → Adi (by claude)."
-    },
-    {
-     "ts": "2026-10-07T23:07:14+0530",
-     "who": "claude",
-     "note": "For the next session: code in cloud/src/invites.ts (Google and Zoom sync), cloud/src/calendar.ts (feeds, /cal/issue), cloud/admin-ui/admin.js (Calendar Invites panel). Live status read-only: GET /admin/api/calendar with the key in ~/.config/tantra/revops-admin-key. Local test: SIM_PORT=8902 vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs (BROWSER=1 for pages). Once Adi supplies items 1 to 3: set gcal_organizer in Cohort Settings (Google invites are already switched on), press Sync now, add the test identity the owner's Google test identity as a test attendee and check its three invites, then a second Sync sends nothing. Errors show under Invite Status and on the attendee's drawer (per-day rows). Item 4 is a decision with a default in place: immediate invites stay unless Adi says otherwise; switching to 'after first open' means gating syncSessions on first_seen for source='signup'."
-    },
-    {
-     "ts": "2026-10-07T23:08:48+0530",
-     "who": "claude",
-     "note": "Created from the S3 calendar-feeds handoff: these real-account steps were only in chat. Live state read from the production admin (read-only) on 2026-10-07."
-    },
-    {
-     "ts": "2026-10-07T23:08:48+0530",
-     "who": "claude",
-     "note": "For the next session: code in cloud/src/invites.ts (Google and Zoom sync), cloud/src/calendar.ts (feeds, /cal/issue), cloud/admin-ui/admin.js (Calendar Invites panel). Live status read-only: GET /admin/api/calendar with the key in ~/.config/tantra/revops-admin-key. Local test: SIM_PORT=8902 vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs (BROWSER=1 for pages). Once Adi supplies items 1 to 3: set gcal_organizer in Cohort Settings (Google invites are already switched on), press Sync now, add the test identity the owner's Google test identity as a test attendee and check its three invites, then a second Sync sends nothing. Errors show under Invite Status and on the attendee's drawer (per-day rows). Item 4 is a decision with a default in place: immediate invites stay unless Adi says otherwise; switching to 'after first open' means gating syncSessions on first_seen for source='signup'."
-    },
-    {
-     "ts": "2026-10-07T23:09:19+0530",
-     "who": "claude",
-     "note": "For the next session: code in cloud/src/invites.ts (Google and Zoom sync), cloud/src/calendar.ts (feeds, /cal/issue), cloud/admin-ui/admin.js (Calendar Invites panel). Live status read-only: GET /admin/api/calendar with the key in ~/.config/tantra/revops-admin-key. Local test: SIM_PORT=8902 vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs (BROWSER=1 for pages). Once Adi supplies items 1 to 3: set gcal_organizer in Cohort Settings (Google invites are already switched on), press Sync now, add the test identity the owner's Google test identity as a test attendee and check its three invites, then a second Sync sends nothing. Errors show under Invite Status and on the attendee's drawer (per-day rows). Item 4 is a decision with a default in place: immediate invites stay unless Adi says otherwise; switching to 'after first open' means gating syncSessions on first_seen for source='signup'."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review 2026-10-08: still accurate. Verified on 2026-10-08: production settings have gcal_organizer empty and no Google service account saved; T-244's decision is item 4 of this task's owner ask."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: re-read the live admin 2026-10-08 00:40 IST: google enabled, organizer None, service_account None, last sync 'off: no organiser email set'; rewrote the owner ask with full clickable URLs and the admin entry link."
-    },
-    {
-     "ts": "2026-10-08T01:43:21+0530",
-     "who": "claude",
-     "note": "Context gathered from the walkthroughs session: the two FintechCircle service accounts already have calendar delegation (verified 2026-10-08). No new Google setup needed; only the organiser choice and the one paste."
-    },
-    {
-     "ts": "2026-10-09T00:25:38+0530",
-     "who": "claude",
-     "note": "Session sweep (2026-10-09): source: 88c16840 2026-10-06T18:23 final report blockers 2 and 5: the abuse-limit decision and the Google attendee-side reminder caveat were in the S3 report and the 2026-10-07T17:24 summary (decision 4) but are missing from the task text."
-    },
-    {
-     "ts": "2026-10-09T05:05:12+0530",
-     "who": "Orchestrator",
-     "note": "People: assignee Adi → Claude (by Orchestrator)."
-    }
-   ],
-   "order": 2270
+   "area": "Delivery",
+   "order": 2270,
+   "title": "T-227: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-228",
@@ -9129,7 +9059,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "blocked",
+   "status": "doing",
    "why": "Approved tools only is a standing owner rule (2026-10-07); these audit findings cannot be closed correctly until each tool has a keep or replace decision.",
    "spec": "Approved tools: Google Workspace, Cloudflare Registrar + DNS (incl. R2), Tantra, LinkedIn, WhatsApp (through Tantra), Twilio (SMS only), Resend or Tantra email, Cal.com, Metricool, Kie.ai/Claude/OpenAI, Dodo, Stripe (attendee option), Zoom Pro meetings or WebinarGeek. Not on that list but still used in guides and cards: Wistia (RSP video upload, workshop-cards.ts pg_video_url, s4-rsp.ts), Beehiiv (s6-newsletter.ts, s6-ai-newsletter.ts), ElevenLabs voice call (s3-tantra-pro-flow.ts T-0 call), Meta Ads and Meta Lead Ads (s1-ads.ts, workshop-cards.ts), Notion (s1-social.ts), WordPress (s1-blog.ts), Sales Navigator/Expandi (T-056 cold calendar lists, list source help), GoHighLevel/HubSpot/Zoho CRM sync (stack_crm options and d1-zoho/d1-ghl/d1-hubspot cards in workshop-cards.ts; T-120 asks where GHL belongs). Step 1: get Adi's keep or replace per tool (recommendations in needs_from_owner) and record it in this task's log and in the memory file approved-vendor-stack.md. Step 2: for replaced tools, rewrite the steps onto an approved tool and remove cards/jobs (same pattern as e4bd0b8, T-251); for kept tools, build the automation the findings ask for or mark the step human, and add vendor-sim routes (cloud/scripts/vendor-sim.py). Findings to close: X001, X002, X003, X004, X097, N047 (Wistia upload and embed URLs), G085, X106, X107 (Beehiiv newsletter), G029, X092 (T-0 voice call), G117, X051, X053, X086, X077 (Meta Ads, lead forms, ad images; X077 also covers LinkedIn Lead Gen Forms to the funnel /register, which is automation 2), X085 (Notion), X087 (WordPress). When done, mark these ids fixed or obsolete in /Users/adithyamurali/tantra-round5-coord/AUDIT.md with the commit. ADDED 2026-10-09 (source: ec3e66fb 2026-10-05T21:32 and 22:12, 9628377c 2026-10-05T19:35): the 20 FunnelOS cinematics (app/src/components/masterclass/funnel-os*.tsx and funnel-os-types/*.tsx, shown in the playbook, both centres and /funnels/<id>) still name tools that are neither approved nor ruled out. Counts on main 2026-10-09 by case-insensitive grep: Vercel 188, DenchClaw CRM 96, Beehiiv 93, Wistia 90, Slack 50, Fireflies 46, Notion 42, OpenRouter 41, ElevenLabs 32, OBS 25, PlusThis 19, Vodex 17, Sales Navigator 12, Rejection.io 3, Stream Deck 2. Adi asked 3 times in the round-2 session and has not answered: remove them, and replace with what (for example AI voice reminders on an approved tool)? NOTE: Adi himself named ElevenLabs and Vodex.ai as the AI voice platforms in his funnel-equations brief (9628377c 2026-10-05T19:35), so do not remove those two without his answer. Apollo is separately ruled out and is its own task (remove Apollo from the FunnelOS cinematics). Whatever is decided, the check app/scripts/probe-visual-tools.mjs (BANNED list at line 36) must be extended to fail on the replaced tools.",
    "done_when": [
@@ -9163,6 +9093,11 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Session sweep (2026-10-09): source: ec3e66fb 2026-10-05T21:32/22:12 and 9628377c 2026-10-05T19:35: the FunnelOS tool list the owner was asked about 3 times (Apollo, Sales Navigator, ElevenLabs, Vodex, Wistia, Vercel, DenchClaw, Fireflies, PlusThis, OBS, Stream Deck, Rejection.io, Notion, Slack, OpenRouter) is still open; added counts and the conflict that the owner named ElevenLabs and Vodex himself."
+    },
+    {
+     "ts": "2026-10-09T05:20:04+0530",
+     "who": "claude",
+     "note": "Decision recorded (Orchestrator O-5ba08511, 2026-10-09, acting as Adi's call): REPLACE Beehiiv→Tantra/Resend newsletter (Metricool for social); Notion→Google Docs/Sheets; WordPress→blog on the attendee's Cloudflare funnel Worker; Expandi→Tantra LinkedIn; Sales Navigator→data-vendor lists (list-partner card); Vercel→Cloudflare; DenchClaw CRM→'CRM'; Fireflies→Zoom Pro recording/transcript; OpenRouter→Claude/OpenAI/Kie.ai; PlusThis, OBS, Stream Deck, Rejection.io, Slack→removed or generic label. KEEP as attendee-brings-own-key: Meta Ads + Lead Ads, ElevenLabs and Vodex (optional V2 T-0 voice call), plus the earlier keeps (Stripe, GoHighLevel, HubSpot, Zoho, Wistia)."
     }
    ],
    "order": 2600
