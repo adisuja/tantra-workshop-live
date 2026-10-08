@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T05:06:54+0530",
-  "version": 444,
+  "updated": "2026-10-09T05:10:18+0530",
+  "version": 446,
   "last_id": 340,
   "team": [
    {
@@ -1322,13 +1322,26 @@
     "Submit to delivery time recorded per persona",
     "Test rows removed or tagged test in the Tantra Tracker afterwards"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Harness",
+     "url": "workshop-plan/ops/dryrun_day1.py"
+    },
+    {
+     "label": "Runbook dry-run section + results table",
+     "url": "workshop-plan/ops/runbook.md"
+    },
+    {
+     "label": "Sim run results",
+     "url": "workshop-plan/ops/dryrun/20261009-050950/results.json"
+    }
+   ],
    "blockers": [
     "T-031",
     "T-032",
     "T-033"
    ],
-   "needs_from_owner": "",
+   "needs_from_owner": "Nothing from Adi: waits on T-031, T-032 and T-033 being built (they write ops.db day_outputs, contract in workshop-plan/ops/runbook.md); then run python3 workshop-plan/ops/dryrun_day1.py --require-real and record the timings.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -1364,6 +1377,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: blockers now name the whole chain (T-031, T-032, T-033); dates follow the weekly cohort."
+    },
+    {
+     "ts": "2026-10-09T05:10:18+0530",
+     "who": "claude",
+     "note": "Built the one-command dry run: workshop-plan/ops/dryrun_day1.py adds the three personas (SendFlow, Apex Growth, Sarah Chen) as 'Adi test' test attendees on GrowthCluborg+sendflow/+apex/+sarah@gmail.com, posts their Day 1 answers to the local centre's POST /api/survey, runs each missing stage on a stand-in (HTML, Playwright PDF, Tantra campaign on the vendor simulator with email + WhatsApp steps carrying the link), records seconds per persona in ops/runbook.md and then tags + revokes the attendees through the admin API. Verified: full run passed (0.4 to 0.6 s, all three stages sim), survey_save events on the centre, 3 valid PDFs, attendees test=1 revoked=1, --require-real correctly refuses today. Committed d8153bf, NOT pushed: main is 31 commits ahead with other lanes' work, wider than the approved push. Stays blocked only on the real run, which needs T-031/T-032/T-033 to write the ops.db day_outputs contract in runbook.md, then: dryrun_day1.py --require-real."
     }
    ],
    "order": 240,
@@ -2414,10 +2432,15 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: the Canva logo was applied on 2026-09-24 (761f715, bbf77ab) and has run on every surface, including the live 7 to 9 Oct cohort; spec rewritten from 'Canva link is unreachable' to the current state. workshop-plan/brand marks are 889x600 and 714x600 PNGs; larger masters sit in app/public/assets (up to 1986 px per the earlier review)."
+    },
+    {
+     "ts": "2026-10-09T05:10:00+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Adi → Claude (by Orchestrator)."
     }
    ],
    "order": 490,
-   "assignee": "Adi",
+   "assignee": "Claude",
    "reviewers": [
     "Bhaskar"
    ]
