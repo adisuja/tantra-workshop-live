@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T01:13:01+0530",
-  "version": 328,
+  "updated": "2026-10-09T01:15:23+0530",
+  "version": 329,
   "last_id": 307,
   "team": [
    {
@@ -5054,7 +5054,7 @@
    "owner": "Amal",
    "priority": "P0",
    "due": "2026-09-26",
-   "status": "blocked",
+   "status": "done",
    "why": "Two owner instructions conflict: the anonymisation rule (workshop-plan/coord/LANES.md) bans client-attributable figures in public, but the library rebuild kept every figure verbatim. Several are searchable and could identify the client.",
    "spec": "The GitHub mirror export holds the verbatim library (04f0e0a), but the live centre build keeps it (cloud/scripts/build.sh line 23). Verified 2026-10-08: https://revops-centre.growthcluborg.workers.dev/onboarding/templates/ answers 200 to an anonymous visitor and its JS bundle contains all 16 large dollar figures from the private workshop-plan/library/clients/_raw_v2/CHECKPOINT1_NUMBERS.md. So the figures are already public on the live centre whatever the mirror does. After the answer Claude applies it in T-111 (library source, centre build, mirror hold) and updates LANES.md. The leaked mirror history is T-145.",
    "done_when": [
@@ -5062,11 +5062,24 @@
     "LANES.md anonymisation rule matches the answer",
     "Live centre and mirror both comply (probe-anonymity on the centre bundle)"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "LANES.md rule",
+     "url": "workshop-plan/coord/LANES.md"
+    },
+    {
+     "label": "Mirror export (hold lifted)",
+     "url": "app/scripts/export-static.sh"
+    },
+    {
+     "label": "Live centre templates",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/templates/?v=t141"
+    }
+   ],
    "blockers": [
     "Owner decision; the library rebuild is not published until then"
    ],
-   "needs_from_owner": "Choose: (A) keep every figure verbatim and relax the rule to 'names, people, domains, links only'; (B) strip or generalise the searchable figures (money amounts, percentages, prices, member and customer counts) and keep the rest; (C) mark keep or strip per figure in the private CHECKPOINT1_NUMBERS.md. Recommended: (B), it matches the standing rule and also fixes the live centre, which serves the figures to anyone today.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-25",
@@ -5092,6 +5105,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: added the 2026-10-08 finding that the live centre already serves the verbatim figures to anonymous visitors, and a recommended answer."
+    },
+    {
+     "ts": "2026-10-09T01:15:23+0530",
+     "who": "claude",
+     "note": "Applied Adi's answer (A) in f7d4090: the LANES.md rule now bans only client names, people, domains and links, and the mirror export no longer holds the verbatim library back. The live centre bundle has 0 of 1,332 private denylist names. Nothing was republished; the next approved mirror publish ships the library with its figures."
     }
    ],
    "order": 1392,
