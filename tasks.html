@@ -481,6 +481,7 @@ function render(){
   const byId=id=>T.find(t=>t.id===id);
   if(AGENT.state==="working")put(byId(AGENT.task_id),AGENT.mode==="queue"?"Working now · continuing it":"Working now · acting on your note");
   if(QAGENT.state==="working")put(byId(QAGENT.task_id),"Working now · continuing it");
+  for(const h of HELPERS_ST)put(byId(h.task_id),"Working now · acting on the next note");
   const waitingNotes=INBOX.filter(f=>!f.processed&&f.trusted!==false&&!isProbeNote(f)&&f.task_id&&byId(f.task_id)).sort((a,b)=>tms(a.ts)-tms(b.ts));
   for(const f of waitingNotes)put(byId(f.task_id),f.action==="ripple"?"Queued · updating for a related change":f.source==="orchestrator"?"Queued · the Orchestrator decided the next step":"Queued · your note is next in line",true);
   // a blocked task is the Orchestrator's to unblock unless it decided only Adi can give the input (owner, 2026-10-09)
@@ -816,7 +817,7 @@ function saveWho(key){const a=WHOASK[key],inp=document.getElementById("whoin-"+k
 function cancelWho(key){delete WHOASK[key];paintWho(key);const out=document.getElementById(key==="nt"?"nt-sent":"sent-"+key);if(out)out.textContent=""}
 
 /* ---- note status in the thread: queued → Claude working → handled ---- */
-let AGENT={},QAGENT={},ORCH={};
+let AGENT={},QAGENT={},ORCH={},HELPERS_ST=[];
 function noteState(m){
   if(m.pending&&m.trusted!==false)return `<span class="st q">saved · reaching Claude within seconds</span>`;
   if(m.trusted===false&&m.unread)return `<span class="st q">sent without a team link · waiting for Adi's approval</span>${STATIC&&!ME.owner?"":`<button class="btn mini" style="margin-left:6px" onclick="trustNote('${esc(m.id)}')">Let Claude act on this</button>`}`;
@@ -983,6 +984,7 @@ let agentSig="";
 async function pollAgent(){
   const get=async u=>{try{const r=await fetch(u+"?v="+Date.now());return r.ok?await r.json():{}}catch(e){return{}}};
   const [st,qs,cf,sync,orch]=await Promise.all([get("tasks/runner.json"),get("tasks/runner-queue.json"),get("tasks/agent.json"),get(STATIC?"tasks/sync.json":"tasks/.board-sync.json"),get("tasks/orchestrator-board.json")]);
+  const helpers=await Promise.all(["tasks/runner-2.json","tasks/runner-3.json"].map(get));HELPERS_ST=helpers.filter(h=>h&&h.state==="working");
   const orchSig=JSON.stringify([orch.last_sweep,orch.running,orch.counts]);const orchChanged=orchSig!==JSON.stringify([ORCH.last_sweep,ORCH.running,ORCH.counts]);ORCH=orch||{};
   AGENT={...st,entries:[...(st.entries||[])]};QAGENT=qs||{};
   const bad=["paused","offline"].includes(st.state)?st.state:null;
@@ -1004,7 +1006,7 @@ async function pollAgent(){
   else if(sync.ts)parts.push(sync.ok===false?`Public board: NOT published (${sync.reason||"error"})`:`Public board: ${sync.published?"published":"in sync"} ${hhmm(sync.ts)}${(sync.held||[]).length?` · held for privacy: ${sync.held.map(h=>h.task||h.id).join(", ")} (reword to publish)`:""}`);
   $("#agent-msg").textContent=parts.join(" · ");
   const tog=$("#agent-tog");tog.hidden=STATIC&&!ME.owner;tog.textContent=cf.enabled===false?"Resume":"Pause";
-  const sig=[st.state,st.task_id,st.updated,qs.state,qs.task_id,qs.updated].join("|");if(agentSig&&sig!==agentSig)load();else if(!agentSig||orchChanged)render();agentSig=sig;
+  const sig=[st.state,st.task_id,st.updated,qs.state,qs.task_id,qs.updated,...HELPERS_ST.map(h=>h.task_id)].join("|");if(agentSig&&sig!==agentSig)load();else if(!agentSig||orchChanged)render();agentSig=sig;
 }
 $("#agent-tog").onclick=async()=>{const on=$("#agent-tog").textContent==="Resume";try{STATIC?await post({action:"agent",enabled:on}):await api("/api/agent",{enabled:on})}catch(e){alert(e.message)}pollAgent()};
 document.querySelectorAll("#view button").forEach(b=>b.onclick=()=>{view=b.dataset.v;document.querySelectorAll("#view button").forEach(x=>x.classList.toggle("on",x===b));render()});

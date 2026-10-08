@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T05:12:22+0530",
-  "version": 455,
+  "updated": "2026-10-09T05:14:30+0530",
+  "version": 457,
   "last_id": 341,
   "team": [
    {
@@ -1845,10 +1845,15 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: T-138 was archived (the guide no longer states an import limit); Tantra host check repeated 2026-10-08 (calendar.usetantra.com still times out); Sales Navigator is outside the approved list, so its use waits on T-260."
+    },
+    {
+     "ts": "2026-10-09T05:14:30+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Bhaskar → Claude (by Orchestrator)."
     }
    ],
    "order": 350,
-   "assignee": "Bhaskar",
+   "assignee": "Claude",
    "reviewers": [
     "Bhaskar"
    ]
@@ -1988,10 +1993,15 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: rewritten onto the approved stack (Tantra omni-channel campaigns, Claude/OpenAI for first lines, data-vendor lists); assignee Aquila kept. UNVERIFIED whether Tantra campaigns accept a per-contact custom first-line variable (cloud/src/jobs-tantra.ts shows no custom-variable use)."
+    },
+    {
+     "ts": "2026-10-09T05:14:30+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Aquila → Claude (by Orchestrator)."
     }
    ],
    "order": 380,
-   "assignee": "Aquila",
+   "assignee": "Claude",
    "reviewers": [
     "Aquila"
    ]
