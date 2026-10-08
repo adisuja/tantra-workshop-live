@@ -475,7 +475,7 @@ const RELMAX=8;
 function relatedHtml(t){
   const rel=related(t.id).filter(([o])=>(DATA.tasks.find(x=>x.id===o)||{}).status!=="dropped");if(!rel.length)return"";
   const show=rel.slice(0,RELMAX);
-  return `<h4>Related tasks · ${rel.length}</h4><div class="rel">${show.map(([o,why])=>{const x=DATA.tasks.find(y=>y.id===o);return `<button type="button" onclick="jump('${o}')" title="${esc(why.join("; "))}"><span class="ri">${o}</span><span class="rt">${esc(x.title)}</span><span class="pill s-${x.status}">${LABEL[x.status]||x.status}</span><span class="rw">${esc(why[0])}</span></button>`}).join("")}${rel.length>RELMAX?`<div class="more">+${rel.length-RELMAX} more with weaker links</div>`:""}</div><p class="hint" style="margin-top:6px">When feedback changes this task, Claude checks these and updates only the ones it affects. An affected Done task moves to Done · recheck.</p>`;
+  return `<h4>Related tasks · ${rel.length}</h4><div class="rel">${show.map(([o,why])=>{const x=DATA.tasks.find(y=>y.id===o);return `<button type="button" onclick="jump('${o}')" title="${esc(x.title)} · ${esc(why.join("; "))}"><span class="ri">${o}</span><span class="rt">${esc(x.title)}</span><span class="pill s-${x.status}">${LABEL[x.status]||x.status}</span><span class="rw">${esc(why[0])}</span></button>`}).join("")}${rel.length>RELMAX?`<div class="more">+${rel.length-RELMAX} more with weaker links</div>`:""}</div><p class="hint" style="margin-top:6px">When feedback changes this task, Claude checks these and updates only the ones it affects. An affected Done task moves to Done · recheck.</p>`;
 }
 function row(t){
   const u=unread(t.id);
