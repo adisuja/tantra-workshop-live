@@ -485,20 +485,24 @@ function render(){
   const onIds=new Set(live.map(x=>x.t.id));
   $("#n-on").textContent=live.length;
   $("#s-next").textContent=nx?nx.id:"—";
-  $("#now-next").innerHTML=live.length?live.slice(0,6).map(({t,label,q})=>`<button class="nowitem" onclick="jump('${t.id}')"><span class="on${q?" q":""}"><i></i>${label}</span><b>${esc(t.title)}</b>${peopleLine(t)}${t===nx&&!q?`<span>${esc(t.why)}</span>`:""}</button>`).join("")+(live.length>6?`<div class="empty">+${live.length-6} more queued</div>`:""):'<div class="empty">Nothing in progress. Notes you send are picked up within seconds.</div>';
+  LISTS.on=live.map(x=>x.t.id);
+  $("#now-next").innerHTML=live.length?live.slice(0,6).map(({t,label,q})=>`<button class="nowitem" onclick="jump('${t.id}','on')"><span class="on${q?" q":""}"><i></i>${label}</span><b>${esc(t.title)}</b>${peopleLine(t)}${t===nx&&!q?`<span>${esc(t.why)}</span>`:""}</button>`).join("")+(live.length>6?`<div class="empty">+${live.length-6} more queued</div>`:""):'<div class="empty">Nothing in progress. Notes you send are picked up within seconds.</div>';
   const youAll=T.filter(t=>t.status==="blocked"&&t.needs_from_owner&&!onIds.has(t.id));
-  const you=youAll.sort((a,b)=>followUp(b)-followUp(a)||a.priority.localeCompare(b.priority)).slice(0,8);
+  const youSorted=youAll.sort((a,b)=>followUp(b)-followUp(a)||a.priority.localeCompare(b.priority));LISTS.you=youSorted.map(t=>t.id);
+  const you=youSorted.slice(0,8);
   $("#n-you").textContent=youAll.length;$("#s-blocked").textContent=youAll.length;
-  $("#now-you").innerHTML=you.length?you.map(t=>`<button class="nowitem" onclick="jump('${t.id}')">${followUp(t)?`<span class="fu">Claude replied to your note</span>`:""}<b>${esc(t.title)}</b>${peopleLine(t)}<span class="ask">${esc(t.needs_from_owner)}</span></button>`).join(""):'<div class="empty">Nothing blocked on you.</div>';
+  $("#now-you").innerHTML=you.length?you.map(t=>`<button class="nowitem" onclick="jump('${t.id}','you')">${followUp(t)?`<span class="fu">Claude replied to your note</span>`:""}<b>${esc(t.title)}</b>${peopleLine(t)}<span class="ask">${esc(t.needs_from_owner)}</span></button>`).join(""):'<div class="empty">Nothing blocked on you.</div>';
   const revAll=T.filter(t=>t.status==="review"&&!onIds.has(t.id));
-  const rev=revAll.sort((a,b)=>followUp(b)-followUp(a)||a.priority.localeCompare(b.priority)).slice(0,8);
+  const revSorted=revAll.sort((a,b)=>followUp(b)-followUp(a)||a.priority.localeCompare(b.priority));LISTS.rev=revSorted.map(t=>t.id);
+  const rev=revSorted.slice(0,8);
   $("#n-rev").textContent=revAll.length;
-  $("#now-rev").innerHTML=rev.length?rev.map(t=>`<button class="nowitem" onclick="jump('${t.id}')">${followUp(t)?`<span class="fu">Claude replied to your note</span>`:""}<b>${esc(t.title)}</b>${peopleLine(t)}<span>${esc((t.evidence[0]||{}).label||"")}${t.evidence[0]?" · ":""}${esc(t.needs_from_owner||"Approve or request changes")}</span></button>`).join(""):'<div class="empty">Nothing waiting for review.</div>';
+  $("#now-rev").innerHTML=rev.length?rev.map(t=>`<button class="nowitem" onclick="jump('${t.id}','rev')">${followUp(t)?`<span class="fu">Claude replied to your note</span>`:""}<b>${esc(t.title)}</b>${peopleLine(t)}<span>${esc((t.evidence[0]||{}).label||"")}${t.evidence[0]?" · ":""}${esc(t.needs_from_owner||"Approve or request changes")}</span></button>`).join(""):'<div class="empty">Nothing waiting for review.</div>';
   const list=filtered();const b=$("#board");
-  {const d=document.querySelector(".task.open .det");if(d)DSCROLL=d.scrollTop}
+  {const d=document.querySelector(".task.open .det .dl"),th=document.querySelector(".task.open .det .thread");if(d)DSCROLL=d.scrollTop;
+   if(th){THREAD_BOTTOM=th.scrollHeight-th.scrollTop-th.clientHeight<24;THREAD_TOP=th.scrollTop}}
   const typed={};document.querySelectorAll('textarea[id^="fb-"]').forEach(t=>{if(t.value)typed[t.id]=t.value});
   if(view==="kanban"){
-    b.innerHTML='<div class="kan">'+KCOLS.map(s=>`<div class="col"><h3>${LABEL[s]} · ${list.filter(t=>t.status===s).length}</h3>${list.filter(t=>t.status===s).map(t=>`<div class="kcard" onclick="jump('${t.id}')"><b>${esc(t.title)}</b><span class="people">${pp(t.owner,"Owner")}${t.assignee&&t.assignee!==t.owner?pp(t.assignee,"Doing"):""}</span><small>${t.id} · ${t.priority}${t.due?" · "+t.due.slice(5):""}${unread(t.id)?" · ✉ "+unread(t.id):""}</small></div>`).join("")}</div>`).join("")+'</div>'+(openTask()?`<div class="kopen">${row(openTask())}</div>`:"");
+    b.innerHTML='<div class="kan">'+KCOLS.map(s=>`<div class="col"><h3>${LABEL[s]} · ${list.filter(t=>t.status===s).length}</h3>${list.filter(t=>t.status===s).map(t=>`<div class="kcard" onclick="jump('${t.id}','col:${s}')"><b>${esc(t.title)}</b><span class="people">${pp(t.owner,"Owner")}${t.assignee&&t.assignee!==t.owner?pp(t.assignee,"Doing"):""}</span><small>${t.id} · ${t.priority}${t.due?" · "+t.due.slice(5):""}${unread(t.id)?" · ✉ "+unread(t.id):""}</small></div>`).join("")}</div>`).join("")+'</div>'+(openTask()?`<div class="kopen">${row(openTask())}</div>`:"");
     afterRender(typed);return;
   }
   const groups=view==="area"?AREAS.map(a=>[a,list.filter(t=>t.area===a)]):Object.keys(ORDER).map(s=>[LABEL[s],list.filter(t=>t.status===s)]);
@@ -507,7 +511,10 @@ function render(){
   afterRender(typed);
 }
 function afterRender(typed){
-  if(openId){const el=document.getElementById("t-"+openId);if(el){el.classList.add("open");const d=el.querySelector(".det");if(d)d.scrollTop=DSCROLL}}
+  if(openId){const el=document.getElementById("t-"+openId);if(el){el.classList.add("open");const d=el.querySelector(".det .dl");if(d)d.scrollTop=DSCROLL;
+    // a chat opens at its latest message and stays there while you read the left side
+    const th=el.querySelector(".det .thread");if(th)th.scrollTop=THREAD_BOTTOM?th.scrollHeight:THREAD_TOP;
+    const ta=el.querySelector(".det textarea");if(ta&&ta.value)waInput(openId);else paintSend(openId)}}
   document.body.classList.toggle("dopen",!!(openId&&document.getElementById("t-"+openId)));
   for(const [k,v] of Object.entries(typed)){const t=document.getElementById(k);if(t)t.value=v}
   Object.keys(PENDING).forEach(renderPending);Object.keys(VN).forEach(id=>drawWave(id));paintGlobal();fillTranscripts();
@@ -555,6 +562,37 @@ function row(t){
   </div>
   <div class="det">${detail(t)}</div></div>`;
 }
+/* ---- the reply bar (WhatsApp-style): attach · type · mic, which turns into send once there is something to send ----
+   Send means what the task needs: an answer when it is blocked on you, a change request when it is in review,
+   context otherwise. Approve is its own button. Enter sends, Shift+Enter is a new line. */
+const ICON={clip:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5 12.6 19.9a5.5 5.5 0 0 1-7.8-7.8l8.4-8.4a3.7 3.7 0 0 1 5.2 5.2l-8.4 8.4a1.8 1.8 0 0 1-2.6-2.6l7.8-7.8"/></svg>',
+  mic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg>',
+  send:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.4 20.4 21 12 3.4 3.6l-.1 6.5L15 12 3.3 13.9z"/></svg>'};
+const msgAction=t=>t.status==="blocked"?"unblock":["review","recheck"].includes(t.status)?"changes":"context";
+const MSG_PH={unblock:"Answer Claude's question…",changes:"Ask for changes, or press Approve…",context:"Add context or ask Claude for something…"};
+const MSG_MEANS={unblock:"Send gives Claude your answer and it carries on.",changes:"Send asks for changes: Claude reworks it and puts it back in Review.",context:"Send adds context: Claude acts on it."};
+function composerHtml(t){const id=t.id,a=msgAction(t);
+  return `<div class="fb">
+      <div class="quick"><button class="btn ok" id="ap-${id}" type="button" onclick="send('${id}','approve')">✓ Approve</button><span class="qsp"></span><button class="lnk" type="button" onclick="send('${id}','prioritize')">↑ Do this next</button><button class="lnk" type="button" onclick="send('${id}','drop')">Drop</button></div>
+      <div class="whoask" id="whoask-${id}">${whoAskHtml(id)}</div>
+      <div class="att" id="att-${id}"></div>
+      <div class="vpanel${VN[id]&&VN[id].state==="recording"?" rec":""}" id="vp-${id}">${vpanelHtml(id)}</div>
+      <div class="wa" id="wa-${id}" ondragover="event.preventDefault();this.classList.add('drag')" ondragleave="this.classList.remove('drag')" ondrop="this.classList.remove('drag');onDrop(event,'${id}')">
+        <label class="wic attbtn" title="Attach files (or paste or drop them here)" aria-label="Attach files">${ICON.clip}<input type="file" multiple onchange="addFiles('${id}',this.files);this.value=''"></label>
+        <textarea id="fb-${id}" rows="1" placeholder="${MSG_PH[a]}" aria-label="Message to Claude about ${id}" oninput="waInput('${id}')" onkeydown="waKey(event,'${id}')" onpaste="onPaste(event,'${id}')"></textarea>
+        <button class="wic mic recbtn" id="rec-${id}" type="button" title="Record a voice note" aria-label="Record a voice note" onclick="startRec('${id}')"${VN[id]?" hidden":""}>${ICON.mic}</button>
+        <button class="wic send" id="vs-${id}" type="button" title="Send (Enter)" aria-label="Send" onclick="send('${id}','msg')">${ICON.send}</button>
+      </div>
+      <span class="sent" id="sent-${id}" aria-live="polite"></span>
+      <div class="hint">${MSG_MEANS[a]} Enter sends · Shift+Enter for a new line.</div>
+    </div>`}
+function waInput(id){const ta=document.getElementById("fb-"+id);if(ta){ta.style.height="auto";ta.style.height=Math.min(168,ta.scrollHeight)+"px"}paintSend(id)}
+function waKey(e,id){if(e.key==="Enter"&&!e.shiftKey&&!e.isComposing){e.preventDefault();send(id,"msg")}}
+/* send shows once there is text, a file or a voice draft; it is disabled while a voice note can't be sent yet */
+function paintSend(id){const wa=document.getElementById("wa-"+id),b=document.getElementById("vs-"+id);if(!wa||!b)return;
+  const ta=document.getElementById("fb-"+id),v=VN[id];
+  wa.classList.toggle("has",!!((ta&&ta.value.trim())||(PENDING[id]||[]).length||(v&&v.state!=="recording")));
+  b.disabled=!!(v&&["recording","uploading","silent","error"].includes(v.state))||!!SENDING[id]}
 function detail(t){
   const fb=fbFor(t.id);
   const thread=[...t.log.map(l=>({...l,owner:false,author:(!l.who||l.who==="claude")?"Claude":l.who})),...fb.map(f=>({pending:f.pending,issue:f.issue,ts:f.ts,who:(f.who||"You")+(f.gh_login&&f.gh_login.toLowerCase()!==String(f.who||"").toLowerCase()?` (@${f.gh_login})`:""),id:f.id,note:f.text,act:f.action,owner:true,unread:!f.processed,trusted:f.trusted,attachments:f.attachments}))].sort((a,b)=>String(a.ts).localeCompare(String(b.ts)));
@@ -570,27 +608,50 @@ function detail(t){
     ${t.needs_from_owner?`<h4>What Claude needs from ${esc(t.owner||"you")}</h4><div class="ask">${esc(t.needs_from_owner)}</div>`:""}
     ${relatedHtml(t)}
   </div><div class="dr">
-    <div class="fb">
+    <h4>Thread</h4><div class="thread">${thread.map(m=>`<div class="msg${m.owner?" owner":""}${m.unread?" unread":""}"><span class="who">${m.owner?esc(m.who):esc(m.author||"Claude")}</span>${m.act?`<span class="act">${esc(m.act)}</span>`:""}${m.owner?noteState(m):""}<span class="ts">${esc(String(m.ts).slice(0,16).replace("T"," "))}</span>${m.note?`<div class="txt">${tlink(m.note)}</div>`:""}${attHtml(m.attachments)}</div>`).join("")}</div>
     ${composerHtml(t)}
-    </div>
   </div></div>`;
 }
-let DSCROLL=0;
+let DSCROLL=0,THREAD_BOTTOM=true,THREAD_TOP=0;
 const openTask=()=>openId&&DATA.tasks.find(t=>t.id===openId);
-/* the order the panel's ↑/↓ walk: the board as it is shown now (view, filters and search applied) */
-function navOrder(){const L=filtered();
+/* ---- stepping: ↑/↓ walk the list the task was opened FROM (Waiting on you, Ready for review, Claude is on, a Kanban
+   column, or the list below), recomputed live, and the page never scrolls (owner, 2026-10-09). If the task has just
+   left that list (it was approved, answered or dropped), the walk carries on from where it was. ---- */
+const LISTS={on:[],you:[],rev:[]};
+const CTX_LABEL={on:"Claude is on",you:"Waiting on you",rev:"Ready for review",list:"the task list"};
+let NAVCTX={key:"list",label:CTX_LABEL.list},NAVIDX=0;
+function listOrder(){const L=filtered();
   if(view==="kanban")return KCOLS.flatMap(s=>L.filter(t=>t.status===s).map(t=>t.id));
   if(view==="area")return AREAS.flatMap(a=>L.filter(t=>t.area===a).map(t=>t.id));
   return L.map(t=>t.id)}
-function navPos(id){const o=navOrder(),i=o.indexOf(id);return {i,n:o.length}}
-function openTaskPanel(id,follow){if(openId!==id)DSCROLL=0;openId=id;render();
-  // the page never jumps when a task opens; only stepping with ↑/↓ keeps the highlighted row in view
-  const r=follow&&document.querySelector(`#board .group #t-${CSS.escape(id)} > .row`);if(r)r.scrollIntoView({block:"nearest"})}
+function ctxIds(key){key=key||NAVCTX.key;
+  if(LISTS[key])return LISTS[key];
+  if(key.startsWith("col:")){const st=key.slice(4);return filtered().filter(t=>t.status===st).map(t=>t.id)}
+  return listOrder()}
+const navOrder=()=>ctxIds();
+function navPos(id){const o=ctxIds(),i=o.indexOf(id);return {i,n:o.length}}
+/* the task d steps away from id in the current list; when id has already left it, from the slot it was in */
+function neighbor(id,d){const o=ctxIds(),i=o.indexOf(id);
+  if(i>=0)return o[i+d]||null;
+  const j=d>0?NAVIDX:NAVIDX-1;return o[Math.max(0,Math.min(o.length-1,j))]||null}
+const AUTONEXT=()=>localStorage.getItem("lc-autonext")?localStorage.getItem("lc-autonext")==="1":!navigator.webdriver;  // probes opt in
+const ACT_DONE={approve:"Approved",changes:"Changes requested",unblock:"Answer sent",context:"Context sent",voice:"Voice note sent",prioritize:"Moved to next",drop:"Dropped"};
+let TOAST_T=null;
+function toast(text,back){let el=$("#toast");if(!el){el=document.createElement("div");el.id="toast";el.className="toast";el.setAttribute("role","status");document.body.appendChild(el)}
+  el.innerHTML=`<span>${esc(text)}</span>${back?`<button type="button" onclick="openTaskPanel('${esc(back)}');$('#toast').hidden=true">Back to ${esc(back)}</button>`:""}`;el.hidden=false;
+  clearTimeout(TOAST_T);TOAST_T=setTimeout(()=>{el.hidden=true},6000)}
+function openTaskPanel(id,ctx){
+  if(ctx&&ctx!==NAVCTX.key)NAVCTX={key:ctx,label:CTX_LABEL[ctx]||(ctx.startsWith("col:")?LABEL[ctx.slice(4)]+" column":CTX_LABEL.list)};
+  else if(!ctx&&!ctxIds().includes(id))NAVCTX={key:"list",label:CTX_LABEL.list};
+  if(openId!==id){DSCROLL=0;THREAD_BOTTOM=true}
+  openId=id;render();const i=ctxIds().indexOf(id);if(i>=0)NAVIDX=i;
+  // the list below follows along only when the walk IS the list; nothing else ever scrolls the page
+  if(NAVCTX.key==="list"){const r=document.querySelector(`#board .group #t-${CSS.escape(id)} > .row`);if(r){const b=r.getBoundingClientRect();if(b.top<0||b.bottom>innerHeight)r.scrollIntoView({block:"nearest"})}}}
 function closeTask(){openId=null;DSCROLL=0;document.querySelectorAll(".task.open").forEach(e=>e.classList.remove("open"));document.querySelectorAll(".kopen").forEach(e=>e.remove());document.body.classList.remove("dopen");paintGlobal()}
-function toggle(id){if(openId===id)closeTask();else openTaskPanel(id)}
-function step(d){const o=navOrder(),n=o[o.indexOf(openId)+d];if(n)openTaskPanel(n,true)}
+function toggle(id){if(openId===id)closeTask();else openTaskPanel(id,"list")}
+function step(d){const n=neighbor(openId,d);if(n)openTaskPanel(n)}
 /* open a task from anywhere (NOW strip, Kanban, a #T-123 link). Filters are cleared only if they hide it. */
-function jump(id){if(!filtered().some(t=>t.id===id)){$("#f-doing").value="";$("#f-rev").value="";MINE=false;$("#f-mine").classList.remove("on");$("#f-owner").value="";$("#f-area").value="";$("#f-status").value="";$("#q").value="";$("#hidedone").checked=false}openTaskPanel(id)}
+function jump(id,ctx){if(!filtered().some(t=>t.id===id)){$("#f-doing").value="";$("#f-rev").value="";MINE=false;$("#f-mine").classList.remove("on");$("#f-owner").value="";$("#f-area").value="";$("#f-status").value="";$("#q").value="";$("#hidedone").checked=false}openTaskPanel(id,ctx)}
 document.addEventListener("keydown",e=>{if(!openId)return;const tag=(e.target.tagName||"").toLowerCase();if(["input","textarea","select"].includes(tag)||e.target.isContentEditable||e.metaKey||e.ctrlKey||e.altKey)return;
   if(e.key==="Escape"){closeTask();e.preventDefault()}else if(e.key==="j"||e.key==="ArrowRight"||e.key==="ArrowDown"&&e.shiftKey){step(1);e.preventDefault()}else if(e.key==="k"||e.key==="ArrowLeft"||e.key==="ArrowUp"&&e.shiftKey){step(-1);e.preventDefault()}});
 /* The public copy of this board is static (GitHub Pages) and cannot save anything itself, so on a
@@ -626,7 +687,7 @@ const isAud=a=>/^(audio|video)\//.test(a.type||"")||/\.(webm|weba|ogg|oga|opus|m
 function attHtml(list){if(!list||!list.length)return"";const aud=list.filter(isAud),rest=list.filter(a=>!isAud(a));
   return aud.map(a=>`<div class="voice"><div class="lab">Voice note</div><div class="vrow"><button class="vplay" type="button" aria-label="Play voice note" data-src="${esc(safeUrl(a.url))}" onclick="playThread(this)">▶</button><div class="vbar"><i></i></div><span class="vtime">–:––</span></div><div class="tx wait" data-tx="${esc(safeUrl(a.transcript||a.url+".transcript.json"))}">Transcribing…</div></div>`).join("")+(rest.length?attHtmlFiles(rest):"")}
 function attHtmlFiles(list){return '<div class="att">'+list.map(a=>{const img=/^image\//.test(a.type||"")||/\.(png|jpe?g|gif|webp|svg)$/i.test(a.name||"");return `<a href="${esc(safeUrl(a.url))}" target="_blank" rel="noopener" title="${esc(a.name)}">${img?`<img src="${esc(safeUrl(a.url))}" alt="">`:`<span class="ic">📄</span>`}<span class="nm">${esc(a.name)}</span></a>`}).join("")+"</div>"}
-function renderPending(id){const box=document.getElementById("att-"+id);if(!box)return;const list=PENDING[id]||[];box.innerHTML=list.map((f,i)=>`<span class="pend">${/^image\//.test(f.type)?`<img src="${f.preview}" alt="">`:`<span class="ic">${isAud(f)?"🎙":"📄"}</span>`}<span class="nm">${esc(f.name)}</span><button class="x" type="button" title="Remove" onclick="rmFile('${id}',${i})">×</button></span>`).join("")}
+function renderPending(id){const box=document.getElementById("att-"+id);if(!box)return;const list=PENDING[id]||[];box.innerHTML=list.map((f,i)=>`<span class="pend">${/^image\//.test(f.type)?`<img src="${f.preview}" alt="">`:`<span class="ic">${isAud(f)?"🎙":"📄"}</span>`}<span class="nm">${esc(f.name)}</span><button class="x" type="button" title="Remove" onclick="rmFile('${id}',${i})">×</button></span>`).join("");paintSend(id)}
 function addFiles(id,files){const list=PENDING[id]=PENDING[id]||[];const out=document.getElementById("sent-"+id);for(const f of files){if(list.length>=MAXF){out.className="sent err";out.textContent=`Max ${MAXF} files per note.`;break}const name=f.name||("pasted-"+Date.now()+"."+((f.type.split("/")[1]||"png").replace("jpeg","jpg")));list.push({file:f,name,type:f.type,preview:/^image\//.test(f.type)?URL.createObjectURL(f):""})}renderPending(id)}
 function rmFile(id,i){(PENDING[id]||[]).splice(i,1);renderPending(id)}
 function onPaste(e,id){const items=[...(e.clipboardData?.items||[])].filter(i=>i.kind==="file");if(!items.length)return;e.preventDefault();addFiles(id,items.map(i=>i.getAsFile()).filter(Boolean))}
@@ -638,6 +699,9 @@ const SENDING={};
 async function send(id,action){
   const ta=document.getElementById("fb-"+id),out=document.getElementById("sent-"+id);const text=ta.value.trim();
   if(SENDING[id])return;
+  const task=DATA.tasks.find(x=>x.id===id)||{};
+  if(action==="msg")action=!text&&!(PENDING[id]||[]).length&&VN[id]&&VN[id].url?"voice":msgAction(task);
+  const after=neighbor(id,1);  // where "next after send" goes, decided before the task leaves this list
   const v=VN[id];
   if(v&&v.state==="recording"){out.className="sent err";out.textContent="Stop the recording first.";return}
   if(v&&v.state==="uploading"){out.className="sent err";out.textContent="The voice note is still uploading; one moment.";return}
@@ -646,7 +710,7 @@ async function send(id,action){
   if(action==="voice"&&!voice){out.className="sent err";out.textContent="Record a voice note first.";return}
   const hasFiles=(PENDING[id]||[]).length>0||!!voice;
   const who=needWho(out,id,()=>send(id,action));if(!who)return;
-  if(!text&&!hasFiles&&!["approve","prioritize","drop"].includes(action)){out.className="sent err";out.textContent="Write a note, record a voice note or attach a file first.";return}
+  if(!text&&!hasFiles&&!["approve","prioritize","drop"].includes(action)){out.className="sent err";out.textContent="Type a message, record a voice note or attach a file first.";return}
   SENDING[id]=true;setSendBusy(id,true);
   try{out.className="sent";out.textContent=(PENDING[id]||[]).length?"Uploading…":"Sending…";
     const attachments=await uploadPending(id);
@@ -657,13 +721,17 @@ async function send(id,action){
     // the board may have re-rendered during the awaits: always address the elements that exist now
     const ta2=document.getElementById("fb-"+id);if(ta2&&ta2.value.trim()===text)ta2.value="";
     if(voice){if(voice.tx&&voice.tx.status==="done")TX[voice.url+".transcript.json"]=voice.tx;dropVoice(id)}
-    openId=id;SENDING[id]=false;render();const o2=document.getElementById("sent-"+id);if(o2){o2.className="sent";o2.textContent=STATIC?(KEY?"Saved · Claude picks it up within seconds":"Saved · waiting for Adi to approve it (no personal link in this browser)"):"Sent · the Claude agent is picking it up"}setTimeout(pollAgent,1500)}
+    SENDING[id]=false;
+    const msg=STATIC?(KEY?"Saved · Claude picks it up within seconds":"Saved · waiting for Adi to approve it (no personal link in this browser)"):"Sent · the Claude agent is picking it up";
+    if(openId===id&&AUTONEXT()&&after){toast(`${ACT_DONE[action]||"Sent"} on ${id}. ${msg.split(" · ")[1]||""}`,id);openTaskPanel(after)}
+    else{if(openId===id)render();const o2=document.getElementById("sent-"+id);if(o2){o2.className="sent";o2.textContent=msg}}
+    setTimeout(pollAgent,1500)}
   catch(e){SENDING[id]=false;setSendBusy(id,false);
     const o3=document.getElementById("sent-"+id)||out;o3.className="sent err";
     if(voice&&/unknown attachment/.test(e.message)){dropVoice(id);paintVoice(id);o3.textContent="The recorded file is no longer on the server. Please record it again.";return}
     o3.textContent="Not sent: "+(e.name==="AbortError"?"the board did not answer; try again":e.message)}
 }
-function setSendBusy(id,on){document.querySelectorAll(`#t-${id} .fb .acts .btn:not(.recbtn), #vs-${id}`).forEach(b=>{b.disabled=on})}
+function setSendBusy(id,on){document.querySelectorAll(`#t-${id} .fb .quick button, #vs-${id}`).forEach(b=>{b.disabled=on})}
 $("#nt-send").onclick=async()=>{
   const title=$("#nt-title").value.trim(),out=$("#nt-sent");
   if(!title){out.className="sent err";out.textContent="Title required.";return}
@@ -778,12 +846,12 @@ function vpanelHtml(id){
     :v.tx&&v.tx.status==="error"?`<div class="vtx err">Transcription failed here; the agent retries it after you send. (${esc(v.tx.error||"")})</div>`
     :STATIC?`<div class="vtx wait">Uploaded. It is transcribed on the owner's Mac seconds after you send it.</div>`
     :`<div class="vtx wait"><span class="spin"></span>Transcribing what you said…</div>`;
-  return `<div class="vrow"><button class="vplay" type="button" id="vplay-${id}" aria-label="Play voice note" onclick="playDraft('${id}')">${PLAYING&&PLAYING.key===id?"❚❚":"▶"}</button><canvas class="vwave" id="vw-${id}" aria-label="Voice note waveform"></canvas><span class="vtime">${fmtT(v.secs)}</span><button class="btn mini" type="button" onclick="reRec('${id}')">Re-record</button><button class="vx" type="button" title="Discard voice note" aria-label="Discard voice note" onclick="discardVoice('${id}')">×</button></div>${tx}<div class="vsend"><button class="btn pri" type="button" id="vs-${id}" onclick="send('${id}','voice')"${canSend?"":" disabled"}>Send voice note</button><span class="hint">Claude acts on it by itself. Add typed context above if you like.</span></div>`;
+  return `<div class="vrow"><button class="vplay" type="button" id="vplay-${id}" aria-label="Play voice note" onclick="playDraft('${id}')">${PLAYING&&PLAYING.key===id?"❚❚":"▶"}</button><canvas class="vwave" id="vw-${id}" aria-label="Voice note waveform"></canvas><span class="vtime">${fmtT(v.secs)}</span><button class="btn mini" type="button" onclick="reRec('${id}')">Re-record</button><button class="vx" type="button" title="Discard voice note" aria-label="Discard voice note" onclick="discardVoice('${id}')">×</button></div>${tx}`;
 }
 function paintVoice(id){
   const p=document.getElementById("vp-"+id);if(p){p.innerHTML=vpanelHtml(id);p.classList.toggle("rec",!!(VN[id]&&VN[id].state==="recording"))}
   const b=document.getElementById("rec-"+id);if(b)b.hidden=!!VN[id];
-  drawWave(id);paintGlobal();
+  drawWave(id);paintGlobal();paintSend(id);
 }
 /* a recording or an unsent voice note is listed at the top whatever view or filter is on */
 function paintGlobal(){

@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T02:30:53+0530",
-  "version": 406,
+  "updated": "2026-10-09T02:35:46+0530",
+  "version": 407,
   "last_id": 331,
   "team": [
    {
@@ -7954,8 +7954,7 @@
   },
   {
    "id": "T-232",
-   "title": "Back up every Zoom recording to the team Google Drive, then delete it from Zoom",
-   "area": "Product",
+   "status": "blocked",
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
@@ -7964,52 +7963,17 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "blocked",
-   "why": "Zoom Pro has about 5 GB of cloud storage, enough for one or two sessions. Adi 2026-10-08: after every session the recording must be saved to the team@growthclub.org Google Drive by a proper integration, and only then deleted from Zoom so no data is lost.",
-   "spec": "BUILT AND LIVE 2026-10-08: rec-backup 647d638 merged (main 8ca0a5d), migration 0016 applied remotely, Worker f71a029d. probe-rec-backup 37/37, probe-zoom-pro 54/54. Flow: on recording.completed (and recording.transcript_completed) every file (video, audio, chat, transcript, timeline) streams from Zoom into Google Drive 'Tantra Workshop Recordings/<cohort week>/Day N' in 8 MB chunks; a file counts only at Zoom's exact size; video shared view only by link and becomes the attendee replay link; then, 2 hours after the last ready event and only if every file is verified, each file is moved to Zoom's trash (30 days to restore). Admin: Cohort Settings, Recording Backups (OAuth client, Connect Google Drive, delete mode) and Zoom Sessions, Backups list with Retry. Zoom side done by Claude 2026-10-08: scope cloud_recording:delete:recording_file:admin added and event 'Recording Transcript files have completed' subscribed on the Tantra Centre app. Remaining (Adi, Google sign-in needed): 1) Google Cloud project on growthclub.org: enable Drive API at https://console.cloud.google.com/apis/library/drive.googleapis.com ; 2) https://console.cloud.google.com/apis/credentials : Create credentials, OAuth client ID, Web application, authorised redirect URI https://revops-centre.growthcluborg.workers.dev/admin/api/drive/callback (consent screen Internal, scope drive.file); 3) admin https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Cohort Settings, Recording Backups: paste client ID and secret, Save, then 'Connect Google Drive as team@growthclub.org' and Allow. Then Claude runs a test recording end to end.",
-   "done_when": [
-    "Admin shows Drive connected as team@growthclub.org",
-    "A test recording lands in the Drive folder at matching sizes, then leaves Zoom",
-    "Attendee replay link opens the Drive copy"
-   ],
+   "area": "Product",
+   "order": 2320,
+   "title": "T-232: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
    "evidence": [],
-   "blockers": [
-    "Google OAuth client and one sign-in as team@growthclub.org (Adi)"
-   ],
-   "needs_from_owner": "The three Google steps in the spec (about 5 minutes).",
-   "log": [
-    {
-     "ts": "2026-10-07T23:25:35+0530",
-     "who": "claude",
-     "note": "Added by the Integrator's pending-work sweep."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review 2026-10-08: still accurate. Still open; no retention decision in docs/onboarding-v3/analysis/zoom-pro-meetings.md or LOG.md."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: still no retention decision in docs/onboarding-v3/analysis/zoom-pro-meetings.md or LOG.md; spec now says what the centre keeps itself and what breaks if Zoom deletes a recording."
-    },
-    {
-     "ts": "2026-10-08T01:43:21+0530",
-     "who": "claude",
-     "note": "Adi 2026-10-08: about 5 GB in Zoom; back up each recording to the team@growthclub.org Drive by integration, then delete from Zoom. Rewritten as a build task for Claude."
-    },
-    {
-     "ts": "2026-10-08T02:46:17+0530",
-     "who": "claude",
-     "note": "Built, merged, deployed (Worker f71a029d, migration 0016). Zoom scope and transcript event added. Waiting on the Google OAuth client and the team@ sign-in."
-    },
-    {
-     "ts": "2026-10-08T05:13:03+0530",
-     "who": "claude",
-     "note": "Fresh-stack verification on merged main: probe-rec-backup 37/37 twice. Live on Worker e6ac0806."
-    }
-   ],
-   "order": 2320
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-233",
