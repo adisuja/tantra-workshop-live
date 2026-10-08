@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T02:22:32+0530",
-  "version": 404,
+  "updated": "2026-10-09T02:30:53+0530",
+  "version": 406,
   "last_id": 331,
   "team": [
    {
@@ -7537,7 +7537,8 @@
    "assignee": "Claude",
    "reviewers": [
     "Adi",
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ],
    "priority": "P0",
    "due": "",
@@ -7552,26 +7553,26 @@
    ],
    "evidence": [
     {
-     "label": "Spike: which Zoom SDK can do what (branch zoom-bot 465d59d, not merged to main yet)",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/zoom-bot/docs/onboarding-v3/analysis/zoom-bot.md"
+     "label": "Live Control page, local test (opens the admin, then go to /admin/control?v=t226)",
+     "url": "http://127.0.0.1:8811/admin/enter?k=t226admin"
     },
     {
-     "label": "Zoom Pro setup doc, section 3: the Tantra Centre app's scopes and events",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/docs/onboarding-v3/analysis/zoom-pro-meetings.md"
+     "label": "Design and what is still to build",
+     "url": "docs/onboarding-v3/analysis/zoom-live-control.md"
     },
     {
-     "label": "Bot contract: cloud/src/zoom-pro.ts (botPlan, zoomBot)",
-     "url": "cloud/src/zoom-pro.ts"
+     "label": "Code: queue, run sheet, seat contract",
+     "url": "cloud/src/zoom-control.ts"
     },
     {
-     "label": "Admin centre: Cohort Settings, Zoom",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=t226"
+     "label": "Page",
+     "url": "cloud/admin-ui/control.js"
     }
    ],
    "blockers": [
     "Adi's confirmation to host from the console, and the Meeting SDK app credentials"
    ],
-   "needs_from_owner": "1) Confirm you will host the sessions from the Tantra Host Console instead of the normal Zoom app. 2) Meeting SDK app (none exists yet: the live centre holds only the Tantra Centre Server-to-Server app): https://marketplace.zoom.us/ (signed in to the GrowthClub Zoom), Develop, Build App, General App, Create, name 'Tantra Host Console', Admin-managed, redirect URL https://revops-centre.growthcluborg.workers.dev/ ; Features, Embed, switch on Meeting SDK; do not publish; paste Client ID and Client Secret in the centre admin (or let Claude do these clicks in the Zoom-signed-in browser profile). 3) On the Tantra Centre app, Scopes, Add Scopes: meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin. 4) Co-host emails.",
+   "needs_from_owner": "Yes or no: may Claude (a) create the Zoom Meeting SDK app 'Tantra Live Control' in the Zoom-signed-in browser (marketplace.zoom.us, Develop, Build App, General App, Features, Embed, Meeting SDK on, not published) and save its Client ID and Secret in the centre, (b) add the 5 poll scopes (meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin) to the Tantra Centre app, and (c) deploy the centre (migration 0019 plus 'npx wrangler deploy' in cloud/) with a new ZOOM_BOT_KEY secret so the control seat can connect? Note: the seat joins as co-host, so you click 'Make co-host' on it once per session in your Zoom app.",
    "log": [
     {
      "ts": "2026-10-07T20:46:43+0530",
@@ -7602,6 +7603,16 @@
      "ts": "2026-10-09T02:11:09+0530",
      "who": "claude",
      "note": "Context checked 2026-10-09: the only Zoom app is Tantra Centre (S2S, T-224, live). Added what is already built and live (bot contract in zoom-pro.ts but off, ZAK and poll-results scopes present, room settings, engagement ingestion, Drive backup), what is still to build, and links to the spike doc and setup doc. No Meeting SDK app has been created or saved yet."
+    },
+    {
+     "ts": "2026-10-09T02:30:53+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi/Aquila → Adi/Aquila/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T02:30:53+0530",
+     "who": "claude",
+     "note": "Reworked to Adi's note: you host from the normal Zoom app, and the team now gets a Live Control web page (admin, Live Control) with the per-day run sheet (timed chat, links, polls), buttons for lock room, mute, stop video, co-host, polls, and an activity log; every action queues for a control seat in the meeting, which reports back. Verified locally against a simulated Day 2 session (items fire once at their minute, nothing posts twice, desktop and mobile render clean); the seat itself and going live need the Zoom pieces below."
     }
    ],
    "order": 2260
