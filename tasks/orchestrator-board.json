@@ -2,9 +2,9 @@
  "running": "2026-10-09T05:04:29+0530",
  "last_sweep": null,
  "counts": {
-  "proceed": 7,
-  "needs_adi": 4,
-  "resolve": 6
+  "proceed": 14,
+  "needs_adi": 7,
+  "resolve": 14
  },
  "tasks": {
   "T-034": {
@@ -90,6 +90,96 @@
   "T-225": {
    "verdict": "proceed",
    "ts": "2026-10-09T05:06:11+0530",
+   "input_task": null
+  },
+  "T-282": {
+   "verdict": "proceed",
+   "ts": "2026-10-09T05:06:17+0530",
+   "input_task": null
+  },
+  "T-283": {
+   "verdict": "proceed",
+   "ts": "2026-10-09T05:06:41+0530",
+   "input_task": null
+  },
+  "T-291": {
+   "verdict": "proceed",
+   "ts": "2026-10-09T05:06:41+0530",
+   "input_task": null
+  },
+  "T-298": {
+   "verdict": "needs_adi",
+   "ts": "2026-10-09T05:06:41+0530",
+   "input_task": "T-338"
+  },
+  "T-299": {
+   "verdict": "resolve",
+   "ts": "2026-10-09T05:06:41+0530",
+   "input_task": null
+  },
+  "T-118": {
+   "verdict": "resolve",
+   "ts": "2026-10-09T05:06:41+0530",
+   "input_task": null
+  },
+  "T-132": {
+   "verdict": "proceed",
+   "ts": "2026-10-09T05:06:46+0530",
+   "input_task": null
+  },
+  "T-133": {
+   "verdict": "needs_adi",
+   "ts": "2026-10-09T05:06:54+0530",
+   "input_task": "T-339"
+  },
+  "T-149": {
+   "verdict": "needs_adi",
+   "ts": "2026-10-09T05:06:54+0530",
+   "input_task": "T-340"
+  },
+  "T-253": {
+   "verdict": "proceed",
+   "ts": "2026-10-09T05:07:13+0530",
+   "input_task": null
+  },
+  "T-279": {
+   "verdict": "resolve",
+   "ts": "2026-10-09T05:07:13+0530",
+   "input_task": null
+  },
+  "T-281": {
+   "verdict": "proceed",
+   "ts": "2026-10-09T05:07:13+0530",
+   "input_task": null
+  },
+  "T-286": {
+   "verdict": "resolve",
+   "ts": "2026-10-09T05:07:13+0530",
+   "input_task": null
+  },
+  "T-287": {
+   "verdict": "resolve",
+   "ts": "2026-10-09T05:07:26+0530",
+   "input_task": null
+  },
+  "T-292": {
+   "verdict": "proceed",
+   "ts": "2026-10-09T05:07:26+0530",
+   "input_task": null
+  },
+  "T-294": {
+   "verdict": "resolve",
+   "ts": "2026-10-09T05:07:28+0530",
+   "input_task": null
+  },
+  "T-296": {
+   "verdict": "resolve",
+   "ts": "2026-10-09T05:07:35+0530",
+   "input_task": null
+  },
+  "T-297": {
+   "verdict": "resolve",
+   "ts": "2026-10-09T05:07:35+0530",
    "input_task": null
   }
  }

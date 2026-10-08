@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T05:05:40+0530",
-  "version": 432,
-  "last_id": 337,
+  "updated": "2026-10-09T05:06:54+0530",
+  "version": 444,
+  "last_id": 340,
   "team": [
    {
     "name": "Adi",
@@ -49,7 +49,7 @@
    "title": "Decide the calls still open from Nelbin's content pass",
    "area": "Content",
    "owner": "Adi",
-   "assignee": "Adi",
+   "assignee": "Claude",
    "reviewers": [
     "Adi"
    ],
@@ -102,6 +102,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: PRs #3 and #4 heads (9991e60, 97cc57c) are ancestors of origin/main, so this no longer blocks any merge (closing them on GitHub is T-281); settled and dropped: (9) /masterclass already sends every CTA to checkout (masterclass-client.tsx startBuildPassCheckout), (13) main says four polls everywhere (no '3 polls' left in app/src or build), (17) unsourced hours fall under the standing no-invented-stats rule (Claude removes or labels them in T-256), (11) is T-141, (12) is T-120/T-260; added recommended answers and the calendar.ts contradiction for (1)."
+    },
+    {
+     "ts": "2026-10-09T05:06:10+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Adi → Claude (by Orchestrator)."
     }
    ],
    "order": 1
@@ -5535,10 +5540,15 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): checked, current. pass 2: rechecked 2026-10-08, codex login status prints 'Not logged in'; text accurate."
+    },
+    {
+     "ts": "2026-10-09T05:06:54+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Adi → Claude (by Orchestrator)."
     }
    ],
    "order": 1490,
-   "assignee": "Adi",
+   "assignee": "Claude",
    "reviewers": [
     "Adi"
    ]
@@ -6007,7 +6017,7 @@
    "title": "Decide: share branch previews outside Adi's Mac (private tunnel with an access key)",
    "area": "Content",
    "owner": "Adi",
-   "assignee": "Adi",
+   "assignee": "Claude",
    "reviewers": [
     "Adi"
    ],
@@ -6046,6 +6056,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: com.tantra.preview-tunnel is loaded and running (PID 1080, cloudflared quick tunnel to 127.0.0.1:4360, log ~/.pr-preview/tunnel.log last connected 2026-10-07 18:50 UTC) although memory team-review-tunnels records it as off pending this decision; added a recommendation."
+    },
+    {
+     "ts": "2026-10-09T05:06:10+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Adi → Claude (by Orchestrator)."
     }
    ],
    "order": 1940
@@ -7455,7 +7470,7 @@
    "title": "Zoom Support ticket: host mute control and participant video disable (waiting on Zoom's reply)",
    "area": "Product",
    "owner": "Nelbin",
-   "assignee": "Adi",
+   "assignee": "Claude",
    "reviewers": [
     "Adi",
     "Aquila"
@@ -7510,6 +7525,11 @@
      "ts": "2026-10-08T01:43:21+0530",
      "who": "claude",
      "note": "Adi 2026-10-08: ticket already opened with Zoom Support; the reply goes to the GrowthClub Gmail. Tracked here until it arrives."
+    },
+    {
+     "ts": "2026-10-09T05:06:11+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Adi → Claude (by Orchestrator)."
     }
    ],
    "order": 2250
@@ -9929,7 +9949,7 @@
    "title": "Review the seven new walkthrough videos before they go on the centres and playbook",
    "area": "Content",
    "owner": "Adi",
-   "assignee": "Adi",
+   "assignee": "Claude",
    "reviewers": [
     "Adi"
    ],
@@ -9971,6 +9991,11 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Session sweep (2026-10-09): source: fcd892f2 2026-10-07T21:28 (reminders video caveats) and 22:56 (final report). Adds the review caveats not yet on the task."
+    },
+    {
+     "ts": "2026-10-09T05:06:17+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Adi → Claude (by Orchestrator)."
     }
    ],
    "order": 2820
@@ -10493,7 +10518,7 @@
    "title": "Write the owner's central rules into the global CLAUDE.md (blocked by the rules-file guard)",
    "area": "Team",
    "owner": "Adi",
-   "assignee": "Adi",
+   "assignee": "Claude",
    "reviewers": [
     "Adi"
    ],
@@ -10516,6 +10541,11 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Added from the session sweep (2026-10-09): source: 9628377c 2026-10-06T20:14/20:15 (owner: write it into CLAUDE.md; hook blocked), ec3e66fb 2026-10-06T20:38 (central copy rule). Checked 2026-10-09: ~/.claude/CLAUDE.md has none of the three rules; they exist only in memory and workshop-plan/COPY_RULES.md. Merged with the S2 session's CLAUDE.md request (7c7d4bae 2026-10-06T21:08) and the later owner rules from 2026-10-07/08."
+    },
+    {
+     "ts": "2026-10-09T05:06:41+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Adi → Claude (by Orchestrator)."
     }
    ],
    "order": 2980
@@ -10975,6 +11005,93 @@
    ],
    "order": 3370,
    "input_for": "T-234",
+   "kind": "input"
+  },
+  {
+   "id": "T-338",
+   "title": "Input from Adi for T-298: In Terminal, run: cd /Users/adithyamurali/tantra-redesign && CLAUDE_ALLOW_RULES_",
+   "area": "Team",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (reserved): The rules-file hook only allows CLAUDE.md edits in a session Adi starts himself with CLAUDE_ALLOW_RULES_EDIT=1. Claude may not set it or bypass it.. Everything else in T-298 is being built around it. As soon as this is done, T-298 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "In Terminal, run: cd /Users/adithyamurali/tantra-redesign && CLAUDE_ALLOW_RULES_EDIT=1 claude -p \"Add every entry in workshop-plan/tasks/staged/T-298-claude-md-rules.md under '## Working rules' in /Users/adithyamurali/.claude/CLAUDE.md, then run workshop-plan/tasks/staged/T-298-verify.sh\"",
+   "log": [
+    {
+     "ts": "2026-10-09T05:06:41+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-298."
+    }
+   ],
+   "order": 3380,
+   "input_for": "T-298",
+   "kind": "input"
+  },
+  {
+   "id": "T-339",
+   "title": "Input from Adi for T-133: In Claude in Chrome, sign in to https://usetantra.com (Tantra app) and https://c",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (signin): Only Adi can log in to his own Tantra and Twilio accounts. Claude must never sign in as him.. Everything else in T-133 is being built around it. As soon as this is done, T-133 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "In Claude in Chrome, sign in to https://usetantra.com (Tantra app) and https://console.twilio.com, then reply 'signed in' on T-115. Claude only looks and captures, and never sends anything.",
+   "log": [
+    {
+     "ts": "2026-10-09T05:06:54+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-133."
+    }
+   ],
+   "order": 3390,
+   "input_for": "T-133",
+   "kind": "input"
+  },
+  {
+   "id": "T-340",
+   "title": "Input from Adi for T-149: In Terminal on this Mac, run `codex logout && codex login`. Finish the ChatGPT s",
+   "area": "Infra",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (signin): It needs Adi's own OpenAI account login and possibly 2FA. Claude may not sign in as Adi.. Everything else in T-149 is being built around it. As soon as this is done, T-149 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "In Terminal on this Mac, run `codex logout && codex login`. Finish the ChatGPT sign-in in the browser page it opens (https://auth.openai.com). That's all: the hourly check will confirm it and close T-149 by itself.",
+   "log": [
+    {
+     "ts": "2026-10-09T05:06:54+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-149."
+    }
+   ],
+   "order": 3400,
+   "input_for": "T-149",
    "kind": "input"
   }
  ]
