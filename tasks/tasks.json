@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T01:25:58+0530",
-  "version": 330,
+  "updated": "2026-10-09T01:26:26+0530",
+  "version": 331,
   "last_id": 307,
   "team": [
    {
@@ -5313,7 +5313,7 @@
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Send the GitHub usernames for Aquila, Bhaskar, Amal, Ben and Bharath, or say who does not need access.",
+   "needs_from_owner": "What are Bhaskar's and Aquila's GitHub usernames (or should they create accounts with their growthclub.org emails and send them)?",
    "log": [
     {
      "ts": "2026-09-26T00:17:50+0530",
@@ -5344,6 +5344,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: tantra-workshop-live is public, so only the private repo blocks Source links; Claude adds people once usernames arrive."
+    },
+    {
+     "ts": "2026-10-09T01:26:26+0530",
+     "who": "claude",
+     "note": "Nelbin (nelbin@growthclub.org = GitHub nelbinxav) already has write access, confirmed via the collaborators API today. GitHub only invites repo collaborators by username, and searching bhaskar@growthclub.org and aquila@growthclub.org finds no public GitHub account, so I could not invite them."
     }
    ],
    "order": 1460,
