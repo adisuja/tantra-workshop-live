@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-08T03:07:41+0530",
-  "version": 280,
-  "last_id": 282,
+  "updated": "2026-10-09T00:06:32+0530",
+  "version": 298,
+  "last_id": 288,
   "team": [
    {
     "name": "Adi",
@@ -3830,6 +3830,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: replaced the stale list with the 60-slot inventory from check-guides on main 2026-10-08 and routed every slot to one task; own-page slots moved to T-135."
+    },
+    {
+     "ts": "2026-10-09T00:06:32+0530",
+     "who": "claude",
+     "note": "2026-10-08: the signed-in browser for captures is the Brave profile driven by Claude in Chrome; GA4, Cloudflare, Tantra, WebinarGeek, Cal.com, Metricool, Zoom, Resend and GoHighLevel are signed in there. Google Admin and Google Cloud console ask for a password re-check (owner)."
     }
    ],
    "order": 1130,
@@ -4016,7 +4021,7 @@
    "owner": "Bharath",
    "priority": "P1",
    "due": "2026-09-28",
-   "status": "blocked",
+   "status": "dropped",
    "why": "GoHighLevel is not on the approved tool list (2026-10-07), yet 16 guide or cloud files teach it and 11 open audit findings depend on it.",
    "spec": "On main 2026-10-08 git grep -il gohighlevel app/src/content/guides cloud/src lists 16 files (s5-gohighlevel.ts, s1-cold-calendar, s1-linkedin, s2-tantra-pro-funnel, s3-tantra-pro-flow, s5-pipeline, s5-extra-pipelines, s5-follow-ups, s5-rsp-stages, s5-webinar-stages, s5-challenge-stages, s5-pipeline/index.ts and cloud connectors). Beehiiv belongs to T-260. Do after T-251 merges (e4bd0b8 on branch tantra-walkthroughs, probes fixed in 043b5ab and aa22a3f, no READY yet). If dropped: delete or replace s5-gohighlevel with the starter CRM path (workshop-plan/crm-starter), rewrite s3 step 12, s5-follow-ups, s5-extra-pipelines and s5-webinar-stages onto the built-in CRM and Tantra campaigns, remove the GHL capture_needed slots (s2 #7, s5-pipeline #7, s5-webinar-stages #1 and #3, s5-rsp-stages #3 and #4, s5-challenge-stages #1), drop GHL from cloud/src/connectors/stack.ts and agentic.ts provider lists. Then run check-guides, probe-guides, probe-flows, probe-stack. Closes audit G031, G060, G071, G075, G078, G079, G080, X065, X066, X091, X100 (by removal).",
    "done_when": [
@@ -4050,6 +4055,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: tied to T-251 (merge of the ruled-out tool removal) and T-260 (owner decision on unapproved tools); Beehiiv moved to T-260; recommendation added."
+    },
+    {
+     "ts": "2026-10-09T00:06:32+0530",
+     "who": "claude",
+     "note": "Dropped 2026-10-08: owner keeps GoHighLevel (T-260 log). Guides stay; GHL card copy fixes are in the card-fixes task."
     }
    ],
    "order": 1180,
@@ -6637,6 +6647,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: why, spec and done_when filled from the 2026-10-07 owner model (cold email inboxes are bought from an inbox vendor, Endy is the partner, and connected to Tantra); found that cloud/src/agentic.ts:460-519 and cloud/src/jobs.ts:564-566 still wait for Endy's inboxes in Instantly (ruled out), which T-251 must move to Tantra."
+    },
+    {
+     "ts": "2026-10-09T00:06:32+0530",
+     "who": "claude",
+     "note": "2026-10-08 findings: endyinboxes.com (Starter $35/mo for 10 Google Workspace inboxes, +$3.50 each; 20 to 25 cold emails per inbox a day; book a call, they buy domains, set MX/SPF/DKIM/DMARC, give full admin control and upload inboxes to the sending platform). Instantly shows the owner's Endy inboxes as IMAP/SMTP accounts. For Tantra the inboxes must be reached by a Google service account with domain-wide delegation (gmail.send, gmail.modify, calendar): give Endy the service account's numeric client ID and the three scopes, or authorise it with the admin access Endy hands over; then Tantra Accounts, Verify & Add. Manual service, so the card is a hand-off (order, then confirm in Tantra), not an API job."
     }
    ],
    "order": 2130
@@ -6708,13 +6723,18 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "done",
+   "status": "review",
    "why": "Owner decisions 2026-10-06",
    "spec": "Claude drives Adi's Chrome to create each key with least privilege (Adi does sign-ins, 2FA, payments); each flow recorded as an MP4/WebM under 2 minutes with labelled call-outs and blurred secrets, plus a short step guide per tool.",
    "done_when": [
     "Branch READY in LOG.md, merged into main by the Integrator, deployed and verified live"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "4K walkthrough review index",
+     "url": "http://localhost:8883/wt-review/index.html"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -6742,6 +6762,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): checked, current. pass 2: evidence on main/LOG confirmed."
+    },
+    {
+     "ts": "2026-10-09T00:06:32+0530",
+     "who": "claude",
+     "note": "Reopened 2026-10-08: Adi rejected the v1 videos. Superseded by the v2 4K set under review in T-282; the remaining in-app gaps are tracked in the blocked walkthrough task."
     }
    ],
    "order": 2150
@@ -6845,6 +6870,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: reopened. The delivered build targets a per-contact POST /api/v1/emails/batch that was Claude's own spec; owner model 2026-10-07 (google-and-reminder-model) says reminders run on LIVE Tantra omni-channel campaigns fed by webhook import. cloud/src/jobs-day2.ts:676 to 678 and :758 still mark Tantra reminder email 'not built' with TANTRA_NOTE, so the done_when (not-built note removed) is not met. T-236 should be removed or folded into this task."
+    },
+    {
+     "ts": "2026-10-09T00:06:32+0530",
+     "who": "claude",
+     "note": "2026-10-08 Tantra API facts (repo docs/onboarding-v3/analysis/integrations-tantra-api.md, PR #142): POST /email-campaigns/:id/contacts appends contacts to a launched omnichannel campaign (email, LinkedIn, WhatsApp, Telegram steps). Steps use delayDays (whole days, step 1 runs on enrolment), so event-relative touches (day before, 1 hour before, live) need one single-step campaign per touch, with the funnel enrolling each registrant at the due time; sending window should be every day, all hours. WhatsApp shows 'Not in your plan' on the owner workspace: see the add-on pricing decision task."
     }
    ],
    "order": 2170
@@ -7934,6 +7964,11 @@
      "ts": "2026-10-08T05:13:03+0530",
      "who": "claude",
      "note": "Deployed: migration 0017 remote, Worker e6ac0806 (main 517574e). Reminders are OFF live (tantra_reminders 0) until the key is saved. Fresh-stack verification: probe-tantra-reminders 51/51 twice; a 1 in 5 probe flake (sim bounce bucket) fixed in 517574e."
+    },
+    {
+     "ts": "2026-10-09T00:06:32+0530",
+     "who": "claude",
+     "note": "2026-10-08 Tantra API facts (repo docs/onboarding-v3/analysis/integrations-tantra-api.md, PR #142): POST /email-campaigns/:id/contacts appends contacts to a launched omnichannel campaign (email, LinkedIn, WhatsApp, Telegram steps). Steps use delayDays (whole days, step 1 runs on enrolment), so event-relative touches (day before, 1 hour before, live) need one single-step campaign per touch, with the funnel enrolling each registrant at the due time; sending window should be every day, all hours. WhatsApp shows 'Not in your plan' on the owner workspace: see the add-on pricing decision task."
     }
    ],
    "order": 2340
@@ -8020,6 +8055,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: the /emails/batch endpoint was Claude's invention and is superseded by the owner's campaign-import model (google-and-reminder-model 2026-10-07, Tantra campaign sends are live); repurposed to unwind the code built against it rather than removed, because cloud/funnel/worker.js, jobs-day2.ts TANTRA_NOTE, the contract test and probe-email-stripe still assume it."
+    },
+    {
+     "ts": "2026-10-09T00:06:32+0530",
+     "who": "claude",
+     "note": "2026-10-08 Tantra API facts (repo docs/onboarding-v3/analysis/integrations-tantra-api.md, PR #142): POST /email-campaigns/:id/contacts appends contacts to a launched omnichannel campaign (email, LinkedIn, WhatsApp, Telegram steps). Steps use delayDays (whole days, step 1 runs on enrolment), so event-relative touches (day before, 1 hour before, live) need one single-step campaign per touch, with the funnel enrolling each registrant at the due time; sending window should be every day, all hours. WhatsApp shows 'Not in your plan' on the owner workspace: see the add-on pricing decision task."
     }
    ],
    "order": 2360
@@ -8639,6 +8679,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: Zoom items mostly answered by the live end-to-end test on our own Pro account (T-224, 2026-10-07: S2S /users calls, one join link for 3 days, attendance after 119 s, recordings and chat); GoHighLevel/HubSpot/Zoho depend on T-260; Tantra checks can run on our own FintechCircle workspace under T-234."
+    },
+    {
+     "ts": "2026-10-09T00:06:32+0530",
+     "who": "claude",
+     "note": "2026-10-08 walkthrough recordings confirmed live: Resend Add API Key (Full access vs Sending access, All domains, shown once); Cloudflare token form (Registrar: Domains offers Read or Admin only); Cal.com Settings, Developer, API keys, New, never expires, cal_live_ key shown once; WebinarGeek Webinar ID via the API reference icon (address bar is the episode ID), API key under Account, Integrations, API; Metricool Account settings, API tab, userId/blogId in the brand URL; GA4 Account access management, Add users, Editor; Zoom settings and S2S app pages; GoHighLevel Private Integrations (Labs not needed on the owner agency). Every object created for recording was deleted and re-checked live on 2026-10-08 (REVERT_LEDGER all reverted). Twilio, Dodo, Stripe and CRM checks still wait (see the blocked walkthrough task)."
     }
    ],
    "order": 2530
@@ -8886,7 +8931,7 @@
    "blockers": [
     "Adi's keep or replace decision per tool"
    ],
-   "needs_from_owner": "Decide keep or replace for each tool (reply on http://localhost:8899/tasks.html#T-260, or the public board https://adisuja.github.io/tantra-workshop-live/tasks.html#T-260). Recommended: Wistia replace (host the RSP video on the attendee's Cloudflare, uploaded by the agent); Beehiiv replace (weekly letter as a Tantra email campaign); ElevenLabs T-0 voice call drop; Meta Ads keep as a human step only (attendee's own ad budget), no Meta automation now; Notion drop (plan from the approved d2-content batch); WordPress keep as a human publish step; Sales Navigator/Expandi drop in favour of the data-partner list and Tantra LinkedIn; GoHighLevel/HubSpot/Zoho keep only as optional one-way sync if you want it, else built-in CRM only (also answers T-120).",
+   "needs_from_owner": "Decide keep or replace for the remaining tools: Beehiiv, ElevenLabs, Meta Ads, Notion, WordPress, Sales Navigator/Expandi (Stripe, GoHighLevel, HubSpot, Zoho, Wistia already decided: keep).",
    "log": [
     {
      "ts": "2026-10-08T00:21:42+0530",
@@ -8897,6 +8942,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: per CONTEXT2 this task owns every not-approved tool decision, so added Sales Navigator/Expandi and GoHighLevel/HubSpot/Zoho (cross-ref T-120, T-056); removed the 'voice via Twilio' suggestion (Twilio is approved for SMS only); added a recommended answer per tool and where to record it."
+    },
+    {
+     "ts": "2026-10-09T00:06:32+0530",
+     "who": "claude",
+     "note": "2026-10-08 owner decisions (chat): Stripe KEEP as a payment option alongside Dodo (owner's Stripe key to come). GoHighLevel KEEP (owner gave a test token; the owner's agency used for the 4K walkthrough). HubSpot, Zoho, Wistia KEEP as attendee-brings-own-account: build the backend workflows with the attendee's key; no owner subscriptions. Ruled out everywhere (2026-10-07): GoDaddy, Microsoft 365, Instantly, SendGrid, ZeroBounce, NeverBounce, BuiltWith, HeyReach, Calendly, Apollo; Cal.com replaces Calendly; WhatsApp only via Tantra. Still open here: Beehiiv, ElevenLabs, Meta Ads, Notion, WordPress, Sales Navigator/Expandi."
     }
    ],
    "order": 2600
@@ -9007,6 +9057,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: aligned with the owner model 2026-10-07 (one Google service account per Workspace user, uploaded to Tantra; Tantra sends the invites); related T-227 is the organiser service account for our own workshop invites, not this; added merge order."
+    },
+    {
+     "ts": "2026-10-09T00:06:32+0530",
+     "who": "claude",
+     "note": "2026-10-08: Tantra help (connect-google-workspace) confirms one service account with domain-wide delegation covers every mailbox in that Workspace; scopes gmail.send + gmail.modify (cold email) and calendar (invites); upload JSON at Connectors, Google Service Accounts; Accounts, Verify and Add shows Connected + Gmail capable (Calendar-only means Gmail scopes missing). Both owner service-account keys mint delegated tokens for calendar.events, gmail.send and gmail.modify (tested 2026-10-07, no API calls). Recorded in the google-senders 4K video."
     }
    ],
    "order": 2630
@@ -9044,6 +9099,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: owner rule 2026-10-07: WhatsApp never via Twilio (Twilio is SMS only); rescoped to SMS gaps plus moving the attendee WhatsApp path from Twilio/Meta templates onto Tantra. X049, X050, N029 become obsolete with that move (start-whatsapp-verify is already removed by e4bd0b8); d1-twilio-whatsapp and wa-templates still exist even on tantra-walkthroughs."
+    },
+    {
+     "ts": "2026-10-09T00:06:32+0530",
+     "who": "claude",
+     "note": "2026-10-08: Twilio now asks for an emailed verification code before Admin, Account management and API keys open (seen on the owner's trial account). Attendee guidance and the video caption mention it."
     }
    ],
    "order": 2640
@@ -9682,19 +9742,214 @@
     "Adi's verdict per video recorded here",
     "Approved videos show on their cards and in the playbook; rejected ones re-recorded or dropped"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Walkthrough review index (18 videos, 4K)",
+     "url": "http://localhost:8883/wt-review/index.html"
+    },
+    {
+     "label": "Workflow v2 (plan, live check, record, verify, render, review)",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/tantra-walkthroughs/scripts/walkthroughs/WORKFLOW.md"
+    }
+   ],
    "blockers": [
     "Review page from the 4K walkthrough session"
    ],
-   "needs_from_owner": "Review each video on the walkthrough review page when it is ready and say approve or redo per video.",
+   "needs_from_owner": "Review every 4K walkthrough on the review index and reply approve or redo per video: http://localhost:8883/wt-review/index.html (each video has its own page: /wt-review/<tool>/index.html). Two run past 2 minutes (Tantra reminders 2:11 at 46 steps, Zoom 2:02 at 39 steps): say which steps to cut.",
    "log": [
     {
      "ts": "2026-10-08T05:03:55+0530",
      "who": "claude",
      "note": "Added by the Integrator: seven videos held per the v2 workflow brief."
+    },
+    {
+     "ts": "2026-10-09T00:06:32+0530",
+     "who": "claude",
+     "note": "2026-10-08/09 (S1): the v1 videos were rejected by Adi (blurry, Log in instead of Sign up, wrong tabs, key deletion recorded). Rebuilt with WORKFLOW.md v2: one agent per tool in parallel, journey plan per tool (journeys/<tool>.md), live dry run, native 2x captures (cap.py on the signed-in Brave window, pwrec.mjs Playwright for public pages), Remotion 3840x2160 motion graphics (motion/), verify.py contact sheets, review page per video. 18 videos now: 11 end to end (Resend, Cloudflare, Cal.com, WebinarGeek, Metricool, GA4, Tantra API key, Tantra reminder campaign, Zoom, GoHighLevel, Google senders Tantra side), 7 stop after sign-up because of access (see the blocked walkthrough task). Every video ends with the paste-into-centre step from a shared 4K capture. No key deletion on camera; every key/draft made for recording deleted off camera, live-checked 2026-10-08."
     }
    ],
    "order": 2820
+  },
+  {
+   "id": "T-283",
+   "title": "Finish the 7 walkthrough videos blocked on account access (Twilio, Kie.ai, Dodo, Stripe, HubSpot, Zoho, Wistia) and the Google Cloud and Admin steps",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "blocked",
+   "why": "Adi's rule (2026-10-08): one end-to-end video per tool, sign-up to key to centre, zero exceptions. These stop after sign-up and pricing because Claude never types passwords or codes and never creates vendor accounts.",
+   "spec": "Per tool, once access exists, resume that tool's recording agent per scripts/walkthroughs/AGENT_BRIEF.md: in-app route in the signed-in Brave window (lock /tmp/wt-brave-lock), key deleted off camera and logged in REVERT_LEDGER.md, bash finalize.sh <tool>. Routes are in scripts/walkthroughs/journeys/<tool>.md.",
+   "done_when": [
+    "Each of the 7 videos shows the in-app route to the key and the centre paste step",
+    "Google senders video shows the Google Cloud service account, JSON key and Google Admin delegation steps",
+    "REVERT_LEDGER shows every test object deleted"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Twilio: enter the emailed verification code once in the Brave recording window (it goes to the account owner's inbox). Kie.ai and Dodo: say which Google account holds the existing account (the chooser offers two; a wrong pick would create a new account). Stripe: sign into the Stripe account in Brave (Google sign-in showed first-time consent). HubSpot, Zoho, Wistia: no accounts exist; create free accounts and sign in in Brave, or say skip. Google Cloud console and Google Admin: type the password once in Brave when asked.",
+   "log": [
+    {
+     "ts": "2026-10-09T00:06:32+0530",
+     "who": "claude",
+     "note": "Added 2026-10-08 by the walkthroughs session: blockers found while recording."
+    }
+   ],
+   "order": 2830
+  },
+  {
+   "id": "T-284",
+   "title": "Put the approved 4K walkthroughs on both onboarding centres and the playbook",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "The live centres and playbook still carry the v1 videos (1456 px, Log-in based, some docs-only). The v2 4K videos replace them only after Adi approves each one (T-282).",
+   "spec": "For each approved tool: export a web copy (1080p or 1440p H.264 plus poster and captions) beside the 4K master; update app/src/lib/walkthroughs.ts (cards, seconds, guide text from journeys/<tool>.md); WatchHow on the agentic centre card and the old centre Day 0 list; app/scripts/embed-walkthroughs.mjs; titlecase.py + embed.py; check-walkthroughs, check-guides, check-playbook-anchors. Drop the Sign in with Google video unless the Sign in with Google decision keeps the button. Commit the v2 pipeline (motion/, pwrec.mjs, cap.py, verify.py, render.sh, review.py, journeys/, recordings/*.jsonl) with frames and 4K masters gitignored.",
+   "done_when": [
+    "Every approved tool's card plays its v2 video on the live centre and the old centre",
+    "Playbook embeds show the v2 videos",
+    "check-walkthroughs and check-guides pass",
+    "No v1 video left on a card that has an approved v2"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-09T00:06:32+0530",
+     "who": "claude",
+     "note": "Added 2026-10-08: follows T-282."
+    }
+   ],
+   "order": 2840
+  },
+  {
+   "id": "T-285",
+   "title": "Card copy fixes found while recording the walkthroughs",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "Recording each vendor's live UI showed card text that no longer matches the product.",
+   "spec": "WebinarGeek: the Webinar ID is NOT the number in the address bar (that is the episode ID); copy it from the API reference icon next to Edit webinar; signup link /try-free 404s, use /register. Metricool: signup link points to the log-in page, use app.metricool.com/register. Cal.com: button is New, not Add. GA4: card-education says property level, card and video say account level (align to the card). GoHighLevel: scope labels in the UI read like 'Edit Contacts - contacts.write', pipelines scopes are pipelinesreadonly/pipelineswrite/pipelinescreate; mention the Labs toggle. HubSpot: menu is Development, Keys, Service keys; eight scopes not six; say service key, not private app. Wistia: Settings, API Home. Stripe: say sandbox, mention the two-step check at Create key. Zoom: the 'Only authenticated' setting label is longer now. Kie.ai: GPT Image 2 is 3 to 8 cents an image ($0.03 to $0.08). Twilio: API keys page may ask for an emailed code first. Tantra: start-tantra-mailboxes says sign in as each mailbox; the real flow is service account plus Accounts, Verify & Add.",
+   "done_when": [
+    "Each listed card and card-education entry matches the recorded UI",
+    "check-guides and check-examples pass"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-09T00:06:32+0530",
+     "who": "claude",
+     "note": "Added 2026-10-08 from the walkthrough agents' reports."
+    }
+   ],
+   "order": 2850
+  },
+  {
+   "id": "T-286",
+   "title": "Decide: keep or remove the Sign in with Google button on the Workspace and GA4 cards",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "Built 2026-10-07 (security-reviewed) with Adi's OAuth client. None of the three Google uses Adi described (per-Workspace service accounts in Tantra for invites and cold email, vendor inboxes, GA4) needs it, and the client is in Google testing mode (only listed test users can consent; going public needs Google verification).",
+   "spec": "",
+   "done_when": [
+    "Decision recorded here",
+    "Remove: button, routes and google-signin video gone, tsc and checks pass; or Keep: consent works for a listed test user on the live centre"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Reply keep or remove. Recommended: remove (the service-account path already works and needs no Google console changes). If keep: add test users and the live redirect URI in the Google Cloud console (password re-check needed) and set the two Worker secrets.",
+   "log": [
+    {
+     "ts": "2026-10-09T00:06:32+0530",
+     "who": "claude",
+     "note": "Added 2026-10-08."
+    }
+   ],
+   "order": 2860
+  },
+  {
+   "id": "T-287",
+   "title": "Confirm Tantra channel add-on pricing (WhatsApp, LinkedIn, Telegram show '$10/mo add-on' in the app)",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "The Tantra Connectors page on the owner's client workspace shows '$10/mo add-on' on WhatsApp, LinkedIn and Telegram, and the campaign builder marks WhatsApp 'Not in your plan'. The agreed plan line-up says no channel add-ons (Pro 5 LI/WA, Scale 15). Reminder campaigns with WhatsApp steps depend on this.",
+   "spec": "",
+   "done_when": [
+    "Answer recorded; cards, playbook and the reminders video caption match it"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Which is current: add-ons in the app, or the no-add-on line-up? If the app is wrong, it is a Tantra product fix.",
+   "log": [
+    {
+     "ts": "2026-10-09T00:06:32+0530",
+     "who": "claude",
+     "note": "Added 2026-10-08 from the Tantra reminder campaign recording."
+    }
+   ],
+   "order": 2870
+  },
+  {
+   "id": "T-288",
+   "title": "Fill the live /preview event card with Thursday 15 October",
+   "area": "Funnel",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "Adi set the webinar date to Thursday 15 October and removed the three-week minimum (shipped in 4d17e2a, merged to main). The shared /preview demo attendee still needs the date.",
+   "spec": "Run app/scripts/fill-preview.mjs (tantra-demo fixture) or fill d1-event / ev_date through the UI on https://revops-centre.growthcluborg.workers.dev/preview; check /api/me shows the date.",
+   "done_when": [
+    "/preview event card shows 15 October 2026 and is done"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-09T00:06:32+0530",
+     "who": "claude",
+     "note": "Added 2026-10-08 (pending since 2026-10-07)."
+    }
+   ],
+   "order": 2880
   }
  ]
 }
