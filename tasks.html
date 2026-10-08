@@ -482,18 +482,21 @@ function render(){
   if(AGENT.state==="working")put(byId(AGENT.task_id),AGENT.mode==="queue"?"Working now · continuing it":"Working now · acting on your note");
   if(QAGENT.state==="working")put(byId(QAGENT.task_id),"Working now · continuing it");
   const waitingNotes=INBOX.filter(f=>!f.processed&&f.trusted!==false&&!isProbeNote(f)&&f.task_id&&byId(f.task_id)).sort((a,b)=>tms(a.ts)-tms(b.ts));
-  for(const f of waitingNotes)put(byId(f.task_id),f.action==="ripple"?"Queued · updating for a related change":"Queued · your note is next in line",true);
+  for(const f of waitingNotes)put(byId(f.task_id),f.action==="ripple"?"Queued · updating for a related change":f.source==="orchestrator"?"Queued · the Orchestrator decided the next step":"Queued · your note is next in line",true);
+  // a blocked task is the Orchestrator's to unblock unless it decided only Adi can give the input (owner, 2026-10-09)
+  const needsAdi=t=>t.kind==="input"||(ORCH.tasks?.[t.id]?.verdict==="needs_adi"&&!ORCH.tasks[t.id].input_task)||(!ORCH.tasks?.[t.id]&&!ORCH.last_sweep);
+  for(const t of T.filter(t=>["blocked","recheck"].includes(t.status)&&!needsAdi(t)))put(t,ORCH.running?"Orchestrator · deciding the blocker":"Orchestrator · blocker being resolved",true);
   if(nx)put(nx,"Next in the queue",true);
   const onIds=new Set(live.map(x=>x.t.id));
   $("#n-on").textContent=live.length;
   $("#s-next").textContent=nx?nx.id:"—";
   LISTS.on=live.map(x=>x.t.id);
   $("#now-next").innerHTML=live.length?live.slice(0,6).map(({t,label,q})=>`<button class="nowitem" onclick="jump('${t.id}','on')"><span class="on${q?" q":""}"><i></i>${label}</span><b>${esc(t.title)}</b>${peopleLine(t)}${t===nx&&!q?`<span>${esc(t.why)}</span>`:""}</button>`).join("")+(live.length>6?`<div class="empty">+${live.length-6} more queued</div>`:""):'<div class="empty">Nothing in progress. Notes you send are picked up within seconds.</div>';
-  const youAll=T.filter(t=>t.status==="blocked"&&t.needs_from_owner&&!onIds.has(t.id));
+  const youAll=T.filter(t=>t.status==="blocked"&&t.needs_from_owner&&!onIds.has(t.id)&&needsAdi(t));
   const youSorted=youAll.sort((a,b)=>followUp(b)-followUp(a)||a.priority.localeCompare(b.priority));LISTS.you=youSorted.map(t=>t.id);
   const you=youSorted.slice(0,8);
   $("#n-you").textContent=youAll.length;$("#s-blocked").textContent=youAll.length;
-  $("#now-you").innerHTML=you.length?you.map(t=>`<button class="nowitem" onclick="jump('${t.id}','you')">${followUp(t)?`<span class="fu">Claude replied to your note</span>`:""}<b>${esc(t.title)}</b>${peopleLine(t)}<span class="ask">${esc(t.needs_from_owner)}</span></button>`).join(""):'<div class="empty">Nothing blocked on you.</div>';
+  $("#now-you").innerHTML=you.length?you.map(t=>`<button class="nowitem" onclick="jump('${t.id}','you')">${followUp(t)?`<span class="fu">Claude replied to your note</span>`:""}<b>${esc(t.title)}</b>${peopleLine(t)}<span class="ask">${esc(t.needs_from_owner)}</span></button>`).join(""):'<div class="empty">Nothing needs your input. Claude and the Orchestrator are on everything else.</div>';
   const revAll=T.filter(t=>t.status==="review"&&!onIds.has(t.id));
   const revSorted=revAll.sort((a,b)=>followUp(b)-followUp(a)||a.priority.localeCompare(b.priority));LISTS.rev=revSorted.map(t=>t.id);
   const rev=revSorted.slice(0,8);
@@ -813,7 +816,7 @@ function saveWho(key){const a=WHOASK[key],inp=document.getElementById("whoin-"+k
 function cancelWho(key){delete WHOASK[key];paintWho(key);const out=document.getElementById(key==="nt"?"nt-sent":"sent-"+key);if(out)out.textContent=""}
 
 /* ---- note status in the thread: queued → Claude working → handled ---- */
-let AGENT={},QAGENT={};
+let AGENT={},QAGENT={},ORCH={};
 function noteState(m){
   if(m.pending&&m.trusted!==false)return `<span class="st q">saved · reaching Claude within seconds</span>`;
   if(m.trusted===false&&m.unread)return `<span class="st q">sent without a team link · waiting for Adi's approval</span>${STATIC&&!ME.owner?"":`<button class="btn mini" style="margin-left:6px" onclick="trustNote('${esc(m.id)}')">Let Claude act on this</button>`}`;
@@ -979,7 +982,8 @@ const AGENT_TEXT={working:"Working",idle:"Idle",paused:"Paused",offline:"Offline
 let agentSig="";
 async function pollAgent(){
   const get=async u=>{try{const r=await fetch(u+"?v="+Date.now());return r.ok?await r.json():{}}catch(e){return{}}};
-  const [st,qs,cf,sync]=await Promise.all([get("tasks/runner.json"),get("tasks/runner-queue.json"),get("tasks/agent.json"),get(STATIC?"tasks/sync.json":"tasks/.board-sync.json")]);
+  const [st,qs,cf,sync,orch]=await Promise.all([get("tasks/runner.json"),get("tasks/runner-queue.json"),get("tasks/agent.json"),get(STATIC?"tasks/sync.json":"tasks/.board-sync.json"),get("tasks/orchestrator-board.json")]);
+  const orchSig=JSON.stringify([orch.last_sweep,orch.running,orch.counts]);const orchChanged=orchSig!==JSON.stringify([ORCH.last_sweep,ORCH.running,ORCH.counts]);ORCH=orch||{};
   AGENT={...st,entries:[...(st.entries||[])]};QAGENT=qs||{};
   const bad=["paused","offline"].includes(st.state)?st.state:null;
   const s=cf.enabled===false?"disabled":bad||(st.state==="working"||qs.state==="working"?"working":"idle");
@@ -993,12 +997,14 @@ async function pollAgent(){
     if(cf.queue!==false)parts.push(qs.state==="working"?"Queue: "+qs.message:["paused","offline"].includes(qs.state)?`Queue: ${AGENT_TEXT[qs.state]} · ${qs.message||""}`:"Queue: idle.");
   }
   if(s!=="working"&&last)parts.push(`Last: ${last.task_id} → ${last.status} (${String(last.ts).slice(5,16).replace("T"," ")}).`);
+  if(ORCH.last_sweep||ORCH.running){const c=ORCH.counts||{},n=Object.values(c).reduce((a,b)=>a+b,0);
+    parts.push(`Orchestrator: ${ORCH.running?"deciding now":"idle"} · ${n} tasks decided (${(c.resolve||0)+(c.proceed||0)+(c.finish||0)} moved forward, ${c.complete||0} ready, ${c.needs_adi||0} need your input)`)}
   const hhmm=ts=>{const d=new Date(String(ts||"").replace(/([+-]\d\d)(\d\d)$/,"$1:$2"));return isNaN(d)?"":d.toLocaleString(undefined,{month:"short",day:"numeric",hour:"2-digit",minute:"2-digit"})};
   if(STATIC)parts.push(sync.published?`Board published ${hhmm(sync.published)} from the owner's Mac${(sync.held||[]).length?` · ${sync.held.length} item(s) held for privacy`:""}. ${KEY?`Signed in as ${ME.name||"…"}: everything you send saves here and reaches Claude within seconds.`:"Open your personal board link to send as yourself."}`:(KEY?`Signed in as ${ME.name||"…"}: everything you send saves here and reaches Claude within seconds.`:"Open your personal board link to send as yourself."));
   else if(sync.ts)parts.push(sync.ok===false?`Public board: NOT published (${sync.reason||"error"})`:`Public board: ${sync.published?"published":"in sync"} ${hhmm(sync.ts)}${(sync.held||[]).length?` · held for privacy: ${sync.held.map(h=>h.task||h.id).join(", ")} (reword to publish)`:""}`);
   $("#agent-msg").textContent=parts.join(" · ");
   const tog=$("#agent-tog");tog.hidden=STATIC&&!ME.owner;tog.textContent=cf.enabled===false?"Resume":"Pause";
-  const sig=[st.state,st.task_id,st.updated,qs.state,qs.task_id,qs.updated].join("|");if(agentSig&&sig!==agentSig)load();else if(!agentSig)render();agentSig=sig;
+  const sig=[st.state,st.task_id,st.updated,qs.state,qs.task_id,qs.updated].join("|");if(agentSig&&sig!==agentSig)load();else if(!agentSig||orchChanged)render();agentSig=sig;
 }
 $("#agent-tog").onclick=async()=>{const on=$("#agent-tog").textContent==="Resume";try{STATIC?await post({action:"agent",enabled:on}):await api("/api/agent",{enabled:on})}catch(e){alert(e.message)}pollAgent()};
 document.querySelectorAll("#view button").forEach(b=>b.onclick=()=>{view=b.dataset.v;document.querySelectorAll("#view button").forEach(x=>x.classList.toggle("on",x===b));render()});
