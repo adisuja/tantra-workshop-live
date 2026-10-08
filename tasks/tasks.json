@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T02:04:42+0530",
-  "version": 397,
+  "updated": "2026-10-09T02:11:09+0530",
+  "version": 398,
   "last_id": 331,
   "team": [
    {
@@ -7498,18 +7498,35 @@
    "due": "",
    "status": "blocked",
    "why": "Adi 2026-10-08: everything the REST API and our Zoom app cannot do live must still be automated in every Day 1, 2 and 3 session: posting chat messages, running polls, posting call-to-action links at the right moments, keeping attendees muted with video off, and promoting co-hosts.",
-   "spec": "Spike done (branch zoom-bot 465d59d, docs/onboarding-v3/analysis/zoom-bot.md, sources cited). Findings: Zoom states the Meeting SDK 'is designed for human use cases and does not support bots' (verified 2026-10-08 on developers.zoom.us/docs/meeting-sdk/linux/), and only the native macOS (or Windows) Meeting SDK can launch polls; Web and Linux cannot. So no unattended bot. Plan: a Swift 'Tantra Host Console' on Adi's Mac, opened by launchd 20 minutes before each Wed to Fri 11:00 ET session; Adi presses Start and hosts from it (Zoom's normal meeting window). It locks the room (mute all, no self-unmute, no video, focus mode), runs the day's script from the centre (/bot/zoom/plan): timed chat posts, CTA links, polls created ahead by REST and launched live, makes listed co-hosts co-host, re-mutes anyone not allowed, and posts joins, leaves and poll results to /bot/zoom/events. Admin gets a per-day script editor (chat, CTAs, polls). UNVERIFIED until the first test meeting: REST polls appearing on every occurrence, stopping another person's video, co-host matching by email.",
+   "spec": "Spike done (branch zoom-bot 465d59d, docs/onboarding-v3/analysis/zoom-bot.md, sources cited). Findings: Zoom states the Meeting SDK 'is designed for human use cases and does not support bots' (verified 2026-10-08 on developers.zoom.us/docs/meeting-sdk/linux/), and only the native macOS (or Windows) Meeting SDK can launch polls; Web and Linux cannot. So no unattended bot. Plan: a Swift 'Tantra Host Console' on Adi's Mac, opened by launchd 20 minutes before each Wed to Fri 11:00 ET session; Adi presses Start and hosts from it (Zoom's normal meeting window). It locks the room (mute all, no self-unmute, no video, focus mode), runs the day's script from the centre (/bot/zoom/plan): timed chat posts, CTA links, polls created ahead by REST and launched live, makes listed co-hosts co-host, re-mutes anyone not allowed, and posts joins, leaves and poll results to /bot/zoom/events. Admin gets a per-day script editor (chat, CTAs, polls). UNVERIFIED until the first test meeting: REST polls appearing on every occurrence, stopping another person's video, co-host matching by email.\n\nALREADY BUILT AND LIVE (verified 2026-10-09 against main and the live centre; the console reuses all of it):\n- The Zoom app that exists is the 'Tantra Centre' Server-to-Server OAuth app (T-224, done): its credentials and webhook secret are saved in the live centre (zoom_s2s_enc, zoom_webhook_enc), host prepared, webhook at /hooks/zoom. It already holds user:read:token:admin (the host's ZAK the console needs to start the meeting) and report:read:list_meeting_polls:admin (poll results), but NOT the poll write scopes in ask 3.\n- One recurring meeting per cohort (87002851906 for 7 to 9 Oct), one join link for all three days, room settings applied at the account level: mute on entry, request permission to unmute, focus mode, passcode on, authentication off, audio transcript (T-223, T-224).\n- The bot contract is already in cloud/src/zoom-pro.ts: GET /bot/zoom/plan (today's sessions, locks mute_all / no self-unmute / no video / focus mode, co-host emails), POST /bot/zoom/zak, POST /bot/zoom/events (started, ended, joined, left). It is OFF in production: ZOOM_BOT_KEY is not set, so /bot/zoom/plan answers 404.\n- Engagement already lands without the console: chat (from the recording's CHAT file), polls, transcript and attendance go to zoom_chat, zoom_polls, zoom_engagement and the Tracker tabs; recordings are backed up to the team Drive (T-232).\n- Co-hosts: no alternative hosts (one Pro licence); co-host emails are collected here (T-230 folded in). Production zoom_cohosts is empty.\n- Mute and video locks: Zoom Support ticket open (T-225). If Zoom grants them, the console only needs chat, CTAs, polls and co-hosts.\n\nSTILL TO BUILD: the Swift console itself; a per-day script (timed chat posts, CTA links, polls) in the plan and an admin editor for it; poll creation by REST; /bot/zoom/events accepting poll results and chat posts (today it takes only started/ended/joined/left); setting ZOOM_BOT_KEY; the launchd opener.",
    "done_when": [
     "A test meeting hosted from the console shows the scripted chat and CTA posts at their times and a poll launched live whose answers reach zoom_polls",
     "Self-unmute and video are blocked; a listed co-host is promoted",
     "Admin edits each day's script, CTAs and polls; probe green",
     "Opens automatically before each session via launchd"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Spike: which Zoom SDK can do what (branch zoom-bot 465d59d, not merged to main yet)",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/zoom-bot/docs/onboarding-v3/analysis/zoom-bot.md"
+    },
+    {
+     "label": "Zoom Pro setup doc, section 3: the Tantra Centre app's scopes and events",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/docs/onboarding-v3/analysis/zoom-pro-meetings.md"
+    },
+    {
+     "label": "Bot contract: cloud/src/zoom-pro.ts (botPlan, zoomBot)",
+     "url": "cloud/src/zoom-pro.ts"
+    },
+    {
+     "label": "Admin centre: Cohort Settings, Zoom",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=t226"
+    }
+   ],
    "blockers": [
     "Adi's confirmation to host from the console, and the Meeting SDK app credentials"
    ],
-   "needs_from_owner": "1) Confirm you will host the sessions from the Tantra Host Console instead of the normal Zoom app. 2) Meeting SDK app: https://marketplace.zoom.us/ (signed in to the GrowthClub Zoom), Develop, Build App, General App, Create, name 'Tantra Host Console', Admin-managed, redirect URL https://revops-centre.growthcluborg.workers.dev/ ; Features, Embed, switch on Meeting SDK; do not publish; paste Client ID and Client Secret in the centre admin (or let Claude do these clicks in the Zoom-signed-in browser profile). 3) On the Tantra Centre app, Scopes, Add Scopes: meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin. 4) Co-host emails.",
+   "needs_from_owner": "1) Confirm you will host the sessions from the Tantra Host Console instead of the normal Zoom app. 2) Meeting SDK app (none exists yet: the live centre holds only the Tantra Centre Server-to-Server app): https://marketplace.zoom.us/ (signed in to the GrowthClub Zoom), Develop, Build App, General App, Create, name 'Tantra Host Console', Admin-managed, redirect URL https://revops-centre.growthcluborg.workers.dev/ ; Features, Embed, switch on Meeting SDK; do not publish; paste Client ID and Client Secret in the centre admin (or let Claude do these clicks in the Zoom-signed-in browser profile). 3) On the Tantra Centre app, Scopes, Add Scopes: meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin. 4) Co-host emails.",
    "log": [
     {
      "ts": "2026-10-07T20:46:43+0530",
@@ -7535,6 +7552,11 @@
      "ts": "2026-10-08T01:51:59+0530",
      "who": "claude",
      "note": "Spike: unattended bot not possible (Zoom policy; polls only in the native desktop SDK). Plan is a Mac host console Adi hosts from. Waiting on Adi's yes and the SDK app."
+    },
+    {
+     "ts": "2026-10-09T02:11:09+0530",
+     "who": "claude",
+     "note": "Context checked 2026-10-09: the only Zoom app is Tantra Centre (S2S, T-224, live). Added what is already built and live (bot contract in zoom-pro.ts but off, ZAK and poll-results scopes present, room settings, engagement ingestion, Drive backup), what is still to build, and links to the spike doc and setup doc. No Meeting SDK app has been created or saved yet."
     }
    ],
    "order": 2260
