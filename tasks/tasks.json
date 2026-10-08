@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T05:14:30+0530",
-  "version": 457,
+  "updated": "2026-10-09T05:15:52+0530",
+  "version": 464,
   "last_id": 341,
   "team": [
    {
@@ -2263,7 +2263,7 @@
    "id": "T-073",
    "status": "queue",
    "owner": "Amal",
-   "assignee": "Amal",
+   "assignee": "Claude",
    "reviewers": [
     "Amal"
    ],
@@ -2316,10 +2316,15 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: made actionable against current tools: coaching on a recurring Zoom Pro meeting, community in the WhatsApp group (T-040, on hold), newsletter on Resend or Tantra email (Beehiiv is not approved, T-260). Depends on the Pro course existing (T-071)."
+    },
+    {
+     "ts": "2026-10-09T05:15:10+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Amal → Claude (by Orchestrator)."
     }
    ],
    "order": 460,
-   "assignee": "Amal",
+   "assignee": "Claude",
    "reviewers": [
     "Amal"
    ]
@@ -8033,12 +8038,13 @@
   },
   {
    "id": "T-232",
-   "status": "blocked",
+   "status": "review",
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
     "Adi",
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ],
    "priority": "P0",
    "due": "",
@@ -8745,7 +8751,7 @@
    "title": "Share the six source resources the team is waiting on",
    "area": "Team",
    "owner": "Adi",
-   "assignee": "Adi",
+   "assignee": "Claude",
    "reviewers": [
     "Nelbin"
    ],
@@ -8771,6 +8777,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: issue #1 'Share:' box still unchecked (issue last updated 2026-09-30); added the issue URL."
+    },
+    {
+     "ts": "2026-10-09T05:15:52+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Adi → Claude (by Orchestrator)."
     }
    ],
    "order": 2490
@@ -8780,7 +8791,7 @@
    "title": "Nelbin's checklist follow-ups: Growth Idea message to Sam, client rollout and billing sheet, daily update, personalization spec items",
    "area": "Ops",
    "owner": "Nelbin",
-   "assignee": "Nelbin",
+   "assignee": "Claude",
    "reviewers": [
     "Adi"
    ],
@@ -8808,6 +8819,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): checked, current. pass 2: still accurate; issue #1 section 4 items still unchecked (issue last updated 2026-09-30). Owner Nelbin, Claude sends no Slack or team messages."
+    },
+    {
+     "ts": "2026-10-09T05:15:52+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Nelbin → Claude (by Orchestrator)."
     }
    ],
    "order": 2500

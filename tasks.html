@@ -486,7 +486,9 @@ function render(){
   for(const f of waitingNotes)put(byId(f.task_id),f.action==="ripple"?"Queued · updating for a related change":f.source==="orchestrator"?"Queued · the Orchestrator decided the next step":"Queued · your note is next in line",true);
   // a blocked task is the Orchestrator's to unblock unless it decided only Adi can give the input (owner, 2026-10-09)
   const needsAdi=t=>t.kind==="input"||(ORCH.tasks?.[t.id]?.verdict==="needs_adi"&&!ORCH.tasks[t.id].input_task)||(!ORCH.tasks?.[t.id]&&!ORCH.last_sweep);
-  for(const t of T.filter(t=>["blocked","recheck"].includes(t.status)&&!needsAdi(t)))put(t,ORCH.running?"Orchestrator · deciding the blocker":"Orchestrator · blocker being resolved",true);
+  const inputFor=id=>T.find(x=>x.input_for===id&&!["done","dropped"].includes(x.status));
+  for(const t of T.filter(t=>["blocked","recheck"].includes(t.status)&&!needsAdi(t))){const inp=inputFor(t.id);
+    put(t,inp?`Built as far as it goes · finishes after your input ${inp.id}`:ORCH.running?"Orchestrator · deciding the blocker":"Orchestrator · blocker being resolved",true)}
   if(nx)put(nx,"Next in the queue",true);
   const onIds=new Set(live.map(x=>x.t.id));
   $("#n-on").textContent=live.length;

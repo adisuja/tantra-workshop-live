@@ -1,0 +1,20 @@
+{
+ "history": [
+  {
+   "ts": "2026-10-09T05:15:32+0530",
+   "task_id": "T-232",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "(Held back from the public board: this note mentions a private client detail.)"
+  }
+ ],
+ "state": "working",
+ "mode": "feedback",
+ "task_id": "T-234",
+ "entries": [
+  "F-e2c4a0a3"
+ ],
+ "started": "2026-10-09T05:15:36+0530",
+ "message": "Acting on 1 note(s) for T-234: Workshop reminders through Tantra omni-channel campaigns: import every registrant with their own join and calendar links"
+}
