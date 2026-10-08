@@ -49,10 +49,10 @@
    "summary": "T-024 → **review**. Built three PDF-ready output templates in `workshop-plan/outputs/` (day1/2/3.html via `build.py`), each section tagged with its source survey questions and filled with a worked SendFlow sample; verified all three with `probe-outputs.mjs` (sections render, source lines present, Se"
   }
  ],
- "state": "idle",
- "message": "Nothing waiting.",
- "task_id": null,
+ "state": "working",
+ "message": "Continuing T-278: Join and success pages: one seat-link resolver, community fallback, footer links, sample dates",
+ "task_id": "T-278",
  "entries": [],
- "mode": null,
- "started": "2026-10-08T02:52:32+0530"
+ "mode": "queue",
+ "started": "2026-10-09T00:25:45+0530"
 }

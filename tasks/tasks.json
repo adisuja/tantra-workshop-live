@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T00:08:55+0530",
-  "version": 299,
-  "last_id": 288,
+  "updated": "2026-10-09T00:25:38+0530",
+  "version": 301,
+  "last_id": 303,
   "team": [
    {
     "name": "Adi",
@@ -769,10 +769,10 @@
    "due": "2026-09-18",
    "status": "review",
    "why": "The thing every attendee gets on Day 1 and the spine the deck and survey hang off.",
-   "spec": "Source workshop-plan/playbook.html (served copy app/public/materials/playbook.html; parts embedded per day in both onboarding centres via workshop-plan/build/titlecase.py then build/embed.py). Latest merged: owner round 2026-10-07 (a439830: hero, Backlinko-voice intros and headlines, COPY_RULES.md) and funnel equations v3 (1e41fdc). Still on main (2026-10-08): ruled-out tool names in the playbook (GoDaddy, Apollo, Instantly, BuiltWith, ZeroBounce, NeverBounce). Commit e4bd0b8 (branch tantra-walkthroughs) removes them from the playbook and both centres but is held until S1's probe fixes (043b5ab, aa22a3f) are READY in /Users/adithyamurali/tantra-round5-coord/LOG.md; that merge is T-251. After it lands, re-run node workshop-plan/probe-playbook.mjs and republish the mirror, then ask Adi for approval. Review copy: https://adisuja.github.io/tantra-workshop-live/playbook.html",
+   "spec": "Source workshop-plan/playbook.html (served copy app/public/materials/playbook.html; parts embedded per day in both onboarding centres via workshop-plan/build/titlecase.py then build/embed.py). Verified implemented on main 2026-10-09 against Adi's owner rounds of 2026-10-05 to 10-07: hero 'The Most Complete Agentic RevOps System in B2B. Installed in 3 Days.' with no pill; Backlinko-voice intros and rewritten headlines (workshop-plan/COPY_RULES.md); exactly 9 summaries, one per sidebar section; no checkboxes or work plans (knowledge only, actions live in the new centre or the daily survey); one 21px serif body (19px phones), headings 40px and 28px; funnel-fit 'Best for' boxes before each funnel; 17 other funnels as dropdowns with cinematics; value-ladder table with real companies; day-plan timeline; survey starts after the first 30 minutes of teaching; The Funnel Equations chapter (one metric per stage, plain-initial short forms). Ruled-out tool names are gone (only the adverb 'instantly' matches). Still open: Sales Navigator appears 3 times (T-260), the 89% show-up teaching-model figure and other owner calls (see 'Playbook owner-round calls still unanswered'), the unapproved tools inside the embedded FunnelOS animations (T-260 and the Apollo task), held walkthrough videos (T-282, T-284). Review copy: https://adisuja.github.io/tantra-workshop-live/playbook.html",
    "done_when": [
-    "T-251 merged: git grep -i -E 'godaddy|apollo|instantly|builtwith|zerobounce|neverbounce' -- workshop-plan/playbook.html returns nothing",
     "node workshop-plan/probe-playbook.mjs clean",
+    "Sales Navigator decision applied (T-260)",
     "Adi approves the playbook or lists changes by section"
    ],
    "evidence": [
@@ -782,7 +782,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "After T-251 lands, read https://adisuja.github.io/tantra-workshop-live/playbook.html and reply on this task with approval or changes by section.",
+   "needs_from_owner": "Read https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1009 and reply on this task with approval or changes by section.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -808,6 +808,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: playbook on main still names ruled-out tools (GoDaddy 4, Apollo 3, Instantly 2, BuiltWith, ZeroBounce, NeverBounce); the fix is e4bd0b8 on tantra-walkthroughs, held until S1's probe fixes land (T-251)."
+    },
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Session sweep (2026-10-09): source: ec3e66fb/9628377c owner rounds verified on main 2026-10-09 (hero, 9 sidebar summaries only, Backlinko voice, no checkboxes, 21px serif, ladder table, 17 dropdowns, equations chapter); stale ruled-out-tools claim corrected."
     }
    ],
    "order": 110,
@@ -3451,14 +3456,14 @@
   },
   {
    "id": "T-108",
-   "title": "Three animated funnels in the playbook: webinar · reverse squeeze page · challenge",
+   "title": "Animated funnels in the playbook: the three main funnels, the Whole Machine and the 17 other types",
    "area": "Content",
    "owner": "Adi",
    "priority": "P1",
    "due": "2026-09-24",
    "status": "review",
    "why": "Owner (2026-09-24, correction): replicate the /masterclass FunnelOS funnel visualisation exactly, and create the same for the reverse squeeze page and challenge funnels, all three animated in the playbook's 'What are funnels' section. The first attempt (custom cards) was rejected.",
-   "spec": "FunnelOS (app/src/components/masterclass/funnel-os.tsx) is now a spec-driven engine; the webinar spec is unchanged on /masterclass. funnel-os-rsp.tsx = the RSP whiteboard (5 stages, its funnel maths, 52-week grid, every tool named). funnel-os-challenge.tsx = the 3-day workshop as built (structural facts only; planned items live in the V2 layer). Pages /funnels/webinar|rsp|challenge; build/funnels.py frames them in the playbook. Verify: scripts/probe-funnel-boards.mjs (5 widths) + scripts/shoot-playbook-funnels.mjs.",
+   "spec": "FunnelOS (app/src/components/masterclass/funnel-os.tsx) is now a spec-driven engine; the webinar spec is unchanged on /masterclass. funnel-os-rsp.tsx = the RSP whiteboard (5 stages, its funnel maths, 52-week grid, every tool named). funnel-os-challenge.tsx = the 3-day workshop as built (structural facts only; planned items live in the V2 layer). Pages /funnels/webinar|rsp|challenge; build/funnels.py frames them in the playbook. Verify: scripts/probe-funnel-boards.mjs (5 widths) + scripts/shoot-playbook-funnels.mjs. SCOPE ADDED 2026-10-05 (Adi, round 2): 17 more cinematics from the Funnel Master (app/src/components/masterclass/funnel-os-types/<id>.tsx, registry funnel-os-registry.tsx with lazy imports) shown as dropdowns in playbook section id bigpic-the-other-17-funnel-types, plus /funnels/system ('The Whole Machine on One Page', all three shapes in one workflow, labelled the comparison view). Every cinematic must use the six canonical stage names (Traffic Generation Engine, Landing & Registration, Multi-Channel Nurture, Conversion Mechanism, Revenue & Deal Pipeline, 52-Week Growth Engine) and five canonical channel names (Cold Email, Calendar Invites, LinkedIn Outreach, Paid Ads, Content / Organic): renaming them was called a 'big no-no' on 2026-10-05T20:05. Open calls on the extra ones: see 'Decide the open calls on the 17 extra funnel animations'.",
    "done_when": [
     "Owner approves all three"
    ],
@@ -3481,7 +3486,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/playbook.html#funnels and the full-screen boards https://adisuja.github.io/tantra-workshop-live/site/funnels/webinar/, https://adisuja.github.io/tantra-workshop-live/site/funnels/rsp/ and https://adisuja.github.io/tantra-workshop-live/site/funnels/challenge/, then approve or reply per funnel.",
+   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/playbook.html#funnels and #bigpic-the-other-17-funnel-types, plus the full-screen boards https://adisuja.github.io/tantra-workshop-live/site/funnels/webinar/, .../rsp/ and .../challenge/, then approve or reply per funnel.",
    "log": [
     {
      "ts": "2026-09-24",
@@ -3497,6 +3502,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still awaiting approval; all four evidence URLs answer 200. The challenge board still labels the $9,999 offer 'Chaperone' (rename in T-072). Owner kept the all-three comparison view /funnels/system on 2026-10-06."
+    },
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Session sweep (2026-10-09): source: ec3e66fb 2026-10-05: scope grew to 21 cinematics (3 + 17 types + system); review ask now covers all."
     }
    ],
    "order": 1060,
@@ -6623,7 +6633,7 @@
    "due": "",
    "status": "queue",
    "why": "Owner model 2026-10-07: attendees' cold email inboxes are bought from an inbox vendor (Endy is the partner) who handles domains, Workspace users and SPF/DKIM/DMARC, then connected to Tantra; the partnership needs an agreed hand-off and revenue share so the team does no per-attendee work.",
-   "spec": "Already built: the start-endy card (app/src/lib/workshop-cards.ts:411, 'Get your inboxes through our partner', never names Endy) records each attendee who picks the partner option as a row in the Inbox Partner Leads tab (Name, Email, Mailboxes, Domains, Date) of the Tantra Work Tracker (workshop-plan/ops/centre_sheet.py, sheet https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit). To do (Nelbin): one call with Endy Inboxes to agree (a) the lead hand-off (Endy reads the Inbox Partner Leads tab, or Claude adds one email per new lead to an address Endy gives), (b) a revenue share per referred attendee, (c) that Endy delivers inbox logins for the attendee to connect in Tantra (not Instantly). Record the agreement here. Claude then wires the hand-off chosen in (a). Code note for T-251: cloud/src/agentic.ts:460-519 and cloud/src/jobs.ts:564-566 still watch Instantly for Endy's uploads and must switch to Tantra.",
+   "spec": "Already built: the start-endy card (app/src/lib/workshop-cards.ts:356, 'Get your inboxes through our partner', never names Endy) records each attendee who picks the partner option as a row in the Inbox Partner Leads tab (Name, Email, Mailboxes, Domains, Date) of the Tantra Work Tracker (workshop-plan/ops/centre_sheet.py, sheet https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit). What Endy's site says (checked by the session 2026-10-07): they give full admin control of the domains and Workspace users, host the DNS in their own Cloudflare, and connect the inboxes to the platform you choose; it is a manual service. How their inboxes connect to Tantra: the attendee gives Endy the Google service account client ID plus the three scopes (calendar, send mail, read replies), then in Tantra Accounts uses Verify and Add; the centre then confirms every inbox shows Connected and Gmail capable. To do (Nelbin): one call with Endy Inboxes to agree (a) the lead hand-off (Endy reads the Inbox Partner Leads tab, or Claude adds one email per new lead to an address Endy gives), (b) a revenue share per referred attendee, (c) that Endy delivers inbox logins or connects them to Tantra (not Instantly), (d) pricing and turnaround. Record the agreement here. Claude then wires the hand-off chosen in (a) and the vendor-only card changes in the cold-email inbox task (the new task titled 'Centre: cold email inboxes come from the inbox vendor only...'). Code note: cloud/src/agentic.ts:25 and 460-519 and cloud/src/jobs.ts:564-566 still watch Instantly for Endy's uploads and must switch to Tantra. Adi also gave an Instantly API key for the FintechCircle account (2026-10-07 18:26, in the chat) so Claude could fetch two Endy-hosted inbox accounts to learn the workflow; this was NOT done and Instantly is otherwise ruled out. NEEDS-ESCALATION: ask Adi whether that read-only fetch is still wanted before using the key.",
    "done_when": [
     "Agreement with Endy (hand-off method, revenue share, delivery into Tantra) recorded in the task log",
     "A test lead in Inbox Partner Leads reaches Endy by the agreed method without anyone forwarding it",
@@ -6652,6 +6662,11 @@
      "ts": "2026-10-09T00:06:32+0530",
      "who": "claude",
      "note": "2026-10-08 findings: endyinboxes.com (Starter $35/mo for 10 Google Workspace inboxes, +$3.50 each; 20 to 25 cold emails per inbox a day; book a call, they buy domains, set MX/SPF/DKIM/DMARC, give full admin control and upload inboxes to the sending platform). Instantly shows the owner's Endy inboxes as IMAP/SMTP accounts. For Tantra the inboxes must be reached by a Google service account with domain-wide delegation (gmail.send, gmail.modify, calendar): give Endy the service account's numeric client ID and the three scopes, or authorise it with the admin access Endy hands over; then Tantra Accounts, Verify & Add. Manual service, so the card is a hand-off (order, then confirm in Tantra), not an API job."
+    },
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Session sweep (2026-10-09): source: fcd892f2 2026-10-07T18:26 (Adi: Endy hosts accounts in their Cloudflare and connects them to Tantra or Instantly; manual service) and 2026-10-08T18:41 final report. Adds the Endy process found by the session and the unused Instantly key."
     }
    ],
    "order": 2130
@@ -6725,7 +6740,7 @@
    "due": "",
    "status": "review",
    "why": "Owner decisions 2026-10-06",
-   "spec": "Claude drives Adi's Chrome to create each key with least privilege (Adi does sign-ins, 2FA, payments); each flow recorded as an MP4/WebM under 2 minutes with labelled call-outs and blurred secrets, plus a short step guide per tool.",
+   "spec": "v2 brief (owner, 2026-10-07 and 08), documented in /Users/adithyamurali/tantra-walkthroughs/scripts/walkthroughs/WORKFLOW.md and AGENT_BRIEF.md: ONE complete video per approved tool, 4K (3840 x 2160, Retina capture) with Remotion motion graphics (step numbers, highlight ring, cursor, captions), shot as a NEW user: vendor homepage, Sign up (never Log in), the sign-up form filled with example details only, then the in-app route to the key, then pasting into the centre card. Never show deleting a key on camera (test objects are deleted afterwards off camera and logged in REVERT_LEDGER.md; vendor accounts are live and must end unchanged). Process: plan the journey (journeys/<tool>.md), dry-run it against the live UI, record, run verify.py and a contact sheet, only then render; each video gets its own review page (app/public/wt-review/<tool>/index.html and the index) before anything ships to the centres and playbook. Run one agent and one browser session per tool in parallel. Status 2026-10-09: 18 videos exist; 11 end to end (Resend, Cloudflare, Cal.com, WebinarGeek, Metricool, GA4, Tantra API key, Tantra reminders, Zoom, GoHighLevel, Google senders Tantra side), 7 blocked after sign-up (T-283). Review is T-282; shipping is T-284; card copy fixes are T-285.",
    "done_when": [
     "Branch READY in LOG.md, merged into main by the Integrator, deployed and verified live"
    ],
@@ -6767,6 +6782,11 @@
      "ts": "2026-10-09T00:06:32+0530",
      "who": "claude",
      "note": "Reopened 2026-10-08: Adi rejected the v1 videos. Superseded by the v2 4K set under review in T-282; the remaining in-app gaps are tracked in the blocked walkthrough task."
+    },
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Session sweep (2026-10-09): source: fcd892f2 2026-10-07T19:38, 20:19, 21:31 (Adi rejected the v1 videos and set the v2 requirements). Spec was still the v1 brief."
     }
    ],
    "order": 2150
@@ -7444,7 +7464,7 @@
    "due": "",
    "status": "blocked",
    "why": "Live check 2026-10-07: Google invites are switched on in production but no attendee gets one. The admin shows no organiser email and no service account saved (Cohort Settings, Invite Status: 'no organiser email set'). The code is live since T-221 (Worker aee6fd0a onward). The same service account also powers the attendees' own Google Workspace card (domain-wide delegation), which says 'Google isn't ready on our side yet' until it is saved.",
-   "spec": "Keys already exist (given by Adi in the 'Tantra demo funnel walkthroughs' session, 2026-10-07): two service accounts, fintech@fintech-488411 and fintech-2@fintech-2-502117 (files in ~/.config/tantra/keys/), both uploaded to Tantra's Google Service Accounts connector for the FintechCircle Tantra account. Verified 2026-10-08 (read only, token minted): both have domain-wide delegation for calendar and calendar.events on the Tantra sender mailboxes (checked 6 of the 20, all OK). So the centre can send each registrant their three invites with no new Google setup. Remaining: (1) Adi picks the organiser mailbox the workshop invites come from (the 20 senders are FintechCircle's cold calendar mailboxes on webinar domains, warmed, 250 a day each); (2) the JSON goes into the live centre at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Human Gates, Google identity (Claude may not enter keys into a deployed site; Adi pastes the file once, or Claude loads it if Adi says so); (3) Claude sets the organiser, runs Sync now, sends one invite to the owner's Google test identity, checks agenda, own Zoom link and reminders, confirms no duplicate on a second sync, then deletes the test event.",
+   "spec": "Keys already exist (given by Adi in the 'Tantra demo funnel walkthroughs' session, 2026-10-07): two service accounts, fintech@fintech-488411 and fintech-2@fintech-2-502117 (files in ~/.config/tantra/keys/), both uploaded to Tantra's Google Service Accounts connector for the FintechCircle Tantra account. Verified 2026-10-08 (read only, token minted): both have domain-wide delegation for calendar and calendar.events on the Tantra sender mailboxes (checked 6 of the 20, all OK). So the centre can send each registrant their three invites with no new Google setup. Remaining: (1) Adi picks the organiser mailbox the workshop invites come from (the 20 senders are FintechCircle's cold calendar mailboxes on webinar domains, warmed, 250 a day each); (2) the JSON goes into the live centre at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Human Gates, Google identity (Claude may not enter keys into a deployed site; Adi pastes the file once, or Claude loads it if Adi says so); (3) Claude sets the organiser, runs Sync now, sends one invite to the owner's Google test identity, checks agenda, own Zoom link and reminders, confirms no duplicate on a second sync, then deletes the test event.\n(4) DECISION for Adi, default stays 'straight away': a public sign-up on a marketing page triggers a Google invite from the organiser mailbox to whatever address was typed. It is limited to requests from browsers on our sites, 20 tries per network address per hour and 500 sign-ups per hour overall (S3 handoff blocker 5). Alternative: hold the invite until the person first opens their centre. Say 'wait for first open' to switch. (5) Known Google limit, nothing to fix: Google applies an event's 5/10/15/30 minute reminders only to the organiser's own copy; each attendee's Google copy uses their own default reminders, while the private .ics feed carries all four for everyone. Source: 88c16840 2026-10-06T18:23 (blockers 2 and 5).",
    "done_when": [
     "Cohort Settings, Invite Status names the service account and the organiser, no 'off' reason",
     "The test identity receives three invites (Day 1 to 3) with the agenda, its own join link and no duplicates after a second sync",
@@ -7463,7 +7483,7 @@
    "blockers": [
     "Organiser mailbox choice"
    ],
-   "needs_from_owner": "Which mailbox should the workshop invites come from? Recommended: one dedicated sender, not one of the 20 cold calendar mailboxes, so workshop invites never eat into cold outreach capacity or reputation; if one of the 20 is fine, name it. Then paste ~/.config/tantra/keys/fintech-488411-a9fbe01f1b39.json at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Human Gates, Google identity.",
+   "needs_from_owner": "Which mailbox should the workshop invites come from? Recommended: one dedicated sender, not one of the 20 cold calendar mailboxes, so workshop invites never eat into cold outreach capacity or reputation; if one of the 20 is fine, name it. Then paste ~/.config/tantra/keys/fintech-488411-a9fbe01f1b39.json at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Human Gates, Google identity. Also one decision: should a marketing-page sign-up get its Google invite straight away (current default, rate-limited to 20 per network address per hour and 500 per hour overall) or only after first opening their centre?",
    "log": [
     {
      "ts": "2026-10-07T22:53:58+0530",
@@ -7509,6 +7529,11 @@
      "ts": "2026-10-08T01:43:21+0530",
      "who": "claude",
      "note": "Context gathered from the walkthroughs session: the two FintechCircle service accounts already have calendar delegation (verified 2026-10-08). No new Google setup needed; only the organiser choice and the one paste."
+    },
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Session sweep (2026-10-09): source: 88c16840 2026-10-06T18:23 final report blockers 2 and 5: the abuse-limit decision and the Google attendee-side reminder caveat were in the S3 report and the 2026-10-07T17:24 summary (decision 4) but are missing from the task text."
     }
    ],
    "order": 2270
@@ -8031,7 +8056,7 @@
    "due": "",
    "status": "queue",
    "why": "Attendees who pick Tantra for reminders get 'held until Tantra ships its per-contact send', which will never ship: the owner's model is omni-channel campaigns fed by contact import, available now.",
-   "spec": "Replace the spec'd per-contact send with campaign import in the ATTENDEE funnel path: 1) cloud/funnel/worker.js sendEmailsTantra (POST /api/v1/emails/batch) becomes an append to the attendee's reminder campaigns via POST /email-campaigns/:id/contacts with customFields (join link, event time), at the moment each reminder is due, per docs/onboarding-v3/analysis/integrations-tantra-api.md section 5. 2) The centre creates those campaigns for the attendee (extend cloud/src/jobs-tantra.ts: one omni-channel campaign per reminder moment, sending window open all hours, email plus WhatsApp step when connected), matching S1's 'Set Up Your Reminder Campaigns in Tantra' walkthrough (branch tantra-walkthroughs, app/public/walkthroughs/tantra-reminders). 3) Remove TANTRA_NOTE / TANTRA_WAIT and the 'not built' results in cloud/src/jobs-day2.ts, the /emails/batch route in cloud/scripts/vendor-sim.py, cloud/scripts/tantra-send-contract.mjs, and the 'Tantra must ship' wording in docs/onboarding-v3/JOURNEY_R6.md and docs/onboarding-v3/analysis/tantra-reminder-endpoint.md (mark it superseded). 4) Update app/scripts/probe-email-stripe.mjs checks that expect 'not built'. Share the append code with T-234 where possible. T-246 then redeploys existing funnels.",
+   "spec": "Replace the spec'd per-contact send with campaign import in the ATTENDEE funnel path: 1) cloud/funnel/worker.js sendEmailsTantra (POST /api/v1/emails/batch) becomes an append to the attendee's reminder campaigns via POST /email-campaigns/:id/contacts with customFields (join link, event time), at the moment each reminder is due, per docs/onboarding-v3/analysis/integrations-tantra-api.md section 5. 2) The centre creates those campaigns for the attendee (extend cloud/src/jobs-tantra.ts: one omni-channel campaign per reminder moment, sending window open all hours, email plus WhatsApp step when connected), matching S1's 'Set Up Your Reminder Campaigns in Tantra' walkthrough (branch tantra-walkthroughs, app/public/walkthroughs/tantra-reminders). 3) Remove TANTRA_NOTE / TANTRA_WAIT and the 'not built' results in cloud/src/jobs-day2.ts, the /emails/batch route in cloud/scripts/vendor-sim.py, cloud/scripts/tantra-send-contract.mjs, and the 'Tantra must ship' wording in docs/onboarding-v3/JOURNEY_R6.md and docs/onboarding-v3/analysis/tantra-reminder-endpoint.md (mark it superseded). 4) Update app/scripts/probe-email-stripe.mjs checks that expect 'not built'. Share the append code with T-234 where possible. T-246 then redeploys existing funnels.\nSupersession note: S2 (2026-10-06) had Adi forward a developer message with cloud/scripts/tantra-send-contract.mjs to Tantra's developers to get a JSON contract report back. Under the omni-channel campaign model that request is withdrawn: nobody waits on or chases a Tantra developer reply, and a report that arrives changes nothing here.",
    "done_when": [
     "git grep 'emails/batch' finds only Resend (api.resend.com) code and the superseded doc note",
     "The Day 3 test run reports reminder email through Tantra as pass against vendor-sim (no 'not built')",
@@ -8060,6 +8085,11 @@
      "ts": "2026-10-09T00:06:32+0530",
      "who": "claude",
      "note": "2026-10-08 Tantra API facts (repo docs/onboarding-v3/analysis/integrations-tantra-api.md, PR #142): POST /email-campaigns/:id/contacts appends contacts to a launched omnichannel campaign (email, LinkedIn, WhatsApp, Telegram steps). Steps use delayDays (whole days, step 1 runs on enrolment), so event-relative touches (day before, 1 hour before, live) need one single-step campaign per touch, with the funnel enrolling each registrant at the due time; sending window should be every day, all hours. WhatsApp shows 'Not in your plan' on the owner workspace: see the add-on pricing decision task."
+    },
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Session sweep (2026-10-09): source: 7c7d4bae 2026-10-06T20:39 (Tantra developer message with tantra-send-contract.mjs sent to Tantra's developers) is SUPERSEDED by the omni-channel campaign model (CONTEXT2). T-236 already retires it; added the explicit instruction not to chase Tantra developers for contract reports."
     }
    ],
    "order": 2360
@@ -8461,11 +8491,12 @@
    "due": "",
    "status": "queue",
    "why": "Integrator sweep 2026-10-07 (Integrator audit 2026-10-07)",
-   "spec": "1) Delete branch int and worktree /Users/adithyamurali/tantra-int (LOG 2026-10-07 23:21: superseded, all 84 files in main). 2) Check the uncommitted files in /Users/adithyamurali/tantra-r5-B (4) and /Users/adithyamurali/tantra-r5-G (6); copy anything not in main into a commit on main or drop it, then remove both worktrees. 3) Remove merged idle worktrees: tantra-calendar-feeds, tantra-zoom-pro, tantra-zoom-pro-2, tantra-zoom-docs, tantra-email-stripe and the merged r5 worktrees (r5-C, r5-D, r5-E, r5-EQ, r5-F, r5-H) after git status shows them clean. Do NOT touch tantra-onboarding-v2 (the launchd stack runs from it, memory integrator-publish-gotchas) or tantra-walkthroughs (S1 active), and leave ~/.pr-preview/* to preview-refresh (never symlink a .pr-preview slug to a working worktree).",
+   "spec": "1) Delete branch int and worktree /Users/adithyamurali/tantra-int (LOG 2026-10-07 23:21: superseded, all 84 files in main). 2) Check the uncommitted files in /Users/adithyamurali/tantra-r5-B (4) and /Users/adithyamurali/tantra-r5-G (6); copy anything not in main into a commit on main or drop it, then remove both worktrees. 3) Remove merged idle worktrees: tantra-calendar-feeds, tantra-zoom-pro, tantra-zoom-pro-2, tantra-zoom-docs, tantra-email-stripe and the merged r5 worktrees (r5-C, r5-D, r5-E, r5-EQ, r5-F, r5-H) after git status shows them clean. Do NOT touch tantra-onboarding-v2 (the launchd stack runs from it, memory integrator-publish-gotchas) or tantra-walkthroughs (S1 active), and leave ~/.pr-preview/* to preview-refresh (never symlink a .pr-preview slug to a working worktree). 4) The remote branch origin/main-52fp0w (commits afe8035 and c4da29f, 2026-10-03) is the snapshot of Adi's uncommitted main checkout that a failed cloud-session hop pushed (source: c726a704 2026-10-03T19:49). It is not an ancestor of main, but main took Adi's WIP in commit 7192965 before the onboarding-v2 merge. Run git diff main origin/main-52fp0w for the files it still adds that main lacks (ignore files main has since changed); copy anything missing into a commit on main, then git push origin --delete main-52fp0w. It was deliberately left untouched until now.",
    "done_when": [
     "Branch int deleted",
     "r5/B and r5/G leftovers committed or dropped and the worktrees removed",
-    "git worktree list shows only main, onboarding-v2, tantra-walkthroughs, active lanes and .pr-preview entries"
+    "git worktree list shows only main, onboarding-v2, tantra-walkthroughs, active lanes and .pr-preview entries",
+    "origin/main-52fp0w is deleted after git diff against main shows nothing worth keeping, or its leftovers are committed to main"
    ],
    "evidence": [],
    "blockers": [],
@@ -8485,6 +8516,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: verified 2026-10-08: int still exists (unmerged, superseded per LOG 23:21), r5/B 4 and r5/G 6 uncommitted files; calendar-feeds, zoom-pro, zoom-pro-2, zoom-docs, tantra-email-stripe and r5/B..H, r5/EQ are merged into main."
+    },
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Session sweep (2026-10-09): source: c726a704 2026-10-03T19:49 (Integrator left origin/main-52fp0w untouched after the cloud-hop failure); not on the board until now. Added as step 4. NEEDS-ESCALATION: the branch is Adi's WIP snapshot, so confirm before deleting if the diff shows unique files."
     }
    ],
    "order": 2480
@@ -8920,7 +8956,7 @@
    "due": "",
    "status": "blocked",
    "why": "Approved tools only is a standing owner rule (2026-10-07); these audit findings cannot be closed correctly until each tool has a keep or replace decision.",
-   "spec": "Approved tools: Google Workspace, Cloudflare Registrar + DNS (incl. R2), Tantra, LinkedIn, WhatsApp (through Tantra), Twilio (SMS only), Resend or Tantra email, Cal.com, Metricool, Kie.ai/Claude/OpenAI, Dodo, Stripe (attendee option), Zoom Pro meetings or WebinarGeek. Not on that list but still used in guides and cards: Wistia (RSP video upload, workshop-cards.ts pg_video_url, s4-rsp.ts), Beehiiv (s6-newsletter.ts, s6-ai-newsletter.ts), ElevenLabs voice call (s3-tantra-pro-flow.ts T-0 call), Meta Ads and Meta Lead Ads (s1-ads.ts, workshop-cards.ts), Notion (s1-social.ts), WordPress (s1-blog.ts), Sales Navigator/Expandi (T-056 cold calendar lists, list source help), GoHighLevel/HubSpot/Zoho CRM sync (stack_crm options and d1-zoho/d1-ghl/d1-hubspot cards in workshop-cards.ts; T-120 asks where GHL belongs). Step 1: get Adi's keep or replace per tool (recommendations in needs_from_owner) and record it in this task's log and in the memory file approved-vendor-stack.md. Step 2: for replaced tools, rewrite the steps onto an approved tool and remove cards/jobs (same pattern as e4bd0b8, T-251); for kept tools, build the automation the findings ask for or mark the step human, and add vendor-sim routes (cloud/scripts/vendor-sim.py). Findings to close: X001, X002, X003, X004, X097, N047 (Wistia upload and embed URLs), G085, X106, X107 (Beehiiv newsletter), G029, X092 (T-0 voice call), G117, X051, X053, X086, X077 (Meta Ads, lead forms, ad images; X077 also covers LinkedIn Lead Gen Forms to the funnel /register, which is automation 2), X085 (Notion), X087 (WordPress). When done, mark these ids fixed or obsolete in /Users/adithyamurali/tantra-round5-coord/AUDIT.md with the commit.",
+   "spec": "Approved tools: Google Workspace, Cloudflare Registrar + DNS (incl. R2), Tantra, LinkedIn, WhatsApp (through Tantra), Twilio (SMS only), Resend or Tantra email, Cal.com, Metricool, Kie.ai/Claude/OpenAI, Dodo, Stripe (attendee option), Zoom Pro meetings or WebinarGeek. Not on that list but still used in guides and cards: Wistia (RSP video upload, workshop-cards.ts pg_video_url, s4-rsp.ts), Beehiiv (s6-newsletter.ts, s6-ai-newsletter.ts), ElevenLabs voice call (s3-tantra-pro-flow.ts T-0 call), Meta Ads and Meta Lead Ads (s1-ads.ts, workshop-cards.ts), Notion (s1-social.ts), WordPress (s1-blog.ts), Sales Navigator/Expandi (T-056 cold calendar lists, list source help), GoHighLevel/HubSpot/Zoho CRM sync (stack_crm options and d1-zoho/d1-ghl/d1-hubspot cards in workshop-cards.ts; T-120 asks where GHL belongs). Step 1: get Adi's keep or replace per tool (recommendations in needs_from_owner) and record it in this task's log and in the memory file approved-vendor-stack.md. Step 2: for replaced tools, rewrite the steps onto an approved tool and remove cards/jobs (same pattern as e4bd0b8, T-251); for kept tools, build the automation the findings ask for or mark the step human, and add vendor-sim routes (cloud/scripts/vendor-sim.py). Findings to close: X001, X002, X003, X004, X097, N047 (Wistia upload and embed URLs), G085, X106, X107 (Beehiiv newsletter), G029, X092 (T-0 voice call), G117, X051, X053, X086, X077 (Meta Ads, lead forms, ad images; X077 also covers LinkedIn Lead Gen Forms to the funnel /register, which is automation 2), X085 (Notion), X087 (WordPress). When done, mark these ids fixed or obsolete in /Users/adithyamurali/tantra-round5-coord/AUDIT.md with the commit. ADDED 2026-10-09 (source: ec3e66fb 2026-10-05T21:32 and 22:12, 9628377c 2026-10-05T19:35): the 20 FunnelOS cinematics (app/src/components/masterclass/funnel-os*.tsx and funnel-os-types/*.tsx, shown in the playbook, both centres and /funnels/<id>) still name tools that are neither approved nor ruled out. Counts on main 2026-10-09 by case-insensitive grep: Vercel 188, DenchClaw CRM 96, Beehiiv 93, Wistia 90, Slack 50, Fireflies 46, Notion 42, OpenRouter 41, ElevenLabs 32, OBS 25, PlusThis 19, Vodex 17, Sales Navigator 12, Rejection.io 3, Stream Deck 2. Adi asked 3 times in the round-2 session and has not answered: remove them, and replace with what (for example AI voice reminders on an approved tool)? NOTE: Adi himself named ElevenLabs and Vodex.ai as the AI voice platforms in his funnel-equations brief (9628377c 2026-10-05T19:35), so do not remove those two without his answer. Apollo is separately ruled out and is its own task (remove Apollo from the FunnelOS cinematics). Whatever is decided, the check app/scripts/probe-visual-tools.mjs (BANNED list at line 36) must be extended to fail on the replaced tools.",
    "done_when": [
     "A keep or replace decision per tool recorded in this task's log and in approved-vendor-stack.md",
     "git grep over app/src and cloud/src finds no step or card that depends on a replaced tool",
@@ -8931,7 +8967,7 @@
    "blockers": [
     "Adi's keep or replace decision per tool"
    ],
-   "needs_from_owner": "Decide keep or replace for the remaining tools: Beehiiv, ElevenLabs, Meta Ads, Notion, WordPress, Sales Navigator/Expandi (Stripe, GoHighLevel, HubSpot, Zoho, Wistia already decided: keep).",
+   "needs_from_owner": "Decide keep or replace for the remaining tools: Beehiiv, ElevenLabs, Meta Ads, Notion, WordPress, Sales Navigator/Expandi (Stripe, GoHighLevel, HubSpot, Zoho, Wistia already decided: keep). Also decide for the funnel animations: Vercel, DenchClaw CRM, Fireflies, PlusThis, OBS, Stream Deck, Rejection.io, OpenRouter, Slack and Vodex. Recommended: replace each with an approved tool or a plain generic label (for example 'CRM', 'recorder'), and keep ElevenLabs/Vodex only if you still want them as the AI voice platforms you named for the equations.",
    "log": [
     {
      "ts": "2026-10-08T00:21:42+0530",
@@ -8947,6 +8983,11 @@
      "ts": "2026-10-09T00:06:32+0530",
      "who": "claude",
      "note": "2026-10-08 owner decisions (chat): Stripe KEEP as a payment option alongside Dodo (owner's Stripe key to come). GoHighLevel KEEP (owner gave a test token; the owner's agency used for the 4K walkthrough). HubSpot, Zoho, Wistia KEEP as attendee-brings-own-account: build the backend workflows with the attendee's key; no owner subscriptions. Ruled out everywhere (2026-10-07): GoDaddy, Microsoft 365, Instantly, SendGrid, ZeroBounce, NeverBounce, BuiltWith, HeyReach, Calendly, Apollo; Cal.com replaces Calendly; WhatsApp only via Tantra. Still open here: Beehiiv, ElevenLabs, Meta Ads, Notion, WordPress, Sales Navigator/Expandi."
+    },
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Session sweep (2026-10-09): source: ec3e66fb 2026-10-05T21:32/22:12 and 9628377c 2026-10-05T19:35: the FunnelOS tool list the owner was asked about 3 times (Apollo, Sales Navigator, ElevenLabs, Vodex, Wistia, Vercel, DenchClaw, Fireflies, PlusThis, OBS, Stream Deck, Rejection.io, Notion, Slack, OpenRouter) is still open; added counts and the conflict that the owner named ElevenLabs and Vodex himself."
     }
    ],
    "order": 2600
@@ -9557,7 +9598,7 @@
    "due": "",
    "status": "queue",
    "why": "Enterprise voice rule bans $50M+ and unsourced numbers; inconsistent day titles appear in calendar invites.",
-   "spec": "Use one title per day across app/src/components/masterclass/day-engine.tsx, app/src/lib/sessions.ts and app/src/lib/calendar.ts DAY_COPY (title-cased in eventSummary), show the eight Day 1 decisions in the Day 1 visual, replace hardcoded 11am ET with SESSION_TIME in workshop-client.tsx, remove the $50M+ figures and source or cut Cavli/Appster numbers on both landings, fix techstars and webinargeek SVG intrinsic sizes, and check /workshop for a pre-paint currency flash in an INR timezone (M066 UNVERIFIED). Closes audit findings M010, M011, M020, M021, M065, M066, O004. Per finding: M010 (app/src/components/masterclass/day-engine.tsx): Replace or relabel the Day 1 layers visual so it shows the eight Day 1 decisions (offer, method, value, buyer, list, funnel, date, channels). M011 (app/src/components/masterclass/day-engine.tsx): Pick one title per day and use it in day-engine.tsx, sessions.ts and calendar.ts DAY_COPY. M020 (app/src/app/workshop/workshop-client.tsx): Replace the hardcoded '11am ET' in workshop-client.tsx:296 with SESSION_TIME. M021 (app/src/app/workshop/workshop-client.tsx): Remove the $50M+ figures (enterprise voice rule) and source or cut the Cavli/Appster numbers on both landings. M065 (app/src/components/masterclass/funnel-os.tsx): Give the SVGs correct intrinsic sizes and drop the WebinarGeek mark from the masterclass FunnelOS if the webinar ban applies there. M066 (app/src/app/workshop/workshop-client.tsx): Load /workshop in a fresh INR-timezone browser and confirm no $99 flash before the pre-paint swap. O004 (app/src/lib/calendar.ts): Wrap DAY_COPY[day].title in titleCase() from lib/title-case.ts inside eventSummary. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md.",
+   "spec": "Use one title per day across app/src/components/masterclass/day-engine.tsx, app/src/lib/sessions.ts and app/src/lib/calendar.ts DAY_COPY (title-cased in eventSummary), show the eight Day 1 decisions in the Day 1 visual, replace hardcoded 11am ET with SESSION_TIME in workshop-client.tsx, remove the $50M+ figures and source or cut Cavli/Appster numbers on both landings, fix techstars and webinargeek SVG intrinsic sizes, and check /workshop for a pre-paint currency flash in an INR timezone (M066 UNVERIFIED). Closes audit findings M010, M011, M020, M021, M065, M066, O004. Per finding: M010 (app/src/components/masterclass/day-engine.tsx): Replace or relabel the Day 1 layers visual so it shows the eight Day 1 decisions (offer, method, value, buyer, list, funnel, date, channels). M011 (app/src/components/masterclass/day-engine.tsx): Pick one title per day and use it in day-engine.tsx, sessions.ts and calendar.ts DAY_COPY. M020 (app/src/app/workshop/workshop-client.tsx): Replace the hardcoded '11am ET' in workshop-client.tsx:296 with SESSION_TIME. M021 (app/src/app/workshop/workshop-client.tsx): Remove the $50M+ figures (enterprise voice rule) and source or cut the Cavli/Appster numbers on both landings. M065 (app/src/components/masterclass/funnel-os.tsx): Give the SVGs correct intrinsic sizes and drop the WebinarGeek mark from the masterclass FunnelOS if the webinar ban applies there. M066 (app/src/app/workshop/workshop-client.tsx): Load /workshop in a fresh INR-timezone browser and confirm no $99 flash before the pre-paint swap. O004 (app/src/lib/calendar.ts): Wrap DAY_COPY[day].title in titleCase() from lib/title-case.ts inside eventSummary. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. ADDED 2026-10-09 (ec3e66fb 2026-10-05T21:19): the playbook and both centres now carry the 'Most Complete Agentic RevOps System in B2B, Installed in Three Days' positioning and new day titles (Day 1 'Lock the Offer, the Buyer and the Channels Every Asset Is Built On', Day 2 'Build the Entire Funnel in One Pass', Day 3 'Hand the Funnel to an AI Agent, Then Prove Every Number', app/src/lib/curriculum.ts) but /workshop and /masterclass (day-engine.tsx) still use older titles. The builder offered to apply the same positioning there and Adi has not answered: NEEDS-ESCALATION whether he wants it; recommended: use the curriculum.ts titles so all surfaces agree (that also closes M011). The /workshop and /masterclass host bio says '$50M+ in tracked client revenue' (set 2026-10-05 in place of 'ARR'): remove under the enterprise voice rule, as above.",
    "done_when": [
     "git grep \"50M\" finds nothing on landings",
     "Same day titles in all three files",
@@ -9566,7 +9607,7 @@
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "",
+   "needs_from_owner": "Apply the playbook's day titles and positioning to the /workshop and /masterclass pages? Recommended: yes, take them from app/src/lib/curriculum.ts.",
    "log": [
     {
      "ts": "2026-10-08T00:21:42+0530",
@@ -9577,6 +9618,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): checked, current. pass 2: verified still open on main f6aeb7e: $50M+ in masterclass-client.tsx:337/491, masterclass/page.tsx:9, workshop/page.tsx:8, workshop-client.tsx:147; '11am ET' at workshop-client.tsx:296; calendar.ts DAY_COPY titles in sentence case."
+    },
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Session sweep (2026-10-09): source: ec3e66fb 2026-10-05T17:27 and 21:19: added the unanswered power-positioning offer and the host bio line."
     }
    ],
    "order": 2770
@@ -9592,7 +9638,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "queue",
+   "status": "next",
    "why": "Join pages are the last step before the live session; an empty join button or a pending link loses the attendee.",
    "spec": "Export one seat-link resolver from app/src/lib/funnel.ts used by sessions.ts and both join pages and set the Zoom join URL in the deployed env, give the pending community link an actionable fallback and promise only live reminders, decide free-lane intake length (owner), derive VIP sample dates from cohortFor(), relabel webinar and cold calendar template names on /vip, use slashed privacy and terms links in success-shell.tsx, add the calendar why line and a claim URL or actionable pending state in curriculum.ts. Closes audit findings M070, O013, M034, M050, M033, M052, M054, M061, O011. Per finding: M070 (app/src/lib/funnel.ts): Export one seat-link resolver (per-day override then SEAT_URL, no placeholder) and use it in sessions.ts and both join pages. O013 (app/src/lib/sessions.ts): The join button must carry a working Zoom link. Zoom Pro is live: each weekly cohort gets its own meeting from cloud/src/zoom-pro.ts (7 to 9 Oct cohort: meeting 87002851906) and each attendee gets their own registrant join link (session_sync, private calendar feed T-220), so prefer that per-attendee link (via the centre or the attendee's feed) over a static NEXT_PUBLIC_SEAT_URL, which would point at last week's meeting. M034 (app/src/app/workshop/success/success-client.tsx): Set NEXT_PUBLIC_COMMUNITY_URL once the group exists, or give the done stage an actionable fallback. M050 (app/src/app/workshop/join/join-client.tsx): Reword 'Join the Cohort Group' so it promises only what is live: calendar reminders now, Tantra campaign reminders once T-234 ships; the WhatsApp groups are on hold (T-040). M033 (app/src/app/workshop/success/success-client.tsx): Owner decision: shorten the free-lane intake toward the paid lane's 11 questions or keep and accept the length. M052 (app/src/lib/preview-data-2.ts): Derive sample dates from cohortFor() or use undated samples in fields.ts and preview-data-2.ts. M054 (app/src/components/masterclass/vip-exhibits.tsx): Filter or relabel 'webinar' and 'cold calendar' template names in the /vip template list (as done for the prompt pack). M061 (app/src/components/masterclass/success-shell.tsx): Point footer links at /privacy-policy/ and /terms-of-service/. O011 (app/src/lib/curriculum.ts): Add a why line to the calendar step (each live day builds on the last, so missing one breaks the next) and publish NEXT_PUBLIC_PLATFORM_CLAIM_URL or replace the pending state with an actionable instruction. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md.",
    "done_when": [
@@ -9755,7 +9801,7 @@
    "blockers": [
     "Review page from the 4K walkthrough session"
    ],
-   "needs_from_owner": "Review every 4K walkthrough on the review index and reply approve or redo per video: http://localhost:8883/wt-review/index.html (each video has its own page: /wt-review/<tool>/index.html). Two run past 2 minutes (Tantra reminders 2:11 at 46 steps, Zoom 2:02 at 39 steps): say which steps to cut.",
+   "needs_from_owner": "Review every 4K walkthrough on the review index and reply approve or redo per video: http://localhost:8883/wt-review/index.html (each video has its own page: /wt-review/<tool>/index.html). Also decide: (1) Two run past 2 minutes (Tantra reminders 2:11 at 46 steps, Zoom 2:02 at 39 steps): say which steps to cut. (2) Tantra reminders: the starter list is a blurred stand-in because the workspace only has client lists; the reminder text on screen is Claude's placeholder, not approved wording; WhatsApp shows 'Not in your plan' (see T-287); the video has no centre-paste step. (3) The Zoom video shows the live app's scope and event lists, not exactly the card's 12 scopes.",
    "log": [
     {
      "ts": "2026-10-08T05:03:55+0530",
@@ -9766,14 +9812,18 @@
      "ts": "2026-10-09T00:06:32+0530",
      "who": "claude",
      "note": "2026-10-08/09 (S1): the v1 videos were rejected by Adi (blurry, Log in instead of Sign up, wrong tabs, key deletion recorded). Rebuilt with WORKFLOW.md v2: one agent per tool in parallel, journey plan per tool (journeys/<tool>.md), live dry run, native 2x captures (cap.py on the signed-in Brave window, pwrec.mjs Playwright for public pages), Remotion 3840x2160 motion graphics (motion/), verify.py contact sheets, review page per video. 18 videos now: 11 end to end (Resend, Cloudflare, Cal.com, WebinarGeek, Metricool, GA4, Tantra API key, Tantra reminder campaign, Zoom, GoHighLevel, Google senders Tantra side), 7 stop after sign-up because of access (see the blocked walkthrough task). Every video ends with the paste-into-centre step from a shared 4K capture. No key deletion on camera; every key/draft made for recording deleted off camera, live-checked 2026-10-08."
+    },
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Session sweep (2026-10-09): source: fcd892f2 2026-10-07T21:28 (reminders video caveats) and 22:56 (final report). Adds the review caveats not yet on the task."
     }
    ],
    "order": 2820
   },
   {
    "id": "T-283",
-   "title": "Finish the 7 walkthrough videos blocked on account access (Twilio, Kie.ai, Dodo, Stripe, HubSpot, Zoho, Wistia) and the Google Cloud and Admin steps",
-   "area": "Content",
+   "status": "blocked",
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
@@ -9781,25 +9831,17 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "blocked",
-   "why": "Adi's rule (2026-10-08): one end-to-end video per tool, sign-up to key to centre, zero exceptions. These stop after sign-up and pricing because Claude never types passwords or codes and never creates vendor accounts.",
-   "spec": "Per tool, once access exists, resume that tool's recording agent per scripts/walkthroughs/AGENT_BRIEF.md: in-app route in the signed-in Brave window (lock /tmp/wt-brave-lock), key deleted off camera and logged in REVERT_LEDGER.md, bash finalize.sh <tool>. Routes are in scripts/walkthroughs/journeys/<tool>.md.",
-   "done_when": [
-    "Each of the 7 videos shows the in-app route to the key and the centre paste step",
-    "Google senders video shows the Google Cloud service account, JSON key and Google Admin delegation steps",
-    "REVERT_LEDGER shows every test object deleted"
-   ],
+   "area": "Content",
+   "order": 2830,
+   "title": "T-283: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Twilio: enter the emailed verification code once in the Brave recording window (it goes to the account owner's inbox). Kie.ai and Dodo: say which Google account holds the existing account (the chooser offers two; a wrong pick would create a new account). Stripe: sign into the Stripe account in Brave (Google sign-in showed first-time consent). HubSpot, Zoho, Wistia: no accounts exist; create free accounts and sign in in Brave, or say skip. Google Cloud console and Google Admin: type the password once in Brave when asked.",
-   "log": [
-    {
-     "ts": "2026-10-09T00:06:32+0530",
-     "who": "claude",
-     "note": "Added 2026-10-08 by the walkthroughs session: blockers found while recording."
-    }
-   ],
-   "order": 2830
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-284",
@@ -9814,7 +9856,7 @@
    "due": "",
    "status": "queue",
    "why": "The live centres and playbook still carry the v1 videos (1456 px, Log-in based, some docs-only). The v2 4K videos replace them only after Adi approves each one (T-282).",
-   "spec": "For each approved tool: export a web copy (1080p or 1440p H.264 plus poster and captions) beside the 4K master; update app/src/lib/walkthroughs.ts (cards, seconds, guide text from journeys/<tool>.md); WatchHow on the agentic centre card and the old centre Day 0 list; app/scripts/embed-walkthroughs.mjs; titlecase.py + embed.py; check-walkthroughs, check-guides, check-playbook-anchors. Drop the Sign in with Google video unless the Sign in with Google decision keeps the button. Commit the v2 pipeline (motion/, pwrec.mjs, cap.py, verify.py, render.sh, review.py, journeys/, recordings/*.jsonl) with frames and 4K masters gitignored.",
+   "spec": "FIRST, and without waiting for T-282: commit and push the v2 pipeline now. /Users/adithyamurali/tantra-walkthroughs (branch tantra-walkthroughs, HEAD 978559b) holds about 45 uncommitted changes: scripts/walkthroughs/{AGENT_BRIEF.md,addstep.py,finalize.sh,pwrec.mjs,journeys/*.md,REVERT_LEDGER.md,recordings/*,motion/}, app/public/walkthrough-review.html. Commit motion/, pwrec.mjs, cap.py, verify.py, render.sh, review.py, finalize.sh, journeys/, recordings/*.jsonl and the ledger; gitignore frames, scripts/walkthroughs/node_modules and the 4K masters (check free disk). THEN, per approved tool (after T-282): export a web copy (1080p or 1440p H.264 plus poster and captions) beside the 4K master; update app/src/lib/walkthroughs.ts (cards, seconds, guide text from journeys/<tool>.md; remove the tool from HELD_FOR_REVIEW); WatchHow on the agentic centre card and the old centre Day 0 list; app/scripts/embed-walkthroughs.mjs; titlecase.py + embed.py; check-walkthroughs, check-guides, check-playbook-anchors. Drop the Sign in with Google video unless T-286 keeps the button. Then deploy and publish via the Integrator.",
    "done_when": [
     "Every approved tool's card plays its v2 video on the live centre and the old centre",
     "Playbook embeds show the v2 videos",
@@ -9829,6 +9871,11 @@
      "ts": "2026-10-09T00:06:32+0530",
      "who": "claude",
      "note": "Added 2026-10-08: follows T-282."
+    },
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Session sweep (2026-10-09): source: fcd892f2 2026-10-08T18:41 final report. Worktree /Users/adithyamurali/tantra-walkthroughs checked 2026-10-09: 45 uncommitted changes (pwrec.mjs, finalize.sh, addstep.py, AGENT_BRIEF.md, recordings/_centre and calcom, journeys edits, REVERT_LEDGER.md edits, app/public/walkthrough-review.html), HEAD 978559b. Risk of losing the pipeline."
     }
    ],
    "order": 2840
@@ -9876,7 +9923,7 @@
    "due": "",
    "status": "blocked",
    "why": "Built 2026-10-07 (security-reviewed) with Adi's OAuth client. None of the three Google uses Adi described (per-Workspace service accounts in Tantra for invites and cold email, vendor inboxes, GA4) needs it, and the client is in Google testing mode (only listed test users can consent; going public needs Google verification).",
-   "spec": "",
+   "spec": "Built 2026-10-07 (commits d5e85d8, eff0b63, security-reviewed): a 'Sign in with Google instead' button on the Google Workspace and GA4 cards in the agentic centre; the attendee consents with their own admin account and the refresh token replaces the service account for the domain, mailbox and Analytics jobs (cloud/src/connectors/google-oauth.ts; off unless Worker secrets GOOGLE_OAUTH_CLIENT_ID and GOOGLE_OAUTH_CLIENT_SECRET are set; refused on the shared public /preview). The Google client 'Email Campaign' is in testing mode, so only listed test users can consent and going public needs Google verification (weeks). Adi's three Google uses (invites by service account, vendor inboxes, GA4) do not need it. If removed: delete the button, routes and google-oauth.ts, the 'Set Up Sign in With Google' video (app/public/walkthroughs/google-signin) and its card, playbook and old-centre embeds; rerun tsc and check-walkthroughs. If kept: add test users (the owner's FintechCircle login, one FintechCircle sender mailbox and the owner's Google test identity) under Google Auth Platform, Audience, Test users, add the redirect https://revops-centre.growthcluborg.workers.dev/api/google/callback under Clients, set the two secrets.",
    "done_when": [
     "Decision recorded here",
     "Remove: button, routes and google-signin video gone, tsc and checks pass; or Keep: consent works for a listed test user on the live centre"
@@ -9889,6 +9936,11 @@
      "ts": "2026-10-09T00:06:32+0530",
      "who": "claude",
      "note": "Added 2026-10-08."
+    },
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Session sweep (2026-10-09): source: fcd892f2 2026-10-07T16:00 (Adi asked what the OAuth is for) and 16:01 answer; spec field was empty, now filled. No decision from Adi yet."
     }
    ],
    "order": 2860
@@ -9906,7 +9958,7 @@
    "due": "",
    "status": "blocked",
    "why": "The Tantra Connectors page on the owner's client workspace shows '$10/mo add-on' on WhatsApp, LinkedIn and Telegram, and the campaign builder marks WhatsApp 'Not in your plan'. The agreed plan line-up says no channel add-ons (Pro 5 LI/WA, Scale 15). Reminder campaigns with WhatsApp steps depend on this.",
-   "spec": "",
+   "spec": "Found while recording the Tantra reminders video (2026-10-07, FintechCircle workspace): the omnichannel campaign builder shows WhatsApp as 'Not in your plan', and the Connectors page lists WhatsApp, LinkedIn and Telegram as '$10/mo add-on'. Our plan line-up says Pro $99 (5 LinkedIn and WhatsApp accounts), Scale $199 (15), +$20 per extra account and no channel add-ons. If the app is current, update the plan wording in the playbook, centre cards, card-education and the reminders video captions; if the app is wrong it is a Tantra product fix for Adi's team. WhatsApp reminders (T-234) depend on WhatsApp being connected in the attendee's Tantra plan.",
    "done_when": [
     "Answer recorded; cards, playbook and the reminders video caption match it"
    ],
@@ -9918,6 +9970,11 @@
      "ts": "2026-10-09T00:06:32+0530",
      "who": "claude",
      "note": "Added 2026-10-08 from the Tantra reminder campaign recording."
+    },
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Session sweep (2026-10-09): source: fcd892f2 2026-10-07T21:28 and 22:56 reports; spec field was empty, now filled. Plan line-up memory (tantra-plan-lineup) says no channel add-ons."
     }
    ],
    "order": 2870
@@ -9955,6 +10012,469 @@
     }
    ],
    "order": 2880
+  },
+  {
+   "id": "T-289",
+   "title": "Retire the Namecheap relay launchd jobs",
+   "area": "Ops",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "A crash-looping launchd job and a public tunnel to nothing are leftover attack surface and noise for a tool the owner ruled out.",
+   "spec": "Namecheap was ruled out on 2026-10-07 and round 6 deleted cloud/relay/namecheap-relay.py, but the two launchd jobs that ran it are still loaded: com.tantra.revops-relay (port :8793, python3 on the deleted script, exit status 2) and com.tantra.revops-relay-tunnel (a running cloudflared tunnel that now fronts nothing). Do: (1) launchctl bootout gui/$(id -u)/com.tantra.revops-relay and the same for com.tantra.revops-relay-tunnel; (2) move both plists out of ~/Library/LaunchAgents (delete them); (3) confirm nothing else uses :8793 or the tunnel hostname (git grep for the port and for REVOPS_RELAY or relay URL settings in cloud/ and app/; cloud/src/connectors/relay.ts only exports hmacHex, which agentic.ts still imports, so keep that file or move hmacHex first); (4) remove the two jobs from the list in T-006 (runbook) so it reports 14 jobs, and cancel the tunnel's cloudflared quick-tunnel log.",
+   "done_when": [
+    "launchctl list shows no com.tantra.revops-relay or revops-relay-tunnel",
+    "The two plists are gone from ~/Library/LaunchAgents",
+    "git grep finds no use of the relay port or tunnel URL outside hmacHex, and tsc is clean in cloud/"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Added from the session sweep (2026-10-09): source: c726a704 2026-10-05T18:41 ('Lane A follow-up: after merging, unload launchd com.tantra.revops-relay and its tunnel, since namecheap-relay.py is deleted'). Verified 2026-10-09: ~/Library/LaunchAgents still has com.tantra.revops-relay.plist (last exit 2, crash looping) and com.tantra.revops-relay-tunnel.plist (running), pointing at cloud/relay/namecheap-relay.py which no longer exists."
+    }
+   ],
+   "order": 2890
+  },
+  {
+   "id": "T-290",
+   "title": "Attendee funnel thank-you page: community and next-step blocks never render because no card asks for them",
+   "area": "Product",
+   "owner": "Bhaskar",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "Lane G built the blocks but nothing collects the answers, so attendees' funnels never offer a community link or a next step after sign-up, which is a leak in the funnels the centre builds.",
+   "spec": "The attendee funnel's thank-you page is built in cloud/src/funnel.ts (line 162 'thanks: {headline, body, community_cta, next}', line 163 community_url from pg_community_url or st.community_url). The three optional answers pg_community_url, pg_community_cta and pg_next are read there but app/src/lib/workshop-cards.ts has no field for any of them (git grep pg_community in app/src finds nothing), so the blocks never show. Add the three optional fields to the Day 1 thank-you or page card for all three funnel shapes (examples and why-lines per the card-education rules, copy per workshop-plan/COPY_RULES.md, no dashes, no invented claims), keep them optional, make the card education text say what each one shows, then extend check-examples and probe-shapes so a filled value renders on the funnel preview at :8794 and an empty one hides the block. Related: T-278 (our own join and success pages), T-246 (redeploy funnels that run the old funnel worker).",
+   "done_when": [
+    "A funnel built with pg_community_url and pg_next filled shows both blocks on its thank-you page in the funnel preview",
+    "With the fields empty the thank-you page shows neither block and no broken link",
+    "check-examples, check-coverage and probe-shapes pass"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Added from the session sweep (2026-10-09): source: c726a704 2026-10-05T22:55/22:58 (Meta pixel and thank-you blocks listed as still open) and 10:33 (Lane G: 'wired but no card has the three optional answers'). Verified 2026-10-09: cloud/src/funnel.ts:162-163 reads pg_community_cta, pg_next and pg_community_url but no card in app/src/lib/workshop-cards.ts asks for them."
+    }
+   ],
+   "order": 2900
+  },
+  {
+   "id": "T-291",
+   "title": "Switch the open /preview link to personal links only once the centre build is complete",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "The open link is a shared attendee that runs real actions if someone pastes a real vendor key, so it must close once the build is final.",
+   "spec": "On 2026-10-05 Adi asked for an open live link to the Agentic Onboarding Centre with no personal link, kept until the build is fully complete: https://revops-centre.growthcluborg.workers.dev/preview (one shared test attendee; also /onboarding/ for signed-out visitors). Adi said restricting it to personal links comes later. When Adi calls the build complete (or before the first real cohort gets the centre link, whichever is first): in the admin, Cohort Settings, set 'Open preview link' to 'Off: personal links only' (url https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, then Cohort Settings). First check what depends on /preview: app/scripts/fill-preview.mjs, the walkers, the review links in the hub and playbook, the Tantra demo funnel (T-214) and T-278; repoint any that must keep working to a personal test-attendee link, then flip the setting and confirm a signed-out visit to /preview no longer opens the centre while a personal link still does. Record the date in this task's log.",
+   "done_when": [
+    "Cohort Settings shows 'Off: personal links only' and a signed-out GET /preview does not open the centre",
+    "Every link and script that used /preview now uses a personal test link and still works",
+    "Adi has said the build is complete (quote in the task log)"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Say when the centre build counts as complete so the open /preview link can be switched off. Recommended: switch it off the day before the first real cohort's centre links go out.",
+   "log": [
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Added from the session sweep (2026-10-09): source: c726a704 2026-10-05T15:23-15:28 (owner: open preview link 'until the build is fully complete, and at a later stage we can then figure out restricting it and only offering personal links'). Setting exists (cloud/src/settings.ts:14, index.ts:797); no board task tracks the switch-off. NEEDS-ESCALATION: Adi decides when the build counts as complete."
+    }
+   ],
+   "order": 2910
+  },
+  {
+   "id": "T-292",
+   "title": "Re-enable the Opus AI drafting connection in the local centre for real use",
+   "area": "Ops",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "Adi's own review drafts should come from the best model, while probes stay on the cheap one; right now the best connection is off and nobody tracks it.",
+   "spec": "To save usage during the round 5 and 6 builds the local centre's test AI drafting was moved from Opus to Sonnet and Haiku: in the centre admin AI connections tab (local stack :8790, admin URL from tantra-onboarding-v2/cloud/.dev.vars ADMIN_KEY), connection 1 'Claude Code, Adi' (Opus) is disabled and connection 3 'Claude Code, probe budget (Sonnet / Haiku)' is enabled with priority 5, and its last_error shows a session-limit message from 2026-10-07. Before Adi reviews real drafts (card copy, brand rules, outreach first lines) or the first cohort uses AI drafting: enable connection 1, leave connection 3 as the fallback for probes and walkers, check that probes pick the cheap connection (priority or per-task model map in Model per task), and clear connection 3's stale last_error. Also check the live Worker's AI connections list for the same state; the live centre is a different database.",
+   "done_when": [
+    "Admin AI connections shows connection 1 enabled and connection 3 enabled as probe fallback",
+    "A drafting call from a real card uses the Opus model and a probe run uses Sonnet or Haiku (admin Model per task shows it)",
+    "The same check is recorded for the live Worker's connections"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Added from the session sweep (2026-10-09): source: c726a704 2026-10-03T19:13/19:45 (owner cost rule) and handoff SESSION_HANDOFF_2026_10_03_ROUND5_A.md ('Opus connection (id 1) disabled: re-enable for Adi's real use'). Verified 2026-10-09 in the local centre D1 (tantra-onboarding-v2/cloud/.wrangler): connections id 1 'Claude Code, Adi' (claude-opus-5-5) enabled=0, id 3 'probe budget (Sonnet / Haiku)' enabled=1. NEEDS-ESCALATION: re-enabling spends Opus tokens; confirm timing against the usage limits."
+    }
+   ],
+   "order": 2920
+  },
+  {
+   "id": "T-293",
+   "title": "Take Apollo out of the funnel animations (ruled out 2026-10-07)",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Approved tools only is a standing owner rule; a ruled-out tool shown in the animations contradicts the guides and cards that already dropped it.",
+   "spec": "Apollo was ruled out on 2026-10-07 (approved-vendor-stack) after the funnel-animation tool sweep of 2026-10-05, so it is still all over the FunnelOS cinematics. On main 2026-10-09: git grep -i -w apollo app/src/components/masterclass lists funnel-os.tsx, funnel-os-rsp.tsx and funnel-os-types/{book-call,book,community,downsell,fps,hub-spoke,jv,ooo,reverse-b,slo,sideways,unlock,webinar-skip,system}.tsx (66 hits; for example book.tsx:74 logos: [\"tantra\",\"apollo\"], system.tsx:427 [\"apollo\",\"Apollo\"]). Replace each with the data source Adi's model uses (bought lists imported into Tantra, T-056) or a plain label such as 'Lead list', drop the apollo logo id from the logo map in funnel-os.tsx, and add apollo to BANNED in app/scripts/probe-visual-tools.mjs (line 36) so it cannot come back. Then run node app/scripts/probe-funnel-boards.mjs (5 widths) and probe-visual-tools.mjs, regenerate nothing by hand in the playbook (frames load /funnels/<id>), and mirror-publish through Lane A. Do not touch the unapproved-but-not-ruled-out tools here: those wait on T-260.",
+   "done_when": [
+    "git grep -i -w apollo -- app/src/components/masterclass returns nothing",
+    "probe-visual-tools.mjs lists apollo as banned and passes",
+    "probe-funnel-boards.mjs reports ALL BOARDS FIT at 1440, 1024, 760, 390 and 350"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Added from the session sweep (2026-10-09): source: ec3e66fb 2026-10-05T21:32 (agent left Apollo in) plus owner ruling 2026-10-07 that Apollo is out; grep on main 2026-10-09 finds 66 hits in 16 FunnelOS files."
+    }
+   ],
+   "order": 2930
+  },
+  {
+   "id": "T-294",
+   "status": "blocked",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "area": "Content",
+   "order": 2940,
+   "title": "T-294: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
+  },
+  {
+   "id": "T-295",
+   "title": "Funnel animation polish: phone caption overlap and missing Amazon, YouTube and Slack logos",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "Overlapping text on the phone boards breaks the 'zero overlap or clipping' quality rule and affects all 21 cinematics, since they share the engine.",
+   "spec": "Three defects reported by the 17-funnel builders on 2026-10-05 and never closed on any task: (a) on phones the V1 caption under the page headline overlaps the moving stage-ribbon chip near the top of the screen on Book a Call and the pilot, a shared-engine bug in app/src/components/masterclass/funnel-os.tsx (HeadCtx); (b) on phones the end-state module cards briefly overlap their cycling text mid-transition (Waterfall, Hub and Spoke and others, same engine); (c) the logo map in funnel-os.tsx has no Amazon, YouTube or Slack mark, so book.tsx and hub-spoke.tsx draw a book and a play icon and waterfall.tsx shows a lettered tile. First reproduce each at 390 px with node app/scripts/probe-funnel-boards.mjs plus screenshots of /funnels/book-call and /funnels/waterfall; if already fixed, close with the evidence. Otherwise fix in the engine (not per file), add the three SVG marks to the logo map, and re-run the probe at 1440, 1024, 760, 390 and 350.",
+   "done_when": [
+    "No caption or card overlap at 390 px in a screenshot of /funnels/book-call, /funnels/waterfall and /funnels/hub-spoke",
+    "Amazon, YouTube and Slack render as marks, not drawn icons or lettered tiles",
+    "probe-funnel-boards.mjs reports ALL BOARDS FIT at five widths"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Added from the session sweep (2026-10-09): source: ec3e66fb 2026-10-05T17:59 and 21:19 (agents flagged, never fixed in a later commit I can find); UNVERIFIED whether still present."
+    }
+   ],
+   "order": 2950
+  },
+  {
+   "id": "T-296",
+   "title": "RevOps Funnel Equations lead magnet: keep one copy, decide the sign-up gate, give the team write access",
+   "area": "Growth",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "The owner wants this page to be a lead magnet, but today it captures nobody, exists twice, and the person he asked to continue the work cannot push to it.",
+   "spec": "Adi asked on 2026-10-05 for the funnel equations as a separate freely hosted page offered as a lead magnet called The RevOps Funnel Equations. Built and live: Cloudflare Worker page https://revops-funnel-equations.growthcluborg.workers.dev and GitHub Pages https://adisuja.github.io/revops-funnel-equations/ (both HTTP 200 on 2026-10-09, the same file in two places because GitHub Pages was down the first night); public source repo https://github.com/adisuja/revops-funnel-equations (CONTEXT.md holds every rule and the four rejected versions; python3 build.py --check must say ok); main copy workshop-plan/revops-funnel-equations/index.html, generated from workshop-plan/build/eqstages.py, eqnames.py, equations.py (never hand-edit). Current form is v4: one metric per stage per funnel (18 stage metrics), plain-initial short forms, definitions under each stage, no slop. Open: (1) Adi has not answered whether to keep one copy; recommended: keep the Cloudflare link and switch the GitHub Pages copy off (gh api -X DELETE repos/adisuja/revops-funnel-equations/pages), then point every link in the playbook, centres and hub at the one URL. (2) The page is ungated: no email capture and no call to action, so it is not yet a lead magnet. Recommended: name, email and WhatsApp in a form that posts through the existing logForm path to the Tantra Tracker (see funnel-live-wiring memory) and one CTA to the free workshop /workshop. (3) The team-member handoff prompt tells the teammate to push to the public repo; they need write access: add their GitHub username as a collaborator on adisuja/revops-funnel-equations or they fork and open a pull request. (4) Copy rule on this page: no cards, examples, tips or ranges (owner 2026-10-06 'AI slop'); do not add any while building the form. Background: the first version carried 252 KPIs with measure-where, lever and sourced bands (git de3ac30 and earlier, eqdata.py); Adi later asked for the compact one-metric form, so that catalogue is intentionally gone but recoverable from git history if Adi wants a KPI reference again.",
+   "done_when": [
+    "Exactly one public URL serves the page; the other redirects or is switched off",
+    "The sign-up form writes name, email and WhatsApp to the Tantra Tracker and a test submission appears there",
+    "The teammate named by Adi can push or open a pull request on adisuja/revops-funnel-equations",
+    "Review link with a fresh cache buster sent to Adi"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Adi decides: one copy or two, what the form asks, and the GitHub username to add"
+   ],
+   "needs_from_owner": "Reply on this task: (1) keep the Cloudflare link only? (2) form fields and where leads go (recommended: name, email, WhatsApp into the Tantra Tracker, CTA to /workshop); (3) the teammate's GitHub username to add as a collaborator at https://github.com/adisuja/revops-funnel-equations/settings/access. Review the page at https://revops-funnel-equations.growthcluborg.workers.dev/?v=h1",
+   "log": [
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Added from the session sweep (2026-10-09): source: 9628377c 2026-10-05T20:19 (owner asked for a free-hosted lead magnet), 20:44 (ungated, no CTA), 2026-10-06T19:56 (two pages for the same thing), 20:40 (team handoff). No board task mentions funnel equations."
+    }
+   ],
+   "order": 2960
+  },
+  {
+   "id": "T-297",
+   "title": "Playbook owner-round calls still unanswered (show-up figure, example sentences, bio line)",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "These were raised as 'Your call' items in the owner-round reports and have been silently left as the builder chose.",
+   "spec": "Open calls the builders raised on workshop-plan/playbook.html that Adi never answered: (1) Day 2 nurture section says 'in the teaching model it lifts show-up to 89%' (playbook.html around lines 2289 and 2371, from the whiteboard) while the funnel-equations model gives about 46% on reference values: align the diagram to the model, or keep the whiteboard figure labelled as the teaching model? Recommended: keep it, label it 'teaching model' in the figure caption too, and never present it as a result. (2) The consultancy and course example sentences (Apex Growth, Northstar Academy 'The Manager Sprint') were written by Claude, not supplied by Adi: approve or rewrite. (3) The 'Day 3 of the challenge' pitch example leaves open whether the challenge is free or paid; the answer is 'free /workshop and paid /masterclass are separate flows' (two-funnel-structure), so confirm the wording. (4) The hosts' bio line on the landing pages still says '$50M+' while the enterprise voice rule bans it: tracked in T-277, no action here. Do not change anything until Adi answers; then edit the source, run python3 workshop-plan/build/titlecase.py then embed.py, copy to app/public/materials/playbook.html and run node workshop-plan/probe-playbook.mjs.",
+   "done_when": [
+    "Adi's answer to each call is recorded in this task log",
+    "Any change is in playbook.html, re-embedded, and probe-playbook.mjs is clean",
+    "Review link sent: https://adisuja.github.io/tantra-workshop-live/playbook.html?v=calls"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Adi's answers"
+   ],
+   "needs_from_owner": "Read https://adisuja.github.io/tantra-workshop-live/playbook.html and reply on this task: approve the recommended answers to calls 1 to 3, or say what to change.",
+   "log": [
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Added from the session sweep (2026-10-09): source: ec3e66fb 2026-10-05T17:27 (Your call list), 2026-10-05T20:58, 2026-10-06T21:01 (all unanswered); 9628377c 2026-10-05T20:15 (89% vs 46%)."
+    }
+   ],
+   "order": 2970
+  },
+  {
+   "id": "T-298",
+   "title": "Write the owner's central rules into the global CLAUDE.md (blocked by the rules-file guard)",
+   "area": "Team",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "blocked",
+   "why": "Adi wrote the link rule off as a 'complete no-no' repeated mistake; memory is read by sessions but CLAUDE.md is the blueprint he asked for.",
+   "spec": "Adi told Claude to write these as central rules in CLAUDE.md so no session repeats the mistake: (a) every update to an already-linked resource ends with its clickable, cache-busted link near the top, even if the URL did not change (memory always-give-updated-link.md, MEMORY.md line 'Always give the updated link'); (b) no AI slop: every line must earn its place, compact explanations only (memory no-ai-slop-central-rule.md); (c) all copy reads like Brian Dean on backlinko.com: I and you, specific pain intros, sharp headlines (workshop-plan/COPY_RULES.md, memory copy-voice-backlinko-rule.md). The protect-rules-files hook blocks edits to /Users/adithyamurali/.claude/CLAUDE.md unless the session is started with CLAUDE_ALLOW_RULES_EDIT=1, and Claude may not bypass it. Once a session runs with that variable, add three short entries under 'Working rules' and verify with grep. Suggested text for (a): 'Whenever I update a page, doc, site or any resource I have already linked, my reply includes the updated, clickable, cache-busted link (?v=...) near the top, even when the URL did not change.' Until then the memory graph carries the rules (project Users-adithyamurali-.claude-memory-graph). Also add, in the same pass: (d) every page Claude builds ships with verified, cache-busted review links for every state, unasked (memory review-links-for-every-page); (e) any handoff or dev message Adi forwards carries every spec, script and file pasted in full and committed, never 'attach X' (memory forwarded-messages-carry-every-file); (f) every instruction to Adi carries the full clickable URL incl. the admin entry link and the exact tab, section and button (memory give-every-link-in-full); (g) before asking Adi for any key, file or decision, search every session transcript and ~/.config/tantra (memory gather-context-from-all-sessions); (h) the Zoom room is 100 people, never propose raising the cap or plan (memory zoom-100-room-limit).",
+   "done_when": [
+    "grep shows the three rules in /Users/adithyamurali/.claude/CLAUDE.md",
+    "A new session recalls the link rule without searching memory"
+   ],
+   "evidence": [],
+   "blockers": [
+    "A Claude Code session started with CLAUDE_ALLOW_RULES_EDIT=1 (only Adi can do this)"
+   ],
+   "needs_from_owner": "Start one Claude Code session in /Users/adithyamurali/tantra-redesign with CLAUDE_ALLOW_RULES_EDIT=1 set (terminal: CLAUDE_ALLOW_RULES_EDIT=1 claude) and tell it 'add the three central rules from this task to the global CLAUDE.md', or reply 'allow rules edit' here if you do not want these in CLAUDE.md.",
+   "log": [
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Added from the session sweep (2026-10-09): source: 9628377c 2026-10-06T20:14/20:15 (owner: write it into CLAUDE.md; hook blocked), ec3e66fb 2026-10-06T20:38 (central copy rule). Checked 2026-10-09: ~/.claude/CLAUDE.md has none of the three rules; they exist only in memory and workshop-plan/COPY_RULES.md. Merged with the S2 session's CLAUDE.md request (7c7d4bae 2026-10-06T21:08) and the later owner rules from 2026-10-07/08."
+    }
+   ],
+   "order": 2980
+  },
+  {
+   "id": "T-299",
+   "title": "Centre: cold email inboxes come from the inbox vendor only, several calendar senders, and a sign-up inbox card",
+   "area": "Product",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Adi's three reasons for Google Workspace (calendar invites by service account, vendor-supplied cold email inboxes, GA4 and sign-up address) differ from what the centre builds; building mailboxes ourselves and warming on Instantly contradicts the approved vendor stack.",
+   "spec": "Adi's model (2026-10-07): (1) Cold calendar invites: one Google service account per Workspace user, each uploaded to Tantra. (2) Cold email: inboxes are Google Workspace users bought through the inbox vendor, who handles the domain cost and SPF, DKIM and DMARC, hosts the accounts in their own Cloudflare and connects them to Tantra; we never build mailboxes ourselves. (3) Google also gives GA4 and one address the attendee signs up to other tools with. The centre today still does the old thing. To build on a branch: A) cold email: make the partner card (id start-endy, app/src/lib/workshop-cards.ts around line 356, never names Endy) the only mailbox path; remove the 'MAIL_OWN' build-your-own path, the start-workspace card ('Let the agent into Google Workspace'), the mailboxes, m365-mailboxes and warmup jobs (cloud/src/agentic.ts, jobs.ts, jobs-m365.ts) and the Instantly warm-up watcher (cloud/src/connectors/instantly.ts, agentic.ts line 25). After the vendor delivers, the attendee gives the vendor the service account client ID and the three scopes, then in Tantra Accounts uses Verify and Add; the agent confirms in Tantra that every inbox shows Connected and Gmail capable and is warming (see T-213 for the vendor flow and T-263 for the Tantra GET /accounts check). B) calendar: the calendar-workspace card asks for several senders, with steps to create a service account per sender and upload each to Tantra (journey: scripts/walkthroughs/journeys/google-senders.md; Adi's note: one service account per Workspace covers every mailbox). C) add a short card 'Pick the address you sign up to tools with' (one Workspace user). D) update probes (probe-stack, probe-domain-chain, probe-day1/day2) and the simulator, then the 'Set Up Your Vendor Inboxes' walkthrough text. Ship on a branch, READY in /Users/adithyamurali/tantra-round5-coord/LOG.md; Integrator merges and deploys.",
+   "done_when": [
+    "The agentic centre offers one cold email inbox path (vendor) and no mailbox-building or Instantly warm-up code remains",
+    "The calendar card collects several senders and explains one service account per sender",
+    "A sign-up address card exists",
+    "probe-stack, probe-domain-chain, probe-day1 and probe-day2 pass in run-chain",
+    "READY in LOG.md and merged by the Integrator"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Confirm removing the build-your-own-mailbox path (cards start-workspace and the mailboxes job) now that inboxes come only from the vendor: reply remove or keep.",
+   "log": [
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Added from the session sweep (2026-10-09): source: fcd892f2 2026-10-07T17:18 (Adi explains the three Google uses and asks for the scope), 17:23 (Claude's change table, not built), 18:26 (Adi: Endy hosts the inboxes, connects them to Tantra). Code check 2026-10-09: start-workspace/mailboxes/m365-mailboxes/warmup jobs still in app/src/lib/workshop-cards.ts and cloud/src/agentic.ts. NEEDS-ESCALATION: Adi never explicitly approved REMOVING the build-your-own-mailbox cards (his 18:26 reply skipped item 1 of the plan); confirm that part before deleting."
+    }
+   ],
+   "order": 2990
+  },
+  {
+   "id": "T-300",
+   "title": "Remove the dormant code and text of the ruled-out tools (T-251 parts 2 and 3)",
+   "area": "Product",
+   "owner": "Aquila",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "The owner ruled these tools out on 2026-10-07; leftover code, survey options and 'verified list' promises can still surface them or promise a check we do not run.",
+   "spec": "The ruled-out tools (GoDaddy, Microsoft 365, Instantly, SendGrid, ZeroBounce, NeverBounce, BuiltWith, HeyReach, Calendly, Apollo, WhatsApp Cloud API card) are gone from the choices but still live as dormant code and text. Do: (1) delete the connectors and jobs nothing reaches: cloud/src/connectors/instantly.ts, m365.ts, jobs-m365.ts, the HeyReach, Calendly, SendGrid ('sendgrid-domain' job id in app/src/lib/workshop-cards.ts JobId and cloud/admin-ui/admin.js) and email-verifier jobs, the dashboard stats in cloud/src/dashboard.ts and the admin Microsoft 365 app setting (overlaps T-272 H062; coordinate). (2) Give attendees who already connected a removed tool a way to disconnect it and wipe the stored key (disconnect used to run through the removed card). (3) Rewrite the remaining promises of paid email checks: 'your verified list' on the Tantra cards (workshop-cards.ts around line 1333), 'Verify every email' in guides and the playbook. Owner rule 2026-10-07: no paid verification (NeverBounce, ZeroBounce); the free checks stay (dedupe, format, company domain) because the data vendors deliver lists already verified. (4) workshop-plan/survey.html still asks about GoDaddy, SendGrid, Apollo and BuiltWith: update it and regenerate the survey. (5) Add every ruled-out name to app/scripts/probe-visual-tools.mjs so none can return. Keep verbatim client library examples (app/src/lib/examples/data/real-growth.ts) unchanged. Coordinate with T-272 and T-264, which touch the same files.",
+   "done_when": [
+    "git grep -il for each ruled-out name over app/src, cloud/src and workshop-plan/survey.html returns only verbatim client examples and the probe denylist",
+    "probe-visual-tools fails if a ruled-out name reappears",
+    "No card promises paid email verification",
+    "tsc app and cloud, check-coverage, check-guides and run-chain pass"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Added from the session sweep (2026-10-09): source: fcd892f2 2026-10-07T16:11 (Claude's removal report items 1, 3, 4, 5, 6, 7), 17:18 (Adi: no paid email verification, WhatsApp via Tantra). T-251 is marked done but only covered its Part 1 (cards and probes); Part 2 and 3 of its own spec are not done: git grep on main still finds GoDaddy and SendGrid in app/src and cloud/src, cloud/src/connectors/instantly.ts and m365.ts, and workshop-plan/survey.html has 2 hits."
+    }
+   ],
+   "order": 3000
+  },
+  {
+   "id": "T-301",
+   "title": "Data partners: agree the order hand-off and test the list upload with a real sample CSV",
+   "area": "Ops",
+   "owner": "Nelbin",
+   "assignee": "Nelbin",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "Adi's model: attendees without a Sales Navigator or ZoomInfo account buy rows through our data partners. The card exists but the hand-off and the real column format are unconfirmed.",
+   "spec": "The centre card 'Order your list from our data partners' (id d1-list-partner; fields lp_platform, lp_rows 50 to 20000, lp_filters) records each order as a row in the List Partner Leads tab of the Tantra Work Tracker, and the partner emails the CSV for the attendee to upload. Vendor contacts (Sohan, Ashiqe, Liakat Ali; the first two in Adi's Canva deck are preferred) are kept privately in ~/.config/tantra/data-vendors.json (never in the repo or a page). To do: (1) Nelbin agrees with the preferred vendors how an order reaches them (they read the tab, or Claude sends one email per new order to an address they give) and the quote and delivery turnaround; record it here. (2) Get one sample CSV (even 5 dummy rows) from Sohan or Ashiqe so the upload card matches their exact column names; Claude then maps them in the list-clean job (cloud/src) and adds a probe fixture. (3) Remove the word 'verifies' from the card why text: no paid email verification (owner rule 2026-10-07). (4) Claude wires the hand-off chosen in (1). Never name the vendors on any attendee-facing page.",
+   "done_when": [
+    "Hand-off method and turnaround recorded on this task",
+    "A real sample CSV uploads through the card and the cleaned list is correct",
+    "The card makes no verification promise",
+    "The hand-off sends or exposes each order to the vendors"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Sample CSV and hand-off agreement from the data vendors"
+   ],
+   "needs_from_owner": "Nelbin asks Sohan or Ashiqe for the sample CSV and the preferred order method; no input needed from Adi.",
+   "log": [
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Added from the session sweep (2026-10-09): source: fcd892f2 2026-10-06T19:32 (Adi: vendors like Endy and the data vendors in the Canva deck, first two preferred, build an integration to buy lists), 2026-10-07T15:42 summary and 15:44 reply (card and Work Tracker tab built; sample CSV asked for). Built: option LIST_PARTNER and card d1-list-partner (app/src/lib/workshop-cards.ts lines 58, 696) and a List Partner Leads tab. Not on the board before."
+    }
+   ],
+   "order": 3010
+  },
+  {
+   "id": "T-302",
+   "title": "After launch: rotate the credentials pasted into the walkthroughs chat (Kie.ai, GoHighLevel, Instantly, Google OAuth client; Dodo stays with T-005)",
+   "area": "Ops",
+   "owner": "Nelbin",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "Keys in a chat transcript are exposed; Adi's standing rule is to rotate after launch.",
+   "spec": "Credentials shared in plain text in the S1 chat (session fcd892f2) and in ~/.config/tantra/ files: Kie.ai API key, GoHighLevel private integration token (FINTECH Circle sub-account), Instantly API key (FintechCircle), the Google OAuth client 'Email Campaign' secret (file ~/.config/tantra/google-oauth-client.env), and the Dodo live key and webhook secret. After launch only (owner: no Dodo key rotation until after launch; T-005 owns the Dodo pair as the last task): regenerate each in its vendor dashboard, store the new value in ~/.config/tantra/keys or the centre vault, and update anything that uses it. The GHL token and any other key created for a recording are already deleted (REVERT_LEDGER.md), so only keys Adi pasted remain. If a key is unused by then, delete it instead of rotating.",
+   "done_when": [
+    "Each listed credential is rotated or deleted at the vendor",
+    "Nothing in ~/.config/tantra or the centre still uses an old value",
+    "Dodo handled under T-005"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Launch has happened (T-005 is the last task)"
+   ],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Added from the session sweep (2026-10-09): source: fcd892f2 2026-10-06T19:32 and 2026-10-07T18:26: Adi pasted a Kie.ai API key, the live Dodo API key and webhook secret, a Google OAuth client ID and secret, an Instantly API key and a GoHighLevel private integration token into the chat; session notes say 'rotate them after launch, per your rule'. T-005 only covers Dodo. Key values are in the transcript and are NOT repeated here."
+    }
+   ],
+   "order": 3020
+  },
+  {
+   "id": "T-303",
+   "status": "queue",
+   "owner": "Bhaskar",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bhaskar"
+   ],
+   "priority": "P2",
+   "due": "",
+   "area": "Content",
+   "order": 3030,
+   "title": "T-303: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   }
  ]
 }
