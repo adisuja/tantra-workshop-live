@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="en" data-theme="light">
 <head>
+<script>
+/* The board lives at its own origin (the tantra-board Worker), so a personal key is never stored where every
+   other adisuja.github.io page could read it. Old github.io links forward there, key and all. */
+if(/github\.io$/.test(location.hostname)){try{localStorage.removeItem("lc-key")}catch(e){}location.replace("https://tantra-board.growthcluborg.workers.dev/tasks.html"+location.search+location.hash)}
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Task Command Center · The 3-Day AI RevOps Workshop</title>
@@ -572,8 +577,9 @@ document.addEventListener("keydown",e=>{if(!openId)return;const tag=(e.target.ta
    The owner's Mac pulls new notes every 15 s (tasks/pass.py import) and the agent acts on them.
    A personal link (#k=<key>, from tasks/board_keys.py) signs a teammate in once per browser: their
    notes are trusted and carry their name. Without one, text notes still save but wait for the owner. */
-const STATIC=/github\.io$/.test(location.hostname)||new URLSearchParams(location.search).has("static");
-const BOARD_API="https://tantra-board.growthcluborg.workers.dev";
+const BOARD_HOST="tantra-board.growthcluborg.workers.dev";
+const STATIC=location.hostname===BOARD_HOST||/github\.io$/.test(location.hostname)||new URLSearchParams(location.search).has("static");
+const BOARD_API=location.hostname===BOARD_HOST?"":"https://"+BOARD_HOST;
 let KEY=localStorage.getItem("lc-key")||"",ME={name:null,owner:false};
 {const m=/(?:^#|&)k=([A-Za-z0-9_-]{20,80})/.exec(location.hash);if(m){KEY=m[1];localStorage.setItem("lc-key",KEY);
   const rest=location.hash.slice(1).split("&").filter(x=>!x.startsWith("k=")).join("&");history.replaceState(null,"",location.pathname+location.search+(rest?"#"+rest:""))}}
@@ -624,7 +630,9 @@ async function send(id,action){
   try{out.className="sent";out.textContent=(PENDING[id]||[]).length?"Uploading…":"Sending…";
     const attachments=await uploadPending(id);
     if(voice)attachments.push({name:voice.name,url:voice.url,type:voice.type,size:voice.size,...(STATIC?{}:{transcript:voice.url+".transcript.json"})});
-    const f=await post({task_id:id,action,text,attachments,who});INBOX.push(f);PENDING[id]=[];
+    // asked = the question this task was waiting on when the note was sent: an owner's yes only ever approves that
+    const asked=(DATA.tasks.find(x=>x.id===id)||{}).needs_from_owner||"";
+    const f=await post({task_id:id,action,text,attachments,who,...(asked?{asked}:{})});INBOX.push(f);PENDING[id]=[];
     // the board may have re-rendered during the awaits: always address the elements that exist now
     const ta2=document.getElementById("fb-"+id);if(ta2&&ta2.value.trim()===text)ta2.value="";
     if(voice){if(voice.tx&&voice.tx.status==="done")TX[voice.url+".transcript.json"]=voice.tx;dropVoice(id)}
