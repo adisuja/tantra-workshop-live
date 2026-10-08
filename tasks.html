@@ -307,7 +307,7 @@ footer{margin-top:28px;font-size:11.5px;color:var(--ink-3)}
   <div class="whoask" id="whoask-nt"></div>
 </section>
 
-<footer>Source of truth: <code>workshop-plan/tasks/tasks.json</code>. Notes and voice notes from anyone on the team append to <code>tasks/inbox.jsonl</code> and show here immediately. Voice notes are transcribed on this Mac. The Claude agent picks every note up within seconds whenever Claude is signed in, works the task, and moves it to Review, Blocked or Done, with no action needed from you.</footer>
+<footer>Source of truth: <code>workshop-plan/tasks/tasks.json</code>. Everything is done from this page: notes, approvals, voice notes, files, people and new tasks save in one click and show here immediately (on the public board through your personal link, nothing to submit anywhere else). Voice notes are transcribed on this Mac. The Claude agent picks every note up within seconds whenever Claude is signed in, works the task, and moves it to Review, Blocked or Done, with no action needed from you.</footer>
 </div>
 
 <script>
@@ -324,25 +324,17 @@ async function load(){
   DATA=await (await fetch("tasks/tasks.json"+v)).json();
   const raw=await (await fetch("tasks/inbox.jsonl"+v)).text().catch(()=>"");
   INBOX=raw.split("\n").filter(Boolean).map(l=>{try{return JSON.parse(l)}catch(e){return null}}).filter(Boolean);
-  if(STATIC){const have=new Set(INBOX.map(e=>e.id));for(const e of await pendingIssues())if(!have.has(e.id))INBOX.push(e)}
+  if(STATIC){const have=new Set(INBOX.map(e=>e.id));for(const e of await pendingNotes())if(!have.has(e.id)){INBOX.push(e);
+    // a people change sent from here shows at once, before the Mac applies it and republishes
+    const t=e.action==="assign"&&DATA.tasks.find(x=>x.id===e.task_id);if(t)for(const k of ["owner","assignee","reviewers"])if(e[k]&&e[k].length)t[k]=e[k]}}
   fill();render();
 }
-/* Public board: a note filed as a GitHub issue shows in the thread at once, marked as waiting for the
-   owner's Mac, instead of vanishing until the next import (issues API, cached ~60 s to stay far under
-   GitHub's 60 requests/hour limit for visitors). */
-let ISSUES={at:0,list:[]};
-async function pendingIssues(){
-  if(Date.now()-ISSUES.at<60000)return ISSUES.list;
-  try{const r=await fetch(`https://api.github.com/repos/${ISSUE_REPO}/issues?state=open&per_page=100`,{headers:{Accept:"application/vnd.github+json"}});
-    if(!r.ok)throw 0;const list=await r.json();
-    ISSUES={at:Date.now(),list:list.filter(i=>!i.pull_request&&/<!-- launch-control/.test(i.body||"")).map(i=>{
-      let meta={};try{meta=JSON.parse((/<!-- launch-control\s*(\{[\s\S]*?\})\s*-->/.exec(i.body)||[])[1]||"{}")}catch(e){}
-      const text=(i.body||"").split("<!-- launch-control")[0].trim();
-      return {id:"gh-"+i.number,ts:i.created_at,task_id:meta.task_id||null,action:meta.action||"context",who:meta.who||i.user?.login||"teammate",
-        gh_login:i.user?.login||"",text:text==="(no note)"?"":text,processed:false,pending:true,issue:i.html_url,
-        trusted:["OWNER","MEMBER","COLLABORATOR"].includes(i.author_association)}})}}
-  catch(e){ISSUES.at=Date.now()}
-  return ISSUES.list;
+/* Public board: notes saved to the Worker show in the thread at once, before the owner's Mac pulls them
+   (every 15 s) and republishes the board. Only a personal team link can read them. */
+async function pendingNotes(){
+  if(!KEY)return[];
+  try{const r=await fetch(BOARD_API+"/api/pending?v="+Date.now(),{headers:{"X-Board-Key":KEY}});if(!r.ok)return[];
+    return ((await r.json()).notes||[]).filter(n=>!["trust","agent"].includes(n.action))}catch(e){return[]}
 }
 /* ---- people: every task has an owner (accountable team member), an assignee (Claude or a team
    member doing the work) and reviewers. The roster lives in tasks.json meta.team. ---- */
@@ -457,31 +449,31 @@ function detail(t){
 }
 function toggle(id){openId=openId===id?null:id;document.querySelectorAll(".task.open").forEach(e=>e.classList.remove("open"));if(openId){const el=document.getElementById("t-"+id);if(el)el.classList.add("open")}paintGlobal()}
 function jump(id){$("#f-doing").value="";$("#f-rev").value="";MINE=false;$("#f-mine").classList.remove("on");$("#f-owner").value="";$("#f-area").value="";$("#f-status").value="";$("#q").value="";$("#hidedone").checked=false;if(view==="kanban"){view="queue";document.querySelectorAll("#view button").forEach(b=>b.classList.toggle("on",b.dataset.v==="queue"))}openId=id;render();const el=document.getElementById("t-"+id);if(el)el.scrollIntoView({behavior:"smooth",block:"start"})}
-/* The public copy of this board is static (GitHub Pages): there is no /api/inbox
-   behind it, and a POST there returns GitHub's HTML 404 — which used to surface
-   as "Unexpected token '<'". On a static host every action becomes a prefilled
-   GitHub issue on the mirror repo instead; tasks/pass.py imports open issues
-   into the inbox on the next pass and closes them once handled. */
+/* The public copy of this board is static (GitHub Pages) and cannot save anything itself, so on a
+   static host every action is saved to the tantra-board Worker (cloud/board/worker.js) in one click.
+   The owner's Mac pulls new notes every 15 s (tasks/pass.py import) and the agent acts on them.
+   A personal link (#k=<key>, from tasks/board_keys.py) signs a teammate in once per browser: their
+   notes are trusted and carry their name. Without one, text notes still save but wait for the owner. */
 const STATIC=/github\.io$/.test(location.hostname)||new URLSearchParams(location.search).has("static");
-const ISSUE_REPO="adisuja/tantra-workshop-live";
-const ACTION_LABEL={voice:"Voice note",approve:"Approve",changes:"Request changes",context:"Add context",unblock:"Answer blocker",prioritize:"Do this next",drop:"Drop",new:"New task"};
-function issueUrl(body){
-  const title=body.action==="new"?`[new task] ${body.title}`:`[${body.task_id}] ${ACTION_LABEL[body.action]||body.action}`;
-  const md=[body.text||"(no note)","","<!-- launch-control",JSON.stringify(body),"-->","","_Sent from the Task Command Center. Press **Submit new issue** — Claude picks it up on the next pass._"].join("\n");
-  return `https://github.com/${ISSUE_REPO}/issues/new?labels=board-feedback&title=${encodeURIComponent(title)}&body=${encodeURIComponent(md)}`;
+const BOARD_API="https://tantra-board.growthcluborg.workers.dev";
+let KEY=localStorage.getItem("lc-key")||"",ME={name:null,owner:false};
+{const m=/(?:^#|&)k=([A-Za-z0-9_-]{20,80})/.exec(location.hash);if(m){KEY=m[1];localStorage.setItem("lc-key",KEY);
+  const rest=location.hash.slice(1).split("&").filter(x=>!x.startsWith("k=")).join("&");history.replaceState(null,"",location.pathname+location.search+(rest?"#"+rest:""))}}
+async function whoAmI(){
+  if(!STATIC||!KEY)return;
+  try{const r=await fetch(BOARD_API+"/api/me",{headers:{"X-Board-Key":KEY}});
+    if(r.status===401){KEY="";localStorage.removeItem("lc-key");return}
+    ME=await r.json();if(ME.name){WHO.value=ME.name;WHO.readOnly=true;WHO.title="Signed in with your personal board link";localStorage.setItem("lc-who",ME.name)}}catch(e){}
 }
-function viaIssue(body,out){
-  const url=issueUrl(body);const w=window.open(url,"_blank");if(w)try{w.opener=null}catch(e){}
-  out.className="sent";
-  out.innerHTML=(w?"Opened on GitHub in a new tab — press <b>Submit new issue</b> there. ":"")+`<a href="${url}" target="_blank" rel="noopener">${w?"Reopen it":"Open it on GitHub"}</a> · Claude picks it up on the next pass.`;
+/* one call for both boards: the Mac's serve.py locally, the Worker on the public board */
+async function api(path,body,ms){
+  const url=STATIC?BOARD_API+path:path,h={"Content-Type":"application/json"};if(STATIC&&KEY)h["X-Board-Key"]=KEY;
+  const r=await fetch(url,{method:"POST",headers:h,body:JSON.stringify(body),signal:withTimeout(ms||30000)});
+  const j=await r.json().catch(()=>({error:STATIC?"the board service did not answer":"the board server did not answer"}));
+  if(!r.ok)throw new Error(j.error||r.status);return j;
 }
 const withTimeout=(ms)=>{const c=new AbortController();setTimeout(()=>c.abort(),ms);return c.signal};
-async function post(body){
-  const r=await fetch("/api/inbox",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body),signal:withTimeout(30000)});
-  const ct=r.headers.get("content-type")||"";
-  if(!ct.includes("json"))throw Object.assign(new Error("no feedback server here"),{static:true});
-  if(!r.ok)throw new Error((await r.json()).error||r.status);return r.json();
-}
+const post=body=>api("/api/inbox",body);
 const PENDING={};
 const MAXF=10;
 const safeUrl=u=>{u=String(u||"");if(/^https:\/\//.test(u))return u;if(!/^\/tasks\/uploads\//.test(u))return"#";return STATIC?u.slice(1):u};
@@ -495,7 +487,8 @@ function rmFile(id,i){(PENDING[id]||[]).splice(i,1);renderPending(id)}
 function onPaste(e,id){const items=[...(e.clipboardData?.items||[])].filter(i=>i.kind==="file");if(!items.length)return;e.preventDefault();addFiles(id,items.map(i=>i.getAsFile()).filter(Boolean))}
 function onDrop(e,id){e.preventDefault();e.target.classList.remove("drag");addFiles(id,e.dataTransfer.files)}
 const b64=f=>new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(",")[1]);r.onerror=rej;r.readAsDataURL(f)});
-async function uploadPending(id){const list=PENDING[id]||[];if(!list.length)return[];const files=[];for(const p of list)files.push({name:p.name,type:p.type,data:await b64(p.file)});const r=await fetch("/api/upload",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({task_id:id,files}),signal:withTimeout(120000)});const j=await r.json();if(!r.ok)throw new Error(j.error||r.status);return j.files}
+async function uploadPending(id){const list=PENDING[id]||[];if(!list.length)return[];const files=[];for(const p of list)files.push({name:p.name,type:p.type,data:await b64(p.file)});if(STATIC&&!KEY)throw new Error(NOKEY);return (await api("/api/upload",{task_id:id,files},120000)).files}
+const NOKEY="files and voice notes need your personal board link (ask Adi for it)";
 const SENDING={};
 async function send(id,action){
   const ta=document.getElementById("fb-"+id),out=document.getElementById("sent-"+id);const text=ta.value.trim();
@@ -503,27 +496,25 @@ async function send(id,action){
   const v=VN[id];
   if(v&&v.state==="recording"){out.className="sent err";out.textContent="Stop the recording first.";return}
   if(v&&v.state==="uploading"){out.className="sent err";out.textContent="The voice note is still uploading; one moment.";return}
-  if(v&&(v.state==="silent"||v.state==="error")&&!STATIC){out.className="sent err";out.textContent=v.state==="silent"?"That recording is silent. Re-record it or discard it first.":"The voice note did not upload. Retry or discard it first.";return}
-  const voice=v&&(v.url||(STATIC&&v.blob))?v:null;
+  if(v&&(v.state==="silent"||v.state==="error")){out.className="sent err";out.textContent=v.state==="silent"?"That recording is silent. Re-record it or discard it first.":"The voice note did not upload. Retry or discard it first.";return}
+  const voice=v&&v.url?v:null;
   if(action==="voice"&&!voice){out.className="sent err";out.textContent="Record a voice note first.";return}
   const hasFiles=(PENDING[id]||[]).length>0||!!voice;
   const who=needWho(out,id,()=>send(id,action));if(!who)return;
   if(!text&&!hasFiles&&!["approve","prioritize","drop"].includes(action)){out.className="sent err";out.textContent="Write a note, record a voice note or attach a file first.";return}
-  // Static host: open the issue synchronously inside the click so no popup blocker fires.
-  if(STATIC){viaIssue({task_id:id,action,text,who},out);if(hasFiles){saveLocal(id);out.innerHTML+=" Your files were saved to Downloads: drag them into the GitHub issue (voice notes included).";}return}
   SENDING[id]=true;setSendBusy(id,true);
   try{out.className="sent";out.textContent=(PENDING[id]||[]).length?"Uploading…":"Sending…";
     const attachments=await uploadPending(id);
-    if(voice)attachments.push({name:voice.name,url:voice.url,type:voice.type,size:voice.size,transcript:voice.url+".transcript.json"});
+    if(voice)attachments.push({name:voice.name,url:voice.url,type:voice.type,size:voice.size,...(STATIC?{}:{transcript:voice.url+".transcript.json"})});
     const f=await post({task_id:id,action,text,attachments,who});INBOX.push(f);PENDING[id]=[];
     // the board may have re-rendered during the awaits: always address the elements that exist now
     const ta2=document.getElementById("fb-"+id);if(ta2&&ta2.value.trim()===text)ta2.value="";
     if(voice){if(voice.tx&&voice.tx.status==="done")TX[voice.url+".transcript.json"]=voice.tx;dropVoice(id)}
-    openId=id;SENDING[id]=false;render();const o2=document.getElementById("sent-"+id);if(o2){o2.className="sent";o2.textContent="Sent · the Claude agent is picking it up"}setTimeout(pollAgent,1500)}
-  catch(e){SENDING[id]=false;setSendBusy(id,false);if(e.static){viaIssue({task_id:id,action,text,who},out);return}
+    openId=id;SENDING[id]=false;render();const o2=document.getElementById("sent-"+id);if(o2){o2.className="sent";o2.textContent=STATIC?(KEY?"Saved · Claude picks it up within seconds":"Saved · waiting for Adi to approve it (no personal link in this browser)"):"Sent · the Claude agent is picking it up"}setTimeout(pollAgent,1500)}
+  catch(e){SENDING[id]=false;setSendBusy(id,false);
     const o3=document.getElementById("sent-"+id)||out;o3.className="sent err";
     if(voice&&/unknown attachment/.test(e.message)){dropVoice(id);paintVoice(id);o3.textContent="The recorded file is no longer on the server. Please record it again.";return}
-    o3.textContent="Failed: "+(e.name==="AbortError"?"the board server did not answer; try again":e.message)}
+    o3.textContent="Not sent: "+(e.name==="AbortError"?"the board did not answer; try again":e.message)}
 }
 function setSendBusy(id,on){document.querySelectorAll(`#t-${id} .fb .acts .btn:not(.recbtn), #vs-${id}`).forEach(b=>{b.disabled=on})}
 $("#nt-send").onclick=async()=>{
@@ -531,10 +522,9 @@ $("#nt-send").onclick=async()=>{
   if(!title){out.className="sent err";out.textContent="Title required.";return}
   const who=needWho(out,"nt",()=>$("#nt-send").click());if(!who)return;
   const nb={action:"new",who,title,owner:NT.owner,assignee:NT.assignee,reviewers:NT.reviewers,area:$("#nt-area").value,priority:$("#nt-pri").value,due:$("#nt-due").value.trim(),text:$("#nt-text").value.trim()};
-  if(STATIC){viaIssue(nb,out);return}
   try{const f=await post(nb);
     INBOX.push(f);NT.picked=false;paintNewPeople();$("#nt-title").value="";$("#nt-text").value="";$("#nt-due").value="";out.className="sent";out.textContent="Queued · Claude adds it as a task on the next pass";}
-  catch(e){if(e.static){viaIssue(nb,out);return}out.className="sent err";out.textContent="Failed: "+e.message}
+  catch(e){out.className="sent err";out.textContent="Not sent: "+e.message}
 };
 /* ---- who is giving feedback (the board is shared with the team) ---- */
 const WHO=$("#who");WHO.value=localStorage.getItem("lc-who")||"";
@@ -571,11 +561,10 @@ async function toggleReviewer(key,n){
 async function savePeople(key,body){
   const out=document.getElementById("pp-sent-"+key)||document.createElement("span");
   const who=needWho(out,"pp-"+key,()=>savePeople(key,body));if(!who){render();return}
-  if(STATIC){viaIssue({...body,action:"assign",who},out);return}
   out.className="sent";out.textContent="Saving…";
-  try{const r=await fetch("/api/assign",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({...body,who}),signal:withTimeout(15000)});
-    const j=await r.json();if(!r.ok)throw new Error(j.error||r.status);
-    const t=DATA.tasks.find(x=>x.id===key);Object.assign(t,{owner:j.owner,assignee:j.assignee,reviewers:j.reviewers,log:j.log});
+  try{const t=DATA.tasks.find(x=>x.id===key);
+    // public board: saved as an assign note the Mac applies within seconds; shown at once
+    const j=STATIC?(await post({...body,action:"assign",who}),{...t,...body,log:t.log}):await api("/api/assign",{...body,who},15000);Object.assign(t,{owner:j.owner,assignee:j.assignee,reviewers:j.reviewers,log:j.log});
     openId=key;fill();render();const o2=document.getElementById("pp-sent-"+key);if(o2){o2.className="sent";o2.textContent="Saved"}}
   catch(e){const o3=document.getElementById("pp-sent-"+key)||out;o3.className="sent err";o3.textContent="Not saved: "+e.message;render()}
 }
@@ -609,14 +598,14 @@ function cancelWho(key){delete WHOASK[key];paintWho(key);const out=document.getE
 /* ---- note status in the thread: queued → Claude working → handled ---- */
 let AGENT={};
 function noteState(m){
-  if(m.pending)return `<span class="st q">sent · waiting for the owner's Mac to pick it up</span>${m.issue?` <a class="st" href="${esc(m.issue)}" target="_blank" rel="noopener">issue ↗</a>`:""}`;
-  if(m.trusted===false&&m.unread)return `<span class="st q">not a collaborator · waiting for owner approval</span>${STATIC?"":`<button class="btn mini" style="margin-left:6px" onclick="trustNote('${esc(m.id)}')">Let Claude act on this</button>`}`;
+  if(m.pending&&m.trusted!==false)return `<span class="st q">saved · reaching Claude within seconds</span>`;
+  if(m.trusted===false&&m.unread)return `<span class="st q">sent without a team link · waiting for Adi's approval</span>${STATIC&&!ME.owner?"":`<button class="btn mini" style="margin-left:6px" onclick="trustNote('${esc(m.id)}')">Let Claude act on this</button>`}`;
   if(m.unread&&AGENT.state==="working"&&(AGENT.entries||[]).includes(m.id))return '<span class="st w">Claude is on it</span>';
   if(m.unread)return '<span class="st q">queued for Claude</span>';
   return '<span class="st h">handled</span>';
 }
 
-async function trustNote(fid){const r=await fetch("/api/trust",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({id:fid})});if(r.ok){const f=INBOX.find(x=>x.id===fid);if(f)f.trusted=true;render();setTimeout(pollAgent,1500)}}
+async function trustNote(fid){let ok=true;try{STATIC?await post({action:"trust",target:fid}):await api("/api/trust",{id:fid})}catch(e){ok=false;alert("Not approved: "+e.message)}if(ok){const f=INBOX.find(x=>x.id===fid);if(f)f.trusted=true;render();setTimeout(pollAgent,1500)}}
 
 /* ---- voice notes ----
    Record → a live level meter (and a warning if the mic hears nothing) → Stop → the clip uploads at
@@ -640,7 +629,7 @@ function vpanelHtml(id){
     :v.state==="error"?`<div class="vtx err">Upload failed: ${esc(v.err||"")} <button class="btn mini" type="button" onclick="uploadVoice('${id}')">Retry</button></div>`
     :v.tx&&v.tx.status==="done"?(v.tx.text?`<div class="vtx"><span class="lab">Transcript · what Claude will read</span>“${esc(v.tx.text)}”</div>`:`<div class="vtx err">No speech detected in this clip. Re-record, or send it anyway.</div>`)
     :v.tx&&v.tx.status==="error"?`<div class="vtx err">Transcription failed here; the agent retries it after you send. (${esc(v.tx.error||"")})</div>`
-    :STATIC?`<div class="vtx wait">The transcript is made on the owner's Mac after the note arrives.</div>`
+    :STATIC?`<div class="vtx wait">Uploaded. It is transcribed on the owner's Mac seconds after you send it.</div>`
     :`<div class="vtx wait"><span class="spin"></span>Transcribing what you said…</div>`;
   return `<div class="vrow"><button class="vplay" type="button" id="vplay-${id}" aria-label="Play voice note" onclick="playDraft('${id}')">${PLAYING&&PLAYING.key===id?"❚❚":"▶"}</button><canvas class="vwave" id="vw-${id}" aria-label="Voice note waveform"></canvas><span class="vtime">${fmtT(v.secs)}</span><button class="btn mini" type="button" onclick="reRec('${id}')">Re-record</button><button class="vx" type="button" title="Discard voice note" aria-label="Discard voice note" onclick="discardVoice('${id}')">×</button></div>${tx}<div class="vsend"><button class="btn pri" type="button" id="vs-${id}" onclick="send('${id}','voice')"${canSend?"":" disabled"}>Send voice note</button><span class="hint">Claude acts on it by itself. Add typed context above if you like.</span></div>`;
 }
@@ -708,7 +697,6 @@ async function startRec(id){
     Object.assign(v,{blob,blobUrl:URL.createObjectURL(blob),name:`voice-${id}-${stamp}.${ext}`,type,size:blob.size,peaks:downsample(v.peaks,160)});
     o.textContent="";
     if(v.meterOk&&v.max<SILENT){v.state="silent";paintVoice(id);return}
-    if(STATIC){v.state="ready";paintVoice(id);return}
     uploadVoice(id);
   };
   try{rec.start(250)}catch(e){clearInterval(r.tick);stream.getTracks().forEach(t=>t.stop());if(ctx)ctx.close().catch(()=>{});delete VN[id];out.className="sent err";out.textContent="Could not start recording: "+e.message;return}
@@ -719,10 +707,11 @@ function cancelRec(id){if(REC&&REC.id===id){REC.cancelled=true;REC.stop()}}
 async function uploadVoice(id){
   const v=VN[id];if(!v||!v.blob)return;
   v.state="uploading";v.err="";paintVoice(id);
-  try{const r=await fetch("/api/upload",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({task_id:id,files:[{name:v.name,type:v.type,data:await b64(v.blob)}]}),signal:withTimeout(120000)});
-    const j=await r.json().catch(()=>({error:"no upload server here"}));if(!r.ok||!j.files)throw new Error(j.error||r.status);
+  try{if(STATIC&&!KEY)throw new Error(NOKEY);
+    const j=await api("/api/upload",{task_id:id,files:[{name:v.name,type:v.type,data:await b64(v.blob)}]},120000);if(!j.files)throw new Error("upload failed");
     if(VN[id]!==v)return;  // discarded meanwhile
-    Object.assign(v,{url:j.files[0].url,size:j.files[0].size,state:"transcribing",tx:null});saveDraft(id);paintVoice(id);pollDraft(id);
+    // the public board has no transcriber: the Mac transcribes it right after it arrives
+    Object.assign(v,{url:j.files[0].url,size:j.files[0].size,state:STATIC?"ready":"transcribing",tx:null});saveDraft(id);paintVoice(id);if(!STATIC)pollDraft(id);
   }catch(e){if(VN[id]!==v)return;v.state="error";v.err=e.message;paintVoice(id)}
 }
 async function pollDraft(id){
@@ -754,9 +743,6 @@ function playDraft(id){const v=VN[id];if(!v)return;const b=()=>document.getEleme
   if(play(id,v.blobUrl||v.url,v.secs,pr=>drawWave(id,pr),()=>{const x=b();if(x)x.textContent="▶";drawWave(id,0)})){const x=b();if(x)x.textContent="❚❚"}}
 function playThread(btn){const box=btn.closest(".voice"),bar=box.querySelector(".vbar i"),key="t:"+btn.dataset.src;
   if(play(key,btn.dataset.src,+btn.dataset.dur||0,pr=>{bar.style.width=(pr*100)+"%"},()=>{btn.textContent="▶";bar.style.width="0"}))btn.textContent="❚❚"}
-/* Public (static) board: no upload server, so files are saved locally for dragging into the GitHub issue. */
-function saveLocal(id){const v=VN[id];if(v&&v.blob){const a=document.createElement("a");a.href=v.blobUrl;a.download=v.name;document.body.appendChild(a);a.click();a.remove()}
-  for(const p of PENDING[id]||[]){const a=document.createElement("a");a.href=URL.createObjectURL(p.file);a.download=p.name;document.body.appendChild(a);a.click();a.remove()}}
 const TX={};
 async function fillTranscripts(){
   const els=[...document.querySelectorAll(".voice .tx[data-tx]")];let pending=false;
@@ -766,7 +752,7 @@ async function fillTranscripts(){
     if(t.duration&&tm){tm.textContent=fmtT(t.duration);if(pb)pb.dataset.dur=t.duration}
     if(t.status==="done"){el.className="tx";el.textContent=t.text?`“${t.text}”`:"(no speech detected)"}
     else if(t.status==="error"){el.className="tx err";el.textContent="Transcription failed; Claude will retry: "+(t.error||"")}
-    else if(t.status==="none"){el.className="tx wait";el.textContent="Transcript is on the local board."}
+    else if(t.status==="none"){el.className="tx wait";el.textContent="Transcribing on the owner's Mac…"}
     else{el.className="tx wait";el.textContent="Transcribing…";pending=true}}
   clearTimeout(fillTranscripts.t);if(pending)fillTranscripts.t=setTimeout(fillTranscripts,3000);
 }
@@ -791,13 +777,13 @@ async function pollAgent(){
   }
   if(s!=="working"&&last)parts.push(`Last: ${last.task_id} → ${last.status} (${String(last.ts).slice(5,16).replace("T"," ")}).`);
   const hhmm=ts=>{const d=new Date(String(ts||"").replace(/([+-]\d\d)(\d\d)$/,"$1:$2"));return isNaN(d)?"":d.toLocaleString(undefined,{month:"short",day:"numeric",hour:"2-digit",minute:"2-digit"})};
-  if(STATIC)parts.push(sync.published?`Board published ${hhmm(sync.published)} from the owner's Mac${(sync.held||[]).length?` · ${sync.held.length} item(s) held for privacy`:""}. Notes you send here arrive as GitHub issues.`:"Notes you send here arrive as GitHub issues.");
+  if(STATIC)parts.push(sync.published?`Board published ${hhmm(sync.published)} from the owner's Mac${(sync.held||[]).length?` · ${sync.held.length} item(s) held for privacy`:""}. ${KEY?` Signed in as ${ME.name||"…"}: everything you send saves here and reaches Claude within seconds.`:" Open your personal board link to send as yourself."}`:(KEY?`Signed in as ${ME.name||"…"}: everything you send saves here and reaches Claude within seconds.`:"Open your personal board link to send as yourself."));
   else if(sync.ts)parts.push(sync.ok===false?`Public board: NOT published (${sync.reason||"error"})`:`Public board: ${sync.published?"published":"in sync"} ${hhmm(sync.ts)}${(sync.held||[]).length?` · held for privacy: ${sync.held.map(h=>h.task||h.id).join(", ")} (reword to publish)`:""}`);
   $("#agent-msg").textContent=parts.join(" · ");
-  const tog=$("#agent-tog");tog.hidden=STATIC;tog.textContent=cf.enabled===false?"Resume":"Pause";
+  const tog=$("#agent-tog");tog.hidden=STATIC&&!ME.owner;tog.textContent=cf.enabled===false?"Resume":"Pause";
   const sig=[st.state,st.task_id,st.updated,qs.state,qs.task_id,qs.updated].join("|");if(agentSig&&sig!==agentSig)load();agentSig=sig;
 }
-$("#agent-tog").onclick=async()=>{const on=$("#agent-tog").textContent==="Resume";await fetch("/api/agent",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({enabled:on})});pollAgent()};
+$("#agent-tog").onclick=async()=>{const on=$("#agent-tog").textContent==="Resume";try{STATIC?await post({action:"agent",enabled:on}):await api("/api/agent",{enabled:on})}catch(e){alert(e.message)}pollAgent()};
 document.querySelectorAll("#view button").forEach(b=>b.onclick=()=>{view=b.dataset.v;document.querySelectorAll("#view button").forEach(x=>x.classList.toggle("on",x===b));render()});
 ["f-owner","f-doing","f-rev","f-area","f-status","hidedone"].forEach(i=>$("#"+i).onchange=()=>{render();paintTeam()});
 $("#nt-area").addEventListener("change",paintNewPeople);$("#q").oninput=render;
@@ -810,7 +796,7 @@ function cohortStarts(now){const NY="America/New_York",DAY=864e5,parts=t=>{const
  const p=parts(now),today=Date.UTC(p.year,p.month-1,p.day);let wed=today-((new Date(today).getUTCDay()+4)%7)*DAY;
  if(+now>=+at(wed+2*DAY,12,0))wed+=7*DAY;wed=Math.max(wed,Date.UTC(2026,9,7));return[0,1,2].map(i=>at(wed+i*DAY,11,0))}
 function countdown(){const now=Date.now(),S=cohortStarts(new Date(now)),i=S.findIndex(s=>now<+s+36e5),n=i+1,_=($("#cdn")&&($("#cdn").textContent=n)),ms=S[i]-now,when=S[i].toLocaleDateString("en-US",{weekday:"short",day:"numeric",month:"short",timeZone:"America/New_York"});if(ms<=0){$("#cd").textContent="is live now";return}const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5);$("#cd").textContent=`in ${d}d ${h}h · ${when}, 11:00 ET`}
-loadDrafts();load().then(countdown).then(()=>{const m=/^#(T-\d+)$/.exec(location.hash);if(m)jump(m[1])}).then(pollAgent);setInterval(countdown,6e4);setInterval(load,STATIC?3e4:9e4);setInterval(pollAgent,STATIC?3e4:8e3);
+loadDrafts();whoAmI().then(load).then(countdown).then(()=>{const m=/^#(T-\d+)$/.exec(location.hash);if(m)jump(m[1])}).then(pollAgent);setInterval(countdown,6e4);setInterval(load,STATIC?3e4:9e4);setInterval(pollAgent,STATIC?3e4:8e3);
 </script>
 </body>
 </html>
