@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T05:23:09+0530",
+   "task_id": "T-234",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-234 is still blocked: today's production preflight shows the GrowthClub Tantra API key isn't saved, which is the one input Adi still owes (T-337). Everything the Orchestrator asked for before the key is done (welcome folded in, dash-free copy, scripted test send, revert ledger entry), and nothing "
+  },
+  {
    "ts": "2026-10-09T05:22:35+0530",
    "task_id": "T-232",
    "mode": "feedback",
@@ -19,10 +27,10 @@
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-234",
+ "task_id": "T-278",
  "entries": [
-  "F-e2c4a0a3"
+  "F-c0c4c286"
  ],
- "started": "2026-10-09T05:22:39+0530",
- "message": "Acting on 1 note(s) for T-234: Workshop reminders through Tantra omni-channel campaigns: import every registrant with their own join and calendar links"
+ "started": "2026-10-09T05:23:17+0530",
+ "message": "Acting on 1 note(s) for T-278: Join and success pages: one seat-link resolver, community fallback, footer links, sample dates"
 }
