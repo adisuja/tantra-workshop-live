@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T05:11:35+0530",
+   "task_id": "T-145",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-145 is blocked on two steps: Adi sends the GitHub Support request now (T-334), and Nelbin deletes his fork, which is in the new task T-341. The request ([t145_github_support_request.md](workshop-plan/ops/t145_github_support_request.md)) is ready today and asks GitHub to remove commits 5b9f57d6 and"
+  },
+  {
+   "ts": "2026-10-09T05:10:27+0530",
+   "task_id": "T-034",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "I built the Day-1 dry-run as one command, `workshop-plan/ops/dryrun_day1.py`, and a full run with all three personas passed (with stand-ins for the unbuilt stages). T-034 stays blocked until T-031, T-032 and T-033 are built, and none of that needs anything from Adi.\n\n**What a run does:** it adds the"
+  },
+  {
    "ts": "2026-10-09T02:36:21+0530",
    "task_id": "T-073",
    "mode": "feedback",
@@ -79,30 +95,14 @@
    "status": "blocked",
    "result": "ok",
    "summary": "I deployed the payment routes to the live centre, but T-122 is blocked again: real Dodo payments still can't reach the centre, because the endpoint as you approved it wouldn't have worked.\n\n**What's live now:**\n- The 0018 migration is applied to the live database.\n- The centre Worker is deployed (ve"
-  },
-  {
-   "ts": "2026-10-09T01:27:47+0530",
-   "task_id": "T-147",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-147 is done: the app's address in `app/src/lib/seo/site.ts:41` and the deck's door 2 line in `scripts/walkthroughs/demo-inputs.md` now say usetantra.com instead of calendar.usetantra.com. A headless test sign-in landed on usetantra.com/campaigns. Committed as a3a912e, not pushed, and the live mark"
-  },
-  {
-   "ts": "2026-10-09T01:26:29+0530",
-   "task_id": "T-146",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-146 is still blocked: Nelbin already has write access (GitHub username nelbinxav), but I couldn't invite Bhaskar or Aquila because no GitHub account matches their growthclub.org emails, so I've asked Adi for their usernames."
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-034: Full dry run of the Day-1 pipeline",
- "task_id": "T-034",
+ "message": "Acting on 1 note(s) for T-226: Tantra Host Console: Adi hosts every session from a Mac app that runs chat posts, polls, call-to-action links, mute and video control, co-hosts",
+ "task_id": "T-226",
  "entries": [
-  "F-5fac6881"
+  "F-98ae97be"
  ],
  "mode": "feedback",
- "started": "2026-10-09T05:06:26+0530"
+ "started": "2026-10-09T05:12:01+0530"
 }
