@@ -60,6 +60,7 @@ header.top{display:flex;align-items:center;justify-content:space-between;gap:14p
 .nowitem b{display:block;font-size:13.5px;font-weight:650;line-height:1.3}
 .nowitem>span:not(.people){display:block;font-size:12px;color:var(--ink-2);margin-top:2px;line-height:1.4}
 .nowitem .ask{color:var(--pink)}
+.nowitem b,.nowitem>span,.det p,.det li,.det .ask,.msg .txt,.rel .rw{overflow-wrap:anywhere}  /* long links in a task's text must wrap, never widen the page */
 .nowitem .on{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:650;letter-spacing:.02em;color:var(--accent-ink);margin-bottom:3px}
 .nowitem .on.q{color:var(--ink-3)}
 .nowitem .on i{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:lcpulse 1.4s ease-in-out infinite}
@@ -137,6 +138,7 @@ a.tl{font-weight:600;cursor:pointer}
 .dhead{flex:none;background:var(--panel-2);padding:14px 22px 12px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:flex-start}
 .dhead .auto{display:flex;align-items:center;gap:5px;font-size:11.5px;color:var(--ink-3);white-space:nowrap;margin-right:6px;cursor:pointer}
 .dhead .auto input{accent-color:var(--accent);margin:0}
+@media(max-width:760px){.dhead{flex-wrap:wrap;padding:12px 14px 10px}.dhead .dt{flex-basis:100%}.dhead .nav{width:100%;align-items:center}.dhead .nav .pos{flex:1;min-width:0;white-space:normal;text-align:left;order:-1}.dhead .auto{margin-right:2px}}
 .dhead .dt{flex:1;min-width:0}
 .dhead .dt b{display:block;font-size:17px;line-height:1.3;font-weight:650;color:var(--ink)}
 .dhead .dt .dm{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:6px;font-size:12px;color:var(--ink-3)}
