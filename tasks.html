@@ -100,10 +100,30 @@ input[type=text]{min-width:180px}
 @media(max-width:640px){.row{grid-template-columns:1fr auto}.id{display:none}.ttl b,.ttl small{white-space:normal}}
 
 /* detail */
-.det{display:none;border-top:1px solid var(--line);padding:12px 14px 14px;background:var(--panel-2)}
+/* Task detail = a side panel (owner, 2026-10-09: no scrolling up and down between the list and an expanded row).
+   The open row's .det is position:fixed, so the DOM and every #t-ID selector stay as they were. */
+:root{--dw:min(900px,58vw)}
+.det{display:none;position:fixed;top:0;right:0;bottom:0;width:var(--dw);z-index:40;overflow-y:auto;overscroll-behavior:contain;
+  background:var(--panel-2);border-left:1px solid var(--line);box-shadow:-18px 0 48px rgba(10,14,24,.16);padding:0 22px 22px}
 .task.open .det{display:block}
-.det .cols{display:grid;grid-template-columns:1.3fr 1fr;gap:16px}
-@media(max-width:800px){.det .cols{grid-template-columns:1fr}}
+.task.open{border-color:var(--accent);box-shadow:inset 3px 0 0 var(--accent)}
+.task.open .row{background:var(--accent-2)}
+@media(min-width:1101px){body.dopen{padding-right:var(--dw)} body.dopen .wrap{max-width:none}}
+@media(max-width:1100px){:root{--dw:100vw} .det{border-left:0;box-shadow:none}}
+.dhead{position:sticky;top:0;z-index:2;background:var(--panel-2);margin:0 -22px 14px;padding:14px 22px 12px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:flex-start}
+.dhead .dt{flex:1;min-width:0}
+.dhead .dt b{display:block;font-size:17px;line-height:1.3;font-weight:650;color:var(--ink)}
+.dhead .dt .dm{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:6px;font-size:12px;color:var(--ink-3)}
+.dhead .nav{display:flex;gap:4px;flex:none}
+.dhead .nav button{width:32px;height:32px;border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--panel);color:var(--ink-2);font-size:15px;line-height:1;cursor:pointer}
+.dhead .nav button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.dhead .nav button:disabled{opacity:.35;cursor:default}
+.dhead .nav .pos{align-self:center;font-size:11.5px;color:var(--ink-3);padding:0 4px;white-space:nowrap}
+.det .cols{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:stretch}
+@media(max-width:760px){.det .cols{grid-template-columns:1fr}}
+.det .cols>div{min-width:0}
+.kopen .task{border:0;margin:0;box-shadow:none;background:none} .kopen .task>.row{display:none}
+.det .fb{position:sticky;bottom:-22px;background:var(--panel-2);padding:10px 0 22px;margin-bottom:-22px}
 .det h4{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin:10px 0 4px}
 .det h4:first-child{margin-top:0}
 .det p,.det li{font-size:13px;color:var(--ink-2);line-height:1.5}
@@ -393,14 +413,20 @@ function render(){
   $("#n-rev").textContent=c("review");
   $("#now-rev").innerHTML=rev.length?rev.map(t=>`<button class="nowitem" onclick="jump('${t.id}')"><b>${esc(t.title)}</b>${peopleLine(t)}<span>${esc((t.evidence[0]||{}).label||"")}${t.evidence[0]?" · ":""}${esc(t.needs_from_owner||"Approve or request changes")}</span></button>`).join(""):'<div class="empty">Nothing waiting for review.</div>';
   const list=filtered();const b=$("#board");
+  {const d=document.querySelector(".task.open .det");if(d)DSCROLL=d.scrollTop}
   const typed={};document.querySelectorAll('textarea[id^="fb-"]').forEach(t=>{if(t.value)typed[t.id]=t.value});
   if(view==="kanban"){
-    b.innerHTML='<div class="kan">'+["next","doing","review","blocked","hold","queue","done"].map(s=>`<div class="col"><h3>${LABEL[s]} · ${list.filter(t=>t.status===s).length}</h3>${list.filter(t=>t.status===s).map(t=>`<div class="kcard" onclick="jump('${t.id}')"><b>${esc(t.title)}</b><span class="people">${pp(t.owner,"Owner")}${t.assignee&&t.assignee!==t.owner?pp(t.assignee,"Doing"):""}</span><small>${t.id} · ${t.priority}${t.due?" · "+t.due.slice(5):""}${unread(t.id)?" · ✉ "+unread(t.id):""}</small></div>`).join("")}</div>`).join("")+'</div>';
-    return;
+    b.innerHTML='<div class="kan">'+["next","doing","review","blocked","hold","queue","done"].map(s=>`<div class="col"><h3>${LABEL[s]} · ${list.filter(t=>t.status===s).length}</h3>${list.filter(t=>t.status===s).map(t=>`<div class="kcard" onclick="jump('${t.id}')"><b>${esc(t.title)}</b><span class="people">${pp(t.owner,"Owner")}${t.assignee&&t.assignee!==t.owner?pp(t.assignee,"Doing"):""}</span><small>${t.id} · ${t.priority}${t.due?" · "+t.due.slice(5):""}${unread(t.id)?" · ✉ "+unread(t.id):""}</small></div>`).join("")}</div>`).join("")+'</div>'+(openTask()?`<div class="kopen">${row(openTask())}</div>`:"");
+    afterRender(typed);return;
   }
   const groups=view==="area"?AREAS.map(a=>[a,list.filter(t=>t.area===a)]):Object.keys(ORDER).map(s=>[LABEL[s],list.filter(t=>t.status===s)]);
   b.innerHTML=groups.filter(g=>g[1].length).map(([g,ts])=>`<div class="group"><h3>${g} <span class="n">${ts.length}</span></h3>${ts.map(row).join("")}</div>`).join("")||'<div class="empty">No tasks match.</div>';
-  if(openId){const el=document.getElementById("t-"+openId);if(el)el.classList.add("open")}
+  if(openTask()&&!document.getElementById("t-"+openId))b.insertAdjacentHTML("beforeend",`<div class="kopen">${row(openTask())}</div>`);  // open but filtered out
+  afterRender(typed);
+}
+function afterRender(typed){
+  if(openId){const el=document.getElementById("t-"+openId);if(el){el.classList.add("open");const d=el.querySelector(".det");if(d)d.scrollTop=DSCROLL}}
+  document.body.classList.toggle("dopen",!!(openId&&document.getElementById("t-"+openId)));
   for(const [k,v] of Object.entries(typed)){const t=document.getElementById(k);if(t)t.value=v}
   Object.keys(PENDING).forEach(renderPending);Object.keys(VN).forEach(id=>drawWave(id));paintGlobal();fillTranscripts();
 }
@@ -417,7 +443,9 @@ function row(t){
 function detail(t){
   const fb=fbFor(t.id);
   const thread=[...t.log.map(l=>({...l,owner:false,author:(!l.who||l.who==="claude")?"Claude":l.who})),...fb.map(f=>({pending:f.pending,issue:f.issue,ts:f.ts,who:(f.who||"You")+(f.gh_login&&f.gh_login.toLowerCase()!==String(f.who||"").toLowerCase()?` (@${f.gh_login})`:""),id:f.id,note:f.text,act:f.action,owner:true,unread:!f.processed,trusted:f.trusted,attachments:f.attachments}))].sort((a,b)=>String(a.ts).localeCompare(String(b.ts)));
-  return `<div class="cols"><div>
+  return `<div class="dhead"><div class="dt"><span class="id">${t.id}</span><b>${esc(t.title)}</b><div class="dm"><span class="pill p-${t.priority}">${t.priority}</span><span class="pill s-${t.status}">${LABEL[t.status]}</span><span>${esc(t.area)}</span>${t.due?`<span class="due${isLate(t)?" late":""}">due ${esc(t.due)}</span>`:""}</div></div>
+    <div class="nav"><button type="button" onclick="step(-1)" title="Previous task (k or ←)" aria-label="Previous task"${navPos(t.id).i>0?"":" disabled"}>↑</button><span class="pos">${navPos(t.id).i<0?"not in this view":`${navPos(t.id).i+1} of ${navPos(t.id).n}`}</span><button type="button" onclick="step(1)" title="Next task (j or →)" aria-label="Next task"${navPos(t.id).i>=0&&navPos(t.id).i<navPos(t.id).n-1?"":" disabled"}>↓</button><button type="button" onclick="closeTask()" title="Close (Esc)" aria-label="Close task">✕</button></div></div>
+  <div class="cols"><div>
     <h4>People</h4>${peopleEditor(t.id,t)}
     <h4>Why it matters</h4><p>${esc(t.why)}</p>
     <h4>Spec</h4><p>${esc(t.spec)}</p>
@@ -447,8 +475,24 @@ function detail(t){
     </div>
   </div></div>`;
 }
-function toggle(id){openId=openId===id?null:id;document.querySelectorAll(".task.open").forEach(e=>e.classList.remove("open"));if(openId){const el=document.getElementById("t-"+id);if(el)el.classList.add("open")}paintGlobal()}
-function jump(id){$("#f-doing").value="";$("#f-rev").value="";MINE=false;$("#f-mine").classList.remove("on");$("#f-owner").value="";$("#f-area").value="";$("#f-status").value="";$("#q").value="";$("#hidedone").checked=false;if(view==="kanban"){view="queue";document.querySelectorAll("#view button").forEach(b=>b.classList.toggle("on",b.dataset.v==="queue"))}openId=id;render();const el=document.getElementById("t-"+id);if(el)el.scrollIntoView({behavior:"smooth",block:"start"})}
+let DSCROLL=0;
+const openTask=()=>openId&&DATA.tasks.find(t=>t.id===openId);
+/* the order the panel's ↑/↓ walk: the board as it is shown now (view, filters and search applied) */
+function navOrder(){const L=filtered();
+  if(view==="kanban")return ["next","doing","review","blocked","hold","queue","done"].flatMap(s=>L.filter(t=>t.status===s).map(t=>t.id));
+  if(view==="area")return AREAS.flatMap(a=>L.filter(t=>t.area===a).map(t=>t.id));
+  return L.map(t=>t.id)}
+function navPos(id){const o=navOrder(),i=o.indexOf(id);return {i,n:o.length}}
+function openTaskPanel(id,follow){if(openId!==id)DSCROLL=0;openId=id;render();
+  // the page never jumps when a task opens; only stepping with ↑/↓ keeps the highlighted row in view
+  const r=follow&&document.querySelector(`#board .group #t-${CSS.escape(id)} > .row`);if(r)r.scrollIntoView({block:"nearest"})}
+function closeTask(){openId=null;DSCROLL=0;document.querySelectorAll(".task.open").forEach(e=>e.classList.remove("open"));document.querySelectorAll(".kopen").forEach(e=>e.remove());document.body.classList.remove("dopen");paintGlobal()}
+function toggle(id){if(openId===id)closeTask();else openTaskPanel(id)}
+function step(d){const o=navOrder(),n=o[o.indexOf(openId)+d];if(n)openTaskPanel(n,true)}
+/* open a task from anywhere (NOW strip, Kanban, a #T-123 link). Filters are cleared only if they hide it. */
+function jump(id){if(!filtered().some(t=>t.id===id)){$("#f-doing").value="";$("#f-rev").value="";MINE=false;$("#f-mine").classList.remove("on");$("#f-owner").value="";$("#f-area").value="";$("#f-status").value="";$("#q").value="";$("#hidedone").checked=false}openTaskPanel(id)}
+document.addEventListener("keydown",e=>{if(!openId)return;const tag=(e.target.tagName||"").toLowerCase();if(["input","textarea","select"].includes(tag)||e.target.isContentEditable||e.metaKey||e.ctrlKey||e.altKey)return;
+  if(e.key==="Escape"){closeTask();e.preventDefault()}else if(e.key==="j"||e.key==="ArrowRight"||e.key==="ArrowDown"&&e.shiftKey){step(1);e.preventDefault()}else if(e.key==="k"||e.key==="ArrowLeft"||e.key==="ArrowUp"&&e.shiftKey){step(-1);e.preventDefault()}});
 /* The public copy of this board is static (GitHub Pages) and cannot save anything itself, so on a
    static host every action is saved to the tantra-board Worker (cloud/board/worker.js) in one click.
    The owner's Mac pulls new notes every 15 s (tasks/pass.py import) and the agent acts on them.
@@ -641,7 +685,7 @@ function paintVoice(id){
 /* a recording or an unsent voice note is listed at the top whatever view or filter is on */
 function paintGlobal(){
   const box=document.getElementById("vglobal");if(!box)return;
-  const ids=Object.keys(VN).filter(id=>VN[id]&&!(openId===id&&document.getElementById("vp-"+id)?.offsetParent&&view!=="kanban"));
+  const ids=Object.keys(VN).filter(id=>VN[id]&&!(openId===id&&document.getElementById("vp-"+id)?.offsetParent));
   box.hidden=!ids.length;
   box.innerHTML=ids.map(id=>{const v=VN[id],known=DATA.tasks.some(t=>t.id===id),rec=v.state==="recording";
     return `<div class="vg${rec?"":" draft"}"><span>${rec?"● Recording":"Unsent voice note"} on <b>${esc(id)}</b>${rec?` · <span id="vgt-${esc(id)}">${fmtT(v.secs)}</span>`:""}</span><span class="sp"></span>${rec?`<button class="btn mini chg" type="button" onclick="stopRec('${esc(id)}')">■ Stop</button>`:known?`<button class="btn mini pri" type="button" onclick="jump('${esc(id)}')">Open to send</button>`:""}<button class="btn mini" type="button" onclick="${rec?`cancelRec('${esc(id)}')`:`discardVoice('${esc(id)}')`}">${rec?"Cancel":"Discard"}</button></div>`}).join("");
