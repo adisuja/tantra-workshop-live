@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T02:22:36+0530",
+   "task_id": "T-145",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-145 is still blocked: option B is done, and the two steps left are deleting Nelbin's fork and filing the GitHub Support purge request (in `workshop-plan/ops/t145_github_support_request.md`), which my rules forbid even with your yes. I checked GitHub today: commit 5b9f57d6 is on no branch but still"
+  },
+  {
+   "ts": "2026-10-09T02:22:02+0530",
+   "task_id": "T-122",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-122 is done. Dodo now sends payment events straight to the live payment route (`https://revops-centre.growthcluborg.workers.dev/hooks/dodo`), and a live check passed.\n\n- **New Dodo endpoint:** it covers payment succeeded, failed and cancelled, plus refunds. The api.usetantra.com endpoint was not t"
+  },
+  {
    "ts": "2026-10-09T02:13:21+0530",
    "task_id": "T-005",
    "mode": "feedback",
@@ -81,12 +97,10 @@
    "summary": "I built T-122 payment-to-seat fulfilment in the centre Worker and proved it locally (probe 28/28, commit `f7c7777`), but it isn't live, so the task is blocked on Adi approving a deploy, the Worker secret and a new Dodo webhook endpoint.\n\nWhat it does now:\n- **Paying makes the buyer a VIP attendee.**"
   }
  ],
- "state": "working",
- "message": "Acting on 1 note(s) for T-122: Payment grants access: Dodo and Stripe webhooks upgrade the attendee in the centre",
- "task_id": "T-122",
- "entries": [
-  "W-60d7749fac"
- ],
- "mode": "feedback",
- "started": "2026-10-09T02:19:47+0530"
+ "state": "idle",
+ "message": "Last sweep handled 1 task(s).",
+ "task_id": null,
+ "entries": [],
+ "mode": null,
+ "started": "2026-10-09T02:22:10+0530"
 }

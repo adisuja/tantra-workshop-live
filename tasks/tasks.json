@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T02:13:18+0530",
-  "version": 402,
+  "updated": "2026-10-09T02:22:32+0530",
+  "version": 404,
   "last_id": 331,
   "team": [
    {
@@ -4145,7 +4145,7 @@
    "owner": "Ben",
    "priority": "P0",
    "due": "2026-09-27",
-   "status": "blocked",
+   "status": "done",
    "why": "People who pay for the seat are not upgraded automatically: the Next app's Dodo webhook only forwards to an unset DODO_FULFILMENT_WEBHOOK_URL and the centre Worker has no payment route for our own workshop.",
    "spec": "State on main 2026-10-08: app/src/app/api/dodo/webhook/route.ts verifies and forwards only; cloud/src/index.ts routes /hooks/zoom but no /hooks/dodo or /hooks/stripe for our own workshop (attendee funnels have their own in jobs-day2.ts); cloud/src/calendar.ts ensureSignup says a VIP seat 'comes from the payment webhook or the admin'. Build: a signed Dodo route (Standard Webhooks, product pdt_0NnpA6EIxXvDvS1F03N8Z) and a Stripe route in the centre Worker that create or upgrade the attendee (attendees.seat = 'vip'), log the event, mirror to the Tantra Tracker, and send the centre link (via the T-123 sender); refund.succeeded and failed payments never grant and revoke on refund. Point the Next app route at it. Keep api.usetantra.com out (T-070 hold). Use the existing Dodo webhook secret; never rotate it (T-005 is last). Prove it on the simulator, then one live check.",
    "done_when": [
@@ -4174,7 +4174,7 @@
    "blockers": [
     "Adi's yes to build fulfilment in the centre while T-070 (Tantra backend) stays on hold"
    ],
-   "needs_from_owner": "Dodo gives every webhook endpoint its own new secret, so the existing one cannot sign a new endpoint. Can I add https://revops-centre.growthcluborg.workers.dev/hooks/dodo as a Dodo webhook endpoint (payment.succeeded, payment.failed, payment.cancelled, refund.succeeded; api.usetantra.com untouched) and store the secret Dodo generates for it in the centre Worker, keeping the current one so the Next app forward still works? Yes or no.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-25",
@@ -4215,6 +4215,11 @@
      "ts": "2026-10-09T02:04:42+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-070, T-005."
+    },
+    {
+     "ts": "2026-10-09T02:21:55+0530",
+     "who": "claude",
+     "note": "Done on Adi's yes: Dodo now has its own live endpoint for https://revops-centre.growthcluborg.workers.dev/hooks/dodo (ep_3KQbHhK5aZTKBfhmUMtbZAkVyaS: payment.succeeded, payment.failed, payment.cancelled, refund.succeeded; api.usetantra.com untouched), its generated secret is stored in the centre Worker next to the existing one, and the route accepts either (commit 3736602, deployed version 7ebda9f1). Live check signed with the new secret on test attendee 2: wrong secret refused (401), payment.failed did not grant, payment.succeeded made them vip, the replay was ignored, a full refund put them back to free; the original secret (Next app forward) still verifies. Adi's standing rule (build fully, ask only for real inputs as separate tasks) is saved to memory; changing the runner's own approval gate is Aquila's call."
     }
    ],
    "order": 1200,
@@ -5292,7 +5297,7 @@
    "blockers": [
     "T-141 answer"
    ],
-   "needs_from_owner": "Two clicks, both from you: (1) delete Nelbin's fork, which still holds the leak: open https://github.com/nelbinxav/tantra-workshop-live/settings while signed in as nelbinxav, then Delete this repository (only that account can do it). (2) Paste the text in workshop-plan/ops/t145_github_support_request.md into https://support.github.com/contact while signed in as adisuja (I am not allowed to send messages for you). Until GitHub purges it, the old commit can still be opened by its SHA.",
+   "needs_from_owner": "Not a permission question, just two actions only your accounts can take: (1) Nelbin, signed in as nelbinxav, opens https://github.com/nelbinxav/tantra-workshop-live/settings and clicks Delete this repository. (2) Adi, signed in as adisuja, pastes the text in workshop-plan/ops/t145_github_support_request.md into https://support.github.com/contact so GitHub purges the cached commit 5b9f57d6.",
    "log": [
     {
      "ts": "2026-09-26T00:17:50+0530",
@@ -5318,6 +5323,11 @@
      "ts": "2026-10-09T02:11:37+0530",
      "who": "claude",
      "note": "Done on Adi's approval: rewrote and force-pushed adisuja/tantra-workshop-live. Both main and a second branch (claude/relaxed-curie-lrdw8i, which also held the leak) now have clean history: the GitHub API confirms neither contains 5b9f57d6, 0 commits match the leaked figures, and the site files are unchanged. Board-sync was paused for the push, resumed, and is pushing on top of the new history. Two steps remain that I am not allowed to do even with approval: deleting a teammate's repo, and sending a message to GitHub Support."
+    },
+    {
+     "ts": "2026-10-09T02:22:32+0530",
+     "who": "claude",
+     "note": "Option B was already carried out on Adi's yes: adisuja/tantra-workshop-live main and the second branch were rewritten and force-pushed, so no branch holds the leak. Rechecked on GitHub today: the old commit 5b9f57d6 is no longer on any branch but still opens by its SHA, and Nelbin's fork still holds it. The two steps left are ones I may not do even with your yes: deleting a teammate's repo and sending a message to GitHub Support."
     }
    ],
    "order": 1450,
