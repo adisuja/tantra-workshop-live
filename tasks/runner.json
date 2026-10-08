@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T02:36:21+0530",
+   "task_id": "T-073",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "ok",
+   "summary": "(Held back from the public board: this note mentions a private client detail.)"
+  },
+  {
    "ts": "2026-10-09T02:35:54+0530",
    "task_id": "T-232",
    "mode": "feedback",
@@ -87,22 +95,12 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-146 is still blocked: Nelbin already has write access (GitHub username nelbinxav), but I couldn't invite Bhaskar or Aquila because no GitHub account matches their growthclub.org emails, so I've asked Adi for their usernames."
-  },
-  {
-   "ts": "2026-10-09T01:26:02+0530",
-   "task_id": "T-145",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-145 is blocked: the Option B history rewrite is built and passes a dry run, but nothing is pushed because force-pushing a public repo needs Adi to run it or explicitly let me. Nelbin's fork from 2026-09-29 also still holds the leaked commit, and the rewrite does not clean it. A dry-run rewrite of "
   }
  ],
- "state": "working",
- "message": "Acting on 1 note(s) for T-073: Cut session recordings into the Tantra Pro course",
- "task_id": "T-073",
- "entries": [
-  "R-3338c1a3"
- ],
- "mode": "feedback",
+ "state": "idle",
+ "message": "Last sweep handled 1 task(s).",
+ "task_id": null,
+ "entries": [],
+ "mode": null,
  "started": "2026-10-09T02:36:00+0530"
 }

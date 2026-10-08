@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T02:35:46+0530",
-  "version": 407,
+  "updated": "2026-10-09T02:36:18+0530",
+  "version": 409,
   "last_id": 331,
   "team": [
    {
@@ -2208,45 +2208,25 @@
   },
   {
    "id": "T-073",
-   "title": "Cut session recordings into the Tantra Pro course",
-   "area": "Product",
-   "owner": "Amal",
-   "priority": "P2",
-   "due": "2026-10-07",
    "status": "queue",
-   "why": "The recordings are the course; this is the core of the $999 upsell.",
-   "spec": "Source: each cohort's three Zoom Pro meeting recordings are saved automatically by the centre (cloud/src/zoom-pro.ts, recording.completed webhook, D1 table zoom_recordings: share_url, passcode, files, transcript_key, chat lines). After the 7 to 9 Oct 2026 cohort ends, export the three day recordings and transcripts, cut them into lessons per day (use the transcript to place cuts), and publish them to the Tantra Pro course home. Retention must be set first so the files are not auto-deleted (T-232). Course name and home follow T-116 and T-071.",
-   "done_when": [
-    "Three day modules from the 7 to 9 Oct cohort published in the course home (URL in the task log)",
-    "Each lesson has its transcript attached"
-   ],
-   "evidence": [],
-   "blockers": [
-    "T-232 recording quota and retention"
-   ],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review: context updated. Recordings now come automatically from Zoom cloud recording per cohort day (T-223, retention policy T-232); the course is three sessions per cohort, not five modules."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: recordings are now saved by the centre itself: Zoom recording.completed webhook to cloud/src/zoom-pro.ts saveRecording, rows in D1 zoom_recordings with share_url, transcript and chat. First real cohort runs 7 to 9 Oct 2026, so the first source recordings exist from Fri 9 Oct. Course home location is UNVERIFIED (depends on the Pro name, T-116)."
-    }
-   ],
-   "order": 450,
+   "owner": "Amal",
    "assignee": "Amal",
    "reviewers": [
     "Amal"
-   ]
+   ],
+   "priority": "P2",
+   "due": "2026-10-07",
+   "area": "Product",
+   "order": 450,
+   "title": "T-073: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-074",
