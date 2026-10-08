@@ -1,6 +1,96 @@
 {
  "running": "2026-10-09T05:04:29+0530",
  "last_sweep": null,
- "counts": {},
- "tasks": {}
+ "counts": {
+  "proceed": 7,
+  "needs_adi": 4,
+  "resolve": 6
+ },
+ "tasks": {
+  "T-034": {
+   "verdict": "proceed",
+   "ts": "2026-10-09T05:04:45+0530",
+   "input_task": null
+  },
+  "T-145": {
+   "verdict": "needs_adi",
+   "ts": "2026-10-09T05:04:53+0530",
+   "input_task": "T-334"
+  },
+  "T-226": {
+   "verdict": "needs_adi",
+   "ts": "2026-10-09T05:04:54+0530",
+   "input_task": "T-335"
+  },
+  "T-227": {
+   "verdict": "proceed",
+   "ts": "2026-10-09T05:05:12+0530",
+   "input_task": null
+  },
+  "T-232": {
+   "verdict": "needs_adi",
+   "ts": "2026-10-09T05:05:12+0530",
+   "input_task": "T-336"
+  },
+  "T-234": {
+   "verdict": "needs_adi",
+   "ts": "2026-10-09T05:05:40+0530",
+   "input_task": "T-337"
+  },
+  "T-260": {
+   "verdict": "resolve",
+   "ts": "2026-10-09T05:05:40+0530",
+   "input_task": null
+  },
+  "T-278": {
+   "verdict": "resolve",
+   "ts": "2026-10-09T05:05:40+0530",
+   "input_task": null
+  },
+  "T-033": {
+   "verdict": "proceed",
+   "ts": "2026-10-09T05:05:40+0530",
+   "input_task": null
+  },
+  "T-071": {
+   "verdict": "proceed",
+   "ts": "2026-10-09T05:05:40+0530",
+   "input_task": null
+  },
+  "T-111": {
+   "verdict": "proceed",
+   "ts": "2026-10-09T05:05:48+0530",
+   "input_task": null
+  },
+  "T-115": {
+   "verdict": "proceed",
+   "ts": "2026-10-09T05:05:48+0530",
+   "input_task": null
+  },
+  "T-116": {
+   "verdict": "resolve",
+   "ts": "2026-10-09T05:05:59+0530",
+   "input_task": null
+  },
+  "T-117": {
+   "verdict": "resolve",
+   "ts": "2026-10-09T05:05:59+0530",
+   "input_task": null
+  },
+  "T-191": {
+   "verdict": "resolve",
+   "ts": "2026-10-09T05:06:10+0530",
+   "input_task": null
+  },
+  "T-194": {
+   "verdict": "resolve",
+   "ts": "2026-10-09T05:06:10+0530",
+   "input_task": null
+  },
+  "T-225": {
+   "verdict": "proceed",
+   "ts": "2026-10-09T05:06:11+0530",
+   "input_task": null
+  }
+ }
 }

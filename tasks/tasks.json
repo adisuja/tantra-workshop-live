@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T02:44:32+0530",
-  "version": 422,
-  "last_id": 333,
+  "updated": "2026-10-09T05:05:40+0530",
+  "version": 432,
+  "last_id": 337,
   "team": [
    {
     "name": "Adi",
@@ -5308,10 +5308,15 @@
      "ts": "2026-10-09T02:22:32+0530",
      "who": "claude",
      "note": "Option B was already carried out on Adi's yes: adisuja/tantra-workshop-live main and the second branch were rewritten and force-pushed, so no branch holds the leak. Rechecked on GitHub today: the old commit 5b9f57d6 is no longer on any branch but still opens by its SHA, and Nelbin's fork still holds it. The two steps left are ones I may not do even with your yes: deleting a teammate's repo and sending a message to GitHub Support."
+    },
+    {
+     "ts": "2026-10-09T05:04:53+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Adi → Claude (by Orchestrator)."
     }
    ],
    "order": 1450,
-   "assignee": "Adi",
+   "assignee": "Claude",
    "reviewers": [
     "Bharath",
     "Adi"
@@ -7602,7 +7607,7 @@
    "title": "Google Calendar invites: save the organiser's service account and authorise it for Calendar",
    "area": "Delivery",
    "owner": "Adi",
-   "assignee": "Adi",
+   "assignee": "Claude",
    "reviewers": [
     "Adi",
     "Aquila"
@@ -7681,6 +7686,11 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Session sweep (2026-10-09): source: 88c16840 2026-10-06T18:23 final report blockers 2 and 5: the abuse-limit decision and the Google attendee-side reminder caveat were in the S3 report and the 2026-10-07T17:24 summary (decision 4) but are missing from the task text."
+    },
+    {
+     "ts": "2026-10-09T05:05:12+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Adi → Claude (by Orchestrator)."
     }
    ],
    "order": 2270
@@ -10857,6 +10867,115 @@
     }
    ],
    "order": 3250
+  },
+  {
+   "id": "T-334",
+   "title": "Input from Adi for T-145: Signed in as adisuja, open https://support.github.com/contact, pick topic 'Remov",
+   "area": "Infra",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (outside_person): The repo owner has to send the purge request from the adisuja account. Claude may not sign in as Adi or message outside parties.. Everything else in T-145 is being built around it. As soon as this is done, T-145 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Signed in as adisuja, open https://support.github.com/contact, pick topic 'Removing sensitive data', paste the full text of workshop-plan/ops/t145_github_support_request.md into the message box, and click Send.",
+   "log": [
+    {
+     "ts": "2026-10-09T05:04:52+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-145."
+    }
+   ],
+   "order": 3340,
+   "input_for": "T-145",
+   "kind": "input"
+  },
+  {
+   "id": "T-335",
+   "title": "Input from Adi for T-226: At https://marketplace.zoom.us/develop/create choose General App and name it 'Ta",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (credential): This creates a new Zoom app credential on Adi's account, and creating credentials is reserved for Adi.. Everything else in T-226 is being built around it. As soon as this is done, T-226 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "At https://marketplace.zoom.us/develop/create choose General App and name it 'Tantra Live Control'. Under Features, Embed, switch Meeting SDK on and do not publish. Paste the Client ID and Client Secret into the centre admin (https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Live Control, Seat credentials). Or tell Claude to do these clicks in your signed-in browser.",
+   "log": [
+    {
+     "ts": "2026-10-09T05:04:54+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-226."
+    }
+   ],
+   "order": 3350,
+   "input_for": "T-226",
+   "kind": "input"
+  },
+  {
+   "id": "T-336",
+   "status": "blocked",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "area": "Product",
+   "order": 3360,
+   "title": "T-336: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
+  },
+  {
+   "id": "T-337",
+   "title": "Input from Adi for T-234: Sign in at https://usetantra.com in your own GrowthClub workspace. Make sure tea",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (credential): Only Adi can sign in to his Tantra workspace and create an API key. No Tantra key is stored anywhere in ~/.config/tantra.. Everything else in T-234 is being built around it. As soon as this is done, T-234 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Sign in at https://usetantra.com in your own GrowthClub workspace. Make sure team@growthclub.org is connected under Connectors, Email Accounts. Then go to Connectors, API Keys, Create Key, name it 'workshop-reminders', and paste the key at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key from ~/.config/tantra/revops-admin-key>, Cohort Settings, Session Reminders, Tantra API key field, Save.",
+   "log": [
+    {
+     "ts": "2026-10-09T05:05:40+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-234."
+    }
+   ],
+   "order": 3370,
+   "input_for": "T-234",
+   "kind": "input"
   }
  ]
 }
