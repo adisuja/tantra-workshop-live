@@ -49,10 +49,12 @@
    "summary": "Confirmed and logged. T-143 stays in **review** for your sign-off.\n\n**Yes — confirmed, and this run is the proof.** Your voice note (F-6bae831b, 22:24) was transcribed locally, the runner's feedback lane picked it up (`start [feedback] T-143 notes=['F-6bae831b'] trigger=board` in runner.log) and spa"
   }
  ],
- "state": "idle",
- "message": "Nothing waiting.",
- "task_id": null,
- "entries": [],
- "mode": null,
- "started": "2026-10-09T01:26:29+0530"
+ "state": "working",
+ "message": "Acting on 1 note(s) for T-122: Payment grants access: Dodo and Stripe webhooks upgrade the attendee in the centre",
+ "task_id": "T-122",
+ "entries": [
+  "W-8e29fdf672"
+ ],
+ "mode": "feedback",
+ "started": "2026-10-09T02:00:40+0530"
 }
