@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T01:15:26+0530",
+   "task_id": "T-141",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-141 is done. I applied option A in commit f7d4090: the LANES.md rule now bans only client names, people, domains and links, and the mirror export no longer holds back the library's figures. The live centre bundle has 0 of the 1,332 private denylist names; nothing was republished, and note W-e8838e"
+  },
+  {
    "ts": "2026-10-09T01:13:11+0530",
    "task_id": "T-122",
    "mode": "feedback",
@@ -18,11 +26,11 @@
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-141: Decide: keep searchable client figures in the public template library?",
- "task_id": "T-141",
+ "message": "Acting on 1 note(s) for T-145: Decide: rewrite the public mirror repo's history to remove the leaked library commit",
+ "task_id": "T-145",
  "entries": [
-  "W-e8838e0c39"
+  "W-5c950085ac"
  ],
  "mode": "feedback",
- "started": "2026-10-09T01:13:12+0530"
+ "started": "2026-10-09T01:15:26+0530"
 }
