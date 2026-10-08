@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T05:11:40+0530",
-  "version": 454,
+  "updated": "2026-10-09T05:12:22+0530",
+  "version": 455,
   "last_id": 341,
   "team": [
    {
@@ -6812,7 +6812,7 @@
    "title": "Set up the Endy Inboxes white-label partnership",
    "area": "Ops",
    "owner": "Nelbin",
-   "assignee": "Nelbin",
+   "assignee": "Claude",
    "reviewers": [
     "Nelbin",
     "Adi"
@@ -6855,6 +6855,11 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Session sweep (2026-10-09): source: fcd892f2 2026-10-07T18:26 (Adi: Endy hosts accounts in their Cloudflare and connects them to Tantra or Instantly; manual service) and 2026-10-08T18:41 final report. Adds the Endy process found by the session and the unused Instantly key."
+    },
+    {
+     "ts": "2026-10-09T05:12:22+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Nelbin → Claude (by Orchestrator)."
     }
    ],
    "order": 2130
