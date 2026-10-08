@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T00:31:57+0530",
+   "task_id": "T-278",
+   "mode": "queue",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-278 is blocked on one question for you (M033): keep the 18-question free-lane intake, or shorten it to match the paid lane's 11? I recommend shortening. Seven of the nine audit items are fixed in commit 97cf452 and marked fixed in AUDIT.md. The join pages still can't show each attendee's own Zoom "
+  },
+  {
    "ts": "2026-10-08T03:07:47+0530",
    "task_id": "T-234",
    "mode": "queue",
@@ -39,20 +47,12 @@
    "status": "review",
    "result": "ok",
    "summary": "T-124 → **review**. Fixed `/vip` checkout dropping first-touch UTMs (both server-session POST and static hosted-link now use `resolveUtm()`); verified with new `probe-checkout-utm.mjs` (both paths PASS) and `probe-checkout-currency` (no regression); committed 777b084 — owner sign-off is a completed "
-  },
-  {
-   "ts": "2026-09-25T21:25:51+0530",
-   "task_id": "T-024",
-   "mode": "queue",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-024 → **review**. Built three PDF-ready output templates in `workshop-plan/outputs/` (day1/2/3.html via `build.py`), each section tagged with its source survey questions and filled with a worked SendFlow sample; verified all three with `probe-outputs.mjs` (sections render, source lines present, Se"
   }
  ],
- "state": "working",
- "message": "Continuing T-278: Join and success pages: one seat-link resolver, community fallback, footer links, sample dates",
- "task_id": "T-278",
+ "state": "idle",
+ "message": "Last sweep handled 1 task(s).",
+ "task_id": null,
  "entries": [],
- "mode": "queue",
+ "mode": null,
  "started": "2026-10-09T00:25:45+0530"
 }

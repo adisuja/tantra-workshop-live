@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T00:25:55+0530",
-  "version": 301,
+  "updated": "2026-10-09T00:31:53+0530",
+  "version": 303,
   "last_id": 303,
   "team": [
    {
@@ -9639,11 +9639,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P0",
    "due": "",
-   "status": "next",
+   "status": "blocked",
    "why": "Join pages are the last step before the live session; an empty join button or a pending link loses the attendee.",
    "spec": "Export one seat-link resolver from app/src/lib/funnel.ts used by sessions.ts and both join pages and set the Zoom join URL in the deployed env, give the pending community link an actionable fallback and promise only live reminders, decide free-lane intake length (owner), derive VIP sample dates from cohortFor(), relabel webinar and cold calendar template names on /vip, use slashed privacy and terms links in success-shell.tsx, add the calendar why line and a claim URL or actionable pending state in curriculum.ts. Closes audit findings M070, O013, M034, M050, M033, M052, M054, M061, O011. Per finding: M070 (app/src/lib/funnel.ts): Export one seat-link resolver (per-day override then SEAT_URL, no placeholder) and use it in sessions.ts and both join pages. O013 (app/src/lib/sessions.ts): The join button must carry a working Zoom link. Zoom Pro is live: each weekly cohort gets its own meeting from cloud/src/zoom-pro.ts (7 to 9 Oct cohort: meeting 87002851906) and each attendee gets their own registrant join link (session_sync, private calendar feed T-220), so prefer that per-attendee link (via the centre or the attendee's feed) over a static NEXT_PUBLIC_SEAT_URL, which would point at last week's meeting. M034 (app/src/app/workshop/success/success-client.tsx): Set NEXT_PUBLIC_COMMUNITY_URL once the group exists, or give the done stage an actionable fallback. M050 (app/src/app/workshop/join/join-client.tsx): Reword 'Join the Cohort Group' so it promises only what is live: calendar reminders now, Tantra campaign reminders once T-234 ships; the WhatsApp groups are on hold (T-040). M033 (app/src/app/workshop/success/success-client.tsx): Owner decision: shorten the free-lane intake toward the paid lane's 11 questions or keep and accept the length. M052 (app/src/lib/preview-data-2.ts): Derive sample dates from cohortFor() or use undated samples in fields.ts and preview-data-2.ts. M054 (app/src/components/masterclass/vip-exhibits.tsx): Filter or relabel 'webinar' and 'cold calendar' template names in the /vip template list (as done for the prompt pack). M061 (app/src/components/masterclass/success-shell.tsx): Point footer links at /privacy-policy/ and /terms-of-service/. O011 (app/src/lib/curriculum.ts): Add a why line to the calendar step (each live day builds on the last, so missing one breaks the next) and publish NEXT_PUBLIC_PLATFORM_CLAIM_URL or replace the pending state with an actionable instruction. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md.",
    "done_when": [
@@ -9652,9 +9653,26 @@
     "Footer links resolve without redirect",
     "Every listed finding id is marked fixed in AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Free join page",
+     "url": "http://localhost:4322/workshop/join?v=t278"
+    },
+    {
+     "label": "Paid join page",
+     "url": "http://localhost:4322/masterclass/success/join?v=t278"
+    },
+    {
+     "label": "/vip",
+     "url": "http://localhost:4322/vip?v=t278"
+    },
+    {
+     "label": "AUDIT.md",
+     "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
+    }
+   ],
    "blockers": [],
-   "needs_from_owner": "Free-lane intake length (M033), on http://localhost:8899/tasks.html#T-278: keep the current free-lane intake, or shorten it toward the paid lane's 11 questions. Recommended: shorten to match the paid lane.",
+   "needs_from_owner": "Free-lane intake length (M033): keep the current 18-question free-lane intake, or shorten it to match the paid lane's 11? Recommended: shorten to 11.",
    "log": [
     {
      "ts": "2026-10-08T00:21:42+0530",
@@ -9665,6 +9683,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: Zoom Pro is live (production meeting 87002851906 for the 7 to 9 Oct cohort, one meeting per weekly cohort from cloud/src/zoom-pro.ts, per-attendee registrant links), so a single static NEXT_PUBLIC_SEAT_URL would go stale weekly; reminders now run on Tantra omni-channel campaigns (T-234); WhatsApp groups are on hold (T-040). UNVERIFIED whether the join pages can read the attendee's own link."
+    },
+    {
+     "ts": "2026-10-09T00:31:53+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T00:31:53+0530",
+     "who": "claude",
+     "note": "Commit 97cf452: one seatLink() resolver (no placeholder) feeds sessions.ts and both join pages; with no shared room link set they now tell attendees their own Zoom link comes by email with their calendar invite (a browser can't prove whose link it is, so the join pages can't show it directly), the closed group became an actionable 'Watch Your Inbox' step, /vip relabels webinar/cold calendar names and hides the past close date, footers use next/link, curriculum got the calendar why line. Verified with tsc and headless Chromium on :4322 (no banned words, no placeholders, no console errors); 7 of 9 ids marked fixed in AUDIT.md, O013 stays with T-197 and M033 needs your call."
     }
    ],
    "order": 2780
