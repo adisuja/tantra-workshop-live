@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T01:27:47+0530",
+   "task_id": "T-147",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-147 is done: the app's address in `app/src/lib/seo/site.ts:41` and the deck's door 2 line in `scripts/walkthroughs/demo-inputs.md` now say usetantra.com instead of calendar.usetantra.com. A headless test sign-in landed on usetantra.com/campaigns. Committed as a3a912e, not pushed, and the live mark"
+  },
+  {
    "ts": "2026-10-09T01:26:29+0530",
    "task_id": "T-146",
    "mode": "feedback",
@@ -41,12 +49,10 @@
    "summary": "Confirmed and logged. T-143 stays in **review** for your sign-off.\n\n**Yes — confirmed, and this run is the proof.** Your voice note (F-6bae831b, 22:24) was transcribed locally, the runner's feedback lane picked it up (`start [feedback] T-143 notes=['F-6bae831b'] trigger=board` in runner.log) and spa"
   }
  ],
- "state": "working",
- "message": "Acting on 1 note(s) for T-147: calendar.usetantra.com (the Tantra app) is not responding",
- "task_id": "T-147",
- "entries": [
-  "W-7beff9d3be"
- ],
- "mode": "feedback",
+ "state": "idle",
+ "message": "Last sweep handled 4 task(s).",
+ "task_id": null,
+ "entries": [],
+ "mode": null,
  "started": "2026-10-09T01:26:29+0530"
 }

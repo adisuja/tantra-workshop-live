@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T01:26:26+0530",
-  "version": 331,
+  "updated": "2026-10-09T01:27:44+0530",
+  "version": 332,
   "last_id": 307,
   "team": [
    {
@@ -5364,7 +5364,7 @@
    "owner": "Bharath",
    "priority": "P0",
    "due": "",
-   "status": "blocked",
+   "status": "done",
    "why": "Every Clerk sign-in and sign-up on the Tantra marketing site redirects to APP_ENTRY_URL (calendar.usetantra.com/campaigns), and the webinar deck's door 2 slide sends viewers there; a host that never answers strands every new user.",
    "spec": "State on 2026-10-08: calendar.usetantra.com resolves to 20.197.48.26 and times out on http and https from this Mac (curl -s -o /dev/null -w '%{http_code}' https://calendar.usetantra.com prints 000); usetantra.com answers 200. Code that depends on it: app/src/lib/seo/site.ts:41 (APP_URL production default) and APP_ENTRY_URL = APP_URL + '/campaigns' (site.ts:51), used by app/src/app/(site)/sign-in and sign-up pages and app/src/components/SiteHeader.tsx (Dashboard button). The webinar deck door 2 (scripts/walkthroughs/demo-inputs.md:125) also prints calendar.usetantra.com. Attendee key instructions already use https://usetantra.com/api-keys and need no change. Steps: (1) Bharath confirms whether the Tantra app moved to another host, is down, or is firewalled to certain networks. (2) If it moved, Claude changes the default in site.ts:41 (or sets NEXT_PUBLIC_APP_URL in the deploy env), rebuilds and re-runs the sign-in redirect check. (3) Re-test from this Mac and one other network.",
    "done_when": [
@@ -5372,10 +5372,21 @@
     "A test sign-in on the marketing site lands inside the Tantra app, not on a timeout",
     "site.ts:41 and the deck door 2 name the host that answers"
    ],
-   "evidence": [],
-   "blockers": [
-    "Bharath (CTO) to restore calendar.usetantra.com or name the host the Tantra app now runs on"
+   "evidence": [
+    {
+     "label": "site.ts APP_URL",
+     "url": "app/src/lib/seo/site.ts"
+    },
+    {
+     "label": "Deck door 2 input",
+     "url": "scripts/walkthroughs/demo-inputs.md"
+    },
+    {
+     "label": "Sign-in landed screenshot",
+     "url": "/tmp/t147/2-landed.png"
+    }
    ],
+   "blockers": [],
    "needs_from_owner": "",
    "log": [
     {
@@ -5392,6 +5403,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: rechecked 2026-10-08 00:38 IST, calendar.usetantra.com (20.197.48.26) still times out (curl 000) while usetantra.com answers 200; attendee API key steps already point at usetantra.com/api-keys, so the dead host only breaks post-sign-in redirects and the deck's door 2 link; the 'who runs it' question is answered by the roster (Bharath, CTO), so it is no longer an ask for Adi."
+    },
+    {
+     "ts": "2026-10-09T01:27:44+0530",
+     "who": "claude",
+     "note": "Adi confirmed the app lives at usetantra.com, so site.ts:41 (APP_URL, and with it every post sign-in redirect and the Dashboard button) and the deck door 2 line now say usetantra.com; calendar.usetantra.com is no longer referenced. Verified 2026-10-09: usetantra.com/campaigns returns 307 to its sign-in, and a headless sign-in with the test account Adi gave landed on usetantra.com/campaigns showing the campaigns list. The live marketing build picks this up on its next deploy."
     }
    ],
    "order": 1470,
