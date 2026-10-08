@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T02:31:04+0530",
+   "task_id": "T-226",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "I built the Live Control web page and tested it locally, but it can't act inside a real Zoom meeting yet, so T-226 is blocked on one yes/no question to Adi. Committed as b75b351.\n\n**What's built.** The page lives in the centre admin, behind a \"Live Control\" link in the top bar. Anyone on the team wi"
+  },
+  {
    "ts": "2026-10-09T02:22:36+0530",
    "task_id": "T-145",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "done",
    "result": "ok",
    "summary": "T-141 is done. I applied option A in commit f7d4090: the LANES.md rule now bans only client names, people, domains and links, and the mirror export no longer holds back the library's figures. The live centre bundle has 0 of the 1,332 private denylist names; nothing was republished, and note W-e8838e"
-  },
-  {
-   "ts": "2026-10-09T01:13:11+0530",
-   "task_id": "T-122",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "I built T-122 payment-to-seat fulfilment in the centre Worker and proved it locally (probe 28/28, commit `f7c7777`), but it isn't live, so the task is blocked on Adi approving a deploy, the Worker secret and a new Dodo webhook endpoint.\n\nWhat it does now:\n- **Paying makes the buyer a VIP attendee.**"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-226: Tantra Host Console: Adi hosts every session from a Mac app that runs chat posts, polls, call-to-action links, mute and video control, co-hosts",
- "task_id": "T-226",
+ "message": "Acting on 1 note(s) for T-232: Back up every Zoom recording to the team Google Drive, then delete it from Zoom",
+ "task_id": "T-232",
  "entries": [
-  "W-ecf15b3b43"
+  "W-d72155a914"
  ],
  "mode": "feedback",
- "started": "2026-10-09T02:23:46+0530"
+ "started": "2026-10-09T02:31:10+0530"
 }
