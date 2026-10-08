@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T01:50:19+0530",
-  "version": 395,
+  "updated": "2026-10-09T02:04:42+0530",
+  "version": 397,
   "last_id": 331,
   "team": [
    {
@@ -4143,6 +4143,10 @@
    ],
    "evidence": [
     {
+     "label": "Live centre payment route",
+     "url": "https://revops-centre.growthcluborg.workers.dev/hooks/dodo"
+    },
+    {
      "label": "Centre payment routes",
      "url": "cloud/src/payments.ts"
     },
@@ -4151,18 +4155,14 @@
      "url": "app/scripts/probe-seat-payments.mjs"
     },
     {
-     "label": "Next Dodo webhook forward",
-     "url": "app/src/app/api/dodo/webhook/route.ts"
-    },
-    {
-     "label": "Migration",
+     "label": "Migration (applied live)",
      "url": "cloud/migrations/0018_seat_payments.sql"
     }
    ],
    "blockers": [
     "Adi's yes to build fulfilment in the centre while T-070 (Tantra backend) stays on hold"
    ],
-   "needs_from_owner": "Can I deploy the centre Worker (wrangler deploy plus the 0018 D1 migration), set its DODO_WEBHOOK_SECRET to the existing Dodo secret, and add https://revops-centre.growthcluborg.workers.dev/hooks/dodo as a second Dodo webhook endpoint (api.usetantra.com stays) so I can run the one live check? Yes or no.",
+   "needs_from_owner": "Dodo gives every webhook endpoint its own new secret, so the existing one cannot sign a new endpoint. Can I add https://revops-centre.growthcluborg.workers.dev/hooks/dodo as a Dodo webhook endpoint (payment.succeeded, payment.failed, payment.cancelled, refund.succeeded; api.usetantra.com untouched) and store the secret Dodo generates for it in the centre Worker, keeping the current one so the Next app forward still works? Yes or no.",
    "log": [
     {
      "ts": "2026-09-25",
@@ -4193,6 +4193,16 @@
      "ts": "2026-10-09T01:13:01+0530",
      "who": "claude",
      "note": "Built and committed (f7c7777): the centre Worker now has signed /hooks/dodo and /hooks/stripe routes that make a buyer a VIP attendee (new or upgraded) and start their invites and centre link, take the seat back on a full refund, never grant on failed, cancelled, unpaid or other-product events, and mirror to the Tantra Tracker (Seat Payments tab); the Next Dodo webhook now forwards every verified event to it. Verified on a local centre: probe-seat-payments 28/28 (paid seat shows in D1 in 12 ms and in the centre's /api/me), plus the Next route forward end to end; AUDIT H056 marked fixed. Only the live check is left, which needs a deploy and the secret, so it waits on Adi."
+    },
+    {
+     "ts": "2026-10-09T02:04:29+0530",
+     "who": "claude",
+     "note": "Approved steps done: the 0018 migration is applied to the live D1, the centre Worker is deployed (version ec4b49cd) and holds the existing Dodo webhook secret. Live check on https://revops-centre.growthcluborg.workers.dev/hooks/dodo with signed events against test attendee 2: payment.failed did not grant, payment.succeeded made them vip (admin and the centre's /api/me both showed vip), a replay was ignored, and a full refund put them back to free, so nothing is left changed. I did not add the Dodo endpoint: Dodo signs each endpoint with its own new secret (the one we have belongs to the disabled staging.usetantra.com endpoint), so a new endpoint would fail against the stored secret and real buyers would not reach the centre."
+    },
+    {
+     "ts": "2026-10-09T02:04:42+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-070, T-005."
     }
    ],
    "order": 1200,

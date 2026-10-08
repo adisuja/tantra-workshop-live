@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T02:04:36+0530",
+   "task_id": "T-122",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "I deployed the payment routes to the live centre, but T-122 is blocked again: real Dodo payments still can't reach the centre, because the endpoint as you approved it wouldn't have worked.\n\n**What's live now:**\n- The 0018 migration is applied to the live database.\n- The centre Worker is deployed (ve"
+  },
+  {
    "ts": "2026-10-09T01:27:47+0530",
    "task_id": "T-147",
    "mode": "feedback",
@@ -50,11 +58,11 @@
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-122: Payment grants access: Dodo and Stripe webhooks upgrade the attendee in the centre",
- "task_id": "T-122",
+ "message": "Acting on 1 note(s) for T-145: Decide: rewrite the public mirror repo's history to remove the leaked library commit",
+ "task_id": "T-145",
  "entries": [
-  "W-8e29fdf672"
+  "W-f8b317119e"
  ],
  "mode": "feedback",
- "started": "2026-10-09T02:00:40+0530"
+ "started": "2026-10-09T02:04:43+0530"
 }
