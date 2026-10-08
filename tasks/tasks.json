@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T00:06:32+0530",
-  "version": 298,
+  "updated": "2026-10-09T00:08:55+0530",
+  "version": 299,
   "last_id": 288,
   "team": [
    {
@@ -9933,7 +9933,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "done",
    "why": "Adi set the webinar date to Thursday 15 October and removed the three-week minimum (shipped in 4d17e2a, merged to main). The shared /preview demo attendee still needs the date.",
    "spec": "Run app/scripts/fill-preview.mjs (tantra-demo fixture) or fill d1-event / ev_date through the UI on https://revops-centre.growthcluborg.workers.dev/preview; check /api/me shows the date.",
    "done_when": [
@@ -9947,6 +9947,11 @@
      "ts": "2026-10-09T00:06:32+0530",
      "who": "claude",
      "note": "Added 2026-10-08 (pending since 2026-10-07)."
+    },
+    {
+     "ts": "2026-10-09T00:08:55+0530",
+     "who": "claude",
+     "note": "Done 2026-10-09: fill-preview.mjs (tantra-demo fixture) on the live centre; /api/me shows ev_date 2026-10-15 and d1-event done; 31 of 70 applying cards done (connect, approve and job cards left for their owners)."
     }
    ],
    "order": 2880
