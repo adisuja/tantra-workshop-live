@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T05:17:53+0530",
+   "task_id": "T-234",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-234 is still blocked: Adi hasn't saved the GrowthClub Tantra key yet (that's T-337), so I couldn't create the 8 campaigns or do the test send. Everything before the key is ready: the welcome email is already the Registered reminder, and `app/scripts/e2e-tantra-reminders-live.mjs` runs the approved"
+  },
+  {
    "ts": "2026-10-09T05:15:32+0530",
    "task_id": "T-232",
    "mode": "feedback",
@@ -11,10 +19,10 @@
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-234",
+ "task_id": "T-260",
  "entries": [
-  "F-e2c4a0a3"
+  "F-e4da6b75"
  ],
- "started": "2026-10-09T05:15:36+0530",
- "message": "Acting on 1 note(s) for T-234: Workshop reminders through Tantra omni-channel campaigns: import every registrant with their own join and calendar links"
+ "started": "2026-10-09T05:18:01+0530",
+ "message": "Acting on 1 note(s) for T-260: Decide and apply: tools outside the approved list still in guides and cards (Wistia, Beehiiv, ElevenLabs, Meta Ads, Notion, WordPress, Sales Navigator/Expandi, GoHighLevel/HubSpot/Zoho)"
 }

@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T05:15:52+0530",
-  "version": 464,
-  "last_id": 341,
+  "updated": "2026-10-09T05:17:49+0530",
+  "version": 470,
+  "last_id": 342,
   "team": [
    {
     "name": "Adi",
@@ -258,10 +258,15 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: owner answered all four on 2026-09-24 (keep endCX, Appster is $19M, Rhenus and SalesTherapy marks supplied) and Claude applied them the same day: app/src/components/masterclass/receipts.tsx shows '$19M ARR in 2 years', logos.tsx carries the owner-supplied Rhenus and SalesTherapy marks. The remaining proof-figure cleanup ($50M+, Cavli) is T-277."
+    },
+    {
+     "ts": "2026-10-09T05:17:07+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Amal → Claude (by Orchestrator)."
     }
    ],
    "order": 10,
-   "assignee": "Amal",
+   "assignee": "Claude",
    "reviewers": [
     "Amal",
     "Adi"
@@ -4330,6 +4335,11 @@
      "ts": "2026-10-08T00:49:40+0530",
      "who": "claude",
      "note": "Pass 2 correction: no real cohort is running yet."
+    },
+    {
+     "ts": "2026-10-09T05:17:49+0530",
+     "who": "claude",
+     "note": "Points at T-234's build: welcome (T-228, now the Registered campaign) and per-day reminders run on 8 Tantra omni-channel campaigns from team@growthclub.org in Adi's GrowthClub workspace, email only. Go-live waits only on the key (T-337); app/scripts/e2e-tantra-reminders-live.mjs --go does the rest."
     }
    ],
    "order": 1210,
@@ -7819,7 +7829,7 @@
    "blockers": [
     "Go-live only: the workshop Tantra campaign id and its API key saved in the centre admin (build and probe against vendor-sim does not wait)"
    ],
-   "needs_from_owner": "Which Tantra workspace and campaign run the workshop messages: create an API key at https://usetantra.com/api-keys in that workspace and paste it, with the campaign id, at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key> once Claude adds the field (Claude will name the exact section here when it ships).",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-07T22:53:58+0530",
@@ -7860,6 +7870,11 @@
      "ts": "2026-10-08T00:49:40+0530",
      "who": "claude",
      "note": "Pass 2 correction: no real cohort is running yet."
+    },
+    {
+     "ts": "2026-10-09T05:17:49+0530",
+     "who": "claude",
+     "note": "Folded into T-234: the Registered reminder campaign is this welcome (centre link, private calendar link, each day's own join link; cloud/src/reminder-copy.ts, checked against COPY_RULES, no dashes). Nothing to build here; it goes live and closes with T-234 once Adi's GrowthClub Tantra key lands (T-337)."
     }
    ],
    "order": 2280
@@ -8121,8 +8136,7 @@
   },
   {
    "id": "T-234",
-   "title": "Workshop reminders through Tantra omni-channel campaigns: import every registrant with their own join and calendar links",
-   "area": "Product",
+   "status": "blocked",
    "owner": "Aquila",
    "assignee": "Claude",
    "reviewers": [
@@ -8132,87 +8146,17 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "blocked",
-   "why": "Nothing sends session reminders, so the first real cohort would run without them: Zoom sends none for meetings and attendees only have the calendar feed. The owner's model is Tantra omni-channel campaigns fed by registrant import, which is live in Tantra today.",
-   "spec": "Owner model 2026-10-07 (memory google-and-reminder-model): reminders run on Tantra omni-channel campaigns and registrants are imported into them programmatically; no home-built sender, no Resend/SendGrid for this, WhatsApp only through Tantra.\nWHAT EXISTS (main f6aeb7e): (a) a Tantra API client for an ATTENDEE's own account in cloud/src/jobs-tantra.ts (tn() with X-API-Key via cloud/src/connectors/stack.ts tantraUrl/tantraHeaders; POST /contacts/import with custom fields; POST /email-campaigns + /email-campaigns/:id/steps; start in cloud/src/connectors/launch.ts tantraStart). (b) The full API contract in docs/onboarding-v3/analysis/integrations-tantra-api.md: base https://api.usetantra.com/api/v1; section 3 omni-channel campaigns (steps with channel email|linkedin|whatsapp, sendingWindow, perMailboxDailyCap); section 5 POST /email-campaigns/:id/contacts (shipped 2026-10-01, API-key route: up to 1,000 contacts a call, each with email, firstName, whatsappPhone, timezone and customFields of scalars; idempotent upsert; step 1 runs when the contact is added; 409 means retry). (c) Per-attendee data: joinsFor() in cloud/src/invites.ts gives each day's own Zoom join_url (or the admin's shared link, null when waitlisted); personalFeedPath(feedTokenOf()) in cloud/src/calendar.ts gives the private calendar link; the Worker has a scheduled() cron in cloud/src/index.ts. (d) S1 recorded a walkthrough of this exact model on the unmerged branch (/Users/adithyamurali/tantra-walkthroughs/app/public/walkthroughs/tantra-reminders, untracked): one omni-channel campaign per reminder moment, sending window open every day and hour, the agent adds each registrant through the API when the reminder is due.\nWHAT DOES NOT EXIST: no code imports OUR workshop registrants into Tantra; no workshop Tantra key or settings in the centre; the vendor simulator (cloud/scripts/vendor-sim.py) has no /email-campaigns/:id/contacts route.\nBUILD: 1) Settings in admin Cohort Settings: tantra_key (stored encrypted like other secrets), sender mailbox, optional WhatsApp channel account, campaign ids. 2) A 'Create reminder campaigns' admin action that, with that key, creates (never starts without the probe passing) omni-channel campaigns: Registered (confirmation: centre link, private calendar link, each day's join link; can absorb T-228), Day before, 1 hour before, We're live, each with sendingWindow all days 0 to 23 in America/New_York, an email step and a WhatsApp step when a WhatsApp account is connected, merge fields {{firstName}} plus customFields join_day1..3, calendar_url, centre_url, cohort_dates. Copy follows workshop-plan/COPY_RULES.md, no dashes. 3) On sign-up (/cal/issue, /intake, admin add) and on cohort move or new join link, POST /email-campaigns/<Registered>/contacts with those fields. 4) In scheduled(), for every non-test, non-revoked attendee whose session is due, append them to the matching campaign once (claim a row per attendee, day and reminder in D1 before calling, so a retry never double-sends). 5) Add the contacts route to vendor-sim.py and a probe app/scripts/probe-tantra-reminders.mjs. 6) Skip placeholder addresses (T-229 helper). Daily volume is bounded by the mailbox caps (perMailboxDailyCap), so set it from the cohort size.",
-   "done_when": [
-    "probe-tantra-reminders passes against the simulator: a test sign-up lands in Registered with join_day1..3 and calendar_url, and is appended once to Day before, 1 hour before and We're live at the right times; a second scheduler run adds nobody",
-    "In production, a test attendee (the owner's Google test identity) receives the Registered message and a reminder with their own join link, then is reverted per the revert ledger",
-    "Admin Cohort Settings shows the four campaign ids and the last import result per attendee"
-   ],
-   "evidence": [
-    {
-     "label": "Probe output (51/51)",
-     "url": "file:///tmp/t234/probe-run.txt"
-    },
-    {
-     "label": "Admin Reminder Campaigns + last import per attendee",
-     "url": "file:///tmp/t234/rem-box.png"
-    },
-    {
-     "label": "Admin Session Reminders settings",
-     "url": "file:///tmp/t234/rem-settings.png"
-    },
-    {
-     "label": "Engine",
-     "url": "cloud/src/reminders.ts"
-    },
-    {
-     "label": "Reminder copy",
-     "url": "cloud/src/reminder-copy.ts"
-    },
-    {
-     "label": "Probe",
-     "url": "app/scripts/probe-tantra-reminders.mjs"
-    }
-   ],
-   "blockers": [
-    "Sending Tantra workspace, mailbox and API key (Adi)"
-   ],
-   "needs_from_owner": "Which Tantra workspace and connected mailbox should send the workshop reminders? Recommended: the same dedicated sender chosen for the calendar invites (T-227), not one of the 20 cold calendar mailboxes. Then in Tantra (https://usetantra.com, that workspace) create an API key (Connectors, API Keys, Create Key) and paste it with the mailbox at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Cohort Settings, Session Reminders. Claude then creates the 8 campaigns, runs Check and does the test send.",
-   "log": [
-    {
-     "ts": "2026-10-07T23:25:35+0530",
-     "who": "claude",
-     "note": "Added by the Integrator's pending-work sweep."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review: context updated. Urgent: the first cohort (Wed 7 to Fri 9 Oct) is running now and nothing sends session reminders. Overlaps T-123 done_when 'T-1h join-link message'; this task is the build, T-123 holds the sender decision."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: rewritten to the owner's Tantra omni-channel campaign model (google-and-reminder-model 2026-10-07); dropped the home-built sender and the T-123/T-236 /emails/batch blocker. Verified what exists in cloud/src/jobs-tantra.ts, integrations-tantra-api.md s3 and s5, invites.ts joinsFor, calendar.ts, and S1's unmerged tantra-reminders walkthrough. UNVERIFIED: which Tantra workspace Adi wants as the sender."
-    },
-    {
-     "ts": "2026-10-08T00:49:40+0530",
-     "who": "claude",
-     "note": "Pass 2 correction: no real cohort is running yet."
-    },
-    {
-     "ts": "2026-10-08T03:07:41+0530",
-     "who": "claude",
-     "note": "People: reviewers Adi/Aquila → Adi/Aquila/Bharath (by claude)."
-    },
-    {
-     "ts": "2026-10-08T03:07:41+0530",
-     "who": "claude",
-     "note": "Built the reminder engine: admin Cohort Settings has a Session Reminders section (sealed Tantra key, sender mailbox, WhatsApp account), 'Create reminder campaigns' makes 8 draft Tantra campaigns (Registered, Day before, then 1 hour before and Live for each day, since Tantra enrolls a contact only once per campaign), and the 10-minute cron appends each due registrant once with their own join, calendar and centre links. Verified with app/scripts/probe-tantra-reminders.mjs against the simulator: 51/51 pass, including one send per reminder at the right times, a second run adding nobody, a 409 retry sending once, and a changed join link reaching the next reminder. Tantra's own backend shows a campaign add never updates an existing contact's custom fields, so the engine rewrites the contact through /contacts/import first. Commit 534c607, not deployed. Still to do: the production test with the owner's test identity."
-    },
-    {
-     "ts": "2026-10-08T05:13:03+0530",
-     "who": "claude",
-     "note": "Deployed: migration 0017 remote, Worker e6ac0806 (main 517574e). Reminders are OFF live (tantra_reminders 0) until the key is saved. Fresh-stack verification: probe-tantra-reminders 51/51 twice; a 1 in 5 probe flake (sim bounce bucket) fixed in 517574e."
-    },
-    {
-     "ts": "2026-10-09T00:06:32+0530",
-     "who": "claude",
-     "note": "2026-10-08 Tantra API facts (repo docs/onboarding-v3/analysis/integrations-tantra-api.md, PR #142): POST /email-campaigns/:id/contacts appends contacts to a launched omnichannel campaign (email, LinkedIn, WhatsApp, Telegram steps). Steps use delayDays (whole days, step 1 runs on enrolment), so event-relative touches (day before, 1 hour before, live) need one single-step campaign per touch, with the funnel enrolling each registrant at the due time; sending window should be every day, all hours. WhatsApp shows 'Not in your plan' on the owner workspace: see the add-on pricing decision task."
-    }
-   ],
-   "order": 2340
+   "area": "Product",
+   "order": 2340,
+   "title": "T-234: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-235",
@@ -10712,7 +10656,7 @@
    "title": "Data partners: agree the order hand-off and test the list upload with a real sample CSV",
    "area": "Ops",
    "owner": "Nelbin",
-   "assignee": "Nelbin",
+   "assignee": "Claude",
    "reviewers": [
     "Adi"
    ],
@@ -10737,6 +10681,11 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Added from the session sweep (2026-10-09): source: fcd892f2 2026-10-06T19:32 (Adi: vendors like Endy and the data vendors in the Canva deck, first two preferred, build an integration to buy lists), 2026-10-07T15:42 summary and 15:44 reply (card and Work Tracker tab built; sample CSV asked for). Built: option LIST_PARTNER and card d1-list-partner (app/src/lib/workshop-cards.ts lines 58, 696) and a List Partner Leads tab. Not on the board before."
+    },
+    {
+     "ts": "2026-10-09T05:16:24+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Nelbin → Claude (by Orchestrator)."
     }
    ],
    "order": 3010
