@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T05:22:35+0530",
+   "task_id": "T-232",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-232 is in review: the backup is built, but it hasn't backed up a real recording yet because Google Drive isn't connected. That connection is Adi's one remaining input, tracked as T-336.\n\n- **End-to-end test:** the live test script was already written; I added a `--create` option so it makes its ow"
+  },
+  {
    "ts": "2026-10-09T05:20:51+0530",
    "task_id": "T-227",
    "mode": "feedback",
@@ -11,10 +19,10 @@
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-232",
+ "task_id": "T-234",
  "entries": [
-  "F-3d07c4b6"
+  "F-e2c4a0a3"
  ],
- "started": "2026-10-09T05:20:57+0530",
- "message": "Acting on 1 note(s) for T-232: Back up every Zoom recording to the team Google Drive, then delete it from Zoom"
+ "started": "2026-10-09T05:22:39+0530",
+ "message": "Acting on 1 note(s) for T-234: Workshop reminders through Tantra omni-channel campaigns: import every registrant with their own join and calendar links"
 }
