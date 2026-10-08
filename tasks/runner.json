@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T01:13:11+0530",
+   "task_id": "T-122",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "I built T-122 payment-to-seat fulfilment in the centre Worker and proved it locally (probe 28/28, commit `f7c7777`), but it isn't live, so the task is blocked on Adi approving a deploy, the Worker secret and a new Dodo webhook endpoint.\n\nWhat it does now:\n- **Paying makes the buyer a VIP attendee.**"
+  },
+  {
    "ts": "2026-09-27T22:30:45+0530",
    "task_id": "T-143",
    "mode": "feedback",
@@ -10,11 +18,11 @@
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-122: Payment grants access: Dodo and Stripe webhooks upgrade the attendee in the centre",
- "task_id": "T-122",
+ "message": "Acting on 1 note(s) for T-141: Decide: keep searchable client figures in the public template library?",
+ "task_id": "T-141",
  "entries": [
-  "W-7fba318690"
+  "W-e8838e0c39"
  ],
  "mode": "feedback",
- "started": "2026-10-09T01:04:36+0530"
+ "started": "2026-10-09T01:13:12+0530"
 }

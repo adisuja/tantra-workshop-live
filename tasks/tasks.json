@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T00:31:53+0530",
-  "version": 303,
-  "last_id": 303,
+  "updated": "2026-10-09T01:13:01+0530",
+  "version": 328,
+  "last_id": 307,
   "team": [
    {
     "name": "Adi",
@@ -4141,11 +4141,28 @@
     "Refund and failed events do not grant (probe)",
     "Audit H056 marked fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Centre payment routes",
+     "url": "cloud/src/payments.ts"
+    },
+    {
+     "label": "Probe (28/28 on local centre)",
+     "url": "app/scripts/probe-seat-payments.mjs"
+    },
+    {
+     "label": "Next Dodo webhook forward",
+     "url": "app/src/app/api/dodo/webhook/route.ts"
+    },
+    {
+     "label": "Migration",
+     "url": "cloud/migrations/0018_seat_payments.sql"
+    }
+   ],
    "blockers": [
     "Adi's yes to build fulfilment in the centre while T-070 (Tantra backend) stays on hold"
    ],
-   "needs_from_owner": "Reply yes or no on this task: build payment-to-seat fulfilment in the centre Worker now. Recommended: yes (nothing upgrades buyers today, so the first paid sign-up would get no access).",
+   "needs_from_owner": "Can I deploy the centre Worker (wrangler deploy plus the 0018 D1 migration), set its DODO_WEBHOOK_SECRET to the existing Dodo secret, and add https://revops-centre.growthcluborg.workers.dev/hooks/dodo as a second Dodo webhook endpoint (api.usetantra.com stays) so I can run the one live check? Yes or no.",
    "log": [
     {
      "ts": "2026-09-25",
@@ -4171,6 +4188,11 @@
      "ts": "2026-10-08T00:49:40+0530",
      "who": "claude",
      "note": "Pass 2 correction: no paid cohort is running yet."
+    },
+    {
+     "ts": "2026-10-09T01:13:01+0530",
+     "who": "claude",
+     "note": "Built and committed (f7c7777): the centre Worker now has signed /hooks/dodo and /hooks/stripe routes that make a buyer a VIP attendee (new or upgraded) and start their invites and centre link, take the seat back on a full refund, never grant on failed, cancelled, unpaid or other-product events, and mirror to the Tantra Tracker (Seat Payments tab); the Next Dodo webhook now forwards every verified event to it. Verified on a local centre: probe-seat-payments 28/28 (paid seat shows in D1 in 12 ms and in the centre's /api/me), plus the Next route forward end to end; AUDIT H056 marked fixed. Only the live check is left, which needs a deploy and the secret, so it waits on Adi."
     }
    ],
    "order": 1200,
