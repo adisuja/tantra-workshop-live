@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T05:28:54+0530",
+   "task_id": "T-278",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-278 is in review for Adi and Bharath (commit a8e393a). Both join pages now open the attendee's own Zoom link, and the free intake is down to 11 questions. Nothing is pushed, because main is 46 commits ahead and a push would publish other lanes' work; the hosted Worker also needs a deploy before li"
+  },
+  {
    "ts": "2026-10-09T05:23:09+0530",
    "task_id": "T-234",
    "mode": "feedback",
@@ -27,10 +35,10 @@
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-278",
+ "task_id": "T-033",
  "entries": [
-  "F-c0c4c286"
+  "F-7a4dfd97"
  ],
- "started": "2026-10-09T05:23:17+0530",
- "message": "Acting on 1 note(s) for T-278: Join and success pages: one seat-link resolver, community fallback, footer links, sample dates"
+ "started": "2026-10-09T05:29:01+0530",
+ "message": "Acting on 1 note(s) for T-033: WhatsApp + email delivery automation"
 }
