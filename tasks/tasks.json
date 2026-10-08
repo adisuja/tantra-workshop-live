@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T02:36:18+0530",
-  "version": 409,
-  "last_id": 331,
+  "updated": "2026-10-09T02:44:32+0530",
+  "version": 422,
+  "last_id": 333,
   "team": [
    {
     "name": "Adi",
@@ -10746,7 +10746,7 @@
    "due": "",
    "status": "review",
    "why": "Opening a task expanded it below the summary strip, so the owner scrolled up and down for every task.",
-   "spec": "Clicking a task anywhere (summary strip, list, Kanban, #T-123 link) opens its detail in a full-height panel on the right. The list stays usable beside it, the page never jumps, j/k or the arrows step through the list, Esc or the close button closes it, and the reply box stays pinned at the bottom.",
+   "spec": "Clicking a task anywhere opens it in a full-height panel on the right. The left half (people, why, spec, evidence, blockers, related) and the right half (the chat thread) scroll on their own, with the reply bar always on screen. The up and down arrows (or j/k) walk the list the task was opened from (Waiting on you, Ready for review, Claude is on, a Kanban column or the list) and the page never scrolls. After Approve or Send the next task in that list opens by itself (switchable: 'Next after send'). The reply bar works like WhatsApp: paperclip for files, a text box (Enter sends, Shift+Enter new line), a mic that becomes the send arrow once there is something to send; Send means an answer on a blocked task, a change request on a review task, context otherwise. Approve, Do this next and Drop sit above the bar.",
    "done_when": [
     "The page does not scroll when a task opens",
     "Stepping and closing work from the keyboard",
@@ -10769,6 +10769,11 @@
      "ts": "2026-10-09T01:39:23+0530",
      "who": "claude",
      "note": "Built and verified 2026-10-09; waiting for Adi's sign-off."
+    },
+    {
+     "ts": "2026-10-09T02:44:32+0530",
+     "who": "claude",
+     "note": "Rebuilt 2026-10-09 after Adi's feedback: stepping stays in the list it came from, two independently scrolling halves, next task after send, WhatsApp-style reply bar. Probes: probe-public-board, probe-board-actions, probe-tasks, probe-voice (129) all clean."
     }
    ],
    "order": 3230
