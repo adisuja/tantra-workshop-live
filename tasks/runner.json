@@ -81,10 +81,12 @@
    "summary": "I built T-122 payment-to-seat fulfilment in the centre Worker and proved it locally (probe 28/28, commit `f7c7777`), but it isn't live, so the task is blocked on Adi approving a deploy, the Worker secret and a new Dodo webhook endpoint.\n\nWhat it does now:\n- **Paying makes the buyer a VIP attendee.**"
   }
  ],
- "state": "idle",
- "message": "Nothing waiting.",
- "task_id": null,
- "entries": [],
- "mode": null,
- "started": "2026-10-09T02:13:04+0530"
+ "state": "working",
+ "message": "Acting on 1 note(s) for T-122: Payment grants access: Dodo and Stripe webhooks upgrade the attendee in the centre",
+ "task_id": "T-122",
+ "entries": [
+  "W-60d7749fac"
+ ],
+ "mode": "feedback",
+ "started": "2026-10-09T02:19:47+0530"
 }
