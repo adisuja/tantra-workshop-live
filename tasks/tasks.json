@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T01:27:44+0530",
-  "version": 332,
-  "last_id": 307,
+  "updated": "2026-10-09T01:39:23+0530",
+  "version": 375,
+  "last_id": 325,
   "team": [
    {
     "name": "Adi",
@@ -10655,6 +10655,161 @@
     }
    ],
    "order": 3030
+  },
+  {
+   "id": "T-322",
+   "title": "Task Command Center: the public board saves every action directly (no GitHub)",
+   "area": "Ops",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "review",
+   "why": "Approving or commenting on the public board opened a GitHub issue that needed GitHub sign-in and a Submit click.",
+   "spec": "Every public-board action (note, approve, request changes, voice note, files, people, new task) saves in one click to the tantra-board Worker (cloud/board/worker.js). The owner's Mac pulls new notes every 15 s (tasks/pass.py import) and wakes the agent. Personal links (tasks/board_keys.py, #k=<key>) sign a teammate in once per browser; notes without a link wait for the owner's approval.",
+   "done_when": [
+    "No board action opens GitHub",
+    "A note sent on the public board reaches the Mac inbox within seconds",
+    "node workshop-plan/probe-public-board.mjs --live is clean"
+   ],
+   "evidence": [
+    {
+     "label": "Public board",
+     "url": "https://adisuja.github.io/tantra-workshop-live/tasks.html?v=20261009f"
+    },
+    {
+     "label": "Probe",
+     "url": "workshop-plan/probe-public-board.mjs"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-09T01:39:23+0530",
+     "who": "claude",
+     "note": "Built and verified 2026-10-09; waiting for Adi's sign-off."
+    }
+   ],
+   "order": 3220
+  },
+  {
+   "id": "T-323",
+   "title": "Task Command Center: task detail opens as a side panel",
+   "area": "Ops",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "review",
+   "why": "Opening a task expanded it below the summary strip, so the owner scrolled up and down for every task.",
+   "spec": "Clicking a task anywhere (summary strip, list, Kanban, #T-123 link) opens its detail in a full-height panel on the right. The list stays usable beside it, the page never jumps, j/k or the arrows step through the list, Esc or the close button closes it, and the reply box stays pinned at the bottom.",
+   "done_when": [
+    "The page does not scroll when a task opens",
+    "Stepping and closing work from the keyboard",
+    "node workshop-plan/probe-board-actions.mjs is clean"
+   ],
+   "evidence": [
+    {
+     "label": "Public board",
+     "url": "https://adisuja.github.io/tantra-workshop-live/tasks.html?v=20261009f"
+    },
+    {
+     "label": "Probe",
+     "url": "workshop-plan/probe-board-actions.mjs"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-09T01:39:23+0530",
+     "who": "claude",
+     "note": "Built and verified 2026-10-09; waiting for Adi's sign-off."
+    }
+   ],
+   "order": 3230
+  },
+  {
+   "id": "T-324",
+   "title": "Task Command Center: feedback on one task updates the tasks that depend on it",
+   "area": "Ops",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "review",
+   "why": "Feedback on one task can make tasks in review, blocked on the owner, or done out of date, and re-reading the whole board per note costs about 140K tokens.",
+   "spec": "tasks/ripple.py, run after every feedback session and every approve or drop: a free dependency map and shortlist, then one Sonnet call with thinking off (about 1 to 2.5K input tokens) decides which related tasks are affected. Each gets a ripple note. An affected Done task moves to the new Done · recheck column, then back to Done if the agent can fix it alone, or to Review with one question. One hop only; the side panel lists Related tasks.",
+   "done_when": [
+    "python3 workshop-plan/probe-ripple.py is clean",
+    "An affected done task goes to recheck, then to done or review, never stays there"
+   ],
+   "evidence": [
+    {
+     "label": "Public board",
+     "url": "https://adisuja.github.io/tantra-workshop-live/tasks.html?v=20261009f"
+    },
+    {
+     "label": "Probe",
+     "url": "workshop-plan/probe-ripple.py"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-09T01:39:23+0530",
+     "who": "claude",
+     "note": "Built and verified 2026-10-09; waiting for Adi's sign-off."
+    }
+   ],
+   "order": 3240
+  },
+  {
+   "id": "T-325",
+   "title": "Task Command Center: show what Claude is working on, and act on the owner's yes",
+   "area": "Ops",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "review",
+   "why": "Notes left on Waiting-on-you tasks were acted on, but the board never showed it, tasks came back with no sign of a reply, and an owner yes to a deploy was asked again because the agent's rules banned deploys outright.",
+   "spec": "Claude is on lists the task being worked now, then every task with notes not yet handled in the order it will take them; those tasks leave Waiting on you and Ready for review meanwhile. Tasks that came back after a note carry a Claude replied to your note label and sort first. When the owner's own note says yes to the exact outward step a task was blocked on, the agent carries out that step (never key rotation, purchases, messages or deletions).",
+   "done_when": [
+    "A note shows in Claude is on within seconds",
+    "A task returned to the owner is labelled as a reply",
+    "The owner's yes is not asked again"
+   ],
+   "evidence": [
+    {
+     "label": "Public board",
+     "url": "https://adisuja.github.io/tantra-workshop-live/tasks.html?v=20261009f"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-09T01:39:23+0530",
+     "who": "claude",
+     "note": "Built and verified 2026-10-09; waiting for Adi's sign-off."
+    }
+   ],
+   "order": 3250
   }
  ]
 }
