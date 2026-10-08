@@ -2,7 +2,7 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T00:25:38+0530",
+  "updated": "2026-10-09T00:25:55+0530",
   "version": 301,
   "last_id": 303,
   "team": [
@@ -8500,7 +8500,7 @@
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "",
+   "needs_from_owner": "origin/main-52fp0w holds a snapshot of uncommitted work from the 2026-10-03 cloud hop and is not in main. Claude will diff it against main first; say delete if nothing in it is wanted (Claude reports what differs before deleting).",
    "log": [
     {
      "ts": "2026-10-07T23:25:35+0530",
@@ -8521,6 +8521,11 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Session sweep (2026-10-09): source: c726a704 2026-10-03T19:49 (Integrator left origin/main-52fp0w untouched after the cloud-hop failure); not on the board until now. Added as step 4. NEEDS-ESCALATION: the branch is Adi's WIP snapshot, so confirm before deleting if the diff shows unique files."
+    },
+    {
+     "ts": "2026-10-09T00:25:55+0530",
+     "who": "claude",
+     "note": "Claude diffs origin/main-52fp0w before any delete; no blocker on the rest of the cleanup."
     }
    ],
    "order": 2480
@@ -9823,7 +9828,8 @@
   },
   {
    "id": "T-283",
-   "status": "blocked",
+   "title": "Finish the 7 walkthrough videos blocked on account access (Twilio, Kie.ai, Dodo, Stripe, HubSpot, Zoho, Wistia) and the Google Cloud and Admin steps",
+   "area": "Content",
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
@@ -9831,17 +9837,36 @@
    ],
    "priority": "P1",
    "due": "",
-   "area": "Content",
-   "order": 2830,
-   "title": "T-283: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
+   "status": "blocked",
+   "why": "Adi's rule (2026-10-08): one end-to-end video per tool, sign-up to key to centre, zero exceptions. These stop after sign-up and pricing because Claude never types passwords or codes and never creates vendor accounts.",
+   "spec": "Per tool, once access exists, resume that tool's recording agent per scripts/walkthroughs/AGENT_BRIEF.md in /Users/adithyamurali/tantra-walkthroughs: in-app route in the signed-in Brave window (lock /tmp/wt-brave-lock), key deleted off camera and logged in scripts/walkthroughs/REVERT_LEDGER.md (the deletion is never shown on camera), bash scripts/walkthroughs/finalize.sh <tool>. Routes are in scripts/walkthroughs/journeys/<tool>.md. Each stops after sign-up and pricing today. Per tool: Twilio (emailed code to the account owner, another of the owner's company addresses, before API keys); Kie.ai and Dodo (Brave not signed in; Google offers the owner's FintechCircle login and a sender mailbox and we do not know which holds the account; Dodo account is live mode, record in Test mode); Stripe (Adi said on 2026-10-07 he would drop a Stripe API key, it never arrived in the session; Google sign-in with boards@fintechcircle.com showed first-time consent so no account sits behind it; the video can only explain the restricted key screen from docs until a signed-in dashboard exists); HubSpot, Zoho, Wistia (no subscription; Adi: attendees create their own accounts and enter their own API keys, so a docs or free-account video is acceptable); Google senders Google side (Google Cloud console and Google Admin re-ask for the password). Adi's rule: never stop a tool at a blocker, list the blockers at the end.",
+   "done_when": [
+    "Each of the 7 videos shows the in-app route to the key and the centre paste step",
+    "Google senders video shows the Google Cloud service account, JSON key and Google Admin delegation steps",
+    "REVERT_LEDGER shows every test object deleted"
+   ],
    "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [],
-   "held": true
+   "blockers": [
+    "Twilio emailed code",
+    "Which Google account holds Kie.ai and Dodo",
+    "Stripe sign-in or key",
+    "HubSpot, Zoho, Wistia free accounts or a skip",
+    "Google password at Google Cloud console and Google Admin"
+   ],
+   "needs_from_owner": "Twilio: enter the emailed verification code once in the Brave recording window (it goes to the account owner's inbox). Kie.ai and Dodo: say which Google account holds the existing account (the chooser offers two; a wrong pick would create a new account). Stripe: sign into the Stripe account in Brave (Google sign-in showed first-time consent). HubSpot, Zoho, Wistia: no accounts exist; create free accounts and sign in in Brave, or say skip. Google Cloud console and Google Admin: type the password once in Brave when asked.",
+   "log": [
+    {
+     "ts": "2026-10-09T00:06:32+0530",
+     "who": "claude",
+     "note": "Added 2026-10-08 by the walkthroughs session: blockers found while recording."
+    },
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Session sweep (2026-10-09): source: fcd892f2 2026-10-07T18:26 (Adi: Stripe key would be dropped), 19:38, 20:19, 21:31 (one complete video per tool, assume sign-up, no delete on camera, report blockers at the end), final report 2026-10-07T22:56. Adds the Stripe key never received, Dodo test mode and blockers list."
+    }
+   ],
+   "order": 2830
   },
   {
    "id": "T-284",
@@ -10087,7 +10112,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "blocked",
    "why": "The open link is a shared attendee that runs real actions if someone pastes a real vendor key, so it must close once the build is final.",
    "spec": "On 2026-10-05 Adi asked for an open live link to the Agentic Onboarding Centre with no personal link, kept until the build is fully complete: https://revops-centre.growthcluborg.workers.dev/preview (one shared test attendee; also /onboarding/ for signed-out visitors). Adi said restricting it to personal links comes later. When Adi calls the build complete (or before the first real cohort gets the centre link, whichever is first): in the admin, Cohort Settings, set 'Open preview link' to 'Off: personal links only' (url https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, then Cohort Settings). First check what depends on /preview: app/scripts/fill-preview.mjs, the walkers, the review links in the hub and playbook, the Tantra demo funnel (T-214) and T-278; repoint any that must keep working to a personal test-attendee link, then flip the setting and confirm a signed-out visit to /preview no longer opens the centre while a personal link still does. Record the date in this task's log.",
    "done_when": [
@@ -10096,13 +10121,20 @@
     "Adi has said the build is complete (quote in the task log)"
    ],
    "evidence": [],
-   "blockers": [],
+   "blockers": [
+    "Adi's call on when /preview goes personal-links only"
+   ],
    "needs_from_owner": "Say when the centre build counts as complete so the open /preview link can be switched off. Recommended: switch it off the day before the first real cohort's centre links go out.",
    "log": [
     {
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Added from the session sweep (2026-10-09): source: c726a704 2026-10-05T15:23-15:28 (owner: open preview link 'until the build is fully complete, and at a later stage we can then figure out restricting it and only offering personal links'). Setting exists (cloud/src/settings.ts:14, index.ts:797); no board task tracks the switch-off. NEEDS-ESCALATION: Adi decides when the build counts as complete."
+    },
+    {
+     "ts": "2026-10-09T00:25:55+0530",
+     "who": "claude",
+     "note": "Waiting on Adi's decision (see needs_from_owner)."
     }
    ],
    "order": 2910
@@ -10118,7 +10150,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "blocked",
    "why": "Adi's own review drafts should come from the best model, while probes stay on the cheap one; right now the best connection is off and nobody tracks it.",
    "spec": "To save usage during the round 5 and 6 builds the local centre's test AI drafting was moved from Opus to Sonnet and Haiku: in the centre admin AI connections tab (local stack :8790, admin URL from tantra-onboarding-v2/cloud/.dev.vars ADMIN_KEY), connection 1 'Claude Code, Adi' (Opus) is disabled and connection 3 'Claude Code, probe budget (Sonnet / Haiku)' is enabled with priority 5, and its last_error shows a session-limit message from 2026-10-07. Before Adi reviews real drafts (card copy, brand rules, outreach first lines) or the first cohort uses AI drafting: enable connection 1, leave connection 3 as the fallback for probes and walkers, check that probes pick the cheap connection (priority or per-task model map in Model per task), and clear connection 3's stale last_error. Also check the live Worker's AI connections list for the same state; the live centre is a different database.",
    "done_when": [
@@ -10127,13 +10159,20 @@
     "The same check is recorded for the live Worker's connections"
    ],
    "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
+   "blockers": [
+    "Adi's cost decision"
+   ],
+   "needs_from_owner": "Re-enable Opus (connection 1) for attendee AI drafts? It spends Opus usage on every draft; the Sonnet/Haiku connection has been on since the 2026-10-03 cost switch. Recommended: Opus for real attendees' drafts only (owner rule: best model for content), cheaper models for probes.",
    "log": [
     {
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Added from the session sweep (2026-10-09): source: c726a704 2026-10-03T19:13/19:45 (owner cost rule) and handoff SESSION_HANDOFF_2026_10_03_ROUND5_A.md ('Opus connection (id 1) disabled: re-enable for Adi's real use'). Verified 2026-10-09 in the local centre D1 (tantra-onboarding-v2/cloud/.wrangler): connections id 1 'Claude Code, Adi' (claude-opus-5-5) enabled=0, id 3 'probe budget (Sonnet / Haiku)' enabled=1. NEEDS-ESCALATION: re-enabling spends Opus tokens; confirm timing against the usage limits."
+    },
+    {
+     "ts": "2026-10-09T00:25:55+0530",
+     "who": "claude",
+     "note": "Waiting on Adi's decision (see needs_from_owner)."
     }
    ],
    "order": 2920
@@ -10171,7 +10210,8 @@
   },
   {
    "id": "T-294",
-   "status": "blocked",
+   "title": "Decide the open calls on the 17 extra funnel animations and the Whole Machine view",
+   "area": "Content",
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
@@ -10179,17 +10219,27 @@
    ],
    "priority": "P2",
    "due": "",
-   "area": "Content",
-   "order": 2940,
-   "title": "T-294: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
+   "status": "blocked",
+   "why": "Adi asked for these 17 cinematics with the same standard as the first three; he has only seen reports that name figures he did not supply, so they need his sign-off before the section counts as done.",
+   "spec": "The playbook section 'The Other 17 Funnel Types' (id bigpic-the-other-17-funnel-types in workshop-plan/playbook.html, built by workshop-plan/build/funnel_types.py; each dropdown loads its own cinematic from app/src/components/masterclass/funnel-os-types/<id>.tsx, 17 files plus system.tsx for 'The Whole Machine on One Page', frames at /funnels/<id>) was built from the Funnel Master (https://cdadf78c.funnel-master-ui.pages.dev/) on 2026-10-05 and is not on any task. Calls the builders left open: (1) Printed totals that do not add up in the Funnel Master were NOT copied: Partnership net per partner, Unlock All '74% revenue increase' (own figures give 17%, +$1,645), Free Plus Shipping (a net and ROI pair) (own figures give $1,596 and no ad spend is stated), Final Funnel (an interest-rate figure), Social Following (a profit-margin figure). Show the printed figures instead, or keep the figures that add up? Recommended: keep the figures that add up. (2) community.tsx reads the Funnel Master's '85% retention' as yearly retention and adds its own month-12 projection (152 members, $7,144 MRR): confirm. (3) Waterfall, Social and Final use one or two channels; the unused channel columns show dashed and marked 'Unused' rather than made-up numbers: confirm. (4) On phones four tall boards render small text (Sideways Nurture, two-path Reverse Squeeze Landing, Product Launch Conversion, Social Traffic): cut content on phones or leave? (5) On desktop the Whole Machine boards fill about 70% of the width against about 90% for the other funnels, because each stage shows three lanes; cutting desktop content would widen them: leave? Recommended answers are in this list; if Adi says 'approve' they stand.",
+   "done_when": [
+    "Adi answers each of the five calls on this task",
+    "Any answer that changes a board is built and passes node app/scripts/probe-funnel-boards.mjs at 5 widths",
+    "Review link sent: https://adisuja.github.io/tantra-workshop-live/playbook.html#bigpic-the-other-17-funnel-types"
+   ],
    "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [],
-   "held": true
+   "blockers": [
+    "Adi's answers to the five calls"
+   ],
+   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/playbook.html#bigpic-the-other-17-funnel-types and https://adisuja.github.io/tantra-workshop-live/playbook.html#bigpic-the-whole-machine-on-one-page, then reply on this task: approve all five recommended answers, or say which to change.",
+   "log": [
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Added from the session sweep (2026-10-09): source: ec3e66fb 2026-10-05T17:59, 18:06, 18:51, 20:58 (agents' reports, none answered by the owner)."
+    }
+   ],
+   "order": 2940
   },
   {
    "id": "T-295",
@@ -10332,7 +10382,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "blocked",
    "why": "Adi's three reasons for Google Workspace (calendar invites by service account, vendor-supplied cold email inboxes, GA4 and sign-up address) differ from what the centre builds; building mailboxes ourselves and warming on Instantly contradicts the approved vendor stack.",
    "spec": "Adi's model (2026-10-07): (1) Cold calendar invites: one Google service account per Workspace user, each uploaded to Tantra. (2) Cold email: inboxes are Google Workspace users bought through the inbox vendor, who handles the domain cost and SPF, DKIM and DMARC, hosts the accounts in their own Cloudflare and connects them to Tantra; we never build mailboxes ourselves. (3) Google also gives GA4 and one address the attendee signs up to other tools with. The centre today still does the old thing. To build on a branch: A) cold email: make the partner card (id start-endy, app/src/lib/workshop-cards.ts around line 356, never names Endy) the only mailbox path; remove the 'MAIL_OWN' build-your-own path, the start-workspace card ('Let the agent into Google Workspace'), the mailboxes, m365-mailboxes and warmup jobs (cloud/src/agentic.ts, jobs.ts, jobs-m365.ts) and the Instantly warm-up watcher (cloud/src/connectors/instantly.ts, agentic.ts line 25). After the vendor delivers, the attendee gives the vendor the service account client ID and the three scopes, then in Tantra Accounts uses Verify and Add; the agent confirms in Tantra that every inbox shows Connected and Gmail capable and is warming (see T-213 for the vendor flow and T-263 for the Tantra GET /accounts check). B) calendar: the calendar-workspace card asks for several senders, with steps to create a service account per sender and upload each to Tantra (journey: scripts/walkthroughs/journeys/google-senders.md; Adi's note: one service account per Workspace covers every mailbox). C) add a short card 'Pick the address you sign up to tools with' (one Workspace user). D) update probes (probe-stack, probe-domain-chain, probe-day1/day2) and the simulator, then the 'Set Up Your Vendor Inboxes' walkthrough text. Ship on a branch, READY in /Users/adithyamurali/tantra-round5-coord/LOG.md; Integrator merges and deploys.",
    "done_when": [
@@ -10343,13 +10393,20 @@
     "READY in LOG.md and merged by the Integrator"
    ],
    "evidence": [],
-   "blockers": [],
+   "blockers": [
+    "Adi: remove or keep the build-your-own-mailbox path"
+   ],
    "needs_from_owner": "Confirm removing the build-your-own-mailbox path (cards start-workspace and the mailboxes job) now that inboxes come only from the vendor: reply remove or keep.",
    "log": [
     {
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Added from the session sweep (2026-10-09): source: fcd892f2 2026-10-07T17:18 (Adi explains the three Google uses and asks for the scope), 17:23 (Claude's change table, not built), 18:26 (Adi: Endy hosts the inboxes, connects them to Tantra). Code check 2026-10-09: start-workspace/mailboxes/m365-mailboxes/warmup jobs still in app/src/lib/workshop-cards.ts and cloud/src/agentic.ts. NEEDS-ESCALATION: Adi never explicitly approved REMOVING the build-your-own-mailbox cards (his 18:26 reply skipped item 1 of the plan); confirm that part before deleting."
+    },
+    {
+     "ts": "2026-10-09T00:25:55+0530",
+     "who": "claude",
+     "note": "Waiting on Adi's decision (see needs_from_owner)."
     }
    ],
    "order": 2990
@@ -10455,7 +10512,8 @@
   },
   {
    "id": "T-303",
-   "status": "queue",
+   "title": "Transcribe the reference VSL and write Richard's own VSL recording script",
+   "area": "Content",
    "owner": "Bhaskar",
    "assignee": "Claude",
    "reviewers": [
@@ -10464,17 +10522,32 @@
    ],
    "priority": "P2",
    "due": "",
-   "area": "Content",
-   "order": 3030,
-   "title": "T-303: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
+   "status": "blocked",
+   "why": "Adi wants a recordable script so Richard can produce a VSL for the thank-you pages without Adi writing it.",
+   "spec": "Adi's request (2026-10-07): the reference video /Users/adithyamurali/tantra-redesign/reference/monetise-survey-vsl-720p.mp4 is the VSL on the thank-you page that helps people complete registration. (1) Transcribe it with timestamps (already done once to /tmp/vsl-ref-transcript.txt, outside the repo and not yet read; redo into the repo, e.g. docs/vsl/reference-transcript.md, if the tmp file is gone). (2) Write a separate VSL script that follows the same structure but is built on OUR webinar and masterclass content (both webinars differ from the reference), for Richard to record. (3) Do NOT change the thank-you page now; the finished video later goes in through T-060 (VSL_SRC). Copy rules: workshop-plan/COPY_RULES.md (Backlinko voice), no dashes, no invented stats or testimonials, no 'webinar' wording in public copy, never say nothing is sold. Material found in the session: another brand's masterclass sources (a private folder outside this repo) and its nurture page lead magnets (Databricks Cost Field Guide, Databricks Cost X-Ray); use them only as structural reference, not as content for our script.",
+   "done_when": [
+    "The reference transcript with timestamps is committed in the repo",
+    "A script for Richard with timed sections matching the reference structure and our own workshop content is committed and linked on this task",
+    "No dashes and no unsourced claims in the script (probe-voice style scan)"
+   ],
    "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [],
-   "held": true
+   "blockers": [
+    "Who Richard is and which thank-you page the script serves"
+   ],
+   "needs_from_owner": "confirm who Richard is for this script (the notes only say Richard records it) and which funnel's thank-you page it serves (free /workshop/success, paid /masterclass/success, or both).",
+   "log": [
+    {
+     "ts": "2026-10-09T00:25:38+0530",
+     "who": "claude",
+     "note": "Added from the session sweep (2026-10-09): source: 7c7d4bae 2026-10-07T12:01 owner request, interrupted at 12:03 before the script was written; nothing in the repo (only /tmp/vsl-ref-transcript.txt, outside the repo)."
+    },
+    {
+     "ts": "2026-10-09T00:25:55+0530",
+     "who": "claude",
+     "note": "Waiting on Adi's decision (see needs_from_owner)."
+    }
+   ],
+   "order": 3030
   }
  ]
 }
