@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T15:09:05+0530",
+   "task_id": "T-144",
+   "mode": "feedback",
+   "status": "review",
+   "result": "limit",
+   "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
+  },
+  {
    "ts": "2026-10-09T14:38:53+0530",
    "task_id": "T-144",
    "mode": "feedback",
@@ -87,14 +95,6 @@
    "status": "review",
    "result": "ok",
    "summary": "T-292 is in review: the local centre has Opus (connection 1) on for real drafts and connection 3 as the probe fallback (person draft logged `claude-opus-5-5`, probe draft `claude-sonnet-5-5`), and the live Worker has no AI connections at all, so I left it alone and recorded that.\n\n- **Local state:**"
-  },
-  {
-   "ts": "2026-10-09T12:55:05+0530",
-   "task_id": "T-287",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-287 stays done: this was a repeat delivery of decision O-a7b40aa6, already applied in full at 12:27. A fresh scan found no add-on wording in the cards, Worker copy or playbook, and https://github.com/Usetantra/tantra-frontend-v2/pull/196 is still open awaiting review. F-23668453 was already acknow"
   }
  ],
  "state": "paused",
@@ -103,6 +103,6 @@
  "entries": [
   "F-b326ef12"
  ],
- "started": "2026-10-09T14:25:39+0530",
- "message": "Usage limit reached; retries automatically after 15:08. (You've hit your session limit · resets 5pm (Asia/Calcutta))"
+ "started": "2026-10-09T15:09:01+0530",
+ "message": "Usage limit reached; retries automatically after 15:39. (You've hit your session limit · resets 5pm (Asia/Calcutta))"
 }
