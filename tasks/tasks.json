@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T02:02:34+0530",
-  "version": 1390,
+  "updated": "2026-10-10T02:07:51+0530",
+  "version": 1391,
   "last_id": 379,
   "team": [
    {
@@ -11388,7 +11388,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Zoom Pro is approved and the cohort runs weekly; Zoom users currently see WebinarGeek-only instructions and the next run is copied by hand.",
    "spec": "Check the WebinarGeek API for base webinar, polls, CTA and replay settings (X057 UNVERIFIED); add a Zoom live-room card (polls, recording, CTA) and a challenge equivalent, gate WebinarGeek steps on ev_platform, give challenge per-day timing, replace the solo pitch example, and have event-setup schedule each weekly cohort broadcast so s4-webinar step 14 becomes auto. Closes audit findings X057, X058, X095, X096, G039, N043, N044, N045, N046. Per finding: X057 (app/src/lib/workshop-cards.ts): Confirm against WebinarGeek API docs; if a create endpoint exists, have event-setup create the base webinar. X058 (app/src/lib/workshop-cards.ts): Confirm WebinarGeek API for these; where none exists keep the card but steer Zoom users to Zoom polls via API. X095 (app/src/content/guides/s4-conversion/s4-webinar.ts): Mirror whatever automation lands for d2-live-room; otherwise mark these steps as the human ones. X096 (app/src/content/guides/s4-conversion/s4-webinar.ts): Have event-setup schedule the next weekly cohort broadcast on the same webinar automatically. G039 (app/src/content/guides/s4-conversion/s4-webinar.ts): Have event-setup create each week's broadcast for the rolling cohort and add an auto block to step 14. N043 (app/src/lib/workshop-cards.ts): Give challenge its own per-day timing in steps and drop 'set up the live room' from the title. N044 (app/src/lib/workshop-cards.ts): Add a Zoom live-room card (polls, recording, CTA) and a challenge equivalent. N045 (app/src/lib/workshop-cards.ts): Gate the WebinarGeek step on ev_platform and add a Zoom version. N046 (app/src/lib/workshop-cards.ts): Replace the solo example with a webinar or challenge pitch. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Context: attendee Zoom runs on Zoom Pro MEETINGS (a webinar is one type 2 meeting, a challenge one recurring meeting; design in docs/onboarding-v3/analysis/zoom-pro-meetings.md, code cloud/src/zoom-pro.ts and connectors/build.ts roomSettings()), so the Zoom live-room card (N044) sets meeting polls, cloud recording and the offer link on a Pro meeting, not a Zoom Webinar. d2-live-room is already gated to ev_platform WebinarGeek; N045 is the d2-dryrun step 2 WebinarGeek text. The WebinarGeek API capability checks (X057, X058: base webinar create, polls, CTA, replay) run on a free or test account as part of T-253. Merge order: build on main after T-251 lands (branch tantra-walkthroughs: e4bd0b8 removes the ruled-out tools and rewrites workshop-cards.ts, agentic.ts, jobs.ts, agent.tsx and coverage.json; probe fixes 043b5ab and aa22a3f, no READY yet in /Users/adithyamurali/tantra-round5-coord/LOG.md). Until then branch from tantra-walkthroughs; AUDIT.md line numbers predate that change.",
    "done_when": [
@@ -11397,7 +11397,20 @@
     "WebinarGeek API capabilities recorded",
     "Every listed finding id is marked fixed in AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Probe (simulator): node cloud/scripts/probe-t268.mjs",
+     "url": "cloud/scripts/probe-t268.mjs"
+    },
+    {
+     "label": "Zoom live-room card source",
+     "url": "app/src/lib/workshop-cards.ts"
+    },
+    {
+     "label": "WebinarGeek API capabilities (doc-verified)",
+     "url": "cloud/src/connectors/CHECKS.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -11410,6 +11423,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: attendee Zoom now runs on Zoom Pro meetings (no Webinars licence, merged in 75c4c5c/643718a), so the Zoom live-room card is for Pro meetings; WebinarGeek API checks (X057, X058) belong with T-253; added merge order."
+    },
+    {
+     "ts": "2026-10-10T02:07:51+0530",
+     "who": "claude",
+     "note": "Zoom attendees and challenges now get a Zoom Pro live-room card (polls by hand in Polls/Quizzes, offer link in the chat, cloud recording already set); d2-live has challenge per-day timing and a webinar pitch example; dry run is platform-neutral. event-setup now schedules the next 4 weekly runs (WebinarGeek broadcasts or Zoom Pro meetings, keeps 11:00 ET across clock changes) and s4-webinar step 14 has an auto block. docs.webinargeek.com has no create-webinar, polls, CTA or replay endpoint, so those stay manual cards (live check stays with T-253). probe-t268 ALL PASS in the simulator, tsc clean, pushed main f6451e2 and deployed Worker 3571aadf; mirror not published (rides the next publish); AUDIT ids marked fixed."
     }
    ],
    "order": 2680
