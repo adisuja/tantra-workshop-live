@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T14:37:50+0530",
+   "task_id": "T-021",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-021 stays in review: both deck items were already finished and live, so this run only rechecked them (done-when grep empty, both probes clean, live mirror byte-identical to source, nothing left to push); note F-5fade61c was already acknowledged, and the deck awaits Adi's approval at https://adisuj"
+  },
+  {
    "ts": "2026-10-09T14:36:48+0530",
    "task_id": "T-001",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-292 stays in review: the Orchestrator's decision had already been applied earlier today, and I re-verified it locally (a real brand-card draft logged `claude-opus-5-5`, a probe draft logged `claude-sonnet-5-5`).\n\n- **Local centre:** connection 1 (Opus) is enabled at priority 1, connection 3 (Sonne"
-  },
-  {
-   "ts": "2026-10-09T12:52:19+0530",
-   "task_id": "T-287",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-287 stays done: this was a re-run of decision O-a7b40aa6, which an earlier run today had already applied. I rechecked that the cards, playbook and reminders caption carry no Tantra add-on wording and that the app-fix PR 196 is still open with a reviewer requested (`bkp31415`, which I took to be Bh"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-021",
+ "task_id": "T-124",
  "entries": [
-  "F-5fade61c"
+  "F-40ad43fd"
  ],
- "started": "2026-10-09T14:36:53+0530",
- "message": "Acting on 1 note(s) for T-021: Workshop deck (158 slides)"
+ "started": "2026-10-09T14:37:56+0530",
+ "message": "Acting on 1 note(s) for T-124: /vip checkout keeps first-touch UTMs"
 }

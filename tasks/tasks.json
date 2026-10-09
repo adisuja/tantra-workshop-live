@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T14:36:42+0530",
-  "version": 1130,
+  "updated": "2026-10-09T14:37:41+0530",
+  "version": 1131,
   "last_id": 357,
   "team": [
    {
@@ -977,15 +977,11 @@
    "evidence": [
     {
      "label": "Deck (live)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/deck.html?v=t021-1009#1"
+     "url": "https://adisuja.github.io/tantra-workshop-live/deck.html?v=1791536861"
     },
     {
-     "label": "Day 1 step 5, the prospect list",
-     "url": "https://adisuja.github.io/tantra-workshop-live/deck.html?v=t021-1009#29"
-    },
-    {
-     "label": "Day 1 step 8, the channels",
-     "url": "https://adisuja.github.io/tantra-workshop-live/deck.html?v=t021-1009#44"
+     "label": "Slide 2 source",
+     "url": "workshop-plan/build/content.py"
     }
    ],
    "blockers": [],
@@ -1025,6 +1021,11 @@
      "ts": "2026-10-09T14:27:10+0530",
      "who": "claude",
      "note": "Nothing further to change: this Orchestrator note was already carried out in full (bd9b0f6, pushed as 711a8fc). Rechecked now: the live deck is byte-identical to source, slide 2 carries the Growth Idea August 2025 result with no placeholder, the ruled-out tool grep returns nothing, probe-deck is clean on all 158 slides and probe-deck-nav passes. Open https://adisuja.github.io/tantra-workshop-live/deck.html?v=t021-1009#2 to review the deck."
+    },
+    {
+     "ts": "2026-10-09T14:37:41+0530",
+     "who": "claude",
+     "note": "Repeat Orchestrator note: both items were already finished and live. Slide 2 carries the Growth Idea, webinar #4, August 2025 result word for word from the Tantra webinar deck, and no ruled-out tool is named. Rechecked now: the done-when grep returns nothing, probe-deck is clean on all 158 slides, probe-deck-nav passes, and the live mirror is byte-identical to the source and to origin main, so nothing needed pushing. Open the deck link to approve."
     }
    ],
    "order": 120,
