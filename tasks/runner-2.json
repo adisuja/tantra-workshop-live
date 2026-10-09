@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T09:31:39+0530",
+   "task_id": "T-149",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "limit",
+   "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
+  },
+  {
+   "ts": "2026-10-09T09:31:13+0530",
+   "task_id": "T-132",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-132 is still blocked and none of the five screenshots were captured: macOS refuses this background run both screen capture and clicks or keys on the Claude app. The one input needed is the macOS permission grant, now raised as T-351 for Adi. No demo routine was created, so there is nothing to reve"
+  },
+  {
    "ts": "2026-10-09T09:25:39+0530",
    "task_id": "T-299",
    "mode": "feedback",
@@ -79,30 +95,14 @@
    "status": "blocked",
    "result": "limit",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:04:26+0530",
-   "task_id": "T-033",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:04:22+0530",
-   "task_id": "T-226",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
- "state": "working",
+ "state": "paused",
  "mode": "feedback",
- "task_id": "T-132",
+ "task_id": null,
  "entries": [
-  "F-35ba9d7a"
+  "F-444cb6d4"
  ],
- "started": "2026-10-09T09:25:39+0530",
- "message": "Acting on 1 note(s) for T-132: Stage 5 to 6 guides: real Claude Code screenshots (5 steps)"
+ "started": "2026-10-09T09:31:36+0530",
+ "message": "Usage limit reached; retries automatically after 10:01. (You've hit your session limit · resets 12pm (Asia/Calcutta))"
 }

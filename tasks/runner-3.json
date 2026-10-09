@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T09:31:40+0530",
+   "task_id": "T-133",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "limit",
+   "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
+  },
+  {
    "ts": "2026-10-09T09:29:21+0530",
    "task_id": "T-118",
    "mode": "feedback",
@@ -87,23 +95,15 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:06:01+0530",
-   "task_id": "T-226",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
- "state": "working",
+ "state": "paused",
  "mode": "feedback",
- "task_id": "T-133",
+ "task_id": null,
  "entries": [
   "F-1885ef4c",
   "R-208da357"
  ],
  "started": "2026-10-09T09:29:26+0530",
- "message": "Acting on 2 note(s) for T-133: Stage 6 guides: real WhatsApp + SMS provider screenshots (5 steps)"
+ "message": "Usage limit reached; retries automatically after 10:01. (You've hit your session limit · resets 12pm (Asia/Calcutta))"
 }
