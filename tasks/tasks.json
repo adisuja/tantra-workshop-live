@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T13:16:34+0530",
-  "version": 1083,
+  "updated": "2026-10-09T13:28:57+0530",
+  "version": 1087,
   "last_id": 357,
   "team": [
    {
@@ -3628,6 +3628,11 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Session sweep (2026-10-09): source: ec3e66fb 2026-10-05: scope grew to 21 cinematics (3 + 17 types + system); review ask now covers all."
+    },
+    {
+     "ts": "2026-10-09T13:28:53+0530",
+     "who": "claude",
+     "note": "T-131 (2026-10-09): the RSP board's 52-week grid no longer shows webinar, event, workshop or replay rows in the Email, WhatsApp and SMS lanes; they are on-demand touches now (on-demand training, VSL re-watch nudge, book-a-call reminder, new case study drop). Live on the mirror (34daef4); the board fits at 5 widths. The paid ads lane still has webinar promo and replay retargeting rows, left for T-260."
     }
    ],
    "order": 1060,
@@ -4982,17 +4987,32 @@
    "owner": "Adi",
    "priority": "P3",
    "due": "2026-09-28",
-   "status": "blocked",
+   "status": "review",
    "why": "funnel-os-rsp.tsx's 52-week rows still say 'Webinar invite / Event reminder / Replay nudge' (warm-list events inside the RSP year). Could read as the RSP being a live event.",
    "spec": "app/src/components/masterclass/funnel-os-rsp.tsx 52-week rows (about lines 226 to 265) still carry 'Webinar invite', 'Webinar reminder', 'Event reminder' and 'Replay nudge' entries, which can read as the RSP being a live event. Rows also name Meta and Google ads, which T-260 covers. On the answer Claude relabels or keeps and re-shoots the RSP board.",
    "done_when": [
     "Rows confirmed or relabelled"
    ],
-   "evidence": [],
-   "blockers": [
-    "Needs owner confirmation"
+   "evidence": [
+    {
+     "label": "RSP board (live, scroll to Stage 5)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/rsp/?v=1791532733"
+    },
+    {
+     "label": "Playbook · What are funnels",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1791532733#funnels"
+    },
+    {
+     "label": "RSP board (local)",
+     "url": "http://localhost:4322/funnels/rsp?v=1791532733"
+    },
+    {
+     "label": "Commit 03fbae0",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/03fbae0"
+    }
    ],
-   "needs_from_owner": "Keep them as warm-list live events inside the RSP year, or relabel them as on-demand touches? Recommended: relabel to on-demand touches so the RSP never reads as a webinar.",
+   "blockers": [],
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-25",
@@ -5008,12 +5028,23 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: re-verified rows on main and added a recommended answer."
+    },
+    {
+     "ts": "2026-10-09T13:28:53+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Bhaskar/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T13:28:53+0530",
+     "who": "claude",
+     "note": "Relabelled the RSP 52-week grid: every webinar, event, workshop and replay row in the Email, WhatsApp and SMS lanes is now an on-demand touch (on-demand training, VSL re-watch nudge, book-a-call reminder, new case study drop), same weeks and channels, in the grid's existing sentence case. Checked: board-fit probe passes at 5 widths, all 52 weeks scanned at 1440, 1024 and 390 in light and dark with 0 old labels, and the live board and playbook frame show the same; source pushed (03fbae0) and mirror republished (34daef4). Still open elsewhere: the paid ads lane keeps its webinar promo and replay retargeting rows for T-260, as the decision said."
     }
    ],
    "order": 1290,
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Bhaskar",
+    "Bharath"
    ]
   },
   {
