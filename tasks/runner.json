@@ -97,12 +97,12 @@
    "summary": "T-058 prep is built and committed, but nothing is launched or published yet. I set the task to doing and acked F-a4339d5e.\n\n- **Built:** a launch kit, a one-page connect guide, and a Replies column on the referral dashboard for each member and the team total. The kit has each member's code and links"
   }
  ],
- "state": "idle",
- "message": "Now running on the plan's monthly API credit.",
- "task_id": null,
+ "state": "working",
+ "message": "Acting on 1 note(s) for T-272: Centre admin: per-teammate auth, per-cohort session settings, ruled-out vendors out of the admin",
+ "task_id": "T-272",
  "entries": [
-  "F-5ffe121f"
+  "F-6d5726b5"
  ],
  "mode": "feedback",
- "started": "2026-10-10T02:01:21+0530"
+ "started": "2026-10-10T03:30:52+0530"
 }

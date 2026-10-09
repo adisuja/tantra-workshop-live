@@ -97,13 +97,12 @@
    "summary": "T-247 is in review, but the \"MongoDB written\" check is not met. The live centre's `/admin/api/export` and `/admin/api/export/full` both return HTTP 500, so the tracker sync stops before it reaches Mongo.\n\n- **Done:** Docker is running again, and `tantra-mongo` is rebuilt on its existing data volume "
   }
  ],
- "state": "idle",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
+ "task_id": "T-271",
  "entries": [
-  "F-338c6626",
-  "R-2794aace"
+  "F-c6418b1d"
  ],
- "started": "2026-10-10T02:02:34+0530",
- "message": "Now running on the plan's monthly API credit."
+ "started": "2026-10-10T03:30:40+0530",
+ "message": "Acting on 1 note(s) for T-271: New centre cards: copy accuracy (counts, thresholds, tags, promises)"
 }

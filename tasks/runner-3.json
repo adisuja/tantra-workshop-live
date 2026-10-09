@@ -97,12 +97,13 @@
    "summary": "T-213 is in review. The warm-up job waits on Tantra, the worker is deployed and the lead email works. I did not push, because local main and `origin/main` have diverged.\n\n- **Instantly removed:** the start-endy warm-up job now waits for inboxes to show Connected and Gmail capable in Tantra Accounts."
   }
  ],
- "state": "idle",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
+ "task_id": "T-270",
  "entries": [
-  "F-f9b6048f"
+  "F-83697c86",
+  "R-0efdd2ed"
  ],
- "started": "2026-10-10T01:54:56+0530",
- "message": "Now running on the plan's monthly API credit."
+ "started": "2026-10-10T03:30:40+0530",
+ "message": "Acting on 2 note(s) for T-270: New centre cards: teach by default, examples on every field, no paid auto-drafts"
 }
