@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T12:09:56+0530",
-  "version": 1043,
+  "updated": "2026-10-09T12:10:36+0530",
+  "version": 1044,
   "last_id": 357,
   "team": [
    {
@@ -5914,6 +5914,11 @@
      "ts": "2026-10-09T12:08:45+0530",
      "who": "claude",
      "note": "Built everything around the sign-in: check_codex.sh (real codex exec round trip, passes only on CODEX_OK with no 401), hourly launchd job com.tantra.codex-check (installed, ran twice, correctly reports fail: HTTP 401), and the critic agent now runs that check and, while it fails, reviews on Fable 5 with 'SINGLE-VENDOR FALLBACK' as its first line (policy in .loop/CRITIC_POLICY.md). Verified with five stub cases plus one live fallback critic pass, which carried the label and found 7 defects; the real ones are fixed. On the first passing check Codex runs one critic pass, the verdict is saved and T-149 and T-340 close automatically; only Adi's sign-in (T-340) is left."
+    },
+    {
+     "ts": "2026-10-09T12:10:36+0530",
+     "who": "claude",
+     "note": "Rechecked 2026-10-09 12:10: everything around the sign-in is built and live (check_codex.sh, hourly launchd job com.tantra.codex-check, critic on the labelled Fable 5 fallback). A fresh real codex exec run still fails with HTTP 401, so the job correctly reports fail. Only Adi's sign-in (T-340) is left; the first passing hourly check records the Codex verdict and closes T-149 and T-340 by itself."
     }
    ],
    "order": 1490,
