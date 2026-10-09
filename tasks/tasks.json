@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T17:53:40+0530",
-  "version": 1159,
+  "updated": "2026-10-09T17:54:48+0530",
+  "version": 1163,
   "last_id": 357,
   "team": [
    {
@@ -3056,19 +3056,23 @@
    "evidence": [
     {
      "label": "VIP offer page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094"
     },
     {
      "label": "Order confirmation",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/success/"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t094"
     },
     {
      "label": "Before / after of the stack",
      "url": "https://adisuja.github.io/tantra-workshop-live/vip-before-after.png"
+    },
+    {
+     "label": "Comment fix on origin main (c0f1897)",
+     "url": "app/src/app/vip/vip-client.tsx"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Review https://adisuja.github.io/tantra-workshop-live/site/vip/ (nine bonuses, key art, recap) and https://adisuja.github.io/tantra-workshop-live/site/vip/success/, then approve or reply with changes.",
+   "needs_from_owner": "Adi: open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094 and https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t094 and approve or reply with changes. This one look also signs off T-100 (the nine bonuses and key art) and shows the T-103 prices in your currency.",
    "log": [
     {
      "ts": "2026-09-23",
@@ -3089,12 +3093,23 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: spec no longer says the paid lane sells a 'Build Pass' (retired, two-funnel-structure.md); VSL blocker removed because the owner kept the scripted-caption preview on 2026-10-06 (T-060 stays as an optional recording). The vip-client.tsx header comment (line 7) still says Build Pass: fix it with this task."
+    },
+    {
+     "ts": "2026-10-09T17:54:23+0530",
+     "who": "claude",
+     "note": "People: reviewers Bhaskar → Bhaskar/Adi (by claude)."
+    },
+    {
+     "ts": "2026-10-09T17:54:23+0530",
+     "who": "claude",
+     "note": "Fixed the vip-client.tsx line 7 comment (now 'the $99 seat on /masterclass'), git grep 'build pass' in app/src/app/vip returns nothing, tsc clean, pushed to origin main as c0f1897. No republish was needed: the T-141 hold is lifted and the only app changes since the last mirror publish (main 755e4a0) are two probe scripts, so the mirror already shows main; checked live with shoot-vip (9 exhibits, 0 overflow, 0 console errors at 1440 and 390), probe-currency 9 of 9, and /vip/success loading all 11 images. Stack, key art, recap and VSL preview untouched. One review pass covers this task, T-100 (nine bonuses) and T-103 (prices, already closed)."
     }
    ],
    "order": 920,
    "assignee": "Claude",
    "reviewers": [
-    "Bhaskar"
+    "Bhaskar",
+    "Adi"
    ]
   },
   {
@@ -3185,6 +3200,11 @@
      "ts": "2026-10-09T17:53:40+0530",
      "who": "claude",
      "note": "Closed on the Orchestrator decision (acting for Adi): the client archive stays private and there is no anonymised login-gated copy, because the template library already covers attendees. Correction to the 2026-09-23 log line: the archive was never published to the review mirror, it has only ever been served locally by serve.py at http://localhost:8899/library/. Rechecked today: .gitignore line 30 still covers workshop-plan/library/, git ls-files shows 0 tracked files under it, and https://adisuja.github.io/tantra-workshop-live/library/ returns 404; the rule is now written into workshop-plan/coord/LANES.md under Hard rules."
+    },
+    {
+     "ts": "2026-10-09T17:54:48+0530",
+     "who": "claude",
+     "note": "Re-run of the same Orchestrator note: nothing left to change. Rechecked today: .gitignore line 30 covers workshop-plan/library/, git ls-files shows 0 tracked files, the mirror /library/ is 404, local http://localhost:8899/library/ is 200, and the private archive rule is in workshop-plan/coord/LANES.md (commit 50f2051)."
     }
    ],
    "order": 950,
@@ -3362,6 +3382,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still awaiting approval; needs_from_owner now carries the full links. Evidence URLs answer 200."
+    },
+    {
+     "ts": "2026-10-09T17:54:23+0530",
+     "who": "claude",
+     "note": "Same review as T-094: Adi's one look at https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094 covers the nine bonuses here, the page in T-094 and the prices from T-103. Nothing on the stack changed."
     }
    ],
    "order": 980,
