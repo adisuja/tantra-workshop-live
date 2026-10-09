@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T18:26:38+0530",
-  "version": 1217,
+  "updated": "2026-10-09T18:42:55+0530",
+  "version": 1220,
   "last_id": 361,
   "team": [
    {
@@ -4959,7 +4959,7 @@
    "owner": "Aquila",
    "priority": "P0",
    "due": "2026-09-27",
-   "status": "queue",
+   "status": "blocked",
    "why": "Pages promise a confirmation, the centre and calendar links, daily reminders with the join link, the plan email and follow-ups. Nothing sends them yet, so the first real cohort would run without them.",
    "spec": "Umbrella. Owner model (google-and-reminder-model, 2026-10-07): email, WhatsApp and LinkedIn reminders run on Tantra omni-channel campaigns; the centre imports each registrant into the campaign by webhook on sign-up; WhatsApp never through Twilio. Tantra sending is live, so nothing waits on T-236 (the per-contact /emails/batch spec was our own invention) and the centre's 'held until Tantra ships its per-contact send' note in cloud/src/jobs-day2.ts must move to the campaign-import model. Children: T-234 (per-day reminders with each person's own Zoom link), T-228 (welcome with centre and private calendar link), T-235 (post-session follow-ups), plan email when the personal plan is generated (T-212 output), payment confirmation (T-122). Close this when the children are done.",
    "done_when": [
@@ -4967,9 +4967,26 @@
     "T-228, T-234 and T-235 done",
     "The plan email arrives when a personal plan is generated"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Admin, Session Reminders (9 moments, still off)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=t123#settings"
+    },
+    {
+     "label": "Commit 12997e9 on main",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/12997e9"
+    },
+    {
+     "label": "Plan email and payment probe",
+     "url": "app/scripts/probe-tantra-reminders.mjs"
+    },
+    {
+     "label": "Funnel email probe",
+     "url": "app/scripts/probe-email-stripe.mjs"
+    }
+   ],
    "blockers": [],
-   "needs_from_owner": "",
+   "needs_from_owner": "The GrowthClub Tantra API key, already asked as T-337: at https://usetantra.com (GrowthClub workspace) open Connectors, API Keys, Create Key, name it workshop-reminders, and paste it at https://revops-centre.growthcluborg.workers.dev/admin/ under Cohort Settings, Session Reminders, Tantra API key. Nothing else is needed from Adi.",
    "log": [
     {
      "ts": "2026-09-25",
@@ -5015,12 +5032,23 @@
      "ts": "2026-10-09T05:17:49+0530",
      "who": "claude",
      "note": "Points at T-234's build: welcome (T-228, now the Registered campaign) and per-day reminders run on 8 Tantra omni-channel campaigns from team@growthclub.org in Adi's GrowthClub workspace, email only. Go-live waits only on the key (T-337); app/scripts/e2e-tantra-reminders-live.mjs --go does the rest."
+    },
+    {
+     "ts": "2026-10-09T18:42:55+0530",
+     "who": "claude",
+     "note": "People: reviewers Aquila → Aquila/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T18:42:55+0530",
+     "who": "claude",
+     "note": "Built everything that does not need the key: attendee funnels now send reminder email through Tantra campaigns (the /emails/batch path is deleted, T-236 closed), a Plan ready email goes once a personal plan exists, and a payment puts the buyer into Registered. Checked on a local centre against the simulator (reminders probe 65 of 65, funnel probe 58 of 58, payments 28 of 28), reviewed by a second model with its three real findings fixed, then deployed as version b87e8b1c with reminders still off and pushed to main. Email only, from team@growthclub.org; go-live of T-234, T-228 and T-235 waits only on the Tantra key (T-337). Two limits to know: Tantra campaign emails carry no calendar file attachment, and starting each campaign sends one copy to the sender mailbox itself."
     }
    ],
    "order": 1210,
    "assignee": "Claude",
    "reviewers": [
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ]
   },
   {
@@ -9256,7 +9284,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "done",
    "why": "Attendees who pick Tantra for reminders get 'held until Tantra ships its per-contact send', which will never ship: the owner's model is omni-channel campaigns fed by contact import, available now.",
    "spec": "Replace the spec'd per-contact send with campaign import in the ATTENDEE funnel path: 1) cloud/funnel/worker.js sendEmailsTantra (POST /api/v1/emails/batch) becomes an append to the attendee's reminder campaigns via POST /email-campaigns/:id/contacts with customFields (join link, event time), at the moment each reminder is due, per docs/onboarding-v3/analysis/integrations-tantra-api.md section 5. 2) The centre creates those campaigns for the attendee (extend cloud/src/jobs-tantra.ts: one omni-channel campaign per reminder moment, sending window open all hours, email plus WhatsApp step when connected), matching S1's 'Set Up Your Reminder Campaigns in Tantra' walkthrough (branch tantra-walkthroughs, app/public/walkthroughs/tantra-reminders). 3) Remove TANTRA_NOTE / TANTRA_WAIT and the 'not built' results in cloud/src/jobs-day2.ts, the /emails/batch route in cloud/scripts/vendor-sim.py, cloud/scripts/tantra-send-contract.mjs, and the 'Tantra must ship' wording in docs/onboarding-v3/JOURNEY_R6.md and docs/onboarding-v3/analysis/tantra-reminder-endpoint.md (mark it superseded). 4) Update app/scripts/probe-email-stripe.mjs checks that expect 'not built'. Share the append code with T-234 where possible. T-246 then redeploys existing funnels.\nSupersession note: S2 (2026-10-06) had Adi forward a developer message with cloud/scripts/tantra-send-contract.mjs to Tantra's developers to get a JSON contract report back. Under the omni-channel campaign model that request is withdrawn: nobody waits on or chases a Tantra developer reply, and a report that arrives changes nothing here.",
    "done_when": [
@@ -9292,6 +9320,11 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Session sweep (2026-10-09): source: 7c7d4bae 2026-10-06T20:39 (Tantra developer message with tantra-send-contract.mjs sent to Tantra's developers) is SUPERSEDED by the omni-channel campaign model (CONTEXT2). T-236 already retires it; added the explicit instruction not to chase Tantra developers for contract reports."
+    },
+    {
+     "ts": "2026-10-09T18:42:55+0530",
+     "who": "claude",
+     "note": "Closed by T-123: the attendee funnel's Tantra email no longer calls /emails/batch. Each approved message is its own running Tantra campaign and the funnel imports the contact and adds them when the message is due (commit 12997e9 on main, Worker version b87e8b1c). probe-email-stripe passes 58 of 58 against the simulator."
     }
    ],
    "order": 2360
