@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T08:55:43+0530",
-  "version": 1001,
-  "last_id": 349,
+  "updated": "2026-10-09T09:08:20+0530",
+  "version": 1003,
+  "last_id": 350,
   "team": [
    {
     "name": "Adi",
@@ -11451,6 +11451,35 @@
    ],
    "order": 3490,
    "input_for": "T-348",
+   "kind": "input"
+  },
+  {
+   "id": "T-350",
+   "title": "Input from Adi for T-283: sign in to Twilio (emailed code), Dodo (GrowthClub) and Google Cloud and Admin in the Brave recording window",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (signin): Claude never types passwords or verification codes and never picks an account for Adi. All 8 videos in T-283 are finished from the vendors' own docs; this only lets Claude re-record the in-app part of Twilio, Dodo (Live Mode off) and the Google Cloud and Admin steps on the real screens. Any key made is deleted off camera and logged in scripts/walkthroughs/REVERT_LEDGER.md. Kie.ai, HubSpot, Zoho and Wistia need nothing: attendees bring their own accounts.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "In the Brave recording window, do these sign-ins once (each only swaps the docs section of a finished video for the live screens). 1) Twilio: open https://console.twilio.com/us1/account/keys-credentials/api-keys and type the verification code Twilio emails to the account owner. 2) Dodo: sign in at https://app.dodopayments.com/login with the GrowthClub account (the Google chooser does not offer it). 3) Google: open https://console.cloud.google.com/iam-admin/serviceaccounts and https://admin.google.com/ac/owl/domainwidedelegation and type the password when asked. Optional: Stripe at https://dashboard.stripe.com/login. Then say done on this task.",
+   "log": [
+    {
+     "ts": "2026-10-09T09:08:20+0530",
+     "who": "claude",
+     "note": "Opened by Claude for T-283 on the Orchestrator's decision O-eb9e95da (split the sign-ins into their own input task)."
+    }
+   ],
+   "order": 3500,
+   "input_for": "T-283",
    "kind": "input"
   }
  ]
