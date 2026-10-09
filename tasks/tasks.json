@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T08:40:22+0530",
-  "version": 995,
+  "updated": "2026-10-09T08:40:50+0530",
+  "version": 997,
   "last_id": 349,
   "team": [
    {
@@ -10163,7 +10163,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "blocked",
+   "status": "review",
    "why": "Owner brief 2026-10-08 (scripts/walkthroughs/WORKFLOW.md v2): no walkthrough ships to the centres or the playbook before it passes verification and Adi's review page. Seven were recorded before that brief: Tantra reminder campaigns, Google senders, Stripe, GoHighLevel, HubSpot, Zoho CRM, Wistia.",
    "spec": "They are merged on main but held: app/src/lib/walkthroughs.ts HELD_FOR_REVIEW keeps them off every card and the playbook (main 86096c7). The 4K re-render session (working in /Users/adithyamurali/tantra-walkthroughs per WORKFLOW.md v2) produces the review page. When Adi approves a video, Claude removes its tool from HELD_FOR_REVIEW, reruns app/scripts/embed-walkthroughs.mjs then workshop-plan/build/titlecase.py, embed.py, generate.py, copies the playbook to app/public/materials, deploys and publishes. GoHighLevel, HubSpot, Zoho and Wistia also depend on T-260 (approved tools).",
    "done_when": [
@@ -10172,18 +10172,24 @@
    ],
    "evidence": [
     {
-     "label": "Walkthrough review index (18 videos, 4K)",
-     "url": "http://localhost:8883/wt-review/index.html"
+     "label": "Walkthrough review index (18 videos, 4K, all under 2:00)",
+     "url": "http://localhost:8883/wt-review/index.html?v=0840"
     },
     {
-     "label": "Workflow v2 (plan, live check, record, verify, render, review)",
+     "label": "Zoom recut (1:59)",
+     "url": "http://localhost:8883/wt-review/zoom/index.html?v=0840"
+    },
+    {
+     "label": "Tantra reminders recut (1:58)",
+     "url": "http://localhost:8883/wt-review/tantra-reminders/index.html?v=0840"
+    },
+    {
+     "label": "Workflow v2",
      "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/tantra-walkthroughs/scripts/walkthroughs/WORKFLOW.md"
     }
    ],
-   "blockers": [
-    "Review page from the 4K walkthrough session"
-   ],
-   "needs_from_owner": "Review every 4K walkthrough on the review index and reply approve or redo per video: http://localhost:8883/wt-review/index.html (each video has its own page: /wt-review/<tool>/index.html). Also decide: (1) Two run past 2 minutes (Tantra reminders 2:11 at 46 steps, Zoom 2:02 at 39 steps): say which steps to cut. (2) Tantra reminders: the starter list is a blurred stand-in because the workspace only has client lists; the reminder text on screen is Claude's placeholder, not approved wording; WhatsApp shows 'Not in your plan' (see T-287); the video has no centre-paste step. (3) The Zoom video shows the live app's scope and event lists, not exactly the card's 12 scopes.",
+   "blockers": [],
+   "needs_from_owner": "Reply approve or redo for each of the 18 videos at http://localhost:8883/wt-review/index.html?v=0840 (the two recut ones: /wt-review/zoom/index.html and /wt-review/tantra-reminders/index.html).",
    "log": [
     {
      "ts": "2026-10-08T05:03:55+0530",
@@ -10204,6 +10210,11 @@
      "ts": "2026-10-09T05:06:17+0530",
      "who": "Orchestrator",
      "note": "People: assignee Adi → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-09T08:40:44+0530",
+     "who": "claude",
+     "note": "Zoom (now 1:59, 30 steps) and Tantra reminders (1:58, 28 steps) are recut and re-rendered in 4K; all 18 videos are under 2:00. Zoom shows exactly the card's 12 scopes and only the card's settings, and the d1-zoom education text now matches; reminders uses the real day before copy from the app, a note in place of the blurred list, and ends on Connect Tantra. Checked with verify.py, stills pulled from both new videos and the review pages loading on :8883. Not done: the mp4s are gitignored so only journeys and step lists were pushed (tantra-walkthroughs 01c5f63), and WhatsApp still reads locked on the demo workspace, captioned as such pending T-287."
     }
    ],
    "order": 2820

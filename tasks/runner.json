@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T08:40:55+0530",
+   "task_id": "T-282",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-282 is in review: Zoom (1:59) and Tantra reminders (1:58) are recut and re-rendered in 4K, all 18 videos are under 2:00, and Adi's only job is approve or redo per video at http://localhost:8883/wt-review/index.html — the mp4s are gitignored so only journeys and step lists were pushed, and WhatsApp"
+  },
+  {
    "ts": "2026-10-09T08:22:33+0530",
    "task_id": "T-225",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:05:42+0530",
-   "task_id": "T-238",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-282: Review the seven new walkthrough videos before they go on the centres and playbook",
- "task_id": "T-282",
+ "message": "Acting on 1 note(s) for T-291: Switch the open /preview link to personal links only once the centre build is complete",
+ "task_id": "T-291",
  "entries": [
-  "F-0c9868a9"
+  "F-1aada045"
  ],
  "mode": "feedback",
- "started": "2026-10-09T08:22:56+0530"
+ "started": "2026-10-09T08:41:02+0530"
 }
