@@ -97,8 +97,8 @@
    "summary": "T-100 stays in review: `/vip` is clean at all 7 widths on the live mirror, every count chip matches the template library, and no bonus is tagged \"VIP only\". No fix or republish was needed, so nothing was pushed. Probe output is committed in `workshop-plan/evidence/T-100-vip-probes-2026-10-09.txt`, t"
   }
  ],
- "state": "disabled",
- "message": "Paused by Adi (2026-10-09 20:3x). Resumes when Adi presses Resume.",
+ "state": "paused",
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 97% (new work starts below 70%). Resumes after 00:01.",
  "task_id": null,
  "entries": [
   "F-33d7ff36"

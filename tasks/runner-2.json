@@ -97,10 +97,10 @@
    "summary": "T-050 is in review with Bhaskar: `workshop-plan/sequences/pre.md` is written and committed, covering both lanes. A grep for Build Pass, Live Pass, webinar, dashes and literal cohort dates found nothing, and F-db847ab6 is acked."
   }
  ],
- "state": "disabled",
+ "state": "paused",
  "mode": null,
  "task_id": null,
  "entries": [],
  "started": "2026-10-09T20:25:39+0530",
- "message": "Paused by Adi (2026-10-09 20:3x). Resumes when Adi presses Resume."
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 97% (new work starts below 70%). Resumes after 00:01."
 }
