@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T14:37:41+0530",
-  "version": 1131,
+  "updated": "2026-10-09T17:15:19+0530",
+  "version": 1133,
   "last_id": 357,
   "team": [
    {
@@ -6225,20 +6225,20 @@
    ],
    "evidence": [
     {
-     "label": "User Flows tab",
-     "url": "https://adisuja.github.io/tantra-workshop-live/#flows"
+     "label": "User Flows, live",
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1791546319#flows"
     },
     {
-     "label": "Tasks tab",
-     "url": "https://adisuja.github.io/tantra-workshop-live/#tasks"
-    },
-    {
-     "label": "Board sync + leak guard",
-     "url": "workshop-plan/tasks/sync_board.py"
+     "label": "Old #tasks link (redirects to the Task Command Center)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1791546319#tasks"
     },
     {
      "label": "Flow data + validation",
      "url": "workshop-plan/build/review_hub.py"
+    },
+    {
+     "label": "Hub page",
+     "url": "workshop-plan/index.html"
     }
    ],
    "blockers": [],
@@ -6263,6 +6263,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: since 673a566 (2026-10-08) the hub no longer has a Tasks tab (#tasks redirects to tasks.html, the Task Command Center); the board publishes via launchd com.tantra.board-sync every 300 s (last exit 0); one flow step is broken (d-prove, T-280), so 'every flow link verified' no longer holds."
+    },
+    {
+     "ts": "2026-10-09T17:15:19+0530",
+     "who": "claude",
+     "note": "Amal, ready for your sign-off: open the User Flows link. The broken Prove step now points at the Day 3 chapter as an unnumbered step (the centre has five daily steps and no per-task proof number), the hidden old tasks section and every 'Launch Control' string are gone, and task chips no longer break on a 'recheck' task. Checked live in a headless browser: 48 flow cards render with no script errors, #tasks redirects to the Task Command Center, review_hub.py reports no unknown element; pushed (ab41816, f7978fc) and published to the mirror. T-280 is closed."
     }
    ],
    "order": 1500,
@@ -10657,13 +10662,22 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "done",
    "why": "Found while renaming the board on 2026-10-08; predates that change.",
    "spec": "python3 workshop-plan/build/review_hub.py reports 'flow d-prove: unknown element onboarding/d1-prove'. Point the flow at the current card id (check app/src/lib/workshop-cards.ts) or drop that step, then regenerate workshop-plan/index.html.",
    "done_when": [
     "review_hub.py prints no PROBLEMS"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "User Flows, live",
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1791546319#flows"
+    },
+    {
+     "label": "Flow data",
+     "url": "workshop-plan/build/review_hub.py"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -10676,6 +10690,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): checked, current. pass 2: verified: workshop-plan/build/review_hub.py:367 still points flow d-prove at onboarding/d1-prove, and no d1-prove card exists in app/src/lib/workshop-cards.ts."
+    },
+    {
+     "ts": "2026-10-09T17:15:19+0530",
+     "who": "claude",
+     "note": "Closed as part of T-150: no onboarding element holds a per-task proof number any more (the centre runs five daily steps: Watch, Fill, Get, Do, Ship), so flow step d-prove now points at the Day 3 chapter (playbook/d3), state Built. review_hub.py reports no unknown element; pushed as ab41816 and live on the mirror."
     }
    ],
    "order": 2800

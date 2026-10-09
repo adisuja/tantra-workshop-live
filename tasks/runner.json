@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T17:15:26+0530",
+   "task_id": "T-150",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-150 is in review for Amal and T-280 is done: the hub's Prove step now points at the Day 3 chapter, the hidden tasks section and every \"Launch Control\" string are gone, and it is pushed and live at https://adisuja.github.io/tantra-workshop-live/#flows (48 flow cards, no script errors, `#tasks` redi"
+  },
+  {
    "ts": "2026-10-09T16:39:22+0530",
    "task_id": "T-150",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-134 stays in review: the reference build from the 13:48 pass was rechecked (board up on localhost:8765, dry run works) and the prompt fixes and README are now pushed to origin main (aafe5d9). No real Resend or Dodo test call was made because no test key exists (T-253 already asks for the Dodo one)"
-  },
-  {
-   "ts": "2026-10-09T14:02:30+0530",
-   "task_id": "T-131",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-131 stays in review: the relabel had already shipped (source `03fbae0`, mirror `34daef4`), so nothing changed this run beyond a recheck (0 old labels in the Email, WhatsApp and SMS lanes on origin main, live RSP board answers 200); note F-7894a484 was already acked."
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-150: Workshop Hub: free and paid user-flow maps and post-workshop workflows; tasks live in the Task Command Center",
- "task_id": "T-150",
+ "message": "Acting on 1 note(s) for T-198: Round 5 #4 (Lane B): New centre educates: five UX variants with the why and how beside every card",
+ "task_id": "T-198",
  "entries": [
-  "F-3d3cff60"
+  "F-8d8a4ae9"
  ],
  "mode": "feedback",
- "started": "2026-10-09T17:09:24+0530"
+ "started": "2026-10-09T17:15:33+0530"
 }
