@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T12:49:12+0530",
-  "version": 1065,
+  "updated": "2026-10-09T12:50:36+0530",
+  "version": 1067,
   "last_id": 357,
   "team": [
    {
@@ -10348,6 +10348,11 @@
      "ts": "2026-10-09T12:17:07+0530",
      "who": "claude",
      "note": "Re-run of the same Orchestrator decision (O-580490b7): everything was already applied (commit e73712d, comment on the bhaskardev entry, no alias, ~/.config/tantra/referral-passphrase deleted). Re-checked today: no code under workshop-plan/ops, workshop-plan/tasks, cloud or the launchd jobs reads referral-passphrase, test_referrals.py 27 PASS, and referrals.members() returns bhaskar (team) and bhaskardev (partner) as separate rows. Nothing new to commit or publish."
+    },
+    {
+     "ts": "2026-10-09T12:50:00+0530",
+     "who": "claude",
+     "note": "Re-run of the same Orchestrator decision (O-580490b7): already applied in e73712d, nothing new to change. Re-checked today: the passphrase file is gone and no ops, tasks, cloud or launchd code reads it, test_referrals.py passes with no failures, and bhaskar (team) and bhaskardev (partner) are still separate rows with no alias."
     }
    ],
    "order": 2790
@@ -10443,6 +10448,11 @@
      "ts": "2026-10-09T12:17:39+0530",
      "who": "claude",
      "note": "Re-run of Orchestrator decision O-968e1f77: nothing left to do. Rechecked with gh just now: issue #1, PR #3 and PR #4 are CLOSED (2026-10-09 06:42 UTC), each with the Task Command Center pointer comment; the hub has no link to issue #1 (repo grep and live page both 0 hits) and T-249's ask points at the board."
+    },
+    {
+     "ts": "2026-10-09T12:50:36+0530",
+     "who": "claude",
+     "note": "Re-run of Orchestrator decision O-968e1f77: already applied, nothing left to do. Rechecked with gh: issue #1, PR #3 and PR #4 are CLOSED (2026-10-09 06:42 UTC), each with the Task Command Center pointer comment; the repo and the live hub have no link to issue #1, and T-249's ask points at the board."
     }
    ],
    "order": 2810
