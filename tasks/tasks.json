@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T04:00:23+0530",
-  "version": 1420,
+  "updated": "2026-10-10T04:03:06+0530",
+  "version": 1421,
   "last_id": 380,
   "team": [
    {
@@ -14036,7 +14036,7 @@
    "title": "Trash two undeployed 'Tantra funnel forms receiver' Apps Script projects (boards@fintechcircle.com)",
    "area": "Ops",
    "owner": "Nelbin",
-   "assignee": "Nelbin",
+   "assignee": "Claude",
    "reviewers": [
     "Nelbin"
    ],
@@ -14056,6 +14056,11 @@
      "ts": "2026-10-10T03:59:32+0530",
      "who": "claude",
      "note": "Created from T-107 under orchestrator decision O-75c84b8c."
+    },
+    {
+     "ts": "2026-10-10T04:03:06+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Nelbin → Claude (by Orchestrator)."
     }
    ],
    "order": 3800
