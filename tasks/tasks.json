@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T14:20:03+0530",
-  "version": 1118,
+  "updated": "2026-10-09T14:22:48+0530",
+  "version": 1119,
   "last_id": 357,
   "team": [
    {
@@ -920,6 +920,11 @@
      "ts": "2026-10-09T14:18:24+0530",
      "who": "claude",
      "note": "Every open playbook call is closed and the finished playbook is live: https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1009b. Two sections changed today. In Day 2, S3 (How to Get Registrants to Actually Show Up) the 89% show-up figure is gone from the text, diagram and caption because it matches no band in the Funnel Equations data; it now gives the model's bands (25 to 40% if they skip the thank-you page action, 45 to 70% if they take it). In The Other 17 Funnel Types and the three main cinematics, Apollo is replaced by data-vendor lists; Sales Navigator and the other replaced tools were already out since 7cb1dd6 (Day 1, Day 2 S2 and S6). Checked: probe-playbook clean at 4 widths locally and on the live mirror, banned-tool grep finds only the adverb 'instantly', probe-visual-tools PASS, all 20 funnel boards fit at 5 widths, 5 live cinematics show no Apollo; pushed to main (69864c5) and the mirror (678a78b); T-294, T-297 and T-293 closed, decision noted on T-260. Walkthrough videos stay out until T-282 clears (T-284)."
+    },
+    {
+     "ts": "2026-10-09T14:22:48+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-260."
     }
    ],
    "order": 110,

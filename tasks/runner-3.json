@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T14:22:43+0530",
+   "task_id": "T-020",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-020 stays in review: every open playbook call is closed, the 89% show-up figure is replaced by the Funnel Equations bands (25 to 40% and 45 to 70%), Apollo is out of the cinematics, main (69864c5) and the mirror (678a78b) are pushed, and T-294, T-297 and T-293 are closed. Read it at https://adisuj"
+  },
+  {
    "ts": "2026-10-09T13:51:27+0530",
    "task_id": "T-004",
    "mode": "feedback",
@@ -87,23 +95,14 @@
    "status": "done",
    "result": "ok",
    "summary": "T-279 stays done: the Orchestrator decision was already applied in e73712d (bhaskardev kept as a separate partner with the comment, no alias, passphrase file deleted), and today's re-check found nothing reads the passphrase, `test_referrals.py` passes 27 of 27, and `bhaskar` and `bhaskardev` are sti"
-  },
-  {
-   "ts": "2026-10-09T12:49:18+0530",
-   "task_id": "T-253",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-253 stays blocked: this was a re-run of Orchestrator decision O-f3df9ab0, which was already built and pushed in ad3ebaf, so nothing changed. Type check and guard probe pass again; the Tantra, WebinarGeek, Cal.com, Dodo and Stripe checks still wait on test keys in `~/.config/tantra/keys/vendor-test"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-020",
+ "task_id": "T-294",
  "entries": [
-  "F-c42cbc45",
-  "R-c04ea3cd"
+  "F-154dcb36"
  ],
- "started": "2026-10-09T13:51:32+0530",
- "message": "Acting on 2 note(s) for T-020: The Tantra Playbook (Day-1 deliverable)"
+ "started": "2026-10-09T14:22:49+0530",
+ "message": "Acting on 1 note(s) for T-294: Decide the open calls on the 17 extra funnel animations and the Whole Machine view"
 }
