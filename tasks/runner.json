@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T14:39:00+0530",
+   "task_id": "T-150",
+   "mode": "feedback",
+   "status": "review",
+   "result": "limit",
+   "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
+  },
+  {
    "ts": "2026-10-09T14:28:50+0530",
    "task_id": "T-146",
    "mode": "feedback",
@@ -87,19 +95,11 @@
    "status": "review",
    "result": "ok",
    "summary": "T-292 is in review: Opus (connection 1) is enabled locally at top priority and a real-browser draft logged `claude-opus-5-5`, while a probe draft logged `claude-sonnet-5-5` on connection 3 through a new headless/script rule (commit 2c3323a in tantra-onboarding-v2, not deployed); the live Worker has "
-  },
-  {
-   "ts": "2026-10-09T12:28:00+0530",
-   "task_id": "T-287",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-287 is done: no channel add-ons is recorded, the reminders walkthrough text and 4K video caption now say WhatsApp comes with the plan, and the app fix is up as [PR 196](https://github.com/Usetantra/tantra-frontend-v2/pull/196) for Bharath. I left account counts out because Tantra's live catalog (P"
   }
  ],
- "state": "working",
- "message": "Acting on 1 note(s) for T-150: Workshop Hub: free and paid user-flow maps and post-workshop workflows; tasks live in the Task Command Center",
- "task_id": "T-150",
+ "state": "paused",
+ "message": "Usage limit reached; retries automatically after 15:09. (You've hit your session limit · resets 5pm (Asia/Calcutta))",
+ "task_id": null,
  "entries": [
   "F-3d3cff60"
  ],
