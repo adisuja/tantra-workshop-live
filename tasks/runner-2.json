@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T04:05:47+0530",
+   "task_id": "T-126",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-126 is in review for Ben and Bharath: the new Worker-path probe passes 15 of 15 checks, and the `probe-survey.mjs` deep-link checks still pass. I pushed it to main as 7d8ccb1.\n\nThe probe is `app/scripts/probe-survey-worker.mjs`. It also checks the legacy-answer mapping and the Tantra/Resend remind"
+  },
+  {
    "ts": "2026-10-10T03:59:45+0530",
    "task_id": "T-107",
    "mode": "feedback",
@@ -87,23 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-261 is built and committed locally (5be6f60) and set to review. I did not push or deploy it, and I did not run a full Day 0 walk in the simulator.\n\n- **Not pushed or deployed:** `main` holds other lanes' uncommitted work, so the Worker deploy needs a clean worktree.\n- **Verification:** `tsc` is cl"
-  },
-  {
-   "ts": "2026-10-10T01:13:12+0530",
-   "task_id": "T-259",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "error",
-   "summary": ": \\\"revops-centre\\\",\\n  \\\"main\\\": \\\"src/index.ts\\\",\\n  \\\"compatibility_date\\\": \\\"2026-09-30\\\",\\n  \\\"compatibility_flags\\\": [\\\"nodejs_compat\\\"],\\n  // the attendee's funnel Worker and its schema ship as text: the agent uploads them to their account\\n  \\\"rules\\\": [{ \\\"type\\\": \\\"Text\\\", \\\"globs\\\": [\\\"*"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-126",
+ "task_id": "T-073",
  "entries": [
-  "F-a5fea8a5",
-  "R-b9d47f77"
+  "F-8eeb69d6"
  ],
- "started": "2026-10-10T03:59:56+0530",
- "message": "Acting on 2 note(s) for T-126: Survey answers save to the attendee's centre account: add a probe for the Worker path"
+ "started": "2026-10-10T04:06:05+0530",
+ "message": "Acting on 1 note(s) for T-073: Cut session recordings into the Tantra Pro course"
 }

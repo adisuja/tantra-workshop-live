@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T04:03:06+0530",
-  "version": 1421,
+  "updated": "2026-10-10T04:05:41+0530",
+  "version": 1422,
   "last_id": 380,
   "team": [
    {
@@ -5397,7 +5397,7 @@
    "owner": "Ben",
    "priority": "P2",
    "due": "2026-09-27",
-   "status": "queue",
+   "status": "review",
    "why": "Deep links (#day-N) and saving are fixed, but probe-survey.mjs only tests the old ops mode, so nothing guards the path real attendees use.",
    "spec": "Shipped: bf0c9f6 (deep links #day-2/#day-3 in survey.html and deck.html); 9c4df62 (survey.html on the centre GETs and POSTs /api/survey with the session cookie, cloud/src/index.ts lines 217 to 245, answers restored on any device). The old ops route (?ops=, ?sid=, workshop-plan/ops/ops.py on :8787, launchd com.tantra.ops currently not running) is no longer needed by the centre. Do: extend workshop-plan/probe-survey.mjs (or add app/scripts/probe-survey-worker.mjs) to sign in a test attendee on the local centre (:8790), save a day, open a fresh context and assert the answers come back; optionally drop the unused ?sid hint from the survey comment.",
    "done_when": [
@@ -5406,20 +5406,16 @@
    ],
    "evidence": [
     {
-     "label": "survey #day-2 opens Day 2 (cache-busted)",
-     "url": "http://localhost:8899/survey.html?v=t126#day-2"
+     "label": "probe (Worker path)",
+     "url": "app/scripts/probe-survey-worker.mjs"
     },
     {
-     "label": "deck #day-2 opens Day 2",
-     "url": "http://localhost:8899/deck.html#day-2"
+     "label": "probe (deep links)",
+     "url": "workshop-plan/probe-survey.mjs"
     },
     {
      "label": "commit",
-     "url": "bf0c9f6"
-    },
-    {
-     "label": "probe (deep-links always; device-survival via OPS_BASE=127.0.0.1:port)",
-     "url": "workshop-plan/probe-survey.mjs"
+     "url": "7d8ccb1"
     }
    ],
    "blockers": [],
@@ -5444,6 +5440,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: the ?sid and ops :8787 follow-ups are obsolete: since 9c4df62 survey.html saves per attendee to the centre Worker (D1 survey_answers via same-origin /api/survey); what is left is a probe for that path."
+    },
+    {
+     "ts": "2026-10-10T04:05:41+0530",
+     "who": "claude",
+     "note": "Added app/scripts/probe-survey-worker.mjs: signs in a unique test attendee, fills all 9 Day 2 questions in survey.html, checks POST /api/survey is 200, restores every answer in a fresh browser context, checks 401 with no session, covers legacy SendGrid/Apollo mapping and the Tantra/Resend reminder options, then deletes its rows. Ran on a local centre at :8820 (survey.html only syncs on :8790/:8820/workers.dev and :8790 is held by another worktree): 15/15 pass; probe-survey.mjs deep links pass with the ops-mode check removed; ?sid hint dropped from the survey comment. Pushed 7d8ccb1. Run: node app/scripts/probe-survey-worker.mjs http://localhost:8790"
     }
    ],
    "order": 1240,
