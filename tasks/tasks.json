@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T08:40:50+0530",
-  "version": 997,
+  "updated": "2026-10-09T08:43:53+0530",
+  "version": 998,
   "last_id": 349,
   "team": [
    {
@@ -4130,6 +4130,11 @@
      "ts": "2026-10-09T08:14:00+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-108."
+    },
+    {
+     "ts": "2026-10-09T08:43:53+0530",
+     "who": "claude",
+     "note": "Re-run of the same Orchestrator note (F-a037bc29): nothing new to build, the fix from 05745e5 is already on origin/main and on the mirror. Rechecked today: the git grep for 368, 11.4K and 3.2% returns nothing in funnel-os.tsx and funnel-visuals.tsx, and the live mirror page serves 8.6K visits, 825 registrations, 9.6% on the FunnelOS board. Bhaskar, one open point for your review: the same /masterclass page still shows the old 342K, 11.4K, 368, 179 chain in two other visuals labelled as an illustrative model (day-engine.tsx lines 160 to 163, visuals.tsx line 614; day-art.tsx 241 to 244 holds the same set), which disagrees with the board's 825; I left them because swapping in the 825 set moves the 'weakest layer' callout from Capture to Traffic, which is a copy call, and those files were outside the approved push."
     }
    ],
    "order": 1150,

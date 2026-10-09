@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T08:44:04+0530",
+   "task_id": "T-117",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-117 stays in review for Bhaskar and Bharath: this was a re-fire of an already-handled note, the fix (05745e5) is on origin/main and live on the mirror with 8.6K / 825 / 9.6% on the FunnelOS board, and the note flags that `day-engine.tsx` and `visuals.tsx` still show the old 11.4K / 368 / 179 chain"
+  },
+  {
    "ts": "2026-10-09T08:42:27+0530",
    "task_id": "T-116",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:05:41+0530",
-   "task_id": "T-011",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-117",
+ "task_id": "T-191",
  "entries": [
-  "F-a037bc29"
+  "F-48756ec5"
  ],
- "started": "2026-10-09T08:42:27+0530",
- "message": "Acting on 1 note(s) for T-117: Re-source the /masterclass FunnelOS webinar numbers"
+ "started": "2026-10-09T08:44:16+0530",
+ "message": "Acting on 1 note(s) for T-191: Decide the calls still open from Nelbin's content pass"
 }
