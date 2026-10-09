@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T18:03:45+0530",
+   "task_id": "T-102",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-102 is in review for Ben and Bharath: after the T-093 republish renamed the join button to \"Show me the add-on\", I fixed the probe's stale selector and the live wiring probe passes 27 of 27 on the mirror with 0 pending (commit fa43464, not pushed; no site fix or republish was needed). The second t"
+  },
+  {
    "ts": "2026-10-09T18:00:25+0530",
    "task_id": "T-097",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "limit",
    "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T14:38:53+0530",
-   "task_id": "T-144",
-   "mode": "feedback",
-   "status": "review",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-102",
+ "task_id": "T-322",
  "entries": [
-  "F-3208d3a0"
+  "F-d10fa748"
  ],
- "started": "2026-10-09T18:00:32+0530",
- "message": "Acting on 1 note(s) for T-102: Live wiring audit and fixes"
+ "started": "2026-10-09T18:03:49+0530",
+ "message": "Acting on 1 note(s) for T-322: Task Command Center: the public board saves every action directly (no GitHub)"
 }
