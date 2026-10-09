@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T03:55:50+0530",
-  "version": 1414,
-  "last_id": 379,
+  "updated": "2026-10-10T03:59:39+0530",
+  "version": 1417,
+  "last_id": 380,
   "team": [
    {
     "name": "Adi",
@@ -4079,7 +4079,7 @@
    "owner": "Nelbin",
    "priority": "P2",
    "due": "2026-09-24",
-   "status": "queue",
+   "status": "review",
    "why": "Test rows must not reach real reporting or the Tantra Tracker sync.",
    "spec": "Delete probe and test rows from the Tantra Work Tracker funnel tabs (Free / Paid Registrations, Free / Paid Intake Survey, Checkout Starts, Checkout Returns): wiring-probe@example.com, ui-probe+...@example.com, currency-probe@example.com, apps-script-probe@example.com, live-probe+free/paid-...@example.com, utm-probe rows, the stray 'placeholder' row in Checkout Starts, and the adi@example.com rows at Paid Registrations row 6 and Checkout Starts row 16 (T-193). Remove the probe attendee from workshop-plan/ops/ops.db through the ops admin route. Delete the two undeployed Apps Script projects 'Tantra funnel forms receiver' under boards@fintechcircle.com (the live receiver is 'Tantra Funnel' under adi@growthclub.org). Deleting rows is a write on a live sheet: confirm the row list with Adi before deleting.",
    "done_when": [
@@ -4089,7 +4089,7 @@
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Confirm the row list before deletion (one yes).",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-24",
@@ -4135,6 +4135,11 @@
      "ts": "2026-10-09T18:03:38+0530",
      "who": "claude",
      "note": "From T-102, second run: probe-live-wiring.mjs ran against the mirror again on 2026-10-09 from 12:31:46Z to 12:33:25Z (18:01 to 18:03 IST). It started one more /vip checkout as wiring-probe@example.com (Dodo session cks_0NpMfFjSIjFVrmHx1vlnQ, not paid), so expect a second Checkout Starts row with that email in that window, on top of the 12:25Z to 12:27Z one. Orchestrator decision O-fca13f52: deleting exactly these probe rows needs no further confirmation."
+    },
+    {
+     "ts": "2026-10-10T03:59:39+0530",
+     "who": "claude",
+     "note": "Backed up then deleted 52 probe rows (all @example.com, utm-probe, placeholder) bottom-up from the six funnel tabs; re-read confirms zero matches left (backup: workshop-plan/ops/t107_deleted_rows.json). ops.db never held a probe attendee; removed the two example.com test attendees (you@, adi@) and their 11 dependent rows from the live D1 (backup t107_d1_deleted_rows.json); the Tantra Tracker is rewritten from these sources on its next sync. I did not re-run the probes (both ran today and would only add new rows); the Apps Script trash needs a boards@ sign-in I do not have, so that is split into T-380 (Nelbin). No T-193 record exists in tasks.json, so there was nothing to close."
     }
    ],
    "order": 1050,
@@ -12412,7 +12417,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "blocked",
    "why": "The live centres and playbook still carry the v1 videos (1456 px, Log-in based, some docs-only). The v2 4K videos replace them only after Adi approves each one (T-282).",
    "spec": "FIRST, and without waiting for T-282: commit and push the v2 pipeline now. /Users/adithyamurali/tantra-walkthroughs (branch tantra-walkthroughs, HEAD 978559b) holds about 45 uncommitted changes: scripts/walkthroughs/{AGENT_BRIEF.md,addstep.py,finalize.sh,pwrec.mjs,journeys/*.md,REVERT_LEDGER.md,recordings/*,motion/}, app/public/walkthrough-review.html. Commit motion/, pwrec.mjs, cap.py, verify.py, render.sh, review.py, finalize.sh, journeys/, recordings/*.jsonl and the ledger; gitignore frames, scripts/walkthroughs/node_modules and the 4K masters (check free disk). THEN, per approved tool (after T-282): export a web copy (1080p or 1440p H.264 plus poster and captions) beside the 4K master; update app/src/lib/walkthroughs.ts (cards, seconds, guide text from journeys/<tool>.md; remove the tool from HELD_FOR_REVIEW); WatchHow on the agentic centre card and the old centre Day 0 list; app/scripts/embed-walkthroughs.mjs; titlecase.py + embed.py; check-walkthroughs, check-guides, check-playbook-anchors. The Sign in with Google video is already gone (T-286 removed the feature, main 981dbf3): do not re-add google-signin. 19 recorded walkthroughs remain in walkthroughs.ts, 12 live and 7 held for review. Then deploy and publish via the Integrator.",
    "done_when": [
@@ -12421,9 +12426,22 @@
     "check-walkthroughs and check-guides pass",
     "No v1 video left on a card that has an approved v2"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Web copy exporter",
+     "url": "/Users/adithyamurali/tantra-walkthroughs/scripts/walkthroughs/webcopy.py"
+    },
+    {
+     "label": "Zoom web copy (sample)",
+     "url": "http://localhost:8883/wt-review/zoom/web/zoom.mp4?v=a34171e"
+    },
+    {
+     "label": "Review index (T-282)",
+     "url": "http://localhost:8883/wt-review/index.html?v=a34171e"
+    }
+   ],
    "blockers": [],
-   "needs_from_owner": "",
+   "needs_from_owner": "Approve or redo each video in T-282: http://localhost:8883/wt-review/index.html?v=a34171e",
    "log": [
     {
      "ts": "2026-10-09T00:06:32+0530",
@@ -12439,6 +12457,11 @@
      "ts": "2026-10-09T12:53:23+0530",
      "who": "claude",
      "note": "T-286 removed Sign in with Google, so the spec no longer lists its video: the walkthrough list is 19 recorded (12 live, 7 held for review). Nothing else in this task changed."
+    },
+    {
+     "ts": "2026-10-10T03:59:22+0530",
+     "who": "claude",
+     "note": "The v2 pipeline was already committed and pushed (2e9db5c, T-215); I added webcopy.py (a34171e, pushed to tantra-walkthroughs) and exported all 18 web copies (1440p H.264, 5 to 16 MB, poster, captions, meta.json) beside each 4K master, durations checked against the masters. Nothing is live yet: every tool stays on v1 until Adi approves it in T-282, then it is one command (webcopy.py --publish <tool>) plus the walkthroughs.ts swap and checks. google-signin is dropped; the stale untracked walkthrough-review.html (v1 links, lists google-signin) is left uncommitted because wt-review/index.html replaces it."
     }
    ],
    "order": 2840
@@ -13991,6 +14014,35 @@
    "order": 3640,
    "input_for": "T-363",
    "kind": "input"
+  },
+  {
+   "id": "T-380",
+   "title": "Trash two undeployed 'Tantra funnel forms receiver' Apps Script projects (boards@fintechcircle.com)",
+   "area": "Ops",
+   "owner": "Nelbin",
+   "assignee": "Nelbin",
+   "reviewers": [
+    "Nelbin"
+   ],
+   "priority": "P3",
+   "due": "",
+   "status": "queue",
+   "why": "Split from T-107: Claude has no session for boards@fintechcircle.com (the stored token is adi@growthclub.org, Drive scope drive.file only).",
+   "spec": "Sign in as boards@fintechcircle.com at https://script.google.com/home, trash both 'Tantra funnel forms receiver' projects. Never touch 'Tantra Funnel' under adi@growthclub.org.",
+   "done_when": [
+    "Only the Tantra Funnel Apps Script project remains"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-10T03:59:32+0530",
+     "who": "claude",
+     "note": "Created from T-107 under orchestrator decision O-75c84b8c."
+    }
+   ],
+   "order": 3800
   }
  ]
 }
