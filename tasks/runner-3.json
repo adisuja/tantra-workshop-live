@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T03:54:43+0530",
+   "task_id": "T-270",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-270 is in review: all five open findings (N068, N069, N070, N080, N088) are fixed, live on the centre and marked fixed in AUDIT.md. The changes are in commit 9fca8f3, pushed with main at 147b841, Worker 4cc3b694 is deployed, mirror 11ef710 is published, my 21-check probe passes on my own local ser"
+  },
+  {
    "ts": "2026-10-10T02:22:35+0530",
    "task_id": "T-257",
    "mode": "feedback",
@@ -87,23 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-217 is in review. Most of it had already landed on main with T-123 (5bde29e), so my change on branch `tantra-campaign-import` (f0b5528, pushed) is small.\n\n- **Already on main:**\n  - The funnel worker enrols each registrant through Tantra's contact import, one single-step campaign per touch.\n  - `/"
-  },
-  {
-   "ts": "2026-10-09T20:03:59+0530",
-   "task_id": "T-213",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-213 is in review. The warm-up job waits on Tantra, the worker is deployed and the lead email works. I did not push, because local main and `origin/main` have diverged.\n\n- **Instantly removed:** the start-endy warm-up job now waits for inboxes to show Connected and Gmail capable in Tantra Accounts."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-270",
+ "task_id": "T-081",
  "entries": [
-  "F-83697c86",
-  "R-0efdd2ed"
+  "F-36015e93"
  ],
- "started": "2026-10-10T03:30:40+0530",
- "message": "Acting on 2 note(s) for T-270: New centre cards: teach by default, examples on every field, no paid auto-drafts"
+ "started": "2026-10-10T03:54:56+0530",
+ "message": "Acting on 1 note(s) for T-081: Add the six funnel tabs to the Consolidated Funnel Doc"
 }

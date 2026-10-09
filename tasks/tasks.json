@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T03:46:08+0530",
-  "version": 1405,
+  "updated": "2026-10-10T03:53:09+0530",
+  "version": 1409,
   "last_id": 379,
   "team": [
    {
@@ -2158,7 +2158,7 @@
    "owner": "Bhaskar",
    "priority": "P2",
    "due": "2026-09-21",
-   "status": "queue",
+   "status": "blocked",
    "why": "Second organic lane after content posting.",
    "spec": "Build the cold calendar outreach list for the workshop and import it into Tantra as a contact list for a calendar-invite campaign. Owner model (2026-10-07): Tantra sends the cold calendar invites through a Google service account per Workspace user uploaded to Tantra; bought lists come pre-verified (no ZeroBounce or NeverBounce). Sources: reuse existing client lists where the person overlaps (UNVERIFIED that Adi still wants this), and LinkedIn Sales Navigator exports only if T-260 approves Sales Navigator. No Expandi, Apollo, HeyReach or Instantly. The import screen in Tantra shows the upload limit (s1-cold-calendar guide, b88a7a6), so record it when importing.",
    "done_when": [
@@ -2169,7 +2169,7 @@
    "blockers": [
     "T-147 calendar.usetantra.com times out from this Mac (rechecked 2026-10-08)"
    ],
-   "needs_from_owner": "",
+   "needs_from_owner": "Sign in to usetantra.com as Adi (or paste a Tantra API key) so the import can run: Contacts > Import > upload /Users/adithyamurali/pro-workflows-suite/followup-engine/Processed_Phase1/workshop_cold_calendar.csv as list 'Workshop cold calendar'. Then the draft calendar-invite campaign and the import limit are done in minutes.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2195,6 +2195,11 @@
      "ts": "2026-10-09T08:02:06+0530",
      "who": "claude",
      "note": "T-260 settled the Sales Navigator question (2026-10-09, O-5ba08511): Sales Navigator is replaced by data-vendor lists through the list-partner card, so build the cold calendar lists from those. Only the T-147 blocker remains."
+    },
+    {
+     "ts": "2026-10-10T03:53:09+0530",
+     "who": "claude",
+     "note": "Built the cleaned list (126 work-email contacts from the verified prospect CSV, 6 free-mail dropped, 0 duplicates, 0 invalid; saved outside the repo because it holds personal data). I have no Tantra login in this run and may not sign in as Adi, so the import, import limit and draft calendar-invite campaign are not done; T-058 stays blocked."
     }
    ],
    "order": 350,
@@ -11574,18 +11579,36 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Copy that contradicts its own fields makes attendees distrust the centre.",
    "spec": "Fix card copy in app/src/lib/workshop-cards.ts and agent.tsx so it matches the fields and jobs: reminder fields vs promises, RSP bridge threshold from rsp_bridge_pct, newsletter limits and labels, drop SMS promise, tag list by funnel shape, Sales Navigator asks for LinkedIn URL, list-source prompt order, conditional excluded countries, link Tantra Pro, test inbox naming, field numbering in why, brand anecdote, one warm-up figure, unsourced list size, DKIM come-back reminder, hw_proof optional, realistic commit examples, CRM import beyond CSV. Closes audit findings N039, N040, N041, N042, N048, N051, N052, N053, N056, N058, N071, N072, N086, N087, N089, N093, N094, X073. Per finding: N039 (app/src/lib/workshop-cards.ts): Add after-session fields per day (and a day-before reminder) or reword step 1 to match the five fields. N040 (app/src/lib/workshop-cards.ts): Reword to 'before the bridge point you set' or render the threshold from rsp_bridge_pct. N041 (app/src/lib/workshop-cards.ts): Set nl_1..4 limits to 250 to 350 and nl_wa to 40 to 90, and put the range in each label. N042 (app/src/lib/workshop-cards.ts): Remove the SMS promise or add an SMS field. N048 (app/src/lib/workshop-cards.ts): Generate the tag list from the funnel shape (challenge and rsp tags). N051 (app/src/app/onboarding/centre/agent.tsx): For Sales Navigator, ask for LinkedIn URL instead of email and say rows go to LinkedIn only. N052 (app/src/app/onboarding/centre/agent.tsx): Show a 'Pick your list source on the previous card first' line until d1v5_list is set. N053 (app/src/lib/workshop-cards.ts): Make it required when d1_gdpr is 'Checked: some countries are excluded'. N056 (app/src/lib/workshop-cards.ts): Link Tantra Pro to its page (or support markdown links in Inline). N058 (app/src/lib/workshop-cards.ts): Name the test inboxes by the picked stack_reminder_email, or say 'test inboxes' generically. N071 (app/src/lib/workshop-cards.ts): Make why say fields 1 to 4 are filters and 5 to 10 are copy, matching the steps. N072 (app/src/lib/workshop-cards.ts): Drop the anecdote and state what breaks without brand rules. N086 (app/src/app/onboarding/centre/agent.tsx): Use one warm-up figure (WARMUP_DAYS) everywhere. N087 (app/src/app/onboarding/centre/agent.tsx): Derive it from the sizing inputs or remove it. N089 (app/src/lib/workshop-cards.ts): Send a reminder (email or WhatsApp) when Google offers DKIM and resurface the card. N093 (app/src/lib/workshop-cards.ts): Make hw_proof optional (or accept 'attached elsewhere') and add an example. N094 (app/src/lib/workshop-cards.ts): Rewrite commit examples to tasks the attendee actually does and match the 13 webinar messages. X073 (app/src/lib/workshop-cards.ts): Pull contacts from a connected GHL, HubSpot or Zoho CRM via its search API instead of a CSV. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Dependencies: N051 is obsolete once T-251 merges (verify on main, then mark obsolete). N058: name test inboxes for Resend or Tantra only. X073 waits on T-260 (GoHighLevel, HubSpot and Zoho are not on the approved list; T-120); if they are dropped, mark X073 obsolete. N042: SMS is Twilio, WhatsApp is Tantra (owner 2026-10-07). Merge order: build on main after T-251 lands (branch tantra-walkthroughs: e4bd0b8 removes the ruled-out tools and rewrites workshop-cards.ts, agentic.ts, jobs.ts, agent.tsx and coverage.json; probe fixes 043b5ab and aa22a3f, no READY yet in /Users/adithyamurali/tantra-round5-coord/LOG.md). Until then branch from tantra-walkthroughs; AUDIT.md line numbers predate that change.",
    "done_when": [
     "Each listed card reads consistent with its fields and jobs",
     "Every listed finding id is marked fixed in AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Branch t-271-card-copy",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/compare/main...t-271-card-copy"
+    },
+    {
+     "label": "Probe",
+     "url": "app/scripts/probe-t271-cards.mjs"
+    },
+    {
+     "label": "Shot: CRM list card",
+     "url": "/tmp/t271-shots/d1-list-build-crm.png"
+    },
+    {
+     "label": "Shot: challenge CRM tags",
+     "url": "/tmp/t271-shots/d1-crm-challenge.png"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -11598,6 +11621,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: N051 (Sales Navigator) and N058 simplify once T-251 merges (Sales Navigator text is gone from agent.tsx on tantra-walkthroughs; REMINDER_EMAIL becomes Resend or Tantra); X073 (pull contacts from GHL, HubSpot or Zoho) depends on the T-260 / T-120 decision because those CRMs are not on the approved list."
+    },
+    {
+     "ts": "2026-10-10T03:51:52+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T03:51:52+0530",
+     "who": "claude",
+     "note": "Fixed 16 card findings plus X073 on branch t-271-card-copy (pushed, 767e3a6 + probe 517cfde): card copy now matches each card's fields and jobs, and a prospect list can pull straight from a connected GoHighLevel, HubSpot or Zoho CRM. Checked on my own local stack with the new probe-t271-cards: 38/38 pass (HubSpot 234 kept and 26 Germany left out, GoHighLevel 130, Zoho 42), typecheck clean. N051 is obsolete; N089 becomes obsolete once T-299 lands (it removes the DKIM card). Main's day-1 probes have been stalling since T-269's Title Case headings, so I did not run them. AUDIT.md and the READY line in LOG.md are updated."
     }
    ],
    "order": 2710
@@ -12779,6 +12812,11 @@
      "ts": "2026-10-09T14:18:08+0530",
      "who": "claude",
      "note": "Done inside T-020: Apollo is out of all 16 FunnelOS cinematic files (logo chips and tool rails now show Data-vendor lists, the apollo logo id is deleted) and probe-visual-tools bans it. Checked: git grep -i -w apollo on app/src/components/masterclass returns nothing, probe-visual-tools PASS, probe-funnel-boards ALL BOARDS FIT at 5 widths on 20 routes, and five live cinematics on the mirror show no Apollo (main bbb6a23, origin 69864c5, mirror 678a78b)."
+    },
+    {
+     "ts": "2026-10-10T03:52:13+0530",
+     "who": "claude",
+     "note": "Already applied, so no agent run was needed: The 2026-10-09T14:18 log confirms all Apollo references were removed, probes passed, and the mirror was published. Commit e1d2338 explicitly marks T-293 as closed. [gemini/gemini-3.1-flash-lite-preview via OmniRoute] (checked by Haiku against the log and commits)."
     }
    ],
    "order": 2930
