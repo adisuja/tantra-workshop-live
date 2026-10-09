@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T07:53:40+0530",
-  "version": 961,
+  "updated": "2026-10-09T07:53:53+0530",
+  "version": 962,
   "last_id": 347,
   "team": [
    {
@@ -2197,6 +2197,11 @@
      "ts": "2026-10-09T07:53:40+0530",
      "who": "claude",
      "note": "Rebuilt /pro as the Tantra Pro Course ($999 one-time: course, community, group coaching calls, recordings) in Backlinko voice; no n8n, no $50M+, no cohort copy. Created Dodo product pdt_0NpKlRqJAjyAf3axboQSR (USD 999, EUR 997, INR 99,999 via prices-pro.json + dodo-setup.mjs --product pro); other currencies are charged in USD. probe-pro.mjs passes 30/30 on the live mirror, following the real button to Dodo, which shows $999.00, €997.00 and ₹99,999.00 incl. GST (never pays). Code pushed as branch agent/t-071-pro-course only (main has other lanes' unpushed commits). Open gap: no automatic fulfilment yet, buyers get course/community access by email from the team."
+    },
+    {
+     "ts": "2026-10-09T07:53:53+0530",
+     "who": "claude",
+     "note": "Checked 9 related task(s); updating T-116, T-129, T-087."
     }
    ],
    "order": 430,
