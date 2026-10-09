@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T10:01:44+0530",
+   "task_id": "T-299",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "limit",
+   "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
+  },
+  {
    "ts": "2026-10-09T09:31:39+0530",
    "task_id": "T-149",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-260 is in review: the tools that were kept now run on the attendee's own key, and the playbook and guides are republished to the public mirror. The centre itself isn't deployed, so the new jobs reach live attendees only after the next Integrator deploy.\n\n- **What it does:** the agent uploads the t"
-  },
-  {
-   "ts": "2026-10-09T07:25:32+0530",
-   "task_id": "T-071",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "limit",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "paused",
  "mode": "feedback",
  "task_id": null,
  "entries": [
-  "F-444cb6d4"
+  "F-4257e252"
  ],
- "started": "2026-10-09T09:31:36+0530",
- "message": "Usage limit reached; retries automatically after 10:01. (You've hit your session limit · resets 12pm (Asia/Calcutta))"
+ "started": "2026-10-09T10:01:41+0530",
+ "message": "Usage limit reached; retries automatically after 10:31. (You've hit your session limit · resets 12pm (Asia/Calcutta))"
 }

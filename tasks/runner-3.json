@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T10:01:44+0530",
+   "task_id": "T-133",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "limit",
+   "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
+  },
+  {
    "ts": "2026-10-09T09:31:40+0530",
    "task_id": "T-133",
    "mode": "feedback",
@@ -87,14 +95,6 @@
    "status": "doing",
    "result": "limit",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:06:04+0530",
-   "task_id": "T-033",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "paused",
@@ -104,6 +104,6 @@
   "F-1885ef4c",
   "R-208da357"
  ],
- "started": "2026-10-09T09:29:26+0530",
- "message": "Usage limit reached; retries automatically after 10:01. (You've hit your session limit · resets 12pm (Asia/Calcutta))"
+ "started": "2026-10-09T10:01:41+0530",
+ "message": "Usage limit reached; retries automatically after 10:31. (You've hit your session limit · resets 12pm (Asia/Calcutta))"
 }
