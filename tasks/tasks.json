@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T13:28:57+0530",
-  "version": 1087,
+  "updated": "2026-10-09T13:33:47+0530",
+  "version": 1089,
   "last_id": 357,
   "team": [
    {
@@ -11364,11 +11364,12 @@
    "owner": "Nelbin",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "blocked",
+   "status": "review",
    "why": "Adi's three reasons for Google Workspace (calendar invites by service account, vendor-supplied cold email inboxes, GA4 and sign-up address) differ from what the centre builds; building mailboxes ourselves and warming on Instantly contradicts the approved vendor stack.",
    "spec": "Adi's model (2026-10-07): (1) Cold calendar invites: one Google service account per Workspace user, each uploaded to Tantra. (2) Cold email: inboxes are Google Workspace users bought through the inbox vendor, who handles the domain cost and SPF, DKIM and DMARC, hosts the accounts in their own Cloudflare and connects them to Tantra; we never build mailboxes ourselves. (3) Google also gives GA4 and one address the attendee signs up to other tools with. The centre today still does the old thing. To build on a branch: A) cold email: make the partner card (id start-endy, app/src/lib/workshop-cards.ts around line 356, never names Endy) the only mailbox path; remove the 'MAIL_OWN' build-your-own path, the start-workspace card ('Let the agent into Google Workspace'), the mailboxes, m365-mailboxes and warmup jobs (cloud/src/agentic.ts, jobs.ts, jobs-m365.ts) and the Instantly warm-up watcher (cloud/src/connectors/instantly.ts, agentic.ts line 25). After the vendor delivers, the attendee gives the vendor the service account client ID and the three scopes, then in Tantra Accounts uses Verify and Add; the agent confirms in Tantra that every inbox shows Connected and Gmail capable and is warming (see T-213 for the vendor flow and T-263 for the Tantra GET /accounts check). B) calendar: the calendar-workspace card asks for several senders, with steps to create a service account per sender and upload each to Tantra (journey: scripts/walkthroughs/journeys/google-senders.md; Adi's note: one service account per Workspace covers every mailbox). C) add a short card 'Pick the address you sign up to tools with' (one Workspace user). D) update probes (probe-stack, probe-domain-chain, probe-day1/day2) and the simulator, then the 'Set Up Your Vendor Inboxes' walkthrough text. Ship on a branch, READY in /Users/adithyamurali/tantra-round5-coord/LOG.md; Integrator merges and deploys.",
    "done_when": [
@@ -11378,11 +11379,24 @@
     "probe-stack, probe-domain-chain, probe-day1 and probe-day2 pass in run-chain",
     "READY in LOG.md and merged by the Integrator"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Branch t-299-vendor-inboxes",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/tree/t-299-vendor-inboxes"
+    },
+    {
+     "label": "Card screenshots (sign-up address, inboxes in Tantra, calendar senders)",
+     "url": "/tmp/t299/d0"
+    },
+    {
+     "label": "Cards source",
+     "url": "/Users/adithyamurali/tantra-t299/app/src/lib/workshop-cards.ts"
+    }
+   ],
    "blockers": [
     "Adi: remove or keep the build-your-own-mailbox path"
    ],
-   "needs_from_owner": "Confirm removing the build-your-own-mailbox path (cards start-workspace and the mailboxes job) now that inboxes come only from the vendor: reply remove or keep.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-09T00:25:38+0530",
@@ -11393,6 +11407,16 @@
      "ts": "2026-10-09T00:25:55+0530",
      "who": "claude",
      "note": "Waiting on Adi's decision (see needs_from_owner)."
+    },
+    {
+     "ts": "2026-10-09T13:33:47+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T13:33:47+0530",
+     "who": "claude",
+     "note": "Built on branch t-299-vendor-inboxes (bb11531, pushed, READY in LOG.md): the partner card is the only cold email inbox path and the mailbox-building, Microsoft 365 and Instantly warm-up code is gone; the calendar card takes several senders with one service account each; a new card asks for the sign-up address. Checked on a private simulator stack: probe-domain-chain 42, day1 36, day2 61 and probe-stack 59 all pass, and I looked at the three cards in a headless browser. Not live yet: the Integrator still has to merge and deploy; the old Instantly campaign-launch code (not mailboxes) is left in place."
     }
    ],
    "order": 2990
