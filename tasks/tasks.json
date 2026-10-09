@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T13:09:24+0530",
-  "version": 1080,
+  "updated": "2026-10-09T13:11:23+0530",
+  "version": 1081,
   "last_id": 357,
   "team": [
    {
@@ -11467,8 +11467,7 @@
   },
   {
    "id": "T-303",
-   "title": "Transcribe the reference VSL and write Richard's own VSL recording script",
-   "area": "Content",
+   "status": "review",
    "owner": "Bhaskar",
    "assignee": "Claude",
    "reviewers": [
@@ -11477,32 +11476,17 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
-   "why": "Adi wants a recordable script so Richard can produce a VSL for the thank-you pages without Adi writing it.",
-   "spec": "Adi's request (2026-10-07): the reference video /Users/adithyamurali/tantra-redesign/reference/monetise-survey-vsl-720p.mp4 is the VSL on the thank-you page that helps people complete registration. (1) Transcribe it with timestamps (already done once to /tmp/vsl-ref-transcript.txt, outside the repo and not yet read; redo into the repo, e.g. docs/vsl/reference-transcript.md, if the tmp file is gone). (2) Write a separate VSL script that follows the same structure but is built on OUR webinar and masterclass content (both webinars differ from the reference), for Richard to record. (3) Do NOT change the thank-you page now; the finished video later goes in through T-060 (VSL_SRC). Copy rules: workshop-plan/COPY_RULES.md (Backlinko voice), no dashes, no invented stats or testimonials, no 'webinar' wording in public copy, never say nothing is sold. Material found in the session: another brand's masterclass sources (a private folder outside this repo) and its nurture page lead magnets (Databricks Cost Field Guide, Databricks Cost X-Ray); use them only as structural reference, not as content for our script.",
-   "done_when": [
-    "The reference transcript with timestamps is committed in the repo",
-    "A script for Richard with timed sections matching the reference structure and our own workshop content is committed and linked on this task",
-    "No dashes and no unsourced claims in the script (probe-voice style scan)"
-   ],
+   "area": "Content",
+   "order": 3030,
+   "title": "T-303: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
    "evidence": [],
-   "blockers": [
-    "Who Richard is and which thank-you page the script serves"
-   ],
-   "needs_from_owner": "confirm who Richard is for this script (the notes only say Richard records it) and which funnel's thank-you page it serves (free /workshop/success, paid /masterclass/success, or both).",
-   "log": [
-    {
-     "ts": "2026-10-09T00:25:38+0530",
-     "who": "claude",
-     "note": "Added from the session sweep (2026-10-09): source: 7c7d4bae 2026-10-07T12:01 owner request, interrupted at 12:03 before the script was written; nothing in the repo (only /tmp/vsl-ref-transcript.txt, outside the repo)."
-    },
-    {
-     "ts": "2026-10-09T00:25:55+0530",
-     "who": "claude",
-     "note": "Waiting on Adi's decision (see needs_from_owner)."
-    }
-   ],
-   "order": 3030
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-322",
