@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T12:15:01+0530",
+   "task_id": "T-281",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-281 is done: issue #1, PR #3 and PR #4 are closed with pointer comments to the Task Command Center, the hub Schedule tab no longer links issue #1 (live on main and the mirror), and T-249's ask now points at the board. Pushing main also carried the 28 agent commits that were waiting locally."
+  },
+  {
    "ts": "2026-10-09T12:12:07+0530",
    "task_id": "T-279",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-283 is in review: all 8 walkthroughs are now single 4K cuts under 2 minutes with the key route filmed from each vendor's public docs (not a live account), the Twilio, Dodo and Google sign-ins are split into T-350, and the review pages are local only at http://localhost:8883/wt-review/index.html?v="
-  },
-  {
-   "ts": "2026-10-09T08:40:26+0530",
-   "task_id": "T-225",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-225 stays blocked on Zoom Support only: today's read-only check shows no grant yet, the daily 09:10 check is loaded and will log, apply and confirm the grant itself, and nothing is asked of Adi.\n\nTwo limits on that check:\n- **Account settings not readable:** the Zoom app lacks the account-settings"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-281",
+ "task_id": "T-286",
  "entries": [
-  "F-c6bf216d"
+  "F-20077b52"
  ],
- "started": "2026-10-09T12:12:12+0530",
- "message": "Acting on 1 note(s) for T-281: Close the old launch checklist issue and open PRs now tracked here"
+ "started": "2026-10-09T12:15:07+0530",
+ "message": "Acting on 1 note(s) for T-286: Decide: keep or remove the Sign in with Google button on the Workspace and GA4 cards"
 }
