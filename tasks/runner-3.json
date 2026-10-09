@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T13:51:27+0530",
+   "task_id": "T-004",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-004 done: the six prices are locked in `app/src/lib/prices.json` (amounts unchanged, only that commit pushed to origin main as a96140e), the live wiring probe passed every check up to Dodo's hosted checkout with the prefilled email, T-103 is closed without re-running its checkout-currency probe (l"
+  },
+  {
    "ts": "2026-10-09T13:48:55+0530",
    "task_id": "T-134",
    "mode": "feedback",
@@ -87,22 +95,15 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-253 stays blocked: this was a re-run of Orchestrator decision O-f3df9ab0, which was already built and pushed in ad3ebaf, so nothing changed. Type check and guard probe pass again; the Tantra, WebinarGeek, Cal.com, Dodo and Stripe checks still wait on test keys in `~/.config/tantra/keys/vendor-test"
-  },
-  {
-   "ts": "2026-10-09T12:48:30+0530",
-   "task_id": "T-149",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-149 stays blocked on Adi's Codex sign-in (T-340): the check script, hourly launchd check and labelled Fable 5 fallback were already built, the check still fails with HTTP 401, and note F-444cb6d4 was already acked."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-004",
+ "task_id": "T-020",
  "entries": [
-  "F-0334459d"
+  "F-c42cbc45",
+  "R-c04ea3cd"
  ],
- "started": "2026-10-09T13:49:00+0530",
- "message": "Acting on 1 note(s) for T-004: Seat checkout (Dodo, live), geo-priced"
+ "started": "2026-10-09T13:51:32+0530",
+ "message": "Acting on 2 note(s) for T-020: The Tantra Playbook (Day-1 deliverable)"
 }

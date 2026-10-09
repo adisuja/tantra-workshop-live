@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T13:48:52+0530",
-  "version": 1098,
+  "updated": "2026-10-09T13:51:22+0530",
+  "version": 1100,
   "last_id": 357,
   "team": [
    {
@@ -456,7 +456,7 @@
    "owner": "Ben",
    "priority": "P0",
    "due": "2026-09-18",
-   "status": "review",
+   "status": "done",
    "why": "The $99 / ₹9,999 front-end must self-liquidate ad spend, so checkout has to be real and tamper-proof.",
    "spec": "Seat checkout: /api/checkout (app/src/app/api/checkout/route.ts) mints a Dodo hosted checkout server-side and falls back to the hosted link on static hosts; Stripe is the attendee alternative (T-218, done). Per-currency prices live in app/src/lib/prices.json (USD 9900, INR 999900, EUR 8900, GBP 7900, AUD 14900, CAD 13900, SGD 12900, AED 36900 minor units) and are pushed to Dodo as localized price rules by app/scripts/dodo-setup.mjs; the webhook verifies the signature. Dodo product pdt_0NnpA6EIxXvDvS1F03N8Z is named 'The 3-Day AI RevOps Workshop'. Access after payment is T-122; key rotation is T-005 (after launch). Once Adi confirms, run node app/scripts/probe-live-wiring.mjs locally and close.",
    "done_when": [
@@ -471,10 +471,18 @@
     {
      "label": "dodo-setup.mjs",
      "url": "app/scripts/dodo-setup.mjs"
+    },
+    {
+     "label": "locked price table",
+     "url": "app/src/lib/prices.json"
+    },
+    {
+     "label": "live seat page",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t004lock"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Confirm the non-locked seat prices: EUR 89, GBP 79, AUD 149, CAD 139, SGD 129, AED 369 (USD 99 and INR 9,999 are locked). Recommended: approve as is; reply 'prices ok' or list changes on this task.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -500,6 +508,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: USD 99 and INR 9,999 are already locked (app/src/lib/prices.json comment); only the six other currencies need Adi's yes. Stripe attendee option exists (T-218 done)."
+    },
+    {
+     "ts": "2026-10-09T13:51:21+0530",
+     "who": "claude",
+     "note": "Orchestrator decision O-3cfb2ee8 carried out: EUR 89, GBP 79, AUD 149, CAD 139, SGD 129 and AED 369 are locked as they stand (lock note added to app/src/lib/prices.json, no amount changed, dodo-setup.mjs not re-run), and only that one-file commit was pushed to origin main (a96140e). node app/scripts/probe-live-wiring.mjs on the live mirror on 2026-10-09: ALL WIRING PASSES, 27 of 27 checks, including '/vip checkout to checkout.dodopayments.com/session/...' and 'Dodo checkout carries the prefilled email' (wiring-probe@example.com, nothing paid). T-005 key rotation stays in the queue."
     }
    ],
    "order": 40,
@@ -3305,7 +3318,7 @@
    "owner": "Ben",
    "priority": "P1",
    "due": "2026-09-24",
-   "status": "review",
+   "status": "done",
    "why": "Owner directive: price shown in the visitor's own currency.",
    "spec": "Every currency is in the HTML and CSS shows the visitor's. Before first paint: saved choice, then cached IP, then timezone; confirmed by IP afterwards (api.country.is). Manual 'Prices in' switch. Dodo charges the same currency (price rules pushed from app/src/lib/prices.json by scripts/dodo-setup.mjs). Verify: BASE=https://adisuja.github.io PREFIX=/tantra-workshop-live/site node scripts/probe-currency.mjs (passes 2026-10-08) and the same for scripts/probe-checkout-currency.mjs (writes currency-probe rows to the Work Tracker; clean them via T-107). Price table confirmation is T-004.",
    "done_when": [
@@ -3324,7 +3337,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Confirm the price table in T-004 (USD 99, INR 9,999, EUR 89, GBP 79, AUD 149, CAD 139, SGD 129, AED 369), visible at https://adisuja.github.io/tantra-workshop-live/site/vip/ .",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-24",
@@ -3340,6 +3353,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: probe-currency.mjs re-run on the live mirror on 2026-10-08: all 9 profiles PASS (IN INR 9,999, US $99, DE/PL/FR EUR 89, UK GBP 79, BR fallback $99, VPN case, manual EUR). probe-checkout-currency.mjs not re-run because it submits currency-probe@example.com and logs Checkout Starts rows in the live Work Tracker (T-107); last pass 2026-09-24."
+    },
+    {
+     "ts": "2026-10-09T13:51:22+0530",
+     "who": "claude",
+     "note": "Price question answered in T-004: the Orchestrator locked the table on 2026-10-09 (USD 99, INR 9,999, EUR 89, GBP 79, AUD 149, CAD 139, SGD 129, AED 369), nothing changed. Closed on the existing checks: probe-currency.mjs passed on the mirror on 2026-10-08 and page price equalled Dodo price for DE, PL, IN and US on 2026-09-24; the checkout-currency probe was not re-run today because it writes rows to the live Work Tracker, and no price or code changed since."
     }
    ],
    "order": 1010,
