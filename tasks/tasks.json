@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T14:25:27+0530",
-  "version": 1121,
+  "updated": "2026-10-09T14:26:12+0530",
+  "version": 1125,
   "last_id": 357,
   "team": [
    {
@@ -218,8 +218,16 @@
    ],
    "evidence": [
     {
-     "label": "Landing page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/"
+     "label": "Landing page (mirror)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791536172"
+    },
+    {
+     "label": "Landing page (local)",
+     "url": "http://localhost:4322/masterclass?v=1791536172"
+    },
+    {
+     "label": "Free landing, same Day 1 visual and bio",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=1791536172"
     },
     {
      "label": "probe-workshop.mjs",
@@ -227,7 +235,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/site/masterclass/ and reply on this task with changes, or approve.",
+   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791536172 and reply on this task with copy changes, or approve.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -253,12 +261,24 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: linked the open proof-figure work (T-277, T-117) and the live cohort; $50M+ figures still on the page (masterclass-client.tsx lines 337 and 491, page.tsx line 9)."
+    },
+    {
+     "ts": "2026-10-09T14:26:12+0530",
+     "who": "claude",
+     "note": "People: reviewers Bhaskar → Bhaskar/Bharath/Adi (by claude)."
+    },
+    {
+     "ts": "2026-10-09T14:26:12+0530",
+     "who": "claude",
+     "note": "The $50M lines were already gone (T-191); this pass cut the last client figures from the host bio (Cavli, Appster, Coinfirm) on /masterclass and /workshop, and replaced the Day 1 leak diagram and its unsourced 342K to 179 chain with the eight Day 1 decisions landing in one strategy doc. Verified with typecheck, the Day 1 shoot at 390, 1366 and 1440 on local and on the mirror (8 tiles, no clipping, no console errors), probe-funnels on the mirror (/masterclass clean at 1440 and 390; its one failure is the word webinar inside the template library, not this page) and probe-workshop (only the older cohort date line on /masterclass/success/join at 1440 fails, plus the API checks a static mirror cannot answer); pushed to main as 2adc82c and published to the mirror as 025b331. Adi: the page is ready for your copy sign-off at the link above."
     }
    ],
    "order": 0,
    "assignee": "Claude",
    "reviewers": [
-    "Bhaskar"
+    "Bhaskar",
+    "Bharath",
+    "Adi"
    ]
   },
   {
@@ -4217,7 +4237,7 @@
    "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-28",
-   "status": "review",
+   "status": "done",
    "why": "The /masterclass FunnelOS webinar board shows 11.4K visitors, 368 registered, 3.2% CVR next to a Tantra Pro Funnel card with 825 registrations and 9.6% CVR: 825 > 368 contradicts itself. Owner rule: no unsourced or invented numbers.",
    "spec": "On main 2026-10-08 app/src/components/masterclass/funnel-os.tsx shows 11.4K visits, 368 registrations, 3.2% (lines 97, 535, 865, 1269) next to a Pro card with 825 registrations and 9.6% (line 520); funnel-visuals.tsx repeats 825 (about line 583). 825 cannot exceed 368. If the owner sends real figures, Claude replaces the stage numbers with them; otherwise Claude removes the combined chips and keeps only the sourced Pro card figures, then re-runs the FunnelOS shoot and probe-workshop.",
    "done_when": [
@@ -4279,6 +4299,11 @@
      "ts": "2026-10-09T08:43:53+0530",
      "who": "claude",
      "note": "Re-run of the same Orchestrator note (F-a037bc29): nothing new to build, the fix from 05745e5 is already on origin/main and on the mirror. Rechecked today: the git grep for 368, 11.4K and 3.2% returns nothing in funnel-os.tsx and funnel-visuals.tsx, and the live mirror page serves 8.6K visits, 825 registrations, 9.6% on the FunnelOS board. Bhaskar, one open point for your review: the same /masterclass page still shows the old 342K, 11.4K, 368, 179 chain in two other visuals labelled as an illustrative model (day-engine.tsx lines 160 to 163, visuals.tsx line 614; day-art.tsx 241 to 244 holds the same set), which disagrees with the board's 825; I left them because swapping in the 825 set moves the 'weakest layer' callout from Capture to Traffic, which is a copy call, and those files were outside the approved push."
+    },
+    {
+     "ts": "2026-10-09T14:26:12+0530",
+     "who": "claude",
+     "note": "Closed by Orchestrator decision O-fdd77ded: the combined chips came off the FunnelOS board in 05745e5, and 2adc82c (T-001) removed the last copy of the old 342K, 11.4K, 368, 179 chain that showed on the landing pages (the Day 1 diagram, now the eight decisions). probe-workshop now fails if those figures return to the Day Engine. The same old chain remains only in two components that render on /debug pages (day-art.tsx, the FunnelRibbon in visuals.tsx), not on any funnel page."
     }
    ],
    "order": 1150,
@@ -10404,7 +10429,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "done",
    "why": "Enterprise voice rule bans $50M+ and unsourced numbers; inconsistent day titles appear in calendar invites.",
    "spec": "Use one title per day across app/src/components/masterclass/day-engine.tsx, app/src/lib/sessions.ts and app/src/lib/calendar.ts DAY_COPY (title-cased in eventSummary), show the eight Day 1 decisions in the Day 1 visual, replace hardcoded 11am ET with SESSION_TIME in workshop-client.tsx, remove the $50M+ figures and source or cut Cavli/Appster numbers on both landings, fix techstars and webinargeek SVG intrinsic sizes, and check /workshop for a pre-paint currency flash in an INR timezone (M066 UNVERIFIED). Closes audit findings M010, M011, M020, M021, M065, M066, O004. Per finding: M010 (app/src/components/masterclass/day-engine.tsx): Replace or relabel the Day 1 layers visual so it shows the eight Day 1 decisions (offer, method, value, buyer, list, funnel, date, channels). M011 (app/src/components/masterclass/day-engine.tsx): Pick one title per day and use it in day-engine.tsx, sessions.ts and calendar.ts DAY_COPY. M020 (app/src/app/workshop/workshop-client.tsx): Replace the hardcoded '11am ET' in workshop-client.tsx:296 with SESSION_TIME. M021 (app/src/app/workshop/workshop-client.tsx): Remove the $50M+ figures (enterprise voice rule) and source or cut the Cavli/Appster numbers on both landings. M065 (app/src/components/masterclass/funnel-os.tsx): Give the SVGs correct intrinsic sizes and drop the WebinarGeek mark from the masterclass FunnelOS if the webinar ban applies there. M066 (app/src/app/workshop/workshop-client.tsx): Load /workshop in a fresh INR-timezone browser and confirm no $99 flash before the pre-paint swap. O004 (app/src/lib/calendar.ts): Wrap DAY_COPY[day].title in titleCase() from lib/title-case.ts inside eventSummary. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. ADDED 2026-10-09 (ec3e66fb 2026-10-05T21:19): the playbook and both centres now carry the 'Most Complete Agentic RevOps System in B2B, Installed in Three Days' positioning and new day titles (Day 1 'Lock the Offer, the Buyer and the Channels Every Asset Is Built On', Day 2 'Build the Entire Funnel in One Pass', Day 3 'Hand the Funnel to an AI Agent, Then Prove Every Number', app/src/lib/curriculum.ts) but /workshop and /masterclass (day-engine.tsx) still use older titles. The builder offered to apply the same positioning there and Adi has not answered: NEEDS-ESCALATION whether he wants it; recommended: use the curriculum.ts titles so all surfaces agree (that also closes M011). The /workshop and /masterclass host bio says '$50M+ in tracked client revenue' (set 2026-10-05 in place of 'ARR'): remove under the enterprise voice rule, as above.",
    "done_when": [
@@ -10415,7 +10440,7 @@
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Apply the playbook's day titles and positioning to the /workshop and /masterclass pages? Recommended: yes, take them from app/src/lib/curriculum.ts.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-08T00:21:42+0530",
@@ -10436,6 +10461,11 @@
      "ts": "2026-10-09T08:38:36+0530",
      "who": "claude",
      "note": "T-191 (b880b67) already did part of this: one title per day from app/src/lib/day-titles.ts in day-engine.tsx, sessions.ts and calendar.ts DAY_COPY (M011), every $50M+ removed with the slim band on both landings and the host bio, press wall and Google/Techstars marks removed. Still open here: Day 1 visual (M010), SESSION_TIME (M020), Cavli/Appster numbers, SVG sizes (M065), INR flash check (M066)."
+    },
+    {
+     "ts": "2026-10-09T14:26:12+0530",
+     "who": "claude",
+     "note": "Closed by Orchestrator decision O-fdd77ded, carried out in T-001. Day titles and the $50M removal shipped in b880b67 (T-191); 2adc82c (T-001) did the rest: Day 1 visual shows the eight decisions, Cavli and Appster figures cut from both host bios, SESSION_TIME on the /workshop sticky bar, WebinarGeek mark sized correctly, and no $99 frame appears in an India timezone browser on either landing. All seven findings (M010, M011, M020, M021, M065, M066, O004) are marked in AUDIT.md with their commits; live on the mirror as 025b331."
     }
    ],
    "order": 2770
