@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T08:01:10+0530",
-  "version": 970,
-  "last_id": 348,
+  "updated": "2026-10-09T08:01:38+0530",
+  "version": 972,
+  "last_id": 349,
   "team": [
    {
     "name": "Adi",
@@ -11196,6 +11196,35 @@
     }
    ],
    "order": 3480
+  },
+  {
+   "id": "T-349",
+   "title": "Input from Adi for T-348: In the Brave window that Claude in Chrome drives, open https://admin.google.com/",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (signin): Only Adi knows the Google account password, and Claude never types passwords.. Everything else in T-348 is being built around it. As soon as this is done, T-348 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "In the Brave window that Claude in Chrome drives, open https://admin.google.com/ac/users and type your Google password in the 'Enter your password' field, then click Next. While there, do the same at https://console.cloud.google.com/ (for T-283). Reply 'done' on T-348.",
+   "log": [
+    {
+     "ts": "2026-10-09T08:01:38+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-348."
+    }
+   ],
+   "order": 3490,
+   "input_for": "T-348",
+   "kind": "input"
   }
  ]
 }
