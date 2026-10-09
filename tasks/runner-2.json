@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T18:08:34+0530",
+   "task_id": "T-322",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-322 stays in review: all four Done-when checks pass on the hardened build (live probe clean, a real note reached the Mac inbox in 2.6 s, the old github.io address forwards to the Worker, no action opens GitHub), with one intermittent miss — the first of four `probe-board-actions.mjs` runs showed 2"
+  },
+  {
    "ts": "2026-10-09T18:03:45+0530",
    "task_id": "T-102",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "limit",
    "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T15:09:05+0530",
-   "task_id": "T-144",
-   "mode": "feedback",
-   "status": "review",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-322",
+ "task_id": "T-101",
  "entries": [
-  "F-d10fa748"
+  "F-15021b1e"
  ],
- "started": "2026-10-09T18:03:49+0530",
- "message": "Acting on 1 note(s) for T-322: Task Command Center: the public board saves every action directly (no GitHub)"
+ "started": "2026-10-09T18:08:40+0530",
+ "message": "Acting on 1 note(s) for T-101: Key-art system across join, confirmation and onboarding pages"
 }

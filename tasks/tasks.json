@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T18:06:55+0530",
-  "version": 1196,
-  "last_id": 360,
+  "updated": "2026-10-09T18:08:26+0530",
+  "version": 1209,
+  "last_id": 361,
   "team": [
    {
     "name": "Adi",
@@ -12237,7 +12237,8 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
@@ -12252,11 +12253,15 @@
    "evidence": [
     {
      "label": "Public board",
-     "url": "https://tantra-board.growthcluborg.workers.dev/tasks.html?v=20261009g"
+     "url": "https://tantra-board.growthcluborg.workers.dev/tasks.html?v=20261009h"
     },
     {
-     "label": "Probe",
+     "label": "Probe (public board)",
      "url": "workshop-plan/probe-public-board.mjs"
+    },
+    {
+     "label": "Probe (board actions)",
+     "url": "workshop-plan/probe-board-actions.mjs"
     }
    ],
    "blockers": [],
@@ -12271,6 +12276,16 @@
      "ts": "2026-10-09T01:50:19+0530",
      "who": "claude",
      "note": "Hardened after a security review (see spec); all personal links rotated."
+    },
+    {
+     "ts": "2026-10-09T18:08:26+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T18:08:26+0530",
+     "who": "claude",
+     "note": "Ready to review at https://tantra-board.growthcluborg.workers.dev/tasks.html?v=20261009h . Re-verified on the hardened build 2026-10-09 18:04 to 18:12 IST: probe-public-board.mjs --live is clean (64 checks, exit 0, incl. keyless 'Adi' arriving as 'Visitor: Adi' untrusted, github.io origin refused by the API, public tasks and notes identical to the Mac at v1179); a real note sent from the live page at 18:05:37 reached the Mac inbox in 2.6 s through the background importer (W-dc76f2a60a); the old adisuja.github.io/tantra-workshop-live/tasks.html forwarded to the Worker in a headless browser; probe-board-actions.mjs now also asserts no github.com request or new tab and passes 71/71 (its first run of four showed 2 failures in the opening voice-note section that did not repeat in three clean runs). Nothing failed on the Worker so no redeploy; sandbox tasks T-358 to T-361 removed and probe notes acked; commit a16ea80."
     }
    ],
    "order": 3220
