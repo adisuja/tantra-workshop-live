@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T11:31:59+0530",
+   "task_id": "T-299",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "limit",
+   "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
+  },
+  {
    "ts": "2026-10-09T11:01:54+0530",
    "task_id": "T-299",
    "mode": "feedback",
@@ -87,14 +95,6 @@
    "status": "blocked",
    "result": "error",
    "summary": "ssion_id\":\"d5aad829-c976-41df-870e-207f231a5924\"}\n{\"type\":\"tool_progress\",\"tool_use_id\":\"toolu_01W8Yr2RaAN5ZZeYq3JXJ4Ub-heartbeat-0\",\"tool_name\":\"Bash\",\"parent_tool_use_id\":\"toolu_01W8Yr2RaAN5ZZeYq3JXJ4Ub\",\"elapsed_time_seconds\":30,\"heartbeat\":true,\"session_id\":\"d5aad829-c976-41df-870e-207f231a5924\""
-  },
-  {
-   "ts": "2026-10-09T07:56:56+0530",
-   "task_id": "T-115",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-115 stays blocked with no screenshots captured: this unattended session has no Claude in Chrome tools and Brave did not answer a read-only query, so the 21 unblocked slots need one session with the extension connected to the signed-in Brave window; the Google Admin password check is now its own in"
   }
  ],
  "state": "paused",
@@ -103,6 +103,6 @@
  "entries": [
   "F-4257e252"
  ],
- "started": "2026-10-09T11:01:51+0530",
- "message": "Usage limit reached; retries automatically after 11:31. (You've hit your session limit · resets 12pm (Asia/Calcutta))"
+ "started": "2026-10-09T11:31:56+0530",
+ "message": "Usage limit reached; retries automatically after 12:01. (You've hit your session limit · resets 12pm (Asia/Calcutta))"
 }
