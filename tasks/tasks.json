@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T12:27:51+0530",
-  "version": 1059,
+  "updated": "2026-10-09T12:28:09+0530",
+  "version": 1060,
   "last_id": 357,
   "team": [
    {
@@ -10751,6 +10751,11 @@
      "ts": "2026-10-09T12:27:51+0530",
      "who": "claude",
      "note": "Answer recorded: there are no channel add-ons and the app is out of date. The playbook and cards had no add-on wording; the held Tantra reminders walkthrough text and its video caption did, and both now say WhatsApp comes with the plan (video re-rendered in 4K, checked on stills). The app fix is up for Bharath: https://github.com/Usetantra/tantra-frontend-v2/pull/196 (366 tests pass), and it only shows once billing v2 is switched on. One thing differs from the decision: Tantra's live catalog says Pro 2 accounts, Scale 12, 10 dollars per extra account, not 5, 15 and 20, so I left account counts out of our material and put the question on T-252."
+    },
+    {
+     "ts": "2026-10-09T12:28:09+0530",
+     "who": "claude",
+     "note": "Checked 6 related task(s); updating T-252."
     }
    ],
    "order": 2870
