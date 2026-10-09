@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T18:26:29+0530",
-  "version": 1216,
+  "updated": "2026-10-09T18:26:38+0530",
+  "version": 1217,
   "last_id": 361,
   "team": [
    {
@@ -1414,6 +1414,11 @@
      "ts": "2026-10-09T18:26:29+0530",
      "who": "claude",
      "note": "Built: workshop-plan/ops/dayoutput.py now runs inside tick.py and turned the live Day 1 row (test attendee 4) into ops/outputs/4/day1.html, with answers placed word for word and one Opus call writing only the worked-out lines. Checked: com.tantra.ops reloaded on Python 3.12 and its first tick logged no packages_distributions error and generated 1; the page matches the template (8 sections, 37 slots, no overflow at 1280 and 390); a second tick reported unchanged 1 and left the file untouched. Not pushed: local main and origin have diverged (97 ahead, 21 behind), so the commit 0332ee4 stays local; the T-024 remap is being done by the other lane and the pipeline reads whatever templates it lands."
+    },
+    {
+     "ts": "2026-10-09T18:26:38+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-032."
     }
    ],
    "order": 210,
