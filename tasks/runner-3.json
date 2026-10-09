@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T08:42:27+0530",
+   "task_id": "T-116",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "error",
+   "summary": "ssion_id\":\"d5aad829-c976-41df-870e-207f231a5924\"}\n{\"type\":\"tool_progress\",\"tool_use_id\":\"toolu_01W8Yr2RaAN5ZZeYq3JXJ4Ub-heartbeat-0\",\"tool_name\":\"Bash\",\"parent_tool_use_id\":\"toolu_01W8Yr2RaAN5ZZeYq3JXJ4Ub\",\"elapsed_time_seconds\":30,\"heartbeat\":true,\"session_id\":\"d5aad829-c976-41df-870e-207f231a5924\""
+  },
+  {
    "ts": "2026-10-09T07:56:56+0530",
    "task_id": "T-115",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:05:38+0530",
-   "task_id": "T-211",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-116",
+ "task_id": "T-117",
  "entries": [
-  "F-2a2f77b3"
+  "F-a037bc29"
  ],
- "started": "2026-10-09T07:57:26+0530",
- "message": "Acting on 1 note(s) for T-116: Decide the 'Tantra Pro' name clash (Tantra Pro Funnel/Flow vs the $999 Tantra Pro offer)"
+ "started": "2026-10-09T08:42:27+0530",
+ "message": "Acting on 1 note(s) for T-117: Re-source the /masterclass FunnelOS webinar numbers"
 }
