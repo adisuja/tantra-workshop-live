@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T19:15:05+0530",
-  "version": 1238,
+  "updated": "2026-10-09T19:17:04+0530",
+  "version": 1242,
   "last_id": 361,
   "team": [
    {
@@ -1914,7 +1914,7 @@
    "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-22",
-   "status": "queue",
+   "status": "review",
    "why": "The upsell to Tantra Pro and Enterprise continues after Day 3, and retention into the paid plan starts here.",
    "spec": "Write the post-workshop sequence copy, end of Day 3 to +14 days: replay links (Zoom cloud recordings per cohort day, T-223), the Tantra Pro course offer ($999, name pending T-116), Tantra Enterprise ($9,999, 1 year platform access, Cal.com call-booking CTA), and retention nudges into the Tantra Plan (Pro $99/mo). It will run as a Tantra omni-channel campaign (email, WhatsApp, LinkedIn steps) that attendees enter at Day 3 end (T-052); write each message per channel. No invented stats, no dashes, Backlinko voice (workshop-plan/COPY_RULES.md). Same-day replay to no-shows and low-engagement nudges are T-235, not here. Save to workshop-plan/sequences/post.md.",
    "done_when": [
@@ -1922,7 +1922,12 @@
     "Offer names and prices match the owner ladder (Pro $99/mo, Pro course $999, Enterprise $9,999)",
     "Owner or Bhaskar approves"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "post.md",
+     "url": "workshop-plan/sequences/post.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -1950,6 +1955,11 @@
      "ts": "2026-10-09T09:21:13+0530",
      "who": "claude",
      "note": "T-116 settled the name (Orchestrator O-0361e753): the $999 offer is 'Tantra Pro Course', one-time; bare 'Tantra Pro' means the $99/mo app plan. Naming no longer blocks this task."
+    },
+    {
+     "ts": "2026-10-09T19:17:00+0530",
+     "who": "claude",
+     "note": "Wrote workshop-plan/sequences/post.md: 7 steps from Day 3 end to +14 days, email/WhatsApp/LinkedIn per step, with replay merge fields, Tantra Pro course ($999, one {{PRO_COURSE_NAME}} token), Enterprise ($9,999, 1 year, Cal.com {{ENTERPRISE_CALL_URL}}) and $99/mo retention nudges. Linted by grep: no dashes, no Calendly, no literal dates, no stats; T-235 messages left out. Ripple from T-116 applied (bare Tantra Pro = $99/mo only)."
     }
    ],
    "order": 300,
@@ -1974,9 +1984,7 @@
     "No n8n, Instantly, SendGrid or Twilio WhatsApp call anywhere in the path"
    ],
    "evidence": [],
-   "blockers": [
-    "T-050 and T-051 copy"
-   ],
+   "blockers": [],
    "needs_from_owner": "",
    "log": [
     {
@@ -1993,6 +2001,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: replaced the stale sender plan (T-236 /emails/batch, Twilio WhatsApp) with the owner model: Tantra omni-channel campaigns fed by webhook import from the centre."
+    },
+    {
+     "ts": "2026-10-09T19:17:04+0530",
+     "who": "claude",
+     "note": "T-051 copy is written (workshop-plan/sequences/post.md); the copy blocker is cleared."
     }
    ],
    "order": 310,
@@ -2270,7 +2283,7 @@
    "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-21",
-   "status": "queue",
+   "status": "doing",
    "why": "Depends on T-057.",
    "spec": "Each team member connects their own LinkedIn profile in Tantra (needs their own login, so not Claude), then campaigns launch from the T-056 list with first lines from T-059 and each member's referral link (T-211). Respect the daily caps recorded in T-057. Track replies and registrations per member on the referral dashboard.",
    "done_when": [
@@ -2278,7 +2291,20 @@
     "First campaign running within the T-057 caps",
     "Registrations from it appear on the referral dashboard under the member's code"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Launch kit",
+     "url": "workshop-plan/outreach/launch-kit.md"
+    },
+    {
+     "label": "Connect guide",
+     "url": "workshop-plan/outreach/connect-linkedin-guide.md"
+    },
+    {
+     "label": "Referral dashboard (Replies column)",
+     "url": "workshop-plan/referrals.html"
+    }
+   ],
    "blockers": [
     "T-057 Tantra LinkedIn readiness",
     "T-056 list imported"
@@ -2309,6 +2335,16 @@
      "ts": "2026-10-09T19:09:35+0530",
      "who": "claude",
      "note": "T-057 readiness recorded (YES); account slots: Pro shows 2 of 2 LinkedIn/WhatsApp accounts in use."
+    },
+    {
+     "ts": "2026-10-09T19:16:02+0530",
+     "who": "claude",
+     "note": "Prep done: launch kit (per-member codes/links, connect status, draft campaign config with T-057 caps and a PENDING slot for Bharath's values), a one-page credentials-based connect guide, and a Replies column per member plus team total on the referral dashboard (data in ops/outreach.json); referral tests pass and probe-referrals 14/14. Not launched: still needs Bharath's T-057 sign-off with caps and the T-056 import, then each member connects; the dashboard goes to the mirror on the next ops tick (publishing needs the Google credential, absent in this run)."
+    },
+    {
+     "ts": "2026-10-09T19:16:13+0530",
+     "who": "claude",
+     "note": "Checked 6 related task(s); updating T-275."
     }
    ],
    "order": 370,

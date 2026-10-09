@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T19:17:07+0530",
+   "task_id": "T-051",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-051 is in review for Bhaskar: `workshop-plan/sequences/post.md` now has 7 steps from Day 3 end to +14 days, with copy for email, WhatsApp and LinkedIn where each step uses them. I only grep-linted it for dashes, Calendly, literal dates and invented stats, so no read-aloud pass against COPY_RULES.m"
+  },
+  {
+   "ts": "2026-10-09T19:16:07+0530",
+   "task_id": "T-058",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "ok",
+   "summary": "T-058 prep is built and committed, but nothing is launched or published yet. I set the task to doing and acked F-a4339d5e.\n\n- **Built:** a launch kit, a one-page connect guide, and a Replies column on the referral dashboard for each member and the team total. The kit has each member's code and links"
+  },
+  {
    "ts": "2026-10-09T19:14:43+0530",
    "task_id": "T-053",
    "mode": "feedback",
@@ -79,30 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-054 stays in review: the Orchestrator note had already been carried out and acked at 17:47 today, and a recheck found 0 test or probe rows left in the Work Tracker, Tantra Tracker, ops.db and the form log, so nothing was resubmitted or deployed."
-  },
-  {
-   "ts": "2026-10-09T17:51:22+0530",
-   "task_id": "T-223",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-223 stays in review: the 05:09 note's pre-work was already shipped at 17:42 today, and a live read-only check at 17:52 IST confirmed Zoom failed 0, placeholder attendees 5 and 66 marked test, and the 14 to 16 Oct meeting 88135386601 in place with 0 registered. I did not re-run the probe or re-chec"
-  },
-  {
-   "ts": "2026-10-09T17:50:32+0530",
-   "task_id": "T-215",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-215 stays in review: nothing was left to build, and note F-703a5e07 was already acknowledged by an earlier pass.\n\n- **Videos:** all 18 are on the review index at http://localhost:8883/wt-review/index.html?v=2e9db5c. Each passes `verify.py` and reads 3840 x 2160 and 59 to 119 seconds from the file."
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-058: Connect team profiles + launch outreach",
- "task_id": "T-058",
+ "message": "Acting on 1 note(s) for T-052: Load both nurture sequences into Tantra campaigns",
+ "task_id": "T-052",
  "entries": [
-  "F-a4339d5e"
+  "F-77b1c371"
  ],
  "mode": "feedback",
- "started": "2026-10-09T19:14:49+0530"
+ "started": "2026-10-09T19:17:16+0530"
 }
