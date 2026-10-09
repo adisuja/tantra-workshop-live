@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T20:03:54+0530",
-  "version": 1267,
+  "updated": "2026-10-09T20:05:27+0530",
+  "version": 1268,
   "last_id": 363,
   "team": [
    {
@@ -8450,7 +8450,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Adi's model (2026-10-07): reminder email, WhatsApp and LinkedIn run on Tantra omni-channel campaigns and registrants are imported into the campaign programmatically; this is live in Tantra. The centre still holds Tantra reminder email waiting for a per-contact send endpoint that Tantra was never going to ship.",
    "spec": "Current state: S2 (branch tantra-email-stripe, merged 89aeda5, b94d5db, b08eeed) built Tantra reminder sends against a spec'd POST /api/v1/emails/batch (docs/onboarding-v3/analysis/tantra-reminder-endpoint.md). cloud/src/jobs-day2.ts lines 676 to 678 define TANTRA_NOTE ('wait for Tantra to ship its per-contact send') and line 758 reports it as 'not built' in the test run. Do: (1) replace the per-contact send path with: on registrant create, the attendee funnel worker imports the registrant into the attendee's Tantra omni-channel reminder campaign through Tantra's existing campaign/contact import API (reuse tantraOutreach / jobs-tantra.ts patterns), with the timed email, WhatsApp and LinkedIn steps living in that campaign; (2) remove TANTRA_NOTE, TANTRA_WAIT and the 'not built' line; (3) update the d2 reminder cards in card-education.ts and the playbook/guides wording so nothing says Tantra sending is pending; (4) WhatsApp goes through Tantra only, never Twilio; (5) update vendor-sim Tantra routes and probe-email-stripe to the import model; (6) mark docs/onboarding-v3/analysis/tantra-reminder-endpoint.md superseded. Our own workshop's reminders are T-234 (same model); real-account checks only on test contacts per vendor-accounts-no-change-rule. Ship on a branch, READY line in /Users/adithyamurali/tantra-round5-coord/LOG.md, Integrator merges and deploys.",
    "done_when": [
@@ -8459,7 +8459,12 @@
     "Live centre test run shows Tantra reminder email as built, not 'not built'",
     "READY and DEPLOYED lines in LOG.md with the Worker version"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "branch",
+     "url": "tantra-campaign-import f0b5528"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -8492,6 +8497,11 @@
      "ts": "2026-10-09T00:06:32+0530",
      "who": "claude",
      "note": "2026-10-08 Tantra API facts (repo docs/onboarding-v3/analysis/integrations-tantra-api.md, PR #142): POST /email-campaigns/:id/contacts appends contacts to a launched omnichannel campaign (email, LinkedIn, WhatsApp, Telegram steps). Steps use delayDays (whole days, step 1 runs on enrolment), so event-relative touches (day before, 1 hour before, live) need one single-step campaign per touch, with the funnel enrolling each registrant at the due time; sending window should be every day, all hours. WhatsApp shows 'Not in your plan' on the owner workspace: see the add-on pricing decision task."
+    },
+    {
+     "ts": "2026-10-09T20:05:27+0530",
+     "who": "claude",
+     "note": "Campaign import (one single-step Tantra campaign per touch, enrol via /email-campaigns/:id/contacts, 409 retry, /emails/batch deleted) was already on main from T-123 (5bde29e); T-236 was already done. This pass removes TANTRA_NOTE/TANTRA_WAIT from cloud/src (branch tantra-campaign-import f0b5528, pushed, tsc 0, READY in LOG.md); cards and guides had no 'pending' wording left. Not done: Twilio WhatsApp path removal belongs to T-264; I did not rerun probe-email-stripe or the live test run, so Integrator should deploy and confirm."
     }
    ],
    "order": 2170
