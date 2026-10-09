@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T07:24:37+0530",
-  "version": 957,
+  "updated": "2026-10-09T07:53:40+0530",
+  "version": 961,
   "last_id": 347,
   "team": [
    {
@@ -2139,7 +2139,7 @@
    "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-23",
-   "status": "blocked",
+   "status": "review",
    "why": "The $999 offer is pitched in the workshop but there is no way to buy it.",
    "spec": "Current state: app/src/app/(site)/pro/page.tsx and pro-client.tsx render an old 'Tantra Pro: 3-month cohort program' lander (25 seats per cohort, stats '$50M+', '250+', '3 mo', '8 mo'), its form posts to an n8n webhook (line 16 WEBHOOK_URL, fetch at line 186) and then redirects to /success; it is published on the mirror at https://adisuja.github.io/tantra-workshop-live/site/pro/ . Rebuild it as the Tantra Pro course offer from the owner ladder (memory tantra-plan-lineup.md, 2026-09-30): $999, course plus community plus group coaching. Add a Pro price table (app/src/lib/prices.json is the seat-only table read by lib/currency.ts and scripts/dodo-setup.mjs, so add a separate Pro table or keyed entry), create the Dodo product via dodo-setup.mjs plus Stripe as the attendee option, hosted checkout like the seat. Remove the $50M+ stat and anything unsourced. The n8n removal is T-087. Name depends on T-116; when Pro is pitched depends on T-129.",
    "done_when": [
@@ -2147,12 +2147,26 @@
     "No n8n call and no $50M+ in app/src/app/(site)/pro",
     "Owner confirms inclusions and per-currency prices"
    ],
-   "evidence": [],
-   "blockers": [
-    "T-116 name clash",
-    "T-129 when Pro is pitched"
+   "evidence": [
+    {
+     "label": "Live /pro (mirror)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071"
+    },
+    {
+     "label": "Local /pro",
+     "url": "http://localhost:4322/pro?v=t071"
+    },
+    {
+     "label": "Branch",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/tree/agent/t-071-pro-course"
+    },
+    {
+     "label": "Probe",
+     "url": "app/scripts/probe-pro.mjs"
+    }
    ],
-   "needs_from_owner": "Decide in T-116 (name) and T-129 (pitch timing), then confirm the Pro inclusions and the price per currency (recommended: USD 999 with the same ratios as the seat table).",
+   "blockers": [],
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2173,12 +2187,23 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: corrected the spec. prices.json is the seat-only table (USD 9900, INR 999900 = INR 9,999); there is no INR 99,999 Pro entry. The live /pro page (also on the mirror at site/pro/) still sells a '3-month cohort program', shows an unsourced '$50M+' stat (enterprise voice rule) and posts to n8n (pro-client.tsx lines 16 and 186)."
+    },
+    {
+     "ts": "2026-10-09T07:53:40+0530",
+     "who": "claude",
+     "note": "People: reviewers Bhaskar → Bhaskar/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T07:53:40+0530",
+     "who": "claude",
+     "note": "Rebuilt /pro as the Tantra Pro Course ($999 one-time: course, community, group coaching calls, recordings) in Backlinko voice; no n8n, no $50M+, no cohort copy. Created Dodo product pdt_0NpKlRqJAjyAf3axboQSR (USD 999, EUR 997, INR 99,999 via prices-pro.json + dodo-setup.mjs --product pro); other currencies are charged in USD. probe-pro.mjs passes 30/30 on the live mirror, following the real button to Dodo, which shows $999.00, €997.00 and ₹99,999.00 incl. GST (never pays). Code pushed as branch agent/t-071-pro-course only (main has other lanes' unpushed commits). Open gap: no automatic fulfilment yet, buyers get course/community access by email from the team."
     }
    ],
    "order": 430,
    "assignee": "Claude",
    "reviewers": [
-    "Bhaskar"
+    "Bhaskar",
+    "Bharath"
    ]
   },
   {
@@ -3912,6 +3937,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: added a spec listing where each name lives and a recommended answer."
+    },
+    {
+     "ts": "2026-10-09T07:53:40+0530",
+     "who": "claude",
+     "note": "Orchestrator decision O-f6931fba (via T-071): the $999 offer is named 'Tantra Pro Course', one-time. /pro and the Dodo product (pdt_0NpKlRqJAjyAf3axboQSR) now use that name; the rest of the rename sweep in this task is still open."
     }
    ],
    "order": 1140,
@@ -4654,6 +4684,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: T-050 rewritten and T-055 archived already; T-042 dropped; remaining are past dues, meta.day1, a dash check in pass.py, the T-070 retitle and the pitch-cadence question (with a recommendation)."
+    },
+    {
+     "ts": "2026-10-09T07:53:40+0530",
+     "who": "claude",
+     "note": "Orchestrator decision O-f6931fba (via T-071): Tantra Pro Course is pitched at the close of Day 3, as the deck already teaches. /pro is live on the mirror regardless of timing."
     }
    ],
    "order": 1270,

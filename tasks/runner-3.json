@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T07:53:48+0530",
+   "task_id": "T-071",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-071 is in review: /pro is now the Tantra Pro Course offer ($999 one-time) and it is live on the mirror at https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071. The buy button opens Dodo checkout at $999, €997 or ₹99,999. The new probe passed 30 of 30 checks against the live mirror, foll"
+  },
+  {
    "ts": "2026-10-09T07:25:32+0530",
    "task_id": "T-260",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:05:31+0530",
-   "task_id": "T-041",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-071",
+ "task_id": "T-115",
  "entries": [
-  "F-43b6a66f"
+  "F-1962daf4"
  ],
- "started": "2026-10-09T07:39:59+0530",
- "message": "Acting on 1 note(s) for T-071: Tantra Pro ($999) offer page + checkout"
+ "started": "2026-10-09T07:53:53+0530",
+ "message": "Acting on 1 note(s) for T-115: Guide screenshots that need Adi's signed-in accounts (Google, GA4, Cloudflare, Tantra, WebinarGeek)"
 }
