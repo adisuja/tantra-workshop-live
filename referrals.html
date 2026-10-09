@@ -136,7 +136,7 @@ h1{font-family:Archivo,sans-serif;font-size:clamp(28px,4.2vw,42px);line-height:1
     </div>
     <div>
       <h2>Commission</h2>
-      <p id="terms-rate">A share of what the buyer actually paid, tax included, with refunds removed. Payouts follow Adi's schedule.</p>
+      <p id="terms-rate">A share of what the buyer actually paid, tax included, with refunds removed. Paid monthly, once the refund window on each sale has closed.</p>
     </div>
   </section>
   <p class="sr" id="live" aria-live="polite"></p>
@@ -144,7 +144,7 @@ h1{font-family:Archivo,sans-serif;font-size:clamp(28px,4.2vw,42px);line-height:1
 
 <script>
 /* ---- the weekly schedule: a copy of app/src/lib/cohort.ts (cohortFor, saleCohortFor); keep in step ---- */
-const TZ="America/New_York",HOUR=11,MINUTES=60,FIRST=Date.UTC(2026,9,7),DAY=864e5;
+const TZ="America/New_York",HOUR=11,MINUTES=60,DAY=864e5;let FIRST=0; // first cohort Wednesday, read from referrals.stats.json (first_cohort)
 function nyParts(t){const p=Object.fromEntries(new Intl.DateTimeFormat("en-US",{timeZone:TZ,year:"numeric",month:"numeric",day:"numeric",hour:"numeric",minute:"numeric",hourCycle:"h23"}).formatToParts(t).map(x=>[x.type,x.value]));return{y:+p.year,m:+p.month,d:+p.day,h:+p.hour%24,min:+p.minute}}
 function nyInstant(dayUtc,hour,minute=0){const want=dayUtc+(hour*60+minute)*6e4;let t=want;for(let i=0;i<3;i++){const p=nyParts(new Date(t));t+=want-Date.UTC(p.y,p.m-1,p.d,p.h,p.min)}return new Date(t)}
 function cohortWed(now){const p=nyParts(now),today=Date.UTC(p.y,p.m-1,p.d);let wed=today-((new Date(today).getUTCDay()-3+7)%7)*DAY;
@@ -217,7 +217,7 @@ function render(){
   $("#board").querySelectorAll(".copy").forEach(b=>b.onclick=()=>copy(b));
   const u=PERIOD==="all"?DATA.unattributed.all:(DATA.unattributed.weeks[PERIOD]||{visits:0,registrations:0,sales:0});
   $("#unattr").textContent=(active?"":"No referral activity in this period yet. ")+`Not credited to anyone${PERIOD==="all"?"":" this week"}: ${plural(u.visits,"visit")}, ${plural(u.registrations,"registration")} and ${plural(u.sales,"sale")} that arrived without a member's code.`;
-  $("#terms-rate").textContent=`${Math.round(T.rate_min*100)} to ${Math.round(T.rate_max*100)}% (default ${Math.round(T.rate_default*100)}%) of what the buyer actually paid, tax included, with refunds removed. Shown in the buyer's currency; team totals convert at the seat price. Payouts follow Adi's schedule.`;
+  $("#terms-rate").textContent=`${Math.round(T.rate_min*100)} to ${Math.round(T.rate_max*100)}% (default ${Math.round(T.rate_default*100)}%) of what the buyer actually paid, tax included, with refunds removed. Shown in the buyer's currency; team totals convert at the seat price. Paid monthly, once the refund window on each sale has closed.`;
   $("#ex-code").textContent=(rows[0]?.m.code||"adi")+"-p014";
   const src=DATA.sources||{},stale=src.visits&&src.visits!=="live"?` Visits ${src.visits}.`:"";
   $("#meta").textContent=`Numbers last changed ${DATA.generated_at}, checked every 10 minutes.${stale}`;
@@ -235,6 +235,7 @@ async function load(){
     const r=await fetch("referrals.stats.json?v="+Date.now(),{cache:"no-store"});
     if(!r.ok)throw new Error(r.status);
     DATA=await r.json();
+    FIRST=Date.parse(DATA.first_cohort);
     if(PERIOD!=="all"&&!DATA.weeks.includes(PERIOD)&&PERIOD!==saleWeek())PERIOD="all";
     render();
   }catch(e){
