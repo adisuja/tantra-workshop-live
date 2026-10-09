@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T14:28:45+0530",
-  "version": 1128,
+  "updated": "2026-10-09T14:33:57+0530",
+  "version": 1129,
   "last_id": 357,
   "team": [
    {
@@ -3721,19 +3721,27 @@
    "evidence": [
     {
      "label": "Playbook · What are funnels",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html#funnels"
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1009c#funnels"
     },
     {
      "label": "Webinar funnel (full screen)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/webinar/"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/webinar/?v=1009c"
     },
     {
      "label": "Reverse squeeze page funnel (full screen)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/rsp/"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/rsp/?v=1009c"
     },
     {
      "label": "Challenge funnel (full screen)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/challenge/"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/challenge/?v=1009c"
+    },
+    {
+     "label": "Playbook · The Other 17 Funnel Types",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1009c#bigpic-the-other-17-funnel-types"
+    },
+    {
+     "label": "The Whole Machine on One Page (full screen)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/system/?v=1009c"
     }
    ],
    "blockers": [],
@@ -3763,6 +3771,11 @@
      "ts": "2026-10-09T13:28:53+0530",
      "who": "claude",
      "note": "T-131 (2026-10-09): the RSP board's 52-week grid no longer shows webinar, event, workshop or replay rows in the Email, WhatsApp and SMS lanes; they are on-demand touches now (on-demand training, VSL re-watch nudge, book-a-call reminder, new case study drop). Live on the mirror (34daef4); the board fits at 5 widths. The paid ads lane still has webinar promo and replay retargeting rows, left for T-260."
+    },
+    {
+     "ts": "2026-10-09T14:33:57+0530",
+     "who": "claude",
+     "note": "T-294 folded in (2026-10-09): its five calls on the 17 other funnel types and the Whole Machine are decided and live, so this is now the one review for all 21 animations. Two links added: the 17 types section and the Whole Machine view."
     }
    ],
    "order": 1060,

@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T14:34:05+0530",
+   "task_id": "T-294",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-294's work is confirmed on origin and rendering on the live mirror, and its review is folded into T-108. I'm waiting on the two local probes (phone text size and board fit) before setting the final status."
+  },
+  {
    "ts": "2026-10-09T14:22:43+0530",
    "task_id": "T-020",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "done",
    "result": "ok",
    "summary": "T-281 stays done: this was a re-run of Orchestrator decision O-968e1f77, which was already applied. Issue #1, PR #3 and PR #4 are closed with the Task Command Center pointer comment, the live hub has no link to issue #1, and T-249's ask points at the board. F-c6bf216d was already acknowledged (ack r"
-  },
-  {
-   "ts": "2026-10-09T12:50:07+0530",
-   "task_id": "T-279",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-279 stays done: the Orchestrator decision was already applied in e73712d (bhaskardev kept as a separate partner with the comment, no alias, passphrase file deleted), and today's re-check found nothing reads the passphrase, `test_referrals.py` passes 27 of 27, and `bhaskar` and `bhaskardev` are sti"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-294",
+ "task_id": "T-001",
  "entries": [
-  "F-154dcb36"
+  "F-4e567f1f"
  ],
- "started": "2026-10-09T14:22:49+0530",
- "message": "Acting on 1 note(s) for T-294: Decide the open calls on the 17 extra funnel animations and the Whole Machine view"
+ "started": "2026-10-09T14:34:05+0530",
+ "message": "Acting on 1 note(s) for T-001: /masterclass landing page"
 }
