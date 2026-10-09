@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T08:04:30+0530",
+   "task_id": "T-071",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-071 stays in review: note F-43b6a66f was already fully carried out by an earlier run (rebuild commit 255576b is on origin/main, the Dodo product exists), and today's re-run of `probe-pro.mjs` passes every check on the live mirror at https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071b;"
+  },
+  {
    "ts": "2026-10-09T08:02:35+0530",
    "task_id": "T-260",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:03:55+0530",
-   "task_id": "T-011",
-   "mode": "feedback",
-   "status": "done",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-071",
+ "task_id": "T-111",
  "entries": [
-  "F-43b6a66f"
+  "F-d7750374"
  ],
- "started": "2026-10-09T08:02:41+0530",
- "message": "Acting on 1 note(s) for T-071: Tantra Pro ($999) offer page + checkout"
+ "started": "2026-10-09T08:04:36+0530",
+ "message": "Acting on 1 note(s) for T-111: Template library corpus (Lane B): fields, channel/mechanism tags, TemplateCard, anonymised corpus templates, leak probe"
 }

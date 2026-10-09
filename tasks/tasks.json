@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T08:02:41+0530",
-  "version": 978,
+  "updated": "2026-10-09T08:04:28+0530",
+  "version": 979,
   "last_id": 349,
   "team": [
    {
@@ -2159,19 +2159,19 @@
    "evidence": [
     {
      "label": "Live /pro (mirror)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071b"
     },
     {
      "label": "Local /pro",
-     "url": "http://localhost:4322/pro?v=t071"
-    },
-    {
-     "label": "Branch",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/tree/agent/t-071-pro-course"
+     "url": "http://localhost:4322/pro?v=t071b"
     },
     {
      "label": "Probe",
      "url": "app/scripts/probe-pro.mjs"
+    },
+    {
+     "label": "Rebuild commit 255576b (on main)",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/255576b"
     }
    ],
    "blockers": [],
@@ -2211,6 +2211,11 @@
      "ts": "2026-10-09T07:53:53+0530",
      "who": "claude",
      "note": "Checked 9 related task(s); updating T-116, T-129, T-087."
+    },
+    {
+     "ts": "2026-10-09T08:04:28+0530",
+     "who": "claude",
+     "note": "Re-run of note F-43b6a66f: nothing left to build, the earlier run already did all of it (commit 255576b, now in origin/main). Re-verified today: probe-pro.mjs passes every check on the live mirror, where US, DE and IN visitors see $999, €997 and ₹99,999 and Dodo's hosted checkout for pdt_0NpKlRqJAjyAf3axboQSR shows the same amounts; app/src/app/(site)/pro has no n8n, $50M+ or cohort copy. Open https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071b . The newer Orchestrator note F-71dc8ef6 (republish from main, fulfilment wording check) is still unread and was not part of this run."
     }
    ],
    "order": 430,
