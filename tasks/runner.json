@@ -97,12 +97,13 @@
    "summary": "T-100 stays in review: `/vip` is clean at all 7 widths on the live mirror, every count chip matches the template library, and no bonus is tagged \"VIP only\". No fix or republish was needed, so nothing was pushed. Probe output is committed in `workshop-plan/evidence/T-100-vip-probes-2026-10-09.txt`, t"
   }
  ],
- "state": "disabled",
- "message": "Paused from the board.",
- "task_id": null,
+ "state": "working",
+ "message": "Acting on 2 note(s) for T-256: Guide copy: unsourced claims, S3 reminder schedule wording and cross-guide consistency",
+ "task_id": "T-256",
  "entries": [
-  "F-33d7ff36"
+  "F-09ff26fd",
+  "R-92f99856"
  ],
  "mode": "feedback",
- "started": "2026-10-09T20:10:52+0530"
+ "started": "2026-10-10T00:23:42+0530"
 }

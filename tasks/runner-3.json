@@ -97,12 +97,12 @@
    "summary": "T-152 is in review. The severity levels, a local Claude bug pipeline and the first weekly report are done. Five fix PRs (#160 to #164) and a CI PR (#165) are open on tantra-backend-v2 against `development`.\n\n- **Bug source:** GitHub issues were empty and the YOGI bug log covers a different product, "
   }
  ],
- "state": "paused",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
+ "task_id": "T-130",
  "entries": [
-  "F-8827a460"
+  "F-33d7ff36"
  ],
- "started": "2026-10-09T20:29:10+0530",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 97% (new work starts below 70%). Resumes after 00:01."
+ "started": "2026-10-10T00:23:41+0530",
+ "message": "Acting on 1 note(s) for T-130: Make the busiest guide flowcharts easier to read"
 }

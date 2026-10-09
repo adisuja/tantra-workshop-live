@@ -49,8 +49,8 @@
    "summary": "T-124 → **review**. Fixed `/vip` checkout dropping first-touch UTMs (both server-session POST and static hosted-link now use `resolveUtm()`); verified with new `probe-checkout-utm.mjs` (both paths PASS) and `probe-checkout-currency` (no regression); committed 777b084 — owner sign-off is a completed "
   }
  ],
- "state": "paused",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 97% (new work starts below 70%). Resumes after 00:01.",
+ "state": "idle",
+ "message": "Nothing waiting.",
  "task_id": null,
  "entries": [],
  "mode": null,
