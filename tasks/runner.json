@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T18:24:34+0530",
+   "task_id": "T-024",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-024 is in review: the Day 1 to 3 output templates are rebuilt on the live v5 ids (one section per question, 8/9/8, with named `data-slot` attributes), the probe passes locally and on the mirror, and the work is pushed to the workshop repo (123cf7f) and published at https://adisuja.github.io/tantra"
+  },
+  {
    "ts": "2026-10-09T18:05:41+0530",
    "task_id": "T-100",
    "mode": "feedback",
@@ -87,23 +95,15 @@
    "status": "review",
    "result": "limit",
    "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T15:09:05+0530",
-   "task_id": "T-150",
-   "mode": "feedback",
-   "status": "review",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
   }
  ],
  "state": "working",
- "message": "Acting on 2 note(s) for T-024: Day 1 to 3 output templates (what each attendee GETS)",
- "task_id": "T-024",
+ "message": "Acting on 2 note(s) for T-123: Attendee messages actually send (Tantra omni-channel campaigns)",
+ "task_id": "T-123",
  "entries": [
-  "F-0474f505",
-  "R-4866ed15"
+  "F-69bbe58e",
+  "R-08522c18"
  ],
  "mode": "feedback",
- "started": "2026-10-09T18:11:41+0530"
+ "started": "2026-10-09T18:24:40+0530"
 }

@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T18:19:45+0530",
-  "version": 1211,
+  "updated": "2026-10-09T18:24:40+0530",
+  "version": 1214,
   "last_id": 361,
   "team": [
    {
@@ -1135,7 +1135,7 @@
    "owner": "Adi",
    "priority": "P0",
    "due": "2026-09-21",
-   "status": "queue",
+   "status": "review",
    "why": "The workshop's promise is 'do something, get something, every day'. With 3 days there are 3 outputs, and the merged days each generate from twelve answers rather than six.",
    "spec": "Templates exist from 2026-09-25 (32c0910): workshop-plan/outputs/build.py generates day1.html, day2.html, day3.html (PDF-ready via @media print, SendFlow sample filled) and probe-outputs.mjs checks them. They were built against the old question list and tag inputs as Q1 to Q38. Rework: map every section to the live ids in workshop-plan/build/questions.py (d1v5_offer, d1v5_method, d1v5_buyer, d1v5_list, d1v5_funnel, d1v5_event, d1v5_channels, d1v5_commit; d2v5_channels to d2v5_commit; d3v5_tools to d3v5_commit) plus the Day 0 choices where a section needs them; drop sections with no question behind them; regenerate; extend probe-outputs.mjs to fail on any Q-number tag or unknown id. The pipeline (T-031) fills these templates, so keep them as plain HTML with named slots.",
    "done_when": [
@@ -1145,20 +1145,28 @@
    ],
    "evidence": [
     {
-     "label": "Day 1 output (SendFlow)",
-     "url": "workshop-plan/outputs/day1.html"
+     "label": "Day 1 output (live mirror)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/outputs/day1.html?v=1791550470"
     },
     {
-     "label": "Day 2 output (SendFlow)",
-     "url": "workshop-plan/outputs/day2.html"
+     "label": "Day 2 output (live mirror)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/outputs/day2.html?v=1791550470"
     },
     {
-     "label": "Day 3 output (SendFlow)",
-     "url": "workshop-plan/outputs/day3.html"
+     "label": "Day 3 output (live mirror)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/outputs/day3.html?v=1791550470"
     },
     {
-     "label": "probe (all PASS)",
+     "label": "Slot manifest for the pipeline (T-031)",
+     "url": "workshop-plan/outputs/slots.json"
+    },
+    {
+     "label": "Probe (PASS local and on the mirror)",
      "url": "workshop-plan/outputs/probe-outputs.mjs"
+    },
+    {
+     "label": "Generator",
+     "url": "workshop-plan/outputs/build.py"
     }
    ],
    "blockers": [],
@@ -1193,12 +1201,28 @@
      "ts": "2026-10-09T14:19:54+0530",
      "who": "claude",
      "note": "T-022 unblocked this: the 8/9/8 daily set (d1v5_* to d3v5_*) is locked by orchestrator 2026-10-09, so the templates can map to the ids in workshop-plan/build/questions.py. d1v5_list options are now the data partners, ZoomInfo, Clay or own CRM."
+    },
+    {
+     "ts": "2026-10-09T18:24:30+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T18:24:30+0530",
+     "who": "claude",
+     "note": "Rebuilt the three output templates on the live ids: each day now has one section per survey question (8, 9, 8), filled with SendFlow's answers and carrying named data-slot attributes for the pipeline; the 20 or so old sections with no question behind them are gone, and stack_domains is left out because the live Day 0 card no longer asks it. Verified with probe-outputs.mjs (ids imported from questions.py and the Day 0 cards, no Q tags, no dashes, no overflow at 900 and 390 px) locally and on the live mirror, plus an independent critic pass whose six findings are fixed; pushed to the workshop repo (123cf7f). Open the three mirror links and approve the structure."
+    },
+    {
+     "ts": "2026-10-09T18:24:40+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-022."
     }
    ],
    "order": 140,
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ]
   },
   {
