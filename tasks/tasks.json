@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T05:35:11+0530",
-  "version": 492,
+  "updated": "2026-10-09T05:38:07+0530",
+  "version": 498,
   "last_id": 347,
   "team": [
    {
@@ -1255,62 +1255,26 @@
   },
   {
    "id": "T-033",
-   "title": "WhatsApp + email delivery automation",
-   "area": "Delivery",
-   "owner": "Aquila",
-   "priority": "P1",
-   "due": "2026-09-22",
    "status": "blocked",
-   "why": "Same-day delivery before the next session is what makes the loop feel magical.",
-   "spec": "After T-031 (day outputs) and T-032 (PDF and link), send each attendee their output link the same day by email and WhatsApp. Owner model (google-and-reminder-model, 2026-10-07): attendee messages run on Tantra omni-channel campaigns, and contacts are imported into the campaign programmatically by webhook; Tantra sending is live. So: on each delivered output, push or update the attendee contact in the Tantra campaign with the output link as a contact field, and let the campaign's email and WhatsApp steps send it. UNVERIFIED that a Tantra campaign step can insert a per-contact link field; if it cannot, send the email through Resend (approved) and keep WhatsApp on Tantra. Never Twilio for WhatsApp. Reuse the same webhook import as the reminders (T-234) and the umbrella T-123; recipients come from the centre attendee records; test identity the owner's Google test identity.",
-   "done_when": [
-    "the owner's Google test identity receives the Day 1 output link by email and WhatsApp within 10 minutes of a pipeline run",
-    "The send is idempotent per attendee and day (no duplicate on the next tick)",
-    "No Twilio WhatsApp, n8n or SendGrid call in the path"
-   ],
-   "evidence": [],
-   "blockers": [
-    "T-032 PDF and link not built",
-    "T-031 day outputs not built"
-   ],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    },
-    {
-     "ts": "2026-09-18T20:42:47+0530",
-     "who": "claude",
-     "note": "Owner: build the automation code yourself. Reassigned from Bhaskar Dev to Claude."
-    },
-    {
-     "ts": "2026-09-25",
-     "who": "Claude",
-     "note": "Blocks T-123 (launch-critical messages)."
-    },
-    {
-     "ts": "2026-10-06T01:37:57+0530",
-     "who": "claude",
-     "note": "Owner 2026-10-06: the playbook and both centres promise each day's answers run through an AI workflow and come back the same day as a PDF and a live link by WhatsApp and email, for every attendee. Not built yet (no PDF generation or WhatsApp/email delivery in cloud/src); keep this open until it runs end to end per attendee."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review: context updated. Blockers stale: approved senders are now Tantra email or Resend for email and Tantra (WhatsApp) or Twilio; Tantra per-contact send endpoint is still pending (tantra-reminder-endpoint-pending)."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: dropped the stale T-236 /emails/batch blocker and Twilio WhatsApp; per the owner model (2026-10-07) attendee messages run on Tantra omni-channel campaigns with contacts imported by webhook, WhatsApp never via Twilio."
-    }
-   ],
-   "order": 230,
+   "owner": "Aquila",
    "assignee": "Claude",
    "reviewers": [
-    "Aquila"
-   ]
+    "Aquila",
+    "Bharath"
+   ],
+   "priority": "P1",
+   "due": "2026-09-22",
+   "area": "Delivery",
+   "order": 230,
+   "title": "T-033: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-034",

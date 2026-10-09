@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T05:38:02+0530",
+   "task_id": "T-033",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-033 is blocked: the delivery code is built and deployed, but the real send to \"Adi test\" can't run until Adi provides the Tantra key (T-337) and a WhatsApp connection plus the test number. Email and WhatsApp both go through Tantra (T-234 showed its `{{custom.*}}` merge tags fill in for each contac"
+  },
+  {
    "ts": "2026-10-09T05:28:54+0530",
    "task_id": "T-278",
    "mode": "feedback",
@@ -35,10 +43,10 @@
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-033",
+ "task_id": "T-071",
  "entries": [
-  "F-7a4dfd97"
+  "F-43b6a66f"
  ],
- "started": "2026-10-09T05:29:01+0530",
- "message": "Acting on 1 note(s) for T-033: WhatsApp + email delivery automation"
+ "started": "2026-10-09T05:38:27+0530",
+ "message": "Acting on 1 note(s) for T-071: Tantra Pro ($999) offer page + checkout"
 }
