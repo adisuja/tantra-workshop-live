@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T01:35:46+0530",
-  "version": 1362,
+  "updated": "2026-10-10T01:39:04+0530",
+  "version": 1364,
   "last_id": 373,
   "team": [
    {
@@ -10777,11 +10777,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Guides still tell attendees to do by hand what the agent already did, which wastes their time and contradicts the centre.",
    "spec": "Relabel or remove the S2 \"Build the Registration Backend\" prompt (deploy-funnel ships it), add auto notes to s5-extra-pipelines (crm-setup creates the four pipelines), point s5-follow-ups step 2 at the d2-reminders drafts (generate server side), update s5-challenge-stages step about Zoom attendance (event-attendance tags attended-day-N), and rewrite or unlink s5-crm-starter around the built-in D1 CRM. Closes audit findings X090, X103, X104, X105, G070, X102. Per finding: X090 (app/src/content/guides/s2-landing/s2-tantra-pro-funnel.ts): Remove the prompt or relabel it as how the deployed funnel works. X103 (app/src/content/guides/s5-pipeline/s5-extra-pipelines.ts): Add auto notes saying crm-setup creates the four pipelines. X104 (app/src/content/guides/s5-pipeline/s5-follow-ups.ts): Add an auto note pointing at d2-reminders drafts instead of the paste step. X105 (app/src/content/guides/s5-pipeline/s5-challenge-stages.ts): Update the step: event-attendance reads Zoom participants per day and tags attended-day-N. G070 (app/src/content/guides/s5-pipeline/s5-follow-ups.ts): Generate follow-ups/ server side from the stored survey answers and show it as an auto block. X102 (app/src/content/guides/s5-pipeline/s5-crm-starter.ts): Unlink it from d1-crm or rewrite it around the built-in D1 CRM the agent deploys. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md.",
    "done_when": [
@@ -10789,7 +10790,36 @@
     "check-guides passes",
     "Every listed finding id is marked fixed in AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Live guide: follow-ups, step 2 (open from your centre link first)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/guides/s5-follow-ups/?v=t259"
+    },
+    {
+     "label": "Live guide: extra pipelines",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/guides/s5-extra-pipelines/?v=t259"
+    },
+    {
+     "label": "Live guide: challenge stages, step 2",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/guides/s5-challenge-stages/?v=t259"
+    },
+    {
+     "label": "Live guide: S2 funnel (prompt at the end)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/guides/s2-tantra-pro-funnel/?v=t259"
+    },
+    {
+     "label": "Local preview: follow-ups guide",
+     "url": "http://localhost:4399/debug/guides?only=s5-follow-ups&v=t259"
+    },
+    {
+     "label": "Pack generator",
+     "url": "cloud/src/pack-followups.ts"
+    },
+    {
+     "label": "Audit rows marked fixed",
+     "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -10802,6 +10832,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): checked, current. pass 2: verified still open on main f6aeb7e; the listed guide steps (s2-tantra-pro-funnel prompt, s5-extra-pipelines, s5-follow-ups, s5-challenge-stages, s5-crm-starter) are unchanged."
+    },
+    {
+     "ts": "2026-10-10T01:39:04+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T01:39:04+0530",
+     "who": "claude",
+     "note": "All six audit findings are closed: the S2 and S5 guides now say what the centre already does (relabelled S2 prompt, crm-setup pipelines, Day 2 drafts, Zoom attendance tags), and your Funnel OS pack now carries a follow-ups/ folder built on the server from approved answers. Steps with no approved copy are marked To write in that folder (the pack does not AI-draft them). Verified with check-guides, probe-guides and probe-flows (all pass) and the live guide pages; merged and pushed to main fa4792b, centre Worker ef0ec7ce deployed without T-261 or T-262. Open the follow-ups guide, step 2."
     }
    ],
    "order": 2590

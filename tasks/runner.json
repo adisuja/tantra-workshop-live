@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T01:39:13+0530",
+   "task_id": "T-259",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-259 is in review: all six audit findings are closed, merged and pushed to main (`fa4792b`), centre Worker `ef0ec7ce` deployed (T-259 only, without T-261/T-262), and the pack's new `follow-ups/` folder marks steps with no approved copy as \"To write\" (it does not AI-draft them)."
+  },
+  {
    "ts": "2026-10-10T01:19:51+0530",
    "task_id": "T-258",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "queue",
    "result": "limit",
    "summary": "You've hit your session limit · resets 10pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T18:42:58+0530",
-   "task_id": "T-123",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-123 is blocked only on the Tantra API key (T-337): the campaign-import funnel email, plan-ready email and payment enrolment are built, probed, deployed as version b87e8b1c with reminders still off and pushed to main as 12997e9; T-236 is closed."
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-259: S2 to S5 guides: make the steps match what the centre already automates",
- "task_id": "T-259",
+ "message": "Acting on 1 note(s) for T-266: Automation 9: challenge daily survey to AI output to PDF delivery loop",
+ "task_id": "T-266",
  "entries": [
-  "F-3fdf6d62"
+  "F-8d6cf2b5"
  ],
  "mode": "feedback",
- "started": "2026-10-10T01:19:52+0530"
+ "started": "2026-10-10T01:39:16+0530"
 }
