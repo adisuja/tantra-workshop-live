@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T12:15:44+0530",
+   "task_id": "T-253",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-253 is blocked on test keys only: the Zoom check ran live (creating an event subscription by API is refused without three extra marketplace scopes, nothing created, so the paste step stays), the Twilio and Metricool guards are in and pushed to main as `ad3ebaf` (typecheck clean, guard probe 17/17;"
+  },
+  {
    "ts": "2026-10-09T12:08:51+0530",
    "task_id": "T-149",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-282 is in review: Zoom (1:59) and Tantra reminders (1:58) are recut and re-rendered in 4K, all 18 videos are under 2:00, and Adi's only job is approve or redo per video at http://localhost:8883/wt-review/index.html — the mp4s are gitignored so only journeys and step lists were pushed, and WhatsApp"
-  },
-  {
-   "ts": "2026-10-09T08:22:33+0530",
-   "task_id": "T-225",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-225 stays blocked on Zoom Support's reply only (the ask of Adi is removed): a daily 09:10 job now checks Zoom directly and logs the result on the task, and today's check shows not granted. Whether a GET can reveal a grant before the fields are written is unproven, so the sure test is one PATCH on "
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-253: Confirm connector assumptions on free or test accounts (WebinarGeek, Zoom, CRMs, Cal.com, Tantra, Twilio, Dodo, Stripe, Metricool)",
- "task_id": "T-253",
+ "message": "Acting on 1 note(s) for T-279: Confirm whether partner code bhaskardev is Bhaskar on the team",
+ "task_id": "T-279",
  "entries": [
-  "F-d1f41f68"
+  "F-e1299ee8"
  ],
  "mode": "feedback",
- "started": "2026-10-09T12:08:55+0530"
+ "started": "2026-10-09T12:16:21+0530"
 }

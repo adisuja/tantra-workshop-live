@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T12:14:59+0530",
-  "version": 1050,
+  "updated": "2026-10-09T12:15:41+0530",
+  "version": 1052,
   "last_id": 357,
   "team": [
    {
@@ -9173,7 +9173,8 @@
    "owner": "Aquila",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P2",
    "due": "",
@@ -9184,12 +9185,29 @@
     "Each listed check has a recorded result (pass or the fix commit)",
     "REVERT_LEDGER shows every test object deleted"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Results per connector",
+     "url": "cloud/src/connectors/CHECKS.md"
+    },
+    {
+     "label": "Check script",
+     "url": "cloud/scripts/connector-checks.mjs"
+    },
+    {
+     "label": "Guard probe (17/17)",
+     "url": "cloud/scripts/probe-connector-guards.mjs"
+    },
+    {
+     "label": "Revert ledger",
+     "url": "scripts/walkthroughs/REVERT_LEDGER.md"
+    }
+   ],
    "blockers": [
     "Free or test accounts for WebinarGeek, Cal.com, Twilio, Dodo test mode, Stripe test mode and Metricool (Adi creates them; Claude never signs up or enters passwords)",
     "CRM checks wait on T-260"
    ],
-   "needs_from_owner": "Create free or test accounts (or say which vendors to skip): WebinarGeek https://www.webinargeek.com, Cal.com https://cal.com/signup, Twilio https://www.twilio.com/try-twilio, Metricool https://metricool.com; turn on test mode in Dodo (https://app.dodopayments.com) and Stripe (https://dashboard.stripe.com/test) and save a test key under ~/.config/tantra/keys/vendor-test.env.",
+   "needs_from_owner": "Test keys, pasted as KEY=value lines into ~/.config/tantra/keys/vendor-test.env (skip any vendor you do not want checked): WEBINARGEEK_TEST_API_KEY and WEBINARGEEK_TEST_WEBINAR_ID (trial at https://www.webinargeek.com with the API switched on by support, key under Account, Integrations, API, plus one unpublished live test webinar's ID); CALCOM_TEST_API_KEY (free account at https://cal.com/signup, Settings, Developer, API keys); DODO_TEST_API_KEY (https://app.dodopayments.com, switch to Test mode, Developer, API Keys); STRIPE_TEST_RESTRICTED_KEY (https://dashboard.stripe.com/test/apikeys, Create restricted key, starts rk_test_); TANTRA_TEST_API_KEY (https://usetantra.com, FintechCircle workspace, Connectors, API Keys, Create Key).",
    "log": [
     {
      "ts": "2026-10-08T00:21:42+0530",
@@ -9205,6 +9223,16 @@
      "ts": "2026-10-09T00:06:32+0530",
      "who": "claude",
      "note": "2026-10-08 walkthrough recordings confirmed live: Resend Add API Key (Full access vs Sending access, All domains, shown once); Cloudflare token form (Registrar: Domains offers Read or Admin only); Cal.com Settings, Developer, API keys, New, never expires, cal_live_ key shown once; WebinarGeek Webinar ID via the API reference icon (address bar is the episode ID), API key under Account, Integrations, API; Metricool Account settings, API tab, userId/blogId in the brand URL; GA4 Account access management, Add users, Editor; Zoom settings and S2S app pages; GoHighLevel Private Integrations (Labs not needed on the owner agency). Every object created for recording was deleted and re-checked live on 2026-10-08 (REVERT_LEDGER all reverted). Twilio, Dodo, Stripe and CRM checks still wait (see the blocked walkthrough task)."
+    },
+    {
+     "ts": "2026-10-09T12:15:41+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T12:15:41+0530",
+     "who": "claude",
+     "note": "Did everything the Orchestrator listed. Zoom checked live on our Pro app: creating an event subscription by API is refused without three extra marketplace scopes (nothing created, logged in REVERT_LEDGER), so the one-paste step in the Zoom app stays. Twilio and Metricool are now defensive instead of live-tested (opt-in image address, registration number, unused template variable, either image answer, LinkedIn target read before posting): tsc clean, probe-connector-guards.mjs 17/17, commit ad3ebaf pushed to main; not deployed to the centre Worker yet, and the full simulator probe was not run because no local stack is up. WebinarGeek, Cal.com, Dodo, Stripe and Tantra checks are one command each (cloud/scripts/connector-checks.mjs, self-deleting, ledger row written) and wait only on test keys; no Tantra API key exists anywhere yet (same key as T-337). Results sit in cloud/src/connectors/CHECKS.md; CRMs stay parked on T-260."
     }
    ],
    "order": 2530
