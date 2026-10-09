@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T20:13:24+0530",
-  "version": 1277,
+  "updated": "2026-10-09T20:17:53+0530",
+  "version": 1280,
   "last_id": 364,
   "team": [
    {
@@ -9723,45 +9723,27 @@
   },
   {
    "id": "T-237",
-   "title": "Give the Tantra webinar a public registration page",
-   "area": "Product",
+   "status": "review",
    "owner": "Nelbin",
    "assignee": "Claude",
    "reviewers": [
     "Adi",
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
-   "why": "People can reach the Tantra webinar meeting only when an admin imports them, so any marketing traffic to the webinar has nowhere to register.",
-   "spec": "Today: the admin schedules a one-off Pro meeting (webinarMeeting, type 2) and imports people 30 a call with Zoom's batch registrants (importRegistrants in cloud/src/zoom-pro.ts, admin routes in cloud/src/index.ts near line 639). Build: a public POST route on the centre (for example /webinar/register, CORS limited like /intake in cloud/src/live.ts, rate limited like /cal/issue) that takes name and email for the webinar meeting currently set in the admin, refuses placeholder emails (T-229 helper), registers the person (single add-registrant call; Zoom's 3-per-person-per-day rule respected as in c106985), returns their own join link, and imports them into the Tantra reminder campaigns (T-234 mechanism). Add a simple form page served by the centre and a probe. Bhaskar decides where the public link is placed on the marketing site.",
-   "done_when": [
-    "A public sign-up registers into the webinar meeting and the person gets Zoom's confirmation and their own join link",
-    "Placeholder emails and repeats are refused without extra Zoom calls",
-    "Probe covers the route against vendor-sim"
-   ],
+   "area": "Product",
+   "order": 2370,
+   "title": "T-237: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
    "evidence": [],
    "blockers": [],
    "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-10-07T23:25:35+0530",
-     "who": "claude",
-     "note": "Added by the Integrator's pending-work sweep."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review 2026-10-08: still accurate. Still open: no public webinar registration route found on main; UNVERIFIED beyond the Integrator note."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: confirmed admin-only today (POST /admin/api/zoom/webinar and /webinar/<id>/registrants in cloud/src/index.ts, importRegistrants in cloud/src/zoom-pro.ts); spec made concrete. UNVERIFIED which public page should host the form."
-    }
-   ],
-   "order": 2370
+   "log": [],
+   "held": true
   },
   {
    "id": "T-238",

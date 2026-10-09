@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T20:18:03+0530",
+   "task_id": "T-237",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-237 is in review: the public webinar sign-up is deployed, but the push, the live test registration and the masterclass link are still open.\n\n- **Built:** `https://revops-centre.growthcluborg.workers.dev/webinar/register` has a form page and a POST route. It makes one add-registrant call and return"
+  },
+  {
    "ts": "2026-10-09T20:13:30+0530",
    "task_id": "T-235",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-087 is in review: the n8n code dependencies are gone, but the commit is local only because `origin/main` rejected the push.\n\n- **Push:** origin has newer commits, and I didn't rebase on top of other lanes' uncommitted work or force it. The commit still needs pulling in and pushing.\n- **What change"
-  },
-  {
-   "ts": "2026-10-09T19:21:31+0530",
-   "task_id": "T-061",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "error",
-   "summary": "tWPKHmf0f31FqJq+4IPdTddkzBN3eQ25KdczK0HTNKV5GcEfYwby5ytRjvO6p6FVZk6LiKironmfvdYZ1KYFAhiZZmxfgVY/AKzE4+4LxVTwF38cX/QDQo0wZdTeZ0u6NJA/CQ6nrhdQ51rMxWmfsWenthbLT/j6B2RzpZV8rOUj5GQokclIIlZlH+R/NT8aPzDAeLUcCOSNubz/Nja+bjfjsefue0GmQGEOcvRSy8gDBKyXQNrAav/XaV1ZtiddWSS/csRyOrhkqmNKmQA1ZJOLZ8BWsibWx3yaSgS3cGqz"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-237",
+ "task_id": "T-241",
  "entries": [
-  "F-cbd83ef5"
+  "F-324d13fa"
  ],
- "started": "2026-10-09T20:13:36+0530",
- "message": "Acting on 1 note(s) for T-237: Give the Tantra webinar a public registration page"
+ "started": "2026-10-09T20:18:09+0530",
+ "message": "Acting on 1 note(s) for T-241: Fix the cohort date shown after Day 1 starts"
 }
