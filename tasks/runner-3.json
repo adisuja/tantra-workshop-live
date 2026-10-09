@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T19:45:37+0530",
+   "task_id": "T-152",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-152 is in review. The severity levels, a local Claude bug pipeline and the first weekly report are done. Five fix PRs (#160 to #164) and a CI PR (#165) are open on tantra-backend-v2 against `development`.\n\n- **Bug source:** GitHub issues were empty and the YOGI bug log covers a different product, "
+  },
+  {
    "ts": "2026-10-09T19:32:03+0530",
    "task_id": "T-087",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-223 stays in review for the first real sign-up only: T-229 is shipped (Worker bc7ea5ad, pushed as 2ba0273), the live admin shows 0 failed, and the 14 to 16 Oct meeting 88135386601 already exists with every room setting correct and cap 98. I also marked a second placeholder, attendee 66 (adi@exampl"
-  },
-  {
-   "ts": "2026-10-09T17:34:00+0530",
-   "task_id": "T-215",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-215 stays in review: all 18 4K walkthroughs are verified on one review index (http://localhost:8883/wt-review/index.html?v=2e9db5c) and the pipeline sources are pushed to `tantra-walkthroughs` (2e9db5c), but the approved Dodo test-mode recording is not done because the recording browser is signed "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-152",
+ "task_id": "T-153",
  "entries": [
-  "F-38245a73"
+  "F-368975e1"
  ],
- "started": "2026-10-09T19:32:09+0530",
- "message": "Acting on 1 note(s) for T-152: Bug pipeline: severity levels, agent reproduces and proposes the fix, human review, deploy"
+ "started": "2026-10-09T19:45:43+0530",
+ "message": "Acting on 1 note(s) for T-153: Feature request pipeline: combine, score by revenue and retention impact, weekly decision, changelog"
 }
