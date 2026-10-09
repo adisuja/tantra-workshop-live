@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T17:29:07+0530",
-  "version": 1135,
+  "updated": "2026-10-09T17:32:41+0530",
+  "version": 1136,
   "last_id": 357,
   "team": [
    {
@@ -5823,12 +5823,20 @@
    ],
    "evidence": [
     {
-     "label": "Review tab",
-     "url": "https://adisuja.github.io/tantra-workshop-live/#review"
+     "label": "Review tab (live, 379 elements)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=99456e1#review"
+    },
+    {
+     "label": "Source-only template example",
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=99456e1#review:templates/utm-scheme"
     },
     {
      "label": "Link probe",
      "url": "app/scripts/probe-review-hub.mjs"
+    },
+    {
+     "label": "Generator",
+     "url": "workshop-plan/build/review_hub.py"
     }
    ],
    "blockers": [],
@@ -5848,6 +5856,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: element count is now 380; data last regenerated before the library and guide rewrites, so regenerate before the owner review."
+    },
+    {
+     "ts": "2026-10-09T17:32:41+0530",
+     "who": "claude",
+     "note": "Review tab regenerated and published (main 01781df, mirror 99456e1): 379 elements. The link probe first failed on 96 templates that have no client example (the live library no longer renders them), so those are now source only, and the VIP ticket, mechanism picker and Build guides links were repointed; probe-review-hub on the live hub now reports ALL LINKS OK (423 links and anchors), the source check on main is 374 links with 0 bad, and the denylist and figures guard found nothing. Open the Review tab link and start the one by one review; two things found outside this task: the public board copy on the mirror is stuck at v1103 because the shared live/ clone cannot rebase, and /onboarding#d1-mechanism lands on Welcome instead of the picker."
     }
    ],
    "order": 1440,
