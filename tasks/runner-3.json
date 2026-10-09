@@ -97,12 +97,12 @@
    "summary": "T-152 is in review. The severity levels, a local Claude bug pipeline and the first weekly report are done. Five fix PRs (#160 to #164) and a CI PR (#165) are open on tantra-backend-v2 against `development`.\n\n- **Bug source:** GitHub issues were empty and the YOGI bug log covers a different product, "
   }
  ],
- "state": "working",
+ "state": "disabled",
  "mode": "feedback",
- "task_id": "T-255",
+ "task_id": null,
  "entries": [
   "F-8827a460"
  ],
  "started": "2026-10-09T20:29:10+0530",
- "message": "Acting on 1 note(s) for T-255: Guide flowcharts: per-mechanism flows for the S2 landing guide (webinar, RSP, challenge)"
+ "message": "Paused by Adi (2026-10-09 20:3x). Resumes when Adi presses Resume."
 }

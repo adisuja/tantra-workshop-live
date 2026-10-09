@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T20:29:00+0530",
-  "version": 1291,
+  "updated": "2026-10-09T20:34:31+0530",
+  "version": 1293,
   "last_id": 364,
   "team": [
    {
@@ -10449,11 +10449,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "The charts are how attendees understand the funnel; a missing exit or end node teaches the wrong flow, and these were left over after the round 5 Lane E chart pass.",
    "spec": "Edit the flow specs in app/src/content/guides/** so each chart shows the real stage to stage path, fix wrong tool logos, add SVG logos for tools that still render as colour chips (app/src/lib/guides/tools.ts), and add a lane rule to app/src/lib/guides/journey-check.ts so a lane with no cross-lane edge fails. Per finding (from /Users/adithyamurali/tantra-round5-coord/AUDIT.md): G053 s5-pipeline/s5-pipeline.ts: add a Qualified node (score to qualified 'clears', qualified to held). G055 same file: add proposal to lost 'declined' to Nurture-Back. G058 same file: rename the lane (for example 'Exits and the Engine') or move engine out. G062 s5-pipeline/s5-challenge-stages.ts: add offer to Stage 6 / 52-week engine 'not now'. G069 s5-pipeline/s5-follow-ups.ts: add lost to Nurture-Back 'timing'. G074 s5-pipeline/s5-extra-pipelines.ts: add a 'Lost (timing)' source into nurture and nurture to engine 'stays parked'. G082 s6-growth/s6-newsletter.ts: add tool to step 'next step' and tool, mindset, templates, letter. G083 same file: reply to letter 'no reply' and letter to quiet '20 unopened'. G086 s6-growth/s6-sms.ts: add click to registration page / pipeline. G090 s6-growth/s6-ai-newsletter.ts: WhatsApp and SMS send nodes fed by the approved draft (WhatsApp through Tantra, SMS through Twilio). G109 s1-traffic/s1-blog.ts: clicks/post to registration page 'CTA click' to CRM 'blog'. G022 s3-nurture/s3-tantra-pro-flow.ts: the reminder email node uses the Tantra logo (reminders run on Tantra campaigns, see T-234). G081 s5-pipeline/s5-crm-starter.ts: drop the github tool on the crm.py node. G126 app/src/lib/guides/tools.ts: SVG logos for Metricool, Canva and Fireflies now; GoHighLevel and Beehiiv only if T-260 keeps them. G125 journey-check.ts: each lane has at least one edge in and out. Mark each id fixed in AUDIT.md with the commit.",
    "done_when": [
@@ -10462,7 +10463,28 @@
     "node app/scripts/probe-details.mjs reports no new chart WARN",
     "Every listed finding id is marked fixed in AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Pipeline chart",
+     "url": "http://localhost:4322/debug/guides?only=s5-pipeline&v=254"
+    },
+    {
+     "label": "Newsletter chart",
+     "url": "http://localhost:4322/debug/guides?only=s6-newsletter&v=254"
+    },
+    {
+     "label": "AI newsletter chart",
+     "url": "http://localhost:4322/debug/guides?only=s6-ai-newsletter&v=254"
+    },
+    {
+     "label": "Blog chart",
+     "url": "http://localhost:4322/debug/guides?only=s1-blog&v=254"
+    },
+    {
+     "label": "Extra pipelines chart",
+     "url": "http://localhost:4322/debug/guides?only=s5-extra-pipelines&v=254"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -10475,6 +10497,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still open (no change under app/src/content/guides or app/src/lib/guides since 1fd8de2; e4bd0b8 on S1 touches only s1-cold-email, s1-overview, journeys.ts, AUTOMATION-FACTS.md, no overlap). G126 asks for GoHighLevel and Beehiiv logos, which are not approved tools: those two wait on T-260."
+    },
+    {
+     "ts": "2026-10-09T20:34:31+0530",
+     "who": "claude",
+     "note": "All 15 findings built in commit 36d9956 (G081 was already clean: no github tool remains). Verified: probe-flows static 24 charts PASS plus a self-test that an unwired lane fails, rendered at 1440 and 390 for the 10 charts with 0 stray crossings, probe-details has no new WARN. Not pushed: local main is 163 ahead and 31 behind origin, so a push would be rejected and would publish other lanes' commits. Logos: GoHighLevel is the vendor's 32px favicon."
+    },
+    {
+     "ts": "2026-10-09T20:34:31+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
     }
    ],
    "order": 2540

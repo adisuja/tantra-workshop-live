@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T20:34:36+0530",
+   "task_id": "T-254",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-254 is in review: all 15 findings are built and committed (`36d9956`), but not pushed.\n\nThe push is the one approved step I skipped. Local main is 163 commits ahead of origin and 31 behind, so a push would be rejected. It would also publish other lanes' unpushed work.\n\n- **Checks:** the static flo"
+  },
+  {
    "ts": "2026-10-09T20:25:34+0530",
    "task_id": "T-247",
    "mode": "feedback",
@@ -87,22 +95,12 @@
    "status": "review",
    "result": "ok",
    "summary": "T-050 is in review with Bhaskar: `workshop-plan/sequences/pre.md` is written and committed, covering both lanes. A grep for Build Pass, Live Pass, webinar, dashes and literal cohort dates found nothing, and F-db847ab6 is acked."
-  },
-  {
-   "ts": "2026-10-09T19:10:19+0530",
-   "task_id": "T-006",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-006 is in review: the runbook, `up.sh` and the 9 plists that weren't in the repo are written, committed as 9ecd123 and pushed to origin main as ca313ef.\n\nRunning `up.sh` exits 0 with 18 active jobs ok and 4 warnings:\n- **codex-check:** returns a 401.\n- **MongoDB:** not installed until T-247.\n- **R"
   }
  ],
- "state": "working",
- "mode": "feedback",
- "task_id": "T-254",
- "entries": [
-  "F-4c259ef6"
- ],
+ "state": "disabled",
+ "mode": null,
+ "task_id": null,
+ "entries": [],
  "started": "2026-10-09T20:25:39+0530",
- "message": "Acting on 1 note(s) for T-254: Guide flowcharts: add the missing nodes, exits and logos in the S1, S3, S5 and S6 charts"
+ "message": "Paused by Adi (2026-10-09 20:3x). Resumes when Adi presses Resume."
 }

@@ -49,8 +49,8 @@
    "summary": "T-124 → **review**. Fixed `/vip` checkout dropping first-touch UTMs (both server-session POST and static hosted-link now use `resolveUtm()`); verified with new `probe-checkout-utm.mjs` (both paths PASS) and `probe-checkout-currency` (no regression); committed 777b084 — owner sign-off is a completed "
   }
  ],
- "state": "idle",
- "message": "Nothing waiting.",
+ "state": "disabled",
+ "message": "Paused by Adi (2026-10-09 20:3x). Resumes when Adi presses Resume.",
  "task_id": null,
  "entries": [],
  "mode": null,
