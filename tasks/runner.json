@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T01:44:41+0530",
+   "task_id": "T-266",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-266 is in review: automation 9 is built, committed and pushed (50914b0), and the centre Worker is deployed. The funnel Worker isn't deployed to any attendee account.\n\nI checked it with a new local probe, `cloud/scripts/probe-t266.mjs`, which passes 14 of 14 against the vendor simulator. A simulate"
+  },
+  {
    "ts": "2026-10-10T01:39:13+0530",
    "task_id": "T-259",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-057 is in review with Bharath and Adi as reviewers. The app shows hard LinkedIn caps per profile, so the c.md ramp stays only as the operating plan.\n\n- **Readiness:** YES, dated 2026-10-07 from Adi's statement. A read-only sign-in with the test account confirmed it, and I changed nothing in the ap"
-  },
-  {
-   "ts": "2026-10-09T18:46:00+0530",
-   "task_id": "T-228",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 10pm (Asia/Calcutta)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-266: Automation 9: challenge daily survey to AI output to PDF delivery loop",
- "task_id": "T-266",
+ "message": "Acting on 1 note(s) for T-267: Centre: payments, live key swap, privacy pages and invoice-only close",
+ "task_id": "T-267",
  "entries": [
-  "F-8d6cf2b5"
+  "F-409a5db1"
  ],
  "mode": "feedback",
- "started": "2026-10-10T01:39:16+0530"
+ "started": "2026-10-10T01:44:46+0530"
 }
