@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T19:45:33+0530",
-  "version": 1252,
+  "updated": "2026-10-09T19:48:48+0530",
+  "version": 1256,
   "last_id": 362,
   "team": [
    {
@@ -1251,7 +1251,7 @@
    "owner": "Adi",
    "priority": "P1",
    "due": "2026-09-22",
-   "status": "queue",
+   "status": "review",
    "why": "One of the three primary funnel types. It was built from the 20-funnel library definition, not the sibling whiteboard, so it is thinner than webinar and workshop.",
    "spec": "Compare the reverse squeeze page content in workshop-plan/playbook.html (#d2-the-reverse-squeeze-funnel-end-to-end, #eq-rsp) and the centre cards against the RSP / Reverse-VSL whiteboard Adi supplied 2026-09-24; fill any section thinner than the webinar and workshop-series equivalents.",
    "done_when": [
@@ -1259,6 +1259,18 @@
     "Reverse squeeze sections match the depth of the webinar and workshop-series sections"
    ],
    "evidence": [
+    {
+     "label": "Live playbook: reverse squeeze, S1 onward",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t025#d2-rsp-s1-traffic"
+    },
+    {
+     "label": "Local playbook",
+     "url": "http://localhost:8899/playbook.html?v=t025#d2-rsp-s1-traffic"
+    },
+    {
+     "label": "Section-by-section comparison",
+     "url": "workshop-plan/coord/T-025_RSP_COMPARISON.md"
+    },
     {
      "label": "RSP funnel whiteboard v10",
      "url": "https://adisuja.github.io/rsp-funnel-whiteboard/rsp_funnel_whiteboard_v10.html"
@@ -1291,6 +1303,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): checked, current. pass 2: still accurate; whiteboard URL answers 200 and the playbook section d2-the-reverse-squeeze-funnel-end-to-end plus eq-rsp-s1 to s6 exist; depth parity still UNVERIFIED."
+    },
+    {
+     "ts": "2026-10-09T19:47:20+0530",
+     "who": "claude",
+     "note": "The reverse squeeze section of the playbook now goes stage by stage like the webinar one: six stage subsections each with a build table and a task, plus a CRM map and a first test per stage (813 to 4,225 words, 1 to 7 tasks; webinar S1 to S6 is 5,643 words and 7 tasks). An earlier run had drafted it; I checked every line against the whiteboard scene and the centre cards, removed 17 reader-facing mentions of 'the whiteboard', fixed a phone overflow the probe caught, then pushed (origin b5fb5a5, with the generated copies of the playbook) and published the mirror (3b5ae9f90); the live page passes probe-playbook at all four widths. Open the live link and read from S1 Traffic; the comparison doc lists what the whiteboard holds, what was thin, and the eight rulings (bridge kept at 75%, no sample KPI numbers, no cost table)."
     }
    ],
    "order": 160,
@@ -6877,7 +6894,7 @@
    "owner": "Amal",
    "priority": "P1",
    "due": "2026-10-09",
-   "status": "queue",
+   "status": "review",
    "why": "Owner voice notes, 2026-09-26: the funnel's job is to get everyone using Tantra and reporting every bug and feature request; both get resolved through a fast agentic dev cycle so customers stay for the business results. Owner assigned all of this to Claude end to end.",
    "spec": "Merge duplicate requests and count demand. Score by revenue/retention impact, not by who asked loudest. Weekly slot decides build now (24h agentic cycle) / write a spec / park. Changelog per release and a note to everyone who asked.",
    "done_when": [
@@ -6886,7 +6903,20 @@
     "First weekly decision logged",
     "Changelog entry for every release"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Rubric",
+     "url": "docs/feature-rubric.md"
+    },
+    {
+     "label": "First decision",
+     "url": "workshop-plan/tasks/features/data/decisions/2026-10-09.json"
+    },
+    {
+     "label": "Changelog",
+     "url": "workshop-plan/tasks/features/changelog/CHANGELOG.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -6904,12 +6934,28 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): checked, current. pass 2: still accurate; not started, depends on T-151."
+    },
+    {
+     "ts": "2026-10-09T19:48:16+0530",
+     "who": "claude",
+     "note": "People: reviewers Amal → Amal/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T19:48:16+0530",
+     "who": "claude",
+     "note": "Built the features pipeline in workshop-plan/tasks/features (T-151 field schema, BM25 duplicate merger with manual override and demand + requester list, weighted rubric in docs/feature-rubric.md applied in score.py, weekly decision job logging to coord/LOG.md, changelog with draft per-requester notes). Seeded 16 real asks from audits and memory (merged to 12), ran the first weekly decision on 2026-10-09 (1 build now, 9 spec, 2 park) and logged it; 5 unit tests pass. Inputs are Claude's first-pass estimates, all asks are internal so paying-brand counts are 0, and no release has shipped yet; Bharath should confirm inputs before any build-now item touches a product repo."
+    },
+    {
+     "ts": "2026-10-09T19:48:48+0530",
+     "who": "claude",
+     "note": "Checked 5 related task(s); updating T-151."
     }
    ],
    "order": 1530,
    "assignee": "Claude",
    "reviewers": [
-    "Amal"
+    "Amal",
+    "Bharath"
    ]
   },
   {

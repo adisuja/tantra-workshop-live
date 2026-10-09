@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T19:48:42+0530",
+   "task_id": "T-153",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-153 is in review: the features pipeline is built, the first weekly decision is logged, and the commit is pushed to origin main as 40ee37a.\n\n- **What's there:** The pipeline is in `workshop-plan/tasks/features/`. The rubric is `docs/feature-rubric.md`. It has intake fields matching T-151, a duplica"
+  },
+  {
    "ts": "2026-10-09T19:45:37+0530",
    "task_id": "T-152",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-092 stays in review: funnel-stays-dark is logged as the Orchestrator's decision (done_when item and ask removed), the recheck found one drift (template library stage names white on white in Light), fixed in 755e4a0 and republished to the mirror (2b41f47), and all 36 checks in the new `app/scripts/"
-  },
-  {
-   "ts": "2026-10-09T17:42:45+0530",
-   "task_id": "T-223",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-223 stays in review for the first real sign-up only: T-229 is shipped (Worker bc7ea5ad, pushed as 2ba0273), the live admin shows 0 failed, and the 14 to 16 Oct meeting 88135386601 already exists with every room setting correct and cap 98. I also marked a second placeholder, attendee 66 (adi@exampl"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-153",
+ "task_id": "T-158",
  "entries": [
-  "F-368975e1"
+  "F-b38aff91"
  ],
- "started": "2026-10-09T19:45:43+0530",
- "message": "Acting on 1 note(s) for T-153: Feature request pipeline: combine, score by revenue and retention impact, weekly decision, changelog"
+ "started": "2026-10-09T19:48:48+0530",
+ "message": "Acting on 1 note(s) for T-158: Pipeline dashboard modelled on a client's webinar desk"
 }
