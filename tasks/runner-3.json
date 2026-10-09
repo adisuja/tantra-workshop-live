@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T02:22:35+0530",
+   "task_id": "T-257",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-257 is in review: built, verified and pushed to main as 6e7b2b6, with all 8 audit ids marked fixed. The public mirror was not published (left for the next Integrator publish), and one older diagram check in probe-screenshots still fails, unrelated to this task."
+  },
+  {
    "ts": "2026-10-10T01:48:15+0530",
    "task_id": "T-268",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-213 is in review. The warm-up job waits on Tantra, the worker is deployed and the lead email works. I did not push, because local main and `origin/main` have diverged.\n\n- **Instantly removed:** the start-endy warm-up job now waits for inboxes to show Connected and Gmail capable in Tantra Accounts."
-  },
-  {
-   "ts": "2026-10-09T20:00:45+0530",
-   "task_id": "T-155",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-155 is in review for Amal. The weekly feedback counter and the \"Report bug / feature\" form are built, but the live Tantra campaigns and the FintechCircle test send are not done.\n\n- **Done:**\n  - **Counter and form:** the board now has a feedback counter and a Report form that posts to the board Wo"
   }
  ],
- "state": "working",
+ "state": "paused",
  "mode": "feedback",
- "task_id": "T-257",
+ "task_id": null,
  "entries": [
   "F-f9b6048f"
  ],
  "started": "2026-10-10T01:54:56+0530",
- "message": "Acting on 1 note(s) for T-257: Screenshots: delete orphan WebPs, re-crop for phone legibility, fix mismatched captures, add Day 1 and Day 3 playbook shots"
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 77% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 05:11."
 }
