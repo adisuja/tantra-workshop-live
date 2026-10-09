@@ -85,6 +85,220 @@
       </table></div>
       <div class="box tip"><div class="h">Pro Tip: The Threshold Is Your Highest-Leverage Variable</div>
         <p>Where you place the opt-in bridge decides everything downstream. Too early and you're a squeeze page wearing a costume: you lose the trust the format exists to build. Too late and people finish, feel satisfied, and leave. <strong>Put it in the spec, start around three-quarters through, and treat it as your first A/B test.</strong></p></div>
+      <h4 id="d2-rsp-s1-traffic">S1 Traffic: Send Every Channel at the Video, Not at a Form</h4>
+      <p>Have you ever sent a cold email with a "register now" link and watched nobody click?</p>
+      <p>A reverse squeeze takes that ask away. Your link doesn't want anything from the reader. It opens the video.</p>
+      <p>You run the same six channels as every other funnel. Group blog and social into one Content lane and you have five lanes, each with its own automations working behind it:</p>
+      <div class="tbl"><table>
+        <thead><tr><th>Lane</th><th>What the Message Offers</th><th>Automations Behind It</th><th>Read Every Week</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Lane"><b>Cold calendar</b></td><td data-label="What the Message Offers">An invite for the day your video goes live, with the Part 1 link in the description</td><td data-label="Automations Behind It">UTM tag on the invite link · phone match to fill in the CRM record · a fallback message when nobody answers · every outcome synced to your dashboard</td><td data-label="Read Every Week">Invites delivered, Yes and Maybe replies, page visits</td></tr>
+          <tr><td data-label="Lane"><b>Cold email</b></td><td data-label="What the Message Offers">The five-step thread, every email linking to Part 1</td><td data-label="Automations Behind It">Replies sorted by intent · bounce and unsubscribe handling · a CRM lead created on an interested reply · UTM tags on every link</td><td data-label="Read Every Week">Delivery, opens, link clicks, interested replies</td></tr>
+          <tr><td data-label="Lane"><b>LinkedIn</b></td><td data-label="What the Message Offers">A connection note, then a short message sequence with the link</td><td data-label="Automations Behind It">Profile details added to the contact · inbox replies answered · CRM sync when a request is accepted · UTM tag on the link</td><td data-label="Read Every Week">Acceptance, messages sent, link clicks, interested replies</td></tr>
+          <tr><td data-label="Lane"><b>Content (blog and social)</b></td><td data-label="What the Message Offers">Posts that teach one idea from Part 1 and link to the rest</td><td data-label="Automations Behind It">Scheduling in Metricool · engagement tracked per post · people who engage added to the CRM · the top post reworked for the other networks · UTM short links</td><td data-label="Read Every Week">Impressions, engagement, link clicks, inbound messages</td></tr>
+          <tr><td data-label="Lane"><b>Paid ads</b></td><td data-label="What the Message Offers">A short teaser cut of Part 1 as the ad</td><td data-label="Automations Behind It">Pixel and Conversions API events · retargeting audiences kept in sync · lookalike audiences built from your CRM · UTM rules enforced · spend synced to your dashboard · conversions written back to the contact's source</td><td data-label="Read Every Week">Impressions, click-through, page views per click, spend</td></tr>
+        </tbody>
+      </table></div>
+      <p>One thing about ads: the agent creates every Meta ad paused. Nothing spends until you switch it on.</p>
+      <p>Which lane should you lead with? Two rules. If you sell to small businesses, swap LinkedIn for Facebook groups. If you sell to enterprise, lead with cold calendar.</p>
+      <div class="task" id="d2-task-rsp-1">
+        <div class="th"><span class="tn">RSP S1</span><b>Point Every Channel at Part 1</b></div>
+        <div class="tm">
+          <p>You wrote two versions per channel in Task 2.2. Here they change in one way: the promise is the video, so nothing in them asks anyone to register.</p>
+          <ol>
+            <li>Go through both versions for every channel and cut the registration language: "register", "save your seat", "sign up". Say what the video shows them instead.</li>
+            <li>Link every message to the Part 1 page with <code>utm_source</code> per channel and <code>utm_content=variant_a</code> or <code>variant_b</code>.</li>
+            <li>Point Tantra's reply, bounce and unsubscribe webhooks at your workflow or Worker, so an interested reply creates the contact without a form.</li>
+            <li>Send both versions to a small slice of your list. After a week, keep the version with more page visits per person reached.</li>
+          </ol>
+        </div>
+        <div class="meta"><span><i>Owner</i>You · AI drafts from the prompt pack</span><span><i>Tool</i>Claude Code · Tantra · Metricool · Meta Ads</span><span><i>Time</i>60 min</span><span class="dl"><i>Deliverable</i>2 versions × every live channel, all linking to Part 1</span><span class="pv"><i>Proof</i>A click from each channel shows up as a page visit with that channel's <code>utm_source</code></span></div>
+      </div>
+      <h4 id="d2-rsp-s2-the-video-page">S2 Video Page: Let Them Watch First, Then Ask</h4>
+      <p>Here's the mistake I see most. Someone builds a reverse squeeze, loses their nerve the night before launch, and puts a form above the video.</p>
+      <p>Now it's a squeeze page. And the trust the format exists to build is gone.</p>
+      <p>This stage has three parts. Build all three:</p>
+      <div class="tbl"><table>
+        <thead><tr><th>Part</th><th>What You Build</th><th>Automations Behind It</th><th>Read Every Week</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Part"><b>The page</b></td><td data-label="What You Build">One page whose only job is the video: headline A or B, the subhead, the player. No form, no menu. It runs on Cloudflare (route B) or GoHighLevel (route A)</td><td data-label="Automations Behind It">The two headlines rotated as an A/B test · heatmaps and session recordings in Microsoft Clarity · page events in GA4</td><td data-label="Read Every Week">Visits, and how many stay past 10 seconds</td></tr>
+          <tr><td data-label="Part"><b>The video</b></td><td data-label="What You Build">Part 1 on Wistia with captions on, starting muted with click for sound. Two cuts: 12 minutes and 6 minutes</td><td data-label="Automations Behind It">Depth events at 25, 50, 75 and 100% written to the contact · captions generated on upload</td><td data-label="Read Every Week">Play rate, average watch time, how many pass halfway</td></tr>
+          <tr><td data-label="Part"><b>The bridge and the button</b></td><td data-label="What You Build">The opt-in bridge, hidden until the viewer passes your threshold. The Apply button, hidden until the minute your offer lands</td><td data-label="Automations Behind It">The watch-threshold trigger that reveals the bridge · the form handler that creates the contact with the <code>webinar registrant</code> tag and its UTM values · an exit prompt that offers early leavers the link by email</td><td data-label="Read Every Week">Bridge opt-in rate per depth band, and how many reach the button</td></tr>
+        </tbody>
+      </table></div>
+      <p>Why the exit prompt? Because most people who leave early aren't saying no. They got interrupted. An email address lets Stage 3 bring them back.</p>
+      <p>How long should Part 1 be? A simple rule: if your offer is under $1,000, swap the long video for a 90 second one. Over $5,000, keep the long form.</p>
+      <div class="task" id="d2-task-rsp-2">
+        <div class="th"><span class="tn">RSP S2</span><b>Build the Page, Then Watch It as a Stranger Would</b></div>
+        <div class="tm">
+          <p>The agent builds the pages. Your job is the video, and then proving the tracking with one real session of your own.</p>
+          <ol>
+            <li>Record Part 1 first, good enough that you'd have charged for it, and cut the 12 minute and 6 minute versions. Then record Part 2.</li>
+            <li>Approve the pages card with headline A, headline B, the subhead, the bridge button text and the threshold set to 75.</li>
+            <li>Open the page on your phone in a private window. Check there is no form anywhere, then watch to the end.</li>
+            <li>Ask Claude Code to read your test contact back. You want four depth events, and a bridge that stayed hidden until the threshold.</li>
+          </ol>
+        </div>
+        <div class="meta"><span><i>Owner</i>You record · agent builds</span><span><i>Tool</i>Wistia · Claude Code · Cloudflare or GoHighLevel</span><span><i>Time</i>3 to 5 h to record · about 10 min to approve and test</span><span class="dl"><i>Deliverable</i>Part 1 page · Part 2 page · depth tracking · the bridge</span><span class="pv"><i>Proof</i>All four depth events sit on your test contact, and the bridge appeared only after the threshold</span></div>
+      </div>
+      <h4 id="d2-rsp-s3-nurture-by-depth">S3 Nurture: Follow Up by How Much They Watched, Not by the Clock</h4>
+      <p>Sound familiar? Someone watches four minutes of your video, their phone rings, and they never come back.</p>
+      <p>A webinar reminder says "we start in one hour". You have no start time. So every message here is triggered by what one person did.</p>
+      <p>You have two groups to follow up. The first group hasn't finished the video yet, and every message has one job: get them back to it. The second group has applied, and every message has a different job: get them to the call.</p>
+      <p>The centre builds the first four emails for you. This is the full set: seven emails, four WhatsApp messages, two texts and one optional AI call.</p>
+      <div class="tbl"><table>
+        <thead><tr><th>What They Did</th><th>Email</th><th>WhatsApp</th><th>SMS or AI Call</th></tr></thead>
+        <tbody>
+          <tr><td data-label="What They Did"><b>Opted in at the bridge</b></td><td data-label="Email">The confirmation, with the Part 2 link</td><td data-label="WhatsApp">The same link in one line</td><td data-label="SMS or AI Call">Nothing</td></tr>
+          <tr><td data-label="What They Did"><b>Watched under 25%</b></td><td data-label="Email">One re-engage. One, not a series</td><td data-label="WhatsApp">Nothing</td><td data-label="SMS or AI Call">Nothing</td></tr>
+          <tr><td data-label="What They Did"><b>Watched 25 to 75%</b></td><td data-label="Email">The missing piece, with a link to the exact timestamp they stopped before</td><td data-label="WhatsApp">A short nudge to the same timestamp</td><td data-label="SMS or AI Call">Nothing</td></tr>
+          <tr><td data-label="What They Did"><b>Watched over 75%, no opt-in</b></td><td data-label="Email">Straight to the Part 2 bridge</td><td data-label="WhatsApp">The same link</td><td data-label="SMS or AI Call">One text</td></tr>
+          <tr><td data-label="What They Did"><b>Applied and booked a call</b></td><td data-label="Email">What to prepare, then one proof story</td><td data-label="WhatsApp">A reminder the day before and on the day</td><td data-label="SMS or AI Call">One text before the call · an optional AI call for people who ticked the consent box</td></tr>
+          <tr><td data-label="What They Did"><b>Went quiet for 14 days</b></td><td data-label="Email">One re-engagement email</td><td data-label="WhatsApp">Nothing</td><td data-label="SMS or AI Call">Nothing</td></tr>
+        </tbody>
+      </table></div>
+      <p>Email goes through Resend or Tantra. WhatsApp goes through Tantra. Twilio sends the texts. The AI call is optional and runs on Vodex or ElevenLabs.</p>
+      <p>Behind those messages sit the automations that keep the list clean: opens and clicks written to the contact, inbound replies on WhatsApp and SMS logged against it, STOP and opt-out honoured on every channel, bounced addresses suppressed, call outcomes and transcripts saved to the CRM, and an alert to you when a hot lead replies.</p>
+      <p>How many touches is right? Size it to your price: if your offer is under $500, collapse to a three-email sequence. Over $10,000, extend to 14 touches across 30 days.</p>
+      <div class="task" id="d2-task-rsp-3">
+        <div class="th"><span class="tn">RSP S3</span><b>Approve the Depth Messages and Test Every Branch</b></div>
+        <div class="tm">
+          <p>A branch that never fires loses people silently. So you test each one with a session of your own before any traffic arrives.</p>
+          <ol>
+            <li>Approve the follow-ups card: the opt-in confirmation, the under 25% re-engage, the 25 to 75% missing piece, and the over 75% bridge email.</li>
+            <li>Write the WhatsApp twins for the confirmation and the 25 to 75% nudge, and submit them as message templates.</li>
+            <li>Run three test sessions with three addresses: stop one at about 10%, one at about 50%, and one past 75% without opting in.</li>
+            <li>Ask Claude Code to read the three contacts back and confirm each got its own message and nobody got another branch's.</li>
+          </ol>
+        </div>
+        <div class="meta"><span><i>Owner</i>You · AI drafts, you approve</span><span><i>Tool</i>Claude Code · Resend or Tantra email · Tantra WhatsApp · Twilio</span><span><i>Time</i>60 min</span><span class="dl"><i>Deliverable</i>4 emails live · 2 WhatsApp templates submitted · 3 branches tested</span><span class="pv"><i>Proof</i>Each of the three test contacts gets the message for its depth, and only that one</span></div>
+      </div>
+      <h4 id="d2-rsp-s4-part-2-and-the-application">S4 Part 2 and the Application: Turn a Viewer Into a Booked Call</h4>
+      <p>In a webinar you can read the room, answer the objection in the chat, and nudge someone toward the button.</p>
+      <p>Here nothing is live. So Part 2 and the application have to do that work for you.</p>
+      <p><strong>Part 2 arrives within seconds of the opt-in</strong>, on the page and by email as a backup. It goes deeper than Part 1, and then it makes the offer. The Apply button appears at the minute the offer lands, not before.</p>
+      <p>The application is three to five questions, and every answer is worth points. A full qualification form can run to 14 fields. Start short, and add a field only once you can see people finishing the form.</p>
+      <p>The points sort every applicant into one of three bands. You set the cut-offs in your spec, where you can change them without touching code:</p>
+      <div class="tbl"><table>
+        <thead><tr><th>Band</th><th>What They See Next</th><th>What Fires Behind It</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Band"><b>Top band</b></td><td data-label="What They See Next">The booking calendar, straight away. Nobody else sees it</td><td data-label="What Fires Behind It">Calendar gating · the booking written to the CRM · the contact filled in before the call, so you walk in knowing who they are</td></tr>
+          <tr><td data-label="Band"><b>Middle band</b></td><td data-label="What They See Next">The lower-priced offer page, with its own checkout and no call</td><td data-label="What Fires Behind It">The redirect to that page. A purchase there goes straight to Payment Completed</td></tr>
+          <tr><td data-label="Band"><b>Bottom band</b></td><td data-label="What They See Next">A thank-you, then the Stage 6 emails</td><td data-label="What Fires Behind It">The long-term sequence starts. No call is offered</td></tr>
+        </tbody>
+      </table></div>
+      <p>Four numbers tell you where this stage leaks: how many viewers reach the button's minute, how many of those click Apply, how many finish the application, and how many applications become a booked call. Multiply them and you have your Booking Rate.</p>
+      <div class="task" id="d2-task-rsp-4">
+        <div class="th"><span class="tn">RSP S4</span><b>Score the Application and Prove All Three Routes</b></div>
+        <div class="tm">
+          <p>The routing rule decides who gets your calendar. Get it wrong and you spend your week on calls with people who were never going to buy.</p>
+          <ol>
+            <li>Write three to five application questions. Give each answer points, so an ideal buyer totals about 100.</li>
+            <li>Write the two cut-offs into your spec: where the top band starts and where the bottom band ends.</li>
+            <li>Send three test applications from three addresses: one ideal buyer, one maybe, one poor fit.</li>
+            <li>Check where each one landed: the calendar, the lower-priced page, the thank-you. Then check each contact carries its <code>score_band</code>.</li>
+          </ol>
+        </div>
+        <div class="meta"><span><i>Owner</i>You · agent wires it</span><span><i>Tool</i>Claude Code · Cal.com · your CRM</span><span><i>Time</i>45 min</span><span class="dl"><i>Deliverable</i>Scored application · 2 cut-offs in the spec · 3 routes</span><span class="pv"><i>Proof</i>Three test applications land in three different places without you touching anything</span></div>
+      </div>
+      <h4 id="d2-rsp-s5-the-close">S5 Close: Run the Call, Send the Proposal, Take the Payment</h4>
+      <p>You know what loses more reverse squeeze deals than a weak pitch? A booked call that nobody turns up to.</p>
+      <p>So the close has two halves: getting the person to the call, and getting the deal from the call to a cleared payment.</p>
+      <p><strong>The premium branch is a call.</strong> Booking runs on Cal.com, the call on Zoom Pro with recording and transcript on, and payment on Dodo Payments or Stripe. Five automations sit around it:</p>
+      <div class="tbl"><table>
+        <thead><tr><th>Moment</th><th>What Fires</th><th>Where It Lands in the CRM</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Moment"><b>The day before and the day of the call</b></td><td data-label="What Fires">A reminder on each, by email and WhatsApp</td><td data-label="Where It Lands in the CRM">Eval Call Scheduled</td></tr>
+          <tr><td data-label="Moment"><b>They miss the call</b></td><td data-label="What Fires">The no-show recovery loop: a rebooking link, sent the same day</td><td data-label="Where It Lands in the CRM">No Show, with the tag <code>call-no-show</code></td></tr>
+          <tr><td data-label="Moment"><b>The call ends</b></td><td data-label="What Fires">Recording and transcript saved · a recap written to the contact · the recap email with the next step</td><td data-label="Where It Lands in the CRM">Sales Call Held, then Follow-Up or Proposal Sent</td></tr>
+          <tr><td data-label="Moment"><b>They accept</b></td><td data-label="What Fires">The payment link from Dodo Payments or Stripe</td><td data-label="Where It Lands in the CRM">Proposal Accepted</td></tr>
+          <tr><td data-label="Moment"><b>The payment clears</b></td><td data-label="What Fires">The <code>purchased</code> tag and the onboarding message</td><td data-label="Where It Lands in the CRM">Payment Completed, then Onboarding</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>The lower-priced branch is a page.</strong> Same template as the premium page, a different price, and a checkout in place of a calendar.</p>
+      <p>The full build also puts an AI reply agent across both branches. It sorts every inbound reply by intent, drafts the answer, updates the contact, and hands the thread to a person when it should. Its targets: a reply inside 5 minutes on WhatsApp and SMS, inside 15 on email, and inside 30 on LinkedIn. The centre doesn't build that agent for you, so until you add one, those targets are yours to hit by hand.</p>
+      <p>After the call, send four emails: the recap with the next step, the recording with a rebooking link, the plan, and one final follow-up. Then stop.</p>
+      <p>Two rules. If you sell in one call, skip the proposal stage. If several people have to say yes, give your contact something they can forward to the others.</p>
+      <div class="task" id="d2-task-rsp-5">
+        <div class="th"><span class="tn">RSP S5</span><b>Test Both Branches With a Real Booking and a Real Payment</b></div>
+        <div class="tm">
+          <p>A broken payment link costs you the deals you already won. Test both branches yourself before a buyer does.</p>
+          <ol>
+            <li>Book a call as a top band test contact. Check the reminder arrives, then don't turn up, and check the rebooking link arrives.</li>
+            <li>Book again and hold the call with a colleague. Check the recording, the transcript and the recap all reach the contact.</li>
+            <li>Buy through the lower-priced page with a real card, then refund it.</li>
+            <li>Ask Claude Code to read both contacts back: every stage in order, and the <code>purchased</code> tag on the buyer.</li>
+          </ol>
+        </div>
+        <div class="meta"><span><i>Owner</i>You · agent wires it</span><span><i>Tool</i>Cal.com · Zoom Pro · Dodo Payments or Stripe · your CRM</span><span><i>Time</i>60 min</span><span class="dl"><i>Deliverable</i>Call branch and checkout branch, both proven</span><span class="pv"><i>Proof</i>The test buyer reaches Payment Completed with the <code>purchased</code> tag, and the missed call gets <code>call-no-show</code></span></div>
+      </div>
+      <h4 id="d2-rsp-s6-fifty-two-weeks">S6 Growth: Keep Selling for 52 Weeks Without an Event</h4>
+      <p>A webinar funnel always has a next thing to invite people to. You don't.</p>
+      <p>That's the trap with a reverse squeeze. The video keeps working, so it feels finished, and everyone who watched and didn't buy hears nothing from you again.</p>
+      <p>The fix is a 52-week grid: five lanes, one touch per lane per week, and a checkpoint at weeks 1, 13, 26 and 52.</p>
+      <div class="tbl"><table>
+        <thead><tr><th>Lane</th><th>What Goes Out Each Week</th><th>Tool</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Lane"><b>Email</b></td><td data-label="What Goes Out Each Week">A rotation: welcome, a pillar lesson, a case study, a founder note, a how-to, a re-engagement, and a wrap-up each quarter</td><td data-label="Tool">Resend or Tantra email</td></tr>
+          <tr><td data-label="Lane"><b>WhatsApp</b></td><td data-label="What Goes Out Each Week">A one-line twin of that week's email</td><td data-label="Tool">Tantra</td></tr>
+          <tr><td data-label="Lane"><b>SMS</b></td><td data-label="What Goes Out Each Week">Only the time-critical ones: a call reminder, a new case study</td><td data-label="Tool">Twilio</td></tr>
+          <tr><td data-label="Lane"><b>AI newsletter</b></td><td data-label="What Goes Out Each Week">One themed issue a week, drafted by AI from your own context. You edit and approve</td><td data-label="Tool">Claude Code · Resend</td></tr>
+          <tr><td data-label="Lane"><b>Retargeting ads</b></td><td data-label="What Goes Out Each Week">A fresh creative and a refreshed audience each week</td><td data-label="Tool">Meta Ads</td></tr>
+        </tbody>
+      </table></div>
+      <p>With no event to promote, every invitation in the grid points at something on demand: a new training, a nudge to re-watch Part 1, a reminder to book a call, a new case study.</p>
+      <p>Three tracks run through the grid, and which one a contact joins depends on what they did:</p>
+      <ul>
+        <li><strong>Non-buyers</strong> get a fresh Part 1 every month. A new angle on the same method, pointed at the same bridge.</li>
+        <li><strong>Lower-priced buyers</strong> get the ascension track: results from the first purchase, then the premium offer.</li>
+        <li><strong>Premium buyers</strong> get the referral track.</li>
+      </ul>
+      <p>Your depth events also build three ad audiences: people who pressed play and left before halfway, people who passed halfway and never saw the bridge, and people who saw the bridge and didn't send it. Each one gets a different ad.</p>
+      <p>One rule: if your buying cycle is short, collapse the grid to 12 weeks. If you sell an annual contract, build the year around the renewal date.</p>
+      <div class="task" id="d2-task-rsp-6">
+        <div class="th"><span class="tn">RSP S6</span><b>Schedule the First Four Weeks and Switch on the Three Tracks</b></div>
+        <div class="tm">
+          <p>Task 2.7 set up the weekly letter. This adds the parts only a reverse squeeze needs: the tracks, and the audiences built from watch depth.</p>
+          <ol>
+            <li>Write weeks 1 to 4 for the email lane: the welcome, a pillar lesson, a case study and a re-engagement.</li>
+            <li>Set the three entry rules: no purchase joins the monthly Part 1 track, a lower-priced purchase joins ascension, a premium purchase joins referral.</li>
+            <li>Ask Claude Code to build the three ad audiences from your depth events. Leave the ads paused until the audiences fill.</li>
+            <li>Put next month's Part 1 in your calendar now. One new video a month is the whole running cost of this stage.</li>
+          </ol>
+        </div>
+        <div class="meta"><span><i>Owner</i>You · AI drafts, you approve</span><span><i>Tool</i>Claude Code · Resend · Tantra WhatsApp · Meta Ads</span><span><i>Time</i>60 to 90 min</span><span class="dl"><i>Deliverable</i>4 weeks scheduled · 3 tracks · 3 ad audiences</span><span class="pv"><i>Proof</i>A non-buyer test contact gets week 1, and a lower-priced test buyer lands in the ascension track instead</span></div>
+      </div>
+      <h4 id="d2-rsp-crm-map">How Every Step Lands in Your CRM</h4>
+      <p>Could you open one contact right now and see how much of your video they watched?</p>
+      <p>You need to. Every message in Stage 3 and every route in Stage 4 keys off a tag, so a tag that's missing is a follow-up that never sends.</p>
+      <p>A reverse squeeze adds four steps in front of the 11-stage pipeline, then joins it:</p>
+      <div class="tbl"><table>
+        <thead><tr><th>What the Person Does</th><th>Tag Written</th><th>Pipeline Stage</th></tr></thead>
+        <tbody>
+          <tr><td data-label="What the Person Does"><b>Presses play on Part 1</b></td><td data-label="Tag Written">None yet</td><td data-label="Pipeline Stage">VSL Started</td></tr>
+          <tr><td data-label="What the Person Does"><b>Passes 25, 50 and 75%</b></td><td data-label="Tag Written"><code>depth-25</code> · <code>depth-50</code> · <code>depth-75</code></td><td data-label="Pipeline Stage">Past the Threshold, once they cross yours</td></tr>
+          <tr><td data-label="What the Person Does"><b>Opts in at the bridge</b></td><td data-label="Tag Written"><code>webinar registrant</code>, the same tag a webinar sign-up gets</td><td data-label="Pipeline Stage">Bridge Opt-In</td></tr>
+          <tr><td data-label="What the Person Does"><b>Sends the application</b></td><td data-label="Tag Written"><code>score_band</code>: top, middle or bottom</td><td data-label="Pipeline Stage">Applied</td></tr>
+          <tr><td data-label="What the Person Does"><b>Books the call (top band)</b></td><td data-label="Tag Written">None</td><td data-label="Pipeline Stage">Eval Call Scheduled, then the shared 11-stage chain</td></tr>
+          <tr><td data-label="What the Person Does"><b>Misses the call</b></td><td data-label="Tag Written"><code>call-no-show</code></td><td data-label="Pipeline Stage">No Show</td></tr>
+          <tr><td data-label="What the Person Does"><b>Pays, on either branch</b></td><td data-label="Tag Written"><code>purchased</code></td><td data-label="Pipeline Stage">Payment Completed, then Onboarding. The middle band arrives here straight from its checkout</td></tr>
+        </tbody>
+      </table></div>
+      <p>A webinar funnel runs eight automations. A reverse squeeze runs seven, because the clock-driven scheduler has nothing to schedule. The depth triggers above take its place, and they fire per person, the moment that person crosses a line.</p>
+      <h4 id="d2-rsp-first-tests">The First Test to Run at Every Stage</h4>
+      <p>Which part of a reverse squeeze should you change first?</p>
+      <p>Not the one you like least. Every stage has a first experiment, and a number it moves. Run one a week and keep whatever wins.</p>
+      <div class="tbl"><table>
+        <thead><tr><th>Stage</th><th>Test This First</th><th>The Number It Moves</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Stage"><b>S1 Traffic</b></td><td data-label="Test This First">Subject lines and opening lines, one channel at a time</td><td data-label="The Number It Moves">Visit Rate, per channel</td></tr>
+          <tr><td data-label="Stage"><b>S2 Video page</b></td><td data-label="Test This First">The first 15 seconds of the video, when the button appears, and the exit prompt's wording</td><td data-label="The Number It Moves">Half-Watch Rate, and clicks on the button</td></tr>
+          <tr><td data-label="Stage"><b>S3 Nurture</b></td><td data-label="Test This First">Subject lines, send times, and the order of your proof stories for people who applied</td><td data-label="The Number It Moves">Nurtured Half-Watch Rate</td></tr>
+          <tr><td data-label="Stage"><b>S4 Application</b></td><td data-label="Test This First">Where the bridge threshold sits, starting at 75%</td><td data-label="The Number It Moves">Booking Rate</td></tr>
+          <tr><td data-label="Stage"><b>S5 Close</b></td><td data-label="Test This First">Reminder timing, a deposit before the call, a second confirmation</td><td data-label="The Number It Moves">How many booked calls are held</td></tr>
+          <tr><td data-label="Stage"><b>S6 Growth</b></td><td data-label="Test This First">The referral ask at week 4 against week 13 · the upgrade offer at week 26 against week 52</td><td data-label="The Number It Moves">Yearly Rebooking Rate</td></tr>
+        </tbody>
+      </table></div>
       <div class="task" id="d2-task-s4-2">
         <div class="th"><span class="tn">Task 2.8</span><b>If You're Building a Reverse Squeeze, Build It in This Order</b></div>
         <div class="tm">
