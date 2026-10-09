@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T01:44:46+0530",
-  "version": 1368,
-  "last_id": 373,
+  "updated": "2026-10-10T01:47:53+0530",
+  "version": 1371,
+  "last_id": 374,
   "team": [
    {
     "name": "Adi",
@@ -11173,11 +11173,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "The dashboard currently shows planned counts, not results, and launch QA is a manual checklist.",
    "spec": "In cloud/src/dashboard.ts read Tantra /campaigns/:id/stats and calendar metrics and Metricool post analytics; extend test-run to screenshot every page at 375, 768, 1280 and register one tagged test contact per channel asserting utm_source; verify d3-connect MCPs respond; offer an ICS for build hours. Closes audit findings X019, X074, X078, X079, X080, X081. Per finding: X019 (cloud/src/dashboard.ts): Read Tantra GET /campaigns/:id/stats and /dashboard/calendar-metrics in collectDash. X074 (cloud/src/dashboard.ts): Read Metricool post analytics (clicks) in collectDash. X078 (app/src/lib/workshop-cards.ts): Have test-run take Browser Rendering screenshots at the three widths and check the dashboard columns. X079 (app/src/lib/workshop-cards.ts): Extend test-run to register one test contact per channel's tagged link and assert utm_source. X080 (app/src/lib/workshop-cards.ts): Accept as teaching step or verify with a pack-side check that each MCP responds. X081 (app/src/lib/workshop-cards.ts): Offer an ICS download for the build hours like start-calendar does. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md.",
    "done_when": [
@@ -11185,7 +11186,20 @@
     "test-run reports per-width screenshots and per-channel utm_source",
     "Every listed finding id is marked fixed in AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Probe (run: node cloud/scripts/probe-t265.mjs)",
+     "url": "/Users/adithyamurali/tantra-redesign/cloud/scripts/probe-t265.mjs"
+    },
+    {
+     "label": "Test run QA code",
+     "url": "/Users/adithyamurali/tantra-redesign/cloud/src/qa.ts"
+    },
+    {
+     "label": "Live centre",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?v=265"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -11198,6 +11212,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): checked, current. pass 2: verified still open on main f6aeb7e (cloud/src/dashboard.ts collectDash has no Tantra stats or Metricool reads); Tantra and Metricool are approved tools."
+    },
+    {
+     "ts": "2026-10-10T01:47:13+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T01:47:13+0530",
+     "who": "claude",
+     "note": "Dashboard now reads Tantra campaign stats, calendar metrics and Metricool post clicks live with the attendee's own keys and shows Not connected on any failure, never a planned count; test-run adds per-width (375/768/1280) screenshots with dashboard column check, one tagged test contact per channel asserting utm_source, and an MCP-answers check; the funnel card offers a build-hours .ics. Verified by cloud/scripts/probe-t265.mjs (17 checks pass against simulated Tantra/Metricool), tsc clean, centre deployed (version 4909296e, no migration) and the new button is in the live bundle; Metricool analytics field names and Browser Rendering on the live account are untested until a real attendee run (merged to main d74b090, not pushed). AUDIT.md marks X019, X074, X078 to X081 fixed."
     }
    ],
    "order": 2650

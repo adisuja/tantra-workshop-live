@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T01:48:16+0530",
+   "task_id": "T-267",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "paused",
+   "summary": "Stopped: Adi paused the agent from the board."
+  },
+  {
    "ts": "2026-10-10T01:44:41+0530",
    "task_id": "T-266",
    "mode": "feedback",
@@ -87,14 +95,6 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-034 stays blocked: the dry-run harness already exists, but `--require-real` still refuses because the PDF and delivery stages aren't built. I updated the waiting-on text to say T-033 is being built against a stub, so it still needs real T-031 and T-032 outputs. I acked F-8e470df7 and R-39087d2a."
-  },
-  {
-   "ts": "2026-10-09T19:09:42+0530",
-   "task_id": "T-057",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-057 is in review with Bharath and Adi as reviewers. The app shows hard LinkedIn caps per profile, so the c.md ramp stays only as the operating plan.\n\n- **Readiness:** YES, dated 2026-10-07 from Adi's statement. A read-only sign-in with the test account confirmed it, and I changed nothing in the ap"
   }
  ],
  "state": "working",
@@ -104,5 +104,5 @@
   "F-409a5db1"
  ],
  "mode": "feedback",
- "started": "2026-10-10T01:44:46+0530"
+ "started": "2026-10-10T01:48:17+0530"
 }

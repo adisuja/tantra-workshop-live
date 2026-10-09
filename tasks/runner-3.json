@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T01:48:15+0530",
+   "task_id": "T-268",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "paused",
+   "summary": "Stopped: Adi paused the agent from the board."
+  },
+  {
+   "ts": "2026-10-10T01:47:20+0530",
+   "task_id": "T-265",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-265 is built, merged to main and deployed, and it's in review. I haven't pushed anything to a remote. Two parts have only been tested against simulated responses, and two details differ from what the Orchestrator asked.\n\n- **Verification:** `cloud/scripts/probe-t265.mjs` passes all 17 checks again"
+  },
+  {
    "ts": "2026-10-10T01:36:40+0530",
    "task_id": "T-257",
    "mode": "feedback",
@@ -79,30 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-155 is in review for Amal. The weekly feedback counter and the \"Report bug / feature\" form are built, but the live Tantra campaigns and the FintechCircle test send are not done.\n\n- **Done:**\n  - **Counter and form:** the board now has a feedback counter and a Report form that posts to the board Wo"
-  },
-  {
-   "ts": "2026-10-09T19:57:26+0530",
-   "task_id": "T-154",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-154 is in review: Bharath has the one-page case, the review steps and the pilot PRs, but the 24h claim isn't proven yet.\n\n- **Pilot data:** I used the five T-152 bug PRs (#160 to #164, open against `development`, nothing merged) as the pilot. They are audit-found bugs, not customer requests.\n- **W"
-  },
-  {
-   "ts": "2026-10-09T19:50:30+0530",
-   "task_id": "T-145",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-145 stays blocked. A GitHub API check today shows the fork `nelbinxav/tantra-workshop-live` and commit `5b9f57d6` on `adisuja/tantra-workshop-live` both still open. It now waits only on T-341 (Nelbin deletes the fork) and T-334 (Adi's Support paste). Both feedback notes are acked. The T-145 owner "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-265",
+ "task_id": "T-257",
  "entries": [
-  "F-05f1775d"
+  "F-f9b6048f"
  ],
- "started": "2026-10-10T01:36:40+0530",
- "message": "Acting on 1 note(s) for T-265: Centre: dashboard reads (Tantra campaign stats, Metricool clicks) and automated launch QA"
+ "started": "2026-10-10T01:48:24+0530",
+ "message": "Acting on 1 note(s) for T-257: Screenshots: delete orphan WebPs, re-crop for phone legibility, fix mismatched captures, add Day 1 and Day 3 playbook shots"
 }
