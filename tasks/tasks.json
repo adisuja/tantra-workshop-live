@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T17:47:48+0530",
-  "version": 1147,
+  "updated": "2026-10-09T17:49:11+0530",
+  "version": 1152,
   "last_id": 357,
   "team": [
    {
@@ -1972,6 +1972,11 @@
      "ts": "2026-10-09T17:47:48+0530",
      "who": "claude",
      "note": "All 6 channels (LinkedIn post, LinkedIn DM, WhatsApp, email, cold calendar invite, referral) were tested on the public /workshop and /masterclass: all 18 rows (6 free registrations, 6 paid registrations, 6 checkout starts) carried the right source, medium, campaign and content in the Work Tracker and the Tantra Tracker, both referral rows credited member code adi, and the Dodo checkout link carried all four UTMs (no payment made, no Zoom seat or invite created). No channel dropped UTMs, so nothing was deployed; the test rows plus the old wiring-probe, ui-probe and 2026-09-24 utm-probe rows are deleted from the Work Tracker, Tantra Tracker, ops.db and the form log (this is T-107's cleanup), and a re-check found 0 left. Open the evidence table for the row-by-row result; one side fix: the Tantra Tracker kept rows deleted at the source, now cleared, and its MongoDB copy is currently down (connection refused on 127.0.0.1:27017), which this task did not touch."
+    },
+    {
+     "ts": "2026-10-09T17:47:59+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-107."
     }
    ],
    "order": 330,
@@ -6948,7 +6953,8 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P0",
    "due": "",
@@ -6960,9 +6966,74 @@
     "Adi's pick recorded",
     "Chosen layout shows by default at https://revops-centre.growthcluborg.workers.dev/onboarding/ and centre probes are green after deploy"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Live centre, no parameter",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?v=t198b"
+    },
+    {
+     "label": "Final: live 1440",
+     "url": "http://localhost:8899/tasks/uploads/T-198/live-default-1440.png?v=t198b"
+    },
+    {
+     "label": "Final: live 1440, field in focus",
+     "url": "http://localhost:8899/tasks/uploads/T-198/live-default-field-focus-1440.png?v=t198b"
+    },
+    {
+     "label": "Final: live 390",
+     "url": "http://localhost:8899/tasks/uploads/T-198/live-default-390.png?v=t198b"
+    },
+    {
+     "label": "Final: live 390, section open",
+     "url": "http://localhost:8899/tasks/uploads/T-198/live-default-open-390.png?v=t198b"
+    },
+    {
+     "label": "Record: 1 Coach Rails 1440",
+     "url": "http://localhost:8899/tasks/uploads/T-198/layout-1-coach-rails-1440.png"
+    },
+    {
+     "label": "Record: 1 Coach Rails 390",
+     "url": "http://localhost:8899/tasks/uploads/T-198/layout-1-coach-rails-390.png"
+    },
+    {
+     "label": "Record: 2 Field Coach 1440",
+     "url": "http://localhost:8899/tasks/uploads/T-198/layout-2-field-coach-1440.png"
+    },
+    {
+     "label": "Record: 2 Field Coach 390",
+     "url": "http://localhost:8899/tasks/uploads/T-198/layout-2-field-coach-390.png"
+    },
+    {
+     "label": "Record: 3 Strategy Desk 1440",
+     "url": "http://localhost:8899/tasks/uploads/T-198/layout-3-strategy-desk-1440.png"
+    },
+    {
+     "label": "Record: 3 Strategy Desk 390",
+     "url": "http://localhost:8899/tasks/uploads/T-198/layout-3-strategy-desk-390.png"
+    },
+    {
+     "label": "Record: 4 Funnel Map 1440",
+     "url": "http://localhost:8899/tasks/uploads/T-198/layout-4-funnel-map-1440.png"
+    },
+    {
+     "label": "Record: 4 Funnel Map 390",
+     "url": "http://localhost:8899/tasks/uploads/T-198/layout-4-funnel-map-390.png"
+    },
+    {
+     "label": "Record: 5 Show Me 1440",
+     "url": "http://localhost:8899/tasks/uploads/T-198/layout-5-show-me-1440.png"
+    },
+    {
+     "label": "Record: 5 Show Me 390",
+     "url": "http://localhost:8899/tasks/uploads/T-198/layout-5-show-me-390.png"
+    },
+    {
+     "label": "Record: Coach Rails as designed, 1680",
+     "url": "http://localhost:8899/tasks/uploads/T-198/layout-1-coach-rails-1680.png"
+    }
+   ],
    "blockers": [],
-   "needs_from_owner": "Pick one of the five teaching layouts from the screenshots on this task (or open https://revops-centre.growthcluborg.workers.dev/onboarding/?learn=1 to ?learn=5).",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-03T23:51:04+0530",
@@ -6983,6 +7054,21 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still no pick; layouts still off by default (learn.tsx line 5); linked T-270, whose audit finding N067 asks for the education to show by default regardless of which layout wins; added a Claude step so Adi picks from screenshots, not by visiting five URLs."
+    },
+    {
+     "ts": "2026-10-09T17:48:58+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T17:48:58+0530",
+     "who": "claude",
+     "note": "Orchestrator chose ?learn=1 Coach Rails for Adi, 2026-10-09. Coach Rails is now the default on the live centre with no parameter: why on the left, how it works on the right, a note beside the field you click into; below 1400 px the why line stays above the card and the rest opens in one section (I kept the fold at 1400, not 1200, because at 1200 the rails are 210 px, about 18 characters a line at the 21 px body). Layouts 2 to 5, the ?learn switch and the review strip are deleted, and I wrote teaching for the six cards that had none (voice call, ElevenLabs, Vodex, call script, Meta, LinkedIn leads), so all 96 cards teach. Checked on live after deploy (Worker 8bb90e2f, origin main 0a77ebe): the card walker visited 95 cards on all three funnels at 1440, 1280 and 390 with no layout, clipping, dash or sideways-scroll finding (one found on the LinkedIn card was fixed and rewalked; the only card not reached is the hidden welcome slot). The mirror needed no publish because it does not carry the centre; the deploy was a full build of main, so it also took T-229's committed placeholder-address guard live. N067 is marked fixed in AUDIT.md and T-270. Open https://revops-centre.growthcluborg.workers.dev/onboarding/?v=t198b from your attendee link."
+    },
+    {
+     "ts": "2026-10-09T17:49:11+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-270, T-269."
     }
    ],
    "order": 1980
@@ -10324,6 +10410,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still open on main f6aeb7e; added merge order (start-stack options N068 change when e4bd0b8 drops the ruled-out choices)."
+    },
+    {
+     "ts": "2026-10-09T17:48:58+0530",
+     "who": "claude",
+     "note": "N067 closed by T-198 (2026-10-09): Coach Rails teaching shows by default on every card on the live centre, and all 96 cards have card-education; marked fixed in AUDIT.md. T-270 stays open for N068, N069, N070, N080 and N088."
     }
    ],
    "order": 2700

@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T17:49:06+0530",
+   "task_id": "T-198",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-198 is in review: Coach Rails is the default teaching layout on the live centre with no parameter (Worker 8bb90e2f, origin main 0a77ebe), a full live card walk at 1440, 1280 and 390 came back with no layout findings, N067 is closed in T-270 and AUDIT.md, and F-8d8a4ae9 is acked. Three things diffe"
+  },
+  {
    "ts": "2026-10-09T17:15:26+0530",
    "task_id": "T-150",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "done",
    "result": "ok",
    "summary": "T-004 is done: the six prices were already locked and on origin main from the earlier pass, the live wiring probe re-run now ends ALL WIRING PASSES (nothing paid), T-103 is closed out of recheck, and T-005 stays in the queue. The note F-0334459d was already acked."
-  },
-  {
-   "ts": "2026-10-09T14:04:04+0530",
-   "task_id": "T-134",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-134 stays in review: the reference build from the 13:48 pass was rechecked (board up on localhost:8765, dry run works) and the prompt fixes and README are now pushed to origin main (aafe5d9). No real Resend or Dodo test call was made because no test key exists (T-253 already asks for the Dodo one)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-198: Round 5 #4 (Lane B): New centre educates: five UX variants with the why and how beside every card",
- "task_id": "T-198",
+ "message": "Acting on 1 note(s) for T-215: Over-the-shoulder API key walkthrough videos for every approved tool (S1 tantra-walkthroughs)",
+ "task_id": "T-215",
  "entries": [
-  "F-8d8a4ae9"
+  "F-703a5e07"
  ],
  "mode": "feedback",
- "started": "2026-10-09T17:15:33+0530"
+ "started": "2026-10-09T17:49:11+0530"
 }
