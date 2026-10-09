@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T20:06:08+0530",
-  "version": 1271,
-  "last_id": 363,
+  "updated": "2026-10-09T20:07:45+0530",
+  "version": 1273,
+  "last_id": 364,
   "team": [
    {
     "name": "Adi",
@@ -13319,6 +13319,35 @@
     }
    ],
    "order": 3630
+  },
+  {
+   "id": "T-364",
+   "title": "Input from Adi for T-363: Amal: send the client the prepared email in workshop-plan/coord/T-363-client-ok-",
+   "area": "Ops",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (outside_person): Only the client can give written consent, and only a team member (Amal, client-facing) may message them.. Everything else in T-363 is being built around it. As soon as this is done, T-363 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Amal: send the client the prepared email in workshop-plan/coord/T-363-client-ok-request.md, then paste their written yes into workshop-plan/coord/T-363-client-reply.md (or into a T-363 note).",
+   "log": [
+    {
+     "ts": "2026-10-09T20:07:45+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-363."
+    }
+   ],
+   "order": 3640,
+   "input_for": "T-363",
+   "kind": "input"
   }
  ]
 }
