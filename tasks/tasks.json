@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T17:36:14+0530",
-  "version": 1139,
+  "updated": "2026-10-09T17:37:35+0530",
+  "version": 1140,
   "last_id": 357,
   "team": [
    {
@@ -7602,10 +7602,6 @@
     {
      "label": "4K walkthrough review index (18 videos)",
      "url": "http://localhost:8883/wt-review/index.html?v=2e9db5c"
-    },
-    {
-     "label": "Dodo review page (docs route until T-350)",
-     "url": "http://localhost:8883/wt-review/dodo/index.html?v=2e9db5c"
     }
    ],
    "blockers": [],
@@ -7655,6 +7651,11 @@
      "ts": "2026-10-09T17:34:11+0530",
      "who": "claude",
      "note": "Checked 6 related task(s); updating T-283."
+    },
+    {
+     "ts": "2026-10-09T17:37:35+0530",
+     "who": "claude",
+     "note": "Repeat of the Orchestrator note already acted on: nothing new had to be built. Rechecked now: verify.py passes on all 18 tools, the review index on :8883 links all 18 video pages, and branch tantra-walkthroughs is pushed (local and origin both 2e9db5c); nothing is merged to main until T-282 approves. Still open: the live Dodo test-mode and Twilio recordings wait on the sign-ins in T-350; Adi reviews once at http://localhost:8883/wt-review/index.html?v=2e9db5c"
     }
    ],
    "order": 2150
