@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T17:53:45+0530",
+   "task_id": "T-097",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-097 is done: the three privacy rechecks passed (`.gitignore` line 30 covers `workshop-plan/library/`, 0 tracked files, mirror `/library/` returns 404), the private-archive rule is in `workshop-plan/coord/LANES.md`, \"Asked of Adi\" is cleared and F-5879456c is acked. The 2026-09-23 \"published to the"
+  },
+  {
+   "ts": "2026-10-09T17:53:08+0530",
+   "task_id": "T-092",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-092 stays in review: the Orchestrator's note was a repeat (the ack returned 0, so F-94d59a50 was already acknowledged), and its changes were already applied on the earlier pass. I re-ran `probe-theme.mjs` on the live mirror and it passed at 1440 and 390, and both links return 200, so nothing was r"
+  },
+  {
    "ts": "2026-10-09T17:51:59+0530",
    "task_id": "T-054",
    "mode": "feedback",
@@ -79,30 +95,14 @@
    "status": "review",
    "result": "limit",
    "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T14:28:50+0530",
-   "task_id": "T-146",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-146 stays in review: the question for Adi is removed, but the invites for Bhaskar and Aquila are still pending (not expired, so not resent) and H034 stays open in AUDIT.md until both accept; F-8c9a559a is acked and the change is committed as 024af70."
-  },
-  {
-   "ts": "2026-10-09T14:28:25+0530",
-   "task_id": "T-124",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-124 stays in review: the probe passes on main at `8b9bdab`, but the read-only Dodo check found no real /vip payment yet (7 payments since the fix, all Tantra app subscriptions), so the second done check is still open; note F-40ad43fd was already marked processed, and the board update is committed "
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-092: Light / dark theme with time-based auto",
- "task_id": "T-092",
+ "message": "Acting on 1 note(s) for T-100: VIP bonus stack: nine branded bonuses with generated key art",
+ "task_id": "T-100",
  "entries": [
-  "F-94d59a50"
+  "F-60ab3053"
  ],
  "mode": "feedback",
- "started": "2026-10-09T17:52:03+0530"
+ "started": "2026-10-09T17:53:52+0530"
 }

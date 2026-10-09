@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T17:51:55+0530",
-  "version": 1157,
+  "updated": "2026-10-09T17:53:40+0530",
+  "version": 1159,
   "last_id": 357,
   "team": [
    {
@@ -2962,6 +2962,11 @@
      "ts": "2026-10-09T17:51:33+0530",
      "who": "claude",
      "note": "Orchestrator decision (O-7fa7a063, acting for Adi): funnel landing pages stay dark at every theme, as the spec says (conversion-tested design); that done_when item and ask are removed. Recheck found one drift: in Light the template library's six stage names were white on white cards; fixed (main 755e4a0) and republished to the mirror (2b41f47). New probe-theme.mjs passes all 36 checks on the live links at 1440 and 390: light 06:00 to 17:59, no flash on first paint, live flip at 18:00, both themes readable, both URLs 200. Only ask left: review the two links."
+    },
+    {
+     "ts": "2026-10-09T17:53:06+0530",
+     "who": "claude",
+     "note": "Repeat Orchestrator note (O-7fa7a063) rechecked: the funnel-stays-dark decision, the trimmed done_when and the ask were already applied on the earlier pass. Re-ran probe-theme.mjs on the live mirror just now: all checks pass at 1440 and 390 (light 06:00 to 17:59, no flash, live flip at 18:00, both themes readable) and both links answer 200, so no drift and no republish. Stays in review for Ben, Bharath and Adi to open the two links."
     }
    ],
    "order": 900,
@@ -3145,12 +3150,12 @@
    "owner": "Amal",
    "priority": "P1",
    "due": "2026-09-23",
-   "status": "review",
+   "status": "done",
    "why": "All 108 artefact URLs the whiteboard links to were dead; staging is down and T-084 was dropped.",
    "spec": "112 recovered client artefact pages (workshop-plan/library: clients, exhibits, templates, index.html), 18 broken image paths repaired, every link verified 200. Served only locally by workshop-plan/serve.py at http://localhost:8899/library/ . Kept private on purpose: gitignored (.gitignore line 30) and absent from the mirror (https://adisuja.github.io/tantra-workshop-live/library/ is 404), because these are real client deliverables and filenames encode client identity. If the owner wants attendees to see it, it would go behind the centre login, anonymised through the same pipeline as the template library (memory library-verbatim-rebuild.md, T-141).",
    "done_when": [
-    "Owner confirms the archive stays private",
-    "Owner decides yes or no on an anonymised, login-gated copy for attendees (recommended: no, the template library already covers it)"
+    "Decided 2026-10-09 (Orchestrator, acting for Adi): the archive stays private",
+    "Decided 2026-10-09: no anonymised, login-gated copy; the template library (T-141, T-111) covers attendees"
    ],
    "evidence": [
     {
@@ -3159,7 +3164,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Two answers: (1) confirm the client archive at http://localhost:8899/library/ stays out of anything public; (2) yes or no to an anonymised copy behind the centre login (recommended: no).",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-23",
@@ -3175,6 +3180,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: corrected where it is served: not by the Next app (no app/src/app/library) but locally by workshop-plan/serve.py at http://localhost:8899/library/ (200 on 2026-10-08). Verified private: workshop-plan/library/ is gitignored (.gitignore line 30, 0 tracked files) and /library/ is 404 on the mirror."
+    },
+    {
+     "ts": "2026-10-09T17:53:40+0530",
+     "who": "claude",
+     "note": "Closed on the Orchestrator decision (acting for Adi): the client archive stays private and there is no anonymised login-gated copy, because the template library already covers attendees. Correction to the 2026-09-23 log line: the archive was never published to the review mirror, it has only ever been served locally by serve.py at http://localhost:8899/library/. Rechecked today: .gitignore line 30 still covers workshop-plan/library/, git ls-files shows 0 tracked files under it, and https://adisuja.github.io/tantra-workshop-live/library/ returns 404; the rule is now written into workshop-plan/coord/LANES.md under Hard rules."
     }
    ],
    "order": 950,
