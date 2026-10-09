@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T01:19:51+0530",
+   "task_id": "T-258",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "paused",
+   "summary": "Stopped: Adi paused the agent from the board."
+  },
+  {
    "ts": "2026-10-10T00:49:29+0530",
    "task_id": "T-256",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-123 is blocked only on the Tantra API key (T-337): the campaign-import funnel email, plan-ready email and payment enrolment are built, probed, deployed as version b87e8b1c with reminders still off and pushed to main as 12997e9; T-236 is closed."
-  },
-  {
-   "ts": "2026-10-09T18:24:34+0530",
-   "task_id": "T-024",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-024 is in review: the Day 1 to 3 output templates are rebuilt on the live v5 ids (one section per question, 8/9/8, with named `data-slot` attributes), the probe passes locally and on the mirror, and the work is pushed to the workshop repo (123cf7f) and published at https://adisuja.github.io/tantra"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-258: S1 traffic guides: automate the remaining manual steps the centre can do (DNS checks, suppression, GCP setup, GA4 reads)",
- "task_id": "T-258",
+ "message": "Acting on 1 note(s) for T-259: S2 to S5 guides: make the steps match what the centre already automates",
+ "task_id": "T-259",
  "entries": [
-  "F-65eef88d"
+  "F-3fdf6d62"
  ],
  "mode": "feedback",
- "started": "2026-10-10T00:49:35+0530"
+ "started": "2026-10-10T01:19:52+0530"
 }
