@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T08:19:29+0530",
+   "task_id": "T-194",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "The forced rebuild of the branch previews is running; once it finishes I will rewrite the sheet tab, check it holds no trycloudflare links, and close out T-194."
+  },
+  {
    "ts": "2026-10-09T08:13:53+0530",
    "task_id": "T-117",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:05:34+0530",
-   "task_id": "T-234",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-194: Decide: share branch previews outside Adi's Mac (private tunnel with an access key)",
- "task_id": "T-194",
+ "message": "Acting on 1 note(s) for T-225: Zoom Support ticket: host mute control and participant video disable (waiting on Zoom's reply)",
+ "task_id": "T-225",
  "entries": [
-  "F-57d78505"
+  "F-08ee4eb4"
  ],
  "mode": "feedback",
- "started": "2026-10-09T08:14:00+0530"
+ "started": "2026-10-09T08:19:29+0530"
 }
