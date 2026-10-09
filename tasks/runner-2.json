@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T04:14:18+0530",
+   "task_id": "T-074",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-074 is blocked: the Tuesday coaching meeting and the rota are done, but the \"Adi test\" newsletter send didn't go out and I didn't push. The blocks are T-071 (Pro course not on sale yet) and a missing Resend or Tantra sender key for our own account.\n\n- **Meeting:** the weekly \"Tantra Pro Weekly Coa"
+  },
+  {
    "ts": "2026-10-10T04:10:55+0530",
    "task_id": "T-073",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-258 is in review: the four Stage 1 jobs are merged to main (73e8272, pushed) and live on the centre Worker (e42e784e), verified on the vendor simulator only (51 of 51 probe checks), with the seven audit ids marked fixed. The Build my service accounts button stays hidden in production until Adi sav"
-  },
-  {
-   "ts": "2026-10-10T01:19:50+0530",
-   "task_id": "T-262",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "paused",
-   "summary": "Stopped: Adi paused the agent from the board."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-074",
+ "task_id": "T-156",
  "entries": [
-  "F-58ffc6ca"
+  "F-5619c997"
  ],
- "started": "2026-10-10T04:11:31+0530",
- "message": "Acting on 1 note(s) for T-074: Weekly coaching call and community moderation rota for Tantra Pro members"
+ "started": "2026-10-10T04:14:56+0530",
+ "message": "Acting on 1 note(s) for T-156: Retention: define each customer's business result and send a monthly results report"
 }
