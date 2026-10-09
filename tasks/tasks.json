@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T18:24:40+0530",
-  "version": 1214,
+  "updated": "2026-10-09T18:26:29+0530",
+  "version": 1216,
   "last_id": 361,
   "team": [
    {
@@ -1334,7 +1334,7 @@
    "owner": "Aquila",
    "priority": "P0",
    "due": "2026-09-21",
-   "status": "queue",
+   "status": "review",
    "why": "Turns each day's answers into a personalized output. The core of the delivery engine.",
    "spec": "Current state (2026-10-08): workshop-plan/ops/tick.py (launchd com.tantra.ops, every 10 min) runs sheets.sync, courseplan.drain (headless Claude Code, OPS_CLAUDE_BIN=~/.local/bin/claude, OPS_CLAUDE_MODEL=opus, prompt prompts/course-plan.md) and referrals; courseplan only turns the registration intake survey in ops.db into a course plan (2 plans in workshop-plan/ops/plans, last 2026-09-24). The daily 8/9/8 answers are saved on the Worker (POST /api/survey, D1 survey_answers) and exported via /admin/api/export/full, which workshop-plan/ops/tracker_sync.py already reads. Nothing turns a day's answers into that day's output, although the playbook and both centres promise it (owner 2026-10-06). Build: (1) a step in tick.py that pulls new or changed survey_answers rows from the Worker admin export, fills that day's template from T-024 with headless Claude Code, and stores the HTML per attendee and day, idempotent on (attendee, day, updated_at); (2) fix the interpreter: the ~/Library/LaunchAgents/com.tantra.ops.plist and workshop-plan/ops/com.tantra.ops.plist run /usr/bin/python3 (3.9.6), which has no importlib.metadata.packages_distributions (1,158 errors in workshop-plan/ops/tick.log); switch to /Library/Frameworks/Python.framework/Versions/3.12/bin/python3 like com.tantra.tracker-sync and reload the job. PDF and link are T-032, delivery T-033.",
    "done_when": [
@@ -1342,7 +1342,24 @@
     "The existing live day1 survey_answers row produces a Day 1 output HTML matching the T-024 template",
     "Re-running tick.py does not regenerate an unchanged day"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Day 1 output for the live row",
+     "url": "file:///Users/adithyamurali/tantra-redesign/workshop-plan/ops/outputs/4/day1.html"
+    },
+    {
+     "label": "Screenshot 1280",
+     "url": "file:///Users/adithyamurali/tantra-redesign/workshop-plan/ops/dryrun/t031/day1-1280.png"
+    },
+    {
+     "label": "Screenshot 390",
+     "url": "file:///Users/adithyamurali/tantra-redesign/workshop-plan/ops/dryrun/t031/day1-390.png"
+    },
+    {
+     "label": "Pipeline source",
+     "url": "file:///Users/adithyamurali/tantra-redesign/workshop-plan/ops/dayoutput.py"
+    }
+   ],
    "blockers": [
     "T-024 templates remapped to the v5 ids"
    ],
@@ -1387,12 +1404,23 @@
      "ts": "2026-10-09T14:19:54+0530",
      "who": "claude",
      "note": "T-022: the 8/9/8 daily ids are locked by orchestrator 2026-10-09; the pipeline can rely on them. Still waits on T-024's templates."
+    },
+    {
+     "ts": "2026-10-09T18:26:29+0530",
+     "who": "claude",
+     "note": "People: reviewers Aquila → Aquila/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T18:26:29+0530",
+     "who": "claude",
+     "note": "Built: workshop-plan/ops/dayoutput.py now runs inside tick.py and turned the live Day 1 row (test attendee 4) into ops/outputs/4/day1.html, with answers placed word for word and one Opus call writing only the worked-out lines. Checked: com.tantra.ops reloaded on Python 3.12 and its first tick logged no packages_distributions error and generated 1; the page matches the template (8 sections, 37 slots, no overflow at 1280 and 390); a second tick reported unchanged 1 and left the file untouched. Not pushed: local main and origin have diverged (97 ahead, 21 behind), so the commit 0332ee4 stays local; the T-024 remap is being done by the other lane and the pipeline reads whatever templates it lands."
     }
    ],
    "order": 210,
    "assignee": "Claude",
    "reviewers": [
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ]
   },
   {
