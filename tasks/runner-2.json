@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T20:25:34+0530",
+   "task_id": "T-247",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-247 is in review, but the \"MongoDB written\" check is not met. The live centre's `/admin/api/export` and `/admin/api/export/full` both return HTTP 500, so the tracker sync stops before it reaches Mongo.\n\n- **Done:** Docker is running again, and `tantra-mongo` is rebuilt on its existing data volume "
+  },
+  {
    "ts": "2026-10-09T20:22:09+0530",
    "task_id": "T-246",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-006 is in review: the runbook, `up.sh` and the 9 plists that weren't in the repo are written, committed as 9ecd123 and pushed to origin main as ca313ef.\n\nRunning `up.sh` exits 0 with 18 active jobs ok and 4 warnings:\n- **codex-check:** returns a 401.\n- **MongoDB:** not installed until T-247.\n- **R"
-  },
-  {
-   "ts": "2026-10-09T19:07:56+0530",
-   "task_id": "T-228",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-228 is now in review with no new code. The welcome email is already the Registered campaign built under T-234, so building the Orchestrator's separate `enrolWelcome()` would have duplicated it.\n\nI only checked the code and the T-234 log. I did not re-run any probe. That campaign is enrolled from a"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-247",
+ "task_id": "T-254",
  "entries": [
-  "F-b0ba4f67"
+  "F-4c259ef6"
  ],
- "started": "2026-10-09T20:22:13+0530",
- "message": "Acting on 1 note(s) for T-247: Bring the Tantra Tracker MongoDB copy back (Docker is stopped) and harden the container"
+ "started": "2026-10-09T20:25:39+0530",
+ "message": "Acting on 1 note(s) for T-254: Guide flowcharts: add the missing nodes, exits and logos in the S1, S3, S5 and S6 charts"
 }

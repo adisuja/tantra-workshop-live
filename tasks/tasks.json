@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T20:23:09+0530",
-  "version": 1286,
+  "updated": "2026-10-09T20:25:39+0530",
+  "version": 1289,
   "last_id": 364,
   "team": [
    {
@@ -10043,11 +10043,12 @@
    "assignee": "Claude",
    "reviewers": [
     "Adi",
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "The owner rule (tantra-tracker) is everything per attendee in the Tracker Sheet AND MongoDB; the Sheet syncs every 5 minutes but MongoDB has not been written since Docker stopped.",
    "spec": "Start Docker Desktop (open -a Docker), bring the tantra-mongo container up (the Tantra backend team's tantra_dev_local database stays untouched; the tracker writes its own tantra_tracker database, TRACKER_MONGO in workshop-plan/ops/tracker_sync.py). Check the next com.tantra.tracker-sync run (~/Library/Logs/tantra-tracker.log) reports MongoDB written. Harden: restart policy unless-stopped, port 27017 bound to 127.0.0.1 only, auth on with a tracker user (credentials in a file under ~/.config/tantra, never printed). The container belongs to the Tantra backend team, so change auth only after telling Ben (developer) and keep their user working.",
    "done_when": [
@@ -10055,7 +10056,16 @@
     "Port 27017 bound to 127.0.0.1 only and auth on",
     "tantra-tracker.log shows MongoDB written on the latest run"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "credentials file (not printed)",
+     "url": "/Users/adithyamurali/.config/tantra/mongo.env"
+    },
+    {
+     "label": "backup",
+     "url": "/Users/adithyamurali/backups/tantra-mongo-2026-10-09/all.archive"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -10083,6 +10093,21 @@
      "ts": "2026-10-09T20:23:09+0530",
      "who": "claude",
      "note": "For Ben: tantra-mongo is being locked down now (bound to 127.0.0.1, auth on). Your backend user: tantra_backend (readWrite on tantra_dev_local). Credentials: ~/.config/tantra/mongo.env (key MONGO_BACKEND_URI, format mongodb://tantra_backend:<password>@127.0.0.1:27017/tantra_dev_local?authSource=admin). Full mongodump of all DBs at ~/backups/tantra-mongo-2026-10-09/all.archive."
+    },
+    {
+     "ts": "2026-10-09T20:25:29+0530",
+     "who": "claude",
+     "note": "Docker is up and tantra-mongo is rebuilt on its same data volume (full mongodump first, ~/backups/tantra-mongo-2026-10-09): bound to 127.0.0.1 only, restart unless-stopped, auth on with admin, tracker and tantra_backend users in ~/.config/tantra/mongo.env; tracker_sync.py now reads its URI from there. Verified: tracker and backend logins work, anonymous access is denied. Not yet verified: 'MongoDB written' in the tracker log, because the live centre's /admin/api/export now returns HTTP 500 (both endpoints), so the sync stops before the Mongo step; that Worker fault is separate and needs a fix or redeploy."
+    },
+    {
+     "ts": "2026-10-09T20:25:29+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi/Aquila → Adi/Aquila/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T20:25:39+0530",
+     "who": "claude",
+     "note": "Checked 8 related task(s); updating T-061."
     }
    ],
    "order": 2470
