@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T12:50:36+0530",
-  "version": 1067,
+  "updated": "2026-10-09T12:52:14+0530",
+  "version": 1068,
   "last_id": 357,
   "team": [
    {
@@ -10777,6 +10777,11 @@
      "ts": "2026-10-09T12:28:09+0530",
      "who": "claude",
      "note": "Checked 6 related task(s); updating T-252."
+    },
+    {
+     "ts": "2026-10-09T12:52:14+0530",
+     "who": "claude",
+     "note": "Re-run of Orchestrator decision O-a7b40aa6, which the 12:27 run already applied. Rechecked: the cards, playbook and reminders caption have no Tantra add-on wording (the only add-on hits are Zoom's Large Meetings add-on and the downsell funnel copy), the 4K reminders video frames mask the old labels, and https://github.com/Usetantra/tantra-frontend-v2/pull/196 is still open for review. Nothing new to change; task stays done."
     }
    ],
    "order": 2870

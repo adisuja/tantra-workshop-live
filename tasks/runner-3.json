@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T12:52:19+0530",
+   "task_id": "T-287",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-287 stays done: this was a re-run of decision O-a7b40aa6, which an earlier run today had already applied. I rechecked that the cards, playbook and reminders caption carry no Tantra add-on wording and that the app-fix PR 196 is still open with a reviewer requested (`bkp31415`, which I took to be Bh"
+  },
+  {
    "ts": "2026-10-09T12:50:42+0530",
    "task_id": "T-281",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "limit",
    "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T09:29:21+0530",
-   "task_id": "T-118",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-118 is in review for Adi and Bharath: the FunnelOS RSP board and the `/funnels/system` comparison view now show Top Band / Middle Band / Bottom Band instead of score numbers, pushed to main (`bf44bf5`, that commit only) and live on the mirror (`cba7ad4`). The grep still finds one line, an unrelate"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-287",
+ "task_id": "T-292",
  "entries": [
-  "F-23668453"
+  "F-13bc4293"
  ],
- "started": "2026-10-09T12:50:48+0530",
- "message": "Acting on 1 note(s) for T-287: Confirm Tantra channel add-on pricing (WhatsApp, LinkedIn, Telegram show '$10/mo add-on' in the app)"
+ "started": "2026-10-09T12:52:29+0530",
+ "message": "Acting on 1 note(s) for T-292: Re-enable the Opus AI drafting connection in the local centre for real use"
 }
