@@ -1897,17 +1897,6 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
         </div>
       </details>
 <!-- /wt:workspace -->
-      <!-- wt:google-signin -->
-      <details class="wt" id="wt-google-signin"><summary>Watch how to connect Sign in with Google<span class="len">1:22</span></summary>
-        <div class="wtb">
-          <video controls playsinline preload="none" poster="site/walkthroughs/google-signin/poster.jpg"><source src="site/walkthroughs/google-signin/google-signin.mp4" type="video/mp4"><track kind="captions" src="site/walkthroughs/google-signin/captions.vtt" srclang="en" label="English"></video>
-          <h4>Which Plan</h4><p>Google Cloud is free for this. The OAuth client lives in the centre owner's Google Cloud project; attendees only sign in.</p>
-          <h4>Permissions to Grant</h4><ul><li>OAuth client of type Web application, with the centre's address plus /api/google/callback as an authorized redirect URI.</li><li>Scopes asked at sign-in: Directory domains, Directory users, Site Verification and Analytics edit, plus your email.</li><li>While the app is in testing, every account that signs in must be listed under Audience, Test users.</li></ul>
-          <h4>Where the Key Appears</h4><p>Google Auth platform, Clients, Create Client. Google shows the client ID and the client secret when you create it; the centre's settings hold both.</p>
-          <h4>Common Errors</h4><dl><dt>Access blocked: the app has not completed Google verification</dt><dd>The account isn't a test user. Add it under Audience, Test users, or publish the app.</dd><dt>redirect_uri_mismatch</dt><dd>The centre's /api/google/callback address isn't on the client's authorized redirect URIs. Add it exactly.</dd><dt>Google didn't grant every permission</dt><dd>A box was unticked on the consent screen. Sign in again and leave every box ticked.</dd></dl>
-        </div>
-      </details>
-<!-- /wt:google-signin -->
       <div class="box sum"><div class="h">Your Day 1 Summary</div>
         <ol>
           <li>Your offer is one sentence a stranger can repeat, scored on the value equation and placed on a ladder.</li>
