@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T14:19:54+0530",
-  "version": 1117,
+  "updated": "2026-10-09T14:20:03+0530",
+  "version": 1118,
   "last_id": 357,
   "team": [
    {
@@ -1055,6 +1055,11 @@
      "ts": "2026-10-09T14:19:54+0530",
      "who": "claude",
      "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T14:20:03+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-126, T-031, T-024."
     }
    ],
    "order": 130,
