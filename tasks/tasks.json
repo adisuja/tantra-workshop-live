@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T14:22:48+0530",
-  "version": 1119,
+  "updated": "2026-10-09T14:24:05+0530",
+  "version": 1120,
   "last_id": 357,
   "team": [
    {
@@ -951,12 +951,20 @@
    ],
    "evidence": [
     {
-     "label": "Deck",
-     "url": "https://adisuja.github.io/tantra-workshop-live/deck.html"
+     "label": "Deck (live)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/deck.html?v=t021-1009#1"
+    },
+    {
+     "label": "Day 1 step 5, the prospect list",
+     "url": "https://adisuja.github.io/tantra-workshop-live/deck.html?v=t021-1009#29"
+    },
+    {
+     "label": "Day 1 step 8, the channels",
+     "url": "https://adisuja.github.io/tantra-workshop-live/deck.html?v=t021-1009#44"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Give one named, dated result for the host slide (for example client, result, month and year) by replying on this task, then approve the deck at https://adisuja.github.io/tantra-workshop-live/deck.html.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -982,6 +990,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: the #day-N bug is fixed (eafbd2b added slideFromHash; workshop-plan/deck.html and app/public/materials/deck.html are identical); still open: the host-intro placeholder and ruled-out tool names in the deck, which T-251 does not cover."
+    },
+    {
+     "ts": "2026-10-09T14:24:05+0530",
+     "who": "claude",
+     "note": "Both open items are finished and live. Slide 2 now ends with 'Growth Idea, webinar #4, August 2025: 99,859 outreach touches, 1,990 registrants, 321 live attendees, 25 sales calls booked, 2 clients won', figures word for word from the Tantra webinar deck; the prospect list slide now offers data partners, your own CRM, ZoomInfo or Clay and the built-in email check, and outreach domains are Cloudflare Registrar only. Checked: the ruled-out tool grep returns nothing, probe-deck is clean at 3 widths, probe-deck-nav passes 9 of 9 locally and on the mirror, and the live deck is byte-identical to source (origin 711a8fc, mirror 6c84768). One thing left as is: step 8 still says mailboxes in Google Workspace, which changes when T-299 (vendor inboxes) merges."
     }
    ],
    "order": 120,

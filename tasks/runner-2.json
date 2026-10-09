@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T14:24:08+0530",
+   "task_id": "T-021",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-021 is in review: the deck is live at https://adisuja.github.io/tantra-workshop-live/deck.html?v=t021-1009#1 with the Growth Idea August 2025 result on slide 2 and no ruled-out tools; the grep is empty, both probes pass, and F-5fade61c is acked."
+  },
+  {
    "ts": "2026-10-09T14:19:56+0530",
    "task_id": "T-022",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "done",
    "result": "ok",
    "summary": "T-281 is done: issue #1, PR #3 and PR #4 are closed with pointer comments to the Task Command Center, the hub Schedule tab no longer links issue #1 (live on main and the mirror), and T-249's ask now points at the board. Pushing main also carried the 28 agent commits that were waiting locally."
-  },
-  {
-   "ts": "2026-10-09T12:12:07+0530",
-   "task_id": "T-279",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-279 is done: `bhaskardev` (Bhaskar Dev, builder) stays a separate partner from Bhaskar (CMO) with a comment in `referrals.json` and no alias, the unused `~/.config/tantra/referral-passphrase` is deleted, `test_referrals.py` passes (27), the [public dashboard](https://adisuja.github.io/tantra-works"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-021",
+ "task_id": "T-124",
  "entries": [
-  "F-5fade61c"
+  "F-40ad43fd"
  ],
- "started": "2026-10-09T14:20:03+0530",
- "message": "Acting on 1 note(s) for T-021: Workshop deck (158 slides)"
+ "started": "2026-10-09T14:24:15+0530",
+ "message": "Acting on 1 note(s) for T-124: /vip checkout keeps first-touch UTMs"
 }
