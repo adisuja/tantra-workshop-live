@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T12:52:14+0530",
-  "version": 1068,
+  "updated": "2026-10-09T12:53:23+0530",
+  "version": 1069,
   "last_id": 357,
   "team": [
    {
@@ -10635,7 +10635,7 @@
    "due": "",
    "status": "queue",
    "why": "The live centres and playbook still carry the v1 videos (1456 px, Log-in based, some docs-only). The v2 4K videos replace them only after Adi approves each one (T-282).",
-   "spec": "FIRST, and without waiting for T-282: commit and push the v2 pipeline now. /Users/adithyamurali/tantra-walkthroughs (branch tantra-walkthroughs, HEAD 978559b) holds about 45 uncommitted changes: scripts/walkthroughs/{AGENT_BRIEF.md,addstep.py,finalize.sh,pwrec.mjs,journeys/*.md,REVERT_LEDGER.md,recordings/*,motion/}, app/public/walkthrough-review.html. Commit motion/, pwrec.mjs, cap.py, verify.py, render.sh, review.py, finalize.sh, journeys/, recordings/*.jsonl and the ledger; gitignore frames, scripts/walkthroughs/node_modules and the 4K masters (check free disk). THEN, per approved tool (after T-282): export a web copy (1080p or 1440p H.264 plus poster and captions) beside the 4K master; update app/src/lib/walkthroughs.ts (cards, seconds, guide text from journeys/<tool>.md; remove the tool from HELD_FOR_REVIEW); WatchHow on the agentic centre card and the old centre Day 0 list; app/scripts/embed-walkthroughs.mjs; titlecase.py + embed.py; check-walkthroughs, check-guides, check-playbook-anchors. Drop the Sign in with Google video unless T-286 keeps the button. Then deploy and publish via the Integrator.",
+   "spec": "FIRST, and without waiting for T-282: commit and push the v2 pipeline now. /Users/adithyamurali/tantra-walkthroughs (branch tantra-walkthroughs, HEAD 978559b) holds about 45 uncommitted changes: scripts/walkthroughs/{AGENT_BRIEF.md,addstep.py,finalize.sh,pwrec.mjs,journeys/*.md,REVERT_LEDGER.md,recordings/*,motion/}, app/public/walkthrough-review.html. Commit motion/, pwrec.mjs, cap.py, verify.py, render.sh, review.py, finalize.sh, journeys/, recordings/*.jsonl and the ledger; gitignore frames, scripts/walkthroughs/node_modules and the 4K masters (check free disk). THEN, per approved tool (after T-282): export a web copy (1080p or 1440p H.264 plus poster and captions) beside the 4K master; update app/src/lib/walkthroughs.ts (cards, seconds, guide text from journeys/<tool>.md; remove the tool from HELD_FOR_REVIEW); WatchHow on the agentic centre card and the old centre Day 0 list; app/scripts/embed-walkthroughs.mjs; titlecase.py + embed.py; check-walkthroughs, check-guides, check-playbook-anchors. The Sign in with Google video is already gone (T-286 removed the feature, main 981dbf3): do not re-add google-signin. 19 recorded walkthroughs remain in walkthroughs.ts, 12 live and 7 held for review. Then deploy and publish via the Integrator.",
    "done_when": [
     "Every approved tool's card plays its v2 video on the live centre and the old centre",
     "Playbook embeds show the v2 videos",
@@ -10655,6 +10655,11 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Session sweep (2026-10-09): source: fcd892f2 2026-10-08T18:41 final report. Worktree /Users/adithyamurali/tantra-walkthroughs checked 2026-10-09: 45 uncommitted changes (pwrec.mjs, finalize.sh, addstep.py, AGENT_BRIEF.md, recordings/_centre and calcom, journeys edits, REVERT_LEDGER.md edits, app/public/walkthrough-review.html), HEAD 978559b. Risk of losing the pipeline."
+    },
+    {
+     "ts": "2026-10-09T12:53:23+0530",
+     "who": "claude",
+     "note": "T-286 removed Sign in with Google, so the spec no longer lists its video: the walkthrough list is 19 recorded (12 live, 7 held for review). Nothing else in this task changed."
     }
    ],
    "order": 2840
