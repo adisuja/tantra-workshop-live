@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T14:06:19+0530",
-  "version": 1108,
+  "updated": "2026-10-09T14:18:08+0530",
+  "version": 1112,
   "last_id": 357,
   "team": [
    {
@@ -9714,6 +9714,11 @@
      "ts": "2026-10-09T08:02:41+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-191, T-056, T-293, T-020."
+    },
+    {
+     "ts": "2026-10-09T14:18:08+0530",
+     "who": "claude",
+     "note": "Decision recorded from T-020 (Orchestrator O-d3b4c0eb): Sales Navigator is replaced by data-vendor lists (list-partner card) plus LinkedIn outreach through Tantra; the playbook has had no Sales Navigator mention since 7cb1dd6, and Apollo is now also out of the embedded FunnelOS cinematics (bbb6a23, live on mirror 678a78b)."
     }
    ],
    "order": 2600
@@ -11220,7 +11225,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "done",
    "why": "Approved tools only is a standing owner rule; a ruled-out tool shown in the animations contradicts the guides and cards that already dropped it.",
    "spec": "Apollo was ruled out on 2026-10-07 (approved-vendor-stack) after the funnel-animation tool sweep of 2026-10-05, so it is still all over the FunnelOS cinematics. On main 2026-10-09: git grep -i -w apollo app/src/components/masterclass lists funnel-os.tsx, funnel-os-rsp.tsx and funnel-os-types/{book-call,book,community,downsell,fps,hub-spoke,jv,ooo,reverse-b,slo,sideways,unlock,webinar-skip,system}.tsx (66 hits; for example book.tsx:74 logos: [\"tantra\",\"apollo\"], system.tsx:427 [\"apollo\",\"Apollo\"]). Replace each with the data source Adi's model uses (bought lists imported into Tantra, T-056) or a plain label such as 'Lead list', drop the apollo logo id from the logo map in funnel-os.tsx, and add apollo to BANNED in app/scripts/probe-visual-tools.mjs (line 36) so it cannot come back. Then run node app/scripts/probe-funnel-boards.mjs (5 widths) and probe-visual-tools.mjs, regenerate nothing by hand in the playbook (frames load /funnels/<id>), and mirror-publish through Lane A. Do not touch the unapproved-but-not-ruled-out tools here: those wait on T-260.",
    "done_when": [
@@ -11236,6 +11241,11 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Added from the session sweep (2026-10-09): source: ec3e66fb 2026-10-05T21:32 (agent left Apollo in) plus owner ruling 2026-10-07 that Apollo is out; grep on main 2026-10-09 finds 66 hits in 16 FunnelOS files."
+    },
+    {
+     "ts": "2026-10-09T14:18:08+0530",
+     "who": "claude",
+     "note": "Done inside T-020: Apollo is out of all 16 FunnelOS cinematic files (logo chips and tool rails now show Data-vendor lists, the apollo logo id is deleted) and probe-visual-tools bans it. Checked: git grep -i -w apollo on app/src/components/masterclass returns nothing, probe-visual-tools PASS, probe-funnel-boards ALL BOARDS FIT at 5 widths on 20 routes, and five live cinematics on the mirror show no Apollo (main bbb6a23, origin 69864c5, mirror 678a78b)."
     }
    ],
    "order": 2930
@@ -11251,7 +11261,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "done",
    "why": "Adi asked for these 17 cinematics with the same standard as the first three; he has only seen reports that name figures he did not supply, so they need his sign-off before the section counts as done.",
    "spec": "The playbook section 'The Other 17 Funnel Types' (id bigpic-the-other-17-funnel-types in workshop-plan/playbook.html, built by workshop-plan/build/funnel_types.py; each dropdown loads its own cinematic from app/src/components/masterclass/funnel-os-types/<id>.tsx, 17 files plus system.tsx for 'The Whole Machine on One Page', frames at /funnels/<id>) was built from the Funnel Master (https://cdadf78c.funnel-master-ui.pages.dev/) on 2026-10-05 and is not on any task. Calls the builders left open: (1) Printed totals that do not add up in the Funnel Master were NOT copied: Partnership net per partner, Unlock All '74% revenue increase' (own figures give 17%, +$1,645), Free Plus Shipping (a net and ROI pair) (own figures give $1,596 and no ad spend is stated), Final Funnel (an interest-rate figure), Social Following (a profit-margin figure). Show the printed figures instead, or keep the figures that add up? Recommended: keep the figures that add up. (2) community.tsx reads the Funnel Master's '85% retention' as yearly retention and adds its own month-12 projection (152 members, $7,144 MRR): confirm. (3) Waterfall, Social and Final use one or two channels; the unused channel columns show dashed and marked 'Unused' rather than made-up numbers: confirm. (4) On phones four tall boards render small text (Sideways Nurture, two-path Reverse Squeeze Landing, Product Launch Conversion, Social Traffic): cut content on phones or leave? (5) On desktop the Whole Machine boards fill about 70% of the width against about 90% for the other funnels, because each stage shows three lanes; cutting desktop content would widen them: leave? Recommended answers are in this list; if Adi says 'approve' they stand.",
    "done_when": [
@@ -11263,12 +11273,17 @@
    "blockers": [
     "Adi's answers to the five calls"
    ],
-   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/playbook.html#bigpic-the-other-17-funnel-types and https://adisuja.github.io/tantra-workshop-live/playbook.html#bigpic-the-whole-machine-on-one-page, then reply on this task: approve all five recommended answers, or say which to change.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Added from the session sweep (2026-10-09): source: ec3e66fb 2026-10-05T17:59, 18:06, 18:51, 20:58 (agents' reports, none answered by the owner)."
+    },
+    {
+     "ts": "2026-10-09T14:18:08+0530",
+     "who": "claude",
+     "note": "Closed on the Orchestrator's decision (O-d3b4c0eb, acting for Adi): all five recommended answers stand and are built (f75136e, 4409519): figures that add up are kept with a source-check note under each, community month 12 is labelled our projection with the maths, unused channel columns stay dashed, the four tall phone boards pan instead of shrinking, and the Whole Machine desktop width is left as is. Checked: probe-funnel-boards ALL BOARDS FIT on all 20 funnel routes at 5 widths; pushed to origin main (69864c5) and live on the mirror (678a78b)."
     }
    ],
    "order": 2940
@@ -11394,7 +11409,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "These were raised as 'Your call' items in the owner-round reports and have been silently left as the builder chose.",
    "spec": "Open calls the builders raised on workshop-plan/playbook.html that Adi never answered: (1) Day 2 nurture section says 'in the teaching model it lifts show-up to 89%' (playbook.html around lines 2289 and 2371, from the whiteboard) while the funnel-equations model gives about 46% on reference values: align the diagram to the model, or keep the whiteboard figure labelled as the teaching model? Recommended: keep it, label it 'teaching model' in the figure caption too, and never present it as a result. (2) The consultancy and course example sentences (Apex Growth, Northstar Academy 'The Manager Sprint') were written by Claude, not supplied by Adi: approve or rewrite. (3) The 'Day 3 of the challenge' pitch example leaves open whether the challenge is free or paid; the answer is 'free /workshop and paid /masterclass are separate flows' (two-funnel-structure), so confirm the wording. (4) The hosts' bio line on the landing pages still says '$50M+' while the enterprise voice rule bans it: tracked in T-277, no action here. Do not change anything until Adi answers; then edit the source, run python3 workshop-plan/build/titlecase.py then embed.py, copy to app/public/materials/playbook.html and run node workshop-plan/probe-playbook.mjs.",
    "done_when": [
@@ -11429,6 +11444,11 @@
      "ts": "2026-10-09T13:35:28+0530",
      "who": "claude",
      "note": "Rechecked after the re-sent 05:07 decision and the T-191 ripple: nothing new had to change. All four calls are already applied and live (main db882e7): the 89% stays as the labelled whiteboard teaching model beside the Funnel Equations figure (about 30% on today's reference values, not the 46% of the 5 Oct model) with 'neither number is a result', the example sentences are marked illustrative, the course pitch says 'Day 3 of the free workshop', and the $50M+ line stays with T-277. The ripple's question (remove the 89% as unsourced?) is answered by the Orchestrator decision: it is Adi's own whiteboard figure and is never shown as a result, so it stays. Checked today: the four phrases are on the live mirror, source and app copy are identical, probe-playbook is clean at 4 widths on the mirror (the local run only reports 16 walkthrough poster 404s per width that the :8899 board server does not host, zero layout defects). Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=calls2#d2-s3-the-nurture-engine-where-show-up-is-won"
+    },
+    {
+     "ts": "2026-10-09T14:18:08+0530",
+     "who": "claude",
+     "note": "Closed on the Orchestrator's decision for T-020 (O-d3b4c0eb): call 1 changed. The 89% matches no band in the Funnel Equations data, so the S3 body, diagram and caption now give the model's reference bands (25 to 40% for sign-ups who skip the thank-you page action, 45 to 70% for those who take it) and say they are not a result. Calls 2 to 4 stand as applied in db882e7. Live: https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1009b#d2-s3-the-nurture-engine-where-show-up-is-won"
     }
    ],
    "order": 2970
