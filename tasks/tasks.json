@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T09:09:22+0530",
-  "version": 1006,
+  "updated": "2026-10-09T09:11:08+0530",
+  "version": 1010,
   "last_id": 350,
   "team": [
    {
@@ -6276,7 +6276,7 @@
      "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=1133663049"
     },
     {
-     "label": "Live mirror the sheet links to",
+     "label": "Live mirror teammates review on",
      "url": "https://adisuja.github.io/tantra-workshop-live/?v=t194"
     }
    ],
@@ -6312,6 +6312,11 @@
      "ts": "2026-10-09T08:39:56+0530",
      "who": "claude",
      "note": "Checked 11 related task(s); updating T-036 (done, now recheck)."
+    },
+    {
+     "ts": "2026-10-09T09:10:09+0530",
+     "who": "claude",
+     "note": "Decision recorded (Orchestrator O-bb46bbb1, acting for Adi, 2026-10-09): preview tunnel OFF. The job is not loaded (launchctl list | grep preview-tunnel returns nothing) and its plist sits in ~/.pr-preview/disabled/, so it will not restart at login; refresh and gateway still run on 127.0.0.1:4360 only. I rewrote the RevOps Workshop Series tab (49 rows) and read it back: 0 trycloudflare links, 0 access-key links, and 7 sampled GitHub Pages links load logged out with the right page titles."
     }
    ],
    "order": 1940
@@ -7735,20 +7740,28 @@
    "due": "",
    "status": "blocked",
    "why": "Without these two hidden Zoom settings attendees can unmute and turn video on in a 100 person room; Zoom Support is the only way to switch them on.",
-   "spec": "Adi opened a Zoom Support ticket on 2026-10-08 asking for allow_host_control_participant_mute_state and disable_participant_video on Pro account 5018326609. Zoom replies on the ticket to the Zoom account's Gmail (Adi: 'growthclub@gmail.com'; the Zoom login is the GrowthClub Gmail). Watch that inbox for the ticket update: enabled, refused, or more details needed. If enabled: Claude sets Zoom Support locks to Granted in https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key> (Cohort Settings) and presses Re-apply room settings, then Check in Zoom confirms both fields on meeting 87002851906 and the next week's meeting. If refused: the Zoom bot (T-226) enforces mute and video instead. If Zoom asks for details: answer the same day.",
+   "spec": "Adi opened a Zoom Support ticket on 2026-10-08 asking for allow_host_control_participant_mute_state and disable_participant_video on Pro account 5018326609. Nobody watches an inbox for the answer: a daily job at 09:10 (workshop-plan/ops/zoom_support_check.mjs, launchd com.tantra.zoom-support-check) reads Zoom with the Tantra Centre Server-to-Server app (user settings and each upcoming cohort meeting, read-only) and writes the result in this task's log. A grant is the video field showing up anywhere, or either field reading true. On a grant the same job sets Zoom Support locks to Granted in the production centre (Cohort Settings), re-applies room settings and confirms both fields on meeting 87002851906 and next week's meeting 88135386601. Until then, and if Zoom refuses, T-226 Live Control enforces mute and video.",
    "done_when": [
-    "Zoom's reply recorded in this task's log",
-    "If granted: Check in Zoom shows both fields on the current cohort meeting",
-    "If refused: T-226 covers mute and video enforcement"
+    "Each daily Zoom check is recorded in this task log",
+    "If granted: Check in Zoom shows both fields on the current cohort meeting and next week meeting",
+    "If refused or still silent: T-226 covers mute and video enforcement"
    ],
    "evidence": [
     {
-     "label": "Zoom Pro doc: why these two fields (section 1, row 'No REST setting locks mic and camera'; section 3 step 4)",
+     "label": "Zoom Pro doc: why these two fields (section 1, row No REST setting locks mic and camera; section 3 step 4)",
      "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/docs/onboarding-v3/analysis/zoom-pro-meetings.md"
+    },
+    {
+     "label": "Daily read-only Zoom check script",
+     "url": "workshop-plan/ops/zoom_support_check.mjs"
+    },
+    {
+     "label": "Daily job log",
+     "url": "/Users/adithyamurali/Library/Logs/tantra-zoom-support-check.log"
     }
    ],
    "blockers": [
-    "Waiting on Zoom Support's reply to the ticket"
+    "Waiting on Zoom Support to switch the two fields on (outside party; the daily 09:10 check detects it, nothing is needed from Adi)"
    ],
    "needs_from_owner": "",
    "log": [
@@ -7801,6 +7814,21 @@
      "ts": "2026-10-09T08:40:22+0530",
      "who": "claude",
      "note": "Rechecked 2026-10-09 (second read-only run today): not granted yet. Zoom still shows no disable_participant_video anywhere and the mute field at its default false on 87002851906 and 88135386601; the centre's Zoom Support locks stay off. The daily 09:10 job (workshop-plan/ops/zoom_support_check.mjs, launchd loaded, last exit 0) keeps checking, logs here, and on a grant sets the locks to Granted, re-applies room settings and confirms both meetings by itself. Nothing is asked of Adi; this waits only on Zoom Support, and T-226 Live Control covers mute and video for the 14 Oct cohort."
+    },
+    {
+     "ts": "2026-10-09T09:10:08+0530",
+     "who": "claude",
+     "note": "Zoom check 2026-10-09: not granted yet. disable_participant_video is in no answer and the mute field is still at its default (/users/me/settings 200, /accounts/me/settings 400, /accounts/me/lock_settings 400, /meetings/88135386601 200, /meetings/87002851906 200); the centre's Zoom Support locks stay off and Live Control (T-226) covers mute and video."
+    },
+    {
+     "ts": "2026-10-09T09:11:01+0530",
+     "who": "claude",
+     "note": "Same Orchestrator note again; the daily check it asks for already runs (09:10, launchd, last exit 0). Ran it by hand just now (2026-10-09): not granted yet. Zoom shows no disable_participant_video anywhere and the mute field at its default false on 87002851906 and 88135386601, so the centre's Zoom Support locks stay off. I rewrote the task's spec and done-when to say the API check replaces watching the inbox; nothing is asked of Adi, this waits only on Zoom Support, and T-226 Live Control covers mute and video for the 14 Oct cohort. One limit: the app lacks the account settings read scope, so that call returns 400 and the check relies on user settings and the two meetings."
+    },
+    {
+     "ts": "2026-10-09T09:11:08+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-226."
     }
    ],
    "order": 2250

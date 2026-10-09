@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T09:11:03+0530",
+   "task_id": "T-225",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-225 stays blocked on Zoom Support only: today's read-only check shows the two fields are not granted yet, the daily 09:10 job keeps checking and applies the locks itself on a grant, and nothing is asked of Adi (F-08ee4eb4 was already acknowledged)."
+  },
+  {
+   "ts": "2026-10-09T09:10:14+0530",
+   "task_id": "T-194",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-194 is done: the preview tunnel is off and stays off at login, the RevOps Workshop Series tab was rewritten with no tunnel or access-key links, and 7 sampled GitHub Pages links load logged out; F-57d78505 was already acknowledged by an earlier pass."
+  },
+  {
    "ts": "2026-10-09T09:09:17+0530",
    "task_id": "T-191",
    "mode": "feedback",
@@ -79,30 +95,14 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:05:51+0530",
-   "task_id": "T-211",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:05:48+0530",
-   "task_id": "T-226",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-194",
+ "task_id": "T-282",
  "entries": [
-  "F-57d78505"
+  "F-0c9868a9"
  ],
- "started": "2026-10-09T09:09:22+0530",
- "message": "Acting on 1 note(s) for T-194: Decide: share branch previews outside Adi's Mac (private tunnel with an access key)"
+ "started": "2026-10-09T09:11:08+0530",
+ "message": "Acting on 1 note(s) for T-282: Review the seven new walkthrough videos before they go on the centres and playbook"
 }
