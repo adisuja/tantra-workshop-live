@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T08:13:53+0530",
+   "task_id": "T-117",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-117 is in review for Bhaskar and Bharath: the `/masterclass` FunnelOS board now shows only the whiteboard-sourced Tantra Pro Funnel figures, pushed to main (05745e5) and live on the mirror (21ab8c5). The 48.6% show-up and the old totals in four other files remain and are flagged in the note."
+  },
+  {
    "ts": "2026-10-09T08:02:24+0530",
    "task_id": "T-115",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:05:31+0530",
-   "task_id": "T-011",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-117: Re-source the /masterclass FunnelOS webinar numbers",
- "task_id": "T-117",
+ "message": "Acting on 1 note(s) for T-194: Decide: share branch previews outside Adi's Mac (private tunnel with an access key)",
+ "task_id": "T-194",
  "entries": [
-  "F-a037bc29"
+  "F-57d78505"
  ],
  "mode": "feedback",
- "started": "2026-10-09T08:02:31+0530"
+ "started": "2026-10-09T08:14:00+0530"
 }

@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T08:07:08+0530",
-  "version": 981,
+  "updated": "2026-10-09T08:13:49+0530",
+  "version": 983,
   "last_id": 349,
   "team": [
    {
@@ -4033,18 +4033,33 @@
    "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-28",
-   "status": "blocked",
+   "status": "review",
    "why": "The /masterclass FunnelOS webinar board shows 11.4K visitors, 368 registered, 3.2% CVR next to a Tantra Pro Funnel card with 825 registrations and 9.6% CVR: 825 > 368 contradicts itself. Owner rule: no unsourced or invented numbers.",
    "spec": "On main 2026-10-08 app/src/components/masterclass/funnel-os.tsx shows 11.4K visits, 368 registrations, 3.2% (lines 97, 535, 865, 1269) next to a Pro card with 825 registrations and 9.6% (line 520); funnel-visuals.tsx repeats 825 (about line 583). 825 cannot exceed 368. If the owner sends real figures, Claude replaces the stage numbers with them; otherwise Claude removes the combined chips and keeps only the sourced Pro card figures, then re-runs the FunnelOS shoot and probe-workshop.",
    "done_when": [
     "Every number on the /masterclass webinar FunnelOS board traces to one source and they agree",
     "git grep -n '368' app/src/components/masterclass/funnel-os.tsx shows no figure that conflicts with the Pro card"
    ],
-   "evidence": [],
-   "blockers": [
-    "Needs the owner's source numbers or a decision to drop the combined chips"
+   "evidence": [
+    {
+     "label": "/masterclass FunnelOS on the public mirror (scroll to One AI Agent Runs the Entire Funnel)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=t117"
+    },
+    {
+     "label": "Same page on localhost",
+     "url": "http://localhost:4322/masterclass?v=t117"
+    },
+    {
+     "label": "Stage 2 shot from the live mirror",
+     "url": "/tmp/eng117-live/eng-d-019.png"
+    },
+    {
+     "label": "System map shot (desktop)",
+     "url": "/tmp/eng117/eng-d-099.png"
+    }
    ],
-   "needs_from_owner": "Send the real figures for that webinar (visitors, registrations, live attendance), or reply 'drop the combined chips'. Recommended: drop the combined chips (owner rule: no unsourced numbers).",
+   "blockers": [],
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-25",
@@ -4060,12 +4075,23 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: added a spec with the current file lines and a recommended answer."
+    },
+    {
+     "ts": "2026-10-09T08:13:49+0530",
+     "who": "claude",
+     "note": "People: reviewers Bhaskar → Bhaskar/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T08:13:49+0530",
+     "who": "claude",
+     "note": "The FunnelOS webinar board on /masterclass no longer shows the 11.4K / 368 / 3.2% / 179 totals: every Stage 2 figure is now the Tantra Pro Funnel set from the whiteboard (8.6K visits, 825 registrations, 9.6%, plus 58% engagement and 0.8s load from the same block), and Stage 4 leads with 18 calls booked live. Verified with the git grep (no 368, 11.4K, 3.2% or 6.89% in either file), tsc, the FunnelOS shoot on desktop and phone, probe-funnels and probe-workshop (one failure each, both outside this change: a 404 resource on /onboarding and the cohort date line on /masterclass/success/join at 1440px); committed as 05745e5, pushed to main (the push also carried 7 earlier agent commits) and published to the mirror (21ab8c5), where the live page shows the new board. Bhaskar, three things to know: the 48.6% show-up stays although it was derived from the removed totals, the same old totals still sit in day-art.tsx, day-engine.tsx, visuals.tsx and the /funnels/system comparison (outside this task's two files), and the uncommitted Tantra Pro to Tantra Funnel rename another session left in these files is untouched."
     }
    ],
    "order": 1150,
    "assignee": "Claude",
    "reviewers": [
-    "Bhaskar"
+    "Bhaskar",
+    "Bharath"
    ]
   },
   {
