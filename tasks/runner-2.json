@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T04:15:28+0530",
+   "task_id": "T-156",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "paused",
+   "summary": "Stopped: Adi paused the agent from the board."
+  },
+  {
    "ts": "2026-10-10T04:14:18+0530",
    "task_id": "T-074",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-262 is in review: a simulated `email.bounced` now tags and suppresses the contact, and the job deletes the full-access Resend key itself. The new probe (`cloud/scripts/probe-resend-hooks.mjs`) passes every check, simulator only. I did not merge or push, because other lanes' uncommitted work shares"
-  },
-  {
-   "ts": "2026-10-10T01:29:27+0530",
-   "task_id": "T-258",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-258 is in review: the four Stage 1 jobs are merged to main (73e8272, pushed) and live on the centre Worker (e42e784e), verified on the vendor simulator only (51 of 51 probe checks), with the seven audit ids marked fixed. The Build my service accounts button stays hidden in production until Adi sav"
   }
  ],
- "state": "working",
+ "state": "disabled",
  "mode": "feedback",
- "task_id": "T-156",
+ "task_id": null,
  "entries": [
   "F-5619c997"
  ],
  "started": "2026-10-10T04:14:56+0530",
- "message": "Acting on 1 note(s) for T-156: Retention: define each customer's business result and send a monthly results report"
+ "message": "Paused from the board; T-156 was stopped mid-run and resumes on Resume."
 }

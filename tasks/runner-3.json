@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T04:15:29+0530",
+   "task_id": "T-135",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "paused",
+   "summary": "Stopped: Adi paused the agent from the board."
+  },
+  {
    "ts": "2026-10-10T03:59:51+0530",
    "task_id": "T-096",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-237 is in review: the public webinar sign-up is deployed, but the push, the live test registration and the masterclass link are still open.\n\n- **Built:** `https://revops-centre.growthcluborg.workers.dev/webinar/register` has a form page and a POST route. It makes one add-registrant call and return"
-  },
-  {
-   "ts": "2026-10-09T20:13:30+0530",
-   "task_id": "T-235",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-235 is built, deployed with follow-ups switched off, and in review; it is not pushed to origin. Probe-tantra-reminders passes 91 of 91 against the simulator, and the nurture and lane probes still pass.\n\nI did not push because `main` is 149 commits ahead of origin and 29 behind, and the T-234 code "
   }
  ],
- "state": "working",
+ "state": "disabled",
  "mode": "feedback",
- "task_id": "T-135",
+ "task_id": null,
  "entries": [
   "F-e8431f3a"
  ],
  "started": "2026-10-10T03:59:59+0530",
- "message": "Acting on 1 note(s) for T-135: Guide screenshots Claude can capture now from our own pages and demo output (11 slots)"
+ "message": "Paused from the board; T-135 was stopped mid-run and resumes on Resume."
 }
