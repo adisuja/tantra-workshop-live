@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T12:28:09+0530",
-  "version": 1060,
+  "updated": "2026-10-09T12:30:51+0530",
+  "version": 1062,
   "last_id": 357,
   "team": [
    {
@@ -10928,11 +10928,12 @@
    "owner": "Nelbin",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "review",
    "why": "Adi's own review drafts should come from the best model, while probes stay on the cheap one; right now the best connection is off and nobody tracks it.",
    "spec": "To save usage during the round 5 and 6 builds the local centre's test AI drafting was moved from Opus to Sonnet and Haiku: in the centre admin AI connections tab (local stack :8790, admin URL from tantra-onboarding-v2/cloud/.dev.vars ADMIN_KEY), connection 1 'Claude Code, Adi' (Opus) is disabled and connection 3 'Claude Code, probe budget (Sonnet / Haiku)' is enabled with priority 5, and its last_error shows a session-limit message from 2026-10-07. Before Adi reviews real drafts (card copy, brand rules, outreach first lines) or the first cohort uses AI drafting: enable connection 1, leave connection 3 as the fallback for probes and walkers, check that probes pick the cheap connection (priority or per-task model map in Model per task), and clear connection 3's stale last_error. Also check the live Worker's AI connections list for the same state; the live centre is a different database.",
    "done_when": [
@@ -10940,11 +10941,20 @@
     "A drafting call from a real card uses the Opus model and a probe run uses Sonnet or Haiku (admin Model per task shows it)",
     "The same check is recorded for the live Worker's connections"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Local admin, AI connections tab",
+     "url": "http://localhost:8790/admin/?v=t292"
+    },
+    {
+     "label": "Probe rule (isProbe)",
+     "url": "/Users/adithyamurali/tantra-onboarding-v2/cloud/src/ai.ts"
+    }
+   ],
    "blockers": [
     "Adi's cost decision"
    ],
-   "needs_from_owner": "Re-enable Opus (connection 1) for attendee AI drafts? It spends Opus usage on every draft; the Sonnet/Haiku connection has been on since the 2026-10-03 cost switch. Recommended: Opus for real attendees' drafts only (owner rule: best model for content), cheaper models for probes.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-09T00:25:38+0530",
@@ -10955,6 +10965,16 @@
      "ts": "2026-10-09T00:25:55+0530",
      "who": "claude",
      "note": "Waiting on Adi's decision (see needs_from_owner)."
+    },
+    {
+     "ts": "2026-10-09T12:30:51+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T12:30:51+0530",
+     "who": "claude",
+     "note": "Opus is back on locally: connection 1 'Claude Code, Adi' is enabled at priority 1, connection 3 (Sonnet / Haiku) stays on at priority 5 with no stale error, and Model per task is at its defaults. The centre only picked by priority, so I added one rule (tantra-onboarding-v2 commit 2c3323a, local only, not deployed): a draft from a headless browser or script goes to the cheap connection first. Checked on the brand card: a real-browser draft logged claude-opus-5-5 on connection 1 (draft 901), a probe draft logged claude-sonnet-5-5 on connection 3 (draft 902). Live Worker: its AI connections list is empty, so nothing to enable there and I left it alone; cohort drafting on live will need an Anthropic API key added in its admin."
     }
    ],
    "order": 2920
