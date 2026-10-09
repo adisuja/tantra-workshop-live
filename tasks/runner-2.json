@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T08:06:26+0530",
+   "task_id": "T-111",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-111 stays in review for Amal: the earlier 08:15 run had already done every step in the note (mirror e4f856b published, T-243 done), so nothing was built, published or pushed this run. A recheck found the anonymity probe at 0 hits and the same library text on the live mirror and the live centre, ap"
+  },
+  {
    "ts": "2026-10-09T08:04:30+0530",
    "task_id": "T-071",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:03:59+0530",
-   "task_id": "T-234",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-111",
+ "task_id": "T-115",
  "entries": [
-  "F-d7750374"
+  "F-1962daf4"
  ],
- "started": "2026-10-09T08:04:36+0530",
- "message": "Acting on 1 note(s) for T-111: Template library corpus (Lane B): fields, channel/mechanism tags, TemplateCard, anonymised corpus templates, leak probe"
+ "started": "2026-10-09T08:06:35+0530",
+ "message": "Acting on 1 note(s) for T-115: Guide screenshots that need Adi's signed-in accounts (Google, GA4, Cloudflare, Tantra, WebinarGeek)"
 }
