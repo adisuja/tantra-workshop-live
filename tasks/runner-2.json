@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T07:25:32+0530",
+   "task_id": "T-071",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "limit",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
+  },
+  {
    "ts": "2026-10-09T06:04:26+0530",
    "task_id": "T-033",
    "mode": "feedback",
@@ -87,20 +95,14 @@
    "status": "done",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:03:49+0530",
-   "task_id": "T-234",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
- "state": "idle",
- "mode": null,
+ "state": "paused",
+ "mode": "feedback",
  "task_id": null,
- "entries": [],
- "started": "2026-10-09T06:04:22+0530",
- "message": "Last sweep handled 2 task(s)."
+ "entries": [
+  "F-43b6a66f"
+ ],
+ "started": "2026-10-09T07:25:29+0530",
+ "message": "Usage limit reached; retries automatically after 07:55. (You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta))"
 }
