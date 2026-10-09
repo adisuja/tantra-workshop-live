@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T08:54:43+0530",
-  "version": 1000,
+  "updated": "2026-10-09T08:55:43+0530",
+  "version": 1001,
   "last_id": 349,
   "team": [
    {
@@ -10781,11 +10781,20 @@
     "grep shows the three rules in /Users/adithyamurali/.claude/CLAUDE.md",
     "A new session recalls the link rule without searching memory"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Staged rules (a) to (h)",
+     "url": "/Users/adithyamurali/tantra-redesign/workshop-plan/tasks/staged/T-298-claude-md-rules.md"
+    },
+    {
+     "label": "Verify script",
+     "url": "/Users/adithyamurali/tantra-redesign/workshop-plan/tasks/staged/T-298-verify.sh"
+    }
+   ],
    "blockers": [
     "A Claude Code session started with CLAUDE_ALLOW_RULES_EDIT=1 (only Adi can do this)"
    ],
-   "needs_from_owner": "Start one Claude Code session in /Users/adithyamurali/tantra-redesign with CLAUDE_ALLOW_RULES_EDIT=1 set (terminal: CLAUDE_ALLOW_RULES_EDIT=1 claude) and tell it 'add the three central rules from this task to the global CLAUDE.md', or reply 'allow rules edit' here if you do not want these in CLAUDE.md.",
+   "needs_from_owner": "In Terminal, run: cd /Users/adithyamurali/tantra-redesign && CLAUDE_ALLOW_RULES_EDIT=1 claude -p \"Add every entry in workshop-plan/tasks/staged/T-298-claude-md-rules.md under '## Working rules' in /Users/adithyamurali/.claude/CLAUDE.md, then run workshop-plan/tasks/staged/T-298-verify.sh\" (tracked as T-338)",
    "log": [
     {
      "ts": "2026-10-09T00:25:38+0530",
@@ -10796,6 +10805,11 @@
      "ts": "2026-10-09T05:06:41+0530",
      "who": "Orchestrator",
      "note": "People: assignee Adi → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-09T08:55:43+0530",
+     "who": "claude",
+     "note": "The eight rules (a) to (h) are written in final form in workshop-plan/tasks/staged/T-298-claude-md-rules.md, with T-298-verify.sh to check them; both committed locally, nothing in CLAUDE.md was touched. Verified: the script reports 8 of 8 missing on today's CLAUDE.md and passes on a test copy with the rules added and re-wrapped. Rule (c) is scoped to Tantra workshop copy, as its memory says. Still waiting on Adi's one command in T-338; after it, run the verify script and the fresh-session recall check, then mark done."
     }
    ],
    "order": 2980

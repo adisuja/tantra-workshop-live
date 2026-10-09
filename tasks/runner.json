@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T08:55:45+0530",
+   "task_id": "T-298",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-298 stays blocked on Adi's one command in T-338: the eight rules and the verify script are staged and committed locally (670fdce, not pushed), the script fails 8 of 8 on today's CLAUDE.md and passes on a test copy with the rules added, and CLAUDE.md itself is untouched."
+  },
+  {
    "ts": "2026-10-09T08:54:50+0530",
    "task_id": "T-291",
    "mode": "feedback",
@@ -87,22 +95,15 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:05:48+0530",
-   "task_id": "T-234",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-298: Write the owner's central rules into the global CLAUDE.md (blocked by the rules-file guard)",
- "task_id": "T-298",
+ "message": "Acting on 2 note(s) for T-116: Decide the 'Tantra Pro' name clash (Tantra Pro Funnel/Flow vs the $999 Tantra Pro offer)",
+ "task_id": "T-116",
  "entries": [
-  "F-213739bc"
+  "F-2a2f77b3",
+  "R-5f661d6a"
  ],
  "mode": "feedback",
- "started": "2026-10-09T08:54:56+0530"
+ "started": "2026-10-09T08:55:52+0530"
 }
