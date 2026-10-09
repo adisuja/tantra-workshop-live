@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T19:29:10+0530",
-  "version": 1246,
-  "last_id": 361,
+  "updated": "2026-10-09T19:30:12+0530",
+  "version": 1249,
+  "last_id": 362,
   "team": [
    {
     "name": "Adi",
@@ -12696,7 +12696,7 @@
    "due": "",
    "status": "blocked",
    "why": "",
-   "spec": "Only Adi can do this (outside_person): The repo owner has to send the purge request from the adisuja account. Claude may not sign in as Adi or message outside parties.. Everything else in T-145 is being built around it. As soon as this is done, T-145 finishes on its own.",
+   "spec": "Only Adi can do this (outside_person): the repo owner has to send the purge request from the adisuja account. Claude may not sign in as Adi or message outside parties. It can be sent today; it does not wait for the fork deletion. The request also asks GitHub to dereference 5b9f57d6 and 0cf43d86 across the whole fork network, naming nelbinxav/tantra-workshop-live. Everything else in T-145 is built around it; once this is sent, T-145 finishes on its own.",
    "done_when": [],
    "evidence": [],
    "blockers": [],
@@ -12706,6 +12706,11 @@
      "ts": "2026-10-09T05:04:52+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-145."
+    },
+    {
+     "ts": "2026-10-09T19:29:54+0530",
+     "who": "claude",
+     "note": "Updated the description: the GitHub support request can be sent now without waiting for the fork deletion, and it now also covers the fork network (nelbinxav/tantra-workshop-live). Checked the request file already contains that wording. Still needs Adi to send it."
     }
    ],
    "order": 3340,
@@ -13036,6 +13041,35 @@
     }
    ],
    "order": 3510
+  },
+  {
+   "id": "T-362",
+   "title": "Input from Adi for T-334: Signed in as adisuja, open https://support.github.com/contact, pick topic 'Remov",
+   "area": "Infra",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (outside_person): GitHub Support only accepts the purge request from the repo owner's signed-in account; Claude may not log in as Adi or message outside parties.. Everything else in T-334 is being built around it. As soon as this is done, T-334 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Signed in as adisuja, open https://support.github.com/contact, pick topic 'Removing sensitive data', paste the full text of workshop-plan/ops/t145_github_support_request.md into the message box, and click Send. It can go today; it does not wait for the fork deletion.",
+   "log": [
+    {
+     "ts": "2026-10-09T19:30:11+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-334."
+    }
+   ],
+   "order": 3620,
+   "input_for": "T-334",
+   "kind": "input"
   }
  ]
 }
