@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T17:58:55+0530",
+   "task_id": "T-093",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-093 is in review: the three free-lane pages are rewritten in the Backlinko voice with no price and no group promise, live on the mirror (82686f6) and pushed to origin main as e1a1d8c, with the click test passing on the live pages. The survey stays at 11 questions because the Orchestrator's later T"
+  },
+  {
    "ts": "2026-10-09T17:47:54+0530",
    "task_id": "T-054",
    "mode": "feedback",
@@ -87,23 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-021 is in review: the deck is live at https://adisuja.github.io/tantra-workshop-live/deck.html?v=t021-1009#1 with the Growth Idea August 2025 result on slide 2 and no ruled-out tools; the grep is empty, both probes pass, and F-5fade61c is acked."
-  },
-  {
-   "ts": "2026-10-09T14:19:56+0530",
-   "task_id": "T-022",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-022 is in review: the survey offers only the approved stack, old answers map to their replacements, the 8/9/8 set is locked, and it is pushed (b68f49b), published to the mirror (f120b81) and deployed to the Worker (b82c10cc). T-024 is unblocked and F-a1aab8aa is acked. The deploy was a full build "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-093",
+ "task_id": "T-094",
  "entries": [
-  "F-6050ca79",
-  "R-cf1a887b"
+  "F-16152124"
  ],
- "started": "2026-10-09T17:47:59+0530",
- "message": "Acting on 2 note(s) for T-093: Free-lane funnel pages"
+ "started": "2026-10-09T17:59:02+0530",
+ "message": "Acting on 1 note(s) for T-094: VIP offer page"
 }

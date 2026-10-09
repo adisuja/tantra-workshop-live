@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T17:57:16+0530",
-  "version": 1166,
+  "updated": "2026-10-09T17:58:52+0530",
+  "version": 1168,
   "last_id": 357,
   "team": [
    {
@@ -2986,7 +2986,7 @@
    "due": "2026-09-23",
    "status": "review",
    "why": "The free lane is the net-new funnel: registration, survey, confirmation, then the VIP fork.",
-   "spec": "Separate URLs from the paid lane so the two can be tracked and optimised independently. Registration is signup-only with no pass comparison and no price. Thank-you 1 runs the 18-question intake survey before the community link, because anyone who joins the group first never returns to fill it in. Thank-you 2 carries the confirmation links and then offers the VIP seat once, below them.",
+   "spec": "Separate URLs from the paid lane so the two can be tracked and optimised independently. Registration is signup-only with no pass comparison and no price. Thank-you 1 runs the 11-question intake survey (the same question set as the paid lane, cut from 18 in T-278) before the community step, because anyone who joins the group first never returns to fill it in. Thank-you 2 carries the confirmation links and then offers the VIP seat once, below them, with no price on the page.",
    "done_when": [
     "Owner approves copy and order across /workshop, /workshop/success and /workshop/join on the mirror",
     "Community link replaces the placeholder once T-040 supplies it"
@@ -2994,23 +2994,23 @@
    "evidence": [
     {
      "label": "Free registration",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=1009b"
     },
     {
      "label": "Thank-you 1, survey",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/success/"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/success/?v=1009b"
     },
     {
      "label": "Thank-you 2, the fork",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=1009b"
     },
     {
      "label": "Paid join page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=1009b"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/site/workshop/, https://adisuja.github.io/tantra-workshop-live/site/workshop/success/ and https://adisuja.github.io/tantra-workshop-live/site/workshop/join/ in order, then approve or reply with changes per page.",
+   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=1009b, https://adisuja.github.io/tantra-workshop-live/site/workshop/success/?v=1009b and https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=1009b in order, then approve or reply with changes per page.",
    "log": [
     {
      "ts": "2026-09-23",
@@ -3031,12 +3031,23 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: blocker T-192 is done (Nelbin's PRs merged) and T-186 sits in tasks/archive.json, so both are removed from blockers and done_when. Community link stays a placeholder on owner hold (T-040). Evidence links answer 200."
+    },
+    {
+     "ts": "2026-10-09T17:58:52+0530",
+     "who": "claude",
+     "note": "People: reviewers Bhaskar → Bhaskar/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T17:58:52+0530",
+     "who": "claude",
+     "note": "All three free-lane pages are rewritten in the Backlinko voice and live on the mirror: no price anywhere (the join page button now reads Show me the add-on), no group promise while the WhatsApp group is on hold (step 1 says the calendar invite and Zoom link come by email and the invite reminds you), and after the survey the one button goes straight to the calendar step. The survey stays at 11 questions, not 18: the Orchestrator's later T-278 decision (O-a511256b) overrode the 18 in this note, and the spec now says 11. Checked with tsc, probe-workshop at 5 widths, the leak probe, and a click test (add-on, bonus tile, No thanks) on the live mirror at 1440 and 390, all passing; commits 49cd90e (origin e1a1d8c, pushed as that one commit only) and mirror 82686f6. Not changed: the paid join page shows 7 Oct to a visitor who has not registered in that browser (T-278's page), and Tantra campaign reminders are not mentioned until T-234 ships."
     }
    ],
    "order": 910,
    "assignee": "Claude",
    "reviewers": [
-    "Bhaskar"
+    "Bhaskar",
+    "Bharath"
    ]
   },
   {
