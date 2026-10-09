@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T17:42:45+0530",
+   "task_id": "T-223",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-223 stays in review for the first real sign-up only: T-229 is shipped (Worker bc7ea5ad, pushed as 2ba0273), the live admin shows 0 failed, and the 14 to 16 Oct meeting 88135386601 already exists with every room setting correct and cap 98. I also marked a second placeholder, attendee 66 (adi@exampl"
+  },
+  {
    "ts": "2026-10-09T17:34:00+0530",
    "task_id": "T-215",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "done",
    "result": "ok",
    "summary": "T-294's work is confirmed on origin and rendering on the live mirror, and its review is folded into T-108. I'm waiting on the two local probes (phone text size and board fit) before setting the final status."
-  },
-  {
-   "ts": "2026-10-09T14:22:43+0530",
-   "task_id": "T-020",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-020 stays in review: every open playbook call is closed, the 89% show-up figure is replaced by the Funnel Equations bands (25 to 40% and 45 to 70%), Apollo is out of the cinematics, main (69864c5) and the mirror (678a78b) are pushed, and T-294, T-297 and T-293 are closed. Read it at https://adisuj"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-223",
+ "task_id": "T-092",
  "entries": [
-  "F-184b482c"
+  "F-94d59a50"
  ],
- "started": "2026-10-09T17:34:11+0530",
- "message": "Acting on 1 note(s) for T-223: Zoom Pro meetings in the centre: per-cohort meeting, presentation room, cap and waitlist, live board, attendance"
+ "started": "2026-10-09T17:42:49+0530",
+ "message": "Acting on 1 note(s) for T-092: Light / dark theme with time-based auto"
 }

@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T17:37:35+0530",
-  "version": 1140,
+  "updated": "2026-10-09T17:42:35+0530",
+  "version": 1144,
   "last_id": 357,
   "team": [
    {
@@ -8076,19 +8076,25 @@
    "assignee": "Claude",
    "reviewers": [
     "Adi",
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ],
    "priority": "P0",
    "due": "",
    "status": "review",
    "why": "Our workshop and the Tantra webinar run on Zoom Pro meetings: each registrant needs their own join link, and attendance, recordings, chat and polls must land in the centre and the Tantra Tracker. The live centre has no real attendees yet (D1 read 2026-10-08 00:50 IST: attendees 1 to 4 are test, attendee 5 'Alex' you@example.com is a placeholder), so the live proof so far is the 2026-10-07 test session 89781893618 (webhooks, 119 s attendance, recording and chat saved, then deleted in Zoom).",
-   "spec": "Code live: main cd7a90e, a3db29a, 99b8083, d31a7e3; Worker 06ee20f9; probe-zoom-pro.mjs (57 own stack, 54 shared). Live: zoom_enabled 1, cap 98, Support locks 0, meeting 87002851906 for 7 to 9 Oct carries all room settings. The 'zoom failed 3' on the admin is the placeholder attendee 5 (you@example.com) hitting Zoom's 3-per-day registrant limit: fixed by T-229 (never send placeholder emails to Zoom), not a real failure. Remaining: when the first real attendee signs up, confirm in https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key> (Zoom Sessions panel) that they are registered with their own join link, then after their session press Read attendance and check the live board, zoom_attendance and the Tracker's Zoom Attendance tab.",
+   "spec": "Code live: main 8c94364 (T-229 fix on top of cd7a90e, a3db29a, 99b8083, d31a7e3); Worker bc7ea5ad; probe-zoom-pro.mjs 58/58 on a fresh own stack. Live on 2026-10-09: zoom_enabled 1, cap 98, Support locks 0. The centre already created meeting 88135386601 for Wed 14 to Fri 16 Oct: Check in Zoom shows every room setting as set, three sessions at 11:00 ET, passcode on, 0 registrants. Invite Status shows 0 failed. The '1 registered' on the ended 7 to 9 Oct meeting 87002851906 is the placeholder adi@example.com (attendee 66, now marked test), not a real person. One condition left, the first real sign-up: confirm in https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key> (Cohort Settings, Zoom Sessions) that they are registered with their own join link, then after their session press Read attendance and check the live board, zoom_attendance and the Tracker's Zoom Attendance tab. Then mark it done.",
    "done_when": [
     "The first real attendee is registered on their cohort's meeting with their own join link (admin Zoom Sessions shows registered 1 or more, failed 0)",
     "A real session shows its joins on the admin live board",
     "zoom_attendance holds rows for that session and the Tracker's Zoom Attendance tab shows them"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Live admin: Zoom Sessions and Invite Status",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/#settings"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -8116,6 +8122,16 @@
      "ts": "2026-10-08T00:49:40+0530",
      "who": "claude",
      "note": "Pass 2 correction: The live centre has no real attendees yet (D1 read 2026-10-08 00:50 IST: attendees 1 to 4 are test, attendee 5 'Alex' you@example.com is a placeholder). The 3 failures are that placeholder (T-229). Back to review; next is T-234."
+    },
+    {
+     "ts": "2026-10-09T17:42:35+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi/Aquila → Adi/Aquila/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T17:42:35+0530",
+     "who": "claude",
+     "note": "Shipped T-229 so the false 'zoom failed 3' is gone: the live admin now shows 0 failed, and placeholder emails can no longer sign up or reach Zoom (Worker bc7ea5ad, commit pushed). The 14 to 16 Oct meeting 88135386601 already exists with every room setting correct and the cap is still 98; probe-zoom-pro passes 58/58. Stays in review for one thing only: the first real sign-up (the 1 registered on last week's meeting was the placeholder adi@example.com, now marked test)."
     }
    ],
    "order": 2230
@@ -8515,11 +8531,12 @@
    "assignee": "Claude",
    "reviewers": [
     "Nelbin",
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Production attendee 5 signed up as you@example.com (not marked test) and its three Zoom registrations hit Zoom's 3-per-person-per-day limit (HTTP 429). The 429 back-off shipped in c106985; what is left is keeping placeholder addresses away from Zoom, Google and the coming Tantra reminder import (T-234).",
    "spec": "1) In the admin (https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Attendees, attendee 5, tick the Test checkbox: #testChk sends PATCH /admin/api/attendees/5 {test:true}) so Invite Status stops counting its failed Zoom rows. 2) Refuse reserved and placeholder domains (example.com, example.net, example.org, *.test, *.invalid, *.localhost, *.example) at every sign-up door: POST /cal/issue (cloud/src/calendar.ts, issue()), POST /intake (cloud/src/live.ts) and the admin add form (cloud/src/index.ts), answering with the same shape as today so nothing leaks. Put the check in one helper in cloud/src/util.ts and reuse it in the T-234 Tantra import. 3) Add a check to app/scripts/probe-calendar-feeds.mjs that an example.com sign-up is refused (local: SIM_PORT=8902 python3 cloud/scripts/vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs). Live evidence 2026-10-08: attendee 5 (you@example.com, test 0) produced 3 failed Zoom rows (429 daily registrant limit). Also clean that row up through the admin (mark it test) rather than editing D1.",
    "done_when": [
@@ -8529,12 +8546,12 @@
    ],
    "evidence": [
     {
-     "label": "Calendar feeds handoff (how it works, setup, blockers)",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/SESSION_HANDOFF_2026_10_06_CALENDAR_FEEDS.md"
+     "label": "Live admin: Cohort Settings, Invite Status (0 failed)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/#settings"
     },
     {
-     "label": "Admin centre: Cohort Settings, Invite Status",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=t227"
+     "label": "Probe with the refusal checks",
+     "url": "app/scripts/probe-calendar-feeds.mjs"
     }
    ],
    "blockers": [],
@@ -8579,6 +8596,16 @@
      "ts": "2026-10-08T00:49:40+0530",
      "who": "claude",
      "note": "Pass 2 correction: live admin shows the placeholder you@example.com failing on Zoom 3 times."
+    },
+    {
+     "ts": "2026-10-09T17:42:35+0530",
+     "who": "claude",
+     "note": "People: reviewers Nelbin/Aquila → Nelbin/Aquila/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T17:42:35+0530",
+     "who": "claude",
+     "note": "Built and live (main 8c94364, pushed as 2ba0273; Worker bc7ea5ad): placeholder addresses are refused at /cal/issue, /intake and the admin add form, and never reach the real Zoom or Google. Checked on production: an example.com sign-up at each door created no attendee, attendees 5 (you@example.com) and 66 (adi@example.com) are marked test, and Invite Status now shows 0 failed. Local probes on a fresh stack: calendar feeds 67/67 (6 new refusal checks), zoom-pro 58/58, tantra reminders 52/52. Open the admin, Cohort Settings, Invite Status."
     }
    ],
    "order": 2290
