@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T08:01:04+0530",
+   "task_id": "T-111",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-111 is in review for Amal and Bharath: the mirror (e4f856b) now serves the 672-example verbatim library, identical to the live centre, with probe-anonymity at 0 hits (T-243 done) and main pushed. probe-fidelity passes only after I changed its private checker to report Nelbin's merged content pass "
+  },
+  {
    "ts": "2026-10-09T07:25:33+0530",
    "task_id": "T-111",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:05:24+0530",
-   "task_id": "T-238",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-111: Template library corpus (Lane B): fields, channel/mechanism tags, TemplateCard, anonymised corpus templates, leak probe",
- "task_id": "T-111",
+ "message": "Acting on 1 note(s) for T-115: Guide screenshots that need Adi's signed-in accounts (Google, GA4, Cloudflare, Tantra, WebinarGeek)",
+ "task_id": "T-115",
  "entries": [
-  "F-d7750374"
+  "F-1962daf4"
  ],
  "mode": "feedback",
- "started": "2026-10-09T07:40:00+0530"
+ "started": "2026-10-09T08:01:10+0530"
 }

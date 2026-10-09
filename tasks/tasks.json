@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T08:00:48+0530",
-  "version": 968,
+  "updated": "2026-10-09T08:01:10+0530",
+  "version": 970,
   "last_id": 348,
   "team": [
    {
@@ -3651,9 +3651,7 @@
      "url": "workshop-plan/coord/LOG.md"
     }
    ],
-   "blockers": [
-    "T-141 owner decision on searchable client figures"
-   ],
+   "blockers": [],
    "needs_from_owner": "",
    "log": [
     {
@@ -3695,6 +3693,11 @@
      "ts": "2026-10-09T08:00:48+0530",
      "who": "claude",
      "note": "The public mirror now serves the real-example library (672 examples), word for word the same as the live centre; I compared the two bundles and found 0 differences, and a full scan of the export found 0 private client names. Anonymity probe is at 0 hits (T-243 done), check-guides passes, and the fidelity probe passes once it accounts for Nelbin's merged content pass (22 examples edited, 7 removed, dashes out), which it now reports instead of failing. Open the first link; one known leftover: the library probe's poll check fails the same way on both sites."
+    },
+    {
+     "ts": "2026-10-09T08:01:10+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-145."
     }
    ],
    "order": 1090,
