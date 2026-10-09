@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T19:24:53+0530",
-  "version": 1245,
+  "updated": "2026-10-09T19:29:10+0530",
+  "version": 1246,
   "last_id": 361,
   "team": [
    {
@@ -2436,49 +2436,25 @@
   },
   {
    "id": "T-061",
-   "title": "Free and paid lane follow-up campaigns in Tantra, with per-lane unit economics",
-   "area": "Traffic",
+   "status": "blocked",
    "owner": "Aquila",
-   "priority": "P1",
-   "due": "2026-09-22",
-   "status": "queue",
-   "why": "The free (/workshop) and paid (/masterclass) lanes have different economics; each needs its own follow-up campaign and its own cost, registration and sales numbers so they can be optimised separately.",
-   "spec": "Per owner model (memory google-and-reminder-model.md): follow-ups (email, WhatsApp, LinkedIn) run as Tantra omni-channel campaigns and registrants are imported into the campaign by webhook from the onboarding centre Worker on sign-up (https://revops-centre.growthcluborg.workers.dev). The lane is already captured (D1 intake_submissions.lane, cloud/migrations/0009_intake_submissions.sql) and synced with UTM fields into the Tantra Tracker (workshop-plan/ops/tracker_sync.py, every 5 minutes). Do: (1) create two Tantra campaigns, one per lane, and route the sign-up import by lane (share the import plumbing with T-234 reminders); (2) add a per-lane unit economics tab to the Tantra Tracker: registrations, VIP sales (/vip), seat sales (/masterclass), revenue, and cost (organic cost 0 until paid ads are decided in T-260); (3) dashboard reads are T-265. WhatsApp only through Tantra, never Twilio. No GoHighLevel.",
-   "done_when": [
-    "Two lane campaigns exist in Tantra and a test sign-up on each lane lands in the matching campaign",
-    "The Tantra Tracker has a per-lane tab with registrations, sales and revenue per weekly cohort",
-    "tracker_sync.py run shows both lanes populated for the 7 to 9 Oct cohort"
-   ],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review: context updated. Lanes renamed to the current free (/workshop) and paid (/masterclass) funnels. UNVERIFIED which CRM is intended: the Tantra Tracker sheet plus MongoDB and the Work Tracker tabs exist; GoHighLevel's role is open in T-120. Status kept."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: CRM question answered by the owner model (follow-ups run on Tantra omni-channel campaigns fed by registrant import; per-attendee records in the Tantra Tracker). GoHighLevel is not on the approved list (T-260/T-120), so that blocker and the CRM ask are removed. Verified the lane is already stored (cloud/migrations/0009_intake_submissions.sql lane column; tracker_sync.py line 347 writes lane and UTM)."
-    },
-    {
-     "ts": "2026-10-09T05:11:30+0530",
-     "who": "Orchestrator",
-     "note": "People: assignee Aquila → Claude (by Orchestrator)."
-    }
-   ],
-   "order": 400,
    "assignee": "Claude",
    "reviewers": [
     "Aquila"
-   ]
+   ],
+   "priority": "P1",
+   "due": "2026-09-22",
+   "area": "Traffic",
+   "order": 400,
+   "title": "T-061: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-070",
