@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T19:50:26+0530",
-  "version": 1258,
+  "updated": "2026-10-09T19:50:35+0530",
+  "version": 1259,
   "last_id": 362,
   "team": [
    {
@@ -6421,6 +6421,11 @@
      "ts": "2026-10-09T19:50:26+0530",
      "who": "claude",
      "note": "Option B is done (no branch holds the leak). API recheck today: the fork nelbinxav/tantra-workshop-live and commit 5b9f57d6 on adisuja/tantra-workshop-live both still resolve, so T-145 stays blocked on T-341 (Nelbin) and T-334 (Adi's Support paste). The 2026-10-09 mirror republish with the real-example library did not change this."
+    },
+    {
+     "ts": "2026-10-09T19:50:35+0530",
+     "who": "claude",
+     "note": "Checked 9 related task(s); updating T-341, T-111."
     }
    ],
    "order": 1450,
