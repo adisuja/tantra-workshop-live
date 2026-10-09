@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T17:33:54+0530",
-  "version": 1137,
+  "updated": "2026-10-09T17:34:11+0530",
+  "version": 1138,
   "last_id": 357,
   "team": [
    {
@@ -7641,6 +7641,11 @@
      "ts": "2026-10-09T17:33:54+0530",
      "who": "claude",
      "note": "All 18 walkthroughs are on one review index for a single pass (T-282), and the v2 pipeline sources (journeys, recorder scripts, step lists, timelines) are now committed and pushed to branch tantra-walkthroughs 2e9db5c; nothing is merged to main until T-282 approves. Checked: verify.py passes on all 18, every mp4 is 3840 x 2160 and under 2:00 and matches its timeline, the index opens in a headless browser with 18 links and no errors. Not done: the Dodo test-mode key on the GrowthClub account is approved but could not be recorded because the recording browser is signed out of Dodo (T-350, with the Twilio code and Google sign-ins), so Dodo, Twilio and Google keep their docs route; Kie.ai is docs only and Stripe has sign-up plus the docs route, no account. The 4K frames and mp4s stay local (gitignored)."
+    },
+    {
+     "ts": "2026-10-09T17:34:11+0530",
+     "who": "claude",
+     "note": "Checked 6 related task(s); updating T-283."
     }
    ],
    "order": 2150
