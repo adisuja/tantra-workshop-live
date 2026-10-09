@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T03:44:46+0530",
-  "version": 1403,
+  "updated": "2026-10-10T03:46:08+0530",
+  "version": 1405,
   "last_id": 379,
   "team": [
    {
@@ -11774,7 +11774,7 @@
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Pick the referral payout cadence for workshop-plan/referrals.html (reply on http://localhost:8899/tasks.html#T-275). Recommended: 'Paid monthly, once the refund window on each sale has closed'.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-08T00:21:42+0530",
@@ -11785,6 +11785,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: verified: links.site in workshop-plan/ops/referrals.json is still the review mirror https://adisuja.github.io/tantra-workshop-live/site and 'Payouts follow Adi's schedule' is still in referrals.html; no production funnel domain exists yet (local-first rule), so H008 is blocked on that, UNVERIFIED whether a domain is planned."
+    },
+    {
+     "ts": "2026-10-10T03:45:50+0530",
+     "who": "claude",
+     "note": "H006 and H013 done (commit 1d66ef0, pushed, mirror republished): the dashboard reads first_cohort from referrals.stats.json and the payout line now says 'Paid monthly, once the refund window on each sale has closed.' Tests 12/12 and the Python suite pass. Open: H008 (links.site on the production domain), waiting on the post-launch host switch T-006. Replies columns preserved. Open http://localhost:8899/workshop-plan/referrals.html?v=275"
     }
    ],
    "order": 2750
@@ -11873,6 +11878,11 @@
      "ts": "2026-10-09T14:26:12+0530",
      "who": "claude",
      "note": "Closed by Orchestrator decision O-fdd77ded, carried out in T-001. Day titles and the $50M removal shipped in b880b67 (T-191); 2adc82c (T-001) did the rest: Day 1 visual shows the eight decisions, Cavli and Appster figures cut from both host bios, SESSION_TIME on the /workshop sticky bar, WebinarGeek mark sized correctly, and no $99 frame appears in an India timezone browser on either landing. All seven findings (M010, M011, M020, M021, M065, M066, O004) are marked in AUDIT.md with their commits; live on the mirror as 025b331."
+    },
+    {
+     "ts": "2026-10-10T03:46:08+0530",
+     "who": "claude",
+     "note": "Already applied, so no agent run was needed: The 2026-10-09T14:26 log entry confirms all items (visuals, session time, figures, SVG sizes, and timezone checks) were completed in commit 2adc82c and published. [gemini/gemini-3.1-flash-lite-preview via OmniRoute] (checked by Haiku against the log and commits)."
     }
    ],
    "order": 2770

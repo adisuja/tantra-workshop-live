@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T03:45:57+0530",
+   "task_id": "T-275",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "ok",
+   "summary": "H006 and H013 are fixed (commit 1d66ef0, pushed, mirror republished). T-275 stays in `queue`, waiting on H008 (production link) and T-006. The Python suite and `probe-referrals.mjs --live` both pass. I did not move it to review, since its last done-when item (`links.site` on the production domain) i"
+  },
+  {
    "ts": "2026-10-10T03:44:51+0530",
    "task_id": "T-273",
    "mode": "feedback",
@@ -87,23 +95,15 @@
    "status": "queue",
    "result": "error",
    "summary": "40 s5-gohighlevel         h rows 1 box 1360x703  labels 5/5 chips 0 OFF \\\"booked\\\" is off its connector; \\\"no-show\\\" covers a card; \\\"no-show\\\" is off its connector; \\\"proposal sent\\\" covers a card; \\\"proposal sent\\\" is off its connector; \\\"idle 7 days\\\" covers a card; \\\"idle 7 days\\\" is off its con"
-  },
-  {
-   "ts": "2026-10-09T19:25:00+0530",
-   "task_id": "T-052",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-052 is built, deployed to the centre Worker with the Tantra push off, and blocked only on the Tantra API key already tracked on T-234/T-337.\n\n- **Build:** `pushToCampaign` imports an attendee into the pre campaign on sign-up and into the post campaign when Day 3 ends. A new per-attendee ledger tab"
   }
  ],
  "state": "working",
- "message": "Acting on 2 note(s) for T-275: Referral dashboard: production link, cohort date source, payout wording",
- "task_id": "T-275",
+ "message": "Acting on 2 note(s) for T-284: Put the approved 4K walkthroughs on both onboarding centres and the playbook",
+ "task_id": "T-284",
  "entries": [
-  "F-0abcbfa9",
-  "R-afe07d48"
+  "F-f4df02b7",
+  "R-d1bf1192"
  ],
  "mode": "feedback",
- "started": "2026-10-10T03:45:04+0530"
+ "started": "2026-10-10T03:46:17+0530"
 }
