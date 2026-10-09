@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T17:50:32+0530",
+   "task_id": "T-215",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-215 stays in review: nothing was left to build, and note F-703a5e07 was already acknowledged by an earlier pass.\n\n- **Videos:** all 18 are on the review index at http://localhost:8883/wt-review/index.html?v=2e9db5c. Each passes `verify.py` and reads 3840 x 2160 and 59 to 119 seconds from the file."
+  },
+  {
    "ts": "2026-10-09T17:49:06+0530",
    "task_id": "T-198",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-001 stays in review for Adi's copy sign-off: the /masterclass proof fix is pushed to main (2adc82c) and live on the mirror (025b331), with T-277 and T-117 closed and the note acked. Two probe failures remain, both outside this change: the cohort date line on /masterclass/success/join at 1440 and t"
-  },
-  {
-   "ts": "2026-10-09T14:06:23+0530",
-   "task_id": "T-004",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-004 is done: the six prices were already locked and on origin main from the earlier pass, the live wiring probe re-run now ends ALL WIRING PASSES (nothing paid), T-103 is closed out of recheck, and T-005 stays in the queue. The note F-0334459d was already acked."
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-215: Over-the-shoulder API key walkthrough videos for every approved tool (S1 tantra-walkthroughs)",
- "task_id": "T-215",
+ "message": "Acting on 1 note(s) for T-223: Zoom Pro meetings in the centre: per-cohort meeting, presentation room, cap and waitlist, live board, attendance",
+ "task_id": "T-223",
  "entries": [
-  "F-703a5e07"
+  "F-184b482c"
  ],
  "mode": "feedback",
- "started": "2026-10-09T17:49:11+0530"
+ "started": "2026-10-09T17:50:38+0530"
 }
