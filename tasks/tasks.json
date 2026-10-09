@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T20:07:45+0530",
-  "version": 1273,
+  "updated": "2026-10-09T20:10:50+0530",
+  "version": 1275,
   "last_id": 364,
   "team": [
    {
@@ -9683,6 +9683,16 @@
      "ts": "2026-10-09T18:42:55+0530",
      "who": "claude",
      "note": "Closed by T-123: the attendee funnel's Tantra email no longer calls /emails/batch. Each approved message is its own running Tantra campaign and the funnel imports the contact and adds them when the message is due (commit 12997e9 on main, Worker version b87e8b1c). probe-email-stripe passes 58 of 58 against the simulator."
+    },
+    {
+     "ts": "2026-10-09T20:10:34+0530",
+     "who": "claude",
+     "note": "Nothing new to build: the campaign import, the retired /emails/batch route and the contract script were already delivered by T-123 (main 5bde29e, Worker b87e8b1c), and the endpoint doc is marked retired. git grep 'emails/batch' now finds only the Resend route and history docs. The one leftover, TANTRA_NOTE/TANTRA_WAIT in jobs-day2.ts, is fixed on T-217's branch tantra-campaign-import (f0b5528, pushed) and waits for the Integrator's merge; I did not rerun the probes this pass."
+    },
+    {
+     "ts": "2026-10-09T20:10:50+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-217."
     }
    ],
    "order": 2360

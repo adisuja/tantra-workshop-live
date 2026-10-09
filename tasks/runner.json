@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T20:10:40+0530",
+   "task_id": "T-236",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-236 stays done: nothing new to build, and I didn't rerun the probes this pass.\n\n- **Already delivered:** T-123 shipped the campaign import and retired `/emails/batch` (main 5bde29e). The send-contract script is gone and the endpoint doc is marked retired.\n- **Still open:** `TANTRA_NOTE` and `TANTR"
+  },
+  {
    "ts": "2026-10-09T20:10:11+0530",
    "task_id": "T-130",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-100 stays in review: `/vip` is clean at all 7 widths on the live mirror, every count chip matches the template library, and no bonus is tagged \"VIP only\". No fix or republish was needed, so nothing was pushed. Probe output is committed in `workshop-plan/evidence/T-100-vip-probes-2026-10-09.txt`, t"
-  },
-  {
-   "ts": "2026-10-09T17:53:45+0530",
-   "task_id": "T-097",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-097 is done: the three privacy rechecks passed (`.gitignore` line 30 covers `workshop-plan/library/`, 0 tracked files, mirror `/library/` returns 404), the private-archive rule is in `workshop-plan/coord/LANES.md`, \"Asked of Adi\" is cleared and F-5879456c is acked. The 2026-09-23 \"published to the"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-236: Attendee funnels: send Tantra reminder emails by campaign import, retire the /emails/batch spec",
- "task_id": "T-236",
+ "message": "Acting on 1 note(s) for T-130: Make the busiest guide flowcharts easier to read",
+ "task_id": "T-130",
  "entries": [
-  "F-3f93e957"
+  "F-33d7ff36"
  ],
  "mode": "feedback",
- "started": "2026-10-09T20:10:11+0530"
+ "started": "2026-10-09T20:10:52+0530"
 }
