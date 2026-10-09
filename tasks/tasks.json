@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T09:18:00+0530",
-  "version": 1011,
+  "updated": "2026-10-09T09:21:13+0530",
+  "version": 1013,
   "last_id": 350,
   "team": [
    {
@@ -1663,9 +1663,7 @@
     "Owner or Bhaskar approves"
    ],
    "evidence": [],
-   "blockers": [
-    "T-116 decides the $999 offer's name"
-   ],
+   "blockers": [],
    "needs_from_owner": "",
    "log": [
     {
@@ -1687,6 +1685,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: channel line moved to the owner model (Tantra omni-channel campaign), Resend only as the email fallback."
+    },
+    {
+     "ts": "2026-10-09T09:21:13+0530",
+     "who": "claude",
+     "note": "T-116 settled the name (Orchestrator O-0361e753): the $999 offer is 'Tantra Pro Course', one-time; bare 'Tantra Pro' means the $99/mo app plan. Naming no longer blocks this task."
     }
    ],
    "order": 300,
@@ -9839,7 +9842,7 @@
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Confirm the hub label for the $999 rung (H026), on http://localhost:8899/tasks.html#T-273. Recommended, from your 2026-09-30 price ladder: 'Tantra Pro course, $999 one-time' as the upsell, with Tantra Pro $99/mo (includes the cohort seat) and Tantra Enterprise $9,999 beside it; this also settles the name clash in T-116.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-08T00:21:42+0530",
@@ -9850,6 +9853,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: page is now the Workshop Hub (no Tasks tab); verified on main: 8 .eyebrow kickers, hardcoded 'Wed 7, Thu 8 and Fri 9 Oct' spans, 'Upsell · Tantra Pro $999' and the T-081 note still present; added the owner's 2026-09-30 price ladder as the recommended answer for H026 and tied it to T-116."
+    },
+    {
+     "ts": "2026-10-09T09:21:13+0530",
+     "who": "claude",
+     "note": "T-116 settled H026 (Orchestrator O-0361e753): the hub now reads 'Upsell · Tantra Pro Course', $999 one-time, live on https://adisuja.github.io/tantra-workshop-live/?v=t116 . Nothing is needed from Adi for the label; the other audit items in this task are still open."
     }
    ],
    "order": 2730
