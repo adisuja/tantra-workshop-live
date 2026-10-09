@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T08:38:36+0530",
-  "version": 989,
+  "updated": "2026-10-09T08:40:22+0530",
+  "version": 995,
   "last_id": 349,
   "team": [
    {
@@ -142,6 +142,11 @@
      "ts": "2026-10-09T08:38:36+0530",
      "who": "claude",
      "note": "All 14 Orchestrator answers (O-72b882af) are applied on main b880b67, pushed, and live on the mirror (de264d8): (1) 45 min teaching + 15 Q&A everywhere, (3) Your VIP Kit, (4)(15)(21) one title and label per day from app/src/lib/day-titles.ts (Day 1: Offer, Buyer and Channels), (10) slim proof band with no $50M, press wall or Google/Techstars marks, (14) Route B guide rewritten for Claude Code + Cloudflare Workers, (16) proof lines now say use your own sourced result or cut the line, (18) free seat / paid seat instead of lanes, (19) Day 2 tasks 2.1 to 2.8, welcome slot hidden until a video exists, platform access described from the usetantra.com sign-up; (5) stays cut, and (6) hours, (7) Google Sheet and (20) 11 questions were already true on main (20 via T-278). Checked with tsc (app and Worker), check-guides, probe-headings and probe-onboarding-tabs clean, probe-anonymity on source and export, git grep for second wordings, and headless Chromium on localhost and the live mirror. Open: probe-details fails on 2 literal dates in private library files this task did not touch, probe-fold fails at 1366x768 the same way on the old mirror, Day 1 header still says 4 to 6 h (steps sum to about 5 to 6), and the revops-centre Worker was not redeployed (not an approved step), so the live centre and calendar invites show the new titles and the hidden welcome card after its next deploy. WhatsApp invite stays on T-040."
+    },
+    {
+     "ts": "2026-10-09T08:38:46+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-277."
     }
    ],
    "order": 1
@@ -1406,7 +1411,7 @@
    "owner": "Ben",
    "priority": "P0",
    "due": "2026-09-21",
-   "status": "done",
+   "status": "recheck",
    "why": "Attendees need a real URL for the playbook, survey, and deck. Everything is localhost today.",
    "spec": "Playbook, survey, and daily outputs are served by serve.py locally. For attendees to reach them during a session the machine needs a temporary public tunnel (Cloudflare Tunnel, already used for GrowthClub OS). Recipe and start script in the runbook; no permanent hosting.",
    "done_when": [
@@ -1463,6 +1468,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: evidence pointer added; the spec still describes the earlier tunnel plan, the delivered path is the GitHub Pages mirror."
+    },
+    {
+     "ts": "2026-10-09T08:39:56+0530",
+     "who": "claude",
+     "note": "Flagged for a recheck by T-194: Spec says the machine needs a temporary public Cloudflare tunnel for attendees; tunnel is now off and GitHub Pages is the route."
     }
    ],
    "order": 250,
@@ -6237,7 +6247,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "blocked",
+   "status": "done",
    "why": "The tunnel is a public ingress to Adi's Mac and is running now without a recorded approval; team review already has permanent GitHub Pages mirrors, so the tunnel only adds value for unmerged branch previews.",
    "spec": "Branch previews are built every 10 min (launchd com.tantra.preview-refresh, workshop-plan/ops/preview_branches.py) and served by com.tantra.preview-gateway on 127.0.0.1:4360 behind ~/.config/tantra/preview-key (?k= sets a cookie). com.tantra.preview-tunnel (cloudflared quick tunnel, random trycloudflare URL, log ~/.pr-preview/tunnel.log) is running as of 2026-10-08. If Adi says off: launchctl bootout gui/$UID/com.tantra.preview-tunnel, and the RevOps Workshop Series sheet tab falls back to live links (workshop-plan/ops/revops_sheet.py). If Adi says keep: record it here and in memory team-review-tunnels.",
    "done_when": [
@@ -6249,12 +6259,14 @@
     {
      "label": "RevOps Workshop Series sheet",
      "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=1133663049"
+    },
+    {
+     "label": "Live mirror the sheet links to",
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=t194"
     }
    ],
-   "blockers": [
-    "Adi's keep or off decision"
-   ],
-   "needs_from_owner": "Keep the key-protected public preview tunnel to this Mac running, or turn it off? It is on now without a recorded approval. Recommended: turn it off; teammates review merged work on https://adisuja.github.io/tantra-workshop-live/ and only unmerged branch previews would be lost.",
+   "blockers": [],
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-02T00:06:45+0530",
@@ -6275,6 +6287,16 @@
      "ts": "2026-10-09T05:06:10+0530",
      "who": "Orchestrator",
      "note": "People: assignee Adi → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-09T08:39:43+0530",
+     "who": "claude",
+     "note": "Decision recorded (Orchestrator O-bb46bbb1, acting for Adi, 2026-10-09): the branch preview tunnel is OFF. Checked: launchctl list | grep preview-tunnel returns nothing, its plist sits in ~/.pr-preview/disabled/ (not in LaunchAgents, so no restart at login), and refresh plus gateway still run on 127.0.0.1:4360 only. Re-ran revops_sheet.py (49 rows) and read the tab back: 0 trycloudflare links, 0 access keys, and 16 of its GitHub Pages links load logged out with the right page titles; the GitHub PR and source links need a repo login because the repo is private. Memory team-review-tunnels already carries the decision."
+    },
+    {
+     "ts": "2026-10-09T08:39:56+0530",
+     "who": "claude",
+     "note": "Checked 11 related task(s); updating T-036 (done, now recheck)."
     }
    ],
    "order": 1940
@@ -7759,6 +7781,11 @@
      "ts": "2026-10-09T08:22:30+0530",
      "who": "claude",
      "note": "No longer waiting on Adi to forward anything: a daily job (09:10, workshop-plan/ops/zoom_support_check.mjs) now asks Zoom directly and writes the answer here; on a grant it sets Zoom Support locks to Granted, re-applies room settings and confirms both fields on the upcoming meetings by itself. Today's result, run by hand and under launchd: not granted (disable_participant_video is in no answer; the mute field shows false on 87002851906 and 88135386601, which looks like Zoom's default and is not counted as a grant). Two limits for the Orchestrator: the app lacks the account:read:settings:admin scope so the account settings call returns 400, and a GET may not reveal a grant until the fields are written, so the sure test is one PATCH of both fields on next week's meeting 88135386601, which I did not run because only read-only calls were approved. Still blocked only on Zoom Support's reply."
+    },
+    {
+     "ts": "2026-10-09T08:40:22+0530",
+     "who": "claude",
+     "note": "Rechecked 2026-10-09 (second read-only run today): not granted yet. Zoom still shows no disable_participant_video anywhere and the mute field at its default false on 87002851906 and 88135386601; the centre's Zoom Support locks stay off. The daily 09:10 job (workshop-plan/ops/zoom_support_check.mjs, launchd loaded, last exit 0) keeps checking, logs here, and on a grant sets the locks to Granted, re-applies room settings and confirms both meetings by itself. Nothing is asked of Adi; this waits only on Zoom Support, and T-226 Live Control covers mute and video for the 14 Oct cohort."
     }
    ],
    "order": 2250
