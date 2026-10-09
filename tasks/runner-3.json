@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T15:39:10+0530",
+   "task_id": "T-294",
+   "mode": "feedback",
+   "status": "done",
+   "result": "limit",
+   "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
+  },
+  {
    "ts": "2026-10-09T15:09:05+0530",
    "task_id": "T-294",
    "mode": "feedback",
@@ -87,14 +95,6 @@
    "status": "review",
    "result": "ok",
    "summary": "T-297 stays in review: all four Orchestrator calls were already applied, pushed (`db882e7`) and live from an earlier pass, so nothing new had to change. The live mirror carries the four phrases and `probe-playbook.mjs` is clean at 4 widths there; the local probe run fails only on walkthrough poster "
-  },
-  {
-   "ts": "2026-10-09T13:34:27+0530",
-   "task_id": "T-296",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-296 stays in review: nothing new to build, because the 05:07 decision was already carried out in the 13:04 pass and note F-73cd259e was already acked then (the ack returned 0 this time). Rechecked just now: the live page passes all 26 gate checks with the form post stubbed, and the old github.io a"
   }
  ],
  "state": "paused",
@@ -103,6 +103,6 @@
  "entries": [
   "F-154dcb36"
  ],
- "started": "2026-10-09T15:09:01+0530",
- "message": "Usage limit reached; retries automatically after 15:39. (You've hit your session limit · resets 5pm (Asia/Calcutta))"
+ "started": "2026-10-09T15:39:06+0530",
+ "message": "Usage limit reached; retries automatically after 16:09. (You've hit your session limit · resets 5pm (Asia/Calcutta))"
 }

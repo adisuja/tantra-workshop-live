@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T15:39:10+0530",
+   "task_id": "T-150",
+   "mode": "feedback",
+   "status": "review",
+   "result": "limit",
+   "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
+  },
+  {
    "ts": "2026-10-09T15:09:05+0530",
    "task_id": "T-150",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-296 stays in review: the 05:07 decision had already been carried out in the 13:04 pass, so nothing new was built. A fresh check found the live gated page passing all 26 gate checks, the old github.io address returning 404 and no file still linking to it. F-73cd259e was already acknowledged."
-  },
-  {
-   "ts": "2026-10-09T13:16:02+0530",
-   "task_id": "T-294",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "1913f6-716b-42bf-8037-a0dd806f4a8a\"}\n{\"type\":\"tool_progress\",\"tool_use_id\":\"toolu_01L3ajKk2hk76VaZKWG6iNCS-heartbeat-0\",\"tool_name\":\"Bash\",\"parent_tool_use_id\":\"toolu_01L3ajKk2hk76VaZKWG6iNCS\",\"elapsed_time_seconds\":30,\"heartbeat\":true,\"session_id\":\"d91913f6-716b-42bf-8037-a0dd806f4a8a\",\"uuid\":\"0484"
   }
  ],
  "state": "paused",
- "message": "Usage limit reached; retries automatically after 15:39. (You've hit your session limit · resets 5pm (Asia/Calcutta))",
+ "message": "Usage limit reached; retries automatically after 16:09. (You've hit your session limit · resets 5pm (Asia/Calcutta))",
  "task_id": null,
  "entries": [
   "F-3d3cff60"
  ],
  "mode": "feedback",
- "started": "2026-10-09T15:09:02+0530"
+ "started": "2026-10-09T15:39:07+0530"
 }
