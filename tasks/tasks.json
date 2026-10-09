@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T07:53:53+0530",
-  "version": 962,
-  "last_id": 347,
+  "updated": "2026-10-09T07:56:53+0530",
+  "version": 964,
+  "last_id": 348,
   "team": [
    {
     "name": "Adi",
@@ -3858,7 +3858,7 @@
    "blockers": [
     "Adi signed in to Google Workspace, GA4, Cloudflare, Tantra and WebinarGeek in Claude in Chrome (Claude never logs in)"
    ],
-   "needs_from_owner": "Sign in once in Claude in Chrome to https://admin.google.com, https://analytics.google.com, https://dash.cloudflare.com, https://usetantra.com (Tantra sign-in) and https://app.webinargeek.com, then reply 'signed in' on this task. Claude only looks and captures.",
+   "needs_from_owner": "Start one Claude Code session with the Claude in Chrome extension connected to the signed-in Brave window (desktop app or terminal on this Mac), and paste: 'capture T-115'. The background runner has no browser tools, so it cannot open the signed-in consoles itself.",
    "log": [
     {
      "ts": "2026-09-25",
@@ -3899,6 +3899,11 @@
      "ts": "2026-10-09T00:06:32+0530",
      "who": "claude",
      "note": "2026-10-08: the signed-in browser for captures is the Brave profile driven by Claude in Chrome; GA4, Cloudflare, Tantra, WebinarGeek, Cal.com, Metricool, Zoom, Resend and GoHighLevel are signed in there. Google Admin and Google Cloud console ask for a password re-check (owner)."
+    },
+    {
+     "ts": "2026-10-09T07:56:53+0530",
+     "who": "claude",
+     "note": "No screenshots captured this run: the unattended runner session has no Claude in Chrome tools (tool search returns none), and Brave did not answer a read-only AppleScript query (AppleEvent timed out), so there was no way to open GA4, Cloudflare, Tantra or WebinarGeek. I did not copy the Brave profile or cookies to get around it. Checked on main: all 21 unblocked slots plus s1-cold-email #2 still carry capture_needed (check-guides PASS, 72 capture-needed board-wide, up from 60), no guide files changed, nothing to commit; the Google Admin password check is split out as its own input task."
     }
    ],
    "order": 1130,
@@ -11120,6 +11125,36 @@
    ],
    "order": 3410,
    "input_for": "T-145"
+  },
+  {
+   "id": "T-348",
+   "title": "Input: Google Admin password re-check in the Brave capture window (for T-115 s1-cold-email #2)",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Amal"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "One guide screenshot (s1-cold-email step 2, Google Admin Add new user) cannot be captured because Google Admin asks for the account password again, and Claude never types passwords.",
+   "spec": "After the password is entered, Claude opens Directory, Users, Add new user in the signed-in Brave window, captures the form with an outreach domain picked after the @, blurs identities, never submits, and closes it. The capture itself belongs to T-115.",
+   "done_when": [
+    "Google Admin opens without a password prompt in the Brave capture window",
+    "s1-cold-email #2 captured under T-115"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Open https://admin.google.com/ac/users in the Brave window Claude in Chrome drives, enter the Google password when asked, and reply 'done' here.",
+   "log": [
+    {
+     "ts": "2026-10-09T07:56:53+0530",
+     "who": "claude",
+     "note": "Split out of T-115 on the Orchestrator's decision O-da56f37d: the only T-115 slot that needs a password from Adi."
+    }
+   ],
+   "order": 3480
   }
  ]
 }
