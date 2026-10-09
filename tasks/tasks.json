@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T07:57:01+0530",
-  "version": 965,
+  "updated": "2026-10-09T08:00:48+0530",
+  "version": 968,
   "last_id": 348,
   "team": [
    {
@@ -3625,7 +3625,7 @@
    "owner": "Amal",
    "priority": "P1",
    "due": "2026-09-28",
-   "status": "blocked",
+   "status": "review",
    "why": "Every Day 2 guide example renders from this library. The rebuilt verbatim library (lane/lib 5b92879, 679 real examples) is on main and in the live centre, but its public status hangs on T-141.",
    "spec": "State on main 2026-10-08: the verbatim library is merged; the GitHub mirror export empties it (app/scripts/export-static.sh and cloud/.export-centre.sh, 'held for T-141', from 04f0e0a), while the live centre build keeps it (cloud/scripts/build.sh line 23). Verified 2026-10-08: https://revops-centre.growthcluborg.workers.dev/onboarding/templates/ answers 200 to an anonymous visitor (it mints an rc_t cookie) and its JS bundle carries the large dollar figures listed in the private workshop-plan/library/clients/_raw_v2/CHECKPOINT1_NUMBERS.md. Steps once T-141 is answered: (1) record the rule in workshop-plan/coord/LANES.md; (2) if keep: remove the hold block from export-static.sh and .export-centre.sh and publish the mirror; if strip or per-figure: apply it in the library source (app/src/lib/examples), rebuild and deploy the centre Worker, then lift the mirror hold; (3) clear T-243 (probe-anonymity non-export hits); (4) re-run probe-fidelity, probe-anonymity and node app/scripts/check-guides.mjs, check /Users/adithyamurali/tantra-round5-coord/LOG.md for publish holds, then publish.",
    "done_when": [
@@ -3633,11 +3633,28 @@
     "probe-anonymity reports 0 hits (T-243)",
     "The live centre and the mirror serve the same library, and neither carries a figure the T-141 answer strips"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Mirror library (live)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/?v=e4f856b"
+    },
+    {
+     "label": "Live centre library",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/templates/?v=e4f856b"
+    },
+    {
+     "label": "Probe allow list",
+     "url": "app/scripts/probe-anonymity.mjs"
+    },
+    {
+     "label": "Publish log line",
+     "url": "workshop-plan/coord/LOG.md"
+    }
+   ],
    "blockers": [
     "T-141 owner decision on searchable client figures"
    ],
-   "needs_from_owner": "Answer T-141 (see that task for the options and the recommendation).",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-24",
@@ -3668,12 +3685,23 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: added the 2026-10-08 finding that the live centre serves the verbatim library to anonymous visitors, so the mirror hold alone does not keep the figures private; steps now name files and the T-141 outcomes."
+    },
+    {
+     "ts": "2026-10-09T08:00:48+0530",
+     "who": "claude",
+     "note": "People: reviewers Amal → Amal/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T08:00:48+0530",
+     "who": "claude",
+     "note": "The public mirror now serves the real-example library (672 examples), word for word the same as the live centre; I compared the two bundles and found 0 differences, and a full scan of the export found 0 private client names. Anonymity probe is at 0 hits (T-243 done), check-guides passes, and the fidelity probe passes once it accounts for Nelbin's merged content pass (22 examples edited, 7 removed, dashes out), which it now reports instead of failing. Open the first link; one known leftover: the library probe's poll check fails the same way on both sites."
     }
    ],
    "order": 1090,
    "assignee": "Claude",
    "reviewers": [
-    "Amal"
+    "Amal",
+    "Bharath"
    ]
   },
   {
@@ -8431,7 +8459,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "done",
    "why": "Integrator sweep 2026-10-07 (run-chain 2026-10-07)",
    "spec": "Run node app/scripts/probe-anonymity.mjs. The export is clean (0 export hits on every publish); 28 hits are outside it: playbook vendor URLs such as usetantra.com/developers and kie.ai/api-key, and guide strings. For each hit decide: a public vendor URL that is meant to be there goes on the probe's allow list with a one-line reason; anything that names a client or private source is rewritten (owner rule no-invented-funnel-elements: library verbatim stays, only anonymised per the lane B pipeline).",
    "done_when": [
@@ -8456,6 +8484,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still open per LOG 2026-10-07 (28 non-export hits; export itself 0); no change to app/scripts/probe-anonymity.mjs since. UNVERIFIED current count."
+    },
+    {
+     "ts": "2026-10-09T08:00:48+0530",
+     "who": "claude",
+     "note": "Anonymity probe now reports 0 hits on the source tree and on the mirror export. All 30 hits were public vendor or source-credit URLs, two placeholder domains and the playbook byline: each is on the probe's allow list with its reason, and one screenshot credit was reworded (db6a151). A planted client URL, email and name still fail the probe."
     }
    ],
    "order": 2430
