@@ -1,52 +1,106 @@
 {
  "history": [
   {
-   "ts": "2026-10-09T05:38:02+0530",
+   "ts": "2026-10-09T06:04:26+0530",
    "task_id": "T-033",
    "mode": "feedback",
    "status": "blocked",
-   "result": "ok",
-   "summary": "T-033 is blocked: the delivery code is built and deployed, but the real send to \"Adi test\" can't run until Adi provides the Tantra key (T-337) and a WhatsApp connection plus the test number. Email and WhatsApp both go through Tantra (T-234 showed its `{{custom.*}}` merge tags fill in for each contac"
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   },
   {
-   "ts": "2026-10-09T05:28:54+0530",
-   "task_id": "T-278",
+   "ts": "2026-10-09T06:04:22+0530",
+   "task_id": "T-226",
    "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-278 is in review for Adi and Bharath (commit a8e393a). Both join pages now open the attendee's own Zoom link, and the free intake is down to 11 questions. Nothing is pushed, because main is 46 commits ahead and a push would publish other lanes' work; the hosted Worker also needs a deploy before li"
+   "status": "blocked",
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   },
   {
-   "ts": "2026-10-09T05:23:09+0530",
+   "ts": "2026-10-09T06:04:19+0530",
+   "task_id": "T-033",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
+  },
+  {
+   "ts": "2026-10-09T06:04:16+0530",
+   "task_id": "T-226",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
+  },
+  {
+   "ts": "2026-10-09T06:04:12+0530",
    "task_id": "T-234",
    "mode": "feedback",
    "status": "blocked",
-   "result": "ok",
-   "summary": "T-234 is still blocked: today's production preflight shows the GrowthClub Tantra API key isn't saved, which is the one input Adi still owes (T-337). Everything the Orchestrator asked for before the key is done (welcome folded in, dash-free copy, scripted test send, revert ledger entry), and nothing "
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   },
   {
-   "ts": "2026-10-09T05:22:35+0530",
-   "task_id": "T-232",
+   "ts": "2026-10-09T06:04:09+0530",
+   "task_id": "T-011",
    "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-232 is in review: the backup is built, but it hasn't backed up a real recording yet because Google Drive isn't connected. That connection is Adi's one remaining input, tracked as T-336.\n\n- **End-to-end test:** the live test script was already written; I added a `--create` option so it makes its ow"
+   "status": "done",
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   },
   {
-   "ts": "2026-10-09T05:20:51+0530",
-   "task_id": "T-227",
+   "ts": "2026-10-09T06:04:06+0530",
+   "task_id": "T-033",
    "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "(Held back from the public board: this note mentions a private client detail.)"
+   "status": "blocked",
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
+  },
+  {
+   "ts": "2026-10-09T06:04:02+0530",
+   "task_id": "T-226",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
+  },
+  {
+   "ts": "2026-10-09T06:03:59+0530",
+   "task_id": "T-234",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
+  },
+  {
+   "ts": "2026-10-09T06:03:55+0530",
+   "task_id": "T-011",
+   "mode": "feedback",
+   "status": "done",
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
+  },
+  {
+   "ts": "2026-10-09T06:03:52+0530",
+   "task_id": "T-211",
+   "mode": "feedback",
+   "status": "done",
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
+  },
+  {
+   "ts": "2026-10-09T06:03:49+0530",
+   "task_id": "T-234",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
- "state": "working",
- "mode": "feedback",
- "task_id": "T-071",
- "entries": [
-  "F-43b6a66f"
- ],
- "started": "2026-10-09T05:38:27+0530",
- "message": "Acting on 1 note(s) for T-071: Tantra Pro ($999) offer page + checkout"
+ "state": "idle",
+ "mode": null,
+ "task_id": null,
+ "entries": [],
+ "started": "2026-10-09T06:04:22+0530",
+ "message": "Last sweep handled 2 task(s)."
 }

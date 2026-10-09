@@ -1,108 +1,106 @@
 {
  "history": [
   {
-   "ts": "2026-10-09T05:37:14+0530",
-   "task_id": "T-227",
+   "ts": "2026-10-09T06:05:59+0530",
+   "task_id": "T-033",
    "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "(Held back from the public board: this note mentions a private client detail.)"
+   "status": "blocked",
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   },
   {
-   "ts": "2026-10-09T05:35:33+0530",
+   "ts": "2026-10-09T06:05:55+0530",
+   "task_id": "T-033",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
+  },
+  {
+   "ts": "2026-10-09T06:05:52+0530",
    "task_id": "T-226",
    "mode": "feedback",
    "status": "blocked",
-   "result": "ok",
-   "summary": "I built and deployed everything except the Zoom part: Live Control is live with the bot key set, but nothing has run in a real Zoom meeting yet. T-226 is blocked on the one input only Adi can give (T-335). The 5 poll scopes are also still missing from the Tantra Centre app, so creating polls in Zoom"
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   },
   {
-   "ts": "2026-10-09T05:11:35+0530",
-   "task_id": "T-145",
+   "ts": "2026-10-09T06:05:48+0530",
+   "task_id": "T-234",
    "mode": "feedback",
    "status": "blocked",
-   "result": "ok",
-   "summary": "T-145 is blocked on two steps: Adi sends the GitHub Support request now (T-334), and Nelbin deletes his fork, which is in the new task T-341. The request ([t145_github_support_request.md](workshop-plan/ops/t145_github_support_request.md)) is ready today and asks GitHub to remove commits 5b9f57d6 and"
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   },
   {
-   "ts": "2026-10-09T05:10:27+0530",
-   "task_id": "T-034",
+   "ts": "2026-10-09T06:05:45+0530",
+   "task_id": "T-011",
    "mode": "feedback",
    "status": "blocked",
-   "result": "ok",
-   "summary": "I built the Day-1 dry-run as one command, `workshop-plan/ops/dryrun_day1.py`, and a full run with all three personas passed (with stand-ins for the unbuilt stages). T-034 stays blocked until T-031, T-032 and T-033 are built, and none of that needs anything from Adi.\n\n**What a run does:** it adds the"
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   },
   {
-   "ts": "2026-10-09T02:36:21+0530",
-   "task_id": "T-073",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "ok",
-   "summary": "(Held back from the public board: this note mentions a private client detail.)"
-  },
-  {
-   "ts": "2026-10-09T02:35:54+0530",
-   "task_id": "T-232",
+   "ts": "2026-10-09T06:05:42+0530",
+   "task_id": "T-238",
    "mode": "feedback",
    "status": "blocked",
-   "result": "ok",
-   "summary": "(Held back from the public board: this note mentions a private client detail.)"
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   },
   {
-   "ts": "2026-10-09T02:31:04+0530",
+   "ts": "2026-10-09T06:05:37+0530",
    "task_id": "T-226",
    "mode": "feedback",
    "status": "blocked",
-   "result": "ok",
-   "summary": "I built the Live Control web page and tested it locally, but it can't act inside a real Zoom meeting yet, so T-226 is blocked on one yes/no question to Adi. Committed as b75b351.\n\n**What's built.** The page lives in the centre admin, behind a \"Live Control\" link in the top bar. Anyone on the team wi"
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   },
   {
-   "ts": "2026-10-09T02:22:36+0530",
-   "task_id": "T-145",
+   "ts": "2026-10-09T06:05:34+0530",
+   "task_id": "T-234",
    "mode": "feedback",
    "status": "blocked",
-   "result": "ok",
-   "summary": "T-145 is still blocked: option B is done, and the two steps left are deleting Nelbin's fork and filing the GitHub Support purge request (in `workshop-plan/ops/t145_github_support_request.md`), which my rules forbid even with your yes. I checked GitHub today: commit 5b9f57d6 is on no branch but still"
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   },
   {
-   "ts": "2026-10-09T02:22:02+0530",
-   "task_id": "T-122",
+   "ts": "2026-10-09T06:05:31+0530",
+   "task_id": "T-011",
    "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-122 is done. Dodo now sends payment events straight to the live payment route (`https://revops-centre.growthcluborg.workers.dev/hooks/dodo`), and a live check passed.\n\n- **New Dodo endpoint:** it covers payment succeeded, failed and cancelled, plus refunds. The api.usetantra.com endpoint was not t"
+   "status": "blocked",
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   },
   {
-   "ts": "2026-10-09T02:13:21+0530",
-   "task_id": "T-005",
+   "ts": "2026-10-09T06:05:27+0530",
+   "task_id": "T-211",
    "mode": "feedback",
-   "status": "queue",
-   "result": "ok",
-   "summary": "I updated T-005's spec and done_when so the rotation also covers the Dodo webhook secret stored in the centre Worker, which belongs to the disabled staging endpoint. T-005 stays in queue until after launch, R-835b0027 is acked and the change is committed."
+   "status": "blocked",
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   },
   {
-   "ts": "2026-10-09T02:13:04+0530",
-   "task_id": "T-070",
+   "ts": "2026-10-09T06:05:24+0530",
+   "task_id": "T-238",
    "mode": "feedback",
-   "status": "hold",
-   "result": "ok",
-   "summary": "T-070 is still on hold: I logged that the centre's Dodo webhook from T-122 is now live and only needs Dodo's endpoint and its signing secret, but Bharath still has to say what api.usetantra.com does with these payments. I acked note R-e9193f50 and committed the change."
+   "status": "blocked",
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   },
   {
-   "ts": "2026-10-09T02:12:43+0530",
-   "task_id": "T-146",
+   "ts": "2026-10-09T06:05:20+0530",
+   "task_id": "T-041",
    "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-146 is in review: I sent write-access invites to the private repo for Bhaskar (GitHub `starmangrowth`) and Aquila (`aquila-growthclub`), and the GitHub API confirms both are pending until they accept; H034 stays open until then, and the task asks whether Amal, Ben and Bharath need access too."
+   "status": "blocked",
+   "result": "error",
+   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
- "state": "working",
- "message": "Acting on 1 note(s) for T-232: Back up every Zoom recording to the team Google Drive, then delete it from Zoom",
- "task_id": "T-232",
- "entries": [
-  "F-3d07c4b6"
- ],
- "mode": "feedback",
- "started": "2026-10-09T05:37:20+0530"
+ "state": "idle",
+ "message": "Last sweep handled 1 task(s).",
+ "task_id": null,
+ "entries": [],
+ "mode": null,
+ "started": "2026-10-09T06:05:56+0530"
 }
