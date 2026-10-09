@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T16:09:15+0530",
+   "task_id": "T-144",
+   "mode": "feedback",
+   "status": "review",
+   "result": "limit",
+   "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
+  },
+  {
    "ts": "2026-10-09T15:39:10+0530",
    "task_id": "T-144",
    "mode": "feedback",
@@ -87,14 +95,6 @@
    "status": "review",
    "result": "ok",
    "summary": "T-297 is in review: the Orchestrator's four calls are applied, pushed and live at https://adisuja.github.io/tantra-workshop-live/playbook.html?v=calls (probe clean on the live page), with two deviations — the model figure beside the 89% is written as about 30%, not 46%, because the page's current Fu"
-  },
-  {
-   "ts": "2026-10-09T13:04:16+0530",
-   "task_id": "T-296",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-296 is in review: the equations page is live as one gated Cloudflare copy (name, email, WhatsApp, one workshop link) at https://revops-funnel-equations.growthcluborg.workers.dev/?v=1791531151, GitHub Pages is off (404), and the handoff prompt now says fork and pull request. The live test passed an"
   }
  ],
  "state": "paused",
@@ -103,6 +103,6 @@
  "entries": [
   "F-b326ef12"
  ],
- "started": "2026-10-09T15:39:06+0530",
- "message": "Usage limit reached; retries automatically after 16:09. (You've hit your session limit · resets 5pm (Asia/Calcutta))"
+ "started": "2026-10-09T16:09:11+0530",
+ "message": "Usage limit reached; retries automatically after 16:39. (You've hit your session limit · resets 5pm (Asia/Calcutta))"
 }
