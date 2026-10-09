@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T02:02:28+0530",
+   "task_id": "T-264",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-264 is built and in review. It's merged to main (0198516), the centre Worker is deployed, the mirror is republished, and AUDIT.md is updated.\n\n**What changed**\n- **Twilio SMS:**\n  - `twilio-setup` now checks the Twilio balance first and stops below $20.\n  - For non-US numbers it files the regulato"
+  },
+  {
    "ts": "2026-10-10T01:35:39+0530",
    "task_id": "T-263",
    "mode": "feedback",
@@ -87,22 +95,15 @@
    "status": "review",
    "result": "ok",
    "summary": "T-246 is in review, and I redeployed nothing because the live centre has no production attendees. All 25 attendees are test accounts and the admin overview shows 0 live ones, so no real funnel runs the old worker.\n\n`GET /admin/api/export` returns HTTP 500 on the live Worker, and `/export/full` fails"
-  },
-  {
-   "ts": "2026-10-09T20:21:13+0530",
-   "task_id": "T-243",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-243 is done: the anonymity probe still passes with 0 hits, and every vendor allow-list entry now carries a one-line reason. I committed it locally and did not push, so the approved push and the runbook baseline update are not done.\n\nI took the banned vendors (Instantly, HeyReach, Calendly, SendGri"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-264",
+ "task_id": "T-269",
  "entries": [
-  "F-4a62dd63"
+  "F-338c6626",
+  "R-2794aace"
  ],
- "started": "2026-10-10T01:35:46+0530",
- "message": "Acting on 1 note(s) for T-264: Centre: Twilio SMS sender gaps, and move attendee WhatsApp off Twilio onto Tantra"
+ "started": "2026-10-10T02:02:34+0530",
+ "message": "Acting on 2 note(s) for T-269: New centre UI: rail order and numbering, actions, field accessibility"
 }

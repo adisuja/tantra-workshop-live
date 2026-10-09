@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T02:00:54+0530",
-  "version": 1386,
+  "updated": "2026-10-10T02:02:34+0530",
+  "version": 1390,
   "last_id": 379,
   "team": [
    {
@@ -11131,11 +11131,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Owner rule 2026-10-07: WhatsApp goes through Tantra, never Twilio, and Twilio is for SMS only; the centre and guides still register a Twilio WhatsApp sender and submit Meta templates, and the SMS path still has manual steps.",
    "spec": "Part A, Twilio SMS (keep): in cloud/src/jobs-twilio.ts and app/src/lib/workshop-cards.ts (d1-twilio, d2-twilio): X043 automate the regulatory bundle (POST /v2/RegulatoryCompliance/Bundles with EndUsers and SupportingDocuments) and the IncomingPhoneNumbers purchase with BundleSid for the UK, Australia and other countries instead of 'buy it in the Console and paste it'; X044 capture the live registration form with Cloudflare Browser Rendering /screenshot and attach it to the toll-free verification automatically; X045 poll GET /Accounts/{sid}/Balance.json and block or warn until the balance is at least $20. Part B, WhatsApp onto Tantra (owner rule): remove the Twilio WhatsApp path: the d1-twilio-whatsapp card ('Register your WhatsApp sender in Twilio'), the WhatsApp template and sender calls in cloud/src/connectors/twilio.ts (Content API /v1/Content, ApprovalRequests/whatsapp, Channels/Senders?Channel=whatsapp), the wa-templates job (cloud/src/jobs-day2.ts around line 243 to 260, cloud/src/jobs.ts JOB map) and 'WhatsApp templates submitted' on deploy-funnel, the 'SMS and WhatsApp senders' copy on d1-twilio, the s3-tantra-pro-flow.ts step 'Connect WhatsApp and Get the Templates Approved' (Twilio screenshots 12.webp, 06.webp), s6-whatsapp.ts, s5-crm-starter.ts node 'SMS and WhatsApp' (tool twilio) and the wa-templates row in app/src/content/guides/AUTOMATION-FACTS.md. Route WhatsApp reminders and twins through the attendee's Tantra omni-channel campaign, with registrants imported into it by webhook, as the Choose your tools line already says ('WhatsApp reminders on Tantra'). Whether Tantra WhatsApp needs pre-approved templates is UNVERIFIED: check the Tantra API docs (or T-253) before writing that step. Then mark X043, X044, X045 fixed and X049, X050, N029 obsolete (WhatsApp moved to Tantra) in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Merge order: build on main after T-251 lands (branch tantra-walkthroughs: e4bd0b8 removes the ruled-out tools and rewrites workshop-cards.ts, agentic.ts, jobs.ts, agent.tsx and coverage.json; probe fixes 043b5ab and aa22a3f, no READY yet in /Users/adithyamurali/tantra-round5-coord/LOG.md). Until then branch from tantra-walkthroughs; AUDIT.md line numbers predate that change.",
    "done_when": [
@@ -11144,7 +11145,20 @@
     "The reminders card and S3/S6 guides say WhatsApp goes through the Tantra campaign",
     "AUDIT.md marks X043, X044, X045 fixed and X049, X050, N029 obsolete with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Funnel + Tantra WhatsApp probe (23 checks)",
+     "url": "cloud/scripts/probe-funnel-whatsapp.mjs"
+    },
+    {
+     "label": "Twilio job probe (UK bundle + US screenshot)",
+     "url": "cloud/scripts/probe-twilio-job.mjs"
+    },
+    {
+     "label": "Live mirror, cache-busted",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/?v=t264"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -11162,6 +11176,21 @@
      "ts": "2026-10-09T00:06:32+0530",
      "who": "claude",
      "note": "2026-10-08: Twilio now asks for an emailed verification code before Admin, Account management and API keys open (seen on the owner's trial account). Attendee guidance and the video caption mention it."
+    },
+    {
+     "ts": "2026-10-10T02:02:15+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T02:02:15+0530",
+     "who": "claude",
+     "note": "Part A: twilio-setup now checks the $20 balance, files the regulatory bundle and buys a +44 number with its BundleSid against vendor-sim, and attaches a Cloudflare Browser Rendering screenshot of the live form (attached pictures remain the fallback). Part B: Twilio/Meta WhatsApp path, the wa-templates job and the d1-twilio-whatsapp card are gone; WhatsApp reminders and twins run as Tantra WhatsApp campaigns (new card 'Connect WhatsApp in Tantra'), registrants added by the funnel scheduler, STOP via webhook; whether Tantra needs approved templates is not in its docs, so no step claims it (recorded in CHECKS.md for T-253). Verified: probe-twilio-job (UK + US job runs), probe-twilio-sms, probe-funnel-whatsapp (real worker + sim, 23 checks), tsc, guide/anchor/coverage checks; merged to main 0198516, centre Worker deployed (750012a1), mirror republished, AUDIT.md updated. Not run: the full app probe chain (needs the shared stack)."
+    },
+    {
+     "ts": "2026-10-10T02:02:34+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-253, T-256."
     }
    ],
    "order": 2640
