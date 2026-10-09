@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T12:03:25+0530",
-  "version": 1030,
-  "last_id": 352,
+  "updated": "2026-10-09T12:08:45+0530",
+  "version": 1040,
+  "last_id": 357,
   "team": [
    {
     "name": "Adi",
@@ -5841,9 +5841,22 @@
     "codex exec answers",
     "critic reports a Codex verdict"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Check script",
+     "url": "workshop-plan/tasks/check_codex.sh"
+    },
+    {
+     "label": "Critic policy",
+     "url": ".loop/CRITIC_POLICY.md"
+    },
+    {
+     "label": "Hourly job",
+     "url": "workshop-plan/ops/com.tantra.codex-check.plist"
+    }
+   ],
    "blockers": [],
-   "needs_from_owner": "Run `codex login` once on this Mac (needs your OpenAI login).",
+   "needs_from_owner": "Same single input as T-340: in Terminal on this Mac run `codex logout && codex login` and finish the ChatGPT sign-in at https://auth.openai.com. The hourly check then closes T-149 and T-340 by itself.",
    "log": [
     {
      "ts": "2026-09-26T00:17:50+0530",
@@ -5864,12 +5877,23 @@
      "ts": "2026-10-09T05:06:54+0530",
      "who": "Orchestrator",
      "note": "People: assignee Adi → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-09T12:08:45+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T12:08:45+0530",
+     "who": "claude",
+     "note": "Built everything around the sign-in: check_codex.sh (real codex exec round trip, passes only on CODEX_OK with no 401), hourly launchd job com.tantra.codex-check (installed, ran twice, correctly reports fail: HTTP 401), and the critic agent now runs that check and, while it fails, reviews on Fable 5 with 'SINGLE-VENDOR FALLBACK' as its first line (policy in .loop/CRITIC_POLICY.md). Verified with five stub cases plus one live fallback critic pass, which carried the label and found 7 defects; the real ones are fixed. On the first passing check Codex runs one critic pass, the verdict is saved and T-149 and T-340 close automatically; only Adi's sign-in (T-340) is left."
     }
    ],
    "order": 1490,
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ]
   },
   {

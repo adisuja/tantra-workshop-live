@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T12:08:51+0530",
+   "task_id": "T-149",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-149 is blocked only on Adi's Codex sign-in (T-340): the check script, the hourly launchd job and the critic's labelled Fable 5 fallback are built, verified and committed (2e5f3f7), and the first passing check will close T-149 and T-340 automatically."
+  },
+  {
    "ts": "2026-10-09T11:32:00+0530",
    "task_id": "T-149",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-225 stays blocked on Zoom Support's reply only (the ask of Adi is removed): a daily 09:10 job now checks Zoom directly and logs the result on the task, and today's check shows not granted. Whether a GET can reveal a grant before the fields are written is unproven, so the sure test is one PATCH on "
-  },
-  {
-   "ts": "2026-10-09T08:19:29+0530",
-   "task_id": "T-194",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "The forced rebuild of the branch previews is running; once it finishes I will rewrite the sheet tab, check it holds no trycloudflare links, and close out T-194."
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-149: Re-authenticate the Codex CLI so the critic gives a second-model opinion",
- "task_id": "T-149",
+ "message": "Acting on 1 note(s) for T-253: Confirm connector assumptions on free or test accounts (WebinarGeek, Zoom, CRMs, Cal.com, Tantra, Twilio, Dodo, Stripe, Metricool)",
+ "task_id": "T-253",
  "entries": [
-  "F-444cb6d4"
+  "F-d1f41f68"
  ],
  "mode": "feedback",
- "started": "2026-10-09T12:02:02+0530"
+ "started": "2026-10-09T12:08:55+0530"
 }
