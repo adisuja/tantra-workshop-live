@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T13:35:28+0530",
-  "version": 1092,
+  "updated": "2026-10-09T13:36:34+0530",
+  "version": 1095,
   "last_id": 357,
   "team": [
    {
@@ -5182,7 +5182,7 @@
    "owner": "Aquila",
    "priority": "P3",
    "due": "2026-09-29",
-   "status": "blocked",
+   "status": "review",
    "why": "In the starter CRM, only the core is built (pipeline, fields, crm.py). Intake, payments, the follow-up runner, the board and the schedule are PLANNED: readers build them with the six prompts. Three guide steps (s5-crm-starter #4 payments, #5 runner --dry-run, #6 board) have nothing real to capture until someone runs those prompts once.",
    "spec": "workshop-plan/crm-starter has only the core built (pipeline, fields, crm.py); payments, runner and board are planned and built by readers with prompts 02, 03 and 05. Claude runs prompts 01 to 06 in a copy against test mode only (Cal.com, Dodo test mode, Resend, optional Twilio test credentials), keeps it as a private reference build, captures s5-crm-starter #4 (payments), #5 (runner --dry-run), #6 (board at localhost:8765), updates the README status table only if the prompts worked as written, then deletes every key or object it created and logs them in scripts/walkthroughs/REVERT_LEDGER.md. No n8n.",
    "done_when": [
@@ -5191,11 +5191,24 @@
     "The board renders at localhost:8765 with test deals",
     "3 capture-needed slots replaced"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Starter CRM guide, steps 2 and 3 (local)",
+     "url": "http://localhost:4322/debug/guides?only=s5-crm-starter&v=t134c"
+    },
+    {
+     "label": "Guide source",
+     "url": "app/src/content/guides/s5-pipeline/s5-crm-starter.ts"
+    },
+    {
+     "label": "Revert ledger row",
+     "url": "scripts/walkthroughs/REVERT_LEDGER.md"
+    }
+   ],
    "blockers": [
     "Owner go / skip decision"
    ],
-   "needs_from_owner": "Reply 'build it' or 'skip: leave those 3 steps as planned'. If building, step in only for logins or 2FA when Claude creates the test keys. Recommended: build it after this week's cohort, since it also proves the prompts work.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-25T19:38:41+0530",
@@ -5211,12 +5224,23 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: added a recommended answer; test-only rules restated."
+    },
+    {
+     "ts": "2026-10-09T13:36:02+0530",
+     "who": "claude",
+     "note": "People: reviewers Aquila → Aquila/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T13:36:02+0530",
+     "who": "claude",
+     "note": "The guide this task targeted was rewritten at 08:32 today (T-191): the laptop crm.py steps for payments.py, runner --dry-run and the localhost:8765 board no longer exist, and no guide links the six prompts, so I did not build them. Instead I ran the real funnel Worker locally on :8765, pushed test contacts through it (registration, a signed Cal.com booking, a signed Dodo payment: wrong signature refused, repeat ignored) and put four real /crm board captures into steps 2 and 3 of the Worker guide; check-guides and probe-guides pass, capture-needed is down from 73 to 71. One finding to confirm: a payment lands the card in Onboarding, not Payment Completed, so I corrected this guide's wording (card-education.ts still says Payment Completed); not published to the mirror or pushed, nothing was created on any vendor, and steps 1, 4, 5 and 6 still need the centre cards, Claude Code (T-132) and a mirrored CRM."
     }
    ],
    "order": 1340,
    "assignee": "Claude",
    "reviewers": [
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ]
   },
   {

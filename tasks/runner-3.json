@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T13:36:39+0530",
+   "task_id": "T-303",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "(Held back from the public board: this note mentions a private client detail.)"
+  },
+  {
    "ts": "2026-10-09T13:35:41+0530",
    "task_id": "T-297",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "error",
    "summary": "c\",\"timestamp\":\"2026-10-09T07:17:00.081Z\",\"request_id\":\"req_011CfrFg5br3WNkCGfjBCGBf\"}\n{\"type\":\"assistant\",\"message\":{\"model\":\"claude-opus-5-5\",\"id\":\"msg_011CfrFg7MGz9ioHhMPAdQDV\",\"type\":\"message\",\"role\":\"assistant\",\"content\":[{\"type\":\"tool_use\",\"id\":\"toolu_01Fp1xRMveGCYtAm1NACwkxT\",\"name\":\"Bash\",\"i"
-  },
-  {
-   "ts": "2026-10-09T11:31:59+0530",
-   "task_id": "T-299",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-303",
+ "task_id": "T-131",
  "entries": [
-  "F-c15dd0af"
+  "F-7894a484"
  ],
- "started": "2026-10-09T13:35:46+0530",
- "message": "Acting on 1 note(s) for T-303: Transcribe the reference VSL and write Richard's own VSL recording script"
+ "started": "2026-10-09T13:36:46+0530",
+ "message": "Acting on 1 note(s) for T-131: Confirm the RSP 52-week grid rows"
 }
