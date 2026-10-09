@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T17:34:11+0530",
-  "version": 1138,
+  "updated": "2026-10-09T17:36:14+0530",
+  "version": 1139,
   "last_id": 357,
   "team": [
    {
@@ -6238,12 +6238,16 @@
    ],
    "evidence": [
     {
-     "label": "User Flows tab",
-     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1009b#flows"
+     "label": "User Flows tab (live)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1791547574#flows"
     },
     {
-     "label": "Tasks redirect",
-     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1009b#tasks"
+     "label": "Tasks redirect (live)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1791547574#tasks"
+    },
+    {
+     "label": "Board sync + leak guard",
+     "url": "workshop-plan/tasks/sync_board.py"
     },
     {
      "label": "Flow data + validation",
@@ -6282,6 +6286,11 @@
      "ts": "2026-10-09T17:29:07+0530",
      "who": "claude",
      "note": "Repeat Orchestrator note: all five steps were already done earlier today, nothing had to change. Rechecked now: review_hub.py regenerates with no unknown element and no diff, the live mirror matches the local hub and is pushed, no 'Launch Control' text anywhere, and in a headless browser #tasks redirects to the Task Command Center and #flows renders with the Prove It Works (Day 3) step and no script errors. T-280 is done; Amal, open the User Flows link to sign off."
+    },
+    {
+     "ts": "2026-10-09T17:36:14+0530",
+     "who": "claude",
+     "note": "Repeat Orchestrator note: the d-prove fix, the removed legacy tasks section and T-280 were already done and live. This pass found and fixed one real fault: the public board had not published since 14:03 because the local mirror clone had diverged (49 unpushed board syncs); it is rebased and pushed, the board is live again at v1138, and board sync now pulls with autostash so it cannot stick that way again. Checked in a headless browser on the live mirror: #flows renders with the Prove It Works (Day 3) step and no script errors, no 'Launch Control' text, #tasks opens the Task Command Center. Amal, open the User Flows link to sign off."
     }
    ],
    "order": 1500,
