@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T14:33:57+0530",
-  "version": 1129,
+  "updated": "2026-10-09T14:36:42+0530",
+  "version": 1130,
   "last_id": 357,
   "team": [
    {
@@ -235,7 +235,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791536172 and reply on this task with copy changes, or approve.",
+   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791536802 and reply on this task with copy changes, or approve.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -271,6 +271,11 @@
      "ts": "2026-10-09T14:26:12+0530",
      "who": "claude",
      "note": "The $50M lines were already gone (T-191); this pass cut the last client figures from the host bio (Cavli, Appster, Coinfirm) on /masterclass and /workshop, and replaced the Day 1 leak diagram and its unsourced 342K to 179 chain with the eight Day 1 decisions landing in one strategy doc. Verified with typecheck, the Day 1 shoot at 390, 1366 and 1440 on local and on the mirror (8 tiles, no clipping, no console errors), probe-funnels on the mirror (/masterclass clean at 1440 and 390; its one failure is the word webinar inside the template library, not this page) and probe-workshop (only the older cohort date line on /masterclass/success/join at 1440 fails, plus the API checks a static mirror cannot answer); pushed to main as 2adc82c and published to the mirror as 025b331. Adi: the page is ready for your copy sign-off at the link above."
+    },
+    {
+     "ts": "2026-10-09T14:36:42+0530",
+     "who": "claude",
+     "note": "Repeat of the same Orchestrator note (O-fdd77ded): nothing left to build, the proof fix is already on origin/main (2adc82c) and on the mirror, and T-277 and T-117 are closed. Rechecked today on the live mirror: no $50M line and no Cavli, Appster or Coinfirm figures (those names now appear only in the three client testimonials), the slim proof reads 250+ brands, 21+ countries, 47+ industries with 'a decade' in the host bio; probe-funnels has /masterclass clean at both widths (its one failure is the word webinar in the template library), probe-workshop fails only on the older cohort date line on /masterclass/success/join at 1440 and the API checks a static mirror cannot answer. Adi: the page is ready for copy sign-off at https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791536802"
     }
    ],
    "order": 0,

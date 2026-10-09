@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T14:36:48+0530",
+   "task_id": "T-001",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-001 stays in review: the proof fix this note asks for was already on origin/main (2adc82c) and the mirror, so nothing was built or pushed this run. The live page has no $50M line or client figures, and `/masterclass` is clean in `probe-funnels.mjs` at both widths. The ack for F-4e567f1f returned \""
+  },
+  {
    "ts": "2026-10-09T14:34:05+0530",
    "task_id": "T-294",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "done",
    "result": "ok",
    "summary": "T-287 stays done: this was a re-run of decision O-a7b40aa6, which an earlier run today had already applied. I rechecked that the cards, playbook and reminders caption carry no Tantra add-on wording and that the app-fix PR 196 is still open with a reviewer requested (`bkp31415`, which I took to be Bh"
-  },
-  {
-   "ts": "2026-10-09T12:50:42+0530",
-   "task_id": "T-281",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-281 stays done: this was a re-run of Orchestrator decision O-968e1f77, which was already applied. Issue #1, PR #3 and PR #4 are closed with the Task Command Center pointer comment, the live hub has no link to issue #1, and T-249's ask points at the board. F-c6bf216d was already acknowledged (ack r"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-001",
+ "task_id": "T-021",
  "entries": [
-  "F-4e567f1f"
+  "F-5fade61c"
  ],
- "started": "2026-10-09T14:34:05+0530",
- "message": "Acting on 1 note(s) for T-001: /masterclass landing page"
+ "started": "2026-10-09T14:36:53+0530",
+ "message": "Acting on 1 note(s) for T-021: Workshop deck (158 slides)"
 }
