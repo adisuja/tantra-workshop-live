@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T03:37:06+0530",
+   "task_id": "T-272",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-272 is live and in review: per-teammate tokens, per-week links, the Cohort Settings additions and the vendor cleanup. I couldn't run the revoke check live because creating a token needs the owner key.\n\n- **Local probe:** `app/scripts/probe-admin-tokens.mjs` passes 18/18. Revoking one token logs th"
+  },
+  {
    "ts": "2026-10-10T02:07:59+0530",
    "task_id": "T-268",
    "mode": "feedback",
@@ -87,22 +95,15 @@
    "status": "review",
    "result": "ok",
    "summary": "T-051 is in review for Bhaskar: `workshop-plan/sequences/post.md` now has 7 steps from Day 3 end to +14 days, with copy for email, WhatsApp and LinkedIn where each step uses them. I only grep-linted it for dashes, Calendly, literal dates and invented stats, so no read-aloud pass against COPY_RULES.m"
-  },
-  {
-   "ts": "2026-10-09T19:16:07+0530",
-   "task_id": "T-058",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "ok",
-   "summary": "T-058 prep is built and committed, but nothing is launched or published yet. I set the task to doing and acked F-a4339d5e.\n\n- **Built:** a launch kit, a one-page connect guide, and a Replies column on the referral dashboard for each member and the team total. The kit has each member's code and links"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-272: Centre admin: per-teammate auth, per-cohort session settings, ruled-out vendors out of the admin",
- "task_id": "T-272",
+ "message": "Acting on 2 note(s) for T-273: Workshop Hub (index.html): review data, offer ladder, cohort dates and header",
+ "task_id": "T-273",
  "entries": [
-  "F-6d5726b5"
+  "F-7e2fda38",
+  "R-f419d795"
  ],
  "mode": "feedback",
- "started": "2026-10-10T03:30:52+0530"
+ "started": "2026-10-10T03:37:52+0530"
 }
