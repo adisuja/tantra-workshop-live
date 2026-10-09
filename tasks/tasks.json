@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T20:05:27+0530",
-  "version": 1268,
+  "updated": "2026-10-09T20:06:08+0530",
+  "version": 1271,
   "last_id": 363,
   "team": [
    {
@@ -8502,6 +8502,11 @@
      "ts": "2026-10-09T20:05:27+0530",
      "who": "claude",
      "note": "Campaign import (one single-step Tantra campaign per touch, enrol via /email-campaigns/:id/contacts, 409 retry, /emails/batch deleted) was already on main from T-123 (5bde29e); T-236 was already done. This pass removes TANTRA_NOTE/TANTRA_WAIT from cloud/src (branch tantra-campaign-import f0b5528, pushed, tsc 0, READY in LOG.md); cards and guides had no 'pending' wording left. Not done: Twilio WhatsApp path removal belongs to T-264; I did not rerun probe-email-stripe or the live test run, so Integrator should deploy and confirm."
+    },
+    {
+     "ts": "2026-10-09T20:05:41+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-123."
     }
    ],
    "order": 2170
@@ -9364,6 +9369,16 @@
      "ts": "2026-10-09T17:42:35+0530",
      "who": "claude",
      "note": "Built and live (main 8c94364, pushed as 2ba0273; Worker bc7ea5ad): placeholder addresses are refused at /cal/issue, /intake and the admin add form, and never reach the real Zoom or Google. Checked on production: an example.com sign-up at each door created no attendee, attendees 5 (you@example.com) and 66 (adi@example.com) are marked test, and Invite Status now shows 0 failed. Local probes on a fresh stack: calendar feeds 67/67 (6 new refusal checks), zoom-pro 58/58, tantra reminders 52/52. Open the admin, Cohort Settings, Invite Status."
+    },
+    {
+     "ts": "2026-10-09T20:05:56+0530",
+     "who": "claude",
+     "note": "Nothing new to build: the Orchestrator's plan was already shipped (main 8c94364, Worker bc7ea5ad). Placeholder addresses are refused at /cal/issue, /intake and the admin add form via isPlaceholderEmail in cloud/src/util.ts, which T-234's import and the reminder jobs reuse. Attendees 5 and 66 are marked test, and Invite Status showed 0 failed on production. Probes passed on a fresh stack: calendar feeds 67/67, zoom-pro 58/58, tantra reminders 52/52. I could not re-read the live admin API this pass (the key header I tried was rejected), so the live check is the earlier one. Open admin, Cohort Settings, Invite Status."
+    },
+    {
+     "ts": "2026-10-09T20:06:08+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-223."
     }
    ],
    "order": 2290
