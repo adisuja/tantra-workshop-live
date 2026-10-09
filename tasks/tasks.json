@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T18:00:20+0530",
-  "version": 1171,
+  "updated": "2026-10-09T18:01:21+0530",
+  "version": 1176,
   "last_id": 357,
   "team": [
    {
@@ -481,7 +481,7 @@
    "owner": "Ben",
    "priority": "P0",
    "due": "2026-09-18",
-   "status": "done",
+   "status": "recheck",
    "why": "The $99 / ₹9,999 front-end must self-liquidate ad spend, so checkout has to be real and tamper-proof.",
    "spec": "Seat checkout: /api/checkout (app/src/app/api/checkout/route.ts) mints a Dodo hosted checkout server-side and falls back to the hosted link on static hosts; Stripe is the attendee alternative (T-218, done). Per-currency prices live in app/src/lib/prices.json (USD 9900, INR 999900, EUR 8900, GBP 7900, AUD 14900, CAD 13900, SGD 12900, AED 36900 minor units) and are pushed to Dodo as localized price rules by app/scripts/dodo-setup.mjs; the webhook verifies the signature. Dodo product pdt_0NnpA6EIxXvDvS1F03N8Z is named 'The 3-Day AI RevOps Workshop'. Access after payment is T-122; key rotation is T-005 (after launch). Once Adi confirms, run node app/scripts/probe-live-wiring.mjs locally and close.",
    "done_when": [
@@ -548,6 +548,16 @@
      "ts": "2026-10-09T14:06:19+0530",
      "who": "claude",
      "note": "Orchestrator decision O-3cfb2ee8 rechecked on 2026-10-09: it was already carried out. The six prices are locked in app/src/lib/prices.json with no amount changed, the lock note is on origin main (verified after a fetch), and node app/scripts/probe-live-wiring.mjs re-run now on the live mirror ends ALL WIRING PASSES (stops at Dodo checkout, nothing paid). T-103 closed out of recheck; T-005 key rotation stays in the queue."
+    },
+    {
+     "ts": "2026-10-09T18:01:11+0530",
+     "who": "claude",
+     "note": "Orchestrator decision O-c4164301 (2026-10-09): the price table is final and waits on nobody: USD 99, INR 9,999, EUR 89, GBP 79, AUD 149, CAD 139, SGD 129, AED 369. Re-checked today on the live mirror with probe-checkout-currency.mjs: page price equals Dodo price for DE (€89), PL (€89), IN (₹9,999) and US ($99); nothing paid."
+    },
+    {
+     "ts": "2026-10-09T18:01:21+0530",
+     "who": "claude",
+     "note": "Flagged for a recheck by T-103: Its non-USD/INR price question is now answered by the final price table; the ripple note already targets it."
     }
    ],
    "order": 40,
@@ -3598,6 +3608,16 @@
      "ts": "2026-10-09T14:06:18+0530",
      "who": "claude",
      "note": "Recheck after T-004: nothing had to change. The price table is locked (USD 99, INR 9,999, EUR 89, GBP 79, AUD 149, CAD 139, SGD 129, AED 369), the lock note is on origin main, and all three done_when items are met (probe-currency on the mirror 2026-10-08, page price equals Dodo price for DE, PL, IN and US on 2026-09-24, table confirmed in T-004). Closed."
+    },
+    {
+     "ts": "2026-10-09T18:01:11+0530",
+     "who": "claude",
+     "note": "Orchestrator decision O-c4164301 carried out on 2026-10-09. Price table is final: USD 99, INR 9,999, EUR 89, GBP 79, AUD 149, CAD 139, SGD 129, AED 369. probe-checkout-currency.mjs on the live mirror (12:27 to 12:28 UTC, stopped at the Dodo payment screen, nothing paid): DE page €89 = Dodo €89.00, PL €89 = €89.00, IN ₹9,999 = ₹9,999.00, US $99 = $99.00. probe-currency.mjs on the mirror: ALL CURRENCY PROFILES PASS, 9 of 9. Cleanup: deleted 12 rows with email currency-probe@example.com from Work Tracker tab 'Funnel · Checkout Starts' (4 from 2026-09-23 21:25 to 21:26 UTC, 4 from 2026-09-25 16:01 to 16:02 UTC, 4 from today 12:27 to 12:28 UTC; each set EUR, EUR, INR, USD); the tab went from 27 to 15 rows, 0 probe rows left, no other row touched. ops.db had no row with that email (attendee, event, survey checked), so nothing was deleted there."
+    },
+    {
+     "ts": "2026-10-09T18:01:21+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-004 (done, now recheck)."
     }
    ],
    "order": 1010,
@@ -3830,6 +3850,11 @@
      "ts": "2026-10-09T17:57:16+0530",
      "who": "claude",
      "note": "From T-102: probe-live-wiring.mjs ran against the mirror on 2026-10-09 from 12:25:15Z to 12:26:56Z (17:55 to 17:57 IST). It started one /vip checkout as wiring-probe@example.com (Dodo session cks_0NpMe1Y2ozTIYqXllxUN3, not paid), so expect one new Checkout Starts row with that email in that window. Orchestrator decision O-fca13f52: deleting exactly these probe rows needs no further confirmation."
+    },
+    {
+     "ts": "2026-10-09T18:01:11+0530",
+     "who": "claude",
+     "note": "From T-103 (2026-10-09): all 12 currency-probe@example.com rows are deleted from 'Funnel · Checkout Starts' (runs of 2026-09-23, 2026-09-25 and 2026-10-09); ops.db never held that email. Still to clean in that tab: placeholder, apps-script-probe, utm-probe (8), adi@example.com, a@example.com and wiring-probe rows. The local ops/form-log.jsonl still has 4 old currency-probe lines from 2026-09-23 (local log, not the sheet)."
     }
    ],
    "order": 1050,

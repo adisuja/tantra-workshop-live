@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T18:01:17+0530",
+   "task_id": "T-103",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-103 is done: both currency probes pass on the live mirror (page price equals Dodo price for DE, PL, IN and US, nothing paid), the 12 `currency-probe@example.com` rows are deleted from the Work Tracker's Checkout Starts tab (`ops.db` had none), the price table is recorded as final on T-004 and T-10"
+  },
+  {
    "ts": "2026-10-09T17:57:21+0530",
    "task_id": "T-102",
    "mode": "feedback",
@@ -87,23 +95,15 @@
    "status": "done",
    "result": "limit",
    "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T15:09:05+0530",
-   "task_id": "T-294",
-   "mode": "feedback",
-   "status": "done",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-103",
+ "task_id": "T-108",
  "entries": [
-  "F-4c9e45ae",
-  "R-a1041ec5"
+  "F-81512939",
+  "R-11b3b444"
  ],
- "started": "2026-10-09T17:57:26+0530",
- "message": "Acting on 2 note(s) for T-103: Geo-aware pricing: INR in India, EUR across the EU, USD elsewhere"
+ "started": "2026-10-09T18:01:21+0530",
+ "message": "Acting on 2 note(s) for T-108: Animated funnels in the playbook: the three main funnels, the Whole Machine and the 17 other types"
 }
