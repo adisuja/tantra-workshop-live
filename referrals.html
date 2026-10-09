@@ -44,7 +44,7 @@ h1{font-family:Archivo,sans-serif;font-size:clamp(28px,4.2vw,42px);line-height:1
 
 /* leaderboard */
 .board{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);overflow:hidden}
-.head,.row .top{display:grid;grid-template-columns:minmax(220px,1.6fr) repeat(4,minmax(0,1fr));gap:16px;align-items:start}
+.head,.row .top{display:grid;grid-template-columns:minmax(220px,1.6fr) repeat(5,minmax(0,1fr));gap:16px;align-items:start}
 .head{padding:12px 20px;border-bottom:1px solid var(--line);font-size:12px;font-weight:600;color:var(--faint)}
 .head span:not(:first-child),.num{text-align:right}
 .row{padding:18px 20px;border-bottom:1px solid var(--line)}
@@ -74,7 +74,7 @@ h1{font-family:Archivo,sans-serif;font-size:clamp(28px,4.2vw,42px);line-height:1
 .posts{margin:10px 0 0 40px;font-size:12.5px;color:var(--faint)}
 .posts span{color:var(--dim)}
 
-.foot{display:grid;grid-template-columns:minmax(220px,1.6fr) repeat(4,minmax(0,1fr));gap:16px;padding:16px 20px;border-top:1px solid var(--line2);background:rgb(255 255 255/.025)}
+.foot{display:grid;grid-template-columns:minmax(220px,1.6fr) repeat(5,minmax(0,1fr));gap:16px;padding:16px 20px;border-top:1px solid var(--line2);background:rgb(255 255 255/.025)}
 .foot .who{font-weight:700;padding-left:40px}
 
 .note{color:var(--faint);font-size:13px;margin:12px 2px 0}
@@ -91,7 +91,7 @@ h1{font-family:Archivo,sans-serif;font-size:clamp(28px,4.2vw,42px);line-height:1
 
 @media (max-width:900px){
   .head{display:none}
-  .row .top,.foot{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:14px}
+  .row .top,.foot{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:14px}
   .row .who,.foot .who{grid-column:1/-1}
   .foot .who{padding-left:0}
   .num{text-align:left;font-size:18px}
@@ -191,7 +191,7 @@ function render(){
   const active=rows.some(r=>score(r).some(v=>v>0));
   const tot=PERIOD==="all"?DATA.totals.all:(DATA.totals.weeks[PERIOD]||{visits:0,registrations:0,sales:0,revenue_usd_eq:0,commission_usd_eq:0});
   $("#total").innerHTML=`<b>${plural(tot.visits,"visit")}</b> · <b>${plural(tot.registrations,"registration")}</b> · <b>${plural(tot.sales,"sale")}</b>`;
-  const head=`<div class="head" aria-hidden="true"><span>Member, code and links</span><span>Visits</span><span>Registrations</span><span>Sales</span><span>Commission</span></div>`;
+  const head=`<div class="head" aria-hidden="true"><span>Member, code and links</span><span>Visits</span><span>Replies</span><span>Registrations</span><span>Sales</span><span>Commission</span></div>`;
   const body=rows.map(({m,s},i)=>{
     const v=s.visits.free+s.visits.paid,r=s.registrations.free+s.registrations.paid,lead=active&&i===0&&score(rows[0]).some(x=>x>0);
     const posts=(PERIOD==="all"?m.posts:[]).filter(p=>p.post!==m.code);
@@ -201,6 +201,7 @@ function render(){
           <div class="name">${esc(m.name)}</div><div class="role">${esc(m.role)}</div>
           <div class="code">Code <kbd>${esc(m.code)}</kbd></div></div></div>
         ${cell("Visits",int(v),`${int(s.visits.free)} free · ${int(s.visits.paid)} paid`,v?"":"zero")}
+        ${cell("Replies",int(m.outreach?.replies||0),m.outreach?.connected?`${int(m.outreach.sent)} sent on LinkedIn`:"LinkedIn not connected",m.outreach?.replies?"":"zero")}
         ${cell("Registrations",int(r),`${int(s.registrations.free)} free · ${int(s.registrations.paid)} paid`,r?"":"zero")}
         ${cell("Sales",int(s.sales),s.sales?`${perCur(s.revenue)} revenue`:"",s.sales?"":"zero")}
         ${cell("Commission",perCur(s.commission),`${Math.round(m.rate*100)}% rate${s.commission_usd_eq&&Object.keys(s.commission)[0]!=="USD"?` · about ${money(s.commission_usd_eq)}`:""}`,"money"+(s.commission_usd_eq?"":" zero"))}
@@ -211,7 +212,7 @@ function render(){
       ${posts.length?`<div class="posts">By label: ${posts.slice(0,6).map(p=>`<span>${esc(p.post)}</span> ${plural(p.visits,"visit")}, ${plural(p.registrations,"registration")}, ${plural(p.sales,"sale")}`).join(" · ")}</div>`:""}
     </article>`}).join("");
   const foot=`<div class="foot"><div class="who">Whole team${PERIOD==="all"?"":", "+esc(weekLabel(PERIOD))}</div>
-    ${cell("Visits",int(tot.visits))}${cell("Registrations",int(tot.registrations))}${cell("Sales",int(tot.sales))}${cell("Commission",money(tot.commission_usd_eq),"in USD at seat parity","money"+(tot.commission_usd_eq?"":" zero"))}</div>`;
+    ${cell("Visits",int(tot.visits))}${cell("Replies",int(DATA.members.reduce((a,m)=>a+(m.outreach?.replies||0),0)))}${cell("Registrations",int(tot.registrations))}${cell("Sales",int(tot.sales))}${cell("Commission",money(tot.commission_usd_eq),"in USD at seat parity","money"+(tot.commission_usd_eq?"":" zero"))}</div>`;
   $("#board").innerHTML=head+body+foot;
   $("#board").querySelectorAll(".copy").forEach(b=>b.onclick=()=>copy(b));
   const u=PERIOD==="all"?DATA.unattributed.all:(DATA.unattributed.weeks[PERIOD]||{visits:0,registrations:0,sales:0});
