@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T12:57:03+0530",
+   "task_id": "T-292",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-292 is in review: the local centre has Opus (connection 1) on for real drafts and connection 3 as the probe fallback (person draft logged `claude-opus-5-5`, probe draft `claude-sonnet-5-5`), and the live Worker has no AI connections at all, so I left it alone and recorded that.\n\n- **Local state:**"
+  },
+  {
    "ts": "2026-10-09T12:55:05+0530",
    "task_id": "T-287",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "limit",
    "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T09:31:13+0530",
-   "task_id": "T-132",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-132 is still blocked and none of the five screenshots were captured: macOS refuses this background run both screen capture and clicks or keys on the Claude app. The one input needed is the macOS permission grant, now raised as T-351 for Adi. No demo routine was created, so there is nothing to reve"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-292",
+ "task_id": "T-296",
  "entries": [
-  "F-13bc4293"
+  "F-73cd259e"
  ],
- "started": "2026-10-09T12:55:14+0530",
- "message": "Acting on 1 note(s) for T-292: Re-enable the Opus AI drafting connection in the local centre for real use"
+ "started": "2026-10-09T12:57:08+0530",
+ "message": "Acting on 1 note(s) for T-296: RevOps Funnel Equations lead magnet: keep one copy, decide the sign-up gate, give the team write access"
 }

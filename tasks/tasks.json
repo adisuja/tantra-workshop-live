@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T12:55:02+0530",
-  "version": 1074,
+  "updated": "2026-10-09T12:56:54+0530",
+  "version": 1076,
   "last_id": 357,
   "team": [
    {
@@ -10998,7 +10998,7 @@
    "assignee": "Claude",
    "reviewers": [
     "Adi",
-    "Bharath"
+    "Nelbin"
    ],
    "priority": "P2",
    "due": "",
@@ -11012,16 +11012,16 @@
    ],
    "evidence": [
     {
-     "label": "Local admin, AI connections tab",
-     "url": "http://localhost:8790/admin/?v=t292"
+     "label": "Local admin, AI connections tab (connections 1 and 3)",
+     "url": "http://localhost:8790/admin/?v=t292#connections"
     },
     {
-     "label": "Probe rule (isProbe)",
-     "url": "/Users/adithyamurali/tantra-onboarding-v2/cloud/src/ai.ts"
+     "label": "Live admin, AI connections tab (empty)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=t292#connections"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "",
+   "needs_from_owner": "Only if real attendees should get AI drafts on the live centre: paste an Anthropic API key at https://revops-centre.growthcluborg.workers.dev/admin/ (AI connections tab, Add connection, type Anthropic, field API key). Local Opus drafting for Adi's own review already works without it.",
    "log": [
     {
      "ts": "2026-10-09T00:25:38+0530",
@@ -11047,6 +11047,16 @@
      "ts": "2026-10-09T12:54:38+0530",
      "who": "claude",
      "note": "Re-run of Orchestrator decision O-01d5da9e, already applied at 12:30 today; re-verified. Local centre: connection 1 (Opus) enabled at priority 1, connection 3 (Sonnet / Haiku) enabled at priority 5 with no last_error, Model per task at defaults. Fresh check on the brand card: a real-browser draft logged claude-opus-5-5 (draft 903), a probe draft logged claude-sonnet-5-5 (draft 904). Live Worker: its AI connections list is still empty, so there was nothing to enable and I left it alone; attendee drafting on live needs an Anthropic API key added in its admin before the first cohort."
+    },
+    {
+     "ts": "2026-10-09T12:56:54+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi/Bharath → Adi/Nelbin (by claude)."
+    },
+    {
+     "ts": "2026-10-09T12:56:54+0530",
+     "who": "claude",
+     "note": "Local centre (:8790) is in the target state: connection 1 'Claude Code, Adi' (Opus) enabled at priority 1, connection 3 (Sonnet / Haiku) enabled at priority 5 as the probe fallback, no stale error on either; Model per task needed no change because the code already sends probe and walker drafts to the non-Opus connection first. Verified with two drafts on the brand rules card for a new test attendee (id 419, 'T-292 Model Check'): the person draft logged claude-opus-5-5, the probe draft logged claude-sonnet-5-5 (admin, Attendees, T-292 Model Check, Drafts). Live Worker (revops-centre.growthcluborg.workers.dev) has zero AI connections, so there was nothing to enable or clear and I left it alone: real attendees there get no AI drafts until an Anthropic API key is added, because the Claude Code logins only ever serve test attendees."
     }
    ],
    "order": 2920
