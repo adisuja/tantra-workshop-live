@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T05:29:01+0530",
-  "version": 491,
+  "updated": "2026-10-09T05:35:11+0530",
+  "version": 492,
   "last_id": 347,
   "team": [
    {
@@ -7642,26 +7642,30 @@
    ],
    "evidence": [
     {
-     "label": "Live Control page, local test (opens the admin, then go to /admin/control?v=t226)",
-     "url": "http://127.0.0.1:8811/admin/enter?k=t226admin"
+     "label": "Live Control, live (open the admin link first)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/control?v=t226seat"
     },
     {
-     "label": "Design and what is still to build",
+     "label": "Seat app and how it runs",
+     "url": "cloud/seat/README.md"
+    },
+    {
+     "label": "Probe (32 checks)",
+     "url": "app/scripts/probe-live-control.mjs"
+    },
+    {
+     "label": "Design",
      "url": "docs/onboarding-v3/analysis/zoom-live-control.md"
     },
     {
-     "label": "Code: queue, run sheet, seat contract",
-     "url": "cloud/src/zoom-control.ts"
-    },
-    {
-     "label": "Page",
-     "url": "cloud/admin-ui/control.js"
+     "label": "launchd opener",
+     "url": "workshop-plan/ops/com.tantra.live-control.plist"
     }
    ],
    "blockers": [
     "Adi's confirmation to host from the console, and the Meeting SDK app credentials"
    ],
-   "needs_from_owner": "Yes or no: may Claude (a) create the Zoom Meeting SDK app 'Tantra Live Control' in the Zoom-signed-in browser (marketplace.zoom.us, Develop, Build App, General App, Features, Embed, Meeting SDK on, not published) and save its Client ID and Secret in the centre, (b) add the 5 poll scopes (meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin) to the Tantra Centre app, and (c) deploy the centre (migration 0019 plus 'npx wrangler deploy' in cloud/) with a new ZOOM_BOT_KEY secret so the control seat can connect? Note: the seat joins as co-host, so you click 'Make co-host' on it once per session in your Zoom app.",
+   "needs_from_owner": "T-335: create the Meeting SDK app 'Tantra Live Control' (https://marketplace.zoom.us/develop/create, General App, Features, Embed, Meeting SDK on, do not publish) and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, then Save.",
    "log": [
     {
      "ts": "2026-10-07T20:46:43+0530",
@@ -7702,6 +7706,11 @@
      "ts": "2026-10-09T02:30:53+0530",
      "who": "claude",
      "note": "Reworked to Adi's note: you host from the normal Zoom app, and the team now gets a Live Control web page (admin, Live Control) with the per-day run sheet (timed chat, links, polls), buttons for lock room, mute, stop video, co-host, polls, and an activity log; every action queues for a control seat in the meeting, which reports back. Verified locally against a simulated Day 2 session (items fire once at their minute, nothing posts twice, desktop and mobile render clean); the seat itself and going live need the Zoom pieces below."
+    },
+    {
+     "ts": "2026-10-09T05:35:11+0530",
+     "who": "claude",
+     "note": "Built and live: the macOS seat app (cloud/seat, real binary probed in a stand-in meeting: run sheet chat, CTA and poll go out at their minute, room lock re-mutes and stops video, listed co-host promoted or the host asked, poll answers and chat reach zoom_polls and zoom_chat; probe-live-control 32/32 twice), a Seat credentials card on Live Control, ZOOM_BOT_KEY set, migration 0019 applied, Worker 72a83733 deployed from a clean worktree (checked: /bot/zoom/plan 401 without the key and 200 with it, /admin/control renders clean at 1440 and 390 px), launchd com.tantra.live-control installed, main pushed. Not done this run: the 5 poll scopes on the Tantra Centre app (this run had no signed-in browser tool; the next browser-enabled run adds them), then once T-335's Client ID and Secret are saved Claude downloads the SDK, builds the app bundle and runs the test meeting."
     }
    ],
    "order": 2260
