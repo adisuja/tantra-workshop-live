@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T00:49:20+0530",
-  "version": 1333,
-  "last_id": 370,
+  "updated": "2026-10-10T00:57:01+0530",
+  "version": 1347,
+  "last_id": 372,
   "team": [
    {
     "name": "Adi",
@@ -10550,11 +10550,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "RSP and challenge attendees currently see a webinar-only chart for their landing funnel.",
    "spec": "Add flowByMechanism to the Guide schema (app/src/lib/guides/schema.ts), render the flow matching the reader's mechanism in guide-view, and author RSP and challenge flows for s2-tantra-pro-funnel. Closes audit findings G013, G124. Per finding: G013 (app/src/content/guides/s2-landing/s2-tantra-pro-funnel.ts): Add per-mechanism flows (RSP bridge form, challenge two lanes) and render the one matching the reader's mechanism. G124 (app/src/lib/guides/schema.ts): Add flowByMechanism to the Guide schema and pick it in guide-view by the reader's mechanism. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md.",
    "done_when": [
@@ -10562,7 +10563,16 @@
     "check-guides passes",
     "Every listed finding id is marked fixed in AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "S2 landing guide (chart follows your mechanism)",
+     "url": "http://localhost:4322/debug/guides?only=s2-tantra-pro-funnel&v=1791574021"
+    },
+    {
+     "label": "AUDIT.md (G013, G124 fixed)",
+     "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -10575,6 +10585,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): checked, current. pass 2: still accurate; no change to app/src/lib/guides/schema.ts or s2-tantra-pro-funnel.ts since 1fd8de2; AUDIT.md G013 still 'open, tracked in T-255'."
+    },
+    {
+     "ts": "2026-10-10T00:57:01+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T00:57:01+0530",
+     "who": "claude",
+     "note": "The S2 landing guide now draws a different chart for webinar, RSP (video first, bridge form at about 75%, Part 2 opens at once) and challenge (free and paid lanes), with a label naming the flow shown; pushed to main (82b9205, 52c226c) and G013 and G124 are marked fixed in AUDIT.md. Verified: check-guides passes (I raised the chart node cap from 14 to 18 because the pipeline chart from T-254 has 17 nodes and draws cleanly), probe-flows and probe-guides pass for all three mechanisms, and I looked at each rendered chart. Open the link and pick a mechanism in the centre to see the chart switch."
     }
    ],
    "order": 2550
