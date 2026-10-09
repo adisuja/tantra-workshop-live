@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T04:10:55+0530",
+   "task_id": "T-073",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-073 is blocked: the course pipeline and the gated `/pro/course` home are built and deployed, but Zoom has no recordings from the 7 to 9 Oct cohort to cut. Meeting 87002851906 shows zero past sessions and no recordings, and D1 has no events for it. The block asks where those recordings are, or whet"
+  },
+  {
    "ts": "2026-10-10T04:05:47+0530",
    "task_id": "T-126",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "queue",
    "result": "paused",
    "summary": "Stopped: Adi paused the agent from the board."
-  },
-  {
-   "ts": "2026-10-10T01:17:01+0530",
-   "task_id": "T-261",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-261 is built and committed locally (5be6f60) and set to review. I did not push or deploy it, and I did not run a full Day 0 walk in the simulator.\n\n- **Not pushed or deployed:** `main` holds other lanes' uncommitted work, so the Worker deploy needs a clean worktree.\n- **Verification:** `tsc` is cl"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-073",
+ "task_id": "T-074",
  "entries": [
-  "F-8eeb69d6"
+  "F-58ffc6ca"
  ],
- "started": "2026-10-10T04:06:05+0530",
- "message": "Acting on 1 note(s) for T-073: Cut session recordings into the Tantra Pro course"
+ "started": "2026-10-10T04:11:31+0530",
+ "message": "Acting on 1 note(s) for T-074: Weekly coaching call and community moderation rota for Tantra Pro members"
 }
