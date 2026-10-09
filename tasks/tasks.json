@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T19:30:12+0530",
-  "version": 1249,
+  "updated": "2026-10-09T19:31:57+0530",
+  "version": 1250,
   "last_id": 362,
   "team": [
    {
@@ -3027,7 +3027,7 @@
    "owner": "Ben",
    "priority": "P1",
    "due": "2026-09-22",
-   "status": "queue",
+   "status": "review",
    "why": "Owner: no n8n, ever.",
    "spec": "git grep 'n8n.growthclub.org' -- app on main f6aeb7e finds: app/src/app/(site)/pro/pro-client.tsx line 16 (WEBHOOK_URL; the form fetch is at line 186, the error log at line 192); app/scripts/probe-masterclass-form.mjs line 6 and app/scripts/shoot-success.mjs lines 41 and 93 (route stubs). Also app/src/app/api/dodo/webhook/route.ts line 19 falls back to NEXT_PUBLIC_LEAD_WEBHOOK_URL (app/.env.example line 19), the old n8n lead hook. Do: point the /pro form at logForm (app/src/lib/form-log.ts line 95) like the other funnel forms, drop the NEXT_PUBLIC_LEAD_WEBHOOK_URL fallback and the .env.example line, update the two scripts' stubs to the Apps Script receiver, rebuild and republish the mirror (the old /pro is live at https://adisuja.github.io/tantra-workshop-live/site/pro/). This also closes the last item of T-030. The /pro offer rebuild itself is T-071.",
    "done_when": [
@@ -3083,6 +3083,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: re-verified on f6aeb7e: n8n.growthclub.org hits are pro-client.tsx line 16 (fetch at line 186, error log line 192), the two scripts, and the NEXT_PUBLIC_LEAD_WEBHOOK_URL fallback in the Dodo route line 19. The /pro page with the n8n form is also live on the mirror. T-030's only remaining item is the same pro-client.tsx change; close T-030 with this task."
+    },
+    {
+     "ts": "2026-10-09T19:31:57+0530",
+     "who": "claude",
+     "note": "No n8n call is left in app code: /pro was already rebuilt by T-071 (no form, no WEBHOOK_URL); I removed the NEXT_PUBLIC_LEAD_WEBHOOK_URL fallback in the Dodo route and .env.example, and pointed both probe scripts' stubs at script.google.com. The remaining 'n8n' grep hits are product mentions (integration catalog, copy, probe assertions), not dependencies. probe-workshop.mjs passes except one unrelated hardcoded 'Wed 14 Thu 15 Fri 16 Oct' copy check on /masterclass/success/join; probe-seat-payments needs secrets. Commit is local: origin/main rejected the push (remote is ahead), and no mirror republish was needed since nothing user-visible changed."
     }
    ],
    "order": 870,

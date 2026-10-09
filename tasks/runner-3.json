@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T19:32:03+0530",
+   "task_id": "T-087",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-087 is in review: the n8n code dependencies are gone, but the commit is local only because `origin/main` rejected the push.\n\n- **Push:** origin has newer commits, and I didn't rebase on top of other lanes' uncommitted work or force it. The commit still needs pulling in and pushing.\n- **What change"
+  },
+  {
    "ts": "2026-10-09T19:21:31+0530",
    "task_id": "T-061",
    "mode": "feedback",
@@ -87,23 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-215 stays in review: all 18 4K walkthroughs are verified on one review index (http://localhost:8883/wt-review/index.html?v=2e9db5c) and the pipeline sources are pushed to `tantra-walkthroughs` (2e9db5c), but the approved Dodo test-mode recording is not done because the recording browser is signed "
-  },
-  {
-   "ts": "2026-10-09T17:29:14+0530",
-   "task_id": "T-150",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-150 stays in review for Amal: this was a repeat Orchestrator note, and the work it asks for was already built, pushed and published earlier today (T-280 is done). I rechecked it live — no unknown element, no \"Launch Control\" text, `#tasks` redirects to the Task Command Center, `#flows` renders — a"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-087",
+ "task_id": "T-152",
  "entries": [
-  "F-13c0ba9f",
-  "R-64ff45a3"
+  "F-38245a73"
  ],
- "started": "2026-10-09T19:21:31+0530",
- "message": "Acting on 2 note(s) for T-087: Remove every n8n dependency from the app"
+ "started": "2026-10-09T19:32:09+0530",
+ "message": "Acting on 1 note(s) for T-152: Bug pipeline: severity levels, agent reproduces and proposes the fix, human review, deploy"
 }
