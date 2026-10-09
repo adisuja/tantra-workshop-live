@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T20:25:39+0530",
-  "version": 1289,
+  "updated": "2026-10-09T20:29:00+0530",
+  "version": 1291,
   "last_id": 364,
   "team": [
    {
@@ -9816,19 +9816,29 @@
    "owner": "Nelbin",
    "assignee": "Claude",
    "reviewers": [
+    "Aquila",
     "Adi",
-    "Aquila"
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "During a running cohort a newcomer may see this week's dates on the success and join pages while they were actually sold next week, which is a wrong-date promise at the moment of purchase.",
    "spec": "Rule in app/src/lib/cohort.ts (5ab3f7b, 1db8ad1): sign-ups after Day 1 starts join the next week; attendees keep the cohort they joined. During a live cohort /masterclass/success, /masterclass/success/join and the VIP pages show the running cohort to a newcomer, while app/scripts/probe-cohort.mjs and probe-workshop.mjs expect the next one on sale. Confirm the rule against weekly-cohort-schedule (owner: rolling weekly, Wed to Fri 11:00 ET), then fix the consumers (success, join, VIP) so a visitor without a stamp sees the cohort on sale, keeping a stamped attendee on their own week. Test with the probes' clock override (no real cohort is live in the centre yet).",
    "done_when": [
     "probe-cohort and probe-workshop pass while a cohort is live",
     "A newcomer on /masterclass/success during a live cohort sees next week's dates; a stamped attendee still sees their own"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "probe",
+     "url": "app/scripts/probe-cohort-live.mjs"
+    },
+    {
+     "label": "fix",
+     "url": "app/src/lib/use-cohort.ts"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -9851,6 +9861,16 @@
      "ts": "2026-10-08T00:49:40+0530",
      "who": "claude",
      "note": "Pass 2 correction: no real cohort is live."
+    },
+    {
+     "ts": "2026-10-09T20:29:00+0530",
+     "who": "claude",
+     "note": "Newcomers (no tantra-cohort stamp, no ?cohort= link) on the success, join and VIP pages now see the cohort on sale; stamped attendees keep their own week (fix in app/src/lib/use-cohort.ts, cohort.ts untouched). With the clock at Wed 14 Oct 12:00 ET and Fri 16 Oct 10:00 ET, new probe-cohort-live passes 36/36 (newcomer 21 to 23 Oct, stamped or linked 14 to 16 Oct, six pages), and probe-cohort and probe-workshop both pass. Pushed to origin main (2210e50) and the tantra-workshop-live mirror (0ca03bcc8)."
+    },
+    {
+     "ts": "2026-10-09T20:29:00+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi/Aquila → Aquila/Adi/Bharath (by claude)."
     }
    ],
    "order": 2410
