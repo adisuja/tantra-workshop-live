@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T18:42:55+0530",
-  "version": 1220,
+  "updated": "2026-10-09T18:44:41+0530",
+  "version": 1223,
   "last_id": 361,
   "team": [
    {
@@ -4011,38 +4011,42 @@
    "due": "2026-09-24",
    "status": "review",
    "why": "Owner (2026-09-24, correction): replicate the /masterclass FunnelOS funnel visualisation exactly, and create the same for the reverse squeeze page and challenge funnels, all three animated in the playbook's 'What are funnels' section. The first attempt (custom cards) was rejected.",
-   "spec": "FunnelOS (app/src/components/masterclass/funnel-os.tsx) is now a spec-driven engine; the webinar spec is unchanged on /masterclass. funnel-os-rsp.tsx = the RSP whiteboard (5 stages, its funnel maths, 52-week grid, every tool named). funnel-os-challenge.tsx = the 3-day workshop as built (structural facts only; planned items live in the V2 layer). Pages /funnels/webinar|rsp|challenge; build/funnels.py frames them in the playbook. Verify: scripts/probe-funnel-boards.mjs (5 widths) + scripts/shoot-playbook-funnels.mjs. SCOPE ADDED 2026-10-05 (Adi, round 2): 17 more cinematics from the Funnel Master (app/src/components/masterclass/funnel-os-types/<id>.tsx, registry funnel-os-registry.tsx with lazy imports) shown as dropdowns in playbook section id bigpic-the-other-17-funnel-types, plus /funnels/system ('The Whole Machine on One Page', all three shapes in one workflow, labelled the comparison view). Every cinematic must use the six canonical stage names (Traffic Generation Engine, Landing & Registration, Multi-Channel Nurture, Conversion Mechanism, Revenue & Deal Pipeline, 52-Week Growth Engine) and five canonical channel names (Cold Email, Calendar Invites, LinkedIn Outreach, Paid Ads, Content / Organic): renaming them was called a 'big no-no' on 2026-10-05T20:05. Open calls on the extra ones: see 'Decide the open calls on the 17 extra funnel animations'.",
+   "spec": "FunnelOS (app/src/components/masterclass/funnel-os.tsx) is now a spec-driven engine; the webinar spec on /masterclass kept its design; T-117 (2026-10-09) took the combined stage chips (11.4K visits, 368 registrations, 3.2%, 179) off it, so the board now shows the Pro card set only (8.6K visits, 825 registrations, 9.6%). funnel-os-rsp.tsx = the RSP whiteboard (5 stages, its funnel maths, 52-week grid, every tool named). funnel-os-challenge.tsx = the 3-day workshop as built (structural facts only; planned items live in the V2 layer). Pages /funnels/webinar|rsp|challenge; build/funnels.py frames them in the playbook. Verify: scripts/probe-funnel-boards.mjs (5 widths) + scripts/probe-funnel-names.mjs (canonical names on the end-state cards, no Chaperone) + scripts/shoot-playbook-funnels.mjs (IDS= covers all 21). SCOPE ADDED 2026-10-05 (Adi, round 2): 17 more cinematics from the Funnel Master (app/src/components/masterclass/funnel-os-types/<id>.tsx, registry funnel-os-registry.tsx with lazy imports) shown as dropdowns in playbook section id bigpic-the-other-17-funnel-types, plus /funnels/system ('The Whole Machine on One Page', all three shapes in one workflow, labelled the comparison view). Every cinematic must use the six canonical stage names (Traffic Generation Engine, Landing & Registration, Multi-Channel Nurture, Conversion Mechanism, Revenue & Deal Pipeline, 52-Week Growth Engine) and five canonical channel names (Cold Email, Calendar Invites, LinkedIn Outreach, Paid Ads, Content / Organic): renaming them was called a 'big no-no' on 2026-10-05T20:05. Open calls on the extra ones: see 'Decide the open calls on the 17 extra funnel animations'.",
    "done_when": [
     "Owner approves all three"
    ],
    "evidence": [
     {
-     "label": "Playbook · What are funnels",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1009c#funnels"
+     "label": "Playbook · What Are Funnels (webinar, reverse squeeze page, challenge)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1791551681#funnels"
     },
     {
-     "label": "Webinar funnel (full screen)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/webinar/?v=1009c"
-    },
-    {
-     "label": "Reverse squeeze page funnel (full screen)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/rsp/?v=1009c"
-    },
-    {
-     "label": "Challenge funnel (full screen)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/challenge/?v=1009c"
+     "label": "Playbook · The Whole Machine on One Page",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1791551681#bigpic-the-whole-machine-on-one-page"
     },
     {
      "label": "Playbook · The Other 17 Funnel Types",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1009c#bigpic-the-other-17-funnel-types"
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1791551681#bigpic-the-other-17-funnel-types"
     },
     {
-     "label": "The Whole Machine on One Page (full screen)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/system/?v=1009c"
+     "label": "Webinar funnel (full screen)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/webinar/?v=1791551681"
+    },
+    {
+     "label": "Reverse squeeze page funnel (full screen)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/rsp/?v=1791551681"
+    },
+    {
+     "label": "Challenge funnel (full screen)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/challenge/?v=1791551681"
+    },
+    {
+     "label": "The Whole Machine (full screen)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/system/?v=1791551681"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/playbook.html#funnels and #bigpic-the-other-17-funnel-types, plus the full-screen boards https://adisuja.github.io/tantra-workshop-live/site/funnels/webinar/, .../rsp/ and .../challenge/, then approve or reply per funnel.",
+   "needs_from_owner": "One review for all 21 animations. Open these, then approve or reply per funnel: https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1791551681#funnels , https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1791551681#bigpic-the-whole-machine-on-one-page , https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1791551681#bigpic-the-other-17-funnel-types , https://adisuja.github.io/tantra-workshop-live/site/funnels/webinar/?v=1791551681 , https://adisuja.github.io/tantra-workshop-live/site/funnels/rsp/?v=1791551681 , https://adisuja.github.io/tantra-workshop-live/site/funnels/challenge/?v=1791551681 , https://adisuja.github.io/tantra-workshop-live/site/funnels/system/?v=1791551681",
    "log": [
     {
      "ts": "2026-09-24",
@@ -4073,12 +4077,23 @@
      "ts": "2026-10-09T14:33:57+0530",
      "who": "claude",
      "note": "T-294 folded in (2026-10-09): its five calls on the 17 other funnel types and the Whole Machine are decided and live, so this is now the one review for all 21 animations. Two links added: the 17 types section and the Whole Machine view."
+    },
+    {
+     "ts": "2026-10-09T18:44:41+0530",
+     "who": "claude",
+     "note": "All 21 funnel animations now use the six stage names and five channel names word for word: nine boards were shortening four names on the closing cards (Traffic, Nurture, Revenue & Pipeline, 52-Week Growth), and the challenge board and the Whole Machine now say Tantra Enterprise instead of Chaperone. Checked on the live mirror in a headless browser: every board fits on all 21 pages at 5 widths, the new name probe passes on all 21 at 5 widths, all 21 playbook frames load and play at 1440 and 390 with no console errors; source is on origin main (e262500) and the mirror (e03ec8a). My call, say if you want it changed: the reverse squeeze page board keeps the whiteboard's five stages, so it has no Conversion Mechanism board (adding one would mean inventing a stage the whiteboard does not have). The defaults on T-116, T-117, T-118, T-131 and T-294 were already built and live, so nothing more changed there."
+    },
+    {
+     "ts": "2026-10-09T18:44:41+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
     }
    ],
    "order": 1060,
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ]
   },
   {
@@ -5042,6 +5057,11 @@
      "ts": "2026-10-09T18:42:55+0530",
      "who": "claude",
      "note": "Built everything that does not need the key: attendee funnels now send reminder email through Tantra campaigns (the /emails/batch path is deleted, T-236 closed), a Plan ready email goes once a personal plan exists, and a payment puts the buyer into Registered. Checked on a local centre against the simulator (reminders probe 65 of 65, funnel probe 58 of 58, payments 28 of 28), reviewed by a second model with its three real findings fixed, then deployed as version b87e8b1c with reminders still off and pushed to main. Email only, from team@growthclub.org; go-live of T-234, T-228 and T-235 waits only on the Tantra key (T-337). Two limits to know: Tantra campaign emails carry no calendar file attachment, and starting each campaign sends one copy to the sender mailbox itself."
+    },
+    {
+     "ts": "2026-10-09T18:43:04+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-217."
     }
    ],
    "order": 1210,

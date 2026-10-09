@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T18:42:58+0530",
+   "task_id": "T-123",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-123 is blocked only on the Tantra API key (T-337): the campaign-import funnel email, plan-ready email and payment enrolment are built, probed, deployed as version b87e8b1c with reminders still off and pushed to main as 12997e9; T-236 is closed."
+  },
+  {
    "ts": "2026-10-09T18:24:34+0530",
    "task_id": "T-024",
    "mode": "feedback",
@@ -87,23 +95,15 @@
    "status": "review",
    "result": "limit",
    "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T15:39:10+0530",
-   "task_id": "T-150",
-   "mode": "feedback",
-   "status": "review",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
   }
  ],
  "state": "working",
- "message": "Acting on 2 note(s) for T-123: Attendee messages actually send (Tantra omni-channel campaigns)",
- "task_id": "T-123",
+ "message": "Acting on 2 note(s) for T-228: Welcome email: every new attendee gets their centre link and private calendar link",
+ "task_id": "T-228",
  "entries": [
-  "F-69bbe58e",
-  "R-08522c18"
+  "F-c01987f5",
+  "R-001e64d4"
  ],
  "mode": "feedback",
- "started": "2026-10-09T18:24:40+0530"
+ "started": "2026-10-09T18:43:30+0530"
 }
