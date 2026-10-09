@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T13:51:22+0530",
-  "version": 1100,
+  "updated": "2026-10-09T13:51:32+0530",
+  "version": 1102,
   "last_id": 357,
   "team": [
    {
@@ -513,6 +513,11 @@
      "ts": "2026-10-09T13:51:21+0530",
      "who": "claude",
      "note": "Orchestrator decision O-3cfb2ee8 carried out: EUR 89, GBP 79, AUD 149, CAD 139, SGD 129 and AED 369 are locked as they stand (lock note added to app/src/lib/prices.json, no amount changed, dodo-setup.mjs not re-run), and only that one-file commit was pushed to origin main (a96140e). node app/scripts/probe-live-wiring.mjs on the live mirror on 2026-10-09: ALL WIRING PASSES, 27 of 27 checks, including '/vip checkout to checkout.dodopayments.com/session/...' and 'Dodo checkout carries the prefilled email' (wiring-probe@example.com, nothing paid). T-005 key rotation stays in the queue."
+    },
+    {
+     "ts": "2026-10-09T13:51:32+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-103 (done, now recheck)."
     }
    ],
    "order": 40,
@@ -3318,7 +3323,7 @@
    "owner": "Ben",
    "priority": "P1",
    "due": "2026-09-24",
-   "status": "done",
+   "status": "recheck",
    "why": "Owner directive: price shown in the visitor's own currency.",
    "spec": "Every currency is in the HTML and CSS shows the visitor's. Before first paint: saved choice, then cached IP, then timezone; confirmed by IP afterwards (api.country.is). Manual 'Prices in' switch. Dodo charges the same currency (price rules pushed from app/src/lib/prices.json by scripts/dodo-setup.mjs). Verify: BASE=https://adisuja.github.io PREFIX=/tantra-workshop-live/site node scripts/probe-currency.mjs (passes 2026-10-08) and the same for scripts/probe-checkout-currency.mjs (writes currency-probe rows to the Work Tracker; clean them via T-107). Price table confirmation is T-004.",
    "done_when": [
@@ -3358,6 +3363,11 @@
      "ts": "2026-10-09T13:51:22+0530",
      "who": "claude",
      "note": "Price question answered in T-004: the Orchestrator locked the table on 2026-10-09 (USD 99, INR 9,999, EUR 89, GBP 79, AUD 149, CAD 139, SGD 129, AED 369), nothing changed. Closed on the existing checks: probe-currency.mjs passed on the mirror on 2026-10-08 and page price equalled Dodo price for DE, PL, IN and US on 2026-09-24; the checkout-currency probe was not re-run today because it writes rows to the live Work Tracker, and no price or code changed since."
+    },
+    {
+     "ts": "2026-10-09T13:51:32+0530",
+     "who": "claude",
+     "note": "Flagged for a recheck by T-004: Orchestrator decision says mark T-103's price question answered and close it if nothing else is open; prices now locked."
     }
    ],
    "order": 1010,
