@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T08:02:35+0530",
+   "task_id": "T-260",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-260 is in review: the tools that were kept now run on the attendee's own key, and the playbook and guides are republished to the public mirror. The centre itself isn't deployed, so the new jobs reach live attendees only after the next Integrator deploy.\n\n- **What it does:** the agent uploads the t"
+  },
+  {
    "ts": "2026-10-09T07:25:32+0530",
    "task_id": "T-071",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "done",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:03:52+0530",
-   "task_id": "T-211",
-   "mode": "feedback",
-   "status": "done",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-260",
+ "task_id": "T-071",
  "entries": [
-  "F-e4da6b75"
+  "F-43b6a66f"
  ],
- "started": "2026-10-09T07:39:59+0530",
- "message": "Acting on 1 note(s) for T-260: Decide and apply: tools outside the approved list still in guides and cards (Wistia, Beehiiv, ElevenLabs, Meta Ads, Notion, WordPress, Sales Navigator/Expandi, GoHighLevel/HubSpot/Zoho)"
+ "started": "2026-10-09T08:02:41+0530",
+ "message": "Acting on 1 note(s) for T-071: Tantra Pro ($999) offer page + checkout"
 }

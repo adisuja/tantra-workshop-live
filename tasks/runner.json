@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T08:02:24+0530",
+   "task_id": "T-115",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-115 stays blocked: no screenshots captured, because this unattended runner has no browser (no Claude in Chrome tools, Brave unreachable); the 21 ready captures need an interactive desktop session with Claude in Chrome. F-1962daf4 was already acknowledged from the previous run, and the task update "
+  },
+  {
    "ts": "2026-10-09T08:01:04+0530",
    "task_id": "T-111",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:05:27+0530",
-   "task_id": "T-211",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-115: Guide screenshots that need Adi's signed-in accounts (Google, GA4, Cloudflare, Tantra, WebinarGeek)",
- "task_id": "T-115",
+ "message": "Acting on 1 note(s) for T-117: Re-source the /masterclass FunnelOS webinar numbers",
+ "task_id": "T-117",
  "entries": [
-  "F-1962daf4"
+  "F-a037bc29"
  ],
  "mode": "feedback",
- "started": "2026-10-09T08:01:10+0530"
+ "started": "2026-10-09T08:02:31+0530"
 }
