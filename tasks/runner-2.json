@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T14:25:32+0530",
+   "task_id": "T-124",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-124 stays in review: `probe-checkout-utm.mjs` passes on main (dd6b7dc), but the read-only Dodo check found no `/vip` payment yet (120 payments, 7 since the fix, none with `source` or `utm_*` metadata), so the real-purchase check is still open and reruns on each orchestrator run; note F-40ad43fd ac"
+  },
+  {
    "ts": "2026-10-09T14:24:08+0530",
    "task_id": "T-021",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "done",
    "result": "ok",
    "summary": "T-286 is done: Sign in with Google is removed, pushed to main (`981dbf3`), live on Worker `137504be` and off the republished mirror (`d1b7c40`); the deploy also took T-253's committed guards live, and the day1, day2 and probe-stack failures are the same on unmodified main."
-  },
-  {
-   "ts": "2026-10-09T12:15:01+0530",
-   "task_id": "T-281",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-281 is done: issue #1, PR #3 and PR #4 are closed with pointer comments to the Task Command Center, the hub Schedule tab no longer links issue #1 (live on main and the mirror), and T-249's ask now points at the board. Pushing main also carried the 28 agent commits that were waiting locally."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-124",
+ "task_id": "T-144",
  "entries": [
-  "F-40ad43fd"
+  "F-b326ef12"
  ],
- "started": "2026-10-09T14:24:15+0530",
- "message": "Acting on 1 note(s) for T-124: /vip checkout keeps first-touch UTMs"
+ "started": "2026-10-09T14:25:39+0530",
+ "message": "Acting on 1 note(s) for T-144: Workshop Hub Review tab: every funnel element with preview, source and approve or feedback"
 }
