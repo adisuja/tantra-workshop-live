@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T05:35:33+0530",
+   "task_id": "T-226",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "I built and deployed everything except the Zoom part: Live Control is live with the bot key set, but nothing has run in a real Zoom meeting yet. T-226 is blocked on the one input only Adi can give (T-335). The 5 poll scopes are also still missing from the Tantra Centre app, so creating polls in Zoom"
+  },
+  {
    "ts": "2026-10-09T05:11:35+0530",
    "task_id": "T-145",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "ok",
    "summary": "I force-pushed the cleaned history to adisuja/tantra-workshop-live, so `main` and `claude/relaxed-curie-lrdw8i` (a second branch that also held the leak) no longer contain commit 5b9f57d6, as the GitHub API shows. T-145 is blocked until Adi deletes Nelbin's fork and sends the GitHub Support request,"
-  },
-  {
-   "ts": "2026-10-09T02:04:36+0530",
-   "task_id": "T-122",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "I deployed the payment routes to the live centre, but T-122 is blocked again: real Dodo payments still can't reach the centre, because the endpoint as you approved it wouldn't have worked.\n\n**What's live now:**\n- The 0018 migration is applied to the live database.\n- The centre Worker is deployed (ve"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-226: Tantra Host Console: Adi hosts every session from a Mac app that runs chat posts, polls, call-to-action links, mute and video control, co-hosts",
- "task_id": "T-226",
+ "message": "Acting on 1 note(s) for T-227: Google Calendar invites: save the organiser's service account and authorise it for Calendar",
+ "task_id": "T-227",
  "entries": [
-  "F-98ae97be"
+  "F-656f9e21"
  ],
  "mode": "feedback",
- "started": "2026-10-09T05:12:01+0530"
+ "started": "2026-10-09T05:36:02+0530"
 }

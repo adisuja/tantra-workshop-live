@@ -1,9 +1,9 @@
 {
  "running": null,
- "last_sweep": "2026-10-09T05:23:17+0530",
+ "last_sweep": "2026-10-09T05:36:02+0530",
  "counts": {
-  "proceed": 114,
-  "needs_adi": 7,
+  "proceed": 115,
+  "needs_adi": 6,
   "resolve": 19,
   "finish": 16,
   "keep_hold": 9,
@@ -21,9 +21,9 @@
    "input_task": "T-334"
   },
   "T-226": {
-   "verdict": "needs_adi",
-   "ts": "2026-10-09T05:04:54+0530",
-   "input_task": "T-335"
+   "verdict": "proceed",
+   "ts": "2026-10-09T05:36:02+0530",
+   "input_task": null
   },
   "T-227": {
    "verdict": "proceed",
