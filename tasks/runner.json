@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T08:22:33+0530",
+   "task_id": "T-225",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-225 stays blocked on Zoom Support's reply only (the ask of Adi is removed): a daily 09:10 job now checks Zoom directly and logs the result on the task, and today's check shows not granted. Whether a GET can reveal a grant before the fields are written is unproven, so the sure test is one PATCH on "
+  },
+  {
    "ts": "2026-10-09T08:19:29+0530",
    "task_id": "T-194",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:05:37+0530",
-   "task_id": "T-226",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-225: Zoom Support ticket: host mute control and participant video disable (waiting on Zoom's reply)",
- "task_id": "T-225",
+ "message": "Acting on 1 note(s) for T-282: Review the seven new walkthrough videos before they go on the centres and playbook",
+ "task_id": "T-282",
  "entries": [
-  "F-08ee4eb4"
+  "F-0c9868a9"
  ],
  "mode": "feedback",
- "started": "2026-10-09T08:19:29+0530"
+ "started": "2026-10-09T08:22:56+0530"
 }

@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T08:22:00+0530",
-  "version": 985,
+  "updated": "2026-10-09T08:22:30+0530",
+  "version": 986,
   "last_id": 349,
   "team": [
    {
@@ -7683,7 +7683,7 @@
    "blockers": [
     "Waiting on Zoom Support's reply to the ticket"
    ],
-   "needs_from_owner": "Forward or paste Zoom Support's reply on the ticket when it arrives (or tell Claude it came) so nothing is missed.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-07T20:46:43+0530",
@@ -7724,6 +7724,11 @@
      "ts": "2026-10-09T08:22:00+0530",
      "who": "claude",
      "note": "Zoom check 2026-10-09: not granted yet. disable_participant_video is in no answer and the mute field is still at its default (/users/me/settings 200, /accounts/me/settings 400, /accounts/me/lock_settings 400, /meetings/88135386601 200, /meetings/87002851906 200); the centre's Zoom Support locks stay off and Live Control (T-226) covers mute and video."
+    },
+    {
+     "ts": "2026-10-09T08:22:30+0530",
+     "who": "claude",
+     "note": "No longer waiting on Adi to forward anything: a daily job (09:10, workshop-plan/ops/zoom_support_check.mjs) now asks Zoom directly and writes the answer here; on a grant it sets Zoom Support locks to Granted, re-applies room settings and confirms both fields on the upcoming meetings by itself. Today's result, run by hand and under launchd: not granted (disable_participant_video is in no answer; the mute field shows false on 87002851906 and 88135386601, which looks like Zoom's default and is not counted as a grant). Two limits for the Orchestrator: the app lacks the account:read:settings:admin scope so the account settings call returns 400, and a GET may not reveal a grant until the fields are written, so the sure test is one PATCH of both fields on next week's meeting 88135386601, which I did not run because only read-only calls were approved. Still blocked only on Zoom Support's reply."
     }
    ],
    "order": 2250
