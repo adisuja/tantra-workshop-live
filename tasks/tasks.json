@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T05:28:50+0530",
-  "version": 490,
+  "updated": "2026-10-09T05:29:01+0530",
+  "version": 491,
   "last_id": 347,
   "team": [
    {
@@ -9807,6 +9807,11 @@
      "ts": "2026-10-09T05:28:50+0530",
      "who": "claude",
      "note": "Commit a8e393a: the join button on both join pages now opens the attendee's own Zoom link for today's or the next session, read from a new read-only Worker route /cal/p/<feed token>.json. The token comes from a ?f= link or the onboarding centre, because /cal/issue never hands one to a browser. With no token, or while the Zoom registration is pending, the page shows the 'your link comes by email' message. The free intake is cut to 11 questions (the 5 that score plus the 6 the plan reads). Verified with tsc, a local Worker seeded with a registrant, and headless Chromium on both join pages in all 3 states (no console errors); probe-cohort passes; probe-funnels passes except /onboarding, which fails on /api/me not existing on the dev server, unrelated. O013 and M033 are marked fixed in AUDIT.md. Not pushed, because main is 46 commits ahead and a push would publish other lanes' work. The hosted Worker needs a deploy before the live pages show own links, and emails need a ?f= join link."
+    },
+    {
+     "ts": "2026-10-09T05:29:01+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-093, T-197."
     }
    ],
    "order": 2780
