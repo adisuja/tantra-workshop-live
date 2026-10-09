@@ -352,6 +352,20 @@ footer{margin-top:28px;font-size:11.5px;color:var(--ink-3)}
 <div class="vglobal" id="vglobal" hidden></div>
 <div class="agent" id="agent"><span class="ad"></span><b>Claude agent</b><span class="am" id="agent-msg">Checking…</span><button class="btn mini" id="agent-tog" type="button" hidden>Pause</button><label class="who">Your name <input id="who" type="text" placeholder="shown on your notes" maxlength="40" autocomplete="name"></label></div>
 
+<section class="card fbpanel" id="fbpanel" style="margin:12px 0;padding:12px 16px">
+  <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+    <b>Team feedback this week</b>
+    <span id="fb-count" style="font-variant-numeric:tabular-nums">…</span>
+    <span id="fb-lines" style="font-size:12.5px;color:var(--muted,#667)"></span>
+    <button class="btn mini" id="fb-open" type="button" style="margin-left:auto">Report bug / feature</button>
+  </div>
+  <form id="fb-form" style="display:none;gap:8px;margin-top:10px;flex-wrap:wrap">
+    <select id="fb-line" aria-label="Line of business"></select>
+    <select id="fb-type" aria-label="Type"><option value="bug">Bug</option><option value="feature">Feature request</option><option value="idea">Idea</option></select>
+    <textarea id="fb-text" required minlength="10" maxlength="3000" placeholder="What did you find using or promoting Tantra? Say where, what you expected, what happened." style="flex:1 1 100%;min-height:64px"></textarea>
+    <button class="btn" type="submit">Send</button><span id="fb-sent" style="font-size:12.5px"></span>
+  </form>
+</section>
 <section class="now">
   <div class="card nextbig"><h2>Claude is on <span class="n" id="n-on">0</span></h2><div id="now-next"></div></div>
   <div class="card"><h2>Waiting on you <span class="n" id="n-you">0</span></h2><div id="now-you"></div></div>
@@ -688,6 +702,23 @@ async function api(path,body,ms){
 }
 const withTimeout=(ms)=>{const c=new AbortController();setTimeout(()=>c.abort(),ms);return c.signal};
 const post=body=>api("/api/inbox",body);
+
+/* T-155: weekly team feedback counter + report form (notes on T-155, tagged by line of business) */
+const FB_LINES=["Marketing","Operations","Automation","Client work","Development","Owner"];
+async function loadFeedback(){
+  try{const r=await fetch("tasks/feedback-counter.json?v="+Date.now());if(!r.ok)return;const c=await r.json(),t=c.this_week;
+    document.getElementById("fb-count").textContent=`${t.total} of ${c.target}`+(c.met?" · target met":"");
+    document.getElementById("fb-lines").textContent=c.lines.map(l=>`${l} ${t.lines[l]||0}/${c.per_line}`).join(" · ")}catch(e){}
+}
+{const sel=document.getElementById("fb-line");sel.innerHTML=FB_LINES.map(l=>`<option>${l}</option>`).join("");
+ const f=document.getElementById("fb-form");
+ document.getElementById("fb-open").onclick=()=>{f.style.display=f.style.display==="none"?"flex":"none"};
+ f.onsubmit=async ev=>{ev.preventDefault();const out=document.getElementById("fb-sent");out.textContent="Sending…";
+  try{await post({task_id:"T-155",action:"context",who:WHO.value||undefined,
+    text:`[Feedback] line=${sel.value} type=${document.getElementById("fb-type").value} | ${document.getElementById("fb-text").value.trim()}`});
+   out.textContent="Sent. It counts after the next board sync (a few minutes).";document.getElementById("fb-text").value=""}
+  catch(e){out.textContent="Not sent: "+e.message}};}
+loadFeedback();setInterval(loadFeedback,120000);
 const PENDING={};
 const MAXF=10;
 const safeUrl=u=>{u=String(u||"");if(/^https:\/\//.test(u))return u;if(!/^\/tasks\/uploads\//.test(u))return"#";return STATIC?u.slice(1):u};

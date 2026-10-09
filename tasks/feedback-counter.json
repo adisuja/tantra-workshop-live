@@ -1,0 +1,31 @@
+{
+ "week": "2026-W41",
+ "target": 15,
+ "per_line": 2,
+ "lines": [
+  "Marketing",
+  "Operations",
+  "Automation",
+  "Client work",
+  "Development",
+  "Owner"
+ ],
+ "this_week": {
+  "total": 0,
+  "lines": {
+   "Marketing": 0,
+   "Operations": 0,
+   "Automation": 0,
+   "Client work": 0,
+   "Development": 0,
+   "Owner": 0
+  },
+  "types": {
+   "bug": 0,
+   "feature": 0,
+   "idea": 0
+  }
+ },
+ "met": false,
+ "history": {}
+}
