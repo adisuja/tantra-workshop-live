@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T00:51:36+0530",
+   "task_id": "T-257",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "paused",
+   "summary": "Stopped: Adi paused the agent from the board."
+  },
+  {
    "ts": "2026-10-10T00:49:01+0530",
    "task_id": "T-130",
    "mode": "feedback",
@@ -87,14 +95,6 @@
    "status": "review",
    "result": "ok",
    "summary": "T-158 is built and in review for Ben and Bharath: the six-band dashboard is live at http://localhost:8899/pipeline?v=2 and committed to main (9145405), with no push or mirror publish. I checked it by fetching the page and taking a headless screenshot, but I couldn't open the image, so the layout is "
-  },
-  {
-   "ts": "2026-10-09T19:48:42+0530",
-   "task_id": "T-153",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-153 is in review: the features pipeline is built, the first weekly decision is logged, and the commit is pushed to origin main as 40ee37a.\n\n- **What's there:** The pipeline is in `workshop-plan/tasks/features/`. The rubric is `docs/feature-rubric.md`. It has intake fields matching T-151, a duplica"
   }
  ],
  "state": "working",
@@ -103,6 +103,6 @@
  "entries": [
   "F-f9b6048f"
  ],
- "started": "2026-10-10T00:49:06+0530",
+ "started": "2026-10-10T00:51:37+0530",
  "message": "Acting on 1 note(s) for T-257: Screenshots: delete orphan WebPs, re-crop for phone legibility, fix mismatched captures, add Day 1 and Day 3 playbook shots"
 }
