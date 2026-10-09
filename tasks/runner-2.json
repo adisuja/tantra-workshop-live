@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T12:55:05+0530",
+   "task_id": "T-287",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-287 stays done: this was a repeat delivery of decision O-a7b40aa6, already applied in full at 12:27. A fresh scan found no add-on wording in the cards, Worker copy or playbook, and https://github.com/Usetantra/tantra-frontend-v2/pull/196 is still open awaiting review. F-23668453 was already acknow"
+  },
+  {
+   "ts": "2026-10-09T12:54:39+0530",
+   "task_id": "T-286",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-286 is done: Sign in with Google is removed, pushed to main (`981dbf3`), live on Worker `137504be` and off the republished mirror (`d1b7c40`); the deploy also took T-253's committed guards live, and the day1, day2 and probe-stack failures are the same on unmodified main."
+  },
+  {
    "ts": "2026-10-09T12:15:01+0530",
    "task_id": "T-281",
    "mode": "feedback",
@@ -79,30 +95,14 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-132 is still blocked and none of the five screenshots were captured: macOS refuses this background run both screen capture and clicks or keys on the Claude app. The one input needed is the macOS permission grant, now raised as T-351 for Adi. No demo routine was created, so there is nothing to reve"
-  },
-  {
-   "ts": "2026-10-09T09:25:39+0530",
-   "task_id": "T-299",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "The full chain is running in the background against the private stack; I'll act on its summary when it finishes."
-  },
-  {
-   "ts": "2026-10-09T09:08:43+0530",
-   "task_id": "T-283",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-283 is in review: all 8 walkthroughs are now single 4K cuts under 2 minutes with the key route filmed from each vendor's public docs (not a live account), the Twilio, Dodo and Google sign-ins are split into T-350, and the review pages are local only at http://localhost:8883/wt-review/index.html?v="
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-286",
+ "task_id": "T-292",
  "entries": [
-  "F-20077b52"
+  "F-13bc4293"
  ],
- "started": "2026-10-09T12:15:07+0530",
- "message": "Acting on 1 note(s) for T-286: Decide: keep or remove the Sign in with Google button on the Workspace and GA4 cards"
+ "started": "2026-10-09T12:55:14+0530",
+ "message": "Acting on 1 note(s) for T-292: Re-enable the Opus AI drafting connection in the local centre for real use"
 }

@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T12:53:23+0530",
-  "version": 1069,
+  "updated": "2026-10-09T12:55:02+0530",
+  "version": 1074,
   "last_id": 357,
   "team": [
    {
@@ -10701,20 +10701,38 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "done",
    "why": "Built 2026-10-07 (security-reviewed) with Adi's OAuth client. None of the three Google uses Adi described (per-Workspace service accounts in Tantra for invites and cold email, vendor inboxes, GA4) needs it, and the client is in Google testing mode (only listed test users can consent; going public needs Google verification).",
    "spec": "Built 2026-10-07 (commits d5e85d8, eff0b63, security-reviewed): a 'Sign in with Google instead' button on the Google Workspace and GA4 cards in the agentic centre; the attendee consents with their own admin account and the refresh token replaces the service account for the domain, mailbox and Analytics jobs (cloud/src/connectors/google-oauth.ts; off unless Worker secrets GOOGLE_OAUTH_CLIENT_ID and GOOGLE_OAUTH_CLIENT_SECRET are set; refused on the shared public /preview). The Google client 'Email Campaign' is in testing mode, so only listed test users can consent and going public needs Google verification (weeks). Adi's three Google uses (invites by service account, vendor inboxes, GA4) do not need it. If removed: delete the button, routes and google-oauth.ts, the 'Set Up Sign in With Google' video (app/public/walkthroughs/google-signin) and its card, playbook and old-centre embeds; rerun tsc and check-walkthroughs. If kept: add test users (the owner's FintechCircle login, one FintechCircle sender mailbox and the owner's Google test identity) under Google Auth Platform, Audience, Test users, add the redirect https://revops-centre.growthcluborg.workers.dev/api/google/callback under Clients, set the two secrets.",
    "done_when": [
     "Decision recorded here",
     "Remove: button, routes and google-signin video gone, tsc and checks pass; or Keep: consent works for a listed test user on the live centre"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Live centre (preview)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/preview?v=137504be"
+    },
+    {
+     "label": "Mirror playbook, Workspace walkthrough",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=d1b7c40#wt-workspace"
+    },
+    {
+     "label": "Removal commit 44f6b67 (merge 981dbf3)",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/44f6b67"
+    },
+    {
+     "label": "Worker version 137504be-f5e1-4560-a110-451dab124ed3",
+     "url": "https://revops-centre.growthcluborg.workers.dev/?v=137504be"
+    }
+   ],
    "blockers": [],
-   "needs_from_owner": "Reply keep or remove. Recommended: remove (the service-account path already works and needs no Google console changes). If keep: add test users and the live redirect URI in the Google Cloud console (password re-check needed) and set the two Worker secrets.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-09T00:06:32+0530",
@@ -10725,6 +10743,21 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Session sweep (2026-10-09): source: fcd892f2 2026-10-07T16:00 (Adi asked what the OAuth is for) and 16:01 answer; spec field was empty, now filled. No decision from Adi yet."
+    },
+    {
+     "ts": "2026-10-09T12:54:33+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T12:54:33+0530",
+     "who": "claude",
+     "note": "Decision recorded: REMOVE (Orchestrator O-973c3319). Sign in with Google is gone from the Workspace and GA4 cards, along with its routes, connector, vault wiring, video and playbook embed; both cards use the service account only. Merged and pushed (main 981dbf3), Worker 137504be is live (/api/google/* answers 404, the video 404s, the Workspace card shows no button) and the mirror is republished (d1b7c40); tsc and check-walkthroughs (12 live) pass, the card walk finished 73 of 73 cards, and the three probe failures (day1, day2, probe-stack) are identical on unmodified main. The deploy came from clean main, so it also took T-253's committed Twilio and Metricool guards live. No local script used the GOOGLE_OAUTH env file, so nothing to remove there; the Drive backup OAuth is untouched."
+    },
+    {
+     "ts": "2026-10-09T12:54:47+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-284."
     }
    ],
    "order": 2860
@@ -10787,6 +10820,11 @@
      "ts": "2026-10-09T12:52:14+0530",
      "who": "claude",
      "note": "Re-run of Orchestrator decision O-a7b40aa6, which the 12:27 run already applied. Rechecked: the cards, playbook and reminders caption have no Tantra add-on wording (the only add-on hits are Zoom's Large Meetings add-on and the downsell funnel copy), the 4K reminders video frames mask the old labels, and https://github.com/Usetantra/tantra-frontend-v2/pull/196 is still open for review. Nothing new to change; task stays done."
+    },
+    {
+     "ts": "2026-10-09T12:55:02+0530",
+     "who": "claude",
+     "note": "Third delivery of Orchestrator decision O-a7b40aa6, which the 12:27 run already applied in full. Rechecked now: no '$10/mo', 'Not in your plan' or 'Add-on required' wording in the cards, Worker copy or playbook, and https://github.com/Usetantra/tantra-frontend-v2/pull/196 is still open with a review request out. Nothing new to change; task stays done."
     }
    ],
    "order": 2870
@@ -10982,9 +11020,7 @@
      "url": "/Users/adithyamurali/tantra-onboarding-v2/cloud/src/ai.ts"
     }
    ],
-   "blockers": [
-    "Adi's cost decision"
-   ],
+   "blockers": [],
    "needs_from_owner": "",
    "log": [
     {
@@ -11006,6 +11042,11 @@
      "ts": "2026-10-09T12:30:51+0530",
      "who": "claude",
      "note": "Opus is back on locally: connection 1 'Claude Code, Adi' is enabled at priority 1, connection 3 (Sonnet / Haiku) stays on at priority 5 with no stale error, and Model per task is at its defaults. The centre only picked by priority, so I added one rule (tantra-onboarding-v2 commit 2c3323a, local only, not deployed): a draft from a headless browser or script goes to the cheap connection first. Checked on the brand card: a real-browser draft logged claude-opus-5-5 on connection 1 (draft 901), a probe draft logged claude-sonnet-5-5 on connection 3 (draft 902). Live Worker: its AI connections list is empty, so nothing to enable there and I left it alone; cohort drafting on live will need an Anthropic API key added in its admin."
+    },
+    {
+     "ts": "2026-10-09T12:54:38+0530",
+     "who": "claude",
+     "note": "Re-run of Orchestrator decision O-01d5da9e, already applied at 12:30 today; re-verified. Local centre: connection 1 (Opus) enabled at priority 1, connection 3 (Sonnet / Haiku) enabled at priority 5 with no last_error, Model per task at defaults. Fresh check on the brand card: a real-browser draft logged claude-opus-5-5 (draft 903), a probe draft logged claude-sonnet-5-5 (draft 904). Live Worker: its AI connections list is still empty, so there was nothing to enable and I left it alone; attendee drafting on live needs an Anthropic API key added in its admin before the first cohort."
     }
    ],
    "order": 2920
