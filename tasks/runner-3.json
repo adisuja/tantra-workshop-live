@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T17:51:41+0530",
+   "task_id": "T-092",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-092 stays in review: funnel-stays-dark is logged as the Orchestrator's decision (done_when item and ask removed), the recheck found one drift (template library stage names white on white in Light), fixed in 755e4a0 and republished to the mirror (2b41f47), and all 36 checks in the new `app/scripts/"
+  },
+  {
    "ts": "2026-10-09T17:42:45+0530",
    "task_id": "T-223",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-001 stays in review: the proof fix this note asks for was already on origin/main (2adc82c) and the mirror, so nothing was built or pushed this run. The live page has no $50M line or client figures, and `/masterclass` is clean in `probe-funnels.mjs` at both widths. The ack for F-4e567f1f returned \""
-  },
-  {
-   "ts": "2026-10-09T14:34:05+0530",
-   "task_id": "T-294",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-294's work is confirmed on origin and rendering on the live mirror, and its review is folded into T-108. I'm waiting on the two local probes (phone text size and board fit) before setting the final status."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-092",
+ "task_id": "T-094",
  "entries": [
-  "F-94d59a50"
+  "F-16152124"
  ],
- "started": "2026-10-09T17:42:49+0530",
- "message": "Acting on 1 note(s) for T-092: Light / dark theme with time-based auto"
+ "started": "2026-10-09T17:51:48+0530",
+ "message": "Acting on 1 note(s) for T-094: VIP offer page"
 }

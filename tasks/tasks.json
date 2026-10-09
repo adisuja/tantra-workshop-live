@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T17:50:24+0530",
-  "version": 1153,
+  "updated": "2026-10-09T17:51:55+0530",
+  "version": 1157,
   "last_id": 357,
   "team": [
    {
@@ -1977,6 +1977,11 @@
      "ts": "2026-10-09T17:47:59+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-107."
+    },
+    {
+     "ts": "2026-10-09T17:51:55+0530",
+     "who": "claude",
+     "note": "Repeat of the Orchestrator note: this was already carried out today at 17:47 (all 6 channels on /workshop and /masterclass, 18 rows correct in the Work Tracker and Tantra Tracker, referral credited to member code adi, no payment made). Rechecked now without resubmitting: the cleanup dry run finds 0 test or probe rows left in the six Work Tracker tabs, ops.db and the form log, and the Tantra Tracker holds 0 of the 18 test rows. Nothing new to build; Nelbin and Bharath can sign off from the evidence table at workshop-plan/outputs/t054-utm-channels-2026-10-09.md."
     }
    ],
    "order": 330,
@@ -2914,21 +2919,24 @@
    "why": "Owner request: a toggle plus an intelligent default based on the visitor's own timezone.",
    "spec": "Three states: Auto, Light, Dark. Auto resolves from the visitor's local hour, light 06:00 to 17:59 and dark otherwise, and flips live at the boundary without a reload. Resolved by an inline script before first paint so there is no flash of the wrong theme. The OS preference is deliberately ignored because the rule is time-based. Applies to the centre and workshop control; the funnel landing pages stay dark at every theme because that design is conversion-tested.",
    "done_when": [
-    "Owner approves both themes",
-    "Owner confirms the funnel pages should stay dark"
+    "Ben, Bharath and Adi approve both themes"
    ],
    "evidence": [
     {
-     "label": "Centre, toggle in the header",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/"
+     "label": "Centre, theme switch in the header",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=1791548493"
     },
     {
-     "label": "Template library, toggle",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/"
+     "label": "Template library, theme switch in the header",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/?v=1791548493"
+    },
+    {
+     "label": "Probe (36 checks, 1440 and 390)",
+     "url": "app/scripts/probe-theme.mjs"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/site/onboarding/ and https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/, use the theme switch in the header (Auto, Light, Dark), then approve or reply with changes, and confirm the funnel pages stay dark.",
+   "needs_from_owner": "Ben, Bharath and Adi: open https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=1791548493 and https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/?v=1791548493, use the theme switch in the header (Auto, Light, Dark), then approve or reply with changes.",
    "log": [
     {
      "ts": "2026-09-23",
@@ -2944,13 +2952,24 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: verified theme-toggle.tsx (light when 6 <= hour < 18, live flip each minute) is used by the old centre (onboarding-client.tsx) and the template library; evidence URLs answer 200. needs_from_owner now carries the full links."
+    },
+    {
+     "ts": "2026-10-09T17:51:33+0530",
+     "who": "claude",
+     "note": "People: reviewers Ben/Bharath → Ben/Bharath/Adi (by claude)."
+    },
+    {
+     "ts": "2026-10-09T17:51:33+0530",
+     "who": "claude",
+     "note": "Orchestrator decision (O-7fa7a063, acting for Adi): funnel landing pages stay dark at every theme, as the spec says (conversion-tested design); that done_when item and ask are removed. Recheck found one drift: in Light the template library's six stage names were white on white cards; fixed (main 755e4a0) and republished to the mirror (2b41f47). New probe-theme.mjs passes all 36 checks on the live links at 1440 and 390: light 06:00 to 17:59, no flash on first paint, live flip at 18:00, both themes readable, both URLs 200. Only ask left: review the two links."
     }
    ],
    "order": 900,
    "assignee": "Claude",
    "reviewers": [
     "Ben",
-    "Bharath"
+    "Bharath",
+    "Adi"
    ]
   },
   {
@@ -8251,6 +8270,11 @@
      "ts": "2026-10-09T17:42:49+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-229."
+    },
+    {
+     "ts": "2026-10-09T17:51:17+0530",
+     "who": "claude",
+     "note": "Rechecked the 05:09 Orchestrator note against production at 17:52 IST: everything it asked for was already shipped at 17:42 today (T-229 live on Worker bc7ea5ad and pushed, probe-zoom-pro 58/58), so nothing was rebuilt. Live read just now: Invite Status shows Zoom failed 0, attendees 5 and 66 (the placeholders) are marked test, the 14 to 16 Oct meeting 88135386601 exists with 0 registered, and there is still no real (non-test) attendee. Stays in review for the one remaining condition: the first real sign-up, then Read attendance after their session."
     }
    ],
    "order": 2230

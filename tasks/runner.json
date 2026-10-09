@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T17:51:59+0530",
+   "task_id": "T-054",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-054 stays in review: the Orchestrator note had already been carried out and acked at 17:47 today, and a recheck found 0 test or probe rows left in the Work Tracker, Tantra Tracker, ops.db and the form log, so nothing was resubmitted or deployed."
+  },
+  {
+   "ts": "2026-10-09T17:51:22+0530",
+   "task_id": "T-223",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-223 stays in review: the 05:09 note's pre-work was already shipped at 17:42 today, and a live read-only check at 17:52 IST confirmed Zoom failed 0, placeholder attendees 5 and 66 marked test, and the 14 to 16 Oct meeting 88135386601 in place with 0 registered. I did not re-run the probe or re-chec"
+  },
+  {
    "ts": "2026-10-09T17:50:32+0530",
    "task_id": "T-215",
    "mode": "feedback",
@@ -79,30 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-124 stays in review: the probe passes on main at `8b9bdab`, but the read-only Dodo check found no real /vip payment yet (7 payments since the fix, all Tantra app subscriptions), so the second done check is still open; note F-40ad43fd was already marked processed, and the board update is committed "
-  },
-  {
-   "ts": "2026-10-09T14:27:15+0530",
-   "task_id": "T-021",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-021 stays in review: the Orchestrator's note had already been carried out by an earlier run, so nothing needed changing. A recheck confirmed the live deck matches source, the ruled-out tool grep is empty, both probes pass, and F-5fade61c was already acked. Review at https://adisuja.github.io/tantr"
-  },
-  {
-   "ts": "2026-10-09T14:26:20+0530",
-   "task_id": "T-001",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-001 stays in review for Adi's copy sign-off: the /masterclass proof fix is pushed to main (2adc82c) and live on the mirror (025b331), with T-277 and T-117 closed and the note acked. Two probe failures remain, both outside this change: the cohort date line on /masterclass/success/join at 1440 and t"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-223: Zoom Pro meetings in the centre: per-cohort meeting, presentation room, cap and waitlist, live board, attendance",
- "task_id": "T-223",
+ "message": "Acting on 1 note(s) for T-092: Light / dark theme with time-based auto",
+ "task_id": "T-092",
  "entries": [
-  "F-184b482c"
+  "F-94d59a50"
  ],
  "mode": "feedback",
- "started": "2026-10-09T17:50:38+0530"
+ "started": "2026-10-09T17:52:03+0530"
 }
