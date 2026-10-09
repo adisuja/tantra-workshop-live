@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T12:12:07+0530",
+   "task_id": "T-279",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-279 is done: `bhaskardev` (Bhaskar Dev, builder) stays a separate partner from Bhaskar (CMO) with a comment in `referrals.json` and no alias, the unused `~/.config/tantra/referral-passphrase` is deleted, `test_referrals.py` passes (27), the [public dashboard](https://adisuja.github.io/tantra-works"
+  },
+  {
    "ts": "2026-10-09T12:10:38+0530",
    "task_id": "T-149",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-225 stays blocked on Zoom Support only: today's read-only check shows no grant yet, the daily 09:10 check is loaded and will log, apply and confirm the grant itself, and nothing is asked of Adi.\n\nTwo limits on that check:\n- **Account settings not readable:** the Zoom app lacks the account-settings"
-  },
-  {
-   "ts": "2026-10-09T08:39:49+0530",
-   "task_id": "T-194",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-194 is done: the preview tunnel is off and stays off at login (plist parked in `~/.pr-preview/disabled/`), the RevOps Workshop Series tab was rewritten with 0 trycloudflare links, 16 of its GitHub Pages links load logged out, and F-57d78505 is acked."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-279",
+ "task_id": "T-281",
  "entries": [
-  "F-e1299ee8"
+  "F-c6bf216d"
  ],
- "started": "2026-10-09T12:10:42+0530",
- "message": "Acting on 1 note(s) for T-279: Confirm whether partner code bhaskardev is Bhaskar on the team"
+ "started": "2026-10-09T12:12:12+0530",
+ "message": "Acting on 1 note(s) for T-281: Close the old launch checklist issue and open PRs now tracked here"
 }

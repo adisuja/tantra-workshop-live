@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T12:10:36+0530",
-  "version": 1044,
+  "updated": "2026-10-09T12:13:24+0530",
+  "version": 1049,
   "last_id": 357,
   "team": [
    {
@@ -7068,7 +7068,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "done",
+   "status": "recheck",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
@@ -7076,7 +7076,7 @@
     "main b7e844c (Merge r5/H: referral system, public no-passphrase dashboard)"
    ],
    "blockers": [],
-   "needs_from_owner": "Is 'Bhaskar Dev' (partner code bhaskardev) the same person as Bhaskar on the team? If yes, Claude makes it an alias so links already shared with bhaskardev keep crediting him (no deletion). Also: OK to delete ~/.config/tantra/referral-passphrase (no longer read)?",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-03T23:51:04+0530",
@@ -7102,6 +7102,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: evidence pointer added; the open bhaskardev question is tracked in T-279 and dashboard follow-ups in T-275."
+    },
+    {
+     "ts": "2026-10-09T12:12:00+0530",
+     "who": "claude",
+     "note": "T-279 closed the open question (Orchestrator decision O-580490b7): Bhaskar Dev (bhaskardev) is a separate person from Bhaskar (CMO), no alias; the unused referral-passphrase file is deleted. Nothing else on this task changed."
+    },
+    {
+     "ts": "2026-10-09T12:12:12+0530",
+     "who": "claude",
+     "note": "Flagged for a recheck by T-279: Its 'Asked of Adi' still lists the bhaskardev-vs-Bhaskar open question, which T-279 just resolved."
     }
    ],
    "order": 2110
@@ -8998,14 +9008,14 @@
    "due": "",
    "status": "queue",
    "why": "Nelbin's content pass and the build guides reference these sources; without them the team cannot verify client examples or reuse the GHL snapshot and Workers code.",
-   "spec": "Issue #1 https://github.com/adisuja/3-day-tantra-ai-revops-workshop/issues/1 (Workshop launch checklist, section 3) asks Adi to share six resources with the team: (1) the FintechCircle repo, (2) the creator taxonomy sheet (source of the 15 client content-engine samples in workshop-plan/ops/revops_sheet.py), (3) the Cloudflare Workers repo, (4) the GoHighLevel snapshot (GoHighLevel itself awaits T-260), (5) the Slack link index, (6) the per-client campaign links. Share each (Drive share, GitHub access, or a link in a comment on issue #1) and tick the box. Claude sends GitHub repo invites once Adi names the repos and teammates' usernames (same as T-146).",
+   "spec": "The old launch checklist (GitHub issue #1, closed 2026-10-09 under T-281, section 3) asked Adi to share six resources with the team: (1) the FintechCircle repo, (2) the creator taxonomy sheet (source of the 15 client content-engine samples in workshop-plan/ops/revops_sheet.py), (3) the Cloudflare Workers repo, (4) the GoHighLevel snapshot (GoHighLevel itself awaits T-260), (5) the Slack link index, (6) the per-client campaign links. Share each (Drive share, GitHub access, or a link in a note on this task). Claude sends GitHub repo invites once Adi names the repos and teammates' usernames (same as T-146).",
    "done_when": [
     "All six resources are reachable by Nelbin, Aquila and Bhaskar",
-    "The 'Share:' box on issue #1 is ticked with the links or access noted in a comment"
+    "The links or access are recorded in a note on T-249 on the Task Command Center"
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Share the six resources (or say which should not be shared) and tick 'Share:' on https://github.com/adisuja/3-day-tantra-ai-revops-workshop/issues/1, or name the repos and GitHub usernames and Claude sends the invites.",
+   "needs_from_owner": "Share the six resources (or say which should not be shared) in a note on http://localhost:8899/tasks.html#T-249, or name the repos and GitHub usernames there and Claude sends the invites.",
    "log": [
     {
      "ts": "2026-10-08T00:21:42+0530",
@@ -9021,6 +9031,11 @@
      "ts": "2026-10-09T05:15:52+0530",
      "who": "Orchestrator",
      "note": "People: assignee Adi → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-09T12:13:24+0530",
+     "who": "claude",
+     "note": "Issue #1 is closed (T-281), so this ask now points at the board: share the six resources in a note on this task."
     }
    ],
    "order": 2490
@@ -10241,17 +10256,24 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "done",
    "why": "Open question from SESSION_HANDOFF_2026_10_03_ROUND5_H.md; T-211 (referral dashboard) is done.",
    "spec": "workshop-plan/ops/referrals.json lists partner 'bhaskardev' (Bhaskar Dev) beside Bhaskar's auto member code. If they are the same person, make it an alias so links already shared with bhaskardev keep crediting him (no deletion). Also confirm ~/.config/tantra/referral-passphrase can be deleted (no longer read since the dashboard went public).",
    "done_when": [
     "Adi's answer recorded; alias applied or partner kept separate"
    ],
-   "evidence": [],
-   "blockers": [
-    "Adi's answer"
+   "evidence": [
+    {
+     "label": "Public referral dashboard (bhaskar and bhaskardev as separate rows)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/referrals.html?v=t279"
+    },
+    {
+     "label": "referrals.json comment (commit e73712d)",
+     "url": "workshop-plan/ops/referrals.json"
+    }
    ],
-   "needs_from_owner": "Reply on http://localhost:8899/tasks.html#T-279: (1) Is partner 'Bhaskar Dev' (code bhaskardev) the same person as Bhaskar (CMO)? Recommended if yes: keep bhaskardev as an alias of his member code so shared links keep crediting him. (2) OK to delete ~/.config/tantra/referral-passphrase? Recommended: yes, nothing reads it since the dashboard went public.",
+   "blockers": [],
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-08T00:21:42+0530",
@@ -10262,6 +10284,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: verified: workshop-plan/ops/referrals.json still lists partner bhaskardev (Bhaskar Dev) and ~/.config/tantra/referral-passphrase still exists (unused since the dashboard went public, per referral-dashboard memory); blocked needed a named blocker and a recommended answer."
+    },
+    {
+     "ts": "2026-10-09T12:12:00+0530",
+     "who": "claude",
+     "note": "Orchestrator decision O-580490b7 applied: Bhaskar Dev (partner code bhaskardev, the builder) and Bhaskar (CMO, auto code bhaskar) stay two separate people, no alias; referrals.json carries a comment saying so (commit e73712d). Deleted ~/.config/tantra/referral-passphrase after confirming the scheduled tick's referrals.py does not read it (only unscheduled 2026-09-24 snapshots mention it). Checked: test_referrals.py 27 PASS, and the public dashboard data shows bhaskar (team) and bhaskardev (partner) as separate rows; the comment changes no public data, so the mirror publish had nothing to push."
+    },
+    {
+     "ts": "2026-10-09T12:12:12+0530",
+     "who": "claude",
+     "note": "Checked 3 related task(s); updating T-211 (done, now recheck)."
     }
    ],
    "order": 2790
