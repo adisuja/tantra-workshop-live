@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T20:22:05+0530",
-  "version": 1285,
+  "updated": "2026-10-09T20:23:09+0530",
+  "version": 1286,
   "last_id": 364,
   "team": [
    {
@@ -10078,6 +10078,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: disk is fine (78 GiB free 2026-10-08); Docker daemon not running; tracker log shows Sheet syncs (889 rows) with no MongoDB write. Title updated."
+    },
+    {
+     "ts": "2026-10-09T20:23:09+0530",
+     "who": "claude",
+     "note": "For Ben: tantra-mongo is being locked down now (bound to 127.0.0.1, auth on). Your backend user: tantra_backend (readWrite on tantra_dev_local). Credentials: ~/.config/tantra/mongo.env (key MONGO_BACKEND_URI, format mongodb://tantra_backend:<password>@127.0.0.1:27017/tantra_dev_local?authSource=admin). Full mongodump of all DBs at ~/backups/tantra-mongo-2026-10-09/all.archive."
     }
    ],
    "order": 2470
