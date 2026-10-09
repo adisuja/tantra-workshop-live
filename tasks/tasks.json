@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T19:08:06+0530",
-  "version": 1226,
+  "updated": "2026-10-09T19:10:25+0530",
+  "version": 1232,
   "last_id": 361,
   "team": [
    {
@@ -626,7 +626,7 @@
    "owner": "Bharath",
    "priority": "P1",
    "due": "2026-09-22",
-   "status": "queue",
+   "status": "review",
    "why": "Owner runs everything locally through launch; one document makes restarts and the later switch to a host repeatable.",
    "spec": "Write workshop-plan/ops/runbook.md (does not exist yet). Cover every local launchd job in ~/Library/LaunchAgents (16 on 2026-10-08: com.tantra.ops, tracker-sync, board-sync, centre-sheet, launch-control-agent, launch-control-board (:8899 Task Command Center), launch-control-github, preview-gateway, preview-refresh, preview-tunnel, revops-centre-dev (:8790), revops-runner (:8791), revops-sim (:8792), revops-relay (:8793), revops-relay-tunnel, revops-funnel-preview (:8794)); only 6 of those plists are versioned in workshop-plan/ops, so copy the rest into the repo. Include start order, ports, health checks, the interpreter each job uses (com.tantra.ops still runs /usr/bin/python3 3.9.6, see T-031), backups of workshop-plan/ops/ops.db and the MongoDB tantra_tracker database (T-247), the Worker deploy command for revops-centre.growthcluborg.workers.dev, the mirror publish steps (check /Users/adithyamurali/tantra-round5-coord/LOG.md for publish holds first), and a post-launch switch plan listing every env var and the Dodo and Stripe webhook URLs that change. Mark the Namecheap relay (revops-relay, revops-relay-tunnel) as to retire: Namecheap was ruled out on 2026-10-07 (T-251).",
    "done_when": [
@@ -634,7 +634,16 @@
     "One script brings every local service up and probes it, exit 0",
     "Switch plan lists every env var and webhook URL that changes on a move to a host"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "runbook",
+     "url": "workshop-plan/ops/runbook.md"
+    },
+    {
+     "label": "up.sh",
+     "url": "workshop-plan/ops/up.sh"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -657,6 +666,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: corrected the service list; only 6 plists live in workshop-plan/ops, 16 com.tantra.* jobs are loaded from ~/Library/LaunchAgents, and the Namecheap relay is a ruled-out tool to retire."
+    },
+    {
+     "ts": "2026-10-09T19:10:15+0530",
+     "who": "claude",
+     "note": "Wrote workshop-plan/ops/runbook.md (all 20 com.tantra jobs with port, interpreter, health check; backups; Worker deploy; mirror publish with hold check; switch plan with every env var and Dodo/Stripe webhook URLs; T-034 dry-run section kept) and ops/up.sh, and copied the 9 unversioned plists to ops/launchd/. Ran up.sh: exit 0, 18 active jobs ok, WARN for codex-check 401, MongoDB not installed (T-247) and the two retired relay jobs still loaded (T-289). Committed 9ecd123 and pushed to origin main as ca313ef (cherry-picked, local main has diverged)."
+    },
+    {
+     "ts": "2026-10-09T19:10:25+0530",
+     "who": "claude",
+     "note": "Checked 8 related task(s); updating T-034, T-289."
     }
    ],
    "order": 60,
@@ -1548,7 +1567,7 @@
     "T-032",
     "T-033"
    ],
-   "needs_from_owner": "Nothing from Adi: waits on T-031, T-032 and T-033 being built (they write ops.db day_outputs, contract in workshop-plan/ops/runbook.md); then run python3 workshop-plan/ops/dryrun_day1.py --require-real and record the timings.",
+   "needs_from_owner": "Nothing from Adi: waits on T-032 (PDF + link, still queued) and T-033 (being built against a stub DayOutput, so it still needs real T-031/T-032 outputs); then run python3 workshop-plan/ops/dryrun_day1.py --require-real and record the timings.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -1594,6 +1613,11 @@
      "ts": "2026-10-09T05:10:33+0530",
      "who": "claude",
      "note": "Checked 7 related task(s); updating T-006."
+    },
+    {
+     "ts": "2026-10-09T19:09:59+0530",
+     "who": "claude",
+     "note": "Harness already built (dryrun_day1.py) and passes on stand-ins; re-checked today: --require-real still refuses (pdf, delivery not built). T-033 is now being built against a stub, so the real run still waits on real T-031/T-032 outputs; nothing else to change."
     }
    ],
    "order": 240,
@@ -2117,14 +2141,23 @@
    "owner": "Bharath",
    "priority": "P1",
    "due": "2026-09-19",
-   "status": "queue",
+   "status": "review",
    "why": "The outreach lane runs through the product itself; a dead app means no outreach lane.",
    "spec": "Adi stated on 2026-10-07 that Tantra omni-channel campaigns (email, WhatsApp, LinkedIn) are live. Bharath confirms in writing that the team's own LinkedIn profiles can be connected and run outreach campaigns in Tantra now, and records (1) the per-profile daily connection and message caps Tantra enforces and (2) the app URL that answers: calendar.usetantra.com still times out from this Mac on 2026-10-08 (T-147), and it is the production APP_ENTRY_URL in app/src/lib/seo/site.ts:41. If the lane is not ready, it pauses; it does not move to an unapproved tool.",
    "done_when": [
     "Yes or no recorded from Bharath with a date",
     "Per-profile daily caps and the working app URL recorded on this task"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "LinkedIn sending limits (redacted)",
+     "url": "workshop-plan/tasks/evidence/T-057-linkedin-limits.png"
+    },
+    {
+     "label": "App URL",
+     "url": "https://usetantra.com/connectors/channels/linkedin"
+    }
+   ],
    "blockers": [
     "T-147"
    ],
@@ -2149,6 +2182,16 @@
      "ts": "2026-10-09T05:10:30+0530",
      "who": "Orchestrator",
      "note": "People: assignee Bharath → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-09T19:09:35+0530",
+     "who": "claude",
+     "note": "Checked read-only in the live app (usetantra.com, test account, nothing changed): app URL is https://usetantra.com. LinkedIn connector shows 1 connected profile with platform caps per profile of 80 connection requests/day (180/week), 120 messages/day (600/week), 80 profile visits/day (400/week); these are the maximums the app enforces, set at 80/120/80 today. Pro plan shows 2 of 2 LinkedIn/WhatsApp accounts in use, so connecting more team profiles needs the plan or extra account added. Operating ramp from c.md stays 20 to 25 connects/day, never above 75, 75 messages/day across campaigns. Readiness: YES, dated 2026-10-07 (Adi's statement, confirmed by this check). Bharath to sign off in writing."
+    },
+    {
+     "ts": "2026-10-09T19:09:48+0530",
+     "who": "claude",
+     "note": "Checked 2 related task(s); updating T-058."
     }
    ],
    "order": 360,
@@ -2199,6 +2242,11 @@
      "ts": "2026-10-09T05:10:58+0530",
      "who": "Orchestrator",
      "note": "People: assignee Bhaskar → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-09T19:09:35+0530",
+     "who": "claude",
+     "note": "T-057 readiness recorded (YES); account slots: Pro shows 2 of 2 LinkedIn/WhatsApp accounts in use."
     }
    ],
    "order": 370,

@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T19:10:19+0530",
+   "task_id": "T-006",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-006 is in review: the runbook, `up.sh` and the 9 plists that weren't in the repo are written, committed as 9ecd123 and pushed to origin main as ca313ef.\n\nRunning `up.sh` exits 0 with 18 active jobs ok and 4 warnings:\n- **codex-check:** returns a 401.\n- **MongoDB:** not installed until T-247.\n- **R"
+  },
+  {
    "ts": "2026-10-09T19:07:56+0530",
    "task_id": "T-228",
    "mode": "feedback",
@@ -87,23 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-215 stays in review: the note was a repeat already acted on and acked, so nothing new was built. Rechecked: `verify.py` passes on all 18 tools, the index at http://localhost:8883/wt-review/index.html?v=2e9db5c links all 18 video pages, and `tantra-walkthroughs` is pushed at 2e9db5c. The live Dodo "
-  },
-  {
-   "ts": "2026-10-09T17:36:23+0530",
-   "task_id": "T-150",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-150 stays in review for Amal: the hub fixes were already live (T-280 done), and this pass repaired a stalled public board (rebased and pushed the mirror, live at v1138; board sync now pulls with autostash, commit 6f1685f, local only). The live `#flows` and `#tasks` checks passed in a headless brow"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-006",
+ "task_id": "T-050",
  "entries": [
-  "R-605a8769",
-  "F-e1a545a9"
+  "F-db847ab6"
  ],
- "started": "2026-10-09T19:08:06+0530",
- "message": "Acting on 2 note(s) for T-006: Local-first launch runbook + post-launch switch plan"
+ "started": "2026-10-09T19:10:25+0530",
+ "message": "Acting on 1 note(s) for T-050: Draft the pre-workshop nurture sequence"
 }

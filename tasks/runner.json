@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T19:10:03+0530",
+   "task_id": "T-034",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-034 stays blocked: the dry-run harness already exists, but `--require-real` still refuses because the PDF and delivery stages aren't built. I updated the waiting-on text to say T-033 is being built against a stub, so it still needs real T-031 and T-032 outputs. I acked F-8e470df7 and R-39087d2a."
+  },
+  {
+   "ts": "2026-10-09T19:09:42+0530",
+   "task_id": "T-057",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-057 is in review with Bharath and Adi as reviewers. The app shows hard LinkedIn caps per profile, so the c.md ramp stays only as the operating plan.\n\n- **Readiness:** YES, dated 2026-10-07 from Adi's statement. A read-only sign-in with the test account confirmed it, and I changed nothing in the ap"
+  },
+  {
    "ts": "2026-10-09T18:46:00+0530",
    "task_id": "T-228",
    "mode": "feedback",
@@ -79,30 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-198 is in review: Coach Rails is the default teaching layout on the live centre with no parameter (Worker 8bb90e2f, origin main 0a77ebe), a full live card walk at 1440, 1280 and 390 came back with no layout findings, N067 is closed in T-270 and AUDIT.md, and F-8d8a4ae9 is acked. Three things diffe"
-  },
-  {
-   "ts": "2026-10-09T17:15:26+0530",
-   "task_id": "T-150",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-150 is in review for Amal and T-280 is done: the hub's Prove step now points at the Day 3 chapter, the hidden tasks section and every \"Launch Control\" string are gone, and it is pushed and live at https://adisuja.github.io/tantra-workshop-live/#flows (48 flow cards, no script errors, `#tasks` redi"
-  },
-  {
-   "ts": "2026-10-09T16:39:22+0530",
-   "task_id": "T-150",
-   "mode": "feedback",
-   "status": "review",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-057: Confirm Tantra LinkedIn app readiness for outreach",
- "task_id": "T-057",
+ "message": "Acting on 1 note(s) for T-053: LinkedIn content: 5 posts/day/team member",
+ "task_id": "T-053",
  "entries": [
-  "F-955803c9"
+  "F-03667588"
  ],
  "mode": "feedback",
- "started": "2026-10-09T19:07:34+0530"
+ "started": "2026-10-09T19:10:33+0530"
 }
