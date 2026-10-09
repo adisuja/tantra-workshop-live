@@ -1,5 +1,5 @@
 :HL["/tantra-workshop-live/site/_next/static/chunks/3xysmg4ndtjfb.css","style"]
-:HL["/tantra-workshop-live/site/_next/static/chunks/0182j_g_dkjpj.css","style"]
+:HL["/tantra-workshop-live/site/_next/static/chunks/3mkgglz86-xe4.css","style"]
 :HL["/tantra-workshop-live/site/_next/static/media/017d9bea37084d9b-s.p.41rroleoq1br7.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/tantra-workshop-live/site/_next/static/media/303804218d80822e-s.p.3lj349bs9hfu1.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/tantra-workshop-live/site/_next/static/media/612838607db3d51d-s.p.2-6hkzwn24m5-.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
@@ -14,4 +14,4 @@
 :HL["/tantra-workshop-live/site/_next/static/media/ed5f1f9bced69653-s.p.2li_3lqay9qjq.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/tantra-workshop-live/site/_next/static/media/f7aa21714c1c53f8-s.p.0-95eo-012xnf.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/tantra-workshop-live/site/_next/static/chunks/1s6yxs7cg50ir.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"onboarding","param":null,"prefetchHints":4160,"slots":{"children":{"name":"looks","param":null,"prefetchHints":4192,"slots":{"children":{"name":"look","param":{"type":"d","key":"wall","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}}}},"staleTime":300,"buildId":"MsTWVMrHmdgAlcZEKK1A2"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"onboarding","param":null,"prefetchHints":4160,"slots":{"children":{"name":"looks","param":null,"prefetchHints":4192,"slots":{"children":{"name":"look","param":{"type":"d","key":"wall","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}}}},"staleTime":300,"buildId":"GgAltScwr9bD2lQ2NO10f"}
