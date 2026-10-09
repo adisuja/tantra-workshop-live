@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T08:54:50+0530",
+   "task_id": "T-291",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-291 is in review: the send-path guard and the switch-off behaviour are deployed to the live centre and pushed, `/preview` stays open until the trigger fires, and F-1aada045 is acked. The local close-preview probe passes all 23 checks and live checks confirm the guard; the day-output hold has no de"
+  },
+  {
    "ts": "2026-10-09T08:40:55+0530",
    "task_id": "T-282",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:05:45+0530",
-   "task_id": "T-011",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-291: Switch the open /preview link to personal links only once the centre build is complete",
- "task_id": "T-291",
+ "message": "Acting on 1 note(s) for T-298: Write the owner's central rules into the global CLAUDE.md (blocked by the rules-file guard)",
+ "task_id": "T-298",
  "entries": [
-  "F-1aada045"
+  "F-213739bc"
  ],
  "mode": "feedback",
- "started": "2026-10-09T08:41:02+0530"
+ "started": "2026-10-09T08:54:56+0530"
 }
