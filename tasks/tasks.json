@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T19:50:35+0530",
-  "version": 1259,
+  "updated": "2026-10-09T19:57:34+0530",
+  "version": 1262,
   "last_id": 362,
   "team": [
    {
@@ -6975,7 +6975,7 @@
    "owner": "Bharath",
    "priority": "P1",
    "due": "2026-10-13",
-   "status": "queue",
+   "status": "review",
    "why": "Owner voice notes, 2026-09-26: bugs and feature requests must be resolved through a fast agentic dev cycle so customers stay for the business results.",
    "spec": "Benchmark a request-to-release cycle of about 24 h (an Opus Clip style claim; verify it before any public use, no invented stats). Write a one-page case for Bharath (CTO): retention argument plus pilot proposal. Pilot 3 to 5 recent Tantra feature requests through the agentic flow and measure request to PR to live. Define the review steps (product, code, QA) and their time limits. Basics: CI, a preview environment per change, enough test coverage for agents to work safely. Stop quoting '2 days' by default; pilot numbers set the new standard. Product code: GitHub Usetantra/tantra-backend-v2 (branch development) and Usetantra/tantra-mcp; clone outside this repo and run locally (no n8n; Claude-built automation).",
    "done_when": [
@@ -6984,7 +6984,20 @@
     "Review steps written and agreed with the dev team",
     "24h ship rate, PR-to-live time and regression rate tracked on the T-158 dashboard"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Pitch, pilot table, review steps",
+     "url": "workshop-plan/pipeline/agentic-dev-cycle.md"
+    },
+    {
+     "label": "Pilot PR 160",
+     "url": "https://github.com/Usetantra/tantra-backend-v2/pull/160"
+    },
+    {
+     "label": "Pilot PR 164",
+     "url": "https://github.com/Usetantra/tantra-backend-v2/pull/164"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -7002,6 +7015,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: named the product repos instead of 'locate it first'; engineering lead correction to Bharath already applied in pass 1; not started."
+    },
+    {
+     "ts": "2026-10-09T19:57:22+0530",
+     "who": "claude",
+     "note": "Cloned both repos, recorded state (no CI, no preview, 2 of 110 backend suites red on development), and wrote the one-page case plus review steps (product 2h, code 4h, QA 4h). Pilot is the 5 T-152 bug PRs (#160 to #164, open against development); request-to-PR could not be measured (request times are day-only, no issues in the repo) and the Opus Clip 24h claim is left out as unsourced. Metrics added to T-158's spec. Bharath: review the PRs to produce the first real merge and live timings."
+    },
+    {
+     "ts": "2026-10-09T19:57:34+0530",
+     "who": "claude",
+     "note": "Checked 2 related task(s); updating T-158."
     }
    ],
    "order": 1540,
@@ -7153,7 +7176,7 @@
    "due": "2026-10-09",
    "status": "review",
    "why": "Owner voice notes, 2026-09-26: the funnel's job is to get everyone using Tantra and reporting every bug and feature request; both get resolved through a fast agentic dev cycle so customers stay for the business results. Owner assigned all of this to Claude end to end.",
-   "spec": "Management view in the style of the reference dashboard (URL in workshop-plan/coord/private-refs.md, not public) grouped bands, KPI cards labelled live/derived with a plain-English caption under each, tables of recent items, notes that say exactly what each number counts. Bands: feedback volume by source/brand, bug pipeline by severity and age, feature pipeline by decision, 24h ship rate and PR-to-live time, dogfooding experiments, customer tier mix.",
+   "spec": "Management view in the style of the reference dashboard (URL in workshop-plan/coord/private-refs.md, not public) grouped bands, KPI cards labelled live/derived with a plain-English caption under each, tables of recent items, notes that say exactly what each number counts. Bands: feedback volume by source/brand, bug pipeline by severity and age, feature pipeline by decision, 24h ship rate and PR-to-live time, dogfooding experiments, customer tier mix. T-154 metric definitions: 24h ship rate = requests with request-to-live of 24 h or less divided by requests shipped; PR to live = median hours from PR opened to running in production; regression rate = shipped fixes needing a second fix for the same defect within 14 days divided by fixes shipped. Definitions in workshop-plan/pipeline/agentic-dev-cycle.md.",
    "done_when": [
     "Dashboard live locally with every band",
     "Every figure labelled live or derived with its definition",
@@ -7197,6 +7220,11 @@
      "ts": "2026-10-09T19:50:00+0530",
      "who": "claude",
      "note": "Built the 6-band dashboard at http://localhost:8899/pipeline?v=2 (workshop-plan/pipeline/dash.py, rendered fresh per load, local only). Every card is tagged live/derived with a caption and a 'Counts:' note; feedback, bug and feature bands read today's files, ship rate uses fixed bugs, PR-to-live, dogfooding and tier mix show 'no data yet, fed by T-154/T-155/T-157'. Monday 09:00 launchd job com.tantra.pipeline-weekly is installed and its first snapshot is logged in coord/LOG.md; verified by fetching the page and a headless screenshot."
+    },
+    {
+     "ts": "2026-10-09T19:57:22+0530",
+     "who": "claude",
+     "note": "Added the three T-154 metric definitions (24h ship rate, PR to live, regression rate) to the spec; no status change."
     }
    ],
    "order": 1580,
