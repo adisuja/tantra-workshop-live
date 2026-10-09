@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T01:30:46+0530",
-  "version": 1359,
+  "updated": "2026-10-10T01:35:30+0530",
+  "version": 1361,
   "last_id": 373,
   "team": [
    {
@@ -11019,11 +11019,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Calendar invites are the core cold channel; a wrong end time or an unverified sender account breaks the whole campaign silently.",
    "spec": "In cloud/src/jobs-tantra.ts and agentic.ts: gate start-calendar-ws on Tantra GET /accounts?search=<cal_ws_email> returning CONNECTED, ask Tantra for service-account upload and verify endpoints (X014), add reminders to eventDetails if Tantra accepts them, make ev_length numeric minutes, compute end as start plus minutes so it rolls over midnight, send both A/B step 1 variants, reject $, % and \"free\" in cal_title (fieldProblem), and write the service-account steps on the card. Closes audit findings X014, X015, N009, N011, N012, N015, N018, N028. Per finding: X014 (app/src/lib/workshop-cards.ts): Ask Tantra for service-account upload and account-verify endpoints, then automate this step. X015 (cloud/src/agentic.ts): In the gate, call Tantra GET /accounts?search=<cal_ws_email> and require CONNECTED before marking done. N009 (cloud/src/jobs-tantra.ts): Add reminders (5/10/15/30 min popup overrides) to eventDetails if Tantra's API accepts them, and state on d2-calendar-campaign what reminders recipients get. N011 (cloud/src/jobs-tantra.ts): Make ev_length a number field in minutes (or parse hour/minute units) and use it directly in the job. N012 (cloud/src/jobs-tantra.ts): Compute end as a Date (start + minutes) and format date and time from it so it rolls over midnight. N015 (app/src/lib/workshop-cards.ts): Add a cal_title check in fieldProblem rejecting $, % and the word free. N018 (cloud/src/jobs-day2.ts): Send both step 1 variants to Tantra (A/B variant or two split campaigns), or drop the B fields and A/B promise from d2-cold-email. N028 (app/src/lib/workshop-cards.ts): Write the service-account steps on the card (create project, enable APIs, create service account, JSON key, domain-wide delegation) or add a walkthrough. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Owner model (google-and-reminder-model, 2026-10-07): a Google service account is created for EACH Workspace user that sends invites (not only the admin) and uploaded to Tantra; Tantra sends the invites. N028's card steps and X014's automation must cover every sending user. Do not confuse with T-227 (the organiser service account for our own workshop's Google invites). Merge order: build on main after T-251 lands (branch tantra-walkthroughs: e4bd0b8 removes the ruled-out tools and rewrites workshop-cards.ts, agentic.ts, jobs.ts, agent.tsx and coverage.json; probe fixes 043b5ab and aa22a3f, no READY yet in /Users/adithyamurali/tantra-round5-coord/LOG.md). Until then branch from tantra-walkthroughs; AUDIT.md line numbers predate that change.",
    "done_when": [
@@ -11032,7 +11033,16 @@
     "Variant B reaches Tantra",
     "Every listed finding id is marked fixed in AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "probe (24 checks)",
+     "url": "cloud/scripts/probe-t263.mjs"
+    },
+    {
+     "label": "commit 4dea9f2, merged 137c5bc, branch t-263-calendar pushed",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/tree/t-263-calendar"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -11050,6 +11060,16 @@
      "ts": "2026-10-09T00:06:32+0530",
      "who": "claude",
      "note": "2026-10-08: Tantra help (connect-google-workspace) confirms one service account with domain-wide delegation covers every mailbox in that Workspace; scopes gmail.send + gmail.modify (cold email) and calendar (invites); upload JSON at Connectors, Google Service Accounts; Accounts, Verify and Add shows Connected + Gmail capable (Calendar-only means Gmail scopes missing). Both owner service-account keys mint delegated tokens for calendar.events, gmail.send and gmail.modify (tested 2026-10-07, no API calls). Recorded in the google-senders 4K video."
+    },
+    {
+     "ts": "2026-10-10T01:35:30+0530",
+     "who": "claude",
+     "note": "Built on current main: the calendar card now passes only when Tantra shows every sending user CONNECTED (GET /accounts?search=), ev_length is minutes with the end computed as start plus minutes (rolls past midnight), cal_title rejects $ % and free, and cold email step 1 sends B as a second Tantra campaign (half the list each, launched and counted together). Tantra's API has no reminder field or A/B step field (so the card says guests get their own Google default reminder, and A/B is two campaigns); service-account upload and verify-bulk already existed from T-258 and the card now teaches the manual steps for every sender. Checked with cloud/scripts/probe-t263.mjs (24 PASS against a Tantra mock) and a clean tsc; not run on the full simulator stack, which serves another worktree; all 8 ids marked fixed in AUDIT.md."
+    },
+    {
+     "ts": "2026-10-10T01:35:30+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
     }
    ],
    "order": 2630

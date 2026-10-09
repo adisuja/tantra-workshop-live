@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T01:35:39+0530",
+   "task_id": "T-263",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-263 is in review: all 8 audit findings are fixed, but I only tested them against a mock of Tantra, not the full simulator stack.\n\n- **Gate (X015):** the calendar card passes only when Tantra shows every sending user as CONNECTED, checked with `GET /accounts?search=`.\n- **Campaign build (N011, N012"
+  },
+  {
    "ts": "2026-10-10T01:30:51+0530",
    "task_id": "T-262",
    "mode": "feedback",
@@ -87,23 +95,14 @@
    "status": "done",
    "result": "ok",
    "summary": "T-243 is done: the anonymity probe still passes with 0 hits, and every vendor allow-list entry now carries a one-line reason. I committed it locally and did not push, so the approved push and the runbook baseline update are not done.\n\nI took the banned vendors (Instantly, HeyReach, Calendly, SendGri"
-  },
-  {
-   "ts": "2026-10-09T20:20:00+0530",
-   "task_id": "T-151",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-151 is in review: the intake service works and the PR is open, but the triage agent scored 83% on the 30 real reports, short of the 90% target.\n\n- **Intake:** widget, form and team-channel reports land in one queue. All six required fields are enforced, and the 4 local tests pass. Acknowledgement "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-263",
+ "task_id": "T-264",
  "entries": [
-  "F-1ad06aa4",
-  "R-03d22bc7"
+  "F-4a62dd63"
  ],
- "started": "2026-10-10T01:30:58+0530",
- "message": "Acting on 2 note(s) for T-263: Centre: Tantra calendar workspace verification and invite campaign job fixes"
+ "started": "2026-10-10T01:35:46+0530",
+ "message": "Acting on 1 note(s) for T-264: Centre: Twilio SMS sender gaps, and move attendee WhatsApp off Twilio onto Tantra"
 }
