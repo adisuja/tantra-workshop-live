@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T02:01:00+0530",
+   "task_id": "T-267",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-267 is built, pushed to main (1fd45a2) and deployed to the centre Worker (bd1ef64d). It's in review with Adi and Bharath, and F-409a5db1 is acked. `cloud/scripts/probe-t267.mjs` passes all 17 checks against the simulator.\n\n- **Dodo approval can't be detected (X071):** Dodo exposes no approval-stat"
+  },
+  {
    "ts": "2026-10-10T01:48:16+0530",
    "task_id": "T-267",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-053 is in review for Bhaskar: 200 LinkedIn drafts (5 days × 5 posts for each of 8 members), on one page published to the board and the public mirror. The page has no dashes or \"webinar\", and I haven't posted anything.\n\nMembers are the seven in meta.team plus bhaskardev. Each link sits in the post'"
-  },
-  {
-   "ts": "2026-10-09T19:10:03+0530",
-   "task_id": "T-034",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-034 stays blocked: the dry-run harness already exists, but `--require-real` still refuses because the PDF and delivery stages aren't built. I updated the waiting-on text to say T-033 is being built against a stub, so it still needs real T-031 and T-032 outputs. I acked F-8e470df7 and R-39087d2a."
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-267: Centre: payments, live key swap, privacy pages and invoice-only close",
- "task_id": "T-267",
+ "message": "Acting on 1 note(s) for T-268: Live room: Zoom and WebinarGeek setup cards and weekly broadcast scheduling",
+ "task_id": "T-268",
  "entries": [
-  "F-409a5db1"
+  "F-5ffe121f"
  ],
  "mode": "feedback",
- "started": "2026-10-10T01:54:57+0530"
+ "started": "2026-10-10T02:01:21+0530"
 }

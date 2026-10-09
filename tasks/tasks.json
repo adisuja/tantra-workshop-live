@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T01:47:53+0530",
-  "version": 1371,
-  "last_id": 374,
+  "updated": "2026-10-10T02:00:54+0530",
+  "version": 1386,
+  "last_id": 379,
   "team": [
    {
     "name": "Adi",
@@ -11298,11 +11298,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Attendees can launch on a test key or without legal pages, so real buyers cannot pay.",
    "spec": "Poll Dodo verification and raise a card to paste the live key, add a step pointing at where to swap test for live key on the Dodo/Stripe connect card, have deploy-funnel host privacy and terms pages and prefill pg_privacy_url, and hide checkout fields when pay_checkout is invoice-only (workshop-cards.ts). Closes audit findings X071, X072, N035, N037. Per finding: X071 (app/src/lib/workshop-cards.ts): Poll Dodo verification status and raise a card or prompt to paste the live key once approved. X072 (app/src/lib/workshop-cards.ts): Have deploy-funnel generate and host privacy and terms pages and prefill pg_privacy_url. N035 (app/src/lib/workshop-cards.ts): Hide checkout options and fields when pay_checkout is 'After a call, by invoice', or explain no checkout is created. N037 (app/src/lib/workshop-cards.ts): Add a step (or Day 3 card) that tells them where to replace the test key with the live key on the Dodo/Stripe connect card. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Merge order: build on main after T-251 lands (branch tantra-walkthroughs: e4bd0b8 removes the ruled-out tools and rewrites workshop-cards.ts, agentic.ts, jobs.ts, agent.tsx and coverage.json; probe fixes 043b5ab and aa22a3f, no READY yet in /Users/adithyamurali/tantra-round5-coord/LOG.md). Until then branch from tantra-walkthroughs; AUDIT.md line numbers predate that change.",
    "done_when": [
@@ -11311,7 +11312,16 @@
     "Invoice-only shows no checkout fields",
     "Every listed finding id is marked fixed in AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Probe",
+     "url": "cloud/scripts/probe-t267.mjs"
+    },
+    {
+     "label": "Commit",
+     "url": "1fd45a2"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -11324,6 +11334,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still open on main f6aeb7e; Dodo and Stripe are both approved attendee options; added merge order."
+    },
+    {
+     "ts": "2026-10-10T02:00:54+0530",
+     "who": "claude",
+     "note": "Built and deployed (commit 1fd45a2, centre Worker bd1ef64d). Invoice-only hides the price, currency, live and after-payment fields; both connect cards and a new Day 3 card 'Swap to your live key' say where to click 'Replace the key' (its check passes only on a live key); a daily poller prompts the swap in the activity feed; deploy-funnel hosts /privacy and /terms and prefills pg_privacy_url. cloud/scripts/probe-t267.mjs passes 17 checks against the simulator. Dodo exposes no approval-status API, so the daily poller nudges after a day on a test key and recognises a live key; it cannot see approval itself. The hosted pages are plain templates from business name and contact."
+    },
+    {
+     "ts": "2026-10-10T02:00:54+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
     }
    ],
    "order": 2670
