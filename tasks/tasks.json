@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T12:15:41+0530",
-  "version": 1052,
+  "updated": "2026-10-09T12:17:39+0530",
+  "version": 1055,
   "last_id": 357,
   "team": [
    {
@@ -7068,7 +7068,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "recheck",
+   "status": "done",
    "why": "",
    "spec": "Round 5 lane work, coordinated in /Users/adithyamurali/tantra-round5-coord (LOG.md, OWNERSHIP.md). Built on branch r5/<lane>, merged by Lane A into onboarding-v2.",
    "done_when": [],
@@ -7112,6 +7112,11 @@
      "ts": "2026-10-09T12:12:12+0530",
      "who": "claude",
      "note": "Flagged for a recheck by T-279: Its 'Asked of Adi' still lists the bhaskardev-vs-Bhaskar open question, which T-279 just resolved."
+    },
+    {
+     "ts": "2026-10-09T12:17:07+0530",
+     "who": "claude",
+     "note": "Recheck cleared: the bhaskardev question was answered in T-279 (two separate people, no alias) and T-211 no longer carries any ask for Adi (needs_from_owner empty). Nothing in the dashboard changed; test_referrals.py 27 PASS."
     }
    ],
    "order": 2110
@@ -10322,6 +10327,11 @@
      "ts": "2026-10-09T12:12:12+0530",
      "who": "claude",
      "note": "Checked 3 related task(s); updating T-211 (done, now recheck)."
+    },
+    {
+     "ts": "2026-10-09T12:17:07+0530",
+     "who": "claude",
+     "note": "Re-run of the same Orchestrator decision (O-580490b7): everything was already applied (commit e73712d, comment on the bhaskardev entry, no alias, ~/.config/tantra/referral-passphrase deleted). Re-checked today: no code under workshop-plan/ops, workshop-plan/tasks, cloud or the launchd jobs reads referral-passphrase, test_referrals.py 27 PASS, and referrals.members() returns bhaskar (team) and bhaskardev (partner) as separate rows. Nothing new to commit or publish."
     }
    ],
    "order": 2790
@@ -10412,6 +10422,11 @@
      "ts": "2026-10-09T12:14:59+0530",
      "who": "claude",
      "note": "Issue #1, PR #3 and PR #4 are closed, each with a comment pointing at the Task Command Center (Orchestrator decision O-968e1f77). Checked first with gh: all three were OPEN and both PR heads (9991e60, 97cc57c) are ancestors of main; gh output: 'Closed issue #1', 'Closed pull request #3', 'Closed pull request #4', state CLOSED on all three after. The hub Schedule tab no longer links issue #1 (main 9bb17f3, mirror 3d372aa, live page checked), and T-249's ask now points at the board. Pushing main also carried the 28 agent commits that were waiting locally (15 files, no secrets)."
+    },
+    {
+     "ts": "2026-10-09T12:17:39+0530",
+     "who": "claude",
+     "note": "Re-run of Orchestrator decision O-968e1f77: nothing left to do. Rechecked with gh just now: issue #1, PR #3 and PR #4 are CLOSED (2026-10-09 06:42 UTC), each with the Task Command Center pointer comment; the hub has no link to issue #1 (repo grep and live page both 0 hits) and T-249's ask points at the board."
     }
    ],
    "order": 2810
