@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T08:38:40+0530",
+   "task_id": "T-191",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-191 is in review: all 14 Orchestrator answers are applied on main (b880b67), pushed, and live on the mirror (de264d8). The revops-centre Worker was not redeployed because that step was not approved, so the live centre and calendar invites still show the old wording. Open: `probe-details` fails on "
+  },
+  {
    "ts": "2026-10-09T08:07:14+0530",
    "task_id": "T-115",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "done",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:04:06+0530",
-   "task_id": "T-033",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-191",
+ "task_id": "T-194",
  "entries": [
-  "F-48756ec5"
+  "F-57d78505"
  ],
- "started": "2026-10-09T08:07:21+0530",
- "message": "Acting on 1 note(s) for T-191: Decide the calls still open from Nelbin's content pass"
+ "started": "2026-10-09T08:38:47+0530",
+ "message": "Acting on 1 note(s) for T-194: Decide: share branch previews outside Adi's Mac (private tunnel with an access key)"
 }

@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T08:22:30+0530",
-  "version": 986,
+  "updated": "2026-10-09T08:38:36+0530",
+  "version": 989,
   "last_id": 349,
   "team": [
    {
@@ -51,11 +51,13 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bhaskar",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "2026-10-01",
-   "status": "blocked",
+   "status": "review",
    "why": "Several attendee-facing surfaces still say two different things (session format, Day 1 labels, Day 2 hours, task numbering) during a live cohort; each needs one answer from Adi before Claude makes main consistent.",
    "spec": "Open content calls from Nelbin's content pass (PR #3 content-pass and PR #4 aquila-client-content on adisuja/3-day-tantra-ai-revops-workshop, both already contained in main; PR #2 merged 2026-10-06) and issue #1 sections 3 and 6. For each answer Adi gives, Claude edits main directly (sources: app/src/lib/calendar.ts, curriculum.ts, card-education.ts, workshop-cards.ts, the Day Engine components, workshop-plan/build/*.py for the deck and survey), re-runs the probes (check-guides, probe-details, probe-onboarding-tabs, probe-headings) and logs the decision here. Unsourced hour figures (agent.tsx:653, funnel-os-types/system.tsx:211, the playbook) are handled by Claude under the no-invented-stats rule in T-256, not by this decision.",
    "done_when": [
@@ -65,18 +67,36 @@
    ],
    "evidence": [
     {
-     "label": "PR #3 'Needs Adi' list",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/pull/3"
+     "label": "/workshop on the public mirror (slim proof band, new day titles)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=t191"
     },
     {
-     "label": "PR #2 'Needs Adi' list",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/pull/2"
+     "label": "/masterclass on the public mirror",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=t191"
+    },
+    {
+     "label": "Playbook on the mirror (45+15 sessions, Day 2 tasks 2.1 to 2.8)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t191#d2"
+    },
+    {
+     "label": "Route B guide: Claude Code and Cloudflare Workers",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=t191#g-s5-crm-starter"
+    },
+    {
+     "label": "Same pages on localhost",
+     "url": "http://localhost:4322/workshop?v=t191"
+    },
+    {
+     "label": "Onboarding library on localhost (Your VIP Kit, no welcome slot)",
+     "url": "http://localhost:4322/debug/onboarding?v=t191"
+    },
+    {
+     "label": "One source for day titles",
+     "url": "app/src/lib/day-titles.ts"
     }
    ],
-   "blockers": [
-    "Adi's answers to the open calls"
-   ],
-   "needs_from_owner": "Decide each call (recommended answer in brackets where an owner rule or main already points one way): (1) Session format: A) 45 min teach + 15 Q&A or B) 30 teach + 15 survey + 15 Q&A. Main contradicts itself: app/src/lib/calendar.ts:96 says 45 + 15, calendar.ts:110 says questions after the first 30 minutes [A, which curriculum.ts:75 and card-education.ts:1599 already use]. (3) Kit name. (4) New Day 1 title. (5) The cut Day 1 second half: keep cut, move to Day 2, or restore. (6) Day 2 hours (steps add to 19 to 25 h, header says 8 to 12) and Day 3 hours. (7) Day 3 dashboard: attendee's own Google Sheet or GrowthClub OS (T-062 is the speed fix) [Google Sheet, an approved tool]. (10) Sign-up proof: $50M+, logos, press strip, named testimonials [slim band: 250+ brands, 10+ years, 21+ countries, 47+ industries, no Google/Amazon/Techstars logos, no press wall, no $50M, per the 2026-09-30 enterprise voice rule]. (14) Route B: replace the laptop starter-CRM guide with Claude Code + Cloudflare Workers. (15) Day 1 labels: 'Strategize, Offer, Buyer, List and Channels' or 'Day 1, Offer, Buyer and Channels'. (16) About 90 blank proof fields ('Result metric', 'Testimonial') and the VSL proof beats: keep marked, sample text, or rewrite around them [rewrite around them: no invented proof]. (18) Keep or rename 'free lane / paid lane'. (19) Day 2 Stages 2 to 5 numbered 3.3 to 3.6 clash with Day 3. (20) Free survey (18 questions) vs paid (11): keep both or unify. (21) DayEngine act titles vs session titles: which are canonical. Links still needed from Adi: WhatsApp community invite (T-040), welcome video URL, how platform access is claimed. Moved elsewhere: client figures in the public library is T-141; GoHighLevel or another CRM is T-120 and T-260.",
+   "blockers": [],
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-01T02:57:00+0530",
@@ -112,6 +132,16 @@
      "ts": "2026-10-09T08:02:06+0530",
      "who": "claude",
      "note": "T-260 settled the tool calls this task pointed to (2026-10-09): GoHighLevel, HubSpot and Zoho stay as attendee-owned CRM options; Beehiiv, Notion, WordPress, Expandi and Sales Navigator are replaced (see approved-vendor-stack). The curriculum calls listed here are unaffected and still need their answers."
+    },
+    {
+     "ts": "2026-10-09T08:38:36+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bhaskar/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T08:38:36+0530",
+     "who": "claude",
+     "note": "All 14 Orchestrator answers (O-72b882af) are applied on main b880b67, pushed, and live on the mirror (de264d8): (1) 45 min teaching + 15 Q&A everywhere, (3) Your VIP Kit, (4)(15)(21) one title and label per day from app/src/lib/day-titles.ts (Day 1: Offer, Buyer and Channels), (10) slim proof band with no $50M, press wall or Google/Techstars marks, (14) Route B guide rewritten for Claude Code + Cloudflare Workers, (16) proof lines now say use your own sourced result or cut the line, (18) free seat / paid seat instead of lanes, (19) Day 2 tasks 2.1 to 2.8, welcome slot hidden until a video exists, platform access described from the usetantra.com sign-up; (5) stays cut, and (6) hours, (7) Google Sheet and (20) 11 questions were already true on main (20 via T-278). Checked with tsc (app and Worker), check-guides, probe-headings and probe-onboarding-tabs clean, probe-anonymity on source and export, git grep for second wordings, and headless Chromium on localhost and the live mirror. Open: probe-details fails on 2 literal dates in private library files this task did not touch, probe-fold fails at 1366x768 the same way on the old mirror, Day 1 header still says 4 to 6 h (steps sum to about 5 to 6), and the revops-centre Worker was not redeployed (not an approved step), so the live centre and calendar invites show the new titles and the hidden welcome card after its next deploy. WhatsApp invite stays on T-040."
     }
    ],
    "order": 1
@@ -9901,6 +9931,11 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Session sweep (2026-10-09): source: ec3e66fb 2026-10-05T17:27 and 21:19: added the unanswered power-positioning offer and the host bio line."
+    },
+    {
+     "ts": "2026-10-09T08:38:36+0530",
+     "who": "claude",
+     "note": "T-191 (b880b67) already did part of this: one title per day from app/src/lib/day-titles.ts in day-engine.tsx, sessions.ts and calendar.ts DAY_COPY (M011), every $50M+ removed with the slim band on both landings and the host bio, press wall and Google/Techstars marks removed. Still open here: Day 1 visual (M010), SESSION_TIME (M020), Cavli/Appster numbers, SVG sizes (M065), INR flash check (M066)."
     }
    ],
    "order": 2770
