@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T19:10:25+0530",
-  "version": 1232,
+  "updated": "2026-10-09T19:11:13+0530",
+  "version": 1234,
   "last_id": 361,
   "team": [
    {
@@ -1825,7 +1825,7 @@
    "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-20",
-   "status": "queue",
+   "status": "review",
    "why": "Registrants go cold between sign-up and Wednesday's Day 1; the sequence protects show-up rate and carries the free lane's VIP upsell.",
    "spec": "Write the pre-workshop sequence copy, sign-up to Day 1, for both lanes: free (/workshop) and paid (/masterclass). Messages: confirmation with centre link and private calendar link (same content as the welcome email, T-228), what to prepare before Day 1 (tool sign-ups from the Day 0 cards), and for the free lane only one VIP upgrade message pointing at /vip. The sequence will run as a Tantra omni-channel campaign (email, WhatsApp, LinkedIn steps) fed by registrant import (T-052), so write each message per channel with Tantra contact fields for name, centre link and calendar link. No 'Build Pass', 'Live Pass', 'webinar' or invented stats; Backlinko voice per workshop-plan/COPY_RULES.md; no dashes. Cohort dates come from the weekly schedule function, never hardcoded. Day-before and 1-hour reminder sending is T-234; this task supplies their copy. Save to workshop-plan/sequences/pre.md (folder does not exist yet).",
    "done_when": [
@@ -1833,7 +1833,12 @@
     "No banned terms (Build Pass, Live Pass, webinar) and no dashes in the file",
     "Owner or Bhaskar approves"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Sequence copy",
+     "url": "workshop-plan/sequences/pre.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -1851,6 +1856,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: channel line moved to the owner model (Tantra omni-channel campaigns: email, WhatsApp, LinkedIn), Resend only as the email fallback."
+    },
+    {
+     "ts": "2026-10-09T19:11:05+0530",
+     "who": "claude",
+     "note": "Wrote workshop-plan/sequences/pre.md: free lane (confirmation, prepare, VIP, day-before, 1-hour) and paid lane (confirmation, prepare, day-before, 1-hour), each as email, WhatsApp and LinkedIn with {{placeholders}} for T-052/T-234 and schedule fields from cohort.ts. Grepped for Build Pass, Live Pass, webinar, dashes and literal dates: none. Open the file to review."
+    },
+    {
+     "ts": "2026-10-09T19:11:13+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-052, T-228."
     }
    ],
    "order": 290,

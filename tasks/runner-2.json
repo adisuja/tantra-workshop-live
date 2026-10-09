@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T19:11:08+0530",
+   "task_id": "T-050",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-050 is in review with Bhaskar: `workshop-plan/sequences/pre.md` is written and committed, covering both lanes. A grep for Build Pass, Live Pass, webinar, dashes and literal cohort dates found nothing, and F-db847ab6 is acked."
+  },
+  {
    "ts": "2026-10-09T19:10:19+0530",
    "task_id": "T-006",
    "mode": "feedback",
@@ -87,22 +95,15 @@
    "status": "review",
    "result": "ok",
    "summary": "T-054 is in review for Nelbin and Bharath: all 6 channels on both public funnels passed with all four UTMs on every row (18 of 18) in the Work Tracker and Tantra Tracker, both referral rows credited `adi`, the test and old probe rows are deleted, and the work is committed at 454d83d (not pushed)."
-  },
-  {
-   "ts": "2026-10-09T17:37:45+0530",
-   "task_id": "T-215",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-215 stays in review: the note was a repeat already acted on and acked, so nothing new was built. Rechecked: `verify.py` passes on all 18 tools, the index at http://localhost:8883/wt-review/index.html?v=2e9db5c links all 18 video pages, and `tantra-walkthroughs` is pushed at 2e9db5c. The live Dodo "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-050",
+ "task_id": "T-032",
  "entries": [
-  "F-db847ab6"
+  "F-770cdba2",
+  "R-030da7b8"
  ],
- "started": "2026-10-09T19:10:25+0530",
- "message": "Acting on 1 note(s) for T-050: Draft the pre-workshop nurture sequence"
+ "started": "2026-10-09T19:11:13+0530",
+ "message": "Acting on 2 note(s) for T-032: PDF + live-link generation"
 }
