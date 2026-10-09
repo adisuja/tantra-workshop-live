@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T14:06:23+0530",
+   "task_id": "T-004",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-004 is done: the six prices were already locked and on origin main from the earlier pass, the live wiring probe re-run now ends ALL WIRING PASSES (nothing paid), T-103 is closed out of recheck, and T-005 stays in the queue. The note F-0334459d was already acked."
+  },
+  {
    "ts": "2026-10-09T14:04:04+0530",
    "task_id": "T-134",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-149 is blocked only on Adi's Codex sign-in (T-340): the check script, the hourly launchd job and the critic's labelled Fable 5 fallback are built, verified and committed (2e5f3f7), and the first passing check will close T-149 and T-340 automatically."
-  },
-  {
-   "ts": "2026-10-09T11:32:00+0530",
-   "task_id": "T-149",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-004: Seat checkout (Dodo, live), geo-priced",
- "task_id": "T-004",
+ "message": "Acting on 1 note(s) for T-001: /masterclass landing page",
+ "task_id": "T-001",
  "entries": [
-  "F-0334459d"
+  "F-4e567f1f"
  ],
  "mode": "feedback",
- "started": "2026-10-09T14:04:11+0530"
+ "started": "2026-10-09T14:06:29+0530"
 }
