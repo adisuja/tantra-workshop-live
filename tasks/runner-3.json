@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T11:01:54+0530",
+   "task_id": "T-299",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "limit",
+   "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
+  },
+  {
    "ts": "2026-10-09T10:31:49+0530",
    "task_id": "T-299",
    "mode": "feedback",
@@ -87,14 +95,6 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-115 stays blocked with no screenshots captured: this unattended session has no Claude in Chrome tools and Brave did not answer a read-only query, so the 21 unblocked slots need one session with the extension connected to the signed-in Brave window; the Google Admin password check is now its own in"
-  },
-  {
-   "ts": "2026-10-09T07:53:48+0530",
-   "task_id": "T-071",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-071 is in review: /pro is now the Tantra Pro Course offer ($999 one-time) and it is live on the mirror at https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071. The buy button opens Dodo checkout at $999, €997 or ₹99,999. The new probe passed 30 of 30 checks against the live mirror, foll"
   }
  ],
  "state": "paused",
@@ -103,6 +103,6 @@
  "entries": [
   "F-4257e252"
  ],
- "started": "2026-10-09T10:31:46+0530",
- "message": "Usage limit reached; retries automatically after 11:01. (You've hit your session limit · resets 12pm (Asia/Calcutta))"
+ "started": "2026-10-09T11:01:51+0530",
+ "message": "Usage limit reached; retries automatically after 11:31. (You've hit your session limit · resets 12pm (Asia/Calcutta))"
 }

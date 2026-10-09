@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T11:01:55+0530",
+   "task_id": "T-149",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "limit",
+   "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
+  },
+  {
    "ts": "2026-10-09T10:31:50+0530",
    "task_id": "T-149",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-117 is in review for Bhaskar and Bharath: the `/masterclass` FunnelOS board now shows only the whiteboard-sourced Tantra Pro Funnel figures, pushed to main (05745e5) and live on the mirror (21ab8c5). The 48.6% show-up and the old totals in four other files remain and are flagged in the note."
-  },
-  {
-   "ts": "2026-10-09T08:02:24+0530",
-   "task_id": "T-115",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-115 stays blocked: no screenshots captured, because this unattended runner has no browser (no Claude in Chrome tools, Brave unreachable); the 21 ready captures need an interactive desktop session with Claude in Chrome. F-1962daf4 was already acknowledged from the previous run, and the task update "
   }
  ],
  "state": "paused",
- "message": "Usage limit reached; retries automatically after 11:01. (You've hit your session limit · resets 12pm (Asia/Calcutta))",
+ "message": "Usage limit reached; retries automatically after 11:31. (You've hit your session limit · resets 12pm (Asia/Calcutta))",
  "task_id": null,
  "entries": [
   "F-444cb6d4"
  ],
  "mode": "feedback",
- "started": "2026-10-09T10:31:47+0530"
+ "started": "2026-10-09T11:01:52+0530"
 }
