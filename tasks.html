@@ -50,8 +50,12 @@ header.top{display:flex;align-items:center;justify-content:space-between;gap:14p
 .prog i{display:block;height:100%;background:var(--teal);width:0;transition:width .5s}
 
 /* NOW strip */
-.now{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:12px;margin-bottom:22px}
+.now{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr 1fr;gap:12px;margin-bottom:22px}
+@media(max-width:1399px){.now{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:900px){.now{grid-template-columns:1fr}}
+.now .card>div{max-height:440px;overflow-y:auto;overscroll-behavior:contain;padding-right:4px}  /* each column scrolls inside; the board stays near the top */
+.nowitem .tag{display:inline-block;font-size:11px;font-weight:650;color:var(--ink-3);margin-bottom:3px}
+.nowmore{display:block;width:100%;text-align:left;background:transparent;border:0;border-top:1px solid var(--line);padding:8px 0 0;font-size:12.5px;color:var(--accent-ink);font-weight:600}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 16px;min-width:0}
 .card h2{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-bottom:8px;display:flex;align-items:center;gap:8px}
 .card h2 .n{background:var(--gray-bg);color:var(--ink-2);border-radius:20px;padding:0 7px;font-size:11px;font-weight:700}
@@ -60,6 +64,8 @@ header.top{display:flex;align-items:center;justify-content:space-between;gap:14p
 .nowitem b{display:block;font-size:13.5px;font-weight:650;line-height:1.3}
 .nowitem>span:not(.people){display:block;font-size:12px;color:var(--ink-2);margin-top:2px;line-height:1.4}
 .nowitem .ask{color:var(--pink)}
+.nowitem b{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.nowitem>span:not(.people):not(.on):not(.fu):not(.tag){display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .nowitem b,.nowitem>span,.det p,.det li,.det .ask,.msg .txt,.rel .rw{overflow-wrap:anywhere}  /* long links in a task's text must wrap, never widen the page */
 .nowitem .on{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:650;letter-spacing:.02em;color:var(--accent-ink);margin-bottom:3px}
 .nowitem .on.q{color:var(--ink-3)}
@@ -314,7 +320,9 @@ a.tl{font-weight:600;cursor:pointer}
 .agent .who input.need{border-color:var(--pink);box-shadow:0 0 0 3px var(--pink-bg)}
 
 /* kanban */
-.kan{display:grid;grid-template-columns:repeat(8,minmax(170px,1fr));gap:10px;overflow-x:auto;padding-bottom:6px}
+.kan{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;padding-bottom:6px}
+.kan .col{background:var(--panel-2);border:1px solid var(--line);border-radius:var(--radius);padding:10px;max-height:72vh;overflow-y:auto;min-width:0}
+.kan .col h3{position:sticky;top:-10px;background:var(--panel-2);padding:4px 0;margin-top:-4px;z-index:1}
 .col h3{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);margin-bottom:6px}
 .kcard{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);padding:8px 10px;margin-bottom:6px;cursor:pointer;min-width:0}
 .kcard b{display:block;font-size:12.5px;font-weight:600;line-height:1.3}
@@ -344,6 +352,7 @@ footer{margin-top:28px;font-size:11.5px;color:var(--ink-3)}
     <div class="stat review"><div class="l">For your review</div><div class="v" id="s-review">0</div></div>
     <div class="stat blocked"><div class="l">Needs you</div><div class="v" id="s-blocked">0</div></div>
     <div class="stat done"><div class="l">Done</div><div class="v" id="s-done">0</div></div>
+    <div class="seg" id="view" aria-label="Board view"><button class="on" data-v="queue">Queue</button><button data-v="area">By area</button><button data-v="kanban">Kanban</button></div>
     <button class="ghost" id="theme" type="button">◐ Theme</button>
     <a class="ghost" href="index.html" style="text-decoration:none">Hub ↗</a>
   </div>
@@ -370,10 +379,11 @@ footer{margin-top:28px;font-size:11.5px;color:var(--ink-3)}
   <div class="card nextbig"><h2>Claude is on <span class="n" id="n-on">0</span></h2><div id="now-next"></div></div>
   <div class="card"><h2>Waiting on you <span class="n" id="n-you">0</span></h2><div id="now-you"></div></div>
   <div class="card"><h2>Ready for review <span class="n" id="n-rev">0</span></h2><div id="now-rev"></div></div>
+  <div class="card"><h2>Blocked or on hold <span class="n" id="n-held">0</span></h2><div id="now-held"></div></div>
+  <div class="card"><h2>Done <span class="n" id="n-done">0</span></h2><div id="now-done"></div></div>
 </section>
 
 <div class="bar">
-  <div class="seg" id="view"><button class="on" data-v="queue">Queue</button><button data-v="area">By area</button><button data-v="kanban">Kanban</button></div>
   <select id="f-owner" aria-label="Owner"><option value="">All owners</option></select>
   <select id="f-doing" aria-label="Doing the work"><option value="">Anyone doing</option></select>
   <select id="f-rev" aria-label="Reviewer"><option value="">Any reviewer</option></select>
@@ -472,7 +482,7 @@ function followUp(t){const notes=fbFor(t.id).filter(f=>f.processed&&f.source!=="
 function unread(id){return fbFor(id).filter(f=>!f.processed).length}
 function isLate(t){return t.due&&t.status!=="done"&&t.due<new Date().toISOString().slice(0,10)}
 function filtered(){
-  const o=$("#f-owner").value,a=$("#f-area").value,s=$("#f-status").value,q=$("#q").value.toLowerCase(),hd=$("#hidedone").checked;
+  const o=$("#f-owner").value,a=$("#f-area").value,s=$("#f-status").value,q=$("#q").value.toLowerCase(),hd=$("#hidedone").checked&&view!=="kanban";  // Kanban always has its Done column
   const dg=$("#f-doing").value,rv=$("#f-rev").value,mine=MINE&&me();
   // the open task and any task holding an unsent voice note stay visible, so a status change by the
   // agent (e.g. to done while "hide done" is on) can never hide a recording or a draft
@@ -519,6 +529,21 @@ function render(){
   const rev=revSorted.slice(0,8);
   $("#n-rev").textContent=revAll.length;
   $("#now-rev").innerHTML=rev.length?rev.map(t=>`<button class="nowitem" onclick="jump('${t.id}','rev')">${followUp(t)?`<span class="fu">Claude replied to your note</span>`:""}<b>${esc(t.title)}</b>${peopleLine(t)}<span>${esc((t.evidence[0]||{}).label||"")}${t.evidence[0]?" · ":""}${esc(t.needs_from_owner||"Approve or request changes")}</span></button>`).join(""):'<div class="empty">Nothing waiting for review.</div>';
+  /* Blocked or on hold / Done (owner, 2026-10-10): every blocked and on-hold task with what it waits on, and the
+     most recently finished work; the full lists open in Kanban */
+  const lastTs=t=>tms(((t.log||[]).at(-1)||{}).ts);
+  const heldAll=T.filter(t=>["blocked","hold"].includes(t.status)).sort((a,b)=>(a.status==="hold")-(b.status==="hold")||a.priority.localeCompare(b.priority));
+  LISTS.held=heldAll.map(t=>t.id);
+  const heldTag=t=>{if(t.status==="hold")return "On hold";const inp=inputFor(t.id);
+    return needsAdi(t)?"Waiting on your input":inp?`Waiting on your input ${inp.id}`:"Orchestrator resolving"};
+  $("#n-held").textContent=heldAll.length;
+  const more=(n,col)=>n>8?`<button class="nowmore" onclick="showKanban('${col}')">+${n-8} more in Kanban</button>`:"";
+  $("#now-held").innerHTML=heldAll.length?heldAll.slice(0,8).map(t=>`<button class="nowitem" onclick="jump('${t.id}','held')"><span class="tag">${heldTag(t)}</span><b>${esc(t.title)}</b>${peopleLine(t)}${t.needs_from_owner?`<span>${esc(t.needs_from_owner)}</span>`:""}</button>`).join("")+more(heldAll.length,"blocked"):'<div class="empty">Nothing is blocked or on hold.</div>';
+  const doneAll=T.filter(t=>t.status==="done").sort((a,b)=>lastTs(b)-lastTs(a));
+  LISTS.done=doneAll.map(t=>t.id);
+  const day=t=>{const d=lastTs(t);return d?new Date(d).toLocaleDateString(undefined,{day:"numeric",month:"short"}):""};
+  $("#n-done").textContent=doneAll.length;
+  $("#now-done").innerHTML=doneAll.length?doneAll.slice(0,8).map(t=>`<button class="nowitem" onclick="jump('${t.id}','done')"><span class="tag">Done${day(t)?" · "+day(t):""}</span><b>${esc(t.title)}</b>${peopleLine(t)}</button>`).join("")+more(doneAll.length,"done"):'<div class="empty">Nothing finished yet.</div>';
   const list=filtered();const b=$("#board");
   {const d=document.querySelector(".task.open .det .dl"),th=document.querySelector(".task.open .det .thread");if(d)DSCROLL=d.scrollTop;
    if(th){THREAD_BOTTOM=th.scrollHeight-th.scrollTop-th.clientHeight<24;THREAD_TOP=th.scrollTop}}
@@ -639,8 +664,10 @@ const openTask=()=>openId&&DATA.tasks.find(t=>t.id===openId);
 /* ---- stepping: ↑/↓ walk the list the task was opened FROM (Waiting on you, Ready for review, Claude is on, a Kanban
    column, or the list below), recomputed live, and the page never scrolls (owner, 2026-10-09). If the task has just
    left that list (it was approved, answered or dropped), the walk carries on from where it was. ---- */
-const LISTS={on:[],you:[],rev:[]};
-const CTX_LABEL={on:"Claude is on",you:"Waiting on you",rev:"Ready for review",list:"the task list"};
+const LISTS={on:[],you:[],rev:[],held:[],done:[]};
+const CTX_LABEL={on:"Claude is on",you:"Waiting on you",rev:"Ready for review",held:"Blocked or on hold",done:"Done",list:"the task list"};
+function showKanban(col){const k=document.querySelector('#view [data-v="kanban"]');k.dataset.quiet="1";k.click();
+  requestAnimationFrame(()=>{const h=[...document.querySelectorAll(".kan .col h3")].find(x=>x.textContent.replace(/ · \d+$/,"")===LABEL[col]);if(h)h.closest(".col").scrollIntoView({block:"start",behavior:"smooth"})})}
 let NAVCTX={key:"list",label:CTX_LABEL.list},NAVIDX=0;
 function listOrder(){const L=filtered();
   if(view==="kanban")return KCOLS.flatMap(s=>L.filter(t=>t.status===s).map(t=>t.id));
@@ -1042,7 +1069,8 @@ async function pollAgent(){
   const sig=[st.state,st.task_id,st.updated,qs.state,qs.task_id,qs.updated,...HELPERS_ST.map(h=>h.task_id)].join("|");if(agentSig&&sig!==agentSig)load();else if(!agentSig||orchChanged)render();agentSig=sig;
 }
 $("#agent-tog").onclick=async()=>{const on=$("#agent-tog").textContent==="Resume";try{STATIC?await post({action:"agent",enabled:on}):await api("/api/agent",{enabled:on})}catch(e){alert(e.message)}pollAgent()};
-document.querySelectorAll("#view button").forEach(b=>b.onclick=()=>{view=b.dataset.v;document.querySelectorAll("#view button").forEach(x=>x.classList.toggle("on",x===b));render()});
+document.querySelectorAll("#view button").forEach(b=>b.onclick=()=>{view=b.dataset.v;document.querySelectorAll("#view button").forEach(x=>x.classList.toggle("on",x===b));render();
+  if(!b.dataset.quiet)$(".bar").scrollIntoView({block:"start",behavior:"smooth"});delete b.dataset.quiet});
 ["f-owner","f-doing","f-rev","f-area","f-status","hidedone"].forEach(i=>$("#"+i).onchange=()=>{render();paintTeam()});
 $("#nt-area").addEventListener("change",paintNewPeople);$("#q").oninput=render;
 $("#theme").onclick=()=>{const h=document.documentElement;h.dataset.theme=h.dataset.theme==="dark"?"light":"dark";localStorage.setItem("lc-theme",h.dataset.theme)};
