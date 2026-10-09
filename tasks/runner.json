@@ -97,10 +97,13 @@
    "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
   }
  ],
- "state": "idle",
- "message": "Recovered from an error: AttributeError: 'str' object has no attribute 'get'",
- "task_id": null,
- "entries": [],
+ "state": "working",
+ "message": "Acting on 2 note(s) for T-024: Day 1 to 3 output templates (what each attendee GETS)",
+ "task_id": "T-024",
+ "entries": [
+  "F-0474f505",
+  "R-4866ed15"
+ ],
  "mode": "feedback",
- "started": "2026-10-09T18:05:48+0530"
+ "started": "2026-10-09T18:11:41+0530"
 }
