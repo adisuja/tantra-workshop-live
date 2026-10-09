@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T12:25:47+0530",
-  "version": 1057,
+  "updated": "2026-10-09T12:27:51+0530",
+  "version": 1059,
   "last_id": 357,
   "team": [
    {
@@ -10457,11 +10457,11 @@
    "evidence": [
     {
      "label": "Walkthrough review index (18 videos, 4K, all under 2:00)",
-     "url": "http://localhost:8883/wt-review/index.html?v=e144712"
+     "url": "http://localhost:8883/wt-review/index.html?v=ac715b3"
     },
     {
-     "label": "Tantra reminders review page (re-rendered 2026-10-09)",
-     "url": "http://localhost:8883/wt-review/tantra-reminders/index.html?v=e144712"
+     "label": "Tantra reminders review page (re-rendered 2026-10-09, caption without account count)",
+     "url": "http://localhost:8883/wt-review/tantra-reminders/index.html?v=ac715b3"
     },
     {
      "label": "Zoom review page (card 12 scopes)",
@@ -10504,6 +10504,11 @@
      "ts": "2026-10-09T09:18:00+0530",
      "who": "claude",
      "note": "Rechecked the Orchestrator's recut: all 18 videos read under 2:00 from the files (Zoom 1:59, 30 steps, exactly the card's 12 scopes; Tantra reminders 1:58, 28 steps), verify.py passes on both. One fix added: the reminders video no longer shows the app's 'Not in your plan' and 'Add-on required' labels (T-287 ruled no add-ons), and the caption now says Pro covers 5 LinkedIn and WhatsApp accounts, Scale 15; re-rendered in 4K and checked on stills from the new file. Pushed as tantra-walkthroughs e144712 (the mp4s stay local, they are gitignored); open the review index and reply approve or redo per video."
+    },
+    {
+     "ts": "2026-10-09T12:27:51+0530",
+     "who": "claude",
+     "note": "From T-287: the Tantra reminders video is re-rendered again (4K, 1:58, verify.py passes). Step 13 now says LinkedIn and WhatsApp accounts come with your plan, with no channel add-on, and gives no account count, because the live Tantra catalog (2 on Pro, 12 on Scale) differs from the 5 and 15 in the earlier caption. Checked on stills from the new file; branch tantra-walkthroughs ac715b3."
     }
    ],
    "order": 2820
@@ -10709,15 +10714,28 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "done",
    "why": "The Tantra Connectors page on the owner's client workspace shows '$10/mo add-on' on WhatsApp, LinkedIn and Telegram, and the campaign builder marks WhatsApp 'Not in your plan'. The agreed plan line-up says no channel add-ons (Pro 5 LI/WA, Scale 15). Reminder campaigns with WhatsApp steps depend on this.",
    "spec": "Found while recording the Tantra reminders video (2026-10-07, FintechCircle workspace): the omnichannel campaign builder shows WhatsApp as 'Not in your plan', and the Connectors page lists WhatsApp, LinkedIn and Telegram as '$10/mo add-on'. Our plan line-up says Pro $99 (5 LinkedIn and WhatsApp accounts), Scale $199 (15), +$20 per extra account and no channel add-ons. If the app is current, update the plan wording in the playbook, centre cards, card-education and the reminders video captions; if the app is wrong it is a Tantra product fix for Adi's team. WhatsApp reminders (T-234) depend on WhatsApp being connected in the attendee's Tantra plan.",
    "done_when": [
     "Answer recorded; cards, playbook and the reminders video caption match it"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Tantra app fix, PR 196 (reviewer Bharath)",
+     "url": "https://github.com/Usetantra/tantra-frontend-v2/pull/196"
+    },
+    {
+     "label": "Tantra reminders review page (new caption)",
+     "url": "http://localhost:8883/wt-review/tantra-reminders/index.html?v=ac715b3"
+    },
+    {
+     "label": "Walkthrough text on main (commit 68733ac)",
+     "url": "app/src/lib/walkthroughs.ts"
+    }
+   ],
    "blockers": [],
-   "needs_from_owner": "Which is current: add-ons in the app, or the no-add-on line-up? If the app is wrong, it is a Tantra product fix.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-09T00:06:32+0530",
@@ -10728,6 +10746,11 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Session sweep (2026-10-09): source: fcd892f2 2026-10-07T21:28 and 22:56 reports; spec field was empty, now filled. Plan line-up memory (tantra-plan-lineup) says no channel add-ons."
+    },
+    {
+     "ts": "2026-10-09T12:27:51+0530",
+     "who": "claude",
+     "note": "Answer recorded: there are no channel add-ons and the app is out of date. The playbook and cards had no add-on wording; the held Tantra reminders walkthrough text and its video caption did, and both now say WhatsApp comes with the plan (video re-rendered in 4K, checked on stills). The app fix is up for Bharath: https://github.com/Usetantra/tantra-frontend-v2/pull/196 (366 tests pass), and it only shows once billing v2 is switched on. One thing differs from the decision: Tantra's live catalog says Pro 2 accounts, Scale 12, 10 dollars per extra account, not 5, 15 and 20, so I left account counts out of our material and put the question on T-252."
     }
    ],
    "order": 2870

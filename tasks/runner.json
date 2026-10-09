@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T12:28:00+0530",
+   "task_id": "T-287",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-287 is done: no channel add-ons is recorded, the reminders walkthrough text and 4K video caption now say WhatsApp comes with the plan, and the app fix is up as [PR 196](https://github.com/Usetantra/tantra-frontend-v2/pull/196) for Bharath. I left account counts out because Tantra's live catalog (P"
+  },
+  {
    "ts": "2026-10-09T12:17:44+0530",
    "task_id": "T-281",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "done",
    "result": "ok",
    "summary": "T-116 is done: the naming decision is logged, and the one page the earlier rename missed (the hub) now reads \"Tantra Funnel\", \"Tantra Flow\" and \"Tantra Pro Course\" in the repo and on the [live mirror](https://adisuja.github.io/tantra-workshop-live/?v=t116). All checks pass, but probe-guides was run "
-  },
-  {
-   "ts": "2026-10-09T08:55:45+0530",
-   "task_id": "T-298",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-298 stays blocked on Adi's one command in T-338: the eight rules and the verify script are staged and committed locally (670fdce, not pushed), the script fails 8 of 8 on today's CLAUDE.md and passes on a test copy with the rules added, and CLAUDE.md itself is untouched."
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-287: Confirm Tantra channel add-on pricing (WhatsApp, LinkedIn, Telegram show '$10/mo add-on' in the app)",
- "task_id": "T-287",
+ "message": "Acting on 1 note(s) for T-292: Re-enable the Opus AI drafting connection in the local centre for real use",
+ "task_id": "T-292",
  "entries": [
-  "F-23668453"
+  "F-13bc4293"
  ],
  "mode": "feedback",
- "started": "2026-10-09T12:17:50+0530"
+ "started": "2026-10-09T12:28:09+0530"
 }
