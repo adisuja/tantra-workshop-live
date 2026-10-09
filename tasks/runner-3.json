@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T20:03:59+0530",
+   "task_id": "T-213",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-213 is in review. The warm-up job waits on Tantra, the worker is deployed and the lead email works. I did not push, because local main and `origin/main` have diverged.\n\n- **Instantly removed:** the start-endy warm-up job now waits for inboxes to show Connected and Gmail capable in Tantra Accounts."
+  },
+  {
    "ts": "2026-10-09T20:00:45+0530",
    "task_id": "T-155",
    "mode": "feedback",
@@ -87,23 +95,15 @@
    "status": "review",
    "result": "ok",
    "summary": "T-108 is back in review: all 21 funnel animations now use the canonical stage and channel names word for word, \"Chaperone\" reads \"Tantra Enterprise\" on the challenge board and the Whole Machine, and it is pushed to origin main and live on the mirror with the board-fit, name and playbook-frame probes"
-  },
-  {
-   "ts": "2026-10-09T18:01:17+0530",
-   "task_id": "T-103",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-103 is done: both currency probes pass on the live mirror (page price equals Dodo price for DE, PL, IN and US, nothing paid), the 12 `currency-probe@example.com` rows are deleted from the Work Tracker's Checkout Starts tab (`ops.db` had none), the price table is recorded as final on T-004 and T-10"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-213",
+ "task_id": "T-217",
  "entries": [
-  "F-58d1f581",
-  "R-2499410a"
+  "F-10ba69f8",
+  "R-a02c350e"
  ],
- "started": "2026-10-09T20:00:49+0530",
- "message": "Acting on 2 note(s) for T-213: Set up the Endy Inboxes white-label partnership"
+ "started": "2026-10-09T20:04:05+0530",
+ "message": "Acting on 2 note(s) for T-217: Attendee funnel reminders through a Tantra omni-channel campaign (registrant import by webhook)"
 }
