@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T14:28:15+0530",
-  "version": 1127,
+  "updated": "2026-10-09T14:28:45+0530",
+  "version": 1128,
   "last_id": 357,
   "team": [
    {
@@ -5954,7 +5954,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Should Amal, Ben and Bharath get access too? If yes, send their emails (Amal may be GitHub amal200496).",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-26T00:17:50+0530",
@@ -5995,6 +5995,11 @@
      "ts": "2026-10-09T02:12:40+0530",
      "who": "claude",
      "note": "Sent write-access invites to the private repo adisuja/3-day-tantra-ai-revops-workshop for Bhaskar (bhaskar@growthclub.org = GitHub starmangrowth) and Aquila (aquila@growthclub.org = GitHub aquila-growthclub); GitHub only invites by username, so I matched each email to the account that authors their commits, and GitHub emails them the invite. The invitations API confirms both pending (ids 336830663, 336830667); once they accept I mark H034 fixed."
+    },
+    {
+     "ts": "2026-10-09T14:28:45+0530",
+     "who": "claude",
+     "note": "Removed the question about Amal, Ben and Bharath: scope is Nelbin, Bhaskar and Aquila only. Checked the GitHub API on 2026-10-09: Nelbin (nelbinxav) has write access; the invites for Bhaskar (starmangrowth, 336830663) and Aquila (aquila-growthclub, 336830667) are still pending and not expired, so nothing was resent. H034 stays open in AUDIT.md until both accept; nothing is needed from Adi."
     }
    ],
    "order": 1460,
