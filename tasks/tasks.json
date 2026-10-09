@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T17:58:52+0530",
-  "version": 1168,
+  "updated": "2026-10-09T18:00:20+0530",
+  "version": 1171,
   "last_id": 357,
   "team": [
    {
@@ -3041,6 +3041,11 @@
      "ts": "2026-10-09T17:58:52+0530",
      "who": "claude",
      "note": "All three free-lane pages are rewritten in the Backlinko voice and live on the mirror: no price anywhere (the join page button now reads Show me the add-on), no group promise while the WhatsApp group is on hold (step 1 says the calendar invite and Zoom link come by email and the invite reminds you), and after the survey the one button goes straight to the calendar step. The survey stays at 11 questions, not 18: the Orchestrator's later T-278 decision (O-a511256b) overrode the 18 in this note, and the spec now says 11. Checked with tsc, probe-workshop at 5 widths, the leak probe, and a click test (add-on, bonus tile, No thanks) on the live mirror at 1440 and 390, all passing; commits 49cd90e (origin e1a1d8c, pushed as that one commit only) and mirror 82686f6. Not changed: the paid join page shows 7 Oct to a visitor who has not registered in that browser (T-278's page), and Tantra campaign reminders are not mentioned until T-234 ships."
+    },
+    {
+     "ts": "2026-10-09T17:59:02+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-278."
     }
    ],
    "order": 910,
@@ -3083,7 +3088,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Adi: open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094 and https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t094 and approve or reply with changes. This one look also signs off T-100 (the nine bonuses and key art) and shows the T-103 prices in your currency.",
+   "needs_from_owner": "Adi: open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094b and https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t094b and approve or reply with changes. This one look also signs off T-100 (the nine bonuses and key art) and shows the T-103 prices in your currency.",
    "log": [
     {
      "ts": "2026-09-23",
@@ -3114,6 +3119,11 @@
      "ts": "2026-10-09T17:54:23+0530",
      "who": "claude",
      "note": "Fixed the vip-client.tsx line 7 comment (now 'the $99 seat on /masterclass'), git grep 'build pass' in app/src/app/vip returns nothing, tsc clean, pushed to origin main as c0f1897. No republish was needed: the T-141 hold is lifted and the only app changes since the last mirror publish (main 755e4a0) are two probe scripts, so the mirror already shows main; checked live with shoot-vip (9 exhibits, 0 overflow, 0 console errors at 1440 and 390), probe-currency 9 of 9, and /vip/success loading all 11 images. Stack, key art, recap and VSL preview untouched. One review pass covers this task, T-100 (nine bonuses) and T-103 (prices, already closed)."
+    },
+    {
+     "ts": "2026-10-09T17:59:57+0530",
+     "who": "claude",
+     "note": "Repeat Orchestrator note rechecked, nothing left to change: the line 7 comment fix is already on origin main (c0f1897), git grep 'build pass' in app/src/app/vip returns nothing locally and on origin, and no /vip source has changed since. So no new push or republish was made. Verified today: tsc clean, both mirror pages answer 200, shoot-vip on the live mirror shows 9 exhibits, 0 overflow, 0 console errors; the T-141 hold is lifted (T-141 done). Stack, key art, recap and VSL preview untouched."
     }
    ],
    "order": 920,
@@ -3216,6 +3226,11 @@
      "ts": "2026-10-09T17:54:48+0530",
      "who": "claude",
      "note": "Re-run of the same Orchestrator note: nothing left to change. Rechecked today: .gitignore line 30 covers workshop-plan/library/, git ls-files shows 0 tracked files, the mirror /library/ is 404, local http://localhost:8899/library/ is 200, and the private archive rule is in workshop-plan/coord/LANES.md (commit 50f2051)."
+    },
+    {
+     "ts": "2026-10-09T18:00:20+0530",
+     "who": "claude",
+     "note": "Same Orchestrator note again: nothing left to change, task stays done. Rechecked now: .gitignore line 30 covers workshop-plan/library/, 0 tracked files, mirror /library/ is 404, local http://localhost:8899/library/ is 200, and the private archive rule is in workshop-plan/coord/LANES.md (commit 50f2051)."
     }
    ],
    "order": 950,

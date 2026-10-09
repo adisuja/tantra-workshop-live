@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T18:00:25+0530",
+   "task_id": "T-097",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-097 stays done: this Orchestrator note was already carried out earlier today (rule in `workshop-plan/coord/LANES.md`, commit 50f2051), and the recheck still holds — `.gitignore` line 30 covers the archive, 0 tracked files, mirror `/library/` is 404. F-5879456c was already acknowledged; commit 59a4"
+  },
+  {
+   "ts": "2026-10-09T18:00:03+0530",
+   "task_id": "T-094",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-094 stays in review with nothing new to change: the comment fix was already on origin main (c0f1897), so I made no new push or republish, and F-16152124 was already acked by the earlier run. Rechecked today: `git grep -i 'build pass'` on the /vip folder returns nothing, tsc is clean, both mirror p"
+  },
+  {
    "ts": "2026-10-09T17:58:55+0530",
    "task_id": "T-093",
    "mode": "feedback",
@@ -79,30 +95,14 @@
    "status": "review",
    "result": "limit",
    "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T14:25:32+0530",
-   "task_id": "T-124",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-124 stays in review: `probe-checkout-utm.mjs` passes on main (dd6b7dc), but the read-only Dodo check found no `/vip` payment yet (120 payments, 7 since the fix, none with `source` or `utm_*` metadata), so the real-purchase check is still open and reruns on each orchestrator run; note F-40ad43fd ac"
-  },
-  {
-   "ts": "2026-10-09T14:24:08+0530",
-   "task_id": "T-021",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-021 is in review: the deck is live at https://adisuja.github.io/tantra-workshop-live/deck.html?v=t021-1009#1 with the Growth Idea August 2025 result on slide 2 and no ruled-out tools; the grep is empty, both probes pass, and F-5fade61c is acked."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-094",
+ "task_id": "T-102",
  "entries": [
-  "F-16152124"
+  "F-3208d3a0"
  ],
- "started": "2026-10-09T17:59:02+0530",
- "message": "Acting on 1 note(s) for T-094: VIP offer page"
+ "started": "2026-10-09T18:00:32+0530",
+ "message": "Acting on 1 note(s) for T-102: Live wiring audit and fixes"
 }
