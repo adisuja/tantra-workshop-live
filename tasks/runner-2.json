@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T08:07:14+0530",
+   "task_id": "T-115",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-115 stays blocked and no screenshots were captured: this unattended session has no Claude in Chrome tools and Brave does not answer from here, so the 21 ready captures need an interactive desktop session with Claude in Chrome connected (note F-1962daf4 was already acknowledged; status committed as"
+  },
+  {
    "ts": "2026-10-09T08:06:26+0530",
    "task_id": "T-111",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:04:02+0530",
-   "task_id": "T-226",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-115",
+ "task_id": "T-191",
  "entries": [
-  "F-1962daf4"
+  "F-48756ec5"
  ],
- "started": "2026-10-09T08:06:35+0530",
- "message": "Acting on 1 note(s) for T-115: Guide screenshots that need Adi's signed-in accounts (Google, GA4, Cloudflare, Tantra, WebinarGeek)"
+ "started": "2026-10-09T08:07:21+0530",
+ "message": "Acting on 1 note(s) for T-191: Decide the calls still open from Nelbin's content pass"
 }
