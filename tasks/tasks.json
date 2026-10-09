@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T02:07:51+0530",
-  "version": 1391,
+  "updated": "2026-10-10T02:18:39+0530",
+  "version": 1393,
   "last_id": 379,
   "team": [
    {
@@ -11439,11 +11439,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "These are attendee-facing usability and accessibility defects in the live centre.",
    "spec": "In app/src/app/onboarding/centre/centre.tsx, fields.tsx, agent.tsx, api.ts and workshop-cards.ts: reorder the rail (commit into launch, after-first-run cards last, channels and calendar campaign adjacent, a start-of-day plan card), show task names and a you-are-here marker, number from the visible list, name the blocking card, disable Back on the first card, label the bug textarea, confirm before disconnect, fix aria-labelledby ids, drop duplicate \"(optional)\" and word ranges from labels, show URL pattern hints, align date picker min with validation, show session time in ET plus local, title-case card titles, fix \"below\" to \"above\", add the missing full stop. Closes audit findings N060, N061, N063, N064, N065, N074, N075, N076, N077, N078, N081, N083, N084, N085, N006, N066, N079, N082. Per finding: N060 (app/src/lib/workshop-cards.ts): Merge d3-commit into d3-launch and put the 'After your first run' cards last. N061 (app/src/app/onboarding/centre/centre.tsx): Show the task name (and code) visibly in the rail, with a 'you are here' marker. N063 (app/src/lib/workshop-cards.ts): Move d2-channels before the follow-up builds and put d2-calendar-campaign right after d2-calendar-invite. N064 (app/src/lib/workshop-cards.ts): Add a start-of-day plan card for Day 1, 2 and 3 after each session card. N065 (app/src/app/onboarding/centre/centre.tsx): Number from the same list the rail shows (include pending cards) or hide pending cards from the rail. N074 (app/src/app/onboarding/centre/fields.tsx): Give the label an id and the chip group id f-<id> (tabIndex -1) so focus and aria-labelledby resolve. N075 (app/src/lib/workshop-cards.ts): Remove '(optional)' from those label strings. N076 (app/src/lib/workshop-cards.ts): Drop the word ranges from the labels. N077 (app/src/app/onboarding/centre/fields.tsx): Show the pattern hint (e.g. 'A link starting https://') in the field foot up front. N078 (app/src/app/onboarding/centre/fields.tsx): Use the same rule in both (minDaysOut - 1 days, or change validation to minDaysOut). N081 (app/src/app/onboarding/centre/centre.tsx): Name the blocking card and link to it. N083 (app/src/app/onboarding/centre/centre.tsx): Disable Back when there is no earlier card. N084 (app/src/app/onboarding/centre/centre.tsx): Add a visible or aria label. N085 (app/src/app/onboarding/centre/agent.tsx): Add a confirm step before disconnecting. N006 (app/src/app/onboarding/centre/centre.tsx): Render the session time as '11:00 AM ET (h:mm your time)' using SESSION_TIME/COHORT_TZ from cohort.ts, as AddToCalendar does. N066 (app/src/app/onboarding/centre/centre.tsx): Apply titleCase() to card titles and help titles in centre.tsx (or fix the strings). N079 (app/src/app/onboarding/centre/api.ts): Change 'below' to 'above' or render the message above the Copy prompt button. N082 (app/src/app/onboarding/centre/centre.tsx): Add the full stop. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Merge order: build on main after T-251 lands (branch tantra-walkthroughs: e4bd0b8 removes the ruled-out tools and rewrites workshop-cards.ts, agentic.ts, jobs.ts, agent.tsx and coverage.json; probe fixes 043b5ab and aa22a3f, no READY yet in /Users/adithyamurali/tantra-round5-coord/LOG.md). Until then branch from tantra-walkthroughs; AUDIT.md line numbers predate that change.",
    "done_when": [
@@ -11451,7 +11452,16 @@
     "No axe violations for labels on centre cards",
     "Every listed finding id is marked fixed in AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Commit b918858",
+     "url": "/Users/adithyamurali/tantra-redesign/app/src/app/onboarding/centre/centre.tsx"
+    },
+    {
+     "label": "AUDIT.md",
+     "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -11464,6 +11474,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still open on main f6aeb7e; added merge order (rail order findings N060, N063 depend on the card list after e4bd0b8 removes 19 cards)."
+    },
+    {
+     "ts": "2026-10-10T02:18:39+0530",
+     "who": "claude",
+     "note": "All 18 findings fixed (commit b918858, pushed to main) and the centre Worker is deployed (fee816d6). Checked on a local Worker at 1440 and 390: rail codes and names with a You-are-here line, Back disabled on the first card, Day 3 launch merged, start-of-day plan cards, Pick the Channels first on Day 2, field hints, labelled chip groups and bug box, ET session time, axe label/aria clean; the live bundle has the new rail. Open the preview: https://revops-centre.growthcluborg.workers.dev/admin/preview (admin link). Still open and not in scope: two axe colour-contrast warnings (Report a problem, short-count text)."
+    },
+    {
+     "ts": "2026-10-10T02:18:39+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
     }
    ],
    "order": 2690
