@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T14:28:50+0530",
+   "task_id": "T-146",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-146 stays in review: the question for Adi is removed, but the invites for Bhaskar and Aquila are still pending (not expired, so not resent) and H034 stays open in AUDIT.md until both accept; F-8c9a559a is acked and the change is committed as 024af70."
+  },
+  {
    "ts": "2026-10-09T14:28:25+0530",
    "task_id": "T-124",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "done",
    "result": "ok",
    "summary": "T-287 is done: no channel add-ons is recorded, the reminders walkthrough text and 4K video caption now say WhatsApp comes with the plan, and the app fix is up as [PR 196](https://github.com/Usetantra/tantra-frontend-v2/pull/196) for Bharath. I left account counts out because Tantra's live catalog (P"
-  },
-  {
-   "ts": "2026-10-09T12:17:44+0530",
-   "task_id": "T-281",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-281 is done: this was a re-run of an already-applied decision, and a fresh `gh` check shows issue #1 and PRs #3 and #4 closed with the Task Command Center pointer comment, the hub no longer links issue #1, and T-249's ask points at the board. Note F-c6bf216d was already acknowledged (the ack retur"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-146: Give teammates access to both GitHub repos",
- "task_id": "T-146",
+ "message": "Acting on 1 note(s) for T-150: Workshop Hub: free and paid user-flow maps and post-workshop workflows; tasks live in the Task Command Center",
+ "task_id": "T-150",
  "entries": [
-  "F-8c9a559a"
+  "F-3d3cff60"
  ],
  "mode": "feedback",
- "started": "2026-10-09T14:28:31+0530"
+ "started": "2026-10-09T14:28:58+0530"
 }
