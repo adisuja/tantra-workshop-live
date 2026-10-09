@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T04:00:27+0530",
+   "task_id": "T-121",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-121 is in review: I deleted `SEATS_TOTAL` and `SEATS_CLAIMED` from `app/src/lib/funnel.ts`, committed as 83a1c23 and pushed to main. `git grep` for both names in `app/src` now returns nothing, and `tsc --noEmit` for the app printed no errors. I didn't capture an explicit exit code for tsc, so \"no "
+  },
+  {
+   "ts": "2026-10-10T03:59:28+0530",
+   "task_id": "T-284",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "I've set T-284 to blocked: nothing goes live until Adi approves or redoes each video in T-282 (http://localhost:8883/wt-review/index.html?v=a34171e). The pipeline was already committed and pushed (2e9db5c), and I've now exported web copies of all 18 v2 videos (1440p, 5 to 16 MB, with poster and capt"
+  },
+  {
    "ts": "2026-10-10T03:45:57+0530",
    "task_id": "T-275",
    "mode": "feedback",
@@ -79,31 +95,15 @@
    "status": "review",
    "result": "ok",
    "summary": "T-256 is in review: all 12 audit findings are fixed, pushed to origin main (`e3ac1ca`, `0330ca0`) and live on the mirror (`fba6ead`), but the centre Worker was not redeployed because remote migrations 0023 and 0025 from other tasks are pending, and `probe-guides` hung without finishing."
-  },
-  {
-   "ts": "2026-10-09T20:10:40+0530",
-   "task_id": "T-236",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-236 stays done: nothing new to build, and I didn't rerun the probes this pass.\n\n- **Already delivered:** T-123 shipped the campaign import and retired `/emails/batch` (main 5bde29e). The send-contract script is gone and the endpoint doc is marked retired.\n- **Still open:** `TANTRA_NOTE` and `TANTR"
-  },
-  {
-   "ts": "2026-10-09T20:10:11+0530",
-   "task_id": "T-130",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "error",
-   "summary": "40 s5-gohighlevel         h rows 1 box 1360x703  labels 5/5 chips 0 OFF \\\"booked\\\" is off its connector; \\\"no-show\\\" covers a card; \\\"no-show\\\" is off its connector; \\\"proposal sent\\\" covers a card; \\\"proposal sent\\\" is off its connector; \\\"idle 7 days\\\" covers a card; \\\"idle 7 days\\\" is off its con"
   }
  ],
  "state": "working",
- "message": "Acting on 2 note(s) for T-284: Put the approved 4K walkthroughs on both onboarding centres and the playbook",
- "task_id": "T-284",
+ "message": "Acting on 2 note(s) for T-072: Tantra Enterprise ($9,999): move the booking page to Cal.com and retire 'Chaperone'",
+ "task_id": "T-072",
  "entries": [
-  "F-f4df02b7",
-  "R-d1bf1192"
+  "F-bf22869b",
+  "R-598b9e37"
  ],
  "mode": "feedback",
- "started": "2026-10-10T03:46:17+0530"
+ "started": "2026-10-10T04:00:50+0530"
 }

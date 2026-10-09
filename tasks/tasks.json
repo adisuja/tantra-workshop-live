@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T03:59:39+0530",
-  "version": 1417,
+  "updated": "2026-10-10T04:00:23+0530",
+  "version": 1420,
   "last_id": 380,
   "team": [
    {
@@ -3366,7 +3366,7 @@
    "owner": "Nelbin",
    "priority": "P2",
    "due": "2026-09-23",
-   "status": "queue",
+   "status": "review",
    "why": "Owner asked for per-attendee access control during the workshop without a redeploy; it exists only in the local admin, not in the live centre that runs the weekly cohort.",
    "spec": "Local admin app/src/app/admin (admin-client.tsx) flags attendees whose personal link is used on more than 20 devices, editable globally or per attendee. The live centre admin (cloud/admin-ui/admin.js, cloud/src/index.ts) has no such control. Do: (1) check whether the Worker records a device or session per attendee link (cloud/src/index.ts session cookie handling around lines 725 to 761); if not, record a hashed device id per session in D1 with a migration; (2) add a 'Devices' column and a per-attendee cap override to the Worker admin, default 20, flag only (never block; no time locks per owner rule 2026-10-02); (3) deploy the Worker and verify with a test attendee. Then retire the local admin page.",
    "done_when": [
@@ -3376,12 +3376,12 @@
    ],
    "evidence": [
     {
-     "label": "Local only, see the handoff for the unlock command",
-     "url": "workshop-plan/ops/.admin-key"
+     "label": "Live admin, Attendees",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=t096"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "After the deploy, open https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key> (key in ~/.config/tantra/revops-admin-key), Attendees table, Devices column, and confirm the controls.",
+   "needs_from_owner": "Open https://revops-centre.growthcluborg.workers.dev/admin/?v=t096 (sign in at /admin/enter with the key in ~/.config/tantra/revops-admin-key), Attendees, Devices column, and confirm the flag and per-attendee override.",
    "log": [
     {
      "ts": "2026-09-23",
@@ -3397,12 +3397,23 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: the live cohort is administered in the Worker admin (cloud/admin-ui, https://revops-centre.growthcluborg.workers.dev/admin), which has no device cap (0 'device' hits in cloud/admin-ui/admin.js and cloud/src). The cap exists only in the local Next admin (app/src/app/admin/admin-client.tsx) over ops.db. Task reframed as porting the flag to where cohorts actually run. UNVERIFIED whether the Worker records devices per attendee link today."
+    },
+    {
+     "ts": "2026-10-10T03:59:45+0530",
+     "who": "claude",
+     "note": "Live centre admin now has a Devices column (flagged in red when over the cap, default 20 in Cohort Settings), a per-attendee override on each attendee page, and records a hashed device cookie per link (migration 0027 applied, Worker 7dcdf5d2 deployed); flag only, never blocks. Verified live with a test attendee on two devices: count 2, override 1 saved and visible after reload; test attendee then deleted. The local Next admin's device controls now point to the Worker admin; pushed to main."
+    },
+    {
+     "ts": "2026-10-10T03:59:45+0530",
+     "who": "claude",
+     "note": "People: reviewers Nelbin → Nelbin/Bharath (by claude)."
     }
    ],
    "order": 940,
    "assignee": "Claude",
    "reviewers": [
-    "Nelbin"
+    "Nelbin",
+    "Bharath"
    ]
   },
   {
@@ -4992,7 +5003,7 @@
    "owner": "Bhaskar",
    "priority": "P2",
    "due": "2026-09-28",
-   "status": "queue",
+   "status": "review",
    "why": "SEATS_TOTAL and SEATS_CLAIMED are invented numbers with no consumer; leaving them invites reuse (owner rule: no unsourced stats).",
    "spec": "The fake counter was removed from /workshop and /masterclass in 983d92d. On main 2026-10-08 app/src/lib/funnel.ts lines 53 to 54 still export SEATS_TOTAL = 1000 and SEATS_CLAIMED = 847 and nothing imports them (git grep). Delete both lines, run tsc for app, mark audit M068 fixed. /pro's SEATS_PER_COHORT = 25 is a separate cap and is out of scope.",
    "done_when": [
@@ -5023,6 +5034,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: no decision needed, the counter is already gone; only dead constants remain, so Claude deletes them."
+    },
+    {
+     "ts": "2026-10-10T04:00:23+0530",
+     "who": "claude",
+     "note": "Deleted SEATS_TOTAL and SEATS_CLAIMED from app/src/lib/funnel.ts (83a1c23, pushed to main). git grep in app/src returns nothing, tsc --noEmit for app printed no errors, SEATS_PER_COHORT untouched. AUDIT.md M068 marked fixed in 83a1c23."
     }
    ],
    "order": 1190,
