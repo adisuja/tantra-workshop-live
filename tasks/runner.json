@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T19:25:00+0530",
+   "task_id": "T-052",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-052 is built, deployed to the centre Worker with the Tantra push off, and blocked only on the Tantra API key already tracked on T-234/T-337.\n\n- **Build:** `pushToCampaign` imports an attendee into the pre campaign on sign-up and into the post campaign when Day 3 ends. A new per-attendee ledger tab"
+  },
+  {
    "ts": "2026-10-09T19:17:07+0530",
    "task_id": "T-051",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-092 stays in review: the Orchestrator's note was a repeat (the ack returned 0, so F-94d59a50 was already acknowledged), and its changes were already applied on the earlier pass. I re-ran `probe-theme.mjs` on the live mirror and it passed at 1440 and 390, and both links return 200, so nothing was r"
-  },
-  {
-   "ts": "2026-10-09T17:51:59+0530",
-   "task_id": "T-054",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-054 stays in review: the Orchestrator note had already been carried out and acked at 17:47 today, and a recheck found 0 test or probe rows left in the Work Tracker, Tantra Tracker, ops.db and the form log, so nothing was resubmitted or deployed."
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-052: Load both nurture sequences into Tantra campaigns",
- "task_id": "T-052",
+ "message": "Acting on 1 note(s) for T-130: Make the busiest guide flowcharts easier to read",
+ "task_id": "T-130",
  "entries": [
-  "F-77b1c371"
+  "F-33d7ff36"
  ],
  "mode": "feedback",
- "started": "2026-10-09T19:17:16+0530"
+ "started": "2026-10-09T19:25:10+0530"
 }

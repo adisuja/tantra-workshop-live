@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T19:18:34+0530",
-  "version": 1243,
+  "updated": "2026-10-09T19:24:53+0530",
+  "version": 1245,
   "last_id": 361,
   "team": [
    {
@@ -1970,49 +1970,26 @@
   },
   {
    "id": "T-052",
-   "title": "Load both nurture sequences into Tantra campaigns",
-   "area": "Traffic",
+   "status": "blocked",
    "owner": "Aquila",
+   "assignee": "Claude",
+   "reviewers": [
+    "Aquila",
+    "Bharath"
+   ],
    "priority": "P1",
    "due": "2026-09-22",
-   "status": "queue",
-   "why": "Drafts do not send themselves; the sequences must fire automatically for every weekly cohort.",
-   "spec": "Owner model (google-and-reminder-model, 2026-10-07): attendee messaging runs on Tantra omni-channel campaigns (email, WhatsApp, LinkedIn), with registrants imported into the campaign programmatically by webhook; this is live in Tantra. Steps: (1) create two campaigns in our own Tantra workspace, 'Pre-workshop' and 'Post-workshop', with the T-050 and T-051 copy; (2) from the centre Worker (cloud/src), on sign-up push the attendee into the pre campaign and at Day 3 end push them into the post campaign, using the same webhook import as the reminders (T-234), idempotent per attendee; (3) test with the owner's Google test identity. No n8n, Instantly, SendGrid or Twilio WhatsApp. Resend is the email fallback only if Tantra cannot carry a needed per-contact field (UNVERIFIED).",
-   "done_when": [
-    "A test attendee is imported into the pre campaign on sign-up and receives its messages on schedule",
-    "The same attendee enters the post campaign after Day 3 and receives its first message",
-    "No n8n, Instantly, SendGrid or Twilio WhatsApp call anywhere in the path"
-   ],
+   "area": "Traffic",
+   "order": 310,
+   "title": "T-052: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
    "evidence": [],
    "blockers": [],
    "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review: context updated. Tooling is now fixed by the approved list (Tantra email or Resend, WhatsApp via Twilio or WhatsApp); n8n and Instantly ruled out. Linked to the send infrastructure tasks T-123, T-234, T-236."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: replaced the stale sender plan (T-236 /emails/batch, Twilio WhatsApp) with the owner model: Tantra omni-channel campaigns fed by webhook import from the centre."
-    },
-    {
-     "ts": "2026-10-09T19:17:04+0530",
-     "who": "claude",
-     "note": "T-051 copy is written (workshop-plan/sequences/post.md); the copy blocker is cleared."
-    }
-   ],
-   "order": 310,
-   "assignee": "Claude",
-   "reviewers": [
-    "Aquila"
-   ]
+   "log": [],
+   "held": true
   },
   {
    "id": "T-053",
