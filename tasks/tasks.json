@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T17:42:49+0530",
-  "version": 1145,
+  "updated": "2026-10-09T17:47:48+0530",
+  "version": 1147,
   "last_id": 357,
   "team": [
    {
@@ -1924,8 +1924,20 @@
    ],
    "evidence": [
     {
-     "label": "Work Tracker · Funnel · Free Registrations (utm columns)",
+     "label": "Row-by-row table, all channels (2026-10-09)",
+     "url": "workshop-plan/outputs/t054-utm-channels-2026-10-09.md"
+    },
+    {
+     "label": "Work Tracker · Funnel · Free Registrations (test rows removed)",
      "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit#gid=913055296"
+    },
+    {
+     "label": "Tantra Tracker · Workshop Funnel Forms",
+     "url": "https://docs.google.com/spreadsheets/d/1clliPUw9w5kOL9CJmV2i8v62zwhJh9TLU3DyA1-M8Dc/edit"
+    },
+    {
+     "label": "Probe: app/scripts/probe-utm-channels.mjs",
+     "url": "app/scripts/probe-utm-channels.mjs"
     }
    ],
    "blockers": [],
@@ -1950,12 +1962,23 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: made the remaining check concrete and assigned to Claude (it can run every channel test itself); Nelbin reviews. One channel was verified 2026-09-24."
+    },
+    {
+     "ts": "2026-10-09T17:47:48+0530",
+     "who": "claude",
+     "note": "People: reviewers Nelbin → Nelbin/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T17:47:48+0530",
+     "who": "claude",
+     "note": "All 6 channels (LinkedIn post, LinkedIn DM, WhatsApp, email, cold calendar invite, referral) were tested on the public /workshop and /masterclass: all 18 rows (6 free registrations, 6 paid registrations, 6 checkout starts) carried the right source, medium, campaign and content in the Work Tracker and the Tantra Tracker, both referral rows credited member code adi, and the Dodo checkout link carried all four UTMs (no payment made, no Zoom seat or invite created). No channel dropped UTMs, so nothing was deployed; the test rows plus the old wiring-probe, ui-probe and 2026-09-24 utm-probe rows are deleted from the Work Tracker, Tantra Tracker, ops.db and the form log (this is T-107's cleanup), and a re-check found 0 left. Open the evidence table for the row-by-row result; one side fix: the Tantra Tracker kept rows deleted at the source, now cleared, and its MongoDB copy is currently down (connection refused on 127.0.0.1:27017), which this task did not touch."
     }
    ],
    "order": 330,
    "assignee": "Claude",
    "reviewers": [
-    "Nelbin"
+    "Nelbin",
+    "Bharath"
    ]
   },
   {

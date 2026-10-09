@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T17:47:54+0530",
+   "task_id": "T-054",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-054 is in review for Nelbin and Bharath: all 6 channels on both public funnels passed with all four UTMs on every row (18 of 18) in the Work Tracker and Tantra Tracker, both referral rows credited `adi`, the test and old probe rows are deleted, and the work is committed at 454d83d (not pushed)."
+  },
+  {
    "ts": "2026-10-09T17:37:45+0530",
    "task_id": "T-215",
    "mode": "feedback",
@@ -87,22 +95,15 @@
    "status": "review",
    "result": "ok",
    "summary": "T-022 is in review: the survey offers only the approved stack, old answers map to their replacements, the 8/9/8 set is locked, and it is pushed (b68f49b), published to the mirror (f120b81) and deployed to the Worker (b82c10cc). T-024 is unblocked and F-a1aab8aa is acked. The deploy was a full build "
-  },
-  {
-   "ts": "2026-10-09T14:06:07+0530",
-   "task_id": "T-139",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-139 is in review: the artifact's five automation tabs were read in full, the four decided fixes are in the Tantra Flow and Tantra Funnel guides, every other difference is ruled in `workshop-plan/coord/status/c.md` (items 15 to 28), the source commit is pushed (c4f58cd) and the mirror is republishe"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-054",
+ "task_id": "T-093",
  "entries": [
-  "F-6991c6cc"
+  "F-6050ca79",
+  "R-cf1a887b"
  ],
- "started": "2026-10-09T17:37:51+0530",
- "message": "Acting on 1 note(s) for T-054: Verify UTM tracking end to end"
+ "started": "2026-10-09T17:47:59+0530",
+ "message": "Acting on 2 note(s) for T-093: Free-lane funnel pages"
 }
