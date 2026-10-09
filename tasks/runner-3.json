@@ -97,12 +97,13 @@
    "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
   }
  ],
- "state": "paused",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
+ "task_id": "T-197",
  "entries": [
-  "F-d10fa748"
+  "F-9282848d",
+  "R-e73e988a"
  ],
- "started": "2026-10-09T18:45:15+0530",
- "message": "Usage limit reached; retries automatically after 19:16. (You've hit your session limit · resets 10pm (Asia/Calcutta))"
+ "started": "2026-10-09T19:07:33+0530",
+ "message": "Acting on 2 note(s) for T-197: Round 5 #3 (Lane A): Epic full-system audit: every element, question, card and section (AUDIT.md + probe-details.mjs)"
 }
