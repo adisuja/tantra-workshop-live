@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T14:18:08+0530",
-  "version": 1112,
+  "updated": "2026-10-09T14:18:24+0530",
+  "version": 1113,
   "last_id": 357,
   "team": [
    {
@@ -859,7 +859,7 @@
    "due": "2026-09-18",
    "status": "review",
    "why": "The thing every attendee gets on Day 1 and the spine the deck and survey hang off.",
-   "spec": "Source workshop-plan/playbook.html (served copy app/public/materials/playbook.html; parts embedded per day in both onboarding centres via workshop-plan/build/titlecase.py then build/embed.py). Verified implemented on main 2026-10-09 against Adi's owner rounds of 2026-10-05 to 10-07: hero 'The Most Complete Agentic RevOps System in B2B. Installed in 3 Days.' with no pill; Backlinko-voice intros and rewritten headlines (workshop-plan/COPY_RULES.md); exactly 9 summaries, one per sidebar section; no checkboxes or work plans (knowledge only, actions live in the new centre or the daily survey); one 21px serif body (19px phones), headings 40px and 28px; funnel-fit 'Best for' boxes before each funnel; 17 other funnels as dropdowns with cinematics; value-ladder table with real companies; day-plan timeline; survey starts after the first 30 minutes of teaching; The Funnel Equations chapter (one metric per stage, plain-initial short forms). Ruled-out tool names are gone (only the adverb 'instantly' matches). Still open: Sales Navigator appears 3 times (T-260), the 89% show-up teaching-model figure and other owner calls (see 'Playbook owner-round calls still unanswered'), the unapproved tools inside the embedded FunnelOS animations (T-260 and the Apollo task), held walkthrough videos (T-282, T-284). Review copy: https://adisuja.github.io/tantra-workshop-live/playbook.html",
+   "spec": "Source workshop-plan/playbook.html (served copy app/public/materials/playbook.html; parts embedded per day in both onboarding centres via workshop-plan/build/titlecase.py then build/embed.py). Implemented on main against Adi's owner rounds of 2026-10-05 to 10-07: hero 'The Most Complete Agentic RevOps System in B2B. Installed in 3 Days.' with no pill; Backlinko-voice intros and rewritten headlines (workshop-plan/COPY_RULES.md); exactly 9 summaries, one per sidebar section; no checkboxes or work plans; one 21px serif body (19px phones), headings 40px and 28px; funnel-fit 'Best for' boxes; 17 other funnels as dropdowns with cinematics; value-ladder table; day-plan timeline; The Funnel Equations chapter. Closed on 2026-10-09 by Orchestrator decision O-d3b4c0eb: Sales Navigator and every replaced tool are out of the playbook (7cb1dd6) and Apollo is out of the embedded FunnelOS cinematics (bbb6a23); the S3 show-up figure is the Funnel Equations reference band (25 to 40% skipping the thank-you page action, 45 to 70% taking it), the unsourced 89% is removed; T-294 and T-297 are closed. Ships without the held walkthrough videos: T-284 adds them once T-282 clears. Only the adverb 'instantly' still matches a ruled-out tool name. Review copy: https://adisuja.github.io/tantra-workshop-live/playbook.html",
    "done_when": [
     "node workshop-plan/probe-playbook.mjs clean",
     "Sales Navigator decision applied (T-260)",
@@ -867,12 +867,24 @@
    ],
    "evidence": [
     {
-     "label": "Playbook",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html"
+     "label": "Playbook (live mirror)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1009b"
+    },
+    {
+     "label": "Changed section: S3 show-up figure and diagram",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1009b#d2-s3-the-nurture-engine-where-show-up-is-won"
+    },
+    {
+     "label": "Changed section: the 17 funnel cinematics (Apollo out)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1009b#bigpic-the-other-17-funnel-types"
+    },
+    {
+     "label": "Local served copy",
+     "url": "http://localhost:4322/materials/playbook.html?v=1009b"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Read https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1009 and reply on this task with approval or changes by section.",
+   "needs_from_owner": "Read https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1009b and reply on this task with approval or changes by section.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -903,6 +915,11 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Session sweep (2026-10-09): source: ec3e66fb/9628377c owner rounds verified on main 2026-10-09 (hero, 9 sidebar summaries only, Backlinko voice, no checkboxes, 21px serif, ladder table, 17 dropdowns, equations chapter); stale ruled-out-tools claim corrected."
+    },
+    {
+     "ts": "2026-10-09T14:18:24+0530",
+     "who": "claude",
+     "note": "Every open playbook call is closed and the finished playbook is live: https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1009b. Two sections changed today. In Day 2, S3 (How to Get Registrants to Actually Show Up) the 89% show-up figure is gone from the text, diagram and caption because it matches no band in the Funnel Equations data; it now gives the model's bands (25 to 40% if they skip the thank-you page action, 45 to 70% if they take it). In The Other 17 Funnel Types and the three main cinematics, Apollo is replaced by data-vendor lists; Sales Navigator and the other replaced tools were already out since 7cb1dd6 (Day 1, Day 2 S2 and S6). Checked: probe-playbook clean at 4 widths locally and on the live mirror, banned-tool grep finds only the adverb 'instantly', probe-visual-tools PASS, all 20 funnel boards fit at 5 widths, 5 live cinematics show no Apollo; pushed to main (69864c5) and the mirror (678a78b); T-294, T-297 and T-293 closed, decision noted on T-260. Walkthrough videos stay out until T-282 clears (T-284)."
     }
    ],
    "order": 110,
