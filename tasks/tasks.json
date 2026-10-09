@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T08:02:24+0530",
-  "version": 977,
+  "updated": "2026-10-09T08:02:41+0530",
+  "version": 978,
   "last_id": 349,
   "team": [
    {
@@ -9205,6 +9205,11 @@
      "ts": "2026-10-09T08:02:24+0530",
      "who": "claude",
      "note": "Replaced tools are out of the guides, cards, cinematics and playbook (7cb1dd6), and the kept tools now run on the attendee's own key (d58d96e): the agent uploads Part 1 and Part 2 to Wistia, places the optional go-live AI call through ElevenLabs or Vodex (only for people who tick the new call box), builds Meta ads paused with Kie.ai images and shows weekly cost per registration, and registers Meta and LinkedIn lead form sign-ups on the funnel. Verified with probe-kept-tools.mjs 50/50, probe-visual-tools PASS, check-guides PASS, tsc app and cloud clean; pushed to main and republished the mirror (live pages checked in a browser), and all 18 AUDIT ids are marked. The centre Worker deploy was not part of the approval, so these jobs reach the live centre with the next Integrator deploy. Bharath added as reviewer for the backend."
+    },
+    {
+     "ts": "2026-10-09T08:02:41+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-191, T-056, T-293, T-020."
     }
    ],
    "order": 2600
