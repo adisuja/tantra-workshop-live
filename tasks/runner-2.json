@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T18:46:01+0530",
+   "task_id": "T-197",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "limit",
+   "summary": "You've hit your session limit · resets 10pm (Asia/Calcutta)"
+  },
+  {
    "ts": "2026-10-09T18:26:32+0530",
    "task_id": "T-031",
    "mode": "feedback",
@@ -87,23 +95,15 @@
    "status": "review",
    "result": "ok",
    "summary": "T-144 stays in review for Amal: the Review tab is regenerated and live at https://adisuja.github.io/tantra-workshop-live/?v=99456e1#review with 379 elements (main `01781df`, mirror `99456e1`). The live link probe reports ALL LINKS OK, the source check has 0 bad of 374, and the denylist and figures g"
-  },
-  {
-   "ts": "2026-10-09T16:39:20+0530",
-   "task_id": "T-144",
-   "mode": "feedback",
-   "status": "review",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
   }
  ],
- "state": "working",
+ "state": "paused",
  "mode": "feedback",
- "task_id": "T-197",
+ "task_id": null,
  "entries": [
   "F-9282848d",
   "R-e73e988a"
  ],
  "started": "2026-10-09T18:26:38+0530",
- "message": "Acting on 2 note(s) for T-197: Round 5 #3 (Lane A): Epic full-system audit: every element, question, card and section (AUDIT.md + probe-details.mjs)"
+ "message": "Usage limit reached; retries automatically after 19:16. (You've hit your session limit · resets 10pm (Asia/Calcutta))"
 }

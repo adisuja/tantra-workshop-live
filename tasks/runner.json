@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T18:46:00+0530",
+   "task_id": "T-228",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "limit",
+   "summary": "You've hit your session limit · resets 10pm (Asia/Calcutta)"
+  },
+  {
    "ts": "2026-10-09T18:42:58+0530",
    "task_id": "T-123",
    "mode": "feedback",
@@ -87,19 +95,11 @@
    "status": "review",
    "result": "limit",
    "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T16:09:16+0530",
-   "task_id": "T-150",
-   "mode": "feedback",
-   "status": "review",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
   }
  ],
- "state": "working",
- "message": "Acting on 2 note(s) for T-228: Welcome email: every new attendee gets their centre link and private calendar link",
- "task_id": "T-228",
+ "state": "paused",
+ "message": "Usage limit reached; retries automatically after 19:16. (You've hit your session limit · resets 10pm (Asia/Calcutta))",
+ "task_id": null,
  "entries": [
   "F-c01987f5",
   "R-001e64d4"

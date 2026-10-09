@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T18:46:24+0530",
+   "task_id": "T-322",
+   "mode": "feedback",
+   "status": "review",
+   "result": "limit",
+   "summary": "You've hit your session limit · resets 10pm (Asia/Calcutta)"
+  },
+  {
+   "ts": "2026-10-09T18:45:05+0530",
+   "task_id": "T-108",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-108 is back in review: all 21 funnel animations now use the canonical stage and channel names word for word, \"Chaperone\" reads \"Tantra Enterprise\" on the challenge board and the Whole Machine, and it is pushed to origin main and live on the mirror with the board-fit, name and playbook-frame probes"
+  },
+  {
    "ts": "2026-10-09T18:01:17+0530",
    "task_id": "T-103",
    "mode": "feedback",
@@ -79,31 +95,14 @@
    "status": "done",
    "result": "limit",
    "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T16:09:15+0530",
-   "task_id": "T-294",
-   "mode": "feedback",
-   "status": "done",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T15:39:10+0530",
-   "task_id": "T-294",
-   "mode": "feedback",
-   "status": "done",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
   }
  ],
- "state": "working",
+ "state": "paused",
  "mode": "feedback",
- "task_id": "T-108",
+ "task_id": null,
  "entries": [
-  "F-81512939",
-  "R-11b3b444"
+  "F-d10fa748"
  ],
- "started": "2026-10-09T18:01:21+0530",
- "message": "Acting on 2 note(s) for T-108: Animated funnels in the playbook: the three main funnels, the Whole Machine and the 17 other types"
+ "started": "2026-10-09T18:45:15+0530",
+ "message": "Usage limit reached; retries automatically after 19:16. (You've hit your session limit · resets 10pm (Asia/Calcutta))"
 }
