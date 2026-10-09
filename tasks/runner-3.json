@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T09:09:17+0530",
+   "task_id": "T-191",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-191 stays in review: this was a re-run of the same Orchestrator note, whose 14 answers were already applied, pushed and published earlier today (b880b67), so this run built and pushed nothing. On recheck, three probes and the second-wording grep are clean; `probe-details` still fails on items this"
+  },
+  {
    "ts": "2026-10-09T08:44:04+0530",
    "task_id": "T-117",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:05:44+0530",
-   "task_id": "T-234",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-191",
+ "task_id": "T-194",
  "entries": [
-  "F-48756ec5"
+  "F-57d78505"
  ],
- "started": "2026-10-09T08:44:16+0530",
- "message": "Acting on 1 note(s) for T-191: Decide the calls still open from Nelbin's content pass"
+ "started": "2026-10-09T09:09:22+0530",
+ "message": "Acting on 1 note(s) for T-194: Decide: share branch previews outside Adi's Mac (private tunnel with an access key)"
 }

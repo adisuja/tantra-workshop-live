@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T09:08:20+0530",
-  "version": 1003,
+  "updated": "2026-10-09T09:09:22+0530",
+  "version": 1006,
   "last_id": 350,
   "team": [
    {
@@ -147,6 +147,16 @@
      "ts": "2026-10-09T08:38:46+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-277."
+    },
+    {
+     "ts": "2026-10-09T09:09:11+0530",
+     "who": "claude",
+     "note": "Re-run of the same Orchestrator note (F-48756ec5, O-72b882af): nothing new to build. All 14 answers were applied in b880b67, pushed and published earlier today; nothing was pushed in this run. Rechecked now: check-guides, probe-headings and probe-onboarding-tabs pass, and git grep over app/src, workshop-plan/build and cloud/src finds no second wording for the session format, Day 1 labels, Day 2 hours or kit name ('free lane/paid lane' survives only in code comments). probe-details still fails on items this task did not cause: 2 literal dates in private library files, 3 screenshot width ratios (masterclass audience-room, s1-cold-email/18, s4-rsp/13) and playbook.html being 66 px too wide on a 390 px phone (identical on the commit before b880b67), and it hangs at its agentic centre section. Open http://localhost:4322/debug/onboarding?v=t191b to review."
+    },
+    {
+     "ts": "2026-10-09T09:09:22+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-297, T-256."
     }
    ],
    "order": 1
@@ -10235,7 +10245,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "blocked",
+   "status": "review",
    "why": "Adi's rule (2026-10-08): one end-to-end video per tool, sign-up to key to centre, zero exceptions. These stop after sign-up and pricing because Claude never types passwords or codes and never creates vendor accounts.",
    "spec": "Per tool, once access exists, resume that tool's recording agent per scripts/walkthroughs/AGENT_BRIEF.md in /Users/adithyamurali/tantra-walkthroughs: in-app route in the signed-in Brave window (lock /tmp/wt-brave-lock), key deleted off camera and logged in scripts/walkthroughs/REVERT_LEDGER.md (the deletion is never shown on camera), bash scripts/walkthroughs/finalize.sh <tool>. Routes are in scripts/walkthroughs/journeys/<tool>.md. Each stops after sign-up and pricing today. Per tool: Twilio (emailed code to the account owner, another of the owner's company addresses, before API keys); Kie.ai and Dodo (Brave not signed in; Google offers the owner's FintechCircle login and a sender mailbox and we do not know which holds the account; Dodo account is live mode, record in Test mode); Stripe (Adi said on 2026-10-07 he would drop a Stripe API key, it never arrived in the session; Google sign-in with boards@fintechcircle.com showed first-time consent so no account sits behind it; the video can only explain the restricted key screen from docs until a signed-in dashboard exists); HubSpot, Zoho, Wistia (no subscription; Adi: attendees create their own accounts and enter their own API keys, so a docs or free-account video is acceptable); Google senders Google side (Google Cloud console and Google Admin re-ask for the password). Adi's rule: never stop a tool at a blocker, list the blockers at the end.",
    "done_when": [
@@ -10243,15 +10253,46 @@
     "Google senders video shows the Google Cloud service account, JSON key and Google Admin delegation steps",
     "REVERT_LEDGER shows every test object deleted"
    ],
-   "evidence": [],
-   "blockers": [
-    "Twilio emailed code",
-    "Which Google account holds Kie.ai and Dodo",
-    "Stripe sign-in or key",
-    "HubSpot, Zoho, Wistia free accounts or a skip",
-    "Google password at Google Cloud console and Google Admin"
+   "evidence": [
+    {
+     "label": "All walkthrough review pages",
+     "url": "http://localhost:8883/wt-review/index.html?v=t283"
+    },
+    {
+     "label": "Kie.ai (0:59)",
+     "url": "http://localhost:8883/wt-review/kie/index.html?v=t283"
+    },
+    {
+     "label": "Stripe (1:26)",
+     "url": "http://localhost:8883/wt-review/stripe/index.html?v=t283"
+    },
+    {
+     "label": "HubSpot (1:10)",
+     "url": "http://localhost:8883/wt-review/hubspot/index.html?v=t283"
+    },
+    {
+     "label": "Zoho CRM (1:24)",
+     "url": "http://localhost:8883/wt-review/zoho/index.html?v=t283"
+    },
+    {
+     "label": "Wistia (1:22)",
+     "url": "http://localhost:8883/wt-review/wistia/index.html?v=t283"
+    },
+    {
+     "label": "Twilio (1:49)",
+     "url": "http://localhost:8883/wt-review/twilio/index.html?v=t283"
+    },
+    {
+     "label": "Dodo Payments (1:03)",
+     "url": "http://localhost:8883/wt-review/dodo/index.html?v=t283"
+    },
+    {
+     "label": "Google senders (1:59)",
+     "url": "http://localhost:8883/wt-review/google-senders/index.html?v=t283"
+    }
    ],
-   "needs_from_owner": "Twilio: enter the emailed verification code once in the Brave recording window (it goes to the account owner's inbox). Kie.ai and Dodo: say which Google account holds the existing account (the chooser offers two; a wrong pick would create a new account). Stripe: sign into the Stripe account in Brave (Google sign-in showed first-time consent). HubSpot, Zoho, Wistia: no accounts exist; create free accounts and sign in in Brave, or say skip. Google Cloud console and Google Admin: type the password once in Brave when asked.",
+   "blockers": [],
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-09T00:06:32+0530",
@@ -10262,6 +10303,11 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Session sweep (2026-10-09): source: fcd892f2 2026-10-07T18:26 (Adi: Stripe key would be dropped), 19:38, 20:19, 21:31 (one complete video per tool, assume sign-up, no delete on camera, report blockers at the end), final report 2026-10-07T22:56. Adds the Stripe key never received, Dodo test mode and blockers list."
+    },
+    {
+     "ts": "2026-10-09T09:08:34+0530",
+     "who": "claude",
+     "note": "All 8 videos now run sign-up, pricing, the key route and the centre paste step in one 4K cut under 2 minutes. The key route is filmed from each vendor's own public docs, not a live account (HubSpot, Zoho and Wistia docs show the real screens; Stripe, Kie.ai, Twilio, Dodo and Google are the written steps), so two done_when lines are only met in that docs form. Checked: verify.py passed on all 8, every review page opens with no broken image and a playing 3840 x 2160 video, sample tokens in vendor pictures are blurred, nothing was signed in to or created (ledger line added), sources pushed to branch tantra-walkthroughs (59ea945); the review pages are local only because app/public/wt-review is gitignored. The live sign-ins for Twilio, Dodo and Google are split into T-350; open the first evidence link to review."
     }
    ],
    "order": 2830

@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T09:08:43+0530",
+   "task_id": "T-283",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-283 is in review: all 8 walkthroughs are now single 4K cuts under 2 minutes with the key route filmed from each vendor's public docs (not a live account), the Twilio, Dodo and Google sign-ins are split into T-350, and the review pages are local only at http://localhost:8883/wt-review/index.html?v="
+  },
+  {
    "ts": "2026-10-09T08:40:26+0530",
    "task_id": "T-225",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:04:16+0530",
-   "task_id": "T-226",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-283",
+ "task_id": "T-299",
  "entries": [
-  "F-a60833dd"
+  "F-4257e252"
  ],
- "started": "2026-10-09T08:40:32+0530",
- "message": "Acting on 1 note(s) for T-283: Finish the 7 walkthrough videos blocked on account access (Twilio, Kie.ai, Dodo, Stripe, HubSpot, Zoho, Wistia) and the Google Cloud and Admin steps"
+ "started": "2026-10-09T09:08:50+0530",
+ "message": "Acting on 1 note(s) for T-299: Centre: cold email inboxes come from the inbox vendor only, several calendar senders, and a sign-up inbox card"
 }
