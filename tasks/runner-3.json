@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T17:29:14+0530",
+   "task_id": "T-150",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-150 stays in review for Amal: this was a repeat Orchestrator note, and the work it asks for was already built, pushed and published earlier today (T-280 is done). I rechecked it live — no unknown element, no \"Launch Control\" text, `#tasks` redirects to the Task Command Center, `#flows` renders — a"
+  },
+  {
    "ts": "2026-10-09T17:28:27+0530",
    "task_id": "T-294",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "done",
    "result": "ok",
    "summary": "T-004 done: the six prices are locked in `app/src/lib/prices.json` (amounts unchanged, only that commit pushed to origin main as a96140e), the live wiring probe passed every check up to Dodo's hosted checkout with the prefilled email, T-103 is closed without re-running its checkout-currency probe (l"
-  },
-  {
-   "ts": "2026-10-09T13:48:55+0530",
-   "task_id": "T-134",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-134 is in review: prompts 01 to 06 were run end to end in a private copy against a local stand-in (no Resend, Dodo or Cal.com test key exists, so no real email or test-mode payment); the real test-mode payment waits on T-253's Dodo key. Prompts 01 to 04 and 06 were edited and committed (6c35d7f), "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-150",
+ "task_id": "T-215",
  "entries": [
-  "F-3d3cff60"
+  "F-703a5e07"
  ],
- "started": "2026-10-09T17:28:33+0530",
- "message": "Acting on 1 note(s) for T-150: Workshop Hub: free and paid user-flow maps and post-workshop workflows; tasks live in the Task Command Center"
+ "started": "2026-10-09T17:29:19+0530",
+ "message": "Acting on 1 note(s) for T-215: Over-the-shoulder API key walkthrough videos for every approved tool (S1 tantra-walkthroughs)"
 }

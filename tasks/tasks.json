@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T17:28:21+0530",
-  "version": 1134,
+  "updated": "2026-10-09T17:29:07+0530",
+  "version": 1135,
   "last_id": 357,
   "team": [
    {
@@ -6225,20 +6225,16 @@
    ],
    "evidence": [
     {
-     "label": "User Flows, live",
-     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1791546319#flows"
+     "label": "User Flows tab",
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1009b#flows"
     },
     {
-     "label": "Old #tasks link (redirects to the Task Command Center)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1791546319#tasks"
+     "label": "Tasks redirect",
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1009b#tasks"
     },
     {
      "label": "Flow data + validation",
      "url": "workshop-plan/build/review_hub.py"
-    },
-    {
-     "label": "Hub page",
-     "url": "workshop-plan/index.html"
     }
    ],
    "blockers": [],
@@ -6268,6 +6264,11 @@
      "ts": "2026-10-09T17:15:19+0530",
      "who": "claude",
      "note": "Amal, ready for your sign-off: open the User Flows link. The broken Prove step now points at the Day 3 chapter as an unnumbered step (the centre has five daily steps and no per-task proof number), the hidden old tasks section and every 'Launch Control' string are gone, and task chips no longer break on a 'recheck' task. Checked live in a headless browser: 48 flow cards render with no script errors, #tasks redirects to the Task Command Center, review_hub.py reports no unknown element; pushed (ab41816, f7978fc) and published to the mirror. T-280 is closed."
+    },
+    {
+     "ts": "2026-10-09T17:29:07+0530",
+     "who": "claude",
+     "note": "Repeat Orchestrator note: all five steps were already done earlier today, nothing had to change. Rechecked now: review_hub.py regenerates with no unknown element and no diff, the live mirror matches the local hub and is pushed, no 'Launch Control' text anywhere, and in a headless browser #tasks redirects to the Task Command Center and #flows renders with the Prove It Works (Day 3) step and no script errors. T-280 is done; Amal, open the User Flows link to sign off."
     }
    ],
    "order": 1500,
