@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T18:19:54+0530",
+   "task_id": "T-101",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-101 is in review with Bhaskar: the self-check passes on the live mirror at 1440 and 390 (0 broken images, 0 failed requests, no WhatsApp logo, no dashes, no stale Thursday copy, dates from `cohort.ts`). The one fix, the paid join intro and seat block wording, is published (mirror 41c270f, origin m"
+  },
+  {
    "ts": "2026-10-09T18:08:34+0530",
    "task_id": "T-322",
    "mode": "feedback",
@@ -87,22 +95,15 @@
    "status": "review",
    "result": "limit",
    "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T15:39:10+0530",
-   "task_id": "T-144",
-   "mode": "feedback",
-   "status": "review",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-101",
+ "task_id": "T-031",
  "entries": [
-  "F-15021b1e"
+  "F-7682c6fd",
+  "R-31c0efc6"
  ],
- "started": "2026-10-09T18:08:40+0530",
- "message": "Acting on 1 note(s) for T-101: Key-art system across join, confirmation and onboarding pages"
+ "started": "2026-10-09T18:20:03+0530",
+ "message": "Acting on 2 note(s) for T-031: Claude Code agentic output pipeline"
 }

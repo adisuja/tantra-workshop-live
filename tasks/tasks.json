@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T18:09:02+0530",
-  "version": 1210,
+  "updated": "2026-10-09T18:19:45+0530",
+  "version": 1211,
   "last_id": 361,
   "team": [
    {
@@ -3488,24 +3488,40 @@
    ],
    "evidence": [
     {
-     "label": "Payment confirmed",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/success/"
-    },
-    {
      "label": "Free join",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=t101b"
     },
     {
-     "label": "Paid join",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/"
+     "label": "Paid join (intro rewritten)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=t101b"
+    },
+    {
+     "label": "Payment confirmed",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t101b"
     },
     {
      "label": "Onboarding",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=t101b"
+    },
+    {
+     "label": "VIP page, guarantee seal",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t101b"
+    },
+    {
+     "label": "Screenshots at 1440 and 390 (10 files)",
+     "url": "workshop-plan/evidence/T-101/"
+    },
+    {
+     "label": "Probe output, ALL PASS",
+     "url": "workshop-plan/evidence/T-101/probe-keyart-2026-10-09.txt"
+    },
+    {
+     "label": "Probe",
+     "url": "app/scripts/probe-keyart.mjs"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/site/vip/success/, https://adisuja.github.io/tantra-workshop-live/site/workshop/join/, https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/ and https://adisuja.github.io/tantra-workshop-live/site/onboarding/, then approve or reply with changes.",
+   "needs_from_owner": "Bhaskar: one review list for all the funnel visuals (this task with T-092, T-093 and T-094). Open in order: https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=t101b , https://adisuja.github.io/tantra-workshop-live/site/workshop/success/?v=t101b , https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=t101b , https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t101b , https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t101b , https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=t101b , https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=t101b (use the theme switch in the header for T-092). Then approve or reply with changes per page.",
    "log": [
     {
      "ts": "2026-09-24",
@@ -3521,6 +3537,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still awaiting approval; needs_from_owner now lists the four links in full. All four answer 200."
+    },
+    {
+     "ts": "2026-10-09T18:19:45+0530",
+     "who": "claude",
+     "note": "Self-check done on the live mirror at 1440 and 390: all step art, the vault hero, the nine bonus cards, the welcome banner, the image cards and the /vip guarantee seal load with 0 broken images and 0 failed requests; the step image has no WhatsApp logo; no dashes, no stale Thursday copy, and every date comes from cohort.ts. One fix shipped: the paid join page intro now reads in the Backlinko voice and its seat block no longer lists the bonuses twice (origin main 1de6333, mirror 41c270f, other 198 pages unchanged in text). Open the four links below; screenshots are in workshop-plan/evidence/T-101, and the same sitting covers T-093 and T-094 (T-092 is the theme switch on the onboarding link)."
     }
    ],
    "order": 990,
