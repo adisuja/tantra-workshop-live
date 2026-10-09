@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T13:38:16+0530",
+   "task_id": "T-131",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-131 stays in review: the relabel was already shipped by an earlier run (source `03fbae0`, mirror `34daef4`), and a headless check today found all four on-demand labels and none of the old webinar, event or replay rows in the script the [live RSP board](https://adisuja.github.io/tantra-workshop-liv"
+  },
+  {
    "ts": "2026-10-09T13:36:39+0530",
    "task_id": "T-303",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-133 stays blocked: the Orchestrator's rewrite was already applied and published (2bd704e), and the four signed-in captures (WhatsApp 1, 2, 4 and SMS 3) still need the Twilio sign-in plus a desktop session with a browser, tracked on T-339. Both notes were already acknowledged."
-  },
-  {
-   "ts": "2026-10-09T12:47:02+0530",
-   "task_id": "T-299",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "c\",\"timestamp\":\"2026-10-09T07:17:00.081Z\",\"request_id\":\"req_011CfrFg5br3WNkCGfjBCGBf\"}\n{\"type\":\"assistant\",\"message\":{\"model\":\"claude-opus-5-5\",\"id\":\"msg_011CfrFg7MGz9ioHhMPAdQDV\",\"type\":\"message\",\"role\":\"assistant\",\"content\":[{\"type\":\"tool_use\",\"id\":\"toolu_01Fp1xRMveGCYtAm1NACwkxT\",\"name\":\"Bash\",\"i"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-131",
+ "task_id": "T-134",
  "entries": [
-  "F-7894a484"
+  "F-7015c234"
  ],
- "started": "2026-10-09T13:36:46+0530",
- "message": "Acting on 1 note(s) for T-131: Confirm the RSP 52-week grid rows"
+ "started": "2026-10-09T13:38:21+0530",
+ "message": "Acting on 1 note(s) for T-134: Starter CRM: build the reference connections (prompts 01 to 06) so the planned steps get real screenshots"
 }

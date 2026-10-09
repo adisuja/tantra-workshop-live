@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T13:36:34+0530",
-  "version": 1095,
+  "updated": "2026-10-09T13:38:09+0530",
+  "version": 1096,
   "last_id": 357,
   "team": [
    {
@@ -5038,6 +5038,11 @@
      "ts": "2026-10-09T13:28:53+0530",
      "who": "claude",
      "note": "Relabelled the RSP 52-week grid: every webinar, event, workshop and replay row in the Email, WhatsApp and SMS lanes is now an on-demand touch (on-demand training, VSL re-watch nudge, book-a-call reminder, new case study drop), same weeks and channels, in the grid's existing sentence case. Checked: board-fit probe passes at 5 widths, all 52 weeks scanned at 1440, 1024 and 390 in light and dark with 0 old labels, and the live board and playbook frame show the same; source pushed (03fbae0) and mirror republished (34daef4). Still open elsewhere: the paid ads lane keeps its webinar promo and replay retargeting rows for T-260, as the decision said."
+    },
+    {
+     "ts": "2026-10-09T13:38:09+0530",
+     "who": "claude",
+     "note": "Rechecked the 05:08 decision: the relabel is already shipped (source 03fbae0, mirror 34daef4), nothing more had to change. Checked today in a headless browser: the live RSP board loads all four on-demand labels and none of the old webinar, event or replay rows; the paid ads lane is left for T-260. Open https://adisuja.github.io/tantra-workshop-live/site/funnels/rsp/?v=1791533289 and scroll to Stage 5."
     }
    ],
    "order": 1290,
