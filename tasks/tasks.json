@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T17:15:19+0530",
-  "version": 1133,
+  "updated": "2026-10-09T17:28:21+0530",
+  "version": 1134,
   "last_id": 357,
   "team": [
    {
@@ -11424,7 +11424,16 @@
     "Any answer that changes a board is built and passes node app/scripts/probe-funnel-boards.mjs at 5 widths",
     "Review link sent: https://adisuja.github.io/tantra-workshop-live/playbook.html#bigpic-the-other-17-funnel-types"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "17 more funnels, live playbook",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1791547101#bigpic-the-other-17-funnel-types"
+    },
+    {
+     "label": "Community funnel frame (month-12 projection)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/community/?v=1791547101"
+    }
+   ],
    "blockers": [
     "Adi's answers to the five calls"
    ],
@@ -11439,6 +11448,11 @@
      "ts": "2026-10-09T14:18:08+0530",
      "who": "claude",
      "note": "Closed on the Orchestrator's decision (O-d3b4c0eb, acting for Adi): all five recommended answers stand and are built (f75136e, 4409519): figures that add up are kept with a source-check note under each, community month 12 is labelled our projection with the maths, unused channel columns stay dashed, the four tall phone boards pan instead of shrinking, and the Whole Machine desktop width is left as is. Checked: probe-funnel-boards ALL BOARDS FIT on all 20 funnel routes at 5 widths; pushed to origin main (69864c5) and live on the mirror (678a78b)."
+    },
+    {
+     "ts": "2026-10-09T17:28:21+0530",
+     "who": "claude",
+     "note": "Repeat of the Orchestrator note already acted on: all five calls are built, pushed (origin main 69864c5) and live, so nothing had to change. Rechecked today: probe-funnel-boards ALL BOARDS FIT on all 21 funnel routes at 5 widths, probe-funnel-text holds the four tall phone boards at 12.1px or more, and the live mirror frames show the source-check notes, the month-12 projection with its maths and the Unused columns. The review is folded into T-108: https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1791547101#bigpic-the-other-17-funnel-types"
     }
    ],
    "order": 2940

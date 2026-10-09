@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T17:28:27+0530",
+   "task_id": "T-294",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-294 stays done: the Orchestrator note was a repeat, all five calls were already built, pushed and live, and today's recheck passed (board-fit probe on 21 routes at 5 widths, phone text at 12.1px or more, live mirror frames showing the changes); F-154dcb36 is acked."
+  },
+  {
    "ts": "2026-10-09T16:39:20+0530",
    "task_id": "T-294",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-134 is in review: prompts 01 to 06 were run end to end in a private copy against a local stand-in (no Resend, Dodo or Cal.com test key exists, so no real email or test-mode payment); the real test-mode payment waits on T-253's Dodo key. Prompts 01 to 04 and 06 were edited and committed (6c35d7f), "
-  },
-  {
-   "ts": "2026-10-09T13:38:16+0530",
-   "task_id": "T-131",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-131 stays in review: the relabel was already shipped by an earlier run (source `03fbae0`, mirror `34daef4`), and a headless check today found all four on-demand labels and none of the old webinar, event or replay rows in the script the [live RSP board](https://adisuja.github.io/tantra-workshop-liv"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-294",
+ "task_id": "T-150",
  "entries": [
-  "F-154dcb36"
+  "F-3d3cff60"
  ],
- "started": "2026-10-09T17:09:23+0530",
- "message": "Acting on 1 note(s) for T-294: Decide the open calls on the 17 extra funnel animations and the Whole Machine view"
+ "started": "2026-10-09T17:28:33+0530",
+ "message": "Acting on 1 note(s) for T-150: Workshop Hub: free and paid user-flow maps and post-workshop workflows; tasks live in the Task Command Center"
 }
