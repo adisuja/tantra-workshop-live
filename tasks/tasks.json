@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T17:32:41+0530",
-  "version": 1136,
+  "updated": "2026-10-09T17:33:54+0530",
+  "version": 1137,
   "last_id": 357,
   "team": [
    {
@@ -7591,8 +7591,12 @@
    ],
    "evidence": [
     {
-     "label": "4K walkthrough review index",
-     "url": "http://localhost:8883/wt-review/index.html"
+     "label": "4K walkthrough review index (18 videos)",
+     "url": "http://localhost:8883/wt-review/index.html?v=2e9db5c"
+    },
+    {
+     "label": "Dodo review page (docs route until T-350)",
+     "url": "http://localhost:8883/wt-review/dodo/index.html?v=2e9db5c"
     }
    ],
    "blockers": [],
@@ -7632,6 +7636,11 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Session sweep (2026-10-09): source: fcd892f2 2026-10-07T19:38, 20:19, 21:31 (Adi rejected the v1 videos and set the v2 requirements). Spec was still the v1 brief."
+    },
+    {
+     "ts": "2026-10-09T17:33:54+0530",
+     "who": "claude",
+     "note": "All 18 walkthroughs are on one review index for a single pass (T-282), and the v2 pipeline sources (journeys, recorder scripts, step lists, timelines) are now committed and pushed to branch tantra-walkthroughs 2e9db5c; nothing is merged to main until T-282 approves. Checked: verify.py passes on all 18, every mp4 is 3840 x 2160 and under 2:00 and matches its timeline, the index opens in a headless browser with 18 links and no errors. Not done: the Dodo test-mode key on the GrowthClub account is approved but could not be recorded because the recording browser is signed out of Dodo (T-350, with the Twilio code and Google sign-ins), so Dodo, Twilio and Google keep their docs route; Kie.ai is docs only and Stripe has sign-up plus the docs route, no account. The 4K frames and mp4s stay local (gitignored)."
     }
    ],
    "order": 2150
