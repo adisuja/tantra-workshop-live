@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T13:04:11+0530",
-  "version": 1078,
+  "updated": "2026-10-09T13:09:24+0530",
+  "version": 1080,
   "last_id": 357,
   "team": [
    {
@@ -11236,7 +11236,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "review",
    "why": "These were raised as 'Your call' items in the owner-round reports and have been silently left as the builder chose.",
    "spec": "Open calls the builders raised on workshop-plan/playbook.html that Adi never answered: (1) Day 2 nurture section says 'in the teaching model it lifts show-up to 89%' (playbook.html around lines 2289 and 2371, from the whiteboard) while the funnel-equations model gives about 46% on reference values: align the diagram to the model, or keep the whiteboard figure labelled as the teaching model? Recommended: keep it, label it 'teaching model' in the figure caption too, and never present it as a result. (2) The consultancy and course example sentences (Apex Growth, Northstar Academy 'The Manager Sprint') were written by Claude, not supplied by Adi: approve or rewrite. (3) The 'Day 3 of the challenge' pitch example leaves open whether the challenge is free or paid; the answer is 'free /workshop and paid /masterclass are separate flows' (two-funnel-structure), so confirm the wording. (4) The hosts' bio line on the landing pages still says '$50M+' while the enterprise voice rule bans it: tracked in T-277, no action here. Do not change anything until Adi answers; then edit the source, run python3 workshop-plan/build/titlecase.py then embed.py, copy to app/public/materials/playbook.html and run node workshop-plan/probe-playbook.mjs.",
    "done_when": [
@@ -11244,16 +11244,28 @@
     "Any change is in playbook.html, re-embedded, and probe-playbook.mjs is clean",
     "Review link sent: https://adisuja.github.io/tantra-workshop-live/playbook.html?v=calls"
    ],
-   "evidence": [],
-   "blockers": [
-    "Adi's answers"
+   "evidence": [
+    {
+     "label": "Playbook (live mirror)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=calls#d2-s3-the-nurture-engine-where-show-up-is-won"
+    },
+    {
+     "label": "Commit db882e7",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/db882e7"
+    }
    ],
-   "needs_from_owner": "Read https://adisuja.github.io/tantra-workshop-live/playbook.html and reply on this task: approve the recommended answers to calls 1 to 3, or say what to change.",
+   "blockers": [],
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Added from the session sweep (2026-10-09): source: ec3e66fb 2026-10-05T17:27 (Your call list), 2026-10-05T20:58, 2026-10-06T21:01 (all unanswered); 9628377c 2026-10-05T20:15 (89% vs 46%)."
+    },
+    {
+     "ts": "2026-10-09T13:09:19+0530",
+     "who": "claude",
+     "note": "Orchestrator decisions O-f10f6c3f applied and live. (1) The 89% show-up stays, labelled as the whiteboard teaching model in the body and the figure caption, with the Funnel Equations figure beside it and 'neither number is a result'; I wrote about 30%, not 46%, because the model on the page today computes a 29.9% Show-Up Rate on reference values (46% was the 5 Oct model). (2) The consultancy and course example sentences stay, marked 'illustrative examples, not real companies or client results' (no dashes, no result claims). (3) The course pitch example lives in the centre card (app/src/lib/workshop-cards.ts, not the playbook) and now reads 'Day 3 of the free workshop' with the paid masterclass named as a separate flow; it reaches the live centre with the next centre deploy. (4) The $50M+ line stays with T-277. Checked: titlecase and embed run, probe-playbook clean at 4 widths locally and on the live mirror, new text confirmed in a headless browser; pushed main db882e7 and mirror 70c4cbc. The T-191 ripple needed no change: the 89% is Adi's whiteboard figure and is now labelled, never shown as a result. Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=calls"
     }
    ],
    "order": 2970
