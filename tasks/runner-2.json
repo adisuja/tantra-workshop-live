@@ -97,13 +97,13 @@
    "summary": "T-115 stays blocked and no screenshots were captured: this unattended session has no Claude in Chrome tools and Brave does not answer from here, so the 21 ready captures need an interactive desktop session with Claude in Chrome connected (note F-1962daf4 was already acknowledged; status committed as"
   }
  ],
- "state": "paused",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
+ "task_id": "T-133",
  "entries": [
   "F-1885ef4c",
   "R-208da357"
  ],
- "started": "2026-10-09T11:31:56+0530",
- "message": "Usage limit reached; retries automatically after 12:02. (You've hit your session limit · resets 12pm (Asia/Calcutta))"
+ "started": "2026-10-09T12:02:01+0530",
+ "message": "Acting on 2 note(s) for T-133: Stage 6 guides: real WhatsApp + SMS provider screenshots (5 steps)"
 }

@@ -97,12 +97,12 @@
    "summary": "The forced rebuild of the branch previews is running; once it finishes I will rewrite the sheet tab, check it holds no trycloudflare links, and close out T-194."
   }
  ],
- "state": "paused",
- "message": "Usage limit reached; retries automatically after 12:02. (You've hit your session limit · resets 12pm (Asia/Calcutta))",
- "task_id": null,
+ "state": "working",
+ "message": "Acting on 1 note(s) for T-149: Re-authenticate the Codex CLI so the critic gives a second-model opinion",
+ "task_id": "T-149",
  "entries": [
   "F-444cb6d4"
  ],
  "mode": "feedback",
- "started": "2026-10-09T11:31:57+0530"
+ "started": "2026-10-09T12:02:02+0530"
 }
