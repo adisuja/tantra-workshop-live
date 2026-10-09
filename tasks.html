@@ -203,6 +203,22 @@ a.tl{font-weight:600;cursor:pointer}
 .msg:first-child{border-top:0;padding-top:0}
 .msg .who{font-weight:650;color:var(--ink)} .msg .ts{color:var(--ink-3);font-size:11px;margin-left:6px}
 .msg .act{display:inline-block;font-size:10.5px;font-weight:650;border-radius:20px;padding:0 7px;margin-left:6px;background:var(--gray-bg);color:var(--ink-2)}
+.msg.run{border-style:dashed}
+.msg.run.dud{opacity:.75;padding-top:4px;padding-bottom:4px}
+.msg.run .who{color:var(--accent-ink)} .msg.dec .who{color:var(--violet,var(--accent-ink))}
+.msg .rmeta{font-size:11.5px;color:var(--ink-3);margin-top:3px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.msg .rmeta b{color:var(--ink-2);font-weight:650} .msg.run.error .rmeta b,.msg.run.limit .rmeta b,.msg.run.budget .rmeta b{color:var(--pink)}
+.msg .rmeta .pulse{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:lcpulse 1.4s ease-in-out infinite}
+.msg .rwhy{font-size:12px;color:var(--ink-2);margin-top:4px}
+.linkbtn{background:none;border:0;padding:4px 0 0;color:var(--accent-ink);font-weight:600;font-size:12px;cursor:pointer}
+.tx{margin-top:6px;border-top:1px solid var(--line);padding-top:6px;display:flex;flex-direction:column;gap:5px}
+.tx .tt{font-size:12.5px;white-space:pre-wrap;overflow-wrap:anywhere}
+.tx details{border:1px solid var(--line);border-radius:8px;background:var(--panel);font-size:12px}
+.tx summary{cursor:pointer;padding:4px 8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink-2)}
+.tx summary b{color:var(--ink);font-weight:650;margin-right:4px}
+.tx details.err summary b{color:var(--pink)}
+.tx pre{margin:0;padding:6px 8px;border-top:1px solid var(--line);font:11.5px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;overflow-wrap:anywhere;max-height:320px;overflow:auto}
+.tx pre.out{background:var(--panel-2);color:var(--ink-2)}
 .msg.owner .who{color:var(--amber)} .msg.unread{background:var(--amber-bg);margin:0 -10px;padding-left:10px;padding-right:10px}
 .msg .txt{color:var(--ink-2);white-space:pre-wrap;margin-top:2px}
 .fb{margin-top:10px}
@@ -640,6 +656,53 @@ function paintSend(id){const wa=document.getElementById("wa-"+id),b=document.get
   const ta=document.getElementById("fb-"+id),v=VN[id];
   wa.classList.toggle("has",!!((ta&&ta.value.trim())||(PENDING[id]||[]).length||(v&&v.state!=="recording")));
   b.disabled=!!(v&&["recording","uploading","silent","error"].includes(v.state))||!!SENDING[id]}
+/* ---- Activity (Adi 2026-10-10): everything on a task in one timeline, like reading a Claude Code session: his
+   notes and the task log (above), every Claude Code run with its full transcript, every Orchestrator decision.
+   Files come from tasks/activity.py (the public board gets a leak-guarded copy without tool output). ---- */
+const ACT={},RUNEV={},RUNOPEN=new Set(),TOOLOPEN=new Set();
+const liveRun=id=>(ACT[id]?.runs||[]).some(r=>r.state==="running");
+async function loadActivity(id,force){
+  if(!id||(!force&&ACT[id]&&Date.now()-ACT[id]._t<(liveRun(id)?4000:20000)))return;
+  try{const r=await fetch(`tasks/activity/${encodeURIComponent(id)}.json?v=${Date.now()}`);
+    if(!r.ok){ACT[id]={runs:[],decisions:[],_t:Date.now()};return}
+    const j=await r.json();j._t=Date.now();const was=JSON.stringify([ACT[id]?.runs,ACT[id]?.decisions]);ACT[id]=j;
+    for(const sid of RUNOPEN)if((j.runs||[]).some(x=>x.session===sid&&x.state==="running"))await loadRun(sid);
+    if(was!==JSON.stringify([j.runs,j.decisions])&&openId===id)render()}catch(e){}}
+async function loadRun(sid){try{const r=await fetch(`tasks/activity/runs/${encodeURIComponent(sid)}.json?v=${Date.now()}`);if(r.ok)RUNEV[sid]=(await r.json()).events||[]}catch(e){}}
+async function toggleRun(sid){if(RUNOPEN.has(sid))RUNOPEN.delete(sid);else{RUNOPEN.add(sid);if(!RUNEV[sid])await loadRun(sid)}render()}
+function tgTool(el,id){if(el.open)TOOLOPEN.add(id);else TOOLOPEN.delete(id)}
+function activityItems(t,thread){
+  const a=ACT[t.id]||{},noted=new Set(thread.map(m=>m.id).filter(Boolean));
+  const orchNotes=new Set(INBOX.filter(f=>f.task_id===t.id&&f.orch_id).map(f=>f.orch_id));
+  // bursts of runs that died in seconds on a usage limit fold into one line (2026-10-09 had hundreds)
+  const runs=[];for(const r of a.runs||[]){const dud=(r.secs||0)<20&&/limit/i.test(r.summary||"")&&r.state!=="running";
+    const last=runs.at(-1);if(dud&&last?.dud){last.n++;last.end=r.start}else runs.push(dud?{dud:true,n:1,ts:r.start,end:r.start,why:r.summary}:{ts:r.start,run:r})}
+  return [...thread,...runs.map(x=>x.dud?{ts:x.ts,dud:x}:x),
+    ...(a.decisions||[]).filter(d=>!orchNotes.has(d.id)).map(d=>({ts:d.ts,dec:d}))].sort((x,y)=>tms(x.ts)-tms(y.ts))}
+const MODEL_NAME={opus:"Opus",sonnet:"Sonnet",haiku:"Haiku"};
+const RUN_STATE={ok:"",running:"Working now",limit:"Stopped: usage limit",budget:"Stopped at the 80% usage ceiling",paused:"Stopped: paused",error:"Failed",auth:"Stopped: signed out",interrupted:"Interrupted"};
+const dur=s=>s>=3600?`${Math.floor(s/3600)}h ${Math.round(s%3600/60)}m`:s>=60?`${Math.floor(s/60)}m ${s%60}s`:`${s||0}s`;
+function runHtml(r){const sid=r.session||"",open=RUNOPEN.has(sid),st=RUN_STATE[r.state]??r.state;
+  const secs=r.state==="running"?Math.max(0,Math.round((Date.now()-tms(r.start))/1000)):r.secs;
+  return `<div class="msg run ${esc(r.state)}"><span class="who">Claude Code</span><span class="act">${r.mode==="queue"?"working the task":"acting on "+(r.notes?.length||0)+" note"+(r.notes?.length===1?"":"s")}</span><span class="ts">${esc(String(r.start).slice(0,16).replace("T"," "))}</span>
+    <div class="rmeta">${r.state==="running"?'<i class="pulse"></i>':""}${esc(MODEL_NAME[r.model]||r.model||"")}${r.model?" · ":""}${dur(secs)}${st?" · <b>"+esc(st)+"</b>":""}${r.status&&r.state!=="running"?" · task now "+esc(LABEL[r.status]||r.status):""}</div>
+    ${r.summary?`<div class="txt">${tlink(r.summary)}</div>`:""}
+    ${sid&&(r.has_transcript||r.state==="running")?`<button class="linkbtn" type="button" onclick="toggleRun('${esc(sid)}')">${open?"Hide":"Show"} everything it did</button>${open?transcriptHtml(sid):""}`:""}</div>`}
+function decHtml(d){const open=d.session&&RUNOPEN.has(d.session);
+  return `<div class="msg run dec"><span class="who">Orchestrator</span><span class="act">${esc(String(d.verdict||"").replace(/_/g," "))}</span><span class="ts">${esc(String(d.ts).slice(0,16).replace("T"," "))}</span>
+    ${d.decision?`<div class="txt">${tlink(d.decision)}</div>`:""}${d.why?`<div class="rwhy">Why: ${tlink(d.why)}</div>`:""}
+    ${d.tokens?`<div class="rmeta">${Math.round((d.tokens.in||0)/1000)}k in · ${d.tokens.out||0} out</div>`:""}
+    ${d.session&&d.has_transcript?`<button class="linkbtn" type="button" onclick="toggleRun('${esc(d.session)}')">${open?"Hide":"Show"} how it decided</button>${open?transcriptHtml(d.session):""}`:""}</div>`}
+function transcriptHtml(sid){const ev=RUNEV[sid];
+  if(!ev)return '<div class="tx"><div class="empty">Loading…</div></div>';
+  if(!ev.length)return '<div class="tx"><div class="empty">Nothing recorded yet.</div></div>';
+  const outs={};for(const e of ev)if(e.k==="out")outs[e.id]=e;
+  return '<div class="tx">'+ev.map(e=>{
+    if(e.k==="prompt")return `<details class="tp" ${TOOLOPEN.has(sid+":p")?"open":""} ontoggle="tgTool(this,'${esc(sid)}:p')"><summary>Instructions Claude was given</summary><pre>${esc(e.text)}</pre></details>`;
+    if(e.k==="text")return `<div class="tt">${tlink(e.text)}</div>`;
+    if(e.k==="tool"){const o=outs[e.id],k=esc(e.id||"");
+      return `<details class="tc${o&&o.error?" err":""}" ${TOOLOPEN.has(e.id)?"open":""} ontoggle="tgTool(this,'${k}')"><summary><b>${esc(e.name)}</b> ${esc(e.head||"")}</summary>${e.input!==undefined?`<pre>${esc(e.input)}</pre>`:""}${o?(o.text!==undefined?`<pre class="out">${esc(o.text||"(no output)")}</pre>`:""):'<div class="empty">Running…</div>'}</details>`}
+    return ""}).join("")+'</div>'}
 function detail(t){
   const fb=fbFor(t.id);
   const thread=[...t.log.map(l=>({...l,owner:false,author:(!l.who||l.who==="claude")?"Claude":l.who})),...fb.map(f=>({pending:f.pending,issue:f.issue,ts:f.ts,who:(f.who||"You")+(f.gh_login&&f.gh_login.toLowerCase()!==String(f.who||"").toLowerCase()?` (@${f.gh_login})`:""),id:f.id,note:f.text,act:f.action,owner:true,unread:!f.processed,trusted:f.trusted,attachments:f.attachments}))].sort((a,b)=>tms(a.ts)-tms(b.ts));  // real time order: notes carry +0530, Z and date-only stamps
@@ -655,7 +718,7 @@ function detail(t){
     ${t.needs_from_owner?`<h4>What Claude needs from ${esc(t.owner||"you")}</h4><div class="ask">${esc(t.needs_from_owner)}</div>`:""}
     ${relatedHtml(t)}
   </div><div class="dr">
-    <h4>Thread</h4><div class="thread">${thread.map(m=>`<div class="msg${m.owner?" owner":""}${m.unread?" unread":""}"><span class="who">${m.owner?esc(m.who):esc(m.author||"Claude")}</span>${m.act?`<span class="act">${esc(m.act)}</span>`:""}${m.owner?noteState(m):""}<span class="ts">${esc(String(m.ts).slice(0,16).replace("T"," "))}</span>${m.note?`<div class="txt">${tlink(m.note)}</div>`:""}${attHtml(m.attachments)}</div>`).join("")}</div>
+    <h4>Activity</h4><div class="thread">${activityItems(t,thread).map(m=>m.run?runHtml(m.run):m.dec?decHtml(m.dec):m.dud?`<div class="msg run dud"><span class="who">Claude Code</span><span class="ts">${esc(String(m.dud.ts).slice(0,16).replace("T"," "))}</span><div class="rmeta">${m.dud.n} run${m.dud.n>1?"s":""} stopped within seconds by a usage limit${m.dud.n>1?", until "+esc(String(m.dud.end).slice(11,16)):""}. Nothing was changed.</div></div>`:`<div class="msg${m.owner?" owner":""}${m.unread?" unread":""}"><span class="who">${m.owner?esc(m.who):esc(m.author||"Claude")}</span>${m.act?`<span class="act">${esc(m.act)}</span>`:""}${m.owner?noteState(m):""}<span class="ts">${esc(String(m.ts).slice(0,16).replace("T"," "))}</span>${m.note?`<div class="txt">${tlink(m.note)}</div>`:""}${attHtml(m.attachments)}</div>`).join("")}</div>
     ${composerHtml(t)}
   </div></div>`;
 }
@@ -693,7 +756,7 @@ function openTaskPanel(id,ctx){
   if(ctx&&ctx!==NAVCTX.key)NAVCTX={key:ctx,label:CTX_LABEL[ctx]||(ctx.startsWith("col:")?LABEL[ctx.slice(4)]+" column":CTX_LABEL.list)};
   else if(!ctx&&!ctxIds().includes(id))NAVCTX={key:"list",label:CTX_LABEL.list};
   if(openId!==id){DSCROLL=0;THREAD_BOTTOM=true}
-  openId=id;render();const i=ctxIds().indexOf(id);if(i>=0)NAVIDX=i;
+  openId=id;render();loadActivity(id,true);const i=ctxIds().indexOf(id);if(i>=0)NAVIDX=i;
   // the list below follows along only when the walk IS the list; nothing else ever scrolls the page
   if(NAVCTX.key==="list"){const r=document.querySelector(`#board .group #t-${CSS.escape(id)} > .row`);if(r){const b=r.getBoundingClientRect();if(b.top<0||b.bottom>innerHeight)r.scrollIntoView({block:"nearest"})}}}
 function closeTask(){openId=null;DSCROLL=0;document.querySelectorAll(".task.open").forEach(e=>e.classList.remove("open"));document.querySelectorAll(".kopen").forEach(e=>e.remove());document.body.classList.remove("dopen");paintGlobal()}
@@ -1042,6 +1105,7 @@ async function fillTranscripts(){
 const AGENT_TEXT={working:"Working",idle:"Idle",paused:"Paused",offline:"Offline",disabled:"Paused by you"};
 let agentSig="";
 async function pollAgent(){
+  if(openId)loadActivity(openId);
   const get=async u=>{try{const r=await fetch(u+"?v="+Date.now());return r.ok?await r.json():{}}catch(e){return{}}};
   const [st,qs,cf,sync,orch]=await Promise.all([get("tasks/runner.json"),get("tasks/runner-queue.json"),get("tasks/agent.json"),get(STATIC?"tasks/sync.json":"tasks/.board-sync.json"),get("tasks/orchestrator-board.json")]);
   const helpers=await Promise.all(["tasks/runner-2.json","tasks/runner-3.json"].map(get));HELPERS_ST=helpers.filter(h=>h&&h.state==="working");

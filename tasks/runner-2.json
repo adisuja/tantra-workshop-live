@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T01:13:12+0530",
+   "task_id": "T-259",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "error",
+   "summary": ": \\\"revops-centre\\\",\\n  \\\"main\\\": \\\"src/index.ts\\\",\\n  \\\"compatibility_date\\\": \\\"2026-09-30\\\",\\n  \\\"compatibility_flags\\\": [\\\"nodejs_compat\\\"],\\n  // the attendee's funnel Worker and its schema ship as text: the agent uploads them to their account\\n  \\\"rules\\\": [{ \\\"type\\\": \\\"Text\\\", \\\"globs\\\": [\\\"*"
+  },
+  {
    "ts": "2026-10-10T00:57:06+0530",
    "task_id": "T-255",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-061 is blocked on the Tantra API key (T-337). Everything else is built, but nothing is deployed and the two campaigns don't exist in the real Tantra yet.\n\n- **Routing:** a sign-up now goes into \"RevOps Workshop: Free (/workshop)\" or \"RevOps Workshop: Paid (/masterclass)\" by its lane. The contact i"
-  },
-  {
-   "ts": "2026-10-09T19:21:31+0530",
-   "task_id": "T-025",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "error",
-   "summary": "e\":\"Bash\",\"input\":{\"command\":\"cd /Users/adithyamurali/tantra-redesign; curl -s \\\"http://localhost:8899/playbook.html?v=t025\\\" | grep -c \\\"d2-rsp-s1-traffic\\\"; cd workshop-plan && node probe-playbook.mjs http://localhost:8899 playbook.html deck.html 2>&1 | tail -25\",\"description\":\"Run the playbook he"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-259",
+ "task_id": "T-261",
  "entries": [
-  "F-3fdf6d62"
+  "F-03eda903"
  ],
- "started": "2026-10-10T00:57:18+0530",
- "message": "Acting on 1 note(s) for T-259: S2 to S5 guides: make the steps match what the centre already automates"
+ "started": "2026-10-10T01:13:12+0530",
+ "message": "Acting on 1 note(s) for T-261: Centre: domains and DNS outside Cloudflare, workers.dev subdomain and registrar gate"
 }
