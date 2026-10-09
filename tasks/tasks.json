@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T12:30:51+0530",
-  "version": 1062,
+  "updated": "2026-10-09T12:47:33+0530",
+  "version": 1063,
   "last_id": 357,
   "team": [
    {
@@ -5105,7 +5105,7 @@
    "blockers": [
     "Tantra and Twilio signed in by Adi in Claude in Chrome"
    ],
-   "needs_from_owner": "Tracked on T-339: sign in to https://console.twilio.com in the Brave profile Claude in Chrome uses, then open a Claude Code desktop session with Claude in Chrome connected and type: Act on T-133.",
+   "needs_from_owner": "Tracked on T-339: sign in to https://console.twilio.com in the Brave profile Claude in Chrome uses (Tantra is already signed in), then open a Claude Code desktop session with Claude in Chrome connected and type: Act on T-133.",
    "log": [
     {
      "ts": "2026-09-25T19:38:41+0530",
@@ -5131,6 +5131,11 @@
      "ts": "2026-10-09T12:09:56+0530",
      "who": "claude",
      "note": "Checked 5 related task(s); updating T-115."
+    },
+    {
+     "ts": "2026-10-09T12:47:33+0530",
+     "who": "claude",
+     "note": "Re-run of the same Orchestrator decision (O-659c1aaf): everything it asked for was already applied in commit 2bd704e and published, so nothing changed this run. Re-checked today: check-guides passes, the mirror serves the Tantra template screen and campaign scheduler wording, and the Twilio segment calculator image loads. The 4 signed-in captures (WhatsApp 1, 2, 4 and SMS 3) still cannot run here because this unattended runner has no browser, so the Tantra slots could not start even though Tantra is signed in; the one input stays on T-339."
     }
    ],
    "order": 1330,

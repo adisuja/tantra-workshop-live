@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T12:47:43+0530",
+   "task_id": "T-133",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-133 stays blocked: the Orchestrator's rewrite was already applied and published (2bd704e), and the four signed-in captures (WhatsApp 1, 2, 4 and SMS 3) still need the Twilio sign-in plus a desktop session with a browser, tracked on T-339. Both notes were already acknowledged."
+  },
+  {
+   "ts": "2026-10-09T12:47:02+0530",
+   "task_id": "T-299",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "error",
+   "summary": "c\",\"timestamp\":\"2026-10-09T07:17:00.081Z\",\"request_id\":\"req_011CfrFg5br3WNkCGfjBCGBf\"}\n{\"type\":\"assistant\",\"message\":{\"model\":\"claude-opus-5-5\",\"id\":\"msg_011CfrFg7MGz9ioHhMPAdQDV\",\"type\":\"message\",\"role\":\"assistant\",\"content\":[{\"type\":\"tool_use\",\"id\":\"toolu_01Fp1xRMveGCYtAm1NACwkxT\",\"name\":\"Bash\",\"i"
+  },
+  {
    "ts": "2026-10-09T11:31:59+0530",
    "task_id": "T-299",
    "mode": "feedback",
@@ -79,30 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-191 stays in review: this was a re-run of the same Orchestrator note, whose 14 answers were already applied, pushed and published earlier today (b880b67), so this run built and pushed nothing. On recheck, three probes and the second-wording grep are clean; `probe-details` still fails on items this"
-  },
-  {
-   "ts": "2026-10-09T08:44:04+0530",
-   "task_id": "T-117",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-117 stays in review for Bhaskar and Bharath: this was a re-fire of an already-handled note, the fix (05745e5) is on origin/main and live on the mirror with 8.6K / 825 / 9.6% on the FunnelOS board, and the note flags that `day-engine.tsx` and `visuals.tsx` still show the old 11.4K / 368 / 179 chain"
-  },
-  {
-   "ts": "2026-10-09T08:42:27+0530",
-   "task_id": "T-116",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "ssion_id\":\"d5aad829-c976-41df-870e-207f231a5924\"}\n{\"type\":\"tool_progress\",\"tool_use_id\":\"toolu_01W8Yr2RaAN5ZZeYq3JXJ4Ub-heartbeat-0\",\"tool_name\":\"Bash\",\"parent_tool_use_id\":\"toolu_01W8Yr2RaAN5ZZeYq3JXJ4Ub\",\"elapsed_time_seconds\":30,\"heartbeat\":true,\"session_id\":\"d5aad829-c976-41df-870e-207f231a5924\""
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-299",
+ "task_id": "T-149",
  "entries": [
-  "F-4257e252"
+  "F-444cb6d4"
  ],
- "started": "2026-10-09T12:02:01+0530",
- "message": "Acting on 1 note(s) for T-299: Centre: cold email inboxes come from the inbox vendor only, several calendar senders, and a sign-up inbox card"
+ "started": "2026-10-09T12:47:49+0530",
+ "message": "Acting on 1 note(s) for T-149: Re-authenticate the Codex CLI so the critic gives a second-model opinion"
 }
