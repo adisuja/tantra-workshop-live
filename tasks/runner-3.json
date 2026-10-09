@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T00:49:01+0530",
+   "task_id": "T-130",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-130 is in review for Adi and Bharath: all 24 guide flowcharts run left to right at 1440 and top to bottom at 390 with every label on its connector, live on the centre (Worker 5fe16470) and the mirror. Three charts that were cutting a label on a phone now fit (6e1facf). Two things remain: 19 of 24 "
+  },
+  {
    "ts": "2026-10-09T20:29:04+0530",
    "task_id": "T-241",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-153 is in review: the features pipeline is built, the first weekly decision is logged, and the commit is pushed to origin main as 40ee37a.\n\n- **What's there:** The pipeline is in `workshop-plan/tasks/features/`. The rubric is `docs/feature-rubric.md`. It has intake fields matching T-151, a duplica"
-  },
-  {
-   "ts": "2026-10-09T19:45:37+0530",
-   "task_id": "T-152",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-152 is in review. The severity levels, a local Claude bug pipeline and the first weekly report are done. Five fix PRs (#160 to #164) and a CI PR (#165) are open on tantra-backend-v2 against `development`.\n\n- **Bug source:** GitHub issues were empty and the YOGI bug log covers a different product, "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-130",
+ "task_id": "T-257",
  "entries": [
-  "F-33d7ff36"
+  "F-f9b6048f"
  ],
- "started": "2026-10-10T00:23:41+0530",
- "message": "Acting on 1 note(s) for T-130: Make the busiest guide flowcharts easier to read"
+ "started": "2026-10-10T00:49:06+0530",
+ "message": "Acting on 1 note(s) for T-257: Screenshots: delete orphan WebPs, re-crop for phone legibility, fix mismatched captures, add Day 1 and Day 3 playbook shots"
 }

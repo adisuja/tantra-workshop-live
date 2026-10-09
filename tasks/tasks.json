@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T20:34:31+0530",
-  "version": 1293,
-  "last_id": 364,
+  "updated": "2026-10-10T00:49:20+0530",
+  "version": 1333,
+  "last_id": 370,
   "team": [
    {
     "name": "Adi",
@@ -5569,7 +5569,7 @@
    "owner": "Aquila",
    "priority": "P1",
    "due": "2026-09-28",
-   "status": "queue",
+   "status": "review",
    "why": "Vertical charts and detached labels are why the busiest charts are hard to follow.",
    "spec": "Renderer and layout only (node and copy gaps are T-254, S2 per-mechanism flows are T-255; T-205 rebuilt all 24 charts from one journey model). In app/src/components/guides/flow-chart.tsx and layout.ts: let desktop charts run left to right (full-bleed box or a lower horizontal threshold; all 24 lay out vertical at 1440), reserve label space so every edge label sits on its connector instead of a chip, and fix the four merge-span warnings from app/scripts/probe-details.mjs (s5-webinar-stages, s1-overview, s4-rsp, s1-cold-email) by re-ranking nodes or layout hints. Closes audit G121, G122, G063, P0419e, P274e7, P4310c, P50286 (details in /Users/adithyamurali/tantra-round5-coord/AUDIT.md).",
    "done_when": [
@@ -5578,7 +5578,28 @@
     "No gf-in label chips at 1440",
     "Every listed finding id is marked fixed in AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Centre: reverse squeeze chart (open at 1440)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/guides/s4-rsp/?v=t130c"
+    },
+    {
+     "label": "Centre: pipeline chart, the busiest",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/guides/s5-pipeline/?v=t130c"
+    },
+    {
+     "label": "Mirror: challenge stages (open on a phone)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s5-challenge-stages/?v=t130c"
+    },
+    {
+     "label": "Mirror: cold email chart",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s1-cold-email/?v=t130c"
+    },
+    {
+     "label": "Screenshots at 1440 and 390",
+     "url": "/tmp/t130-final-centre"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -5601,12 +5622,23 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: linked the sibling flowchart tasks T-254 and T-255; renderer scope unchanged."
+    },
+    {
+     "ts": "2026-10-10T00:48:56+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T00:48:56+0530",
+     "who": "claude",
+     "note": "All 24 guide flowcharts now run left to right at 1440 in a 1360 px box and top to bottom at 390, every label sits on its connector (no chips), and the four merge-span warnings are gone; live on the centre (Worker 5fe16470) and the mirror, source eb2bb14 plus 6e1facf, which makes three near-miss charts fit a phone instead of cutting a label. Checked on both live sites at 1440 and 390 (24 of 24 pass), probe-details 0 merge-span WARN, probe-flows PASS, tsc 0, seven findings marked fixed in AUDIT.md. Still true: 19 of the 24 charts are wider than a phone and scroll sideways at 390 (unchanged behaviour), and check-guides fails on s5-pipeline because T-254 took it to 17 nodes against a cap of 14."
     }
    ],
    "order": 1280,
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ]
   },
   {
@@ -10554,11 +10586,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Owner rules: no unsourced stats, and the same fact must read the same in every guide.",
    "spec": "Copy-only fixes across app/src/content/guides/**: remove or source five unsourced claims, use one reminder schedule verbatim in the S3 chart and steps 3 and 4, delete the duplicated WhatsApp paragraph in S3 step 4, replace T-minus notation with plain wording, align the no-show source across S3, S4 and S5, make s1-ads reuse the S2 generate_lead event, use a month-free UTM slug example, and give the prompt Copy button an accessible name in app/src/components/guides/guide-view.tsx. Closes audit findings G015, G033, G052, G072, G076, G023, G024, G032, G025, G116, G094, G128. Per finding: G015 (app/src/content/guides/s2-landing/s2-tantra-pro-funnel.ts): Drop the claim or cite a source. G033 (app/src/content/guides/s3-nurture/s3-tantra-pro-flow.ts): Remove the unsourced comparison. G052 (app/src/content/guides/s4-conversion/s4-challenge.ts): Remove or source the claim. G072 (app/src/content/guides/s5-pipeline/s5-follow-ups.ts): Drop the coin-flip line. G076 (app/src/content/guides/s5-pipeline/s5-extra-pipelines.ts): Remove or source the claim. G023 (app/src/content/guides/s3-nurture/s3-tantra-pro-flow.ts): Pick the scheduler's schedule (T-7d, T-24h 08:00, T-1h, live) and use it verbatim in the chart, step 3 and step 4. G024 (app/src/content/guides/s3-nurture/s3-tantra-pro-flow.ts): Delete the second copy of the WhatsApp plain-statement paragraph in step 4. G032 (app/src/content/guides/s3-nurture/s3-tantra-pro-flow.ts): Replace every T-N with '24 hours before' style wording. G025 (app/src/content/guides/s4-conversion/s4-webinar.ts): Pick one no-show source (Webinar ended with no live view, as the funnel does) and align S3 step 9 and S5 webinar-stages step 1 to it. G116 (app/src/content/guides/s1-traffic/s1-ads.ts): Make s1-ads step 1 reuse the S2 step 7 event (only star it), and delete the Create-without-code path. G094 (app/src/content/guides/s1-traffic/s1-overview.ts): Use a month-free slug such as ops-webinar-weekly. G128 (app/src/components/guides/guide-view.tsx): Label it 'Copy prompt: <title>' (aria-label at least). When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Coordinate with T-264, which rewrites the S3 WhatsApp step (s3-tantra-pro-flow.ts 'Connect WhatsApp and Get the Templates Approved') onto Tantra, and with T-260, which owns the T-0 voice call (G029, X092); do not reword those parts here. Reminder timing wording must match the Tantra omni-channel campaign model (owner 2026-10-07: reminders run on Tantra campaigns fed by registrant import).",
    "done_when": [
@@ -10567,7 +10600,28 @@
     "No U+2212 T-notation left in s3-tantra-pro-flow.ts",
     "Every listed finding id is marked fixed in AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "S3 guide, live mirror",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s3-tantra-pro-flow/?v=t256"
+    },
+    {
+     "label": "S1 ads guide, live mirror",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s1-ads/?v=t256"
+    },
+    {
+     "label": "Playbook, live mirror",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t256"
+    },
+    {
+     "label": "All guides, local",
+     "url": "http://localhost:4322/debug/guides?v=t256"
+    },
+    {
+     "label": "Audit file with the 12 ids marked",
+     "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -10580,6 +10634,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still open on main f6aeb7e (only board commits since the 1fd8de2 re-verification); added coordination with T-264 (S3 step 'Connect WhatsApp and Get the Templates Approved' moves off Twilio/Meta) and T-260 (voice call G029/X092)."
+    },
+    {
+     "ts": "2026-10-10T00:49:20+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T00:49:20+0530",
+     "who": "claude",
+     "note": "All 12 audit findings are fixed and live: the five unsourced claims are gone (also from the playbook and the Stage 5 card), the S3 chart, step 3 and step 4 carry one reminder schedule sentence with no T-minus notation, no-show comes from Webinar ended with no live view in S3, S4 and S5, s1-ads reuses the Stage 2 generate_lead event, the slug is ops-webinar-weekly and Copy buttons are named. Checked by git grep (no quoted claim left), typecheck, the leak probe on the export, a headless screenshot of the S3 chart and the live mirror pages; check-guides has one failure that predates this work (s5-pipeline chart has more than 14 nodes) and the rendered probe-guides run hung on the shared dev server, so it did not finish. Pushed to origin main (e3ac1ca, 0330ca0) and published to the mirror; the centre Worker was not redeployed because two remote migrations from other tasks (0023, 0025) are pending, so the one card line ships with the next Integrator deploy. Ripple from T-191: nothing else had to change in committed guide copy, but another lane's uncommitted chart in s2-tantra-pro-funnel.ts labels lanes Free Lane and Paid Lane and should be renamed before it lands."
     }
    ],
    "order": 2560

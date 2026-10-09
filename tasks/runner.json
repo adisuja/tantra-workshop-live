@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T00:49:29+0530",
+   "task_id": "T-256",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-256 is in review: all 12 audit findings are fixed, pushed to origin main (`e3ac1ca`, `0330ca0`) and live on the mirror (`fba6ead`), but the centre Worker was not redeployed because remote migrations 0023 and 0025 from other tasks are pending, and `probe-guides` hung without finishing."
+  },
+  {
    "ts": "2026-10-09T20:10:40+0530",
    "task_id": "T-236",
    "mode": "feedback",
@@ -87,23 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-024 is in review: the Day 1 to 3 output templates are rebuilt on the live v5 ids (one section per question, 8/9/8, with named `data-slot` attributes), the probe passes locally and on the mirror, and the work is pushed to the workshop repo (123cf7f) and published at https://adisuja.github.io/tantra"
-  },
-  {
-   "ts": "2026-10-09T18:05:41+0530",
-   "task_id": "T-100",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-100 stays in review: `/vip` is clean at all 7 widths on the live mirror, every count chip matches the template library, and no bonus is tagged \"VIP only\". No fix or republish was needed, so nothing was pushed. Probe output is committed in `workshop-plan/evidence/T-100-vip-probes-2026-10-09.txt`, t"
   }
  ],
  "state": "working",
- "message": "Acting on 2 note(s) for T-256: Guide copy: unsourced claims, S3 reminder schedule wording and cross-guide consistency",
- "task_id": "T-256",
+ "message": "Acting on 1 note(s) for T-258: S1 traffic guides: automate the remaining manual steps the centre can do (DNS checks, suppression, GCP setup, GA4 reads)",
+ "task_id": "T-258",
  "entries": [
-  "F-09ff26fd",
-  "R-92f99856"
+  "F-65eef88d"
  ],
  "mode": "feedback",
- "started": "2026-10-10T00:23:42+0530"
+ "started": "2026-10-10T00:49:35+0530"
 }
