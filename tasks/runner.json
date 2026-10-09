@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T13:16:38+0530",
+   "task_id": "T-296",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-296 stays in review: the 05:07 decision had already been carried out in the 13:04 pass, so nothing new was built. A fresh check found the live gated page passing all 26 gate checks, the old github.io address returning 404 and no file still linking to it. F-73cd259e was already acknowledged."
+  },
+  {
    "ts": "2026-10-09T13:16:02+0530",
    "task_id": "T-294",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "limit",
    "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T09:31:40+0530",
-   "task_id": "T-299",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-296: RevOps Funnel Equations lead magnet: keep one copy, decide the sign-up gate, give the team write access",
- "task_id": "T-296",
+ "message": "Acting on 1 note(s) for T-294: Decide the open calls on the 17 extra funnel animations and the Whole Machine view",
+ "task_id": "T-294",
  "entries": [
-  "F-73cd259e"
+  "F-154dcb36"
  ],
  "mode": "feedback",
- "started": "2026-10-09T13:16:02+0530"
+ "started": "2026-10-09T13:16:46+0530"
 }

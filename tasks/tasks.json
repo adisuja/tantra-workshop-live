@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T13:11:23+0530",
-  "version": 1081,
+  "updated": "2026-10-09T13:16:34+0530",
+  "version": 1083,
   "last_id": 357,
   "team": [
    {
@@ -11221,6 +11221,11 @@
      "ts": "2026-10-09T13:04:11+0530",
      "who": "claude",
      "note": "The page is now one copy on Cloudflare behind a name, email and WhatsApp form, with one link to the free workshop once it opens; GitHub Pages is off (404) and the handoff prompt and repo rules say fork and open a pull request. Checked in a headless browser on the live page at desktop and phone widths (26 of 26 checks), and the wiring-probe sign-up shows in the Tantra Tracker's new Funnel Equations tab; I ran the live test twice, so there are two test rows, not one, both safe to delete. One thing to know: the live sheet receiver only takes its six form names and changing it needs Adi's Google login, so sign-ups arrive as rows tagged source=funnel-equations in the Work Tracker's Free Registrations tab, and the tracker sync moves them to their own tab and keeps them out of workshop and referral counts. Open: https://revops-funnel-equations.growthcluborg.workers.dev/?v=1791531251"
+    },
+    {
+     "ts": "2026-10-09T13:16:34+0530",
+     "who": "claude",
+     "note": "Nothing new to build: this 05:07 decision was already carried out in the 13:04 pass (one gated copy on Cloudflare, GitHub Pages off, fork and pull request in the handoff prompt, wiring-probe rows in the Funnel Equations tab). Rechecked now: the live page passes all 26 gate checks at desktop and phone widths with the form post stubbed (no extra test row), the old github.io address returns 404, and no file still links to it. The 13:06 Orchestrator note asks for the same steps, so it is covered too. Open: https://revops-funnel-equations.growthcluborg.workers.dev/?v=1791531994"
     }
    ],
    "order": 2960
