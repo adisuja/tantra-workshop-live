@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T08:01:38+0530",
-  "version": 972,
+  "updated": "2026-10-09T08:02:06+0530",
+  "version": 974,
   "last_id": 349,
   "team": [
    {
@@ -107,6 +107,11 @@
      "ts": "2026-10-09T05:06:10+0530",
      "who": "Orchestrator",
      "note": "People: assignee Adi → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-09T08:02:06+0530",
+     "who": "claude",
+     "note": "T-260 settled the tool calls this task pointed to (2026-10-09): GoHighLevel, HubSpot and Zoho stay as attendee-owned CRM options; Beehiiv, Notion, WordPress, Expandi and Sales Navigator are replaced (see approved-vendor-stack). The curriculum calls listed here are unaffected and still need their answers."
     }
    ],
    "order": 1
@@ -1795,8 +1800,7 @@
    ],
    "evidence": [],
    "blockers": [
-    "T-147 calendar.usetantra.com times out from this Mac (rechecked 2026-10-08)",
-    "T-260 decision on Sales Navigator"
+    "T-147 calendar.usetantra.com times out from this Mac (rechecked 2026-10-08)"
    ],
    "needs_from_owner": "",
    "log": [
@@ -1819,6 +1823,11 @@
      "ts": "2026-10-09T05:14:30+0530",
      "who": "Orchestrator",
      "note": "People: assignee Bhaskar → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-09T08:02:06+0530",
+     "who": "claude",
+     "note": "T-260 settled the Sales Navigator question (2026-10-09, O-5ba08511): Sales Navigator is replaced by data-vendor lists through the list-partner card, so build the cold calendar lists from those. Only the T-147 blocker remains."
     }
    ],
    "order": 350,
