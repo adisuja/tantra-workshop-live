@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T08:13:49+0530",
-  "version": 983,
+  "updated": "2026-10-09T08:14:00+0530",
+  "version": 984,
   "last_id": 349,
   "team": [
    {
@@ -4085,6 +4085,11 @@
      "ts": "2026-10-09T08:13:49+0530",
      "who": "claude",
      "note": "The FunnelOS webinar board on /masterclass no longer shows the 11.4K / 368 / 3.2% / 179 totals: every Stage 2 figure is now the Tantra Pro Funnel set from the whiteboard (8.6K visits, 825 registrations, 9.6%, plus 58% engagement and 0.8s load from the same block), and Stage 4 leads with 18 calls booked live. Verified with the git grep (no 368, 11.4K, 3.2% or 6.89% in either file), tsc, the FunnelOS shoot on desktop and phone, probe-funnels and probe-workshop (one failure each, both outside this change: a 404 resource on /onboarding and the cohort date line on /masterclass/success/join at 1440px); committed as 05745e5, pushed to main (the push also carried 7 earlier agent commits) and published to the mirror (21ab8c5), where the live page shows the new board. Bhaskar, three things to know: the 48.6% show-up stays although it was derived from the removed totals, the same old totals still sit in day-art.tsx, day-engine.tsx, visuals.tsx and the /funnels/system comparison (outside this task's two files), and the uncommitted Tantra Pro to Tantra Funnel rename another session left in these files is untouched."
+    },
+    {
+     "ts": "2026-10-09T08:14:00+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-108."
     }
    ],
    "order": 1150,
