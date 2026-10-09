@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T13:48:55+0530",
+   "task_id": "T-134",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-134 is in review: prompts 01 to 06 were run end to end in a private copy against a local stand-in (no Resend, Dodo or Cal.com test key exists, so no real email or test-mode payment); the real test-mode payment waits on T-253's Dodo key. Prompts 01 to 04 and 06 were edited and committed (6c35d7f), "
+  },
+  {
    "ts": "2026-10-09T13:38:16+0530",
    "task_id": "T-131",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-149 stays blocked on Adi's Codex sign-in (T-340): the check script, hourly launchd check and labelled Fable 5 fallback were already built, the check still fails with HTTP 401, and note F-444cb6d4 was already acked."
-  },
-  {
-   "ts": "2026-10-09T12:47:43+0530",
-   "task_id": "T-133",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-133 stays blocked: the Orchestrator's rewrite was already applied and published (2bd704e), and the four signed-in captures (WhatsApp 1, 2, 4 and SMS 3) still need the Twilio sign-in plus a desktop session with a browser, tracked on T-339. Both notes were already acknowledged."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-134",
+ "task_id": "T-004",
  "entries": [
-  "F-7015c234"
+  "F-0334459d"
  ],
- "started": "2026-10-09T13:38:21+0530",
- "message": "Acting on 1 note(s) for T-134: Starter CRM: build the reference connections (prompts 01 to 06) so the planned steps get real screenshots"
+ "started": "2026-10-09T13:49:00+0530",
+ "message": "Acting on 1 note(s) for T-004: Seat checkout (Dodo, live), geo-priced"
 }

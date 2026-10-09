@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T13:38:09+0530",
-  "version": 1096,
+  "updated": "2026-10-09T13:48:52+0530",
+  "version": 1098,
   "last_id": 357,
   "team": [
    {
@@ -5198,21 +5198,31 @@
    ],
    "evidence": [
     {
-     "label": "Starter CRM guide, steps 2 and 3 (local)",
-     "url": "http://localhost:4322/debug/guides?only=s5-crm-starter&v=t134c"
+     "label": "Reference board (local, test deals)",
+     "url": "http://localhost:8765/?v=1791533932"
     },
     {
-     "label": "Guide source",
-     "url": "app/src/content/guides/s5-pipeline/s5-crm-starter.ts"
+     "label": "Board capture",
+     "url": "/Users/adithyamurali/tantra-private/crm-reference/captures/board-sales-desktop.png"
+    },
+    {
+     "label": "runner --dry-run capture",
+     "url": "/Users/adithyamurali/tantra-private/crm-reference/captures/runner-dry-run.png"
+    },
+    {
+     "label": "Payment recorded (contact page capture)",
+     "url": "/Users/adithyamurali/tantra-private/crm-reference/captures/contact-priya-desktop.png"
+    },
+    {
+     "label": "Prompts and README (commit 6c35d7f)",
+     "url": "workshop-plan/crm-starter/README.md"
     },
     {
      "label": "Revert ledger row",
      "url": "scripts/walkthroughs/REVERT_LEDGER.md"
     }
    ],
-   "blockers": [
-    "Owner go / skip decision"
-   ],
+   "blockers": [],
    "needs_from_owner": "",
    "log": [
     {
@@ -5239,6 +5249,11 @@
      "ts": "2026-10-09T13:36:02+0530",
      "who": "claude",
      "note": "The guide this task targeted was rewritten at 08:32 today (T-191): the laptop crm.py steps for payments.py, runner --dry-run and the localhost:8765 board no longer exist, and no guide links the six prompts, so I did not build them. Instead I ran the real funnel Worker locally on :8765, pushed test contacts through it (registration, a signed Cal.com booking, a signed Dodo payment: wrong signature refused, repeat ignored) and put four real /crm board captures into steps 2 and 3 of the Worker guide; check-guides and probe-guides pass, capture-needed is down from 73 to 71. One finding to confirm: a payment lands the card in Onboarding, not Payment Completed, so I corrected this guide's wording (card-education.ts still says Payment Completed); not published to the mirror or pushed, nothing was created on any vendor, and steps 1, 4, 5 and 6 still need the centre cards, Claude Code (T-132) and a mirrored CRM."
+    },
+    {
+     "ts": "2026-10-09T13:48:52+0530",
+     "who": "claude",
+     "note": "Built the full reference CRM from prompts 01 to 06 in a private folder (~/tantra-private/crm-reference, outside the repo): intake, payments, the follow-up runner, the four extra pipelines, the board on localhost:8765 and the 5 minute schedule all ran end to end with 10 test deals, and I checked runner --dry-run (21 messages in the next 24h), double-run dedupe, the 7/30/90 day rules and the board at 1440 and 390 px. No test key existed for Resend, Dodo or Cal.com (the Resend field in r5F-readonly-keys.json is empty, app/.env.local is live Dodo only), so all three ran against a local stand-in with made-up keys: no real email or payment, and the real test-mode payment waits on the DODO_TEST_API_KEY already asked for in T-253. Prompts 05 and 06 ran as written, 01 to 04 needed fixes that are now in the prompts and the README check column (commit 6c35d7f, not pushed because main is 1 behind origin with other lanes' uncommitted work in the checkout); the guide was rewritten by T-191 so the three old capture slots no longer exist and nothing went to the mirror. Open the board at http://localhost:8765/?v=1791533932."
     }
    ],
    "order": 1340,
@@ -9314,6 +9329,11 @@
      "ts": "2026-10-09T12:49:12+0530",
      "who": "claude",
      "note": "Re-run of Orchestrator decision O-f3df9ab0: all of it was already built and pushed in ad3ebaf, so nothing changed. Re-checked today: tsc clean, probe-connector-guards.mjs all pass, connector-checks.mjs lists Zoom as run (API refused it, nothing created, in REVERT_LEDGER) and Tantra, WebinarGeek, Cal.com, Dodo and Stripe as waiting only on test keys; vendor-test.env still holds none of them. Still blocked on those keys; the newer Orchestrator note F-46b4f4a4 (CRM check scripts) is not part of this run and is still unread."
+    },
+    {
+     "ts": "2026-10-09T13:48:52+0530",
+     "who": "claude",
+     "note": "From T-134: the starter CRM reference build is ready to take real test keys. Once DODO_TEST_API_KEY and CALCOM_TEST_API_KEY land in vendor-test.env, point ~/tantra-private/crm-reference/crm-starter/.env at them and rerun payments.py and intake.py for the real test-mode proof. A Resend test key is also missing (r5F-readonly-keys.json has an empty resend_api_key)."
     }
    ],
    "order": 2530
