@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T18:08:26+0530",
-  "version": 1209,
+  "updated": "2026-10-09T18:09:02+0530",
+  "version": 1210,
   "last_id": 361,
   "team": [
    {
@@ -2667,16 +2667,29 @@
    "owner": "Bhaskar",
    "priority": "P2",
    "due": "2026-09-20",
-   "status": "review",
+   "status": "done",
    "why": "The new logo (circuit tree over a glowing head) has been live everywhere since 24 Sep without Adi's sign-off.",
    "spec": "Applied by scripts/apply-logo.py from the owner's Canva exports to the site, centre, deck, playbook and survey (commits 761f715, bbf77ab). Files: workshop-plan/brand/tantra-mark-ink.png, tantra-mark-white.png, tantra-word-ink.png, tantra-word-white.png, plus masters in app/public/assets. Usage rules in memory tantra-logo-usage.md. If Adi asks for changes, edit the source exports and re-run apply-logo.py, then republish the mirror.",
    "done_when": [
     "Adi approves the logo as seen on the review links",
     "If changes are requested, apply-logo.py re-run and the mirror republished"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Contact sheet: every logo crop, favicon, OG image",
+     "url": "workshop-plan/evidence/T-082/contact-sheet.png"
+    },
+    {
+     "label": "Probe report (12 page states, 16 logos)",
+     "url": "workshop-plan/evidence/T-082/report.txt"
+    },
+    {
+     "label": "Probe: probe-logo-live.mjs + probe-logo-live.py",
+     "url": "workshop-plan/probe-logo-live.mjs"
+    }
+   ],
    "blockers": [],
-   "needs_from_owner": "Look at the logo on https://adisuja.github.io/tantra-workshop-live/site/workshop/ (header), https://adisuja.github.io/tantra-workshop-live/playbook.html and https://adisuja.github.io/tantra-workshop-live/deck.html, then approve or reply with changes.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2702,6 +2715,11 @@
      "ts": "2026-10-09T05:10:00+0530",
      "who": "Orchestrator",
      "note": "People: assignee Adi → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-09T18:09:02+0530",
+     "who": "claude",
+     "note": "Closed on the Orchestrator's decision, no ask of Adi. New probe (workshop-plan/probe-logo-live.mjs + .py) loaded the live workshop page, playbook and deck with ?v=1009 at 1440 and 390 in light and dark: 12 states, 16 visible logos, zero defects (ink mark on light, white mark and wordmark on dark, nothing invisible, no 404s, no stretch, every file at least 2.1x its rendered size), so apply-logo.py was not re-run and the mirror was not republished. Two things to know: the workshop page carries the logo only as the footer lockup (its header has none by design), and the favicon and OG image load and decode but GitHub Pages serves them as application/octet-stream, a mirror hosting quirk rather than a logo fault that some link-preview scrapers may skip. Open workshop-plan/evidence/T-082/contact-sheet.png."
     }
    ],
    "order": 490,

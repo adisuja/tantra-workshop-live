@@ -97,12 +97,10 @@
    "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
   }
  ],
- "state": "working",
- "message": "Acting on 1 note(s) for T-082: Approve the Tantra logo applied from the Canva export",
- "task_id": "T-082",
- "entries": [
-  "F-c08d1c59"
- ],
+ "state": "idle",
+ "message": "Recovered from an error: AttributeError: 'str' object has no attribute 'get'",
+ "task_id": null,
+ "entries": [],
  "mode": "feedback",
  "started": "2026-10-09T18:05:48+0530"
 }
