@@ -97,12 +97,12 @@
    "summary": "T-213 is in review. The warm-up job waits on Tantra, the worker is deployed and the lead email works. I did not push, because local main and `origin/main` have diverged.\n\n- **Instantly removed:** the start-endy warm-up job now waits for inboxes to show Connected and Gmail capable in Tantra Accounts."
   }
  ],
- "state": "paused",
+ "state": "idle",
  "mode": "feedback",
  "task_id": null,
  "entries": [
   "F-f9b6048f"
  ],
  "started": "2026-10-10T01:54:56+0530",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 77% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 05:11."
+ "message": "Now running on the plan's monthly API credit."
 }

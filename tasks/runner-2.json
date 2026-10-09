@@ -97,7 +97,7 @@
    "summary": "T-247 is in review, but the \"MongoDB written\" check is not met. The live centre's `/admin/api/export` and `/admin/api/export/full` both return HTTP 500, so the tracker sync stops before it reaches Mongo.\n\n- **Done:** Docker is running again, and `tantra-mongo` is rebuilt on its existing data volume "
   }
  ],
- "state": "paused",
+ "state": "idle",
  "mode": "feedback",
  "task_id": null,
  "entries": [
@@ -105,5 +105,5 @@
   "R-2794aace"
  ],
  "started": "2026-10-10T02:02:34+0530",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 76% (new work starts below 70%). Resumes after 05:11."
+ "message": "Now running on the plan's monthly API credit."
 }
