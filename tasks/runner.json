@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T14:02:30+0530",
+   "task_id": "T-131",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-131 stays in review: the relabel had already shipped (source `03fbae0`, mirror `34daef4`), so nothing changed this run beyond a recheck (0 old labels in the Email, WhatsApp and SMS lanes on origin main, live RSP board answers 200); note F-7894a484 was already acked."
+  },
+  {
    "ts": "2026-10-09T14:01:47+0530",
    "task_id": "T-294",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "limit",
    "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T10:31:50+0530",
-   "task_id": "T-149",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-131: Confirm the RSP 52-week grid rows",
- "task_id": "T-131",
+ "message": "Acting on 1 note(s) for T-134: Starter CRM: build the reference connections (prompts 01 to 06) so the planned steps get real screenshots",
+ "task_id": "T-134",
  "entries": [
-  "F-7894a484"
+  "F-7015c234"
  ],
  "mode": "feedback",
- "started": "2026-10-09T14:01:47+0530"
+ "started": "2026-10-09T14:02:35+0530"
 }
