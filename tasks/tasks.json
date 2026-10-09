@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T12:56:54+0530",
-  "version": 1076,
+  "updated": "2026-10-09T13:04:11+0530",
+  "version": 1078,
   "last_id": 357,
   "team": [
    {
@@ -11163,11 +11163,13 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
+    "Bhaskar",
+    "Bharath",
     "Adi"
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "review",
    "why": "The owner wants this page to be a lead magnet, but today it captures nobody, exists twice, and the person he asked to continue the work cannot push to it.",
    "spec": "Adi asked on 2026-10-05 for the funnel equations as a separate freely hosted page offered as a lead magnet called The RevOps Funnel Equations. Built and live: Cloudflare Worker page https://revops-funnel-equations.growthcluborg.workers.dev and GitHub Pages https://adisuja.github.io/revops-funnel-equations/ (both HTTP 200 on 2026-10-09, the same file in two places because GitHub Pages was down the first night); public source repo https://github.com/adisuja/revops-funnel-equations (CONTEXT.md holds every rule and the four rejected versions; python3 build.py --check must say ok); main copy workshop-plan/revops-funnel-equations/index.html, generated from workshop-plan/build/eqstages.py, eqnames.py, equations.py (never hand-edit). Current form is v4: one metric per stage per funnel (18 stage metrics), plain-initial short forms, definitions under each stage, no slop. Open: (1) Adi has not answered whether to keep one copy; recommended: keep the Cloudflare link and switch the GitHub Pages copy off (gh api -X DELETE repos/adisuja/revops-funnel-equations/pages), then point every link in the playbook, centres and hub at the one URL. (2) The page is ungated: no email capture and no call to action, so it is not yet a lead magnet. Recommended: name, email and WhatsApp in a form that posts through the existing logForm path to the Tantra Tracker (see funnel-live-wiring memory) and one CTA to the free workshop /workshop. (3) The team-member handoff prompt tells the teammate to push to the public repo; they need write access: add their GitHub username as a collaborator on adisuja/revops-funnel-equations or they fork and open a pull request. (4) Copy rule on this page: no cards, examples, tips or ranges (owner 2026-10-06 'AI slop'); do not add any while building the form. Background: the first version carried 252 KPIs with measure-where, lever and sourced bands (git de3ac30 and earlier, eqdata.py); Adi later asked for the compact one-metric form, so that catalogue is intentionally gone but recoverable from git history if Adi wants a KPI reference again.",
    "done_when": [
@@ -11176,16 +11178,49 @@
     "The teammate named by Adi can push or open a pull request on adisuja/revops-funnel-equations",
     "Review link with a fresh cache buster sent to Adi"
    ],
-   "evidence": [],
-   "blockers": [
-    "Adi decides: one copy or two, what the form asks, and the GitHub username to add"
+   "evidence": [
+    {
+     "label": "Gated page (form, then equations and the workshop link)",
+     "url": "https://revops-funnel-equations.growthcluborg.workers.dev/?v=1791531251"
+    },
+    {
+     "label": "Tantra Tracker, Funnel Equations tab (two wiring-probe rows)",
+     "url": "https://docs.google.com/spreadsheets/d/1clliPUw9w5kOL9CJmV2i8v62zwhJh9TLU3DyA1-M8Dc/edit#gid=1986109960"
+    },
+    {
+     "label": "Old GitHub Pages address, now 404",
+     "url": "https://adisuja.github.io/revops-funnel-equations/?v=1791531251"
+    },
+    {
+     "label": "Public repo: gate, rules and fork and pull request workflow (a971c0e)",
+     "url": "https://github.com/adisuja/revops-funnel-equations/blob/main/CONTEXT.md"
+    },
+    {
+     "label": "Teammate handoff prompt",
+     "url": "SESSION_HANDOFF_2026_10_07_FUNNEL_EQUATIONS.md"
+    },
+    {
+     "label": "Probe: node app/scripts/probe-equations-gate.mjs",
+     "url": "app/scripts/probe-equations-gate.mjs"
+    }
    ],
-   "needs_from_owner": "Reply on this task: (1) keep the Cloudflare link only? (2) form fields and where leads go (recommended: name, email, WhatsApp into the Tantra Tracker, CTA to /workshop); (3) the teammate's GitHub username to add as a collaborator at https://github.com/adisuja/revops-funnel-equations/settings/access. Review the page at https://revops-funnel-equations.growthcluborg.workers.dev/?v=h1",
+   "blockers": [],
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Added from the session sweep (2026-10-09): source: 9628377c 2026-10-05T20:19 (owner asked for a free-hosted lead magnet), 20:44 (ungated, no CTA), 2026-10-06T19:56 (two pages for the same thing), 20:40 (team handoff). No board task mentions funnel equations."
+    },
+    {
+     "ts": "2026-10-09T13:04:11+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Bhaskar/Bharath/Adi (by claude)."
+    },
+    {
+     "ts": "2026-10-09T13:04:11+0530",
+     "who": "claude",
+     "note": "The page is now one copy on Cloudflare behind a name, email and WhatsApp form, with one link to the free workshop once it opens; GitHub Pages is off (404) and the handoff prompt and repo rules say fork and open a pull request. Checked in a headless browser on the live page at desktop and phone widths (26 of 26 checks), and the wiring-probe sign-up shows in the Tantra Tracker's new Funnel Equations tab; I ran the live test twice, so there are two test rows, not one, both safe to delete. One thing to know: the live sheet receiver only takes its six form names and changing it needs Adi's Google login, so sign-ups arrive as rows tagged source=funnel-equations in the Work Tracker's Free Registrations tab, and the tracker sync moves them to their own tab and keeps them out of workshop and referral counts. Open: https://revops-funnel-equations.growthcluborg.workers.dev/?v=1791531251"
     }
    ],
    "order": 2960
