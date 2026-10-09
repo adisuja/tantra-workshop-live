@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T03:53:09+0530",
-  "version": 1409,
+  "updated": "2026-10-10T03:55:50+0530",
+  "version": 1414,
   "last_id": 379,
   "team": [
    {
@@ -2359,7 +2359,7 @@
    "owner": "Aquila",
    "priority": "P2",
    "due": "2026-09-22",
-   "status": "queue",
+   "status": "blocked",
    "why": "Personalised first lines lift reply and registration rates on the outreach that fills each weekly cohort; today every prospect gets the same opener.",
    "spec": "Our own outreach for the weekly cohort runs as Tantra omni-channel campaigns (email from vendor-bought inboxes connected to Tantra, LinkedIn through Tantra; owner model in memory google-and-reminder-model.md). Prospect lists come pre-verified from the data vendors (no Apollo, no paid verification). Steps: (1) confirm in Tantra whether a campaign step can use a per-contact custom field (for example {first_line}); (2) write a small script that takes a lead CSV (name, title, company, profile and company summary) and generates one first line per lead with Claude or OpenAI, in the style of the proven client playbook (no client name in public files); (3) import the leads with the first_line field into a test Tantra campaign and send to the the owner's Google test identity test identity first; (4) run one real batch against a control batch without personalisation. Approved tools only; no HeyReach, Instantly or Apollo.",
    "done_when": [
@@ -2369,7 +2369,7 @@
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "",
+   "needs_from_owner": "Tantra API key: in Tantra go to Settings > API Keys, create one, and save it in the file ~/.config/tantra/tantra-api-key (no other Tantra key exists on this machine). Then run: python3 workshop-plan/scripts/first_lines.py tantra-test workshop-plan/outreach/t059/sample_first_lines.csv",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2395,6 +2395,11 @@
      "ts": "2026-10-09T05:14:30+0530",
      "who": "Orchestrator",
      "note": "People: assignee Aquila → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-10T03:55:50+0530",
+     "who": "claude",
+     "note": "Built workshop-plan/scripts/first_lines.py (Claude first lines tested on 3 sample leads, 3/3 clean, no dashes; A/B split with reply tracker tested). Tantra templates fill contact fields as {{custom.first_line}} (same syntax the live reminder funnel uses), so no per-contact body workaround is needed. The test campaign is not built because there is no Tantra key on this machine; not pushed either, since the worktree holds other lanes' uncommitted changes. Real and control batches go with T-058 once T-056's list is imported."
     }
    ],
    "order": 380,
@@ -2801,13 +2806,18 @@
    "owner": "Nelbin",
    "priority": "P2",
    "due": "2026-09-22",
-   "status": "queue",
+   "status": "review",
    "why": "Team-facing project setup.",
    "spec": "The six funnel tabs exist in the Tantra Work Tracker (workshop-plan/ops/funnel_tabs.py: Free / Paid Registrations, Free / Paid Intake Survey, Checkout Starts, Checkout Returns). Find the Google Doc named 'Consolidated Funnel Doc' in Drive, add one tab per funnel tab with a one-line description and the matching sheet tab link. First ask Nelbin in the task log whether the doc is still used; if not, remove this task.",
    "done_when": [
     "The Consolidated Funnel Doc has six funnel tabs linking to the matching Work Tracker tabs, or Nelbin confirms the doc is retired"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Funnel tabs in the doc",
+     "url": "https://docs.google.com/document/d/1p7-I7hMaHE3uJYw1oKz8VsJdpBwPi4hjzuZ_hgOnx-Q/edit?tab=t.dr12g7dtpiel"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -2830,6 +2840,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: title trimmed to the remaining half (Work Tracker tabs done in T-104, receiver live T-105); assignee Claude since a Google Docs token exists on this machine (2026-09-24 log). UNVERIFIED whether the Consolidated Funnel Doc is still in use; if Nelbin says it is not, remove this task."
+    },
+    {
+     "ts": "2026-10-10T03:55:43+0530",
+     "who": "claude",
+     "note": "Added six new tabs (Funnel: Free Registrations, Paid Registrations, Free Intake Survey, Paid Intake Survey, Checkout Starts, Checkout Returns) to 'Tantra Consolidated Funnel Documentation' via the Docs API; each has a one-line description and a #gid= link to its Work Tracker tab, Checkout Returns marked unverified. Re-read the doc to confirm text and links; no existing tab touched. Open https://docs.google.com/document/d/1p7-I7hMaHE3uJYw1oKz8VsJdpBwPi4hjzuZ_hgOnx-Q/edit?tab=t.dr12g7dtpiel . FYI Nelbin: doc confirmed in use (Webinar Script, Live Assets), so this task stays; please sign off."
     }
    ],
    "order": 480,
@@ -7576,7 +7591,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Owner 2026-10-03: the new centre must educate; every card teaches why and how. Off by default means attendees see none of it.",
    "spec": "Five layouts of the why/how teaching beside each card exist on the live centre: https://revops-centre.growthcluborg.workers.dev/onboarding/?learn=1 to ?learn=5 (data app/src/lib/card-education.ts, layouts app/src/app/onboarding/centre/learn.tsx, off by default). Claude first shoots each layout at 1440 and 390 px on the same card and attaches the ten screenshots to this task. When Adi picks, make it the default in learn.tsx and centre.tsx (no query parameter), delete the other four, redeploy the Worker, rerun the centre probes, and close N067 together with T-270.",
    "done_when": [
@@ -7687,6 +7702,11 @@
      "ts": "2026-10-09T17:49:11+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-270, T-269."
+    },
+    {
+     "ts": "2026-10-10T03:54:35+0530",
+     "who": "claude",
+     "note": "Closed per Orchestrator decision O-47a7fc9a (run with T-270): Coach Rails is the default layout with no query parameter (why beside the card at 1440, stacked above the controls at 390), the ?learn switch and the other four variants are gone. Live on Worker 4cc3b694."
     }
    ],
    "order": 1980
@@ -11537,11 +11557,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Owner rule 2026-10-03 (new centre must educate): every card teaches why and how.",
    "spec": "Show card-education outcome, why and how by default (not only ?learn), preselect and describe each start-stack option with cost, add per-business examples (software, consultancy, course, solo) to every typed field, ask before the first paid AI draft, and link the foundations chapters on the Day 0 card with a readable funnel board. Closes audit findings N067, N068, N069, N070, N080, N088. Per finding: N067 (app/src/app/onboarding/centre/centre.tsx): Show the education outcome/why/how by default on each card, not only behind ?learn. N068 (app/src/lib/workshop-cards.ts): Preselect the first option and add a one-line description and cost per option. N069 (app/src/lib/workshop-cards.ts): Add per-business examples to every typed field. N070 (app/src/lib/workshop-cards.ts): Add solo examples (and d1_funnel_reason examples) to these fields. N080 (app/src/app/onboarding/centre/centre.tsx): Ask before the first paid draft, or only auto-draft on the attendee's current next task. N088 (app/src/lib/workshop-cards.ts): Link the foundations chapters on the card and make the funnel board readable in the 616px frame (or open full size). When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Merge order: build on main after T-251 lands (branch tantra-walkthroughs: e4bd0b8 removes the ruled-out tools and rewrites workshop-cards.ts, agentic.ts, jobs.ts, agent.tsx and coverage.json; probe fixes 043b5ab and aa22a3f, no READY yet in /Users/adithyamurali/tantra-round5-coord/LOG.md). Until then branch from tantra-walkthroughs; AUDIT.md line numbers predate that change.",
    "done_when": [
@@ -11550,7 +11571,36 @@
     "No paid draft fires without consent",
     "Every listed finding id is marked fixed in AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Live centre (Choose your tools)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-stack&v=t270"
+    },
+    {
+     "label": "Live centre (Day 0 funnels card)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-foundations&v=t270"
+    },
+    {
+     "label": "Full-size webinar board",
+     "url": "https://revops-centre.growthcluborg.workers.dev/funnels/webinar/?v=t270"
+    },
+    {
+     "label": "Commit 9fca8f3",
+     "url": "app/src/lib/field-examples.ts"
+    },
+    {
+     "label": "Probe",
+     "url": "app/scripts/probe-t270.mjs"
+    },
+    {
+     "label": "Screenshot: Choose your tools",
+     "url": "/tmp/probe-t270/start-stack-1440.png"
+    },
+    {
+     "label": "Screenshot: Day 0 funnels",
+     "url": "/tmp/probe-t270/start-foundations-1440.png"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -11568,6 +11618,16 @@
      "ts": "2026-10-09T17:48:58+0530",
      "who": "claude",
      "note": "N067 closed by T-198 (2026-10-09): Coach Rails teaching shows by default on every card on the live centre, and all 96 cards have card-education; marked fixed in AUDIT.md. T-270 stays open for N068, N069, N070, N080 and N088."
+    },
+    {
+     "ts": "2026-10-10T03:54:35+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T03:54:35+0530",
+     "who": "claude",
+     "note": "Live: every typed field now has a software, consultancy, course and solo example; Choose your tools preselects the first option on each line and says what each option does and costs; an AI card asks once before drafting and only auto-drafts after a yes (stored per attendee); the Day 0 funnels card links the four foundations chapters and opens each board full size. Verified with node app/scripts/probe-t270.mjs (21/21 on my own stack) and check-examples (597/597), then pushed main 147b841, deployed Worker 4cc3b694 and published mirror 11ef710. N067 to N088 marked fixed in AUDIT.md. Open the centre and go to Choose your tools, then Write the Offer."
     }
    ],
    "order": 2700

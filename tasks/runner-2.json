@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T03:55:55+0530",
+   "task_id": "T-059",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-059 is blocked: the first-lines script is built and committed (9907805), but the Tantra test campaign isn't built because there's no Tantra API key on this machine. Adi needs to create one in Tantra under Settings > API Keys and save it at `~/.config/tantra/tantra-api-key`. Then run `first_lines.p"
+  },
+  {
    "ts": "2026-10-10T03:53:14+0530",
    "task_id": "T-056",
    "mode": "feedback",
@@ -87,22 +95,15 @@
    "status": "review",
    "result": "ok",
    "summary": "T-255 is in review: the S2 landing guide draws its own webinar, RSP and challenge charts, `check-guides` and both probes pass for all three mechanisms (after I raised the chart node cap from 14 to 18 for T-254's 17-node pipeline chart), it is pushed to main (82b9205, 52c226c), and G013 and G124 are "
-  },
-  {
-   "ts": "2026-10-10T00:51:38+0530",
-   "task_id": "T-255",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "paused",
-   "summary": "Stopped: Adi paused the agent from the board."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-059",
+ "task_id": "T-107",
  "entries": [
-  "F-3aa48f35"
+  "F-37172e0d",
+  "R-1aaa6f2a"
  ],
- "started": "2026-10-10T03:54:03+0530",
- "message": "Acting on 1 note(s) for T-059: AI-personalised first lines for our workshop outreach on Tantra campaigns"
+ "started": "2026-10-10T03:56:50+0530",
+ "message": "Acting on 2 note(s) for T-107: Delete wiring test rows (ops.db + Work Tracker)"
 }
