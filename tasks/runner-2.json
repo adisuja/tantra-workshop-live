@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T19:07:56+0530",
+   "task_id": "T-228",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-228 is now in review with no new code. The welcome email is already the Registered campaign built under T-234, so building the Orchestrator's separate `enrolWelcome()` would have duplicated it.\n\nI only checked the code and the T-234 log. I did not re-run any probe. That campaign is enrolled from a"
+  },
+  {
    "ts": "2026-10-09T18:46:01+0530",
    "task_id": "T-197",
    "mode": "feedback",
@@ -87,23 +95,15 @@
    "status": "review",
    "result": "ok",
    "summary": "T-150 stays in review for Amal: the hub fixes were already live (T-280 done), and this pass repaired a stalled public board (rebased and pushed the mirror, live at v1138; board sync now pulls with autostash, commit 6f1685f, local only). The live `#flows` and `#tasks` checks passed in a headless brow"
-  },
-  {
-   "ts": "2026-10-09T17:32:50+0530",
-   "task_id": "T-144",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-144 stays in review for Amal: the Review tab is regenerated and live at https://adisuja.github.io/tantra-workshop-live/?v=99456e1#review with 379 elements (main `01781df`, mirror `99456e1`). The live link probe reports ALL LINKS OK, the source check has 0 bad of 374, and the denylist and figures g"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-228",
+ "task_id": "T-006",
  "entries": [
-  "F-c01987f5",
-  "R-001e64d4"
+  "R-605a8769",
+  "F-e1a545a9"
  ],
- "started": "2026-10-09T19:07:33+0530",
- "message": "Acting on 2 note(s) for T-228: Welcome email: every new attendee gets their centre link and private calendar link"
+ "started": "2026-10-09T19:08:06+0530",
+ "message": "Acting on 2 note(s) for T-006: Local-first launch runbook + post-launch switch plan"
 }

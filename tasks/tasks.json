@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T18:45:15+0530",
-  "version": 1224,
+  "updated": "2026-10-09T19:08:06+0530",
+  "version": 1226,
   "last_id": 361,
   "team": [
    {
@@ -8895,7 +8895,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Since the 2026-10-07 security fix (b08eeed) /cal/issue never returns a feed token to the browser, so a marketing sign-up only gets their centre link (/enter?t=) and private calendar link (/cal/p/<token>.ics) if we send them; nothing on main sends them, so the first real attendee would get no links.",
    "spec": "Owner model (memory google-and-reminder-model, 2026-10-07): attendee messages (email, WhatsApp, LinkedIn) run on a Tantra omni-channel campaign, and registrants are imported into it programmatically. Build: (1) In the centre Worker (cloud/src), on attendee creation (admin add in index.ts ~478, /cal/issue sign-up and /intake in cloud/src/calendar.ts), POST the attendee to the workshop's Tantra campaign: POST /email-campaigns/:id/contacts with {contacts:[{email, firstName, lastName, phone or whatsappPhone, tags:['workshop', week], customFields:{centre_link, calendar_link, google_cal_link, cohort_dates, zoom_join}}]} (contract: docs/onboarding-v3/analysis/integrations-tantra-api.md section 5; upserts by email, idempotent, 409 means retry). Reuse tantraUrl/tantraHeaders from cloud/src/connectors/stack.ts. Record event 'welcome_enrolled' per attendee; a revoked calendar link re-posts the contact with the new calendar_link. (2) Admin field for the workshop's Tantra API key and campaign id (secret stored like other vault keys, never in the repo). (3) Campaign step 1 in Tantra is the welcome email using those custom fields (copy per workshop-plan/COPY_RULES.md, no dashes), WhatsApp step if a phone is present (through Tantra, never Twilio). (4) Probe against vendor-sim first (add the route if missing), then live with the test identity the owner's Google test identity. Shares the same import with the per-day reminders (T-234).",
    "done_when": [
@@ -8959,6 +8959,16 @@
      "ts": "2026-10-09T05:17:49+0530",
      "who": "claude",
      "note": "Folded into T-234: the Registered reminder campaign is this welcome (centre link, private calendar link, each day's own join link; cloud/src/reminder-copy.ts, checked against COPY_RULES, no dashes). Nothing to build here; it goes live and closes with T-234 once Adi's GrowthClub Tantra key lands (T-337)."
+    },
+    {
+     "ts": "2026-10-09T19:07:51+0530",
+     "who": "claude",
+     "note": "Nothing separate to build: the welcome is the Registered campaign built in T-234 (cloud/src/reminders.ts, reminder-copy.ts), enrolled from admin add (index.ts) and /cal/issue (calendar.ts), carrying centre, private calendar and Zoom join links; it passed probe-tantra-reminders 51/51 against vendor-sim. This supersedes the Orchestrator's second enrolWelcome build, which would duplicate it. Live send evidence arrives when T-234 goes live with the Tantra key (T-337)."
+    },
+    {
+     "ts": "2026-10-09T19:08:06+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-337."
     }
    ],
    "order": 2280
