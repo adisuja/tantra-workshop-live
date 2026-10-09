@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T03:20:57+0530",
-  "version": 1398,
+  "updated": "2026-10-10T03:37:01+0530",
+  "version": 1400,
   "last_id": 379,
   "team": [
    {
@@ -11604,11 +11604,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "A shared admin key in a URL cannot be revoked per person, and one set of links cannot serve a weekly rolling cohort.",
    "spec": "In cloud/src/index.ts and cloud/admin-ui/admin.js (live admin https://revops-centre.growthcluborg.workers.dev/admin, entered today via https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, the shared ADMIN_KEY checked at index.ts:728): H057 replace the shared key in a URL with per-teammate revocable tokens (D1 table with revoke) accepted by POST form; H058 store join and recording links per cohort week and pick them by the attendee's cohort (weekly rolling cohort Wed to Fri 11:00 ET; Zoom Pro already makes one meeting per cohort in cloud/src/zoom-pro.ts, so read join links from there); H059 add a read-only preview of the invite description and reminder times to Cohort Settings; N097 add session_minutes and per-day slides/description fields to Cohort Settings; H062 remove the 'Connect your email verifier' gates (cards go with T-251) and every ruled-out vendor from the VENDOR map in admin.js (GoDaddy, Instantly, SendGrid, Calendly, HeyReach, Apollo, BuiltWith, NeverBounce, ZeroBounce; Wistia and others follow T-260), and add a one-line legend for 'not yet' vs 'open'; H065 use plural() in the Overview stat. When done, mark H057, H058, H059, H062, H065, N097 fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Merge order: build on main after T-251 lands (branch tantra-walkthroughs: e4bd0b8 removes the ruled-out tools and rewrites workshop-cards.ts, agentic.ts, jobs.ts, agent.tsx and coverage.json; probe fixes 043b5ab and aa22a3f, no READY yet in /Users/adithyamurali/tantra-round5-coord/LOG.md). Until then branch from tantra-walkthroughs; AUDIT.md line numbers predate that change.",
    "done_when": [
@@ -11617,7 +11618,16 @@
     "No ruled-out vendor or verifier gate appears anywhere in the admin",
     "Every listed finding id is marked fixed in AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Admin sign-in form",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t272"
+    },
+    {
+     "label": "Probe",
+     "url": "app/scripts/probe-admin-tokens.mjs"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -11630,6 +11640,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: e4bd0b8 (T-251) removes the ZeroBounce and NeverBounce cards from workshop-cards.ts, but cloud/admin-ui/admin.js VENDOR map (line 416) still names GoDaddy, Instantly, SendGrid, Calendly, HeyReach, Apollo, BuiltWith, NeverBounce, ZeroBounce; added that and the live admin entry link."
+    },
+    {
+     "ts": "2026-10-10T03:37:01+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T03:37:01+0530",
+     "who": "claude",
+     "note": "Built and live (Worker c36e7b2e, commit 3a4b01c, pushed): /admin/enter is a POST form (no ?k=), a new Teammates tab makes and revokes per-person tokens (D1 admin_tokens, owner key stays as POST fallback), Cohort Settings has a per-week panel (join, recording, slides, invite note per day) with a read-only invite and reminder preview plus Session Minutes, ruled-out vendors are gone from the admin with a not-yet/open legend, and the Overview stat pluralises. Probe app/scripts/probe-admin-tokens.mjs passes 18/18 locally (revoke A while B keeps working; two weeks show different links; attendees get their own week's); live checks: ?k= no longer signs in, unauth /admin redirects to the form; I could not create live tokens without the owner key. Note: migrations 0023 and 0025 from other lanes were also pending on the remote and were applied with 0026. Sign in at https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t272 with the owner key, then open Teammates and Cohort Settings."
     }
    ],
    "order": 2720
