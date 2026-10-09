@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T19:47:23+0530",
+   "task_id": "T-025",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-025 is in review: the playbook's reverse squeeze section is now at webinar depth, pushed (origin `b5fb5a5`, including the playbook's four generated copies alongside the two named files) and live on the mirror at https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t025#d2-rsp-s1-traffic,"
+  },
+  {
    "ts": "2026-10-09T19:37:38+0530",
    "task_id": "T-151",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-101 is in review with Bhaskar: the self-check passes on the live mirror at 1440 and 390 (0 broken images, 0 failed requests, no WhatsApp logo, no dashes, no stale Thursday copy, dates from `cohort.ts`). The one fix, the paid join intro and seat block wording, is published (mirror 41c270f, origin m"
-  },
-  {
-   "ts": "2026-10-09T18:08:34+0530",
-   "task_id": "T-322",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-322 stays in review: all four Done-when checks pass on the hardened build (live probe clean, a real note reached the Mac inbox in 2.6 s, the old github.io address forwards to the Worker, no action opens GitHub), with one intermittent miss — the first of four `probe-board-actions.mjs` runs showed 2"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-025",
+ "task_id": "T-151",
  "entries": [
-  "F-89cbcf5c"
+  "F-65aa7c02"
  ],
- "started": "2026-10-09T19:37:38+0530",
- "message": "Acting on 1 note(s) for T-025: Reverse-squeeze content at full whiteboard scope"
+ "started": "2026-10-09T19:47:31+0530",
+ "message": "Acting on 1 note(s) for T-151: Feedback intake: one queue for every Tantra bug report and feature request"
 }
