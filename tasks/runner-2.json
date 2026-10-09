@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T14:38:53+0530",
+   "task_id": "T-144",
+   "mode": "feedback",
+   "status": "review",
+   "result": "limit",
+   "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
+  },
+  {
    "ts": "2026-10-09T14:25:32+0530",
    "task_id": "T-124",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "done",
    "result": "ok",
    "summary": "T-287 stays done: this was a repeat delivery of decision O-a7b40aa6, already applied in full at 12:27. A fresh scan found no add-on wording in the cards, Worker copy or playbook, and https://github.com/Usetantra/tantra-frontend-v2/pull/196 is still open awaiting review. F-23668453 was already acknow"
-  },
-  {
-   "ts": "2026-10-09T12:54:39+0530",
-   "task_id": "T-286",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-286 is done: Sign in with Google is removed, pushed to main (`981dbf3`), live on Worker `137504be` and off the republished mirror (`d1b7c40`); the deploy also took T-253's committed guards live, and the day1, day2 and probe-stack failures are the same on unmodified main."
   }
  ],
- "state": "working",
+ "state": "paused",
  "mode": "feedback",
- "task_id": "T-144",
+ "task_id": null,
  "entries": [
   "F-b326ef12"
  ],
  "started": "2026-10-09T14:25:39+0530",
- "message": "Acting on 1 note(s) for T-144: Workshop Hub Review tab: every funnel element with preview, source and approve or feedback"
+ "message": "Usage limit reached; retries automatically after 15:08. (You've hit your session limit · resets 5pm (Asia/Calcutta))"
 }
