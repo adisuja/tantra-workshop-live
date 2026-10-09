@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T13:33:47+0530",
-  "version": 1089,
+  "updated": "2026-10-09T13:35:28+0530",
+  "version": 1092,
   "last_id": 357,
   "team": [
    {
@@ -11257,6 +11257,11 @@
      "ts": "2026-10-09T13:16:34+0530",
      "who": "claude",
      "note": "Nothing new to build: this 05:07 decision was already carried out in the 13:04 pass (one gated copy on Cloudflare, GitHub Pages off, fork and pull request in the handoff prompt, wiring-probe rows in the Funnel Equations tab). Rechecked now: the live page passes all 26 gate checks at desktop and phone widths with the form post stubbed (no extra test row), the old github.io address returns 404, and no file still links to it. The 13:06 Orchestrator note asks for the same steps, so it is covered too. Open: https://revops-funnel-equations.growthcluborg.workers.dev/?v=1791531994"
+    },
+    {
+     "ts": "2026-10-09T13:34:22+0530",
+     "who": "claude",
+     "note": "Nothing new to build: this 05:07 decision was carried out in the 13:04 pass, and this is the third time the same note has come back. Rechecked now: the live page passes all 26 gate checks at desktop and phone widths (form post stubbed, so no extra test row), the old github.io address and its Pages setting both return 404, no file links to it, and the handoff prompt says fork and open a pull request. Open: https://revops-funnel-equations.growthcluborg.workers.dev/?v=1791533048"
     }
    ],
    "order": 2960
@@ -11302,6 +11307,11 @@
      "ts": "2026-10-09T13:09:19+0530",
      "who": "claude",
      "note": "Orchestrator decisions O-f10f6c3f applied and live. (1) The 89% show-up stays, labelled as the whiteboard teaching model in the body and the figure caption, with the Funnel Equations figure beside it and 'neither number is a result'; I wrote about 30%, not 46%, because the model on the page today computes a 29.9% Show-Up Rate on reference values (46% was the 5 Oct model). (2) The consultancy and course example sentences stay, marked 'illustrative examples, not real companies or client results' (no dashes, no result claims). (3) The course pitch example lives in the centre card (app/src/lib/workshop-cards.ts, not the playbook) and now reads 'Day 3 of the free workshop' with the paid masterclass named as a separate flow; it reaches the live centre with the next centre deploy. (4) The $50M+ line stays with T-277. Checked: titlecase and embed run, probe-playbook clean at 4 widths locally and on the live mirror, new text confirmed in a headless browser; pushed main db882e7 and mirror 70c4cbc. The T-191 ripple needed no change: the 89% is Adi's whiteboard figure and is now labelled, never shown as a result. Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=calls"
+    },
+    {
+     "ts": "2026-10-09T13:35:28+0530",
+     "who": "claude",
+     "note": "Rechecked after the re-sent 05:07 decision and the T-191 ripple: nothing new had to change. All four calls are already applied and live (main db882e7): the 89% stays as the labelled whiteboard teaching model beside the Funnel Equations figure (about 30% on today's reference values, not the 46% of the 5 Oct model) with 'neither number is a result', the example sentences are marked illustrative, the course pitch says 'Day 3 of the free workshop', and the $50M+ line stays with T-277. The ripple's question (remove the 89% as unsourced?) is answered by the Orchestrator decision: it is Adi's own whiteboard figure and is never shown as a result, so it stays. Checked today: the four phrases are on the live mirror, source and app copy are identical, probe-playbook is clean at 4 widths on the mirror (the local run only reports 16 walkthrough poster 404s per width that the :8899 board server does not host, zero layout defects). Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=calls2#d2-s3-the-nurture-engine-where-show-up-is-won"
     }
    ],
    "order": 2970
@@ -11417,6 +11427,11 @@
      "ts": "2026-10-09T13:33:47+0530",
      "who": "claude",
      "note": "Built on branch t-299-vendor-inboxes (bb11531, pushed, READY in LOG.md): the partner card is the only cold email inbox path and the mailbox-building, Microsoft 365 and Instantly warm-up code is gone; the calendar card takes several senders with one service account each; a new card asks for the sign-up address. Checked on a private simulator stack: probe-domain-chain 42, day1 36, day2 61 and probe-stack 59 all pass, and I looked at the three cards in a headless browser. Not live yet: the Integrator still has to merge and deploy; the old Instantly campaign-launch code (not mailboxes) is left in place."
+    },
+    {
+     "ts": "2026-10-09T13:33:56+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-213, T-300."
     }
    ],
    "order": 2990

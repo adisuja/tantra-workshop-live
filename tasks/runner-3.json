@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T13:35:41+0530",
+   "task_id": "T-297",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-297 stays in review: all four Orchestrator calls were already applied, pushed (`db882e7`) and live from an earlier pass, so nothing new had to change. The live mirror carries the four phrases and `probe-playbook.mjs` is clean at 4 widths there; the local probe run fails only on walkthrough poster "
+  },
+  {
+   "ts": "2026-10-09T13:34:27+0530",
+   "task_id": "T-296",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-296 stays in review: nothing new to build, because the 05:07 decision was already carried out in the 13:04 pass and note F-73cd259e was already acked then (the ack returned 0 this time). Rechecked just now: the live page passes all 26 gate checks with the form post stubbed, and the old github.io a"
+  },
+  {
    "ts": "2026-10-09T13:33:50+0530",
    "task_id": "T-299",
    "mode": "feedback",
@@ -79,30 +95,14 @@
    "status": "blocked",
    "result": "limit",
    "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T11:01:54+0530",
-   "task_id": "T-299",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T10:31:49+0530",
-   "task_id": "T-299",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-296",
+ "task_id": "T-303",
  "entries": [
-  "F-73cd259e"
+  "F-c15dd0af"
  ],
- "started": "2026-10-09T13:33:56+0530",
- "message": "Acting on 1 note(s) for T-296: RevOps Funnel Equations lead magnet: keep one copy, decide the sign-up gate, give the team write access"
+ "started": "2026-10-09T13:35:46+0530",
+ "message": "Acting on 1 note(s) for T-303: Transcribe the reference VSL and write Richard's own VSL recording script"
 }
