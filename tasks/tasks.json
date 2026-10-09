@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T02:18:39+0530",
-  "version": 1393,
+  "updated": "2026-10-10T02:22:32+0530",
+  "version": 1395,
   "last_id": 379,
   "team": [
    {
@@ -10680,11 +10680,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Orphans bloat the build and unreadable or mismatched captures mislead attendees on a phone.",
    "spec": "Delete unreferenced files under app/public/guides/ (or wire them in), re-crop wide short captures so they render at least about 100 px tall at 390, recapture or crop s1-blog 07 and s1-social 06 so the typed value matches the step, and add real product screenshots to app/public/playbook-parts/d1.html and d3.html through the shared shot-size system. Closes audit findings G014, G041, G118, G140, G141, G111, G114, O010. Per finding: G014 (app/public/guides/s2-tantra-pro-funnel/08.webp): Delete the unused files or wire them into the steps they show. G041 (app/public/guides/s4-webinar/10.webp): Delete it or use it in its step. G118 (app/public/guides/s1-ads/05.webp): Delete the unreferenced WebPs. G140 (app/src/content/guides/s4-conversion/s4-webinar.ts): Crop 12.webp and 16.webp tighter (or allow horizontal scroll at native size) so text stays readable on a phone. G141 (app/src/content/guides/s1-traffic/s1-blog.ts): Re-crop these wide, short captures to the relevant region so they render readable at 390. G111 (app/src/content/guides/s1-traffic/s1-blog.ts): Recapture with `blog` typed, or crop out the search box. G114 (app/src/content/guides/s1-traffic/s1-social.ts): Recapture with `social` typed, or crop out the search box. O010 (app/public/playbook-parts/d1.html): Add at least one real product screenshot per Day 1 and Day 3 step, sized through the shared shot-size system used by Day 2. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md.",
    "done_when": [
@@ -10693,7 +10694,28 @@
     "d1.html and d3.html each contain product screenshots",
     "Every listed finding id is marked fixed in AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Playbook Day 1 and Day 3 screenshots",
+     "url": "http://localhost:4322/materials/playbook.html?v=6e7b2b6#d1-step-1-write-the-offer"
+    },
+    {
+     "label": "Blog guide step 7 (cropped GA4 shot)",
+     "url": "http://localhost:4322/onboarding/guides/s1-blog?v=6e7b2b6"
+    },
+    {
+     "label": "Social guide step 7 (cropped GA4 shot)",
+     "url": "http://localhost:4322/onboarding/guides/s1-social?v=6e7b2b6"
+    },
+    {
+     "label": "Webinar guide (shots 12 and 16 at phone width)",
+     "url": "http://localhost:4322/onboarding/guides/s4-webinar?v=6e7b2b6"
+    },
+    {
+     "label": "Audit file",
+     "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -10706,6 +10728,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): checked, current. pass 2: verified still open on main f6aeb7e (no code change since the audit re-verification on 1fd8de2); orphan WebPs and d1.html/d3.html gaps unchanged. Related capture tasks T-115, T-140."
+    },
+    {
+     "ts": "2026-10-10T02:22:32+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T02:22:32+0530",
+     "who": "claude",
+     "note": "Built, verified and pushed to main as 6e7b2b6: 62 unreferenced guide images deleted (none left), the GA4 search box cropped out of s1-blog 07 and s1-social 06, wide strips now stay at least 104 px tall on a phone (they swipe sideways), and every Day 1 and Day 3 playbook step has a real product screenshot (16 in total). Checked with probe-screenshots at 390 and 1440 (all screenshot checks pass; one older diagram check fails and is not from this task: the vertical One Funnel System diagram is 304 px wide at 390), probe-headings, tsc and the impeccable detector, all clean, and the 8 audit ids are marked fixed in AUDIT.md. The public mirror was not published from here because main also carries other lanes' fresh work (T-264, T-267), so it goes out with the next Integrator publish."
     }
    ],
    "order": 2570
