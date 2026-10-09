@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T14:04:04+0530",
+   "task_id": "T-134",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-134 stays in review: the reference build from the 13:48 pass was rechecked (board up on localhost:8765, dry run works) and the prompt fixes and README are now pushed to origin main (aafe5d9). No real Resend or Dodo test call was made because no test key exists (T-253 already asks for the Dodo one)"
+  },
+  {
    "ts": "2026-10-09T14:02:30+0530",
    "task_id": "T-131",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "limit",
    "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T11:01:55+0530",
-   "task_id": "T-149",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-134: Starter CRM: build the reference connections (prompts 01 to 06) so the planned steps get real screenshots",
- "task_id": "T-134",
+ "message": "Acting on 1 note(s) for T-004: Seat checkout (Dodo, live), geo-priced",
+ "task_id": "T-004",
  "entries": [
-  "F-7015c234"
+  "F-0334459d"
  ],
  "mode": "feedback",
- "started": "2026-10-09T14:02:35+0530"
+ "started": "2026-10-09T14:04:11+0530"
 }
