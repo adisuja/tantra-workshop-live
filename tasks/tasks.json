@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T20:21:09+0530",
-  "version": 1284,
+  "updated": "2026-10-09T20:22:05+0530",
+  "version": 1285,
   "last_id": 364,
   "team": [
    {
@@ -10001,7 +10001,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Funnels deployed before 8a62369 still answer Zoom's URL check without a signature, which let anyone forge signed Zoom events (for example a fake replay link).",
    "spec": "List production attendees with a deployed funnel (admin https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Attendees, each attendee's 'Deploy the funnel' job; or GET /admin/api/export endpoints rows). For each non-test funnel deployed before 2026-10-07 22:24, rerun the deploy-funnel job from the attendee page (startOrRerun in cloud/src/jobs.ts). Then check each funnel's /hooks/zoom answers an unsigned endpoint.url_validation with 401. If T-236 lands first, one redeploy covers both.",
    "done_when": [
@@ -10026,6 +10026,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still open per LOG 2026-10-07 22:24; no redeploy logged since. Spec now says how."
+    },
+    {
+     "ts": "2026-10-09T20:22:05+0530",
+     "who": "claude",
+     "note": "Nothing to redeploy: the live centre has 25 attendees and all are test (overview: 0 live attendees), so no production funnel runs the old worker; any real attendee who deploys now gets the signed Zoom URL check. Separately, GET /admin/api/export returns HTTP 500 on the live Worker (attendees and overview work); I used /admin/api/attendees instead. Logged in coord LOG.md."
     }
    ],
    "order": 2460

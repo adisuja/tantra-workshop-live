@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T20:22:09+0530",
+   "task_id": "T-246",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-246 is in review, and I redeployed nothing because the live centre has no production attendees. All 25 attendees are test accounts and the admin overview shows 0 live ones, so no real funnel runs the old worker.\n\n`GET /admin/api/export` returns HTTP 500 on the live Worker, and `/export/full` fails"
+  },
+  {
    "ts": "2026-10-09T20:21:13+0530",
    "task_id": "T-243",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-228 is now in review with no new code. The welcome email is already the Registered campaign built under T-234, so building the Orchestrator's separate `enrolWelcome()` would have duplicated it.\n\nI only checked the code and the T-234 log. I did not re-run any probe. That campaign is enrolled from a"
-  },
-  {
-   "ts": "2026-10-09T18:46:01+0530",
-   "task_id": "T-197",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 10pm (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-246",
+ "task_id": "T-247",
  "entries": [
-  "F-6b438f3c"
+  "F-b0ba4f67"
  ],
- "started": "2026-10-09T20:21:17+0530",
- "message": "Acting on 1 note(s) for T-246: Redeploy attendee funnels that run the old funnel worker"
+ "started": "2026-10-09T20:22:13+0530",
+ "message": "Acting on 1 note(s) for T-247: Bring the Tantra Tracker MongoDB copy back (Docker is stopped) and harden the container"
 }
