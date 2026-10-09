@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T12:47:33+0530",
-  "version": 1063,
+  "updated": "2026-10-09T12:49:12+0530",
+  "version": 1065,
   "last_id": 357,
   "team": [
    {
@@ -5881,14 +5881,10 @@
     {
      "label": "Critic policy",
      "url": ".loop/CRITIC_POLICY.md"
-    },
-    {
-     "label": "Hourly job",
-     "url": "workshop-plan/ops/com.tantra.codex-check.plist"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Same single input as T-340: in Terminal on this Mac run `codex logout && codex login` and finish the ChatGPT sign-in at https://auth.openai.com. The hourly check then closes T-149 and T-340 by itself.",
+   "needs_from_owner": "Adi's Codex sign-in, tracked as T-340: in Terminal on this Mac run `codex logout && codex login` and finish the ChatGPT sign-in at https://auth.openai.com. Nothing else is needed.",
    "log": [
     {
      "ts": "2026-09-26T00:17:50+0530",
@@ -5924,6 +5920,11 @@
      "ts": "2026-10-09T12:10:36+0530",
      "who": "claude",
      "note": "Rechecked 2026-10-09 12:10: everything around the sign-in is built and live (check_codex.sh, hourly launchd job com.tantra.codex-check, critic on the labelled Fable 5 fallback). A fresh real codex exec run still fails with HTTP 401, so the job correctly reports fail. Only Adi's sign-in (T-340) is left; the first passing hourly check records the Codex verdict and closes T-149 and T-340 by itself."
+    },
+    {
+     "ts": "2026-10-09T12:48:24+0530",
+     "who": "claude",
+     "note": "Re-run of the same Orchestrator decision: everything it asked for is already built (commits 2e5f3f7, 9bb1307). Rechecked 2026-10-09: check_codex.sh still fails with HTTP 401, the hourly launchd job com.tantra.codex-check is loaded and writing ~/.config/tantra/codex-check.json, and the critic config uses the labelled Fable 5 single-vendor fallback. Only Adi's sign-in (T-340) is left; when the check passes, the Codex critic pass runs and closes this task."
     }
    ],
    "order": 1490,
@@ -9248,6 +9249,11 @@
      "ts": "2026-10-09T12:15:41+0530",
      "who": "claude",
      "note": "Did everything the Orchestrator listed. Zoom checked live on our Pro app: creating an event subscription by API is refused without three extra marketplace scopes (nothing created, logged in REVERT_LEDGER), so the one-paste step in the Zoom app stays. Twilio and Metricool are now defensive instead of live-tested (opt-in image address, registration number, unused template variable, either image answer, LinkedIn target read before posting): tsc clean, probe-connector-guards.mjs 17/17, commit ad3ebaf pushed to main; not deployed to the centre Worker yet, and the full simulator probe was not run because no local stack is up. WebinarGeek, Cal.com, Dodo, Stripe and Tantra checks are one command each (cloud/scripts/connector-checks.mjs, self-deleting, ledger row written) and wait only on test keys; no Tantra API key exists anywhere yet (same key as T-337). Results sit in cloud/src/connectors/CHECKS.md; CRMs stay parked on T-260."
+    },
+    {
+     "ts": "2026-10-09T12:49:12+0530",
+     "who": "claude",
+     "note": "Re-run of Orchestrator decision O-f3df9ab0: all of it was already built and pushed in ad3ebaf, so nothing changed. Re-checked today: tsc clean, probe-connector-guards.mjs all pass, connector-checks.mjs lists Zoom as run (API refused it, nothing created, in REVERT_LEDGER) and Tantra, WebinarGeek, Cal.com, Dodo and Stripe as waiting only on test keys; vendor-test.env still holds none of them. Still blocked on those keys; the newer Orchestrator note F-46b4f4a4 (CRM check scripts) is not part of this run and is still unread."
     }
    ],
    "order": 2530
