@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T19:18:38+0530",
+   "task_id": "T-197",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-197 is in review, but I did not publish the mirror or deploy the Worker, so the mirror still lacks the O013 fix.\n\n- **O013:** The old centre's Join button and calendar now read the attendee's own Zoom link at runtime (commit 729da61). I did not re-run the local-centre check this session; I'm relyi"
+  },
+  {
    "ts": "2026-10-09T18:46:24+0530",
    "task_id": "T-322",
    "mode": "feedback",
@@ -87,23 +95,14 @@
    "status": "done",
    "result": "ok",
    "summary": "T-294 stays done: the Orchestrator note was a repeat, all five calls were already built, pushed and live, and today's recheck passed (board-fit probe on 21 routes at 5 widths, phone text at 12.1px or more, live mirror frames showing the changes); F-154dcb36 is acked."
-  },
-  {
-   "ts": "2026-10-09T16:39:20+0530",
-   "task_id": "T-294",
-   "mode": "feedback",
-   "status": "done",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-197",
+ "task_id": "T-061",
  "entries": [
-  "F-9282848d",
-  "R-e73e988a"
+  "F-6dcf60b4"
  ],
- "started": "2026-10-09T19:07:33+0530",
- "message": "Acting on 2 note(s) for T-197: Round 5 #3 (Lane A): Epic full-system audit: every element, question, card and section (AUDIT.md + probe-details.mjs)"
+ "started": "2026-10-09T19:18:47+0530",
+ "message": "Acting on 1 note(s) for T-061: Free and paid lane follow-up campaigns in Tantra, with per-lane unit economics"
 }

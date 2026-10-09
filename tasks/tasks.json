@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T19:17:04+0530",
-  "version": 1242,
+  "updated": "2026-10-09T19:18:34+0530",
+  "version": 1243,
   "last_id": 361,
   "team": [
    {
@@ -7358,7 +7358,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "The audit is the backlog of known defects; the last open P0 rows must each be fixed or re-pointed to the task that owns them so AUDIT.md shows no orphan P0.",
    "spec": "Deliverable done: /Users/adithyamurali/tantra-round5-coord/AUDIT.md, app/scripts/probe-details.mjs, run-chain.sh. Remaining open P0 rows (2026-10-08): (1) O013 old centre: 'Join the session live' shows 'Join link not published yet' on all three days because app/src/lib/sessions.ts:38-60 reads NEXT_PUBLIC_SEAT_URL / NEXT_PUBLIC_SESSION_N_URL, which are empty. Each attendee now has a personal Zoom join link from the per-cohort Zoom Pro meeting (T-223, session_sync), so make the old centre's button and .ics use the signed-in attendee's join link from the centre instead of a build-time env var; fix and verify. (2) X001, X002, X003 (Wistia upload) and X051 (Meta Ads): set their AUDIT.md status to 'tracked in T-260' (approved-tool decision). (3) H056 stays tracked in T-122. Then re-run node app/scripts/probe-details.mjs on main.",
    "done_when": [
@@ -7404,6 +7404,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: AUDIT.md now has 5 open P0 rows (X013 fixed and verified on main 2026-10-08): H056 tracked in T-122, O013, X001 to X003 (Wistia); X051 (Meta Ads) is also open. Wistia and Meta Ads are not approved tools, so their decision belongs to T-260; the owner ask moved there. The audit deliverable (AUDIT.md, probe-details.mjs, run-chain.sh) is finished."
+    },
+    {
+     "ts": "2026-10-09T19:18:34+0530",
+     "who": "claude",
+     "note": "O013 is fixed (729da61: the old centre's Join button and calendar read the attendee's own Zoom link from their feed token, probe-own-join 16/16 on a local centre). AUDIT.md has no open P0 without a task (X001 to X003 fixed in T-260, X051 tracked in T-260, H056 fixed in T-122, O013 and M033 fixed). probe-details now 0 FAIL on main (static, 30 WARN); I made it skip workshop-plan/library, whose verbatim client dates caused the 2 FAILs. Not done: the mirror publish and Worker deploy, because the shared tree has other lanes' uncommitted work and no Worker code changed."
     }
    ],
    "order": 1970
