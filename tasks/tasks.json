@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T19:11:13+0530",
-  "version": 1234,
+  "updated": "2026-10-09T19:15:05+0530",
+  "version": 1238,
   "last_id": 361,
   "team": [
    {
@@ -1454,7 +1454,7 @@
    "owner": "Aquila",
    "priority": "P1",
    "due": "2026-09-21",
-   "status": "queue",
+   "status": "review",
    "why": "Attendees get a downloadable PDF and a link, same day.",
    "spec": "Not built (2026-10-08): no PDF step anywhere in workshop-plan/ops or cloud/src. For each day output HTML written by T-031, render a PDF with Playwright page.pdf (the T-024 templates already carry @media print rules) and publish both at a per-attendee, unguessable link, reusing the path that serves course plans (T-127, ops.py /plans and OPS_PLAN_BASE) or the Worker's R2 storage if attendees must reach it while this Mac is offline (pick one and record it in workshop-plan/ops/runbook.md, T-006). Record the link against the attendee and day so T-033 can send it and the centre can show it.",
    "done_when": [
@@ -1462,7 +1462,24 @@
     "The link opens from a phone on mobile data (not only localhost)",
     "Link stored per attendee and day for T-033"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Hosted day1 HTML",
+     "url": "https://revops-centre.growthcluborg.workers.dev/o/xpEvUSJjNnYQXZmqflDlaer0FNbv9gSPgtxwoJulwxg"
+    },
+    {
+     "label": "Hosted day1 PDF",
+     "url": "https://revops-centre.growthcluborg.workers.dev/o/xpEvUSJjNnYQXZmqflDlaer0FNbv9gSPgtxwoJulwxg.pdf"
+    },
+    {
+     "label": "Worker code",
+     "url": "/Users/adithyamurali/tantra-redesign/cloud/src/outputs.ts"
+    },
+    {
+     "label": "Renderer",
+     "url": "/Users/adithyamurali/tantra-redesign/workshop-plan/ops/render_pdf.py"
+    }
+   ],
    "blockers": [
     "T-031 day outputs"
    ],
@@ -1502,12 +1519,28 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: spec made concrete (input from T-031, print via Playwright, link via the existing plan serving path); still not built."
+    },
+    {
+     "ts": "2026-10-09T19:14:39+0530",
+     "who": "claude",
+     "note": "Built and deployed: render_pdf.py renders the T-031 day HTML to an A4 PDF and posts both to the Worker, which hosts them in R2 at /o/<token> and /o/<token>.pdf (D1 attendee_outputs, migration applied remotely, /api/me outputs, runbook updated, tick.py wired). Probe_outputs.py fetched the real day1 row (attendee 4, the preview attendee, so nothing is sent) over the public workers.dev URL: HTML 200, PDF 200 %PDF, wrong token 404; re-run is idempotent. Still open: show the link in the centre UI (data is in /api/me, bundle not rebuilt) and the phone-on-mobile-data check; a real attendee row needs a live T-031 answer."
+    },
+    {
+     "ts": "2026-10-09T19:14:39+0530",
+     "who": "claude",
+     "note": "People: reviewers Aquila → Aquila/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T19:15:05+0530",
+     "who": "claude",
+     "note": "Checked 11 related task(s); updating T-031, T-033, T-006."
     }
    ],
    "order": 220,
    "assignee": "Claude",
    "reviewers": [
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ]
   },
   {
@@ -1975,14 +2008,23 @@
    "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-20",
-   "status": "queue",
+   "status": "review",
    "why": "The organic LinkedIn lane is the zero-cost traffic source, and per-member links feed the referral commission.",
    "spec": "Draft LinkedIn posts with Claude Code from the 'LinkedIn Creator Taxonomy' tab in the Work Tracker, 5 per day per team member. Every link is that member's referral link from the public referral dashboard (utm_source=referral, utm_content=<member code>, T-211). Rotate software, consultancy and course examples (any-B2B positioning); no invented stats, no 'webinar', no dashes.",
    "done_when": [
     "First 5 days of posts drafted per member, each link carrying that member's code",
     "Owner approves the voice"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "All 200 LinkedIn drafts (board)",
+     "url": "http://localhost:8899/outputs/t053-linkedin-posts.html?v=t053"
+    },
+    {
+     "label": "All 200 LinkedIn drafts (public mirror)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/outputs/t053-linkedin-posts.html?v=t053"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -2005,6 +2047,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): checked, current. pass 2: still accurate (referral links per member from T-211, any-B2B rotation, Backlinko voice rule applies)."
+    },
+    {
+     "ts": "2026-10-09T19:14:36+0530",
+     "who": "claude",
+     "note": "Drafted 5 days x 5 posts for Adi, Bhaskar, Nelbin, Aquila, Amal, Ben, Bharath and bhaskardev (200 posts), shaped on the Creator Taxonomy formats and rotating software, consultancy and course examples in the Backlinko voice. A script confirmed every first-comment link carries utm_source=referral and that member's utm_content, with no banned words, dashes, stats or dates; I checked the page at 1440 and 390 wide on localhost and the mirror. Open the page and approve the voice; nothing was posted."
     }
    ],
    "order": 320,
