@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T14:27:10+0530",
-  "version": 1126,
+  "updated": "2026-10-09T14:28:15+0530",
+  "version": 1127,
   "last_id": 357,
   "team": [
    {
@@ -4768,6 +4768,11 @@
      "ts": "2026-10-09T14:25:27+0530",
      "who": "claude",
      "note": "2026-10-09: probe-checkout-utm.mjs PASS on main at dd6b7dc (server POST body and hosted-link URL both carry the first-touch utm_source, medium, campaign, content). Read-only GET https://live.dodopayments.com/payments returned 120 payments, 7 created after the fix (777b084, 2026-09-25): none has metadata source=vip or any utm key, they are all Tantra app subscription payments, so no real /vip purchase exists yet to confirm against. Staying in review with nothing needed from Adi: the same read-only check reruns on each orchestrator run, or on the next /hooks/dodo payment.succeeded event, and the task closes on the first /vip payment whose utm values match the buyer's first-touch row. Nothing was created or changed in Dodo."
+    },
+    {
+     "ts": "2026-10-09T14:28:15+0530",
+     "who": "claude",
+     "note": "Recheck 2026-10-09: probe-checkout-utm.mjs PASS on main at 8b9bdab (server POST body and hosted link both carry the first-touch utm_source/medium/campaign/content). Read-only Dodo check (GET /payments plus GET /payments/{id}, live mode): 7 payments since the fix 777b084 (2 succeeded, 5 unpaid), all Tantra app subscriptions with no metadata source=vip and none on the VIP product, and none in the newest 100 payments overall, so there is no real /vip purchase to confirm yet. Nothing was created or changed in Dodo; the task stays in review until the first /vip payment.succeeded arrives, then the same check closes it."
     }
    ],
    "order": 1220,
