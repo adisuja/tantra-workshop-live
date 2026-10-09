@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T19:21:31+0530",
+   "task_id": "T-025",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "error",
+   "summary": "e\":\"Bash\",\"input\":{\"command\":\"cd /Users/adithyamurali/tantra-redesign; curl -s \\\"http://localhost:8899/playbook.html?v=t025\\\" | grep -c \\\"d2-rsp-s1-traffic\\\"; cd workshop-plan && node probe-playbook.mjs http://localhost:8899 playbook.html deck.html 2>&1 | tail -25\",\"description\":\"Run the playbook he"
+  },
+  {
    "ts": "2026-10-09T19:14:57+0530",
    "task_id": "T-032",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-094 stays in review with nothing new to change: the comment fix was already on origin main (c0f1897), so I made no new push or republish, and F-16152124 was already acked by the earlier run. Rechecked today: `git grep -i 'build pass'` on the /vip folder returns nothing, tsc is clean, both mirror p"
-  },
-  {
-   "ts": "2026-10-09T17:58:55+0530",
-   "task_id": "T-093",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-093 is in review: the three free-lane pages are rewritten in the Backlinko voice with no price and no group promise, live on the mirror (82686f6) and pushed to origin main as e1a1d8c, with the click test passing on the live pages. The survey stays at 11 questions because the Orchestrator's later T"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-025",
+ "task_id": "T-061",
  "entries": [
-  "F-89cbcf5c"
+  "F-6dcf60b4"
  ],
- "started": "2026-10-09T19:15:05+0530",
- "message": "Acting on 1 note(s) for T-025: Reverse-squeeze content at full whiteboard scope"
+ "started": "2026-10-09T19:21:31+0530",
+ "message": "Acting on 1 note(s) for T-061: Free and paid lane follow-up campaigns in Tantra, with per-lane unit economics"
 }
