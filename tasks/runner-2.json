@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T01:17:01+0530",
+   "task_id": "T-261",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-261 is built and committed locally (5be6f60) and set to review. I did not push or deploy it, and I did not run a full Day 0 walk in the simulator.\n\n- **Not pushed or deployed:** `main` holds other lanes' uncommitted work, so the Worker deploy needs a clean worktree.\n- **Verification:** `tsc` is cl"
+  },
+  {
    "ts": "2026-10-10T01:13:12+0530",
    "task_id": "T-259",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-334's description now says the GitHub purge request can be sent today without waiting for the fork deletion, and that it also covers `5b9f57d6` and `0cf43d86` across the fork network (`nelbinxav/tantra-workshop-live`). I checked that `t145_github_support_request.md` already contains that wording. "
-  },
-  {
-   "ts": "2026-10-09T19:29:15+0530",
-   "task_id": "T-061",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-061 is blocked on the Tantra API key (T-337). Everything else is built, but nothing is deployed and the two campaigns don't exist in the real Tantra yet.\n\n- **Routing:** a sign-up now goes into \"RevOps Workshop: Free (/workshop)\" or \"RevOps Workshop: Paid (/masterclass)\" by its lane. The contact i"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-261",
+ "task_id": "T-262",
  "entries": [
-  "F-03eda903"
+  "F-41f1b84f"
  ],
- "started": "2026-10-10T01:13:12+0530",
- "message": "Acting on 1 note(s) for T-261: Centre: domains and DNS outside Cloudflare, workers.dev subdomain and registrar gate"
+ "started": "2026-10-10T01:17:07+0530",
+ "message": "Acting on 1 note(s) for T-262: Centre: Resend bounce and complaint webhook, full-access key cleanup"
 }

@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T00:57:01+0530",
-  "version": 1347,
+  "updated": "2026-10-10T01:16:56+0530",
+  "version": 1349,
   "last_id": 372,
   "team": [
    {
@@ -10882,11 +10882,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Attendees whose main domain is not in Cloudflare still get hand DNS work, the most error-prone step in Day 0.",
    "spec": "In cloud/src/jobs.ts, jobs-day2.ts, agentic.ts and app/src/lib/workshop-cards.ts: offer a one-click zone move to Cloudflare (or Sign in with Google proof) so no TXT, Resend or DMARC record is added by hand, create the workers.dev subdomain via API when missing, run a registrar domain-check in the start-cf-registrar gate, have the agent register the calendar domain through Cloudflare Registrar, and teach the TXT step when DNS is elsewhere. Closes audit findings X025, X031, X037, X036, X039, N091, N027. Per finding: X025 (app/src/lib/workshop-cards.ts): Offer to move the main domain's DNS to Cloudflare or use Sign in with Google domain proof so no record is added by hand. X031 (cloud/src/jobs.ts): Offer a one-click zone move to Cloudflare (registrar APIs for GoDaddy/Namecheap are ruled out) so Resend records are never added by hand. X037 (cloud/src/jobs.ts): Offer to move the report domain into Cloudflare or pick a report domain already in the account. X036 (cloud/src/jobs-day2.ts): Create the workers.dev subdomain with PUT /accounts/{id}/workers/subdomain when none exists. X039 (cloud/src/agentic.ts): Run a registrar domain-check (connectors/stack.ts:109) in the gate to confirm billing and registrar access work. N091 (app/src/lib/workshop-cards.ts): Add registrar how-to for adding the TXT record, or default to Sign in with Google. N027 (app/src/lib/workshop-cards.ts): Have the agent register the calendar domain through Cloudflare Registrar (as start-domains does) and leave only the Workspace sign-up to the person. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Merge order: build on main after T-251 lands (branch tantra-walkthroughs: e4bd0b8 removes the ruled-out tools and rewrites workshop-cards.ts, agentic.ts, jobs.ts, agent.tsx and coverage.json; probe fixes 043b5ab and aa22a3f, no READY yet in /Users/adithyamurali/tantra-round5-coord/LOG.md). Until then branch from tantra-walkthroughs; AUDIT.md line numbers predate that change.",
    "done_when": [
@@ -10894,7 +10895,16 @@
     "start-cf-registrar gate fails without registrar access",
     "Every listed finding id is marked fixed in AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "probe",
+     "url": "/Users/adithyamurali/tantra-redesign/cloud/scripts/probe-dns-elsewhere.mjs"
+    },
+    {
+     "label": "AUDIT.md",
+     "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -10907,6 +10917,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still open on main f6aeb7e; GoDaddy path disappears with T-251 (e4bd0b8), so the non-Cloudflare case is any domain whose DNS lives elsewhere; added merge order."
+    },
+    {
+     "ts": "2026-10-10T01:16:56+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T01:16:56+0530",
+     "who": "claude",
+     "note": "Built in 5be6f60 (local, not pushed or deployed: main carries other lanes' uncommitted work, so the Worker deploy needs a clean worktree). Resend and DMARC-report domains outside Cloudflare now become a pending zone with the nameservers shown and records written only once active; a missing workers.dev address is created by PUT; the start-cf-registrar gate runs the Registrar domain-check; Workspace proof leads with Sign in with Google plus a registrar TXT how-to; the agent registers the calendar domain. Verified with node cloud/scripts/probe-dns-elsewhere.mjs (16 pass against the simulator) and tsc clean; the full Day 0 simulator walk and the calendar-domain gate were not run end to end. All 7 ids marked fixed in AUDIT.md."
     }
    ],
    "order": 2610

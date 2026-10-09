@@ -659,7 +659,7 @@ function paintSend(id){const wa=document.getElementById("wa-"+id),b=document.get
 /* ---- Activity (Adi 2026-10-10): everything on a task in one timeline, like reading a Claude Code session: his
    notes and the task log (above), every Claude Code run with its full transcript, every Orchestrator decision.
    Files come from tasks/activity.py (the public board gets a leak-guarded copy without tool output). ---- */
-const ACT={},RUNEV={},RUNOPEN=new Set(),TOOLOPEN=new Set();
+const ACT={},RUNEV={},RUNPUB={},RUNOPEN=new Set(),TOOLOPEN=new Set();
 const liveRun=id=>(ACT[id]?.runs||[]).some(r=>r.state==="running");
 async function loadActivity(id,force){
   if(!id||(!force&&ACT[id]&&Date.now()-ACT[id]._t<(liveRun(id)?4000:20000)))return;
@@ -668,7 +668,7 @@ async function loadActivity(id,force){
     const j=await r.json();j._t=Date.now();const was=JSON.stringify([ACT[id]?.runs,ACT[id]?.decisions]);ACT[id]=j;
     for(const sid of RUNOPEN)if((j.runs||[]).some(x=>x.session===sid&&x.state==="running"))await loadRun(sid);
     if(was!==JSON.stringify([j.runs,j.decisions])&&openId===id)render()}catch(e){}}
-async function loadRun(sid){try{const r=await fetch(`tasks/activity/runs/${encodeURIComponent(sid)}.json?v=${Date.now()}`);if(r.ok)RUNEV[sid]=(await r.json()).events||[]}catch(e){}}
+async function loadRun(sid){try{const r=await fetch(`tasks/activity/runs/${encodeURIComponent(sid)}.json?v=${Date.now()}`);if(r.ok){const j=await r.json();RUNEV[sid]=j.events||[];RUNPUB[sid]=!!j.public}}catch(e){}}
 async function toggleRun(sid){if(RUNOPEN.has(sid))RUNOPEN.delete(sid);else{RUNOPEN.add(sid);if(!RUNEV[sid])await loadRun(sid)}render()}
 function tgTool(el,id){if(el.open)TOOLOPEN.add(id);else TOOLOPEN.delete(id)}
 function activityItems(t,thread){
@@ -697,7 +697,7 @@ function transcriptHtml(sid){const ev=RUNEV[sid];
   if(!ev)return '<div class="tx"><div class="empty">Loading…</div></div>';
   if(!ev.length)return '<div class="tx"><div class="empty">Nothing recorded yet.</div></div>';
   const outs={};for(const e of ev)if(e.k==="out")outs[e.id]=e;
-  return '<div class="tx">'+ev.map(e=>{
+  return '<div class="tx">'+(RUNPUB[sid]?'<div class="empty">Public copy: commands and messages only. Tool output and file contents show on the owner\'s board.</div>':'')+ev.map(e=>{
     if(e.k==="prompt")return `<details class="tp" ${TOOLOPEN.has(sid+":p")?"open":""} ontoggle="tgTool(this,'${esc(sid)}:p')"><summary>Instructions Claude was given</summary><pre>${esc(e.text)}</pre></details>`;
     if(e.k==="text")return `<div class="tt">${tlink(e.text)}</div>`;
     if(e.k==="tool"){const o=outs[e.id],k=esc(e.id||"");
