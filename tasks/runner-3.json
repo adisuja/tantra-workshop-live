@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T01:36:40+0530",
+   "task_id": "T-257",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "error",
+   "summary": "l_use_id\":\"toolu_01TDMuk3pftrQygMmDtKr22t\",\"status\":\"stopped\",\"output_file\":\"\",\"summary\":\"Locate the impeccable detector and rerun the screenshot probe\",\"uuid\":\"f2e6755f-0a72-4b84-831c-11e118bdd1a8\",\"session_id\":\"c68b2765-d0ee-49a9-abcb-b0779d57d912\"}\n{\"type\":\"user\",\"message\":{\"role\":\"user\",\"content"
+  },
+  {
    "ts": "2026-10-10T00:51:36+0530",
    "task_id": "T-257",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-145 stays blocked. A GitHub API check today shows the fork `nelbinxav/tantra-workshop-live` and commit `5b9f57d6` on `adisuja/tantra-workshop-live` both still open. It now waits only on T-341 (Nelbin deletes the fork) and T-334 (Adi's Support paste). Both feedback notes are acked. The T-145 owner "
-  },
-  {
-   "ts": "2026-10-09T19:50:06+0530",
-   "task_id": "T-158",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-158 is built and in review for Ben and Bharath: the six-band dashboard is live at http://localhost:8899/pipeline?v=2 and committed to main (9145405), with no push or mirror publish. I checked it by fetching the page and taking a headless screenshot, but I couldn't open the image, so the layout is "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-257",
+ "task_id": "T-265",
  "entries": [
-  "F-f9b6048f"
+  "F-05f1775d"
  ],
- "started": "2026-10-10T00:51:37+0530",
- "message": "Acting on 1 note(s) for T-257: Screenshots: delete orphan WebPs, re-crop for phone legibility, fix mismatched captures, add Day 1 and Day 3 playbook shots"
+ "started": "2026-10-10T01:36:40+0530",
+ "message": "Acting on 1 note(s) for T-265: Centre: dashboard reads (Tantra campaign stats, Metricool clicks) and automated launch QA"
 }
