@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T14:03:57+0530",
-  "version": 1104,
+  "updated": "2026-10-09T14:05:58+0530",
+  "version": 1106,
   "last_id": 357,
   "team": [
    {
@@ -5434,18 +5434,33 @@
    "owner": "Aquila",
    "priority": "P3",
    "due": "2026-09-29",
-   "status": "blocked",
+   "status": "review",
    "why": "Your Lane C brief named claude.ai/artifact/4wu7b37yzQCByRLSPiTWkp as the full scope of the automation setups. Claude couldn't open it: the Docs connector says it isn't shared with this account, and Claude in Chrome rendered it blank. The guides were written from the repo's copy of Doc 2 (sources/playbooks/2_growthclub_funnel_automations.txt, the canonical 8 automations). The artifact may be newer.",
    "spec": "Artifact claude.ai/artifact/4wu7b37yzQCByRLSPiTWkp ('Webinar Funnel Automations') was named as the scope. The Docs connector still answers 'not shared' (re-tried 2026-10-08). The guides rest on workshop-plan/sources/playbooks/2_growthclub_funnel_automations.txt (the canonical 8 automations). Once readable, diff it against app/src/content/guides/s2-landing/s2-tantra-pro-funnel.ts, s3-nurture/s3-tantra-pro-flow.ts and s1-traffic/s1-cold-calendar.ts; fix differences or log conflicts in workshop-plan/coord/status/c.md.",
    "done_when": [
     "The artifact is read in full",
     "Every automation, step or number that differs is either fixed in s2-tantra-pro-funnel, s3-tantra-pro-flow and s1-cold-calendar, or logged as a conflict in status/c.md"
    ],
-   "evidence": [],
-   "blockers": [
-    "Artifact not shared with the account the Claude Docs connector uses"
+   "evidence": [
+    {
+     "label": "Tantra Flow guide (mirror)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s3-tantra-pro-flow/?v=1791534952"
+    },
+    {
+     "label": "Tantra Funnel guide, step 4 (mirror)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s2-tantra-pro-funnel/?v=1791534952"
+    },
+    {
+     "label": "Local guides",
+     "url": "http://localhost:4322/debug/guides?v=1791534952"
+    },
+    {
+     "label": "Decisions log",
+     "url": "workshop-plan/coord/status/c.md"
+    }
    ],
-   "needs_from_owner": "One of: share the artifact (open the link, Share, add the connector's account); export it to workshop-plan/tasks/uploads/webinar-funnel-automations.md; or reply 'the repo copy is current'. Recommended: 'the repo copy is current' if the artifact predates the 8-automation Doc 2, and Claude closes this.",
+   "blockers": [],
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-25",
@@ -5461,6 +5476,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: re-tried the Docs connector on 2026-10-08 (still denied); fixed the repo source path; added a recommendation."
+    },
+    {
+     "ts": "2026-10-09T14:05:52+0530",
+     "who": "claude",
+     "note": "The Webinar Funnel Automations doc opened through the Docs connector and all five automation tabs (A1 to A5) are now read in full, so nothing is needed from Adi. The Tantra Flow guide now runs reminders on Tantra campaigns (T-24h, T-1h, T-15m, live; no 4h30m send), sends WhatsApp through Tantra with Twilio left for SMS only, and says the attended and no-show branches need the attendance sync first; the Tantra Funnel guide step 4 has the double-capture guard and the 600 ms redirect delay; every other difference is ruled in status/c.md items 15 to 28 (the cold calendar guide needed no change). Guide checks and the anonymity probe pass, the source commit is pushed and the mirror is republished: open the Tantra Flow link, steps 6, 7, 10 and 11."
     }
    ],
    "order": 1381,
