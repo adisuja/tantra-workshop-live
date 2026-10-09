@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T07:56:56+0530",
+   "task_id": "T-115",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-115 stays blocked with no screenshots captured: this unattended session has no Claude in Chrome tools and Brave did not answer a read-only query, so the 21 unblocked slots need one session with the extension connected to the signed-in Brave window; the Google Admin password check is now its own in"
+  },
+  {
    "ts": "2026-10-09T07:53:48+0530",
    "task_id": "T-071",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:05:34+0530",
-   "task_id": "T-238",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-115",
+ "task_id": "T-116",
  "entries": [
-  "F-1962daf4"
+  "F-2a2f77b3"
  ],
- "started": "2026-10-09T07:53:53+0530",
- "message": "Acting on 1 note(s) for T-115: Guide screenshots that need Adi's signed-in accounts (Google, GA4, Cloudflare, Tantra, WebinarGeek)"
+ "started": "2026-10-09T07:57:26+0530",
+ "message": "Acting on 1 note(s) for T-116: Decide the 'Tantra Pro' name clash (Tantra Pro Funnel/Flow vs the $999 Tantra Pro offer)"
 }
