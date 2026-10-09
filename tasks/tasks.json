@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T20:17:53+0530",
-  "version": 1280,
+  "updated": "2026-10-09T20:21:09+0530",
+  "version": 1284,
   "last_id": 364,
   "team": [
    {
@@ -6776,45 +6776,26 @@
   },
   {
    "id": "T-151",
-   "title": "Feedback intake: one queue for every Tantra bug report and feature request",
-   "area": "Product",
+   "status": "review",
    "owner": "Amal",
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal",
+    "Bharath"
+   ],
    "priority": "P1",
    "due": "2026-10-06",
-   "status": "queue",
-   "why": "Owner voice notes, 2026-09-26: the funnel's job is to get everyone using Tantra and reporting every bug and feature request; both get resolved through a fast agentic dev cycle so customers stay for the business results. Owner assigned all of this to Claude end to end.",
-   "spec": "One place all Tantra feedback lands (in-app widget, a form, team channel all feed it). Required fields: type (bug or feature), brand/workspace, reporter, severity, steps to reproduce, screenshot or screen recording. A triage agent labels bug vs feature, merges duplicates, sets severity and routes to T-152 (bugs) or T-153 (features). Reporter gets an automatic acknowledgement and a 'shipped' message. One-page how-to-report guide. Product code: GitHub Usetantra/tantra-backend-v2 (use branch development; main is stale since 2026-04-23) and Usetantra/tantra-mcp; read the contract notes in docs/onboarding-v3/analysis/integrations-tantra-api.md first. Neither repo is cloned on this Mac: clone outside this repo and run locally. Claude-built automation only (no n8n, no Make). Bharath (CTO) signs off before anything touches the product.",
-   "done_when": [
-    "Reports from widget, form and channel land in one queue",
-    "Required fields enforced",
-    "Triage agent 90%+ correct on a test batch of 30 real reports",
-    "Acknowledgement and shipped messages fire, and the how-to-report guide is linked in the app"
-   ],
+   "area": "Product",
+   "order": 1510,
+   "title": "T-151: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
    "evidence": [],
    "blockers": [],
    "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-26T03:21:41+0530",
-     "who": "claude",
-     "note": "Added from owner voice notes 2026-09-26."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review 2026-10-08: still accurate. No work started (no commits or LOG lines); still a valid post-launch product item from the 2026-09-26 voice notes."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: replaced 'locate the Tantra product code' with the known repos (Usetantra/tantra-backend-v2 branch development, Usetantra/tantra-mcp, per docs/onboarding-v3/analysis/integrations-tantra-api.md); due date 2026-10-06 has passed, no work started (no commits or LOG lines)."
-    }
-   ],
-   "order": 1510,
-   "assignee": "Claude",
-   "reviewers": [
-    "Amal"
-   ]
+   "log": [],
+   "held": true
   },
   {
    "id": "T-152",
@@ -9957,6 +9938,11 @@
      "ts": "2026-10-09T08:00:48+0530",
      "who": "claude",
      "note": "Anonymity probe now reports 0 hits on the source tree and on the mirror export. All 30 hits were public vendor or source-credit URLs, two placeholder domains and the playbook byline: each is on the probe's allow list with its reason, and one screenshot credit was reworded (db6a151). A planted client URL, email and name still fail the probe."
+    },
+    {
+     "ts": "2026-10-09T20:21:09+0530",
+     "who": "claude",
+     "note": "Anonymity probe still reports 0 hits (source and export). Per the Orchestrator, every VENDORS entry now carries a one-line reason and the banned vendors (Instantly, HeyReach, Calendly, SendGrid, Apollo, Beehiiv) are off the allow list; probe and check-guides both pass with them gone. Committed locally, not pushed."
     }
    ],
    "order": 2430

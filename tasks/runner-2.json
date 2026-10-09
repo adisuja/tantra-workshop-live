@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T20:21:13+0530",
+   "task_id": "T-243",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-243 is done: the anonymity probe still passes with 0 hits, and every vendor allow-list entry now carries a one-line reason. I committed it locally and did not push, so the approved push and the runbook baseline update are not done.\n\nI took the banned vendors (Instantly, HeyReach, Calendly, SendGri"
+  },
+  {
+   "ts": "2026-10-09T20:20:00+0530",
+   "task_id": "T-151",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-151 is in review: the intake service works and the PR is open, but the triage agent scored 83% on the 30 real reports, short of the 90% target.\n\n- **Intake:** widget, form and team-channel reports land in one queue. All six required fields are enforced, and the 4 local tests pass. Acknowledgement "
+  },
+  {
    "ts": "2026-10-09T19:47:23+0530",
    "task_id": "T-025",
    "mode": "feedback",
@@ -79,30 +95,14 @@
    "status": "queue",
    "result": "limit",
    "summary": "You've hit your session limit · resets 10pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T18:26:32+0530",
-   "task_id": "T-031",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-031 is in review with Aquila and Bharath: the day output pipeline is live on Python 3.12, it generated the live Day 1 page and skipped it on a re-run. The commit (0332ee4) is not pushed because local main and origin have diverged, and T-024 was left to the other lane that holds it."
-  },
-  {
-   "ts": "2026-10-09T18:19:54+0530",
-   "task_id": "T-101",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-101 is in review with Bhaskar: the self-check passes on the live mirror at 1440 and 390 (0 broken images, 0 failed requests, no WhatsApp logo, no dashes, no stale Thursday copy, dates from `cohort.ts`). The one fix, the paid join intro and seat block wording, is published (mirror 41c270f, origin m"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-151",
+ "task_id": "T-246",
  "entries": [
-  "F-65aa7c02"
+  "F-6b438f3c"
  ],
- "started": "2026-10-09T19:47:31+0530",
- "message": "Acting on 1 note(s) for T-151: Feedback intake: one queue for every Tantra bug report and feature request"
+ "started": "2026-10-09T20:21:17+0530",
+ "message": "Acting on 1 note(s) for T-246: Redeploy attendee funnels that run the old funnel worker"
 }
