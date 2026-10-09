@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T14:27:15+0530",
+   "task_id": "T-021",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-021 stays in review: the Orchestrator's note had already been carried out by an earlier run, so nothing needed changing. A recheck confirmed the live deck matches source, the ruled-out tool grep is empty, both probes pass, and F-5fade61c was already acked. Review at https://adisuja.github.io/tantr"
+  },
+  {
    "ts": "2026-10-09T14:26:20+0530",
    "task_id": "T-001",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "done",
    "result": "ok",
    "summary": "T-279 is done: the Orchestrator's decision was already fully applied by the earlier run, so this pass only re-verified it — no alias, comment on the `bhaskardev` entry, passphrase file deleted with nothing reading it, `test_referrals.py` 27 PASS, `bhaskar` and `bhaskardev` resolving as separate rows"
-  },
-  {
-   "ts": "2026-10-09T12:15:44+0530",
-   "task_id": "T-253",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-253 is blocked on test keys only: the Zoom check ran live (creating an event subscription by API is refused without three extra marketplace scopes, nothing created, so the paste step stays), the Twilio and Metricool guards are in and pushed to main as `ad3ebaf` (typecheck clean, guard probe 17/17;"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-021: Workshop deck (158 slides)",
- "task_id": "T-021",
+ "message": "Acting on 1 note(s) for T-124: /vip checkout keeps first-touch UTMs",
+ "task_id": "T-124",
  "entries": [
-  "F-5fade61c"
+  "F-40ad43fd"
  ],
  "mode": "feedback",
- "started": "2026-10-09T14:26:26+0530"
+ "started": "2026-10-09T14:27:21+0530"
 }
