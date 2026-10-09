@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T02:57:48+0530",
-  "version": 1397,
+  "updated": "2026-10-10T03:20:57+0530",
+  "version": 1398,
   "last_id": 379,
   "team": [
    {
@@ -13761,7 +13761,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "blocked",
+   "status": "dropped",
    "why": "",
    "spec": "Only Adi can do this (outside_person): GitHub Support only accepts the purge request from the repo owner's signed-in account; Claude may not log in as Adi or message outside parties.. Everything else in T-334 is being built around it. As soon as this is done, T-334 finishes on its own.",
    "done_when": [],
@@ -13773,6 +13773,11 @@
      "ts": "2026-10-09T19:30:11+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-334."
+    },
+    {
+     "ts": "2026-10-10T03:20:57+0530",
+     "who": "claude",
+     "note": "Duplicate of T-334 (same GitHub Support step)."
     }
    ],
    "order": 3620,
