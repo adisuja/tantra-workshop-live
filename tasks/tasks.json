@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T17:42:35+0530",
-  "version": 1144,
+  "updated": "2026-10-09T17:42:49+0530",
+  "version": 1145,
   "last_id": 357,
   "team": [
    {
@@ -8132,6 +8132,11 @@
      "ts": "2026-10-09T17:42:35+0530",
      "who": "claude",
      "note": "Shipped T-229 so the false 'zoom failed 3' is gone: the live admin now shows 0 failed, and placeholder emails can no longer sign up or reach Zoom (Worker bc7ea5ad, commit pushed). The 14 to 16 Oct meeting 88135386601 already exists with every room setting correct and the cap is still 98; probe-zoom-pro passes 58/58. Stays in review for one thing only: the first real sign-up (the 1 registered on last week's meeting was the placeholder adi@example.com, now marked test)."
+    },
+    {
+     "ts": "2026-10-09T17:42:49+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-229."
     }
    ],
    "order": 2230
