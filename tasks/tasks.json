@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T12:17:39+0530",
-  "version": 1055,
+  "updated": "2026-10-09T12:25:47+0530",
+  "version": 1057,
   "last_id": 357,
   "team": [
    {
@@ -9167,6 +9167,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: unblocked: the source is on GitHub, Usetantra/tantra-frontend-v2, branch adi-new-ui (last commit 2026-10-01), which has src/lib/billing/pricing.ts and src/lib/marketing/enterprise-call.ts; the local folder holds only .next. enterprise-call.ts still pins a Calendly URL (Calendly ruled out 2026-10-07)."
+    },
+    {
+     "ts": "2026-10-09T12:25:47+0530",
+     "who": "claude",
+     "note": "From T-287 (Orchestrator ruling: no channel add-ons, the app is out of date). Item 7 now has a fix up for review: https://github.com/Usetantra/tantra-frontend-v2/pull/196 (base development, reviewer Bharath) makes the Connectors cards, the Add step menu and the webhook dialog read the plan under billing v2, so the add-on labels go once BILLING_V2_ENABLED is on. New for the list to Adi: the Tantra billing catalog (version 2026-10-06, live on usetantra.com/pricing) says Pro includes 2 LinkedIn or WhatsApp accounts, Scale 12, extra accounts 10 dollars a month and a 7 day trial; the 2026-09-29 brief said 5, 15, 20 dollars and 14 days. Recommended: keep the live catalog, since that is what checkout charges."
     }
    ],
    "order": 2520
