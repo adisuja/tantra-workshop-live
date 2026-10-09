@@ -426,7 +426,7 @@ main.wrap:has(#flows:not([hidden])){max-width:1240px}
 .tk-chip:hover{text-decoration:none;border-color:var(--ink-3)}
 .tk-chip i{width:7px;height:7px;border-radius:50%;background:var(--ink-3);flex:none}
 .tk-chip.s-done i{background:var(--teal)}.tk-chip.s-review i{background:var(--accent)}.tk-chip.s-blocked i{background:var(--pink)}
-.tk-chip.s-next i,.tk-chip.s-doing i{background:var(--blue)}.tk-chip.s-hold i{background:var(--amber)}.tk-chip.s-queue i{background:var(--ink-3)}.tk-chip.s-dropped i{background:var(--line-2)}
+.tk-chip.s-next i,.tk-chip.s-doing i{background:var(--blue)}.tk-chip.s-hold i,.tk-chip.s-recheck i{background:var(--amber)}.tk-chip.s-queue i{background:var(--ink-3)}.tk-chip.s-dropped i{background:var(--line-2)}
 .fl-fork{margin:2px 0 0 0}
 .fl-fork .fk-hd{font-size:13px;color:var(--ink-2);margin-bottom:10px}
 .fl-fork .fk-hd b{color:var(--ink);font-weight:680}
@@ -1050,6 +1050,7 @@ const ST={blocked:["Blocked","#c23a68","Waiting on a decision, an account or acc
   queue:["Pending","#8b909b","Not started yet."],
   hold:["On hold","#b8790f","Parked by decision (placeholders, post-launch work)."],
   done:["Done","#0f9e75","Finished and signed off."],
+  recheck:["Done · recheck","#b8790f","Finished, then a related change flagged it for another look."],
   dropped:["Dropped","#a3a8b3","Decided against."]};
 const ORDER=["blocked","review","doing","queue","hold","done","dropped"];
 const bucket=s=>s==="next"?"doing":s;
@@ -1063,8 +1064,8 @@ async function loadTasks(){
   }catch(e){TASKS=null}
   renderFlows();
 }
-function chip(id){const t=TMAP[id];if(!t)return`<span class="tk-chip">${esc(id)}</span>`;const b=bucket(t.status);
-  return `<a class="tk-chip s-${esc(t.status)}" href="tasks.html#${esc(id)}" target="_blank" rel="noopener" title="${esc(t.title)} · ${esc(ST[b][0])}"><i></i>${esc(id)} · ${esc(ST[b][0])}</a>`}
+function chip(id){const t=TMAP[id];if(!t)return`<span class="tk-chip">${esc(id)}</span>`;const s=(ST[bucket(t.status)]||[t.status])[0];
+  return `<a class="tk-chip s-${esc(t.status)}" href="tasks.html#${esc(id)}" target="_blank" rel="noopener" title="${esc(t.title)} · ${esc(s)}"><i></i>${esc(id)} · ${esc(s)}</a>`}
 
 // ---------- flows ----------
 function links(n){
