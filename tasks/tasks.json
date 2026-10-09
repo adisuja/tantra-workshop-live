@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T17:54:48+0530",
-  "version": 1163,
+  "updated": "2026-10-09T17:57:16+0530",
+  "version": 1166,
   "last_id": 357,
   "team": [
    {
@@ -3467,7 +3467,11 @@
    "evidence": [
     {
      "label": "Live VIP page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t102-1009"
+    },
+    {
+     "label": "Live join page",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=t102-1009"
     }
    ],
    "blockers": [],
@@ -3492,6 +3496,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: corrected the command: probe-live-wiring.mjs already defaults to the mirror (BASE https://adisuja.github.io, PREFIX /tantra-workshop-live/site); 'PREFIX=/' was wrong. Not re-run in this pass because checkout clicks may log Checkout Starts rows in the live Work Tracker (UNVERIFIED); current pass state still UNVERIFIED."
+    },
+    {
+     "ts": "2026-10-09T17:57:16+0530",
+     "who": "claude",
+     "note": "Full probe-live-wiring.mjs output, mirror defaults, run 2026-10-09 12:25:15Z to 12:26:56Z:\nPASS  /workshop/join/ → \"text=See the add-on\" → https://adisuja.github.io/tantra-workshop-live/site/vip/\nPASS  /workshop/join/ → \"button[aria-label='The Automation Vault']\" → https://adisuja.github.io/tantra-workshop-live/site/vip/\nPASS  /workshop/join/ → \"text=No thanks, keep my seat\" → https://adisuja.github.io/tantra-workshop-live/site/onboarding/\nPASS  /vip/success/ → \"text=Open my onboarding centre\" → https://adisuja.github.io/tantra-workshop-live/site/onboarding/\nPASS  /vip/ → \"a[href$='#vip-library']\" → https://adisuja.github.io/tantra-workshop-live/site/vip/#vip-library\nPASS  /vip checkout → https://checkout.dodopayments.com/session/cks_0NpMe1Y2ozTIYqXllxUN3?email=wiring-probe%40e\nPASS  Dodo checkout carries the prefilled email\nPASS  no failed requests on /workshop/\nPASS  200 https://adisuja.github.io/tantra-workshop-live/site/privacy-policy  ← /workshop/\nPASS  200 https://adisuja.github.io/tantra-workshop-live/site/terms-of-service  ← /workshop/\nPASS  no failed requests on /workshop/success/\nPASS  200 https://adisuja.github.io/tantra-workshop-live/site/privacy-policy/  ← /workshop/success/\nPASS  200 https://adisuja.github.io/tantra-workshop-live/site/terms-of-service/  ← /workshop/success/\nPASS  no failed requests on /workshop/join/\nPASS  200 https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Frevops-centre.growthcluborg.workers.dev%2Fcal%2F2026-10-07.ics  ← /workshop/join/\nPASS  200 https://revops-centre.growthcluborg.workers.dev/cal/2026-10-07.ics  ← /workshop/join/\nPASS  200 https://outlook.live.com/calendar/0/addfromweb?url=https%3A%2F%2Frevops-centre.growthcluborg.workers.dev%2Fcal%2F2026-10-07.ics&name=The%203-Day%20AI%20RevOps%20Workshop  ← /workshop/join/\nPASS  200 https://outlook.office.com/calendar/0/addfromweb?url=https%3A%2F%2Frevops-centre.growthcluborg.workers.dev%2Fcal%2F2026-10-07.ics&name=The%203-Day%20AI%20RevOps%20Workshop  ← /workshop/join/\nPASS  200 https://revops-centre.growthcluborg.workers.dev/cal/2026-10-07.ics?download=1  ← /workshop/join/\nPASS  no failed requests on /vip/\nPASS  200 https://adisuja.github.io/tantra-workshop-live/site/vip/  ← /vip/\nPASS  no failed requests on /vip/success/\nPASS  no failed requests on /masterclass/\nPASS  no failed requests on /masterclass/success/\nPASS  no failed requests on /masterclass/success/join/\nPASS  no failed requests on /onboarding/\nPASS  200 https://adisuja.github.io/tantra-workshop-live/site/onboarding/  ← /onboarding/\n\nALL WIRING PASSES"
+    },
+    {
+     "ts": "2026-10-09T17:57:16+0530",
+     "who": "claude",
+     "note": "Re-ran probe-live-wiring.mjs on the live mirror today: 27 of 27 checks pass, 0 fail, 0 pending (the WhatsApp placeholder link is no longer on any funnel page, so not even T-040 shows as pending). No wiring fix, push or republish was needed; the full output is in the log entry above and the one test row (wiring-probe@example.com, 12:25Z to 12:27Z) is recorded on T-107 for cleanup. Ben and Bharath: open the Live VIP page link to spot check, then sign off."
     }
    ],
    "order": 1000,
@@ -3785,6 +3799,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still valid; added that probe-checkout-currency.mjs and probe-live-wiring.mjs add new probe rows, so clean up after those runs. T-193 still open in queue and should close with this task."
+    },
+    {
+     "ts": "2026-10-09T17:57:16+0530",
+     "who": "claude",
+     "note": "From T-102: probe-live-wiring.mjs ran against the mirror on 2026-10-09 from 12:25:15Z to 12:26:56Z (17:55 to 17:57 IST). It started one /vip checkout as wiring-probe@example.com (Dodo session cks_0NpMe1Y2ozTIYqXllxUN3, not paid), so expect one new Checkout Starts row with that email in that window. Orchestrator decision O-fca13f52: deleting exactly these probe rows needs no further confirmation."
     }
    ],
    "order": 1050,
