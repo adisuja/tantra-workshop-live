@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T20:10:50+0530",
-  "version": 1275,
+  "updated": "2026-10-09T20:13:24+0530",
+  "version": 1277,
   "last_id": 364,
   "team": [
    {
@@ -9594,11 +9594,12 @@
    "assignee": "Claude",
    "reviewers": [
     "Adi",
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Attendance and engagement are already captured per person after each session, but nobody who missed a day or drifted gets the replay or a nudge.",
    "spec": "Data exists: zoom_attendance and zoom_engagement per registrant and day (score, minutes, share, rejoins, chat, polls), zoom_recordings per cohort day with viewer link and passcode (migration 0015, cloud/src/zoom-pro.ts). After pullAttendance finishes for a session, append each non-test attendee to one of two Tantra omni-channel campaigns created by the T-234 admin action (add 'Missed today: replay' and 'Low engagement nudge'), with customFields replay_url, replay_passcode, next_session_join and day. Thresholds: no-show = no attendance row for that day; low engagement = score below a value set in Cohort Settings (default proposed by Claude from the first cohort's data). Claim per attendee and day in D1 so it runs once. Extend app/scripts/probe-tantra-reminders.mjs (T-234) with a no-show and a low-engagement test attendee against vendor-sim.",
    "done_when": [
@@ -9606,7 +9607,20 @@
     "A second run after the same session appends nobody",
     "Thresholds visible in Cohort Settings"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Probe",
+     "url": "app/scripts/probe-tantra-reminders.mjs"
+    },
+    {
+     "label": "Engine",
+     "url": "cloud/src/followups.ts"
+    },
+    {
+     "label": "Migration",
+     "url": "cloud/migrations/0024_followups.sql"
+    }
+   ],
    "blockers": [
     "T-234 (Tantra key, campaigns and the import code)"
    ],
@@ -9626,6 +9640,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: moved to the Tantra campaign model (same import as T-234) instead of a home-built sender or T-123; blocked only on T-234."
+    },
+    {
+     "ts": "2026-10-09T20:13:24+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi/Aquila → Adi/Aquila/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T20:13:24+0530",
+     "who": "claude",
+     "note": "Built and deployed (Worker 5c25a0af, migration 0024 applied, feature OFF). 'Create reminder campaigns' now also makes drafts 'Missed today: replay' and 'Low engagement nudge'; after each attendance pull, no-shows (no attendance row) go to the replay and attendees under the day score threshold (default 40, Cohort Settings > Post-Session Follow-Ups) go to the nudge, once each via D1 ledger followup_pushes. Probe-tantra-reminders now 91/91 against the simulator (replay once with right replay_url, nudge once, second run adds nobody, threshold read live, no recording waits then centre link); nurture and lane probes still pass. Not done: push to origin (main is 149 ahead and 29 behind, T-234 code is not on origin, so no clean T-235-only push); turning it on needs the Tantra key saved, then tantra_followups=On and Start the two campaigns in Tantra. Nudge goes out a day after the session (after the settled second pull)."
     }
    ],
    "order": 2350
