@@ -97,12 +97,12 @@
    "summary": "T-131 stays in review: the relabel was already shipped by an earlier run (source `03fbae0`, mirror `34daef4`), and a headless check today found all four on-demand labels and none of the old webinar, event or replay rows in the script the [live RSP board](https://adisuja.github.io/tantra-workshop-liv"
   }
  ],
- "state": "paused",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
+ "task_id": "T-294",
  "entries": [
   "F-154dcb36"
  ],
- "started": "2026-10-09T16:39:17+0530",
- "message": "Usage limit reached; retries automatically after 17:09. (You've hit your session limit · resets 5pm (Asia/Calcutta))"
+ "started": "2026-10-09T17:09:23+0530",
+ "message": "Acting on 1 note(s) for T-294: Decide the open calls on the 17 extra funnel animations and the Whole Machine view"
 }

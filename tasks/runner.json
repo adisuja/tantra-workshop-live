@@ -97,12 +97,12 @@
    "summary": "T-131 stays in review: the relabel had already shipped (source `03fbae0`, mirror `34daef4`), so nothing changed this run beyond a recheck (0 old labels in the Email, WhatsApp and SMS lanes on origin main, live RSP board answers 200); note F-7894a484 was already acked."
   }
  ],
- "state": "paused",
- "message": "Usage limit reached; retries automatically after 17:09. (You've hit your session limit · resets 5pm (Asia/Calcutta))",
- "task_id": null,
+ "state": "working",
+ "message": "Acting on 1 note(s) for T-150: Workshop Hub: free and paid user-flow maps and post-workshop workflows; tasks live in the Task Command Center",
+ "task_id": "T-150",
  "entries": [
   "F-3d3cff60"
  ],
  "mode": "feedback",
- "started": "2026-10-09T16:39:18+0530"
+ "started": "2026-10-09T17:09:24+0530"
 }
