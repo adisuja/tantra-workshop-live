@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T18:05:41+0530",
+   "task_id": "T-100",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-100 stays in review: `/vip` is clean at all 7 widths on the live mirror, every count chip matches the template library, and no bonus is tagged \"VIP only\". No fix or republish was needed, so nothing was pushed. Probe output is committed in `workshop-plan/evidence/T-100-vip-probes-2026-10-09.txt`, t"
+  },
+  {
    "ts": "2026-10-09T17:53:45+0530",
    "task_id": "T-097",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "review",
    "result": "limit",
    "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T14:39:00+0530",
-   "task_id": "T-150",
-   "mode": "feedback",
-   "status": "review",
-   "result": "limit",
-   "summary": "You've hit your session limit · resets 5pm (Asia/Calcutta)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-100: VIP bonus stack: nine branded bonuses with generated key art",
- "task_id": "T-100",
+ "message": "Acting on 1 note(s) for T-082: Approve the Tantra logo applied from the Canva export",
+ "task_id": "T-082",
  "entries": [
-  "F-60ab3053"
+  "F-c08d1c59"
  ],
  "mode": "feedback",
- "started": "2026-10-09T17:53:52+0530"
+ "started": "2026-10-09T18:05:48+0530"
 }

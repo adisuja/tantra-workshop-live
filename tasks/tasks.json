@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T18:03:38+0530",
-  "version": 1179,
-  "last_id": 357,
+  "updated": "2026-10-09T18:06:55+0530",
+  "version": 1196,
+  "last_id": 360,
   "team": [
    {
     "name": "Adi",
@@ -3389,15 +3389,23 @@
    "evidence": [
     {
      "label": "VIP page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t100p"
+    },
+    {
+     "label": "Order confirmation",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t100p"
     },
     {
      "label": "Before / after",
      "url": "https://adisuja.github.io/tantra-workshop-live/vip-before-after.png"
+    },
+    {
+     "label": "Probe output, 7 widths (2026-10-09)",
+     "url": "workshop-plan/evidence/T-100-vip-probes-2026-10-09.txt"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Review the nine bonuses on https://adisuja.github.io/tantra-workshop-live/site/vip/ (before and after: https://adisuja.github.io/tantra-workshop-live/vip-before-after.png ), then approve or reply with changes per bonus.",
+   "needs_from_owner": "Adi: one review covers this task and T-094. Open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t100p (nine bonuses, key art, recap) and https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t100p, then approve or reply with changes per bonus.",
    "log": [
     {
      "ts": "2026-09-24",
@@ -3412,7 +3420,7 @@
     {
      "ts": "2026-10-08T00:21:42+0530",
      "who": "claude",
-     "note": "Task Command Center review 2026-10-08: still accurate. Still awaiting owner approval of the nine bonuses; T-186 covers Nelbin's VIP page edits."
+     "note": "Task Command Center review 2026-10-08: still accurate. Still awaiting owner approval of the nine bonuses."
     },
     {
      "ts": "2026-10-08T00:48:49+0530",
@@ -3423,12 +3431,28 @@
      "ts": "2026-10-09T17:54:23+0530",
      "who": "claude",
      "note": "Same review as T-094: Adi's one look at https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094 covers the nine bonuses here, the page in T-094 and the prices from T-103. Nothing on the stack changed."
+    },
+    {
+     "ts": "2026-10-09T18:05:33+0530",
+     "who": "claude",
+     "note": "People: reviewers Bhaskar → Bhaskar/Adi (by claude)."
+    },
+    {
+     "ts": "2026-10-09T18:05:33+0530",
+     "who": "claude",
+     "note": "Probes are now clean at 7 widths (390 to 1920) on the live mirror: shoot-vip and probe-page show 0 overflow, 0 clipped text, 0 console errors, key art loads 9 of 9, no bonus is tagged VIP only, and every count chip matches the template library (182 specs, 74 automation, 27 page and form, 77 copy). No fix and no republish was needed: a clean export of main matches the mirror for /vip, so nothing was pushed and the before/after image stands. Output is in workshop-plan/evidence/T-100-vip-probes-2026-10-09.txt; the stale T-186 log line is gone and the ask is one review shared with T-094, with Adi added as reviewer."
+    },
+    {
+     "ts": "2026-10-09T18:05:47+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-094."
     }
    ],
    "order": 980,
    "assignee": "Claude",
    "reviewers": [
-    "Bhaskar"
+    "Bhaskar",
+    "Adi"
    ]
   },
   {
