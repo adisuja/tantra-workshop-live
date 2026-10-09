@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T19:57:34+0530",
-  "version": 1262,
-  "last_id": 362,
+  "updated": "2026-10-09T20:00:38+0530",
+  "version": 1265,
+  "last_id": 363,
   "team": [
    {
     "name": "Adi",
@@ -7041,7 +7041,7 @@
    "owner": "Amal",
    "priority": "P1",
    "due": "2026-10-13",
-   "status": "queue",
+   "status": "review",
    "why": "Owner voice notes, 2026-09-26: the funnel's job is to get everyone using Tantra and reporting every bug and feature request; both get resolved through a fast agentic dev cycle so customers stay for the business results. Owner assigned all of this to Claude end to end.",
    "spec": "Run Tantra's own funnel fully on Tantra. One live experiment each on one client account and FintechCircle. Backlog of at least 5 more growth ideas to run on Tantra. Team members across every line of business use or promote Tantra and report what they find, against a weekly feedback-volume target.",
    "done_when": [
@@ -7050,7 +7050,24 @@
     "Growth-idea backlog of 5+",
     "Weekly feedback-volume target set and tracked"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Board with counter + Report form",
+     "url": "http://localhost:8899/tasks.html?v=155"
+    },
+    {
+     "label": "Growth backlog (8 ideas, each with a metric)",
+     "url": "workshop-plan/dogfooding/GROWTH_BACKLOG.md"
+    },
+    {
+     "label": "FintechCircle experiment spec",
+     "url": "workshop-plan/dogfooding/FINTECHCIRCLE_EXPERIMENT.md"
+    },
+    {
+     "label": "Client experiment spec (private)",
+     "url": "workshop-plan/coord/T-155-client-experiment-private.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -7073,12 +7090,23 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): checked, current. pass 2: still accurate; no client named on the public board; not started."
+    },
+    {
+     "ts": "2026-10-09T20:00:38+0530",
+     "who": "claude",
+     "note": "People: reviewers Amal → Amal/Aquila (by claude)."
+    },
+    {
+     "ts": "2026-10-09T20:00:38+0530",
+     "who": "claude",
+     "note": "Built: board counter (15 a week, 2 per line of business) and a 'Report bug / feature' form that posts tagged notes to the board Worker /api/inbox; probe-feedback.mjs passes 6/6 on localhost. Wrote an 8-idea growth backlog with metrics, the FintechCircle spec, and the private client spec; opened T-363 for Amal to get the client's written OK. Not done: moving our funnel's reminders and the FintechCircle Adi-test send onto live Tantra campaigns, because both need the Tantra API key Adi pastes in T-337 (the code for reminders is already built in T-234); the counter reaches the public mirror on the next board sync."
     }
    ],
    "order": 1550,
    "assignee": "Claude",
    "reviewers": [
-    "Amal"
+    "Amal",
+    "Aquila"
    ]
   },
   {
@@ -13212,6 +13240,36 @@
    "order": 3620,
    "input_for": "T-334",
    "kind": "input"
+  },
+  {
+   "id": "T-363",
+   "title": "Get the client's written OK for the Tantra growth test (T-155)",
+   "area": "Ops",
+   "owner": "Amal",
+   "assignee": "Amal",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "2026-10-13",
+   "status": "blocked",
+   "why": "T-155 client experiment cannot send anything until the client agrees in writing; until then Claude reads and tests only.",
+   "spec": "Ask the client for a written yes (email is fine) naming: the test (two cold-email variants on their list), the list, the sender mailboxes, the 7-day dates. Full spec: workshop-plan/coord/T-155-client-experiment-private.md. Save the reply where Claude can read it and mark this done.",
+   "done_when": [
+    "Client written OK saved",
+    "Spec step 1 ticked in T-155 client experiment"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Amal: send the client the test description and get their written yes (email is fine). Attach or paste their reply here.",
+   "log": [
+    {
+     "ts": "2026-10-09T20:00:30+0530",
+     "who": "claude",
+     "note": "Opened by T-155 per Orchestrator decision O-9d051af3."
+    }
+   ],
+   "order": 3630
   }
  ]
 }

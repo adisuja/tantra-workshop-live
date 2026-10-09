@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T20:00:45+0530",
+   "task_id": "T-155",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-155 is in review for Amal. The weekly feedback counter and the \"Report bug / feature\" form are built, but the live Tantra campaigns and the FintechCircle test send are not done.\n\n- **Done:**\n  - **Counter and form:** the board now has a feedback counter and a Report form that posts to the board Wo"
+  },
+  {
    "ts": "2026-10-09T19:57:26+0530",
    "task_id": "T-154",
    "mode": "feedback",
@@ -87,22 +95,15 @@
    "status": "done",
    "result": "ok",
    "summary": "T-103 is done: both currency probes pass on the live mirror (page price equals Dodo price for DE, PL, IN and US, nothing paid), the 12 `currency-probe@example.com` rows are deleted from the Work Tracker's Checkout Starts tab (`ops.db` had none), the price table is recorded as final on T-004 and T-10"
-  },
-  {
-   "ts": "2026-10-09T17:57:21+0530",
-   "task_id": "T-102",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-102 is in review for Ben and Bharath: the live wiring probe passed 27 of 27 on the mirror with nothing pending, so no fix, push or republish was needed. The full output is in the task log, the one test checkout row (`wiring-probe@example.com`, 12:25Z to 12:27Z) is recorded on T-107 for cleanup, an"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-155",
+ "task_id": "T-213",
  "entries": [
-  "F-d5aac9da"
+  "F-58d1f581",
+  "R-2499410a"
  ],
- "started": "2026-10-09T19:57:35+0530",
- "message": "Acting on 1 note(s) for T-155: Dogfooding: run Tantra on our own funnel and on one client account and FintechCircle, with team-wide feedback"
+ "started": "2026-10-09T20:00:49+0530",
+ "message": "Acting on 2 note(s) for T-213: Set up the Endy Inboxes white-label partnership"
 }
