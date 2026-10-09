@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T01:44:35+0530",
-  "version": 1367,
+  "updated": "2026-10-10T01:44:46+0530",
+  "version": 1368,
   "last_id": 373,
   "team": [
    {
@@ -11258,6 +11258,11 @@
      "ts": "2026-10-10T01:44:35+0530",
      "who": "claude",
      "note": "Automation 9 is built and committed (50914b0, pushed; centre Worker deployed). The funnel Worker now serves the day survey (/challenge/day/N), writes the output with the attendee's Anthropic key, serves a live page and PDF (/out/N/token), emails both and logs output_delivered; probe-t266.mjs passes 14 of 14 on the local simulator, and the test run's automation 9 now passes only on a real PDF link. Left: the PDF is made by a built-in writer, not Browser Rendering; WhatsApp goes through a Tantra campaign that is not created yet; the key is bound only when an 'anthropic' connection exists. AUDIT.md: X076 and X098 fixed, X082 partial (waits on T-260)."
+    },
+    {
+     "ts": "2026-10-10T01:44:46+0530",
+     "who": "claude",
+     "note": "Checked 11 related task(s); updating T-136."
     }
    ],
    "order": 2660
