@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T12:08:45+0530",
-  "version": 1040,
+  "updated": "2026-10-09T12:09:56+0530",
+  "version": 1043,
   "last_id": 357,
   "team": [
    {
@@ -5084,11 +5084,28 @@
     "All remaining slots show real, redacted captures",
     "No personal numbers or names visible"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "WhatsApp guide on the mirror",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s6-whatsapp/?v=t133"
+    },
+    {
+     "label": "SMS guide on the mirror",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s6-sms/?v=t133"
+    },
+    {
+     "label": "WhatsApp guide, local",
+     "url": "http://localhost:4322/debug/guides?only=s6-whatsapp&v=t133"
+    },
+    {
+     "label": "SMS guide, local",
+     "url": "http://localhost:4322/debug/guides?only=s6-sms&v=t133"
+    }
+   ],
    "blockers": [
     "Tantra and Twilio signed in by Adi in Claude in Chrome"
    ],
-   "needs_from_owner": "Sign in to https://usetantra.com (Tantra sign-in) and https://console.twilio.com in Claude in Chrome and reply 'signed in'. For s6-whatsapp #1, either send a phone screenshot of any chat showing two short test messages to yourself, or reply 'drop the phone shot'.",
+   "needs_from_owner": "Tracked on T-339: sign in to https://console.twilio.com in the Brave profile Claude in Chrome uses, then open a Claude Code desktop session with Claude in Chrome connected and type: Act on T-133.",
    "log": [
     {
      "ts": "2026-09-25T19:38:41+0530",
@@ -5104,6 +5121,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: steps must first be rewritten for the approved stack (WhatsApp through Tantra, SMS through Twilio); WhatsApp Manager slot is stale."
+    },
+    {
+     "ts": "2026-10-09T12:09:47+0530",
+     "who": "claude",
+     "note": "The WhatsApp guide now sends steps 2 to 4 through Tantra (template body, Marketing category, 1,024-character limit, campaign scheduler; the flow node says Tantra), the phone shot is dropped for Tantra's template preview, and SMS step 2 has a real capture of Twilio's public segment calculator, so 4 slots still wait with exact capture plans (WhatsApp 1, 2, 4 and SMS 3). Verified: check-guides and typecheck pass, both guides render clean at 1440 and 390 with no dashes, the anonymity probe passes on source and export, and the mirror is published and answers 200 (source repo not pushed). The 4 signed-in captures cannot run from this unattended runner because it has no browser; Tantra is already signed in, so the only input left is Twilio plus one desktop session, tracked on T-339."
+    },
+    {
+     "ts": "2026-10-09T12:09:56+0530",
+     "who": "claude",
+     "note": "Checked 5 related task(s); updating T-115."
     }
    ],
    "order": 1330,
@@ -11520,12 +11547,17 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "In Claude in Chrome, sign in to https://usetantra.com (Tantra app) and https://console.twilio.com, then reply 'signed in' on T-115. Claude only looks and captures, and never sends anything.",
+   "needs_from_owner": "Sign in to https://console.twilio.com in the Brave profile Claude in Chrome uses (Tantra is already signed in there), then open a Claude Code session in the desktop app with Claude in Chrome connected and type: Act on T-133. Claude only drafts and captures, and never saves or sends.",
    "log": [
     {
      "ts": "2026-10-09T05:06:54+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-133."
+    },
+    {
+     "ts": "2026-10-09T12:09:47+0530",
+     "who": "claude",
+     "note": "T-133 ripple: Tantra is already signed in per the 2026-10-09 log, so the ask is now Twilio only, plus the interactive session, because the unattended runner has no browser."
     }
    ],
    "order": 3390,
