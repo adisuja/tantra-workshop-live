@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T09:11:08+0530",
-  "version": 1010,
+  "updated": "2026-10-09T09:18:00+0530",
+  "version": 1011,
   "last_id": 350,
   "team": [
    {
@@ -10216,23 +10216,23 @@
    "evidence": [
     {
      "label": "Walkthrough review index (18 videos, 4K, all under 2:00)",
-     "url": "http://localhost:8883/wt-review/index.html?v=0840"
+     "url": "http://localhost:8883/wt-review/index.html?v=e144712"
     },
     {
-     "label": "Zoom recut (1:59)",
-     "url": "http://localhost:8883/wt-review/zoom/index.html?v=0840"
+     "label": "Tantra reminders review page (re-rendered 2026-10-09)",
+     "url": "http://localhost:8883/wt-review/tantra-reminders/index.html?v=e144712"
     },
     {
-     "label": "Tantra reminders recut (1:58)",
-     "url": "http://localhost:8883/wt-review/tantra-reminders/index.html?v=0840"
+     "label": "Zoom review page (card 12 scopes)",
+     "url": "http://localhost:8883/wt-review/zoom/index.html?v=e144712"
     },
     {
-     "label": "Workflow v2",
+     "label": "Workflow v2 (plan, live check, record, verify, render, review)",
      "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/tantra-walkthroughs/scripts/walkthroughs/WORKFLOW.md"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Reply approve or redo for each of the 18 videos at http://localhost:8883/wt-review/index.html?v=0840 (the two recut ones: /wt-review/zoom/index.html and /wt-review/tantra-reminders/index.html).",
+   "needs_from_owner": "Reply approve or redo for each of the 18 videos on the review index: http://localhost:8883/wt-review/index.html?v=e144712 (each video has its own page at /wt-review/<tool>/index.html).",
    "log": [
     {
      "ts": "2026-10-08T05:03:55+0530",
@@ -10258,6 +10258,11 @@
      "ts": "2026-10-09T08:40:44+0530",
      "who": "claude",
      "note": "Zoom (now 1:59, 30 steps) and Tantra reminders (1:58, 28 steps) are recut and re-rendered in 4K; all 18 videos are under 2:00. Zoom shows exactly the card's 12 scopes and only the card's settings, and the d1-zoom education text now matches; reminders uses the real day before copy from the app, a note in place of the blurred list, and ends on Connect Tantra. Checked with verify.py, stills pulled from both new videos and the review pages loading on :8883. Not done: the mp4s are gitignored so only journeys and step lists were pushed (tantra-walkthroughs 01c5f63), and WhatsApp still reads locked on the demo workspace, captioned as such pending T-287."
+    },
+    {
+     "ts": "2026-10-09T09:18:00+0530",
+     "who": "claude",
+     "note": "Rechecked the Orchestrator's recut: all 18 videos read under 2:00 from the files (Zoom 1:59, 30 steps, exactly the card's 12 scopes; Tantra reminders 1:58, 28 steps), verify.py passes on both. One fix added: the reminders video no longer shows the app's 'Not in your plan' and 'Add-on required' labels (T-287 ruled no add-ons), and the caption now says Pro covers 5 LinkedIn and WhatsApp accounts, Scale 15; re-rendered in 4K and checked on stills from the new file. Pushed as tantra-walkthroughs e144712 (the mp4s stay local, they are gitignored); open the review index and reply approve or redo per video."
     }
    ],
    "order": 2820
