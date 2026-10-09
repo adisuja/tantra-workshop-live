@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T08:14:00+0530",
-  "version": 984,
+  "updated": "2026-10-09T08:22:00+0530",
+  "version": 985,
   "last_id": 349,
   "team": [
    {
@@ -7719,6 +7719,11 @@
      "ts": "2026-10-09T05:06:11+0530",
      "who": "Orchestrator",
      "note": "People: assignee Adi → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-09T08:22:00+0530",
+     "who": "claude",
+     "note": "Zoom check 2026-10-09: not granted yet. disable_participant_video is in no answer and the mute field is still at its default (/users/me/settings 200, /accounts/me/settings 400, /accounts/me/lock_settings 400, /meetings/88135386601 200, /meetings/87002851906 200); the centre's Zoom Support locks stay off and Live Control (T-226) covers mute and video."
     }
    ],
    "order": 2250
