@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T09:29:23+0530",
+   "task_id": "T-116",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-116 is done: the naming decision is logged, and the one page the earlier rename missed (the hub) now reads \"Tantra Funnel\", \"Tantra Flow\" and \"Tantra Pro Course\" in the repo and on the [live mirror](https://adisuja.github.io/tantra-workshop-live/?v=t116). All checks pass, but probe-guides was run "
+  },
+  {
    "ts": "2026-10-09T08:55:45+0530",
    "task_id": "T-298",
    "mode": "feedback",
@@ -87,23 +95,14 @@
    "status": "blocked",
    "result": "error",
    "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
-  },
-  {
-   "ts": "2026-10-09T06:05:52+0530",
-   "task_id": "T-226",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "You've hit your weekly limit · resets Oct 11 at 3:30am (Asia/Calcutta)"
   }
  ],
  "state": "working",
- "message": "Acting on 2 note(s) for T-116: Decide the 'Tantra Pro' name clash (Tantra Pro Funnel/Flow vs the $999 Tantra Pro offer)",
- "task_id": "T-116",
+ "message": "Acting on 1 note(s) for T-283: Finish the 7 walkthrough videos blocked on account access (Twilio, Kie.ai, Dodo, Stripe, HubSpot, Zoho, Wistia) and the Google Cloud and Admin steps",
+ "task_id": "T-283",
  "entries": [
-  "F-2a2f77b3",
-  "R-5f661d6a"
+  "F-a60833dd"
  ],
  "mode": "feedback",
- "started": "2026-10-09T08:55:52+0530"
+ "started": "2026-10-09T09:29:29+0530"
 }

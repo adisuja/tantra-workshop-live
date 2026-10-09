@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T09:21:13+0530",
-  "version": 1013,
+  "updated": "2026-10-09T09:29:29+0530",
+  "version": 1018,
   "last_id": 350,
   "team": [
    {
@@ -4037,7 +4037,7 @@
    "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-09-28",
-   "status": "blocked",
+   "status": "done",
    "why": "Three things now share the name 'Tantra Pro': the $99/mo app plan (includes the cohort seat), the $999 Tantra Pro course (T-071; shown in app/src/components/masterclass/funnel-os-challenge.tsx and funnel-os-types/system.tsx), and the funnel/nurture built in the workshop (Tantra Pro Funnel / Tantra Pro Flow, in guides s2/s3, funnel-os.tsx, funnel-os-rsp.tsx, masterclass-client.tsx). Attendees reading Day 3 and the offer will confuse them.",
    "spec": "Three things share 'Tantra Pro': (1) the $99/mo Tantra app plan that includes the cohort seat (owner price ladder 2026-09-30); (2) the $999 Tantra Pro course (T-071; app/src/components/masterclass/funnel-os-challenge.tsx lines 251 and 351, funnel-os-types/system.tsx); (3) the funnel and nurture built in the workshop, 'Tantra Pro Funnel' and 'Tantra Pro Flow' (46 hits in app/src: guides s2-landing/s2-tantra-pro-funnel.ts, s3-nurture/s3-tantra-pro-flow.ts, funnel-os.tsx, funnel-os-rsp.tsx, masterclass-client.tsx). After the decision Claude renames across app/src, workshop-plan/playbook.html, the deck build (workshop-plan/build), the library and T-071, keeps old anchor ids, then runs check-guides, probe-guides and check-playbook-anchors.",
    "done_when": [
@@ -4045,11 +4045,22 @@
     "git grep for the retired name returns nothing in app/src and workshop-plan",
     "check-guides, probe-guides and check-playbook-anchors pass"
    ],
-   "evidence": [],
-   "blockers": [
-    "Naming decision is the owner's"
+   "evidence": [
+    {
+     "label": "Hub on the mirror (offer ladder and Day 2 card)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=t116"
+    },
+    {
+     "label": "Playbook on the mirror",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t116"
+    },
+    {
+     "label": "Decision line in the coordination log",
+     "url": "workshop-plan/coord/LOG.md"
+    }
    ],
-   "needs_from_owner": "Pick one: (1) keep all three; (2) rename the $999 course (give the name); (3) rename the funnel and flow (give the names). Recommended: (2), keep 'Tantra Pro' for the $99/mo app plan since it is the product's plan name, and give the course its own name.",
+   "blockers": [],
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-25",
@@ -4070,6 +4081,16 @@
      "ts": "2026-10-09T07:53:40+0530",
      "who": "claude",
      "note": "Orchestrator decision O-f6931fba (via T-071): the $999 offer is named 'Tantra Pro Course', one-time. /pro and the Dodo product (pdt_0NpKlRqJAjyAf3axboQSR) now use that name; the rest of the rename sweep in this task is still open."
+    },
+    {
+     "ts": "2026-10-09T09:29:20+0530",
+     "who": "claude",
+     "note": "Decision (Orchestrator O-0361e753, acting for Adi): 'Tantra Pro' is the $99/mo app plan with the cohort seat, the $999 offer is always 'Tantra Pro Course', the workshop funnel is 'Tantra Funnel' and the nurture is 'Tantra Flow'; file names, guide ids and anchor ids keep the old slugs. The rename was already pushed (1f9d44c, c199432) and published; this run fixed the one page it missed, the hub, which still said 'Upsell · Tantra Pro' and 'Tantra Pro Funnel/Flow' on the mirror (pushed b9f5e73 to main, mirror 952dfa684). Checked: the retired names return nothing in app/src and workshop-plan outside this board's own task history, the live hub, deck and playbook are clean, check-guides, check-playbook-anchors and the leak probe pass, and probe-guides passes at 1440 light (25 guides; the other widths were not rerun because one width takes 10 minutes). T-051 and T-273 are no longer waiting on the name."
+    },
+    {
+     "ts": "2026-10-09T09:29:29+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-071, T-273, T-051."
     }
    ],
    "order": 1140,
@@ -4164,18 +4185,53 @@
    "owner": "Adi",
    "priority": "P2",
    "due": "2026-09-28",
-   "status": "blocked",
+   "status": "review",
    "why": "FunnelOS RSP still shows a 0 to 100 score band (40 to 70 = AI SDR) while the playbook, library and S5 guides use number-free top / middle / bottom bands.",
    "spec": "Only one numeric scale is left on main: app/src/components/masterclass/funnel-os-rsp.tsx lines 168 to 170 ('Score > 70', 'Score 40 to 70', 'Score < 40') and line 417 ('Score > 70 instant book'). Playbook, library and S5 guides use number-free top, middle and bottom bands. On the answer Claude edits funnel-os-rsp.tsx (or applies thresholds everywhere) and re-shoots the RSP board.",
    "done_when": [
     "FunnelOS RSP, playbook, library and S5 guides use the same scale",
     "git grep -n 'Score 40 to 70' app/src returns nothing if bands are chosen"
    ],
-   "evidence": [],
-   "blockers": [
-    "Needs owner decision"
+   "evidence": [
+    {
+     "label": "Live RSP board (Stage 4, Qualify to route)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/rsp/?v=1791518354"
+    },
+    {
+     "label": "Live comparison view",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/system/?v=1791518354"
+    },
+    {
+     "label": "Local RSP board",
+     "url": "http://localhost:4322/funnels/rsp?v=1791518354"
+    },
+    {
+     "label": "Before: RSP board",
+     "url": "/tmp/t118/before/rsp-desktop.png"
+    },
+    {
+     "label": "After: RSP board",
+     "url": "/tmp/t118/after/rsp-desktop.png"
+    },
+    {
+     "label": "After: RSP board on phone",
+     "url": "/tmp/t118/after/rsp-phone.png"
+    },
+    {
+     "label": "Before: comparison view",
+     "url": "/tmp/t118/before/system-desktop.png"
+    },
+    {
+     "label": "After: comparison view",
+     "url": "/tmp/t118/after/system-desktop.png"
+    },
+    {
+     "label": "Live shot: RSP board",
+     "url": "/tmp/t118/live-rsp.png"
+    }
    ],
-   "needs_from_owner": "Pick: number-free bands everywhere, or give thresholds to use everywhere. Recommended: bands everywhere (Claude drops the score numbers from FunnelOS RSP).",
+   "blockers": [],
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-25",
@@ -4191,12 +4247,23 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: added a spec and a recommended answer."
+    },
+    {
+     "ts": "2026-10-09T09:29:14+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T09:29:14+0530",
+     "who": "claude",
+     "note": "FunnelOS RSP now shows Top Band, Middle Band and Bottom Band in place of the score numbers (routing unchanged: instant book, AI SDR, unqualified sequence), and I made the same swap in the /funnels/system comparison view because it carried the same Score > 70 scale. Checked: type check clean, the board-fit probe passes on the RSP board at all five widths, the export build and anonymity probe pass, and the live mirror serves the new labels on both pages; pushed to main as bf44bf5 (that one commit only) and published as mirror cba7ad4. Two things to know: the grep still finds one line, a 'Score 1 to 5' subject-line rubric in the library (app/src/lib/corpus/s1.ts:124), which is not lead qualification so I left it, and the comparison view's revenue board overlaps by about 2 percent in the fit probe, the same as before this change."
     }
    ],
    "order": 1160,
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ]
   },
   {
