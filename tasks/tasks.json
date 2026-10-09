@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T09:29:29+0530",
-  "version": 1018,
-  "last_id": 350,
+  "updated": "2026-10-09T09:31:05+0530",
+  "version": 1020,
+  "last_id": 351,
   "team": [
    {
     "name": "Adi",
@@ -5025,17 +5025,22 @@
    "due": "2026-09-28",
    "status": "blocked",
    "why": "Five steps need Claude desktop app Code screens, and Claude cannot operate the desktop app itself.",
-   "spec": "Slots on main 2026-10-08: s6-ai-newsletter #1 (new Code session with the weekly-letter folder), #2 (setup prompt with inputs), #6 (Code, Routines, task page: Run now, Status, Edit, Review history); s5-follow-ups #2 (follow-up prompt running plus follow-ups/ folder); s5-crm-starter #3 (prompt 01 in the crm-starter folder). Plan: Claude prepares a demo weekly-letter folder in /tmp/e-demo with a fictional persona and a temporary routine, Adi leaves the Claude app on the right screen when pinged, Claude captures with screencapture, redacts the sidebar, saves WebP, then deletes the demo routine.",
+   "spec": "Slots on main 2026-10-09: s6-ai-newsletter #1 (new Code session with the weekly-letter folder), #2 (setup prompt with inputs), #6 (Code, Routines, task page: Run now, Status, Edit, Review history); s5-follow-ups #2 (follow-up prompt running plus follow-ups/ folder); s5-crm-starter #5 (Claude Code in the Funnel OS folder listing contacts; the guide was rewritten in T-191, so the old #3 prompt-01 slot no longer exists). Run: python3 app/scripts/shots/claude-app-shots.py prep, then preflight (must print READY), create the temporary weekly routine (approved by the Orchestrator 2026-10-09), drive the app with open -a, claude:// links and System Events, capture each screen with the shot command (redact the sidebar and account name), fill shots[], delete the routine and log it in scripts/walkthroughs/REVERT_LEDGER.md.",
    "done_when": [
     "All 5 slots show a real, redacted capture",
     "check-guides capture-needed drops by 5",
     "The demo routine is deleted"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Capture tool and preflight",
+     "url": "app/scripts/shots/claude-app-shots.py"
+    }
+   ],
    "blockers": [
     "The Claude desktop app must be on screen while Claude captures"
    ],
-   "needs_from_owner": "(1) Reply 'OK demo routine': Claude creates a temporary weekly routine for the screenshots and deletes it afterwards. (2) When Claude pings, open Claude app, Code, Routines and leave it on screen for about a minute.",
+   "needs_from_owner": "Only the macOS permission in T-351 (Screen Recording and Accessibility for Python on this Mac). No 'OK demo routine' and no need to leave a screen up: the agent opens and drives the Claude app itself once that is granted.",
    "log": [
     {
      "ts": "2026-09-25T19:38:41+0530",
@@ -5051,6 +5056,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: CLI part done (Claude Code 2.1.287 on this Mac), so the title drops it; the only blocker is the desktop app screen."
+    },
+    {
+     "ts": "2026-10-09T09:31:05+0530",
+     "who": "claude",
+     "note": "Tried the Orchestrator's route: the Claude app is open and on screen, but macOS refuses this background run both the capture ('could not create image from window') and any click or key (System Events times out on a permission prompt), so no routine was created and nothing needs reverting. Built the rest: demo folders with the Ops Sherpa persona and a capture tool (app/scripts/shots/claude-app-shots.py, commit 72aa784) whose preflight prints NOT READY today. The single input is the macOS permission in T-351; the 'OK demo routine' ask is gone."
     }
    ],
    "order": 1320,
@@ -11635,6 +11645,35 @@
    "order": 3500,
    "input_for": "T-283",
    "kind": "input"
+  },
+  {
+   "id": "T-351",
+   "title": "Give the Launch Control agent macOS permission to capture and drive the Claude app",
+   "area": "Infra",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "T-132 needs five real Claude desktop app screenshots. The app is on screen, but macOS refuses the background agent both screen capture and clicks or keys, and only the person at the Mac can grant that.",
+   "spec": "Checked 2026-10-09 from the unattended runner: screencapture -l on the Claude window returns 'could not create image from window', and System Events and Terminal Apple Events time out on an unanswered permission prompt. Probe: python3 app/scripts/shots/claude-app-shots.py preflight (prints READY when both grants are in place). Once READY, T-132 runs without anything else from Adi.",
+   "done_when": [
+    "python3 app/scripts/shots/claude-app-shots.py preflight prints READY"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "On this Mac, open System Settings, Privacy and Security. (1) Screen and System Audio Recording (x-apple.systempreferences:com.apple.preference.security?Privacy_ScreenCapture): switch on Python (and claude if listed). (2) Accessibility (x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility): press +, add /Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app and switch it on. (3) If a prompt says Python wants to control System Events or Claude, click Allow. Keep the Claude app open.",
+   "log": [
+    {
+     "ts": "2026-10-09T09:30:56+0530",
+     "who": "claude",
+     "note": "Opened from T-132: the one input it needs. Everything else for the captures is built."
+    }
+   ],
+   "order": 3510
   }
  ]
 }
