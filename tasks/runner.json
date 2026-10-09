@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-09T10:31:50+0530",
+   "task_id": "T-149",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "limit",
+   "summary": "You've hit your session limit · resets 12pm (Asia/Calcutta)"
+  },
+  {
    "ts": "2026-10-09T10:01:45+0530",
    "task_id": "T-149",
    "mode": "feedback",
@@ -87,22 +95,14 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-115 stays blocked: no screenshots captured, because this unattended runner has no browser (no Claude in Chrome tools, Brave unreachable); the 21 ready captures need an interactive desktop session with Claude in Chrome. F-1962daf4 was already acknowledged from the previous run, and the task update "
-  },
-  {
-   "ts": "2026-10-09T08:01:04+0530",
-   "task_id": "T-111",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-111 is in review for Amal and Bharath: the mirror (e4f856b) now serves the 672-example verbatim library, identical to the live centre, with probe-anonymity at 0 hits (T-243 done) and main pushed. probe-fidelity passes only after I changed its private checker to report Nelbin's merged content pass "
   }
  ],
  "state": "paused",
- "message": "Usage limit reached; retries automatically after 10:31. (You've hit your session limit · resets 12pm (Asia/Calcutta))",
+ "message": "Usage limit reached; retries automatically after 11:01. (You've hit your session limit · resets 12pm (Asia/Calcutta))",
  "task_id": null,
  "entries": [
   "F-444cb6d4"
  ],
  "mode": "feedback",
- "started": "2026-10-09T10:01:42+0530"
+ "started": "2026-10-09T10:31:47+0530"
 }
