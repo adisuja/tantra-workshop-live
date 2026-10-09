@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-09T14:18:24+0530",
-  "version": 1113,
+  "updated": "2026-10-09T14:19:54+0530",
+  "version": 1117,
   "last_id": 357,
   "team": [
    {
@@ -1002,16 +1002,24 @@
    ],
    "evidence": [
     {
-     "label": "Survey",
-     "url": "https://adisuja.github.io/tantra-workshop-live/survey.html"
+     "label": "Survey (mirror)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/survey.html?v=1791535794"
     },
     {
-     "label": "questions.py (source)",
+     "label": "Survey (live centre)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/materials/survey.html?v=1791535794"
+    },
+    {
+     "label": "Survey (local)",
+     "url": "http://localhost:8899/survey.html?v=1791535794"
+    },
+    {
+     "label": "questions.py (source, lock note)",
      "url": "workshop-plan/build/questions.py"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Reply 'locked' on this task to freeze the 8/9/8 daily questions (recommended: lock; they are live in this week's cohort), or list changes by question id. Review at https://adisuja.github.io/tantra-workshop-live/survey.html",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -1037,12 +1045,23 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: survey also carries 7 Day 0 setup questions (32 total); the Worker path is proven (tracker sync shows survey_answers from the live Worker); ruled-out tools remain in the Day 0 options and samples; T-023's lock folded in here."
+    },
+    {
+     "ts": "2026-10-09T14:19:54+0530",
+     "who": "claude",
+     "note": "Survey now offers only the approved stack: reminders are Tantra or Resend, lists come from the data partners, ZoomInfo, Clay or your own CRM, and every sample and hint is rewritten; old saved answers map to their replacement (checked in a browser with seeded old answers). The 8/9/8 daily set is locked by orchestrator 2026-10-09 (note at the top of questions.py, which now matches the survey on all 25). Verified: the grep finds only the legacy map lines, probe-survey is clean locally and on the mirror; pushed (origin b68f49b), mirror published (f120b81), Worker deployed (b82c10cc, a full build of main, so it also carried main's committed T-134 captures and T-020 playbook)."
+    },
+    {
+     "ts": "2026-10-09T14:19:54+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
     }
    ],
    "order": 130,
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ]
   },
   {
@@ -1078,9 +1097,7 @@
      "url": "workshop-plan/outputs/probe-outputs.mjs"
     }
    ],
-   "blockers": [
-    "T-022 lock of the 8/9/8 set (soft: build against the live ids now)"
-   ],
+   "blockers": [],
    "needs_from_owner": "",
    "log": [
     {
@@ -1107,6 +1124,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: the templates are not review-ready: workshop-plan/outputs/build.py still tags sections with the old Q1 to Q38 numbering, not the v5 ids (d1v5_offer etc.) the live survey uses; moved back to queue."
+    },
+    {
+     "ts": "2026-10-09T14:19:54+0530",
+     "who": "claude",
+     "note": "T-022 unblocked this: the 8/9/8 daily set (d1v5_* to d3v5_*) is locked by orchestrator 2026-10-09, so the templates can map to the ids in workshop-plan/build/questions.py. d1v5_list options are now the data partners, ZoomInfo, Clay or own CRM."
     }
    ],
    "order": 140,
@@ -1272,6 +1294,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: corrected the facts. tick.py and courseplan.py generate the intake course plan from ops.db (T-127), not daily outputs; the daily answers live on the Worker (D1 survey_answers) and no day-output generation exists. The packages_distributions error comes from com.tantra.ops running /usr/bin/python3 3.9.6."
+    },
+    {
+     "ts": "2026-10-09T14:19:54+0530",
+     "who": "claude",
+     "note": "T-022: the 8/9/8 daily ids are locked by orchestrator 2026-10-09; the pipeline can rely on them. Still waits on T-024's templates."
     }
    ],
    "order": 210,
