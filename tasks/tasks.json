@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T16:44:29+0530",
-  "version": 1547,
+  "updated": "2026-10-10T16:52:20+0530",
+  "version": 1548,
   "last_id": 382,
   "team": [
    {
@@ -10298,7 +10298,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Integrator sweep 2026-10-07 (run-chain 2026-10-07)",
    "spec": "node app/scripts/probe-details.mjs (static mode: probe-details - -) reports 3 screenshot-fill FAILs: app/public/.../masterclass/audience-room-1440.avif, the s1-cold-email step 18 shot (18.webp) and the s4-rsp step 13 shot (13.webp) each fill a different share of their column than their sibling images. Re-crop or re-export each to the siblings' aspect ratio (or fix the container class if the image is right), rerun probe-details, and mark the matching AUDIT.md rows (/Users/adithyamurali/tantra-round5-coord/AUDIT.md) fixed with the commit.",
    "done_when": [
@@ -10306,7 +10306,32 @@
     "The 3 images look consistent with their siblings at 1440 and 390",
     "AUDIT.md rows for them marked fixed"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "s1-cold-email guide",
+     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/onboarding/guides/s1-cold-email/?v=t240"
+    },
+    {
+     "label": "s4-rsp guide",
+     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/onboarding/guides/s4-rsp/?v=t240"
+    },
+    {
+     "label": "masterclass",
+     "url": "http://127.0.0.1:4361/tantra-workshop-live/masterclass/?v=t240"
+    },
+    {
+     "label": "screenshots 1440 and 390",
+     "url": "/tmp/t240/"
+    },
+    {
+     "label": "probe report",
+     "url": "/tmp/probe-details/report.json"
+    },
+    {
+     "label": "AUDIT G129",
+     "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -10324,6 +10349,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still open; no screenshot or probe-details fix since the 2026-10-07 run-chain (LOG 01:41 lists these 3 as pre-existing, tracked in AUDIT.md). Added the command and what 'fill' means. UNVERIFIED current FAIL count."
+    },
+    {
+     "ts": "2026-10-10T16:52:20+0530",
+     "who": "claude",
+     "note": "No image or CSS change was needed. The 3 screenshot-fill FAILs no longer fire on main: they were cleared by the probe rules in c38ce69 and the recrops in 6e7b2b6. A full probe-details run against the staged mirror lists none of them, and at 1440 and 390 I measured s1-cold-email/18 at 85% fill (sibling median 81%), s4-rsp/13 with its text at about 16px, and audience-room as a full-bleed backdrop. AUDIT G129 and LOG.md are updated; there was nothing to push or publish, and the 7 probe FAILs still open (dates, playbook overflow, s2/s5 titles, s5-challenge-stages) belong to other tasks."
     }
    ],
    "order": 2400
