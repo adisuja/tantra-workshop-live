@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T15:46:12+0530",
+   "task_id": "T-249",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-249 is back in review with Nelbin. One gap was fixed and pushed (commit pushed, main matches origin). The taxonomy sheet still waits on Adi (T-381) and the GHL snapshot on T-260.\n\n**Completion check:**\n1. **FintechCircle repo:** done. I checked the access list today: Nelbin and Bhaskar are admins."
+  },
+  {
    "ts": "2026-10-10T15:36:03+0530",
    "task_id": "T-242",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-267 is built, pushed to main (1fd45a2) and deployed to the centre Worker (bd1ef64d). It's in review with Adi and Bharath, and F-409a5db1 is acked. `cloud/scripts/probe-t267.mjs` passes all 17 checks against the simulator.\n\n- **Dodo approval can't be detected (X071):** Dodo exposes no approval-stat"
-  },
-  {
-   "ts": "2026-10-10T01:48:16+0530",
-   "task_id": "T-267",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "paused",
-   "summary": "Stopped: Adi paused the agent from the board."
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-249: Share the six source resources the team is waiting on",
- "task_id": "T-249",
+ "message": "Acting on 1 note(s) for T-276: Docs: bring ONBOARDING_V3_SPEC.md and coverage.json up to date",
+ "task_id": "T-276",
  "entries": [
-  "F-45569950"
+  "F-f2e279de"
  ],
  "mode": "feedback",
- "started": "2026-10-10T15:36:17+0530",
+ "started": "2026-10-10T15:46:50+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1

@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T15:44:37+0530",
-  "version": 1449,
+  "updated": "2026-10-10T15:45:42+0530",
+  "version": 1450,
   "last_id": 381,
   "team": [
    {
@@ -10430,7 +10430,7 @@
    ],
    "evidence": [
     {
-     "label": "Shared resources index",
+     "label": "Index file",
      "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/workshop-plan/ops/shared-resources.md"
     },
     {
@@ -10438,7 +10438,7 @@
      "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/issues/1#issuecomment-6096463549"
     },
     {
-     "label": "Sheet share input task",
+     "label": "T-381 sheet share",
      "url": "http://localhost:8899/tasks.html#T-381"
     }
    ],
@@ -10469,6 +10469,11 @@
      "ts": "2026-10-10T15:44:37+0530",
      "who": "claude",
      "note": "Shared what Claude can: Aquila invited with write to the FintechCircle repo (Nelbin, Bhaskar already admin), Workers code indexed in cloud/ (Bhaskar, Aquila invites pending from T-146), all six sources indexed in workshop-plan/ops/shared-resources.md (pushed), issue #1 commented and Share ticked. Taxonomy sheet Viewer share waits on Adi in T-381; GHL snapshot waits on T-260; no Slack index exists."
+    },
+    {
+     "ts": "2026-10-10T15:45:42+0530",
+     "who": "claude",
+     "note": "Verified today: Nelbin, Bhaskar and Aquila all have write on the workshop repo (Workers code in cloud/); on the FintechCircle repo Nelbin and Bhaskar are admin and Aquila's write invite is pending. Issue #1 comment and ticked Share box confirmed; index updated and pushed. Still open: taxonomy sheet Viewer share (Adi, T-381) and GHL snapshot (T-260)."
     }
    ],
    "order": 2490
