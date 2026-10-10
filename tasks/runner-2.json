@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T20:51:16+0530",
+   "task_id": "T-282",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-282 stays in review: the verify pass found no gaps in the review index, and it is still waiting on Adi's approve or redo per video.\n\nCOMPLETION CHECK\n- **Refresh the video count and list:** done. The served index shows 18 cards, each with its step count and length, and regenerating it with `review"
+  },
+  {
    "ts": "2026-10-10T20:46:39+0530",
    "task_id": "T-225",
    "mode": "feedback",
@@ -87,24 +95,17 @@
    "status": "blocked",
    "result": "turns",
    "summary": "T-140 stays blocked: the s1-blog shots check out, but the three S3 Tantra shots still need the usetantra.com sign-in that T-115 is already asking Adi for.\n\n**COMPLETION CHECK**\n- **s1-blog #2 and #6:** done. Both images are on main (they landed in another lane's commit f1db2ea). I opened the guide a"
-  },
-  {
-   "ts": "2026-10-10T16:41:48+0530",
-   "task_id": "T-129",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-129 passed the verify run with nothing left to fix. It's back in review for Amal and Bharath, with no changes beyond the status note.\n\n**Completion check** (everything below was checked in this run)\n1. **Dash check:** done. `pass.py validate` checks for em and en dashes (`dash_problems`, lines 484"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-282",
+ "task_id": "T-253",
  "entries": [
-  "R-5ce992a3"
+  "F-46b4f4a4",
+  "R-aacc2eb8"
  ],
- "started": "2026-10-10T20:48:40+0530",
- "message": "Acting on 1 note(s) for T-282: Review the seven new walkthrough videos before they go on the centres and playbook",
+ "started": "2026-10-10T20:52:30+0530",
+ "message": "Acting on 2 note(s) for T-253: Confirm connector assumptions on free or test accounts (WebinarGeek, Zoom, CRMs, Cal.com, Tantra, Twilio, Dodo, Stripe, Metricool)",
  "slices": {
   "T-072": 1,
   "T-245": 1,

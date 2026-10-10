@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T20:50:39+0530",
-  "version": 1606,
+  "updated": "2026-10-10T20:52:42+0530",
+  "version": 1609,
   "last_id": 386,
   "team": [
    {
@@ -6194,14 +6194,14 @@
    ],
    "evidence": [
     {
-     "label": "Capture tool and preflight",
+     "label": "Capture tool and preflight (now checks the lock screen)",
      "url": "app/scripts/shots/claude-app-shots.py"
     }
    ],
    "blockers": [
     "macOS refuses the background agent screen capture and clicks on this Mac until T-351 is granted"
    ],
-   "needs_from_owner": "Only the macOS permission in T-351 (Screen Recording and Accessibility for Python on this Mac). No 'OK demo routine' and no need to leave a screen up: the agent opens and drives the Claude app itself once that is granted.",
+   "needs_from_owner": "Two things on this Mac, both physical: (1) unlock the screen and leave it unlocked with the Claude app open (a locked screen captures blank). (2) System Settings, Privacy and Security, Accessibility: switch ON 'Python' (/Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app); if it is not listed, add it with the + button. Screen Recording is already granted. Then the agent captures all 5 slots by itself.",
    "log": [
     {
      "ts": "2026-09-25T19:38:41+0530",
@@ -6227,6 +6227,11 @@
      "ts": "2026-10-10T16:35:34+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-28 was past; now 2026-10-16 (P2 rule)."
+    },
+    {
+     "ts": "2026-10-10T20:52:13+0530",
+     "who": "claude",
+     "note": "No screenshots captured this run: the Mac has been on its lock screen since 20:22 IST, so the Claude window captures blank (checked: window and full-screen captures show only the lock wallpaper), and Accessibility still reads NOT granted for the runner (AXIsProcessTrusted false, System Events times out); only Screen Recording is in place. No routine was created, so nothing needs reverting. The preflight (python3 app/scripts/shots/claude-app-shots.py preflight) now also reports a locked screen and prints NOT READY until both are fixed."
     }
    ],
    "order": 1320,
@@ -13672,7 +13677,7 @@
    "due": "",
    "status": "review",
    "why": "The open link is a shared attendee that runs real actions if someone pastes a real vendor key, so it must close once the build is final.",
-   "spec": "Trigger (Orchestrator O-5308a6a2, 2026-10-09): set Cohort Settings 'Open preview link' to 'Off: personal links only' before the first non-test attendee is sent a centre link, or as soon as Adi calls the build complete in review, whichever comes first. Until then /preview stays open, as Adi asked on 2026-10-05. Prep is live (Worker f6301391, commit 8690ef6): while the open preview is on the centre refuses to add a real attendee in the admin (409 with the fix in the message) and holds real attendees' reminders and day outputs (cloud/src/settings.ts heldByPreview, reminders.ts, jobs-delivery.ts, index.ts); switching it off makes /preview answer 403, ends every session /preview handed out and gives the shared demo attendee (the Tantra demo funnel, T-214) a new personal link under Attendees, Copy link. Users of /preview: app/scripts/fill-preview.mjs and app/scripts/probe-live-qa.mjs now enter by the demo attendee's personal link from the admin API (app/scripts/test-attendee.mjs) and take the admin enter link as their argument; the walkers already made their own test attendees; the hub and playbook carry no /preview link; T-278 does not use it. To flip: open https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Cohort Settings, 'Open preview link (/preview)', choose 'Off: personal links only', Save. Then confirm a signed-out GET https://revops-centre.growthcluborg.workers.dev/preview answers 403 and the demo attendee's new personal link opens the centre, and log the date here.",
+   "spec": "Trigger (Orchestrator O-5308a6a2, 2026-10-09): set Cohort Settings 'Open preview link' to 'Off: personal links only' before the first non-test attendee is sent a centre link, or as soon as Adi calls the build complete in review, whichever comes first. Until then /preview stays open, as Adi asked on 2026-10-05. Prep is live (Worker f6301391, commit 8690ef6): while the open preview is on the centre refuses to add a real attendee in the admin (409 with the fix in the message) and holds real attendees' reminders and day outputs (cloud/src/settings.ts heldByPreview, reminders.ts, jobs-delivery.ts, index.ts); switching it off makes /preview answer 403, ends every session /preview handed out and gives the shared demo attendee (the Tantra demo funnel, T-214) a new personal link under Attendees, Copy link. Users of /preview: app/scripts/fill-preview.mjs and app/scripts/probe-live-qa.mjs now enter by the demo attendee's personal link from the admin API (app/scripts/test-attendee.mjs) and take the admin enter link as their argument; the walkers already made their own test attendees; the hub and playbook carry no /preview link; T-278 does not use it. To flip: open https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Cohort Settings, 'Open preview link (/preview)', choose 'Off: personal links only', Save. Then confirm a signed-out GET https://revops-centre.growthcluborg.workers.dev/preview answers 403 and the demo attendee's new personal link opens the centre, and log the date here. Who flips it: nobody has to ask Adi. The 409 guard forces the switch-off before any real attendee can be added, so whoever adds the first real attendee (or the T-228 welcome-email build) flips it with the steps above. The day output hold and release are proven by app/scripts/probe-preview-close.mjs (29 checks).",
    "done_when": [
     "Cohort Settings shows Off: personal links only and a signed-out GET /preview answers 403",
     "The demo attendee personal link still opens the centre after the switch and fill-preview.mjs and probe-live-qa.mjs run through it",
@@ -13680,20 +13685,24 @@
    ],
    "evidence": [
     {
-     "label": "Open preview, still on until the trigger (302 into the shared test attendee)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/preview?v=t291-8690ef6"
-    },
-    {
-     "label": "Probe: open, held, then closed (23 checks)",
+     "label": "Probe: open, held, then closed, now with the day output (29 checks, all pass)",
      "url": "/Users/adithyamurali/tantra-redesign/app/scripts/probe-preview-close.mjs"
     },
     {
-     "label": "Personal link helper for scripts",
-     "url": "/Users/adithyamurali/tantra-redesign/app/scripts/test-attendee.mjs"
+     "label": "Open preview, still on until the trigger (302 into the shared test attendee)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/preview?v=t291-2a35293"
+    },
+    {
+     "label": "The day output hold",
+     "url": "/Users/adithyamurali/tantra-redesign/cloud/src/jobs-delivery.ts"
     },
     {
      "label": "The guard",
      "url": "/Users/adithyamurali/tantra-redesign/cloud/src/settings.ts"
+    },
+    {
+     "label": "Personal link helper for scripts",
+     "url": "/Users/adithyamurali/tantra-redesign/app/scripts/test-attendee.mjs"
     }
    ],
    "blockers": [],
@@ -13718,6 +13727,16 @@
      "ts": "2026-10-09T08:54:43+0530",
      "who": "claude",
      "note": "Unblocked on Orchestrator decision O-5308a6a2: /preview stays open, and the switch-off now fires before the first non-test attendee gets a centre link or when Adi calls the build complete in review. Built, deployed (Worker f6301391) and pushed (8690ef6): while it is open the centre refuses to add a real attendee and holds real attendees' reminders and day outputs; switching it off returns 403 on /preview, signs out everyone who used it and keeps the Tantra demo attendee under a new personal link; fill-preview.mjs and probe-live-qa.mjs now enter by personal link. Verified with probe-preview-close.mjs (all checks pass on a local centre, reminder and delivery probes still pass) and on live: /preview 302, a real add answers 409 and creates nothing, the demo attendee's personal link opens with its 31 done cards. Not covered: the day output hold has no check of its own (same guard, three lines), and probe-live-qa's last UI step (Read your personal plan) fails the same way on the old script, so it predates this change. Adi: reply 'build complete' here and the setting goes to Off."
+    },
+    {
+     "ts": "2026-10-10T20:51:06+0530",
+     "who": "claude",
+     "note": "The one gap is closed: probe-preview-close.mjs now proves a real attendee's Day 1 output is held while /preview is open (manual and cron-style runs, nothing claimed, nothing sent) and goes out once, with their own link, after the switch-off. Ran it on a fresh local centre and simulator today: 29 of 29 checks pass, and it is pushed (origin/main 2a35293). Nothing is needed from Adi: /preview stays open until the trigger, the 409 guard forces the switch-off before any real attendee can be added, and whoever adds the first real attendee (or the T-228 welcome-email build) flips it with the steps in the spec."
+    },
+    {
+     "ts": "2026-10-10T20:52:42+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-10: nothing had to change. I re-ran app/scripts/probe-preview-close.mjs on a fresh local centre and simulator and all 29 checks pass, including the real attendee's Day 1 output held while /preview is open (manual and cron-style runs) and sent once after the switch-off. origin/main (2a35293) carries the same probe and guard, the live /preview still answers 302 as intended, and nothing is asked of Adi: the switch-off waits on the trigger. Open: https://revops-centre.growthcluborg.workers.dev/preview?v=t291-verify-1010"
     }
    ],
    "order": 2910
