@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T21:40:34+0530",
-  "version": 1634,
+  "updated": "2026-10-10T21:48:26+0530",
+  "version": 1635,
   "last_id": 387,
   "team": [
    {
@@ -1162,28 +1162,32 @@
    "due": "2026-10-14",
    "status": "review",
    "why": "The do-half of the do-and-get loop. Attendees fill it while watching Zoom.",
-   "spec": "Survey at app/public/materials/survey.html (source of truth); the 25 daily questions are mirrored in workshop-plan/build/questions.py (Day 1: 8, Day 2: 9, Day 3: 8, ids d1v5_* to d3v5_*) and the file adds 7 Day 0 tool questions (mail_provider, stack_domains, stack_reminder_email, stack_crm, stack_ai, pay_checkout, send_senders) that ride on the day1 row. Answers save per attendee on the Worker (POST /api/survey in cloud/src/index.ts, D1 survey_answers) and reach the Tantra Tracker 'Survey Answers' tab via workshop-plan/ops/tracker_sync.py (proven: the 2026-10-08 sync pulled survey_answers from https://revops-centre.growthcluborg.workers.dev). Open: (1) ruled-out tools in the survey: stack_reminder_email still offers SendGrid, and samples or hints name Apollo, GoDaddy, HeyReach, Instantly and BuiltWith; change the options to the approved stack and keep cloud/src/index.ts SURVEY_LEGACY mapping old answers to their replacement; run node workshop-plan/probe-survey.mjs; (2) Adi locks the 8/9/8 set, which is live in this week's cohort, so the output templates (T-024) and pipeline (T-031) can map to stable ids.",
+   "spec": "Survey at app/public/materials/survey.html (source of truth); the 25 daily questions are mirrored in workshop-plan/build/questions.py (Day 1: 8, Day 2: 9, Day 3: 8, ids d1v5_* to d3v5_*) and the file adds 7 Day 0 tool questions (mail_provider, stack_domains, stack_reminder_email, stack_crm, stack_ai, pay_checkout, send_senders) that ride on the day1 row. Answers save per attendee on the Worker (POST /api/survey in cloud/src/index.ts, D1 survey_answers) and reach the Tantra Tracker 'Survey Answers' tab via workshop-plan/ops/tracker_sync.py (proven: the 2026-10-08 sync pulled survey_answers from https://revops-centre.growthcluborg.workers.dev). Done 2026-10-09 to 10: the survey offers only the approved stack, and SURVEY_LEGACY (survey.html lines 147 to 155 and cloud/src/index.ts) maps every old answer, including d2v5_creds and stack_domains, to its replacement. The 8/9/8 set is locked by orchestrator 2026-10-09 (note at the top of questions.py); T-024 and T-031 build against the live ids and do not wait on anything here. Open: Adi reviews the finished survey.",
    "done_when": [
-    "git grep -i -E 'sendgrid|apollo|godaddy|heyreach|instantly|builtwith' -- app/public/materials/survey.html finds only the SURVEY_LEGACY comment",
+    "git grep -i -E 'sendgrid|apollo|godaddy|heyreach|instantly|builtwith' -- app/public/materials/survey.html finds only the SURVEY_LEGACY map lines",
     "node workshop-plan/probe-survey.mjs clean",
-    "Adi replies 'locked' for the 8/9/8 daily set"
+    "8/9/8 daily set locked (locked by orchestrator 2026-10-09, noted in questions.py)"
    ],
    "evidence": [
     {
-     "label": "Survey (mirror)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/survey.html?v=1791535794"
+     "label": "Survey (live centre)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/materials/survey.html?v=1791649106"
     },
     {
-     "label": "Survey (live centre)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/materials/survey.html?v=1791535794"
+     "label": "Survey (mirror)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/survey.html?v=1791649106"
     },
     {
      "label": "Survey (local)",
-     "url": "http://localhost:8899/survey.html?v=1791535794"
+     "url": "http://localhost:8899/survey.html?v=1791649106"
     },
     {
      "label": "questions.py (source, lock note)",
      "url": "workshop-plan/build/questions.py"
+    },
+    {
+     "label": "Worker old-answer map (SURVEY_LEGACY)",
+     "url": "cloud/src/index.ts"
     }
    ],
    "blockers": [],
@@ -1233,6 +1237,11 @@
      "ts": "2026-10-10T16:35:32+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-18 was past; now 2026-10-14 (P0 rule)."
+    },
+    {
+     "ts": "2026-10-10T21:48:26+0530",
+     "who": "claude",
+     "note": "Locked by orchestrator 2026-10-09: the 8/9/8 daily set stands as it is in questions.py, nothing is asked of Adi, and T-024 and T-031 already build against the locked ids (no wording here says they wait). The Worker's old-answer map now also covers d2v5_creds and stack_domains, pushed (origin main dc5ec66) and deployed as revops-centre 3f9c05f2 from a clean build of main. Checked today: the grep finds only the 5 legacy map lines, probe-survey is clean, and the live centre and mirror copies are byte-identical to the source, so open the live centre link to review."
     }
    ],
    "order": 130,
