@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T16:52:20+0530",
-  "version": 1548,
+  "updated": "2026-10-10T16:54:00+0530",
+  "version": 1550,
   "last_id": 382,
   "team": [
    {
@@ -4881,6 +4881,11 @@
      "ts": "2026-10-10T16:35:34+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-28 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-10T16:53:59+0530",
+     "who": "claude",
+     "note": "T-140 rides on this sign-in ask: once a Tantra session as GrowthCluborg is open, also capture s3-tantra-pro-flow steps 5 (send in the contact's time zone), 13 (two 'Adi test' contacts tagged attended and not watched, with message history) and 14 (final step into the newsletter list), then revert and log in REVERT_LEDGER.md."
     }
    ],
    "order": 1130,
@@ -6531,51 +6536,25 @@
   },
   {
    "id": "T-140",
-   "title": "Stage 1 to 3 guides: screenshots that can only be taken once their source exists",
-   "area": "Content",
+   "status": "blocked",
    "owner": "Amal",
-   "priority": "P3",
-   "due": "2026-10-23",
-   "status": "queue",
-   "why": "These slots show screens that do not exist yet (a real operator run, a live post, CRM test contacts). Claude captures each as its source appears.",
-   "spec": "Slots on main 2026-10-08: s1-blog #2 (Claude Code terminal running the Draft the Pillar Post prompt on real Day 1 notes; Claude can run it in Terminal on a demo engine file and capture) and #6 (a live published pillar post at phone width, once one is published); s3-tantra-pro-flow #5 (send in the contact's time zone), #13 (two test contacts tagged attended and not watched with message history), #14 (final step into the newsletter list): capture from the Tantra campaign or the starter CRM once T-120 settles which CRM the guide teaches. s1-social #3 (Canva) is T-260; s1-overview slots are T-115, T-135 and T-251.",
-   "done_when": [
-    "s1-blog #2 and #6 replaced with real captures",
-    "s3-tantra-pro-flow #5, #13 and #14 replaced",
-    "check-guides capture-needed down by 5"
-   ],
-   "evidence": [],
-   "blockers": [
-    "T-120 (which CRM the S3 guide teaches)"
-   ],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-25",
-     "who": "Claude",
-     "note": "Added by Lane C at the owner's request: pending Stage 1 to 3 work, split by what unblocks it."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review: context updated. Dates stale (cohorts now run weekly from 7 Oct with Zoom cloud recordings via T-223); the reminder scheduler is now T-234. Slots still open on main: s1-blog 2, s1-social 1, s1-overview, s3-tantra-pro-flow."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: slot list refreshed from main; the old s1-social Zoom-clip and s3 step 7 items no longer exist."
-    },
-    {
-     "ts": "2026-10-10T16:35:34+0530",
-     "who": "claude",
-     "note": "Board hygiene (T-129): due 2026-10-03 was past; now 2026-10-23 (P3 rule)."
-    }
-   ],
-   "order": 1382,
    "assignee": "Claude",
    "reviewers": [
     "Amal"
-   ]
+   ],
+   "priority": "P3",
+   "due": "2026-10-23",
+   "area": "Content",
+   "order": 1382,
+   "title": "T-140: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-141",

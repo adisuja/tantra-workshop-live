@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T16:54:16+0530",
+   "task_id": "T-295",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "error",
+   "summary": "Both probes pass. I'm confirming /funnels/book (the Amazon board) is in the five-width run, then taking the final 390 px screenshots."
+  },
+  {
    "ts": "2026-10-10T16:08:56+0530",
    "task_id": "T-285",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-273 is in review: all ten audit findings are fixed, committed and pushed to main (f4f181f) and to the GitHub Pages mirror (c7f1710). On the live hub, `probe-review-hub.mjs` reports ALL LINKS OK.\n\n- **H036:** this reproduced locally, with the section heading sitting under the sticky header. I fixed"
-  },
-  {
-   "ts": "2026-10-10T03:37:06+0530",
-   "task_id": "T-272",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-272 is live and in review: per-teammate tokens, per-week links, the Cohort Settings additions and the vendor cleanup. I couldn't run the revoke check live because creating a token needs the owner key.\n\n- **Local probe:** `app/scripts/probe-admin-tokens.mjs` passes 18/18. Revoking one token logs th"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-295: Funnel animation polish: phone caption overlap and missing Amazon, YouTube and Slack logos",
- "task_id": "T-295",
+ "message": "Acting on 1 note(s) for T-041: Add admins to both WhatsApp groups",
+ "task_id": "T-041",
  "entries": [
-  "F-328045bd"
+  "F-649aa08d"
  ],
  "mode": "feedback",
- "started": "2026-10-10T16:09:12+0530",
+ "started": "2026-10-10T16:54:31+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
