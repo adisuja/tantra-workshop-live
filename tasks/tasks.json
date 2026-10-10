@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T20:40:34+0530",
-  "version": 1599,
+  "updated": "2026-10-10T20:46:49+0530",
+  "version": 1602,
   "last_id": 386,
   "team": [
    {
@@ -5132,6 +5132,11 @@
      "ts": "2026-10-09T14:26:12+0530",
      "who": "claude",
      "note": "Closed by Orchestrator decision O-fdd77ded: the combined chips came off the FunnelOS board in 05745e5, and 2adc82c (T-001) removed the last copy of the old 342K, 11.4K, 368, 179 chain that showed on the landing pages (the Day 1 diagram, now the eight decisions). probe-workshop now fails if those figures return to the Day Engine. The same old chain remains only in two components that render on /debug pages (day-art.tsx, the FunnelRibbon in visuals.tsx), not on any funnel page."
+    },
+    {
+     "ts": "2026-10-10T20:46:49+0530",
+     "who": "claude",
+     "note": "Already applied, so no agent run was needed: 2026-10-09T08:43 log: 'nothing new to build, the fix from 05745e5 is already on origin/main and on the mirror.' Git grep confirmed; scripts re-run verified; task marked [done]. (checked by Haiku against the log and commits)."
     }
    ],
    "order": 1150,
@@ -9551,7 +9556,7 @@
    "due": "",
    "status": "blocked",
    "why": "Without these two hidden Zoom settings attendees can unmute and turn video on in a 100 person room; Zoom Support is the only way to switch them on.",
-   "spec": "Adi opened a Zoom Support ticket on 2026-10-08 asking for allow_host_control_participant_mute_state and disable_participant_video on Pro account 5018326609. Nobody watches an inbox for the answer: a daily job at 09:10 (workshop-plan/ops/zoom_support_check.mjs, launchd com.tantra.zoom-support-check) reads Zoom with the Tantra Centre Server-to-Server app (user settings and each upcoming cohort meeting, read-only) and writes the result in this task's log. A grant is the video field showing up anywhere, or either field reading true. On a grant the same job sets Zoom Support locks to Granted in the production centre (Cohort Settings), re-applies room settings and confirms both fields on meeting 87002851906 and next week's meeting 88135386601. Until then, and if Zoom refuses, T-226 Live Control enforces mute and video.",
+   "spec": "Adi opened a Zoom Support ticket on 2026-10-08 asking for allow_host_control_participant_mute_state and disable_participant_video on Pro account 5018326609. Nobody watches an inbox for the answer: a daily job at 09:10 (workshop-plan/ops/zoom_support_check.mjs, launchd com.tantra.zoom-support-check) reads Zoom with the Tantra Centre Server-to-Server app (user settings and each upcoming cohort workshop meeting, read-only) and writes the result in this task's log. A grant is the video field showing up anywhere, or either field reading true. On a grant the same job sets Zoom Support locks to Granted in the production centre (Cohort Settings), re-applies room settings, confirms both fields on every upcoming cohort meeting (today that is 88135386601, the 14 Oct cohort; 87002851906 ended on 9 Oct) and marks this task done. The day before a cohort starts without a grant it logs that the grant did not come in time. Until then, and if Zoom refuses, T-226 Live Control enforces mute and video.",
    "done_when": [
     "Each daily Zoom check is recorded in this task log",
     "If granted: Check in Zoom shows both fields on the current cohort meeting and next week meeting",
@@ -9660,6 +9665,11 @@
      "ts": "2026-10-10T20:38:51+0530",
      "who": "claude",
      "note": "Today's 09:10 Zoom check failed because the centre now takes the admin key by POST only; I fixed workshop-plan/ops/zoom_support_check.mjs, ran it by hand and under launchd (last exit 0). Result 2026-10-10: not granted yet. Zoom shows no disable_participant_video anywhere and the mute field at its default false on 88135386601 and 81507619710 (the centre's upcoming list no longer holds 87002851906, so the job checks the meetings the centre lists). Nothing is asked of Adi: this waits only on Zoom Support, T-226 Live Control covers mute and video, and tracker_sync.py and deliver.py still use the retired GET sign-in and need the same one-line fix in their own tasks."
+    },
+    {
+     "ts": "2026-10-10T20:45:17+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-10: Zoom has still not granted the two fields (read-only check today: no disable_participant_video anywhere, mute field at its default on 88135386601). I fixed three gaps in the daily job: it now checks only cohort workshop meetings (it was treating the 9 Oct coaching call as next week's cohort), it adds the 'not granted in time for the 14 Oct cohort' line by itself on 13 Oct, and it closes this task on a confirmed grant; Check in Zoom now also lists both Support fields (local probe 60 of 60 passed, commit not deployed, so it ships with the next centre deploy). Heads up: the fallback T-226 is itself blocked on T-335 (Live Control app credentials), so mute and video are not enforced for 14 Oct until that lands."
     }
    ],
    "order": 2250
@@ -12799,32 +12809,28 @@
    ],
    "evidence": [
     {
-     "label": "Free join page (hosted, no token)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=t278c"
+     "label": "Free join page (add &f=<feed token> for the pending or own-link state)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=t278v"
     },
     {
-     "label": "Paid join page (hosted, no token)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=t278c"
+     "label": "Paid join page (add &f=<feed token>)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=t278v"
     },
     {
-     "label": "Free join page on the Worker",
-     "url": "https://revops-centre.growthcluborg.workers.dev/workshop/join/?v=t278c"
+     "label": "VIP page",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t278v"
     },
     {
-     "label": "Paid join page on the Worker",
-     "url": "https://revops-centre.growthcluborg.workers.dev/masterclass/success/join/?v=t278c"
+     "label": "Own-link probe",
+     "url": "/Users/adithyamurali/tantra-redesign/app/scripts/probe-join-own-link.mjs"
     },
     {
-     "label": "Free intake (11 questions)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/success/?v=t278c"
+     "label": "Own-link screenshot, free page",
+     "url": "/tmp/join-own-free-own.png"
     },
     {
-     "label": "VIP page (no past dates)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t278c"
-    },
-    {
-     "label": "Pending and own-link states: add &f=<feed token> from an attendee email to either join link",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=t278c"
+     "label": "Own-link screenshot, paid page",
+     "url": "/tmp/join-own-paid-own.png"
     },
     {
      "label": "AUDIT.md",
@@ -12868,6 +12874,11 @@
      "ts": "2026-10-10T20:35:22+0530",
      "who": "claude",
      "note": "All five leftovers are finished: main is pushed (1135653), the centre Worker is deployed (version 22952e72, no migration pending) so /cal/p/<token>.json is live, the join link with the attendee's feed token was already in the confirmation and day-before emails and the calendar description (a002193, nothing sent), and the mirror is republished (8b59f66). I checked both join pages on the mirror and on the Worker in headless Chromium in 3 states, all passing with no console errors: no token and pending registration with real data, and the own-link state with a stubbed feed reply, because no test attendee on production has a Zoom registrant link yet, so that state is not yet proven with a real attendee. M033 stays at 11 questions (T-093 noted, ripple needed no change); probe-funnels still fails on /onboarding/templates for the word 'webinar' in the template library, which is another lane's content and needs its own task."
+    },
+    {
+     "ts": "2026-10-10T20:45:50+0530",
+     "who": "claude",
+     "note": "Verify pass: every item holds, and the one gap from the last report is closed. A new probe (app/scripts/probe-join-own-link.mjs, commit 462d17b, pushed) opens both hosted join pages against a local centre with a Zoom-registered test attendee, and the button reads Join Day 1 on Zoom with that attendee's own link, while no token and pending registration both show the link comes by email message (30 of 30 checks pass). The ripple from T-093 needed no change (intake stays at 11, fallback wording already matches); a production attendee's own link will only show once Zoom registration for the 14 Oct cohort syncs (T-197), and the template library page still fails probe-funnels on the word webinar, which is outside this task."
     }
    ],
    "order": 2780

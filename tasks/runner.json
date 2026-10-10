@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T20:45:40+0530",
+   "task_id": "T-260",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "COMPLETION CHECK for T-260 (now in review, reviewers Adi and Bharath; notes F-09302e2b and R-70c02c47 acked)\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| (1) `app/src/lib/fields.ts:70` hint drops Slack | Done | Hint now reads \"WhatsApp or community invite\" (commit 25a8998) |\n| (2) `vis"
+  },
+  {
    "ts": "2026-10-10T20:34:54+0530",
    "task_id": "T-071",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "Stripe refunds are verified end to end against the simulator, but the change is not live: the approved `cloud/funnel` deploy cannot ship it, so T-238 stays in review on one yes or no.\n\n**Completion check:**\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Payment link carries funnel, produ"
-  },
-  {
-   "ts": "2026-10-10T17:14:49+0530",
-   "task_id": "T-295",
-   "mode": "feedback",
-   "status": "review",
-   "result": "turns",
-   "summary": "T-295 is in review for Adi and Bharath. The overlap fixes are pushed to main, but I didn't rebuild the GitHub Pages mirror, so the playbook boards won't show them until the next Integrator publish.\n\n| Item | State | Evidence |\n|---|---|---|\n| (a) Caption overlapping the stage chip at 390 px | Fixed "
   }
  ],
  "state": "working",
- "message": "Acting on 2 note(s) for T-260: Decide and apply: tools outside the approved list still in guides and cards (Wistia, Beehiiv, ElevenLabs, Meta Ads, Notion, WordPress, Sales Navigator/Expandi, GoHighLevel/HubSpot/Zoho)",
- "task_id": "T-260",
+ "message": "Acting on 1 note(s) for T-036: Publish the workshop artifacts and site mirror to GitHub Pages",
+ "task_id": "T-036",
  "entries": [
-  "F-09302e2b",
-  "R-70c02c47"
+  "R-5e8a0b57"
  ],
  "mode": "feedback",
- "started": "2026-10-10T20:36:43+0530",
+ "started": "2026-10-10T20:47:09+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
