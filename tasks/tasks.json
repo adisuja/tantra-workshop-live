@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T21:28:18+0530",
-  "version": 1629,
+  "updated": "2026-10-10T21:31:43+0530",
+  "version": 1631,
   "last_id": 387,
   "team": [
    {
@@ -6572,19 +6572,23 @@
    ],
    "evidence": [
     {
+     "label": "Tantra Flow guide (local, with fixes)",
+     "url": "http://localhost:4322/onboarding/guides/s3-tantra-pro-flow?v=1791648103"
+    },
+    {
+     "label": "Tantra Funnel guide, step 4 (local, with fixes)",
+     "url": "http://localhost:4322/onboarding/guides/s2-tantra-pro-funnel?v=1791648103"
+    },
+    {
      "label": "Tantra Flow guide (mirror)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s3-tantra-pro-flow/?v=1791534952"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s3-tantra-pro-flow/?v=1791648103"
     },
     {
-     "label": "Tantra Funnel guide, step 4 (mirror)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s2-tantra-pro-funnel/?v=1791534952"
+     "label": "Tantra Funnel guide (mirror)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s2-tantra-pro-funnel/?v=1791648103"
     },
     {
-     "label": "Local guides",
-     "url": "http://localhost:4322/debug/guides?v=1791534952"
-    },
-    {
-     "label": "Decisions log",
+     "label": "Decisions log, items 15 to 30",
      "url": "workshop-plan/coord/status/c.md"
     }
    ],
@@ -6620,12 +6624,23 @@
      "ts": "2026-10-10T21:22:41+0530",
      "who": "claude",
      "note": "Close-out check, nothing rebuilt: both T-139 commits (f5e9639, f63eb4a) are on origin/main, so no push was needed, and the live mirror already serves the reconciled Tantra Flow and Tantra Funnel guides (attendance sync wording, WhatsApp through Tantra, 600 ms redirect delay), so no republish was needed. check-guides.mjs today: 24 guides, 195 steps, FAIL 4, all four are too-small screenshots in other guides (s1-blog 07, s1-social 06, s4-webinar 17, s5-extra-pipelines 06) and none is in the three T-139 guides. The rulings are in workshop-plan/coord/status/c.md, section 'T-139: artifact read in full and reconciled (9 Oct)', items 15 to 28. The card has no blocker and no ask of Adi. Aquila to sign off."
+    },
+    {
+     "ts": "2026-10-10T21:31:43+0530",
+     "who": "claude",
+     "note": "Verify pass: the reconciliation holds (both original commits are on origin/main, the live mirror serves the Tantra Flow and Tantra Funnel wording, status/c.md items 15 to 28 match the guides). I fixed two small gaps locally in commit f6874d7, not pushed: the Tantra Flow campaign lists now include the 15 minutes before send, and the Tantra Funnel step 4 no longer claims an unsourced one in ten loss (status/c.md items 29 and 30). Checked with tsc, the rendered guide probe on both pages (pass at 1440 and 390) and check-guides.mjs (24 guides, FAIL 4, all too-small screenshots in s1-blog, s1-social, s4-webinar and s5-extra-pipelines, none in these guides); open the local links, the two wording fixes reach the mirror with the next publish."
+    },
+    {
+     "ts": "2026-10-10T21:31:43+0530",
+     "who": "claude",
+     "note": "People: reviewers Aquila → Aquila/Bhaskar (by claude)."
     }
    ],
    "order": 1381,
    "assignee": "Claude",
    "reviewers": [
-    "Aquila"
+    "Aquila",
+    "Bhaskar"
    ]
   },
   {
