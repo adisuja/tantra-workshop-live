@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T16:54:49+0530",
-  "version": 1552,
+  "updated": "2026-10-10T17:14:14+0530",
+  "version": 1554,
   "last_id": 382,
   "team": [
    {
@@ -13696,11 +13696,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Overlapping text on the phone boards breaks the 'zero overlap or clipping' quality rule and affects all 21 cinematics, since they share the engine.",
    "spec": "Three defects reported by the 17-funnel builders on 2026-10-05 and never closed on any task: (a) on phones the V1 caption under the page headline overlaps the moving stage-ribbon chip near the top of the screen on Book a Call and the pilot, a shared-engine bug in app/src/components/masterclass/funnel-os.tsx (HeadCtx); (b) on phones the end-state module cards briefly overlap their cycling text mid-transition (Waterfall, Hub and Spoke and others, same engine); (c) the logo map in funnel-os.tsx has no Amazon, YouTube or Slack mark, so book.tsx and hub-spoke.tsx draw a book and a play icon and waterfall.tsx shows a lettered tile. First reproduce each at 390 px with node app/scripts/probe-funnel-boards.mjs plus screenshots of /funnels/book-call and /funnels/waterfall; if already fixed, close with the evidence. Otherwise fix in the engine (not per file), add the three SVG marks to the logo map, and re-run the probe at 1440, 1024, 760, 390 and 350.",
    "done_when": [
@@ -13708,7 +13709,40 @@
     "Amazon, YouTube and Slack render as marks, not drawn icons or lettered tiles",
     "probe-funnel-boards.mjs reports ALL BOARDS FIT at five widths"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Book a Call",
+     "url": "http://localhost:4322/funnels/book-call?v=t295"
+    },
+    {
+     "label": "Waterfall",
+     "url": "http://localhost:4322/funnels/waterfall?v=t295"
+    },
+    {
+     "label": "Hub and Spoke",
+     "url": "http://localhost:4322/funnels/hub-spoke?v=t295"
+    },
+    {
+     "label": "Before 390px",
+     "url": "/tmp/t295/b-book-call-8370.png"
+    },
+    {
+     "label": "After settled 390px",
+     "url": "/tmp/t295/late-book-call-10600.png"
+    },
+    {
+     "label": "After hub-spoke 390px",
+     "url": "/tmp/t295/fin2-hub-spoke-10600.png"
+    },
+    {
+     "label": "After waterfall 390px",
+     "url": "/tmp/t295/fin2-waterfall-10600.png"
+    },
+    {
+     "label": "Probe output",
+     "url": "/tmp/t295/probe-after.txt"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -13716,6 +13750,16 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Added from the session sweep (2026-10-09): source: ec3e66fb 2026-10-05T17:59 and 21:19 (agents flagged, never fixed in a later commit I can find); UNVERIFIED whether still present."
+    },
+    {
+     "ts": "2026-10-10T17:14:14+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T17:14:14+0530",
+     "who": "claude",
+     "note": "Fixed in the shared engine funnel-os.tsx (e5fbf41, pushed to main): the ribbon and caption now hand off in sequence, ribbons fade out before the modules land, card text is veiled while cards fly in, and long figures step down on phones so the Hub and Spoke footer no longer spills. Amazon and YouTube already render as marks from the logo map, Apollo is gone, and Slack is not added because it is a banned vendor no funnel uses. Checked with 390 px screenshots of Book a Call, Waterfall and Hub and Spoke taken before, mid transition and settled; probe-funnel-boards gives ALL BOARDS FIT at 1440, 1024, 760, 390 and 350 (175 PASS). The GitHub Pages mirror was not rebuilt in this run, so the fix ships with the next Integrator publish."
     }
    ],
    "order": 2950

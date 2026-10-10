@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T17:14:49+0530",
+   "task_id": "T-295",
+   "mode": "feedback",
+   "status": "review",
+   "result": "turns",
+   "summary": "T-295 is in review for Adi and Bharath. The overlap fixes are pushed to main, but I didn't rebuild the GitHub Pages mirror, so the playbook boards won't show them until the next Integrator publish.\n\n| Item | State | Evidence |\n|---|---|---|\n| (a) Caption overlapping the stage chip at 390 px | Fixed "
+  },
+  {
    "ts": "2026-10-10T16:55:19+0530",
    "task_id": "T-041",
    "mode": "feedback",
@@ -87,29 +95,22 @@
    "status": "blocked",
    "result": "ok",
    "summary": "I've set T-284 to blocked: nothing goes live until Adi approves or redoes each video in T-282 (http://localhost:8883/wt-review/index.html?v=a34171e). The pipeline was already committed and pushed (2e9db5c), and I've now exported web copies of all 18 v2 videos (1440p, 5 to 16 MB, with poster and capt"
-  },
-  {
-   "ts": "2026-10-10T03:45:57+0530",
-   "task_id": "T-275",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "ok",
-   "summary": "H006 and H013 are fixed (commit 1d66ef0, pushed, mirror republished). T-275 stays in `queue`, waiting on H008 (production link) and T-006. The Python suite and `probe-referrals.mjs --live` both pass. I did not move it to review, since its last done-when item (`links.site` on the production domain) i"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-295: Funnel animation polish: phone caption overlap and missing Amazon, YouTube and Slack logos",
- "task_id": "T-295",
+ "message": "Acting on 1 note(s) for T-238: Wire Stripe refunds (parked by Adi)",
+ "task_id": "T-238",
  "entries": [
-  "F-328045bd"
+  "F-6ec8728a"
  ],
  "mode": "feedback",
- "started": "2026-10-10T16:55:30+0530",
+ "started": "2026-10-10T17:15:11+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
   "T-276": 1,
   "T-285": 1,
-  "T-041": 1
+  "T-041": 1,
+  "T-295": 1
  }
 }
