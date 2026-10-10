@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T17:46:39+0530",
+   "task_id": "T-227",
+   "mode": "feedback",
+   "status": "review",
+   "result": "provider",
+   "summary": "API Error: 502 [gemini/gemini-3.7-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.7-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. If it persis"
+  },
+  {
    "ts": "2026-10-10T17:36:33+0530",
    "task_id": "T-226",
    "mode": "feedback",
@@ -87,25 +95,17 @@
    "status": "queue",
    "result": "paused",
    "summary": "Stopped: Adi paused the agent from the board."
-  },
-  {
-   "ts": "2026-10-10T04:14:18+0530",
-   "task_id": "T-074",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-074 is blocked: the Tuesday coaching meeting and the rota are done, but the \"Adi test\" newsletter send didn't go out and I didn't push. The blocks are T-071 (Pro course not on sale yet) and a missing Resend or Tantra sender key for our own account.\n\n- **Meeting:** the weekly \"Tantra Pro Weekly Coa"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-227",
+ "task_id": "T-278",
  "entries": [
-  "F-f4a85277",
-  "R-21f4e0d6"
+  "F-2e1a130f",
+  "R-e2e2a9ab"
  ],
- "started": "2026-10-10T17:43:02+0530",
- "message": "Acting on 2 note(s) for T-227: Google Calendar invites: save the organiser's service account and authorise it for Calendar",
+ "started": "2026-10-10T17:46:57+0530",
+ "message": "Acting on 2 note(s) for T-278: Join and success pages: one seat-link resolver, community fallback, footer links, sample dates",
  "slices": {
   "T-072": 1,
   "T-245": 1,
