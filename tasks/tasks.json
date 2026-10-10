@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T15:32:12+0530",
-  "version": 1438,
+  "updated": "2026-10-10T15:39:28+0530",
+  "version": 1443,
   "last_id": 380,
   "team": [
    {
@@ -10145,11 +10145,12 @@
    "assignee": "Claude",
    "reviewers": [
     "Adi",
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "doing",
    "why": "Integrator sweep 2026-10-07 (Integrator notes 2026-10-07)",
    "spec": "Add a guarded admin action 'Forget this meeting' on the Zoom panel (cloud/admin-ui/admin.js) backed by an admin route in cloud/src/index.ts (Zoom block near line 620) that, for a meeting already deleted in Zoom (check with a GET that returns 3001) and confirmed by typing its id, deletes its rows from zoom_meetings, zoom_events, zoom_attendance, zoom_recordings, zoom_chat, zoom_polls and zoom_engagement and its R2 transcript, and logs it in centre_events. Run it on 89781893618 in production. The Tantra Tracker drops it on the next tracker_sync run (workshop-plan/ops/tracker_sync.py). Never edit D1 by hand.",
    "done_when": [
@@ -10157,7 +10158,16 @@
     "Tracker tabs Zoom Sessions and Zoom Attendance no longer list it after the next sync",
     "The action refuses a meeting that still exists in Zoom"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Probe cases",
+     "url": "app/scripts/probe-zoom-pro.mjs"
+    },
+    {
+     "label": "Forget route",
+     "url": "cloud/src/zoom-pro.ts"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -10175,6 +10185,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still true (test meeting 89781893618 in production zoom_meetings, 5 zoom_events, 1 zoom_attendance; deleted in Zoom per LOG 2026-10-07 23:21); no forget action in cloud/src."
+    },
+    {
+     "ts": "2026-10-10T15:39:24+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi/Aquila → Adi/Aquila/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T15:39:24+0530",
+     "who": "claude",
+     "note": "Built and deployed: POST /admin/api/zoom/forget (refuses unless the typed id matches and Zoom answers 3001, then one D1 batch delete, R2 transcript delete and a zoom_forget event) plus a Forget this meeting button on the admin Zoom panel; probe-zoom-pro.mjs passed 59 of 59 twice on vendor-sim plus wrangler dev, including refusing a meeting still in Zoom; commit 9431027, Worker version dc802b2c. Left for the next pass: the production forget on 89781893618 (my first call sent the wrong admin auth header and got admin only, so nothing was deleted; use the header deliver.py/tracker_sync.py send), then tracker_sync.py and checking Zoom Sessions and Zoom Attendance, then git push of main."
     }
    ],
    "order": 2450
@@ -10310,11 +10330,12 @@
    "assignee": "Claude",
    "reviewers": [
     "Adi",
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Integrator sweep 2026-10-07 (Integrator audit 2026-10-07)",
    "spec": "1) Delete branch int and worktree /Users/adithyamurali/tantra-int (LOG 2026-10-07 23:21: superseded, all 84 files in main). 2) Check the uncommitted files in /Users/adithyamurali/tantra-r5-B (4) and /Users/adithyamurali/tantra-r5-G (6); copy anything not in main into a commit on main or drop it, then remove both worktrees. 3) Remove merged idle worktrees: tantra-calendar-feeds, tantra-zoom-pro, tantra-zoom-pro-2, tantra-zoom-docs, tantra-email-stripe and the merged r5 worktrees (r5-C, r5-D, r5-E, r5-EQ, r5-F, r5-H) after git status shows them clean. Do NOT touch tantra-onboarding-v2 (the launchd stack runs from it, memory integrator-publish-gotchas) or tantra-walkthroughs (S1 active), and leave ~/.pr-preview/* to preview-refresh (never symlink a .pr-preview slug to a working worktree). 4) The remote branch origin/main-52fp0w (commits afe8035 and c4da29f, 2026-10-03) is the snapshot of Adi's uncommitted main checkout that a failed cloud-session hop pushed (source: c726a704 2026-10-03T19:49). It is not an ancestor of main, but main took Adi's WIP in commit 7192965 before the onboarding-v2 merge. Run git diff main origin/main-52fp0w for the files it still adds that main lacks (ignore files main has since changed); copy anything missing into a commit on main, then git push origin --delete main-52fp0w. It was deliberately left untouched until now.",
    "done_when": [
@@ -10323,9 +10344,18 @@
     "git worktree list shows only main, onboarding-v2, tantra-walkthroughs, active lanes and .pr-preview entries",
     "origin/main-52fp0w is deleted after git diff against main shows nothing worth keeping, or its leftovers are committed to main"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Backups and bundles",
+     "url": "file:///Users/adithyamurali/tantra-backups/2026-10-09/"
+    },
+    {
+     "label": "Coordination LOG entry",
+     "url": "file:///Users/adithyamurali/tantra-round5-coord/LOG.md"
+    }
+   ],
    "blockers": [],
-   "needs_from_owner": "origin/main-52fp0w holds a snapshot of uncommitted work from the 2026-10-03 cloud hop and is not in main. Claude will diff it against main first; say delete if nothing in it is wanted (Claude reports what differs before deleting).",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-07T23:25:35+0530",
@@ -10351,6 +10381,21 @@
      "ts": "2026-10-09T00:25:55+0530",
      "who": "claude",
      "note": "Claude diffs origin/main-52fp0w before any delete; no blocker on the rest of the cleanup."
+    },
+    {
+     "ts": "2026-10-10T15:38:35+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi/Aquila → Adi/Aquila/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T15:38:35+0530",
+     "who": "claude",
+     "note": "Cleanup done: branch int deleted, 13 stale worktrees removed (int, r5-B/C/D/E/EQ/F/G/H, calendar-feeds, zoom-pro, zoom-pro-2, zoom-docs, email-stripe), and origin/main-52fp0w deleted. I checked the r5-B/r5-G leftovers and the main-52fp0w diff file by file: all were stale copies or guide WebPs main deleted on purpose in T-257, so nothing was committed or pushed to main. Backups, int and main-52fp0w bundles are in ~/tantra-backups/2026-10-09/, and the result is logged in the coordination LOG."
+    },
+    {
+     "ts": "2026-10-10T15:39:28+0530",
+     "who": "claude",
+     "note": "Verify pass (2026-10-10): branch int is gone, origin has no int or main-52fp0w, and all 14 listed worktrees are removed (git worktree list now shows main, onboarding-v2, tantra-walkthroughs, other lanes' worktrees and .pr-preview only). Backup bundles verify OK in ~/tantra-backups/2026-10-09/. One correction to the last report: main-52fp0w added 45 guide WebPs and 3 playbook checklist pages (d1/d2/d3-checklist.html). Main deleted the WebPs on purpose in T-257 and the checklists on purpose in 9c4df62 (owner feedback: no checklists in the playbook), so nothing needed committing."
     }
    ],
    "order": 2480

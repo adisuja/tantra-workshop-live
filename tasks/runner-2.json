@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T15:39:38+0530",
+   "task_id": "T-245",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-245 is half done: the forget action is built, tested locally and deployed, but meeting 89781893618 is still in production, so the task stays in `doing` for another"
+  },
+  {
    "ts": "2026-10-10T15:32:24+0530",
    "task_id": "T-072",
    "mode": "feedback",
@@ -87,25 +95,18 @@
    "status": "review",
    "result": "ok",
    "summary": "T-264 is built and in review. It's merged to main (0198516), the centre Worker is deployed, the mirror is republished, and AUDIT.md is updated.\n\n**What changed**\n- **Twilio SMS:**\n  - `twilio-setup` now checks the Twilio balance first and stops below $20.\n  - For non-US numbers it files the regulato"
-  },
-  {
-   "ts": "2026-10-10T01:35:39+0530",
-   "task_id": "T-263",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-263 is in review: all 8 audit findings are fixed, but I only tested them against a mock of Tantra, not the full simulator stack.\n\n- **Gate (X015):** the calendar card passes only when Tantra shows every sending user as CONNECTED, checked with `GET /accounts?search=`.\n- **Campaign build (N011, N012"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-245",
+ "task_id": "T-250",
  "entries": [
-  "F-f41cc289"
+  "F-3c4113c7"
  ],
- "started": "2026-10-10T15:32:54+0530",
- "message": "Acting on 1 note(s) for T-245: Add an admin way to forget a Zoom test session",
+ "started": "2026-10-10T15:39:50+0530",
+ "message": "Acting on 1 note(s) for T-250: Nelbin's checklist follow-ups: Growth Idea message to Sam, client rollout and billing sheet, daily update, personalization spec items",
  "slices": {
-  "T-072": 1
+  "T-072": 1,
+  "T-245": 1
  }
 }
