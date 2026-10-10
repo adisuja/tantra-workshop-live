@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T20:38:51+0530",
-  "version": 1598,
+  "updated": "2026-10-10T20:40:34+0530",
+  "version": 1599,
   "last_id": 386,
   "team": [
    {
@@ -11675,28 +11675,28 @@
    ],
    "evidence": [
     {
-     "label": "Live playbook (no Beehiiv, Sales Navigator, Vercel)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t260live"
+     "label": "Live playbook (no replaced tool)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t260close"
     },
     {
-     "label": "Live guide: optional go-live AI call (ElevenLabs SIP trunk or Vodex)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s3-tantra-pro-flow/?v=t260live"
+     "label": "Live centre (93 screens scanned, no replaced tool)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=t260close"
     },
     {
-     "label": "Live guide: paid ads, what the centre builds",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s1-ads/?v=t260live"
+     "label": "Live FunnelOS page",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/webinar/?v=t260close"
     },
     {
-     "label": "Live guide: reverse squeeze, Wistia upload by the agent",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s4-rsp/?v=t260live"
+     "label": "Live guide: optional go-live AI call",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s3-tantra-pro-flow/?v=t260close"
     },
     {
-     "label": "Probe (50 checks, own sim + funnel)",
-     "url": "app/scripts/probe-kept-tools.mjs"
+     "label": "Probes",
+     "url": "app/scripts/probe-visual-tools.mjs, app/scripts/probe-kept-tools.mjs"
     },
     {
-     "label": "Commits",
-     "url": "7cb1dd6 (replaced tools), d58d96e (kept tools); mirror 610863e"
+     "label": "Commits on origin main",
+     "url": "7cb1dd6 (replaced tools), d58d96e (kept tools), 25a8998 (close-out fix)"
     }
    ],
    "blockers": [],
@@ -11746,6 +11746,11 @@
      "ts": "2026-10-09T14:18:08+0530",
      "who": "claude",
      "note": "Decision recorded from T-020 (Orchestrator O-d3b4c0eb): Sales Navigator is replaced by data-vendor lists (list-partner card) plus LinkedIn outreach through Tantra; the playbook has had no Sales Navigator mention since 7cb1dd6, and Apollo is now also out of the embedded FunnelOS cinematics (bbb6a23, live on mirror 678a78b)."
+    },
+    {
+     "ts": "2026-10-10T20:40:34+0530",
+     "who": "claude",
+     "note": "Closed out per the Orchestrator's decision (O-cb21de29): the community link hint no longer names Slack, the Expandi statistic source is kept and marked for the tools check, and two unused Beehiiv and Fireflies logo entries are gone (25a8998, pushed to main with 7cb1dd6 and d58d96e). Verified today: probe-visual-tools PASS, probe-kept-tools 50 of 50, tsc clean, all 18 audit ids marked with their commit, and a headless browser walk of the live mirror (playbook, 93 centre screens, 4 funnel pages, reference, templates) found no replaced tool, so no republish was needed. Open the live playbook and the centre links below; the only hits left in source are Tantra's own product pages, the integration catalog and real client examples, which the decision said to leave."
     }
    ],
    "order": 2600
