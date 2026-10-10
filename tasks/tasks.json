@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T16:28:41+0530",
-  "version": 1468,
+  "updated": "2026-10-10T16:33:21+0530",
+  "version": 1470,
   "last_id": 381,
   "team": [
    {
@@ -13728,7 +13728,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "hold",
    "why": "Keys in a chat transcript are exposed; Adi's standing rule is to rotate after launch.",
    "spec": "Credentials shared in plain text in the S1 chat (session fcd892f2) and in ~/.config/tantra/ files: Kie.ai API key, GoHighLevel private integration token (FINTECH Circle sub-account), Instantly API key (FintechCircle), the Google OAuth client 'Email Campaign' secret (file ~/.config/tantra/google-oauth-client.env), and the Dodo live key and webhook secret. After launch only (owner: no Dodo key rotation until after launch; T-005 owns the Dodo pair as the last task): regenerate each in its vendor dashboard, store the new value in ~/.config/tantra/keys or the centre vault, and update anything that uses it. The GHL token and any other key created for a recording are already deleted (REVERT_LEDGER.md), so only keys Adi pasted remain. If a key is unused by then, delete it instead of rotating.",
    "done_when": [
@@ -13736,7 +13736,12 @@
     "Nothing in ~/.config/tantra or the centre still uses an old value",
     "Dodo handled under T-005"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Rotation plan",
+     "url": "file:///Users/adithyamurali/.config/tantra/ROTATION_PLAN.md"
+    }
+   ],
    "blockers": [
     "Launch has happened (T-005 is the last task)"
    ],
@@ -13746,6 +13751,16 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Added from the session sweep (2026-10-09): source: fcd892f2 2026-10-06T19:32 and 2026-10-07T18:26: Adi pasted a Kie.ai API key, the live Dodo API key and webhook secret, a Google OAuth client ID and secret, an Instantly API key and a GoHighLevel private integration token into the chat; session notes say 'rotate them after launch, per your rule'. T-005 only covers Dodo. Key values are in the transcript and are NOT repeated here."
+    },
+    {
+     "ts": "2026-10-10T16:32:32+0530",
+     "who": "claude",
+     "note": "Prep done, nothing touched at any vendor: ~/.config/tantra/ROTATION_PLAN.md lists for each key every file and reader, checked by grep of ~/.config, app/.env.local, cloud/.dev.vars, the repo, the centre Worker secret names and the centre D1 drive_client_id. Verdicts: Kie.ai ROTATE (gen-image.mjs reads it), GoHighLevel, Instantly and the Google 'Email Campaign' client DELETE (nothing reads them; Sign in with Google was removed in T-286); none were in REVERT_LEDGER, so all four still exist. Held until launch (T-005 is the last task)."
+    },
+    {
+     "ts": "2026-10-10T16:33:21+0530",
+     "who": "claude",
+     "note": "Verify pass: ~/.config/tantra/ROTATION_PLAN.md re-checked (mode 600, no key values, no long dashes). Every reader in app/ and cloud/ matches the plan: Kie.ai ROTATE (gen-image.mjs, kie-generate.mjs); GHL, Instantly and the Google 'Email Campaign' client DELETE (code refs are attendee-supplied keys only); REVERT_LEDGER has no entry for any of them. Nothing touched at any vendor; held until launch (T-005)."
     }
    ],
    "order": 3020
