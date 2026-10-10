@@ -97,12 +97,16 @@
    "summary": "**COMPLETION CHECK (T-278, verify pass)**\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| 1. Run tsc and probes, push main | Done | tsc exits 0 for app and cloud. probe-cohort passes on the mirror. probe-funnels passes except `/onboarding/templates`. Main pushed and level with origin at `"
   }
  ],
- "state": "idle",
- "mode": null,
- "task_id": null,
- "entries": [],
- "started": "2026-10-11T01:30:53+0530",
- "message": "Last sweep handled 6 task(s).",
+ "state": "working",
+ "mode": "feedback",
+ "task_id": "T-123",
+ "entries": [
+  "F-02f5dedc",
+  "R-7aa0f67a",
+  "F-07260b02"
+ ],
+ "started": "2026-10-11T05:21:21+0530",
+ "message": "Acting on 3 note(s) for T-123: Attendee messages actually send (Tantra omni-channel campaigns)",
  "slices": {
   "T-135": 1,
   "T-148": 1,
