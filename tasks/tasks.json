@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T16:54:00+0530",
-  "version": 1550,
+  "updated": "2026-10-10T16:54:49+0530",
+  "version": 1552,
   "last_id": 382,
   "team": [
    {
@@ -39,6 +39,11 @@
     "name": "Bharath",
     "role": "CTO",
     "covers": "Head of all development: architecture, infrastructure, technical decisions"
+   },
+   {
+    "name": "Vaibhavi",
+    "role": "traffic/LinkedIn posting",
+    "covers": "Traffic: LinkedIn posting for the workshop funnels (referral partner)"
    }
   ]
  },
@@ -1903,7 +1908,7 @@
    "blockers": [
     "T-040: the groups do not exist yet (owner hold)"
    ],
-   "needs_from_owner": "On hold by your choice (2026-09-24). Confirm the admin list when the groups exist: Aquila, Bhaskar, Adi, Amal, Vaibhavi (Vaibhavi is not on the team roster; confirm or remove).",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -1939,6 +1944,11 @@
      "ts": "2026-10-10T16:35:32+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-20 was past; now none (cleared: on hold, nothing depends on a deadline)."
+    },
+    {
+     "ts": "2026-10-10T16:54:49+0530",
+     "who": "claude",
+     "note": "Orchestrator decision applied: the admin list is final (Aquila, Bhaskar, Adi, Amal, Vaibhavi) and Vaibhavi is now on the team roster as traffic/LinkedIn posting. No question to Adi remains; this stays on hold only until T-040 creates both groups, then Nelbin makes all five admins in the community and the announcement group and attaches a screenshot of each admin list."
     }
    ],
    "order": 270,

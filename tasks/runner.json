@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T16:55:19+0530",
+   "task_id": "T-041",
+   "mode": "feedback",
+   "status": "hold",
+   "result": "turns",
+   "summary": "T-041 stays on hold, waiting only on T-040 (the WhatsApp groups don't exist yet). I applied the Orchestrator decision, there's no question left for Adi, and I acked note F-649aa08d.\n\n- **Vaibhavi added to the team roster:** done. `pass.py team` now lists her as \"traffic/LinkedIn posting\", and `pass."
+  },
+  {
    "ts": "2026-10-10T16:54:16+0530",
    "task_id": "T-295",
    "mode": "feedback",
@@ -87,28 +95,21 @@
    "status": "queue",
    "result": "ok",
    "summary": "H006 and H013 are fixed (commit 1d66ef0, pushed, mirror republished). T-275 stays in `queue`, waiting on H008 (production link) and T-006. The Python suite and `probe-referrals.mjs --live` both pass. I did not move it to review, since its last done-when item (`links.site` on the production domain) i"
-  },
-  {
-   "ts": "2026-10-10T03:44:51+0530",
-   "task_id": "T-273",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-273 is in review: all ten audit findings are fixed, committed and pushed to main (f4f181f) and to the GitHub Pages mirror (c7f1710). On the live hub, `probe-review-hub.mjs` reports ALL LINKS OK.\n\n- **H036:** this reproduced locally, with the section heading sitting under the sticky header. I fixed"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-041: Add admins to both WhatsApp groups",
- "task_id": "T-041",
+ "message": "Acting on 1 note(s) for T-295: Funnel animation polish: phone caption overlap and missing Amazon, YouTube and Slack logos",
+ "task_id": "T-295",
  "entries": [
-  "F-649aa08d"
+  "F-328045bd"
  ],
  "mode": "feedback",
- "started": "2026-10-10T16:54:31+0530",
+ "started": "2026-10-10T16:55:30+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
   "T-276": 1,
-  "T-285": 1
+  "T-285": 1,
+  "T-041": 1
  }
 }
