@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T05:23:56+0530",
-  "version": 1679,
-  "last_id": 389,
+  "updated": "2026-10-11T05:27:05+0530",
+  "version": 1694,
+  "last_id": 391,
   "team": [
    {
     "name": "Adi",
@@ -2520,8 +2520,8 @@
    "owner": "Bhaskar",
    "priority": "P1",
    "due": "2026-10-14",
-   "status": "doing",
-   "why": "Depends on T-057.",
+   "status": "blocked",
+   "why": "T-057 readiness is YES (2026-10-09). Now waits on the T-056 import and each member connecting.",
    "spec": "Each team member connects their own LinkedIn profile in Tantra (needs their own login, so not Claude), then campaigns launch from the T-056 list with first lines from T-059 and each member's referral link (T-211). Respect the daily caps recorded in T-057. Track replies and registrations per member on the referral dashboard.",
    "done_when": [
     "Every participating team member's profile shows connected in Tantra",
@@ -2543,10 +2543,10 @@
     }
    ],
    "blockers": [
-    "T-057 Tantra LinkedIn readiness",
-    "T-056 list imported"
+    "T-056 list imported",
+    "Each member connects their own LinkedIn in Tantra"
    ],
-   "needs_from_owner": "",
+   "needs_from_owner": "Each participating member signs in at https://usetantra.com/connectors/channels/linkedin and connects their own LinkedIn (guide: workshop-plan/outreach/connect-linkedin-guide.md). Pro shows 2 of 2 accounts in use, so a third profile needs an extra account (+$20) bought first. The list import itself is the sign-in already asked on T-056.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2587,6 +2587,11 @@
      "ts": "2026-10-10T16:35:33+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-21 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-11T05:25:22+0530",
+     "who": "claude",
+     "note": "Removed the T-057 wait: the launch kit and ops/outreach.json now say readiness is YES (app at usetantra.com) and the run caps are set to the agreed ramp (20 to 25 connects/day, never above 75, 75 messages/day; app max 80 connects, 120 messages, 80 visits), with the 2 of 2 Pro accounts note kept. Verified by grep (no PENDING or sign-off wording left) and the referral tests. Not launched: it still needs the T-056 import and each member connecting with their own login. Open workshop-plan/outreach/launch-kit.md."
     }
    ],
    "order": 370,
