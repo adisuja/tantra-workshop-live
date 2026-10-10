@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T20:20:18+0530",
-  "version": 1575,
-  "last_id": 383,
+  "updated": "2026-10-10T20:22:00+0530",
+  "version": 1578,
+  "last_id": 384,
   "team": [
    {
     "name": "Adi",
@@ -4921,6 +4921,11 @@
      "ts": "2026-10-10T20:20:18+0530",
      "who": "claude",
      "note": "Still no captures: this unattended run has no Claude in Chrome tools and Brave exposes no debug port, so the 07:57 Orchestrator plan cannot run here (I did not copy the Brave profile or cookies). Per the T-133 ripple I merged the ask with T-339 so Adi opens one desktop session for both; no Tantra WhatsApp slots were listed here, so nothing to remove. check-guides now FAILs 4 on undersized files owned by other tasks (s1-blog 07, s1-social 06, s4-webinar 17, s5-extra-pipelines 06), none of them T-115 slots; capture-needed 60, G127 stays open."
+    },
+    {
+     "ts": "2026-10-10T20:21:19+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-140."
     }
    ],
    "order": 1130,
@@ -15049,6 +15054,35 @@
    ],
    "order": 3830,
    "input_for": "T-339",
+   "kind": "input"
+  },
+  {
+   "id": "T-384",
+   "title": "Input from Adi for T-115: Open the Claude Code desktop app, start a session with Claude in Chrome connecte",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (physical): Only an interactive desktop session Adi opens has Claude in Chrome; the unattended runner has no browser and must not take over his Brave.. Everything else in T-115 is being built around it. As soon as this is done, T-115 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Open the Claude Code desktop app, start a session with Claude in Chrome connected to the Brave profile adi@growthclub.org, and type: Act on T-115. Optional in the same sitting: open https://admin.google.com/ac/users and type your Google password in the 'Enter your password' field (T-348).",
+   "log": [
+    {
+     "ts": "2026-10-10T20:22:00+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-115."
+    }
+   ],
+   "order": 3840,
+   "input_for": "T-115",
    "kind": "input"
   }
  ]

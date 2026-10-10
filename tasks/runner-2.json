@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T20:21:19+0530",
+   "task_id": "T-278",
+   "mode": "feedback",
+   "status": "review",
+   "result": "error",
+   "summary": "[process exit 143; stderr: ''] Diff is only mine. Committing, then checking migrations."
+  },
+  {
    "ts": "2026-10-10T20:15:58+0530",
    "task_id": "T-033",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "I checked all seven T-274 fixes again and they are working on main and on both live copies. I had nothing to fix. The task is now in review with Adi and Bharath, and note F-8271900e was already acked (the ack command reported 0).\n\n**Completion check (all checked in this run):**\n\n| Item | State | Evi"
-  },
-  {
-   "ts": "2026-10-10T15:41:56+0530",
-   "task_id": "T-250",
-   "mode": "feedback",
-   "status": "review",
-   "result": "turns",
-   "summary": "I built the rollout and billing sheet and the personalization spec, pushed both to main in 305808f, and linked them on issue #1. T-250 is now in review, assigned to Nelbin.\n\n**Checklist:**\n1. **Growth Idea message to Sam:** Nelbin's to send. I sent nothing. The issue #1 comment asks Nelbin to confir"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-278",
+ "task_id": "T-348",
  "entries": [
-  "F-2e1a130f",
-  "R-e2e2a9ab"
+  "F-201a538e"
  ],
- "started": "2026-10-10T20:16:31+0530",
- "message": "Acting on 2 note(s) for T-278: Join and success pages: one seat-link resolver, community fallback, footer links, sample dates",
+ "started": "2026-10-10T20:21:43+0530",
+ "message": "Acting on 1 note(s) for T-348: Input: Google Admin password re-check in the Brave capture window (for T-115 s1-cold-email #2)",
  "slices": {
   "T-072": 1,
   "T-245": 1,
