@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T17:36:33+0530",
+   "task_id": "T-226",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model gemini-3.5-flash are cooling down"
+  },
+  {
    "ts": "2026-10-10T17:21:20+0530",
    "task_id": "T-234",
    "mode": "feedback",
@@ -87,25 +95,17 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-074 is blocked: the Tuesday coaching meeting and the rota are done, but the \"Adi test\" newsletter send didn't go out and I didn't push. The blocks are T-071 (Pro course not on sale yet) and a missing Resend or Tantra sender key for our own account.\n\n- **Meeting:** the weekly \"Tantra Pro Weekly Coa"
-  },
-  {
-   "ts": "2026-10-10T04:10:55+0530",
-   "task_id": "T-073",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-073 is blocked: the course pipeline and the gated `/pro/course` home are built and deployed, but Zoom has no recordings from the 7 to 9 Oct cohort to cut. Meeting 87002851906 shows zero past sessions and no recordings, and D1 has no events for it. The block asks where those recordings are, or whet"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-226",
+ "task_id": "T-033",
  "entries": [
-  "F-c251293a",
-  "R-803ec112"
+  "F-90daec88",
+  "R-95c6ab16"
  ],
- "started": "2026-10-10T17:22:04+0530",
- "message": "Acting on 2 note(s) for T-226: Tantra Host Console: Adi hosts every session from a Mac app that runs chat posts, polls, call-to-action links, mute and video control, co-hosts",
+ "started": "2026-10-10T17:39:07+0530",
+ "message": "Acting on 2 note(s) for T-033: WhatsApp + email delivery automation",
  "slices": {
   "T-072": 1,
   "T-245": 1,
