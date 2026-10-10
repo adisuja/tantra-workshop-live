@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T20:15:58+0530",
+   "task_id": "T-033",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. I built the Resend email fallback for T-033, both delivery probes pass on the local simulator, and the work is committed locally as `535291f` (not pushed or deployed"
+  },
+  {
    "ts": "2026-10-10T20:04:50+0530",
    "task_id": "T-011",
    "mode": "feedback",
@@ -87,30 +95,23 @@
    "status": "review",
    "result": "turns",
    "summary": "I built the rollout and billing sheet and the personalization spec, pushed both to main in 305808f, and linked them on issue #1. T-250 is now in review, assigned to Nelbin.\n\n**Checklist:**\n1. **Growth Idea message to Sam:** Nelbin's to send. I sent nothing. The issue #1 comment asks Nelbin to confir"
-  },
-  {
-   "ts": "2026-10-10T15:39:38+0530",
-   "task_id": "T-245",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-245 is half done: the forget action is built, tested locally and deployed, but meeting 89781893618 is still in production, so the task stays in `doing` for another"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-033",
+ "task_id": "T-278",
  "entries": [
-  "F-90daec88",
-  "R-95c6ab16"
+  "F-2e1a130f",
+  "R-e2e2a9ab"
  ],
- "started": "2026-10-10T20:05:30+0530",
- "message": "Acting on 2 note(s) for T-033: WhatsApp + email delivery automation",
+ "started": "2026-10-10T20:16:31+0530",
+ "message": "Acting on 2 note(s) for T-278: Join and success pages: one seat-link resolver, community fallback, footer links, sample dates",
  "slices": {
   "T-072": 1,
   "T-245": 1,
   "T-250": 1,
   "T-301": 1,
-  "T-140": 1
+  "T-140": 1,
+  "T-033": 1
  }
 }
