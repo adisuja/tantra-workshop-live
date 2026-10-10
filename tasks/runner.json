@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T20:19:03+0530",
+   "task_id": "T-339",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-339 is still blocked on one thing: Adi signing in to Twilio at https://console.twilio.com in the Brave profile that Claude in Chrome uses. The ripple's change had mostly been made already: needs_from_owner was already asking for Twilio only. The only stale part was the title, which still said \"sig"
+  },
+  {
    "ts": "2026-10-10T20:17:22+0530",
    "task_id": "T-227",
    "mode": "feedback",
@@ -87,24 +95,17 @@
    "status": "queue",
    "result": "error",
    "summary": "Both probes pass. I'm confirming /funnels/book (the Amazon board) is in the five-width run, then taking the final 390 px screenshots."
-  },
-  {
-   "ts": "2026-10-10T16:08:56+0530",
-   "task_id": "T-285",
-   "mode": "feedback",
-   "status": "review",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-285 is in review: all the copy fixes are on origin/main, but I ran out of calls before the approved Worker deploy and mirror publish, so neither has happened yet.\n"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-339: Input from Adi for T-133: In Claude in Chrome, sign in to https://usetantra.com (Tantra app) and https://c",
- "task_id": "T-339",
+ "message": "Acting on 2 note(s) for T-115: Guide screenshots that need Adi's signed-in accounts (Google, GA4, Cloudflare, Tantra, WebinarGeek)",
+ "task_id": "T-115",
  "entries": [
-  "R-e3fcb741"
+  "F-00a906f4",
+  "R-85835850"
  ],
  "mode": "feedback",
- "started": "2026-10-10T20:17:53+0530",
+ "started": "2026-10-10T20:20:01+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
