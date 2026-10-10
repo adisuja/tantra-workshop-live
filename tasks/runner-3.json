@@ -97,15 +97,14 @@
    "summary": "T-148 is in review for Bhaskar: the Tantra mark on the cover slide is fixed in the deck's source files and on the live deck, and I checked the live page in a headless browser.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| Fix the slide sources (`_rebuild/header.html:83`, `_rebuild/slid"
   }
  ],
- "state": "paused",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
+ "task_id": "T-242",
  "entries": [
-  "F-f4a85277",
-  "R-21f4e0d6"
+  "F-5c5c3069"
  ],
- "started": "2026-10-10T18:10:58+0530",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 76% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 19:51.",
+ "started": "2026-10-10T19:56:11+0530",
+ "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
  "slices": {
   "T-135": 1,
   "T-148": 1,
