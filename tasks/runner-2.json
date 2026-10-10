@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T16:29:35+0530",
+   "task_id": "T-301",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "turns",
+   "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-301 is set to blocked again. The code checks out and the fix is pushed, but the walkthrough fix is not live yet because the centre redeploy failed in the scratch b"
+  },
+  {
    "ts": "2026-10-10T16:17:22+0530",
    "task_id": "T-274",
    "mode": "feedback",
@@ -87,27 +95,20 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-056 is blocked: I built the cleaned list (126 work-email contacts), but I have no Tantra login, so nothing was imported and no campaign was created. The import limit is not recorded and T-058 stays blocked. It needs Adi to sign in to usetantra.com or paste an API key. Both notes are acked."
-  },
-  {
-   "ts": "2026-10-10T03:52:02+0530",
-   "task_id": "T-271",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-271 is in review (reviewers Adi and Bharath). All 18 findings are now either fixed or marked obsolete. The work is pushed to branch `t-271-card-copy` (commits 767e3a6 and 517cfde), and the new `probe-t271-cards` passes 38/38 on my own local stack (GoHighLevel, HubSpot and Zoho CRM imports included"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-301",
+ "task_id": "T-302",
  "entries": [
-  "F-82660483"
+  "F-874518af"
  ],
- "started": "2026-10-10T16:18:38+0530",
- "message": "Acting on 1 note(s) for T-301: Data partners: agree the order hand-off and test the list upload with a real sample CSV",
+ "started": "2026-10-10T16:29:56+0530",
+ "message": "Acting on 1 note(s) for T-302: After launch: rotate the credentials pasted into the walkthroughs chat (Kie.ai, GoHighLevel, Instantly, Google OAuth client; Dodo stays with T-005)",
  "slices": {
   "T-072": 1,
   "T-245": 1,
-  "T-250": 1
+  "T-250": 1,
+  "T-301": 1
  }
 }

@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T16:24:00+0530",
-  "version": 1467,
+  "updated": "2026-10-10T16:28:41+0530",
+  "version": 1468,
   "last_id": 381,
   "team": [
    {
@@ -13676,26 +13676,18 @@
    ],
    "evidence": [
     {
-     "label": "Card text live",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?v=t301-733dd3b#d1-list-partner"
-    },
-    {
-     "label": "Column mapper",
-     "url": "cloud/src/list-columns.ts"
-    },
-    {
-     "label": "Probe and fixture",
+     "label": "probe",
      "url": "cloud/scripts/probe-list-columns.mjs"
     },
     {
-     "label": "Order email sender (off)",
-     "url": "workshop-plan/ops/list_partner_leads.py"
+     "label": "fix commit",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/0da826e"
     }
    ],
    "blockers": [
     "Sample CSV and hand-off agreement from the data vendors"
    ],
-   "needs_from_owner": "Nelbin (not Adi): ask Sohan or Ashiqe for (1) a sample CSV, even 5 dummy rows, attached to this task, (2) whether they read the List Partner Leads tab or want one email per order (if email, add it as order_email in ~/.config/tantra/data-vendors.json), (3) quote and delivery turnaround, recorded here.",
+   "needs_from_owner": "Nelbin asks Sohan or Ashiqe for a sample CSV (even 5 dummy rows), how they want orders (read the List Partner Leads tab, or an email address for one email per order) and the quote and delivery turnaround; no input needed from Adi.",
    "log": [
     {
      "ts": "2026-10-09T00:25:38+0530",
@@ -13716,6 +13708,11 @@
      "ts": "2026-10-10T16:24:00+0530",
      "who": "claude",
      "note": "Built and live (Worker ad06ad65, main pushed at 733dd3b): the list upload now maps common vendor column names and cleans the rows (cloud/src/list-columns.ts), the card no longer promises verification, and a per-order email sender (workshop-plan/ops/list_partner_leads.py) stays off until the partners give an order address. Probe cloud/scripts/probe-list-columns.mjs passes 9/9 on a 5-row fixture, and the sender's dry run reports OFF. Left for Nelbin: the vendors' sample CSV, order method and turnaround."
+    },
+    {
+     "ts": "2026-10-10T16:28:41+0530",
+     "who": "claude",
+     "note": "Verify pass: the column mapper, 5-row fixture, card text, List Partner Leads tab and the per-order sender (dry run: 0 orders, OFF) all check out, and the live centre (ad06ad65) serves the new card text. I found three more verification promises in the card's walkthrough (card-education.ts), fixed them, added a probe check (10 of 10 pass) and pushed 0da826e. Redeploying the centre failed in the scratch build (Turbopack distDirRoot error), so the next run redeploys 0da826e. Still waiting on Nelbin for the vendors' sample CSV, order method and turnaround."
     }
    ],
    "order": 3010
