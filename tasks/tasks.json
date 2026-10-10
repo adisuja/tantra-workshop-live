@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T21:22:41+0530",
-  "version": 1628,
+  "updated": "2026-10-10T21:28:18+0530",
+  "version": 1629,
   "last_id": 387,
   "team": [
    {
@@ -6313,24 +6313,28 @@
    ],
    "evidence": [
     {
+     "label": "Guide on the mirror (steps 1 and 4 captured)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s5-crm-starter/?v=1791647898"
+    },
+    {
+     "label": "Guide, local",
+     "url": "http://localhost:4322/onboarding/guides/s5-crm-starter?v=1791647898"
+    },
+    {
+     "label": "Step 1 capture",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/guides/s5-crm-starter/01.webp?v=1791647898"
+    },
+    {
+     "label": "Step 4 capture",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/guides/s5-crm-starter/07.webp?v=1791647898"
+    },
+    {
      "label": "Reference board (local, test deals)",
-     "url": "http://localhost:8765/?v=1791534837"
+     "url": "http://localhost:8765/?v=1791647898"
     },
     {
-     "label": "Board capture",
-     "url": "/Users/adithyamurali/tantra-private/crm-reference/captures/board-sales-desktop.png"
-    },
-    {
-     "label": "runner --dry-run capture",
-     "url": "/Users/adithyamurali/tantra-private/crm-reference/captures/runner-dry-run.png"
-    },
-    {
-     "label": "Payment recorded (contact page capture)",
-     "url": "/Users/adithyamurali/tantra-private/crm-reference/captures/contact-priya-desktop.png"
-    },
-    {
-     "label": "Prompts and README, pushed (origin main aafe5d9)",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/aafe5d9"
+     "label": "Source commit ed17b92 (origin main)",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/ed17b92"
     },
     {
      "label": "Revert ledger rows",
@@ -6379,6 +6383,11 @@
      "ts": "2026-10-10T16:35:34+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-29 was past; now 2026-10-23 (P3 rule)."
+    },
+    {
+     "ts": "2026-10-10T21:28:18+0530",
+     "who": "claude",
+     "note": "Closed out as the Orchestrator decided: T-191 call 14 replaced the laptop crm.py guide with the Cloudflare Worker guide, so the three old payments.py, runner and board slots no longer exist, and the new guide's steps 1 and 4 now carry real captures (01.webp and 07.webp) taken from the local centre against the vendor simulator; step 5 goes to T-132 and step 6 to T-253. To be plain: payments, booking and email in the reference build ran against a local stand-in (fake_vendors.py), not the real Dodo test API, and the live Dodo keys in app/.env.local were not used. Main is pushed (ed17b92, README check column and prompts 01 to 04 included, crm-starter.zip rebuilt) and the guide is live on the mirror (960de6695, this guide's pages and screenshots only): I opened it headless and both images load with 2 capture slots left; check-guides shows no crm-starter failure (its 4 failures are other guides) and probe-guides had not finished. No blocker or ask of Adi remains."
     }
    ],
    "order": 1340,
