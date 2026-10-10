@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T01:00:00+0530",
-  "version": 1649,
+  "updated": "2026-10-11T01:00:27+0530",
+  "version": 1650,
   "last_id": 387,
   "team": [
    {
@@ -13326,39 +13326,39 @@
    "evidence": [
     {
      "label": "All walkthrough review pages",
-     "url": "http://localhost:8883/wt-review/index.html?v=t283b"
-    },
-    {
-     "label": "Kie.ai",
-     "url": "http://localhost:8883/wt-review/kie/index.html?v=t283b"
-    },
-    {
-     "label": "Stripe",
-     "url": "http://localhost:8883/wt-review/stripe/index.html?v=t283b"
-    },
-    {
-     "label": "HubSpot",
-     "url": "http://localhost:8883/wt-review/hubspot/index.html?v=t283b"
-    },
-    {
-     "label": "Zoho",
-     "url": "http://localhost:8883/wt-review/zoho/index.html?v=t283b"
-    },
-    {
-     "label": "Wistia",
-     "url": "http://localhost:8883/wt-review/wistia/index.html?v=t283b"
+     "url": "http://localhost:8883/wt-review/index.html?v=t283d"
     },
     {
      "label": "Twilio",
-     "url": "http://localhost:8883/wt-review/twilio/index.html?v=t283b"
+     "url": "http://localhost:8883/wt-review/twilio/index.html?v=t283d"
+    },
+    {
+     "label": "Kie.ai",
+     "url": "http://localhost:8883/wt-review/kie/index.html?v=t283d"
     },
     {
      "label": "Dodo",
-     "url": "http://localhost:8883/wt-review/dodo/index.html?v=t283b"
+     "url": "http://localhost:8883/wt-review/dodo/index.html?v=t283d"
+    },
+    {
+     "label": "Stripe",
+     "url": "http://localhost:8883/wt-review/stripe/index.html?v=t283d"
+    },
+    {
+     "label": "HubSpot",
+     "url": "http://localhost:8883/wt-review/hubspot/index.html?v=t283d"
+    },
+    {
+     "label": "Zoho",
+     "url": "http://localhost:8883/wt-review/zoho/index.html?v=t283d"
+    },
+    {
+     "label": "Wistia",
+     "url": "http://localhost:8883/wt-review/wistia/index.html?v=t283d"
     },
     {
      "label": "Google senders",
-     "url": "http://localhost:8883/wt-review/google-senders/index.html?v=t283b"
+     "url": "http://localhost:8883/wt-review/google-senders/index.html?v=t283d"
     }
    ],
    "blockers": [],
@@ -13393,6 +13393,11 @@
      "ts": "2026-10-11T00:57:13+0530",
      "who": "claude",
      "note": "Related update on T-215 checked: the decided approach (Kie.ai docs only, Stripe sign-up plus its docs route with no account, HubSpot, Zoho and Wistia from public docs, Twilio, Dodo and Google live sign-ins split to T-350) is already what the 8 videos show, so no video was rebuilt. One leftover line in the Stripe journey file still said 'Waiting on access'; it now states the docs route (commit 1a50789 on branch tantra-walkthroughs, not pushed). Rechecked today: verify.py passes on all 8, each mp4 is 3840 x 2160 and 59 to 119 seconds, and all 9 review pages load. Open http://localhost:8883/wt-review/index.html?v=t283c"
+    },
+    {
+     "ts": "2026-10-11T01:00:27+0530",
+     "who": "claude",
+     "note": "Ripple from T-215 checked as a fresh reviewer: the videos needed no rebuild, but the journey notes for Twilio, Dodo, Google senders and Kie.ai still read as waiting on access, so they now state the decided docs route and point the sign-ins to T-350 (commit 355d8c6 on branch tantra-walkthroughs, not pushed). Proof this run: verify.py passes on all 8, the index and all 8 review pages open in a headless browser with no broken images or errors and each video plays at 3840 x 2160 (59 to 119 seconds) with the key route and centre paste step, and every REVERT_LEDGER row reads reverted, deleted or nothing created. Stripe stays sign-up plus the docs route to the restricted key, and Twilio, Dodo and Google are in docs form until Adi signs in under T-350. Open http://localhost:8883/wt-review/index.html?v=t283d"
     }
    ],
    "order": 2830

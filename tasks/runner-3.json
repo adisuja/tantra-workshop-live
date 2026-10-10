@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T01:00:39+0530",
+   "task_id": "T-283",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-283 stays in review: the T-215 ripple needed wording fixes in four journey notes and no video rebuild.\n\nCOMPLETION CHECK\n- **Replace the \"waiting for access\" framing with the decided approach:** done. The journey notes for Twilio, Dodo, Google senders and Kie.ai still read as blocked or waiting on"
+  },
+  {
    "ts": "2026-10-11T00:54:15+0530",
    "task_id": "T-021",
    "mode": "feedback",
@@ -87,24 +95,17 @@
    "status": "blocked",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model gemini-3.7-flash are cooling down"
-  },
-  {
-   "ts": "2026-10-10T17:38:06+0530",
-   "task_id": "T-242",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "error",
-   "summary": "I'll wait for the notification that rsp has finished."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-283",
+ "task_id": "T-223",
  "entries": [
-  "R-81c9413d"
+  "F-95185d64",
+  "R-38eb5dfd"
  ],
- "started": "2026-10-11T00:55:45+0530",
- "message": "Acting on 1 note(s) for T-283: Finish the 7 walkthrough videos blocked on account access (Twilio, Kie.ai, Dodo, Stripe, HubSpot, Zoho, Wistia) and the Google Cloud and Admin steps",
+ "started": "2026-10-11T01:01:21+0530",
+ "message": "Acting on 2 note(s) for T-223: Zoom Pro meetings in the centre: per-cohort meeting, presentation room, cap and waitlist, live board, attendance",
  "slices": {
   "T-135": 1,
   "T-148": 1,
