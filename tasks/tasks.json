@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T01:00:27+0530",
-  "version": 1650,
+  "updated": "2026-10-11T01:03:44+0530",
+  "version": 1651,
   "last_id": 387,
   "team": [
    {
@@ -7347,11 +7347,11 @@
    "evidence": [
     {
      "label": "User Flows tab (live)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1791660600#flows"
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1791660824#flows"
     },
     {
      "label": "Tasks redirect (live)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1791660600#tasks"
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1791660824#tasks"
     },
     {
      "label": "Board sync + leak guard",
@@ -7404,6 +7404,11 @@
      "ts": "2026-10-11T01:00:00+0530",
      "who": "claude",
      "note": "Amal, open the User Flows link to sign off. This pass found the live hub one step behind main (it still showed the retired Chaperone wording), so I regenerated it, pushed main (acb387a) and published the hub to the mirror (1843bc2). Checked on the live page in a headless browser: it is byte-identical to the local hub, review_hub.py reports no unknown element, the Prove It Works (Day 3) step points at playbook/d3, there is no 'Launch Control' text or old tasks section, #tasks opens the Task Command Center, the link probe passes (423 links) and there are no script errors."
+    },
+    {
+     "ts": "2026-10-11T01:03:44+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11, nothing had to change. Rechecked from scratch: review_hub.py regenerates 382 elements with no unknown element and no diff, the live hub is byte-identical to the local one, no 'Launch Control' or old tasks section in either index.html, the link probe passed (423 links, ALL LINKS OK), and in a headless browser the Prove It Works (Day 3) card opens the Day 3 chapter and #tasks opens the Task Command Center with no script errors. Amal, open the User Flows link to sign off."
     }
    ],
    "order": 1500,
