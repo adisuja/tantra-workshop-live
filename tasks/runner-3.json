@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T20:47:13+0530",
+   "task_id": "T-278",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "**COMPLETION CHECK (T-278, verify pass)**\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| 1. Run tsc and probes, push main | Done | tsc exits 0 for app and cloud. probe-cohort passes on the mirror. probe-funnels passes except `/onboarding/templates`. Main pushed and level with origin at `"
+  },
+  {
    "ts": "2026-10-10T20:24:22+0530",
    "task_id": "T-242",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "The T-248 cleanup is finished, and I've moved the task to review. I checked every item again on disk in this run.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Backup made before changing anything | Done | `~/tantra-backups/2026-10-09/` has the diffs, the untracked-file tars and the `.h"
-  },
-  {
-   "ts": "2026-10-10T15:36:02+0530",
-   "task_id": "T-240",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "error",
-   "summary": "It needs a scroll pass first to mount the shots. Adding that."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-278",
+ "task_id": "T-291",
  "entries": [
-  "F-2e1a130f",
-  "R-e2e2a9ab"
+  "F-8996d6a4"
  ],
- "started": "2026-10-10T20:25:09+0530",
- "message": "Acting on 2 note(s) for T-278: Join and success pages: one seat-link resolver, community fallback, footer links, sample dates",
+ "started": "2026-10-10T20:48:15+0530",
+ "message": "Acting on 1 note(s) for T-291: Switch the open /preview link to personal links only before the first real attendee gets a centre link",
  "slices": {
   "T-135": 1,
   "T-148": 1,

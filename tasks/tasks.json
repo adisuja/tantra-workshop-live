@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T20:46:49+0530",
-  "version": 1602,
+  "updated": "2026-10-10T20:47:40+0530",
+  "version": 1604,
   "last_id": 386,
   "team": [
    {
@@ -1777,12 +1777,13 @@
    "owner": "Ben",
    "priority": "P0",
    "due": "2026-10-14",
-   "status": "recheck",
+   "status": "done",
    "why": "Attendees need a real URL for the playbook, survey, and deck. Everything is localhost today.",
-   "spec": "Playbook, survey, and daily outputs are served by serve.py locally. For attendees to reach them during a session the machine needs a temporary public tunnel (Cloudflare Tunnel, already used for GrowthClub OS). Recipe and start script in the runbook; no permanent hosting.",
+   "spec": "Attendees reach the workshop hub, playbook, deck, survey and the static site mirror on the permanent GitHub Pages mirror https://adisuja.github.io/tantra-workshop-live/ (public repo adisuja/tantra-workshop-live). Checkout, registration and auth are excluded from the mirror. No tunnel: the preview tunnel was turned off on 2026-10-09 (T-194), so the earlier Cloudflare Tunnel recipe no longer applies to attendees or to branch previews, which stay on this Mac at 127.0.0.1.",
    "done_when": [
-    "tunnel script starts and prints the public URL",
-    "all four probes pass through the tunnel URL"
+    "hub, playbook, deck and survey load from the GitHub Pages mirror with their real titles",
+    "site mirror loads under /site/masterclass/",
+    "no tunnel job is loaded and the runbook says attendees use the mirror"
    ],
    "evidence": [
     {
@@ -1844,6 +1845,11 @@
      "ts": "2026-10-10T16:35:32+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-21 was past; now 2026-10-14 (P0 rule)."
+    },
+    {
+     "ts": "2026-10-10T20:47:40+0530",
+     "who": "claude",
+     "note": "Recheck from T-194 closed: the spec and done_when now describe the GitHub Pages mirror instead of the retired tunnel plan, and the runbook (workshop-plan/ops/runbook.md, Retired section) says the preview tunnel was turned off on 2026-10-09 and attendees use the mirror. Verified today: hub, playbook, deck, survey and /site/masterclass/ all load from https://adisuja.github.io/tantra-workshop-live/ with their real titles, and launchctl shows no preview-tunnel job (plist sits in ~/.pr-preview/disabled/). Nothing was published or pushed."
     }
    ],
    "order": 250,
@@ -12879,6 +12885,11 @@
      "ts": "2026-10-10T20:45:50+0530",
      "who": "claude",
      "note": "Verify pass: every item holds, and the one gap from the last report is closed. A new probe (app/scripts/probe-join-own-link.mjs, commit 462d17b, pushed) opens both hosted join pages against a local centre with a Zoom-registered test attendee, and the button reads Join Day 1 on Zoom with that attendee's own link, while no token and pending registration both show the link comes by email message (30 of 30 checks pass). The ripple from T-093 needed no change (intake stays at 11, fallback wording already matches); a production attendee's own link will only show once Zoom registration for the 14 Oct cohort syncs (T-197), and the template library page still fails probe-funnels on the word webinar, which is outside this task."
+    },
+    {
+     "ts": "2026-10-10T20:47:39+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-093."
     }
    ],
    "order": 2780

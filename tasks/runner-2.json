@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T20:46:39+0530",
+   "task_id": "T-225",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-225 stays blocked on Zoom Support only: Zoom has not granted the two fields yet. I fixed three gaps in the daily job and one in Check in Zoom (commit fd2fcb0, not pushed, not deployed).\n\nCOMPLETION CHECK\n- **Blocker wording and \"Asked of Adi\" line:** done. Read back from `tasks.json`: the blocker "
+  },
+  {
    "ts": "2026-10-10T20:35:53+0530",
    "task_id": "T-111",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-129 passed the verify run with nothing left to fix. It's back in review for Amal and Bharath, with no changes beyond the status note.\n\n**Completion check** (everything below was checked in this run)\n1. **Dash check:** done. `pass.py validate` checks for em and en dashes (`dash_problems`, lines 484"
-  },
-  {
-   "ts": "2026-10-10T16:33:51+0530",
-   "task_id": "T-302",
-   "mode": "feedback",
-   "status": "hold",
-   "result": "ok",
-   "summary": "T-302 is on hold until launch (T-005). I checked the rotation prep and it holds up. No key was rotated, deleted or created at any vendor.\n\n| Item | State (checked in this run) |\n|---|---|\n| `~/.config/tantra/ROTATION_PLAN.md` exists and lists names and file paths only | Done. Only the owner can read"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-225",
+ "task_id": "T-282",
  "entries": [
-  "F-bb8c3d70"
+  "R-5ce992a3"
  ],
- "started": "2026-10-10T20:37:21+0530",
- "message": "Acting on 1 note(s) for T-225: Zoom Support ticket: host mute control and participant video disable (waiting on Zoom's reply)",
+ "started": "2026-10-10T20:48:40+0530",
+ "message": "Acting on 1 note(s) for T-282: Review the seven new walkthrough videos before they go on the centres and playbook",
  "slices": {
   "T-072": 1,
   "T-245": 1,
