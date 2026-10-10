@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T16:33:51+0530",
+   "task_id": "T-302",
+   "mode": "feedback",
+   "status": "hold",
+   "result": "ok",
+   "summary": "T-302 is on hold until launch (T-005). I checked the rotation prep and it holds up. No key was rotated, deleted or created at any vendor.\n\n| Item | State (checked in this run) |\n|---|---|\n| `~/.config/tantra/ROTATION_PLAN.md` exists and lists names and file paths only | Done. Only the owner can read"
+  },
+  {
    "ts": "2026-10-10T16:29:35+0530",
    "task_id": "T-301",
    "mode": "feedback",
@@ -87,24 +95,17 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-059 is blocked: the first-lines script is built and committed (9907805), but the Tantra test campaign isn't built because there's no Tantra API key on this machine. Adi needs to create one in Tantra under Settings > API Keys and save it at `~/.config/tantra/tantra-api-key`. Then run `first_lines.p"
-  },
-  {
-   "ts": "2026-10-10T03:53:14+0530",
-   "task_id": "T-056",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-056 is blocked: I built the cleaned list (126 work-email contacts), but I have no Tantra login, so nothing was imported and no campaign was created. The import limit is not recorded and T-058 stays blocked. It needs Adi to sign in to usetantra.com or paste an API key. Both notes are acked."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-302",
+ "task_id": "T-129",
  "entries": [
-  "F-874518af"
+  "F-16092311",
+  "R-072d9f54"
  ],
- "started": "2026-10-10T16:29:56+0530",
- "message": "Acting on 1 note(s) for T-302: After launch: rotate the credentials pasted into the walkthroughs chat (Kie.ai, GoHighLevel, Instantly, Google OAuth client; Dodo stays with T-005)",
+ "started": "2026-10-10T16:34:45+0530",
+ "message": "Acting on 2 note(s) for T-129: Board hygiene: past due dates, meta.day1, dash check, T-070 title, pitch cadence",
  "slices": {
   "T-072": 1,
   "T-245": 1,

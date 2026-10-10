@@ -1,9 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T16:33:21+0530",
-  "version": 1470,
+  "updated": "2026-10-10T16:36:00+0530",
+  "version": 1539,
   "last_id": 381,
   "team": [
    {
@@ -56,7 +55,7 @@
     "Bharath"
    ],
    "priority": "P1",
-   "due": "2026-10-01",
+   "due": "2026-10-14",
    "status": "review",
    "why": "Several attendee-facing surfaces still say two different things (session format, Day 1 labels, Day 2 hours, task numbering) during a live cohort; each needs one answer from Adi before Claude makes main consistent.",
    "spec": "Open content calls from Nelbin's content pass (PR #3 content-pass and PR #4 aquila-client-content on adisuja/3-day-tantra-ai-revops-workshop, both already contained in main; PR #2 merged 2026-10-06) and issue #1 sections 3 and 6. For each answer Adi gives, Claude edits main directly (sources: app/src/lib/calendar.ts, curriculum.ts, card-education.ts, workshop-cards.ts, the Day Engine components, workshop-plan/build/*.py for the deck and survey), re-runs the probes (check-guides, probe-details, probe-onboarding-tabs, probe-headings) and logs the decision here. Unsourced hour figures (agent.tsx:653, funnel-os-types/system.tsx:211, the playbook) are handled by Claude under the no-invented-stats rule in T-256, not by this decision.",
@@ -157,6 +156,11 @@
      "ts": "2026-10-09T09:09:22+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-297, T-256."
+    },
+    {
+     "ts": "2026-10-10T16:35:32+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-10-01 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 1
@@ -207,7 +211,7 @@
    "area": "Funnel",
    "owner": "Bhaskar",
    "priority": "P0",
-   "due": "2026-09-19",
+   "due": "2026-10-14",
    "status": "review",
    "why": "The front door of the paid lane (paid traffic). It sells the 3-Day AI RevOps Workshop seat outright.",
    "spec": "Paid lane landing page app/src/app/masterclass/masterclass-client.tsx (metadata in app/src/app/masterclass/page.tsx): one $99 seat (prices from app/src/lib/prices.json via <Price/>), dates from the weekly cohort in app/src/lib/cohort.ts (Wed to Fri 11:00 ET, first real cohort Wed 7 to Fri 9 Oct 2026), checkout via /api/checkout (Dodo, Stripe as the attendee option) or the Dodo hosted link on the static mirror. Still open on main (2026-10-08): '$50M+ in tracked revenue' (line 337), '$50M+ in tracked client revenue' plus Cavli and Appster figures (lines 491 to 492) and the page.tsx description; the enterprise voice rule says slim proof with no $50M figures, and that fix is owned by T-277 (with T-117 for the FunnelOS webinar numbers). Review on https://adisuja.github.io/tantra-workshop-live/site/masterclass/ and locally; verify with node app/scripts/probe-funnels.mjs and node app/scripts/probe-workshop.mjs.",
@@ -276,6 +280,11 @@
      "ts": "2026-10-09T14:36:42+0530",
      "who": "claude",
      "note": "Repeat of the same Orchestrator note (O-fdd77ded): nothing left to build, the proof fix is already on origin/main (2adc82c) and on the mirror, and T-277 and T-117 are closed. Rechecked today on the live mirror: no $50M line and no Cavli, Appster or Coinfirm figures (those names now appear only in the three client testimonials), the slim proof reads 250+ brands, 21+ countries, 47+ industries with 'a decade' in the host bio; probe-funnels has /masterclass clean at both widths (its one failure is the word webinar in the template library), probe-workshop fails only on the older cohort date line on /masterclass/success/join at 1440 and the API checks a static mirror cannot answer. Adi: the page is ready for copy sign-off at https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791536802"
+    },
+    {
+     "ts": "2026-10-10T16:35:32+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-19 was past; now 2026-10-14 (P0 rule)."
     }
    ],
    "order": 0,
@@ -480,7 +489,7 @@
    "area": "Funnel",
    "owner": "Ben",
    "priority": "P0",
-   "due": "2026-09-18",
+   "due": "2026-10-14",
    "status": "recheck",
    "why": "The $99 / ₹9,999 front-end must self-liquidate ad spend, so checkout has to be real and tamper-proof.",
    "spec": "Seat checkout: /api/checkout (app/src/app/api/checkout/route.ts) mints a Dodo hosted checkout server-side and falls back to the hosted link on static hosts; Stripe is the attendee alternative (T-218, done). Per-currency prices live in app/src/lib/prices.json (USD 9900, INR 999900, EUR 8900, GBP 7900, AUD 14900, CAD 13900, SGD 12900, AED 36900 minor units) and are pushed to Dodo as localized price rules by app/scripts/dodo-setup.mjs; the webhook verifies the signature. Dodo product pdt_0NnpA6EIxXvDvS1F03N8Z is named 'The 3-Day AI RevOps Workshop'. Access after payment is T-122; key rotation is T-005 (after launch). Once Adi confirms, run node app/scripts/probe-live-wiring.mjs locally and close.",
@@ -558,6 +567,11 @@
      "ts": "2026-10-09T18:01:21+0530",
      "who": "claude",
      "note": "Flagged for a recheck by T-103: Its non-USD/INR price question is now answered by the final price table; the ripple note already targets it."
+    },
+    {
+     "ts": "2026-10-10T16:35:32+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-18 was past; now 2026-10-14 (P0 rule)."
     }
    ],
    "order": 40,
@@ -573,7 +587,7 @@
    "area": "Infra",
    "owner": "Adi",
    "priority": "P1",
-   "due": "2026-10-01",
+   "due": "2026-10-14",
    "status": "queue",
    "why": "Both secrets entered a chat transcript on Sep 18. Until rotated, anyone with that transcript can mint checkouts or forge webhooks.",
    "spec": "In the Dodo dashboard: regenerate the live API key and the webhook signing secret, then paste both into app/.env.local. I will restart the dev server and re-run the checkout probe. The onboarding centre Worker (revops-centre) also stores a Dodo webhook secret for its /hooks/dodo route: update it there too, or /hooks/dodo will fail signature checks. The secret it holds today belongs to the disabled staging endpoint; when the live Dodo endpoint for /hooks/dodo is created it brings its own secret, so store that one in the Worker.",
@@ -611,6 +625,11 @@
      "ts": "2026-10-09T02:13:18+0530",
      "who": "claude",
      "note": "Ripple from T-122: added the centre Worker's stored Dodo webhook secret to the rotation steps and done_when (the stored one is for the disabled staging endpoint). Still held until after launch per the owner's 2026-09-18 rule."
+    },
+    {
+     "ts": "2026-10-10T16:35:32+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-10-01 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 50,
@@ -625,7 +644,7 @@
    "area": "Infra",
    "owner": "Bharath",
    "priority": "P1",
-   "due": "2026-09-22",
+   "due": "2026-10-14",
    "status": "review",
    "why": "Owner runs everything locally through launch; one document makes restarts and the later switch to a host repeatable.",
    "spec": "Write workshop-plan/ops/runbook.md (does not exist yet). Cover every local launchd job in ~/Library/LaunchAgents (16 on 2026-10-08: com.tantra.ops, tracker-sync, board-sync, centre-sheet, launch-control-agent, launch-control-board (:8899 Task Command Center), launch-control-github, preview-gateway, preview-refresh, preview-tunnel, revops-centre-dev (:8790), revops-runner (:8791), revops-sim (:8792), revops-relay (:8793), revops-relay-tunnel, revops-funnel-preview (:8794)); only 6 of those plists are versioned in workshop-plan/ops, so copy the rest into the repo. Include start order, ports, health checks, the interpreter each job uses (com.tantra.ops still runs /usr/bin/python3 3.9.6, see T-031), backups of workshop-plan/ops/ops.db and the MongoDB tantra_tracker database (T-247), the Worker deploy command for revops-centre.growthcluborg.workers.dev, the mirror publish steps (check /Users/adithyamurali/tantra-round5-coord/LOG.md for publish holds first), and a post-launch switch plan listing every env var and the Dodo and Stripe webhook URLs that change. Mark the Namecheap relay (revops-relay, revops-relay-tunnel) as to retire: Namecheap was ruled out on 2026-10-07 (T-251).",
@@ -676,6 +695,11 @@
      "ts": "2026-10-09T19:10:25+0530",
      "who": "claude",
      "note": "Checked 8 related task(s); updating T-034, T-289."
+    },
+    {
+     "ts": "2026-10-10T16:35:32+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-22 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 60,
@@ -910,7 +934,7 @@
    "area": "Content",
    "owner": "Adi",
    "priority": "P0",
-   "due": "2026-09-18",
+   "due": "2026-10-14",
    "status": "review",
    "why": "The thing every attendee gets on Day 1 and the spine the deck and survey hang off.",
    "spec": "Source workshop-plan/playbook.html (served copy app/public/materials/playbook.html; parts embedded per day in both onboarding centres via workshop-plan/build/titlecase.py then build/embed.py). Implemented on main against Adi's owner rounds of 2026-10-05 to 10-07: hero 'The Most Complete Agentic RevOps System in B2B. Installed in 3 Days.' with no pill; Backlinko-voice intros and rewritten headlines (workshop-plan/COPY_RULES.md); exactly 9 summaries, one per sidebar section; no checkboxes or work plans; one 21px serif body (19px phones), headings 40px and 28px; funnel-fit 'Best for' boxes; 17 other funnels as dropdowns with cinematics; value-ladder table; day-plan timeline; The Funnel Equations chapter. Closed on 2026-10-09 by Orchestrator decision O-d3b4c0eb: Sales Navigator and every replaced tool are out of the playbook (7cb1dd6) and Apollo is out of the embedded FunnelOS cinematics (bbb6a23); the S3 show-up figure is the Funnel Equations reference band (25 to 40% skipping the thank-you page action, 45 to 70% taking it), the unsourced 89% is removed; T-294 and T-297 are closed. Ships without the held walkthrough videos: T-284 adds them once T-282 clears. Only the adverb 'instantly' still matches a ruled-out tool name. Review copy: https://adisuja.github.io/tantra-workshop-live/playbook.html",
@@ -979,6 +1003,11 @@
      "ts": "2026-10-09T14:22:48+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-260."
+    },
+    {
+     "ts": "2026-10-10T16:35:32+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-18 was past; now 2026-10-14 (P0 rule)."
     }
    ],
    "order": 110,
@@ -993,7 +1022,7 @@
    "area": "Content",
    "owner": "Adi",
    "priority": "P0",
-   "due": "2026-09-21",
+   "due": "2026-10-14",
    "status": "review",
    "why": "The live presentation for all three days.",
    "spec": "workshop-plan/deck.html (158 slides: Cover 1, Agenda 9, Day 1 46, Day 2 52, Day 3 45, Close 5), generated from workshop-plan/build/*.py (lanes.py, content.py, questions.py); served copy app/public/materials/deck.html is identical; mirror https://adisuja.github.io/tantra-workshop-live/deck.html. It is in use for this week's cohort (Wed 7 to Fri 9 Oct 2026). Done: #day-N links from the centre (app/src/lib/curriculum.ts) now open each day's first slide (slideFromHash, eafbd2b). Open: (1) slide 2 'Who Is Running This Week' still says 'Add your own proof point here before presenting: a named result, with a date', which needs Adi's one named, dated result (no unsourced stats); (2) the deck still names ruled-out tools (Apollo 6, SendGrid 2, GoDaddy 2, BuiltWith 2, NeverBounce, ZeroBounce, Instantly): replace them in workshop-plan/build/*.py with the approved stack (Cloudflare Registrar, Resend or Tantra email, Tantra lists and outreach), regenerate, copy to app/public/materials/deck.html, run node workshop-plan/probe-deck.mjs and probe-deck-nav.mjs, republish. T-251 sweeps app/src and cloud/src only, so this file is handled here.",
@@ -1055,6 +1084,11 @@
      "ts": "2026-10-09T14:37:41+0530",
      "who": "claude",
      "note": "Repeat Orchestrator note: both items were already finished and live. Slide 2 carries the Growth Idea, webinar #4, August 2025 result word for word from the Tantra webinar deck, and no ruled-out tool is named. Rechecked now: the done-when grep returns nothing, probe-deck is clean on all 158 slides, probe-deck-nav passes, and the live mirror is byte-identical to the source and to origin main, so nothing needed pushing. Open the deck link to approve."
+    },
+    {
+     "ts": "2026-10-10T16:35:32+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-21 was past; now 2026-10-14 (P0 rule)."
     }
    ],
    "order": 120,
@@ -1069,7 +1103,7 @@
    "area": "Content",
    "owner": "Adi",
    "priority": "P0",
-   "due": "2026-09-18",
+   "due": "2026-10-14",
    "status": "review",
    "why": "The do-half of the do-and-get loop. Attendees fill it while watching Zoom.",
    "spec": "Survey at app/public/materials/survey.html (source of truth); the 25 daily questions are mirrored in workshop-plan/build/questions.py (Day 1: 8, Day 2: 9, Day 3: 8, ids d1v5_* to d3v5_*) and the file adds 7 Day 0 tool questions (mail_provider, stack_domains, stack_reminder_email, stack_crm, stack_ai, pay_checkout, send_senders) that ride on the day1 row. Answers save per attendee on the Worker (POST /api/survey in cloud/src/index.ts, D1 survey_answers) and reach the Tantra Tracker 'Survey Answers' tab via workshop-plan/ops/tracker_sync.py (proven: the 2026-10-08 sync pulled survey_answers from https://revops-centre.growthcluborg.workers.dev). Open: (1) ruled-out tools in the survey: stack_reminder_email still offers SendGrid, and samples or hints name Apollo, GoDaddy, HeyReach, Instantly and BuiltWith; change the options to the approved stack and keep cloud/src/index.ts SURVEY_LEGACY mapping old answers to their replacement; run node workshop-plan/probe-survey.mjs; (2) Adi locks the 8/9/8 set, which is live in this week's cohort, so the output templates (T-024) and pipeline (T-031) can map to stable ids.",
@@ -1138,6 +1172,11 @@
      "ts": "2026-10-09T14:20:03+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-126, T-031, T-024."
+    },
+    {
+     "ts": "2026-10-10T16:35:32+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-18 was past; now 2026-10-14 (P0 rule)."
     }
    ],
    "order": 130,
@@ -1153,7 +1192,7 @@
    "area": "Delivery",
    "owner": "Adi",
    "priority": "P0",
-   "due": "2026-09-21",
+   "due": "2026-10-14",
    "status": "review",
    "why": "The workshop's promise is 'do something, get something, every day'. With 3 days there are 3 outputs, and the merged days each generate from twelve answers rather than six.",
    "spec": "Templates exist from 2026-09-25 (32c0910): workshop-plan/outputs/build.py generates day1.html, day2.html, day3.html (PDF-ready via @media print, SendFlow sample filled) and probe-outputs.mjs checks them. They were built against the old question list and tag inputs as Q1 to Q38. Rework: map every section to the live ids in workshop-plan/build/questions.py (d1v5_offer, d1v5_method, d1v5_buyer, d1v5_list, d1v5_funnel, d1v5_event, d1v5_channels, d1v5_commit; d2v5_channels to d2v5_commit; d3v5_tools to d3v5_commit) plus the Day 0 choices where a section needs them; drop sections with no question behind them; regenerate; extend probe-outputs.mjs to fail on any Q-number tag or unknown id. The pipeline (T-031) fills these templates, so keep them as plain HTML with named slots.",
@@ -1235,6 +1274,11 @@
      "ts": "2026-10-09T18:24:40+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-022."
+    },
+    {
+     "ts": "2026-10-10T16:35:32+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-21 was past; now 2026-10-14 (P0 rule)."
     }
    ],
    "order": 140,
@@ -1250,7 +1294,7 @@
    "area": "Content",
    "owner": "Adi",
    "priority": "P1",
-   "due": "2026-09-22",
+   "due": "2026-10-14",
    "status": "review",
    "why": "One of the three primary funnel types. It was built from the 20-funnel library definition, not the sibling whiteboard, so it is thinner than webinar and workshop.",
    "spec": "Compare the reverse squeeze page content in workshop-plan/playbook.html (#d2-the-reverse-squeeze-funnel-end-to-end, #eq-rsp) and the centre cards against the RSP / Reverse-VSL whiteboard Adi supplied 2026-09-24; fill any section thinner than the webinar and workshop-series equivalents.",
@@ -1308,6 +1352,11 @@
      "ts": "2026-10-09T19:47:20+0530",
      "who": "claude",
      "note": "The reverse squeeze section of the playbook now goes stage by stage like the webinar one: six stage subsections each with a build table and a task, plus a CRM map and a first test per stage (813 to 4,225 words, 1 to 7 tasks; webinar S1 to S6 is 5,643 words and 7 tasks). An earlier run had drafted it; I checked every line against the whiteboard scene and the centre cards, removed 17 reader-facing mentions of 'the whiteboard', fixed a phone overflow the probe caught, then pushed (origin b5fb5a5, with the generated copies of the playbook) and published the mirror (3b5ae9f90); the live page passes probe-playbook at all four widths. Open the live link and read from S1 Traffic; the comparison doc lists what the whiteboard holds, what was thin, and the eight rulings (bridge kept at 75%, no sample KPI numbers, no cost table)."
+    },
+    {
+     "ts": "2026-10-10T16:35:32+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-22 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 160,
@@ -1369,7 +1418,7 @@
    "area": "Delivery",
    "owner": "Aquila",
    "priority": "P0",
-   "due": "2026-09-21",
+   "due": "2026-10-14",
    "status": "review",
    "why": "Turns each day's answers into a personalized output. The core of the delivery engine.",
    "spec": "Current state (2026-10-08): workshop-plan/ops/tick.py (launchd com.tantra.ops, every 10 min) runs sheets.sync, courseplan.drain (headless Claude Code, OPS_CLAUDE_BIN=~/.local/bin/claude, OPS_CLAUDE_MODEL=opus, prompt prompts/course-plan.md) and referrals; courseplan only turns the registration intake survey in ops.db into a course plan (2 plans in workshop-plan/ops/plans, last 2026-09-24). The daily 8/9/8 answers are saved on the Worker (POST /api/survey, D1 survey_answers) and exported via /admin/api/export/full, which workshop-plan/ops/tracker_sync.py already reads. Nothing turns a day's answers into that day's output, although the playbook and both centres promise it (owner 2026-10-06). Build: (1) a step in tick.py that pulls new or changed survey_answers rows from the Worker admin export, fills that day's template from T-024 with headless Claude Code, and stores the HTML per attendee and day, idempotent on (attendee, day, updated_at); (2) fix the interpreter: the ~/Library/LaunchAgents/com.tantra.ops.plist and workshop-plan/ops/com.tantra.ops.plist run /usr/bin/python3 (3.9.6), which has no importlib.metadata.packages_distributions (1,158 errors in workshop-plan/ops/tick.log); switch to /Library/Frameworks/Python.framework/Versions/3.12/bin/python3 like com.tantra.tracker-sync and reload the job. PDF and link are T-032, delivery T-033.",
@@ -1455,6 +1504,11 @@
      "ts": "2026-10-09T18:26:38+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-032."
+    },
+    {
+     "ts": "2026-10-10T16:35:32+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-21 was past; now 2026-10-14 (P0 rule)."
     }
    ],
    "order": 210,
@@ -1470,7 +1524,7 @@
    "area": "Delivery",
    "owner": "Aquila",
    "priority": "P1",
-   "due": "2026-09-21",
+   "due": "2026-10-14",
    "status": "review",
    "why": "Attendees get a downloadable PDF and a link, same day.",
    "spec": "Not built (2026-10-08): no PDF step anywhere in workshop-plan/ops or cloud/src. For each day output HTML written by T-031, render a PDF with Playwright page.pdf (the T-024 templates already carry @media print rules) and publish both at a per-attendee, unguessable link, reusing the path that serves course plans (T-127, ops.py /plans and OPS_PLAN_BASE) or the Worker's R2 storage if attendees must reach it while this Mac is offline (pick one and record it in workshop-plan/ops/runbook.md, T-006). Record the link against the attendee and day so T-033 can send it and the centre can show it.",
@@ -1551,6 +1605,11 @@
      "ts": "2026-10-09T19:15:05+0530",
      "who": "claude",
      "note": "Checked 11 related task(s); updating T-031, T-033, T-006."
+    },
+    {
+     "ts": "2026-10-10T16:35:32+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-21 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 220,
@@ -1570,7 +1629,7 @@
     "Bharath"
    ],
    "priority": "P1",
-   "due": "2026-09-22",
+   "due": "2026-10-14",
    "area": "Delivery",
    "order": 230,
    "title": "T-033: held back (private client detail)",
@@ -1589,7 +1648,7 @@
    "area": "Delivery",
    "owner": "Aquila",
    "priority": "P0",
-   "due": "2026-09-22",
+   "due": "2026-10-14",
    "status": "blocked",
    "why": "Each weekly cohort's Day 1 depends on the loop; a failed loop breaks the do-and-get promise.",
    "spec": "End-to-end dry run before the next weekly cohort (Wed to Fri 11:00 ET): daily survey on the Worker (POST /api/survey) to day output (T-031) to PDF and link (T-032) to email and WhatsApp through Tantra (T-033), with three test personas (SendFlow, Apex Growth, Sarah Chen from workshop-plan/build/questions.py) on the test identity the owner's Google test identity and plus-addressed variants, tagged test so they stay out of real counts. Record the time from submit to delivery per persona in workshop-plan/ops/runbook.md (T-006).",
@@ -1668,6 +1727,11 @@
      "ts": "2026-10-09T19:09:59+0530",
      "who": "claude",
      "note": "Harness already built (dryrun_day1.py) and passes on stand-ins; re-checked today: --require-real still refuses (pdf, delivery not built). T-033 is now being built against a stub, so the real run still waits on real T-031/T-032 outputs; nothing else to change."
+    },
+    {
+     "ts": "2026-10-10T16:35:32+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-22 was past; now 2026-10-14 (P0 rule)."
     }
    ],
    "order": 240,
@@ -1682,7 +1746,7 @@
    "area": "Delivery",
    "owner": "Ben",
    "priority": "P0",
-   "due": "2026-09-21",
+   "due": "2026-10-14",
    "status": "recheck",
    "why": "Attendees need a real URL for the playbook, survey, and deck. Everything is localhost today.",
    "spec": "Playbook, survey, and daily outputs are served by serve.py locally. For attendees to reach them during a session the machine needs a temporary public tunnel (Cloudflare Tunnel, already used for GrowthClub OS). Recipe and start script in the runbook; no permanent hosting.",
@@ -1745,6 +1809,11 @@
      "ts": "2026-10-09T08:39:56+0530",
      "who": "claude",
      "note": "Flagged for a recheck by T-194: Spec says the machine needs a temporary public Cloudflare tunnel for attendees; tunnel is now off and GitHub Pages is the route."
+    },
+    {
+     "ts": "2026-10-10T16:35:32+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-21 was past; now 2026-10-14 (P0 rule)."
     }
    ],
    "order": 250,
@@ -1760,7 +1829,7 @@
    "area": "Ops",
    "owner": "Nelbin",
    "priority": "P0",
-   "due": "2026-09-20",
+   "due": "",
    "status": "hold",
    "why": "The community is the retention surface and the thank-you page's destination.",
    "spec": "Create one WhatsApp chat group and one read-only announcement group (mirroring the Fintech Circle setup). The join pages read COMMUNITY_URL from app/src/lib/funnel.ts, which falls back to the placeholder https://chat.whatsapp.com/REPLACE-WITH-COHORT-INVITE (line 133) unless NEXT_PUBLIC_COMMUNITY_URL is set. When the link exists: set NEXT_PUBLIC_COMMUNITY_URL (or the constant), rebuild the static export (app/scripts/export-static.sh), republish the mirror and run node app/scripts/probe-funnels.mjs.",
@@ -1804,6 +1873,11 @@
      "ts": "2026-10-08T00:49:40+0530",
      "who": "claude",
      "note": "Pass 2 correction: no real cohort is running yet in the centre."
+    },
+    {
+     "ts": "2026-10-10T16:35:32+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-20 was past; now none (cleared: on hold, nothing depends on a deadline)."
     }
    ],
    "order": 260,
@@ -1818,7 +1892,7 @@
    "area": "Ops",
    "owner": "Nelbin",
    "priority": "P1",
-   "due": "2026-09-20",
+   "due": "",
    "status": "hold",
    "why": "Moderation from day one.",
    "spec": "Aquila, Bhaskar, Adi, Amal, Vaibhavi.",
@@ -1860,6 +1934,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: blocker now names T-040 (groups do not exist); 'Vaibhavi' is not in the team roster (meta.team), kept from the original list, UNVERIFIED."
+    },
+    {
+     "ts": "2026-10-10T16:35:32+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-20 was past; now none (cleared: on hold, nothing depends on a deadline)."
     }
    ],
    "order": 270,
@@ -1874,7 +1953,7 @@
    "area": "Traffic",
    "owner": "Bhaskar",
    "priority": "P1",
-   "due": "2026-09-20",
+   "due": "2026-10-14",
    "status": "review",
    "why": "Registrants go cold between sign-up and Wednesday's Day 1; the sequence protects show-up rate and carries the free lane's VIP upsell.",
    "spec": "Write the pre-workshop sequence copy, sign-up to Day 1, for both lanes: free (/workshop) and paid (/masterclass). Messages: confirmation with centre link and private calendar link (same content as the welcome email, T-228), what to prepare before Day 1 (tool sign-ups from the Day 0 cards), and for the free lane only one VIP upgrade message pointing at /vip. The sequence will run as a Tantra omni-channel campaign (email, WhatsApp, LinkedIn steps) fed by registrant import (T-052), so write each message per channel with Tantra contact fields for name, centre link and calendar link. No 'Build Pass', 'Live Pass', 'webinar' or invented stats; Backlinko voice per workshop-plan/COPY_RULES.md; no dashes. Cohort dates come from the weekly schedule function, never hardcoded. Day-before and 1-hour reminder sending is T-234; this task supplies their copy. Save to workshop-plan/sequences/pre.md (folder does not exist yet).",
@@ -1916,6 +1995,11 @@
      "ts": "2026-10-09T19:11:13+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-052, T-228."
+    },
+    {
+     "ts": "2026-10-10T16:35:32+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-20 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 290,
@@ -1930,7 +2014,7 @@
    "area": "Traffic",
    "owner": "Bhaskar",
    "priority": "P1",
-   "due": "2026-09-22",
+   "due": "2026-10-14",
    "status": "review",
    "why": "The upsell to Tantra Pro and Enterprise continues after Day 3, and retention into the paid plan starts here.",
    "spec": "Write the post-workshop sequence copy, end of Day 3 to +14 days: replay links (Zoom cloud recordings per cohort day, T-223), the Tantra Pro course offer ($999, name pending T-116), Tantra Enterprise ($9,999, 1 year platform access, Cal.com call-booking CTA), and retention nudges into the Tantra Plan (Pro $99/mo). It will run as a Tantra omni-channel campaign (email, WhatsApp, LinkedIn steps) that attendees enter at Day 3 end (T-052); write each message per channel. No invented stats, no dashes, Backlinko voice (workshop-plan/COPY_RULES.md). Same-day replay to no-shows and low-engagement nudges are T-235, not here. Save to workshop-plan/sequences/post.md.",
@@ -1977,6 +2061,11 @@
      "ts": "2026-10-09T19:17:00+0530",
      "who": "claude",
      "note": "Wrote workshop-plan/sequences/post.md: 7 steps from Day 3 end to +14 days, email/WhatsApp/LinkedIn per step, with replay merge fields, Tantra Pro course ($999, one {{PRO_COURSE_NAME}} token), Enterprise ($9,999, 1 year, Cal.com {{ENTERPRISE_CALL_URL}}) and $99/mo retention nudges. Linted by grep: no dashes, no Calendly, no literal dates, no stats; T-235 messages left out. Ripple from T-116 applied (bare Tantra Pro = $99/mo only)."
+    },
+    {
+     "ts": "2026-10-10T16:35:32+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-22 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 300,
@@ -1995,7 +2084,7 @@
     "Bharath"
    ],
    "priority": "P1",
-   "due": "2026-09-22",
+   "due": "2026-10-14",
    "area": "Traffic",
    "order": 310,
    "title": "T-052: held back (private client detail)",
@@ -2014,7 +2103,7 @@
    "area": "Traffic",
    "owner": "Bhaskar",
    "priority": "P1",
-   "due": "2026-09-20",
+   "due": "2026-10-14",
    "status": "review",
    "why": "The organic LinkedIn lane is the zero-cost traffic source, and per-member links feed the referral commission.",
    "spec": "Draft LinkedIn posts with Claude Code from the 'LinkedIn Creator Taxonomy' tab in the Work Tracker, 5 per day per team member. Every link is that member's referral link from the public referral dashboard (utm_source=referral, utm_content=<member code>, T-211). Rotate software, consultancy and course examples (any-B2B positioning); no invented stats, no 'webinar', no dashes.",
@@ -2059,6 +2148,11 @@
      "ts": "2026-10-09T19:14:36+0530",
      "who": "claude",
      "note": "Drafted 5 days x 5 posts for Adi, Bhaskar, Nelbin, Aquila, Amal, Ben, Bharath and bhaskardev (200 posts), shaped on the Creator Taxonomy formats and rotating software, consultancy and course examples in the Backlinko voice. A script confirmed every first-comment link carries utm_source=referral and that member's utm_content, with no banned words, dashes, stats or dates; I checked the page at 1440 and 390 wide on localhost and the mirror. Open the page and approve the voice; nothing was posted."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-20 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 320,
@@ -2073,7 +2167,7 @@
    "area": "Traffic",
    "owner": "Nelbin",
    "priority": "P1",
-   "due": "2026-09-20",
+   "due": "2026-10-14",
    "status": "review",
    "why": "Attribution per channel and per team member.",
    "spec": "Verified 2026-09-24 for one channel: /workshop?utm_source=linkedin&utm_medium=dm&utm_content=post-7 put all four UTMs on the registration row, and first-touch UTMs persist through survey and checkout. Remaining: run one test visit per channel to both /workshop and /masterclass (LinkedIn post, LinkedIn DM, WhatsApp, email, cold calendar invite, and a teammate referral link from the referral dashboard, T-211, utm_source=referral, utm_content=<member code>), register with a plus-addressed the owner's Google test identity, and confirm each row in the Work Tracker 'Funnel, Free Registrations' and paid tabs and in the Tantra Tracker carries the right source, medium, campaign and content. Then delete the test rows (T-107).",
@@ -2142,6 +2236,11 @@
      "ts": "2026-10-09T17:51:55+0530",
      "who": "claude",
      "note": "Repeat of the Orchestrator note: this was already carried out today at 17:47 (all 6 channels on /workshop and /masterclass, 18 rows correct in the Work Tracker and Tantra Tracker, referral credited to member code adi, no payment made). Rechecked now without resubmitting: the cleanup dry run finds 0 test or probe rows left in the six Work Tracker tabs, ops.db and the form log, and the Tantra Tracker holds 0 of the 18 test rows. Nothing new to build; Nelbin and Bharath can sign off from the evidence table at workshop-plan/outputs/t054-utm-channels-2026-10-09.md."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-20 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 330,
@@ -2157,7 +2256,7 @@
    "area": "Traffic",
    "owner": "Bhaskar",
    "priority": "P2",
-   "due": "2026-09-21",
+   "due": "2026-10-16",
    "status": "blocked",
    "why": "Second organic lane after content posting.",
    "spec": "Build the cold calendar outreach list for the workshop and import it into Tantra as a contact list for a calendar-invite campaign. Owner model (2026-10-07): Tantra sends the cold calendar invites through a Google service account per Workspace user uploaded to Tantra; bought lists come pre-verified (no ZeroBounce or NeverBounce). Sources: reuse existing client lists where the person overlaps (UNVERIFIED that Adi still wants this), and LinkedIn Sales Navigator exports only if T-260 approves Sales Navigator. No Expandi, Apollo, HeyReach or Instantly. The import screen in Tantra shows the upload limit (s1-cold-calendar guide, b88a7a6), so record it when importing.",
@@ -2200,6 +2299,11 @@
      "ts": "2026-10-10T03:53:09+0530",
      "who": "claude",
      "note": "Built the cleaned list (126 work-email contacts from the verified prospect CSV, 6 free-mail dropped, 0 duplicates, 0 invalid; saved outside the repo because it holds personal data). I have no Tantra login in this run and may not sign in as Adi, so the import, import limit and draft calendar-invite campaign are not done; T-058 stays blocked."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-21 was past; now 2026-10-16 (P2 rule)."
     }
    ],
    "order": 350,
@@ -2214,7 +2318,7 @@
    "area": "Product",
    "owner": "Bharath",
    "priority": "P1",
-   "due": "2026-09-19",
+   "due": "2026-10-14",
    "status": "review",
    "why": "The outreach lane runs through the product itself; a dead app means no outreach lane.",
    "spec": "Adi stated on 2026-10-07 that Tantra omni-channel campaigns (email, WhatsApp, LinkedIn) are live. Bharath confirms in writing that the team's own LinkedIn profiles can be connected and run outreach campaigns in Tantra now, and records (1) the per-profile daily connection and message caps Tantra enforces and (2) the app URL that answers: calendar.usetantra.com still times out from this Mac on 2026-10-08 (T-147), and it is the production APP_ENTRY_URL in app/src/lib/seo/site.ts:41. If the lane is not ready, it pauses; it does not move to an unapproved tool.",
@@ -2266,6 +2370,11 @@
      "ts": "2026-10-09T19:09:48+0530",
      "who": "claude",
      "note": "Checked 2 related task(s); updating T-058."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-19 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 360,
@@ -2281,7 +2390,7 @@
    "area": "Traffic",
    "owner": "Bhaskar",
    "priority": "P1",
-   "due": "2026-09-21",
+   "due": "2026-10-14",
    "status": "doing",
    "why": "Depends on T-057.",
    "spec": "Each team member connects their own LinkedIn profile in Tantra (needs their own login, so not Claude), then campaigns launch from the T-056 list with first lines from T-059 and each member's referral link (T-211). Respect the daily caps recorded in T-057. Track replies and registrations per member on the referral dashboard.",
@@ -2344,6 +2453,11 @@
      "ts": "2026-10-09T19:16:13+0530",
      "who": "claude",
      "note": "Checked 6 related task(s); updating T-275."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-21 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 370,
@@ -2358,7 +2472,7 @@
    "area": "Traffic",
    "owner": "Aquila",
    "priority": "P2",
-   "due": "2026-09-22",
+   "due": "2026-10-16",
    "status": "blocked",
    "why": "Personalised first lines lift reply and registration rates on the outreach that fills each weekly cohort; today every prospect gets the same opener.",
    "spec": "Our own outreach for the weekly cohort runs as Tantra omni-channel campaigns (email from vendor-bought inboxes connected to Tantra, LinkedIn through Tantra; owner model in memory google-and-reminder-model.md). Prospect lists come pre-verified from the data vendors (no Apollo, no paid verification). Steps: (1) confirm in Tantra whether a campaign step can use a per-contact custom field (for example {first_line}); (2) write a small script that takes a lead CSV (name, title, company, profile and company summary) and generates one first line per lead with Claude or OpenAI, in the style of the proven client playbook (no client name in public files); (3) import the leads with the first_line field into a test Tantra campaign and send to the the owner's Google test identity test identity first; (4) run one real batch against a control batch without personalisation. Approved tools only; no HeyReach, Instantly or Apollo.",
@@ -2410,6 +2524,11 @@
      "ts": "2026-10-10T15:41:33+0530",
      "who": "claude",
      "note": "Personalization engine spec items written for the AI first lines (from T-250): workshop-plan/ops/personalization-engine-spec.md, pushed in 305808f. Status unchanged."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-22 was past; now 2026-10-16 (P2 rule)."
     }
    ],
    "order": 380,
@@ -2424,7 +2543,7 @@
    "area": "Content",
    "owner": "Adi",
    "priority": "P1",
-   "due": "2026-09-19",
+   "due": "",
    "status": "hold",
    "why": "The success pages and /vip play a scripted-caption preview over a poster (owner kept it on 2026-10-06); a real recording would replace it whenever Adi records one.",
    "spec": "Current state: app/src/lib/funnel.ts line 145 VSL_SRC = process.env.NEXT_PUBLIC_VSL_SRC (empty), VSL_PENDING true, so the player (restored in T-203, ac7da75) shows the poster plus scripted captions on https://adisuja.github.io/tantra-workshop-live/site/workshop/success/, https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/ and https://adisuja.github.io/tantra-workshop-live/site/vip/ . When Adi supplies an MP4 (1080p, under 60 MB, captions or the timed script), Claude encodes it, hosts it next to the site assets, sets NEXT_PUBLIC_VSL_SRC, rebuilds and republishes the mirror, and re-runs app/scripts/probe-funnels.mjs.",
@@ -2462,6 +2581,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: owner decided on 2026-10-06 to keep the scripted-caption VSL preview as is (owner-decisions-2026-10-06.md), so the ask is no longer a ship decision; it only waits for an optional recording. Verified VSL_SRC still reads NEXT_PUBLIC_VSL_SRC with VSL_PENDING in app/src/lib/funnel.ts lines 145 to 146."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-19 was past; now none (cleared: on hold, nothing depends on a deadline)."
     }
    ],
    "order": 390,
@@ -2480,7 +2604,7 @@
     "Aquila"
    ],
    "priority": "P1",
-   "due": "2026-09-22",
+   "due": "2026-10-14",
    "area": "Traffic",
    "order": 400,
    "title": "T-061: held back (private client detail)",
@@ -2499,7 +2623,7 @@
    "area": "Product",
    "owner": "Bharath",
    "priority": "P0",
-   "due": "2026-09-20",
+   "due": "",
    "status": "hold",
    "why": "The paid seat promises platform access; nobody has confirmed what the Tantra backend does with a workshop payment.",
    "spec": "Dodo has one live webhook, https://api.usetantra.com/api/v1/webhooks/dodo/prod, which receives every workshop payment (paid seat on /masterclass and VIP on /vip, product pdt_0NnpA6EIxXvDvS1F03N8Z). That handler was written for Tantra app plans. Bharath confirms whether it ignores, errors on, or provisions a plan for this product, and whether the Tantra Plan included with the seat can be granted by it or must be granted from the centre's attendee list (D1 in the revops-centre Worker). Stripe attendee payments (T-218, live) need the same answer. Code comments still call the product 'Build Pass' (app/src/app/api/checkout/route.ts line 5, app/src/app/api/dodo/webhook/route.ts line 83); rename them when this is integrated.",
@@ -2542,6 +2666,11 @@
      "ts": "2026-10-09T02:12:58+0530",
      "who": "claude",
      "note": "Ripple from T-122 recorded: the centre's /hooks/dodo is deployed and verified (version ec4b49cd, migration 0018 applied), so the centre can grant the seat or VIP access once a Dodo endpoint with its own new signing secret is added and stored in the centre (asked on T-122). Nothing else in this task changes: what api.usetantra.com does with pdt_0NnpA6EIxXvDvS1F03N8Z is still Bharath's question, and it stays on your hold."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-20 was past; now none (cleared: on hold, nothing depends on a deadline)."
     }
    ],
    "order": 420,
@@ -2557,10 +2686,10 @@
    "area": "Product",
    "owner": "Bhaskar",
    "priority": "P1",
-   "due": "2026-09-23",
+   "due": "2026-10-14",
    "status": "review",
    "why": "The $999 offer is pitched in the workshop but there is no way to buy it.",
-   "spec": "Current state: app/src/app/(site)/pro/page.tsx and pro-client.tsx render an old 'Tantra Pro: 3-month cohort program' lander (25 seats per cohort, stats '$50M+', '250+', '3 mo', '8 mo'), its form posts to an n8n webhook (line 16 WEBHOOK_URL, fetch at line 186) and then redirects to /success; it is published on the mirror at https://adisuja.github.io/tantra-workshop-live/site/pro/ . Rebuild it as the Tantra Pro course offer from the owner ladder (memory tantra-plan-lineup.md, 2026-09-30): $999, course plus community plus group coaching. Add a Pro price table (app/src/lib/prices.json is the seat-only table read by lib/currency.ts and scripts/dodo-setup.mjs, so add a separate Pro table or keyed entry), create the Dodo product via dodo-setup.mjs plus Stripe as the attendee option, hosted checkout like the seat. Remove the $50M+ stat and anything unsourced. The n8n removal is T-087. Name depends on T-116; when Pro is pitched depends on T-129.",
+   "spec": "Current state: app/src/app/(site)/pro/page.tsx and pro-client.tsx render an old 'Tantra Pro: 3-month cohort program' lander (25 seats per cohort, stats '$50M+', '250+', '3 mo', '8 mo'), its form posts to an n8n webhook (line 16 WEBHOOK_URL, fetch at line 186) and then redirects to /success; it is published on the mirror at https://adisuja.github.io/tantra-workshop-live/site/pro/ . Rebuild it as the Tantra Pro course offer from the owner ladder (memory tantra-plan-lineup.md, 2026-09-30): $999, course plus community plus group coaching. Add a Pro price table (app/src/lib/prices.json is the seat-only table read by lib/currency.ts and scripts/dodo-setup.mjs, so add a separate Pro table or keyed entry), create the Dodo product via dodo-setup.mjs plus Stripe as the attendee option, hosted checkout like the seat. Remove the $50M+ stat and anything unsourced. The n8n removal is T-087. Name depends on T-116; Pitch timing (decided, recorded in T-129): Pro is pitched only at the close of Day 3, as the deck's offer slide and the s4-challenge guide teach.",
    "done_when": [
     "https://adisuja.github.io/tantra-workshop-live/site/pro/ checks out in USD, EUR and INR with prices from the new Pro table",
     "No n8n call and no $50M+ in app/src/app/(site)/pro",
@@ -2626,6 +2755,16 @@
      "ts": "2026-10-09T08:04:28+0530",
      "who": "claude",
      "note": "Re-run of note F-43b6a66f: nothing left to build, the earlier run already did all of it (commit 255576b, now in origin/main). Re-verified today: probe-pro.mjs passes every check on the live mirror, where US, DE and IN visitors see $999, €997 and ₹99,999 and Dodo's hosted checkout for pdt_0NpKlRqJAjyAf3axboQSR shows the same amounts; app/src/app/(site)/pro has no n8n, $50M+ or cohort copy. Open https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071b . The newer Orchestrator note F-71dc8ef6 (republish from main, fulfilment wording check) is still unread and was not part of this run."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-23 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-10T16:36:00+0530",
+     "who": "claude",
+     "note": "Spec updated from T-129: Pro is pitched at the close of Day 3 only (no longer pending)."
     }
    ],
    "order": 430,
@@ -2641,7 +2780,7 @@
    "area": "Product",
    "owner": "Bhaskar",
    "priority": "P2",
-   "due": "2026-09-29",
+   "due": "2026-10-16",
    "status": "blocked",
    "why": "Enterprise is pitched at the Day 3 close and its booking page runs on Calendly, which is ruled out; the workshop visuals still call it 'Chaperone'.",
    "spec": "(1) tantra-frontend-v2 /enterprise (src/app/enterprise/page.tsx, calendly-embed.tsx, src/lib/marketing/enterprise-call.ts ENTERPRISE_CALENDLY_URL and applyOwnerCorrections) embeds the Calendly event 'Tantra Enterprise Evaluation Call'. Replace it with a Cal.com event of the same name and the owner's description (1 year of platform access, never 10; 3 months of 1:1, course, community and coaching; no $50MN, no testimonials per the enterprise voice rule), embedded with Cal.com's inline embed. (2) In this repo rename every 'Chaperone' to 'Tantra Enterprise': app/src/components/masterclass/funnel-os-challenge.tsx lines 12, 252, 306, 351, 418, 423, 433, 440 and app/src/components/masterclass/funnel-os-types/system.tsx line 541 (leave the verbatim client example data in app/src/lib/examples/data/real-foundation.ts untouched). Rebuild the playbook funnels (workshop-plan/build/funnels.py) and republish.",
@@ -2706,6 +2845,11 @@
      "ts": "2026-10-10T15:32:12+0530",
      "who": "claude",
      "note": "Verified again: /enterprise on adi-new-ui (5d6eecf) loads Cal.com embed.js and renders the inline calendar in brand purple when pointed at a live event, makes zero Calendly requests, and shows the Request a call card while the adisuja event is still 404. The challenge board on the mirror says Tantra Enterprise 7 times and Chaperone 0, and I retired the last Chaperone and 10 year wording in the review hub (32f8372). Only the Cal.com event itself is left, then Bhaskar signs off the copy."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-29 was past; now 2026-10-16 (P2 rule)."
     }
    ],
    "order": 440,
@@ -2724,7 +2868,7 @@
     "Amal"
    ],
    "priority": "P2",
-   "due": "2026-10-07",
+   "due": "2026-10-16",
    "area": "Product",
    "order": 450,
    "title": "T-073: held back (private client detail)",
@@ -2747,7 +2891,7 @@
     "Bharath"
    ],
    "priority": "P2",
-   "due": "2026-10-07",
+   "due": "2026-10-16",
    "area": "Product",
    "order": 460,
    "title": "T-074: held back (private client detail)",
@@ -2823,7 +2967,7 @@
    "area": "Infra",
    "owner": "Nelbin",
    "priority": "P2",
-   "due": "2026-09-22",
+   "due": "2026-10-16",
    "status": "review",
    "why": "Team-facing project setup.",
    "spec": "The six funnel tabs exist in the Tantra Work Tracker (workshop-plan/ops/funnel_tabs.py: Free / Paid Registrations, Free / Paid Intake Survey, Checkout Starts, Checkout Returns). Find the Google Doc named 'Consolidated Funnel Doc' in Drive, add one tab per funnel tab with a one-line description and the matching sheet tab link. First ask Nelbin in the task log whether the doc is still used; if not, remove this task.",
@@ -2863,6 +3007,11 @@
      "ts": "2026-10-10T03:55:43+0530",
      "who": "claude",
      "note": "Added six new tabs (Funnel: Free Registrations, Paid Registrations, Free Intake Survey, Paid Intake Survey, Checkout Starts, Checkout Returns) to 'Tantra Consolidated Funnel Documentation' via the Docs API; each has a one-line description and a #gid= link to its Work Tracker tab, Checkout Returns marked unverified. Re-read the doc to confirm text and links; no existing tab touched. Open https://docs.google.com/document/d/1p7-I7hMaHE3uJYw1oKz8VsJdpBwPi4hjzuZ_hgOnx-Q/edit?tab=t.dr12g7dtpiel . FYI Nelbin: doc confirmed in use (Webinar Script, Live Assets), so this task stays; please sign off."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-22 was past; now 2026-10-16 (P2 rule)."
     }
    ],
    "order": 480,
@@ -3081,7 +3230,7 @@
    "area": "Funnel",
    "owner": "Ben",
    "priority": "P1",
-   "due": "2026-09-22",
+   "due": "2026-10-14",
    "status": "review",
    "why": "Owner: no n8n, ever.",
    "spec": "git grep 'n8n.growthclub.org' -- app on main f6aeb7e finds: app/src/app/(site)/pro/pro-client.tsx line 16 (WEBHOOK_URL; the form fetch is at line 186, the error log at line 192); app/scripts/probe-masterclass-form.mjs line 6 and app/scripts/shoot-success.mjs lines 41 and 93 (route stubs). Also app/src/app/api/dodo/webhook/route.ts line 19 falls back to NEXT_PUBLIC_LEAD_WEBHOOK_URL (app/.env.example line 19), the old n8n lead hook. Do: point the /pro form at logForm (app/src/lib/form-log.ts line 95) like the other funnel forms, drop the NEXT_PUBLIC_LEAD_WEBHOOK_URL fallback and the .env.example line, update the two scripts' stubs to the Apps Script receiver, rebuild and republish the mirror (the old /pro is live at https://adisuja.github.io/tantra-workshop-live/site/pro/). This also closes the last item of T-030. The /pro offer rebuild itself is T-071.",
@@ -3143,6 +3292,11 @@
      "ts": "2026-10-09T19:31:57+0530",
      "who": "claude",
      "note": "No n8n call is left in app code: /pro was already rebuilt by T-071 (no form, no WEBHOOK_URL); I removed the NEXT_PUBLIC_LEAD_WEBHOOK_URL fallback in the Dodo route and .env.example, and pointed both probe scripts' stubs at script.google.com. The remaining 'n8n' grep hits are product mentions (integration catalog, copy, probe assertions), not dependencies. probe-workshop.mjs passes except one unrelated hardcoded 'Wed 14 Thu 15 Fri 16 Oct' copy check on /masterclass/success/join; probe-seat-payments needs secrets. Commit is local: origin/main rejected the push (remote is ahead), and no mirror republish was needed since nothing user-visible changed."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-22 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 870,
@@ -3158,7 +3312,7 @@
    "area": "Product",
    "owner": "Ben",
    "priority": "P1",
-   "due": "2026-09-23",
+   "due": "2026-10-14",
    "status": "review",
    "why": "Owner request: a toggle plus an intelligent default based on the visitor's own timezone.",
    "spec": "Three states: Auto, Light, Dark. Auto resolves from the visitor's local hour, light 06:00 to 17:59 and dark otherwise, and flips live at the boundary without a reload. Resolved by an inline script before first paint so there is no flash of the wrong theme. The OS preference is deliberately ignored because the rule is time-based. Applies to the centre and workshop control; the funnel landing pages stay dark at every theme because that design is conversion-tested.",
@@ -3211,6 +3365,11 @@
      "ts": "2026-10-09T17:53:06+0530",
      "who": "claude",
      "note": "Repeat Orchestrator note (O-7fa7a063) rechecked: the funnel-stays-dark decision, the trimmed done_when and the ask were already applied on the earlier pass. Re-ran probe-theme.mjs on the live mirror just now: all checks pass at 1440 and 390 (light 06:00 to 17:59, no flash, live flip at 18:00, both themes readable) and both links answer 200, so no drift and no republish. Stays in review for Ben, Bharath and Adi to open the two links."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-23 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 900,
@@ -3227,7 +3386,7 @@
    "area": "Funnel",
    "owner": "Bhaskar",
    "priority": "P1",
-   "due": "2026-09-23",
+   "due": "2026-10-14",
    "status": "review",
    "why": "The free lane is the net-new funnel: registration, survey, confirmation, then the VIP fork.",
    "spec": "Separate URLs from the paid lane so the two can be tracked and optimised independently. Registration is signup-only with no pass comparison and no price. Thank-you 1 runs the 11-question intake survey (the same question set as the paid lane, cut from 18 in T-278) before the community step, because anyone who joins the group first never returns to fill it in. Thank-you 2 carries the confirmation links and then offers the VIP seat once, below them, with no price on the page.",
@@ -3290,6 +3449,11 @@
      "ts": "2026-10-09T17:59:02+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-278."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-23 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 910,
@@ -3305,7 +3469,7 @@
    "area": "Funnel",
    "owner": "Bhaskar",
    "priority": "P1",
-   "due": "2026-09-23",
+   "due": "2026-10-14",
    "status": "review",
    "why": "The only page in the product that takes money from the free lane.",
    "spec": "/vip has its own URL and offer stack so its conversion reads separately from the paid lane. It is the only surface that uses the word VIP: the paid lane (/masterclass) sells the same $99 seat outright in one card, and the onboarding centre names no tier. The VSL slot shows the scripted-caption preview the owner kept on 2026-10-06. Small fix: app/src/app/vip/vip-client.tsx line 7 comment still says 'Build Pass'; change it to 'the $99 seat on /masterclass'. Bonus stack approval is T-100.",
@@ -3368,6 +3532,11 @@
      "ts": "2026-10-09T17:59:57+0530",
      "who": "claude",
      "note": "Repeat Orchestrator note rechecked, nothing left to change: the line 7 comment fix is already on origin main (c0f1897), git grep 'build pass' in app/src/app/vip returns nothing locally and on origin, and no /vip source has changed since. So no new push or republish was made. Verified today: tsc clean, both mirror pages answer 200, shoot-vip on the live mirror shows 9 exhibits, 0 overflow, 0 console errors; the T-141 hold is lifted (T-141 done). Stack, key art, recap and VSL preview untouched."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-23 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 920,
@@ -3383,7 +3552,7 @@
    "area": "Ops",
    "owner": "Nelbin",
    "priority": "P2",
-   "due": "2026-09-23",
+   "due": "2026-10-16",
    "status": "review",
    "why": "Owner asked for per-attendee access control during the workshop without a redeploy; it exists only in the local admin, not in the live centre that runs the weekly cohort.",
    "spec": "Local admin app/src/app/admin (admin-client.tsx) flags attendees whose personal link is used on more than 20 devices, editable globally or per attendee. The live centre admin (cloud/admin-ui/admin.js, cloud/src/index.ts) has no such control. Do: (1) check whether the Worker records a device or session per attendee link (cloud/src/index.ts session cookie handling around lines 725 to 761); if not, record a hashed device id per session in D1 with a migration; (2) add a 'Devices' column and a per-attendee cap override to the Worker admin, default 20, flag only (never block; no time locks per owner rule 2026-10-02); (3) deploy the Worker and verify with a test attendee. Then retire the local admin page.",
@@ -3425,6 +3594,11 @@
      "ts": "2026-10-10T03:59:45+0530",
      "who": "claude",
      "note": "People: reviewers Nelbin → Nelbin/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-23 was past; now 2026-10-16 (P2 rule)."
     }
    ],
    "order": 940,
@@ -3570,7 +3744,7 @@
    "area": "Ops",
    "owner": "Nelbin",
    "priority": "P0",
-   "due": "2026-09-23",
+   "due": "",
    "status": "hold",
    "why": "Reading all 18 sources surfaced plaintext credentials in essentially every client work tracker. This is systemic: it is in the tracker template, not one careless sheet.",
    "spec": "Every tracker carries a Logins tab. Beyond that: password columns inside Outreach Domains tabs, shared-file passwords in All Docs and Links, and a Log tab holding raw automation webhook payloads with embedded API key and secret pairs. Several consolidated documents also carry registrar, workspace, cloud and model-provider logins, and one holds account backup codes. Two sources contain registrant names, emails and phone numbers. Nothing was copied anywhere and every extraction agent was instructed to skip those tabs.",
@@ -3609,6 +3783,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): checked, current. pass 2: still accurate; owner hold (rotate at the end, after launch, alongside T-005)."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-23 was past; now none (cleared: on hold, nothing depends on a deadline)."
     }
    ],
    "order": 970,
@@ -3623,7 +3802,7 @@
    "area": "Funnel",
    "owner": "Bhaskar",
    "priority": "P1",
-   "due": "2026-09-24",
+   "due": "2026-10-14",
    "status": "review",
    "why": "The stack IS the VIP sell; nine text cards didn't sell it.",
    "spec": "Each bonus: a VIP Bonus badge, a gradient name, one hook, a count, its own Kie key art and colour, and a purpose-built visual. No invented valuations: every figure is a count from the template library.",
@@ -3691,6 +3870,11 @@
      "ts": "2026-10-09T18:05:47+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-094."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-24 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 980,
@@ -3706,7 +3890,7 @@
    "area": "Funnel",
    "owner": "Bhaskar",
    "priority": "P2",
-   "due": "2026-09-24",
+   "due": "2026-10-16",
    "status": "review",
    "why": "Post-signup pages were flat black text; the funnel should read as one campaign.",
    "spec": "Step art on both join pages, a vault hero + nine 'Unlocked' bonuses on /vip/success, a welcome banner and image cards in onboarding, a guarantee seal on /vip.",
@@ -3769,6 +3953,11 @@
      "ts": "2026-10-09T18:19:45+0530",
      "who": "claude",
      "note": "Self-check done on the live mirror at 1440 and 390: all step art, the vault hero, the nine bonus cards, the welcome banner, the image cards and the /vip guarantee seal load with 0 broken images and 0 failed requests; the step image has no WhatsApp logo; no dashes, no stale Thursday copy, and every date comes from cohort.ts. One fix shipped: the paid join page intro now reads in the Backlinko voice and its seat block no longer lists the bonuses twice (origin main 1de6333, mirror 41c270f, other 198 pages unchanged in text). Open the four links below; screenshots are in workshop-plan/evidence/T-101, and the same sitting covers T-093 and T-094 (T-092 is the theme switch on the onboarding link)."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-24 was past; now 2026-10-16 (P2 rule)."
     }
    ],
    "order": 990,
@@ -3783,7 +3972,7 @@
    "area": "Funnel",
    "owner": "Ben",
    "priority": "P1",
-   "due": "2026-09-24",
+   "due": "2026-10-14",
    "status": "review",
    "why": "Every button and link on the live site must go somewhere real.",
    "spec": "Run cd /Users/adithyamurali/tantra-redesign/app && node scripts/probe-live-wiring.mjs (defaults to https://adisuja.github.io/tantra-workshop-live/site). It clicks the real buttons on the join pages, /vip and both lanes, follows checkout as far as Dodo's hosted page without paying, and fails on any wrong landing or 4xx. Fix any base-path 404 with internalHref()/apiUrl() from app/src/lib/asset.ts, rebuild and republish (check /Users/adithyamurali/tantra-round5-coord/LOG.md for publish holds first; T-141 holds the library). Only the WhatsApp community placeholder (T-040, on hold) may report PEND. Any probe rows it leaves in the Work Tracker are cleaned in T-107.",
@@ -3846,6 +4035,11 @@
      "ts": "2026-10-09T18:03:38+0530",
      "who": "claude",
      "note": "The mirror was republished (T-093) one minute after the earlier pass and renamed the join page button to 'Show me the add-on', which broke the probe's selector, not the site. I updated the selector in app/scripts/probe-live-wiring.mjs and re-ran on the live mirror: 27 of 27 pass, 0 fail, 0 pending (full output in the log entry above, second test row recorded on T-107). Ben and Bharath: open the Live VIP page link to spot check, then sign off."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-24 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 1000,
@@ -4107,7 +4301,7 @@
    "area": "Ops",
    "owner": "Nelbin",
    "priority": "P2",
-   "due": "2026-09-24",
+   "due": "2026-10-16",
    "status": "review",
    "why": "Test rows must not reach real reporting or the Tantra Tracker sync.",
    "spec": "Delete probe and test rows from the Tantra Work Tracker funnel tabs (Free / Paid Registrations, Free / Paid Intake Survey, Checkout Starts, Checkout Returns): wiring-probe@example.com, ui-probe+...@example.com, currency-probe@example.com, apps-script-probe@example.com, live-probe+free/paid-...@example.com, utm-probe rows, the stray 'placeholder' row in Checkout Starts, and the adi@example.com rows at Paid Registrations row 6 and Checkout Starts row 16 (T-193). Remove the probe attendee from workshop-plan/ops/ops.db through the ops admin route. Delete the two undeployed Apps Script projects 'Tantra funnel forms receiver' under boards@fintechcircle.com (the live receiver is 'Tantra Funnel' under adi@growthclub.org). Deleting rows is a write on a live sheet: confirm the row list with Adi before deleting.",
@@ -4169,6 +4363,11 @@
      "ts": "2026-10-10T03:59:39+0530",
      "who": "claude",
      "note": "Backed up then deleted 52 probe rows (all @example.com, utm-probe, placeholder) bottom-up from the six funnel tabs; re-read confirms zero matches left (backup: workshop-plan/ops/t107_deleted_rows.json). ops.db never held a probe attendee; removed the two example.com test attendees (you@, adi@) and their 11 dependent rows from the live D1 (backup t107_d1_deleted_rows.json); the Tantra Tracker is rewritten from these sources on its next sync. I did not re-run the probes (both ran today and would only add new rows); the Apps Script trash needs a boards@ sign-in I do not have, so that is split into T-380 (Nelbin). No T-193 record exists in tasks.json, so there was nothing to close."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-24 was past; now 2026-10-16 (P2 rule)."
     }
    ],
    "order": 1050,
@@ -4183,7 +4382,7 @@
    "area": "Content",
    "owner": "Adi",
    "priority": "P1",
-   "due": "2026-09-24",
+   "due": "2026-10-14",
    "status": "review",
    "why": "Owner (2026-09-24, correction): replicate the /masterclass FunnelOS funnel visualisation exactly, and create the same for the reverse squeeze page and challenge funnels, all three animated in the playbook's 'What are funnels' section. The first attempt (custom cards) was rejected.",
    "spec": "FunnelOS (app/src/components/masterclass/funnel-os.tsx) is now a spec-driven engine; the webinar spec on /masterclass kept its design; T-117 (2026-10-09) took the combined stage chips (11.4K visits, 368 registrations, 3.2%, 179) off it, so the board now shows the Pro card set only (8.6K visits, 825 registrations, 9.6%). funnel-os-rsp.tsx = the RSP whiteboard (5 stages, its funnel maths, 52-week grid, every tool named). funnel-os-challenge.tsx = the 3-day workshop as built (structural facts only; planned items live in the V2 layer). Pages /funnels/webinar|rsp|challenge; build/funnels.py frames them in the playbook. Verify: scripts/probe-funnel-boards.mjs (5 widths) + scripts/probe-funnel-names.mjs (canonical names on the end-state cards, no Chaperone) + scripts/shoot-playbook-funnels.mjs (IDS= covers all 21). SCOPE ADDED 2026-10-05 (Adi, round 2): 17 more cinematics from the Funnel Master (app/src/components/masterclass/funnel-os-types/<id>.tsx, registry funnel-os-registry.tsx with lazy imports) shown as dropdowns in playbook section id bigpic-the-other-17-funnel-types, plus /funnels/system ('The Whole Machine on One Page', all three shapes in one workflow, labelled the comparison view). Every cinematic must use the six canonical stage names (Traffic Generation Engine, Landing & Registration, Multi-Channel Nurture, Conversion Mechanism, Revenue & Deal Pipeline, 52-Week Growth Engine) and five canonical channel names (Cold Email, Calendar Invites, LinkedIn Outreach, Paid Ads, Content / Organic): renaming them was called a 'big no-no' on 2026-10-05T20:05. Open calls on the extra ones: see 'Decide the open calls on the 17 extra funnel animations'.",
@@ -4267,6 +4466,11 @@
      "ts": "2026-10-09T18:45:15+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-072, T-020."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-24 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 1060,
@@ -4331,7 +4535,7 @@
    "area": "Content",
    "owner": "Amal",
    "priority": "P1",
-   "due": "2026-09-28",
+   "due": "2026-10-14",
    "status": "review",
    "why": "Every Day 2 guide example renders from this library. The rebuilt verbatim library (lane/lib 5b92879, 679 real examples) is on main and in the live centre, but its public status hangs on T-141.",
    "spec": "State on main 2026-10-08: the verbatim library is merged; the GitHub mirror export empties it (app/scripts/export-static.sh and cloud/.export-centre.sh, 'held for T-141', from 04f0e0a), while the live centre build keeps it (cloud/scripts/build.sh line 23). Verified 2026-10-08: https://revops-centre.growthcluborg.workers.dev/onboarding/templates/ answers 200 to an anonymous visitor (it mints an rc_t cookie) and its JS bundle carries the large dollar figures listed in the private workshop-plan/library/clients/_raw_v2/CHECKPOINT1_NUMBERS.md. Steps once T-141 is answered: (1) record the rule in workshop-plan/coord/LANES.md; (2) if keep: remove the hold block from export-static.sh and .export-centre.sh and publish the mirror; if strip or per-figure: apply it in the library source (app/src/lib/examples), rebuild and deploy the centre Worker, then lift the mirror hold; (3) clear T-243 (probe-anonymity non-export hits); (4) re-run probe-fidelity, probe-anonymity and node app/scripts/check-guides.mjs, check /Users/adithyamurali/tantra-round5-coord/LOG.md for publish holds, then publish.",
@@ -4410,6 +4614,11 @@
      "ts": "2026-10-09T08:06:21+0530",
      "who": "claude",
      "note": "Re-run of the Orchestrator note F-d7750374: nothing left to build, the 08:15 run already did every step (hold lifted, T-243 done, mirror e4f856b published). Rechecked now: the anonymity probe passes with 0 hits on 1017 files, cloud/.export-centre.sh no longer empties the library (its hold block is switched off), and a fresh crawl of the live mirror and the live centre found the same library text in both (about 4.18 MB of bundle each, the only differences are minified code, plus one extra dollar-pattern match on the mirror that I did not trace). Amal: open the mirror link in the evidence and sign off."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-28 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 1090,
@@ -4588,7 +4797,7 @@
    "area": "Content",
    "owner": "Amal",
    "priority": "P1",
-   "due": "2026-09-28",
+   "due": "2026-10-14",
    "status": "blocked",
    "why": "Placeholder 'capture needed' boxes on attendee guides read as unfinished. These slots show real vendor consoles, so they need Adi signed in.",
    "spec": "node app/scripts/check-guides.mjs on main 2026-10-08: 24 guides, 195 steps, 60 capture-needed. This task owns the account slots: s1-ads #1 (GA4 create event); s1-cold-email #1 (Cloudflare Registrar search), #2 (Google Admin add user), #6, #9, #10, #11 (Tantra accounts and cold email campaign), #7 (Google Sheets cleanup); s1-linkedin #1 to #6 and #8 (Tantra LinkedIn channel and campaign); s1-overview #3 and #6 (Tantra accounts and A/B campaign); s2-tantra-pro-funnel #9 (deployed lead-form Worker in Cloudflare) and #10 (WebinarGeek subscriber list). Routed elsewhere: GoHighLevel slots (s2 #7, s5-pipeline #7, s5-webinar-stages #1 and #3, s5-rsp-stages #3 and #4, s5-challenge-stages #1) to T-120; Beehiiv (s6-newsletter #6), Canva (s1-social #3), ad creatives (s1-ads #5) to T-260; s1-overview #4 (paid verifier column, ruled out) to T-251; own pages to T-135; Claude Code screens to T-132; WhatsApp and SMS to T-133; crm-starter planned steps to T-134; daily output loop to T-136; later screens to T-140. Method: Adi signs in, Claude captures in Claude in Chrome, blurs client identities in the DOM before capture (key-walkthrough pipeline), observes only and changes no settings (vendor no-change rule), saves redacted WebP and removes capture_needed.",
@@ -4662,6 +4871,11 @@
      "ts": "2026-10-09T08:07:08+0530",
      "who": "claude",
      "note": "Third run, same wall, no screenshots captured: this unattended runner session has no Claude in Chrome tools (tool search returns none), Brave runs without a debug port and again timed out on a read-only AppleScript query, so GA4, Cloudflare, Tantra and WebinarGeek cannot be opened from here. I did not restart Adi's Brave or copy its profile or cookies to get around that. check-guides PASS with 72 capture-needed, all 22 slots unchanged, no guide files touched, G127 stays open; a 'proceed' decision cannot move this, only an interactive desktop session with Claude in Chrome connected can run the 21 ready captures."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-28 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 1130,
@@ -4834,7 +5048,7 @@
    "area": "Content",
    "owner": "Adi",
    "priority": "P2",
-   "due": "2026-09-28",
+   "due": "2026-10-16",
    "status": "review",
    "why": "FunnelOS RSP still shows a 0 to 100 score band (40 to 70 = AI SDR) while the playbook, library and S5 guides use number-free top / middle / bottom bands.",
    "spec": "Only one numeric scale is left on main: app/src/components/masterclass/funnel-os-rsp.tsx lines 168 to 170 ('Score > 70', 'Score 40 to 70', 'Score < 40') and line 417 ('Score > 70 instant book'). Playbook, library and S5 guides use number-free top, middle and bottom bands. On the answer Claude edits funnel-os-rsp.tsx (or applies thresholds everywhere) and re-shoots the RSP board.",
@@ -4907,6 +5121,11 @@
      "ts": "2026-10-09T09:29:14+0530",
      "who": "claude",
      "note": "FunnelOS RSP now shows Top Band, Middle Band and Bottom Band in place of the score numbers (routing unchanged: instant book, AI SDR, unqualified sequence), and I made the same swap in the /funnels/system comparison view because it carried the same Score > 70 scale. Checked: type check clean, the board-fit probe passes on the RSP board at all five widths, the export build and anonymity probe pass, and the live mirror serves the new labels on both pages; pushed to main as bf44bf5 (that one commit only) and published as mirror cba7ad4. Two things to know: the grep still finds one line, a 'Score 1 to 5' subject-line rubric in the library (app/src/lib/corpus/s1.ts:124), which is not lead qualification so I left it, and the comparison view's revenue board overlaps by about 2 percent in the fit probe, the same as before this change."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-28 was past; now 2026-10-16 (P2 rule)."
     }
    ],
    "order": 1160,
@@ -5020,7 +5239,7 @@
    "area": "Funnel",
    "owner": "Bhaskar",
    "priority": "P2",
-   "due": "2026-09-28",
+   "due": "2026-10-16",
    "status": "review",
    "why": "SEATS_TOTAL and SEATS_CLAIMED are invented numbers with no consumer; leaving them invites reuse (owner rule: no unsourced stats).",
    "spec": "The fake counter was removed from /workshop and /masterclass in 983d92d. On main 2026-10-08 app/src/lib/funnel.ts lines 53 to 54 still export SEATS_TOTAL = 1000 and SEATS_CLAIMED = 847 and nothing imports them (git grep). Delete both lines, run tsc for app, mark audit M068 fixed. /pro's SEATS_PER_COHORT = 25 is a separate cap and is out of scope.",
@@ -5057,6 +5276,11 @@
      "ts": "2026-10-10T04:00:23+0530",
      "who": "claude",
      "note": "Deleted SEATS_TOTAL and SEATS_CLAIMED from app/src/lib/funnel.ts (83a1c23, pushed to main). git grep in app/src returns nothing, tsc --noEmit for app printed no errors, SEATS_PER_COHORT untouched. AUDIT.md M068 marked fixed in 83a1c23."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-28 was past; now 2026-10-16 (P2 rule)."
     }
    ],
    "order": 1190,
@@ -5163,7 +5387,7 @@
    "area": "Delivery",
    "owner": "Aquila",
    "priority": "P0",
-   "due": "2026-09-27",
+   "due": "2026-10-14",
    "status": "blocked",
    "why": "Pages promise a confirmation, the centre and calendar links, daily reminders with the join link, the plan email and follow-ups. Nothing sends them yet, so the first real cohort would run without them.",
    "spec": "Umbrella. Owner model (google-and-reminder-model, 2026-10-07): email, WhatsApp and LinkedIn reminders run on Tantra omni-channel campaigns; the centre imports each registrant into the campaign by webhook on sign-up; WhatsApp never through Twilio. Tantra sending is live, so nothing waits on T-236 (the per-contact /emails/batch spec was our own invention) and the centre's 'held until Tantra ships its per-contact send' note in cloud/src/jobs-day2.ts must move to the campaign-import model. Children: T-234 (per-day reminders with each person's own Zoom link), T-228 (welcome with centre and private calendar link), T-235 (post-session follow-ups), plan email when the personal plan is generated (T-212 output), payment confirmation (T-122). Close this when the children are done.",
@@ -5252,6 +5476,11 @@
      "ts": "2026-10-09T18:43:04+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-217."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-27 was past; now 2026-10-14 (P0 rule)."
     }
    ],
    "order": 1210,
@@ -5267,7 +5496,7 @@
    "area": "Funnel",
    "owner": "Ben",
    "priority": "P0",
-   "due": "2026-09-26",
+   "due": "2026-10-14",
    "status": "review",
    "why": "checkout-client used to read location.search, empty on /vip, so purchases lost first-touch UTMs and referral credit.",
    "spec": "Fixed in 777b084: app/src/lib/checkout-client.ts uses resolveUtm() from app/src/lib/form-log.ts (first-touch tantra_first_touch_utm, else the URL) for both the server session POST and the hosted-link fallback; app/scripts/probe-checkout-utm.mjs covers both paths. Remaining: confirm on a real purchase by reading the Dodo payment (read-only GET https://live.dodopayments.com/payments) and checking its metadata carries utm_* matching the buyer's first touch; then mark done.",
@@ -5321,6 +5550,11 @@
      "ts": "2026-10-09T14:28:15+0530",
      "who": "claude",
      "note": "Recheck 2026-10-09: probe-checkout-utm.mjs PASS on main at 8b9bdab (server POST body and hosted link both carry the first-touch utm_source/medium/campaign/content). Read-only Dodo check (GET /payments plus GET /payments/{id}, live mode): 7 payments since the fix 777b084 (2 succeeded, 5 unpaid), all Tantra app subscriptions with no metadata source=vip and none on the VIP product, and none in the newest 100 payments overall, so there is no real /vip purchase to confirm yet. Nothing was created or changed in Dodo; the task stays in review until the first /vip payment.succeeded arrives, then the same check closes it."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-26 was past; now 2026-10-14 (P0 rule)."
     }
    ],
    "order": 1220,
@@ -5414,7 +5648,7 @@
    "area": "Delivery",
    "owner": "Ben",
    "priority": "P2",
-   "due": "2026-09-27",
+   "due": "2026-10-16",
    "status": "review",
    "why": "Deep links (#day-N) and saving are fixed, but probe-survey.mjs only tests the old ops mode, so nothing guards the path real attendees use.",
    "spec": "Shipped: bf0c9f6 (deep links #day-2/#day-3 in survey.html and deck.html); 9c4df62 (survey.html on the centre GETs and POSTs /api/survey with the session cookie, cloud/src/index.ts lines 217 to 245, answers restored on any device). The old ops route (?ops=, ?sid=, workshop-plan/ops/ops.py on :8787, launchd com.tantra.ops currently not running) is no longer needed by the centre. Do: extend workshop-plan/probe-survey.mjs (or add app/scripts/probe-survey-worker.mjs) to sign in a test attendee on the local centre (:8790), save a day, open a fresh context and assert the answers come back; optionally drop the unused ?sid hint from the survey comment.",
@@ -5463,6 +5697,11 @@
      "ts": "2026-10-10T04:05:41+0530",
      "who": "claude",
      "note": "Added app/scripts/probe-survey-worker.mjs: signs in a unique test attendee, fills all 9 Day 2 questions in survey.html, checks POST /api/survey is 200, restores every answer in a fresh browser context, checks 401 with no session, covers legacy SendGrid/Apollo mapping and the Tantra/Resend reminder options, then deletes its rows. Ran on a local centre at :8820 (survey.html only syncs on :8790/:8820/workers.dev and :8790 is held by another worktree): 15/15 pass; probe-survey.mjs deep links pass with the ops-mode check removed; ?sid hint dropped from the survey comment. Pushed 7d8ccb1. Run: node app/scripts/probe-survey-worker.mjs http://localhost:8790"
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-27 was past; now 2026-10-16 (P2 rule)."
     }
    ],
    "order": 1240,
@@ -5576,7 +5815,7 @@
    "area": "Ops",
    "owner": "Amal",
    "priority": "P3",
-   "due": "2026-09-26",
+   "due": "2026-10-23",
    "status": "queue",
    "why": "Stale dues and Build Pass wording make the board untrustworthy; dashes break the owner rule.",
    "spec": "State 2026-10-08 in workshop-plan/tasks/tasks.json: 76 open tasks have a due date before today (H042); meta.day1 is still 2026-09-30T11:00 (H043; derive from the weekly schedule Wed to Fri 11:00 ET or remove); the data has 0 em or en dashes but pass.py validate has no dash check (H044); T-055 is in tasks/archive.json (H054 done); T-070 is still titled 'What happens in the Tantra backend when a Build Pass is bought' (H055: retitle to the paid /masterclass seat). T-050 is already rewritten for the two funnels. Do all edits through workshop-plan/tasks/pass.py. After Adi answers the cadence, align T-071, the deck (workshop-plan/build, deck.html) and the s4-challenge guide.",
@@ -5588,7 +5827,7 @@
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "When is the $999 course offered: (A) only at the close of Day 3, as the deck and challenge guide teach now; or (B) every day from Day 1? Recommended: (A), it matches what is already built and taught.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-25",
@@ -5619,6 +5858,16 @@
      "ts": "2026-10-09T07:53:40+0530",
      "who": "claude",
      "note": "Orchestrator decision O-f6931fba (via T-071): Tantra Pro Course is pitched at the close of Day 3, as the deck already teaches. /pro is live on the mirror regardless of timing."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-26 was past; now 2026-10-23 (P3 rule)."
+    },
+    {
+     "ts": "2026-10-10T16:36:00+0530",
+     "who": "claude",
+     "note": "Pitch cadence recorded: the Tantra Pro Course ($999) is pitched only at the close of Day 3, matching the current deck (Orchestrator O-f6931fba and O-17c26710; source T-071 note F-43b6a66f)."
     }
    ],
    "order": 1270,
@@ -5633,7 +5882,7 @@
    "area": "Content",
    "owner": "Aquila",
    "priority": "P1",
-   "due": "2026-09-28",
+   "due": "2026-10-14",
    "status": "review",
    "why": "Vertical charts and detached labels are why the busiest charts are hard to follow.",
    "spec": "Renderer and layout only (node and copy gaps are T-254, S2 per-mechanism flows are T-255; T-205 rebuilt all 24 charts from one journey model). In app/src/components/guides/flow-chart.tsx and layout.ts: let desktop charts run left to right (full-bleed box or a lower horizontal threshold; all 24 lay out vertical at 1440), reserve label space so every edge label sits on its connector instead of a chip, and fix the four merge-span warnings from app/scripts/probe-details.mjs (s5-webinar-stages, s1-overview, s4-rsp, s1-cold-email) by re-ranking nodes or layout hints. Closes audit G121, G122, G063, P0419e, P274e7, P4310c, P50286 (details in /Users/adithyamurali/tantra-round5-coord/AUDIT.md).",
@@ -5697,6 +5946,11 @@
      "ts": "2026-10-10T00:48:56+0530",
      "who": "claude",
      "note": "All 24 guide flowcharts now run left to right at 1440 in a 1360 px box and top to bottom at 390, every label sits on its connector (no chips), and the four merge-span warnings are gone; live on the centre (Worker 5fe16470) and the mirror, source eb2bb14 plus 6e1facf, which makes three near-miss charts fit a phone instead of cutting a label. Checked on both live sites at 1440 and 390 (24 of 24 pass), probe-details 0 merge-span WARN, probe-flows PASS, tsc 0, seven findings marked fixed in AUDIT.md. Still true: 19 of the 24 charts are wider than a phone and scroll sideways at 390 (unchanged behaviour), and check-guides fails on s5-pipeline because T-254 took it to 17 nodes against a cap of 14."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-28 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 1280,
@@ -5712,7 +5966,7 @@
    "area": "Funnel",
    "owner": "Adi",
    "priority": "P3",
-   "due": "2026-09-28",
+   "due": "2026-10-23",
    "status": "review",
    "why": "funnel-os-rsp.tsx's 52-week rows still say 'Webinar invite / Event reminder / Replay nudge' (warm-list events inside the RSP year). Could read as the RSP being a live event.",
    "spec": "app/src/components/masterclass/funnel-os-rsp.tsx 52-week rows (about lines 226 to 265) still carry 'Webinar invite', 'Webinar reminder', 'Event reminder' and 'Replay nudge' entries, which can read as the RSP being a live event. Rows also name Meta and Google ads, which T-260 covers. On the answer Claude relabels or keeps and re-shoots the RSP board.",
@@ -5774,6 +6028,11 @@
      "ts": "2026-10-09T14:02:23+0530",
      "who": "claude",
      "note": "Third delivery of the 05:08 decision: nothing left to change. The relabel is on origin main (03fbae0) and the mirror (34daef4); rechecked now that the Email, WhatsApp and SMS lanes on origin main carry 0 webinar, event, replay or workshop rows and the live RSP board answers 200. Paid ads lane left for T-260 as decided."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-28 was past; now 2026-10-23 (P3 rule)."
     }
    ],
    "order": 1290,
@@ -5789,7 +6048,7 @@
    "area": "Content",
    "owner": "Amal",
    "priority": "P2",
-   "due": "2026-09-28",
+   "due": "2026-10-16",
    "status": "blocked",
    "why": "Five steps need Claude desktop app Code screens, and Claude cannot operate the desktop app itself.",
    "spec": "Slots on main 2026-10-09: s6-ai-newsletter #1 (new Code session with the weekly-letter folder), #2 (setup prompt with inputs), #6 (Code, Routines, task page: Run now, Status, Edit, Review history); s5-follow-ups #2 (follow-up prompt running plus follow-ups/ folder); s5-crm-starter #5 (Claude Code in the Funnel OS folder listing contacts; the guide was rewritten in T-191, so the old #3 prompt-01 slot no longer exists). Run: python3 app/scripts/shots/claude-app-shots.py prep, then preflight (must print READY), create the temporary weekly routine (approved by the Orchestrator 2026-10-09), drive the app with open -a, claude:// links and System Events, capture each screen with the shot command (redact the sidebar and account name), fill shots[], delete the routine and log it in scripts/walkthroughs/REVERT_LEDGER.md.",
@@ -5828,6 +6087,11 @@
      "ts": "2026-10-09T09:31:05+0530",
      "who": "claude",
      "note": "Tried the Orchestrator's route: the Claude app is open and on screen, but macOS refuses this background run both the capture ('could not create image from window') and any click or key (System Events times out on a permission prompt), so no routine was created and nothing needs reverting. Built the rest: demo folders with the Ops Sherpa persona and a capture tool (app/scripts/shots/claude-app-shots.py, commit 72aa784) whose preflight prints NOT READY today. The single input is the macOS permission in T-351; the 'OK demo routine' ask is gone."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-28 was past; now 2026-10-16 (P2 rule)."
     }
    ],
    "order": 1320,
@@ -5842,7 +6106,7 @@
    "area": "Content",
    "owner": "Amal",
    "priority": "P2",
-   "due": "2026-09-28",
+   "due": "2026-10-16",
    "status": "blocked",
    "why": "The WhatsApp-twin and SMS-nudge guides need real screens from the approved providers.",
    "spec": "Slots on main 2026-10-08: s6-whatsapp #1 (pointer and compressed twin in a phone chat), #2 ('WhatsApp Manager's template category notice': Meta's console, stale since WhatsApp goes through Tantra; rewrite the step to Tantra's WhatsApp template screen or drop the slot), #4 (provider broadcast scheduler: capture Tantra's WhatsApp campaign scheduler); s6-sms #2 (composer with segment counter) and #3 (draft with merge fields) from the Twilio console. s6-sms #1 is own content and belongs to T-135. Draft only, never send from live accounts (vendor no-change rule); blur numbers and names.",
@@ -5903,6 +6167,11 @@
      "ts": "2026-10-09T12:47:33+0530",
      "who": "claude",
      "note": "Re-run of the same Orchestrator decision (O-659c1aaf): everything it asked for was already applied in commit 2bd704e and published, so nothing changed this run. Re-checked today: check-guides passes, the mirror serves the Tantra template screen and campaign scheduler wording, and the Twilio segment calculator image loads. The 4 signed-in captures (WhatsApp 1, 2, 4 and SMS 3) still cannot run here because this unattended runner has no browser, so the Tantra slots could not start even though Tantra is signed in; the one input stays on T-339."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-28 was past; now 2026-10-16 (P2 rule)."
     }
    ],
    "order": 1330,
@@ -5917,7 +6186,7 @@
    "area": "Product",
    "owner": "Aquila",
    "priority": "P3",
-   "due": "2026-09-29",
+   "due": "2026-10-23",
    "status": "review",
    "why": "In the starter CRM, only the core is built (pipeline, fields, crm.py). Intake, payments, the follow-up runner, the board and the schedule are PLANNED: readers build them with the six prompts. Three guide steps (s5-crm-starter #4 payments, #5 runner --dry-run, #6 board) have nothing real to capture until someone runs those prompts once.",
    "spec": "workshop-plan/crm-starter has only the core built (pipeline, fields, crm.py); payments, runner and board are planned and built by readers with prompts 02, 03 and 05. Claude runs prompts 01 to 06 in a copy against test mode only (Cal.com, Dodo test mode, Resend, optional Twilio test credentials), keeps it as a private reference build, captures s5-crm-starter #4 (payments), #5 (runner --dry-run), #6 (board at localhost:8765), updates the README status table only if the prompts worked as written, then deletes every key or object it created and logs them in scripts/walkthroughs/REVERT_LEDGER.md. No n8n.",
@@ -5990,6 +6259,11 @@
      "ts": "2026-10-09T14:03:57+0530",
      "who": "claude",
      "note": "The 05:08 'build it' decision was already carried out in the 13:48 pass, so nothing was rebuilt; this pass rechecked it (board on localhost:8765 answers 200 with 10 test deals, runner.py --dry-run lists the next 24h, payments.py recorded the test-mode fixture payment into Payment Completed) and pushed the prompt fixes, README check column and ledger rows to origin main as commit aafe5d9 (that commit only, cherry-picked onto origin). Two parts of the decision could not happen as written: the Resend field in r5F-readonly-keys.json is empty and app/.env.local holds a live Dodo key only, so no real test email or test-mode payment was made (the Dodo test key is already asked for in T-253, no new task opened), and the three capture slots were removed from the guide by T-191, so nothing went to the mirror. Open the board at http://localhost:8765/?v=1791534837."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-29 was past; now 2026-10-23 (P3 rule)."
     }
    ],
    "order": 1340,
@@ -6005,7 +6279,7 @@
    "area": "Content",
    "owner": "Amal",
    "priority": "P2",
-   "due": "2026-09-27",
+   "due": "2026-10-16",
    "status": "doing",
    "why": "These slots show our own funnel pages, the centre or demo files, so Claude can capture them today without any owner account.",
    "spec": "Slots on main 2026-10-08: s5-webinar-stages #2 (/masterclass offer link with ?src=live opening checkout, no purchase); s5-challenge-stages #3 (final-day offer link opening checkout); s5-rsp-stages #1 (CRM contact timeline with depth tags, not a Wistia heatmap: T-260) and #2 (bridge opt-in over Part 1 on our RSP page); s6-sms #1 (the demo's rotation.md 52-week calendar with SMS weeks); s4-challenge #8 (Day 2 in the centre with session times), #11 (first Day 1 task with its done control), #15 (referral dashboard per-member totals, public since T-211); s4-rsp #7 (our Part 2 page after a bridge submit); s2-tantra-pro-funnel #12 (free-lane thank-you page at 390 px after a test sign-up: use a local build with NEXT_PUBLIC_TRACKING_DISABLED=1 so nothing reaches the live Work Tracker); s1-overview #5 (Set Your Sending Plan capacity in the centre, via the preview attendee). Real captures only, redact anything personal, save WebP, remove capture_needed.",
@@ -6050,6 +6324,11 @@
      "ts": "2026-10-10T15:10:22+0530",
      "who": "claude",
      "note": "All 11 slots now have real WebP captures from our local build, the starter CRM demo and the demo rotation.md, with names and emails blurred. I committed them in 512c734, and check-guides shows capture-needed at 62 (was 73); its only FAILs are 4 old undersized files outside this task. Left for the next pass: run probe-guides on the 8 guides, confirm the 2026-10-06 'mirror publish held' line in LOG.md is lifted, then push main, republish the mirror and set review for Amal."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-27 was past; now 2026-10-16 (P2 rule)."
     }
    ],
    "order": 1350,
@@ -6064,7 +6343,7 @@
    "area": "Content",
    "owner": "Amal",
    "priority": "P3",
-   "due": "2026-10-02",
+   "due": "2026-10-23",
    "status": "queue",
    "why": "The step shows attended-day-N plus a 'Day N Output Delivered' event. True attendance tracking and the daily output delivery (automation 9) aren't built yet, so there is nothing real to capture.",
    "spec": "s5-challenge-stages #2 wants a contact timeline with attended-day-N and a daily output-delivered event from the attendee's challenge funnel. That loop is automation 9 in the funnel worker (cloud/src/jobs-day2.ts reports it not built), tracked in T-266. Once T-266 ships, run it on the simulator for a test attendee and capture the timeline.",
@@ -6097,6 +6376,11 @@
      "ts": "2026-10-10T01:44:35+0530",
      "who": "claude",
      "note": "Unheld: T-266 built automation 9 (commit 50914b0), so the daily-output loop can be captured now."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-10-02 was past; now 2026-10-23 (P3 rule)."
     }
    ],
    "order": 1360,
@@ -6154,7 +6438,7 @@
    "area": "Content",
    "owner": "Aquila",
    "priority": "P3",
-   "due": "2026-09-29",
+   "due": "2026-10-23",
    "status": "review",
    "why": "Your Lane C brief named claude.ai/artifact/4wu7b37yzQCByRLSPiTWkp as the full scope of the automation setups. Claude couldn't open it: the Docs connector says it isn't shared with this account, and Claude in Chrome rendered it blank. The guides were written from the repo's copy of Doc 2 (sources/playbooks/2_growthclub_funnel_automations.txt, the canonical 8 automations). The artifact may be newer.",
    "spec": "Artifact claude.ai/artifact/4wu7b37yzQCByRLSPiTWkp ('Webinar Funnel Automations') was named as the scope. The Docs connector still answers 'not shared' (re-tried 2026-10-08). The guides rest on workshop-plan/sources/playbooks/2_growthclub_funnel_automations.txt (the canonical 8 automations). Once readable, diff it against app/src/content/guides/s2-landing/s2-tantra-pro-funnel.ts, s3-nurture/s3-tantra-pro-flow.ts and s1-traffic/s1-cold-calendar.ts; fix differences or log conflicts in workshop-plan/coord/status/c.md.",
@@ -6202,6 +6486,11 @@
      "ts": "2026-10-09T14:05:52+0530",
      "who": "claude",
      "note": "The Webinar Funnel Automations doc opened through the Docs connector and all five automation tabs (A1 to A5) are now read in full, so nothing is needed from Adi. The Tantra Flow guide now runs reminders on Tantra campaigns (T-24h, T-1h, T-15m, live; no 4h30m send), sends WhatsApp through Tantra with Twilio left for SMS only, and says the attended and no-show branches need the attendance sync first; the Tantra Funnel guide step 4 has the double-capture guard and the 600 ms redirect delay; every other difference is ruled in status/c.md items 15 to 28 (the cold calendar guide needed no change). Guide checks and the anonymity probe pass, the source commit is pushed and the mirror is republished: open the Tantra Flow link, steps 6, 7, 10 and 11."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-29 was past; now 2026-10-23 (P3 rule)."
     }
    ],
    "order": 1381,
@@ -6216,7 +6505,7 @@
    "area": "Content",
    "owner": "Amal",
    "priority": "P3",
-   "due": "2026-10-03",
+   "due": "2026-10-23",
    "status": "queue",
    "why": "These slots show screens that do not exist yet (a real operator run, a live post, CRM test contacts). Claude captures each as its source appears.",
    "spec": "Slots on main 2026-10-08: s1-blog #2 (Claude Code terminal running the Draft the Pillar Post prompt on real Day 1 notes; Claude can run it in Terminal on a demo engine file and capture) and #6 (a live published pillar post at phone width, once one is published); s3-tantra-pro-flow #5 (send in the contact's time zone), #13 (two test contacts tagged attended and not watched with message history), #14 (final step into the newsletter list): capture from the Tantra campaign or the starter CRM once T-120 settles which CRM the guide teaches. s1-social #3 (Canva) is T-260; s1-overview slots are T-115, T-135 and T-251.",
@@ -6245,6 +6534,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: slot list refreshed from main; the old s1-social Zoom-clip and s3 step 7 items no longer exist."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-10-03 was past; now 2026-10-23 (P3 rule)."
     }
    ],
    "order": 1382,
@@ -6926,7 +7220,7 @@
     "Bharath"
    ],
    "priority": "P1",
-   "due": "2026-10-06",
+   "due": "2026-10-14",
    "area": "Product",
    "order": 1510,
    "title": "T-151: held back (private client detail)",
@@ -6945,7 +7239,7 @@
    "area": "Product",
    "owner": "Bharath",
    "priority": "P1",
-   "due": "2026-10-09",
+   "due": "2026-10-14",
    "status": "review",
    "why": "Owner voice notes, 2026-09-26: the funnel's job is to get everyone using Tantra and reporting every bug and feature request; both get resolved through a fast agentic dev cycle so customers stay for the business results. Owner assigned all of this to Claude end to end.",
    "spec": "Severity levels with deadlines (P0 same day, P1 within 24 h, P2 within the week). Agent flow: reproduce, write a failing test, open a fix PR, human review, deploy, notify reporter. Every fix carries a regression test. Weekly report: open bugs by severity, time to fix, bugs that came back. Input queue comes from T-151. Product code: GitHub Usetantra/tantra-backend-v2 (branch development) and Usetantra/tantra-mcp (contract notes in docs/onboarding-v3/analysis/integrations-tantra-api.md); clone outside this repo and run locally. Claude-built automation only (no n8n). Metrics feed the T-158 dashboard.",
@@ -7011,6 +7305,11 @@
      "ts": "2026-10-09T19:45:33+0530",
      "who": "claude",
      "note": "Severity levels written (docs/bug-pipeline/severity.md), local Claude pipeline built (workshop-plan/bugs/pipeline.py: collect, triage, fix, report), and 5 real bugs found, each with a red-then-green regression test, now PRs #160 to #164 on tantra-backend-v2 plus CI PR #165 (fails PRs that change src/ without a test). Verified by re-running every new spec (all pass). The first weekly report is attached; Bharath must mark 'regression-test-required' a required check and review the PRs. Note: GitHub issues were empty and the YOGI bug log is a different product, so the 5 bugs came from a code audit."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-10-09 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 1520,
@@ -7026,7 +7325,7 @@
    "area": "Product",
    "owner": "Amal",
    "priority": "P1",
-   "due": "2026-10-09",
+   "due": "2026-10-14",
    "status": "review",
    "why": "Owner voice notes, 2026-09-26: the funnel's job is to get everyone using Tantra and reporting every bug and feature request; both get resolved through a fast agentic dev cycle so customers stay for the business results. Owner assigned all of this to Claude end to end.",
    "spec": "Merge duplicate requests and count demand. Score by revenue/retention impact, not by who asked loudest. Weekly slot decides build now (24h agentic cycle) / write a spec / park. Changelog per release and a note to everyone who asked.",
@@ -7082,6 +7381,11 @@
      "ts": "2026-10-09T19:48:48+0530",
      "who": "claude",
      "note": "Checked 5 related task(s); updating T-151."
+    },
+    {
+     "ts": "2026-10-10T16:35:35+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-10-09 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 1530,
@@ -7352,7 +7656,7 @@
    "area": "Infra",
    "owner": "Ben",
    "priority": "P1",
-   "due": "2026-10-09",
+   "due": "2026-10-14",
    "status": "review",
    "why": "Owner voice notes, 2026-09-26: the funnel's job is to get everyone using Tantra and reporting every bug and feature request; both get resolved through a fast agentic dev cycle so customers stay for the business results. Owner assigned all of this to Claude end to end.",
    "spec": "Management view in the style of the reference dashboard (URL in workshop-plan/coord/private-refs.md, not public) grouped bands, KPI cards labelled live/derived with a plain-English caption under each, tables of recent items, notes that say exactly what each number counts. Bands: feedback volume by source/brand, bug pipeline by severity and age, feature pipeline by decision, 24h ship rate and PR-to-live time, dogfooding experiments, customer tier mix. T-154 metric definitions: 24h ship rate = requests with request-to-live of 24 h or less divided by requests shipped; PR to live = median hours from PR opened to running in production; regression rate = shipped fixes needing a second fix for the same defect within 14 days divided by fixes shipped. Definitions in workshop-plan/pipeline/agentic-dev-cycle.md.",
@@ -7404,6 +7708,11 @@
      "ts": "2026-10-09T19:57:22+0530",
      "who": "claude",
      "note": "Added the three T-154 metric definitions (24h ship rate, PR to live, regression rate) to the spec; no status change."
+    },
+    {
+     "ts": "2026-10-10T16:35:35+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-10-09 was past; now 2026-10-14 (P1 rule)."
     }
    ],
    "order": 1580,
