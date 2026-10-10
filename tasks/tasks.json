@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T00:54:07+0530",
-  "version": 1646,
+  "updated": "2026-10-11T00:57:13+0530",
+  "version": 1647,
   "last_id": 387,
   "team": [
    {
@@ -13378,6 +13378,11 @@
      "ts": "2026-10-09T09:31:28+0530",
      "who": "claude",
      "note": "Checked 10 related task(s); updating T-282."
+    },
+    {
+     "ts": "2026-10-11T00:57:13+0530",
+     "who": "claude",
+     "note": "Related update on T-215 checked: the decided approach (Kie.ai docs only, Stripe sign-up plus its docs route with no account, HubSpot, Zoho and Wistia from public docs, Twilio, Dodo and Google live sign-ins split to T-350) is already what the 8 videos show, so no video was rebuilt. One leftover line in the Stripe journey file still said 'Waiting on access'; it now states the docs route (commit 1a50789 on branch tantra-walkthroughs, not pushed). Rechecked today: verify.py passes on all 8, each mp4 is 3840 x 2160 and 59 to 119 seconds, and all 9 review pages load. Open http://localhost:8883/wt-review/index.html?v=t283c"
     }
    ],
    "order": 2830
