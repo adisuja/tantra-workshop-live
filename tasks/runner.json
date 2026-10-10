@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T19:56:59+0530",
+   "task_id": "T-234",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-234 is still blocked on the Tantra API key (T-337). The T-227 sender note didn't require any change to it.\n\n**What I checked:**\n- **Sender for invites:** T-234 sends reminder emails through a Tantra mailbox, not Google Calendar invites, so the T-227 invite sender doesn't apply to it. The go-live s"
+  },
+  {
    "ts": "2026-10-10T18:15:36+0530",
    "task_id": "T-071",
    "mode": "feedback",
@@ -87,25 +95,17 @@
    "status": "review",
    "result": "ok",
    "summary": "T-249 is back in review with Nelbin. One gap was fixed and pushed (commit pushed, main matches origin). The taxonomy sheet still waits on Adi (T-381) and the GHL snapshot on T-260.\n\n**Completion check:**\n1. **FintechCircle repo:** done. I checked the access list today: Nelbin and Bhaskar are admins."
-  },
-  {
-   "ts": "2026-10-10T15:36:03+0530",
-   "task_id": "T-242",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "error",
-   "summary": "Stack is up. Running the full run-chain (which includes the three walkers) in the background."
   }
  ],
- "state": "paused",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 76% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 19:51.",
- "task_id": null,
+ "state": "working",
+ "message": "Acting on 2 note(s) for T-226: Tantra Host Console: Adi hosts every session from a Mac app that runs chat posts, polls, call-to-action links, mute and video control, co-hosts",
+ "task_id": "T-226",
  "entries": [
-  "F-71dc8ef6",
-  "R-f8aa7d48"
+  "F-c251293a",
+  "R-803ec112"
  ],
  "mode": "feedback",
- "started": "2026-10-10T18:09:25+0530",
+ "started": "2026-10-10T19:57:49+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
