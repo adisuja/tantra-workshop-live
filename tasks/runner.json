@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T20:56:58+0530",
+   "task_id": "T-060",
+   "mode": "feedback",
+   "status": "hold",
+   "result": "ok",
+   "summary": "(Held back from the public board: this note mentions a private client detail.)"
+  },
+  {
    "ts": "2026-10-10T20:54:55+0530",
    "task_id": "T-132",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "provider",
    "summary": "API Error: 502 [gemini/gemini-3-flash-preview] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3-flash-preview — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. "
-  },
-  {
-   "ts": "2026-10-10T17:57:36+0530",
-   "task_id": "T-227",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "Task T-227 completed – added test attendee growthcluborg+t227@gmail.com, verified three invites with agenda and personal Zoom join link (second sync produced 0 new events), then revoked the test attendee and the placeholder you@example.com; see admin centre status at https://revops-centre.growthclub"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-060: Record the VSL",
- "task_id": "T-060",
+ "message": "Acting on 1 note(s) for T-297: Playbook owner-round calls still unanswered (show-up figure, example sentences, bio line)",
+ "task_id": "T-297",
  "entries": [
-  "R-73ae0ee7"
+  "F-52836b53"
  ],
  "mode": "feedback",
- "started": "2026-10-10T20:55:54+0530",
+ "started": "2026-10-10T20:57:35+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,

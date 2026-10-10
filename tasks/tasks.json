@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T20:56:18+0530",
-  "version": 1614,
+  "updated": "2026-10-10T20:57:02+0530",
+  "version": 1616,
   "last_id": 386,
   "team": [
    {
@@ -11199,7 +11199,7 @@
     "Free or test accounts for WebinarGeek, Cal.com, Twilio, Dodo test mode, Stripe test mode and Metricool (Adi creates them; Claude never signs up or enters passwords)",
     "CRM checks wait on T-260"
    ],
-   "needs_from_owner": "Test keys, pasted as KEY=value lines into ~/.config/tantra/keys/vendor-test.env (skip any vendor you do not want checked): WEBINARGEEK_TEST_API_KEY and WEBINARGEEK_TEST_WEBINAR_ID (trial at https://www.webinargeek.com with the API switched on by support, key under Account, Integrations, API, plus one unpublished live test webinar's ID); CALCOM_TEST_API_KEY (free account at https://cal.com/signup, Settings, Developer, API keys); DODO_TEST_API_KEY (https://app.dodopayments.com, switch to Test mode, Developer, API Keys); STRIPE_TEST_RESTRICTED_KEY (https://dashboard.stripe.com/test/apikeys, Create restricted key, starts rk_test_); TANTRA_TEST_API_KEY (https://usetantra.com, FintechCircle workspace, Connectors, API Keys, Create Key).",
+   "needs_from_owner": "Test keys, pasted as KEY=value lines into ~/.config/tantra/keys/vendor-test.env (skip any vendor you do not want checked): WEBINARGEEK_TEST_API_KEY and WEBINARGEEK_TEST_WEBINAR_ID (trial at https://www.webinargeek.com with the API switched on by support, key under Account, Integrations, API, plus one unpublished live test webinar's ID); CALCOM_TEST_API_KEY (free account at https://cal.com/signup, Settings, Developer, API keys); DODO_TEST_API_KEY (https://app.dodopayments.com, switch to Test mode, Developer, API Keys); STRIPE_TEST_RESTRICTED_KEY (https://dashboard.stripe.com/test/apikeys, Create restricted key, starts rk_test_); TANTRA_TEST_API_KEY (https://usetantra.com, FintechCircle workspace, Connectors, API Keys, Create Key). Optional CRM test accounts: GHL_TEST_TOKEN and GHL_TEST_LOCATION_ID (a test sub-account's private integration), HUBSPOT_TEST_TOKEN (free test portal), ZOHO_TEST_CLIENT_ID, ZOHO_TEST_CLIENT_SECRET, ZOHO_TEST_REFRESH_TOKEN (free test org).",
    "log": [
     {
      "ts": "2026-10-08T00:21:42+0530",
@@ -11235,6 +11235,11 @@
      "ts": "2026-10-09T13:48:52+0530",
      "who": "claude",
      "note": "From T-134: the starter CRM reference build is ready to take real test keys. Once DODO_TEST_API_KEY and CALCOM_TEST_API_KEY land in vendor-test.env, point ~/tantra-private/crm-reference/crm-starter/.env at them and rerun payments.py and intake.py for the real test-mode proof. A Resend test key is also missing (r5F-readonly-keys.json has an empty resend_api_key)."
+    },
+    {
+     "ts": "2026-10-10T20:57:02+0530",
+     "who": "claude",
+     "note": "Added self-deleting check scripts for GoHighLevel, HubSpot and Zoho (recorded as docs + defensive in cloud/src/connectors/CHECKS.md) and one fix: a HubSpot property the portal refuses is now retried as plain text (commit a21b666, pushed to main; tsc clean, guard probe all pass, the three scripts run to a clean 'nothing was created' on an invalid token). Zoom re-run live today: creating an event subscription by API is still refused for missing marketplace scopes, nothing was created, the T-224 webhook is untouched. The T-264 ripple needed no change (the Tantra WhatsApp template question is already an item to verify in CHECKS.md and no Twilio WhatsApp check exists); the remaining live checks wait only on test keys, and no Tantra API key is on disk."
     }
    ],
    "order": 2530
@@ -14035,6 +14040,11 @@
      "ts": "2026-10-09T13:34:22+0530",
      "who": "claude",
      "note": "Nothing new to build: this 05:07 decision was carried out in the 13:04 pass, and this is the third time the same note has come back. Rechecked now: the live page passes all 26 gate checks at desktop and phone widths (form post stubbed, so no extra test row), the old github.io address and its Pages setting both return 404, no file links to it, and the handoff prompt says fork and open a pull request. Open: https://revops-funnel-equations.growthcluborg.workers.dev/?v=1791533048"
+    },
+    {
+     "ts": "2026-10-10T20:56:59+0530",
+     "who": "claude",
+     "note": "Nothing new to build: every step in this 13:06 Orchestrator note was already carried out in the 13:04 pass on 2026-10-09, and this is the fourth time the note has come back. Rechecked today: the live Cloudflare page passes all 26 gate checks at desktop and phone widths (form post stubbed, so no extra test row), it matches the public repo's index.html byte for byte (a971c0e), the old github.io address and its Pages setting both return 404, no file links to it, and the handoff prompt says fork and open a pull request. One thing to know: the monorepo copy has the same page body but a newer playbook stylesheet (21px serif body text) than the live page, which uses the public repo's own stylesheet snapshot. Open: https://revops-funnel-equations.growthcluborg.workers.dev/?v=1791645986"
     }
    ],
    "order": 2960
