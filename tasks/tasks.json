@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T20:54:01+0530",
-  "version": 1610,
+  "updated": "2026-10-10T20:56:18+0530",
+  "version": 1614,
   "last_id": 386,
   "team": [
    {
@@ -2580,61 +2580,26 @@
   },
   {
    "id": "T-060",
-   "title": "Record the VSL",
-   "area": "Content",
-   "owner": "Adi",
-   "priority": "P1",
-   "due": "",
    "status": "hold",
-   "why": "The success pages and /vip play a scripted-caption preview over a poster (owner kept it on 2026-10-06); a real recording would replace it whenever Adi records one.",
-   "spec": "Current state: app/src/lib/funnel.ts line 145 VSL_SRC = process.env.NEXT_PUBLIC_VSL_SRC (empty), VSL_PENDING true, so the player (restored in T-203, ac7da75) shows the poster plus scripted captions on https://adisuja.github.io/tantra-workshop-live/site/workshop/success/, https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/ and https://adisuja.github.io/tantra-workshop-live/site/vip/ . When Adi supplies an MP4 (1080p, under 60 MB, captions or the timed script), Claude encodes it, hosts it next to the site assets, sets NEXT_PUBLIC_VSL_SRC, rebuilds and republishes the mirror, and re-runs app/scripts/probe-funnels.mjs.",
-   "done_when": [
-    "The recorded video plays on /workshop/success, /masterclass/success and /vip on the mirror",
-    "probe-funnels.mjs passes on the mirror after the swap"
-   ],
-   "evidence": [],
-   "blockers": [
-    "On hold (owner): scripted-caption preview kept until Adi records"
-   ],
-   "needs_from_owner": "Only if you want to replace the preview: record the VSL against the approved script (MP4 1080p, under 60 MB) and drop the file in the chat. Nothing else is needed; the preview stays live meanwhile.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    },
-    {
-     "ts": "2026-09-24",
-     "who": "Claude",
-     "note": "Owner decision 2026-09-24: ship the pages now; the VSL gets updated before launch."
-    },
-    {
-     "ts": "2026-09-24",
-     "who": "Owner",
-     "note": "Owner: keep maintaining the placeholder (like the VSL / Zoom / WhatsApp links). Moved to On hold."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review: context updated. Recording is still the owner's; the player was restored on both success pages in round 5 (T-203, Worker 6cb4a0b4) and now waits only for the MP4."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: owner decided on 2026-10-06 to keep the scripted-caption VSL preview as is (owner-decisions-2026-10-06.md), so the ask is no longer a ship decision; it only waits for an optional recording. Verified VSL_SRC still reads NEXT_PUBLIC_VSL_SRC with VSL_PENDING in app/src/lib/funnel.ts lines 145 to 146."
-    },
-    {
-     "ts": "2026-10-10T16:35:33+0530",
-     "who": "claude",
-     "note": "Board hygiene (T-129): due 2026-09-19 was past; now none (cleared: on hold, nothing depends on a deadline)."
-    }
-   ],
-   "order": 390,
+   "owner": "Adi",
    "assignee": "Adi",
    "reviewers": [
     "Adi",
     "Bhaskar"
-   ]
+   ],
+   "priority": "P1",
+   "due": "",
+   "area": "Content",
+   "order": 390,
+   "title": "T-060: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-061",
@@ -6237,6 +6202,11 @@
      "ts": "2026-10-10T20:54:01+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-10 20:53 IST: still no captures. The Mac has been on its lock screen since 20:22 IST (a full-screen capture shows only the lock wallpaper, the Claude window captures blank) and preflight reports Accessibility as not granted, with System Events timing out. All 5 slots are still marked capture-needed (check-guides total 60), no demo routine exists and nothing needs reverting. Once the screen is unlocked and Accessibility is on, the agent captures all 5 without further input."
+    },
+    {
+     "ts": "2026-10-10T20:55:11+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-351 (done, now recheck)."
     }
    ],
    "order": 1320,
@@ -13813,6 +13783,11 @@
      "ts": "2026-10-09T12:56:54+0530",
      "who": "claude",
      "note": "Local centre (:8790) is in the target state: connection 1 'Claude Code, Adi' (Opus) enabled at priority 1, connection 3 (Sonnet / Haiku) enabled at priority 5 as the probe fallback, no stale error on either; Model per task needed no change because the code already sends probe and walker drafts to the non-Opus connection first. Verified with two drafts on the brand rules card for a new test attendee (id 419, 'T-292 Model Check'): the person draft logged claude-opus-5-5, the probe draft logged claude-sonnet-5-5 (admin, Attendees, T-292 Model Check, Drafts). Live Worker (revops-centre.growthcluborg.workers.dev) has zero AI connections, so there was nothing to enable or clear and I left it alone: real attendees there get no AI drafts until an Anthropic API key is added, because the Claude Code logins only ever serve test attendees."
+    },
+    {
+     "ts": "2026-10-10T20:55:22+0530",
+     "who": "claude",
+     "note": "Already applied, so no agent run was needed: 2026-10-09T12:56 log confirms all work: Opus priority 1, probe fallback clean, test drafts routed correctly (person=Opus, probe=Sonnet), live Worker checked, task ready for review (checked by Haiku against the log and commits)."
     }
    ],
    "order": 2920
@@ -14989,7 +14964,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "done",
+   "status": "recheck",
    "why": "T-132 needs five real Claude desktop app screenshots. The app is on screen, but macOS refuses the background agent both screen capture and clicks or keys, and only the person at the Mac can grant that.",
    "spec": "Checked 2026-10-09 from the unattended runner: screencapture -l on the Claude window returns 'could not create image from window', and System Events and Terminal Apple Events time out on an unanswered permission prompt. Probe: python3 app/scripts/shots/claude-app-shots.py preflight (prints READY when both grants are in place). Once READY, T-132 runs without anything else from Adi.",
    "done_when": [
@@ -15008,6 +14983,11 @@
      "ts": "2026-10-09T12:02:36+0530",
      "who": "claude",
      "note": "Verified 2026-10-09 12:05: Python has Screen Recording (CGPreflightScreenCaptureAccess=True) and Accessibility (AXIsProcessTrusted=True); a test screencapture succeeded."
+    },
+    {
+     "ts": "2026-10-10T20:55:11+0530",
+     "who": "claude",
+     "note": "Flagged for a recheck by T-132: Marked done, but T-132 found Accessibility still not granted for the runner and the Mac locked; T-132 waits on it."
     }
    ],
    "order": 3510

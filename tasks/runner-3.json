@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T20:53:28+0530",
+   "task_id": "T-291",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-291 stays in review with no ask to Adi: the verify pass found no gaps and changed no code.\n\nCOMPLETION CHECK\n\n- **Do not flip the setting yet:** done. A signed-out GET of the live `/preview` answered 302 in this run, and I changed nothing on the live centre.\n- **Day output checks in `app/scripts/p"
+  },
+  {
    "ts": "2026-10-10T20:47:13+0530",
    "task_id": "T-278",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-252 is in review: [PR 197](https://github.com/Usetantra/tantra-frontend-v2/pull/197) into adi-new-ui (reviewers Bhaskar and Bharath). COMPLETION CHECK:\n- **Already"
-  },
-  {
-   "ts": "2026-10-10T15:39:59+0530",
-   "task_id": "T-248",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "The T-248 cleanup is finished, and I've moved the task to review. I checked every item again on disk in this run.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Backup made before changing anything | Done | `~/tantra-backups/2026-10-09/` has the diffs, the untracked-file tars and the `.h"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-291",
+ "task_id": "T-296",
  "entries": [
-  "F-8996d6a4"
+  "F-8e7a001a"
  ],
- "started": "2026-10-10T20:48:15+0530",
- "message": "Acting on 1 note(s) for T-291: Switch the open /preview link to personal links only before the first real attendee gets a centre link",
+ "started": "2026-10-10T20:56:08+0530",
+ "message": "Acting on 1 note(s) for T-296: RevOps Funnel Equations lead magnet: keep one copy, decide the sign-up gate, give the team write access",
  "slices": {
   "T-135": 1,
   "T-148": 1,
