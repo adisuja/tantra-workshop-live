@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T21:02:00+0530",
+   "task_id": "T-296",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-296 stays in review: every done-when item holds on a fresh check, and I fixed one gap (the monorepo copy of the page was stale against its generator).\n\n**Completion check (all evidence from this run)**\n\n1. **One public URL:** done. The workers.dev page returns the gated page and is byte-identical "
+  },
+  {
    "ts": "2026-10-10T20:53:28+0530",
    "task_id": "T-291",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "turns",
    "summary": "T-289 is in review for Adi and Nelbin. Both relay launchd jobs are gone from this Mac and their repo references are cleaned up, but I didn't push the commit.\n\n| Item | State | What I checked in this run |\n| --- | --- | --- |\n| Back up both plists | Done | Copied to `~/tantra-backups/2026-10-09/*.pli"
-  },
-  {
-   "ts": "2026-10-10T16:02:07+0530",
-   "task_id": "T-252",
-   "mode": "feedback",
-   "status": "review",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-252 is in review: [PR 197](https://github.com/Usetantra/tantra-frontend-v2/pull/197) into adi-new-ui (reviewers Bhaskar and Bharath). COMPLETION CHECK:\n- **Already"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-296",
+ "task_id": "T-303",
  "entries": [
-  "F-8e7a001a"
+  "F-8dd617b1"
  ],
- "started": "2026-10-10T20:56:08+0530",
- "message": "Acting on 1 note(s) for T-296: RevOps Funnel Equations lead magnet: keep one copy, decide the sign-up gate, give the team write access",
+ "started": "2026-10-10T21:02:31+0530",
+ "message": "Acting on 1 note(s) for T-303: Transcribe the reference VSL and write Richard's own VSL recording script",
  "slices": {
   "T-135": 1,
   "T-148": 1,

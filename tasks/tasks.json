@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T20:59:17+0530",
-  "version": 1617,
-  "last_id": 386,
+  "updated": "2026-10-10T21:01:50+0530",
+  "version": 1622,
+  "last_id": 387,
   "team": [
    {
     "name": "Adi",
@@ -11240,6 +11240,11 @@
      "ts": "2026-10-10T20:57:02+0530",
      "who": "claude",
      "note": "Added self-deleting check scripts for GoHighLevel, HubSpot and Zoho (recorded as docs + defensive in cloud/src/connectors/CHECKS.md) and one fix: a HubSpot property the portal refuses is now retried as plain text (commit a21b666, pushed to main; tsc clean, guard probe all pass, the three scripts run to a clean 'nothing was created' on an invalid token). Zoom re-run live today: creating an event subscription by API is still refused for missing marketplace scopes, nothing was created, the T-224 webhook is untouched. The T-264 ripple needed no change (the Tantra WhatsApp template question is already an item to verify in CHECKS.md and no Twilio WhatsApp check exists); the remaining live checks wait only on test keys, and no Tantra API key is on disk."
+    },
+    {
+     "ts": "2026-10-10T21:01:50+0530",
+     "who": "claude",
+     "note": "Verify pass: every check script, guard and CHECKS.md row was re-read and re-run (Zoom live again: 401, nothing created; guard probe all pass; tsc clean). One gap fixed: the Twilio unused template variable check had no record, so CHECKS.md now says it no longer applies because T-264 removed the Twilio template and SMS is plain text (commit 4e57d09, local only, not pushed because main also carries two other lanes' unpushed commits). The T-264 ripple needed no change; still blocked only on the test keys."
     }
    ],
    "order": 2530
@@ -13990,18 +13995,18 @@
    "evidence": [
     {
      "label": "Gated page (form, then equations and the workshop link)",
-     "url": "https://revops-funnel-equations.growthcluborg.workers.dev/?v=1791531251"
+     "url": "https://revops-funnel-equations.growthcluborg.workers.dev/?v=1791646256"
     },
     {
-     "label": "Tantra Tracker, Funnel Equations tab (two wiring-probe rows)",
+     "label": "Tantra Tracker, Funnel Equations tab (one wiring-probe row)",
      "url": "https://docs.google.com/spreadsheets/d/1clliPUw9w5kOL9CJmV2i8v62zwhJh9TLU3DyA1-M8Dc/edit#gid=1986109960"
     },
     {
      "label": "Old GitHub Pages address, now 404",
-     "url": "https://adisuja.github.io/revops-funnel-equations/?v=1791531251"
+     "url": "https://adisuja.github.io/revops-funnel-equations/?v=1791646256"
     },
     {
-     "label": "Public repo: gate, rules and fork and pull request workflow (a971c0e)",
+     "label": "Public repo rules: fork and pull request (a971c0e)",
      "url": "https://github.com/adisuja/revops-funnel-equations/blob/main/CONTEXT.md"
     },
     {
@@ -14050,6 +14055,11 @@
      "ts": "2026-10-10T20:59:17+0530",
      "who": "claude",
      "note": "Correction to my note from a few minutes ago: the page side holds, but the two test sign-ups from 2026-10-09 were no longer in the tracker and the Funnel Equations tab was empty. I sent one wiring-probe sign-up through the live page (26 of 26 gate checks, desktop and phone) and it now shows in the Tantra Tracker's Funnel Equations tab (wiring-probe T296, 2026-10-10 15:27 UTC, safe to delete). To get it there I had to fix the tracker sync: it has failed since 2026-10-09 14:31 UTC because the centre rejects the admin key (HTTP 401), so it now still updates the two form tabs when that happens (python3 workshop-plan/ops/tracker_sync.py --forms-only, commit 11c808e). Still broken and not mine to fix: every other Tantra Tracker tab is stale until the centre admin key in ~/.config/tantra/revops-admin-key matches the centre again. Also unchanged: live page matches the public repo (a971c0e), github.io and its Pages setting return 404, handoff prompt says fork and pull request. Open: https://revops-funnel-equations.growthcluborg.workers.dev/?v=1791645986"
+    },
+    {
+     "ts": "2026-10-10T21:00:56+0530",
+     "who": "claude",
+     "note": "Verify pass: all four done-when items hold. The live page passes 26 of 26 gate checks at desktop and phone widths, the old github.io address and its Pages setting return 404, the public repo's build check says ok, and the test sign-up (wiring-probe T296) shows in the Tantra Tracker's Funnel Equations tab after a fresh sync. One fix: the monorepo copy of the page was stale against its generator, so I regenerated it (stylesheet only, same body); the live page still carries the older stylesheet and I did not redeploy a restyle. Open: https://revops-funnel-equations.growthcluborg.workers.dev/?v=1791646256"
     }
    ],
    "order": 2960
@@ -14065,7 +14075,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "done",
+   "status": "review",
    "why": "These were raised as 'Your call' items in the owner-round reports and have been silently left as the builder chose.",
    "spec": "Open calls the builders raised on workshop-plan/playbook.html that Adi never answered: (1) Day 2 nurture section says 'in the teaching model it lifts show-up to 89%' (playbook.html around lines 2289 and 2371, from the whiteboard) while the funnel-equations model gives about 46% on reference values: align the diagram to the model, or keep the whiteboard figure labelled as the teaching model? Recommended: keep it, label it 'teaching model' in the figure caption too, and never present it as a result. (2) The consultancy and course example sentences (Apex Growth, Northstar Academy 'The Manager Sprint') were written by Claude, not supplied by Adi: approve or rewrite. (3) The 'Day 3 of the challenge' pitch example leaves open whether the challenge is free or paid; the answer is 'free /workshop and paid /masterclass are separate flows' (two-funnel-structure), so confirm the wording. (4) The hosts' bio line on the landing pages still says '$50M+' while the enterprise voice rule bans it: tracked in T-277, no action here. Do not change anything until Adi answers; then edit the source, run python3 workshop-plan/build/titlecase.py then embed.py, copy to app/public/materials/playbook.html and run node workshop-plan/probe-playbook.mjs.",
    "done_when": [
@@ -14075,12 +14085,12 @@
    ],
    "evidence": [
     {
-     "label": "Playbook (live mirror)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=calls#d2-s3-the-nurture-engine-where-show-up-is-won"
+     "label": "Playbook, nurture section (live mirror)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=calls3#d2-s3-the-nurture-engine-where-show-up-is-won"
     },
     {
-     "label": "Commit db882e7",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/db882e7"
+     "label": "Commit 10aacc2",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/10aacc2"
     }
    ],
    "blockers": [],
@@ -14105,6 +14115,11 @@
      "ts": "2026-10-09T14:18:08+0530",
      "who": "claude",
      "note": "Closed on the Orchestrator's decision for T-020 (O-d3b4c0eb): call 1 changed. The 89% matches no band in the Funnel Equations data, so the S3 body, diagram and caption now give the model's reference bands (25 to 40% for sign-ups who skip the thank-you page action, 45 to 70% for those who take it) and say they are not a result. Calls 2 to 4 stand as applied in db882e7. Live: https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1009b#d2-s3-the-nurture-engine-where-show-up-is-won"
+    },
+    {
+     "ts": "2026-10-10T21:00:40+0530",
+     "who": "claude",
+     "note": "Orchestrator decision O-4a3e6138 applied: a later T-020 run had removed the 89%, so I put it back in the Day 2 nurture section as the labelled whiteboard teaching model (body, diagram and caption), next to the Funnel Equations reference bands (25 to 40% and 45 to 70%, which I kept instead of 'about 46%' because the model on the page no longer gives that figure), with 'neither is a result'. Calls 2 to 4 were already in place and I rechecked them on disk (examples marked illustrative, 'Day 3 of the free workshop' with the masterclass as a separate flow, the $50M+ line stays with T-277). Checked: titlecase and embed run, main pushed (10aacc2), mirror published (239c841), probe-playbook clean at 4 widths on the live mirror. Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=calls3#d2-s3-the-nurture-engine-where-show-up-is-won"
     }
    ],
    "order": 2970
@@ -15278,6 +15293,35 @@
     }
    ],
    "order": 3850
+  },
+  {
+   "id": "T-387",
+   "title": "Input from Adi for T-253: Paste test keys as KEY=value lines into ~/.config/tantra/keys/vendor-test.env; s",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (credential): The keys need sign-ups and logins as Adi; Claude never signs up, enters passwords or creates credentials.. Everything else in T-253 is being built around it. As soon as this is done, T-253 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Paste test keys as KEY=value lines into ~/.config/tantra/keys/vendor-test.env; skip any vendor you do not want checked. DODO_TEST_API_KEY: https://app.dodopayments.com, switch to Test mode, Developer, API Keys. STRIPE_TEST_RESTRICTED_KEY: https://dashboard.stripe.com/test/apikeys, Create restricted key (starts rk_test_). CALCOM_TEST_API_KEY: free account at https://cal.com/signup, Settings, Developer, API keys. Optional: WEBINARGEEK_TEST_API_KEY and WEBINARGEEK_TEST_WEBINAR_ID from a trial at https://www.webinargeek.com/register (Account, Integrations, API).",
+   "log": [
+    {
+     "ts": "2026-10-10T21:00:34+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-253."
+    }
+   ],
+   "order": 3870,
+   "input_for": "T-253",
+   "kind": "input"
   }
  ]
 }
