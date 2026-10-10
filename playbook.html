@@ -171,6 +171,12 @@ section.reveal.in{opacity:1;transform:none}
 .pb-zoom .pb-zoom-box{width:900px}
 .pb-zoom svg{display:block;width:900px;height:auto}
 .pb-zoom .pb-zoom-x{position:fixed;top:10px;right:12px;z-index:1;border-radius:999px;padding:8px 16px;font:700 14px/1 system-ui,sans-serif;background:var(--accent);color:#fff;border:0}
+/* Product screenshots (T-257). One sizing rule with the build guides: --shot-w and --shot-min-w are
+   stamped by app/scripts/shots/stamp-playbook.mjs from app/src/lib/shot-size.ts. */
+.shot{margin:24px 0;width:var(--shot-w);max-width:100%}
+.shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+.shot figcaption{font-size:14px;color:var(--ink-3);margin-top:9px;line-height:1.5}
+@media(max-width:640px){.shot{overflow-x:auto}.shot img{min-width:var(--shot-min-w,0)}}
 .viz .cap{font-size:12.5px;color:var(--ink-3);margin-top:12px;text-align:center;line-height:1.5}
 .viz .cap b{color:var(--ink-2);font-weight:650}
 .vtitle{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px}
@@ -1507,6 +1513,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 
 
       <!-- ===================== 2 · POSITIONING ===================== -->
+      <figure class="shot" style="--shot-w:702px;--shot-min-w:158px"><img src="site/guides/pb-d1/01.webp" alt="The Write the offer card in the onboarding centre, with the Who, Before and After slots filled by an AI draft for a demo fintech brand" loading="lazy" decoding="async" width="1440" height="946"><figcaption>The Write the offer card in your onboarding centre, shown for a demo brand. The AI drafts each slot, and you fix every [check] note.</figcaption></figure>
       <h3 id="d1-step-2-position-it-with-a-named-method-and-voice">Step 2: Position It With a Named Method and Voice</h3>
       <p><b>Why:</b> an unnamed method sounds like every competitor. A named one gives buyers a reason to choose you, and gives Day 2 one name and one voice for every asset.</p>
       <div class="task">
@@ -1524,6 +1531,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 
 
       <!-- ===================== 3 · VALUE EQUATION ===================== -->
+      <figure class="shot" style="--shot-w:475px;--shot-min-w:144px"><img src="site/guides/pb-d1/02.webp" alt="The Position it with a named method card in the onboarding centre, with three steps: name the method, say why the obvious alternative fails, and list your proof" loading="lazy" decoding="async" width="1440" height="1038"><figcaption>The named method card: name it, say why the obvious alternative fails, then list your proof.</figcaption></figure>
       <h3 id="d1-step-3-score-the-offer-on-the-value-equation">Step 3: Score the Offer on the Value Equation</h3>
       <p><b>Why:</b> value is dream outcome times perceived likelihood, divided by time delay times effort. This is Alex Hormozi's value equation from <em>$100M Offers</em>; Hormozi sold a majority stake in his portfolio of companies, including Gym Launch, and now runs the investment firm Acquisition.com. No headline saves a weak offer, so fix the weak lever before writing copy.</p>
       <div class="viz wide">
@@ -1605,6 +1613,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 
 
       <!-- ===================== 4 · PERSONA ===================== -->
+      <figure class="shot" style="--shot-w:677px;--shot-min-w:135px"><img src="site/guides/pb-d1/03.webp" alt="The value equation card with four lever scores out of 10, one change next to each, and the rewritten offer sentence, drafted for a demo brand" loading="lazy" decoding="async" width="1440" height="1112"><figcaption>The value equation card, shown for a demo brand: four scores, one change each, then the offer sentence with the two lowest levers fixed.</figcaption></figure>
       <h3 id="d1-step-4-define-the-buyer-persona">Step 4: Define the Buyer Persona</h3>
       <p><b>Why:</b> the account (fields 1 to 4) plus the role (field 5) is what you type into a data vendor in Step 5. The person (fields 5 to 9) is who your copy speaks to. The trigger (field 10) says when to reach them.</p>
       <div class="viz wide">
@@ -1686,6 +1695,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 
 
       <!-- ===================== 5 · PROSPECT LIST ===================== -->
+      <figure class="shot" style="--shot-w:733px;--shot-min-w:151px"><img src="site/guides/pb-d1/04.webp" alt="The buyer persona card with headcount band, revenue band, industry, geography and role filled by an AI draft for a demo brand" loading="lazy" decoding="async" width="1440" height="990"><figcaption>The buyer persona card, shown for a demo brand. Fields 1 to 5 are the filters your data tool uses.</figcaption></figure>
       <h3 id="d1-step-5-build-the-prospect-list">Step 5: Build the Prospect List</h3>
       <p><b>Why:</b> Day 2's invites go to named people with verified contact details. Unverified addresses bounce and damage the sending domains from Step 8.</p>
       <div class="tbl"><table>
@@ -1715,6 +1725,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 
 
       <!-- ===================== 6 · FUNNEL ===================== -->
+      <figure class="shot" style="--shot-w:734px;--shot-min-w:135px"><img src="site/guides/pb-d1/05.webp" alt="The Pick where your list comes from card: the database options, the cold outreach rules, countries to leave out and customer email domains to exclude" loading="lazy" decoding="async" width="1440" height="1112"><figcaption>The list source card: one database, the outreach rules checked, and who to leave out.</figcaption></figure>
       <h3 id="d1-step-6-pick-your-funnel">Step 6: Pick Your Funnel</h3>
       <p><b>Why:</b> the funnel decides which Day 2 guide you build and where your hours go. Pick it on what your buyers already believe and who closes the sale, not on what you sell. Every type in the diagram below is explained, with its own animated funnel, under <a class="tlink" href="#bigpic">The Big Picture</a>.</p>
       <div class="viz wide" data-scope="comparison">
@@ -1809,6 +1820,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 
 
       <!-- ===================== 7 · EVENT ===================== -->
+      <figure class="shot" style="--shot-w:603px;--shot-min-w:162px"><img src="site/guides/pb-d1/06.webp" alt="The Pick your funnel card: questions on how much buyers already believe, who closes the sale and weekly hours, with Webinar funnel picked" loading="lazy" decoding="async" width="1440" height="922"><figcaption>The Pick your funnel card. Your answers decide the funnel. Here it's a webinar.</figcaption></figure>
       <h3 id="d1-step-7-set-the-webinar-topic-date-and-time">Step 7: Set the Webinar Topic, Date and Time</h3>
       <p><b>Why:</b> every Day 2 invite, reminder and page carries the topic and date. Set them once, so nothing is rewritten.</p>
       <div class="task">
@@ -1828,6 +1840,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 
 
       <!-- ===================== 8 · CHANNELS ===================== -->
+      <figure class="shot" style="--shot-w:640px;--shot-min-w:126px"><img src="site/guides/pb-d1/07.webp" alt="The webinar topic, date and time card with an AI-drafted title and the date, start time, time zone, length and replay fields" loading="lazy" decoding="async" width="1440" height="1190"><figcaption>The topic, date and time card, shown for a demo brand. The AI drafts the title, and you set the rest.</figcaption></figure>
       <h3 id="d1-step-8-connect-every-channel-and-the-cloudflare">Step 8: Connect Every Channel and the Cloudflare API</h3>
       <p><b>Why:</b> domain warm-up is the only task with a fixed wait, so it starts today. The Cloudflare token lets your AI agent add DNS records and deploy the Day 3 automations for you.</p>
       <div class="task">
@@ -1908,7 +1921,8 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
       <div class="box tip homework"><div class="h">Tonight's Homework: 30 Minutes</div>
         <p>Short on real conversations in Step 4? Send the question to five customers. Five sent, not five drafted.</p>
         <p>Gather your proof into one folder: screenshots, numbers, testimonials, logos, links. Name each file after the objection it answers. Day 2's pages need them.</p></div>
-    </section>
+    <figure class="shot" style="--shot-w:475px;--shot-min-w:90px"><img src="site/guides/pb-d1/08.webp" alt="The Connect Cloudflare card: what the agent does with the token, and the three steps that create it" loading="lazy" decoding="async" width="1440" height="1668"><figcaption>The Connect Cloudflare card: what the agent does with your token, and the three steps that create it.</figcaption></figure>
+      </section>
 
     <div class="divider"></div>
 
@@ -3200,6 +3214,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
         </div>
       </details>
 <!-- /wt:ga4 -->
+      <figure class="shot" style="--shot-w:540px;--shot-min-w:97px"><img src="site/guides/pb-d3/01.webp" alt="The Connect your AI to every tool card with its three steps and the list of tools to tick" loading="lazy" decoding="async" width="1440" height="1548"><figcaption>The Connect your AI card. Tick each tool once your AI can read from it.</figcaption></figure>
       <h3 id="d3-step-2-brief-it-before-it-changes-anything">Step 2: Brief It Before It Changes Anything</h3>
       <div class="box do"><div class="h">Copy This as Your First Message</div>
         <p><em>"Read every file in this folder in full. Confirm you've read them. Then interview me, a few questions at a time, about brand and story, offer and pricing, buyer, traffic channels, and the tools connected here. Wait for my answers. Then write one spec file that holds every page, template, price and automation, and restate it for my approval. Do not change anything live until I approve it."</em></p></div>
@@ -3219,6 +3234,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
       </div>
 
 
+      <figure class="shot" style="--shot-w:479px;--shot-min-w:135px"><img src="site/guides/pb-d3/02.webp" alt="The Brief it before it changes anything card with three steps about the spec file" loading="lazy" decoding="async" width="1440" height="1106"><figcaption>The briefing card: your AI interviews you, writes one spec file, and you approve it line by line.</figcaption></figure>
       <h3 id="d3-step-3-check-every-automation-fires">Step 3: Check Every Automation Fires</h3>
       <div class="task">
         <div class="th"><span class="tn">Task 3.3</span><b>Prove the Automations With a Real Contact</b></div>
@@ -3292,6 +3308,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
       </div>
 
 
+      <figure class="shot" style="--shot-w:471px;--shot-min-w:150px"><img src="site/guides/pb-d3/03.webp" alt="The Watch a test contact go through every automation card with its two steps" loading="lazy" decoding="async" width="1440" height="996"><figcaption>The test contact card. The agent registers two test contacts and says why anything didn't fire.</figcaption></figure>
       <h3 id="d3-step-4-build-the-dashboard">Step 4: Build the Dashboard</h3>
       <p><b>What it shows:</b> one row per run and per source, with every count from first touch to sale: sends or invites, RSVPs, landing visits, registrations, attendees, CTA clicks, calls booked, sales, revenue, and the page variant. Rates sit between each pair. <b>Where it lives:</b> a Google Sheet in your Drive, copied from the Per-Run Session Analytics Sheet template (under this step in the onboarding centre). Tantra's own dashboard keeps the outreach detail; the sheet is where every tool's numbers meet.</p>
       <div class="task">
@@ -3313,6 +3330,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 <div class="box tip"><div class="h">The Columns, Stage by Stage</div><p>One column for every input in The Funnel Equations.</p><ul><li><b>Stage 1:</b> ACTR, AI, APVR, CIS, EDR, ELCR, EOR, ICR, IDR, LAR, LCR, LMR, LRS, PE, PI, PLCR, PLR</li><li><b>Stage 2:</b> ASR, CIS, EDR, EEOR, EIS, ERR, FCR, FSR, FVR, HR, IDR, IMR, IRR, LAR, LIS, LMR, LRR, LRS, MR, NASR, PE, PER, PI, PSR, TAR, VPR, YR</li><li><b>Stage 3:</b> CACR, CAR, CCR, D2RR, D3RR, DJR, ECCR, EJCR, PCCR, PS, REDR, REOR, RHR, SCCR, SDR, SJCR, SRR, SSR, WCCR, WDR, WJCR, WOR, WRR</li><li><b>Stage 4:</b> ABR, ACR, AFR, BCR, BRR, D1BR, D2BR, D3BR, EOCR, ES, FUCR, OSR, QOCR, RCR, RWR</li><li><b>Stage 5:</b> BPS, BSR, BWR, CRDR, CROR, CSCR, DF1R, DF2R, DF3R, ESCR, NF1R, NF2R, NF3R, NF4R, NF5R, OCR, PCR, PR, QR, RCAR, SDR, SSCR, USR, WDR, WRR, WSCR, WWC</li><li><b>Stage 6:</b> ANCR, ANDR, ANOR, ANR, ANS, CBR, CIAR, CIBR, CIC, CICR, NSCR, NSDR, NSR, NSS, NWCR, NWDR, NWR, NWRR, NWS, WECR, WEDR, WEOR, WER, WES</li></ul></div>
 <!-- EQ-DASH:END -->
 
+      <figure class="shot" style="--shot-w:475px;--shot-min-w:90px"><img src="site/guides/pb-d3/04.webp" alt="The Approve your analytics dashboard card with four steps on what the dashboard counts" loading="lazy" decoding="async" width="1440" height="1662"><figcaption>The dashboard card. Approve it, and the agent adds a private dashboard to your funnel.</figcaption></figure>
       <h3 id="d3-step-5-send-one-small-test-run">Step 5: Send One Small Test Run</h3>
       <div class="task">
         <div class="th"><span class="tn">Task 3.5</span><b>Send One Small Test Run</b></div>
@@ -3329,6 +3347,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
       </div>
 
 
+      <figure class="shot" style="--shot-w:508px;--shot-min-w:87px"><img src="site/guides/pb-d3/05.webp" alt="The Launch one small test run card: five steps, then the channels to start" loading="lazy" decoding="async" width="1440" height="1730"><figcaption>The test run card. Tick the channels to start, and nothing you didn't tick is started.</figcaption></figure>
       <h3 id="d3-step-6-read-the-dashboard-and-find-the-worst-step">Step 6: Read the Dashboard and Find the Worst Step</h3>
       <div class="task">
         <div class="th"><span class="tn">Task 3.6</span><b>Name the One Step to Fix</b></div>
@@ -3360,6 +3379,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 <!-- EQ-MODEL:END -->
 
 
+      <figure class="shot" style="--shot-w:851px;--shot-min-w:143px"><img src="site/guides/pb-d3/06.webp" alt="The Find your worst step card: six choices, then the Funnel Equation Model with six stage metrics for the webinar example" loading="lazy" decoding="async" width="1440" height="1048"><figcaption>The worst step card. The model shows your six stage metrics, here with the webinar example numbers.</figcaption></figure>
       <h3 id="d3-step-7-run-the-experiment-loop-every-week">Step 7: Run the Experiment Loop Every Week</h3>
       <div class="task">
         <div class="th"><span class="tn">Task 3.7</span><b>Swap One Thing, Read the Dashboard, Keep the Winner</b></div>
@@ -3416,6 +3436,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
       </div>
 
 
+      <figure class="shot" style="--shot-w:489px;--shot-min-w:88px"><img src="site/guides/pb-d3/07.webp" alt="The Run one experiment a week card with five steps and the first experiment field" loading="lazy" decoding="async" width="1440" height="1704"><figcaption>The experiment card: one variant, one split run, and one number that decides.</figcaption></figure>
       <h3 id="d3-step-8-write-the-scale-plan">Step 8: Write the Scale Plan</h3>
       <div class="task">
         <div class="th"><span class="tn">Task 3.8</span><b>Write the Scale Plan</b></div>
@@ -3442,6 +3463,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
           <li>A weekly experiment loop in your calendar, and a five-line scale plan.</li>
         </ol></div>
 
+      <figure class="shot" style="--shot-w:734px;--shot-min-w:155px"><img src="site/guides/pb-d3/08.webp" alt="The Write your scale plan card with the first three lines to fill in" loading="lazy" decoding="async" width="1440" height="964"><figcaption>The scale plan card. Lines 1 and 2 must be numbers you fetched, not estimates.</figcaption></figure>
       <div class="box do"><div class="h">What You Leave With</div>
         <p>A running, measured funnel, and a weekly loop that improves it.</p></div>
     </section>
