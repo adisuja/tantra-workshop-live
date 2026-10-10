@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T20:57:02+0530",
-  "version": 1616,
+  "updated": "2026-10-10T20:59:17+0530",
+  "version": 1617,
   "last_id": 386,
   "team": [
    {
@@ -14045,6 +14045,11 @@
      "ts": "2026-10-10T20:56:59+0530",
      "who": "claude",
      "note": "Nothing new to build: every step in this 13:06 Orchestrator note was already carried out in the 13:04 pass on 2026-10-09, and this is the fourth time the note has come back. Rechecked today: the live Cloudflare page passes all 26 gate checks at desktop and phone widths (form post stubbed, so no extra test row), it matches the public repo's index.html byte for byte (a971c0e), the old github.io address and its Pages setting both return 404, no file links to it, and the handoff prompt says fork and open a pull request. One thing to know: the monorepo copy has the same page body but a newer playbook stylesheet (21px serif body text) than the live page, which uses the public repo's own stylesheet snapshot. Open: https://revops-funnel-equations.growthcluborg.workers.dev/?v=1791645986"
+    },
+    {
+     "ts": "2026-10-10T20:59:17+0530",
+     "who": "claude",
+     "note": "Correction to my note from a few minutes ago: the page side holds, but the two test sign-ups from 2026-10-09 were no longer in the tracker and the Funnel Equations tab was empty. I sent one wiring-probe sign-up through the live page (26 of 26 gate checks, desktop and phone) and it now shows in the Tantra Tracker's Funnel Equations tab (wiring-probe T296, 2026-10-10 15:27 UTC, safe to delete). To get it there I had to fix the tracker sync: it has failed since 2026-10-09 14:31 UTC because the centre rejects the admin key (HTTP 401), so it now still updates the two form tabs when that happens (python3 workshop-plan/ops/tracker_sync.py --forms-only, commit 11c808e). Still broken and not mine to fix: every other Tantra Tracker tab is stale until the centre admin key in ~/.config/tantra/revops-admin-key matches the centre again. Also unchanged: live page matches the public repo (a971c0e), github.io and its Pages setting return 404, handoff prompt says fork and pull request. Open: https://revops-funnel-equations.growthcluborg.workers.dev/?v=1791645986"
     }
    ],
    "order": 2960
