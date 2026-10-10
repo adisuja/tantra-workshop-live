@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T16:41:48+0530",
+   "task_id": "T-129",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-129 passed the verify run with nothing left to fix. It's back in review for Amal and Bharath, with no changes beyond the status note.\n\n**Completion check** (everything below was checked in this run)\n1. **Dash check:** done. `pass.py validate` checks for em and en dashes (`dash_problems`, lines 484"
+  },
+  {
    "ts": "2026-10-10T16:33:51+0530",
    "task_id": "T-302",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-107 is in review. The 52 probe rows are deleted from the six funnel tabs, but the Apps Script trashing is split off to T-380 because I have no boards@ sign-in.\n\n- **Funnel tabs:** The rows were all `@example.com`, utm-probe or the placeholder. I backed them up first and deleted bottom-up. A re-rea"
-  },
-  {
-   "ts": "2026-10-10T03:55:55+0530",
-   "task_id": "T-059",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-059 is blocked: the first-lines script is built and committed (9907805), but the Tantra test campaign isn't built because there's no Tantra API key on this machine. Adi needs to create one in Tantra under Settings > API Keys and save it at `~/.config/tantra/tantra-api-key`. Then run `first_lines.p"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-129",
+ "task_id": "T-140",
  "entries": [
-  "F-16092311",
-  "R-072d9f54"
+  "F-d93aeea1"
  ],
- "started": "2026-10-10T16:34:45+0530",
- "message": "Acting on 2 note(s) for T-129: Board hygiene: past due dates, meta.day1, dash check, T-070 title, pitch cadence",
+ "started": "2026-10-10T16:42:44+0530",
+ "message": "Acting on 1 note(s) for T-140: Stage 1 to 3 guides: screenshots that can only be taken once their source exists",
  "slices": {
   "T-072": 1,
   "T-245": 1,

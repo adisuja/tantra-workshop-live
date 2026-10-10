@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T16:39:33+0530",
-  "version": 1541,
+  "updated": "2026-10-10T16:41:20+0530",
+  "version": 1542,
   "last_id": 381,
   "team": [
    {
@@ -5827,20 +5827,12 @@
    ],
    "evidence": [
     {
-     "label": "pass.py dash check",
-     "url": "workshop-plan/tasks/pass.py"
-    },
-    {
-     "label": "dash test",
-     "url": "workshop-plan/tasks/test_pass_dashes.py"
-    },
-    {
-     "label": "AUDIT.md H042 to H055",
-     "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
-    },
-    {
      "label": "Live board",
      "url": "https://adisuja.github.io/tantra-workshop-live/tasks.html?v=1539"
+    },
+    {
+     "label": "Dash test",
+     "url": "workshop-plan/tasks/test_pass_dashes.py"
     }
    ],
    "blockers": [],
@@ -5895,6 +5887,11 @@
      "ts": "2026-10-10T16:39:33+0530",
      "who": "claude",
      "note": "Done through pass.py: validate now fails on any em or en dash (test_pass_dashes.py passes), meta.day1 is removed, 66 past due dates are reset (0 open tasks past due), T-070 has no Build Pass, and T-071 now says Pro is pitched only at the close of Day 3, which the deck and the s4-challenge guide already teach. H042 to H055 are marked fixed in AUDIT.md. Board republished (v1539) and main pushed. Bharath added as reviewer for the pass.py change."
+    },
+    {
+     "ts": "2026-10-10T16:41:20+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-10: re-checked every item on disk. test_pass_dashes.py passes and validate passes on 239 tasks, meta.day1 is gone with no code reading it, 0 open tasks are past due, T-070 has no Build Pass and stays on hold. T-071, the deck offer slide (content.py, Day 3 final block, shown once) and the s4-challenge guide (offer on the last day only) all say close of Day 3, and AUDIT.md marks H042 to H055 fixed. The live mirror board (v1539) has the same data, so nothing had to change."
     }
    ],
    "order": 1270,
