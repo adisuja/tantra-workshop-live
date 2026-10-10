@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T09:10:06+0530",
-  "version": 1426,
+  "updated": "2026-10-10T15:03:12+0530",
+  "version": 1428,
   "last_id": 380,
   "team": [
    {
@@ -7151,44 +7151,26 @@
   },
   {
    "id": "T-156",
-   "title": "Retention: define each customer's business result and send a monthly results report",
-   "area": "Product",
+   "status": "doing",
    "owner": "Amal",
+   "assignee": "Claude",
+   "reviewers": [
+    "Amal",
+    "Bharath"
+   ],
    "priority": "P2",
    "due": "2026-10-20",
-   "status": "queue",
-   "why": "Owner voice notes, 2026-09-26: the funnel's job is to get everyone using Tantra and reporting every bug and feature request; both get resolved through a fast agentic dev cycle so customers stay for the business results. Owner assigned all of this to Claude end to end.",
-   "spec": "Customers stay month after month only if Tantra produces real revenue/business outcomes. Define the result metric per customer type (revenue influenced, hours saved, processes automated), send a monthly results report, and feed the retention signal into feature scoring.",
-   "done_when": [
-    "Result metric defined per customer type",
-    "First monthly reports sent",
-    "Feature scoring rubric includes retention"
-   ],
+   "area": "Product",
+   "order": 1560,
+   "title": "T-156: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
    "evidence": [],
    "blockers": [],
    "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-26T03:21:41+0530",
-     "who": "claude",
-     "note": "Added from owner voice notes 2026-09-26."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review 2026-10-08: still accurate. No work started; still valid."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): checked, current. pass 2: still accurate; not started."
-    }
-   ],
-   "order": 1560,
-   "assignee": "Claude",
-   "reviewers": [
-    "Amal"
-   ]
+   "log": [],
+   "held": true
   },
   {
    "id": "T-157",
