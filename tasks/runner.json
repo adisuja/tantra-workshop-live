@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T17:36:04+0530",
+   "task_id": "T-234",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "provider",
+   "summary": "API Error: 502 [gemini/gemini-3.5-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.5-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. If it persis"
+  },
+  {
    "ts": "2026-10-10T17:23:44+0530",
    "task_id": "T-238",
    "mode": "feedback",
@@ -87,24 +95,17 @@
    "status": "queue",
    "result": "paused",
    "summary": "Stopped: Adi paused the agent from the board."
-  },
-  {
-   "ts": "2026-10-10T04:00:27+0530",
-   "task_id": "T-121",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-121 is in review: I deleted `SEATS_TOTAL` and `SEATS_CLAIMED` from `app/src/lib/funnel.ts`, committed as 83a1c23 and pushed to main. `git grep` for both names in `app/src` now returns nothing, and `tsc --noEmit` for the app printed no errors. I didn't capture an explicit exit code for tsc, so \"no "
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-234: Workshop reminders through Tantra omni-channel campaigns: import every registrant with their own join and calendar links",
- "task_id": "T-234",
+ "message": "Acting on 2 note(s) for T-226: Tantra Host Console: Adi hosts every session from a Mac app that runs chat posts, polls, call-to-action links, mute and video control, co-hosts",
+ "task_id": "T-226",
  "entries": [
-  "R-8475fbce"
+  "F-c251293a",
+  "R-803ec112"
  ],
  "mode": "feedback",
- "started": "2026-10-10T17:26:55+0530",
+ "started": "2026-10-10T17:37:32+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
