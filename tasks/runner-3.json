@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T20:24:22+0530",
+   "task_id": "T-242",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. API Error: Connection refused — a firewall or proxy may be blocking it (ECONNREFUSED)"
+  },
+  {
    "ts": "2026-10-10T18:15:37+0530",
    "task_id": "T-227",
    "mode": "feedback",
@@ -87,30 +95,24 @@
    "status": "queue",
    "result": "error",
    "summary": "It needs a scroll pass first to mount the shots. Adding that."
-  },
-  {
-   "ts": "2026-10-10T15:14:04+0530",
-   "task_id": "T-148",
-   "mode": "feedback",
-   "status": "review",
-   "result": "turns",
-   "summary": "T-148 is in review for Bhaskar: the Tantra mark on the cover slide is fixed in the deck's source files and on the live deck, and I checked the live page in a headless browser.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| Fix the slide sources (`_rebuild/header.html:83`, `_rebuild/slid"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-242",
+ "task_id": "T-278",
  "entries": [
-  "F-5c5c3069"
+  "F-2e1a130f",
+  "R-e2e2a9ab"
  ],
- "started": "2026-10-10T19:56:11+0530",
- "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
+ "started": "2026-10-10T20:25:09+0530",
+ "message": "Acting on 2 note(s) for T-278: Join and success pages: one seat-link resolver, community fallback, footer links, sample dates",
  "slices": {
   "T-135": 1,
   "T-148": 1,
   "T-252": 1,
   "T-289": 1,
   "T-300": 1,
-  "T-240": 1
+  "T-240": 1,
+  "T-242": 1
  }
 }

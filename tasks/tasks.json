@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T20:23:31+0530",
-  "version": 1579,
+  "updated": "2026-10-10T20:26:24+0530",
+  "version": 1580,
   "last_id": 384,
   "team": [
    {
@@ -14764,6 +14764,11 @@
      "ts": "2026-10-10T20:23:31+0530",
      "who": "claude",
      "note": "Still waiting on the Google password, which only Adi can type (tracked as T-349). I built the one-pass capture kit so the shot takes minutes once it is in: scripts/walkthroughs/journeys/guide-s1-cold-email-02.md (runbook), guide-admin-add-user.js (blurs identities, blocks any submit, cancels the form) and guide-slot.py (WebP, guide entry, check-guides). Tested on a mock form: submit by click and Enter blocked, 0 emails readable, dry-run WebP 1400 wide passes the size check; live selectors are unverified until the password wall is gone."
+    },
+    {
+     "ts": "2026-10-10T20:26:24+0530",
+     "who": "claude",
+     "note": "Verify pass: still waiting on Adi typing the Google password (T-349). I re-tested the one-pass capture kit on a mock form in headless Chromium: click, Enter and Space could not submit, no real name or email stayed readable, Cancel closed the form, and the finalize script filled step 2 of a copy of the guide with a 1400 by 1248 WebP of 14,206 bytes. One fix: the blur step now reports ok only when the submit guard is on. Selectors are still untested on the real Google Admin console. Runbook: scripts/walkthroughs/journeys/guide-s1-cold-email-02.md"
     }
    ],
    "order": 3480
