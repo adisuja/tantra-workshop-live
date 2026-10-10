@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T16:41:20+0530",
-  "version": 1542,
-  "last_id": 381,
+  "updated": "2026-10-10T16:44:29+0530",
+  "version": 1547,
+  "last_id": 382,
   "team": [
    {
     "name": "Adi",
@@ -2671,10 +2671,15 @@
      "ts": "2026-10-10T16:35:33+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-20 was past; now none (cleared: on hold, nothing depends on a deadline)."
+    },
+    {
+     "ts": "2026-10-10T16:43:30+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Bharath → Claude (by Orchestrator)."
     }
    ],
    "order": 420,
-   "assignee": "Bharath",
+   "assignee": "Claude",
    "reviewers": [
     "Bharath",
     "Adi"
@@ -13962,11 +13967,12 @@
    "owner": "Aquila",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "doing",
    "why": "The owner ruled these tools out on 2026-10-07; leftover code, survey options and 'verified list' promises can still surface them or promise a check we do not run.",
    "spec": "The ruled-out tools (GoDaddy, Microsoft 365, Instantly, SendGrid, ZeroBounce, NeverBounce, BuiltWith, HeyReach, Calendly, Apollo, WhatsApp Cloud API card) are gone from the choices but still live as dormant code and text. Do: (1) delete the connectors and jobs nothing reaches: cloud/src/connectors/instantly.ts, m365.ts, jobs-m365.ts, the HeyReach, Calendly, SendGrid ('sendgrid-domain' job id in app/src/lib/workshop-cards.ts JobId and cloud/admin-ui/admin.js) and email-verifier jobs, the dashboard stats in cloud/src/dashboard.ts and the admin Microsoft 365 app setting (overlaps T-272 H062; coordinate). (2) Give attendees who already connected a removed tool a way to disconnect it and wipe the stored key (disconnect used to run through the removed card). (3) Rewrite the remaining promises of paid email checks: 'your verified list' on the Tantra cards (workshop-cards.ts around line 1333), 'Verify every email' in guides and the playbook. Owner rule 2026-10-07: no paid verification (NeverBounce, ZeroBounce); the free checks stay (dedupe, format, company domain) because the data vendors deliver lists already verified. (4) workshop-plan/survey.html still asks about GoDaddy, SendGrid, Apollo and BuiltWith: update it and regenerate the survey. (5) Add every ruled-out name to app/scripts/probe-visual-tools.mjs so none can return. Keep verbatim client library examples (app/src/lib/examples/data/real-growth.ts) unchanged. Coordinate with T-272 and T-264, which touch the same files.",
    "done_when": [
@@ -13975,7 +13981,20 @@
     "No card promises paid email verification",
     "tsc app and cloud, check-coverage, check-guides and run-chain pass"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "branch t300-ruled-out-cleanup",
+     "url": "file:///private/tmp/wt-t300"
+    },
+    {
+     "label": "run-chain log",
+     "url": "file:///tmp/t300-chain.log"
+    },
+    {
+     "label": "probe logs",
+     "url": "file:///tmp/chain-t300"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -13983,6 +14002,16 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Added from the session sweep (2026-10-09): source: fcd892f2 2026-10-07T16:11 (Claude's removal report items 1, 3, 4, 5, 6, 7), 17:18 (Adi: no paid email verification, WhatsApp via Tantra). T-251 is marked done but only covered its Part 1 (cards and probes); Part 2 and 3 of its own spec are not done: git grep on main still finds GoDaddy and SendGrid in app/src and cloud/src, cloud/src/connectors/instantly.ts and m365.ts, and workshop-plan/survey.html has 2 hits."
+    },
+    {
+     "ts": "2026-10-10T16:44:29+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T16:44:29+0530",
+     "who": "claude",
+     "note": "All five parts are built on branch t300-ruled-out-cleanup (worktree /private/tmp/wt-t300, head 2220026, merged with main): dead connectors and jobs removed, Disconnect and delete key for retired providers, verification copy rewritten, survey regenerated, denylist probe (proven to fail on a planted name). Passing: both tsc, check-coverage, check-examples, probe-visual-tools; the done_when grep only hits examples/data. Left: run-chain probes fail (domain-chain 'Choose your tools asks three questions' and the capacity plan, day1/day2 stuck on Choose your tools, stack calendar card, shapes, workshop checkout). Next run: compare each against main, fix the ones this branch caused, then push the branch and post READY. check-guides and check-playbook-anchors fail the same way on main."
     }
    ],
    "order": 3000
@@ -14825,6 +14854,35 @@
    ],
    "order": 3810,
    "input_for": "T-249",
+   "kind": "input"
+  },
+  {
+   "id": "T-382",
+   "title": "Input from Adi for T-005: Open the Dodo dashboard (https://app.dodopayments.com) > Developer > API Keys an",
+   "area": "Infra",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (reserved): Owner's written rule reserves Dodo key rotation for after launch, and regenerating live credentials in his account is something only Adi can do.. Everything else in T-005 is being built around it. As soon as this is done, T-005 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Open the Dodo dashboard (https://app.dodopayments.com) > Developer > API Keys and regenerate the live key. Then go to Webhooks, open the live /hooks/dodo endpoint (create it if missing) and copy its signing secret. Paste both into app/.env.local as DODO_API_KEY and DODO_WEBHOOK_SECRET. Claude then updates the Worker and runs the probes.",
+   "log": [
+    {
+     "ts": "2026-10-10T16:42:54+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-005."
+    }
+   ],
+   "order": 3820,
+   "input_for": "T-005",
    "kind": "input"
   }
  ]
