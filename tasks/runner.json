@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T17:46:43+0530",
+   "task_id": "T-226",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "provider",
+   "summary": "API Error: 502 [gemini/gemini-3.7-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.7-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. If it persis"
+  },
+  {
    "ts": "2026-10-10T17:36:04+0530",
    "task_id": "T-234",
    "mode": "feedback",
@@ -87,25 +95,17 @@
    "status": "doing",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-156 is still in progress (status set to doing): the metrics and the rubric change are done and committed in 7a96aef, but the report generator doesn't exist yet and"
-  },
-  {
-   "ts": "2026-10-10T04:15:27+0530",
-   "task_id": "T-072",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "paused",
-   "summary": "Stopped: Adi paused the agent from the board."
   }
  ],
  "state": "working",
- "message": "Acting on 2 note(s) for T-226: Tantra Host Console: Adi hosts every session from a Mac app that runs chat posts, polls, call-to-action links, mute and video control, co-hosts",
- "task_id": "T-226",
+ "message": "Acting on 2 note(s) for T-033: WhatsApp + email delivery automation",
+ "task_id": "T-033",
  "entries": [
-  "F-c251293a",
-  "R-803ec112"
+  "F-90daec88",
+  "R-95c6ab16"
  ],
  "mode": "feedback",
- "started": "2026-10-10T17:37:32+0530",
+ "started": "2026-10-10T17:47:55+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
