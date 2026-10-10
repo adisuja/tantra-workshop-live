@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T21:48:26+0530",
-  "version": 1635,
+  "updated": "2026-10-10T21:56:33+0530",
+  "version": 1636,
   "last_id": 387,
   "team": [
    {
@@ -1171,23 +1171,23 @@
    "evidence": [
     {
      "label": "Survey (live centre)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/materials/survey.html?v=1791649106"
+     "url": "https://revops-centre.growthcluborg.workers.dev/materials/survey.html?v=1791649568"
     },
     {
      "label": "Survey (mirror)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/survey.html?v=1791649106"
+     "url": "https://adisuja.github.io/tantra-workshop-live/survey.html?v=1791649568"
     },
     {
      "label": "Survey (local)",
-     "url": "http://localhost:8899/survey.html?v=1791649106"
+     "url": "http://localhost:8899/survey.html?v=1791649568"
     },
     {
      "label": "questions.py (source, lock note)",
      "url": "workshop-plan/build/questions.py"
     },
     {
-     "label": "Worker old-answer map (SURVEY_LEGACY)",
-     "url": "cloud/src/index.ts"
+     "label": "Worker save probe",
+     "url": "app/scripts/probe-survey-worker.mjs"
     }
    ],
    "blockers": [],
@@ -1242,6 +1242,11 @@
      "ts": "2026-10-10T21:48:26+0530",
      "who": "claude",
      "note": "Locked by orchestrator 2026-10-09: the 8/9/8 daily set stands as it is in questions.py, nothing is asked of Adi, and T-024 and T-031 already build against the locked ids (no wording here says they wait). The Worker's old-answer map now also covers d2v5_creds and stack_domains, pushed (origin main dc5ec66) and deployed as revops-centre 3f9c05f2 from a clean build of main. Checked today: the grep finds only the 5 legacy map lines, probe-survey is clean, and the live centre and mirror copies are byte-identical to the source, so open the live centre link to review."
+    },
+    {
+     "ts": "2026-10-10T21:56:33+0530",
+     "who": "claude",
+     "note": "Verify pass found one gap and fixed it: the Worker was dropping the Day 0 domains answer on every save and storing old tool names raw, so it now keeps that answer and saves old names as their replacement. Checked with the survey probe (clean, all 32 questions) and the Worker save probe on a local Worker (all passed), then pushed and deployed as revops-centre e61e9802; the live and mirror survey pages match the source and show banned names only in the 5 old-answer map lines. The live save path was not tested with a test attendee, to avoid writing test data to the live database. Open: https://revops-centre.growthcluborg.workers.dev/materials/survey.html?v=1791649568"
     }
    ],
    "order": 130,
