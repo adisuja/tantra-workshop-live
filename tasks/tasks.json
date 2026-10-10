@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T01:30:35+0530",
-  "version": 1671,
+  "updated": "2026-10-11T01:33:36+0530",
+  "version": 1674,
   "last_id": 387,
   "team": [
    {
@@ -1524,7 +1524,11 @@
    "evidence": [
     {
      "label": "Day 1 output for the live row",
-     "url": "file:///Users/adithyamurali/tantra-redesign/workshop-plan/ops/outputs/4/day1.html"
+     "url": "file:///Users/adithyamurali/tantra-redesign/workshop-plan/ops/outputs/4/day1.html?v=f842c8b"
+    },
+    {
+     "label": "tick.log line 3004 (2026-10-10T20:03:03Z): scheduled tick, day_outputs unchanged 1, no packages_distributions",
+     "url": "file:///Users/adithyamurali/tantra-redesign/workshop-plan/ops/tick.log"
     },
     {
      "label": "Screenshot 1280",
@@ -1535,13 +1539,11 @@
      "url": "file:///Users/adithyamurali/tantra-redesign/workshop-plan/ops/dryrun/t031/day1-390.png"
     },
     {
-     "label": "Pipeline source",
+     "label": "Pipeline source (commit f842c8b, on origin main)",
      "url": "file:///Users/adithyamurali/tantra-redesign/workshop-plan/ops/dayoutput.py"
     }
    ],
-   "blockers": [
-    "T-024 templates remapped to the v5 ids"
-   ],
+   "blockers": [],
    "needs_from_owner": "",
    "log": [
     {
@@ -1603,6 +1605,11 @@
      "ts": "2026-10-10T16:35:32+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-21 was past; now 2026-10-14 (P0 rule)."
+    },
+    {
+     "ts": "2026-10-11T01:33:36+0530",
+     "who": "claude",
+     "note": "Found and fixed a real break: the job was ticking, but the day output step had failed since 2026-10-09 14:38Z (HTTP 500, then 401 from 22:15Z) because the Worker's admin sign-in became POST only; dayoutput.py, deliver.py and tracker_sync.py now sign in by POST (commit f842c8b). Checked: the next scheduled tick (tick.log line 3004, 2026-10-10T20:03:03Z) shows day_outputs unchanged 1 with no packages_distributions error and day1.html untouched; dayoutput.py --check passes against the pushed template (8 sections, 37 slots, no problems) so no regeneration and the T-024 blocker is removed; probe_outputs.py is green and main is pushed to origin (0332ee4, 8141e8d and f842c8b are on origin main, no merge was needed, origin had nothing new). Left for their own tasks: centre_sheet.py and dryrun_day1.py still use the old sign-in address and will get 401 until switched the same way."
     }
    ],
    "order": 210,
@@ -1645,9 +1652,7 @@
      "url": "/Users/adithyamurali/tantra-redesign/workshop-plan/ops/render_pdf.py"
     }
    ],
-   "blockers": [
-    "T-031 day outputs"
-   ],
+   "blockers": [],
    "needs_from_owner": "",
    "log": [
     {
@@ -1704,6 +1709,11 @@
      "ts": "2026-10-10T16:35:32+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-21 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-11T01:33:36+0530",
+     "who": "claude",
+     "note": "T-031 update: the real day1 row for attendee 4 is in place and ticking again (sign-in fix f842c8b, pushed). probe_outputs.py passes on it (HTML 200, PDF 200, wrong token 404), so the T-031 blocker is removed. Nothing else had to change here."
     }
    ],
    "order": 220,
@@ -1766,7 +1776,6 @@
     }
    ],
    "blockers": [
-    "T-031",
     "T-032",
     "T-033"
    ],
@@ -1826,6 +1835,11 @@
      "ts": "2026-10-10T16:35:32+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-22 was past; now 2026-10-14 (P0 rule)."
+    },
+    {
+     "ts": "2026-10-11T01:33:36+0530",
+     "who": "claude",
+     "note": "T-031 update: day outputs are real and on origin main (f842c8b), so T-031 no longer blocks this. Note for the rehearsal: dryrun_day1.py still signs in to the centre admin with the old address form and will get 401 until it posts the token like dayoutput.py does."
     }
    ],
    "order": 240,
