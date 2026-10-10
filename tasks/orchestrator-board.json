@@ -1,12 +1,12 @@
 {
- "running": "2026-10-10T16:30:12+0530",
- "last_sweep": "2026-10-10T16:20:12+0530",
+ "running": null,
+ "last_sweep": "2026-10-10T16:30:53+0530",
  "counts": {
-  "proceed": 63,
+  "proceed": 62,
   "needs_adi": 9,
   "finish": 53,
   "resolve": 12,
-  "keep_hold": 20,
+  "keep_hold": 21,
   "complete": 16
  },
  "tasks": {
@@ -771,8 +771,8 @@
    "input_task": null
   },
   "T-301": {
-   "verdict": "proceed",
-   "ts": "2026-10-09T05:16:24+0530",
+   "verdict": "keep_hold",
+   "ts": "2026-10-10T16:30:53+0530",
    "input_task": null
   },
   "T-302": {
