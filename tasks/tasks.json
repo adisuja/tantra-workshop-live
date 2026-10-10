@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T20:11:41+0530",
-  "version": 1568,
+  "updated": "2026-10-10T20:18:16+0530",
+  "version": 1572,
   "last_id": 382,
   "team": [
    {
@@ -14613,7 +14613,7 @@
   },
   {
    "id": "T-339",
-   "title": "Input from Adi for T-133: In Claude in Chrome, sign in to https://usetantra.com (Tantra app) and https://c",
+   "title": "Input from Adi for T-133: sign in to Twilio (https://console.twilio.com) in the Claude in Chrome Brave profile",
    "area": "Content",
    "owner": "Adi",
    "assignee": "Adi",
@@ -14639,6 +14639,11 @@
      "ts": "2026-10-09T12:09:47+0530",
      "who": "claude",
      "note": "T-133 ripple: Tantra is already signed in per the 2026-10-09 log, so the ask is now Twilio only, plus the interactive session, because the unattended runner has no browser."
+    },
+    {
+     "ts": "2026-10-10T20:18:16+0530",
+     "who": "claude",
+     "note": "Ripple from T-115 checked: needs_from_owner already asks for Twilio only, so I only retitled the task to drop the old Tantra sign-in wording. Tantra is signed in per the 2026-10-09 log. This unattended run has no browser to re-check it, so the interactive T-133 session confirms it on its first step. Still blocked on Adi signing in to Twilio."
     }
    ],
    "order": 3390,
