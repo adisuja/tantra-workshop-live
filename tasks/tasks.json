@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T20:52:42+0530",
-  "version": 1609,
+  "updated": "2026-10-10T20:54:01+0530",
+  "version": 1610,
   "last_id": 386,
   "team": [
    {
@@ -6201,7 +6201,7 @@
    "blockers": [
     "macOS refuses the background agent screen capture and clicks on this Mac until T-351 is granted"
    ],
-   "needs_from_owner": "Two things on this Mac, both physical: (1) unlock the screen and leave it unlocked with the Claude app open (a locked screen captures blank). (2) System Settings, Privacy and Security, Accessibility: switch ON 'Python' (/Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app); if it is not listed, add it with the + button. Screen Recording is already granted. Then the agent captures all 5 slots by itself.",
+   "needs_from_owner": "Two things on this Mac: 1) unlock the screen and leave it unlocked with the Claude app open (the agent cannot type your password); 2) System Settings, Privacy and Security, Accessibility: switch on Python (/Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app), adding it with the + button if it is not listed. Check: python3 app/scripts/shots/claude-app-shots.py preflight prints READY.",
    "log": [
     {
      "ts": "2026-09-25T19:38:41+0530",
@@ -6232,6 +6232,11 @@
      "ts": "2026-10-10T20:52:13+0530",
      "who": "claude",
      "note": "No screenshots captured this run: the Mac has been on its lock screen since 20:22 IST, so the Claude window captures blank (checked: window and full-screen captures show only the lock wallpaper), and Accessibility still reads NOT granted for the runner (AXIsProcessTrusted false, System Events times out); only Screen Recording is in place. No routine was created, so nothing needs reverting. The preflight (python3 app/scripts/shots/claude-app-shots.py preflight) now also reports a locked screen and prints NOT READY until both are fixed."
+    },
+    {
+     "ts": "2026-10-10T20:54:01+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-10 20:53 IST: still no captures. The Mac has been on its lock screen since 20:22 IST (a full-screen capture shows only the lock wallpaper, the Claude window captures blank) and preflight reports Accessibility as not granted, with System Events timing out. All 5 slots are still marked capture-needed (check-guides total 60), no demo routine exists and nothing needs reverting. Once the screen is unlocked and Accessibility is on, the agent captures all 5 without further input."
     }
    ],
    "order": 1320,
