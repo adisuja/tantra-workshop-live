@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T16:17:22+0530",
+   "task_id": "T-274",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I checked all seven T-274 fixes again and they are working on main and on both live copies. I had nothing to fix. The task is now in review with Adi and Bharath, and note F-8271900e was already acked (the ack command reported 0).\n\n**Completion check (all checked in this run):**\n\n| Item | State | Evi"
+  },
+  {
    "ts": "2026-10-10T15:41:56+0530",
    "task_id": "T-250",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-271 is in review (reviewers Adi and Bharath). All 18 findings are now either fixed or marked obsolete. The work is pushed to branch `t-271-card-copy` (commits 767e3a6 and 517cfde), and the new `probe-t271-cards` passes 38/38 on my own local stack (GoHighLevel, HubSpot and Zoho CRM imports included"
-  },
-  {
-   "ts": "2026-10-10T02:18:53+0530",
-   "task_id": "T-269",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-269 is in review: all 18 findings are fixed, committed (`b918858`), pushed to main and deployed (Worker `fee816d6`). I checked the changes on a local Worker at 1440 and 390 px. The live bundle has the new rail, but I did not walk the live centre as an attendee.\n\n**What changed**\n- The rail shows e"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-274",
+ "task_id": "T-301",
  "entries": [
-  "F-8271900e"
+  "F-82660483"
  ],
- "started": "2026-10-10T15:42:05+0530",
- "message": "Acting on 1 note(s) for T-274: Task Command Center board UI fixes (tasks.html)",
+ "started": "2026-10-10T16:18:38+0530",
+ "message": "Acting on 1 note(s) for T-301: Data partners: agree the order hand-off and test the list upload with a real sample CSV",
  "slices": {
   "T-072": 1,
   "T-245": 1,
