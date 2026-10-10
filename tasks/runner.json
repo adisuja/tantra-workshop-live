@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T01:11:46+0530",
+   "task_id": "T-004",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-004 is closed (done): the verify pass found no code change needed, and the one gap left by the last run is fixed.\n\nCOMPLETION CHECK\n- **Record the price table as final:** done. `app/src/lib/prices.json`, read this run, holds USD 9900, INR 999900, EUR 8900, GBP 7900, AUD 14900, CAD 13900, SGD 12900"
+  },
+  {
    "ts": "2026-10-11T01:03:56+0530",
    "task_id": "T-150",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "done",
    "result": "ok",
    "summary": "T-036 is set to done: the task and the runbook now name the GitHub Pages mirror as the attendee route, and the tunnel recipe is marked retired.\n\nCompletion check:\n- **Note that the preview tunnel was turned off on 2026-10-09 (T-194) and attendees use the mirror:** done. Added to the Retired section "
-  },
-  {
-   "ts": "2026-10-10T20:45:40+0530",
-   "task_id": "T-260",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "COMPLETION CHECK for T-260 (now in review, reviewers Adi and Bharath; notes F-09302e2b and R-70c02c47 acked)\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| (1) `app/src/lib/fields.ts:70` hint drops Slack | Done | Hint now reads \"WhatsApp or community invite\" (commit 25a8998) |\n| (2) `vis"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-004: Seat checkout (Dodo, live), geo-priced",
- "task_id": "T-004",
+ "message": "Acting on 1 note(s) for T-100: VIP bonus stack: nine branded bonuses with generated key art",
+ "task_id": "T-100",
  "entries": [
-  "R-042511e2"
+  "F-b411f855"
  ],
  "mode": "feedback",
- "started": "2026-10-11T01:07:03+0530",
+ "started": "2026-10-11T01:13:10+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
