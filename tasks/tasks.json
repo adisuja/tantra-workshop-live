@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T15:45:42+0530",
-  "version": 1450,
+  "updated": "2026-10-10T15:57:12+0530",
+  "version": 1451,
   "last_id": 381,
   "team": [
    {
@@ -12112,7 +12112,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Newcomers read the spec first; it still describes Namecheap and a fixed first cohort.",
    "spec": "In docs/onboarding-v3/ONBOARDING_V3_SPEC.md: dates relative to the weekly cohort, Day 0 card 3 with description and 5/10/15/30 min reminders, approved vendor set (Cloudflare Registrar, Twilio, Choose your tools) with ruled-out vendors removed, an owner and date for each manual step, Title Case headings. Update docs/onboarding-v3/coverage.json notes as automations land. Closes audit findings H069, H070, H071, H072, H073, X108. Per finding: H069 (docs/onboarding-v3/ONBOARDING_V3_SPEC.md): Rewrite the dates relative to each weekly cohort (Wed to Fri 11:00 ET). H070 (docs/onboarding-v3/ONBOARDING_V3_SPEC.md): Add the event description and 5, 10, 15, 30 minute reminders to the card 3 requirement. H071 (docs/onboarding-v3/ONBOARDING_V3_SPEC.md): Update sections 4, 6 and 8 to the approved vendor set (Cloudflare Registrar, Twilio, Choose your tools) and drop ruled-out vendors. H072 (docs/onboarding-v3/ONBOARDING_V3_SPEC.md): Automate or explicitly own each manual step and give every open item an owner and date. H073 (docs/onboarding-v3/ONBOARDING_V3_SPEC.md): Title Case every heading in the spec. X108 (docs/onboarding-v3/coverage.json): Update the notes as each automation lands; the remaining human-only entries need an owner decision. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Merge order: build on main after T-251 lands (branch tantra-walkthroughs: e4bd0b8 removes the ruled-out tools and rewrites workshop-cards.ts, agentic.ts, jobs.ts, agent.tsx and coverage.json; probe fixes 043b5ab and aa22a3f, no READY yet in /Users/adithyamurali/tantra-round5-coord/LOG.md). Until then branch from tantra-walkthroughs; AUDIT.md line numbers predate that change.",
    "done_when": [
@@ -12120,7 +12120,20 @@
     "No hardcoded cohort date in the spec; node app/scripts/probe-headings.mjs (or titlecase) passes on it",
     "Every listed finding id is marked fixed in AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Spec",
+     "url": "docs/onboarding-v3/ONBOARDING_V3_SPEC.md"
+    },
+    {
+     "label": "coverage.json",
+     "url": "docs/onboarding-v3/coverage.json"
+    },
+    {
+     "label": "Commit 7bc886a",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/7bc886a"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -12133,6 +12146,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: verified: ONBOARDING_V3_SPEC.md still describes Namecheap (lines 19, 20, 66 to 70, 126 to 130), Instantly and HeyReach; coverage.json is rewritten by e4bd0b8, so do this after T-251 merges."
+    },
+    {
+     "ts": "2026-10-10T15:57:12+0530",
+     "who": "claude",
+     "note": "Rewrote ONBOARDING_V3_SPEC.md: approved stack only (Cloudflare Registrar, Twilio SMS, Choose your tools, Cal.com, Tantra WhatsApp and reminders), dates relative to the weekly cohort via cohort.ts, Day 0 card 3 needs a description plus 5/10/15/30 min reminders, and every manual step or open item now has an owner and due date. coverage.json human-only entries got owners and 10 unmapped cards and jobs were mapped. Verified: ruled-out vendor grep empty, no dashes, all 16 headings pass titlecase.py, check-coverage OK. Pushed as 7bc886a; H069 to H073 and X108 marked fixed in AUDIT.md and LOG.md."
     }
    ],
    "order": 2760
