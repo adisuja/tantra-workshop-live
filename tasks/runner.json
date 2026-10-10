@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T20:50:02+0530",
+   "task_id": "T-242",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "ok",
+   "summary": "Rsp walker is in progress and writing its output; waiting for the background watcher to report its result."
+  },
+  {
    "ts": "2026-10-10T20:47:48+0530",
    "task_id": "T-036",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "provider",
    "summary": "API Error: 502 [gemini/gemini-3.7-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.7-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. If it persis"
-  },
-  {
-   "ts": "2026-10-10T17:36:04+0530",
-   "task_id": "T-234",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "provider",
-   "summary": "API Error: 502 [gemini/gemini-3.5-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.5-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. If it persis"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
- "task_id": "T-242",
+ "message": "Acting on 1 note(s) for T-132: Stage 5 to 6 guides: real Claude Code screenshots (5 steps)",
+ "task_id": "T-132",
  "entries": [
-  "F-5c5c3069"
+  "F-a48458c6"
  ],
  "mode": "feedback",
- "started": "2026-10-10T20:48:36+0530",
+ "started": "2026-10-10T20:50:21+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,

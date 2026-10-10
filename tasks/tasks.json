@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T20:47:40+0530",
-  "version": 1604,
+  "updated": "2026-10-10T20:50:39+0530",
+  "version": 1606,
   "last_id": 386,
   "team": [
    {
@@ -13096,8 +13096,8 @@
    ],
    "evidence": [
     {
-     "label": "Walkthrough review index (18 videos, 4K, all under 2:00)",
-     "url": "http://localhost:8883/wt-review/index.html?v=ac715b3"
+     "label": "Walkthrough review index (18 videos: 10 in account, 5 docs based, 3 docs only until sign-in)",
+     "url": "http://localhost:8883/wt-review/index.html?v=2efde3d"
     },
     {
      "label": "Tantra reminders review page (re-rendered 2026-10-09, caption without account count)",
@@ -13113,7 +13113,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Reply approve or redo for each of the 18 videos on the review index: http://localhost:8883/wt-review/index.html?v=e144712 (each video has its own page at /wt-review/<tool>/index.html).",
+   "needs_from_owner": "Reply approve or redo for each of the 18 videos on the review index: http://localhost:8883/wt-review/index.html?v=2efde3d (each video has its own page at /wt-review/<tool>/index.html). Twilio, Dodo and Google senders show docs steps until their sign-in exists, so judge those on the rest.",
    "log": [
     {
      "ts": "2026-10-08T05:03:55+0530",
@@ -13149,6 +13149,16 @@
      "ts": "2026-10-09T12:27:51+0530",
      "who": "claude",
      "note": "From T-287: the Tantra reminders video is re-rendered again (4K, 1:58, verify.py passes). Step 13 now says LinkedIn and WhatsApp accounts come with your plan, with no channel add-on, and gives no account count, because the live Tantra catalog (2 on Pro, 12 on Scale) differs from the 5 and 15 in the earlier caption. Checked on stills from the new file; branch tantra-walkthroughs ac715b3."
+    },
+    {
+     "ts": "2026-10-10T20:49:48+0530",
+     "who": "claude",
+     "note": "Review index refreshed after T-283: it still lists 18 videos (the 5 docs based ones, Kie.ai, Stripe, HubSpot, Zoho and Wistia, replaced the old sign-up-only cuts), and now shows the count, each length, and a label per video: 10 recorded in the account, 5 docs based, 3 docs only until sign-in (Twilio, Dodo, Google senders). Checked in a headless browser: 18 cards, all 18 pages and thumbnails load, labels count 10/5/3; the review server on :8883 was down and is running again. Open the index and reply approve or redo per video (tantra-walkthroughs 2efde3d, not pushed)."
+    },
+    {
+     "ts": "2026-10-10T20:50:39+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-10: the review index holds and nothing had to change. Checked from the files: 18 cards, labelled 10 recorded in the account, 5 docs based (Kie.ai, Stripe, HubSpot, Zoho, Wistia) and 3 docs only until sign-in (Twilio, Dodo, Google senders); all 36 page and thumbnail links and all 18 videos load on :8883, every file is 3840x2160 and under 2:00 (longest 1:59), and regenerating the index gives an identical page. Still waiting on Adi: open http://localhost:8883/wt-review/index.html?v=2efde3d and reply approve or redo per video."
     }
    ],
    "order": 2820
