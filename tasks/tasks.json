@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T16:01:53+0530",
-  "version": 1455,
+  "updated": "2026-10-10T16:04:02+0530",
+  "version": 1457,
   "last_id": 381,
   "team": [
    {
@@ -12933,11 +12933,12 @@
    "owner": "Nelbin",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Nelbin"
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "A crash-looping launchd job and a public tunnel to nothing are leftover attack surface and noise for a tool the owner ruled out.",
    "spec": "Namecheap was ruled out on 2026-10-07 and round 6 deleted cloud/relay/namecheap-relay.py, but the two launchd jobs that ran it are still loaded: com.tantra.revops-relay (port :8793, python3 on the deleted script, exit status 2) and com.tantra.revops-relay-tunnel (a running cloudflared tunnel that now fronts nothing). Do: (1) launchctl bootout gui/$(id -u)/com.tantra.revops-relay and the same for com.tantra.revops-relay-tunnel; (2) move both plists out of ~/Library/LaunchAgents (delete them); (3) confirm nothing else uses :8793 or the tunnel hostname (git grep for the port and for REVOPS_RELAY or relay URL settings in cloud/ and app/; cloud/src/connectors/relay.ts only exports hmacHex, which agentic.ts still imports, so keep that file or move hmacHex first); (4) remove the two jobs from the list in T-006 (runbook) so it reports 14 jobs, and cancel the tunnel's cloudflared quick-tunnel log.",
    "done_when": [
@@ -12945,7 +12946,20 @@
     "The two plists are gone from ~/Library/LaunchAgents",
     "git grep finds no use of the relay port or tunnel URL outside hmacHex, and tsc is clean in cloud/"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Runbook (retired relay section)",
+     "url": "workshop-plan/ops/runbook.md"
+    },
+    {
+     "label": "Plist backups",
+     "url": "/Users/adithyamurali/tantra-backups/2026-10-09/"
+    },
+    {
+     "label": "Commit",
+     "url": "aad13c1"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -12953,6 +12967,16 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Added from the session sweep (2026-10-09): source: c726a704 2026-10-05T18:41 ('Lane A follow-up: after merging, unload launchd com.tantra.revops-relay and its tunnel, since namecheap-relay.py is deleted'). Verified 2026-10-09: ~/Library/LaunchAgents still has com.tantra.revops-relay.plist (last exit 2, crash looping) and com.tantra.revops-relay-tunnel.plist (running), pointing at cloud/relay/namecheap-relay.py which no longer exists."
+    },
+    {
+     "ts": "2026-10-10T16:04:02+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Nelbin (by claude)."
+    },
+    {
+     "ts": "2026-10-10T16:04:02+0530",
+     "who": "claude",
+     "note": "Relay retired: both plists backed up to ~/tantra-backups/2026-10-09/*.plist.DISARMED, both jobs booted out, plists and logs deleted, no revops cloudflared process left. Checked: launchctl list has no revops-relay, up.sh --check shows both not loaded (0 failed), git grep in cloud/ and app/ finds no 8793 or relay URL (probe-admin-tokens default moved to the centre's :8790; hmacHex in relay.ts kept), tsc in cloud/ exits 0; runbook updated to 18 plists and the retired section. Commit aad13c1 is local only: main carries 2 other lanes' commits ahead of origin, so a push would ship more than the approved cleanup; it goes out with the next whole-main publish. The trycloudflare hit in app/next.config.ts is the dev preview allowance, not the relay, so it stays."
     }
    ],
    "order": 2890
