@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T01:35:58+0530",
-  "version": 1678,
+  "updated": "2026-10-11T05:23:56+0530",
+  "version": 1679,
   "last_id": 389,
   "team": [
    {
@@ -5630,112 +5630,26 @@
   },
   {
    "id": "T-123",
-   "title": "Attendee messages actually send (Tantra omni-channel campaigns)",
-   "area": "Delivery",
-   "owner": "Aquila",
-   "priority": "P0",
-   "due": "2026-10-14",
    "status": "blocked",
-   "why": "Pages promise a confirmation, the centre and calendar links, daily reminders with the join link, the plan email and follow-ups. Nothing sends them yet, so the first real cohort would run without them.",
-   "spec": "Umbrella. Owner model (google-and-reminder-model, 2026-10-07): email, WhatsApp and LinkedIn reminders run on Tantra omni-channel campaigns; the centre imports each registrant into the campaign by webhook on sign-up; WhatsApp never through Twilio. Tantra sending is live, so nothing waits on T-236 (the per-contact /emails/batch spec was our own invention) and the centre's 'held until Tantra ships its per-contact send' note in cloud/src/jobs-day2.ts must move to the campaign-import model. Children: T-234 (per-day reminders with each person's own Zoom link), T-228 (welcome with centre and private calendar link), T-235 (post-session follow-ups), plan email when the personal plan is generated (T-212 output), payment confirmation (T-122). Close this when the children are done.",
-   "done_when": [
-    "A test sign-up lands in the Tantra campaign within 1 minute and gets the confirmation email and WhatsApp",
-    "T-228, T-234 and T-235 done",
-    "The plan email arrives when a personal plan is generated"
-   ],
-   "evidence": [
-    {
-     "label": "Admin, Session Reminders (9 moments, still off)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=t123#settings"
-    },
-    {
-     "label": "Commit 12997e9 on main",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/12997e9"
-    },
-    {
-     "label": "Plan email and payment probe",
-     "url": "app/scripts/probe-tantra-reminders.mjs"
-    },
-    {
-     "label": "Funnel email probe",
-     "url": "app/scripts/probe-email-stripe.mjs"
-    }
-   ],
-   "blockers": [],
-   "needs_from_owner": "The GrowthClub Tantra API key, already asked as T-337: at https://usetantra.com (GrowthClub workspace) open Connectors, API Keys, Create Key, name it workshop-reminders, and paste it at https://revops-centre.growthcluborg.workers.dev/admin/ under Cohort Settings, Session Reminders, Tantra API key. Nothing else is needed from Adi.",
-   "log": [
-    {
-     "ts": "2026-09-25",
-     "who": "Claude",
-     "note": "Created from the Build Guides integration pass (Lane A)."
-    },
-    {
-     "ts": "2026-10-07T22:53:58+0530",
-     "who": "claude",
-     "note": "Updated 2026-10-07: Zoom links now come per attendee via T-222/T-223 (needs T-224); the welcome email with the private calendar link is T-228."
-    },
-    {
-     "ts": "2026-10-07T23:08:48+0530",
-     "who": "claude",
-     "note": "Updated 2026-10-07: Zoom links now come per attendee via T-222/T-223 (needs T-224); the welcome email with the private calendar link is T-228."
-    },
-    {
-     "ts": "2026-10-07T23:09:19+0530",
-     "who": "claude",
-     "note": "Updated 2026-10-07: Zoom links now come per attendee via T-222/T-223 (needs T-224); the welcome email with the private calendar link is T-228."
-    },
-    {
-     "ts": "2026-10-07T23:25:35+0530",
-     "who": "claude",
-     "note": "Remaining blockers: a reminder sender (new task) and Tantra's /emails/batch endpoint (new task)."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review: context updated. Blockers and asks were stale: SendGrid and the WhatsApp Cloud API are ruled out; WhatsApp goes through Tantra; the Zoom app is done (T-224); Tantra email is built (T-217) but waits on Tantra's POST /api/v1/emails/batch (T-236); Adi does not hand over keys (keys are created through recorded browser walkthroughs). Sub-parts now have their own tasks: reminders T-234, welcome email T-228, follow-ups T-235."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: moved to the owner's 2026-10-07 model: reminders run on Tantra omni-channel campaigns fed by webhook import (live); the T-236 /emails/batch blocker and the Resend question are dropped."
-    },
-    {
-     "ts": "2026-10-08T00:49:40+0530",
-     "who": "claude",
-     "note": "Pass 2 correction: no real cohort is running yet."
-    },
-    {
-     "ts": "2026-10-09T05:17:49+0530",
-     "who": "claude",
-     "note": "Points at T-234's build: welcome (T-228, now the Registered campaign) and per-day reminders run on 8 Tantra omni-channel campaigns from team@growthclub.org in Adi's GrowthClub workspace, email only. Go-live waits only on the key (T-337); app/scripts/e2e-tantra-reminders-live.mjs --go does the rest."
-    },
-    {
-     "ts": "2026-10-09T18:42:55+0530",
-     "who": "claude",
-     "note": "People: reviewers Aquila → Aquila/Bharath (by claude)."
-    },
-    {
-     "ts": "2026-10-09T18:42:55+0530",
-     "who": "claude",
-     "note": "Built everything that does not need the key: attendee funnels now send reminder email through Tantra campaigns (the /emails/batch path is deleted, T-236 closed), a Plan ready email goes once a personal plan exists, and a payment puts the buyer into Registered. Checked on a local centre against the simulator (reminders probe 65 of 65, funnel probe 58 of 58, payments 28 of 28), reviewed by a second model with its three real findings fixed, then deployed as version b87e8b1c with reminders still off and pushed to main. Email only, from team@growthclub.org; go-live of T-234, T-228 and T-235 waits only on the Tantra key (T-337). Two limits to know: Tantra campaign emails carry no calendar file attachment, and starting each campaign sends one copy to the sender mailbox itself."
-    },
-    {
-     "ts": "2026-10-09T18:43:04+0530",
-     "who": "claude",
-     "note": "Checked 12 related task(s); updating T-217."
-    },
-    {
-     "ts": "2026-10-10T16:35:34+0530",
-     "who": "claude",
-     "note": "Board hygiene (T-129): due 2026-09-27 was past; now 2026-10-14 (P0 rule)."
-    }
-   ],
-   "order": 1210,
+   "owner": "Aquila",
    "assignee": "Claude",
    "reviewers": [
     "Aquila",
     "Bharath"
-   ]
+   ],
+   "priority": "P0",
+   "due": "2026-10-14",
+   "area": "Delivery",
+   "order": 1210,
+   "title": "T-123: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-124",
