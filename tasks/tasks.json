@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T01:24:30+0530",
-  "version": 1667,
+  "updated": "2026-10-11T01:29:59+0530",
+  "version": 1670,
   "last_id": 387,
   "team": [
    {
@@ -3950,6 +3950,10 @@
     {
      "label": "Probe output, 7 widths (2026-10-09)",
      "url": "workshop-plan/evidence/T-100-vip-probes-2026-10-09.txt"
+    },
+    {
+     "label": "Verify pass, per-width probe output, main and mirror (2026-10-11)",
+     "url": "workshop-plan/evidence/T-100-vip-probes-2026-10-11-verify.txt"
     }
    ],
    "blockers": [],
@@ -4009,6 +4013,11 @@
      "ts": "2026-10-11T01:18:24+0530",
      "who": "claude",
      "note": "Reran the /vip probes today at all 7 widths (390 to 1920) on both main and the live mirror: 0 overflow, 0 clipped text, 0 console errors, key art loads 9 of 9, no bonus is tagged VIP only, and all nine count chips match the template library (182 specs, 74 automation, 27 page and form, 77 copy). Nothing needed fixing, so nothing was rebuilt or pushed; the per-width output is in workshop-plan/evidence/T-100-vip-probes-2026-10-11.txt and the stale T-186 log line is already gone. Still the same single look as T-094: open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094b"
+    },
+    {
+     "ts": "2026-10-11T01:29:54+0530",
+     "who": "claude",
+     "note": "Verify pass: I reran shoot-vip and probe-page at all 7 widths (390 to 1920) on main and on the live mirror, and both show 9 bonuses, key art 9 of 9, 0 overflow, 0 clipped text and 0 console errors; every count chip matches my own count of the template library (182 specs, 74 automation, 27 page and form, 77 copy) and no bonus says VIP only. Nothing visible had to change, so nothing was rebuilt or pushed; I only corrected old figures in a code comment. Still one look with T-094: open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094b and approve the names, hooks and key art."
     }
    ],
    "order": 980,
@@ -4116,19 +4125,23 @@
    "evidence": [
     {
      "label": "Live workshop page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=1011a"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=1011b"
     },
     {
      "label": "Live join page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=1011a"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=1011b"
     },
     {
      "label": "Live workshop success page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/success/?v=1011a"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/success/?v=1011b"
+    },
+    {
+     "label": "Live masterclass join page",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=1011b"
     },
     {
      "label": "Live VIP page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1011a"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1011b"
     },
     {
      "label": "Probe script",
@@ -4192,6 +4205,16 @@
      "ts": "2026-10-11T01:24:30+0530",
      "who": "claude",
      "note": "Re-ran probe-live-wiring.mjs on the current live mirror (commit 4a1d84d, after the T-093 rewrite of /workshop, /workshop/success and /workshop/join): 27 of 27 pass, 0 fail, 0 pending, full output in the log entry above. A first run at 19:50Z showed one 503 on site/brand/logos/tools/x-white.svg because GitHub Pages was swapping a board-sync deploy mid-run; the file returned 200 five times straight afterwards and the clean re-run confirmed it, so no wiring fix, push or republish was needed. Ben and Bharath: open the Live workshop page and Live VIP page links to spot check, then sign off; the two test rows are recorded on T-107."
+    },
+    {
+     "ts": "2026-10-11T01:29:19+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11: the logged 27 of 27 run (2026-10-10 19:52Z to 19:54Z) still stands, because site/ on the mirror has not changed since a8dd0b8 (16:24Z that day; mirror head is now 75800d0, board syncs only, checked with the GitHub compare API). I re-ran every non-checkout row today (19:57Z to 19:59Z, 0 fail, 0 pending, no WhatsApp placeholder on any page) and added four click rows the probe was missing for the spec's 'both lanes': survey skip on /workshop/success and /masterclass/success, plus 'Open my onboarding centre' and the bonus card on /masterclass/success/join. All four land correctly. The checkout step was not re-run (no new Work Tracker row), as the Orchestrator said to re-run only if the mirror changes. Ben and Bharath: open the Live workshop page and Live VIP page links, then sign off."
+    },
+    {
+     "ts": "2026-10-11T01:29:59+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-107."
     }
    ],
    "order": 1000,
