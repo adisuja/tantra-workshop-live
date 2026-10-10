@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T17:19:11+0530",
+   "task_id": "T-140",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "turns",
+   "summary": "T-140 stays blocked: the s1-blog shots check out, but the three S3 Tantra shots still need the usetantra.com sign-in that T-115 is already asking Adi for.\n\n**COMPLETION CHECK**\n- **s1-blog #2 and #6:** done. Both images are on main (they landed in another lane's commit f1db2ea). I opened the guide a"
+  },
+  {
    "ts": "2026-10-10T16:41:48+0530",
    "task_id": "T-129",
    "mode": "feedback",
@@ -87,28 +95,19 @@
    "status": "review",
    "result": "ok",
    "summary": "T-126 is in review for Ben and Bharath: the new Worker-path probe passes 15 of 15 checks, and the `probe-survey.mjs` deep-link checks still pass. I pushed it to main as 7d8ccb1.\n\nThe probe is `app/scripts/probe-survey-worker.mjs`. It also checks the legacy-answer mapping and the Tantra/Resend remind"
-  },
-  {
-   "ts": "2026-10-10T03:59:45+0530",
-   "task_id": "T-107",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-107 is in review. The 52 probe rows are deleted from the six funnel tabs, but the Apps Script trashing is split off to T-380 because I have no boards@ sign-in.\n\n- **Funnel tabs:** The rows were all `@example.com`, utm-probe or the placeholder. I backed them up first and deleted bottom-up. A re-rea"
   }
  ],
- "state": "working",
- "mode": "feedback",
- "task_id": "T-140",
- "entries": [
-  "F-d93aeea1"
- ],
+ "state": "idle",
+ "mode": null,
+ "task_id": null,
+ "entries": [],
  "started": "2026-10-10T16:42:44+0530",
- "message": "Acting on 1 note(s) for T-140: Stage 1 to 3 guides: screenshots that can only be taken once their source exists",
+ "message": "Last sweep handled 8 task(s).",
  "slices": {
   "T-072": 1,
   "T-245": 1,
   "T-250": 1,
-  "T-301": 1
+  "T-301": 1,
+  "T-140": 1
  }
 }

@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T17:14:14+0530",
-  "version": 1554,
+  "updated": "2026-10-10T17:20:11+0530",
+  "version": 1557,
   "last_id": 382,
   "team": [
    {
@@ -10242,20 +10242,38 @@
    "assignee": "Claude",
    "reviewers": [
     "Adi",
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ],
    "priority": "P2",
    "due": "",
-   "status": "hold",
+   "status": "review",
    "why": "An attendee funnel that sells through Stripe keeps a refunded buyer tagged as a buyer; Dodo funnels already reverse it. Parked by Adi until Stripe sales are real.",
    "spec": "When unparked: in cloud/src/connectors/build.ts stripeEnsureCheckout, add payment_intent_data[metadata] (funnel and product id) to the payment link so a refund names the product; in cloud/funnel/worker.js /hooks/stripe (near line 870) handle charge.refunded for a full refund of this funnel's product by calling refunded() like the Dodo path (near line 866); add the event to the Stripe webhook's enabled events; probe against vendor-sim in test mode.",
    "done_when": [
     "A test-mode Stripe full refund tags the buyer refunded and the dashboard counts it",
     "A partial refund or another product's refund changes nothing"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Probe (ALL PASS)",
+     "url": "cloud/scripts/probe-stripe-refunds.mjs"
+    },
+    {
+     "label": "Refund handler",
+     "url": "cloud/funnel/worker.js"
+    },
+    {
+     "label": "Payment link metadata and webhook events",
+     "url": "cloud/src/connectors/build.ts"
+    },
+    {
+     "label": "Sim refund route",
+     "url": "cloud/scripts/vendor-sim.py"
+    }
+   ],
    "blockers": [],
-   "needs_from_owner": "",
+   "needs_from_owner": "Yes or no: run 'cd cloud && npx wrangler deploy' (the main cloud Worker, which carries funnel/worker.js to attendee funnels) so Stripe refund handling goes live? The approved cloud/funnel deploy cannot ship it.",
    "log": [
     {
      "ts": "2026-10-07T23:25:35+0530",
@@ -10271,6 +10289,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still parked by Adi (hold); spec now names the code: Dodo refunds are already handled in cloud/funnel/worker.js (refund.succeeded), Stripe has only checkout and /hooks/stripe."
+    },
+    {
+     "ts": "2026-10-10T17:20:11+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi/Aquila → Adi/Aquila/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T17:20:11+0530",
+     "who": "claude",
+     "note": "Stripe refunds are wired: payment links now carry funnel, product and link id on the payment, the webhook listens for charge.refunded, and the funnel Worker tags a buyer refunded only for a full refund of its own link (b4f3533 plus ccbcbb1, pushed to main). node cloud/scripts/probe-stripe-refunds.mjs prints ALL PASS against the vendor-sim: full refund tagged and dashboard refunds 1, partial refund, another product's refund and an unattributable refund change nothing. Not live yet: wrangler deploy of cloud/funnel failed because that config is the local preview template (placeholder D1 id), and real funnels get worker.js bundled inside the main cloud Worker, so it ships with the next cloud deploy."
     }
    ],
    "order": 2380
