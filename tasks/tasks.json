@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T01:14:57+0530",
-  "version": 1661,
+  "updated": "2026-10-11T01:18:29+0530",
+  "version": 1663,
   "last_id": 387,
   "team": [
    {
@@ -3652,6 +3652,11 @@
      "ts": "2026-10-11T01:14:57+0530",
      "who": "claude",
      "note": "T-100 ripple: this is now the one combined review for the /vip page and the nine bonuses, and every link on both tasks uses ?v=t094b. Nothing on the page had to change. Rechecked today on the live mirror: shoot-vip at all 7 widths (390, 414, 768, 1024, 1280, 1440, 1920) shows 9 exhibits ok, 0 overflow, 0 console errors, and git grep 'build pass' in app/src/app/vip returns nothing. vip-before-after.png was not regenerated because no fix was needed, so the current image stands."
+    },
+    {
+     "ts": "2026-10-11T01:18:29+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11: nothing had to change, this stays the one combined /vip review with T-100 on the single ?v=t094b link. Rechecked on the live mirror: shoot-vip at 390, 414, 768, 1024, 1280, 1440 and 1920 shows 9 exhibits ok, 0 overflow, 0 console errors; all nine bonus names render on /vip, no broken images on /vip (29) or /vip/success (11), no 'Build Pass', 'webinar' or 'VIP only' wording, and git grep 'build pass' in app/src/app/vip returns nothing. No /vip source has changed since the mirror was published from main 26dc888, so vip-before-after.png was not regenerated. Open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094b and https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t094b."
     }
    ],
    "order": 920,
@@ -3936,7 +3941,11 @@
     },
     {
      "label": "Before / after",
-     "url": "https://adisuja.github.io/tantra-workshop-live/vip-before-after.png?v=t094b"
+     "url": "https://adisuja.github.io/tantra-workshop-live/vip-before-after.png"
+    },
+    {
+     "label": "Probe output per width, main and mirror (2026-10-11)",
+     "url": "workshop-plan/evidence/T-100-vip-probes-2026-10-11.txt"
     },
     {
      "label": "Probe output, 7 widths (2026-10-09)",
@@ -3944,7 +3953,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Adi: the review for this task is the one on T-094. Open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094b (nine bonuses, key art, recap) and https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t094b, then approve or reply with changes per bonus.",
+   "needs_from_owner": "Adi: one review covers this task and T-094. Open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094b (nine bonuses, key art, recap) and https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t094b, then approve or reply with changes per bonus.",
    "log": [
     {
      "ts": "2026-09-24",
@@ -3995,6 +4004,11 @@
      "ts": "2026-10-11T01:14:57+0530",
      "who": "claude",
      "note": "Links aligned with T-094 (?v=t094b) so the owner gets one review link for both tasks. Nothing else changed; status stays review."
+    },
+    {
+     "ts": "2026-10-11T01:18:24+0530",
+     "who": "claude",
+     "note": "Reran the /vip probes today at all 7 widths (390 to 1920) on both main and the live mirror: 0 overflow, 0 clipped text, 0 console errors, key art loads 9 of 9, no bonus is tagged VIP only, and all nine count chips match the template library (182 specs, 74 automation, 27 page and form, 77 copy). Nothing needed fixing, so nothing was rebuilt or pushed; the per-width output is in workshop-plan/evidence/T-100-vip-probes-2026-10-11.txt and the stale T-186 log line is already gone. Still the same single look as T-094: open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094b"
     }
    ],
    "order": 980,
