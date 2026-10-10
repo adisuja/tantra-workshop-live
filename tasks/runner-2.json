@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T01:21:20+0530",
+   "task_id": "T-299",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-299 is set to `doing` and F-0dba77f5 is acked: nothing is merged, pushed, deployed or published yet, because the four chain probes are not green.\n\nCOMPLETION CHECK"
+  },
+  {
    "ts": "2026-10-10T22:09:21+0530",
    "task_id": "T-242",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "provider",
    "summary": "API Error: 502 [gemini/gemini-3.7-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.7-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. If it persis"
-  },
-  {
-   "ts": "2026-10-10T17:36:33+0530",
-   "task_id": "T-226",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model gemini-3.5-flash are cooling down"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-299",
+ "task_id": "T-322",
  "entries": [
-  "F-0dba77f5"
+  "F-51dd8e85"
  ],
- "started": "2026-10-11T00:52:08+0530",
- "message": "Acting on 1 note(s) for T-299: Centre: cold email inboxes come from the inbox vendor only, several calendar senders, and a sign-up inbox card",
+ "started": "2026-10-11T01:22:22+0530",
+ "message": "Acting on 1 note(s) for T-322: Task Command Center: the public board saves every action directly (no GitHub)",
  "slices": {
   "T-072": 1,
   "T-245": 1,
@@ -113,6 +113,7 @@
   "T-140": 1,
   "T-033": 1,
   "T-348": 1,
-  "T-242": 1
+  "T-242": 1,
+  "T-299": 1
  }
 }

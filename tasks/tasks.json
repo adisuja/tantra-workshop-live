@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T01:18:29+0530",
-  "version": 1663,
+  "updated": "2026-10-11T01:21:03+0530",
+  "version": 1664,
   "last_id": 387,
   "team": [
    {
@@ -14448,7 +14448,7 @@
    ],
    "evidence": [
     {
-     "label": "Merged branch worktree (b5468e5)",
+     "label": "Branch worktree (4cb2f43)",
      "url": "/Users/adithyamurali/tantra-t299"
     },
     {
@@ -14456,8 +14456,8 @@
      "url": "/tmp/t299/probes-summary.txt"
     },
     {
-     "label": "Cards source",
-     "url": "/Users/adithyamurali/tantra-t299/app/src/lib/workshop-cards.ts"
+     "label": "Calendar gate fix",
+     "url": "/Users/adithyamurali/tantra-t299/cloud/src/agentic.ts"
     }
    ],
    "blockers": [],
@@ -14492,6 +14492,11 @@
      "ts": "2026-10-10T21:21:18+0530",
      "who": "claude",
      "note": "Not merged or live yet. Main had moved 389 commits, so I merged it into branch t-299-vendor-inboxes (b5468e5 in /Users/adithyamurali/tantra-t299, not pushed), keeping the vendor-only inbox path, the several calendar senders and the sign-up address card; app and cloud type checks are clean and the site builds. My first probe run this pass never executed (a shell quoting mistake of mine), so the four probes are rerunning now on the private simulator stack (results in /tmp/t299/probes-summary.txt); left for the next pass: read them, fast-forward main, push, deploy the centre Worker, publish the mirror, add the MERGED line to LOG.md. Ripple from T-263: the calendar gate already uses T-263's per-sender Connected check, nothing had to change."
+    },
+    {
+     "ts": "2026-10-11T01:21:03+0530",
+     "who": "claude",
+     "note": "Not merged or live yet, and nothing was pushed, deployed or published. Merging main into the branch exposed a real bug (the calendar card refused more than one sender), now fixed in the gate and the service account job, and the four chain probes were out of date against main's newer centre and have been brought in line (branch t-299-vendor-inboxes at 4cb2f43 in /Users/adithyamurali/tantra-t299, app and cloud type checks clean). The four probes are rerunning on the private simulator stack (results in /tmp/t299/probes-summary.txt); the last domain-chain run before the fix was 38 pass, 1 fail. Left for the next pass: read the results and get all four green, merge main again if it moved, fast-forward main, push, deploy the centre Worker, publish the mirror, add the MERGED line to LOG.md."
     }
    ],
    "order": 2990
