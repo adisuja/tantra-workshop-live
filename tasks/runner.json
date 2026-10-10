@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T01:36:01+0530",
+   "task_id": "T-123",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "paused",
+   "summary": "Stopped: Adi paused the agent from the board."
+  },
+  {
    "ts": "2026-10-11T01:30:13+0530",
    "task_id": "T-100",
    "mode": "feedback",
@@ -87,19 +95,11 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-132 stays blocked: none of the 5 screenshots could be captured, because the Mac is still on its lock screen and Accessibility is not granted to the runner.\n\nCOMPLETION CHECK (all checked in this run, 20:53 IST)\n- **All 5 slots show a real, redacted capture:** not done. The screen has been locked s"
-  },
-  {
-   "ts": "2026-10-10T20:50:02+0530",
-   "task_id": "T-242",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "ok",
-   "summary": "Rsp walker is in progress and writing its output; waiting for the background watcher to report its result."
   }
  ],
- "state": "working",
- "message": "Acting on 2 note(s) for T-123: Attendee messages actually send (Tantra omni-channel campaigns)",
- "task_id": "T-123",
+ "state": "disabled",
+ "message": "Paused from the board; T-123 was stopped mid-run and resumes on Resume.",
+ "task_id": null,
  "entries": [
   "F-02f5dedc",
   "R-7aa0f67a"

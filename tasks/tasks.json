@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T01:33:36+0530",
-  "version": 1674,
-  "last_id": 387,
+  "updated": "2026-10-11T01:35:58+0530",
+  "version": 1678,
+  "last_id": 389,
   "team": [
    {
     "name": "Adi",
@@ -1840,6 +1840,11 @@
      "ts": "2026-10-11T01:33:36+0530",
      "who": "claude",
      "note": "T-031 update: day outputs are real and on origin main (f842c8b), so T-031 no longer blocks this. Note for the rehearsal: dryrun_day1.py still signs in to the centre admin with the old address form and will get 401 until it posts the token like dayoutput.py does."
+    },
+    {
+     "ts": "2026-10-11T01:35:58+0530",
+     "who": "claude",
+     "note": "T-031 verify pass: dryrun_day1.py and centre_sheet.py now sign in to the centre admin by POST (commit 0365f09, pushed), so the harness no longer gets 401 from the Worker. Nothing else changed here; T-034 still waits on T-032 and T-033."
     }
    ],
    "order": 240,

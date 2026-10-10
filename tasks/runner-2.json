@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T01:35:59+0530",
+   "task_id": "T-322",
+   "mode": "feedback",
+   "status": "review",
+   "result": "paused",
+   "summary": "Stopped: Adi paused the agent from the board."
+  },
+  {
    "ts": "2026-10-11T01:21:20+0530",
    "task_id": "T-299",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · [cerebras/gpt-oss-120b] [429]: upstream error (reset after 1m)"
-  },
-  {
-   "ts": "2026-10-10T17:46:39+0530",
-   "task_id": "T-227",
-   "mode": "feedback",
-   "status": "review",
-   "result": "provider",
-   "summary": "API Error: 502 [gemini/gemini-3.7-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.7-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. If it persis"
   }
  ],
- "state": "working",
+ "state": "disabled",
  "mode": "feedback",
- "task_id": "T-322",
+ "task_id": null,
  "entries": [
   "F-51dd8e85"
  ],
  "started": "2026-10-11T01:22:22+0530",
- "message": "Acting on 1 note(s) for T-322: Task Command Center: the public board saves every action directly (no GitHub)",
+ "message": "Paused from the board; T-322 was stopped mid-run and resumes on Resume.",
  "slices": {
   "T-072": 1,
   "T-245": 1,
