@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T15:19:00+0530",
-  "version": 1437,
+  "updated": "2026-10-10T15:32:12+0530",
+  "version": 1438,
   "last_id": 380,
   "team": [
    {
@@ -2643,28 +2643,24 @@
    ],
    "evidence": [
     {
-     "label": "Frontend commit adi-new-ui 5d6eecf",
-     "url": "https://github.com/Usetantra/tantra-frontend-v2/commit/5d6eecf"
-    },
-    {
-     "label": "Cal.com event draft",
+     "label": "Event field draft",
      "url": "workshop-plan/build/T-072-calcom-event-draft.md"
     },
     {
-     "label": "Challenge board on mirror",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/challenge/?v=t072"
-    },
-    {
-     "label": "Embed rendering a demo event (screenshot)",
+     "label": "Embed screenshot (demo event)",
      "url": "/tmp/t072-embed.png"
     },
     {
-     "label": "Fallback card (screenshot)",
-     "url": "/tmp/t072-enterprise.png"
+     "label": "Mirror challenge board",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/challenge/?v=t072v2"
+    },
+    {
+     "label": "Frontend commit",
+     "url": "https://github.com/Usetantra/tantra-frontend-v2/commit/5d6eecf"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Sign in to Cal.com as adisuja at https://app.cal.com/event-types and create the event 'Tantra Enterprise Evaluation Call' (slug tantra-enterprise-evaluation-call, 30 min, Google Meet), pasting the description from workshop-plan/build/T-072-calcom-event-draft.md. cal.com/adisuja/tantra-enterprise-evaluation-call returns 404 today, and /enterprise switches to the embed on its own once it answers.",
+   "needs_from_owner": "Sign in at https://app.cal.com/event-types as adisuja and create the event 'Tantra Enterprise Evaluation Call' (slug tantra-enterprise-evaluation-call) using the fields in workshop-plan/build/T-072-calcom-event-draft.md. /enterprise switches to the embed within 10 minutes.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2695,6 +2691,11 @@
      "ts": "2026-10-10T15:18:09+0530",
      "who": "claude",
      "note": "The /enterprise page in tantra-frontend-v2 now uses a Cal.com inline embed in place of Calendly, pointed at cal.com/adisuja/tantra-enterprise-evaluation-call. The corrected description is now a constant in the repo, and the change is pushed to adi-new-ui as 5d6eecf. Verified: 304 tests pass, the voice probe has no copy failures, no Calendly script loads, the fallback card shows while the event does not exist, and a live Cal.com demo event rendered in the embed. The challenge board on the mirror already says Tantra Enterprise (T-108 did that). The only remaining step is creating the event on Cal.com, using workshop-plan/build/T-072-calcom-event-draft.md."
+    },
+    {
+     "ts": "2026-10-10T15:32:12+0530",
+     "who": "claude",
+     "note": "Verified again: /enterprise on adi-new-ui (5d6eecf) loads Cal.com embed.js and renders the inline calendar in brand purple when pointed at a live event, makes zero Calendly requests, and shows the Request a call card while the adisuja event is still 404. The challenge board on the mirror says Tantra Enterprise 7 times and Chaperone 0, and I retired the last Chaperone and 10 year wording in the review hub (32f8372). Only the Cal.com event itself is left, then Bhaskar signs off the copy."
     }
    ],
    "order": 440,
