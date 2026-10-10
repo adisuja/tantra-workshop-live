@@ -97,14 +97,14 @@
    "summary": "API Error: Request rejected (429) · [cerebras/gpt-oss-120b] [429]: upstream error (reset after 1m)"
   }
  ],
- "state": "disabled",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
+ "task_id": "T-322",
  "entries": [
   "F-51dd8e85"
  ],
- "started": "2026-10-11T01:22:22+0530",
- "message": "Paused from the board; T-322 was stopped mid-run and resumes on Resume.",
+ "started": "2026-10-11T05:22:28+0530",
+ "message": "Acting on 1 note(s) for T-322: Task Command Center: the public board saves every action directly (no GitHub)",
  "slices": {
   "T-072": 1,
   "T-245": 1,

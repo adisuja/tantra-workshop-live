@@ -97,15 +97,14 @@
    "summary": "T-132 stays blocked: none of the 5 screenshots could be captured, because the Mac is still on its lock screen and Accessibility is not granted to the runner.\n\nCOMPLETION CHECK (all checked in this run, 20:53 IST)\n- **All 5 slots show a real, redacted capture:** not done. The screen has been locked s"
   }
  ],
- "state": "disabled",
- "message": "Paused from the board.",
- "task_id": null,
+ "state": "working",
+ "message": "Acting on 1 note(s) for T-337: Input from Adi for T-234: Sign in at https://usetantra.com in your own GrowthClub workspace. Make sure tea",
+ "task_id": "T-337",
  "entries": [
-  "F-02f5dedc",
-  "R-7aa0f67a"
+  "R-4d72b3a2"
  ],
  "mode": "feedback",
- "started": "2026-10-11T01:31:33+0530",
+ "started": "2026-10-11T05:21:56+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
