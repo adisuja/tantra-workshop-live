@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T00:57:13+0530",
-  "version": 1647,
+  "updated": "2026-10-11T01:00:00+0530",
+  "version": 1649,
   "last_id": 387,
   "team": [
    {
@@ -7347,11 +7347,11 @@
    "evidence": [
     {
      "label": "User Flows tab (live)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1791547574#flows"
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1791660600#flows"
     },
     {
      "label": "Tasks redirect (live)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1791547574#tasks"
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1791660600#tasks"
     },
     {
      "label": "Board sync + leak guard",
@@ -7399,6 +7399,11 @@
      "ts": "2026-10-09T17:36:14+0530",
      "who": "claude",
      "note": "Repeat Orchestrator note: the d-prove fix, the removed legacy tasks section and T-280 were already done and live. This pass found and fixed one real fault: the public board had not published since 14:03 because the local mirror clone had diverged (49 unpushed board syncs); it is rebased and pushed, the board is live again at v1138, and board sync now pulls with autostash so it cannot stick that way again. Checked in a headless browser on the live mirror: #flows renders with the Prove It Works (Day 3) step and no script errors, no 'Launch Control' text, #tasks opens the Task Command Center. Amal, open the User Flows link to sign off."
+    },
+    {
+     "ts": "2026-10-11T01:00:00+0530",
+     "who": "claude",
+     "note": "Amal, open the User Flows link to sign off. This pass found the live hub one step behind main (it still showed the retired Chaperone wording), so I regenerated it, pushed main (acb387a) and published the hub to the mirror (1843bc2). Checked on the live page in a headless browser: it is byte-identical to the local hub, review_hub.py reports no unknown element, the Prove It Works (Day 3) step points at playbook/d3, there is no 'Launch Control' text or old tasks section, #tasks opens the Task Command Center, the link probe passes (423 links) and there are no script errors."
     }
    ],
    "order": 1500,
@@ -13137,6 +13142,11 @@
      "ts": "2026-10-10T15:58:04+0530",
      "who": "claude",
      "note": "Already applied, so no agent run was needed: Commit ab41816 and the log entry at 17:15 confirm the d-prove flow step was updated, the hub was regenerated, and the task was closed. [gemini/gemini-3.1-flash-lite-preview via OmniRoute] (checked by Haiku against the log and commits)."
+    },
+    {
+     "ts": "2026-10-11T01:00:00+0530",
+     "who": "claude",
+     "note": "Rechecked 2026-10-11 as part of T-150: the d-prove flow step points at playbook/d3 on the live hub (main acb387a, mirror 1843bc2) and review_hub.py reports no unknown element."
     }
    ],
    "order": 2800
