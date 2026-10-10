@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T01:05:14+0530",
-  "version": 1655,
+  "updated": "2026-10-11T01:09:04+0530",
+  "version": 1658,
   "last_id": 387,
   "team": [
    {
@@ -525,7 +525,7 @@
    "owner": "Ben",
    "priority": "P0",
    "due": "2026-10-14",
-   "status": "recheck",
+   "status": "done",
    "why": "The $99 / ₹9,999 front-end must self-liquidate ad spend, so checkout has to be real and tamper-proof.",
    "spec": "Seat checkout: /api/checkout (app/src/app/api/checkout/route.ts) mints a Dodo hosted checkout server-side and falls back to the hosted link on static hosts; Stripe is the attendee alternative (T-218, done). Per-currency prices live in app/src/lib/prices.json (USD 9900, INR 999900, EUR 8900, GBP 7900, AUD 14900, CAD 13900, SGD 12900, AED 36900 minor units) and are pushed to Dodo as localized price rules by app/scripts/dodo-setup.mjs; the webhook verifies the signature. Dodo product pdt_0NnpA6EIxXvDvS1F03N8Z is named 'The 3-Day AI RevOps Workshop'. Access after payment is T-122; key rotation is T-005 (after launch). Once Adi confirms, run node app/scripts/probe-live-wiring.mjs locally and close.",
    "done_when": [
@@ -607,6 +607,11 @@
      "ts": "2026-10-10T16:35:32+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-18 was past; now 2026-10-14 (P0 rule)."
+    },
+    {
+     "ts": "2026-10-11T01:08:59+0530",
+     "who": "claude",
+     "note": "Ripple from T-103 checked on 2026-10-11: nothing had to change. The price table is already recorded as final in app/src/lib/prices.json (USD 99, INR 9,999, EUR 89, GBP 79, AUD 149, CAD 139, SGD 129, AED 369, lock note dated 2026-10-09, commit d18817d), and the price question is answered by orchestrator decisions O-3cfb2ee8 and O-c4164301, so it waits on nobody. Re-ran node app/scripts/probe-live-wiring.mjs on the live mirror today: ALL WIRING PASSES, 27 of 27, including /vip checkout reaching checkout.dodopayments.com/session/... with the prefilled probe email (nothing paid). Closed. Open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t004r1011 to see the seat page."
     }
    ],
    "order": 40,
@@ -9523,7 +9528,7 @@
    "due": "",
    "status": "review",
    "why": "Our workshop and the Tantra webinar run on Zoom Pro meetings: each registrant needs their own join link, and attendance, recordings, chat and polls must land in the centre and the Tantra Tracker. The live centre has no real attendees yet (D1 read 2026-10-08 00:50 IST: attendees 1 to 4 are test, attendee 5 'Alex' you@example.com is a placeholder), so the live proof so far is the 2026-10-07 test session 89781893618 (webhooks, 119 s attendance, recording and chat saved, then deleted in Zoom).",
-   "spec": "Code live: main fa7f53d (T-229 placeholder fix is 8c94364, on top of cd7a90e, a3db29a, 99b8083, d31a7e3); Worker e61e9802 (deployed 2026-10-10). Since T-229, /cal/issue, /intake and the admin add form silently skip placeholder emails (example.com and test domains), so they never reach Zoom; attendee 5 is marked test. probe-zoom-pro.mjs 60/60 on a fresh own stack of main (2026-10-11). Live read 2026-10-11 01:05 IST: zoom_enabled 1, cap 98, Support locks 0, Invite Status Zoom failed 0, 24 attendees and all 24 are test. One condition left, on the Wed 14 to Fri 16 Oct cohort (meeting 88135386601, three sessions at 11:00 ET, Check in Zoom shows every room setting as set, passcode on, 0 registrants): at the first real (non-test) sign-up, confirm in https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key> (Cohort Settings, Zoom Sessions) that they are registered on 88135386601 with their own join link (registered 1 or more, failed 0). After their session, press Read attendance and check the live board, zoom_attendance and the Tracker's Zoom Attendance tab. Then mark it done. If the first real sign-up lands in a later week, the same check applies to that week's meeting.",
+   "spec": "Code live: main fa7f53d (the T-229 placeholder fix is 8c94364, on top of cd7a90e, a3db29a, 99b8083, d31a7e3); Worker e61e9802 (deployed 2026-10-10). probe-zoom-pro.mjs passes 60 of 60 on a fresh stack of main and 60 of 60 on the shared local stack (2026-10-11). /cal/issue, /intake and the admin add form silently skip placeholder emails (exact example.com, example.net, example.org and the .test, .invalid, .localhost, .example endings; subdomains such as mail.example.com are not caught yet, tracked in T-229). Live read on 2026-10-11: zoom_enabled 1, cap 98, Support locks 0 (T-225). The centre has 24 attendees and all 24 are test; the old placeholders, attendees 5 and 66, are no longer in the centre at all. Invite Status shows Zoom failed 0. The centre created meeting 88135386601 for the Wed 14 to Fri 16 Oct cohort: Check in Zoom shows no setting differing, three sessions at 11:00 ET, passcode on, 0 registrants. One condition left, the first real sign-up on the Wed 14 to Fri 16 Oct cohort (or the next cohort if nobody real signs up that week): confirm in https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key> (Cohort Settings, Zoom Sessions) that they are registered on meeting 88135386601 with their own join link, then after their session press Read attendance and check the live board, zoom_attendance and the Tracker's Zoom Attendance tab. Then mark it done.",
    "done_when": [
     "The first real attendee is registered on their cohort's meeting with their own join link (admin Zoom Sessions shows registered 1 or more, failed 0)",
     "A real session shows its joins on the admin live board",
@@ -9532,7 +9537,7 @@
    "evidence": [
     {
      "label": "Live admin: Zoom Sessions and Invite Status",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=20261011#settings"
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=20261011b#settings"
     }
    ],
    "blockers": [],
@@ -9587,6 +9592,11 @@
      "ts": "2026-10-11T01:05:14+0530",
      "who": "claude",
      "note": "All of the Orchestrator's pre-work is checked on production (read-only, 2026-10-11 01:05 IST): attendee 5 is already test (all 24 attendees are, so no PATCH was sent), Invite Status shows Zoom failed 0, the cap is 98, and the Wed 14 to Fri 16 Oct meeting 88135386601 exists with every room setting as set, three sessions at 11:00 ET and 0 registrants. probe-zoom-pro passes 60/60 on a fresh stack of main; the shared local stack scores 48 pass, 6 fail, but it serves the older onboarding-v2 branch with last week's state, so it does not measure main. The spec now cites main fa7f53d and Worker e61e9802 and names the 14 Oct cohort; it stays in review only for the first real sign-up: https://revops-centre.growthcluborg.workers.dev/admin/?v=20261011#settings"
+    },
+    {
+     "ts": "2026-10-11T01:09:03+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11: rechecked everything on production and nothing had to be rebuilt. Worker e61e9802 runs main fa7f53d, Invite Status shows Zoom failed 0, meeting 88135386601 (Wed 14 to Fri 16 Oct) has every room setting as set with cap 98, and probe-zoom-pro passes 60 of 60 on both a fresh stack and the shared stack. One correction to the last report: attendees 5 and 66 are no longer in the centre at all (not marked test), so no PATCH was sent. Stays in review only for the first real sign-up (0 non-test attendees today), which waits on an outside person. Open https://revops-centre.growthcluborg.workers.dev/admin/?v=20261011b#settings"
     }
    ],
    "order": 2230
@@ -10112,6 +10122,11 @@
      "ts": "2026-10-09T20:06:08+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-223."
+    },
+    {
+     "ts": "2026-10-11T01:09:04+0530",
+     "who": "claude",
+     "note": "Found while verifying T-223 on 2026-10-11: isPlaceholderEmail in cloud/src/util.ts:117 catches you@example.com but not subdomains (a@mail.example.com and a@x.example.org return false), although the decision asked for subdomains too. Fix: change the first pattern to /(^|\\.)example\\.(com|net|org)$/, add a probe case, then deploy."
     }
    ],
    "order": 2290
