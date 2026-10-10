@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T21:57:56+0530",
-  "version": 1637,
+  "updated": "2026-10-10T22:07:47+0530",
+  "version": 1638,
   "last_id": 387,
   "team": [
    {
@@ -10638,14 +10638,27 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "doing",
    "why": "Integrator sweep 2026-10-07 (run-chain 2026-10-07)",
    "spec": "run-chain walkers (app/scripts/walk-scenarios.mjs and walk-ui.mjs, reports read by the run-chain) end with the content-schedule job still waiting on the Kie.ai image job in the simulator (cloud/scripts/vendor-sim.py Kie routes). Either make the simulator finish the image task within the walker's wait, or make the walker poll the content-schedule job until done with a bounded timeout. Rerun the three walkers (rsp, webinar, challenge) and the run-chain.",
    "done_when": [
     "All three walkers finish with every job done and 0 findings",
     "run-chain summary shows no Kie.ai timing finding"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Webinar walker report",
+     "url": "/tmp/walk/1-webinar/report.json"
+    },
+    {
+     "label": "Webinar walker log",
+     "url": "/tmp/t242/walk-webinar.log"
+    },
+    {
+     "label": "Walker",
+     "url": "app/scripts/walk-ui.mjs"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -10663,6 +10676,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: still open per LOG 2026-10-07 01:41 (webinar and challenge walkers 1 finding each = Kie.ai image job still running); no fix on main since. UNVERIFIED current result."
+    },
+    {
+     "ts": "2026-10-10T22:07:47+0530",
+     "who": "claude",
+     "note": "The walkers now wait up to 120s for every job to settle and open rail cards by card id; pushed to main (77d66cd) and logged in the coord LOG. Webinar walker on a private stack built from main: no job left waiting and no Kie.ai timing finding, but 8 findings remain from 3 other fixture drifts (calendar sender email not on the calendar domain, Twilio EIN value rejected by the new guard, Day 3 live key check on a test key). Left for the next pass: fix those three in the walker, then run challenge, rsp and the run-chain (private stack still up on 8890, 8891, 8892, 8894, state in /tmp/t242)."
     }
    ],
    "order": 2420
