@@ -97,12 +97,13 @@
    "summary": "T-262 is in review: a simulated `email.bounced` now tags and suppresses the contact, and the job deletes the full-access Resend key itself. The new probe (`cloud/scripts/probe-resend-hooks.mjs`) passes every check, simulator only. I did not merge or push, because other lanes' uncommitted work shares"
   }
  ],
- "state": "disabled",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
+ "task_id": "T-072",
  "entries": [
-  "F-5619c997"
+  "F-bf22869b",
+  "R-598b9e37"
  ],
- "started": "2026-10-10T04:14:56+0530",
- "message": "Paused from the board; T-156 was stopped mid-run and resumes on Resume."
+ "started": "2026-10-10T15:00:11+0530",
+ "message": "Acting on 2 note(s) for T-072: Tantra Enterprise ($9,999): move the booking page to Cal.com and retire 'Chaperone'"
 }

@@ -97,12 +97,12 @@
    "summary": "T-237 is in review: the public webinar sign-up is deployed, but the push, the live test registration and the masterclass link are still open.\n\n- **Built:** `https://revops-centre.growthcluborg.workers.dev/webinar/register` has a form page and a POST route. It makes one add-registrant call and return"
   }
  ],
- "state": "disabled",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
+ "task_id": "T-135",
  "entries": [
   "F-e8431f3a"
  ],
- "started": "2026-10-10T03:59:59+0530",
- "message": "Paused from the board; T-135 was stopped mid-run and resumes on Resume."
+ "started": "2026-10-10T15:00:08+0530",
+ "message": "Acting on 1 note(s) for T-135: Guide screenshots Claude can capture now from our own pages and demo output (11 slots)"
 }
