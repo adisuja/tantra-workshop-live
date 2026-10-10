@@ -97,14 +97,14 @@
    "summary": "API Error: Request rejected (429) · All credentials for model gemini-3.5-flash are cooling down"
   }
  ],
- "state": "paused",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
+ "task_id": "T-299",
  "entries": [
-  "F-5c5c3069"
+  "F-0dba77f5"
  ],
- "started": "2026-10-10T21:03:24+0530",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 71% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 00:51.",
+ "started": "2026-10-11T00:52:08+0530",
+ "message": "Acting on 1 note(s) for T-299: Centre: cold email inboxes come from the inbox vendor only, several calendar senders, and a sign-up inbox card",
  "slices": {
   "T-072": 1,
   "T-245": 1,

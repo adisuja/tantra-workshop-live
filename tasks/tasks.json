@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T00:29:06+0530",
-  "version": 1644,
+  "updated": "2026-10-11T00:52:43+0530",
+  "version": 1645,
   "last_id": 387,
   "team": [
    {
@@ -7034,7 +7034,7 @@
    "owner": "Adi",
    "priority": "P0",
    "due": "",
-   "status": "review",
+   "status": "hold",
    "why": "Hub Source links and issue #1 point at the private repo adisuja/3-day-tantra-ai-revops-workshop, which most teammates cannot open (404).",
    "spec": "GitHub API 2026-10-08: adisuja/3-day-tantra-ai-revops-workshop (private) has adisuja, nelbinxav (Nelbin), growthclub-ai; no pending invites. adisuja/tantra-workshop-live is public, so reading and opening review issues needs no access. When usernames arrive Claude runs gh api repos/adisuja/3-day-tantra-ai-revops-workshop/collaborators/<login> -X PUT -f permission=push for each, confirms the invite, and logs it here. Closes audit H034.",
    "done_when": [
@@ -7099,6 +7099,11 @@
      "ts": "2026-10-09T14:28:45+0530",
      "who": "claude",
      "note": "Removed the question about Amal, Ben and Bharath: scope is Nelbin, Bhaskar and Aquila only. Checked the GitHub API on 2026-10-09: Nelbin (nelbinxav) has write access; the invites for Bhaskar (starmangrowth, 336830663) and Aquila (aquila-growthclub, 336830667) are still pending and not expired, so nothing was resent. H034 stays open in AUDIT.md until both accept; nothing is needed from Adi."
+    },
+    {
+     "ts": "2026-10-11T00:52:43+0530",
+     "who": "claude",
+     "note": "GitHub API checked 2026-10-11: collaborators are adisuja, nelbinxav (Nelbin, write) and growthclub-ai; the invites for Bhaskar (starmangrowth, 336830663) and Aquila (aquila-growthclub, 336830667) are still pending, not expired (sent 2026-10-08 20:42 UTC, expiry 2026-10-15 20:42 UTC), so nothing was resent or deleted. Both logins are tied to the teammate's email by commits: 31abe27eb0 (GrowthClub-org/Bespin-Global-landing-page-backend) is authored by bhaskar@growthclub.org as starmangrowth, and d093fed319 (adisuja/tantra-workshop-live) by aquila@growthclub.org as aquila-growthclub. On hold until both accept: each run rechecks /invitations, resends only after the expiry, then checks a hub Source link and marks H034 fixed in AUDIT.md (line 175 still reads open). The Asked of Adi section is empty; nothing is needed from Adi."
     }
    ],
    "order": 1460,
