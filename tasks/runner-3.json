@@ -97,12 +97,14 @@
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-300 is built and committed on branch `t300-ruled-out-cleanup`, but not finished: several run-chain probes fail, so I set it to **doing**. I did not push the branch"
   }
  ],
- "state": "idle",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
- "entries": [],
- "started": "2026-10-10T21:40:25+0530",
- "message": "Recovered from an error: FileNotFoundError: [Errno 2] No such file or directory: '/Users/adithyamurali/tantra-redesign/workshop-plan/tasks/overflow.json.tmp' -> '/U",
+ "task_id": "T-124",
+ "entries": [
+  "F-bbb95eff"
+ ],
+ "started": "2026-10-10T22:03:02+0530",
+ "message": "Acting on 1 note(s) for T-124: /vip checkout keeps first-touch UTMs",
  "slices": {
   "T-135": 1,
   "T-148": 1,
