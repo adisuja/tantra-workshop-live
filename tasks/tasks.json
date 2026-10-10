@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T01:21:03+0530",
-  "version": 1664,
+  "updated": "2026-10-11T01:24:30+0530",
+  "version": 1667,
   "last_id": 387,
   "team": [
    {
@@ -4115,12 +4115,20 @@
    ],
    "evidence": [
     {
-     "label": "Live VIP page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1009b"
+     "label": "Live workshop page",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=1011a"
     },
     {
-     "label": "Live join page (renamed add-on button)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=1009b"
+     "label": "Live join page",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=1011a"
+    },
+    {
+     "label": "Live workshop success page",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/success/?v=1011a"
+    },
+    {
+     "label": "Live VIP page",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1011a"
     },
     {
      "label": "Probe script",
@@ -4174,6 +4182,16 @@
      "ts": "2026-10-10T16:35:33+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-24 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-11T01:24:30+0530",
+     "who": "claude",
+     "note": "Full probe-live-wiring.mjs output, mirror defaults, run 2026-10-10 19:52:23Z to 19:54:02Z. Mirror commit 5d805c8 at start and 4a1d84d at end (both are board syncs that change only tasks/ files; site/ is identical from a9e515d through 4a1d84d, checked with the GitHub compare API):\nPASS  /workshop/join/ → \"button:has-text(\"the add-on\")\" → https://adisuja.github.io/tantra-workshop-live/site/vip/\nPASS  /workshop/join/ → \"button[aria-label='The Automation Vault']\" → https://adisuja.github.io/tantra-workshop-live/site/vip/\nPASS  /workshop/join/ → \"text=No thanks, keep my seat\" → https://adisuja.github.io/tantra-workshop-live/site/onboarding/\nPASS  /vip/success/ → \"text=Open my onboarding centre\" → https://adisuja.github.io/tantra-workshop-live/site/onboarding/\nPASS  /vip/ → \"a[href$='#vip-library']\" → https://adisuja.github.io/tantra-workshop-live/site/vip/#vip-library\nPASS  /vip checkout → https://checkout.dodopayments.com/session/cks_0NpSQvpVHTrAxYPcEiDx5?email=wiring-probe%40e\nPASS  Dodo checkout carries the prefilled email\nPASS  no failed requests on /workshop/\nPASS  200 https://adisuja.github.io/tantra-workshop-live/site/privacy-policy  ← /workshop/\nPASS  200 https://adisuja.github.io/tantra-workshop-live/site/terms-of-service  ← /workshop/\nPASS  no failed requests on /workshop/success/\nPASS  200 https://adisuja.github.io/tantra-workshop-live/site/privacy-policy/  ← /workshop/success/\nPASS  200 https://adisuja.github.io/tantra-workshop-live/site/terms-of-service/  ← /workshop/success/\nPASS  no failed requests on /workshop/join/\nPASS  200 https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Frevops-centre.growthcluborg.workers.dev%2Fcal%2F2026-10-14.ics  ← /workshop/join/\nPASS  200 https://revops-centre.growthcluborg.workers.dev/cal/2026-10-14.ics  ← /workshop/join/\nPASS  200 https://outlook.live.com/calendar/0/addfromweb?url=https%3A%2F%2Frevops-centre.growthcluborg.workers.dev%2Fcal%2F2026-10-14.ics&name=The%203-Day%20AI%20RevOps%20Workshop  ← /workshop/join/\nPASS  200 https://outlook.office.com/calendar/0/addfromweb?url=https%3A%2F%2Frevops-centre.growthcluborg.workers.dev%2Fcal%2F2026-10-14.ics&name=The%203-Day%20AI%20RevOps%20Workshop  ← /workshop/join/\nPASS  200 https://revops-centre.growthcluborg.workers.dev/cal/2026-10-14.ics?download=1  ← /workshop/join/\nPASS  no failed requests on /vip/\nPASS  200 https://adisuja.github.io/tantra-workshop-live/site/vip/  ← /vip/\nPASS  no failed requests on /vip/success/\nPASS  no failed requests on /masterclass/\nPASS  no failed requests on /masterclass/success/\nPASS  no failed requests on /masterclass/success/join/\nPASS  no failed requests on /onboarding/\nPASS  200 https://adisuja.github.io/tantra-workshop-live/site/onboarding/  ← /onboarding/\n\nALL WIRING PASSES"
+    },
+    {
+     "ts": "2026-10-11T01:24:30+0530",
+     "who": "claude",
+     "note": "Re-ran probe-live-wiring.mjs on the current live mirror (commit 4a1d84d, after the T-093 rewrite of /workshop, /workshop/success and /workshop/join): 27 of 27 pass, 0 fail, 0 pending, full output in the log entry above. A first run at 19:50Z showed one 503 on site/brand/logos/tools/x-white.svg because GitHub Pages was swapping a board-sync deploy mid-run; the file returned 200 five times straight afterwards and the clean re-run confirmed it, so no wiring fix, push or republish was needed. Ben and Bharath: open the Live workshop page and Live VIP page links to spot check, then sign off; the two test rows are recorded on T-107."
     }
    ],
    "order": 1000,
@@ -4502,6 +4520,11 @@
      "ts": "2026-10-10T16:35:34+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-24 was past; now 2026-10-16 (P2 rule)."
+    },
+    {
+     "ts": "2026-10-11T01:24:30+0530",
+     "who": "claude",
+     "note": "T-102 wiring probe wrote two more test rows to the Work Tracker (Checkout Starts): email wiring-probe@example.com, run 1 2026-10-10 19:50:24Z to 19:52:06Z (Dodo session cks_0NpSQYdr3E6LG7ZhMyFhu), run 2 2026-10-10 19:52:23Z to 19:54:02Z (Dodo session cks_0NpSQvpVHTrAxYPcEiDx5). Delete exactly these along with the earlier wiring-probe rows."
     }
    ],
    "order": 1050,
