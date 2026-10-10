@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T17:23:18+0530",
-  "version": 1559,
+  "updated": "2026-10-10T19:59:58+0530",
+  "version": 1562,
   "last_id": 382,
   "team": [
    {
@@ -316,12 +316,20 @@
    ],
    "evidence": [
     {
-     "label": "Paid landing proof section",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/"
+     "label": "Paid landing proof section (local)",
+     "url": "http://localhost:4322/masterclass?v=t011-1010#receipts"
+    },
+    {
+     "label": "Chips at 390 (Rhenus, endCX, SalesTherapy)",
+     "url": "/tmp/t011-chips-390.png"
+    },
+    {
+     "label": "Logo probe",
+     "url": "app/scripts/probe-logos.mjs"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Approve the new logos on the proof cards.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -352,13 +360,24 @@
      "ts": "2026-10-09T05:17:07+0530",
      "who": "Orchestrator",
      "note": "People: assignee Amal → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-10T19:59:58+0530",
+     "who": "claude",
+     "note": "People: reviewers Amal/Adi → Amal/Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T19:59:58+0530",
+     "who": "claude",
+     "note": "I re-ran the probes against localhost:4322. probe-workshop is clean. probe-funnels passes /workshop and /masterclass (its one failure is a /onboarding 404 from another lane's work, unrelated to this task). probe-logos passes on every row once it measures the three receipts size tiers separately. Before that it was lumping 17px chips in with 26px card marks. At 1440, 1024 and 390 the Appster card reads '$19M ARR in 2 Years', endCX is still there, and the Rhenus Automation (67x17) and SalesTherapy (84x15) marks load as transparent white silhouettes. No card or logo change was needed, so nothing was pushed."
     }
    ],
    "order": 10,
    "assignee": "Claude",
    "reviewers": [
     "Amal",
-    "Adi"
+    "Adi",
+    "Bharath"
    ]
   },
   {
