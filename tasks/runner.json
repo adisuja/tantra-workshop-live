@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T00:53:22+0530",
+   "task_id": "T-146",
+   "mode": "feedback",
+   "status": "hold",
+   "result": "ok",
+   "summary": "T-146 is on hold: Bhaskar's and Aquila's invites are still pending, so H034 stays open until they accept.\n\nCOMPLETION CHECK\n1. **Delete the \"Asked of Adi\" section:** done. `needs_from_owner` was already empty on disk and stays empty; scope is Nelbin, Bhaskar and Aquila only.\n2. **Run collaborators a"
+  },
+  {
    "ts": "2026-10-10T21:58:31+0530",
    "task_id": "T-001",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-071 verified and left in review for Bhaskar and Bharath: nothing needed fixing, and the live probe passed 33 checks with 0 failures in this run.\n\n**COMPLETION CHECK**\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Live `/pro` checks out in USD, EUR and INR from the Pro table | Done | `"
-  },
-  {
-   "ts": "2026-10-10T20:21:03+0530",
-   "task_id": "T-115",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-115 is still blocked because this unattended run has no browser tools, so none of the screenshots were captured. I merged its ask with T-339, so Adi opens one desktop session for both.\n\n- **Orchestrator note F-00a906f4 (capture the 21 slots, commit and push, update G127):** Not done. No Claude in "
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-146: Give teammates access to both GitHub repos",
- "task_id": "T-146",
+ "message": "Acting on 1 note(s) for T-150: Workshop Hub: free and paid user-flow maps and post-workshop workflows; tasks live in the Task Command Center",
+ "task_id": "T-150",
  "entries": [
-  "F-9a432835"
+  "F-c5ec7e87"
  ],
  "mode": "feedback",
- "started": "2026-10-11T00:52:09+0530",
+ "started": "2026-10-11T00:54:41+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,

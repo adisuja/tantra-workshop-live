@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T00:52:43+0530",
-  "version": 1645,
+  "updated": "2026-10-11T00:54:07+0530",
+  "version": 1646,
   "last_id": 387,
   "team": [
    {
@@ -1086,17 +1086,21 @@
    "due": "2026-10-14",
    "status": "review",
    "why": "The live presentation for all three days.",
-   "spec": "workshop-plan/deck.html (158 slides: Cover 1, Agenda 9, Day 1 46, Day 2 52, Day 3 45, Close 5), generated from workshop-plan/build/*.py (lanes.py, content.py, questions.py); served copy app/public/materials/deck.html is identical; mirror https://adisuja.github.io/tantra-workshop-live/deck.html. It is in use for this week's cohort (Wed 7 to Fri 9 Oct 2026). Done: #day-N links from the centre (app/src/lib/curriculum.ts) now open each day's first slide (slideFromHash, eafbd2b). Open: (1) slide 2 'Who Is Running This Week' still says 'Add your own proof point here before presenting: a named result, with a date', which needs Adi's one named, dated result (no unsourced stats); (2) the deck still names ruled-out tools (Apollo 6, SendGrid 2, GoDaddy 2, BuiltWith 2, NeverBounce, ZeroBounce, Instantly): replace them in workshop-plan/build/*.py with the approved stack (Cloudflare Registrar, Resend or Tantra email, Tantra lists and outreach), regenerate, copy to app/public/materials/deck.html, run node workshop-plan/probe-deck.mjs and probe-deck-nav.mjs, republish. T-251 sweeps app/src and cloud/src only, so this file is handled here.",
+   "spec": "workshop-plan/deck.html (158 slides: Cover 1, Agenda 9, Day 1 46, Day 2 52, Day 3 45, Close 5), generated from workshop-plan/build/*.py (lanes.py, content.py, questions.py) and never hand-edited; served copy app/public/materials/deck.html and the mirror https://adisuja.github.io/tantra-workshop-live/deck.html are byte-identical to it. Finished: #day-N links from the centre open each day's first slide; slide 2 'Who Is Running This Week' ends with the Growth Idea, webinar #4, August 2025 result, figures word for word from https://usetantra.github.io/tantra-webinar-deck; no ruled-out tool is named (prospect lists use data partners, your own CRM, ZoomInfo or Clay and the built-in email check; outreach domains are Cloudflare Registrar only). Only thing left: Adi reviews and approves the deck. Known follow-up owned elsewhere: Day 1 step 8 says mailboxes in Google Workspace, which changes when T-299 (vendor inboxes) merges.",
    "done_when": [
-    "git grep -i -E 'apollo|sendgrid|godaddy|builtwith|neverbounce|zerobounce|instantly' -- workshop-plan/deck.html returns nothing",
-    "Slide 2 carries Adi's named, dated proof point and no placeholder text",
-    "probe-deck.mjs and probe-deck-nav.mjs clean; mirror republished",
+    "git grep -i -E 'apollo|sendgrid|godaddy|builtwith|neverbounce|zerobounce|instantly' -- workshop-plan/deck.html returns nothing (met, rechecked 2026-10-11)",
+    "Slide 2 carries the Growth Idea, webinar #4, August 2025 result and no placeholder text (met)",
+    "probe-deck.mjs and probe-deck-nav.mjs clean; mirror byte-identical to source (met)",
     "Adi approves the deck"
    ],
    "evidence": [
     {
-     "label": "Deck (live)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/deck.html?v=1791536861"
+     "label": "Deck, slide 2 (live)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/deck.html?v=t021-1011#2"
+    },
+    {
+     "label": "Deck (local)",
+     "url": "http://localhost:8799/deck.html?v=t021-1011"
     },
     {
      "label": "Slide 2 source",
@@ -1150,6 +1154,11 @@
      "ts": "2026-10-10T16:35:32+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-21 was past; now 2026-10-14 (P0 rule)."
+    },
+    {
+     "ts": "2026-10-11T00:54:07+0530",
+     "who": "claude",
+     "note": "Nothing needed rebuilding or pushing: the live deck is byte-identical to workshop-plan/deck.html and app/public/materials/deck.html, and the deck files match origin main. Rechecked today: the Growth Idea figures on slide 2 match the Tantra webinar deck word for word, the ruled-out tool grep and the placeholder search return nothing on the live copy, probe-deck is clean on all 158 slides at 3 widths and probe-deck-nav passes with no errors. The spec now asks only for your review: open https://adisuja.github.io/tantra-workshop-live/deck.html?v=t021-1011#2 and approve the deck."
     }
    ],
    "order": 120,

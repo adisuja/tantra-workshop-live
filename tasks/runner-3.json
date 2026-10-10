@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T00:54:15+0530",
+   "task_id": "T-021",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-021 stays in review: nothing needed rebuilding or pushing, and the only thing left is Adi's approval of the deck.\n\nCompletion check, all evidence from this run:\n\n1. **Growth Idea figures match the webinar deck word for word: done.** The Tantra webinar deck reads \"webinar #4, August 2025 ... 99,859"
+  },
+  {
    "ts": "2026-10-10T22:10:04+0530",
    "task_id": "T-124",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "queue",
    "result": "error",
    "summary": "I'll wait for the notification that rsp has finished."
-  },
-  {
-   "ts": "2026-10-10T16:52:47+0530",
-   "task_id": "T-240",
-   "mode": "feedback",
-   "status": "review",
-   "result": "turns",
-   "summary": "T-240 is in review for Adi and Aquila. None of the 3 screenshot-fill FAILs fire on main any more, so no image or CSS change was needed and I committed, pushed and published nothing.\n\n**COMPLETION CHECK**\n- **Run probe-details, fix the 3 FAILs:** Done. A full run against the staged mirror on port 436"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-021",
+ "task_id": "T-283",
  "entries": [
-  "F-f9a330f5"
+  "R-81c9413d"
  ],
- "started": "2026-10-11T00:53:07+0530",
- "message": "Acting on 1 note(s) for T-021: Workshop deck (158 slides)",
+ "started": "2026-10-11T00:55:45+0530",
+ "message": "Acting on 1 note(s) for T-283: Finish the 7 walkthrough videos blocked on account access (Twilio, Kie.ai, Dodo, Stripe, HubSpot, Zoho, Wistia) and the Google Cloud and Admin steps",
  "slices": {
   "T-135": 1,
   "T-148": 1,
