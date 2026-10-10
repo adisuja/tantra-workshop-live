@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T21:41:07+0530",
+   "task_id": "T-020",
+   "mode": "feedback",
+   "status": "review",
+   "result": "turns",
+   "summary": "T-020 verified with nothing to fix and left at review for Adi's read: https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a\n\nCOMPLETION CHECK (all evidence from this run)\n\n1. **Run both probes, fix anything red: done.** `probe-playbook.mjs` printed \"clean\" at 360, 768, 1024 and 1440 o"
+  },
+  {
    "ts": "2026-10-10T21:33:52+0530",
    "task_id": "T-139",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-339 is still blocked on one thing: Adi signing in to Twilio at https://console.twilio.com in the Brave profile that Claude in Chrome uses. The ripple's change had mostly been made already: needs_from_owner was already asking for Twilio only. The only stale part was the title, which still said \"sig"
-  },
-  {
-   "ts": "2026-10-10T20:17:22+0530",
-   "task_id": "T-227",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-227 passed the verify pass and is back in review. Nothing needed fixing, so I changed no code and made no commit.\n\n**COMPLETION CHECK**\n1. **Invite Status names the service account and the organiser: done.** On production in this run, the calendar status names fintech@fintech-488411 and emily@capi"
   }
  ],
  "state": "working",
- "message": "Acting on 2 note(s) for T-020: The Tantra Playbook (Day-1 deliverable)",
- "task_id": "T-020",
+ "message": "Acting on 1 note(s) for T-001: /masterclass landing page",
+ "task_id": "T-001",
  "entries": [
-  "F-b6d15b21",
-  "R-394cb7c5"
+  "F-da92aac5"
  ],
  "mode": "feedback",
- "started": "2026-10-10T21:35:16+0530",
+ "started": "2026-10-10T21:41:37+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
@@ -115,6 +114,7 @@
   "T-295": 1,
   "T-226": 1,
   "T-299": 1,
-  "T-139": 1
+  "T-139": 1,
+  "T-020": 1
  }
 }
