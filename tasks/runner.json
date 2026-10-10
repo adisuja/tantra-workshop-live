@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T15:36:03+0530",
+   "task_id": "T-242",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "error",
+   "summary": "Stack is up. Running the full run-chain (which includes the three walkers) in the background."
+  },
+  {
    "ts": "2026-10-10T15:19:00+0530",
    "task_id": "T-157",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "queue",
    "result": "paused",
    "summary": "Stopped: Adi paused the agent from the board."
-  },
-  {
-   "ts": "2026-10-10T01:44:41+0530",
-   "task_id": "T-266",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-266 is in review: automation 9 is built, committed and pushed (50914b0), and the centre Worker is deployed. The funnel Worker isn't deployed to any attendee account.\n\nI checked it with a new local probe, `cloud/scripts/probe-t266.mjs`, which passes 14 of 14 against the vendor simulator. A simulate"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
- "task_id": "T-242",
+ "message": "Acting on 1 note(s) for T-249: Share the six source resources the team is waiting on",
+ "task_id": "T-249",
  "entries": [
-  "F-5c5c3069"
+  "F-45569950"
  ],
  "mode": "feedback",
- "started": "2026-10-10T15:19:11+0530",
+ "started": "2026-10-10T15:36:17+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1

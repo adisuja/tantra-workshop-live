@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T15:36:02+0530",
+   "task_id": "T-240",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "error",
+   "summary": "It needs a scroll pass first to mount the shots. Adding that."
+  },
+  {
    "ts": "2026-10-10T15:14:04+0530",
    "task_id": "T-148",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "queue",
    "result": "paused",
    "summary": "Stopped: Adi paused the agent from the board."
-  },
-  {
-   "ts": "2026-10-10T00:49:01+0530",
-   "task_id": "T-130",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-130 is in review for Adi and Bharath: all 24 guide flowcharts run left to right at 1440 and top to bottom at 390 with every label on its connector, live on the centre (Worker 5fe16470) and the mirror. Three charts that were cutting a label on a phone now fit (6e1facf). Two things remain: 19 of 24 "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-240",
+ "task_id": "T-248",
  "entries": [
-  "F-b2b06335"
+  "F-5b7fd037"
  ],
- "started": "2026-10-10T15:14:16+0530",
- "message": "Acting on 1 note(s) for T-240: Fix the 3 probe-details screenshot-fill failures",
+ "started": "2026-10-10T15:36:17+0530",
+ "message": "Acting on 1 note(s) for T-248: Delete branch int and clean the r5/B and r5/G worktrees",
  "slices": {
   "T-135": 1,
   "T-148": 1
