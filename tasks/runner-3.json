@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T21:05:07+0530",
+   "task_id": "T-303",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "(Held back from the public board: this note mentions a private client detail.)"
+  },
+  {
    "ts": "2026-10-10T21:02:00+0530",
    "task_id": "T-296",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-290 is in review for Adi, Aquila and Bharath. Not pushed to onboarding-v2: that branch's checkout has 5 commits main lacks, one with walkthroughs held for Adi's review. COMPLETION CHECK:\n- **Fields on all 3 shapes:** done; RSP sign-ups skip `/thanks`, so this run added the link and next step to th"
-  },
-  {
-   "ts": "2026-10-10T16:04:26+0530",
-   "task_id": "T-289",
-   "mode": "feedback",
-   "status": "review",
-   "result": "turns",
-   "summary": "T-289 is in review for Adi and Nelbin. Both relay launchd jobs are gone from this Mac and their repo references are cleaned up, but I didn't push the commit.\n\n| Item | State | What I checked in this run |\n| --- | --- | --- |\n| Back up both plists | Done | Copied to `~/tantra-backups/2026-10-09/*.pli"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-303",
+ "task_id": "T-134",
  "entries": [
-  "F-8dd617b1"
+  "F-fad13bd6"
  ],
- "started": "2026-10-10T21:02:31+0530",
- "message": "Acting on 1 note(s) for T-303: Transcribe the reference VSL and write Richard's own VSL recording script",
+ "started": "2026-10-10T21:05:58+0530",
+ "message": "Acting on 1 note(s) for T-134: Starter CRM: build the reference connections (prompts 01 to 06) so the planned steps get real screenshots",
  "slices": {
   "T-135": 1,
   "T-148": 1,

@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T21:03:18+0530",
-  "version": 1624,
+  "updated": "2026-10-10T21:04:48+0530",
+  "version": 1626,
   "last_id": 387,
   "team": [
    {
@@ -14125,6 +14125,11 @@
      "ts": "2026-10-10T21:03:18+0530",
      "who": "claude",
      "note": "Verify pass, nothing had to change. All four calls are on disk and live: the 89% is back in the Day 2 nurture section as the labelled whiteboard teaching model (body, diagram, caption) with 'Neither is a result', the examples are marked illustrative, the course pitch says 'Day 3 of the free workshop', and the $50M+ line stays with T-277. One deviation stands: the page gives the Funnel Equations bands (25 to 40% and 45 to 70%) instead of 'about 46%', because the model today blends to 40% on reference values (0.30 and 0.55 at a 0.40 action rate), so 46% would be unsourced. Checked this run: titlecase 0 changes, embed no diff, source equals app copy equals the mirror's site/materials copy, probe-playbook clean at 4 widths on the mirror, diagram label screenshotted with no overlap at 390 and 1440. Note: the mirror's root /playbook.html still lacks the 16 T-257 product screenshots (T-257's publish, not this task). Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=calls4#d2-s3-the-nurture-engine-where-show-up-is-won"
+    },
+    {
+     "ts": "2026-10-10T21:04:48+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-191."
     }
    ],
    "order": 2970
