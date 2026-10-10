@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T15:10:22+0530",
-  "version": 1429,
+  "updated": "2026-10-10T15:13:38+0530",
+  "version": 1433,
   "last_id": 380,
   "team": [
    {
@@ -6659,7 +6659,7 @@
    "owner": "Bhaskar",
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "The cover slide is the first thing a webinar viewer sees, and its large background Tantra mark is still a 404.",
    "spec": "Deck: https://usetantra.github.io/tantra-webinar-deck/ (repo usetantra/tantra-webinar-deck, GitHub Pages; hosting notes in memory webinar-deck-hosting). Verified 2026-10-08: index.html lines 83 and 348 use background-image:url('tantra-logo.png'), and https://usetantra.github.io/tantra-webinar-deck/tantra-logo.png returns 404, while uploads/tantra-logo.png returns 200. Fix: change both url('tantra-logo.png') to url('uploads/tantra-logo.png') (or copy the file to the repo root), push, and confirm the cover in a real browser. Then delete the note='The Tantra logo image on the first slide is missing (404).' argument on the webinar-deck element in workshop-plan/build/review_hub.py:257, regenerate workshop-plan/index.html, and mark H038 fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md with the commit.",
    "done_when": [
@@ -6667,7 +6667,24 @@
     "Cover slide screenshot shows the Tantra mark",
     "review_hub.py has no 404 note on webinar-deck and AUDIT.md marks H038 fixed with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Live deck",
+     "url": "https://usetantra.github.io/tantra-webinar-deck/?v=t148fix"
+    },
+    {
+     "label": "Cover screenshot",
+     "url": "/tmp/t148/cover.png"
+    },
+    {
+     "label": "Public deck commit",
+     "url": "https://github.com/Usetantra/tantra-webinar-deck/commit/b3def23"
+    },
+    {
+     "label": "Hub",
+     "url": "http://localhost/workshop-plan/index.html?v=t148"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -6690,6 +6707,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: the previous review was wrong to call the logo fixed. Verified 2026-10-08: the <img> logos load from uploads/tantra-logo.png (200), but the cover slide's CSS background url('tantra-logo.png') at lines 83 and 348 of the deck still requests the site root, which returns 404; review_hub.py:257 still carries the 404 note (audit H038)."
+    },
+    {
+     "ts": "2026-10-10T15:13:31+0530",
+     "who": "claude",
+     "note": "The cover's background Tantra mark now loads from uploads/tantra-logo.png: fixed in the slide sources (private Usetantra/webinar-deck 097f6bd), rebuilt, and published (Usetantra/tantra-webinar-deck b3def23). A headless sweep of all 58 live slides found 0 failed images, the only logo requests are uploads/ paths (all 200) and none go to the root tantra-logo.png; the cover screenshot shows the mark. The hub 404 note is gone (7a525b0) and H038 is marked fixed in AUDIT.md."
     }
    ],
    "order": 1480,
@@ -7197,7 +7219,7 @@
    "owner": "Bhaskar",
    "priority": "P2",
    "due": "2026-10-20",
-   "status": "queue",
+   "status": "blocked",
    "why": "Owner voice notes, 2026-09-26: whichever product a funnel targets, buyers spread across all tiers, so every funnel needs a qualifier and the mix must be measured.",
    "spec": "Use the owner's ladder (memory tantra-plan-lineup): Tantra Pro $99/mo (includes the workshop cohort seat; up to 5 LinkedIn or WhatsApp accounts), the $199/mo tier (up to 15; name pending on T-252), extra LinkedIn or WhatsApp accounts at $20 each, Tantra Pro course $999, Tantra Enterprise $9,999 (coaching plus done-with-you build, 1 year of platform access). Constants live in tantra-frontend-v2 src/lib/billing/pricing.ts (no checkout on this Mac: ~/tantra-frontend-v2 is empty, same blocker as T-252). The Enterprise booking link must move from Calendly (ruled out 2026-10-07) to a Cal.com event. Write a one-pager per offer, run one traffic experiment per offer, add a tier qualifier to both funnels (free /workshop and paid /masterclass) that routes each buyer to the right tier, and track the tier mix per 100 customers. No invented stats.",
    "done_when": [
@@ -7206,12 +7228,33 @@
     "Qualifier live on /workshop and /masterclass",
     "Tier-mix report after the first 100 customers"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Free funnel qualifier",
+     "url": "http://localhost:4322/workshop/join?v=t157"
+    },
+    {
+     "label": "Paid funnel qualifier",
+     "url": "http://localhost:4322/masterclass/success/join?v=t157"
+    },
+    {
+     "label": "One-pagers and experiments",
+     "url": "workshop-plan/offers/"
+    },
+    {
+     "label": "Tier-mix report",
+     "url": "workshop-plan/ops/tier_mix.py"
+    },
+    {
+     "label": "Calendly removal (adi-new-ui 0d737b3)",
+     "url": "https://github.com/Usetantra/tantra-frontend-v2/commit/0d737b3"
+    }
+   ],
    "blockers": [
     "$199 tier name (T-252)",
     "tantra-frontend-v2 source not on this Mac"
    ],
-   "needs_from_owner": "",
+   "needs_from_owner": "Redeploy the Apps Script so tier answers land in the Work Tracker: script.google.com, project Tantra Funnel (adi@growthclub.org), Deploy > Manage deployments > edit > Version: New version > Deploy. Code.gs in workshop-plan/ops/apps-script/Code.gs is already updated.",
    "log": [
     {
      "ts": "2026-09-26T03:21:41+0530",
@@ -7227,12 +7270,23 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: the $199 tier name is already an owner decision on T-252 (item 3), so the ask moved there; the Enterprise evaluation call still runs on Calendly, which was ruled out on 2026-10-07 (Cal.com replaces it); tantra-frontend-v2 has no checkout on this Mac (~/tantra-frontend-v2 is empty)."
+    },
+    {
+     "ts": "2026-10-10T15:13:28+0530",
+     "who": "claude",
+     "note": "People: reviewers Bhaskar → Bhaskar/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T15:13:38+0530",
+     "who": "claude",
+     "note": "Built and committed (dcd1578): a 4 question tier qualifier on /workshop/join and /masterclass/success/join that routes to Pro, Scale, Pro course or Enterprise and logs through logForm with UTM (headless probe at 1440 and 390 passed), four one-pagers plus one UTM tagged organic experiment per offer in workshop-plan/offers, and workshop-plan/ops/tier_mix.py (runs now, final at 100 customers); Calendly is unpinned on adi-new-ui (0d737b3, pushed) and Scale is recorded on T-252. The Work Tracker rejects tier_qualifier rows until the Apps Script is redeployed, so the mirror publish waits for that (publishing now would lose answers), and Bhaskar posts the LinkedIn and outreach variants from experiments.md since an agent may not message people."
     }
    ],
    "order": 1570,
    "assignee": "Claude",
    "reviewers": [
-    "Bhaskar"
+    "Bhaskar",
+    "Bharath"
    ]
   },
   {
@@ -10426,6 +10480,11 @@
      "ts": "2026-10-09T12:25:47+0530",
      "who": "claude",
      "note": "From T-287 (Orchestrator ruling: no channel add-ons, the app is out of date). Item 7 now has a fix up for review: https://github.com/Usetantra/tantra-frontend-v2/pull/196 (base development, reviewer Bharath) makes the Connectors cards, the Add step menu and the webhook dialog read the plan under billing v2, so the add-on labels go once BILLING_V2_ENABLED is on. New for the list to Adi: the Tantra billing catalog (version 2026-10-06, live on usetantra.com/pricing) says Pro includes 2 LinkedIn or WhatsApp accounts, Scale 12, extra accounts 10 dollars a month and a 7 day trial; the 2026-09-29 brief said 5, 15, 20 dollars and 14 days. Recommended: keep the live catalog, since that is what checkout charges."
+    },
+    {
+     "ts": "2026-10-10T15:13:28+0530",
+     "who": "claude",
+     "note": "Item 3 closed (T-157, Orchestrator decision 2026-10-09): the $199 plan is named Scale, matching SCALE_MONTHLY in pricing.ts, the handoff and /pricing."
     }
    ],
    "order": 2520
