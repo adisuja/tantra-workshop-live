@@ -443,6 +443,7 @@ const LABEL={next:"Next",doing:"In progress",review:"Review",recheck:"Done · re
 const KCOLS=["next","doing","review","blocked","hold","queue","recheck","done"];
 let DATA={tasks:[]},INBOX=[],view="queue",openId=null;
 const $=s=>document.querySelector(s);
+const SENTMSG={};  // the last "Saved" line per task, so a board refresh never wipes it
 const plural=(n,w)=>`${n} ${w}${n===1?"":"s"}`;
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const bust=u=>/^https?:/.test(u)?u+(u.includes("?")?"&":"?")+"v="+Date.now():u;
@@ -649,7 +650,7 @@ function composerHtml(t){const id=t.id,a=msgAction(t);
         <button class="wic mic recbtn" id="rec-${id}" type="button" title="Record a voice note" aria-label="Record a voice note" onclick="startRec('${id}')"${VN[id]?" hidden":""}>${ICON.mic}</button>
         <button class="wic send" id="vs-${id}" type="button" title="Send (Enter)" aria-label="Send" onclick="send('${id}','msg')">${ICON.send}</button>
       </div>
-      <span class="sent" id="sent-${id}" aria-live="polite"></span>
+      <span class="sent" id="sent-${id}" aria-live="polite">${esc(SENTMSG[id]||"")}</span>
       <div class="hint">${MSG_MEANS[a]} Enter sends · Shift+Enter for a new line.</div>
     </div>`}
 function waInput(id){const ta=document.getElementById("fb-"+id);if(ta){ta.style.height="auto";ta.style.height=Math.min(168,ta.scrollHeight)+"px"}paintSend(id)}
@@ -846,7 +847,7 @@ async function send(id,action){
   const hasFiles=(PENDING[id]||[]).length>0||!!voice;
   const who=needWho(out,id,()=>send(id,action));if(!who)return;
   if(!text&&!hasFiles&&!["approve","prioritize","drop"].includes(action)){out.className="sent err";out.textContent="Type a message, record a voice note or attach a file first.";return}
-  SENDING[id]=true;setSendBusy(id,true);
+  SENDING[id]=true;setSendBusy(id,true);delete SENTMSG[id];
   try{out.className="sent";out.textContent=(PENDING[id]||[]).length?"Uploading…":"Sending…";
     const attachments=await uploadPending(id);
     if(voice)attachments.push({name:voice.name,url:voice.url,type:voice.type,size:voice.size,...(STATIC?{}:{transcript:voice.url+".transcript.json"})});
@@ -857,7 +858,7 @@ async function send(id,action){
     const ta2=document.getElementById("fb-"+id);if(ta2&&ta2.value.trim()===text)ta2.value="";
     if(voice){if(voice.tx&&voice.tx.status==="done")TX[voice.url+".transcript.json"]=voice.tx;dropVoice(id)}
     SENDING[id]=false;
-    const msg=STATIC?(KEY?"Saved · Claude picks it up within seconds":"Saved · waiting for Adi to approve it (no personal link in this browser)"):"Sent · the Claude agent is picking it up";
+    const msg=SENTMSG[id]=STATIC?(KEY?"Saved · Claude picks it up within seconds":"Saved · waiting for Adi to approve it (no personal link in this browser)"):"Sent · the Claude agent is picking it up";
     if(openId===id&&AUTONEXT()&&after){toast(`${ACT_DONE[action]||"Sent"} on ${id}. ${msg.split(" · ")[1]||""}`,id);openTaskPanel(after)}
     else{if(openId===id)render();const o2=document.getElementById("sent-"+id);if(o2){o2.className="sent";o2.textContent=msg}}
     setTimeout(pollAgent,1500)}

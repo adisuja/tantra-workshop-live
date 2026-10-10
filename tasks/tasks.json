@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T15:58:04+0530",
-  "version": 1453,
+  "updated": "2026-10-10T16:01:53+0530",
+  "version": 1455,
   "last_id": 381,
   "team": [
    {
@@ -10603,11 +10603,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Bhaskar"
+    "Bhaskar",
+    "Bharath"
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "The public pricing page and product billing contradict the owner's plan line-up (memory tantra-plan-lineup), which is a trust problem for every workshop attendee who checks Tantra's pricing.",
    "spec": "Source: GitHub Usetantra/tantra-frontend-v2 (private), branch adi-new-ui (handoff SESSION_HANDOFF_2026_09_29_TANTRA_FRONTEND_V2.md; work there was uncommitted on 2026-09-29, check what reached the branch). Clone read-only (gh repo clone Usetantra/tantra-frontend-v2 -- -b adi-new-ui) and re-verify each open item in code before asking Adi: (1) SMS in the enterprise call description although Tantra has no SMS channel; (2) /pricing Enterprise card and FAQ versus the owner's coaching plus build with 1 year of platform access; (3) name of the $199 plan ('Scale' placeholder); (4) Telegram on pricing (removed from public surfaces 2026-09-30 per frontend-v2-ground-truth-docs); (5) 'Start Free' CTAs with no free plan (Pro has a 14-day $0 trial); (6) about 10 help-centre add-on articles (content/help/multichannel-outreach/...) and ToS/Privacy add-on mentions; (7) Dodo products: no Scale, no $20 extra-account product, Pro trial, in-app /billing still sells $10 add-ons; (8) annual pricing ($999/yr Pro in Dodo, not shown); (9) /enterprise embeds Calendly (src/lib/marketing/enterprise-call.ts ENTERPRISE_CALENDLY_URL) while Calendly is ruled out: recommended move to Cal.com. Then put only the still-open items to Adi as one list with a recommended answer each.",
    "done_when": [
@@ -10615,7 +10616,20 @@
     "Pricing page, FAQ and help articles match the decisions on a branch in tantra-frontend-v2",
     "/enterprise books through Cal.com (or Adi keeps Calendly explicitly)"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "PR 197",
+     "url": "https://github.com/Usetantra/tantra-frontend-v2/pull/197"
+    },
+    {
+     "label": "Dodo spec",
+     "url": "https://github.com/Usetantra/tantra-frontend-v2/blob/pricing-lineup-2026-10/docs/dodo-product-spec-2026-10.md"
+    },
+    {
+     "label": "Annual toggle screenshot",
+     "url": "/tmp/t252-pricing-annual.png"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -10638,6 +10652,16 @@
      "ts": "2026-10-10T15:13:28+0530",
      "who": "claude",
      "note": "Item 3 closed (T-157, Orchestrator decision 2026-10-09): the $199 plan is named Scale, matching SCALE_MONTHLY in pricing.ts, the handoff and /pricing."
+    },
+    {
+     "ts": "2026-10-10T16:01:53+0530",
+     "who": "claude",
+     "note": "People: reviewers Bhaskar → Bhaskar/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T16:01:53+0530",
+     "who": "claude",
+     "note": "All 9 items checked in code. Items 1, 3, 4, 5 and 9 were already right, so they needed no change. Items 2, 6, 7 and 8 are built in PR 197 (into adi-new-ui; reviewers Bhaskar and Bharath): Enterprise is $9,999 with 1 year, the help articles have no add-ons, /billing has no Add-ons tab, there is a Dodo spec, and annual Pro is $999 behind a toggle. Verified: npm test passes (304 tests), and headless Chromium showed $999/year after clicking Annual; the voice probe flags only the missing local PostHog env var. Still open for whoever creates the Dodo products: the live development catalog says 2 and 12 accounts, $10 extra and a 7 day trial, while this branch follows the owner's 5 and 15, $20 and 14 days."
     }
    ],
    "order": 2520
