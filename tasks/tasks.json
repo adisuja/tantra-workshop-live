@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T21:04:48+0530",
-  "version": 1626,
+  "updated": "2026-10-10T21:21:18+0530",
+  "version": 1627,
   "last_id": 387,
   "team": [
    {
@@ -14202,7 +14202,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "doing",
    "why": "Adi's three reasons for Google Workspace (calendar invites by service account, vendor-supplied cold email inboxes, GA4 and sign-up address) differ from what the centre builds; building mailboxes ourselves and warming on Instantly contradicts the approved vendor stack.",
    "spec": "Adi's model (2026-10-07): (1) Cold calendar invites: one Google service account per Workspace user, each uploaded to Tantra. (2) Cold email: inboxes are Google Workspace users bought through the inbox vendor, who handles the domain cost and SPF, DKIM and DMARC, hosts the accounts in their own Cloudflare and connects them to Tantra; we never build mailboxes ourselves. (3) Google also gives GA4 and one address the attendee signs up to other tools with. The centre today still does the old thing. To build on a branch: A) cold email: make the partner card (id start-endy, app/src/lib/workshop-cards.ts around line 356, never names Endy) the only mailbox path; remove the 'MAIL_OWN' build-your-own path, the start-workspace card ('Let the agent into Google Workspace'), the mailboxes, m365-mailboxes and warmup jobs (cloud/src/agentic.ts, jobs.ts, jobs-m365.ts) and the Instantly warm-up watcher (cloud/src/connectors/instantly.ts, agentic.ts line 25). After the vendor delivers, the attendee gives the vendor the service account client ID and the three scopes, then in Tantra Accounts uses Verify and Add; the agent confirms in Tantra that every inbox shows Connected and Gmail capable and is warming (see T-213 for the vendor flow and T-263 for the Tantra GET /accounts check). B) calendar: the calendar-workspace card asks for several senders, with steps to create a service account per sender and upload each to Tantra (journey: scripts/walkthroughs/journeys/google-senders.md; Adi's note: one service account per Workspace covers every mailbox). C) add a short card 'Pick the address you sign up to tools with' (one Workspace user). D) update probes (probe-stack, probe-domain-chain, probe-day1/day2) and the simulator, then the 'Set Up Your Vendor Inboxes' walkthrough text. Ship on a branch, READY in /Users/adithyamurali/tantra-round5-coord/LOG.md; Integrator merges and deploys.",
    "done_when": [
@@ -14214,21 +14214,19 @@
    ],
    "evidence": [
     {
-     "label": "Branch t-299-vendor-inboxes",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/tree/t-299-vendor-inboxes"
+     "label": "Merged branch worktree (b5468e5)",
+     "url": "/Users/adithyamurali/tantra-t299"
     },
     {
-     "label": "Card screenshots (sign-up address, inboxes in Tantra, calendar senders)",
-     "url": "/tmp/t299/d0"
+     "label": "Probe summary (being written)",
+     "url": "/tmp/t299/probes-summary.txt"
     },
     {
      "label": "Cards source",
      "url": "/Users/adithyamurali/tantra-t299/app/src/lib/workshop-cards.ts"
     }
    ],
-   "blockers": [
-    "Adi: remove or keep the build-your-own-mailbox path"
-   ],
+   "blockers": [],
    "needs_from_owner": "",
    "log": [
     {
@@ -14255,6 +14253,11 @@
      "ts": "2026-10-09T13:33:56+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-213, T-300."
+    },
+    {
+     "ts": "2026-10-10T21:21:18+0530",
+     "who": "claude",
+     "note": "Not merged or live yet. Main had moved 389 commits, so I merged it into branch t-299-vendor-inboxes (b5468e5 in /Users/adithyamurali/tantra-t299, not pushed), keeping the vendor-only inbox path, the several calendar senders and the sign-up address card; app and cloud type checks are clean and the site builds. My first probe run this pass never executed (a shell quoting mistake of mine), so the four probes are rerunning now on the private simulator stack (results in /tmp/t299/probes-summary.txt); left for the next pass: read them, fast-forward main, push, deploy the centre Worker, publish the mirror, add the MERGED line to LOG.md. Ripple from T-263: the calendar gate already uses T-263's per-sender Connected check, nothing had to change."
     }
    ],
    "order": 2990

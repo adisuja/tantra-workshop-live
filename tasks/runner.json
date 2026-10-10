@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T21:21:37+0530",
+   "task_id": "T-299",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. COMPLETION CHECK for T-299 (status set to doing): not merged, pushed, deployed or published this run.\n\n- **Vendor-only inbox path, no mailbox-building or Instantly w"
+  },
+  {
    "ts": "2026-10-10T21:04:36+0530",
    "task_id": "T-297",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "blocked",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-226 is blocked on T-335: you need to create the Meeting SDK app and save its Client ID and Secret, and the 5 poll scopes are still not added to the Tantra Centre a"
-  },
-  {
-   "ts": "2026-10-10T19:56:59+0530",
-   "task_id": "T-234",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-234 is still blocked on the Tantra API key (T-337). The T-227 sender note didn't require any change to it.\n\n**What I checked:**\n- **Sender for invites:** T-234 sends reminder emails through a Tantra mailbox, not Google Calendar invites, so the T-227 invite sender doesn't apply to it. The go-live s"
   }
  ],
  "state": "working",
- "message": "Acting on 2 note(s) for T-299: Centre: cold email inboxes come from the inbox vendor only, several calendar senders, and a sign-up inbox card",
- "task_id": "T-299",
+ "message": "Acting on 1 note(s) for T-139: Read the 'Webinar Funnel Automations' Claude doc and reconcile the S2/S3 guides with it",
+ "task_id": "T-139",
  "entries": [
-  "F-0dba77f5",
-  "R-073625cc"
+  "F-4f2a2a50"
  ],
  "mode": "feedback",
- "started": "2026-10-10T21:05:07+0530",
+ "started": "2026-10-10T21:22:17+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
@@ -113,6 +112,7 @@
   "T-285": 1,
   "T-041": 1,
   "T-295": 1,
-  "T-226": 1
+  "T-226": 1,
+  "T-299": 1
  }
 }
