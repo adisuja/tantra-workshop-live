@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T21:58:31+0530",
+   "task_id": "T-001",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-001 stays in review: everything the Orchestrator note asked for is verified on the live mirror, and the only thing left is Adi's copy sign-off.\n\nCOMPLETION CHECK (evidence from this run):\n\n1. **Funnel numbers match the FunnelOS board: done.** `day-art.tsx`, `visuals.tsx` and `funnel-os-types/syste"
+  },
+  {
    "ts": "2026-10-10T21:41:07+0530",
    "task_id": "T-020",
    "mode": "feedback",
@@ -87,23 +95,13 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-115 is still blocked because this unattended run has no browser tools, so none of the screenshots were captured. I merged its ask with T-339, so Adi opens one desktop session for both.\n\n- **Orchestrator note F-00a906f4 (capture the 21 slots, commit and push, update G127):** Not done. No Claude in "
-  },
-  {
-   "ts": "2026-10-10T20:19:03+0530",
-   "task_id": "T-339",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-339 is still blocked on one thing: Adi signing in to Twilio at https://console.twilio.com in the Brave profile that Claude in Chrome uses. The ripple's change had mostly been made already: needs_from_owner was already asking for Twilio only. The only stale part was the title, which still said \"sig"
   }
  ],
- "state": "working",
- "message": "Acting on 1 note(s) for T-001: /masterclass landing page",
- "task_id": "T-001",
- "entries": [
-  "F-da92aac5"
- ],
- "mode": "feedback",
+ "state": "idle",
+ "message": "Last sweep handled 8 task(s).",
+ "task_id": null,
+ "entries": [],
+ "mode": null,
  "started": "2026-10-10T21:41:37+0530",
  "slices": {
   "T-156": 1,

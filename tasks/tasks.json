@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T21:56:33+0530",
-  "version": 1636,
+  "updated": "2026-10-10T21:57:56+0530",
+  "version": 1637,
   "last_id": 387,
   "team": [
    {
@@ -233,15 +233,15 @@
    "evidence": [
     {
      "label": "Landing page (mirror)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791536172"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791649676"
     },
     {
-     "label": "Landing page (local)",
-     "url": "http://localhost:4322/masterclass?v=1791536172"
+     "label": "Free landing, same funnel numbers",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=1791649676"
     },
     {
-     "label": "Free landing, same Day 1 visual and bio",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=1791536172"
+     "label": "probe-funnels.mjs",
+     "url": "app/scripts/probe-funnels.mjs"
     },
     {
      "label": "probe-workshop.mjs",
@@ -249,7 +249,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791536802 and reply on this task with copy changes, or approve.",
+   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791649676 and reply on this task with copy changes, or approve.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -295,6 +295,11 @@
      "ts": "2026-10-10T16:35:32+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-19 was past; now 2026-10-14 (P0 rule)."
+    },
+    {
+     "ts": "2026-10-10T21:57:56+0530",
+     "who": "claude",
+     "note": "Verify pass: the funnel numbers on /masterclass and /workshop match the FunnelOS board on the live mirror (8.6K visits, 825 registrations, 9.6%, 48.6% show-up, no attendee count, weak layer on Traffic), with none of the old 11.4K, 368, 3.2%, 179 or $50M figures and no 404 on /onboarding. Checked today on the mirror at 1440 and 390: tsc clean, probe-funnels 10 of 10 pages OK (I made its webinar rule skip the template library, whose one hit was a word for word client example), probe-workshop 44 ok with only the three checkout API checks a static mirror cannot answer; main is pushed at 46aa3a1, mirror publish a8dd0b8e7 from main 26dc888 is in the coord log. Adi: the only thing left is your copy sign-off at https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791649676"
     }
    ],
    "order": 0,
