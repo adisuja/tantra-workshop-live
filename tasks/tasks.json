@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T05:27:05+0530",
-  "version": 1694,
+  "updated": "2026-10-11T05:28:12+0530",
+  "version": 1697,
   "last_id": 391,
   "team": [
    {
@@ -2546,7 +2546,7 @@
     "T-056 list imported",
     "Each member connects their own LinkedIn in Tantra"
    ],
-   "needs_from_owner": "Each participating member signs in at https://usetantra.com/connectors/channels/linkedin and connects their own LinkedIn (guide: workshop-plan/outreach/connect-linkedin-guide.md). Pro shows 2 of 2 accounts in use, so a third profile needs an extra account (+$20) bought first. The list import itself is the sign-in already asked on T-056.",
+   "needs_from_owner": "Each participating member signs in at https://usetantra.com/connectors/channels/linkedin and connects their own LinkedIn (guide: workshop-plan/outreach/connect-linkedin-guide.md). Pro shows 2 of 2 accounts in use, so a third profile needs an extra account (+$20) first. The list import is the sign-in already asked on T-056.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2592,6 +2592,11 @@
      "ts": "2026-10-11T05:25:22+0530",
      "who": "claude",
      "note": "Removed the T-057 wait: the launch kit and ops/outreach.json now say readiness is YES (app at usetantra.com) and the run caps are set to the agreed ramp (20 to 25 connects/day, never above 75, 75 messages/day; app max 80 connects, 120 messages, 80 visits), with the 2 of 2 Pro accounts note kept. Verified by grep (no PENDING or sign-off wording left) and the referral tests. Not launched: it still needs the T-056 import and each member connecting with their own login. Open workshop-plan/outreach/launch-kit.md."
+    },
+    {
+     "ts": "2026-10-11T05:28:04+0530",
+     "who": "claude",
+     "note": "Verify pass: the T-057 wait is gone and readiness YES, the caps and the 2 of 2 Pro accounts are all in the launch kit (checked on disk). I added the weekly limits from T-057 (180 connects, 600 messages, 400 visits) and a probe check for the Replies column: probe-referrals 15 of 15, referral tests 27 of 27. Nothing is launched: every member still shows not connected and the T-056 list is not imported. Open workshop-plan/outreach/launch-kit.md and workshop-plan/referrals.html?v=1011a."
     }
    ],
    "order": 370,
@@ -14704,7 +14709,7 @@
    "evidence": [
     {
      "label": "Public board",
-     "url": "https://tantra-board.growthcluborg.workers.dev/tasks.html?v=20261009h"
+     "url": "https://tantra-board.growthcluborg.workers.dev/tasks.html?v=20261011a"
     },
     {
      "label": "Probe (public board)",
@@ -14737,6 +14742,11 @@
      "ts": "2026-10-09T18:08:26+0530",
      "who": "claude",
      "note": "Ready to review at https://tantra-board.growthcluborg.workers.dev/tasks.html?v=20261009h . Re-verified on the hardened build 2026-10-09 18:04 to 18:12 IST: probe-public-board.mjs --live is clean (64 checks, exit 0, incl. keyless 'Adi' arriving as 'Visitor: Adi' untrusted, github.io origin refused by the API, public tasks and notes identical to the Mac at v1179); a real note sent from the live page at 18:05:37 reached the Mac inbox in 2.6 s through the background importer (W-dc76f2a60a); the old adisuja.github.io/tantra-workshop-live/tasks.html forwarded to the Worker in a headless browser; probe-board-actions.mjs now also asserts no github.com request or new tab and passes 71/71 (its first run of four showed 2 failures in the opening voice-note section that did not repeat in three clean runs). Nothing failed on the Worker so no redeploy; sandbox tasks T-358 to T-361 removed and probe notes acked; commit a16ea80."
+    },
+    {
+     "ts": "2026-10-11T05:27:55+0530",
+     "who": "claude",
+     "note": "Ready to review at https://tantra-board.growthcluborg.workers.dev/tasks.html?v=20261011a . Re-verified on the hardened build 2026-10-11 05:22 to 05:28 IST: (1) probe-public-board.mjs --live is clean (72 checks, exit 0, public and local both v1678, 397 notes identical, keyless 'Adi' arrives as 'Visitor: Adi' untrusted); (2) a note sent from the live page at 05:27:12 reached the Mac inbox in 14.5 s through the background importer (W-731338e67f), one POST to the Worker, 0 github.com requests, 0 new tabs; (3) the old adisuja.github.io/tantra-workshop-live/tasks.html landed on the Worker in a headless browser; (4) probe-board-actions.mjs passes 70 of 70 including 'no action opened github.com or a new tab'. Its first run showed 4 failures, all in the probe and not the board: a sandbox task (T-389) left by the run that was killed at 01:35 matched the same title, and the roster check predated Vaibhavi. Both fixed in the probe (commit e298321), T-389 removed, 25 probe notes acked. Nothing failed on the Worker, so no redeploy and no push."
     }
    ],
    "order": 3220
