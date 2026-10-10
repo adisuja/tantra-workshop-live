@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T20:26:24+0530",
-  "version": 1580,
-  "last_id": 384,
+  "updated": "2026-10-10T20:31:24+0530",
+  "version": 1588,
+  "last_id": 386,
   "team": [
    {
     "name": "Adi",
@@ -2706,6 +2706,11 @@
      "ts": "2026-10-10T16:43:30+0530",
      "who": "Orchestrator",
      "note": "People: assignee Bharath → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-10T20:30:42+0530",
+     "who": "claude",
+     "note": "From T-071: the Tantra Pro Course ($999, Dodo product pdt_0NpKlRqJAjyAf3axboQSR) has no automatic fulfilment. The centre Worker hook records a Pro payment as other_product and grants nothing, so the team emails course, community and coaching call access by hand after seeing the payment in the Tracker Payments tab. Automating that belongs here when this task is picked up."
     }
    ],
    "order": 420,
@@ -2733,19 +2738,19 @@
    "evidence": [
     {
      "label": "Live /pro (mirror)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071b"
-    },
-    {
-     "label": "Local /pro",
-     "url": "http://localhost:4322/pro?v=t071b"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071c"
     },
     {
      "label": "Probe",
      "url": "app/scripts/probe-pro.mjs"
     },
     {
-     "label": "Rebuild commit 255576b (on main)",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/255576b"
+     "label": "Merge commit 08d5599 (on main)",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/08d5599"
+    },
+    {
+     "label": "Mirror publish 4df706f",
+     "url": "https://github.com/adisuja/tantra-workshop-live/commit/4df706f"
     }
    ],
    "blockers": [],
@@ -2800,6 +2805,11 @@
      "ts": "2026-10-10T16:36:00+0530",
      "who": "claude",
      "note": "Spec updated from T-129: Pro is pitched at the close of Day 3 only (no longer pending)."
+    },
+    {
+     "ts": "2026-10-10T20:30:42+0530",
+     "who": "claude",
+     "note": "Owner-confirmation item is met: the inclusions (course with recordings, community, group coaching calls) and USD 999 / EUR 997 / INR 99,999 match the offer ladder Adi locked on 2026-09-17. Merged agent/t-071-pro-course into main (08d5599), pushed main, and republished /pro only to the mirror (4df706f); a whole-site sync would have shipped 1356 files of other lanes' unpublished work, so it was not run. /pro now says before and after payment that our team emails access (buy card, new FAQ, welcome banner), every mention reads Tantra Pro Course so the T-116 rename needed no change, and probe-pro.mjs passes all 34 checks on the live page ($999, €997, ₹99,999 on Dodo). Pro purchases reach the team through tracker_sync.py's Dodo polling (Tracker Payments tab, with product name); fulfilment stays manual, noted on T-070 and T-074. Open https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071c"
     }
    ],
    "order": 430,
@@ -4572,8 +4582,8 @@
    "priority": "P1",
    "due": "2026-10-14",
    "status": "review",
-   "why": "Every Day 2 guide example renders from this library. The rebuilt verbatim library (lane/lib 5b92879, 679 real examples) is on main and in the live centre, but its public status hangs on T-141.",
-   "spec": "State on main 2026-10-08: the verbatim library is merged; the GitHub mirror export empties it (app/scripts/export-static.sh and cloud/.export-centre.sh, 'held for T-141', from 04f0e0a), while the live centre build keeps it (cloud/scripts/build.sh line 23). Verified 2026-10-08: https://revops-centre.growthcluborg.workers.dev/onboarding/templates/ answers 200 to an anonymous visitor (it mints an rc_t cookie) and its JS bundle carries the large dollar figures listed in the private workshop-plan/library/clients/_raw_v2/CHECKPOINT1_NUMBERS.md. Steps once T-141 is answered: (1) record the rule in workshop-plan/coord/LANES.md; (2) if keep: remove the hold block from export-static.sh and .export-centre.sh and publish the mirror; if strip or per-figure: apply it in the library source (app/src/lib/examples), rebuild and deploy the centre Worker, then lift the mirror hold; (3) clear T-243 (probe-anonymity non-export hits); (4) re-run probe-fidelity, probe-anonymity and node app/scripts/check-guides.mjs, check /Users/adithyamurali/tantra-round5-coord/LOG.md for publish holds, then publish.",
+   "why": "Every Day 2 guide example renders from this library. The verbatim library (built on lane/lib 5b92879 with 679 real examples, now 672 after the team content pass: 22 edited, 7 removed) is public on both the live centre and the mirror since T-141 was answered (A: figures may be public).",
+   "spec": "State 2026-10-10: finished, waiting for sign-off. T-141 was answered with (A): figures may be public; only names, people, domains and links are banned (rule in workshop-plan/coord/LANES.md, guarded by app/scripts/probe-anonymity.mjs). The mirror hold is lifted: app/scripts/export-static.sh ships the library by default (PUBLISH_VERBATIM_EXAMPLES=0 empties it), and cloud/.export-centre.sh, which cloud/scripts/build.sh generates from it, never empties it. Published 2026-10-09 08:15: mirror e4f856b from main db6a151, 672 examples, same text as the live centre. The mirror history was rewritten and republished on 2026-10-09 (T-145); the old leak commit 5b9f57d6 is on no branch but GitHub still returns it by its full SHA until Support clears it (T-334) and the one fork is deleted (T-341). T-243 is done. The probe-library poll check is split out to its own task.",
    "done_when": [
     "T-141 answered and the rule written in workshop-plan/coord/LANES.md",
     "probe-anonymity reports 0 hits (T-243)",
@@ -4582,18 +4592,22 @@
    "evidence": [
     {
      "label": "Mirror library (live)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/?v=e4f856b"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/?v=d8e452a"
     },
     {
      "label": "Live centre library",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/templates/?v=e4f856b"
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/templates/?v=d8e452a"
     },
     {
-     "label": "Probe allow list",
-     "url": "app/scripts/probe-anonymity.mjs"
+     "label": "Centre export script (comment tidy, d8e452a)",
+     "url": "cloud/.export-centre.sh"
     },
     {
-     "label": "Publish log line",
+     "label": "Generator that sets the gate",
+     "url": "cloud/scripts/build.sh"
+    },
+    {
+     "label": "Publish log line (2026-10-09 08:15)",
      "url": "workshop-plan/coord/LOG.md"
     }
    ],
@@ -4654,6 +4668,11 @@
      "ts": "2026-10-10T16:35:34+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-28 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-10T20:31:17+0530",
+     "who": "claude",
+     "note": "Closed out the record: spec and why now say 672 examples and the current state, and the stale 'T-141 open' comment is gone from cloud/.export-centre.sh (d8e452a, pushed to main). That file is generated by cloud/scripts/build.sh, which sets the gate to 'if false' on purpose so the centre can never ship an emptied library, so I kept that and labelled it at the generator instead of swapping in the env gate. Rechecked today: probe-anonymity PASS, probe-fidelity PASS, and a fresh crawl of both live sites found the same library (124 distinct money figures and 4,939 text strings each, the only differences are 9 lines of minified code); the old leak commit 5b9f57d6 is on no mirror branch but GitHub still serves it by SHA (T-334, T-341). check-guides fails on 4 small guide screenshots from today's T-257 crop, unrelated to the library. Amal: open the mirror link and sign off."
     }
    ],
    "order": 1090,
@@ -11438,6 +11457,11 @@
      "ts": "2026-10-10T02:22:32+0530",
      "who": "claude",
      "note": "Built, verified and pushed to main as 6e7b2b6: 62 unreferenced guide images deleted (none left), the GA4 search box cropped out of s1-blog 07 and s1-social 06, wide strips now stay at least 104 px tall on a phone (they swipe sideways), and every Day 1 and Day 3 playbook step has a real product screenshot (16 in total). Checked with probe-screenshots at 390 and 1440 (all screenshot checks pass; one older diagram check fails and is not from this task: the vertical One Funnel System diagram is 304 px wide at 390), probe-headings, tsc and the impeccable detector, all clean, and the 8 audit ids are marked fixed in AUDIT.md. The public mirror was not published from here because main also carries other lanes' fresh work (T-264, T-267), so it goes out with the next Integrator publish."
+    },
+    {
+     "ts": "2026-10-10T20:31:24+0530",
+     "who": "claude",
+     "note": "From the T-111 run 2026-10-10: node app/scripts/check-guides.mjs now fails on 4 screenshots as too small to be a real capture (s1-blog/07.webp, s1-social/06.webp, s4-webinar/17.webp, s5-extra-pipelines/06.webp), which look like results of the 6e7b2b6 crop. Status left as it was."
     }
    ],
    "order": 2570
@@ -15107,6 +15131,35 @@
    "order": 3840,
    "input_for": "T-115",
    "kind": "input"
+  },
+  {
+   "id": "T-385",
+   "title": "probe-library: 'poll accepts a vote' check fails on the live centre and the mirror",
+   "area": "Infra",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Bharath"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "The library probe (app/scripts/probe-library.mjs) reports one failure that is not a library fault, so every library run ends red and a real regression could hide behind it.",
+   "spec": "Recorded 2026-10-09 in workshop-plan/coord/LOG.md: the 'poll accepts a vote' check fails the same way on https://revops-centre.growthcluborg.workers.dev/onboarding/templates/ and on https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/ because the default library view has no poll. Find out whether the poll was removed on purpose (then drop or re-point the check) or should be there (then restore it). Split out of T-111 by Orchestrator decision; T-111 does not wait on this.",
+   "done_when": [
+    "node app/scripts/probe-library.mjs passes against the live centre and the mirror, or the poll check is removed with the reason in the commit message"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-10T20:31:17+0530",
+     "who": "claude",
+     "note": "Opened from T-111 (Orchestrator decision 2026-10-09) so the library task can close without it."
+    }
+   ],
+   "order": 3850
   }
  ]
 }
