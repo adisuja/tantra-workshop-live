@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T15:13:38+0530",
-  "version": 1433,
+  "updated": "2026-10-10T15:18:09+0530",
+  "version": 1435,
   "last_id": 380,
   "team": [
    {
@@ -2632,7 +2632,7 @@
    "owner": "Bhaskar",
    "priority": "P2",
    "due": "2026-09-29",
-   "status": "queue",
+   "status": "blocked",
    "why": "Enterprise is pitched at the Day 3 close and its booking page runs on Calendly, which is ruled out; the workshop visuals still call it 'Chaperone'.",
    "spec": "(1) tantra-frontend-v2 /enterprise (src/app/enterprise/page.tsx, calendly-embed.tsx, src/lib/marketing/enterprise-call.ts ENTERPRISE_CALENDLY_URL and applyOwnerCorrections) embeds the Calendly event 'Tantra Enterprise Evaluation Call'. Replace it with a Cal.com event of the same name and the owner's description (1 year of platform access, never 10; 3 months of 1:1, course, community and coaching; no $50MN, no testimonials per the enterprise voice rule), embedded with Cal.com's inline embed. (2) In this repo rename every 'Chaperone' to 'Tantra Enterprise': app/src/components/masterclass/funnel-os-challenge.tsx lines 12, 252, 306, 351, 418, 423, 433, 440 and app/src/components/masterclass/funnel-os-types/system.tsx line 541 (leave the verbatim client example data in app/src/lib/examples/data/real-foundation.ts untouched). Rebuild the playbook funnels (workshop-plan/build/funnels.py) and republish.",
    "done_when": [
@@ -2641,9 +2641,30 @@
     "probe-funnel-boards.mjs passes and the challenge board on the mirror says Tantra Enterprise",
     "Owner approves the Enterprise copy"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Frontend commit adi-new-ui 5d6eecf",
+     "url": "https://github.com/Usetantra/tantra-frontend-v2/commit/5d6eecf"
+    },
+    {
+     "label": "Cal.com event draft",
+     "url": "workshop-plan/build/T-072-calcom-event-draft.md"
+    },
+    {
+     "label": "Challenge board on mirror",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/challenge/?v=t072"
+    },
+    {
+     "label": "Embed rendering a demo event (screenshot)",
+     "url": "/tmp/t072-embed.png"
+    },
+    {
+     "label": "Fallback card (screenshot)",
+     "url": "/tmp/t072-enterprise.png"
+    }
+   ],
    "blockers": [],
-   "needs_from_owner": "Which Cal.com account hosts the Enterprise call: sign in at https://app.cal.com/event-types on that account when Claude asks so it can create 'Tantra Enterprise Evaluation Call'.",
+   "needs_from_owner": "Sign in to Cal.com as adisuja at https://app.cal.com/event-types and create the event 'Tantra Enterprise Evaluation Call' (slug tantra-enterprise-evaluation-call, 30 min, Google Meet), pasting the description from workshop-plan/build/T-072-calcom-event-draft.md. cal.com/adisuja/tantra-enterprise-evaluation-call returns 404 today, and /enterprise switches to the embed on its own once it answers.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2664,12 +2685,23 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: a Tantra Enterprise booking page already exists in tantra-frontend-v2 at /enterprise with an inline Calendly embed (export copy /Users/adithyamurali/.export-review/fe/src/app/enterprise/calendly-embed.tsx, ENTERPRISE_CALENDLY_URL in src/lib/marketing/enterprise-call.ts). Calendly was ruled out on 2026-10-07, so the task is now the Cal.com swap plus the Chaperone rename (also in funnel-os-types/system.tsx line 541). UNVERIFIED: the tantra-frontend-v2 checkout at /Users/adithyamurali/tantra-frontend-v2 is empty on this machine."
+    },
+    {
+     "ts": "2026-10-10T15:18:09+0530",
+     "who": "claude",
+     "note": "People: reviewers Bhaskar → Bhaskar/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T15:18:09+0530",
+     "who": "claude",
+     "note": "The /enterprise page in tantra-frontend-v2 now uses a Cal.com inline embed in place of Calendly, pointed at cal.com/adisuja/tantra-enterprise-evaluation-call. The corrected description is now a constant in the repo, and the change is pushed to adi-new-ui as 5d6eecf. Verified: 304 tests pass, the voice probe has no copy failures, no Calendly script loads, the fallback card shows while the event does not exist, and a live Cal.com demo event rendered in the embed. The challenge board on the mirror already says Tantra Enterprise (T-108 did that). The only remaining step is creating the event on Cal.com, using workshop-plan/build/T-072-calcom-event-draft.md."
     }
    ],
    "order": 440,
    "assignee": "Claude",
    "reviewers": [
-    "Bhaskar"
+    "Bhaskar",
+    "Bharath"
    ]
   },
   {
