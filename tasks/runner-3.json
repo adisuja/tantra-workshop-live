@@ -97,15 +97,12 @@
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-300 is built and committed on branch `t300-ruled-out-cleanup`, but not finished: several run-chain probes fail, so I set it to **doing**. I did not push the branch"
   }
  ],
- "state": "working",
+ "state": "idle",
  "mode": "feedback",
- "task_id": "T-022",
- "entries": [
-  "F-1842da1e",
-  "R-5e6e9701"
- ],
+ "task_id": null,
+ "entries": [],
  "started": "2026-10-10T21:40:25+0530",
- "message": "Acting on 2 note(s) for T-022: Daily survey (Day 0 setup plus 25 daily questions, 8/9/8)",
+ "message": "Recovered from an error: FileNotFoundError: [Errno 2] No such file or directory: '/Users/adithyamurali/tantra-redesign/workshop-plan/tasks/overflow.json.tmp' -> '/U",
  "slices": {
   "T-135": 1,
   "T-148": 1,
