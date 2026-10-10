@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T22:09:35+0530",
-  "version": 1639,
+  "updated": "2026-10-11T00:29:06+0530",
+  "version": 1644,
   "last_id": 387,
   "team": [
    {
@@ -2922,6 +2922,11 @@
      "ts": "2026-10-10T16:35:33+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-29 was past; now 2026-10-16 (P2 rule)."
+    },
+    {
+     "ts": "2026-10-11T00:29:06+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-11: agents never touch Usetantra repos (frontend, backend, new UI, decks, MCP). This task's upstream PRs/commits were closed, deleted or reverted; the work is kept as patches in workshop-plan/tantra-product-patches/ (README indexes them). Any further Tantra product change goes there as a patch or spec, never upstream."
     }
    ],
    "order": 440,
@@ -7222,6 +7227,11 @@
      "ts": "2026-10-10T15:13:31+0530",
      "who": "claude",
      "note": "The cover's background Tantra mark now loads from uploads/tantra-logo.png: fixed in the slide sources (private Usetantra/webinar-deck 097f6bd), rebuilt, and published (Usetantra/tantra-webinar-deck b3def23). A headless sweep of all 58 live slides found 0 failed images, the only logo requests are uploads/ paths (all 200) and none go to the root tantra-logo.png; the cover screenshot shows the mark. The hub 404 note is gone (7a525b0) and H038 is marked fixed in AUDIT.md."
+    },
+    {
+     "ts": "2026-10-11T00:29:06+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-11: agents never touch Usetantra repos (frontend, backend, new UI, decks, MCP). This task's upstream PRs/commits were closed, deleted or reverted; the work is kept as patches in workshop-plan/tantra-product-patches/ (README indexes them). Any further Tantra product change goes there as a patch or spec, never upstream."
     }
    ],
    "order": 1480,
@@ -7483,6 +7493,11 @@
      "ts": "2026-10-10T16:35:34+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-10-09 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-11T00:29:06+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-11: agents never touch Usetantra repos (frontend, backend, new UI, decks, MCP). This task's upstream PRs/commits were closed, deleted or reverted; the work is kept as patches in workshop-plan/tantra-product-patches/ (README indexes them). Any further Tantra product change goes there as a patch or spec, never upstream."
     }
    ],
    "order": 1520,
@@ -7814,6 +7829,11 @@
      "ts": "2026-10-10T15:19:00+0530",
      "who": "claude",
      "note": "ALARM: run over budget ($2.20): 54 calls, peak context 47k. Slice the next run smaller."
+    },
+    {
+     "ts": "2026-10-11T00:29:06+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-11: agents never touch Usetantra repos (frontend, backend, new UI, decks, MCP). This task's upstream PRs/commits were closed, deleted or reverted; the work is kept as patches in workshop-plan/tantra-product-patches/ (README indexes them). Any further Tantra product change goes there as a patch or spec, never upstream."
     }
    ],
    "order": 1570,
@@ -11256,6 +11276,11 @@
      "ts": "2026-10-10T16:01:53+0530",
      "who": "claude",
      "note": "All 9 items checked in code. Items 1, 3, 4, 5 and 9 were already right, so they needed no change. Items 2, 6, 7 and 8 are built in PR 197 (into adi-new-ui; reviewers Bhaskar and Bharath): Enterprise is $9,999 with 1 year, the help articles have no add-ons, /billing has no Add-ons tab, there is a Dodo spec, and annual Pro is $999 behind a toggle. Verified: npm test passes (304 tests), and headless Chromium showed $999/year after clicking Annual; the voice probe flags only the missing local PostHog env var. Still open for whoever creates the Dodo products: the live development catalog says 2 and 12 accounts, $10 extra and a 7 day trial, while this branch follows the owner's 5 and 15, $20 and 14 days."
+    },
+    {
+     "ts": "2026-10-11T00:29:06+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-11: agents never touch Usetantra repos (frontend, backend, new UI, decks, MCP). This task's upstream PRs/commits were closed, deleted or reverted; the work is kept as patches in workshop-plan/tantra-product-patches/ (README indexes them). Any further Tantra product change goes there as a patch or spec, never upstream."
     }
    ],
    "order": 2520
