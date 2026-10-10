@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T20:05:17+0530",
+   "task_id": "T-226",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-226 is blocked on T-335: you need to create the Meeting SDK app and save its Client ID and Secret, and the 5 poll scopes are still not added to the Tantra Centre a"
+  },
+  {
    "ts": "2026-10-10T19:56:59+0530",
    "task_id": "T-234",
    "mode": "feedback",
@@ -87,31 +95,24 @@
    "status": "review",
    "result": "turns",
    "summary": "T-276 is in review, F-f2e279de is acknowledged, and the spec and coverage.json rewrites are pushed to main as commit 7bc886a. Completion check: approved vendors only ✅ (ruled-out-vendor grep empty), cohort-relative dates via `cohort.ts` ✅ (only due dates and one dated Stripe fact remain), card 3 des"
-  },
-  {
-   "ts": "2026-10-10T15:46:12+0530",
-   "task_id": "T-249",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-249 is back in review with Nelbin. One gap was fixed and pushed (commit pushed, main matches origin). The taxonomy sheet still waits on Adi (T-381) and the GHL snapshot on T-260.\n\n**Completion check:**\n1. **FintechCircle repo:** done. I checked the access list today: Nelbin and Bhaskar are admins."
   }
  ],
  "state": "working",
- "message": "Acting on 2 note(s) for T-226: Tantra Host Console: Adi hosts every session from a Mac app that runs chat posts, polls, call-to-action links, mute and video control, co-hosts",
- "task_id": "T-226",
+ "message": "Acting on 2 note(s) for T-227: Google Calendar invites: save the organiser's service account and authorise it for Calendar",
+ "task_id": "T-227",
  "entries": [
-  "F-c251293a",
-  "R-803ec112"
+  "F-f4a85277",
+  "R-21f4e0d6"
  ],
  "mode": "feedback",
- "started": "2026-10-10T19:57:49+0530",
+ "started": "2026-10-10T20:06:03+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
   "T-276": 1,
   "T-285": 1,
   "T-041": 1,
-  "T-295": 1
+  "T-295": 1,
+  "T-226": 1
  }
 }

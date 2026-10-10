@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T20:04:50+0530",
+   "task_id": "T-011",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-011 stays done: I re-checked everything in a fresh verify pass and nothing needed fixing, so there was no commit and nothing was pushed.\n\n**Completion check (evidence from this run):**\n- **\"Approve the new logos\" ask removed:** done. `needs_from_owner` is empty in tasks.json.\n- **probe-workshop:**"
+  },
+  {
    "ts": "2026-10-10T18:08:56+0530",
    "task_id": "T-278",
    "mode": "feedback",
@@ -87,24 +95,17 @@
    "status": "doing",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-245 is half done: the forget action is built, tested locally and deployed, but meeting 89781893618 is still in production, so the task stays in `doing` for another"
-  },
-  {
-   "ts": "2026-10-10T15:32:24+0530",
-   "task_id": "T-072",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "turns",
-   "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-072 is still blocked: only Adi can create the Cal.com event the booking page points at. Everything else checks out in this run. The `ack` command reported 0 notes "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-011",
+ "task_id": "T-033",
  "entries": [
-  "F-045cac31"
+  "F-90daec88",
+  "R-95c6ab16"
  ],
- "started": "2026-10-10T19:56:12+0530",
- "message": "Acting on 1 note(s) for T-011: Fix landing-page proof cards (endCX, Appster, Rhenus, SalesTherapy)",
+ "started": "2026-10-10T20:05:30+0530",
+ "message": "Acting on 2 note(s) for T-033: WhatsApp + email delivery automation",
  "slices": {
   "T-072": 1,
   "T-245": 1,

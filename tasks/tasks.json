@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T19:59:58+0530",
-  "version": 1562,
+  "updated": "2026-10-10T20:05:05+0530",
+  "version": 1564,
   "last_id": 382,
   "team": [
    {
@@ -316,16 +316,12 @@
    ],
    "evidence": [
     {
-     "label": "Paid landing proof section (local)",
-     "url": "http://localhost:4322/masterclass?v=t011-1010#receipts"
+     "label": "Proof cards (local)",
+     "url": "http://localhost:4322/masterclass?v=t011-verify#receipts"
     },
     {
-     "label": "Chips at 390 (Rhenus, endCX, SalesTherapy)",
-     "url": "/tmp/t011-chips-390.png"
-    },
-    {
-     "label": "Logo probe",
-     "url": "app/scripts/probe-logos.mjs"
+     "label": "Receipts at 390px",
+     "url": "/tmp/t011-receipts-390.png"
     }
    ],
    "blockers": [],
@@ -370,6 +366,11 @@
      "ts": "2026-10-10T19:59:58+0530",
      "who": "claude",
      "note": "I re-ran the probes against localhost:4322. probe-workshop is clean. probe-funnels passes /workshop and /masterclass (its one failure is a /onboarding 404 from another lane's work, unrelated to this task). probe-logos passes on every row once it measures the three receipts size tiers separately. Before that it was lumping 17px chips in with 26px card marks. At 1440, 1024 and 390 the Appster card reads '$19M ARR in 2 Years', endCX is still there, and the Rhenus Automation (67x17) and SalesTherapy (84x15) marks load as transparent white silhouettes. No card or logo change was needed, so nothing was pushed."
+    },
+    {
+     "ts": "2026-10-10T20:04:14+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-10: probe-workshop clean (it defaults to port 4430, so it was run with BASE=http://localhost:4322), probe-logos all rows consistent, probe-funnels passes /workshop and /masterclass (its only failure is /onboarding, another lane's uncommitted work). A render check at 1440, 1024 and 390 found the Appster card reads $19M ARR in 2 Years with no $25M on the page, the endCX chip still there, and both the Rhenus Automation and SalesTherapy marks loaded as white silhouettes about 52% transparent, with no black box. Nothing needed fixing, so nothing was pushed; open http://localhost:4322/masterclass?v=t011-verify#receipts"
     }
    ],
    "order": 10,
@@ -9613,16 +9614,16 @@
    ],
    "evidence": [
     {
-     "label": "Live Control, live (open the admin link first)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/control?v=t226seat"
+     "label": "Live Control, poll scope line (open the admin link first)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/control?v=t226scopes2"
+    },
+    {
+     "label": "Probe (34 checks)",
+     "url": "app/scripts/probe-live-control.mjs"
     },
     {
      "label": "Seat app and how it runs",
      "url": "cloud/seat/README.md"
-    },
-    {
-     "label": "Probe (32 checks)",
-     "url": "app/scripts/probe-live-control.mjs"
     },
     {
      "label": "Design",
@@ -9682,6 +9683,11 @@
      "ts": "2026-10-09T05:35:11+0530",
      "who": "claude",
      "note": "Built and live: the macOS seat app (cloud/seat, real binary probed in a stand-in meeting: run sheet chat, CTA and poll go out at their minute, room lock re-mutes and stops video, listed co-host promoted or the host asked, poll answers and chat reach zoom_polls and zoom_chat; probe-live-control 32/32 twice), a Seat credentials card on Live Control, ZOOM_BOT_KEY set, migration 0019 applied, Worker 72a83733 deployed from a clean worktree (checked: /bot/zoom/plan 401 without the key and 200 with it, /admin/control renders clean at 1440 and 390 px), launchd com.tantra.live-control installed, main pushed. Not done this run: the 5 poll scopes on the Tantra Centre app (this run had no signed-in browser tool; the next browser-enabled run adds them), then once T-335's Client ID and Secret are saved Claude downloads the SDK, builds the app bundle and runs the test meeting."
+    },
+    {
+     "ts": "2026-10-10T20:05:05+0530",
+     "who": "claude",
+     "note": "Live Control now shows whether the Tantra Centre Zoom app holds the 5 poll scopes, read from Zoom's own token; it is deployed (Worker d6bc4a77, main pushed, migration 0019 already applied) and today says all 5 are still missing, because this run had no browser signed in to Zoom. probe-live-control passed 34/34 against a simulated seat, and the live page renders cleanly at 1440 and 390 px: open https://revops-centre.growthcluborg.workers.dev/admin/control?v=t226scopes2 (Polls card). Ripple from T-225: the seat already keeps mute all, no self-unmute and no video on by default for the 14 Oct cohort, so nothing had to change; the next browser-enabled run adds the scopes, and once T-335's Client ID and Secret are saved Claude runs the test meeting."
     }
    ],
    "order": 2260
