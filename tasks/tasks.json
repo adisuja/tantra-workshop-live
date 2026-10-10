@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T22:07:47+0530",
-  "version": 1638,
+  "updated": "2026-10-10T22:09:35+0530",
+  "version": 1639,
   "last_id": 387,
   "team": [
    {
@@ -5626,7 +5626,7 @@
    ],
    "evidence": [
     {
-     "label": "probe-checkout-utm.mjs (both paths PASS)",
+     "label": "probe-checkout-utm.mjs (3 checks PASS, 2026-10-10)",
      "url": "app/scripts/probe-checkout-utm.mjs"
     },
     {
@@ -5675,6 +5675,11 @@
      "ts": "2026-10-10T16:35:34+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-26 was past; now 2026-10-14 (P0 rule)."
+    },
+    {
+     "ts": "2026-10-10T22:09:35+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-10: the fix is in place (vip, masterclass and pro checkout all read the stored first-touch UTMs, and /api/checkout copies them into the Dodo metadata), and probe-checkout-utm.mjs passes on main. I tightened the probe: the hosted link is now checked for all four UTMs plus source=vip, and a new check lands on /workshop with UTMs, opens /vip with none, and still sees all four in the checkout request. Read-only Dodo check (live, GET /payments and GET /payments/{id}): 8 payments since the fix on 2026-09-25, all Tantra app subscriptions, none on the VIP product or with source=vip, so there is no real /vip purchase to confirm yet. Nothing needed from Adi and nothing was changed in Dodo. The task closes on the first real /vip payment."
     }
    ],
    "order": 1220,
