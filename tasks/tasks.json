@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T15:03:12+0530",
-  "version": 1428,
+  "updated": "2026-10-10T15:10:22+0530",
+  "version": 1429,
   "last_id": 380,
   "team": [
    {
@@ -5963,7 +5963,7 @@
    "owner": "Amal",
    "priority": "P2",
    "due": "2026-09-27",
-   "status": "queue",
+   "status": "doing",
    "why": "These slots show our own funnel pages, the centre or demo files, so Claude can capture them today without any owner account.",
    "spec": "Slots on main 2026-10-08: s5-webinar-stages #2 (/masterclass offer link with ?src=live opening checkout, no purchase); s5-challenge-stages #3 (final-day offer link opening checkout); s5-rsp-stages #1 (CRM contact timeline with depth tags, not a Wistia heatmap: T-260) and #2 (bridge opt-in over Part 1 on our RSP page); s6-sms #1 (the demo's rotation.md 52-week calendar with SMS weeks); s4-challenge #8 (Day 2 in the centre with session times), #11 (first Day 1 task with its done control), #15 (referral dashboard per-member totals, public since T-211); s4-rsp #7 (our Part 2 page after a bridge submit); s2-tantra-pro-funnel #12 (free-lane thank-you page at 390 px after a test sign-up: use a local build with NEXT_PUBLIC_TRACKING_DISABLED=1 so nothing reaches the live Work Tracker); s1-overview #5 (Set Your Sending Plan capacity in the centre, via the preview attendee). Real captures only, redact anything personal, save WebP, remove capture_needed.",
    "done_when": [
@@ -5971,7 +5971,20 @@
     "check-guides PASS with capture-needed down by 11",
     "probe-guides clean"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "commit 512c734",
+     "url": "app/src/content/guides"
+    },
+    {
+     "label": "s2 thank-you 390px",
+     "url": "http://localhost:4322/guides/s2-tantra-pro-funnel/16.webp?v=t135"
+    },
+    {
+     "label": "s5-rsp CRM depth tags",
+     "url": "http://localhost:4322/guides/s5-rsp-stages/01.webp?v=t135"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -5989,6 +6002,11 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: added the own-page slots that sat in T-115 (s4-challenge, s4-rsp, s2 thank-you, s1-overview sending plan); all need no owner account."
+    },
+    {
+     "ts": "2026-10-10T15:10:22+0530",
+     "who": "claude",
+     "note": "All 11 slots now have real WebP captures from our local build, the starter CRM demo and the demo rotation.md, with names and emails blurred. I committed them in 512c734, and check-guides shows capture-needed at 62 (was 73); its only FAILs are 4 old undersized files outside this task. Left for the next pass: run probe-guides on the 8 guides, confirm the 2026-10-06 'mirror publish held' line in LOG.md is lifted, then push main, republish the mirror and set review for Amal."
     }
    ],
    "order": 1350,

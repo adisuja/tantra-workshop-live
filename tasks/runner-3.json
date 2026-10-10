@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T15:10:33+0530",
+   "task_id": "T-135",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. All 11 guide screenshots are captured and committed in `512c734`, but I have not pushed to main or republished the mirror. T-135 is in `doing` (not review yet) and n"
+  },
+  {
    "ts": "2026-10-10T04:15:29+0530",
    "task_id": "T-135",
    "mode": "feedback",
@@ -87,22 +95,17 @@
    "status": "review",
    "result": "ok",
    "summary": "T-241 is fixed and in review. During a live cohort, newcomers on the success, join and VIP pages now see the cohort on sale, and stamped attendees keep their own week.\n\n- **Fix:** the fix is in `app/src/lib/use-cohort.ts`. `cohort.ts` is untouched.\n- **Clock-override check:** with the clock at Wed 1"
-  },
-  {
-   "ts": "2026-10-09T20:18:03+0530",
-   "task_id": "T-237",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-237 is in review: the public webinar sign-up is deployed, but the push, the live test registration and the masterclass link are still open.\n\n- **Built:** `https://revops-centre.growthcluborg.workers.dev/webinar/register` has a form page and a POST route. It makes one add-registrant call and return"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-135",
+ "task_id": "T-148",
  "entries": [
-  "F-e8431f3a"
+  "F-7ace8e8c"
  ],
- "started": "2026-10-10T15:00:08+0530",
- "message": "Acting on 1 note(s) for T-135: Guide screenshots Claude can capture now from our own pages and demo output (11 slots)"
+ "started": "2026-10-10T15:10:45+0530",
+ "message": "Acting on 1 note(s) for T-148: Webinar deck v3: the Tantra logo image is missing (404)",
+ "slices": {
+  "T-135": 1
+ }
 }
