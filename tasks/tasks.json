@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T21:38:35+0530",
-  "version": 1633,
+  "updated": "2026-10-10T21:40:34+0530",
+  "version": 1634,
   "last_id": 387,
   "team": [
    {
@@ -1059,6 +1059,11 @@
      "ts": "2026-10-10T21:38:11+0530",
      "who": "claude",
      "note": "The mirror's playbook was one step behind main (it lacked the 16 product screenshots on the Day 1 and Day 3 steps), so I republished it (mirror e09ca9c) and the review link is now https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a. Checked today: probe-playbook clean at 4 widths on the staged copy and on the live mirror, probe-visual-tools PASS, the served copy is byte-identical to the source, all 16 screenshots load at 1440 and 390, and the only ruled-out tool match is the adverb 'instantly'. Spec, done-when ticks and the ask are rewritten; note the Day 2 S3 figure is the 89% labelled teaching model (T-297), not removed as the old spec said. The T-108 ripple is covered: the link is new and the ask names the rebuilt funnel sections."
+    },
+    {
+     "ts": "2026-10-10T21:40:34+0530",
+     "who": "claude",
+     "note": "Verify pass: nothing needed fixing. Checked today: the live mirror playbook is identical to the source on main (only the two asset paths rewritten), the served copy has the same hash and the embedded parts regenerate with no change; probe-playbook is clean at 360, 768, 1024 and 1440 on the served copy and the live mirror, probe-visual-tools passes, all 16 Day 1 and Day 3 screenshots load at 1440 and 390, the six review anchors exist, and there are no long dashes or replaced tools in the visible text. Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a and reply with approval or changes by section."
     }
    ],
    "order": 110,
