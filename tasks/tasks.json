@@ -2,9 +2,9 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T15:41:33+0530",
-  "version": 1446,
-  "last_id": 380,
+  "updated": "2026-10-10T15:42:51+0530",
+  "version": 1448,
+  "last_id": 381,
   "team": [
    {
     "name": "Adi",
@@ -14234,6 +14234,35 @@
     }
    ],
    "order": 3800
+  },
+  {
+   "id": "T-381",
+   "title": "Input from Adi for T-249: share the creator taxonomy sheet as Viewer with Nelbin, Bhaskar and Aquila",
+   "area": "Team",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (sign-in): the creator taxonomy sheet is owned by Adi's Google account and Claude's token has only the drive.file scope. Everything else in T-249 is done around it.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Open https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit, click Share, add nelbin@growthclub.org, bhaskar@growthclub.org and aquila@growthclub.org as Viewer, click Send. (Claude's Google token only covers files it created, so it cannot share this sheet.)",
+   "log": [
+    {
+     "ts": "2026-10-10T15:42:51+0530",
+     "who": "claude",
+     "note": "Opened by Claude for T-249."
+    }
+   ],
+   "order": 3810,
+   "input_for": "T-249",
+   "kind": "input"
   }
  ]
 }

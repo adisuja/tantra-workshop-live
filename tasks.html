@@ -7,6 +7,8 @@
 if(/github\.io$/.test(location.hostname)){try{localStorage.removeItem("lc-key")}catch(e){}location.replace("https://tantra-board.growthcluborg.workers.dev/tasks.html"+location.search+location.hash)}
 </script>
 <meta charset="utf-8">
+<!-- board-mode: "owner" here; tasks/sync_board.py publishes it as "static" (the read-and-post public board) -->
+<meta name="board-mode" content="owner">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Task Command Center · The 3-Day AI RevOps Workshop</title>
 <style>
@@ -328,7 +330,7 @@ a.tl{font-weight:600;cursor:pointer}
 .agent{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);padding:7px 12px;margin:-6px 0 16px;font-size:12.5px;min-width:0}
 .agent .ad{width:9px;height:9px;border-radius:50%;background:var(--ink-3);flex:none}
 .agent.working .ad{background:var(--accent);box-shadow:0 0 0 4px var(--accent-2)} .agent.idle .ad{background:var(--teal)}
-.agent.paused .ad,.agent.disabled .ad{background:var(--amber)} .agent.offline .ad{background:var(--pink)}
+.agent.paused .ad,.agent.disabled .ad{background:var(--amber)} .agent.offline .ad{background:var(--pink)} .agent.stale .ad{background:var(--pink)}
 .agent b{font-weight:650;white-space:nowrap}
 .agent .am{color:var(--ink-2);flex:1 1 220px;min-width:0;overflow-wrap:anywhere}
 .agent .who{display:flex;align-items:center;gap:6px;color:var(--ink-3);white-space:nowrap}
@@ -364,7 +366,7 @@ footer{margin-top:28px;font-size:11.5px;color:var(--ink-3)}
     <div><h1>Task Command Center</h1><p>The 3-Day AI RevOps Workshop · Day <span id="cdn">1</span> <span id="cd">…</span></p></div>
   </div>
   <div class="stats">
-    <div class="stat next"><div class="l">Next up</div><div class="v" id="s-next">—</div></div>
+    <div class="stat next"><div class="l">Next up</div><div class="v" id="s-next">None</div></div>
     <div class="stat review"><div class="l">For your review</div><div class="v" id="s-review">0</div></div>
     <div class="stat blocked"><div class="l">Needs you</div><div class="v" id="s-blocked">0</div></div>
     <div class="stat done"><div class="l">Done</div><div class="v" id="s-done">0</div></div>
@@ -418,12 +420,12 @@ footer{margin-top:28px;font-size:11.5px;color:var(--ink-3)}
 <section class="newt" id="newt">
   <h2>Add a task</h2>
   <div class="f">
-    <input type="text" id="nt-title" placeholder="Title">
-    <select id="nt-area"></select>
-    <select id="nt-pri"><option>P0</option><option selected>P1</option><option>P2</option></select>
-    <input type="text" id="nt-due" placeholder="Due (2026-09-21)">
+    <input type="text" id="nt-title" aria-label="New task title" placeholder="Title">
+    <select id="nt-area" aria-label="New task area"></select>
+    <select id="nt-pri" aria-label="New task priority"><option>P0</option><option selected>P1</option><option>P2</option></select>
+    <input type="text" id="nt-due" aria-label="New task due date (YYYY-MM-DD)" placeholder="Due (YYYY-MM-DD)">
     <div id="nt-people" style="grid-column:1/-1;min-width:0"></div>
-    <textarea id="nt-text" placeholder="Context, links, what done looks like…"></textarea>
+    <textarea id="nt-text" aria-label="New task context" placeholder="Context, links, what done looks like…"></textarea>
   </div>
   <div class="acts" style="display:flex;gap:8px;align-items:center;margin-top:8px"><button class="btn pri" id="nt-send" type="button">Add to queue</button><span id="nt-sent" class="sent"></span></div>
   <div class="whoask" id="whoask-nt"></div>
@@ -441,6 +443,7 @@ const LABEL={next:"Next",doing:"In progress",review:"Review",recheck:"Done · re
 const KCOLS=["next","doing","review","blocked","hold","queue","recheck","done"];
 let DATA={tasks:[]},INBOX=[],view="queue",openId=null;
 const $=s=>document.querySelector(s);
+const plural=(n,w)=>`${n} ${w}${n===1?"":"s"}`;
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const bust=u=>/^https?:/.test(u)?u+(u.includes("?")?"&":"?")+"v="+Date.now():u;
 
@@ -532,7 +535,7 @@ function render(){
   if(nx)put(nx,"Next in the queue",true);
   const onIds=new Set(live.map(x=>x.t.id));
   $("#n-on").textContent=live.length;
-  $("#s-next").textContent=nx?nx.id:"—";
+  $("#s-next").textContent=nx?nx.id:"None";
   LISTS.on=live.map(x=>x.t.id);
   $("#now-next").innerHTML=live.length?live.slice(0,6).map(({t,label,q})=>`<button class="nowitem" onclick="jump('${t.id}','on')"><span class="on${q?" q":""}"><i></i>${label}</span><b>${esc(t.title)}</b>${peopleLine(t)}${t===nx&&!q?`<span>${esc(t.why)}</span>`:""}</button>`).join("")+(live.length>6?`<div class="empty">+${live.length-6} more queued</div>`:""):'<div class="empty">Nothing in progress. Notes you send are picked up within seconds.</div>';
   const youAll=T.filter(t=>t.status==="blocked"&&t.needs_from_owner&&!onIds.has(t.id)&&needsAdi(t));
@@ -565,7 +568,7 @@ function render(){
    if(th){THREAD_BOTTOM=th.scrollHeight-th.scrollTop-th.clientHeight<24;THREAD_TOP=th.scrollTop}}
   const typed={};document.querySelectorAll('textarea[id^="fb-"]').forEach(t=>{if(t.value)typed[t.id]=t.value});
   if(view==="kanban"){
-    b.innerHTML='<div class="kan">'+KCOLS.map(s=>`<div class="col"><h3>${LABEL[s]} · ${list.filter(t=>t.status===s).length}</h3>${list.filter(t=>t.status===s).map(t=>`<div class="kcard" onclick="jump('${t.id}','col:${s}')"><b>${esc(t.title)}</b><span class="people">${pp(t.owner,"Owner")}${t.assignee&&t.assignee!==t.owner?pp(t.assignee,"Doing"):""}</span><small>${t.id} · ${t.priority}${t.due?" · "+t.due.slice(5):""}${unread(t.id)?" · ✉ "+unread(t.id):""}</small></div>`).join("")}</div>`).join("")+'</div>'+(openTask()?`<div class="kopen">${row(openTask())}</div>`:"");
+    b.innerHTML='<div class="kan">'+KCOLS.map(s=>`<div class="col"><h3>${LABEL[s]} · ${list.filter(t=>t.status===s).length}</h3>${list.filter(t=>t.status===s).map(t=>`<div class="kcard" onclick="jump('${t.id}','col:${s}')"><b>${esc(t.title)}</b><span class="people">${pp(t.owner,"Owner")}${t.assignee&&t.assignee!==t.owner?pp(t.assignee,"Doing"):""}${(t.reviewers||[]).map((r,i)=>pp(r,i?"":"Review")).join("")}</span><small>${t.id} · ${t.priority}${t.due?" · "+t.due.slice(5):""}${unread(t.id)?" · ✉ "+unread(t.id):""}</small></div>`).join("")}</div>`).join("")+'</div>'+(openTask()?`<div class="kopen">${row(openTask())}</div>`:"");
     afterRender(typed);return;
   }
   const groups=view==="area"?AREAS.map(a=>[a,list.filter(t=>t.area===a)]):Object.keys(ORDER).map(s=>[LABEL[s],list.filter(t=>t.status===s)]);
@@ -774,7 +777,8 @@ document.addEventListener("keydown",e=>{if(!openId)return;const tag=(e.target.ta
    A personal link (#k=<key>, from tasks/board_keys.py) signs a teammate in once per browser: their
    notes are trusted and carry their name. Without one, text notes still save but wait for the owner. */
 const BOARD_HOST="tantra-board.growthcluborg.workers.dev";
-const STATIC=location.hostname===BOARD_HOST||/github\.io$/.test(location.hostname)||new URLSearchParams(location.search).has("static");
+// the published build says so itself (sync_board.py), so every mirror of it (Pages, the Worker, a local copy) is the public board
+const STATIC=document.querySelector('meta[name="board-mode"]')?.content==="static"||new URLSearchParams(location.search).has("static");
 const BOARD_API=location.hostname===BOARD_HOST?"":"https://"+BOARD_HOST;
 let KEY=localStorage.getItem("lc-key")||"",ME={name:null,owner:false};
 {const m=/(?:^#|&)k=([A-Za-z0-9_-]{20,80})/.exec(location.hash);if(m){KEY=m[1];localStorage.setItem("lc-key",KEY);
@@ -816,7 +820,7 @@ const MAXF=10;
 const safeUrl=u=>{u=String(u||"");if(/^https:\/\//.test(u))return u;if(!/^\/tasks\/uploads\//.test(u))return"#";return STATIC?u.slice(1):u};
 const isAud=a=>/^(audio|video)\//.test(a.type||"")||/\.(webm|weba|ogg|oga|opus|mp3|m4a|aac|wav|flac|aiff?|caf)$/i.test(a.name||"");
 function attHtml(list){if(!list||!list.length)return"";const aud=list.filter(isAud),rest=list.filter(a=>!isAud(a));
-  return aud.map(a=>`<div class="voice"><div class="lab">Voice note</div><div class="vrow"><button class="vplay" type="button" aria-label="Play voice note" data-src="${esc(safeUrl(a.url))}" onclick="playThread(this)">▶</button><div class="vbar"><i></i></div><span class="vtime">–:––</span></div><div class="tx wait" data-tx="${esc(safeUrl(a.transcript||a.url+".transcript.json"))}">Transcribing…</div></div>`).join("")+(rest.length?attHtmlFiles(rest):"")}
+  return aud.map(a=>`<div class="voice"><div class="lab">Voice note</div><div class="vrow"><button class="vplay" type="button" aria-label="Play voice note" data-src="${esc(safeUrl(a.url))}" onclick="playThread(this)">▶</button><div class="vbar"><i></i></div><span class="vtime">0:00</span></div><div class="tx wait" data-tx="${esc(safeUrl(a.transcript||a.url+".transcript.json"))}">Transcribing…</div></div>`).join("")+(rest.length?attHtmlFiles(rest):"")}
 function attHtmlFiles(list){return '<div class="att">'+list.map(a=>{const img=/^image\//.test(a.type||"")||/\.(png|jpe?g|gif|webp|svg)$/i.test(a.name||"");return `<a href="${esc(safeUrl(a.url))}" target="_blank" rel="noopener" title="${esc(a.name)}">${img?`<img src="${esc(safeUrl(a.url))}" alt="">`:`<span class="ic">📄</span>`}<span class="nm">${esc(a.name)}</span></a>`}).join("")+"</div>"}
 function renderPending(id){const box=document.getElementById("att-"+id);if(!box)return;const list=PENDING[id]||[];box.innerHTML=list.map((f,i)=>`<span class="pend">${/^image\//.test(f.type)?`<img src="${f.preview}" alt="">`:`<span class="ic">${isAud(f)?"🎙":"📄"}</span>`}<span class="nm">${esc(f.name)}</span><button class="x" type="button" title="Remove" onclick="rmFile('${id}',${i})">×</button></span>`).join("");paintSend(id)}
 function addFiles(id,files){const list=PENDING[id]=PENDING[id]||[];const out=document.getElementById("sent-"+id);for(const f of files){if(list.length>=MAXF){out.className="sent err";out.textContent=`Max ${MAXF} files per note.`;break}const name=f.name||("pasted-"+Date.now()+"."+((f.type.split("/")[1]||"png").replace("jpeg","jpg")));list.push({file:f,name,type:f.type,preview:/^image\//.test(f.type)?URL.createObjectURL(f):""})}renderPending(id)}
@@ -1125,10 +1129,15 @@ async function pollAgent(){
     if(cf.queue!==false)parts.push(qs.state==="working"?"Queue: "+qs.message:["paused","offline"].includes(qs.state)?`Queue: ${AGENT_TEXT[qs.state]} · ${qs.message||""}`:"Queue: idle.");
   }
   if(s!=="working"&&last)parts.push(`Last: ${last.task_id} → ${last.status} (${String(last.ts).slice(5,16).replace("T"," ")}).`);
+  const tsd=ts=>new Date(String(ts||"").replace(/([+-]\d\d)(\d\d)$/,"$1:$2"));
+  if(s!=="disabled"&&s!=="working"&&(!last||Date.now()-tsd(last.ts)>864e5)){  // no run for a day: say so, and show what did change
+    const lg=DATA.tasks.flatMap(t=>(t.log||[]).map(l=>({...l,id:t.id}))).filter(l=>!isNaN(tsd(l.ts))).sort((x,y)=>tsd(y.ts)-tsd(x.ts))[0];
+    $("#agent").classList.add("stale");
+    parts.push(`Runner stale: no run in over a day${lg?`. Latest activity: ${lg.id} (${String(lg.ts).slice(5,16).replace("T"," ")}) ${String(lg.note||"").slice(0,90)}`:""}.`)}
   if(ORCH.last_sweep||ORCH.running){const c=ORCH.counts||{},n=Object.values(c).reduce((a,b)=>a+b,0);
     parts.push(`Orchestrator: ${ORCH.running?"deciding now":"idle"} · ${n} tasks decided (${(c.resolve||0)+(c.proceed||0)+(c.finish||0)} moved forward, ${c.complete||0} ready, ${c.needs_adi||0} need your input)`)}
   const hhmm=ts=>{const d=new Date(String(ts||"").replace(/([+-]\d\d)(\d\d)$/,"$1:$2"));return isNaN(d)?"":d.toLocaleString(undefined,{month:"short",day:"numeric",hour:"2-digit",minute:"2-digit"})};
-  if(STATIC)parts.push(sync.published?`Board published ${hhmm(sync.published)} from the owner's Mac${(sync.held||[]).length?` · ${sync.held.length} item(s) held for privacy`:""}. ${KEY?`Signed in as ${ME.name||"…"}: everything you send saves here and reaches Claude within seconds.`:"Open your personal board link to send as yourself."}`:(KEY?`Signed in as ${ME.name||"…"}: everything you send saves here and reaches Claude within seconds.`:"Open your personal board link to send as yourself."));
+  if(STATIC)parts.push(sync.published?`Board published ${hhmm(sync.published)} from the owner's Mac${(sync.held||[]).length?` · ${plural(sync.held.length,"item")} held for privacy`:""}. ${KEY?`Signed in as ${ME.name||"…"}: everything you send saves here and reaches Claude within seconds.`:"Open your personal board link to send as yourself."}`:(KEY?`Signed in as ${ME.name||"…"}: everything you send saves here and reaches Claude within seconds.`:"Open your personal board link to send as yourself."));
   else if(sync.ts)parts.push(sync.ok===false?`Public board: NOT published (${sync.reason||"error"})`:`Public board: ${sync.published?"published":"in sync"} ${hhmm(sync.ts)}${(sync.held||[]).length?` · held for privacy: ${sync.held.map(h=>h.task||h.id).join(", ")} (reword to publish)`:""}`);
   $("#agent-msg").textContent=parts.join(" · ");
   const tog=$("#agent-tog");tog.hidden=STATIC&&!ME.owner;tog.textContent=cf.enabled===false?"Resume":"Pause";

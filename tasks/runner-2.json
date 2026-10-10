@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T15:41:56+0530",
+   "task_id": "T-250",
+   "mode": "feedback",
+   "status": "review",
+   "result": "turns",
+   "summary": "I built the rollout and billing sheet and the personalization spec, pushed both to main in 305808f, and linked them on issue #1. T-250 is now in review, assigned to Nelbin.\n\n**Checklist:**\n1. **Growth Idea message to Sam:** Nelbin's to send. I sent nothing. The issue #1 comment asks Nelbin to confir"
+  },
+  {
    "ts": "2026-10-10T15:39:38+0530",
    "task_id": "T-245",
    "mode": "feedback",
@@ -87,26 +95,19 @@
    "status": "review",
    "result": "ok",
    "summary": "T-269 is in review: all 18 findings are fixed, committed (`b918858`), pushed to main and deployed (Worker `fee816d6`). I checked the changes on a local Worker at 1440 and 390 px. The live bundle has the new rail, but I did not walk the live centre as an attendee.\n\n**What changed**\n- The rail shows e"
-  },
-  {
-   "ts": "2026-10-10T02:02:28+0530",
-   "task_id": "T-264",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-264 is built and in review. It's merged to main (0198516), the centre Worker is deployed, the mirror is republished, and AUDIT.md is updated.\n\n**What changed**\n- **Twilio SMS:**\n  - `twilio-setup` now checks the Twilio balance first and stops below $20.\n  - For non-US numbers it files the regulato"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-250",
+ "task_id": "T-274",
  "entries": [
-  "F-3c4113c7"
+  "F-8271900e"
  ],
- "started": "2026-10-10T15:39:50+0530",
- "message": "Acting on 1 note(s) for T-250: Nelbin's checklist follow-ups: Growth Idea message to Sam, client rollout and billing sheet, daily update, personalization spec items",
+ "started": "2026-10-10T15:42:05+0530",
+ "message": "Acting on 1 note(s) for T-274: Task Command Center board UI fixes (tasks.html)",
  "slices": {
   "T-072": 1,
-  "T-245": 1
+  "T-245": 1,
+  "T-250": 1
  }
 }
