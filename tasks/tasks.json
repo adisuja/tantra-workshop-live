@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T21:01:50+0530",
-  "version": 1622,
+  "updated": "2026-10-10T21:03:18+0530",
+  "version": 1624,
   "last_id": 387,
   "team": [
    {
@@ -14086,7 +14086,7 @@
    "evidence": [
     {
      "label": "Playbook, nurture section (live mirror)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=calls3#d2-s3-the-nurture-engine-where-show-up-is-won"
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=calls4#d2-s3-the-nurture-engine-where-show-up-is-won"
     },
     {
      "label": "Commit 10aacc2",
@@ -14120,6 +14120,11 @@
      "ts": "2026-10-10T21:00:40+0530",
      "who": "claude",
      "note": "Orchestrator decision O-4a3e6138 applied: a later T-020 run had removed the 89%, so I put it back in the Day 2 nurture section as the labelled whiteboard teaching model (body, diagram and caption), next to the Funnel Equations reference bands (25 to 40% and 45 to 70%, which I kept instead of 'about 46%' because the model on the page no longer gives that figure), with 'neither is a result'. Calls 2 to 4 were already in place and I rechecked them on disk (examples marked illustrative, 'Day 3 of the free workshop' with the masterclass as a separate flow, the $50M+ line stays with T-277). Checked: titlecase and embed run, main pushed (10aacc2), mirror published (239c841), probe-playbook clean at 4 widths on the live mirror. Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=calls3#d2-s3-the-nurture-engine-where-show-up-is-won"
+    },
+    {
+     "ts": "2026-10-10T21:03:18+0530",
+     "who": "claude",
+     "note": "Verify pass, nothing had to change. All four calls are on disk and live: the 89% is back in the Day 2 nurture section as the labelled whiteboard teaching model (body, diagram, caption) with 'Neither is a result', the examples are marked illustrative, the course pitch says 'Day 3 of the free workshop', and the $50M+ line stays with T-277. One deviation stands: the page gives the Funnel Equations bands (25 to 40% and 45 to 70%) instead of 'about 46%', because the model today blends to 40% on reference values (0.30 and 0.55 at a 0.40 action rate), so 46% would be unsourced. Checked this run: titlecase 0 changes, embed no diff, source equals app copy equals the mirror's site/materials copy, probe-playbook clean at 4 widths on the mirror, diagram label screenshotted with no overlap at 390 and 1440. Note: the mirror's root /playbook.html still lacks the 16 T-257 product screenshots (T-257's publish, not this task). Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=calls4#d2-s3-the-nurture-engine-where-show-up-is-won"
     }
    ],
    "order": 2970

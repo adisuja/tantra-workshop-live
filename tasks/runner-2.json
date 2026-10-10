@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T21:02:46+0530",
+   "task_id": "T-253",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-253 stays blocked on the test keys only; the verify pass found one gap (no record for the Twilio unused template variable check) and fixed it in `cloud/src/connectors/CHECKS.md`.\n\nCOMPLETION CHECK\n\n- **Zoom event subscription by API:** done. I re-ran the check live in this run and Zoom refused bot"
+  },
+  {
    "ts": "2026-10-10T20:51:16+0530",
    "task_id": "T-282",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "blocked",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-10T17:19:11+0530",
-   "task_id": "T-140",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "turns",
-   "summary": "T-140 stays blocked: the s1-blog shots check out, but the three S3 Tantra shots still need the usetantra.com sign-in that T-115 is already asking Adi for.\n\n**COMPLETION CHECK**\n- **s1-blog #2 and #6:** done. Both images are on main (they landed in another lane's commit f1db2ea). I opened the guide a"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-253",
+ "task_id": "T-242",
  "entries": [
-  "F-46b4f4a4",
-  "R-aacc2eb8"
+  "F-5c5c3069"
  ],
- "started": "2026-10-10T20:52:30+0530",
- "message": "Acting on 2 note(s) for T-253: Confirm connector assumptions on free or test accounts (WebinarGeek, Zoom, CRMs, Cal.com, Tantra, Twilio, Dodo, Stripe, Metricool)",
+ "started": "2026-10-10T21:03:24+0530",
+ "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
  "slices": {
   "T-072": 1,
   "T-245": 1,
