@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T16:08:56+0530",
+   "task_id": "T-285",
+   "mode": "feedback",
+   "status": "review",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-285 is in review: all the copy fixes are on origin/main, but I ran out of calls before the approved Worker deploy and mirror publish, so neither has happened yet.\n"
+  },
+  {
    "ts": "2026-10-10T15:57:52+0530",
    "task_id": "T-276",
    "mode": "feedback",
@@ -87,27 +95,20 @@
    "status": "review",
    "result": "ok",
    "summary": "T-272 is live and in review: per-teammate tokens, per-week links, the Cohort Settings additions and the vendor cleanup. I couldn't run the revoke check live because creating a token needs the owner key.\n\n- **Local probe:** `app/scripts/probe-admin-tokens.mjs` passes 18/18. Revoking one token logs th"
-  },
-  {
-   "ts": "2026-10-10T02:07:59+0530",
-   "task_id": "T-268",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-268 is in review. The simulator probe passes and the Worker is deployed, but I did not publish the mirror, and the live WebinarGeek check still waits on T-253.\n\n- **Zoom card:** Zoom webinars and every challenge now get a Zoom live-room card for Pro meetings.\n  - Polls are added by hand in Zoom's "
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-285: Card copy fixes found while recording the walkthroughs",
- "task_id": "T-285",
+ "message": "Acting on 1 note(s) for T-295: Funnel animation polish: phone caption overlap and missing Amazon, YouTube and Slack logos",
+ "task_id": "T-295",
  "entries": [
-  "F-0410ae15"
+  "F-328045bd"
  ],
  "mode": "feedback",
- "started": "2026-10-10T15:58:16+0530",
+ "started": "2026-10-10T16:09:12+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
-  "T-276": 1
+  "T-276": 1,
+  "T-285": 1
  }
 }

@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T16:08:43+0530",
-  "version": 1459,
+  "updated": "2026-10-10T16:10:01+0530",
+  "version": 1463,
   "last_id": 381,
   "team": [
    {
@@ -12054,11 +12054,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Small but visible board defects; the em dash breaks the no-dash rule.",
    "spec": "In workshop-plan/tasks.html (the Task Command Center, local http://localhost:8899/tasks.html, public copy https://adisuja.github.io/tantra-workshop-live/tasks.html): flag a stale runner and show latest activity, replace every em dash empty value (5 on main) with \"None\", aria-label the new-task inputs, use a YYYY-MM-DD due hint, render reviewers on kanban cards, pluralise \"item(s)\", detect static mode from a published flag not the hostname. Closes audit findings H041, H045, H048, H049, H050, H051, H052. Per finding: H041 (workshop-plan/tasks.html): Flag the runner as stale when the last history entry is older than a day and show the latest task log activity instead. H045 (workshop-plan/tasks.html): Use 'None' instead of the em dash. H048 (workshop-plan/tasks.html): Add aria-labels to the new-task inputs. H049 (workshop-plan/tasks.html): Use a format hint like 'Due (YYYY-MM-DD)'. H050 (workshop-plan/tasks.html): Render reviewers on each kanban card. H051 (workshop-plan/tasks.html): Use a plural helper for 'item' / 'items'. H052 (workshop-plan/tasks.html): Detect static mode by probing tasks/sync.json or a flag in the published build, not the hostname. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md.",
    "done_when": [
@@ -12066,7 +12067,20 @@
     "No em dash or en dash in tasks.html source or rendered output",
     "Every listed finding id is marked fixed in AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Local board",
+     "url": "http://localhost:8899/tasks.html?v=1791628801"
+    },
+    {
+     "label": "Public board",
+     "url": "https://adisuja.github.io/tantra-workshop-live/tasks.html?v=1791628801"
+    },
+    {
+     "label": "Worker board",
+     "url": "https://tantra-board.growthcluborg.workers.dev/tasks.html?v=1791628801"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -12079,6 +12093,16 @@
      "ts": "2026-10-08T00:48:49+0530",
      "who": "claude",
      "note": "Pass 2 (2026-10-08): pass 2: renamed: Launch Control is now the Task Command Center (673a566); verified on main tasks.html still has 5 em dashes, 'item(s)' and hostname-based STATIC detection (line 465)."
+    },
+    {
+     "ts": "2026-10-10T16:10:01+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T16:10:01+0530",
+     "who": "claude",
+     "note": "All seven board fixes (H041 to H052) are live: stale runner flag with latest activity, None for empty values, aria-labels, Due (YYYY-MM-DD) hint, reviewers on kanban cards, plural helper, and static mode from a published board-mode flag; the Saved line now survives board refreshes. probe-tasks.mjs, probe-public-board.mjs and probe-public-board.mjs --live all pass, there are 0 dashes in source and on both live copies, and AUDIT.md marks the ids fixed in 629678d, 0dca6ec and 78e6b4e. Follow-up for Aquila: runner.py still writes 'note(s)' (left alone, another lane is editing it)."
     }
    ],
    "order": 2740
@@ -13017,11 +13041,12 @@
    "assignee": "Claude",
    "reviewers": [
     "Adi",
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Lane G built the blocks but nothing collects the answers, so attendees' funnels never offer a community link or a next step after sign-up, which is a leak in the funnels the centre builds.",
    "spec": "The attendee funnel's thank-you page is built in cloud/src/funnel.ts (line 162 'thanks: {headline, body, community_cta, next}', line 163 community_url from pg_community_url or st.community_url). The three optional answers pg_community_url, pg_community_cta and pg_next are read there but app/src/lib/workshop-cards.ts has no field for any of them (git grep pg_community in app/src finds nothing), so the blocks never show. Add the three optional fields to the Day 1 thank-you or page card for all three funnel shapes (examples and why-lines per the card-education rules, copy per workshop-plan/COPY_RULES.md, no dashes, no invented claims), keep them optional, make the card education text say what each one shows, then extend check-examples and probe-shapes so a filled value renders on the funnel preview at :8794 and an empty one hides the block. Related: T-278 (our own join and success pages), T-246 (redeploy funnels that run the old funnel worker).",
    "done_when": [
@@ -13029,7 +13054,24 @@
     "With the fields empty the thank-you page shows neither block and no broken link",
     "check-examples, check-coverage and probe-shapes pass"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Thank-you preview (filled)",
+     "url": "http://127.0.0.1:8794/thanks?v=t290"
+    },
+    {
+     "label": "Screenshot",
+     "url": "/tmp/t290-thanks.png"
+    },
+    {
+     "label": "Card fields",
+     "url": "app/src/lib/workshop-cards.ts"
+    },
+    {
+     "label": "Probe",
+     "url": "app/scripts/probe-shapes.mjs"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -13037,6 +13079,16 @@
      "ts": "2026-10-09T00:25:38+0530",
      "who": "claude",
      "note": "Added from the session sweep (2026-10-09): source: c726a704 2026-10-05T22:55/22:58 (Meta pixel and thank-you blocks listed as still open) and 10:33 (Lane G: 'wired but no card has the three optional answers'). Verified 2026-10-09: cloud/src/funnel.ts:162-163 reads pg_community_cta, pg_next and pg_community_url but no card in app/src/lib/workshop-cards.ts asks for them."
+    },
+    {
+     "ts": "2026-10-10T16:09:43+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi/Aquila → Adi/Aquila/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T16:09:43+0530",
+     "who": "claude",
+     "note": "All three funnel shapes now have three optional thank-you page fields: community link (https only), join link text and one next step. Each has examples and a why-line saying what it shows, and an empty value hides its block with no broken link. check-examples (634, 0 failing), check-coverage and probe-shapes (ALL PASS, including filled vs empty /thanks on :8794 for every shape) pass. The changes landed in commit d1ff5ca; I did not push to onboarding-v2 because that branch has diverged from main, and live funnels get redeployed under T-246."
     }
    ],
    "order": 2900
