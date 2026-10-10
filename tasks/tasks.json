@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T21:31:43+0530",
-  "version": 1631,
+  "updated": "2026-10-10T21:38:35+0530",
+  "version": 1633,
   "last_id": 387,
   "team": [
    {
@@ -967,32 +967,48 @@
    "due": "2026-10-14",
    "status": "review",
    "why": "The thing every attendee gets on Day 1 and the spine the deck and survey hang off.",
-   "spec": "Source workshop-plan/playbook.html (served copy app/public/materials/playbook.html; parts embedded per day in both onboarding centres via workshop-plan/build/titlecase.py then build/embed.py). Implemented on main against Adi's owner rounds of 2026-10-05 to 10-07: hero 'The Most Complete Agentic RevOps System in B2B. Installed in 3 Days.' with no pill; Backlinko-voice intros and rewritten headlines (workshop-plan/COPY_RULES.md); exactly 9 summaries, one per sidebar section; no checkboxes or work plans; one 21px serif body (19px phones), headings 40px and 28px; funnel-fit 'Best for' boxes; 17 other funnels as dropdowns with cinematics; value-ladder table; day-plan timeline; The Funnel Equations chapter. Closed on 2026-10-09 by Orchestrator decision O-d3b4c0eb: Sales Navigator and every replaced tool are out of the playbook (7cb1dd6) and Apollo is out of the embedded FunnelOS cinematics (bbb6a23); the S3 show-up figure is the Funnel Equations reference band (25 to 40% skipping the thank-you page action, 45 to 70% taking it), the unsourced 89% is removed; T-294 and T-297 are closed. Ships without the held walkthrough videos: T-284 adds them once T-282 clears. Only the adverb 'instantly' still matches a ruled-out tool name. Review copy: https://adisuja.github.io/tantra-workshop-live/playbook.html",
+   "spec": "Source workshop-plan/playbook.html (served copy app/public/materials/playbook.html; parts embedded per day in both onboarding centres via workshop-plan/build/titlecase.py then build/embed.py; the mirror root copy is the source with ../walkthroughs/ and ../guides/ rewritten to site/). Implemented on main against Adi's owner rounds of 2026-10-05 to 10-07: hero 'The Most Complete Agentic RevOps System in B2B. Installed in 3 Days.' with no pill; Backlinko-voice intros and rewritten headlines (workshop-plan/COPY_RULES.md); exactly 9 summaries, one per sidebar section; no checkboxes or work plans; one 21px serif body (19px phones), headings 40px and 28px; funnel-fit 'Best for' boxes; 17 other funnels as dropdowns with cinematics; value-ladder table; day-plan timeline; The Funnel Equations chapter. Every call is closed: Sales Navigator and every replaced tool are out of the playbook (7cb1dd6, T-260) and Apollo is out of the embedded FunnelOS cinematics (bbb6a23); the Day 2 S3 show-up figure keeps the whiteboard's 89% labelled 'teaching model, not a result' in the body and the figure note, beside the Funnel Equations reference bands of 25 to 40% and 45 to 70% (10aacc2, T-297, Orchestrator decision O-4a3e6138); the T-294 calls are applied; three unsourced claims are out (aef029d, T-256); 16 product screenshots sit on the Day 1 and Day 3 steps (6e7b2b6, T-257); all 21 funnel animations use the canonical stage and channel names (T-108). Walkthrough videos awaiting Adi's review in T-282 follow in T-284. Only the adverb 'instantly' still matches a ruled-out tool name. Review copy: https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a",
    "done_when": [
-    "node workshop-plan/probe-playbook.mjs clean",
-    "Sales Navigator decision applied (T-260)",
+    "DONE 2026-10-10: node workshop-plan/probe-playbook.mjs clean (4 widths, staged copy and live mirror)",
+    "DONE: Sales Navigator decision applied (T-260, 7cb1dd6)",
     "Adi approves the playbook or lists changes by section"
    ],
    "evidence": [
     {
      "label": "Playbook (live mirror)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1009b"
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a"
     },
     {
-     "label": "Changed section: S3 show-up figure and diagram",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1009b#d2-s3-the-nurture-engine-where-show-up-is-won"
+     "label": "Day 1: product screenshots on each step",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a#d1"
     },
     {
-     "label": "Changed section: the 17 funnel cinematics (Apollo out)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1009b#bigpic-the-other-17-funnel-types"
+     "label": "Day 2 S3: show-up figure labelled teaching model",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a#d2-s3-the-nurture-engine-where-show-up-is-won"
+    },
+    {
+     "label": "Day 3: product screenshots",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a#d3"
+    },
+    {
+     "label": "What Are Funnels (three main animations, rebuilt)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a#funnels"
+    },
+    {
+     "label": "The Other 17 Funnel Types",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a#bigpic-the-other-17-funnel-types"
+    },
+    {
+     "label": "The Whole Machine on One Page",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a#bigpic-the-whole-machine-on-one-page"
     },
     {
      "label": "Local served copy",
-     "url": "http://localhost:4322/materials/playbook.html?v=1009b"
+     "url": "http://localhost:4322/materials/playbook.html?v=1010a"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Read https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1009b and reply on this task with approval or changes by section.",
+   "needs_from_owner": "Read https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a and reply with approval or changes by section. Changed since 2026-10-07: Day 1 and Day 3 steps (16 product screenshots), Day 1 plus Day 2 S2 and S6 (replaced tools out), Day 2 S3 (89% labelled teaching model beside the 25 to 40% and 45 to 70% reference bands), the reverse squeeze page section (full whiteboard scope), and the funnel sections (What Are Funnels, The Other 17 Funnel Types, The Whole Machine: rebuilt animations, Apollo out).",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -1038,6 +1054,11 @@
      "ts": "2026-10-10T16:35:32+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-18 was past; now 2026-10-14 (P0 rule)."
+    },
+    {
+     "ts": "2026-10-10T21:38:11+0530",
+     "who": "claude",
+     "note": "The mirror's playbook was one step behind main (it lacked the 16 product screenshots on the Day 1 and Day 3 steps), so I republished it (mirror e09ca9c) and the review link is now https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a. Checked today: probe-playbook clean at 4 widths on the staged copy and on the live mirror, probe-visual-tools PASS, the served copy is byte-identical to the source, all 16 screenshots load at 1440 and 390, and the only ruled-out tool match is the adverb 'instantly'. Spec, done-when ticks and the ask are rewritten; note the Day 2 S3 figure is the 89% labelled teaching model (T-297), not removed as the old spec said. The T-108 ripple is covered: the link is new and the ask names the rebuilt funnel sections."
     }
    ],
    "order": 110,
@@ -6313,28 +6334,28 @@
    ],
    "evidence": [
     {
-     "label": "Guide on the mirror (steps 1 and 4 captured)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s5-crm-starter/?v=1791647898"
-    },
-    {
-     "label": "Guide, local",
-     "url": "http://localhost:4322/onboarding/guides/s5-crm-starter?v=1791647898"
-    },
-    {
-     "label": "Step 1 capture",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/guides/s5-crm-starter/01.webp?v=1791647898"
-    },
-    {
-     "label": "Step 4 capture",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/guides/s5-crm-starter/07.webp?v=1791647898"
+     "label": "Live guide on the mirror (steps 1 and 4 captured)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s5-crm-starter/?v=1791648515"
     },
     {
      "label": "Reference board (local, test deals)",
-     "url": "http://localhost:8765/?v=1791647898"
+     "url": "http://localhost:8765/?v=1791648515"
     },
     {
-     "label": "Source commit ed17b92 (origin main)",
+     "label": "Step 1 capture",
+     "url": "app/public/guides/s5-crm-starter/01.webp"
+    },
+    {
+     "label": "Step 4 capture",
+     "url": "app/public/guides/s5-crm-starter/07.webp"
+    },
+    {
+     "label": "Prompts, README and captures on origin main (ed17b92)",
      "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/ed17b92"
+    },
+    {
+     "label": "Mirror publish commit",
+     "url": "https://github.com/adisuja/tantra-workshop-live/commit/960de6695"
     },
     {
      "label": "Revert ledger rows",
@@ -6388,6 +6409,11 @@
      "ts": "2026-10-10T21:28:18+0530",
      "who": "claude",
      "note": "Closed out as the Orchestrator decided: T-191 call 14 replaced the laptop crm.py guide with the Cloudflare Worker guide, so the three old payments.py, runner and board slots no longer exist, and the new guide's steps 1 and 4 now carry real captures (01.webp and 07.webp) taken from the local centre against the vendor simulator; step 5 goes to T-132 and step 6 to T-253. To be plain: payments, booking and email in the reference build ran against a local stand-in (fake_vendors.py), not the real Dodo test API, and the live Dodo keys in app/.env.local were not used. Main is pushed (ed17b92, README check column and prompts 01 to 04 included, crm-starter.zip rebuilt) and the guide is live on the mirror (960de6695, this guide's pages and screenshots only): I opened it headless and both images load with 2 capture slots left; check-guides shows no crm-starter failure (its 4 failures are other guides) and probe-guides had not finished. No blocker or ask of Adi remains."
+    },
+    {
+     "ts": "2026-10-10T21:38:35+0530",
+     "who": "claude",
+     "note": "Verify pass, no gaps found and nothing changed: the README check column and corrected prompts are on origin main (level at ed17b92), the mirror zip is byte identical to the repo zip, and the live guide loads all six screenshots including the real step 1 and step 4 centre captures, with no stale laptop crm.py text. Rechecked locally: runner.py --dry-run lists 20 messages for the next 24h, the board renders in a browser at localhost:8765 with 10 test deals, and the payment sits in Payment Completed, but that payment, the booking and the email ran against the local stand-in (fake_vendors.py), not the real Dodo test API, which still waits on the test key in T-253. T-191 call 14 replaced the laptop guide, so the three old slots are gone; in the new guide 2 of 4 slots are filled, step 5 sits with T-132 and step 6 with T-253. Open https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s5-crm-starter/?v=1791648515 and http://localhost:8765/?v=1791648515"
     }
    ],
    "order": 1340,
