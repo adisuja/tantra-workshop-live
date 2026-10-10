@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T18:08:56+0530",
+   "task_id": "T-278",
+   "mode": "feedback",
+   "status": "review",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · [cerebras/gpt-oss-120b] [429]: upstream error (reset after 1m)"
+  },
+  {
    "ts": "2026-10-10T17:46:39+0530",
    "task_id": "T-227",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "blocked",
    "result": "turns",
    "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-072 is still blocked: only Adi can create the Cal.com event the booking page points at. Everything else checks out in this run. The `ack` command reported 0 notes "
-  },
-  {
-   "ts": "2026-10-10T04:15:28+0530",
-   "task_id": "T-156",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "paused",
-   "summary": "Stopped: Adi paused the agent from the board."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-278",
+ "task_id": "T-339",
  "entries": [
-  "F-2e1a130f",
-  "R-e2e2a9ab"
+  "R-e3fcb741"
  ],
- "started": "2026-10-10T17:46:57+0530",
- "message": "Acting on 2 note(s) for T-278: Join and success pages: one seat-link resolver, community fallback, footer links, sample dates",
+ "started": "2026-10-10T18:12:24+0530",
+ "message": "Acting on 1 note(s) for T-339: Input from Adi for T-133: In Claude in Chrome, sign in to https://usetantra.com (Tantra app) and https://c",
  "slices": {
   "T-072": 1,
   "T-245": 1,

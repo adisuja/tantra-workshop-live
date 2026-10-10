@@ -99,13 +99,13 @@
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-033",
+ "task_id": "T-227",
  "entries": [
-  "F-90daec88",
-  "R-95c6ab16"
+  "F-f4a85277",
+  "R-21f4e0d6"
  ],
- "started": "2026-10-10T18:07:28+0530",
- "message": "Acting on 2 note(s) for T-033: WhatsApp + email delivery automation",
+ "started": "2026-10-10T18:10:58+0530",
+ "message": "Acting on 2 note(s) for T-227: Google Calendar invites: save the organiser's service account and authorise it for Calendar",
  "slices": {
   "T-135": 1,
   "T-148": 1,
