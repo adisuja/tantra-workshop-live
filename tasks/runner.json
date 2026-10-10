@@ -98,7 +98,7 @@
   }
  ],
  "state": "disabled",
- "message": "Paused from the board; T-123 was stopped mid-run and resumes on Resume.",
+ "message": "Paused from the board.",
  "task_id": null,
  "entries": [
   "F-02f5dedc",
