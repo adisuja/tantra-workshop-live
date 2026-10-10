@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T15:18:09+0530",
-  "version": 1435,
+  "updated": "2026-10-10T15:19:00+0530",
+  "version": 1437,
   "last_id": 380,
   "team": [
    {
@@ -7262,31 +7262,35 @@
    ],
    "evidence": [
     {
-     "label": "Free funnel qualifier",
-     "url": "http://localhost:4322/workshop/join?v=t157"
+     "label": "Free join page (no prices)",
+     "url": "http://localhost:4322/workshop/join?v=t157b"
     },
     {
-     "label": "Paid funnel qualifier",
-     "url": "http://localhost:4322/masterclass/success/join?v=t157"
+     "label": "Paid join page",
+     "url": "http://localhost:4322/masterclass/success/join?v=t157b"
     },
     {
-     "label": "One-pagers and experiments",
+     "label": "Qualifier probe",
+     "url": "app/scripts/probe-tier-qualifier.mjs"
+    },
+    {
+     "label": "Offer one-pagers",
      "url": "workshop-plan/offers/"
+    },
+    {
+     "label": "Experiments",
+     "url": "workshop-plan/offers/experiments.md"
     },
     {
      "label": "Tier-mix report",
      "url": "workshop-plan/ops/tier_mix.py"
-    },
-    {
-     "label": "Calendly removal (adi-new-ui 0d737b3)",
-     "url": "https://github.com/Usetantra/tantra-frontend-v2/commit/0d737b3"
     }
    ],
    "blockers": [
     "$199 tier name (T-252)",
     "tantra-frontend-v2 source not on this Mac"
    ],
-   "needs_from_owner": "Redeploy the Apps Script so tier answers land in the Work Tracker: script.google.com, project Tantra Funnel (adi@growthclub.org), Deploy > Manage deployments > edit > Version: New version > Deploy. Code.gs in workshop-plan/ops/apps-script/Code.gs is already updated.",
+   "needs_from_owner": "Redeploy the Apps Script so tier_qualifier answers are accepted: script.google.com > project 'Tantra Funnel' (adi@growthclub.org) > Deploy > Manage deployments > edit (pencil) > Version: New version > Deploy. The updated Code.gs is committed at workshop-plan/ops/apps-script/Code.gs.",
    "log": [
     {
      "ts": "2026-09-26T03:21:41+0530",
@@ -7312,6 +7316,16 @@
      "ts": "2026-10-10T15:13:38+0530",
      "who": "claude",
      "note": "Built and committed (dcd1578): a 4 question tier qualifier on /workshop/join and /masterclass/success/join that routes to Pro, Scale, Pro course or Enterprise and logs through logForm with UTM (headless probe at 1440 and 390 passed), four one-pagers plus one UTM tagged organic experiment per offer in workshop-plan/offers, and workshop-plan/ops/tier_mix.py (runs now, final at 100 customers); Calendly is unpinned on adi-new-ui (0d737b3, pushed) and Scale is recorded on T-252. The Work Tracker rejects tier_qualifier rows until the Apps Script is redeployed, so the mirror publish waits for that (publishing now would lose answers), and Bhaskar posts the LinkedIn and outreach variants from experiments.md since an agent may not message people."
+    },
+    {
+     "ts": "2026-10-10T15:18:45+0530",
+     "who": "claude",
+     "note": "Verify pass: the free /workshop/join tier result no longer shows prices (T-093), and a new probe (app/scripts/probe-tier-qualifier.mjs) passed 16 of 16 checks on both join pages at desktop and phone width: routing, payload with tier, answers, email and UTM, and no overflow. Calendly is gone: frontend-v2 adi-new-ui now books Enterprise on Cal.com (commit 5d6eecf, 7 of 7 tests pass). The qualifier answers still cannot reach the Work Tracker, and the mirror publish waits, until the Apps Script is redeployed. Open http://localhost:4322/workshop/join?v=t157b and http://localhost:4322/masterclass/success/join?v=t157b"
+    },
+    {
+     "ts": "2026-10-10T15:19:00+0530",
+     "who": "claude",
+     "note": "ALARM: run over budget ($2.20): 54 calls, peak context 47k. Slice the next run smaller."
     }
    ],
    "order": 1570,
