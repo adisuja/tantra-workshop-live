@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T16:36:00+0530",
-  "version": 1539,
+  "updated": "2026-10-10T16:39:33+0530",
+  "version": 1541,
   "last_id": 381,
   "team": [
    {
@@ -5816,7 +5816,7 @@
    "owner": "Amal",
    "priority": "P3",
    "due": "2026-10-23",
-   "status": "queue",
+   "status": "review",
    "why": "Stale dues and Build Pass wording make the board untrustworthy; dashes break the owner rule.",
    "spec": "State 2026-10-08 in workshop-plan/tasks/tasks.json: 76 open tasks have a due date before today (H042); meta.day1 is still 2026-09-30T11:00 (H043; derive from the weekly schedule Wed to Fri 11:00 ET or remove); the data has 0 em or en dashes but pass.py validate has no dash check (H044); T-055 is in tasks/archive.json (H054 done); T-070 is still titled 'What happens in the Tantra backend when a Build Pass is bought' (H055: retitle to the paid /masterclass seat). T-050 is already rewritten for the two funnels. Do all edits through workshop-plan/tasks/pass.py. After Adi answers the cadence, align T-071, the deck (workshop-plan/build, deck.html) and the s4-challenge guide.",
    "done_when": [
@@ -5825,7 +5825,24 @@
     "T-070 title has no Build Pass",
     "T-071, the deck and s4-challenge state the same pitch cadence; H042 to H055 marked fixed in AUDIT.md"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "pass.py dash check",
+     "url": "workshop-plan/tasks/pass.py"
+    },
+    {
+     "label": "dash test",
+     "url": "workshop-plan/tasks/test_pass_dashes.py"
+    },
+    {
+     "label": "AUDIT.md H042 to H055",
+     "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
+    },
+    {
+     "label": "Live board",
+     "url": "https://adisuja.github.io/tantra-workshop-live/tasks.html?v=1539"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -5868,12 +5885,23 @@
      "ts": "2026-10-10T16:36:00+0530",
      "who": "claude",
      "note": "Pitch cadence recorded: the Tantra Pro Course ($999) is pitched only at the close of Day 3, matching the current deck (Orchestrator O-f6931fba and O-17c26710; source T-071 note F-43b6a66f)."
+    },
+    {
+     "ts": "2026-10-10T16:39:33+0530",
+     "who": "claude",
+     "note": "People: reviewers Amal → Amal/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T16:39:33+0530",
+     "who": "claude",
+     "note": "Done through pass.py: validate now fails on any em or en dash (test_pass_dashes.py passes), meta.day1 is removed, 66 past due dates are reset (0 open tasks past due), T-070 has no Build Pass, and T-071 now says Pro is pitched only at the close of Day 3, which the deck and the s4-challenge guide already teach. H042 to H055 are marked fixed in AUDIT.md. Board republished (v1539) and main pushed. Bharath added as reviewer for the pass.py change."
     }
    ],
    "order": 1270,
    "assignee": "Claude",
    "reviewers": [
-    "Amal"
+    "Amal",
+    "Bharath"
    ]
   },
   {
