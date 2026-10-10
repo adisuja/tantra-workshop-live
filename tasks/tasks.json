@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T21:21:18+0530",
-  "version": 1627,
+  "updated": "2026-10-10T21:22:41+0530",
+  "version": 1628,
   "last_id": 387,
   "team": [
    {
@@ -6606,6 +6606,11 @@
      "ts": "2026-10-10T16:35:34+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-29 was past; now 2026-10-23 (P3 rule)."
+    },
+    {
+     "ts": "2026-10-10T21:22:41+0530",
+     "who": "claude",
+     "note": "Close-out check, nothing rebuilt: both T-139 commits (f5e9639, f63eb4a) are on origin/main, so no push was needed, and the live mirror already serves the reconciled Tantra Flow and Tantra Funnel guides (attendance sync wording, WhatsApp through Tantra, 600 ms redirect delay), so no republish was needed. check-guides.mjs today: 24 guides, 195 steps, FAIL 4, all four are too-small screenshots in other guides (s1-blog 07, s1-social 06, s4-webinar 17, s5-extra-pipelines 06) and none is in the three T-139 guides. The rulings are in workshop-plan/coord/status/c.md, section 'T-139: artifact read in full and reconciled (9 Oct)', items 15 to 28. The card has no blocker and no ask of Adi. Aquila to sign off."
     }
    ],
    "order": 1381,
