@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T16:16:41+0530",
-  "version": 1465,
+  "updated": "2026-10-10T16:24:00+0530",
+  "version": 1467,
   "last_id": 381,
   "team": [
    {
@@ -13660,11 +13660,12 @@
    "owner": "Nelbin",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "blocked",
    "why": "Adi's model: attendees without a Sales Navigator or ZoomInfo account buy rows through our data partners. The card exists but the hand-off and the real column format are unconfirmed.",
    "spec": "The centre card 'Order your list from our data partners' (id d1-list-partner; fields lp_platform, lp_rows 50 to 20000, lp_filters) records each order as a row in the List Partner Leads tab of the Tantra Work Tracker, and the partner emails the CSV for the attendee to upload. Vendor contacts (Sohan, Ashiqe, Liakat Ali; the first two in Adi's Canva deck are preferred) are kept privately in ~/.config/tantra/data-vendors.json (never in the repo or a page). To do: (1) Nelbin agrees with the preferred vendors how an order reaches them (they read the tab, or Claude sends one email per new order to an address they give) and the quote and delivery turnaround; record it here. (2) Get one sample CSV (even 5 dummy rows) from Sohan or Ashiqe so the upload card matches their exact column names; Claude then maps them in the list-clean job (cloud/src) and adds a probe fixture. (3) Remove the word 'verifies' from the card why text: no paid email verification (owner rule 2026-10-07). (4) Claude wires the hand-off chosen in (1). Never name the vendors on any attendee-facing page.",
    "done_when": [
@@ -13673,11 +13674,28 @@
     "The card makes no verification promise",
     "The hand-off sends or exposes each order to the vendors"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Card text live",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?v=t301-733dd3b#d1-list-partner"
+    },
+    {
+     "label": "Column mapper",
+     "url": "cloud/src/list-columns.ts"
+    },
+    {
+     "label": "Probe and fixture",
+     "url": "cloud/scripts/probe-list-columns.mjs"
+    },
+    {
+     "label": "Order email sender (off)",
+     "url": "workshop-plan/ops/list_partner_leads.py"
+    }
+   ],
    "blockers": [
     "Sample CSV and hand-off agreement from the data vendors"
    ],
-   "needs_from_owner": "Nelbin asks Sohan or Ashiqe for the sample CSV and the preferred order method; no input needed from Adi.",
+   "needs_from_owner": "Nelbin (not Adi): ask Sohan or Ashiqe for (1) a sample CSV, even 5 dummy rows, attached to this task, (2) whether they read the List Partner Leads tab or want one email per order (if email, add it as order_email in ~/.config/tantra/data-vendors.json), (3) quote and delivery turnaround, recorded here.",
    "log": [
     {
      "ts": "2026-10-09T00:25:38+0530",
@@ -13688,6 +13706,16 @@
      "ts": "2026-10-09T05:16:24+0530",
      "who": "Orchestrator",
      "note": "People: assignee Nelbin → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-10T16:24:00+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T16:24:00+0530",
+     "who": "claude",
+     "note": "Built and live (Worker ad06ad65, main pushed at 733dd3b): the list upload now maps common vendor column names and cleans the rows (cloud/src/list-columns.ts), the card no longer promises verification, and a per-order email sender (workshop-plan/ops/list_partner_leads.py) stays off until the partners give an order address. Probe cloud/scripts/probe-list-columns.mjs passes 9/9 on a 5-row fixture, and the sender's dry run reports OFF. Left for Nelbin: the vendors' sample CSV, order method and turnaround."
     }
    ],
    "order": 3010
