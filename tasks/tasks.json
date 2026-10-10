@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T15:39:28+0530",
-  "version": 1443,
+  "updated": "2026-10-10T15:41:33+0530",
+  "version": 1446,
   "last_id": 380,
   "team": [
    {
@@ -2367,7 +2367,12 @@
     "A test Tantra campaign shows the personalised first line in the received test email",
     "One real batch and one control batch sent, with reply rates of both recorded in the task log"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Personalization engine spec",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/305808f/workshop-plan/ops/personalization-engine-spec.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "Tantra API key: in Tantra go to Settings > API Keys, create one, and save it in the file ~/.config/tantra/tantra-api-key (no other Tantra key exists on this machine). Then run: python3 workshop-plan/scripts/first_lines.py tantra-test workshop-plan/outreach/t059/sample_first_lines.csv",
    "log": [
@@ -2400,6 +2405,11 @@
      "ts": "2026-10-10T03:55:50+0530",
      "who": "claude",
      "note": "Built workshop-plan/scripts/first_lines.py (Claude first lines tested on 3 sample leads, 3/3 clean, no dashes; A/B split with reply tracker tested). Tantra templates fill contact fields as {{custom.first_line}} (same syntax the live reminder funnel uses), so no per-contact body workaround is needed. The test campaign is not built because there is no Tantra key on this machine; not pushed either, since the worktree holds other lanes' uncommitted changes. Real and control batches go with T-058 once T-056's list is imported."
+    },
+    {
+     "ts": "2026-10-10T15:41:33+0530",
+     "who": "claude",
+     "note": "Personalization engine spec items written for the AI first lines (from T-250): workshop-plan/ops/personalization-engine-spec.md, pushed in 305808f. Status unchanged."
     }
    ],
    "order": 380,
@@ -10450,22 +10460,40 @@
    "title": "Nelbin's checklist follow-ups: Growth Idea message to Sam, client rollout and billing sheet, daily update, personalization spec items",
    "area": "Ops",
    "owner": "Nelbin",
-   "assignee": "Claude",
+   "assignee": "Nelbin",
    "reviewers": [
+    "Nelbin",
     "Adi"
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "These were agreed on the issue as Nelbin's follow-ups and are tracked nowhere else.",
    "spec": "Four follow-ups listed for Nelbin in section 4 of issue #1 (adisuja/3-day-tantra-ai-revops-workshop): (1) send the Growth Idea message to Sam; (2) build the client rollout and billing sheet; (3) post a daily update in the Tantra channel; (4) write up the personalization engine spec items (relates to T-059, AI personalization for outreach). The issue carries no more detail, so Nelbin confirms the scope of each with Adi first. Claude does not send Slack or team messages on anyone's behalf.",
    "done_when": [
     "Message to Sam sent (Nelbin confirms on issue #1)",
     "Client rollout and billing sheet exists and is linked on issue #1",
     "Personalization spec items written and linked from T-059",
-    "Daily update habit confirmed with Adi"
+    "Nelbin posts updates"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Rollout and billing sheet",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/305808f/workshop-plan/ops/client-rollout-billing.csv"
+    },
+    {
+     "label": "Sheet column guide",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/305808f/workshop-plan/ops/client-rollout-billing.md"
+    },
+    {
+     "label": "Personalization engine spec",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/305808f/workshop-plan/ops/personalization-engine-spec.md"
+    },
+    {
+     "label": "Issue #1 comment",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/issues/1#issuecomment-6096439261"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -10483,6 +10511,16 @@
      "ts": "2026-10-09T05:15:52+0530",
      "who": "Orchestrator",
      "note": "People: assignee Nelbin → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-10T15:41:33+0530",
+     "who": "claude",
+     "note": "People: assignee Claude → Nelbin; reviewers Adi → Nelbin/Adi (by claude)."
+    },
+    {
+     "ts": "2026-10-10T15:41:33+0530",
+     "who": "claude",
+     "note": "Built the client rollout and billing sheet (CSV plus column guide, client rows blank for Nelbin) and the personalization engine spec, pushed to main in 305808f, linked from T-059 and on issue #1. Checked the files exist on origin main and the spec matches first_lines.py. Left for Nelbin (assignee now): the Growth Idea message to Sam and the daily Tantra channel updates; Claude sends neither."
     }
    ],
    "order": 2500

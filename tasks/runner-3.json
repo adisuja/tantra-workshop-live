@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T15:39:59+0530",
+   "task_id": "T-248",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "The T-248 cleanup is finished, and I've moved the task to review. I checked every item again on disk in this run.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Backup made before changing anything | Done | `~/tantra-backups/2026-10-09/` has the diffs, the untracked-file tars and the `.h"
+  },
+  {
    "ts": "2026-10-10T15:36:02+0530",
    "task_id": "T-240",
    "mode": "feedback",
@@ -87,24 +95,17 @@
    "status": "queue",
    "result": "error",
    "summary": "l_use_id\":\"toolu_01TDMuk3pftrQygMmDtKr22t\",\"status\":\"stopped\",\"output_file\":\"\",\"summary\":\"Locate the impeccable detector and rerun the screenshot probe\",\"uuid\":\"f2e6755f-0a72-4b84-831c-11e118bdd1a8\",\"session_id\":\"c68b2765-d0ee-49a9-abcb-b0779d57d912\"}\n{\"type\":\"user\",\"message\":{\"role\":\"user\",\"content"
-  },
-  {
-   "ts": "2026-10-10T00:51:36+0530",
-   "task_id": "T-257",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "paused",
-   "summary": "Stopped: Adi paused the agent from the board."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-248",
+ "task_id": "T-252",
  "entries": [
-  "F-5b7fd037"
+  "F-cd5c6289",
+  "R-67501357"
  ],
- "started": "2026-10-10T15:36:17+0530",
- "message": "Acting on 1 note(s) for T-248: Delete branch int and clean the r5/B and r5/G worktrees",
+ "started": "2026-10-10T15:40:51+0530",
+ "message": "Acting on 2 note(s) for T-252: Tantra marketing site: settle the open pricing and copy decisions from the frontend-v2 pass",
  "slices": {
   "T-135": 1,
   "T-148": 1
