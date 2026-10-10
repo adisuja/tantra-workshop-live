@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T15:42:51+0530",
-  "version": 1448,
+  "updated": "2026-10-10T15:44:37+0530",
+  "version": 1449,
   "last_id": 381,
   "team": [
    {
@@ -10421,14 +10421,27 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Nelbin's content pass and the build guides reference these sources; without them the team cannot verify client examples or reuse the GHL snapshot and Workers code.",
    "spec": "The old launch checklist (GitHub issue #1, closed 2026-10-09 under T-281, section 3) asked Adi to share six resources with the team: (1) the FintechCircle repo, (2) the creator taxonomy sheet (source of the 15 client content-engine samples in workshop-plan/ops/revops_sheet.py), (3) the Cloudflare Workers repo, (4) the GoHighLevel snapshot (GoHighLevel itself awaits T-260), (5) the Slack link index, (6) the per-client campaign links. Share each (Drive share, GitHub access, or a link in a note on this task). Claude sends GitHub repo invites once Adi names the repos and teammates' usernames (same as T-146).",
    "done_when": [
     "All six resources are reachable by Nelbin, Aquila and Bhaskar",
     "The links or access are recorded in a note on T-249 on the Task Command Center"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Shared resources index",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/workshop-plan/ops/shared-resources.md"
+    },
+    {
+     "label": "Issue #1 comment",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/issues/1#issuecomment-6096463549"
+    },
+    {
+     "label": "Sheet share input task",
+     "url": "http://localhost:8899/tasks.html#T-381"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "Share the six resources (or say which should not be shared) in a note on http://localhost:8899/tasks.html#T-249, or name the repos and GitHub usernames there and Claude sends the invites.",
    "log": [
@@ -10451,6 +10464,11 @@
      "ts": "2026-10-09T12:13:24+0530",
      "who": "claude",
      "note": "Issue #1 is closed (T-281), so this ask now points at the board: share the six resources in a note on this task."
+    },
+    {
+     "ts": "2026-10-10T15:44:37+0530",
+     "who": "claude",
+     "note": "Shared what Claude can: Aquila invited with write to the FintechCircle repo (Nelbin, Bhaskar already admin), Workers code indexed in cloud/ (Bhaskar, Aquila invites pending from T-146), all six sources indexed in workshop-plan/ops/shared-resources.md (pushed), issue #1 commented and Share ticked. Taxonomy sheet Viewer share waits on Adi in T-381; GHL snapshot waits on T-260; no Slack index exists."
     }
    ],
    "order": 2490
