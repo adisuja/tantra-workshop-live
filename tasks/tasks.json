@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T16:04:02+0530",
-  "version": 1457,
+  "updated": "2026-10-10T16:08:43+0530",
+  "version": 1459,
   "last_id": 381,
   "team": [
    {
@@ -12734,18 +12734,36 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Recording each vendor's live UI showed card text that no longer matches the product.",
    "spec": "WebinarGeek: the Webinar ID is NOT the number in the address bar (that is the episode ID); copy it from the API reference icon next to Edit webinar; signup link /try-free 404s, use /register. Metricool: signup link points to the log-in page, use app.metricool.com/register. Cal.com: button is New, not Add. GA4: card-education says property level, card and video say account level (align to the card). GoHighLevel: scope labels in the UI read like 'Edit Contacts - contacts.write', pipelines scopes are pipelinesreadonly/pipelineswrite/pipelinescreate; mention the Labs toggle. HubSpot: menu is Development, Keys, Service keys; eight scopes not six; say service key, not private app. Wistia: Settings, API Home. Stripe: say sandbox, mention the two-step check at Create key. Zoom: the 'Only authenticated' setting label is longer now. Kie.ai: GPT Image 2 is 3 to 8 cents an image ($0.03 to $0.08). Twilio: API keys page may ask for an emailed code first. Tantra: start-tantra-mailboxes says sign in as each mailbox; the real flow is service account plus Accounts, Verify & Add.",
    "done_when": [
     "Each listed card and card-education entry matches the recorded UI",
     "check-guides and check-examples pass"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "workshop-cards.ts",
+     "url": "app/src/lib/workshop-cards.ts"
+    },
+    {
+     "label": "card-education.ts",
+     "url": "app/src/lib/card-education.ts"
+    },
+    {
+     "label": "walkthroughs.ts",
+     "url": "app/src/lib/walkthroughs.ts"
+    },
+    {
+     "label": "channels.ts",
+     "url": "cloud/src/connectors/channels.ts"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -12753,6 +12771,16 @@
      "ts": "2026-10-09T00:06:32+0530",
      "who": "claude",
      "note": "Added 2026-10-08 from the walkthrough agents' reports."
+    },
+    {
+     "ts": "2026-10-10T16:08:43+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T16:08:43+0530",
+     "who": "claude",
+     "note": "Card copy fixed for WebinarGeek, Metricool, Cal.com, GA4 (account level), GoHighLevel scopes, HubSpot service key and eight scopes, Wistia API Home, Stripe sandbox and two-step check, Zoom, Kie.ai $0.03 to $0.08, Twilio emailed code and the Tantra mailboxes card (service account plus Verify & Add), in workshop-cards.ts, card-education.ts, walkthroughs.ts and channels.ts. These landed in 78e6b4e and are already on origin/main. check-examples (597, 0 failing), check-walkthroughs (12 ok), tsc and probe-stack (23 pass, 2 fail only for the missing day2 funnel precondition) all pass. check-guides fails only on 4 T-257 image sizes. Still to do: the revops-centre Worker deploy and the mirror publish from a clean worktree at origin/main."
     }
    ],
    "order": 2850
