@@ -99,12 +99,12 @@
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-011",
+ "task_id": "T-234",
  "entries": [
-  "F-045cac31"
+  "R-8475fbce"
  ],
- "started": "2026-10-10T17:40:16+0530",
- "message": "Acting on 1 note(s) for T-011: Fix landing-page proof cards (endCX, Appster, Rhenus, SalesTherapy)",
+ "started": "2026-10-10T17:44:02+0530",
+ "message": "Acting on 1 note(s) for T-234: Workshop reminders through Tantra omni-channel campaigns: import every registrant with their own join and calendar links",
  "slices": {
   "T-135": 1,
   "T-148": 1,
