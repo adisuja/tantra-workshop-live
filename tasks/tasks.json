@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T20:22:00+0530",
-  "version": 1578,
+  "updated": "2026-10-10T20:23:31+0530",
+  "version": 1579,
   "last_id": 384,
   "team": [
    {
@@ -14738,14 +14738,32 @@
     "Google Admin opens without a password prompt in the Brave capture window",
     "s1-cold-email #2 captured under T-115"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Runbook",
+     "url": "scripts/walkthroughs/journeys/guide-s1-cold-email-02.md"
+    },
+    {
+     "label": "In-page kit",
+     "url": "scripts/walkthroughs/guide-admin-add-user.js"
+    },
+    {
+     "label": "Finalize script",
+     "url": "scripts/walkthroughs/guide-slot.py"
+    }
+   ],
    "blockers": [],
-   "needs_from_owner": "Open https://admin.google.com/ac/users in the Brave window Claude in Chrome drives, enter the Google password when asked, and reply 'done' here.",
+   "needs_from_owner": "Open https://admin.google.com/ac/users in the Brave window Claude in Chrome drives, type your Google password in the 'Enter your password' field, click Next, and reply 'done' here.",
    "log": [
     {
      "ts": "2026-10-09T07:56:53+0530",
      "who": "claude",
      "note": "Split out of T-115 on the Orchestrator's decision O-da56f37d: the only T-115 slot that needs a password from Adi."
+    },
+    {
+     "ts": "2026-10-10T20:23:31+0530",
+     "who": "claude",
+     "note": "Still waiting on the Google password, which only Adi can type (tracked as T-349). I built the one-pass capture kit so the shot takes minutes once it is in: scripts/walkthroughs/journeys/guide-s1-cold-email-02.md (runbook), guide-admin-add-user.js (blurs identities, blocks any submit, cancels the form) and guide-slot.py (WebP, guide entry, check-guides). Tested on a mock form: submit by click and Enter blocked, 0 emails readable, dry-run WebP 1400 wide passes the size check; live selectors are unverified until the password wall is gone."
     }
    ],
    "order": 3480
