@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T01:03:56+0530",
+   "task_id": "T-150",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-150 stays in review for Amal: the verify pass found no gaps, so nothing was changed, pushed or published this run.\n\nCOMPLETION CHECK (all evidence from this run)\n1. **`review_hub.py` reports no unknown element:** done. It wrote 382 elements with no PROBLEMS line, and the regenerated `workshop-plan"
+  },
+  {
    "ts": "2026-10-11T00:53:22+0530",
    "task_id": "T-146",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "COMPLETION CHECK for T-260 (now in review, reviewers Adi and Bharath; notes F-09302e2b and R-70c02c47 acked)\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| (1) `app/src/lib/fields.ts:70` hint drops Slack | Done | Hint now reads \"WhatsApp or community invite\" (commit 25a8998) |\n| (2) `vis"
-  },
-  {
-   "ts": "2026-10-10T20:34:54+0530",
-   "task_id": "T-071",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-071 verified and left in review for Bhaskar and Bharath: nothing needed fixing, and the live probe passed 33 checks with 0 failures in this run.\n\n**COMPLETION CHECK**\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Live `/pro` checks out in USD, EUR and INR from the Pro table | Done | `"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-150: Workshop Hub: free and paid user-flow maps and post-workshop workflows; tasks live in the Task Command Center",
- "task_id": "T-150",
+ "message": "Acting on 1 note(s) for T-004: Seat checkout (Dodo, live), geo-priced",
+ "task_id": "T-004",
  "entries": [
-  "F-c5ec7e87"
+  "R-042511e2"
  ],
  "mode": "feedback",
- "started": "2026-10-11T00:54:41+0530",
+ "started": "2026-10-11T01:07:03+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
