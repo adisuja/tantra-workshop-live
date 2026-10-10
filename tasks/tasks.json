@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T17:21:04+0530",
-  "version": 1558,
+  "updated": "2026-10-10T17:23:18+0530",
+  "version": 1559,
   "last_id": 382,
   "team": [
    {
@@ -10304,6 +10304,11 @@
      "ts": "2026-10-10T17:20:11+0530",
      "who": "claude",
      "note": "Stripe refunds are wired: payment links now carry funnel, product and link id on the payment, the webhook listens for charge.refunded, and the funnel Worker tags a buyer refunded only for a full refund of its own link (b4f3533 plus ccbcbb1, pushed to main). node cloud/scripts/probe-stripe-refunds.mjs prints ALL PASS against the vendor-sim: full refund tagged and dashboard refunds 1, partial refund, another product's refund and an unattributable refund change nothing. Not live yet: wrangler deploy of cloud/funnel failed because that config is the local preview template (placeholder D1 id), and real funnels get worker.js bundled inside the main cloud Worker, so it ships with the next cloud deploy."
+    },
+    {
+     "ts": "2026-10-10T17:23:18+0530",
+     "who": "claude",
+     "note": "Verify pass: the Stripe refund code checks out end to end and the probe now also covers the payment lookup, an unknown payment and a badly signed refund (node cloud/scripts/probe-stripe-refunds.mjs, ALL PASS, commit 73a8a4a pushed). It is not live: the approved cloud/funnel deploy is only a local preview config, and attendee funnels get worker.js through the main cloud Worker. In production the funnel Worker has no Stripe key, so it relies on the metadata Stripe copies onto the charge, which the payment link now sets."
     }
    ],
    "order": 2380
