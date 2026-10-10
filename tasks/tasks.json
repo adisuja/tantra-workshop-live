@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T01:11:32+0530",
-  "version": 1659,
+  "updated": "2026-10-11T01:14:57+0530",
+  "version": 1661,
   "last_id": 387,
   "team": [
    {
@@ -3586,23 +3586,27 @@
    "evidence": [
     {
      "label": "VIP offer page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094b"
     },
     {
      "label": "Order confirmation",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t094"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t094b"
     },
     {
      "label": "Before / after of the stack",
-     "url": "https://adisuja.github.io/tantra-workshop-live/vip-before-after.png"
+     "url": "https://adisuja.github.io/tantra-workshop-live/vip-before-after.png?v=t094b"
     },
     {
-     "label": "Comment fix on origin main (c0f1897)",
+     "label": "Probe output, 7 widths (T-100, 2026-10-09)",
+     "url": "workshop-plan/evidence/T-100-vip-probes-2026-10-09.txt"
+    },
+    {
+     "label": "Comment fix (f221b82)",
      "url": "app/src/app/vip/vip-client.tsx"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Adi: open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094b and https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t094b and approve or reply with changes. This one look also signs off T-100 (the nine bonuses and key art) and shows the T-103 prices in your currency.",
+   "needs_from_owner": "Adi: one look signs off this task and T-100. Open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094b and https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t094b, then approve, or reply with a change for any of the nine bonuses (playbook, automations, library, pages, copy, prompts, recordings, platform, channel), the key art, the offer recap or the page.",
    "log": [
     {
      "ts": "2026-09-23",
@@ -3643,6 +3647,11 @@
      "ts": "2026-10-10T16:35:33+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-23 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-11T01:14:57+0530",
+     "who": "claude",
+     "note": "T-100 ripple: this is now the one combined review for the /vip page and the nine bonuses, and every link on both tasks uses ?v=t094b. Nothing on the page had to change. Rechecked today on the live mirror: shoot-vip at all 7 widths (390, 414, 768, 1024, 1280, 1440, 1920) shows 9 exhibits ok, 0 overflow, 0 console errors, and git grep 'build pass' in app/src/app/vip returns nothing. vip-before-after.png was not regenerated because no fix was needed, so the current image stands."
     }
    ],
    "order": 920,
@@ -3919,15 +3928,15 @@
    "evidence": [
     {
      "label": "VIP page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t100p"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094b"
     },
     {
      "label": "Order confirmation",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t100p"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t094b"
     },
     {
      "label": "Before / after",
-     "url": "https://adisuja.github.io/tantra-workshop-live/vip-before-after.png"
+     "url": "https://adisuja.github.io/tantra-workshop-live/vip-before-after.png?v=t094b"
     },
     {
      "label": "Probe output, 7 widths (2026-10-09)",
@@ -3935,7 +3944,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Adi: one review covers this task and T-094. Open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t100p (nine bonuses, key art, recap) and https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t100p, then approve or reply with changes per bonus.",
+   "needs_from_owner": "Adi: the review for this task is the one on T-094. Open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094b (nine bonuses, key art, recap) and https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t094b, then approve or reply with changes per bonus.",
    "log": [
     {
      "ts": "2026-09-24",
@@ -3981,6 +3990,11 @@
      "ts": "2026-10-10T16:35:33+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-24 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-11T01:14:57+0530",
+     "who": "claude",
+     "note": "Links aligned with T-094 (?v=t094b) so the owner gets one review link for both tasks. Nothing else changed; status stays review."
     }
    ],
    "order": 980,
