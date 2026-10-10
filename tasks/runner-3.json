@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T01:09:20+0530",
+   "task_id": "T-223",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-223 stays in review: everything the Orchestrator asked for checks out on production, and the only thing left is the first real sign-up, which waits on an outside person, not on Adi.\n\n**COMPLETION CHECK**\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| 1a. T-229 is deployed | Done | Prod"
+  },
+  {
    "ts": "2026-10-11T01:00:39+0530",
    "task_id": "T-283",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "Agent T-226: migration 0019 applied, Worker deployed with npx wrangler, task status set to review awaiting Meeting SDK app credentials (T‑335)."
-  },
-  {
-   "ts": "2026-10-10T17:47:00+0530",
-   "task_id": "T-234",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model gemini-3.7-flash are cooling down"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-223",
+ "task_id": "T-094",
  "entries": [
-  "F-95185d64",
-  "R-38eb5dfd"
+  "R-f44ece7e"
  ],
- "started": "2026-10-11T01:01:21+0530",
- "message": "Acting on 2 note(s) for T-223: Zoom Pro meetings in the centre: per-cohort meeting, presentation room, cap and waitlist, live board, attendance",
+ "started": "2026-10-11T01:10:52+0530",
+ "message": "Acting on 1 note(s) for T-094: VIP offer page",
  "slices": {
   "T-135": 1,
   "T-148": 1,

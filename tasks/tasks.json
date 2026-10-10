@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T01:09:04+0530",
-  "version": 1658,
+  "updated": "2026-10-11T01:11:32+0530",
+  "version": 1659,
   "last_id": 387,
   "team": [
    {
@@ -529,7 +529,7 @@
    "why": "The $99 / ₹9,999 front-end must self-liquidate ad spend, so checkout has to be real and tamper-proof.",
    "spec": "Seat checkout: /api/checkout (app/src/app/api/checkout/route.ts) mints a Dodo hosted checkout server-side and falls back to the hosted link on static hosts; Stripe is the attendee alternative (T-218, done). Per-currency prices live in app/src/lib/prices.json (USD 9900, INR 999900, EUR 8900, GBP 7900, AUD 14900, CAD 13900, SGD 12900, AED 36900 minor units) and are pushed to Dodo as localized price rules by app/scripts/dodo-setup.mjs; the webhook verifies the signature. Dodo product pdt_0NnpA6EIxXvDvS1F03N8Z is named 'The 3-Day AI RevOps Workshop'. Access after payment is T-122; key rotation is T-005 (after launch). Once Adi confirms, run node app/scripts/probe-live-wiring.mjs locally and close.",
    "done_when": [
-    "Adi confirms EUR, GBP, AUD, CAD, SGD and AED prices (USD and INR already locked)",
+    "Price table final by orchestrator decisions O-3cfb2ee8 and O-c4164301 (2026-10-09): USD 99, INR 9,999, EUR 89, GBP 79, AUD 149, CAD 139, SGD 129, AED 369",
     "node app/scripts/probe-live-wiring.mjs reaches the Dodo checkout"
    ],
    "evidence": [
@@ -547,7 +547,7 @@
     },
     {
      "label": "live seat page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t004lock"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t004v1011"
     }
    ],
    "blockers": [],
@@ -612,6 +612,11 @@
      "ts": "2026-10-11T01:08:59+0530",
      "who": "claude",
      "note": "Ripple from T-103 checked on 2026-10-11: nothing had to change. The price table is already recorded as final in app/src/lib/prices.json (USD 99, INR 9,999, EUR 89, GBP 79, AUD 149, CAD 139, SGD 129, AED 369, lock note dated 2026-10-09, commit d18817d), and the price question is answered by orchestrator decisions O-3cfb2ee8 and O-c4164301, so it waits on nobody. Re-ran node app/scripts/probe-live-wiring.mjs on the live mirror today: ALL WIRING PASSES, 27 of 27, including /vip checkout reaching checkout.dodopayments.com/session/... with the prefilled probe email (nothing paid). Closed. Open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t004r1011 to see the seat page."
+    },
+    {
+     "ts": "2026-10-11T01:11:32+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11 (fresh reviewer): nothing in the code had to change. prices.json holds the final table (USD 99, INR 9,999, EUR 89, GBP 79, AUD 149, CAD 139, SGD 129, AED 369) with the lock note; probe-live-wiring.mjs on the live mirror ends ALL WIRING PASSES and reaches checkout.dodopayments.com with the prefilled probe email (nothing paid); probe-currency.mjs passes all 9 country profiles. One gap fixed: the done_when line that still said Adi confirms now records the price question as answered by the orchestrator decisions. Open: https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t004v1011"
     }
    ],
    "order": 40,
