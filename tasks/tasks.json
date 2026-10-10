@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T01:29:59+0530",
-  "version": 1670,
+  "updated": "2026-10-11T01:30:35+0530",
+  "version": 1671,
   "last_id": 387,
   "team": [
    {
@@ -4018,6 +4018,11 @@
      "ts": "2026-10-11T01:29:54+0530",
      "who": "claude",
      "note": "Verify pass: I reran shoot-vip and probe-page at all 7 widths (390 to 1920) on main and on the live mirror, and both show 9 bonuses, key art 9 of 9, 0 overflow, 0 clipped text and 0 console errors; every count chip matches my own count of the template library (182 specs, 74 automation, 27 page and form, 77 copy) and no bonus says VIP only. Nothing visible had to change, so nothing was rebuilt or pushed; I only corrected old figures in a code comment. Still one look with T-094: open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094b and approve the names, hooks and key art."
+    },
+    {
+     "ts": "2026-10-11T01:30:35+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-094."
     }
    ],
    "order": 980,
