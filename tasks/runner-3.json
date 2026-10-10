@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T16:15:35+0530",
+   "task_id": "T-290",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-290 is in review for Adi, Aquila and Bharath. Not pushed to onboarding-v2: that branch's checkout has 5 commits main lacks, one with walkthroughs held for Adi's review. COMPLETION CHECK:\n- **Fields on all 3 shapes:** done; RSP sign-ups skip `/thanks`, so this run added the link and next step to th"
+  },
+  {
    "ts": "2026-10-10T16:04:26+0530",
    "task_id": "T-289",
    "mode": "feedback",
@@ -87,24 +95,17 @@
    "status": "review",
    "result": "ok",
    "summary": "T-257 is in review: built, verified and pushed to main as 6e7b2b6, with all 8 audit ids marked fixed. The public mirror was not published (left for the next Integrator publish), and one older diagram check in probe-screenshots still fails, unrelated to this task."
-  },
-  {
-   "ts": "2026-10-10T01:48:15+0530",
-   "task_id": "T-268",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "paused",
-   "summary": "Stopped: Adi paused the agent from the board."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-290",
+ "task_id": "T-300",
  "entries": [
-  "F-e11268fa"
+  "F-46379414",
+  "R-84b1dc50"
  ],
- "started": "2026-10-10T16:04:35+0530",
- "message": "Acting on 1 note(s) for T-290: Attendee funnel thank-you page: community and next-step blocks never render because no card asks for them",
+ "started": "2026-10-10T16:16:42+0530",
+ "message": "Acting on 2 note(s) for T-300: Remove the dormant code and text of the ruled-out tools (T-251 parts 2 and 3)",
  "slices": {
   "T-135": 1,
   "T-148": 1,
