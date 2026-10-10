@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T20:27:26+0530",
+   "task_id": "T-348",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "turns",
+   "summary": "T-348 stays blocked on Adi typing the Google password (T-349); the capture kit held up under a fresh mock test, with one small fix committed in 0bd30b6.\n\nCOMPLETION CHECK\n- **Keep T-348 as the single input task, never type or look for the password:** done. Status is blocked, and `needs_from_owner` a"
+  },
+  {
    "ts": "2026-10-10T20:21:19+0530",
    "task_id": "T-278",
    "mode": "feedback",
@@ -87,30 +95,24 @@
    "status": "blocked",
    "result": "turns",
    "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-301 is set to blocked again. The code checks out and the fix is pushed, but the walkthrough fix is not live yet because the centre redeploy failed in the scratch b"
-  },
-  {
-   "ts": "2026-10-10T16:17:22+0530",
-   "task_id": "T-274",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I checked all seven T-274 fixes again and they are working on main and on both live copies. I had nothing to fix. The task is now in review with Adi and Bharath, and note F-8271900e was already acked (the ack command reported 0).\n\n**Completion check (all checked in this run):**\n\n| Item | State | Evi"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-348",
+ "task_id": "T-111",
  "entries": [
-  "F-201a538e"
+  "F-8a8bd4a8",
+  "R-5adb9bd4"
  ],
- "started": "2026-10-10T20:21:43+0530",
- "message": "Acting on 1 note(s) for T-348: Input: Google Admin password re-check in the Brave capture window (for T-115 s1-cold-email #2)",
+ "started": "2026-10-10T20:27:53+0530",
+ "message": "Acting on 2 note(s) for T-111: Template library corpus (Lane B): fields, channel/mechanism tags, TemplateCard, anonymised corpus templates, leak probe",
  "slices": {
   "T-072": 1,
   "T-245": 1,
   "T-250": 1,
   "T-301": 1,
   "T-140": 1,
-  "T-033": 1
+  "T-033": 1,
+  "T-348": 1
  }
 }
