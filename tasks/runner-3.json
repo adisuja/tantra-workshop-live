@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T18:03:56+0530",
+   "task_id": "T-226",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "Agent T-226: migration 0019 applied, Worker deployed with npx wrangler, task status set to review awaiting Meeting SDK app credentials (T‑335)."
+  },
+  {
    "ts": "2026-10-10T17:47:00+0530",
    "task_id": "T-234",
    "mode": "feedback",
@@ -87,25 +95,17 @@
    "status": "doing",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. All 11 guide screenshots are captured and committed in `512c734`, but I have not pushed to main or republished the mirror. T-135 is in `doing` (not review yet) and n"
-  },
-  {
-   "ts": "2026-10-10T04:15:29+0530",
-   "task_id": "T-135",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "paused",
-   "summary": "Stopped: Adi paused the agent from the board."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-226",
+ "task_id": "T-033",
  "entries": [
-  "F-c251293a",
-  "R-803ec112"
+  "F-90daec88",
+  "R-95c6ab16"
  ],
- "started": "2026-10-10T17:47:57+0530",
- "message": "Acting on 2 note(s) for T-226: Tantra Host Console: Adi hosts every session from a Mac app that runs chat posts, polls, call-to-action links, mute and video control, co-hosts",
+ "started": "2026-10-10T18:07:28+0530",
+ "message": "Acting on 2 note(s) for T-033: WhatsApp + email delivery automation",
  "slices": {
   "T-135": 1,
   "T-148": 1,
