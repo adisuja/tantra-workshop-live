@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T18:15:37+0530",
+   "task_id": "T-227",
+   "mode": "feedback",
+   "status": "review",
+   "result": "provider",
+   "summary": "API Error: 502 [gemini/gemini-3-flash-preview] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3-flash-preview — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. "
+  },
+  {
    "ts": "2026-10-10T18:03:56+0530",
    "task_id": "T-226",
    "mode": "feedback",
@@ -87,25 +95,17 @@
    "status": "review",
    "result": "turns",
    "summary": "T-148 is in review for Bhaskar: the Tantra mark on the cover slide is fixed in the deck's source files and on the live deck, and I checked the live page in a headless browser.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| Fix the slide sources (`_rebuild/header.html:83`, `_rebuild/slid"
-  },
-  {
-   "ts": "2026-10-10T15:10:33+0530",
-   "task_id": "T-135",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. All 11 guide screenshots are captured and committed in `512c734`, but I have not pushed to main or republished the mirror. T-135 is in `doing` (not review yet) and n"
   }
  ],
- "state": "working",
+ "state": "paused",
  "mode": "feedback",
- "task_id": "T-227",
+ "task_id": null,
  "entries": [
   "F-f4a85277",
   "R-21f4e0d6"
  ],
  "started": "2026-10-10T18:10:58+0530",
- "message": "Acting on 2 note(s) for T-227: Google Calendar invites: save the organiser's service account and authorise it for Calendar",
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 76% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 19:51.",
  "slices": {
   "T-135": 1,
   "T-148": 1,

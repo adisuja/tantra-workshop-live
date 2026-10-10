@@ -97,14 +97,15 @@
    "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-072 is still blocked: only Adi can create the Cal.com event the booking page points at. Everything else checks out in this run. The `ack` command reported 0 notes "
   }
  ],
- "state": "working",
+ "state": "paused",
  "mode": "feedback",
- "task_id": "T-339",
+ "task_id": null,
  "entries": [
-  "R-e3fcb741"
+  "F-00a906f4",
+  "R-85835850"
  ],
- "started": "2026-10-10T18:12:24+0530",
- "message": "Acting on 1 note(s) for T-339: Input from Adi for T-133: In Claude in Chrome, sign in to https://usetantra.com (Tantra app) and https://c",
+ "started": "2026-10-10T18:15:47+0530",
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 76% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 19:51.",
  "slices": {
   "T-072": 1,
   "T-245": 1,

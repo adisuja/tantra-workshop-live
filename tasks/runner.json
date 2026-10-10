@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T18:15:36+0530",
+   "task_id": "T-071",
+   "mode": "feedback",
+   "status": "review",
+   "result": "provider",
+   "summary": "API Error: 502 [gemini/gemini-3-flash-preview] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3-flash-preview — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. "
+  },
+  {
    "ts": "2026-10-10T17:57:36+0530",
    "task_id": "T-227",
    "mode": "feedback",
@@ -87,19 +95,11 @@
    "status": "queue",
    "result": "error",
    "summary": "Stack is up. Running the full run-chain (which includes the three walkers) in the background."
-  },
-  {
-   "ts": "2026-10-10T15:19:00+0530",
-   "task_id": "T-157",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "turns",
-   "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-157 is still blocked: the tier qualifier works, but its answers can't reach the Work Tracker until Adi redeploys the Apps Script. This verify pass found and fixed "
   }
  ],
- "state": "working",
- "message": "Acting on 2 note(s) for T-071: Tantra Pro ($999) offer page + checkout",
- "task_id": "T-071",
+ "state": "paused",
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 76% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 19:51.",
+ "task_id": null,
  "entries": [
   "F-71dc8ef6",
   "R-f8aa7d48"
