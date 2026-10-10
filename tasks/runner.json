@@ -97,8 +97,8 @@
    "summary": "T-115 is still blocked because this unattended run has no browser tools, so none of the screenshots were captured. I merged its ask with T-339, so Adi opens one desktop session for both.\n\n- **Orchestrator note F-00a906f4 (capture the 21 slots, commit and push, update G127):** Not done. No Claude in "
   }
  ],
- "state": "paused",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 70% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 00:51.",
+ "state": "disabled",
+ "message": "Paused from the board.",
  "task_id": null,
  "entries": [],
  "mode": null,
