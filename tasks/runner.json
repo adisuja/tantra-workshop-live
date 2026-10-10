@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T15:57:52+0530",
+   "task_id": "T-276",
+   "mode": "feedback",
+   "status": "review",
+   "result": "turns",
+   "summary": "T-276 is in review, F-f2e279de is acknowledged, and the spec and coverage.json rewrites are pushed to main as commit 7bc886a. Completion check: approved vendors only ✅ (ruled-out-vendor grep empty), cohort-relative dates via `cohort.ts` ✅ (only due dates and one dated Stripe fact remain), card 3 des"
+  },
+  {
    "ts": "2026-10-10T15:46:12+0530",
    "task_id": "T-249",
    "mode": "feedback",
@@ -87,26 +95,19 @@
    "status": "review",
    "result": "ok",
    "summary": "T-268 is in review. The simulator probe passes and the Worker is deployed, but I did not publish the mirror, and the live WebinarGeek check still waits on T-253.\n\n- **Zoom card:** Zoom webinars and every challenge now get a Zoom live-room card for Pro meetings.\n  - Polls are added by hand in Zoom's "
-  },
-  {
-   "ts": "2026-10-10T02:01:00+0530",
-   "task_id": "T-267",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-267 is built, pushed to main (1fd45a2) and deployed to the centre Worker (bd1ef64d). It's in review with Adi and Bharath, and F-409a5db1 is acked. `cloud/scripts/probe-t267.mjs` passes all 17 checks against the simulator.\n\n- **Dodo approval can't be detected (X071):** Dodo exposes no approval-stat"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-276: Docs: bring ONBOARDING_V3_SPEC.md and coverage.json up to date",
- "task_id": "T-276",
+ "message": "Acting on 1 note(s) for T-285: Card copy fixes found while recording the walkthroughs",
+ "task_id": "T-285",
  "entries": [
-  "F-f2e279de"
+  "F-0410ae15"
  ],
  "mode": "feedback",
- "started": "2026-10-10T15:46:50+0530",
+ "started": "2026-10-10T15:58:16+0530",
  "slices": {
   "T-156": 1,
-  "T-157": 1
+  "T-157": 1,
+  "T-276": 1
  }
 }

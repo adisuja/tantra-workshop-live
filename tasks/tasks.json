@@ -2,8 +2,8 @@
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
   "day1": "2026-09-30T11:00:00-04:00",
-  "updated": "2026-10-10T15:57:12+0530",
-  "version": 1451,
+  "updated": "2026-10-10T15:58:04+0530",
+  "version": 1453,
   "last_id": 381,
   "team": [
    {
@@ -12151,6 +12151,11 @@
      "ts": "2026-10-10T15:57:12+0530",
      "who": "claude",
      "note": "Rewrote ONBOARDING_V3_SPEC.md: approved stack only (Cloudflare Registrar, Twilio SMS, Choose your tools, Cal.com, Tantra WhatsApp and reminders), dates relative to the weekly cohort via cohort.ts, Day 0 card 3 needs a description plus 5/10/15/30 min reminders, and every manual step or open item now has an owner and due date. coverage.json human-only entries got owners and 10 unmapped cards and jobs were mapped. Verified: ruled-out vendor grep empty, no dashes, all 16 headings pass titlecase.py, check-coverage OK. Pushed as 7bc886a; H069 to H073 and X108 marked fixed in AUDIT.md and LOG.md."
+    },
+    {
+     "ts": "2026-10-10T15:57:52+0530",
+     "who": "claude",
+     "note": "ALARM: run over budget ($2.34): 33 calls, peak context 48k. Slice the next run smaller."
     }
    ],
    "order": 2760
@@ -12398,6 +12403,11 @@
      "ts": "2026-10-09T17:15:19+0530",
      "who": "claude",
      "note": "Closed as part of T-150: no onboarding element holds a per-task proof number any more (the centre runs five daily steps: Watch, Fill, Get, Do, Ship), so flow step d-prove now points at the Day 3 chapter (playbook/d3), state Built. review_hub.py reports no unknown element; pushed as ab41816 and live on the mirror."
+    },
+    {
+     "ts": "2026-10-10T15:58:04+0530",
+     "who": "claude",
+     "note": "Already applied, so no agent run was needed: Commit ab41816 and the log entry at 17:15 confirm the d-prove flow step was updated, the hub was regenerated, and the task was closed. [gemini/gemini-3.1-flash-lite-preview via OmniRoute] (checked by Haiku against the log and commits)."
     }
    ],
    "order": 2800
