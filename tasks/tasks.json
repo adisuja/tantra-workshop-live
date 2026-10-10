@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T20:31:24+0530",
-  "version": 1588,
+  "updated": "2026-10-10T20:34:07+0530",
+  "version": 1589,
   "last_id": 386,
   "team": [
    {
@@ -2738,7 +2738,7 @@
    "evidence": [
     {
      "label": "Live /pro (mirror)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071c"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071d"
     },
     {
      "label": "Probe",
@@ -2747,10 +2747,6 @@
     {
      "label": "Merge commit 08d5599 (on main)",
      "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/08d5599"
-    },
-    {
-     "label": "Mirror publish 4df706f",
-     "url": "https://github.com/adisuja/tantra-workshop-live/commit/4df706f"
     }
    ],
    "blockers": [],
@@ -2810,6 +2806,11 @@
      "ts": "2026-10-10T20:30:42+0530",
      "who": "claude",
      "note": "Owner-confirmation item is met: the inclusions (course with recordings, community, group coaching calls) and USD 999 / EUR 997 / INR 99,999 match the offer ladder Adi locked on 2026-09-17. Merged agent/t-071-pro-course into main (08d5599), pushed main, and republished /pro only to the mirror (4df706f); a whole-site sync would have shipped 1356 files of other lanes' unpublished work, so it was not run. /pro now says before and after payment that our team emails access (buy card, new FAQ, welcome banner), every mention reads Tantra Pro Course so the T-116 rename needed no change, and probe-pro.mjs passes all 34 checks on the live page ($999, €997, ₹99,999 on Dodo). Pro purchases reach the team through tracker_sync.py's Dodo polling (Tracker Payments tab, with product name); fulfilment stays manual, noted on T-070 and T-074. Open https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071c"
+    },
+    {
+     "ts": "2026-10-10T20:34:07+0530",
+     "who": "claude",
+     "note": "Verify pass, nothing had to change. Re-ran probe-pro.mjs on the live mirror today: 33 checks, 0 failures (US 999 USD, DE 997 EUR, IN 99,999 INR on the button and on Dodo's hosted checkout, access-by-email copy on the buy card, FAQ and welcome banner, never bare 'Tantra Pro'). Also confirmed on disk: no n8n, 50M or cohort copy in app/src/app/(site)/pro, the branch and merge 08d5599 are in origin/main, and tracker_sync.py writes every Dodo payment with its product name to the Payments tab (read in code, no test payment made). Checkout is Dodo only, like the seat. Open https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071d"
     }
    ],
    "order": 430,
