@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T01:03:44+0530",
-  "version": 1651,
+  "updated": "2026-10-11T01:05:14+0530",
+  "version": 1655,
   "last_id": 387,
   "team": [
    {
@@ -2336,6 +2336,11 @@
      "ts": "2026-10-10T16:35:33+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-20 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-11T01:05:03+0530",
+     "who": "claude",
+     "note": "Already applied, so no agent run was needed: 2026-10-09T17:51 confirms all work done: 6 channels tested on both funnels, 18 rows verified correct, referral credited, cleanup complete (0 test rows left), evidence table exists (checked by Haiku against the log and commits)."
     }
    ],
    "order": 330,
@@ -7409,6 +7414,11 @@
      "ts": "2026-10-11T01:03:44+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-11, nothing had to change. Rechecked from scratch: review_hub.py regenerates 382 elements with no unknown element and no diff, the live hub is byte-identical to the local one, no 'Launch Control' or old tasks section in either index.html, the link probe passed (423 links, ALL LINKS OK), and in a headless browser the Prove It Works (Day 3) card opens the Day 3 chapter and #tasks opens the Task Command Center with no script errors. Amal, open the User Flows link to sign off."
+    },
+    {
+     "ts": "2026-10-11T01:04:19+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-280 (done, now recheck)."
     }
    ],
    "order": 1500,
@@ -9513,7 +9523,7 @@
    "due": "",
    "status": "review",
    "why": "Our workshop and the Tantra webinar run on Zoom Pro meetings: each registrant needs their own join link, and attendance, recordings, chat and polls must land in the centre and the Tantra Tracker. The live centre has no real attendees yet (D1 read 2026-10-08 00:50 IST: attendees 1 to 4 are test, attendee 5 'Alex' you@example.com is a placeholder), so the live proof so far is the 2026-10-07 test session 89781893618 (webhooks, 119 s attendance, recording and chat saved, then deleted in Zoom).",
-   "spec": "Code live: main 8c94364 (T-229 fix on top of cd7a90e, a3db29a, 99b8083, d31a7e3); Worker bc7ea5ad; probe-zoom-pro.mjs 58/58 on a fresh own stack. Live on 2026-10-09: zoom_enabled 1, cap 98, Support locks 0. The centre already created meeting 88135386601 for Wed 14 to Fri 16 Oct: Check in Zoom shows every room setting as set, three sessions at 11:00 ET, passcode on, 0 registrants. Invite Status shows 0 failed. The '1 registered' on the ended 7 to 9 Oct meeting 87002851906 is the placeholder adi@example.com (attendee 66, now marked test), not a real person. One condition left, the first real sign-up: confirm in https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key> (Cohort Settings, Zoom Sessions) that they are registered with their own join link, then after their session press Read attendance and check the live board, zoom_attendance and the Tracker's Zoom Attendance tab. Then mark it done.",
+   "spec": "Code live: main fa7f53d (T-229 placeholder fix is 8c94364, on top of cd7a90e, a3db29a, 99b8083, d31a7e3); Worker e61e9802 (deployed 2026-10-10). Since T-229, /cal/issue, /intake and the admin add form silently skip placeholder emails (example.com and test domains), so they never reach Zoom; attendee 5 is marked test. probe-zoom-pro.mjs 60/60 on a fresh own stack of main (2026-10-11). Live read 2026-10-11 01:05 IST: zoom_enabled 1, cap 98, Support locks 0, Invite Status Zoom failed 0, 24 attendees and all 24 are test. One condition left, on the Wed 14 to Fri 16 Oct cohort (meeting 88135386601, three sessions at 11:00 ET, Check in Zoom shows every room setting as set, passcode on, 0 registrants): at the first real (non-test) sign-up, confirm in https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key> (Cohort Settings, Zoom Sessions) that they are registered on 88135386601 with their own join link (registered 1 or more, failed 0). After their session, press Read attendance and check the live board, zoom_attendance and the Tracker's Zoom Attendance tab. Then mark it done. If the first real sign-up lands in a later week, the same check applies to that week's meeting.",
    "done_when": [
     "The first real attendee is registered on their cohort's meeting with their own join link (admin Zoom Sessions shows registered 1 or more, failed 0)",
     "A real session shows its joins on the admin live board",
@@ -9522,7 +9532,7 @@
    "evidence": [
     {
      "label": "Live admin: Zoom Sessions and Invite Status",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/#settings"
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=20261011#settings"
     }
    ],
    "blockers": [],
@@ -9572,6 +9582,11 @@
      "ts": "2026-10-09T17:51:17+0530",
      "who": "claude",
      "note": "Rechecked the 05:09 Orchestrator note against production at 17:52 IST: everything it asked for was already shipped at 17:42 today (T-229 live on Worker bc7ea5ad and pushed, probe-zoom-pro 58/58), so nothing was rebuilt. Live read just now: Invite Status shows Zoom failed 0, attendees 5 and 66 (the placeholders) are marked test, the 14 to 16 Oct meeting 88135386601 exists with 0 registered, and there is still no real (non-test) attendee. Stays in review for the one remaining condition: the first real sign-up, then Read attendance after their session."
+    },
+    {
+     "ts": "2026-10-11T01:05:14+0530",
+     "who": "claude",
+     "note": "All of the Orchestrator's pre-work is checked on production (read-only, 2026-10-11 01:05 IST): attendee 5 is already test (all 24 attendees are, so no PATCH was sent), Invite Status shows Zoom failed 0, the cap is 98, and the Wed 14 to Fri 16 Oct meeting 88135386601 exists with every room setting as set, three sessions at 11:00 ET and 0 registrants. probe-zoom-pro passes 60/60 on a fresh stack of main; the shared local stack scores 48 pass, 6 fail, but it serves the older onboarding-v2 branch with last week's state, so it does not measure main. The spec now cites main fa7f53d and Worker e61e9802 and names the 14 Oct cohort; it stays in review only for the first real sign-up: https://revops-centre.growthcluborg.workers.dev/admin/?v=20261011#settings"
     }
    ],
    "order": 2230
@@ -13109,7 +13124,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "done",
+   "status": "recheck",
    "why": "Found while renaming the board on 2026-10-08; predates that change.",
    "spec": "python3 workshop-plan/build/review_hub.py reports 'flow d-prove: unknown element onboarding/d1-prove'. Point the flow at the current card id (check app/src/lib/workshop-cards.ts) or drop that step, then regenerate workshop-plan/index.html.",
    "done_when": [
@@ -13152,6 +13167,11 @@
      "ts": "2026-10-11T01:00:00+0530",
      "who": "claude",
      "note": "Rechecked 2026-10-11 as part of T-150: the d-prove flow step points at playbook/d3 on the live hub (main acb387a, mirror 1843bc2) and review_hub.py reports no unknown element."
+    },
+    {
+     "ts": "2026-10-11T01:04:19+0530",
+     "who": "claude",
+     "note": "Flagged for a recheck by T-150: It was waiting on this fix being logged, committed and verified live; T-150 note says its log lacks that record."
     }
    ],
    "order": 2800
