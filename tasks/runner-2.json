@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T20:35:53+0530",
+   "task_id": "T-111",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "**T-111 stays in review for Amal and Bharath. Every item holds on a fresh check, and I fixed one misleading comment.**\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| T-141 answered and the rule written in `LANES.md` | Done | T-141 is `done`; the rule is at `workshop-plan/coord/LANES.md` "
+  },
+  {
    "ts": "2026-10-10T20:27:26+0530",
    "task_id": "T-348",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "hold",
    "result": "ok",
    "summary": "T-302 is on hold until launch (T-005). I checked the rotation prep and it holds up. No key was rotated, deleted or created at any vendor.\n\n| Item | State (checked in this run) |\n|---|---|\n| `~/.config/tantra/ROTATION_PLAN.md` exists and lists names and file paths only | Done. Only the owner can read"
-  },
-  {
-   "ts": "2026-10-10T16:29:35+0530",
-   "task_id": "T-301",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "turns",
-   "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-301 is set to blocked again. The code checks out and the fix is pushed, but the walkthrough fix is not live yet because the centre redeploy failed in the scratch b"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-111",
+ "task_id": "T-225",
  "entries": [
-  "F-8a8bd4a8",
-  "R-5adb9bd4"
+  "F-bb8c3d70"
  ],
- "started": "2026-10-10T20:27:53+0530",
- "message": "Acting on 2 note(s) for T-111: Template library corpus (Lane B): fields, channel/mechanism tags, TemplateCard, anonymised corpus templates, leak probe",
+ "started": "2026-10-10T20:37:21+0530",
+ "message": "Acting on 1 note(s) for T-225: Zoom Support ticket: host mute control and participant video disable (waiting on Zoom's reply)",
  "slices": {
   "T-072": 1,
   "T-245": 1,

@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-10T20:34:54+0530",
+   "task_id": "T-071",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-071 verified and left in review for Bhaskar and Bharath: nothing needed fixing, and the live probe passed 33 checks with 0 failures in this run.\n\n**COMPLETION CHECK**\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Live `/pro` checks out in USD, EUR and INR from the Pro table | Done | `"
+  },
+  {
    "ts": "2026-10-10T20:21:03+0530",
    "task_id": "T-115",
    "mode": "feedback",
@@ -87,25 +95,17 @@
    "status": "review",
    "result": "turns",
    "summary": "T-295 is in review for Adi and Bharath. The overlap fixes are pushed to main, but I didn't rebuild the GitHub Pages mirror, so the playbook boards won't show them until the next Integrator publish.\n\n| Item | State | Evidence |\n|---|---|---|\n| (a) Caption overlapping the stage chip at 390 px | Fixed "
-  },
-  {
-   "ts": "2026-10-10T16:55:19+0530",
-   "task_id": "T-041",
-   "mode": "feedback",
-   "status": "hold",
-   "result": "turns",
-   "summary": "T-041 stays on hold, waiting only on T-040 (the WhatsApp groups don't exist yet). I applied the Orchestrator decision, there's no question left for Adi, and I acked note F-649aa08d.\n\n- **Vaibhavi added to the team roster:** done. `pass.py team` now lists her as \"traffic/LinkedIn posting\", and `pass."
   }
  ],
  "state": "working",
- "message": "Acting on 2 note(s) for T-071: Tantra Pro ($999) offer page + checkout",
- "task_id": "T-071",
+ "message": "Acting on 2 note(s) for T-260: Decide and apply: tools outside the approved list still in guides and cards (Wistia, Beehiiv, ElevenLabs, Meta Ads, Notion, WordPress, Sales Navigator/Expandi, GoHighLevel/HubSpot/Zoho)",
+ "task_id": "T-260",
  "entries": [
-  "F-71dc8ef6",
-  "R-f8aa7d48"
+  "F-09302e2b",
+  "R-70c02c47"
  ],
  "mode": "feedback",
- "started": "2026-10-10T20:22:31+0530",
+ "started": "2026-10-10T20:36:43+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,

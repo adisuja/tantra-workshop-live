@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-10T20:35:44+0530",
-  "version": 1594,
+  "updated": "2026-10-10T20:37:57+0530",
+  "version": 1597,
   "last_id": 386,
   "team": [
    {
@@ -4698,6 +4698,11 @@
      "ts": "2026-10-10T20:34:50+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-10: every item holds. Rechecked live: the centre and the mirror (now at 8b59f668) serve the same library, 110 money figures each and 0 text differences outside minified code; anonymity probe passes on 996 files, fidelity probe passes on 672 examples, and the old leak commit 5b9f57d6 is on neither mirror branch though GitHub still returns it by SHA and one fork remains (T-334, T-341). One fix: the generated centre export script still told readers a switch could empty the library when the centre ignores it, so the generator now writes the true comment (af07114, local, not pushed). check-guides still fails on 4 small screenshots from the T-257 crop, which is not a library fault. Amal and Bharath: open the first evidence link and sign off."
+    },
+    {
+     "ts": "2026-10-10T20:36:10+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-145."
     }
    ],
    "order": 1090,
@@ -9640,6 +9645,16 @@
      "ts": "2026-10-10T09:10:06+0530",
      "who": "claude",
      "note": "Zoom check 2026-10-10: could not run (the centre refused the admin key (200))."
+    },
+    {
+     "ts": "2026-10-10T20:37:45+0530",
+     "who": "claude",
+     "note": "Zoom check 2026-10-10: not granted yet. disable_participant_video is in no answer and the mute field is still at its default (/users/me/settings 200, /accounts/me/settings 400, /accounts/me/lock_settings 400, /meetings/88135386601 200, /meetings/81507619710 200); the centre's Zoom Support locks stay off and Live Control (T-226) covers mute and video."
+    },
+    {
+     "ts": "2026-10-10T20:37:57+0530",
+     "who": "claude",
+     "note": "Zoom check 2026-10-10: not granted yet. disable_participant_video is in no answer and the mute field is still at its default (/users/me/settings 200, /accounts/me/settings 400, /accounts/me/lock_settings 400, /meetings/88135386601 200, /meetings/81507619710 200); the centre's Zoom Support locks stay off and Live Control (T-226) covers mute and video."
     }
    ],
    "order": 2250
