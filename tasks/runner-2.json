@@ -97,12 +97,14 @@
    "summary": "Task T-242 moved to review; note F-15a68b48 acknowledged."
   }
  ],
- "state": "idle",
- "mode": null,
- "task_id": null,
- "entries": [],
- "started": "2026-10-11T17:32:25+0530",
- "message": "Last sweep handled 8 task(s).",
+ "state": "working",
+ "mode": "feedback",
+ "task_id": "T-364",
+ "entries": [
+  "R-6a950738"
+ ],
+ "started": "2026-10-11T17:52:07+0530",
+ "message": "Acting on 1 note(s) for T-364: Input from Adi for T-363: Amal: send the client the prepared email in workshop-plan/coord/T-363-client-ok-",
  "slices": {
   "T-072": 1,
   "T-245": 1,

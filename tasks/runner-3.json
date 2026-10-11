@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T17:48:31+0530",
+   "task_id": "T-197",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-197 is back in review: the probe gives 0 FAIL on main and the old centre's Join buttons open the attendee's own Zoom link; nothing new needed pushing, fixing or re"
+  },
+  {
    "ts": "2026-10-11T17:11:35+0530",
    "task_id": "T-152",
    "mode": "feedback",
@@ -87,24 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "T-134 is back in review. Both closing checks passed, so I changed, committed and pushed nothing.\n\n1. **Guide and screenshots on origin main: done.** The guide file and screenshots 01 and 03 to 07 are on origin main and match my local copy exactly.\n2. **Live guide shows the step 1 to 4 captures and t"
-  },
-  {
-   "ts": "2026-10-11T13:05:28+0530",
-   "task_id": "T-020",
-   "mode": "feedback",
-   "status": "review",
-   "result": "error",
-   "summary": "[process exit 143; stderr: ''] Now the probes, plus a live check once Pages rebuilds."
   }
  ],
- "state": "working",
- "mode": "feedback",
- "task_id": "T-197",
- "entries": [
-  "F-0dcb8236"
- ],
+ "state": "idle",
+ "mode": null,
+ "task_id": null,
+ "entries": [],
  "started": "2026-10-11T17:18:06+0530",
- "message": "Acting on 1 note(s) for T-197: Round 5 #3 (Lane A): Epic full-system audit: every element, question, card and section (AUDIT.md + probe-details.mjs)",
+ "message": "Last sweep handled 8 task(s).",
  "slices": {
   "T-135": 1,
   "T-148": 1,

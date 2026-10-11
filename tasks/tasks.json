@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T17:48:07+0530",
-  "version": 1993,
+  "updated": "2026-10-11T17:51:41+0530",
+  "version": 1994,
   "last_id": 408,
   "team": [
    {
@@ -9118,6 +9118,11 @@
      "ts": "2026-10-11T17:48:07+0530",
      "who": "claude",
      "note": "Verify pass: main 9799d599 is on origin/main (nothing new to push), and probe-details on a clean export of main gives 0 FAIL, 56 WARN, exit 0 (/tmp/t197r-details2.log; the admin-centre section was skipped because the local admin key is stale, and every section before it was 0 FAIL). O013 checked at runtime with a stubbed attendee feed: Days 1 to 3 Join buttons open the attendee's own Zoom link, and with no feed token the 'Join link not published yet' chip shows (6/6 PASS). AUDIT.md has no open P0. No shipped asset changed, so there was no republish (Worker 22952e72, mirror 8b59f66)."
+    },
+    {
+     "ts": "2026-10-11T17:51:41+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-240."
     }
    ],
    "order": 1970
