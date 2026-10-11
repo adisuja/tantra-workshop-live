@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T12:28:48+0530",
-  "version": 1895,
+  "updated": "2026-10-11T12:31:41+0530",
+  "version": 1899,
   "last_id": 401,
   "team": [
    {
@@ -61,7 +61,7 @@
    ],
    "priority": "P1",
    "due": "2026-10-14",
-   "status": "review",
+   "status": "doing",
    "why": "Several attendee-facing surfaces still say two different things (session format, Day 1 labels, Day 2 hours, task numbering) during a live cohort; each needs one answer from Adi before Claude makes main consistent.",
    "spec": "Open content calls from Nelbin's content pass (PR #3 content-pass and PR #4 aquila-client-content on adisuja/3-day-tantra-ai-revops-workshop, both already contained in main; PR #2 merged 2026-10-06) and issue #1 sections 3 and 6. For each answer Adi gives, Claude edits main directly (sources: app/src/lib/calendar.ts, curriculum.ts, card-education.ts, workshop-cards.ts, the Day Engine components, workshop-plan/build/*.py for the deck and survey), re-runs the probes (check-guides, probe-details, probe-onboarding-tabs, probe-headings) and logs the decision here. Unsourced hour figures (agent.tsx:653, funnel-os-types/system.tsx:211, the playbook) are handled by Claude under the no-invented-stats rule in T-256, not by this decision.",
    "done_when": [
@@ -71,31 +71,19 @@
    ],
    "evidence": [
     {
-     "label": "/workshop on the public mirror (slim proof band, new day titles)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=t191"
+     "label": "Playbook Day 1 on the mirror (5 to 6 h)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t191c#d1"
     },
     {
-     "label": "/masterclass on the public mirror",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=t191"
+     "label": "/workshop on the mirror",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=t191c"
     },
     {
-     "label": "Playbook on the mirror (45+15 sessions, Day 2 tasks 2.1 to 2.8)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t191#d2"
+     "label": "Onboarding library on localhost",
+     "url": "http://localhost:4322/debug/onboarding?v=t191c"
     },
     {
-     "label": "Route B guide: Claude Code and Cloudflare Workers",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=t191#g-s5-crm-starter"
-    },
-    {
-     "label": "Same pages on localhost",
-     "url": "http://localhost:4322/workshop?v=t191"
-    },
-    {
-     "label": "Onboarding library on localhost (Your VIP Kit, no welcome slot)",
-     "url": "http://localhost:4322/debug/onboarding?v=t191"
-    },
-    {
-     "label": "One source for day titles",
+     "label": "One source for day titles and hours",
      "url": "app/src/lib/day-titles.ts"
     }
    ],
@@ -171,6 +159,11 @@
      "ts": "2026-10-10T20:35:44+0530",
      "who": "claude",
      "note": "Already applied, so no agent run was needed: Commit 2bbe87c (10-09 13:35): T-191 ripple rechecked as already carried out, task stays in review (checked by Haiku against the log and commits)."
+    },
+    {
+     "ts": "2026-10-11T12:31:37+0530",
+     "who": "claude",
+     "note": "Day 1 header now reads 5 to 6 h from one source (DAY_HOURS in app/src/lib/day-titles.ts, landed in main 9ea3b9a0, pushed) and the mirror is republished as ae397ec2e. tsc, check-guides, probe-headings, probe-onboarding-tabs and probe-anonymity pass; with the agentic section skipped, probe-details has the date and 390 px playbook failures gone, and its one remaining FAIL (s5-rsp-stages pinned grid) comes from T-135. Left: build and deploy the revops-centre Worker from the clean worktree /private/tmp/t191-wt, then move to review. Ripple R-da29e551 (89% teaching model) needed no change here. Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t191c#d1"
     }
    ],
    "order": 1
@@ -3012,7 +3005,7 @@
    "evidence": [
     {
      "label": "Live /pro (mirror)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071d"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071f"
     },
     {
      "label": "Probe",
@@ -3095,6 +3088,16 @@
      "ts": "2026-10-11T12:28:48+0530",
      "who": "claude",
      "note": "Ripple from T-074, nothing on /pro had to change: buyers get the weekly coaching link (Zoom, Tue 11:00 ET) in the access email our team sends (moderation-rota.md step 2) and on the buyer-gated course home (cloud/src/course.ts, settings pro_coaching_url). I kept the raw link off the public /pro?paid=1 banner on purpose, since anyone can open that URL and it would publish a members-only Zoom link; the banner already says coaching call access arrives by email. The Orchestrator items were closed in the 2026-10-10 runs, and probe-pro.mjs re-run today on live /pro reports ALL PASS. Open https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071e"
+    },
+    {
+     "ts": "2026-10-11T12:30:39+0530",
+     "who": "claude",
+     "note": "Verify pass, nothing on /pro had to change. probe-pro.mjs on the live mirror passed every check today: US $999, DE €997, IN ₹99,999 (and GB $999) on the button and on Dodo's checkout for pdt_0NpKlRqJAjyAf3axboQSR, plus the access-by-email copy and no n8n calls. On disk, app/src/app/(site)/pro has no n8n or 50M copy, and tracker_sync.py polls every Dodo payment with no product filter, so Pro sales show up. I also removed T-074's stale 'Pro not on sale' blocker and logged that fulfilment is still manual. Buyers get the coaching link from the team's access email (rota step 2) and on /pro/course, never on the public thank-you URL. Open https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071f"
+    },
+    {
+     "ts": "2026-10-11T12:31:41+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-074, T-070."
     }
    ],
    "order": 430,
@@ -3260,7 +3263,7 @@
     }
    ],
    "blockers": [
-    "T-071 Pro course not on sale yet"
+    "Email sender for the Pro access email (see needs_from_owner)"
    ],
    "needs_from_owner": "One email sender for our own account: either save the Tantra API key and sender mailbox in Cohort Settings at https://revops-centre.growthcluborg.workers.dev/admin/ , or a Resend API key and verified From address in ~/.config/tantra/resend-api-key and ~/.config/tantra/pro-newsletter-from. Then the Adi test send runs, and issue 1 goes out after the Tue 13 Oct call.",
    "log": [
@@ -3318,6 +3321,11 @@
      "ts": "2026-10-11T11:15:05+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-073, T-071."
+    },
+    {
+     "ts": "2026-10-11T12:30:32+0530",
+     "who": "claude",
+     "note": "From T-071 verify pass: removed the stale 'T-071 Pro course not on sale yet' blocker, since /pro has sold the Tantra Pro Course on Dodo (pdt_0NpKlRqJAjyAf3axboQSR) since 2026-10-10. Pro fulfilment is still manual: the team emails course, community and coaching access to each buyer (rota step 2) until the access email has a sender."
     }
    ],
    "order": 460,
