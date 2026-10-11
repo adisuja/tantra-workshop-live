@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T18:32:34+0530",
-  "version": 2017,
+  "updated": "2026-10-11T18:37:13+0530",
+  "version": 2018,
   "last_id": 408,
   "team": [
    {
@@ -13268,24 +13268,24 @@
    ],
    "evidence": [
     {
-     "label": "live centre (Worker version 11f4dff4)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?v=1791723754"
+     "label": "probe (21 checks)",
+     "url": "cloud/scripts/probe-t263.mjs"
     },
     {
-     "label": "probe (21 of 21)",
-     "url": "cloud/scripts/probe-t263.mjs"
+     "label": "live centre",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/centre/?v=1791724033"
+    },
+    {
+     "label": "build.sh fix c17207f2",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/c17207f2"
     },
     {
      "label": "live sender check script",
      "url": "cloud/scripts/check-tantra-senders.mjs"
-    },
-    {
-     "label": "commit c17207f2 on main",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/c17207f2"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Paste a FintechCircle Tantra API key as one line TANTRA_TEST_API_KEY=<key> in ~/.config/tantra/keys/vendor-test.env (read-only use: GET /accounts?search= per sender).",
+   "needs_from_owner": "Paste the FintechCircle Tantra API key as one line TANTRA_TEST_API_KEY=<key> in ~/.config/tantra/keys/vendor-test.env so node cloud/scripts/check-tantra-senders.mjs <sender emails> can run the live check.",
    "log": [
     {
      "ts": "2026-10-08T00:21:42+0530",
@@ -13326,6 +13326,11 @@
      "ts": "2026-10-11T18:32:34+0530",
      "who": "claude",
      "note": "Deployed the centre Worker (version 11f4dff4) from a clean worktree of origin/main, and the live site serves the same bundle as that build, including the cal_title rule; probe-t263 passes 21 of 21 (23:30 plus 60 minutes ends 00:30 the next date, the gate answers 422 until every sender is CONNECTED, variant B reaches Tantra as its own campaign) and AUDIT.md marks 7 ids fixed at 4dea9f2 with N009 as a manual step because Tantra has no reminders field. The silent build.sh exit was a symlinked node_modules hidden by a pipe into tail; build.sh now prints the export error (c17207f2, pushed). Not done: the live GET /accounts check, because no FintechCircle Tantra key exists on this machine (there is no repo .env, and vendor-test.env holds only Instantly and GHL keys); once a key is pasted, node cloud/scripts/check-tantra-senders.mjs <sender emails> prints CONNECTED or not per sender."
+    },
+    {
+     "ts": "2026-10-11T18:37:13+0530",
+     "who": "claude",
+     "note": "Verify pass: probe-t263 passes 21 of 21 (end time rolls past midnight, gate returns 422 until every sender is CONNECTED, variant B goes to Tantra as its own campaign), cloud tsc is clean, all 8 ids are marked in AUDIT.md, and the live Worker 11f4dff4 serves the new cal_title rule, minutes field and service-account steps; the build.sh fix c17207f2 is on origin/main. The live GET /accounts check could not run because tantra-redesign/.env does not exist and no FintechCircle Tantra key is on this machine."
     }
    ],
    "order": 2630
