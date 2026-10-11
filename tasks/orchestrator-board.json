@@ -3,7 +3,7 @@
  "last_sweep": "2026-10-11T13:00:13+0530",
  "counts": {
   "proceed": 45,
-  "needs_adi": 19,
+  "needs_adi": 20,
   "complete": 42,
   "resolve": 9,
   "finish": 36,
@@ -909,6 +909,11 @@
    "verdict": "needs_adi",
    "ts": "2026-10-11T12:49:32+0530",
    "input_task": "T-403"
+  },
+  "T-404": {
+   "verdict": "needs_adi",
+   "ts": "2026-10-11T13:13:43+0530",
+   "input_task": "T-405"
   }
  }
 }

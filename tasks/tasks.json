@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T13:09:35+0530",
-  "version": 1925,
-  "last_id": 404,
+  "updated": "2026-10-11T13:13:43+0530",
+  "version": 1927,
+  "last_id": 405,
   "team": [
    {
     "name": "Adi",
@@ -17008,6 +17008,35 @@
     }
    ],
    "order": 4040
+  },
+  {
+   "id": "T-405",
+   "title": "Input from Adi for T-404: Please paste the Anthropic API key into the live centre admin at https://revops-",
+   "area": "Ops",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (credential): Only Adi possesses the Anthropic API key needed for live attendee AI drafting.. Everything else in T-404 is being built around it. As soon as this is done, T-404 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Please paste the Anthropic API key into the live centre admin at https://revops-centre.growthcluborg.workers.dev/admin/ under the AI Connections tab: click 'Add connection', select type 'Anthropic', and fill the 'API key' field.",
+   "log": [
+    {
+     "ts": "2026-10-11T13:13:43+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-404."
+    }
+   ],
+   "order": 4050,
+   "input_for": "T-404",
+   "kind": "input"
   }
  ]
 }
