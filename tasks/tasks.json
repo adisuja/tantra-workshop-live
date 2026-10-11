@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T22:30:14+0530",
-  "version": 2063,
+  "updated": "2026-10-11T22:31:19+0530",
+  "version": 2066,
   "last_id": 409,
   "team": [
    {
@@ -8819,6 +8819,11 @@
      "ts": "2026-10-11T22:30:14+0530",
      "who": "claude",
      "note": "Probe re-run today: probe-tier-qualifier.mjs passes 16 of 16 on both join pages; the live Apps Script still lists only 6 forms (no tier_qualifier) and no Chrome connection was available to redeploy it, so that redeploy is now its own input task T-409 and only the mirror publish waits on it. Ripple from T-252 not applied: Adi's standing rule fixes Scale at $199 and extra accounts at $20 (prices.json is the one table), which conflicts with the '2 / 12 accounts, $10 extra' catalog figures, so the one-pagers keep 5 / 15 / $20 and Bharath should settle the catalog against that rule on T-252. Open http://localhost:4322/workshop/join?v=t157d and http://localhost:4322/masterclass/success/join?v=t157d"
+    },
+    {
+     "ts": "2026-10-11T22:30:51+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-409."
     }
    ],
    "order": 1570,
@@ -12006,6 +12011,11 @@
      "ts": "2026-10-11T11:17:56+0530",
      "who": "claude",
      "note": "Ran the production forget on 89781893618 (signed in through /admin/enter the way tracker_sync.py does). The guard refused it: Zoom still has the meeting live (read-only GET /admin/api/zoom/check/89781893618 shows topic 'Tantra Centre Test Session (safe to delete)', 1 registrant), so the 2026-10-07 deletion never went through. Nothing was deleted, and GET /admin/api/zoom still lists it. This also confirms in production that the action refuses a meeting that still exists in Zoom. Commits 9431027 and a0900f9 are already on origin/main, so no push was needed. Once it is deleted in Zoom, the next pass runs the forget and tracker_sync.py."
+    },
+    {
+     "ts": "2026-10-11T22:31:19+0530",
+     "who": "claude",
+     "note": "Re-ran the production forget on 89781893618 at the Orchestrator's request with the correct /admin/enter cookie sign-in (302, signed in). The guard refused again with 400 'This meeting still exists in Zoom', because Zoom still serves the meeting (GET /admin/api/zoom/check/89781893618 returns topic 'Tantra Centre Test Session (safe to delete)'), so auth was never the problem and nothing was deleted. Deleting the meeting in Zoom is the one step left that needs Adi; commits 9431027 and a0900f9 are already on origin/main, and tracker_sync is held until the forget succeeds."
     }
    ],
    "order": 2450

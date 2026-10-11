@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T22:31:38+0530",
+   "task_id": "T-245",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-245 is blocked again. The sign-in works now, but production still refused the forget because Zoom still has meeting 89781893618, so it can't finish until Adi deletes that meeting in Zoom.\n\n- **Sign-in:** done. `POST /admin/enter` with the admin key returned 302 with a session cookie, so the auth p"
+  },
+  {
+   "ts": "2026-10-11T22:29:38+0530",
+   "task_id": "T-107",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I checked T-107 again live, cleaned up one probe record the earlier passes had missed, and moved the task back to review for Nelbin. The Apps Script part is still not done and waits on T-380.\n\n**Completion check (all evidence is from this run):**\n- **The 10-10 wiring-probe rows (19:50Z and 19:52Z, c"
+  },
+  {
    "ts": "2026-10-11T22:20:30+0530",
    "task_id": "T-154",
    "mode": "feedback",
@@ -79,32 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-006 checks out: the runbook and `up.sh` are complete and already on GitHub, so I changed nothing and left the task in review for Bharath and Adi.\n\n- **Runbook covers all 19 jobs:** done. `workshop-plan/ops/runbook.md` section 1 gives each job's port, interpreter and health check. All 19 live plist"
-  },
-  {
-   "ts": "2026-10-11T16:40:32+0530",
-   "task_id": "T-058",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-058 stays blocked on the T-056 list import and on members connecting their own LinkedIn. Bhaskar now owns those steps, and I found and fixed two gaps the last run had reported as done.\n\n**What I fixed:**\n- **The first-line tag.** The kit said to use `{{firstLine}}`. But the T-059 tool (`workshop-p"
-  },
-  {
-   "ts": "2026-10-11T16:25:13+0530",
-   "task_id": "T-242",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-242 is still in progress. The three walker fixes are written and committed locally, but not verified or pushed, because the walker reruns hadn't finished when this"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-107: Delete wiring test rows (ops.db + Work Tracker)",
- "task_id": "T-107",
+ "message": "Acting on 1 note(s) for T-041: Add admins to both WhatsApp groups",
+ "task_id": "T-041",
  "entries": [
-  "F-19aa15c5"
+  "R-d00b0022"
  ],
  "mode": "feedback",
- "started": "2026-10-11T22:21:57+0530",
+ "started": "2026-10-11T22:32:34+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
