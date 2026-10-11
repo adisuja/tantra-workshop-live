@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T16:14:09+0530",
-  "version": 1945,
+  "updated": "2026-10-11T16:17:12+0530",
+  "version": 1947,
   "last_id": 406,
   "team": [
    {
@@ -4058,6 +4058,11 @@
      "ts": "2026-10-11T16:14:09+0530",
      "who": "claude",
      "note": "Added T-100's 7-width probe result (390 to 1920) to Evidence: 0 overflow, 0 clipped text, 0 console errors, key art 9 of 9; the ?v=t094b links stay. Rechecked today on the live mirror: shoot-vip at all 7 widths shows 9 exhibits ok, 0 overflow, 0 console errors, 0 broken images on /vip (29) and /vip/success (11), and git grep 'build pass' in app/src/app/vip returns nothing. The page itself did not change; open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094b"
+    },
+    {
+     "ts": "2026-10-11T16:17:12+0530",
+     "who": "claude",
+     "note": "Verify pass: the ripple from T-100 was already applied, nothing else had to change. Evidence links T-100's 7-width probe file (workshop-plan/evidence/T-100-vip-probes-2026-10-11-verify.txt: key art 9 of 9, 0 clipped, 0 overflow), and I reran shoot-vip on the live mirror at all 7 widths today: 9 exhibits, 0 clipped rows, 0 overflow, 0 console errors. 0 broken images on /vip (29) and /vip/success (11), and git grep 'build pass' in app/src/app/vip returns nothing. Open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094b to sign off."
     }
    ],
    "order": 920,
@@ -15508,16 +15513,16 @@
    ],
    "evidence": [
     {
-     "label": "Branch worktree (4cb2f43)",
+     "label": "Branch worktree",
      "url": "/Users/adithyamurali/tantra-t299"
     },
     {
-     "label": "Probe summary (being written)",
+     "label": "Probe summary",
      "url": "/tmp/t299/probes-summary.txt"
     },
     {
-     "label": "Calendar gate fix",
-     "url": "/Users/adithyamurali/tantra-t299/cloud/src/agentic.ts"
+     "label": "Failing probe step",
+     "url": "/Users/adithyamurali/tantra-t299/app/scripts/probe-domain-chain.mjs"
     }
    ],
    "blockers": [],
@@ -15557,6 +15562,11 @@
      "ts": "2026-10-11T01:21:03+0530",
      "who": "claude",
      "note": "Not merged or live yet, and nothing was pushed, deployed or published. Merging main into the branch exposed a real bug (the calendar card refused more than one sender), now fixed in the gate and the service account job, and the four chain probes were out of date against main's newer centre and have been brought in line (branch t-299-vendor-inboxes at 4cb2f43 in /Users/adithyamurali/tantra-t299, app and cloud type checks clean). The four probes are rerunning on the private simulator stack (results in /tmp/t299/probes-summary.txt); the last domain-chain run before the fix was 38 pass, 1 fail. Left for the next pass: read the results and get all four green, merge main again if it moved, fast-forward main, push, deploy the centre Worker, publish the mirror, add the MERGED line to LOG.md."
+    },
+    {
+     "ts": "2026-10-11T16:16:36+0530",
+     "who": "claude",
+     "note": "Not merged, pushed or deployed yet: the four probes are not green. A fresh build now serves the several-senders calendar check, so the stale single-sender error is gone. probe-domain-chain still times out at its 'Check my inboxes' step (app/scripts/probe-domain-chain.mjs:187) because the vendor simulator on :8932 answers 404 to the /tantra/__inbox test hook, so the disconnected inbox never reaches Tantra GET /accounts. Next pass: start the simulator from the worktree's cloud/scripts/vendor-sim.py (or add the hook there), rerun /tmp/t299/run-probes.sh, fix day1 and day2 for the Title Case 'Describe Your Business' heading if they still stall, then do the approved merge, push, deploy, publish and LOG.md steps. Ripple from T-213: the Instantly watcher removal stays and the legacy campaign code is left to T-300, so nothing had to change."
     }
    ],
    "order": 2990
