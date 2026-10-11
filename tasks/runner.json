@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T22:35:27+0530",
+   "task_id": "T-285",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-285 is back in review, and nothing had to be deployed or published because the copy fixes (commit 78e6b4e) are already live on both the Worker and the mirror.\n\n- **Ancestry check (done):** 78e6b4e is included in every commit the Worker was deployed from (fa7f53d, af0a1d0, 95d8630e, 53326f5b, 605e4"
+  },
+  {
    "ts": "2026-10-11T22:33:05+0530",
    "task_id": "T-041",
    "mode": "feedback",
@@ -87,29 +95,21 @@
    "status": "review",
    "result": "ok",
    "summary": "T-151 is back in review. The triage agent scored 28/30 (93%) on 30 fresh real reports and 29/30 on the original batch. The guide link in the app and the PR 166 steps still need Bharath. Item by item:\n\n- **One queue:** done. Widget, form and team-channel reports land in the same queue (`test_widget_a"
-  },
-  {
-   "ts": "2026-10-11T17:11:10+0530",
-   "task_id": "T-061",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-061 is still blocked, but on a different input now. The Tantra key is saved in the live centre (T-337 is done). Creating the two lane campaigns also needs team@growthclub.org connected as a mailbox in the GrowthClub Tantra workspace, and it isn't yet. That's the same ask already on T-123 and T-228"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-285: Card copy fixes found while recording the walkthroughs",
- "task_id": "T-285",
+ "message": "Acting on 2 note(s) for T-070: What the Tantra backend does when a workshop seat or VIP is paid",
+ "task_id": "T-070",
  "entries": [
-  "F-c3d417eb"
+  "F-75036ce3",
+  "R-563592d2"
  ],
  "mode": "feedback",
- "started": "2026-10-11T22:33:16+0530",
+ "started": "2026-10-11T22:36:17+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
   "T-276": 1,
-  "T-285": 1,
   "T-295": 1,
   "T-226": 1,
   "T-299": 1,

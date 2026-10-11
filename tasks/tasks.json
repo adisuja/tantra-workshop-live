@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T22:33:10+0530",
-  "version": 2069,
+  "updated": "2026-10-11T22:36:32+0530",
+  "version": 2076,
   "last_id": 409,
   "team": [
    {
@@ -3311,6 +3311,16 @@
      "ts": "2026-10-11T22:33:10+0530",
      "who": "claude",
      "note": "The Cal.com embed now lives as patch adi-new-ui--5d6eecf642 with apply steps for Bharath in the tantra-product-patches README (pinned to cal.com/adisuja/tantra-enterprise-evaluation-call), and I removed the false 'switches within 10 minutes' line from the event draft. Checked today: the Chaperone grep of app/src/components is empty, probe-funnel-boards.mjs prints ALL BOARDS FIT against the mirror, and the mirror challenge board shows Tantra Enterprise 7 times and Chaperone 0. Creating the Cal.com event is Adi's input task T-398; Bhaskar and Bharath to approve the Enterprise copy."
+    },
+    {
+     "ts": "2026-10-11T22:34:50+0530",
+     "who": "claude",
+     "note": "Verify pass: everything checked out and nothing needed to change. The patch adi-new-ui--5d6eecf642 deletes calendly-embed.tsx, adds the Cal.com inline embed pinned to cal.com/adisuja/tantra-enterprise-evaluation-call, and its copy tests require 1 year with no $50M or testimonials. The README apply steps and the event draft are correct, and the false 10 minute claim is gone. git grep for Chaperone in app/src/components finds 0, probe-funnel-boards.mjs against the mirror prints ALL BOARDS FIT, and the mirror challenge board (https://adisuja.github.io/tantra-workshop-live/site/funnels/challenge/?v=t072v5) shows Tantra Enterprise 7 times and Chaperone 0. Bhaskar and Bharath to approve the copy; Adi's Cal.com event is T-398."
+    },
+    {
+     "ts": "2026-10-11T22:35:09+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-252, T-398."
     }
    ],
    "order": 440,
@@ -7512,25 +7522,84 @@
   },
   {
    "id": "T-140",
-   "status": "blocked",
+   "title": "Stage 1 to 3 guides: screenshots that can only be taken once their source exists",
+   "area": "Content",
    "owner": "Amal",
+   "priority": "P3",
+   "due": "2026-10-23",
+   "status": "blocked",
+   "why": "These slots show screens that do not exist yet (a real operator run, a live post, CRM test contacts). Claude captures each as its source appears.",
+   "spec": "Slots on main 2026-10-08: s1-blog #2 (Claude Code terminal running the Draft the Pillar Post prompt on real Day 1 notes; Claude can run it in Terminal on a demo engine file and capture) and #6 (a live published pillar post at phone width, once one is published); s3-tantra-pro-flow #5 (send in the contact's time zone), #13 (two test contacts tagged attended and not watched with message history), #14 (final step into the newsletter list): capture from the Tantra campaign or the starter CRM once T-120 settles which CRM the guide teaches. s1-social #3 (Canva) is T-260; s1-overview slots are T-115, T-135 and T-251.",
+   "done_when": [
+    "s1-blog #2 and #6 replaced with real captures",
+    "s3-tantra-pro-flow #5, #13 and #14 replaced",
+    "check-guides capture-needed down by 5"
+   ],
+   "evidence": [
+    {
+     "label": "Capture manifest rows 95 to 97",
+     "url": "scripts/walkthroughs/journeys/guide-t115-capture-manifest.md"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "Nothing new: covered by T-115's single batched ask (tracked as T-399). In that interactive Claude in Chrome session, capture s3-tantra-pro-flow 5, 13 and 14 per scripts/walkthroughs/journeys/guide-t115-capture-manifest.md.",
+   "log": [
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Added by Lane C at the owner's request: pending Stage 1 to 3 work, split by what unblocks it."
+    },
+    {
+     "ts": "2026-10-08T00:21:42+0530",
+     "who": "claude",
+     "note": "Task Command Center review: context updated. Dates stale (cohorts now run weekly from 7 Oct with Zoom cloud recordings via T-223); the reminder scheduler is now T-234. Slots still open on main: s1-blog 2, s1-social 1, s1-overview, s3-tantra-pro-flow."
+    },
+    {
+     "ts": "2026-10-08T00:48:49+0530",
+     "who": "claude",
+     "note": "Pass 2 (2026-10-08): pass 2: slot list refreshed from main; the old s1-social Zoom-clip and s3 step 7 items no longer exist."
+    },
+    {
+     "ts": "2026-10-10T16:35:34+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-10-03 was past; now 2026-10-23 (P3 rule)."
+    },
+    {
+     "ts": "2026-10-10T16:54:00+0530",
+     "who": "claude",
+     "note": "s1-blog steps 2 and 6 now have real captures: a real Claude Code run of the Draft the Pillar Post prompt on demo Day 1 notes, and the funnel /blog page at 390 px. Both were checked on the guide at phone width with no sideways scroll, and capture-needed dropped from 62 to 60. The T-120 blocker is removed. The three S3 Tantra shots (steps 5, 13, 14) need a signed-in Tantra session, so they are folded into T-115's sign-in ask. main was not pushed because it carries other lanes' unpublished commits, and the funnel's own /blog render made a mirror post unnecessary."
+    },
+    {
+     "ts": "2026-10-10T17:18:43+0530",
+     "who": "claude",
+     "note": "Verify pass: s1-blog steps 2 and 6 are real captures on main (commit f1db2ea), and both load on the guide at 390 px with no sideways scroll. check-guides is at 60 capture-needed (down 2 of 5). probe-guides light theme is ok at 1440, 1366, 768 and 390; the one 1024 fail is another lane's half-saved funnel-os.tsx. Steps 5, 13 and 14 of s3-tantra-pro-flow still need a Tantra session. ~/tantra-frontend-v2 exists, but it has no demo mode and every read goes to the backend, so it needs the same sign-in (T-115). The stale T-120 blocker is cleared. I did not push main or publish a demo post to the mirror: the push would carry other lanes' commits, and the 390 px capture already shows the funnel's own render."
+    },
+    {
+     "ts": "2026-10-11T11:44:33+0530",
+     "who": "claude",
+     "note": "s1-blog steps 2 and 6 are real captures already on origin/main (f1db2ea), so no main push or demo mirror post was needed; check-guides PASS at 57 capture-needed this run. s3-tantra-pro-flow steps 5, 13 and 14 still need a signed-in Tantra screen: this unattended run has no Claude in Chrome tools and Brave exposes no debug port, and T-115 is still blocked (not unblocked as the ripple said), so these three ride on T-115's existing one-session ask rather than a new one."
+    },
+    {
+     "ts": "2026-10-11T11:45:47+0530",
+     "who": "claude",
+     "note": "Verify pass: s1-blog steps 2 and 6 are real captures on main and origin/main (f1db2ea), and both load on the guide at 390 px with no sideways scroll; check-guides PASS at 57 capture-needed (3 of 5 still to go). s3-tantra-pro-flow steps 5, 13 and 14 are still capture_needed: this unattended run has no Claude in Chrome tools and no browser debug port, so the Tantra test contacts and campaign were not created. The ripple was wrong that T-115 is unblocked (it is still blocked on the same desktop session), so the ask stays folded into T-115."
+    },
+    {
+     "ts": "2026-10-11T11:46:54+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-399."
+    },
+    {
+     "ts": "2026-10-11T22:36:32+0530",
+     "who": "claude",
+     "note": "Per the Orchestrator, no capture retry from this runner. I confirmed s3-tantra-pro-flow 5, 13 and 14 are in T-115's capture manifest with URL, screen, blur selectors, WebP path and the capture_needed line, and updated row 13 so the session creates the two Adi test contacts (approved) and deletes them after (commit 74dcba55). check-guides PASS at 57 capture-needed; the stale ask now points to T-115/T-399."
+    }
+   ],
+   "order": 1382,
    "assignee": "Claude",
    "reviewers": [
     "Amal"
-   ],
-   "priority": "P3",
-   "due": "2026-10-23",
-   "area": "Content",
-   "order": 1382,
-   "title": "T-140: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [],
-   "held": true
+   ]
   },
   {
    "id": "T-141",
@@ -8034,7 +8103,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "",
+   "needs_from_owner": "Bharath applies workshop-plan/tantra-product-patches/tantra-webinar-deck/main--b3def23f6b.patch in Usetantra/tantra-webinar-deck and webinar-deck/main--097f6bd6a5.patch in Usetantra/webinar-deck with git am, then pushes main (steps in tantra-product-patches/README.md, T-148 section).",
    "log": [
     {
      "ts": "2026-09-26T00:17:50+0530",
@@ -8085,6 +8154,16 @@
      "ts": "2026-10-11T22:32:54+0530",
      "who": "claude",
      "note": "Rechecked read-only today: the revert brought the 404 back (root tantra-logo.png 404, uploads/tantra-logo.png 200, deck lines 83 and 348 still use the root path). Both patches apply cleanly with git am on scratch copies (cloning Usetantra repos is hook-blocked, so I used the live index.html and the pre-fix slide sources); the hub note is restored, index.html regenerated, AUDIT H038 says patch ready, reverted upstream, and apply steps for Bharath are in tantra-product-patches/README.md (commit dafd6b00, pushed to the workshop repo). Bharath: run the README T-148 steps."
+    },
+    {
+     "ts": "2026-10-11T22:35:54+0530",
+     "who": "claude",
+     "note": "Verify pass: confirmed again with read-only checks. The live cover still requests the root tantra-logo.png (404), while uploads/tantra-logo.png returns 200. Both patches apply cleanly with git am on scratch copies and leave no url('tantra-logo.png'). The hub note, AUDIT H038 ('patch ready, reverted upstream') and README apply steps for Bharath are all in commit dafd6b00 on main. Nothing was written to any Usetantra repo."
+    },
+    {
+     "ts": "2026-10-11T22:36:10+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-152."
     }
    ],
    "order": 1480,
@@ -15033,12 +15112,12 @@
    ],
    "evidence": [
     {
-     "label": "Live mirror chunk",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/_next/static/chunks/3gni33e2k693m.js?v=1791698179"
+     "label": "Live Worker chunk",
+     "url": "https://revops-centre.growthcluborg.workers.dev/_next/static/chunks/1sz2rab_-j-4n.js?v=1791700000"
     },
     {
-     "label": "Live Worker chunk",
-     "url": "https://revops-centre.growthcluborg.workers.dev/_next/static/chunks/2s5krkg0n28bt.js?v=1791698179"
+     "label": "Live mirror chunk",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/_next/static/chunks/43fq5cdzevd66.js?v=1791700000"
     },
     {
      "label": "workshop-cards.ts",
@@ -15071,6 +15150,11 @@
      "ts": "2026-10-11T11:26:19+0530",
      "who": "claude",
      "note": "The card copy fixes (commit de7e475e) are already live. I fetched the deployed revops-centre Worker chunk and the published mirror chunk (cache-busted) and both show Metricool /register, WebinarGeek /register, HubSpot Development, Keys, Service keys and Wistia API Home. I made no redeploy or publish because both already run builds that contain the fix (Worker from af0a1d0, mirror from e66dda5). Shipping origin/main now would also release other lanes' unrelated changes. Checks run today: check-guides PASS with exit 0 (the 4 T-257 image-size failures are gone), check-examples 641/0 failing, check-walkthroughs 12 ok, tsc clean for app and cloud. The probe-stack day2 funnel failure is a precondition problem outside this task. Per tool: WebinarGeek Webinar ID from the API reference icon and /register. Metricool /register. Cal.com New. GA4 account level. GoHighLevel UI scope labels and pipelines scopes, plus the Labs toggle. HubSpot service key, Development, Keys, Service keys, eight scopes. Wistia Settings, API Home. Stripe sandbox and the two-step check. Zoom longer authenticated label. Kie.ai $0.03 to $0.08. Twilio emailed code. Tantra service account plus Accounts, Verify & Add."
+    },
+    {
+     "ts": "2026-10-11T22:35:19+0530",
+     "who": "claude",
+     "note": "No deploy or publish was needed: 78e6b4e is inside every Worker and mirror source since (fa7f53d, 95d8630e, 53326f5b; 26dc888, 9ea3b9a0), and today's live Worker ac309aa8 and the mirror both show WebinarGeek /register, HubSpot Development, Keys, Service keys (eight scopes) and Kie.ai $0.03 to $0.08. check-examples 641/0, check-walkthroughs 12 ok, check-guides PASS (the T-257 image-size failures are gone), tsc app and cloud clean; logged in tantra-round5-coord/LOG.md (not a git repo, so nothing to push). Per tool: WebinarGeek ID and /register, Metricool /register, Cal.com New, GA4 account level, GoHighLevel scope labels and Labs toggle, HubSpot service key, Wistia API Home, Stripe sandbox and two-step check, Zoom label, Kie.ai price, Twilio emailed code, Tantra service account plus Verify & Add."
     }
    ],
    "order": 2850
@@ -15256,7 +15340,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "A crash-looping launchd job and a public tunnel to nothing are leftover attack surface and noise for a tool the owner ruled out.",
    "spec": "Namecheap was ruled out on 2026-10-07 and round 6 deleted cloud/relay/namecheap-relay.py, but the two launchd jobs that ran it are still loaded: com.tantra.revops-relay (port :8793, python3 on the deleted script, exit status 2) and com.tantra.revops-relay-tunnel (a running cloudflared tunnel that now fronts nothing). Do: (1) launchctl bootout gui/$(id -u)/com.tantra.revops-relay and the same for com.tantra.revops-relay-tunnel; (2) move both plists out of ~/Library/LaunchAgents (delete them); (3) confirm nothing else uses :8793 or the tunnel hostname (git grep for the port and for REVOPS_RELAY or relay URL settings in cloud/ and app/; cloud/src/connectors/relay.ts only exports hmacHex, which agentic.ts still imports, so keep that file or move hmacHex first); (4) remove the two jobs from the list in T-006 (runbook) so it reports 14 jobs, and cancel the tunnel's cloudflared quick-tunnel log.",
    "done_when": [
@@ -15274,11 +15358,11 @@
      "url": "/Users/adithyamurali/tantra-backups/2026-10-09/"
     },
     {
-     "label": "Commit (relay cleanup)",
+     "label": "Commit on origin/main (relay cleanup)",
      "url": "aad13c1"
     },
     {
-     "label": "Commit (trycloudflare removed)",
+     "label": "Commit on origin/main (trycloudflare removed)",
      "url": "361e8e5c"
     }
    ],
@@ -15304,6 +15388,11 @@
      "ts": "2026-10-11T11:24:27+0530",
      "who": "claude",
      "note": "Rechecked on disk: launchctl list has no revops-relay, both plists are gone from LaunchAgents (backups in ~/tantra-backups/2026-10-09/*.DISARMED), no revops cloudflared process, up.sh --check shows both retired jobs not loaded (0 failed). I removed the last trycloudflare hit, the allowedDevOrigins line in app/next.config.ts, because no quick tunnel runs anymore. git grep in cloud/ and app/ for 8793, REVOPS_RELAY, relay_url and trycloudflare now returns nothing (hmacHex kept), and tsc is clean in cloud/ and app/ (commit 361e8e5c). Not pushed: origin/main has another lane's commit that main lacks, so pushing would need a merge into a shared dirty tree; it goes out with the next whole-main publish (aad13c1 is already on origin). The runbook says 19 active plists, not 14, because other lanes added jobs since; the relay pair is only in the retired section. Key files in ~/.config/tantra are left alone."
+    },
+    {
+     "ts": "2026-10-11T22:35:39+0530",
+     "who": "claude",
+     "note": "No push was needed: after git fetch, origin/main (f7ffea17) already contains aad13c1 and 361e8e5c, so I skipped the cherry-pick. Re-checked today: launchctl list | grep revops-relay prints nothing, no relay plists in ~/Library/LaunchAgents (the 4 revops plists left are centre-dev, funnel-preview, runner, sim), up.sh --check says 0 failed, 1 warning. git grep in cloud/ and app/ for 8793, REVOPS_RELAY, relay_url and trycloudflare finds nothing, and npx tsc --noEmit in cloud/ exits 0. All three done-when lines are met. ~/.config/tantra relay keys and ~/.cloudflared/revops/ were left alone."
     }
    ],
    "order": 2890

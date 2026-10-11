@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T22:35:45+0530",
+   "task_id": "T-289",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-289 is done. I didn't push anything because origin/main already had commits aad13c1 and 361e8e5c, so there was nothing to cherry-pick.\n\n- **Push aad13c1:** not needed. `git fetch` shows origin/main (f7ffea17) already contains aad13c1 and 361e8e5c.\n- **Relay jobs not in launchctl:** `launchctl list"
+  },
+  {
+   "ts": "2026-10-11T22:35:03+0530",
+   "task_id": "T-072",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-072 is in review for Bhaskar and Bharath. I re-checked every item from scratch and found no gaps, so I changed no files.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| /enterprise uses a Cal.com embed with no Calendly script, as a patch | Done | The patch `adi-new-ui--5d6eecf642` dele"
+  },
+  {
    "ts": "2026-10-11T22:30:23+0530",
    "task_id": "T-157",
    "mode": "feedback",
@@ -79,38 +95,20 @@
    "status": "done",
    "result": "ok",
    "summary": "I closed T-246 as done: no attendee funnel was ever deployed from production, so nothing runs the old worker and there was nothing to redeploy or check.\n\n1. **Counts:** I signed in with the admin key and read `/admin/api/attendees`. There are 26 attendees and all 26 are test accounts; the overview s"
-  },
-  {
-   "ts": "2026-10-11T18:20:21+0530",
-   "task_id": "T-237",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-237 stays in review. I re-checked everything in this run, found nothing new to fix, and changed no code.\n\n| Item | State | What I checked in this run |\n|---|---|---|\n| Public sign-up registers into the webinar and returns the person's own join link | Done | Probe passes on a fresh local stack. On "
-  },
-  {
-   "ts": "2026-10-11T18:13:57+0530",
-   "task_id": "T-397",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "ok",
-   "summary": "T-397 stays in queue with Nelbin. The call with Endy hasn't happened yet, so nothing needed changing on disk this run.\n\n- **Brief covers all four items:** done. `workshop-plan/ops/endy-call-brief.md` has the lead address question, the proposed 20% recurring share, delivery through the service accoun"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-072",
+ "task_id": "T-140",
  "entries": [
-  "F-ff05cf0b",
-  "R-119db726"
+  "F-ca7d668d"
  ],
- "started": "2026-10-11T22:31:26+0530",
- "message": "Acting on 2 note(s) for T-072: Tantra Enterprise ($9,999): move the booking page to Cal.com and retire 'Chaperone'",
+ "started": "2026-10-11T22:36:07+0530",
+ "message": "Acting on 1 note(s) for T-140: Stage 1 to 3 guides: screenshots that can only be taken once their source exists",
  "slices": {
   "T-135": 1,
   "T-148": 1,
   "T-252": 1,
-  "T-289": 1,
   "T-300": 2,
   "T-240": 1,
   "T-242": 2,
