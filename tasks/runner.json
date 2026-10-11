@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T11:00:57+0530",
+   "task_id": "T-380",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "ok",
+   "summary": "I couldn't trash the two projects, so T-380 is back in the queue with Nelbin. Nothing in the Apps Script account was changed.\n\nThis run again had no Claude in Chrome tool, and no Brave or Chrome window was open for remote control. (Port 9222 answered, but it was wrangler, not a browser.) So I couldn"
+  },
+  {
    "ts": "2026-10-11T10:56:37+0530",
    "task_id": "T-121",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-246 is in review: the live centre has no deployed attendee funnels at all, so nothing was redeployed and no unsigned Zoom check could be sent.\n\nCOMPLETION CHECK\n1. **Export and list funnels deployed before 2026-10-07 22:24 IST: done.** `GET /admin/api/export` answered 200 this run (it was 500 on 2"
-  },
-  {
-   "ts": "2026-10-11T07:09:51+0530",
-   "task_id": "T-237",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-237 is in review. The verify pass found one fault, which is fixed and committed locally (a67da2c) but not deployed. `ack F-74af7720` returned \"acked 0\", which I read as the previous run having already acknowledged it.\n\n**COMPLETION CHECK** (evidence from this run)\n\nDone_when\n1. **Public sign-up re"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-380: Trash two undeployed 'Tantra funnel forms receiver' Apps Script projects (boards@fintechcircle.com)",
- "task_id": "T-380",
+ "message": "Acting on 1 note(s) for T-073: Cut session recordings into the Tantra Pro course",
+ "task_id": "T-073",
  "entries": [
-  "F-0abf4261"
+  "F-04b63b02"
  ],
  "mode": "feedback",
- "started": "2026-10-11T10:57:27+0530",
+ "started": "2026-10-11T11:02:05+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
