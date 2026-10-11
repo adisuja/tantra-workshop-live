@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T02:43:35+0530",
-  "version": 2252,
+  "updated": "2026-10-12T02:44:53+0530",
+  "version": 2255,
   "last_id": 415,
   "team": [
    {
@@ -7392,7 +7392,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Nothing new: covered by T-115's single batched ask, tracked as T-399 (one desktop session with Claude in Chrome on the already signed-in Brave profile). When it arrives, Claude captures s3-tantra-pro-flow steps 5, 13 and 14 from the manifest rows.",
+   "needs_from_owner": "Tracked on T-410 (T-399 was closed as a duplicate), same sitting as T-115 (T-384): Act on T-115, T-339 and T-140.",
    "log": [
     {
      "ts": "2026-09-25",
@@ -7453,6 +7453,16 @@
      "ts": "2026-10-11T22:38:20+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-115."
+    },
+    {
+     "ts": "2026-10-12T02:44:22+0530",
+     "who": "claude",
+     "note": "Housekeeping only, per the Orchestrator: the Asked of Adi text now points at T-410 and the T-115 sitting (T-384), and T-384's ask now says 'Act on T-115, T-339 and T-140'. Manifest rows 95 to 97 and T-399 left unchanged; s3-tantra-pro-flow 5, 13 and 14 still wait on that one desktop session."
+    },
+    {
+     "ts": "2026-10-12T02:44:53+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-384."
     }
    ],
    "order": 1382,
@@ -17271,12 +17281,17 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Open the Claude Code desktop app, start a session with Claude in Chrome connected to the Brave profile adi@growthclub.org, and type: Act on T-115. Optional in the same sitting: open https://admin.google.com/ac/users and type your Google password in the 'Enter your password' field (T-348).",
+   "needs_from_owner": "Open the Claude Code desktop app, start a session with Claude in Chrome connected to the Brave profile adi@growthclub.org, and type: Act on T-115, T-339 and T-140. Optional in the same sitting: open https://admin.google.com/ac/users and type your Google password in the 'Enter your password' field (T-348).",
    "log": [
     {
      "ts": "2026-10-10T20:22:00+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-115."
+    },
+    {
+     "ts": "2026-10-12T02:44:22+0530",
+     "who": "claude",
+     "note": "Ask now names T-140 too, so T-384 and T-410 carry the same sentence (Orchestrator decision on T-140)."
     }
    ],
    "order": 3840,

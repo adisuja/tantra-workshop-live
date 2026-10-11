@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T02:44:46+0530",
+   "task_id": "T-140",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-140 is still blocked on the one desktop session. This run only updated the board; the three Tantra screenshots are still not taken.\n\n- **T-140's ask to Adi:** done. It now reads \"Tracked on T-410 (T-399 was closed as a duplicate), same sitting as T-115 (T-384)\". I didn't use the exact wording the "
+  },
+  {
    "ts": "2026-10-12T02:43:19+0530",
    "task_id": "T-252",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "turns",
    "summary": "Stopped at the 70-minute wall clock for one run; the work so far is committed and the next run continues. Last report: The funnel is up. Now I'll rerun the webinar walker, detached."
-  },
-  {
-   "ts": "2026-10-11T23:48:54+0530",
-   "task_id": "T-299",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-299 is still in doing: nothing was merged, pushed, deployed or published, because three of the four probes still fail.\n\nThe disconnected-inbox issue the Orchestrat"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-140",
+ "task_id": "T-148",
  "entries": [
-  "F-40b33294"
+  "F-70acb352"
  ],
- "started": "2026-10-12T02:44:07+0530",
- "message": "Acting on 1 note(s) for T-140: Stage 1 to 3 guides: screenshots that can only be taken once their source exists",
+ "started": "2026-10-12T02:45:59+0530",
+ "message": "Acting on 1 note(s) for T-148: Webinar deck v3: the Tantra logo image is missing (404)",
  "slices": {
   "T-135": 1,
   "T-148": 1,
