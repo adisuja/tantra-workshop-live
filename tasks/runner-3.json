@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T12:03:03+0530",
+   "task_id": "T-033",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "I re-checked T-033 from scratch and it stays blocked. The only thing missing is Adi's Tantra API key (T-337) plus the WhatsApp number he's been asked for in T-400. I found nothing to fix and changed no code.\n\n**COMPLETION CHECK**\n- **Real T-032 link source (`/o/<token>` and `.pdf`):** done. `render_"
+  },
+  {
    "ts": "2026-10-11T11:52:22+0530",
    "task_id": "T-234",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. I re-checked T-096 and it works on the live admin. It is back in review: Nelbin still has to walk the admin table and confirm, which only they can do.\n\n| Item | Stat"
-  },
-  {
-   "ts": "2026-10-11T08:42:39+0530",
-   "task_id": "T-156",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-033",
+ "task_id": "T-227",
  "entries": [
-  "F-6f1aa315",
-  "R-304dd592"
+  "F-bfa6088c"
  ],
- "started": "2026-10-11T11:53:17+0530",
- "message": "Acting on 2 note(s) for T-033: WhatsApp + email delivery automation",
+ "started": "2026-10-11T12:05:34+0530",
+ "message": "Acting on 1 note(s) for T-227: Google Calendar invites: save the organiser's service account and authorise it for Calendar",
  "slices": {
   "T-135": 1,
   "T-148": 1,
