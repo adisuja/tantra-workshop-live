@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T02:47:01+0530",
-  "version": 2258,
+  "updated": "2026-10-12T02:49:00+0530",
+  "version": 2261,
   "last_id": 415,
   "team": [
    {
@@ -1891,11 +1891,11 @@
     },
     {
      "label": "Live delivery status (admin)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/api/delivery?v=t033r4"
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/api/delivery?v=t033r5"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Waits on T-123 (connect team@growthclub.org as a mailbox in the GrowthClub Tantra workspace) and T-400 (WhatsApp connect and test number). Nothing to answer here.",
+   "needs_from_owner": "Waits on T-123 (the new non-main-domain sending mailbox Adi is choosing; once it exists, email goes out via that mailbox or Resend on that domain) and T-400 (the WhatsApp test number only; the connector already shows Connected). Nothing to answer here.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -1991,6 +1991,11 @@
      "ts": "2026-10-12T01:42:36+0530",
      "who": "claude",
      "note": "Adi gave the Tantra campaigns API key (2026-10-12). Saved sealed in the centre (admin settings tantra_key) and in ~/.config/tantra/keys/tantra-api.env (never in a repo). Verified: GET https://api.usetantra.com/api/v1/campaigns with header x-api-key returns 200 (1 campaign). The Tantra key is no longer a blocker."
+    },
+    {
+     "ts": "2026-10-12T02:49:00+0530",
+     "who": "claude",
+     "note": "Live centre now has delivery_email_via=resend (re-read via /admin/api/delivery), and a delivery run stops cleanly with nothing sent. Tantra WhatsApp shows Connected (account 6acbd96d, running). No test email went out because no Resend key exists on the Worker, the centre or ~/.config/tantra, and Adi's 12 Oct rule needs a sender on the new non-main domain (T-123). No WhatsApp campaigns were created because T-400 still needs the test number, which the Tantra API does not expose. No code changed."
     }
    ],
    "order": 230,
@@ -8763,11 +8768,11 @@
    "evidence": [
     {
      "label": "Free join page (no prices)",
-     "url": "http://localhost:4377/workshop/join?v=t157e"
+     "url": "http://localhost:4377/workshop/join?v=t157f"
     },
     {
      "label": "Paid join page",
-     "url": "http://localhost:4377/masterclass/success/join?v=t157e"
+     "url": "http://localhost:4377/masterclass/success/join?v=t157f"
     },
     {
      "label": "Qualifier probe",
@@ -8857,6 +8862,11 @@
      "ts": "2026-10-12T02:46:48+0530",
      "who": "claude",
      "note": "Reconciled with T-252: the four one-pagers, the qualifier answers and result copy no longer state account counts or trial length (T-252 left 5/15 vs 2/12 open), keep $20 per extra account per Adi's pricing rule (the catalog's $10 is not settled either), add Pro $999/yr, and fix the Enterprise line (live page still uses Calendly; Cal.com is only a patch). Blockers cleared, probe-tier-qualifier.mjs passes 16 of 16 on a fresh dev server; the Apps Script health GET still lists 6 forms, so the probe row and mirror publish stay held on T-409. Bhaskar posts the experiments; open http://localhost:4377/workshop/join?v=t157e and http://localhost:4377/masterclass/success/join?v=t157e (run npx next dev -p 4377 in app/)."
+    },
+    {
+     "ts": "2026-10-12T02:48:19+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-12: probe-tier-qualifier.mjs passes 16 of 16 on a fresh server (free lane shows no price, paid lane does), blockers and the ask to Adi are empty, and the one-pagers and qualifier copy leave out the unsettled account counts and trial length. Extra accounts stay at $20 because T-252 never settled $10 and Adi's standing rule says +$20. The Apps Script health GET still lists 6 forms with no tier_qualifier, so the probe row and mirror publish wait on T-409. Open http://localhost:4377/workshop/join?v=t157f and http://localhost:4377/masterclass/success/join?v=t157f (run npx next dev -p 4377 in app/)."
     }
    ],
    "order": 1570,

@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T02:48:28+0530",
+   "task_id": "T-157",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-157 is back in review after a fresh verify pass. Nothing new had to change on disk, so I made no commit. Bhaskar and Bharath are already its reviewers.\n\n- **Stale blockers:** done. Both blockers and the ask to Adi are empty in tasks.json.\n- **One-pagers, qualifier copy and spec:** done.\n  - **Acco"
+  },
+  {
    "ts": "2026-10-12T02:43:20+0530",
    "task_id": "T-398",
    "mode": "feedback",
@@ -87,27 +95,18 @@
    "status": "blocked",
    "result": "turns",
    "summary": "I deployed the parser fix live, but the live test-run still couldn't run, so T-265 is blocked again. This time it needs a Cloudflare token from Adi.\n\n- **Re-enable attendee 60 and read its enter link:** done. I signed in with the owner key, sent the PATCH with `{revoked:false,test:true}`, and the GE"
-  },
-  {
-   "ts": "2026-10-12T00:22:51+0530",
-   "task_id": "T-263",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "I've moved T-263 to blocked. Everything checks out except the live Tantra sender check, which needs a FintechCircle Tantra API key that isn't on this machine. Nothing in the repo needed fixing, so there was nothing to commit.\n\n| Item | State |\n|---|---|\n| Event ending after midnight gets the next da"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-157: Three products: define SaaS / Pro / Enterprise, one traffic experiment each, tier qualifier in every funnel",
- "task_id": "T-157",
+ "message": "Acting on 1 note(s) for T-108: Animated funnels in the playbook: the three main funnels, the Whole Machine and the 17 other types",
+ "task_id": "T-108",
  "entries": [
-  "F-883c38d0"
+  "F-114db9c9"
  ],
  "mode": "feedback",
- "started": "2026-10-12T02:43:54+0530",
+ "started": "2026-10-12T02:49:23+0530",
  "slices": {
   "T-156": 1,
-  "T-157": 1,
   "T-276": 1,
   "T-295": 1,
   "T-226": 1,
