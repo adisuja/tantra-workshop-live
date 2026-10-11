@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T16:03:35+0530",
-  "version": 1943,
+  "updated": "2026-10-11T16:07:44+0530",
+  "version": 1944,
   "last_id": 406,
   "team": [
    {
@@ -15000,12 +15000,12 @@
    ],
    "evidence": [
     {
-     "label": "Local admin, AI connections tab (connections 1 and 3)",
-     "url": "http://localhost:8790/admin/?v=t292#connections"
+     "label": "Probe chain summary (private stack, main 4f04c5cd)",
+     "url": "file:///tmp/t292-chain/summary.txt"
     },
     {
-     "label": "Live admin, AI connections tab (empty)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=t292#connections"
+     "label": "Local admin, AI connections",
+     "url": "http://localhost:8790/admin/?v=t292c#connections"
     }
    ],
    "blockers": [],
@@ -15055,6 +15055,11 @@
      "ts": "2026-10-11T13:05:39+0530",
      "who": "claude",
      "note": "Live key ask moved to its own task T-404 (owner Adi). Commit 2c3323a is merged on main as 064e2b7c (not pushed yet). The local probe chain run failed because every centre probe still signed in by GET ?k=, which T-272 removed, so I fixed that in d14448a9 (app/scripts/admin-sign-in.mjs, POST sign-in). Left: rerun bash app/scripts/run-chain.sh quick on a private stack at main HEAD, then push main (no force), run build.sh and wrangler deploy, do a read-only check of the live AI connections list, and mark done."
+    },
+    {
+     "ts": "2026-10-11T16:07:44+0530",
+     "who": "claude",
+     "note": "Not deployed yet, because the local probe chain has to pass first. On a private stack at main 4f04c5cd, export, both tsc checks and every static check pass. That includes check-playbook-anchors, which was failing on main until I gave card d3-live-key an anchor in 4f04c5cd. Two probes still fail: probe-domain-chain stops at line 43 because the first preview card's Mark done is disabled (likely a session card with no published link in the fresh private database), and probe-day1 fails as a knock-on. Left: fix that walk (seed the session links or skip disabled cards), rerun bash app/scripts/run-chain.sh quick from /private/tmp/t292-wt, then build.sh and wrangler deploy. Commits 064e2b7c and d14448a9 are already on origin/main, the live AI connections list was 0 at 15:57 today, and the key ask is on T-404."
     }
    ],
    "order": 2920
