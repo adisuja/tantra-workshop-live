@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T08:35:39+0530",
-  "version": 1817,
+  "updated": "2026-10-11T08:49:55+0530",
+  "version": 1818,
   "last_id": 397,
   "team": [
    {
@@ -12157,28 +12157,16 @@
    ],
    "evidence": [
     {
-     "label": "Live guide: follow-ups, step 2 (open from your centre link first)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/guides/s5-follow-ups/?v=t259"
+     "label": "Local guide: follow-ups",
+     "url": "http://localhost:4322/debug/guides?only=s5-follow-ups&v=t259c"
     },
     {
-     "label": "Live guide: extra pipelines",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/guides/s5-extra-pipelines/?v=t259"
+     "label": "Local guide: CRM starter",
+     "url": "http://localhost:4322/debug/guides?only=s5-crm-starter&v=t259c"
     },
     {
-     "label": "Live guide: challenge stages, step 2",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/guides/s5-challenge-stages/?v=t259"
-    },
-    {
-     "label": "Live guide: S2 funnel (prompt at the end)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/guides/s2-tantra-pro-funnel/?v=t259"
-    },
-    {
-     "label": "Local preview: follow-ups guide",
-     "url": "http://localhost:4399/debug/guides?only=s5-follow-ups&v=t259"
-    },
-    {
-     "label": "Pack generator",
-     "url": "cloud/src/pack-followups.ts"
+     "label": "Live guide: follow-ups",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/guides/s5-follow-ups/?v=t259c"
     },
     {
      "label": "Audit rows marked fixed",
@@ -12207,6 +12195,11 @@
      "ts": "2026-10-10T01:39:04+0530",
      "who": "claude",
      "note": "All six audit findings are closed: the S2 and S5 guides now say what the centre already does (relabelled S2 prompt, crm-setup pipelines, Day 2 drafts, Zoom attendance tags), and your Funnel OS pack now carries a follow-ups/ folder built on the server from approved answers. Steps with no approved copy are marked To write in that folder (the pack does not AI-draft them). Verified with check-guides, probe-guides and probe-flows (all pass) and the live guide pages; merged and pushed to main fa4792b, centre Worker ef0ec7ce deployed without T-261 or T-262. Open the follow-ups guide, step 2."
+    },
+    {
+     "ts": "2026-10-11T08:49:55+0530",
+     "who": "claude",
+     "note": "Close-out check on current main: cf3d5ff is on origin/main and the guide and pack files have no uncommitted edits. check-guides PASS (24 guides, 195 steps); probe-guides PASS on all five guides (s5-follow-ups, s5-extra-pipelines, s5-challenge-stages, s2-tantra-pro-funnel, s5-crm-starter, at 1440 and 390); probe-flows PASS (24 charts static, 0 problems, plus rendered). s5-crm-starter is fine as it is: its only prompt reads the built-in Worker CRM through /api/contacts and builds no local CRM. AUDIT.md already marks X090, X103, X104, X105 and G070 fixed in cf3d5ff and X102 in b880b67, so nothing new was committed or pushed. Open the follow-ups guide, step 2."
     }
    ],
    "order": 2590
