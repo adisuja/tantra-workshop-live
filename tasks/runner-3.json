@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T03:28:03+0530",
+   "task_id": "T-151",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-151 stays in review with reviewers Amal and Bharath. Bharath's note is posted, F-0c38db2a is acked, and I didn't commit or push because nothing in the intake folder or the patch differed from origin/main.\n\n1. **Fetch:** done. A read-only fetch shows the backend's development branch still at f0b901"
+  },
+  {
+   "ts": "2026-10-12T03:26:26+0530",
+   "task_id": "T-223",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-223 stays in review: the spec already had every change the Orchestrator asked for, production still shows no real sign-up, and nothing needed rebuilding.\n\n| Item | State and evidence from this run |\n|---|---|\n| 1. Spec ripple | **Done.** The spec says 51c7ee1 is on origin/main, is live on Worker 9"
+  },
+  {
    "ts": "2026-10-12T03:23:45+0530",
    "task_id": "T-228",
    "mode": "feedback",
@@ -79,32 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-148 is in review with Bharath and Bhaskar; the deck's cover logo is still broken live until Bharath applies the two patches.\n\n| Item | State |\n|---|---|\n| Live state (checked today, read-only) | Root `tantra-logo.png` still returns 404; `uploads/tantra-logo.png` returns 200 |\n| Published deck patc"
-  },
-  {
-   "ts": "2026-10-12T02:44:46+0530",
-   "task_id": "T-140",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-140 is still blocked on the one desktop session. This run only updated the board; the three Tantra screenshots are still not taken.\n\n- **T-140's ask to Adi:** done. It now reads \"Tracked on T-410 (T-399 was closed as a duplicate), same sitting as T-115 (T-384)\". I didn't use the exact wording the "
-  },
-  {
-   "ts": "2026-10-12T02:43:19+0530",
-   "task_id": "T-252",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I re-checked the earlier work: the correction is on disk and T-252 is back in review with the T-072 ripple (note R-7faa9568) handled. Nothing needed fixing, so I changed no files and made no commit.\n\n**Completion check (all checked this run):**\n- **No claim that `/enterprise` switched to Cal.com: do"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-223",
+ "task_id": "T-158",
  "entries": [
-  "F-9165bee2"
+  "F-a5eb6136"
  ],
- "started": "2026-10-12T03:24:32+0530",
- "message": "Acting on 1 note(s) for T-223: Zoom Pro meetings in the centre: per-cohort meeting, presentation room, cap and waitlist, live board, attendance",
+ "started": "2026-10-12T03:28:20+0530",
+ "message": "Acting on 1 note(s) for T-158: Pipeline dashboard modelled on a client's webinar desk",
  "slices": {
   "T-135": 1,
   "T-300": 2,
