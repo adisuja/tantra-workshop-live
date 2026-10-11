@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T02:11:03+0530",
-  "version": 2222,
+  "updated": "2026-10-12T02:11:46+0530",
+  "version": 2224,
   "last_id": 413,
   "team": [
    {
@@ -7629,6 +7629,11 @@
      "ts": "2026-10-09T17:32:41+0530",
      "who": "claude",
      "note": "Review tab regenerated and published (main 01781df, mirror 99456e1): 379 elements. The link probe first failed on 96 templates that have no client example (the live library no longer renders them), so those are now source only, and the VIP ticket, mechanism picker and Build guides links were repointed; probe-review-hub on the live hub now reports ALL LINKS OK (423 links and anchors), the source check on main is 374 links with 0 bad, and the denylist and figures guard found nothing. Open the Review tab link and start the one by one review; two things found outside this task: the public board copy on the mirror is stuck at v1103 because the shared live/ clone cannot rebase, and /onboarding#d1-mechanism lands on Welcome instead of the picker."
+    },
+    {
+     "ts": "2026-10-12T02:11:46+0530",
+     "who": "claude",
+     "note": "Ripple from T-273 checked: the b-pass element already reads Two-Month Platform Pass in review_hub.py and in the committed index.html, the live mirror shows it with no '1 month, worth $99', and this task's spec and notes never carried the old wording, so nothing had to change. Regenerating only shuffled the repo file list, so I left index.html as committed; probe-review-hub.mjs reports ALL LINKS OK (423 links and anchors). Open https://adisuja.github.io/tantra-workshop-live/?v=t144r2#review and continue the one by one review."
     }
    ],
    "order": 1440,
