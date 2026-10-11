@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T08:05:24+0530",
-  "version": 1798,
+  "updated": "2026-10-11T08:12:28+0530",
+  "version": 1802,
   "last_id": 397,
   "team": [
    {
@@ -3832,7 +3832,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Open https://revops-centre.growthcluborg.workers.dev/admin/?v=t096 (sign in at /admin/enter with the key in ~/.config/tantra/revops-admin-key), Attendees, Devices column, and confirm the flag and per-attendee override.",
+   "needs_from_owner": "Open https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t096 and paste the owner key (~/.config/tantra/revops-admin-key) into the sign-in form (old ?k= links no longer sign in), then Attendees, Devices column, and confirm the flag and per-attendee override.",
    "log": [
     {
      "ts": "2026-09-23",
@@ -12813,7 +12813,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "doing",
    "why": "Zoom Pro is approved and the cohort runs weekly; Zoom users currently see WebinarGeek-only instructions and the next run is copied by hand.",
    "spec": "Check the WebinarGeek API for base webinar, polls, CTA and replay settings (X057 UNVERIFIED); add a Zoom live-room card (polls, recording, CTA) and a challenge equivalent, gate WebinarGeek steps on ev_platform, give challenge per-day timing, replace the solo pitch example, and have event-setup schedule each weekly cohort broadcast so s4-webinar step 14 becomes auto. Closes audit findings X057, X058, X095, X096, G039, N043, N044, N045, N046. Per finding: X057 (app/src/lib/workshop-cards.ts): Confirm against WebinarGeek API docs; if a create endpoint exists, have event-setup create the base webinar. X058 (app/src/lib/workshop-cards.ts): Confirm WebinarGeek API for these; where none exists keep the card but steer Zoom users to Zoom polls via API. X095 (app/src/content/guides/s4-conversion/s4-webinar.ts): Mirror whatever automation lands for d2-live-room; otherwise mark these steps as the human ones. X096 (app/src/content/guides/s4-conversion/s4-webinar.ts): Have event-setup schedule the next weekly cohort broadcast on the same webinar automatically. G039 (app/src/content/guides/s4-conversion/s4-webinar.ts): Have event-setup create each week's broadcast for the rolling cohort and add an auto block to step 14. N043 (app/src/lib/workshop-cards.ts): Give challenge its own per-day timing in steps and drop 'set up the live room' from the title. N044 (app/src/lib/workshop-cards.ts): Add a Zoom live-room card (polls, recording, CTA) and a challenge equivalent. N045 (app/src/lib/workshop-cards.ts): Gate the WebinarGeek step on ev_platform and add a Zoom version. N046 (app/src/lib/workshop-cards.ts): Replace the solo example with a webinar or challenge pitch. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Context: attendee Zoom runs on Zoom Pro MEETINGS (a webinar is one type 2 meeting, a challenge one recurring meeting; design in docs/onboarding-v3/analysis/zoom-pro-meetings.md, code cloud/src/zoom-pro.ts and connectors/build.ts roomSettings()), so the Zoom live-room card (N044) sets meeting polls, cloud recording and the offer link on a Pro meeting, not a Zoom Webinar. d2-live-room is already gated to ev_platform WebinarGeek; N045 is the d2-dryrun step 2 WebinarGeek text. The WebinarGeek API capability checks (X057, X058: base webinar create, polls, CTA, replay) run on a free or test account as part of T-253. Merge order: build on main after T-251 lands (branch tantra-walkthroughs: e4bd0b8 removes the ruled-out tools and rewrites workshop-cards.ts, agentic.ts, jobs.ts, agent.tsx and coverage.json; probe fixes 043b5ab and aa22a3f, no READY yet in /Users/adithyamurali/tantra-round5-coord/LOG.md). Until then branch from tantra-walkthroughs; AUDIT.md line numbers predate that change.",
    "done_when": [
@@ -12853,6 +12853,11 @@
      "ts": "2026-10-10T02:07:51+0530",
      "who": "claude",
      "note": "Zoom attendees and challenges now get a Zoom Pro live-room card (polls by hand in Polls/Quizzes, offer link in the chat, cloud recording already set); d2-live has challenge per-day timing and a webinar pitch example; dry run is platform-neutral. event-setup now schedules the next 4 weekly runs (WebinarGeek broadcasts or Zoom Pro meetings, keeps 11:00 ET across clock changes) and s4-webinar step 14 has an auto block. docs.webinargeek.com has no create-webinar, polls, CTA or replay endpoint, so those stay manual cards (live check stays with T-253). probe-t268 ALL PASS in the simulator, tsc clean, pushed main f6451e2 and deployed Worker 3571aadf; mirror not published (rides the next publish); AUDIT ids marked fixed."
+    },
+    {
+     "ts": "2026-10-11T08:12:28+0530",
+     "who": "claude",
+     "note": "Event-setup now creates the four Zoom polls on every attendee Pro meeting (challenge polls titled by day, no duplicates on a re-run) and names the missing scope with the by-hand fallback if Zoom refuses. The card polls step is now an auto block, and probe-t268 passes 21 of 22 in the simulator. Left: the probe check 'Day 1 Zoom card lists the poll scopes' (probe line 111) fails even though workshop-cards.ts:1035 lists the scope, so the by('d1-zoom') lookup needs checking. Then tsc, commit, push, Worker deploy, mirror publish and the AUDIT X058 commit, all uncommitted in this run."
     }
    ],
    "order": 2680
@@ -13082,11 +13087,15 @@
    "evidence": [
     {
      "label": "Admin sign-in form",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t272"
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t272b"
     },
     {
      "label": "Probe",
      "url": "app/scripts/probe-admin-tokens.mjs"
+    },
+    {
+     "label": "Script fix",
+     "url": "app/scripts/test-attendee.mjs"
     }
    ],
    "blockers": [],
@@ -13111,6 +13120,11 @@
      "ts": "2026-10-10T03:37:01+0530",
      "who": "claude",
      "note": "Built and live (Worker c36e7b2e, commit 3a4b01c, pushed): /admin/enter is a POST form (no ?k=), a new Teammates tab makes and revokes per-person tokens (D1 admin_tokens, owner key stays as POST fallback), Cohort Settings has a per-week panel (join, recording, slides, invite note per day) with a read-only invite and reminder preview plus Session Minutes, ruled-out vendors are gone from the admin with a not-yet/open legend, and the Overview stat pluralises. Probe app/scripts/probe-admin-tokens.mjs passes 18/18 locally (revoke A while B keeps working; two weeks show different links; attendees get their own week's); live checks: ?k= no longer signs in, unauth /admin redirects to the form; I could not create live tokens without the owner key. Note: migrations 0023 and 0025 from other lanes were also pending on the remote and were applied with 0026. Sign in at https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t272 with the owner key, then open Teammates and Cohort Settings."
+    },
+    {
+     "ts": "2026-10-11T08:12:26+0530",
+     "who": "claude",
+     "note": "Live check on Worker 5c45750f (2026-10-11), 10/10 pass: GET /admin/enter?k=<owner key> signs nobody in, a POST with the owner key does, two test tokens (ids 1, 2) both signed in, revoking A cut A off while B kept working, then B was revoked too. Cohort Settings lists Wed 7 to Fri 9 Oct on Zoom meeting 87002851906 and Wed 14 to Fri 16 Oct on 88135386601, so the two weeks get different join links. Every ?k= hand-out is fixed (scripts sign in by POST with ADMIN_KEY plus the centre origin, two memories, T-096's ask, automation matrix; TEAM_GUIDE already used the form), commit 53e12d6 pushed; no Worker code changed, so no deploy."
     }
    ],
    "order": 2720
