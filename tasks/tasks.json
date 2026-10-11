@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T08:23:23+0530",
-  "version": 1808,
+  "updated": "2026-10-11T08:26:00+0530",
+  "version": 1810,
   "last_id": 397,
   "team": [
    {
@@ -2464,16 +2464,12 @@
    ],
    "evidence": [
     {
-     "label": "Import + campaign script",
+     "label": "Import + draft campaign script",
      "url": "workshop-plan/ops/t056_cold_calendar.mjs"
-    },
-    {
-     "label": "Cleaned list (personal data, outside repo)",
-     "url": "/Users/adithyamurali/pro-workflows-suite/followup-engine/Processed_Phase1/workshop_cold_calendar.csv"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "One Tantra API key: at https://usetantra.com/api-keys click Create API Key (name it 'workshop-agent'), then save the tk_live_ value as the only line of ~/.config/tantra/keys/tantra-workshop.key. The next run executes 'node workshop-plan/ops/t056_cold_calendar.mjs --go' (import, then the campaign created unstarted) and logs the result.",
+   "needs_from_owner": "One Tantra API key: at https://usetantra.com/api-keys click Create API Key (name it 'workshop-agent'), then save the tk_live_ value as the only line of ~/.config/tantra/keys/tantra-workshop.key. The next run executes 'node workshop-plan/ops/t056_cold_calendar.mjs --go' (import the list, then save the calendar-invite campaign as a draft, never started) and logs the result.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2514,6 +2510,11 @@
      "ts": "2026-10-11T08:23:20+0530",
      "who": "claude",
      "note": "The T-147 blocker is cleared, but this Mac has no Tantra API key or signed-in Tantra session, and I may not sign in as Adi, so the import and the campaign are not done yet. I built workshop-plan/ops/t056_cold_calendar.mjs: it imports the 126-contact list as 'Workshop cold calendar' and creates the smart_calendar invite campaign with the connected FintechCircle senders, never started, through the API (so the wizard's final send step is never touched). Dry run verified today (126 rows, 0 dropped, event next Wed 11:00 ET); --go stops cleanly at the missing key. No T-301 vendor CSVs have arrived to append yet. The import limit was last seen as 50,000 per upload on the import screen (archived T-138, not rechecked in this run, because the API has no screen)."
+    },
+    {
+     "ts": "2026-10-11T08:25:54+0530",
+     "who": "claude",
+     "note": "Verify pass: I checked the script against the Tantra API reference and found that /campaigns/create launches a campaign (it plans real invites). So I switched it to /campaigns/draft, which saves the calendar-invite campaign as a draft and sends nothing (commit cae0b4b). The auth header and base URL now match the Tantra client. Dry run today: 126 work emails, 0 dropped, event Wed 2026-10-14 11:00 ET. With --go it stops at 'No Tantra API key' because there is still no key on this Mac. The import, the per-upload limit and the draft campaign all run as soon as the key file exists. Open workshop-plan/ops/t056_cold_calendar.mjs."
     }
    ],
    "order": 350,
@@ -13165,7 +13166,11 @@
    "evidence": [
     {
      "label": "Live hub",
-     "url": "https://adisuja.github.io/tantra-workshop-live/?v=t273"
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=t273e5b"
+    },
+    {
+     "label": "Local hub",
+     "url": "file:///Users/adithyamurali/tantra-redesign/workshop-plan/index.html?v=t273e5b"
     }
    ],
    "blockers": [],
@@ -13195,6 +13200,11 @@
      "ts": "2026-10-10T03:44:46+0530",
      "who": "claude",
      "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-11T08:26:00+0530",
+     "who": "claude",
+     "note": "All ten hub findings are on main (f4f181f) and live. This pass found one gap: at 390 wide the countdown still hid its 'Day 1' label (H035). I fixed it in e5b5df8 (mirror 261cf9c5e), and AUDIT.md now cites that commit for H035. Checked in this run: probe-review-hub.mjs says ALL LINKS OK on live, the only 'Oct' left is the JS month list that fills in the cohort dates, and headless checks at 390 and 1440 show no eyebrows, no sideways scroll and 'Day 1' on one line. Open https://adisuja.github.io/tantra-workshop-live/?v=t273e5b. One thing left for Bhaskar: the VIP bonus copy in app/src/lib/vip-kit.ts still says 'Two-Month Platform Pass', while the hub's b-pass says 1 month. I didn't change it here because it is live sales copy."
     }
    ],
    "order": 2730
