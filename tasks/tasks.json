@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T12:33:34+0530",
-  "version": 1901,
+  "updated": "2026-10-11T12:36:47+0530",
+  "version": 1903,
   "last_id": 401,
   "team": [
    {
@@ -6984,7 +6984,7 @@
    "owner": "Amal",
    "priority": "P2",
    "due": "2026-10-16",
-   "status": "doing",
+   "status": "review",
    "why": "These slots show our own funnel pages, the centre or demo files, so Claude can capture them today without any owner account.",
    "spec": "Slots on main 2026-10-08: s5-webinar-stages #2 (/masterclass offer link with ?src=live opening checkout, no purchase); s5-challenge-stages #3 (final-day offer link opening checkout); s5-rsp-stages #1 (CRM contact timeline with depth tags, not a Wistia heatmap: T-260) and #2 (bridge opt-in over Part 1 on our RSP page); s6-sms #1 (the demo's rotation.md 52-week calendar with SMS weeks); s4-challenge #8 (Day 2 in the centre with session times), #11 (first Day 1 task with its done control), #15 (referral dashboard per-member totals, public since T-211); s4-rsp #7 (our Part 2 page after a bridge submit); s2-tantra-pro-funnel #12 (free-lane thank-you page at 390 px after a test sign-up: use a local build with NEXT_PUBLIC_TRACKING_DISABLED=1 so nothing reaches the live Work Tracker); s1-overview #5 (Set Your Sending Plan capacity in the centre, via the preview attendee). Real captures only, redact anything personal, save WebP, remove capture_needed.",
    "done_when": [
@@ -6994,16 +6994,24 @@
    ],
    "evidence": [
     {
-     "label": "commit 512c734",
-     "url": "app/src/content/guides"
+     "label": "guides index (local)",
+     "url": "http://localhost:4322/debug/guides?v=t135r"
     },
     {
      "label": "s2 thank-you 390px",
-     "url": "http://localhost:4322/guides/s2-tantra-pro-funnel/16.webp?v=t135"
+     "url": "http://localhost:4322/guides/s2-tantra-pro-funnel/16.webp?v=t135r"
     },
     {
      "label": "s5-rsp CRM depth tags",
-     "url": "http://localhost:4322/guides/s5-rsp-stages/01.webp?v=t135"
+     "url": "http://localhost:4322/guides/s5-rsp-stages/01.webp?v=t135r"
+    },
+    {
+     "label": "s6-sms rotation calendar",
+     "url": "http://localhost:4322/guides/s6-sms/03.webp?v=t135r"
+    },
+    {
+     "label": "commit 512c734",
+     "url": "app/public/guides"
     }
    ],
    "blockers": [],
@@ -7033,6 +7041,11 @@
      "ts": "2026-10-10T16:35:34+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-27 was past; now 2026-10-16 (P2 rule)."
+    },
+    {
+     "ts": "2026-10-11T12:36:43+0530",
+     "who": "claude",
+     "note": "All 11 captures (512c734) were already on origin/main, and they are byte-identical on the live mirror (T-256's full publish c516789). So I pushed and republished nothing. The 2026-10-06 publish hold was effectively lifted by later full publishes (LOG 2026-10-08 05:22 and 2026-10-11 07:33). Checked today: check-guides PASS (capture-needed was 73, then 62 after this task, now 57 after other tasks; the 4 undersized FAILs are gone), probe-guides PASS on all 250 renders (25 guides, 5 widths, light and dark), probe-anonymity PASS (997 files). Amal: open the 11 slots in the guides below."
     }
    ],
    "order": 1350,
@@ -16541,13 +16554,30 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "The library probe (app/scripts/probe-library.mjs) reports one failure that is not a library fault, so every library run ends red and a real regression could hide behind it.",
    "spec": "Recorded 2026-10-09 in workshop-plan/coord/LOG.md: the 'poll accepts a vote' check fails the same way on https://revops-centre.growthcluborg.workers.dev/onboarding/templates/ and on https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/ because the default library view has no poll. Find out whether the poll was removed on purpose (then drop or re-point the check) or should be there (then restore it). Split out of T-111 by Orchestrator decision; T-111 does not wait on this.",
    "done_when": [
     "node app/scripts/probe-library.mjs passes against the live centre and the mirror, or the poll check is removed with the reason in the commit message"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Probe fix (commit 57df3a90)",
+     "url": "app/scripts/probe-library.mjs"
+    },
+    {
+     "label": "Live centre poll view",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/templates/?v=57df3a90#live-polls"
+    },
+    {
+     "label": "Mirror poll view",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/?v=57df3a90#live-polls"
+    },
+    {
+     "label": "Log line",
+     "url": "workshop-plan/coord/LOG.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -16555,6 +16585,11 @@
      "ts": "2026-10-10T20:31:17+0530",
      "who": "claude",
      "note": "Opened from T-111 (Orchestrator decision 2026-10-09) so the library task can close without it."
+    },
+    {
+     "ts": "2026-10-11T12:36:47+0530",
+     "who": "claude",
+     "note": "The poll was not removed, so the 'poll accepts a vote' check now opens the #live-polls deep link before voting ('no poll found' still fails). probe-library passes at all four widths on the live centre and the mirror; commit 57df3a90 is pushed to main and logged in coord/LOG.md."
     }
    ],
    "order": 3850
