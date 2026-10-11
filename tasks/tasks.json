@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T23:09:13+0530",
-  "version": 2107,
+  "updated": "2026-10-11T23:11:24+0530",
+  "version": 2109,
   "last_id": 410,
   "team": [
    {
@@ -17104,6 +17104,10 @@
    ],
    "evidence": [
     {
+     "label": "Runner gate",
+     "url": "workshop-plan/tasks/runner.py"
+    },
+    {
      "label": "Preflight probe",
      "url": "app/scripts/shots/claude-app-shots.py"
     }
@@ -17145,6 +17149,11 @@
      "ts": "2026-10-11T23:09:13+0530",
      "who": "claude",
      "note": "Preflight now prints the binary and process chain macOS checks: from the runner it is launchd job Python.app (/Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python) then ~/.local/bin/claude then Python.app, so the Accessibility grant must go on Python.app, not bin/python3.12. Rerun 2026-10-11: Screen Recording yes, Claude window found, Accessibility NO, Mac locked, NOT READY."
+    },
+    {
+     "ts": "2026-10-11T23:11:24+0530",
+     "who": "claude",
+     "note": "Every runner sweep now reruns the preflight under the runner's own Python (workshop-plan/tasks/runner.py shots_gate); the moment it prints READY it marks T-351 done and sends T-132 its start note. Tested with a mocked READY and NOT READY; the real run just now still prints NOT READY (Accessibility NO, Mac locked, Screen Recording yes). The grant goes on Python.app (the binary macOS checks from the runner), tracked as T-403."
     }
    ],
    "order": 3510
@@ -17798,7 +17807,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "dropped",
    "why": "",
    "spec": "Only Adi can do this (physical): macOS lets only the person at the Mac type the login password and switch on an Accessibility grant.. Everything else in T-132 is being built around it. As soon as this is done, T-132 finishes on its own.",
    "done_when": [],
@@ -17810,6 +17819,11 @@
      "ts": "2026-10-11T12:49:32+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-132."
+    },
+    {
+     "ts": "2026-10-11T23:11:17+0530",
+     "who": "claude",
+     "note": "Duplicate of T-403 (same unlock and Accessibility grant on Python.app). Orchestrator 2026-10-11: one ask for Adi, tracked on T-351/T-403."
     }
    ],
    "order": 4020,
