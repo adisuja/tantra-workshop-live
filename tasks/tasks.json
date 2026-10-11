@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T05:32:17+0530",
-  "version": 1707,
+  "updated": "2026-10-11T05:36:15+0530",
+  "version": 1709,
   "last_id": 394,
   "team": [
    {
@@ -9989,8 +9989,12 @@
    ],
    "evidence": [
     {
-     "label": "Calendar feeds handoff (how it works, setup, blockers)",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/SESSION_HANDOFF_2026_10_06_CALENDAR_FEEDS.md"
+     "label": "pre.md confirmation (aligned)",
+     "url": "workshop-plan/sequences/pre.md"
+    },
+    {
+     "label": "Sent welcome copy",
+     "url": "cloud/src/reminder-copy.ts"
     }
    ],
    "blockers": [
@@ -10052,6 +10056,11 @@
      "ts": "2026-10-09T19:08:06+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-337."
+    },
+    {
+     "ts": "2026-10-11T05:36:15+0530",
+     "who": "claude",
+     "note": "Ripple from T-050: the two did differ, so I rewrote the confirmation in workshop-plan/sequences/pre.md to match the welcome that is actually sent (COPY.registered in cloud/src/reminder-copy.ts), because Adi's T-050 decision makes the T-228 welcome the reference. The free lane email subject, body and WhatsApp now match word for word after placeholder mapping (script check: all three True), the paid lane carries the same links with its masterclass opening, the placeholder table names the real Tantra fields, and rebuilding the nurture copy gives no diff. No Worker code changed, so nothing to deploy; open workshop-plan/sequences/pre.md. Live send still waits on the Tantra key (T-337)."
     }
    ],
    "order": 2280
