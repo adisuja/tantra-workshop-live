@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T23:01:59+0530",
-  "version": 2101,
+  "updated": "2026-10-11T23:04:00+0530",
+  "version": 2102,
   "last_id": 410,
   "team": [
    {
@@ -16255,16 +16255,16 @@
    ],
    "evidence": [
     {
+     "label": "branch chain",
+     "url": "file:///tmp/chain-t300/summary.txt"
+    },
+    {
+     "label": "origin/main baseline chain",
+     "url": "file:///tmp/chain-t300-base/summary.txt"
+    },
+    {
      "label": "worktree",
      "url": "file:///private/tmp/wt-t300"
-    },
-    {
-     "label": "run-chain log",
-     "url": "file:///tmp/t300-chain.log"
-    },
-    {
-     "label": "probe logs",
-     "url": "file:///tmp/chain-t300"
     }
    ],
    "blockers": [],
@@ -16289,6 +16289,11 @@
      "ts": "2026-10-11T11:43:03+0530",
      "who": "claude",
      "note": "All five parts are built and pushed on branch t300-ruled-out-cleanup (184d5cb2, also carries T-299). The deck and survey now say the vendor delivers the list verified and we run only the free checks. Passing in this run: both tsc, check-coverage, check-guides, check-examples, probe-visual-tools (fails on a planted Calendly) and the done_when grep (only examples/data). Left: probe-domain-chain fails 4 T-299 checks because the launchd centre on :8790 serves tantra-onboarding-v2 code, not this branch. Next run: rerun the chain against a centre built from the branch, then post READY in LOG.md."
+    },
+    {
+     "ts": "2026-10-11T23:04:00+0530",
+     "who": "claude",
+     "note": "Merged origin/main into the branch and ran the chain on the branch and on a clean origin/main worktree with the same ports. Every failure is the same on main (domain-chain, day1, day2 and context stop because the centre now shows 'Describe Your Business' in Title Case, plus shapes, workshop checkout 501 and the stack funnel and GHL checks), except the calendar card check, which I updated in probe-stack (9c4402d1) to the wording main uses now. Left for the next run: re-run probe-stack, re-run the final checks, push, post READY and add board notes on the owning tasks for the failures that also happen on main."
     }
    ],
    "order": 3000

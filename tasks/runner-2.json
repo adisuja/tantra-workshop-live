@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T23:04:18+0530",
+   "task_id": "T-300",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. I've merged origin/main into the branch and run the chain on both the branch and a clean origin/main. All but one failure also happens on main. I fixed that one (a s"
+  },
+  {
    "ts": "2026-10-11T22:36:03+0530",
    "task_id": "T-148",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-396 is back in review for Bharath. Every claim in the earlier report held up when I re-ran it from scratch, so I changed no files and made no commit. The ack call returned \"acked 0\": F-e4e225ad was already acked last run.\n\nCOMPLETION CHECK:\n1. **Endpoint that adds one lead to a running campaign: d"
-  },
-  {
-   "ts": "2026-10-11T17:22:58+0530",
-   "task_id": "T-341",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-341 is still blocked on Nelbin: their fork was still live on today's GitHub check, so the task can't close yet.\n\n**Completion check (all checked this run):**\n1. **Read-only API check of the fork:** done. `nelbinxav/tantra-workshop-live` returned 200, so the fork still exists.\n2. **Check of commit "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-300",
+ "task_id": "T-225",
  "entries": [
-  "F-cb4eaae0"
+  "F-da4774f2"
  ],
- "started": "2026-10-11T22:36:22+0530",
- "message": "Acting on 1 note(s) for T-300: Remove the dormant code and text of the ruled-out tools (T-251 parts 2 and 3)",
+ "started": "2026-10-11T23:05:25+0530",
+ "message": "Acting on 1 note(s) for T-225: Zoom Support ticket: host mute control and participant video disable (waiting on Zoom's reply)",
  "slices": {
   "T-072": 1,
   "T-245": 1,
@@ -118,6 +118,7 @@
   "T-240": 1,
   "T-278": 1,
   "T-292": 1,
-  "T-059": 1
+  "T-059": 1,
+  "T-300": 1
  }
 }
