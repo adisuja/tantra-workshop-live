@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T16:07:44+0530",
-  "version": 1944,
+  "updated": "2026-10-11T16:14:09+0530",
+  "version": 1945,
   "last_id": 406,
   "team": [
    {
@@ -3989,6 +3989,10 @@
      "url": "https://adisuja.github.io/tantra-workshop-live/vip-before-after.png?v=t094b"
     },
     {
+     "label": "Probe output, 7 widths (390 to 1920), main and mirror (T-100, 2026-10-11)",
+     "url": "workshop-plan/evidence/T-100-vip-probes-2026-10-11-verify.txt"
+    },
+    {
      "label": "Probe output, 7 widths (T-100, 2026-10-09)",
      "url": "workshop-plan/evidence/T-100-vip-probes-2026-10-09.txt"
     },
@@ -4049,6 +4053,11 @@
      "ts": "2026-10-11T01:18:29+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-11: nothing had to change, this stays the one combined /vip review with T-100 on the single ?v=t094b link. Rechecked on the live mirror: shoot-vip at 390, 414, 768, 1024, 1280, 1440 and 1920 shows 9 exhibits ok, 0 overflow, 0 console errors; all nine bonus names render on /vip, no broken images on /vip (29) or /vip/success (11), no 'Build Pass', 'webinar' or 'VIP only' wording, and git grep 'build pass' in app/src/app/vip returns nothing. No /vip source has changed since the mirror was published from main 26dc888, so vip-before-after.png was not regenerated. Open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094b and https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t094b."
+    },
+    {
+     "ts": "2026-10-11T16:14:09+0530",
+     "who": "claude",
+     "note": "Added T-100's 7-width probe result (390 to 1920) to Evidence: 0 overflow, 0 clipped text, 0 console errors, key art 9 of 9; the ?v=t094b links stay. Rechecked today on the live mirror: shoot-vip at all 7 widths shows 9 exhibits ok, 0 overflow, 0 console errors, 0 broken images on /vip (29) and /vip/success (11), and git grep 'build pass' in app/src/app/vip returns nothing. The page itself did not change; open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t094b"
     }
    ],
    "order": 920,
