@@ -3287,7 +3287,7 @@
    "blockers": [
     "Email sender for the Pro access email (see needs_from_owner)"
    ],
-   "needs_from_owner": "Waiting only on T-123: connect team@growthclub.org in the GrowthClub Tantra workspace (app.usetantra.com, Email Accounts, Connect account). The T-337 key is already saved. Then the Adi test send runs (node app/scripts/pro-newsletter.mjs --send-test) and issue 1 goes to the test inbox and team after the Tue 13 Oct call (--send-issue).",
+   "needs_from_owner": "Waiting only on T-123: connect team@growthclub.org in the GrowthClub Tantra workspace (usetantra.com, Email Accounts, Connect account). The T-337 key is already saved. Then the Adi test send runs (node app/scripts/pro-newsletter.mjs --send-test) and issue 1 goes to the test inbox and team after the Tue 13 Oct call (--send-issue).",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -11026,7 +11026,7 @@
    "blockers": [
     "Go-live only: the workshop Tantra campaign id and its API key saved in the centre admin (build and probe against vendor-sim does not wait)"
    ],
-   "needs_from_owner": "See T-408 (one input task): connect team@growthclub.org in the GrowthClub Tantra workspace (app.usetantra.com, Email Accounts, Connect account), rotate the Tantra key (Connectors, API Keys) and paste the new one at https://revops-centre.growthcluborg.workers.dev/admin/ under Cohort Settings, Session Reminders, Tantra API key.",
+   "needs_from_owner": "See T-408 (one input task): connect team@growthclub.org in the GrowthClub Tantra workspace (usetantra.com, Email Accounts, Connect account), rotate the Tantra key (Connectors, API Keys) and paste the new one at https://revops-centre.growthcluborg.workers.dev/admin/ under Cohort Settings, Session Reminders, Tantra API key.",
    "log": [
     {
      "ts": "2026-10-07T22:53:58+0530",
@@ -17948,7 +17948,7 @@
   },
   {
    "id": "T-408",
-   "title": "Input from Adi for T-123: Sign in at https://app.usetantra.com (GrowthClub workspace). 1) Open Email Accou",
+   "title": "Input from Adi for T-123: Sign in at https://usetantra.com (GrowthClub workspace). 1) Open Email Accou",
    "area": "Delivery",
    "owner": "Adi",
    "assignee": "Adi",
@@ -17963,7 +17963,7 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Sign in at https://app.usetantra.com (GrowthClub workspace). 1) Open Email Accounts, click Connect account, and sign in as team@growthclub.org. 2) Open Connectors, API Keys, rotate the 'workshop-reminders' key and copy the new one. 3) Sign in at https://revops-centre.growthcluborg.workers.dev/admin/enter, open Cohort Settings, Session Reminders, paste it into the Tantra API key field, and click Save.",
+   "needs_from_owner": "Sign in at https://usetantra.com (GrowthClub workspace). 1) Open Email Accounts, click Connect account, and sign in as team@growthclub.org. 2) Open Connectors, API Keys, rotate the 'workshop-reminders' key and copy the new one. 3) Sign in at https://revops-centre.growthcluborg.workers.dev/admin/enter, open Cohort Settings, Session Reminders, paste it into the Tantra API key field, and click Save.",
    "log": [
     {
      "ts": "2026-10-11T16:34:37+0530",
@@ -18036,7 +18036,7 @@
   },
   {
    "id": "T-411",
-   "title": "Input from Adi for T-052: Same single ask as T-123, no new one: at https://app.usetantra.com (GrowthClub w",
+   "title": "Input from Adi for T-052: Same single ask as T-123, no new one: at https://usetantra.com (GrowthClub w",
    "area": "Traffic",
    "owner": "Adi",
    "assignee": "Adi",
@@ -18051,7 +18051,7 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Same single ask as T-123, no new one: at https://app.usetantra.com (GrowthClub workspace), go to Email Accounts, Connect account, and sign in as team@growthclub.org so it shows as Connected.",
+   "needs_from_owner": "Same single ask as T-123, no new one: at https://usetantra.com (GrowthClub workspace), go to Email Accounts, Connect account, and sign in as team@growthclub.org so it shows as Connected.",
    "log": [
     {
      "ts": "2026-10-11T23:45:42+0530",
@@ -18065,7 +18065,7 @@
   },
   {
    "id": "T-412",
-   "title": "Input from Adi for T-234: Open https://app.usetantra.com in the GrowthClub workspace, go to Email Accounts",
+   "title": "Input from Adi for T-234: Open https://usetantra.com in the GrowthClub workspace, go to Email Accounts",
    "area": "Product",
    "owner": "Adi",
    "assignee": "Adi",
@@ -18080,7 +18080,7 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Open https://app.usetantra.com in the GrowthClub workspace, go to Email Accounts, click Connect account, and sign in with Google as team@growthclub.org. This is the same single ask as T-123 and T-408.",
+   "needs_from_owner": "Open https://usetantra.com in the GrowthClub workspace, go to Email Accounts, click Connect account, and sign in with Google as team@growthclub.org. This is the same single ask as T-123 and T-408.",
    "log": [
     {
      "ts": "2026-10-11T23:46:36+0530",
@@ -18094,7 +18094,7 @@
   },
   {
    "id": "T-413",
-   "title": "Input from Adi for T-228: See T-408: sign in at https://app.usetantra.com (GrowthClub workspace), open Ema",
+   "title": "Input from Adi for T-228: See T-408: sign in at https://usetantra.com (GrowthClub workspace), open Ema",
    "area": "Delivery",
    "owner": "Adi",
    "assignee": "Adi",
@@ -18109,7 +18109,7 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "See T-408: sign in at https://app.usetantra.com (GrowthClub workspace), open Email Accounts, click Connect account and sign in as team@growthclub.org; then rotate the 'workshop-reminders' key and paste it at https://revops-centre.growthcluborg.workers.dev/admin/enter, Cohort Settings, Session Reminders, Tantra API key, Save.",
+   "needs_from_owner": "See T-408: sign in at https://usetantra.com (GrowthClub workspace), open Email Accounts, click Connect account and sign in as team@growthclub.org; then rotate the 'workshop-reminders' key and paste it at https://revops-centre.growthcluborg.workers.dev/admin/enter, Cohort Settings, Session Reminders, Tantra API key, Save.",
    "log": [
     {
      "ts": "2026-10-12T00:09:40+0530",
