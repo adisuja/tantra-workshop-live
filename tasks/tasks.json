@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T12:59:18+0530",
-  "version": 1920,
-  "last_id": 403,
+  "updated": "2026-10-11T13:04:07+0530",
+  "version": 1923,
+  "last_id": 404,
   "team": [
    {
     "name": "Adi",
@@ -16968,6 +16968,36 @@
    "order": 4030,
    "input_for": "T-351",
    "kind": "input"
+  },
+  {
+   "id": "T-404",
+   "title": "Paste an Anthropic API key for live centre AI drafting",
+   "area": "Ops",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi",
+    "Nelbin"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "Real attendees on the live centre get no AI drafts until the live Worker has an Anthropic connection; the Claude Code logins only serve test attendees.",
+   "spec": "",
+   "done_when": [
+    "Live admin AI connections lists an enabled Anthropic connection and a real-browser draft on live succeeds"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Only if real attendees should get AI drafts on the live centre: paste an Anthropic API key at https://revops-centre.growthcluborg.workers.dev/admin/ (AI connections tab, Add connection, type Anthropic, field API key). Local Opus drafting for Adi's own review already works without it.",
+   "log": [
+    {
+     "ts": "2026-10-11T13:04:07+0530",
+     "who": "claude",
+     "note": "Split out of T-292 by Orchestrator decision O-40ffe493."
+    }
+   ],
+   "order": 4040
   }
  ]
 }
