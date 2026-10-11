@@ -1,0 +1,1 @@
+{"session":"fc3077ad-0866-451e-a6cf-bfba894a3f7b","task":"T-300","public":true,"events":[{"k":"tool","ts":"2026-10-11T19:05:13.587Z","id":"toolu_0157AmzbRaJ8BYwq5Rxu9vec","name":"Bash","head":"Check T-300 worktree state","input":"$ cd /private/tmp/wt-t300 && git status -sb | head -5 && git log --oneline -3 && git log origin/t300-ruled-out-cleanup --oneline -1 2>&1 | head -1"}]}

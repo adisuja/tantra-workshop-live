@@ -1,0 +1,1 @@
+{"session":"9d499aba-ab84-4929-9edb-53f6d111fdff","task":"T-278","public":true,"events":[{"k":"tool","ts":"2026-10-11T19:04:30.428Z","id":"toolu_01R6KUAtLahKxKj8fdjt4AY6","name":"Bash","head":"Check intake wording and AUDIT M033 row","input":"$ grep -c \"18-q\" app/src/lib/funnel.ts; grep \"^| M033\" /Users/adithyamurali/tantra-round5-coord/AUDIT.md | cut -c1-40,200-400"}]}
