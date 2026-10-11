@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T07:47:07+0530",
-  "version": 1788,
+  "updated": "2026-10-11T07:49:06+0530",
+  "version": 1790,
   "last_id": 397,
   "team": [
    {
@@ -6771,6 +6771,11 @@
      "ts": "2026-10-10T16:35:34+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-10-02 was past; now 2026-10-23 (P3 rule)."
+    },
+    {
+     "ts": "2026-10-11T07:49:06+0530",
+     "who": "claude",
+     "note": "Ripple from T-266: nothing had to change, the task was already unheld to queue. Rechecked today: node cloud/scripts/probe-t266.mjs passes 14/14 (survey, AI output, HTML and PDF links, one output_delivered event per day), and check-guides shows capture-needed 58. Gap for the capture run: the worker logs output_delivered with the day in its data (not output_delivered_dayN, and survey_submitted not survey_submitted_dayN), and no contact timeline screen shows it, because the CRM sync pushes tags only. So the next pass needs either a per-contact timeline view in cloud/funnel/worker.js or the delivery pushed to the CRM, plus the guide's event names fixed to match."
     }
    ],
    "order": 1360,
@@ -11932,14 +11937,14 @@
    "evidence": [
     {
      "label": "S3 guide, live mirror",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s3-tantra-pro-flow/?v=t256d"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s3-tantra-pro-flow/?v=t256v"
     },
     {
-     "label": "S3 guide, local",
-     "url": "http://localhost:4322/onboarding/guides/s3-tantra-pro-flow/?v=t256d"
+     "label": "S1 ads guide, live mirror",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s1-ads/?v=t256v"
     },
     {
-     "label": "Audit file (G023 row has e66dda5)",
+     "label": "Audit file",
      "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
     }
    ],
@@ -11970,6 +11975,11 @@
      "ts": "2026-10-11T07:33:52+0530",
      "who": "claude",
      "note": "S3 step 4 and the scheduler prompt now use the same schedule sentence as the chart and step 3, with the per-channel split in a separate sentence after it (e66dda5, pushed, AUDIT G023 row updated, mirror c516789). I kept the 15 minutes before touch because T-139 added it to the chart and step 3 on 2026-10-10 to match the funnel's WhatsApp send. Verified: the sentence appears 7 times in the file, the five quoted claims are gone (git grep), 0 U+2212 characters, one WhatsApp paragraph (Tantra, not Twilio), tsc 0 errors, probe-guides on S3 PASS at 1440 and 390, the live mirror shows the new text. check-guides has 4 failures, all small screenshots in other guides that this task did not touch."
+    },
+    {
+     "ts": "2026-10-11T07:48:09+0530",
+     "who": "claude",
+     "note": "Verify pass, nothing had to change: e3ac1ca and e66dda5 are on origin/main, the S3 chart, step 3, step 4 and scheduler prompt carry one schedule sentence, no U+2212 is left, the five quoted claims are gone from app code, and all 12 ids in AUDIT.md are marked fixed (G023 lists both commits). Typecheck has 0 errors and the rendered guide probe passed on the live S3 page (10 renders, light and dark, 390 to 1440 wide). check-guides fails only on 4 small screenshots from T-257, which this task did not touch."
     }
    ],
    "order": 2560
