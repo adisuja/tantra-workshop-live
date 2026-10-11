@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T07:39:54+0530",
-  "version": 1784,
+  "updated": "2026-10-11T07:42:50+0530",
+  "version": 1785,
   "last_id": 397,
   "team": [
    {
@@ -12391,6 +12391,14 @@
     {
      "label": "probe",
      "url": "/Users/adithyamurali/tantra-redesign/cloud/scripts/probe-resend-hooks.mjs"
+    },
+    {
+     "label": "live centre",
+     "url": "https://revops-centre.growthcluborg.workers.dev/?v=t262-8cf185d5"
+    },
+    {
+     "label": "LOG.md",
+     "url": "/Users/adithyamurali/tantra-round5-coord/LOG.md"
     }
    ],
    "blockers": [],
@@ -12415,6 +12423,11 @@
      "ts": "2026-10-10T01:30:46+0530",
      "who": "claude",
      "note": "Resend path registers a bounce/complaint webhook, Svix-signed /hooks/resend on the funnel Worker tags and suppresses the contact, and the job deletes the full-access key itself; vendor-sim covers webhooks, api-keys DELETE, GA4 runReport. probe-resend-hooks.mjs passes all checks on the simulator only. Commit 3caf4d0; AUDIT X032/X033/X109 fixed; not merged/pushed because other lanes' uncommitted work shares the tree."
+    },
+    {
+     "ts": "2026-10-11T07:42:50+0530",
+     "who": "claude",
+     "note": "Shipped: main pushed at 0d728f7 (includes 3caf4d0, no force) and revops-centre deployed from a clean worktree as Worker 8cf185d5-b76c-4ff4-bbf9-f9136a625c4b, no migration pending; live root answers 302. In that worktree tsc was clean and probe-resend-hooks.mjs passed all 16 checks against the simulator only (bounce and complaint suppress, forged signature refused, sim log shows DELETE /api-keys/key_full0001); no real Resend account touched."
     }
    ],
    "order": 2620
