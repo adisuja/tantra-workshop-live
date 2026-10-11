@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T08:49:55+0530",
-  "version": 1818,
+  "updated": "2026-10-11T08:55:01+0530",
+  "version": 1819,
   "last_id": 397,
   "team": [
    {
@@ -12200,6 +12200,11 @@
      "ts": "2026-10-11T08:49:55+0530",
      "who": "claude",
      "note": "Close-out check on current main: cf3d5ff is on origin/main and the guide and pack files have no uncommitted edits. check-guides PASS (24 guides, 195 steps); probe-guides PASS on all five guides (s5-follow-ups, s5-extra-pipelines, s5-challenge-stages, s2-tantra-pro-funnel, s5-crm-starter, at 1440 and 390); probe-flows PASS (24 charts static, 0 problems, plus rendered). s5-crm-starter is fine as it is: its only prompt reads the built-in Worker CRM through /api/contacts and builds no local CRM. AUDIT.md already marks X090, X103, X104, X105 and G070 fixed in cf3d5ff and X102 in b880b67, so nothing new was committed or pushed. Open the follow-ups guide, step 2."
+    },
+    {
+     "ts": "2026-10-11T08:55:01+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11: no change needed. All five guides read correctly against the centre jobs (crm-setup pipelines, event-attendance tags, Day 2 drafts plus the pack follow-ups folder, relabelled S2 prompt, CRM starter on the built-in Worker CRM), and each by-hand body renders under the label Building it by hand instead. check-guides PASS (24 guides, 195 steps), probe-guides PASS on the five guides at 1440 and 390 px (light), probe-flows PASS (24 charts, 0 problems); cf3d5ff and b880b67 are on origin/main and the six AUDIT.md rows read fixed. Open http://localhost:4322/debug/guides?only=s5-follow-ups&v=t259v2 and look at step 2."
     }
    ],
    "order": 2590
