@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T17:43:27+0530",
-  "version": 1990,
+  "updated": "2026-10-11T17:46:12+0530",
+  "version": 1992,
   "last_id": 408,
   "team": [
    {
@@ -17118,6 +17118,11 @@
      "ts": "2026-10-11T17:43:27+0530",
      "who": "claude",
      "note": "Endpoint already exists on development (e571b78), so no second build: I delivered a tests-only patch with the FR-ad7abb regression test (one lead joins an active campaign, repeat is idempotent, contactListIds lock holds; mutation check fails it when the lock is removed) and stubs that make the red contact-append suite green again. 27 of 27 tests pass on a scratch clone of f0b901e; no Usetantra repo touched. Bharath: open the spec, confirm the four seed.py inputs (5, 4, 2, 5, kept as is, still build now 72.0) and whether e571b78 is in production, then apply per the README."
+    },
+    {
+     "ts": "2026-10-11T17:45:44+0530",
+     "who": "claude",
+     "note": "Verify pass: the patch applies cleanly to a fresh export of development f0b901e and all 27 tests pass against a clean Mongo. Without the billing stub, all 15 integration tests fail on ActivePlanGuard. With the contactListIds lock removed, only the new test fails. Bharath: open workshop-plan/tantra-product-patches/tantra-backend-v2/fr-ad7abb_add-lead-running-campaign--SPEC.md, confirm the four inputs (5, 4, 2, 5), then apply the patch."
     }
    ],
    "order": 3960
