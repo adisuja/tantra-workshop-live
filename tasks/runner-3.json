@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T03:35:26+0530",
+   "task_id": "T-158",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-158 is back in review for Ben and Bharath. The Monday 2026-10-12 snapshot checks out, and I fixed the duplicate feature-decision line the last run left open (pushed as 30d6f021).\n\n**Completion check:**\n1. **Snapshot file and LOG line:** done. `workshop-plan/pipeline/snapshots/2026-10-12.json` is o"
+  },
+  {
    "ts": "2026-10-12T03:28:03+0530",
    "task_id": "T-151",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-033 is still blocked. Nothing was sent by email or WhatsApp in this run, and no code changed.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| 1. Resend key on the Worker | Missing | The Worker's secrets have no Resend key. The live centre reports `resend_key_saved:false` and no From ad"
-  },
-  {
-   "ts": "2026-10-12T02:47:09+0530",
-   "task_id": "T-148",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-148 is in review with Bharath and Bhaskar; the deck's cover logo is still broken live until Bharath applies the two patches.\n\n| Item | State |\n|---|---|\n| Live state (checked today, read-only) | Root `tantra-logo.png` still returns 404; `uploads/tantra-logo.png` returns 200 |\n| Published deck patc"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-158",
+ "task_id": "T-242",
  "entries": [
-  "F-a5eb6136"
+  "F-5ef803d7"
  ],
- "started": "2026-10-12T03:28:20+0530",
- "message": "Acting on 1 note(s) for T-158: Pipeline dashboard modelled on a client's webinar desk",
+ "started": "2026-10-12T03:35:49+0530",
+ "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
  "slices": {
   "T-135": 1,
   "T-300": 2,

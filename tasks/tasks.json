@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T03:32:14+0530",
-  "version": 2301,
+  "updated": "2026-10-12T03:35:17+0530",
+  "version": 2302,
   "last_id": 417,
   "team": [
    {
@@ -8944,7 +8944,7 @@
    "evidence": [
     {
      "label": "Pipeline dashboard",
-     "url": "http://localhost:8899/pipeline?v=8"
+     "url": "http://localhost:8899/pipeline?v=9"
     },
     {
      "label": "1440 screenshot",
@@ -9036,6 +9036,11 @@
      "ts": "2026-10-12T03:32:14+0530",
      "who": "claude",
      "note": "First Monday run: kickstarted com.tantra.pipeline-weekly, which wrote pipeline/snapshots/2026-10-12.json and its LOG line. I fixed two faults it showed in dash.py: snapshots were dated in UTC (so the 09:00 IST run would file as Sunday), and under launchd gh could not be found (all 5 PR lookups failed, now 0). A same-day rerun now replaces its LOG line instead of adding one. test_dash.py passes and http://localhost:8899/pipeline?v=8 shows 6 bands, with all 23 cards keeping their live/derived tag and Counts note next to the local preview table. Pushed as 025b2fd4."
+    },
+    {
+     "ts": "2026-10-12T03:35:17+0530",
+     "who": "claude",
+     "note": "Verify pass: the 2026-10-12 snapshot and its single LOG line are there. I re-ran the job under launchd and it found all 5 PRs and wrote no second line. I also fixed the duplicate feature-decision line: a rerun on the same day now keeps that day's decision (pushed as 30d6f021). test_dash.py passes, and http://localhost:8899/pipeline?v=9 shows 6 bands, 23 of 23 cards tagged with a Counts note, the local preview table and no dashes. The sheet is still unreadable because this machine's Python is too old for the Google library."
     }
    ],
    "order": 1580,
