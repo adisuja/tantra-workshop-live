@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T21:45:02+0530",
-  "version": 2043,
+  "updated": "2026-10-11T21:56:27+0530",
+  "version": 2045,
   "last_id": 408,
   "team": [
    {
@@ -13775,19 +13775,7 @@
    "evidence": [
     {
      "label": "Live centre (Choose your tools)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-stack&v=t270"
-    },
-    {
-     "label": "Live centre (Day 0 funnels card)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-foundations&v=t270"
-    },
-    {
-     "label": "Full-size webinar board",
-     "url": "https://revops-centre.growthcluborg.workers.dev/funnels/webinar/?v=t270"
-    },
-    {
-     "label": "Commit 9fca8f3",
-     "url": "app/src/lib/field-examples.ts"
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-stack&v=t270b"
     },
     {
      "label": "Probe",
@@ -13796,10 +13784,6 @@
     {
      "label": "Screenshot: Choose your tools",
      "url": "/tmp/probe-t270/start-stack-1440.png"
-    },
-    {
-     "label": "Screenshot: Day 0 funnels",
-     "url": "/tmp/probe-t270/start-foundations-1440.png"
     }
    ],
    "blockers": [],
@@ -13834,6 +13818,11 @@
      "ts": "2026-10-11T08:35:15+0530",
      "who": "claude",
      "note": "9fca8f3 was already on origin/main. ev_length had only a software example, so I added software, consultancy, course and solo examples on both cards (1ef94a2, pushed); check-examples passes 641/641 and probe-t270 passes its two data checks. Left for the next pass: the probe's browser step times out on page.fill, so the live consent check is not yet re-verified, and the revops-centre Worker deploy plus mirror publish for 1ef94a2 are still to do."
+    },
+    {
+     "ts": "2026-10-11T21:56:27+0530",
+     "who": "claude",
+     "note": "Deployed revops-centre Worker 81d596cf (1ef94a2 ev_length examples live). The live probe passes every teaching, start-stack, examples and Day 0 check, but the two consent checks cannot run on the live preview: its shared test attendee has finished Day 1, so the ask is correctly hidden, and the local admin key is refused on live. Left: run the consent checks in admin mode on local wrangler dev (or point the preview run at an open, empty Day 2 AI card and skip the paid yes), push the probe fix (local commit 430a1201), then publish the mirror and move to review. Open https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-stack&v=t270b"
     }
    ],
    "order": 2700
@@ -14001,11 +13990,11 @@
    "evidence": [
     {
      "label": "Live hub",
-     "url": "https://adisuja.github.io/tantra-workshop-live/?v=t273h025b"
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=t273v3"
     },
     {
      "label": "Local hub",
-     "url": "file:///Users/adithyamurali/tantra-redesign/workshop-plan/index.html?v=t273h025b"
+     "url": "file:///Users/adithyamurali/tantra-redesign/workshop-plan/index.html?v=t273v3"
     }
    ],
    "blockers": [],
@@ -14045,6 +14034,11 @@
      "ts": "2026-10-11T21:41:33+0530",
      "who": "claude",
      "note": "H025 now goes the other way: the hub's b-pass and the ladder freebie both say Two-Month Platform Pass ('Two months of the platform the engine runs on', funnel.ts wording, no dollar value). Committed f341d58f to main and pushed, mirror 4f6e8f861 is live. probe-review-hub.mjs says ALL LINKS OK, the live page has no '1 month, worth' left, and the only 'Oct' in index.html is the JS month list. AUDIT.md H025 now cites f341d58f; that folder is not a git repo, so the edit is saved but there was nothing to commit. Open https://adisuja.github.io/tantra-workshop-live/?v=t273h025b"
+    },
+    {
+     "ts": "2026-10-11T21:55:27+0530",
+     "who": "claude",
+     "note": "Checked again in a fresh run: the b-pass in review_hub.py and the offer ladder in index.html both say Two-Month Platform Pass, word for word from funnel.ts. vip-kit.ts is untouched, f341d58f is on origin/main, and the live mirror shows the new wording. Rebuilding the page changed nothing in either copy, the full link probe passes (ALL LINKS OK; its first run had one card miss from a slow page load, and that card loads fine when opened directly). The only 'Oct' left is the JS month list, and AUDIT.md H025 cites f341d58f. Open https://adisuja.github.io/tantra-workshop-live/?v=t273v3"
     }
    ],
    "order": 2730

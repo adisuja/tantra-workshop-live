@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T21:56:43+0530",
+   "task_id": "T-270",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-270 is still in doing: 1ef94a2 is deployed on the live Worker, but the two consent checks could not run on live, so the probe fix, mirror publish and move to revie"
+  },
+  {
    "ts": "2026-10-11T21:44:57+0530",
    "task_id": "T-284",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-197 is back in review: the probe gives 0 FAIL on main and the old centre's Join buttons open the attendee's own Zoom link; nothing new needed pushing, fixing or re"
-  },
-  {
-   "ts": "2026-10-11T17:11:35+0530",
-   "task_id": "T-152",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "**T-152:** it's back in review with Bharath and Adi. I found one real gap and fixed it: the fix step was creating branches and commits inside the local Tantra backend clone, which Adi's 2026-10-11 rule forbids. Committed as 4f8e6c9b, nothing pushed.\n\n**Completion check (all evidence from this run):*"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-270",
+ "task_id": "T-380",
  "entries": [
-  "F-e0743104"
+  "F-50db9ee7"
  ],
- "started": "2026-10-11T21:45:15+0530",
- "message": "Acting on 1 note(s) for T-270: New centre cards: teach by default, examples on every field, no paid auto-drafts",
+ "started": "2026-10-11T21:57:18+0530",
+ "message": "Acting on 1 note(s) for T-380: Trash two undeployed 'Tantra funnel forms receiver' Apps Script projects (boards@fintechcircle.com)",
  "slices": {
   "T-135": 1,
   "T-148": 1,
@@ -115,6 +115,7 @@
   "T-242": 2,
   "T-052": 1,
   "T-191": 1,
-  "T-292": 1
+  "T-292": 1,
+  "T-270": 1
  }
 }
