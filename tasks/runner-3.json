@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T21:23:52+0530",
+   "task_id": "T-275",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-275 is now in review: H006 and H013 are closed, H008 moved to T-006, and the referral dashboard needed no republish.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| 1d66ef0 is on origin/main | Done | `merge-base --is-ancestor` check passed |\n| Replies column and team total still in `ref"
+  },
+  {
    "ts": "2026-10-11T18:47:22+0530",
    "task_id": "T-258",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-334 is still blocked: GitHub only takes the purge request from Adi's signed-in adisuja account, and the agent may not sign in as Adi or message outside parties. I posted that as the plain answer on the task and acked F-bee27c2a.\n\n- **Exact blocker explained:** done. orchestrator.py lines 74-75 for"
-  },
-  {
-   "ts": "2026-10-11T16:53:26+0530",
-   "task_id": "T-031",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "The retry is still waiting for the lock. I'll act on its result when the notification comes."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-275",
+ "task_id": "T-284",
  "entries": [
-  "F-024389c9"
+  "F-777d2bc8"
  ],
- "started": "2026-10-11T21:19:27+0530",
- "message": "Acting on 1 note(s) for T-275: Referral dashboard: production link, cohort date source, payout wording",
+ "started": "2026-10-11T21:28:59+0530",
+ "message": "Acting on 1 note(s) for T-284: Put the approved 4K walkthroughs on both onboarding centres and the playbook",
  "slices": {
   "T-135": 1,
   "T-148": 1,
