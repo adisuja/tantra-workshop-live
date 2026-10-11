@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T22:44:30+0530",
-  "version": 2090,
+  "updated": "2026-10-11T22:50:15+0530",
+  "version": 2093,
   "last_id": 410,
   "team": [
    {
@@ -5286,6 +5286,11 @@
      "ts": "2026-10-10T16:35:34+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-24 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-11T22:50:15+0530",
+     "who": "claude",
+     "note": "Ripple from T-295 checked, nothing had to change: in a headless browser on the live mirror today, Book a Call shows the Amazon mark, Hub and Spoke shows the YouTube mark, and no Slack tile or text appears on Book a Call, Waterfall or Hub and Spoke (Slack was already taken out of every board by T-260; Waterfall uses no Amazon or YouTube channel). The T-295 engine fix (e5fbf41) is in the published mirror build, so the seven review links above already show it."
     }
    ],
    "order": 1060,

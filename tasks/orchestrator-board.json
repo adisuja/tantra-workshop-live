@@ -1,13 +1,13 @@
 {
  "running": null,
- "last_sweep": "2026-10-11T22:49:00+0530",
+ "last_sweep": "2026-10-11T22:52:37+0530",
  "counts": {
-  "proceed": 32,
+  "proceed": 33,
   "needs_adi": 22,
-  "complete": 50,
+  "complete": 51,
   "resolve": 9,
-  "finish": 30,
-  "keep_hold": 39,
+  "finish": 29,
+  "keep_hold": 38,
   "drop": 1
  },
  "tasks": {
@@ -307,8 +307,8 @@
    "input_task": null
   },
   "T-108": {
-   "verdict": "keep_hold",
-   "ts": "2026-10-10T16:41:46+0530",
+   "verdict": "proceed",
+   "ts": "2026-10-11T22:52:37+0530",
    "input_task": null
   },
   "T-322": {
@@ -697,8 +697,8 @@
    "input_task": null
   },
   "T-240": {
-   "verdict": "finish",
-   "ts": "2026-10-11T11:56:07+0530",
+   "verdict": "complete",
+   "ts": "2026-10-11T22:52:37+0530",
    "input_task": null
   },
   "T-242": {
