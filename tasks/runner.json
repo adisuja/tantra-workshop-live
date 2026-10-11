@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T16:02:02+0530",
+   "task_id": "T-001",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I checked the ack. F-200e1788 was already marked processed by the previous run, so \"acked 0\" just means there was nothing left to ack.\n\nT-001 is back in review: the page passes every check I ran today, I fixed one gap I found, and only Adi's copy sign-off is left.\n\n**Completion check:**\n- **Orchestr"
+  },
+  {
    "ts": "2026-10-11T13:32:45+0530",
    "task_id": "T-253",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · [cerebras/gpt-oss-120b] [429]: upstream error (reset after 1m)"
-  },
-  {
-   "ts": "2026-10-11T08:55:14+0530",
-   "task_id": "T-259",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-259 is in review for Adi and Bharath: the verify pass found nothing to fix, so there was no commit and no push.\n\n**COMPLETION CHECK** (evidence from this run)\n\n| Item | State |\n|---|---|\n| `cf3d5ff` on origin/main, tree clean | Done for the task's files. `cf3d5ff` and `b880b67` are ancestors of or"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-001: /masterclass landing page",
- "task_id": "T-001",
+ "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
+ "task_id": "T-242",
  "entries": [
-  "F-200e1788"
+  "F-15a68b48"
  ],
  "mode": "feedback",
- "started": "2026-10-11T15:56:19+0530",
+ "started": "2026-10-11T16:08:22+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
