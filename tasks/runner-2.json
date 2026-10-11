@@ -97,14 +97,15 @@
    "summary": "(Held back from the public board: this note mentions a private client detail.)"
   }
  ],
- "state": "paused",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
+ "task_id": "T-107",
  "entries": [
-  "F-12dd68ec"
+  "F-a0ca4550",
+  "R-9a5ee669"
  ],
- "started": "2026-10-11T08:43:01+0530",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 76% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 10:51.",
+ "started": "2026-10-11T10:56:31+0530",
+ "message": "Acting on 2 note(s) for T-107: Delete wiring test rows (ops.db + Work Tracker)",
  "slices": {
   "T-072": 1,
   "T-245": 1,

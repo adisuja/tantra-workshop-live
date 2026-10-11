@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T09:10:10+0530",
-  "version": 1820,
+  "updated": "2026-10-11T10:56:30+0530",
+  "version": 1822,
   "last_id": 397,
   "team": [
    {
@@ -5589,7 +5589,16 @@
     "app tsc passes",
     "M068 marked fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md with the commit"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "funnel.ts (83a1c23)",
+     "url": "app/src/lib/funnel.ts"
+    },
+    {
+     "label": "AUDIT.md M068",
+     "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -5622,12 +5631,23 @@
      "ts": "2026-10-10T16:35:34+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-28 was past; now 2026-10-16 (P2 rule)."
+    },
+    {
+     "ts": "2026-10-11T10:56:30+0530",
+     "who": "claude",
+     "note": "People: reviewers Bhaskar/Adi → Bhaskar/Bharath/Adi (by claude)."
+    },
+    {
+     "ts": "2026-10-11T10:56:30+0530",
+     "who": "claude",
+     "note": "Verified 2026-10-11, no code change: 83a1c23 is already on origin/main (no push needed), git grep for SEATS_CLAIMED/SEATS_TOTAL in app/src on origin/main and the worktree returns nothing, and app tsc --noEmit exits 0. AUDIT.md line 455 reads M068 'fixed in 83a1c23 (2026-10-09)'; SEATS_PER_COHORT untouched. Added Bharath as reviewer for the code change."
     }
    ],
    "order": 1190,
    "assignee": "Claude",
    "reviewers": [
     "Bhaskar",
+    "Bharath",
     "Adi"
    ]
   },
