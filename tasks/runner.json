@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T06:58:25+0530",
+   "task_id": "T-213",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-213 is back in review: the verify pass found and fixed one real fault in the lead hand-off, and the Endy agreement itself still waits on Nelbin's call (T-397). My two commits (6a59a78, 5d8a0ca) are local only, not pushed.\n\n**COMPLETION CHECK**\n\n| Item | State | Evidence from this run |\n|---|---|--"
+  },
+  {
    "ts": "2026-10-11T06:40:21+0530",
    "task_id": "T-158",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-001 stays in review: everything the Orchestrator note asked for is verified on the live mirror, and the only thing left is Adi's copy sign-off.\n\nCOMPLETION CHECK (evidence from this run):\n\n1. **Funnel numbers match the FunnelOS board: done.** `day-art.tsx`, `visuals.tsx` and `funnel-os-types/syste"
-  },
-  {
-   "ts": "2026-10-10T21:41:07+0530",
-   "task_id": "T-020",
-   "mode": "feedback",
-   "status": "review",
-   "result": "turns",
-   "summary": "T-020 verified with nothing to fix and left at review for Adi's read: https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a\n\nCOMPLETION CHECK (all evidence from this run)\n\n1. **Run both probes, fix anything red: done.** `probe-playbook.mjs` printed \"clean\" at 360, 768, 1024 and 1440 o"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-213: Set up the Endy Inboxes white-label partnership",
- "task_id": "T-213",
+ "message": "Acting on 1 note(s) for T-235: Post-session follow-ups through Tantra: replay to no-shows, nudge on low engagement",
+ "task_id": "T-235",
  "entries": [
-  "F-81e534f7"
+  "F-bb81a15c"
  ],
  "mode": "feedback",
- "started": "2026-10-11T06:41:58+0530",
+ "started": "2026-10-11T06:59:52+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
