@@ -97,8 +97,8 @@
    "summary": "I made no changes for this update and T-061 stays blocked.\n\n- **Key no longer blocking (ripple ask):** already true. The key was saved in the live centre on 11 Oct, and `needs_from_owner` only asks for the mailbox.\n- **Email only, WhatsApp off:** already the case. `createLaneCampaigns` in `cloud/src"
   }
  ],
- "state": "idle",
- "message": "Last sweep handled 8 task(s).",
+ "state": "paused",
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 75% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 01:51.",
  "task_id": null,
  "entries": [],
  "mode": null,

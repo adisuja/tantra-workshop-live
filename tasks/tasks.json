@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T00:28:49+0530",
-  "version": 2183,
+  "updated": "2026-10-12T00:29:48+0530",
+  "version": 2185,
   "last_id": 413,
   "team": [
    {
@@ -13806,20 +13806,16 @@
    ],
    "evidence": [
     {
-     "label": "Probe (simulator): node cloud/scripts/probe-t268.mjs",
+     "label": "Probe (simulator) 22/22",
      "url": "cloud/scripts/probe-t268.mjs"
     },
     {
-     "label": "Zoom live-room card source",
-     "url": "app/src/lib/workshop-cards.ts"
+     "label": "Live mirror",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=t268d"
     },
     {
-     "label": "Poll and WebinarGeek API checks",
+     "label": "API checks",
      "url": "cloud/src/connectors/CHECKS.md"
-    },
-    {
-     "label": "Live centre",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?v=t268polls"
     }
    ],
    "blockers": [],
@@ -13854,6 +13850,16 @@
      "ts": "2026-10-11T21:13:35+0530",
      "who": "claude",
      "note": "Event-setup now creates the four Zoom polls on every attendee Pro meeting (commit 6d65f80, already on main). Later deploys from main put it live: the current revops-centre Worker b6423609 has it, and the published Pages mirror serves the Zoom card's poll auto block (checked by curl). probe-t268 passes 22 of 22 in the simulator and app and cloud tsc are clean. The poll scopes are still UNVERIFIED on a live Zoom account (T-253). X058 in AUDIT.md now cites 6d65f80 and LOG.md has a DEPLOYED line."
+    },
+    {
+     "ts": "2026-10-12T00:28:56+0530",
+     "who": "claude",
+     "note": "Close-out: poll commit 6d65f80 is on origin/main with no T-268 changes left uncommitted, probe-t268 passes 22 of 22 in the simulator (including 'Day 1 Zoom card lists the poll scopes'), and the live mirror ae397ec2e serves the Zoom card text 'event-setup creates the four polls' (chunk 43fq5cdzevd66.js). Worker b6423609 (from LOG.md:918) has it, so nothing was redeployed. The poll scopes are still UNVERIFIED on a live Zoom account (T-253). Open the mirror at https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=t268c"
+    },
+    {
+     "ts": "2026-10-12T00:29:48+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-12: 6d65f80 is on origin/main with no T-268 files left uncommitted; probe-t268 passes 22 of 22 in the simulator (Zoom card, poll scopes, 4 weekly broadcasts for WebinarGeek and Zoom, 11:00 ET across clock change); the live mirror chunk serves 'creates the four polls'; all nine AUDIT ids are marked fixed with commits (X058 cites 6d65f80). Worker b6423609 per LOG.md:918; poll scopes stay UNVERIFIED on a live Zoom account under T-253. Open https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=t268d"
     }
    ],
    "order": 2680

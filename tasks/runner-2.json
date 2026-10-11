@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T00:29:57+0530",
+   "task_id": "T-268",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I checked everything again and found nothing to fix, so T-268 is back in review. Nothing was pushed, redeployed or republished, and the task files are unchanged. When I acked F-bace4576, `pass.py` reported 0 notes acked, which most likely means the last run had already acked it.\n\n| Item | State | Wh"
+  },
+  {
    "ts": "2026-10-12T00:27:48+0530",
    "task_id": "T-006",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "done",
    "result": "ok",
    "summary": "I checked the previous report from scratch, everything holds up, and I've set T-292 to **done**. I changed no code in this run.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| Local admin shows connection 1 on and connection 3 on as the probe fallback | Done | The local centre lists conn"
-  },
-  {
-   "ts": "2026-10-11T23:17:30+0530",
-   "task_id": "T-020",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "The note was already marked processed (2026-10-11 23:16) by the previous run. That's why the ack reports 0, and it needs nothing more. I changed no files, so there was nothing to commit.\n\n**Completion check:**\n- **Orchestrator decision O-98af5c69 (keep T-020 in review, one ask to Adi, no pushes):** "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-268",
+ "task_id": "T-270",
  "entries": [
-  "F-bace4576"
+  "F-a74ca775"
  ],
- "started": "2026-10-12T00:27:53+0530",
- "message": "Acting on 1 note(s) for T-268: Live room: Zoom and WebinarGeek setup cards and weekly broadcast scheduling",
+ "started": "2026-10-12T00:31:26+0530",
+ "message": "Acting on 1 note(s) for T-270: New centre cards: teach by default, examples on every field, no paid auto-drafts",
  "slices": {
   "T-072": 1,
   "T-245": 1,
@@ -120,5 +120,17 @@
   "T-059": 1,
   "T-300": 1,
   "T-234": 1
+ },
+ "api_capped": {
+  "T-229": "2026-10-12T00:30:11+0530",
+  "T-272": "2026-10-12T00:30:18+0530",
+  "T-275": "2026-10-12T00:30:25+0530",
+  "T-282": "2026-10-12T00:30:32+0530",
+  "T-059": "2026-10-12T00:30:43+0530",
+  "T-273": "2026-10-12T00:30:51+0530",
+  "T-284": "2026-10-12T00:31:01+0530",
+  "T-144": "2026-10-12T00:31:08+0530",
+  "T-380": "2026-10-12T00:31:19+0530",
+  "T-153": "2026-10-12T00:31:26+0530"
  }
 }
