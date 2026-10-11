@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T15:57:05+0530",
-  "version": 1940,
+  "updated": "2026-10-11T16:01:42+0530",
+  "version": 1941,
   "last_id": 406,
   "team": [
    {
@@ -226,7 +226,15 @@
    "evidence": [
     {
      "label": "Landing page (mirror)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791714425"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791714702"
+    },
+    {
+     "label": "Landing page (local)",
+     "url": "http://localhost:4322/masterclass?v=1791714702"
+    },
+    {
+     "label": "Share metadata",
+     "url": "app/src/app/masterclass/page.tsx"
     },
     {
      "label": "probe-funnels.mjs",
@@ -234,7 +242,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791714425 and reply on this task with copy changes, or approve.",
+   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791714702 and reply on this task with copy changes, or approve.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -290,6 +298,11 @@
      "ts": "2026-10-11T15:57:05+0530",
      "who": "claude",
      "note": "Orchestrator finish note applied: rechecked today, no $50M figure in masterclass-client.tsx, page.tsx or the live mirror page, and probe-funnels on the mirror is clean on all 10 pages including /masterclass (2adc82c is on origin/main). Adi: the only step left is your copy sign-off at https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791714425"
+    },
+    {
+     "ts": "2026-10-11T16:01:42+0530",
+     "who": "claude",
+     "note": "Verified today: no $50M figure in the masterclass source or on the live mirror, the mirror page shows $99, and probe-funnels is clean on all 10 pages at 390 and 1440, both on the mirror and locally. I also fixed a gap: the /masterclass share card used the sitewide product description, which says 'webinar'. It now uses the page's own title and description (commit 757b2ecd, checked locally). This reaches the mirror at the next publish. Adi: copy sign-off at https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791714702"
     }
    ],
    "order": 0,
