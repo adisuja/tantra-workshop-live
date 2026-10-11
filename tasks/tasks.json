@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T06:52:25+0530",
-  "version": 1764,
+  "updated": "2026-10-11T07:02:03+0530",
+  "version": 1768,
   "last_id": 397,
   "team": [
    {
@@ -7888,16 +7888,24 @@
    ],
    "evidence": [
     {
-     "label": "Board with counter + Report form",
-     "url": "http://localhost:8899/tasks.html?v=155"
+     "label": "Public board with counter + Report form",
+     "url": "https://tantra-board.growthcluborg.workers.dev/?v=1764"
+    },
+    {
+     "label": "Mirror board",
+     "url": "https://adisuja.github.io/tantra-workshop-live/tasks.html?v=1764"
+    },
+    {
+     "label": "FintechCircle draft + test-send script",
+     "url": "workshop-plan/scripts/fintechcircle-experiment.mjs"
+    },
+    {
+     "label": "FintechCircle experiment spec (status updated)",
+     "url": "workshop-plan/dogfooding/FINTECHCIRCLE_EXPERIMENT.md"
     },
     {
      "label": "Growth backlog (8 ideas, each with a metric)",
      "url": "workshop-plan/dogfooding/GROWTH_BACKLOG.md"
-    },
-    {
-     "label": "FintechCircle experiment spec",
-     "url": "workshop-plan/dogfooding/FINTECHCIRCLE_EXPERIMENT.md"
     },
     {
      "label": "Client experiment spec (private)",
@@ -7936,13 +7944,24 @@
      "ts": "2026-10-09T20:00:38+0530",
      "who": "claude",
      "note": "Built: board counter (15 a week, 2 per line of business) and a 'Report bug / feature' form that posts tagged notes to the board Worker /api/inbox; probe-feedback.mjs passes 6/6 on localhost. Wrote an 8-idea growth backlog with metrics, the FintechCircle spec, and the private client spec; opened T-363 for Amal to get the client's written OK. Not done: moving our funnel's reminders and the FintechCircle Adi-test send onto live Tantra campaigns, because both need the Tantra API key Adi pastes in T-337 (the code for reminders is already built in T-234); the counter reaches the public mirror on the next board sync."
+    },
+    {
+     "ts": "2026-10-11T07:02:03+0530",
+     "who": "claude",
+     "note": "People: reviewers Amal/Aquila → Amal/Aquila/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-11T07:02:03+0530",
+     "who": "claude",
+     "note": "Board sync published (v1764): the feedback counter and Report form are on the public board and the mirror, and probe-feedback.mjs passes live (9 checks) and local (6 checks). The FintechCircle draft and test send is now one command (workshop-plan/scripts/fintechcircle-experiment.mjs), proven on the vendor simulator with 16 checks passing and emails going only to the Adi test inbox. Still open, no new ask: funnel reminders and the real FintechCircle draft wait on the key in T-337 (then run T-234 --go, then this script --go), the client experiment waits on T-363, and starting on FintechCircle's real list is not approved and is the one open step for Amal and Aquila."
     }
    ],
    "order": 1550,
    "assignee": "Claude",
    "reviewers": [
     "Amal",
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ]
   },
   {
