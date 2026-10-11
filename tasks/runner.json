@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T07:36:22+0530",
+   "task_id": "T-261",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I found nothing to fix, so T-261 is back in review for Adi and Bharath. The note F-65f5fd5b had already been acked by the previous run, so `ack` returned 0.\n\n**Completion check (everything below was checked in this run):**\n- **Domain with DNS outside Cloudflare, Day 0 with no record added by hand:**"
+  },
+  {
    "ts": "2026-10-11T07:32:00+0530",
    "task_id": "T-254",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "paused",
    "summary": "Stopped: Adi paused the agent from the board."
-  },
-  {
-   "ts": "2026-10-11T01:30:13+0530",
-   "task_id": "T-100",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-100 stays in review as the same single look as T-094. Nothing visible had to change, so nothing was rebuilt or pushed.\n\n**COMPLETION CHECK for T-100 (note F-b411f855)**\n\n1. **Probes at 7 widths, main and live mirror: done.** `shoot-vip.mjs` and `probe-page.mjs` at 390, 414, 768, 1024, 1280, 1440 a"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-261: Centre: domains and DNS outside Cloudflare, workers.dev subdomain and registrar gate",
- "task_id": "T-261",
+ "message": "Acting on 1 note(s) for T-258: S1 traffic guides: automate the remaining manual steps the centre can do (DNS checks, suppression, GCP setup, GA4 reads)",
+ "task_id": "T-258",
  "entries": [
-  "F-65f5fd5b"
+  "F-992e2178"
  ],
  "mode": "feedback",
- "started": "2026-10-11T07:32:51+0530",
+ "started": "2026-10-11T07:37:52+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,

@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T07:34:37+0530",
-  "version": 1781,
+  "updated": "2026-10-11T07:36:47+0530",
+  "version": 1783,
   "last_id": 397,
   "team": [
    {
@@ -12310,7 +12310,7 @@
     },
     {
      "label": "live centre",
-     "url": "https://revops-centre.growthcluborg.workers.dev/?v=t261-8cbbcb2"
+     "url": "https://revops-centre.growthcluborg.workers.dev/?v=t261-verify"
     },
     {
      "label": "AUDIT.md",
@@ -12344,6 +12344,16 @@
      "ts": "2026-10-11T07:34:37+0530",
      "who": "claude",
      "note": "Shipped: 5be6f60 is on origin/main (pushed at 8cbbcb2), and the live Worker 7f8bfc45 already runs it because it was built from 97096ab and cloud/src has not changed since, so I did not deploy again. I extended probe-dns-elsewhere so a domain whose DNS is outside Cloudflare goes from pending zone to active and the agent writes all 5 Resend and DMARC records. It passes 18/18 on the simulator, the registrar gate refuses a token with no registrar access, tsc is clean, the live centre answers 302, and all 7 ids in AUDIT.md cite 5be6f60."
+    },
+    {
+     "ts": "2026-10-11T07:35:59+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11, nothing had to change. 5be6f60 and 8cbbcb2 are on origin/main; cloud tsc is clean; node cloud/scripts/probe-dns-elsewhere.mjs gives ALL PASS (18/18): a non-Cloudflare domain gets a pending zone, turns active after the nameserver change, and the agent writes all 5 Resend and DMARC records, and the start-cf-registrar gate refuses a token without registrar access. The live Worker 7f8bfc45 was deployed at 01:50 UTC from 97096ab (01:49 UTC), which contains 5be6f60, nothing in cloud/src, migrations or the card files has changed since, and the centre answers 302. AUDIT.md marks all 7 ids fixed 5be6f60. One limit: the probe drives the connector calls the Resend job uses, not the full Workflow run."
+    },
+    {
+     "ts": "2026-10-11T07:36:47+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-229."
     }
    ],
    "order": 2610
