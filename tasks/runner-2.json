@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T21:32:51+0530",
+   "task_id": "T-059",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "turns",
+   "summary": "(Held back from the public board: this note mentions a private client detail.)"
+  },
+  {
    "ts": "2026-10-11T21:20:38+0530",
    "task_id": "T-056",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-226 is still blocked: the seat can't join a real meeting until you do one Zoom sign-in. The separate blocker list you asked for is T-407, and I checked it against production today.\n\n**What production shows today (read-only check):**\n- **Seat credentials:** none are saved on Live Control. The app v"
-  },
-  {
-   "ts": "2026-10-11T16:16:52+0530",
-   "task_id": "T-299",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. The probes are still failing, so nothing was merged, pushed, deployed or published; T-299 is back in `doing` and both notes are acked.\n\n**Completion check:**\n- **Ven"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-059",
+ "task_id": "T-273",
  "entries": [
-  "F-6fe6d448",
-  "R-0948074a"
+  "F-8aa58f92"
  ],
- "started": "2026-10-11T21:25:19+0530",
- "message": "Acting on 2 note(s) for T-059: AI-personalised first lines for our workshop outreach on Tantra campaigns",
+ "started": "2026-10-11T21:35:02+0530",
+ "message": "Acting on 1 note(s) for T-273: Workshop Hub (index.html): review data, offer ladder, cohort dates and header",
  "slices": {
   "T-072": 1,
   "T-245": 1,
@@ -118,6 +117,7 @@
   "T-229": 1,
   "T-240": 1,
   "T-278": 1,
-  "T-292": 1
+  "T-292": 1,
+  "T-059": 1
  }
 }
