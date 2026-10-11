@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T04:27:13+0530",
-  "version": 2339,
+  "updated": "2026-10-12T04:31:00+0530",
+  "version": 2340,
   "last_id": 419,
   "team": [
    {
@@ -7739,6 +7739,11 @@
      "ts": "2026-10-12T04:27:13+0530",
      "who": "claude",
      "note": "The mirror was one note behind main (the webinar deck cover-logo note from T-148), so I republished the hub from main as mirror fa67765 after the LOG.md hold check and the leak guard (0 hits in the review data). The live tab shows 475 elements in 11 categories, b-pass reads Two-Month Platform Pass with no '1 month, worth $99', and probe-review-hub.mjs reports ALL LINKS OK (423 links). Amal: open https://adisuja.github.io/tantra-workshop-live/?v=fa67765#review and approve or request changes."
+    },
+    {
+     "ts": "2026-10-12T04:31:00+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-12: the live hub is byte-identical to main's index.html (mirror index commit fa67765), it carries 475 elements in 11 categories, b-pass reads Two-Month Platform Pass with no '1 month, worth $99', and probe-review-hub.mjs reports ALL LINKS OK (423 links). Amal: open https://adisuja.github.io/tantra-workshop-live/?v=fa67765#review and approve or request changes."
     }
    ],
    "order": 1440,

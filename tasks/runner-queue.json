@@ -50,9 +50,12 @@
   }
  ],
  "state": "idle",
- "message": "Nothing waiting.",
+ "message": "Last sweep handled 0 task(s).",
  "task_id": null,
  "entries": [],
  "mode": null,
- "started": "2026-10-09T00:25:45+0530"
+ "started": "2026-10-12T04:30:32+0530",
+ "api_capped": {
+  "T-073": "2026-10-12T04:30:40+0530"
+ }
 }
