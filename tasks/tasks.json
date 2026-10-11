@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T05:46:02+0530",
-  "version": 1721,
+  "updated": "2026-10-11T05:50:03+0530",
+  "version": 1723,
   "last_id": 394,
   "team": [
    {
@@ -700,16 +700,12 @@
    ],
    "evidence": [
     {
-     "label": "runbook",
+     "label": "runbook (commit 4121584)",
      "url": "workshop-plan/ops/runbook.md"
     },
     {
-     "label": "up.sh",
+     "label": "up.sh (19 jobs, exit 0)",
      "url": "workshop-plan/ops/up.sh"
-    },
-    {
-     "label": "commit 4ebca0a (local, not pushed)",
-     "url": "workshop-plan/ops/runbook.md"
     }
    ],
    "blockers": [],
@@ -754,6 +750,11 @@
      "ts": "2026-10-11T05:46:02+0530",
      "who": "claude",
      "note": "Runbook and up.sh now cover all 19 com.tantra jobs (pipeline-weekly was missing), section 4 names the right mirror (tantra-workshop-live, with tantra-review noted as the separate team site), and the R2 output hosting note from T-032 was already in the runbook. Verified on 2026-10-11: up.sh and up.sh --check both exit 0 with 0 failed and 3 warnings (centre-sheet admin export 401, codex-check 401, MongoDB not running per T-247); all 19 live plists are byte-identical to their repo copies and hold no secret values. Committed locally as 4ebca0a and not pushed: the cherry-pick push is ruled out by the newer whole-main rule (it split history twice on 2026-10-10), so this rides the next whole-main publish. Open workshop-plan/ops/runbook.md."
+    },
+    {
+     "ts": "2026-10-11T05:50:03+0530",
+     "who": "claude",
+     "note": "Verify pass: up.sh and up.sh --check both exit 0 (0 failed, 3 warnings: centre-sheet 401, codex-check 401, MongoDB off until T-247), and all 19 live plists match their repo copies with no secret values. I corrected the runbook where it was wrong or thin: zoom-support-check runs daily at 09:10, the latest migration is 0027, the funnel Worker variables and the Zoom hook are now in the switch plan, and the attendee funnel hooks are no longer listed as centre hooks. Committed locally as 4121584 and not pushed: the owner's rule forbids cherry-picking onto origin/main, so it rides the next whole-main publish. Open workshop-plan/ops/runbook.md sections 1 and 5."
     }
    ],
    "order": 60,
@@ -2267,12 +2268,12 @@
    ],
    "evidence": [
     {
-     "label": "All 200 LinkedIn drafts (board)",
-     "url": "http://localhost:8899/outputs/t053-linkedin-posts.html?v=t053"
+     "label": "All 225 LinkedIn drafts (board)",
+     "url": "http://localhost:8899/outputs/t053-linkedin-posts.html?v=t053b"
     },
     {
-     "label": "All 200 LinkedIn drafts (public mirror)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/outputs/t053-linkedin-posts.html?v=t053"
+     "label": "All 225 LinkedIn drafts (public mirror)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/outputs/t053-linkedin-posts.html?v=t053b"
     }
    ],
    "blockers": [],
@@ -2307,6 +2308,11 @@
      "ts": "2026-10-10T16:35:33+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-20 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-11T05:50:01+0530",
+     "who": "claude",
+     "note": "Reran after the usage limit reset: the drafts now cover all 9 posting members (Adi, Bhaskar, Nelbin, Aquila, Amal, Ben, Bharath, Vaibhavi, Bhaskar Dev), 5 days x 5 posts each, 225 posts, with Vaibhavi added. The build script found 0 problems (every first-comment link carries utm_source=referral and that member's utm_content, no banned words, dashes, stats or dates), the leak guard was clean, and I opened the page at 1440 and 390 wide and confirmed the public mirror serves Vaibhavi's links. Bhaskar: open the page and approve the voice; nothing was posted on anyone's LinkedIn."
     }
    ],
    "order": 320,
