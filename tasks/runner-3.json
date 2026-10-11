@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T12:16:51+0530",
+   "task_id": "T-115",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-115 stays blocked: the screenshots still need your one desktop session (T-384). I checked the earlier run's capture plan and it is correct, so I changed no files and made no commit.\n\n| Item | State |\n|---|---|\n| Capture plan covers all 22 slots | **Done.** A script compared it with the spec list: "
+  },
+  {
    "ts": "2026-10-11T12:07:54+0530",
    "task_id": "T-227",
    "mode": "feedback",
@@ -87,24 +95,17 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-157 is still blocked: the live Apps Script hasn't been redeployed, so it can't accept tier qualifier answers yet. The Orchestrator note (F-12dd68ec) had already been carried out in the earlier run, so I acked it. I changed no files, so there was nothing to commit.\n\n| Item | State |\n|---|---|\n| 1. "
-  },
-  {
-   "ts": "2026-10-11T11:11:39+0530",
-   "task_id": "T-156",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I checked everything again and found nothing to fix, so T-156 is back in review for Amal and Bharath. Note F-4a7ca1cd had already been acknowledged in the last run.\n\n**Completion check (evidence from this run)**\n- **Result metric for each customer type: done.** `docs/retention/result-metrics.md` lis"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-115",
+ "task_id": "T-191",
  "entries": [
-  "F-bb4cfb67"
+  "F-e202a805",
+  "R-da29e551"
  ],
- "started": "2026-10-11T12:08:51+0530",
- "message": "Acting on 1 note(s) for T-115: Guide screenshots that need Adi's signed-in accounts (Google, GA4, Cloudflare, Tantra, WebinarGeek)",
+ "started": "2026-10-11T12:18:19+0530",
+ "message": "Acting on 2 note(s) for T-191: Decide the calls still open from Nelbin's content pass",
  "slices": {
   "T-135": 1,
   "T-148": 1,
