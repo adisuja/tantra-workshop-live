@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T13:28:24+0530",
+   "task_id": "T-135",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-135 is in review for Amal. All 11 guide screenshots are real captures, and the checks passed again in this run. No push or mirror republish was needed because the work was already on origin and on the live mirror.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| 1. 11 slots replaced with"
+  },
+  {
    "ts": "2026-10-11T11:29:02+0530",
    "task_id": "T-290",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-273 is back in review: all ten hub fixes are live, plus one fix made this run for the countdown label on phones (H035, commit `e5b5df8`, mirror `261cf9c5e`).\n\n- **H016, H019, H024, H028, H029, H033, H036:** Done. Checked on the live page and in `workshop-plan/index.html` this run: the Agentic Onbo"
-  },
-  {
-   "ts": "2026-10-11T08:12:40+0530",
-   "task_id": "T-268",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. I added automatic Zoom poll creation to event-setup and 21 of 22 probe checks pass in the simulator, but nothing is committed, pushed, deployed or published yet. I m"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-135: Guide screenshots Claude can capture now from our own pages and demo output (11 slots)",
- "task_id": "T-135",
+ "message": "Acting on 1 note(s) for T-253: Confirm connector assumptions on free or test accounts (WebinarGeek, Zoom, CRMs, Cal.com, Tantra, Twilio, Dodo, Stripe, Metricool)",
+ "task_id": "T-253",
  "entries": [
-  "F-03b2abca"
+  "F-403ff48e"
  ],
  "mode": "feedback",
- "started": "2026-10-11T11:29:52+0530",
+ "started": "2026-10-11T13:28:49+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,

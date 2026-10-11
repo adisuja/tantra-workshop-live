@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T13:29:37+0530",
+   "task_id": "T-223",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-223: applied the ripple (spec now cites Worker a9f57c7a on main 95d8630e, subdomain fix 51c7ee15 cited, stale clause dropped) and ran the two approved production reads (meeting 88135386601 for 14 to 16 Oct: registered 0, waitlist 0, failed 0, session_sync empty, no non-test attendee, cap 98), logg"
+  },
+  {
    "ts": "2026-10-11T13:26:42+0530",
    "task_id": "T-242",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "I re-checked T-033 from scratch and it stays blocked. The only thing missing is Adi's Tantra API key (T-337) plus the WhatsApp number he's been asked for in T-400. I found nothing to fix and changed no code.\n\n**COMPLETION CHECK**\n- **Real T-032 link source (`/o/<token>` and `.pdf`):** done. `render_"
-  },
-  {
-   "ts": "2026-10-11T11:52:22+0530",
-   "task_id": "T-234",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "(Held back from the public board: this note mentions a private client detail.)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-223",
+ "task_id": "T-102",
  "entries": [
-  "F-47c120f4"
+  "F-de20069d"
  ],
- "started": "2026-10-11T13:28:12+0530",
- "message": "Acting on 1 note(s) for T-223: Zoom Pro meetings in the centre: per-cohort meeting, presentation room, cap and waitlist, live board, attendance",
+ "started": "2026-10-11T13:30:09+0530",
+ "message": "Acting on 1 note(s) for T-102: Live wiring audit and fixes",
  "slices": {
   "T-135": 1,
   "T-148": 1,
