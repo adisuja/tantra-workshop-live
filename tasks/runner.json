@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T00:00:54+0530",
+   "task_id": "T-034",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "I re-checked the earlier run against production myself and re-ran the dry run. Output pages and PDFs are real for all three test personas, but no email or WhatsApp went out, so T-034 stays blocked on T-123 and T-400.\n\n**COMPLETION CHECK**\n- **Harness pointed at the production centre with three test "
+  },
+  {
    "ts": "2026-10-11T23:49:20+0530",
    "task_id": "T-058",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-285 is back in review, and nothing had to be deployed or published because the copy fixes (commit 78e6b4e) are already live on both the Worker and the mirror.\n\n- **Ancestry check (done):** 78e6b4e is included in every commit the Worker was deployed from (fa7f53d, af0a1d0, 95d8630e, 53326f5b, 605e4"
-  },
-  {
-   "ts": "2026-10-11T22:33:05+0530",
-   "task_id": "T-041",
-   "mode": "feedback",
-   "status": "hold",
-   "result": "ok",
-   "summary": "I reworded T-041's blocker and left the task on hold. The tasks file now shows the new wording, there is still no ask of Adi, and note R-d00b0022 is acknowledged. Committed as 0cda65ea (not pushed).\n\n**Completion check:**\n- **Blocker wording:** done. It now reads \"Waits on T-040: its owner hold must"
   }
  ],
  "state": "working",
- "message": "Acting on 2 note(s) for T-034: Full dry run of the Day-1 pipeline",
- "task_id": "T-034",
+ "message": "Acting on 1 note(s) for T-032: PDF + live-link generation",
+ "task_id": "T-032",
  "entries": [
-  "F-23f53c5f",
-  "R-e81680b7"
+  "F-b6a9ff1b"
  ],
  "mode": "feedback",
- "started": "2026-10-11T23:50:23+0530",
+ "started": "2026-10-12T00:01:16+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
@@ -115,7 +114,6 @@
   "T-299": 1,
   "T-139": 1,
   "T-020": 1,
-  "T-034": 1,
   "T-258": 1,
   "T-268": 1,
   "T-148": 1,

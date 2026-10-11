@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T23:56:50+0530",
-  "version": 2143,
+  "updated": "2026-10-12T00:00:25+0530",
+  "version": 2145,
   "last_id": 412,
   "team": [
    {
@@ -1990,155 +1990,26 @@
   },
   {
    "id": "T-034",
-   "title": "Full dry run of the Day-1 pipeline",
-   "area": "Delivery",
-   "owner": "Aquila",
-   "priority": "P0",
-   "due": "2026-10-14",
    "status": "blocked",
-   "why": "Each weekly cohort's Day 1 depends on the loop; a failed loop breaks the do-and-get promise.",
-   "spec": "End-to-end dry run before the next weekly cohort (Wed to Fri 11:00 ET): daily survey on the Worker (POST /api/survey) to day output (T-031) to PDF and link (T-032) to email and WhatsApp through Tantra (T-033), with three test personas (SendFlow, Apex Growth, Sarah Chen from workshop-plan/build/questions.py) on the test identity the owner's Google test identity and plus-addressed variants, tagged test so they stay out of real counts. Record the time from submit to delivery per persona in workshop-plan/ops/runbook.md (T-006).",
-   "done_when": [
-    "Three personas processed with no manual step",
-    "Submit to delivery time recorded per persona",
-    "Test rows removed or tagged test in the Tantra Tracker afterwards"
-   ],
-   "evidence": [
-    {
-     "label": "Harness",
-     "url": "workshop-plan/ops/dryrun_day1.py"
-    },
-    {
-     "label": "Runbook section 6: production run rows",
-     "url": "workshop-plan/ops/runbook.md"
-    },
-    {
-     "label": "Production run 20261011-235507 results",
-     "url": "workshop-plan/ops/dryrun/20261011-235507/results.json"
-    },
-    {
-     "label": "SendFlow Day 1 output (production)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/o/Qc0yn6q3TxmblcP5CTgVXEp_BuBEOcOWq0ct8BzF3X0?v=20261011235507"
-    }
-   ],
-   "blockers": [
-    "T-123",
-    "T-400"
-   ],
-   "needs_from_owner": "Nothing new from Adi: the email leg waits on T-123 (team@growthclub.org connected as a Tantra mailbox) and WhatsApp waits on T-400 (test number). Then: DRYRUN_CENTRE=https://revops-centre.growthcluborg.workers.dev python3 workshop-plan/ops/dryrun_day1.py --require-real",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    },
-    {
-     "ts": "2026-09-18T20:42:47+0530",
-     "who": "claude",
-     "note": "Owner: build the automation code yourself. Reassigned from Bhaskar Dev to Claude."
-    },
-    {
-     "ts": "2026-09-24",
-     "who": "Claude",
-     "note": "Blocked behind T-031: the pipeline has no agent credential yet."
-    },
-    {
-     "ts": "2026-09-24",
-     "who": "Claude",
-     "note": "Unblocked: T-031 has a working agent now."
-    },
-    {
-     "ts": "2026-10-06T01:37:57+0530",
-     "who": "claude",
-     "note": "Owner 2026-10-06: the playbook and both centres promise each day's answers run through an AI workflow and come back the same day as a PDF and a live link by WhatsApp and email, for every attendee. Not built yet (no PDF generation or WhatsApp/email delivery in cloud/src); keep this open until it runs end to end per attendee."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review: context updated. 'First live session is Sep 24' is stale; cohorts now run weekly Wed to Fri 11:00 ET. Still not possible end to end until T-032 and T-033 exist."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: blockers now name the whole chain (T-031, T-032, T-033); dates follow the weekly cohort."
-    },
-    {
-     "ts": "2026-10-09T05:10:18+0530",
-     "who": "claude",
-     "note": "Built the one-command dry run: workshop-plan/ops/dryrun_day1.py adds the three personas (SendFlow, Apex Growth, Sarah Chen) as 'Adi test' test attendees on GrowthCluborg+sendflow/+apex/+sarah@gmail.com, posts their Day 1 answers to the local centre's POST /api/survey, runs each missing stage on a stand-in (HTML, Playwright PDF, Tantra campaign on the vendor simulator with email + WhatsApp steps carrying the link), records seconds per persona in ops/runbook.md and then tags + revokes the attendees through the admin API. Verified: full run passed (0.4 to 0.6 s, all three stages sim), survey_save events on the centre, 3 valid PDFs, attendees test=1 revoked=1, --require-real correctly refuses today. Committed d8153bf, NOT pushed: main is 31 commits ahead with other lanes' work, wider than the approved push. Stays blocked only on the real run, which needs T-031/T-032/T-033 to write the ops.db day_outputs contract in runbook.md, then: dryrun_day1.py --require-real."
-    },
-    {
-     "ts": "2026-10-09T05:10:33+0530",
-     "who": "claude",
-     "note": "Checked 7 related task(s); updating T-006."
-    },
-    {
-     "ts": "2026-10-09T19:09:59+0530",
-     "who": "claude",
-     "note": "Harness already built (dryrun_day1.py) and passes on stand-ins; re-checked today: --require-real still refuses (pdf, delivery not built). T-033 is now being built against a stub, so the real run still waits on real T-031/T-032 outputs; nothing else to change."
-    },
-    {
-     "ts": "2026-10-10T16:35:32+0530",
-     "who": "claude",
-     "note": "Board hygiene (T-129): due 2026-09-22 was past; now 2026-10-14 (P0 rule)."
-    },
-    {
-     "ts": "2026-10-11T01:33:36+0530",
-     "who": "claude",
-     "note": "T-031 update: day outputs are real and on origin main (f842c8b), so T-031 no longer blocks this. Note for the rehearsal: dryrun_day1.py still signs in to the centre admin with the old address form and will get 401 until it posts the token like dayoutput.py does."
-    },
-    {
-     "ts": "2026-10-11T01:35:58+0530",
-     "who": "claude",
-     "note": "T-031 verify pass: dryrun_day1.py and centre_sheet.py now sign in to the centre admin by POST (commit 0365f09, pushed), so the harness no longer gets 401 from the Worker. Nothing else changed here; T-034 still waits on T-032 and T-033."
-    },
-    {
-     "ts": "2026-10-11T05:45:20+0530",
-     "who": "claude",
-     "note": "People: reviewers Aquila → Aquila/Bharath (by claude)."
-    },
-    {
-     "ts": "2026-10-11T05:45:20+0530",
-     "who": "claude",
-     "note": "The dry run now drives the real stage code itself (dayoutput.py, render_pdf.py, deliver.py) on a run-scoped ledger: run 20261011-054418 took all three personas from survey to delivery with no manual step in 15.0 s, 8.7 s and 8.7 s, with day output and PDF plus link real and delivery on the real code against the vendor simulator (email and WhatsApp seen for Apex and Sarah; the simulator bounces the +sendflow address by its one in five rule, so that row proves the refusal path). Verified: timings are in runbook.md section 6, all three attendees read test=1 revoked=1 afterwards, cleanup and settings restore now run even when a stage fails, and --require-real still refuses until the Tantra key (T-337) exists. Two things to know: the centre on :8790 serves an older Worker build without the T-032 and T-033 routes, so I ran against a temporary local centre from this repo on :8796 (stopped now), and the T-006 ripple needed no change because the runbook was extended, not overwritten. Commit cd5590b, not pushed."
-    },
-    {
-     "ts": "2026-10-11T05:53:09+0530",
-     "who": "claude",
-     "note": "T-032 ripple: T-032 is verified live and in review, so it is dropped as a blocker. Waits only on T-033."
-    },
-    {
-     "ts": "2026-10-11T11:59:47+0530",
-     "who": "claude",
-     "note": "T-033 ripple: dryrun_day1.py rerun on a private simulator stack (run 20261011-115532): all 3 personas got real day output, PDF and delivery code (sim vendor) in 10 to 15 s; timings are in ops/runbook.md."
-    },
-    {
-     "ts": "2026-10-11T16:48:45+0530",
-     "who": "claude",
-     "note": "The dry run now runs on its own: when :8790 is stale it starts a private centre and simulator, runs, and stops them (:8790 untouched). Run 20261011-164656 took SendFlow, Apex Growth and Sarah Chen from survey to email and WhatsApp in 10.3 s, 13.4 s and 14.6 s with no manual step, a separate refusal address bounced as designed, and all four attendees read test=1 revoked=1 afterwards. Timings are in runbook.md section 6, --require-real still refuses until the Tantra key exists, and main is pushed (5320259f, cd5590b included)."
-    },
-    {
-     "ts": "2026-10-11T16:54:03+0530",
-     "who": "claude",
-     "note": "Verify pass: I reran the harness myself (run 20261011-165232). It started and stopped its own private centre, left the :8790 process alone (PID 43749 before and after), and all three personas got email and WhatsApp in 10.9 s, 12.9 s and 14.3 s, while the refusal address bounced. All four attendees read test=1 revoked=1 afterwards, the rows are in runbook.md section 6, and cd5590b and 5320259f are both on origin. --require-real still refuses until the T-337 Tantra key exists."
-    },
-    {
-     "ts": "2026-10-11T17:07:34+0530",
-     "who": "claude",
-     "note": "T-032 update: the onboarding centre now shows each attendee's Day N output link and PDF on that day's session card (deployed, commit 6c65c86c), read from /api/me outputs. Nothing else changes here."
-    },
-    {
-     "ts": "2026-10-11T23:56:50+0530",
-     "who": "claude",
-     "note": "I ran the dry run against the production centre (run 20261011-235507): all three personas got real Day 1 output and PDF plus link in 15.9 s, 20.9 s and 22.1 s with no manual step, then all three read test=1 revoked=1, and delivery settings went back to off. Email did not send because Tantra refuses to create the Day N campaigns while team@growthclub.org is not a connected mailbox (T-123), so no campaign or contact was created and nothing needs removing. WhatsApp reads Connected but stays pending T-400 for the test number. Timings are in runbook.md section 6, pushed as 6bab8bbf."
-    }
-   ],
-   "order": 240,
+   "owner": "Aquila",
    "assignee": "Claude",
    "reviewers": [
     "Aquila",
     "Bharath"
-   ]
+   ],
+   "priority": "P0",
+   "due": "2026-10-14",
+   "area": "Delivery",
+   "order": 240,
+   "title": "T-034: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-036",
