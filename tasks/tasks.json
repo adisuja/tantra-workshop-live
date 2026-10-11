@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T11:48:17+0530",
-  "version": 1875,
+  "updated": "2026-10-11T11:53:15+0530",
+  "version": 1878,
   "last_id": 399,
   "team": [
    {
@@ -14870,35 +14870,35 @@
    "evidence": [
     {
      "label": "Book a Call",
-     "url": "http://localhost:4322/funnels/book-call?v=t295"
+     "url": "http://localhost:4322/funnels/book-call?v=t295b"
     },
     {
      "label": "Waterfall",
-     "url": "http://localhost:4322/funnels/waterfall?v=t295"
+     "url": "http://localhost:4322/funnels/waterfall?v=t295b"
     },
     {
      "label": "Hub and Spoke",
-     "url": "http://localhost:4322/funnels/hub-spoke?v=t295"
+     "url": "http://localhost:4322/funnels/hub-spoke?v=t295b"
     },
     {
-     "label": "Before 390px",
-     "url": "/tmp/t295/b-book-call-8370.png"
+     "label": "Book (Amazon mark)",
+     "url": "http://localhost:4322/funnels/book?v=t295b"
     },
     {
-     "label": "After settled 390px",
-     "url": "/tmp/t295/late-book-call-10600.png"
+     "label": "Caption and ribbon 390px",
+     "url": "/tmp/t295b/ov-waterfall-20.png"
     },
     {
-     "label": "After hub-spoke 390px",
-     "url": "/tmp/t295/fin2-hub-spoke-10600.png"
+     "label": "Cards in flight 390px",
+     "url": "/tmp/t295b/ov-hub-spoke-94.png"
     },
     {
-     "label": "After waterfall 390px",
-     "url": "/tmp/t295/fin2-waterfall-10600.png"
+     "label": "Settled 390px",
+     "url": "/tmp/t295b/s-waterfall-100.png"
     },
     {
      "label": "Probe output",
-     "url": "/tmp/t295/probe-after.txt"
+     "url": "/tmp/t295b/probe-after.txt"
     }
    ],
    "blockers": [],
@@ -14918,6 +14918,11 @@
      "ts": "2026-10-10T17:14:14+0530",
      "who": "claude",
      "note": "Fixed in the shared engine funnel-os.tsx (e5fbf41, pushed to main): the ribbon and caption now hand off in sequence, ribbons fade out before the modules land, card text is veiled while cards fly in, and long figures step down on phones so the Hub and Spoke footer no longer spills. Amazon and YouTube already render as marks from the logo map, Apollo is gone, and Slack is not added because it is a banned vendor no funnel uses. Checked with 390 px screenshots of Book a Call, Waterfall and Hub and Spoke taken before, mid transition and settled; probe-funnel-boards gives ALL BOARDS FIT at 1440, 1024, 760, 390 and 350 (175 PASS). The GitHub Pages mirror was not rebuilt in this run, so the fix ships with the next Integrator publish."
+    },
+    {
+     "ts": "2026-10-11T11:53:15+0530",
+     "who": "claude",
+     "note": "Rechecked on main: the engine fix (e5fbf41) is on origin/main and in the mirror already published from e66dda5 (c516789), so I made no new commit, push or publish. Today at 390 px I scrolled Book a Call, Waterfall and Hub and Spoke through 51 frames each: the caption sits above the ribbon, and the cards are clean mid-flight and settled. Amazon and YouTube load as real SVG marks on /funnels/book and /funnels/hub-spoke, and no funnel uses Slack, so no Team chat tile was needed. probe-funnel-boards: ALL BOARDS FIT at 1440, 1024, 760, 390 and 350 (85 PASS, 0 FAIL); probe-visual-tools: PASS."
     }
    ],
    "order": 2950
