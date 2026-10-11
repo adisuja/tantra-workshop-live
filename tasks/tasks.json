@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T06:25:52+0530",
-  "version": 1747,
-  "last_id": 395,
+  "updated": "2026-10-11T06:27:47+0530",
+  "version": 1749,
+  "last_id": 396,
   "team": [
    {
     "name": "Adi",
@@ -7753,6 +7753,11 @@
      "ts": "2026-10-10T16:35:35+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-10-09 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-11T06:27:47+0530",
+     "who": "claude",
+     "note": "Close-out check (2026-10-11): the build is commit b935a1d (plus 7a96aef for the retention signal), both confirmed in origin/main; the feature tests pass (6 of 6, one was added after the first run). Nothing was rebuilt. Follow-up T-396 (owner Bharath) covers confirming the seed.py inputs for FR-ad7abb and building it as a reviewed patch. Amal and Bharath: open docs/feature-rubric.md and workshop-plan/tasks/features/changelog/CHANGELOG.md to sign off."
     }
    ],
    "order": 1530,
@@ -15828,6 +15833,38 @@
    "order": 3950,
    "input_for": "T-334",
    "kind": "input"
+  },
+  {
+   "id": "T-396",
+   "title": "Confirm inputs for FR-ad7abb (add a lead to a running campaign), then build it as a reviewed patch for Bharath",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Bharath"
+   ],
+   "priority": "P1",
+   "due": "2026-10-16",
+   "status": "queue",
+   "why": "T-153's first weekly decision (2026-10-09) picked FR-ad7abb as the one build-now item (score 72.0, demand 2). Its rubric inputs in seed.py are Claude's first-pass estimates, and the rubric says build-now work goes through Bharath before it touches a product repo.",
+   "spec": "Step 1: Bharath confirms or corrects the four inputs for FR-ad7abb in workshop-plan/tasks/features/seed.py line 14 (revenue 5, retention 4, effort 2, strategic fit 5); re-run weekly.py if any change, and stop if it no longer scores build now. Step 2: build the endpoint that adds a lead to a running campaign (enrollment today happens once, in start(), and contactListIds are locked while the campaign is active; see memory/lead-intake-feature-gap.md) with a regression test. Deliver it as a patch plus short spec under workshop-plan/tantra-product-patches/ for Bharath to apply as a branch and PR, because the standing rule bars this agent from writing to any Usetantra repo. No product-repo change before Bharath's review. Step 3: when it ships, add the release to features/data/releases.json so the changelog and the per-requester notes generate.",
+   "done_when": [
+    "Bharath has confirmed or corrected the FR-ad7abb inputs in seed.py and the score is re-run",
+    "Patch with a passing regression test saved under workshop-plan/tantra-product-patches/",
+    "Bharath has reviewed the patch before any product-repo change",
+    "Release recorded in releases.json and the changelog entry generated once it ships"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-11T06:27:40+0530",
+     "who": "claude",
+     "note": "Created from T-153 close-out (Orchestrator decision O-d6861b99). Waiting on Bharath to confirm the seed.py inputs first."
+    }
+   ],
+   "order": 3960
   }
  ]
 }
