@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T05:50:03+0530",
-  "version": 1723,
+  "updated": "2026-10-11T05:54:25+0530",
+  "version": 1728,
   "last_id": 394,
   "team": [
    {
@@ -1647,11 +1647,15 @@
    "evidence": [
     {
      "label": "Hosted day1 HTML",
-     "url": "https://revops-centre.growthcluborg.workers.dev/o/xpEvUSJjNnYQXZmqflDlaer0FNbv9gSPgtxwoJulwxg"
+     "url": "https://revops-centre.growthcluborg.workers.dev/o/xpEvUSJjNnYQXZmqflDlaer0FNbv9gSPgtxwoJulwxg?v=20261011"
     },
     {
      "label": "Hosted day1 PDF",
-     "url": "https://revops-centre.growthcluborg.workers.dev/o/xpEvUSJjNnYQXZmqflDlaer0FNbv9gSPgtxwoJulwxg.pdf"
+     "url": "https://revops-centre.growthcluborg.workers.dev/o/xpEvUSJjNnYQXZmqflDlaer0FNbv9gSPgtxwoJulwxg.pdf?v=20261011"
+    },
+    {
+     "label": "Probe",
+     "url": "/Users/adithyamurali/tantra-redesign/workshop-plan/ops/probe_outputs.py"
     },
     {
      "label": "Worker code",
@@ -1724,6 +1728,16 @@
      "ts": "2026-10-11T01:33:36+0530",
      "who": "claude",
      "note": "T-031 update: the real day1 row for attendee 4 is in place and ticking again (sign-in fix f842c8b, pushed). probe_outputs.py passes on it (HTML 200, PDF 200, wrong token 404), so the T-031 blocker is removed. Nothing else had to change here."
+    },
+    {
+     "ts": "2026-10-11T05:53:09+0530",
+     "who": "claude",
+     "note": "Closed out per the Orchestrator decision, nothing rebuilt. Verified live today: probe_outputs.py prints ok for attendee 4 day1 HTML (200), PDF (200, %PDF) and wrong token (404) from the public workers.dev URL; GET /admin/api/outputs lists attendee 4 day 1 and /api/me returns the same outputs entry; the page renders cleanly in a headless iPhone viewport (no sideways scroll, no errors). Attendee 4 is the public-preview@revops-centre.local placeholder, so the D1 attendee_outputs row is the stored link (ops.db gets no send link for it, nothing is sent). The T-032 commit 78e0a1e is already on origin/main, so no deploy, migration or push was needed. Open: https://revops-centre.growthcluborg.workers.dev/o/xpEvUSJjNnYQXZmqflDlaer0FNbv9gSPgtxwoJulwxg?v=20261011 and the same address ending .pdf. Not checked: a real phone on mobile data (headless phone check only)."
+    },
+    {
+     "ts": "2026-10-11T05:53:52+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-031, T-034, T-033."
     }
    ],
    "order": 220,
@@ -1786,7 +1800,6 @@
     }
    ],
    "blockers": [
-    "T-032",
     "T-033"
    ],
    "needs_from_owner": "Nothing new from Adi: T-031 and T-032 are real. Waits only on the T-033 live send, which needs the Tantra API key already asked in T-337. Then: python3 workshop-plan/ops/dryrun_day1.py --require-real",
@@ -1865,6 +1878,11 @@
      "ts": "2026-10-11T05:45:20+0530",
      "who": "claude",
      "note": "The dry run now drives the real stage code itself (dayoutput.py, render_pdf.py, deliver.py) on a run-scoped ledger: run 20261011-054418 took all three personas from survey to delivery with no manual step in 15.0 s, 8.7 s and 8.7 s, with day output and PDF plus link real and delivery on the real code against the vendor simulator (email and WhatsApp seen for Apex and Sarah; the simulator bounces the +sendflow address by its one in five rule, so that row proves the refusal path). Verified: timings are in runbook.md section 6, all three attendees read test=1 revoked=1 afterwards, cleanup and settings restore now run even when a stage fails, and --require-real still refuses until the Tantra key (T-337) exists. Two things to know: the centre on :8790 serves an older Worker build without the T-032 and T-033 routes, so I ran against a temporary local centre from this repo on :8796 (stopped now), and the T-006 ripple needed no change because the runbook was extended, not overwritten. Commit cd5590b, not pushed."
+    },
+    {
+     "ts": "2026-10-11T05:53:09+0530",
+     "who": "claude",
+     "note": "T-032 ripple: T-032 is verified live and in review, so it is dropped as a blocker. Waits only on T-033."
     }
    ],
    "order": 240,
@@ -2269,11 +2287,11 @@
    "evidence": [
     {
      "label": "All 225 LinkedIn drafts (board)",
-     "url": "http://localhost:8899/outputs/t053-linkedin-posts.html?v=t053b"
+     "url": "http://localhost:8899/outputs/t053-linkedin-posts.html?v=t053c"
     },
     {
      "label": "All 225 LinkedIn drafts (public mirror)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/outputs/t053-linkedin-posts.html?v=t053b"
+     "url": "https://adisuja.github.io/tantra-workshop-live/outputs/t053-linkedin-posts.html?v=t053c"
     }
    ],
    "blockers": [],
@@ -2313,6 +2331,11 @@
      "ts": "2026-10-11T05:50:01+0530",
      "who": "claude",
      "note": "Reran after the usage limit reset: the drafts now cover all 9 posting members (Adi, Bhaskar, Nelbin, Aquila, Amal, Ben, Bharath, Vaibhavi, Bhaskar Dev), 5 days x 5 posts each, 225 posts, with Vaibhavi added. The build script found 0 problems (every first-comment link carries utm_source=referral and that member's utm_content, no banned words, dashes, stats or dates), the leak guard was clean, and I opened the page at 1440 and 390 wide and confirmed the public mirror serves Vaibhavi's links. Bhaskar: open the page and approve the voice; nothing was posted on anyone's LinkedIn."
+    },
+    {
+     "ts": "2026-10-11T05:54:25+0530",
+     "who": "claude",
+     "note": "Verify pass found one real gap and fixed it: three teammates were getting the same text on the same day, so the build now rotates day themes across members and fails if any text is posted twice on a day (each text is still shared by three members on different days). Rechecked all 225 drafts for 9 members: every link carries utm_source=referral and that member's code, no banned words, dashes, stats or dates, and the page shows 9 sections and 225 copy buttons with no sideways scroll at 1440 and 390 wide. Bhaskar, open the page and approve the voice: http://localhost:8899/outputs/t053-linkedin-posts.html?v=t053c or https://adisuja.github.io/tantra-workshop-live/outputs/t053-linkedin-posts.html?v=t053c (nothing was posted)."
     }
    ],
    "order": 320,
