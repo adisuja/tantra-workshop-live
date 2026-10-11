@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T02:32:31+0530",
-  "version": 2238,
+  "updated": "2026-10-12T02:39:12+0530",
+  "version": 2244,
   "last_id": 414,
   "team": [
    {
@@ -4871,6 +4871,10 @@
      "url": "workshop-plan/ops/t107_d1_deleted_rows.json"
     },
     {
+     "label": "Cleanup command",
+     "url": "workshop-plan/ops/probe_cleanup.py"
+    },
+    {
      "label": "Apps Script trash",
      "url": "T-380"
     }
@@ -4962,12 +4966,23 @@
      "ts": "2026-10-11T22:28:37+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-11: live re-scan found 0 probe, placeholder or @example.com rows in the six Work Tracker funnel tabs, all 45 revops-centre D1 tables and form-log.jsonl; the 10-10 19:50Z and 19:52Z wiring-probe rows are in the backup and gone. A wider match caught one leftover ops.db probe attendee (Lane Test, utm_source=probe), so I backed it up and deleted it with its token, session and event. After a fresh sync the Tantra Tracker has 0 matches across 37 tabs (5,169 rows). T-193 is archived as a duplicate (2026-10-08). The Apps Script trash is T-380 (Nelbin, blocked on a boards@ sign-in)."
+    },
+    {
+     "ts": "2026-10-12T02:38:39+0530",
+     "who": "claude",
+     "note": "People: reviewers Nelbin → Nelbin/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-12T02:38:39+0530",
+     "who": "claude",
+     "note": "Packaged the matcher as workshop-plan/ops/probe_cleanup.py (dry run by default, --delete backs up then deletes across the six funnel tabs, ops.db, form-log.jsonl and the revops-centre D1), and both probe scripts now say to run it after every run. It backed up and deleted 3 new cohort-probe@example.com rows (Free Registrations, 10-11 17:17Z to 17:58Z); the cks_0NpUfO7QdBU1ktOdV4ddP wiring-probe row was already gone and is in the backup, and the probes were not re-run. Re-scan: 0 matches in the six tabs, ops.db, form-log and 45 D1 tables, and 0 in all 37 Tantra Tracker tabs (5,290 rows) after a fresh sync; the Apps Script trash is T-380 (Nelbin). Bharath added as reviewer for the new script."
     }
    ],
    "order": 1050,
    "assignee": "Claude",
    "reviewers": [
-    "Nelbin"
+    "Nelbin",
+    "Bharath"
    ]
   },
   {
@@ -10803,7 +10818,7 @@
    "blockers": [
     "Adi's confirmation to host from the console, and the Meeting SDK app credentials"
    ],
-   "needs_from_owner": "Only T-335: One Zoom sign-in at https://marketplace.zoom.us covers everything: (1) at https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), or open it if it exists, and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, Save; (2) in the same sign-in, Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, Save. Nothing else to change.",
+   "needs_from_owner": "Only T-335: One Zoom sign-in at https://marketplace.zoom.us covers everything: (1) at https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), or open it if it exists, and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, Save; (2) in the same sign-in, Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, meeting:delete:meeting:admin, Save. Nothing else to change.",
    "log": [
     {
      "ts": "2026-10-07T20:46:43+0530",
@@ -10869,6 +10884,11 @@
      "ts": "2026-10-11T23:41:35+0530",
      "who": "claude",
      "note": "Blocker list narrowed in T-407: the only Adi input is T-335 (one Zoom sign-in for the SDK app credentials and the 5 poll scopes). Day 1 to 3 run sheets are drafted and saved on Live Control for Bhaskar and Adi to review."
+    },
+    {
+     "ts": "2026-10-12T02:39:06+0530",
+     "who": "claude",
+     "note": "Added meeting:delete:meeting:admin to the Zoom sign-in scope list: T-245 needs it to delete the test meeting 89781893618 in Zoom (Zoom answered 400 code 4711, token lacks meeting:delete:meeting:admin)."
     }
    ],
    "order": 2260
@@ -11839,16 +11859,20 @@
    ],
    "evidence": [
     {
+     "label": "Forget route with Zoom delete",
+     "url": "cloud/src/zoom-pro.ts"
+    },
+    {
      "label": "Probe cases",
      "url": "app/scripts/probe-zoom-pro.mjs"
     },
     {
-     "label": "Forget route",
-     "url": "cloud/src/zoom-pro.ts"
+     "label": "Admin Zoom panel",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=f64fd2d2"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Delete the test meeting in Zoom: sign in at https://zoom.us/meeting, open Upcoming, choose 'Tantra Centre Test Session (safe to delete)' (ID 897 8189 3618) and click Delete. Do not also empty Recently Deleted. Then reply 'deleted' on this task.",
+   "needs_from_owner": "Only the Zoom sign-in on T-226: at https://marketplace.zoom.us, Manage, Tantra Centre, Scopes, add meeting:delete:meeting:admin (with the poll scopes listed there), Save, then reply 'done' on this task.",
    "log": [
     {
      "ts": "2026-10-07T23:25:35+0530",
@@ -11884,6 +11908,11 @@
      "ts": "2026-10-11T22:31:19+0530",
      "who": "claude",
      "note": "Re-ran the production forget on 89781893618 at the Orchestrator's request with the correct /admin/enter cookie sign-in (302, signed in). The guard refused again with 400 'This meeting still exists in Zoom', because Zoom still serves the meeting (GET /admin/api/zoom/check/89781893618 returns topic 'Tantra Centre Test Session (safe to delete)'), so auth was never the problem and nothing was deleted. Deleting the meeting in Zoom is the one step left that needs Adi; commits 9431027 and a0900f9 are already on origin/main, and tracker_sync is held until the forget succeeds."
+    },
+    {
+     "ts": "2026-10-12T02:39:12+0530",
+     "who": "claude",
+     "note": "The forget route can now delete a '(safe to delete)' test meeting in Zoom first (commit 054299d1, pushed; Worker version f64fd2d2; probe-zoom-pro.mjs passed 65 of 65 twice, including refusing a meeting without that topic). On production Zoom refused the delete for 89781893618 with 400 code 4711 'Invalid access token, does not contain scopes:[meeting:delete:meeting:admin, meeting:delete:meeting]', so nothing was deleted and it still shows in GET /admin/api/zoom. The scope is now in the one Zoom sign-in ask on T-226; once it is added the next pass runs the forget and tracker_sync.py."
     }
    ],
    "order": 2450
@@ -17816,6 +17845,11 @@
      "ts": "2026-10-11T23:43:27+0530",
      "who": "claude",
      "note": "Checked 3 related task(s); updating T-335, T-226."
+    },
+    {
+     "ts": "2026-10-12T02:39:06+0530",
+     "who": "claude",
+     "note": "T-245 found one more missing Tantra Centre scope on 2026-10-12: meeting:delete:meeting:admin (Zoom 400 code 4711 on DELETE /meetings/89781893618). It is now in the one Zoom sign-in ask on T-226."
     }
    ],
    "order": 4070
