@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T03:51:50+0530",
-  "version": 2304,
+  "updated": "2026-10-12T03:54:45+0530",
+  "version": 2305,
   "last_id": 417,
   "team": [
    {
@@ -18138,18 +18138,23 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "blocked",
+   "status": "dropped",
    "why": "",
    "spec": "Only Adi can do this (signin): Connecting the mailbox needs the Google sign-in for team@growthclub.org; no growthclub.org service account or credential is on file.. Everything else in T-052 is being built around it. As soon as this is done, T-052 finishes on its own.",
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Same single ask as T-123, no new one: at https://usetantra.com (GrowthClub workspace), go to Email Accounts, Connect account, and sign in as team@growthclub.org so it shows as Connected.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-11T23:45:42+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-052."
+    },
+    {
+     "ts": "2026-10-12T03:54:45+0530",
+     "who": "claude",
+     "note": "Dropped: duplicate of the single sending-mailbox ask T-408 (Adi 2026-10-12: one ask per action; never team@growthclub.org or Gmail as sender)."
     }
    ],
    "order": 4110,
@@ -18167,18 +18172,23 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "blocked",
+   "status": "dropped",
    "why": "",
    "spec": "Only Adi can do this (signin): Connecting the mailbox needs the Google sign-in for team@growthclub.org, which only Adi holds.. Everything else in T-234 is being built around it. As soon as this is done, T-234 finishes on its own.",
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Open https://usetantra.com in the GrowthClub workspace, go to Email Accounts, click Connect account, and sign in with Google as team@growthclub.org. This is the same single ask as T-123 and T-408.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-11T23:46:36+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-234."
+    },
+    {
+     "ts": "2026-10-12T03:54:45+0530",
+     "who": "claude",
+     "note": "Dropped: duplicate of the single sending-mailbox ask T-408 (Adi 2026-10-12: one ask per action; never team@growthclub.org or Gmail as sender)."
     }
    ],
    "order": 4120,
@@ -18187,7 +18197,8 @@
   },
   {
    "id": "T-413",
-   "status": "blocked",
+   "title": "Input from Adi for T-228: See T-408: sign in at https://usetantra.com (GrowthClub workspace), open Ema",
+   "area": "Delivery",
    "owner": "Adi",
    "assignee": "Adi",
    "reviewers": [
@@ -18195,17 +18206,33 @@
    ],
    "priority": "P0",
    "due": "",
-   "area": "Delivery",
-   "order": 4130,
-   "title": "T-413: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
+   "status": "dropped",
+   "why": "",
+   "spec": "Only Adi can do this (signin): Needs the Google sign-in for team@growthclub.org and a Tantra key rotation, both reserved for Adi.. Everything else in T-228 is being built around it. As soon as this is done, T-228 finishes on its own.",
    "done_when": [],
    "evidence": [],
    "blockers": [],
    "needs_from_owner": "",
-   "log": [],
-   "held": true
+   "log": [
+    {
+     "ts": "2026-10-12T00:09:40+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-228."
+    },
+    {
+     "ts": "2026-10-12T03:19:18+0530",
+     "who": "claude",
+     "note": "Ask updated to Adi's 2026-10-12 rule: team@growthclub.org is no longer the sender."
+    },
+    {
+     "ts": "2026-10-12T03:54:45+0530",
+     "who": "claude",
+     "note": "Dropped: duplicate of the single sending-mailbox ask T-408 (Adi 2026-10-12: one ask per action; never team@growthclub.org or Gmail as sender)."
+    }
+   ],
+   "order": 4130,
+   "input_for": "T-228",
+   "kind": "input"
   },
   {
    "id": "T-414",
