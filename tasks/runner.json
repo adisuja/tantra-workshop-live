@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T22:54:50+0530",
+   "task_id": "T-108",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "**T-108 stays in review.** No code change was needed, so I made no commit. One mistake in the previous report is corrected on the board: the Amazon mark is on the **Book** board, not Book a Call.\n\n**Completion check (all evidence from this run):**\n- **Amazon and YouTube marks from T-295:** done. Bot"
+  },
+  {
    "ts": "2026-10-11T22:48:55+0530",
    "task_id": "T-400",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-136 is back in review for Amal and Bharath: step 2 now shows one test attendee across all three days, and main is pushed at c6382640.\n\n**COMPLETION CHECK:**\n\n| Item | State and evidence from this run |\n|---|---|\n| A test attendee's timeline shows attended-day-N and output_delivered_dayN | Done. Th"
-  },
-  {
-   "ts": "2026-10-11T18:29:38+0530",
-   "task_id": "T-247",
-   "mode": "feedback",
-   "status": "review",
-   "result": "error",
-   "summary": "API Error: Connection refused — a firewall or proxy may be blocking it (ECONNREFUSED)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-108: Animated funnels in the playbook: the three main funnels, the Whole Machine and the 17 other types",
- "task_id": "T-108",
+ "message": "Acting on 1 note(s) for T-135: Guide screenshots Claude can capture now from our own pages and demo output (11 slots)",
+ "task_id": "T-135",
  "entries": [
-  "R-acfab02a"
+  "F-a5259871"
  ],
  "mode": "feedback",
- "started": "2026-10-11T22:49:12+0530",
+ "started": "2026-10-11T22:56:05+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
