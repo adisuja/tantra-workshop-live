@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T12:58:05+0530",
+   "task_id": "T-253",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "error",
+   "summary": "[process exit 143; stderr: ''] My Cal.com, Stripe and Dodo guards were already committed in 1deec78, which T-278's runner swept up. I'll cite that commit, then update CHECKS.md and the ledger."
+  },
+  {
    "ts": "2026-10-11T12:50:22+0530",
    "task_id": "T-132",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "hold",
    "result": "ok",
    "summary": "I checked the earlier T-070 work and it holds up, apart from one fix to the integration plan. T-070 stays on hold and both notes are acked.\n\n**What I fixed:** the earlier plan said to grant the plan through the backend's `BillingTrialCampaignService.grant`. That method is private. The only public wa"
-  },
-  {
-   "ts": "2026-10-11T11:30:51+0530",
-   "task_id": "T-040",
-   "mode": "feedback",
-   "status": "hold",
-   "result": "ok",
-   "summary": "T-040 stays on hold with nothing asked of Adi. I cleared the ask, set the only blocker to \"Owner hold (2026-09-24); groups created by Nelbin when the hold lifts.\", left the placeholder link in place and acked F-1fa9f6e7.\n\n**Completion check:**\n- **Keep T-040 on hold:** done. Reading tasks.json after"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-253",
+ "task_id": "T-292",
  "entries": [
-  "F-403ff48e"
+  "F-aaaa255d"
  ],
- "started": "2026-10-11T12:51:26+0530",
- "message": "Acting on 1 note(s) for T-253: Confirm connector assumptions on free or test accounts (WebinarGeek, Zoom, CRMs, Cal.com, Tantra, Twilio, Dodo, Stripe, Metricool)",
+ "started": "2026-10-11T12:58:55+0530",
+ "message": "Acting on 1 note(s) for T-292: Re-enable the Opus AI drafting connection in the local centre for real use",
  "slices": {
   "T-072": 1,
   "T-245": 1,

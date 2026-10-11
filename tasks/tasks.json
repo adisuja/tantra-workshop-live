@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T12:58:09+0530",
-  "version": 1919,
+  "updated": "2026-10-11T12:59:18+0530",
+  "version": 1920,
   "last_id": 403,
   "team": [
    {
@@ -14893,6 +14893,11 @@
      "ts": "2026-10-11T12:58:09+0530",
      "who": "claude",
      "note": "Closing out the 09:03 and 21:00 orchestrator notes. I re-ran app/scripts/probe-preview-close.mjs on a fresh local centre and simulator on 2026-10-11 and all 29 checks pass, including the day output hold and release; the probe is committed and already on origin/main (53e12d6, no diff), so nothing needed a push. There is no ask for Adi: the 409 guard blocks adding any real attendee while the open preview is on, so whoever adds the first real attendee (or the T-228 welcome-email send) flips it using the steps in the spec. Live /preview still answers 302 as intended: https://revops-centre.growthcluborg.workers.dev/preview?v=t291-1011"
+    },
+    {
+     "ts": "2026-10-11T12:59:18+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11: I re-ran app/scripts/probe-preview-close.mjs on a fresh local centre and simulator, and all 29 checks pass, including the Day 1 output held while /preview is open and sent once after the switch-off. The probe and guard are on origin/main (last probe commit 53e12d6f, no diff), so nothing needed a push. The live /preview still answers 302, the 09:03 and 21:00 orchestrator notes are closed out, and nobody needs to ask Adi: the 409 guard blocks adding any real attendee while the open preview is on, so whoever adds the first real attendee (or the T-228 welcome-email send) flips it using the steps in the spec. Open: https://revops-centre.growthcluborg.workers.dev/preview?v=t291-1011b"
     }
    ],
    "order": 2910
