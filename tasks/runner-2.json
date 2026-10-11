@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T08:01:06+0530",
+   "task_id": "T-258",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-258 is back in review. Nothing needed changing on this check. The fix (62dff8d) is on origin/main and in the live Worker, version 9eca4944.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| 1. Calendar sign-in uses its own Google client, never the Drive one | Done | `oauthClient()` at `cl"
+  },
+  {
    "ts": "2026-10-11T07:48:22+0530",
    "task_id": "T-256",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-334 stays blocked: the blocker holds on recheck, and the only thing left is Adi sending the GitHub Support request from the adisuja account.\n\nCOMPLETION CHECK\n- **Give Adi the exact blocker (F-dc1d30ac):** Done. The T-334 log entry of 2026-10-11 gives both parts, and I rechecked each today.\n  - Te"
-  },
-  {
-   "ts": "2026-10-11T05:55:30+0530",
-   "task_id": "T-051",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-051 is in review for Bhaskar: `workshop-plan/sequences/post.md` now carries the settled name \"Tantra Pro Course\", and the change is pushed to main as `41d119d`.\n\nCOMPLETION CHECK\n- **T-116 name ripple in `post.md`: done.** The `{{PRO_COURSE_NAME}}` value in the placeholder table reads \"Tantra Pro "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-258",
+ "task_id": "T-265",
  "entries": [
-  "F-992e2178"
+  "F-0921ce22"
  ],
- "started": "2026-10-11T07:49:22+0530",
- "message": "Acting on 1 note(s) for T-258: S1 traffic guides: automate the remaining manual steps the centre can do (DNS checks, suppression, GCP setup, GA4 reads)",
+ "started": "2026-10-11T08:01:44+0530",
+ "message": "Acting on 1 note(s) for T-265: Centre: dashboard reads (Tantra campaign stats, Metricool clicks) and automated launch QA",
  "slices": {
   "T-072": 1,
   "T-245": 1,
