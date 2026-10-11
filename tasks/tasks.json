@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T23:33:44+0530",
-  "version": 2118,
+  "updated": "2026-10-11T23:35:10+0530",
+  "version": 2120,
   "last_id": 410,
   "team": [
    {
@@ -71,16 +71,16 @@
    ],
    "evidence": [
     {
-     "label": "Playbook Day 1 on the mirror (5 to 6 h, 390 px fit)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t191d#d1"
+     "label": "Playbook Day 1 on the mirror (5 to 6 h)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t191v#d1"
     },
     {
-     "label": "Live onboarding on the Worker",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?v=t191d"
+     "label": "Onboarding on the mirror",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=t191v"
     },
     {
-     "label": "Onboarding centre on the mirror",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=t191d"
+     "label": "Live Worker centre",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?v=t191v"
     },
     {
      "label": "One source for day titles and hours",
@@ -169,6 +169,16 @@
      "ts": "2026-10-11T23:23:27+0530",
      "who": "claude",
      "note": "Nothing needed rebuilding or pushing: main and origin/main already have the Day 1 header at 5 to 6 h from DAY_HOURS (9ea3b9a0). Both remaining '4 to 6 h' (onboarding-tasks.ts:446, playbook.html:3251) are the Day 3 automations step's own estimate, so I kept them. The mirror playbook is 390 px wide on a 390 px phone (scrollWidth 390, measured headless today). The live Worker bundle already has the new day titles, 5 to 6 and the links.welcome hide check, so I did not redeploy. Today's checks: tsc, check-guides, probe-anonymity and probe-headings pass; probe-onboarding-tabs has 0 FAIL on the mirror. probe-details on the mirror (centre skipped) has 1 FAIL: '7 to 9 Oct' on referrals.html is the first cohort's real dates (T-275, owner Adi), not a T-191 surface. Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t191d#d1"
+    },
+    {
+     "ts": "2026-10-11T23:33:54+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11: Day 1 header reads 5 to 6 h from DAY_HOURS (the 8 Day 1 step times add to 310 to 340 min), the two '4 to 6 h' are the Day 3 Step 3 time and stay, library dates untouched, and playbook.html is 390 px wide at 390 px both locally and on the mirror. On the mirror, tsc, check-guides, probe-headings, probe-onboarding-tabs (0 FAIL) and probe-anonymity pass. probe-details with the centre skipped has 1 FAIL: '9 Oct' on the referrals page, which belongs to T-275 (Adi). The live Worker shows the Day 1 title on screen with no welcome card, and the fix was already on origin/main, so nothing was pushed or redeployed. Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t191v#d1"
+    },
+    {
+     "ts": "2026-10-11T23:35:10+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-020."
     }
    ],
    "order": 1
