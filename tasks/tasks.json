@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T12:31:41+0530",
-  "version": 1899,
+  "updated": "2026-10-11T12:33:34+0530",
+  "version": 1901,
   "last_id": 401,
   "team": [
    {
@@ -3865,23 +3865,23 @@
    "evidence": [
     {
      "label": "Free registration",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=1009b"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=1011a"
     },
     {
-     "label": "Thank-you 1, survey",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/success/?v=1009b"
+     "label": "Thank-you 1, survey (11 questions)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/success/?v=1011a"
     },
     {
      "label": "Thank-you 2, the fork",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=1009b"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=1011a"
     },
     {
      "label": "Paid join page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=1009b"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=1011a"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=1009b, https://adisuja.github.io/tantra-workshop-live/site/workshop/success/?v=1009b and https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=1009b in order, then approve or reply with changes per page.",
+   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=1011a, https://adisuja.github.io/tantra-workshop-live/site/workshop/success/?v=1011a and https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=1011a in order, then approve or reply with changes per page.",
    "log": [
     {
      "ts": "2026-09-23",
@@ -3927,6 +3927,16 @@
      "ts": "2026-10-10T20:35:10+0530",
      "who": "claude",
      "note": "From T-278 (Orchestrator decision O-a511256b): the 'keep 18 questions' line here is superseded. M033 stays at 11 questions on /workshop/success, and that is what is live on the mirror now. Nothing else on T-093 changes."
+    },
+    {
+     "ts": "2026-10-11T12:32:54+0530",
+     "who": "claude",
+     "note": "Ripple from T-278: the 11 vs 18 question is already settled (Orchestrator decision O-a511256b: 11, the paid lane's set), so it does not go back to Adi; the live mirror shows 'Answer these 11 questions' on /workshop/success. Review links are refreshed to ?v=1011a after the republish; all four answer 200 and the free join page shows the Show me the add-on fork. Still waiting only on Adi's copy and order sign-off."
+    },
+    {
+     "ts": "2026-10-11T12:33:34+0530",
+     "who": "claude",
+     "note": "Verify pass: nothing had to change. The 11 vs 18 question was already settled as 11 by the Orchestrator (O-a511256b on T-278): intake-survey.tsx has 11 questions, the same count as the paid survey, and the live /workshop/success page reads Answer these 11 questions. The evidence and review links already point at ?v=1011a, and all four mirror pages answered 200 today."
     }
    ],
    "order": 910,

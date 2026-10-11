@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T12:33:51+0530",
+   "task_id": "T-093",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I made no changes to T-093 and left it in **review**: the owner's question was already answered, and the links had already been refreshed.\n\n- **11 vs 18 intake questions:** done without asking Adi. The Orchestrator settled it as 11 (decision O-a511256b on T-278). The free survey in `app/src/componen"
+  },
+  {
+   "ts": "2026-10-11T12:31:48+0530",
+   "task_id": "T-191",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-191 is pushed and the public mirror is republished, but the revops-centre Worker isn't deployed yet, so I set the task to `doing` rather than `review`. Day 1 now r"
+  },
+  {
    "ts": "2026-10-11T12:16:51+0530",
    "task_id": "T-115",
    "mode": "feedback",
@@ -79,33 +95,16 @@
    "status": "done",
    "result": "ok",
    "summary": "T-276 is done. Most items checked out, but one claim in the last report was wrong and I found one real gap. Both are fixed now and pushed to main as `0aad7e3d`.\n\n- **Wrong claim:** the last run said `titlecase.py` passed the spec's headings, but that script only checks `playbook.html`, so it never l"
-  },
-  {
-   "ts": "2026-10-11T11:18:52+0530",
-   "task_id": "T-245",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "I've blocked T-245: the production forget on 89781893618 was refused because the meeting still exists in Zoom. The 2026-10-07 log said it was deleted, but that never took effect.\n\n| Item | State |\n|---|---|\n| Production forget on 89781893618 | **Refused, nothing deleted.** I signed in the same way `"
-  },
-  {
-   "ts": "2026-10-11T11:14:50+0530",
-   "task_id": "T-157",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-157 is still blocked: the live Apps Script hasn't been redeployed, so it can't accept tier qualifier answers yet. The Orchestrator note (F-12dd68ec) had already been carried out in the earlier run, so I acked it. I changed no files, so there was nothing to commit.\n\n| Item | State |\n|---|---|\n| 1. "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-191",
+ "task_id": "T-278",
  "entries": [
-  "F-e202a805",
-  "R-da29e551"
+  "F-6ddf16a9"
  ],
- "started": "2026-10-11T12:18:19+0530",
- "message": "Acting on 2 note(s) for T-191: Decide the calls still open from Nelbin's content pass",
+ "started": "2026-10-11T12:34:25+0530",
+ "message": "Acting on 1 note(s) for T-278: Join and success pages: one seat-link resolver, community fallback, footer links, sample dates",
  "slices": {
   "T-135": 1,
   "T-148": 1,
@@ -116,6 +115,7 @@
   "T-242": 1,
   "T-134": 1,
   "T-052": 1,
-  "T-263": 1
+  "T-263": 1,
+  "T-191": 1
  }
 }
