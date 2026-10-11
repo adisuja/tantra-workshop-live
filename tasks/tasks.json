@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T04:22:14+0530",
-  "version": 2336,
+  "updated": "2026-10-12T04:26:46+0530",
+  "version": 2338,
   "last_id": 419,
   "team": [
    {
@@ -13944,19 +13944,19 @@
    "evidence": [
     {
      "label": "Live centre (Choose your tools)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-stack&v=t270d"
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-stack&v=t270e"
     },
     {
      "label": "Probe",
      "url": "app/scripts/probe-t270.mjs"
     },
     {
-     "label": "Mirror chunk with ev_length examples",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/_next/static/chunks/43fq5cdzevd66.js?v=t270d"
+     "label": "Screenshot: consent ask",
+     "url": "/tmp/probe-t270/consent-1440.png"
     },
     {
-     "label": "Screenshot: Choose your tools",
-     "url": "/tmp/probe-t270/start-stack-1440.png"
+     "label": "Mirror chunk with ev_length examples",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/_next/static/chunks/43fq5cdzevd66.js?v=t270e"
     }
    ],
    "blockers": [],
@@ -14006,6 +14006,11 @@
      "ts": "2026-10-12T02:30:50+0530",
      "who": "claude",
      "note": "Verify pass: node app/scripts/probe-t270.mjs against the live centre passed 21/21 today, including the ask before the first draft and 0 drafts before a yes (test attendee revoked, AI drafting left on). check-examples passed 641/641, and the ev_length examples are served by both the live Worker and github.io. AUDIT.md marks N067 to N088 fixed, with 1ef94a2 next to N070. Open Choose your tools, then Write the Offer."
+    },
+    {
+     "ts": "2026-10-12T04:26:46+0530",
+     "who": "claude",
+     "note": "Live centre: probe-t270 made the test attendee 'Adi test T-270' and passed 18 of 18. An empty AI card asks before the first draft and sent 0 drafts, and the probe never answered yes on live. The yes path passed on local wrangler dev: the answer is stored and 1 draft fires after it. The probe change is pushed in bd8df50c. The mirror (6d5689b) already serves the ev_length examples and the default teaching panel, and AUDIT.md lists 1ef94a2 beside N070, so neither needed redoing. Open https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-stack&v=t270e"
     }
    ],
    "order": 2700
