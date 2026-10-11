@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T06:21:18+0530",
-  "version": 1743,
+  "updated": "2026-10-11T06:22:55+0530",
+  "version": 1744,
   "last_id": 395,
   "team": [
    {
@@ -15262,18 +15262,23 @@
    "due": "",
    "status": "blocked",
    "why": "Nelbin's fork was cut on 2026-09-29, after the leak, so it still carries commit 5b9f57d6 with the client figures. The parent repo is already rewritten (T-145); a rewrite does not clean forks.",
-   "spec": "One step, only nelbinxav can do it. Re-fork https://github.com/adisuja/tantra-workshop-live afterwards if a fork is still needed: the new fork gets the clean history.",
+   "spec": "One step, only nelbinxav can do it. Re-fork https://github.com/adisuja/tantra-workshop-live afterwards if a fork is still needed: the new fork gets the clean history. T-145 closes once this fork returns 404 and commit 5b9f57d6 can no longer be opened on adisuja/tantra-workshop-live.",
    "done_when": [
     "https://api.github.com/repos/nelbinxav/tantra-workshop-live returns 404"
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Nelbin: signed in as nelbinxav, open https://github.com/nelbinxav/tantra-workshop-live/settings, scroll to Danger Zone, click Delete this repository and confirm. Re-fork https://github.com/adisuja/tantra-workshop-live afterwards if you still need a fork.",
+   "needs_from_owner": "Nelbin: signed in as nelbinxav, open https://github.com/nelbinxav/tantra-workshop-live/settings, scroll to Danger Zone, click Delete this repository and confirm. Re-fork https://github.com/adisuja/tantra-workshop-live afterwards if you still need a fork. T-145 closes once your fork returns 404 and commit 5b9f57d6 can no longer be opened on adisuja's repo.",
    "log": [
     {
      "ts": "2026-10-09T05:11:20+0530",
      "who": "claude",
      "note": "Opened for T-145 on the Orchestrator's decision O-4340f748."
+    },
+    {
+     "ts": "2026-10-11T06:22:55+0530",
+     "who": "claude",
+     "note": "Owner and assignee were already Nelbin (nelbinxav) and the ask already goes to him with the Danger Zone steps, so I only added the closing rule: T-145 closes once the fork returns 404 and 5b9f57d6 can't be opened on adisuja's repo. Checked the GitHub API on 2026-10-11: the fork still returns 200 and 5b9f57d6 still opens on adisuja/tantra-workshop-live (200), so this stays blocked on Nelbin deleting the fork."
     }
    ],
    "order": 3410,
