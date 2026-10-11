@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T13:23:41+0530",
-  "version": 1930,
+  "updated": "2026-10-11T13:27:39+0530",
+  "version": 1931,
   "last_id": 405,
   "team": [
    {
@@ -7019,24 +7019,20 @@
    ],
    "evidence": [
     {
-     "label": "guides index (local)",
-     "url": "http://localhost:4322/debug/guides?v=t135r"
-    },
-    {
      "label": "s2 thank-you 390px",
-     "url": "http://localhost:4322/guides/s2-tantra-pro-funnel/16.webp?v=t135r"
+     "url": "http://localhost:4322/guides/s2-tantra-pro-funnel/16.webp?v=t135v"
     },
     {
-     "label": "s5-rsp CRM depth tags",
-     "url": "http://localhost:4322/guides/s5-rsp-stages/01.webp?v=t135r"
+     "label": "s5-rsp CRM depth tags (live mirror)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/guides/s5-rsp-stages/01.webp?v=t135v"
     },
     {
-     "label": "s6-sms rotation calendar",
-     "url": "http://localhost:4322/guides/s6-sms/03.webp?v=t135r"
+     "label": "referral dashboard",
+     "url": "http://localhost:4322/guides/s4-challenge/16.webp?v=t135v"
     },
     {
-     "label": "commit 512c734",
-     "url": "app/public/guides"
+     "label": "all guides",
+     "url": "http://localhost:4322/debug/guides?v=t135v"
     }
    ],
    "blockers": [],
@@ -7071,6 +7067,11 @@
      "ts": "2026-10-11T12:36:43+0530",
      "who": "claude",
      "note": "All 11 captures (512c734) were already on origin/main, and they are byte-identical on the live mirror (T-256's full publish c516789). So I pushed and republished nothing. The 2026-10-06 publish hold was effectively lifted by later full publishes (LOG 2026-10-08 05:22 and 2026-10-11 07:33). Checked today: check-guides PASS (capture-needed was 73, then 62 after this task, now 57 after other tasks; the 4 undersized FAILs are gone), probe-guides PASS on all 250 renders (25 guides, 5 widths, light and dark), probe-anonymity PASS (997 files). Amal: open the 11 slots in the guides below."
+    },
+    {
+     "ts": "2026-10-11T13:27:39+0530",
+     "who": "claude",
+     "note": "Verify pass: all 11 captures are real WebPs on main and byte-identical on the live mirror. check-guides went from 73 to 62 at 512c734 and passes now, probe-guides passes all 250 renders, and probe-anonymity passes. I removed the throwaway capture scripts, one of which held the test sign-up email (638a3600). Open the two links below to see the thank-you page and the CRM capture."
     }
    ],
    "order": 1350,
