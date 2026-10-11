@@ -97,14 +97,14 @@
    "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. ## Completion check\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| (1) No `TANTRA_NOTE`, `TANTRA_WAIT` or \"per-contact send\" in `cloud/src` or `app/src` "
   }
  ],
- "state": "paused",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
+ "task_id": "T-096",
  "entries": [
-  "F-3c98063d"
+  "F-9f32088b"
  ],
- "started": "2026-10-11T08:43:16+0530",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 76% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 10:51.",
+ "started": "2026-10-11T10:56:23+0530",
+ "message": "Acting on 1 note(s) for T-096: Device cap per attendee link in the live centre admin",
  "slices": {
   "T-135": 1,
   "T-148": 1,
