@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T03:57:41+0530",
-  "version": 2306,
-  "last_id": 417,
+  "updated": "2026-10-12T04:05:08+0530",
+  "version": 2310,
+  "last_id": 418,
   "team": [
    {
     "name": "Adi",
@@ -13432,7 +13432,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "blocked",
+   "status": "review",
    "why": "Calendar invites are the core cold channel; a wrong end time or an unverified sender account breaks the whole campaign silently.",
    "spec": "In cloud/src/jobs-tantra.ts and agentic.ts: gate start-calendar-ws on Tantra GET /accounts?search=<cal_ws_email> returning CONNECTED, ask Tantra for service-account upload and verify endpoints (X014), add reminders to eventDetails if Tantra accepts them, make ev_length numeric minutes, compute end as start plus minutes so it rolls over midnight, send both A/B step 1 variants, reject $, % and \"free\" in cal_title (fieldProblem), and write the service-account steps on the card. Closes audit findings X014, X015, N009, N011, N012, N015, N018, N028. Per finding: X014 (app/src/lib/workshop-cards.ts): Ask Tantra for service-account upload and account-verify endpoints, then automate this step. X015 (cloud/src/agentic.ts): In the gate, call Tantra GET /accounts?search=<cal_ws_email> and require CONNECTED before marking done. N009 (cloud/src/jobs-tantra.ts): Add reminders (5/10/15/30 min popup overrides) to eventDetails if Tantra's API accepts them, and state on d2-calendar-campaign what reminders recipients get. N011 (cloud/src/jobs-tantra.ts): Make ev_length a number field in minutes (or parse hour/minute units) and use it directly in the job. N012 (cloud/src/jobs-tantra.ts): Compute end as a Date (start + minutes) and format date and time from it so it rolls over midnight. N015 (app/src/lib/workshop-cards.ts): Add a cal_title check in fieldProblem rejecting $, % and the word free. N018 (cloud/src/jobs-day2.ts): Send both step 1 variants to Tantra (A/B variant or two split campaigns), or drop the B fields and A/B promise from d2-cold-email. N028 (app/src/lib/workshop-cards.ts): Write the service-account steps on the card (create project, enable APIs, create service account, JSON key, domain-wide delegation) or add a walkthrough. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Owner model (google-and-reminder-model, 2026-10-07): a Google service account is created for EACH Workspace user that sends invites (not only the admin) and uploaded to Tantra; Tantra sends the invites. N028's card steps and X014's automation must cover every sending user. Do not confuse with T-227 (the organiser service account for our own workshop's Google invites). Merge order: build on main after T-251 lands (branch tantra-walkthroughs: e4bd0b8 removes the ruled-out tools and rewrites workshop-cards.ts, agentic.ts, jobs.ts, agent.tsx and coverage.json; probe fixes 043b5ab and aa22a3f, no READY yet in /Users/adithyamurali/tantra-round5-coord/LOG.md). Until then branch from tantra-walkthroughs; AUDIT.md line numbers predate that change.",
    "done_when": [
@@ -13460,7 +13460,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Add one line TANTRA_TEST_API_KEY=<FintechCircle Tantra API key> to ~/.config/tantra/keys/vendor-test.env; then node cloud/scripts/check-tantra-senders.mjs <sender emails> prints CONNECTED or not per sender.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-08T00:21:42+0530",
@@ -13516,6 +13516,11 @@
      "ts": "2026-10-12T00:22:19+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-12: probe-t263 passes 21 of 21 (23:30 plus 60 minutes ends 00:30 the next date, gate only passes on CONNECTED, variant B reaches Tantra as its own campaign), cloud tsc is clean, AUDIT.md marks all 8 ids (7 fixed at 4dea9f2, N009 a manual step because Tantra has no reminders field), and the build.sh fix c17207f2 and 7b5f59e are on origin/main. Live Worker 25396394 serves the cal_title rule, the ev_length minutes field and the domain-wide delegation steps (checked in the /onboarding/ chunk). Only the live GET /accounts check is left: tantra-redesign/.env does not exist and no Tantra key is anywhere on this machine."
+    },
+    {
+     "ts": "2026-10-12T04:04:52+0530",
+     "who": "claude",
+     "note": "Ready for sign-off. Today probe-t263 passed 21 of 21: an event at 23:30 plus 60 minutes ends at 00:30 the next date, the gate returns 422 until every sender is CONNECTED, and variant B reaches Tantra as its own campaign. All 8 ids are marked in AUDIT.md and live Worker 25396394 serves the build. As the Orchestrator decided, the read-only FintechCircle sender check moved to new input task T-418 (T-337 is done and holds the GrowthClub key, not FintechCircle's); once that key is saved, the result gets logged here."
     }
    ],
    "order": 2630
@@ -16123,8 +16128,8 @@
      "url": "/tmp/t299/probes-summary.txt"
     },
     {
-     "label": "Day 1 probe log",
-     "url": "/tmp/t299/p-day1.log"
+     "label": "Day 2 probe log",
+     "url": "/tmp/t299/p-day2.log"
     },
     {
      "label": "Branch worktree",
@@ -16183,6 +16188,11 @@
      "ts": "2026-10-12T03:51:50+0530",
      "who": "claude",
      "note": "From T-300 (2026-10-12): on a clean origin/main b9cf6efe private stack, probe-domain-chain, probe-day1, probe-day2 and probe-context stop on 'Describe your business' (the centre now shows 'Describe Your Business'), and probe-stack fails its live funnel and GoHighLevel checks. Logs: /tmp/chain-t300-base/*.log."
+    },
+    {
+     "ts": "2026-10-12T04:05:08+0530",
+     "who": "claude",
+     "note": "Not merged, pushed or deployed yet: probe-domain-chain (45 of 45) and probe-day1 (36 of 36) now pass after I changed probe-day1 to accept either Resend text and moved probe-day2's channels step to where main now puts it (commit 09612ae8 on branch t-299-vendor-inboxes). probe-day2 still fails at page drafting because my private stack sent drafts to LOCAL_RUNNER_URL 127.0.0.1:1 from .dev.vars, which never answers; I pointed /tmp/t299/stack.sh at the real runner on :8791 instead. Next pass: reset the simulator, rerun /tmp/t299/stack.sh then /tmp/t299/run-probes.sh, and once all four pass merge main (now 461f03d8), rerun both tsc checks, then do the approved push, deploy, mirror publish and the LOG.md MERGED line."
     }
    ],
    "order": 2990
@@ -18349,6 +18359,37 @@
    "order": 4170,
    "input_for": "T-335",
    "kind": "input"
+  },
+  {
+   "id": "T-418",
+   "title": "Input from Adi for T-263: save the FintechCircle Tantra API key for the read-only sender check",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi",
+    "Nelbin"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "T-263's last check (are the FintechCircle calendar senders CONNECTED in Tantra) needs FintechCircle's Tantra key, which is not on this machine.",
+   "spec": "When the key line exists, the board agent runs node cloud/scripts/check-tantra-senders.mjs <the 20 FintechCircle sender emails> read-only (GET /accounts?search= only, no writes, key never printed) and posts CONNECTED or not per sender as a log line on T-263.",
+   "done_when": [
+    "TANTRA_TEST_API_KEY is in vendor-test.env",
+    "check-tantra-senders.mjs result per sender is logged on T-263"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Sign in at https://usetantra.com in the FintechCircle workspace, open Connectors, API Keys, Create Key (name it workshop-sender-check), and add one line TANTRA_TEST_API_KEY=<that key> to ~/.config/tantra/keys/vendor-test.env.",
+   "log": [
+    {
+     "ts": "2026-10-12T04:04:46+0530",
+     "who": "claude",
+     "note": "Split out of T-263 by Orchestrator decision O-182ec31e (T-337 is done and held the GrowthClub key, not FintechCircle's)."
+    }
+   ],
+   "order": 4180
   }
  ]
 }

@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T04:03:20+0530",
+   "task_id": "T-061",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-061 is back in review: I found the cause of the paid sign-up failure, fixed it, deployed it, and checked everything else again.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Sender optional when creating the campaigns (`lane.ts`) | Done | The code is in place. The probe passed its no-"
+  },
+  {
    "ts": "2026-10-12T03:52:09+0530",
    "task_id": "T-300",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-282 needed no changes and stays in review, waiting on Adi to approve or redo each of the 18 videos.\n\n- **Review link:** points at ?v=2efde3d. That matches tantra-walkthroughs commit 2efde3d. The review server on :8883 was down, so I restarted it, and the index and all 18 video pages now open.\n- **"
-  },
-  {
-   "ts": "2026-10-12T01:58:16+0530",
-   "task_id": "T-275",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "**COMPLETION CHECK** (all checks below were run this pass):\n\n- **No hardcoded cohort date in referrals.html, and the probe passes:** Done. The page has no `Date.UTC(2026,9,7)` and gets the first cohort date from `DATA.first_cohort` (`workshop-plan/referrals.html:238`). `probe-referrals.mjs --live` p"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-061: Free and paid lane follow-up campaigns in Tantra, with per-lane unit economics",
- "task_id": "T-061",
+ "message": "Acting on 1 note(s) for T-263: Centre: Tantra calendar workspace verification and invite campaign job fixes",
+ "task_id": "T-263",
  "entries": [
-  "F-474ff553"
+  "F-8bc7b9da"
  ],
  "mode": "feedback",
- "started": "2026-10-12T03:52:27+0530",
+ "started": "2026-10-12T04:04:12+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
