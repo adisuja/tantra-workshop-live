@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T23:39:08+0530",
-  "version": 2123,
+  "updated": "2026-10-11T23:42:04+0530",
+  "version": 2129,
   "last_id": 410,
   "team": [
    {
@@ -11089,7 +11089,7 @@
    "blockers": [
     "Adi's confirmation to host from the console, and the Meeting SDK app credentials"
    ],
-   "needs_from_owner": "One Zoom sign-in (marketplace.zoom.us) for two things: (1) create General App 'Tantra Live Control' at https://marketplace.zoom.us/develop/create (Features, Embed, Meeting SDK on, do not publish), or open it if it exists, and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, Save; (2) Manage, Tantra Centre, Scopes: add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin. Details in T-407.",
+   "needs_from_owner": "Only T-335: One Zoom sign-in at https://marketplace.zoom.us covers everything: (1) at https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), or open it if it exists, and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, Save; (2) in the same sign-in, Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, Save. Nothing else to change.",
    "log": [
     {
      "ts": "2026-10-07T20:46:43+0530",
@@ -11150,6 +11150,11 @@
      "ts": "2026-10-11T16:24:27+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-11: the blocker list is T-407 (in review), and production D1 confirms it today: no Meeting SDK credentials saved (zoom_sdk_enc absent), the seat has never connected (no zoom_seat), the Day 1 to 3 run sheet and co-host list are empty; the launchd seat logs 'Built without ZoomSDK.framework'. The app validated earlier is Tantra Centre (Server-to-Server), which cannot run the Meeting SDK, so the one input is still the General App's Client ID and Secret plus the 5 poll scopes (one Zoom sign-in). The code itself is green: probe-live-control passed 34/34 on a local centre with the real seat binary."
+    },
+    {
+     "ts": "2026-10-11T23:41:35+0530",
+     "who": "claude",
+     "note": "Blocker list narrowed in T-407: the only Adi input is T-335 (one Zoom sign-in for the SDK app credentials and the 5 poll scopes). Day 1 to 3 run sheets are drafted and saved on Live Control for Bhaskar and Adi to review."
     }
    ],
    "order": 2260
@@ -16769,12 +16774,17 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "At https://marketplace.zoom.us/develop/create choose General App and name it 'Tantra Live Control'. Under Features, Embed, switch Meeting SDK on and do not publish. Paste the Client ID and Client Secret into the centre admin (https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Live Control, Seat credentials). Or tell Claude to do these clicks in your signed-in browser.",
+   "needs_from_owner": "One Zoom sign-in at https://marketplace.zoom.us covers everything: (1) at https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), or open it if it exists, and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, Save; (2) in the same sign-in, Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, Save. Nothing else to change.",
    "log": [
     {
      "ts": "2026-10-09T05:04:54+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-226."
+    },
+    {
+     "ts": "2026-10-11T23:41:35+0530",
+     "who": "claude",
+     "note": "Ask widened per Orchestrator O-695a03c5: the same Zoom sign-in also adds the 5 Tantra Centre poll scopes (no signed-in browser was available to Claude). This is now the only Adi item for Live Control (T-407)."
     }
    ],
    "order": 3350,
@@ -18025,6 +18035,7 @@
    "assignee": "Claude",
    "reviewers": [
     "Adi",
+    "Bhaskar",
     "Nelbin",
     "Bharath"
    ],
@@ -18032,9 +18043,18 @@
    "due": "",
    "status": "review",
    "why": "Adi 2026-10-11 (F-532a89ae): give me an updated list of blockers for T-226, as a separate task.",
-   "spec": "Checked live on 2026-10-11 from the centre's Live Control status (/admin/api/zoom/control) and the seat's launchd log. Next session: cohort meeting 88135386601, Day 1 Wed 14 Oct 11:00 ET.\n1. BLOCKER (Adi, Zoom sign-in): Meeting SDK credentials are not saved (Seat credentials card: saved = no). The app validated earlier is Tantra Centre, a Server-to-Server OAuth app (T-224). Zoom only runs the Meeting SDK from a General App with Meeting SDK switched on, so Tantra Centre cannot be the seat. Fix: marketplace.zoom.us/develop/create, General App 'Tantra Live Control', Features, Embed, Meeting SDK on, do not publish; paste Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control (Seat credentials card), Save. If such a General App already exists, just paste its two values. (T-335)\n2. BLOCKER (Adi, same Zoom sign-in): Tantra Centre is missing all 5 poll scopes, read from Zoom's own token: meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin. Fix: marketplace.zoom.us, Manage, Tantra Centre, Scopes, Add those 5, Save. Without them run-sheet polls cannot be created ahead by REST, so none can be launched live.\n3. Follows from 1 (Claude): download ZoomSDK.framework from the new app's Embed page into cloud/seat/Frameworks and build the app bundle. Today the launchd seat (com.tantra.live-control, loaded) logs 'Built without ZoomSDK.framework'.\n4. Follows from 1 to 3 (Claude, with Adi hosting): the test meeting that proves chat, CTA and a live poll reaching zoom_polls, the room lock, and co-host promotion. The seat has never connected (no heartbeat).\n5. Content, not a Zoom blocker (Bhaskar for chat and CTA wording, Adi for polls): the production run sheet is empty (0 items for Day 1, 2 and 3), so nothing would post even with the seat live.\n6. Input (Nelbin): production co-host list is empty; add co-host emails on Live Control if anyone besides Adi co-hosts.\nNot a blocker: Zoom Support has not granted host mute or video locks (T-225, write test 2026-10-11 ignored); the seat's room lock covers both. Already done and live: ZOOM_BOT_KEY set, migration 0019, Live Control page, seat app code, launchd opener.",
+   "spec": "Checked live on 2026-10-11 from Live Control (/admin/api/zoom/control). The only Adi item is T-335.\n1. ADI (T-335, one Zoom sign-in): One Zoom sign-in at https://marketplace.zoom.us covers everything: (1) at https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), or open it if it exists, and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, Save; (2) in the same sign-in, Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, Save. Nothing else to change. Claude found no Zoom-signed-in browser this run, so the 5 poll scopes are folded into this same sign-in; Live Control reads all 5 missing today.\n2. Queued behind T-335 (Claude): download ZoomSDK.framework from the new app's Embed page into cloud/seat/Frameworks and build the seat app (launchd com.tantra.live-control logs 'Built without ZoomSDK.framework' today).\n3. Queued behind T-335 (Claude, Adi hosting): the test meeting proving chat, CTA, a live poll reaching zoom_polls, the room lock and co-host promotion. The seat has never connected.\n4. Done for review: Day 1, 2 and 3 run sheets drafted (24 items: chat, CTA, polls) and saved on https://revops-centre.growthcluborg.workers.dev/admin/control; copy in workshop-plan/ops/live-control-runsheet-draft.json. Bhaskar reviews chat and CTA wording, Adi reviews polls.\n5. Decided: Adi is the only host; the co-host list stays empty unless Nelbin adds emails on Live Control.\nNot a blocker: Zoom Support has not granted host mute or video locks (T-225); the seat's room lock covers both. Already live: ZOOM_BOT_KEY, migration 0019, Live Control page, seat app code, launchd opener.",
    "done_when": [],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Live Control run sheet",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/control?v=t407rs1"
+    },
+    {
+     "label": "Run sheet draft",
+     "url": "workshop-plan/ops/live-control-runsheet-draft.json"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -18042,6 +18062,16 @@
      "ts": "2026-10-11T16:18:26+0530",
      "who": "claude",
      "note": "Blocker list for T-226, checked live today: 2 need Adi's Zoom sign-in (Meeting SDK app credentials not saved; 5 poll scopes missing on Tantra Centre), the rest follow from those or are content. The app validated earlier is Tantra Centre (Server-to-Server), which cannot run the Meeting SDK. Read the spec; open https://revops-centre.growthcluborg.workers.dev/admin/control?v=t226blk1"
+    },
+    {
+     "ts": "2026-10-11T23:41:41+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi/Nelbin/Bharath → Adi/Bhaskar/Nelbin/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-11T23:41:42+0530",
+     "who": "claude",
+     "note": "Run sheets drafted and saved on Live Control: 24 items over Days 1 to 3 (chat, CTA, polls), with a live GET showing 4 chat, 1 CTA and 3 polls per day; Bhaskar reviews the wording and Adi the polls. No Zoom-signed-in browser was available, so the 5 poll scopes go into T-335's single sign-in, which is now the only Adi item. Adi stays the sole host. Open https://revops-centre.growthcluborg.workers.dev/admin/control?v=t407rs1"
     }
    ],
    "order": 4070
