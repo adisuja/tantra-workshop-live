@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T07:36:47+0530",
-  "version": 1783,
+  "updated": "2026-10-11T07:39:54+0530",
+  "version": 1784,
   "last_id": 397,
   "team": [
    {
@@ -9397,16 +9397,20 @@
    ],
    "evidence": [
     {
-     "label": "Live centre (Worker 7f8bfc45)",
+     "label": "live centre",
      "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?v=7f8bfc45"
     },
     {
-     "label": "Mirror 8215fd7",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/?v=8215fd7"
+     "label": "probe-email-stripe output",
+     "url": "/tmp/t217v-es.out"
     },
     {
-     "label": "main 97096ab, Worker 7f8bfc45, DEPLOYED line in LOG.md",
-     "url": "/Users/adithyamurali/tantra-round5-coord/LOG.md"
+     "label": "probe-tantra-reminders output",
+     "url": "/tmp/t217v-rem.out"
+    },
+    {
+     "label": "probe-funnel-whatsapp output",
+     "url": "/tmp/t217v-wa.out"
     }
    ],
    "blockers": [],
@@ -9456,6 +9460,11 @@
      "ts": "2026-10-11T07:24:08+0530",
      "who": "claude",
      "note": "Closed out without a rebuild: main (97096ab) already carried the branch's change plus the fix that makes a held email read as a setup step, so I did not merge f0b5528 (it would have brought 'not built' back); I pushed main, deployed centre Worker 7f8bfc45 with no migration, published mirror 8215fd7 and added the DEPLOYED line to LOG.md. Checked on main: no TANTRA_NOTE, TANTRA_WAIT or 'per-contact send' in cloud/src or app/src, and on a private simulator stack probe-tantra-reminders passed 92 of 92 and probe-email-stripe 58 of 58 (the test registrant is enrolled by POST /email-campaigns/:id/contacts, the test run shows reminder email as pass, and as setup when the campaigns are held); the T-236 ripple needed no code change, the criteria were re-checked against campaign import. One gap for the reviewer: the pass reading was proven on the local stack running the deployed code, not on the live centre, because production cannot reach a simulator and has no deployed attendee funnel; probe-funnel-whatsapp was not run."
+    },
+    {
+     "ts": "2026-10-11T07:39:54+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11, nothing had to change: main has no TANTRA_NOTE, TANTRA_WAIT or per-contact send, the Tantra /emails/batch path and its doc are retired, and the cards and guides have no pending wording. On a private simulator stack, probe-tantra-reminders passed 92/0, probe-email-stripe 59/0 (the registrant is enrolled via POST /email-campaigns/:id/contacts, and a held email reads as setup) and probe-funnel-whatsapp 24/0 (Tantra only, no Twilio). The live centre (Worker 7f8bfc45, DEPLOYED in LOG.md) cannot reach a simulator, so the test-run readings are proven on the same code locally."
     }
    ],
    "order": 2170

@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T07:40:06+0530",
+   "task_id": "T-217",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. ## Completion check\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| (1) No `TANTRA_NOTE`, `TANTRA_WAIT` or \"per-contact send\" in `cloud/src` or `app/src` "
+  },
+  {
    "ts": "2026-10-11T07:00:32+0530",
    "task_id": "T-217",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-123 stays blocked: the build checks out, but I did not save or use the Tantra key from Adi's note, because this run's approval covers only commit, push and deploy with reminders off.\n\n**Security flag:** the key sits in plain text in `workshop-plan/tasks/inbox.jsonl`, a git-tracked file. It is in n"
-  },
-  {
-   "ts": "2026-10-11T01:36:00+0530",
-   "task_id": "T-031",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-031 stays in review for Aquila and Bharath: the day output step was actually broken (HTTP 401 since 2026-10-09 22:15Z), is now fixed, ticking cleanly and pushed.\n\n**Completion check**\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| (1) Job loaded and ticking, clean tick line in Evidence"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-217",
+ "task_id": "T-262",
  "entries": [
-  "F-b7d07f86",
-  "R-fc69507f"
+  "F-87273251"
  ],
- "started": "2026-10-11T07:09:59+0530",
- "message": "Acting on 2 note(s) for T-217: Attendee funnel reminders through a Tantra omni-channel campaign (registrant import by webhook)",
+ "started": "2026-10-11T07:41:14+0530",
+ "message": "Acting on 1 note(s) for T-262: Centre: Resend bounce and complaint webhook, full-access key cleanup",
  "slices": {
   "T-135": 1,
   "T-148": 1,
