@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T06:36:04+0530",
-  "version": 1755,
+  "updated": "2026-10-11T06:40:08+0530",
+  "version": 1756,
   "last_id": 396,
   "team": [
    {
@@ -8059,15 +8059,19 @@
    "evidence": [
     {
      "label": "Pipeline dashboard",
-     "url": "http://localhost:8899/pipeline?v=1791680764"
+     "url": "http://localhost:8899/pipeline?v=4"
     },
     {
-     "label": "Screenshot at 1440",
-     "url": "http://localhost:8899/pipeline/snapshots/dashboard-1440.png?v=1791680764"
+     "label": "1440 screenshot",
+     "url": "workshop-plan/pipeline/snapshots/dashboard-1440.png"
     },
     {
-     "label": "First weekly snapshot",
+     "label": "Weekly snapshot",
      "url": "workshop-plan/pipeline/snapshots/2026-10-09.json"
+    },
+    {
+     "label": "Figure check",
+     "url": "workshop-plan/pipeline/test_dash.py"
     }
    ],
    "blockers": [],
@@ -8117,6 +8121,11 @@
      "ts": "2026-10-11T06:36:04+0530",
      "who": "claude",
      "note": "Closed out per the Orchestrator decision: the dashboard serves all 6 bands at /pipeline, the Monday 09:00 job com.tantra.pipeline-weekly is loaded, nothing names the client and pipeline/ is outside both the mirror export and sync_board. Added the three T-154 cards (24h ship rate, PR to live, Regression rate) with their definitions; they, Dogfooding and Customer tier mix show 'no data yet' until T-154, T-155 and T-157 land (logged in coord/LOG.md). Checked in a headless browser at 1440 (14 of 14 cards have a tag, caption and Counts note) and with a synthetic data test; committed and pushed as 0ccd9e0, which also carries T-153's weekly decision call in the snapshot job."
+    },
+    {
+     "ts": "2026-10-11T06:40:08+0530",
+     "who": "claude",
+     "note": "Verify pass: the Ship rate band now lists each fix PR with opened, merged, live and review clock (times read from GitHub, refreshed every Monday), flags PRs past the 2 h, 4 h, 4 h limits, and Regression rate counts each shipped fix once. PRs #160 to #164 are closed unmerged, so 24h ship rate, PR to live and Regression rate still read no data yet (they fill when Bharath merges and a fix goes live); Dogfooding waits on T-155 and Customer tier mix on T-157. Checked with python3 workshop-plan/pipeline/test_dash.py (75%, 12.5 h, 25%, 2 overdue) and a headless 1440 load (6 bands, 15 of 15 cards tagged, no client name); open http://localhost:8899/pipeline?v=4 , pushed as 72ffd9e."
     }
    ],
    "order": 1580,
