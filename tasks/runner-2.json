@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T06:53:37+0530",
+   "task_id": "T-229",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "turns",
+   "summary": "T-229 is blocked on one step: deploying the revops-centre Worker (`cd cloud && npm run deploy`), which I may not do without an approved decision.\n\nCOMPLETION CHECK\n- **Ripple R-165bb4b5 (verify the shared helper, skip rebuilding):** done. `isPlaceholderEmail` in `cloud/src/util.ts:121` is the single"
+  },
+  {
    "ts": "2026-10-11T06:50:18+0530",
    "task_id": "T-154",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-322 passes the verify pass and stays in review for Adi and Bharath. Nothing failed on the Worker, so there was no redeploy and no push.\n\nCOMPLETION CHECK (all run 2026-10-11, 05:28 to 05:45 IST):\n\n- **(1) `probe-public-board.mjs --live` is clean:** done. It exited 0 with 72 checks ok and 0 failed,"
-  },
-  {
-   "ts": "2026-10-11T01:35:59+0530",
-   "task_id": "T-322",
-   "mode": "feedback",
-   "status": "review",
-   "result": "paused",
-   "summary": "Stopped: Adi paused the agent from the board."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-229",
+ "task_id": "T-155",
  "entries": [
-  "R-165bb4b5"
+  "F-70514f95"
  ],
- "started": "2026-10-11T06:51:16+0530",
- "message": "Acting on 1 note(s) for T-229: Zoom registrations: keep placeholder emails out of sign-ups",
+ "started": "2026-10-11T06:54:22+0530",
+ "message": "Acting on 1 note(s) for T-155: Dogfooding: run Tantra on our own funnel and on one client account and FintechCircle, with team-wide feedback",
  "slices": {
   "T-072": 1,
   "T-245": 1,
@@ -114,6 +114,7 @@
   "T-033": 1,
   "T-348": 1,
   "T-242": 1,
-  "T-299": 1
+  "T-299": 1,
+  "T-229": 1
  }
 }
