@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T22:36:32+0530",
-  "version": 2076,
+  "updated": "2026-10-11T22:38:20+0530",
+  "version": 2080,
   "last_id": 409,
   "team": [
    {
@@ -3091,6 +3091,11 @@
      "ts": "2026-10-11T11:34:47+0530",
      "who": "claude",
      "note": "Verify pass: re-read tantra-backend-v2 at f0b901e (unchanged) and the logged findings hold: payment.* goes to onPayment() (lines 102 to 108), which stores a row and answers 200, ownerFor() never matches by email, and no plan is granted. One correction to the integration plan: BillingTrialCampaignService.grant (line 320) is private, and the only public entry, run(), is a bulk free-week campaign over existing users. So granting a seat's plan needs a small new public per-user method plus an admin route in the backend (Ben/Bharath's work, written as a spec under workshop-plan/tantra-product-patches/ when this leaves hold). Renames verified: no 'Build Pass' left in either route file, tsc clean, dab1571b is on origin/main. Still on the owner's hold."
+    },
+    {
+     "ts": "2026-10-11T22:36:41+0530",
+     "who": "claude",
+     "note": "Checked again today: both 'Build Pass' comments now read '$99 seat / VIP' (checkout/route.ts line 5, dodo/webhook/route.ts line 116) and match origin/main exactly. Commit dab1571b is on origin/main, so nothing needed pushing, and tsc --noEmit passes. The backend finding still holds at tantra-backend-v2 f0b901e: onPayment() (lines 102 to 108) stores a payment row and returns 'unmatched' or 'applied', but it never grants a plan. The Pro Course manual-email gap (pdt_0NpKlRqJAjyAf3axboQSR) is already in the log from 2026-10-10, so the T-071 ripple needed no change. @Bharath: please confirm production runs this processor code. The task stays on Adi's integration hold."
     }
    ],
    "order": 420,
@@ -7542,7 +7547,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Nothing new: covered by T-115's single batched ask (tracked as T-399). In that interactive Claude in Chrome session, capture s3-tantra-pro-flow 5, 13 and 14 per scripts/walkthroughs/journeys/guide-t115-capture-manifest.md.",
+   "needs_from_owner": "Nothing new: covered by T-115's single batched ask, tracked as T-399 (one desktop session with Claude in Chrome on the already signed-in Brave profile). When it arrives, Claude captures s3-tantra-pro-flow steps 5, 13 and 14 from the manifest rows.",
    "log": [
     {
      "ts": "2026-09-25",
@@ -7593,6 +7598,16 @@
      "ts": "2026-10-11T22:36:32+0530",
      "who": "claude",
      "note": "Per the Orchestrator, no capture retry from this runner. I confirmed s3-tantra-pro-flow 5, 13 and 14 are in T-115's capture manifest with URL, screen, blur selectors, WebP path and the capture_needed line, and updated row 13 so the session creates the two Adi test contacts (approved) and deletes them after (commit 74dcba55). check-guides PASS at 57 capture-needed; the stale ask now points to T-115/T-399."
+    },
+    {
+     "ts": "2026-10-11T22:37:49+0530",
+     "who": "claude",
+     "note": "Verify pass: s1-blog steps 2 and 6 are real captures on origin/main (f1db2ea) and check-guides PASS at 57 capture-needed. s3-tantra-pro-flow steps 5, 13 and 14 are still capture_needed (lines 99, 182, 191) and listed in the T-115 capture manifest (rows 95 to 97, with test contact create and delete steps). The Asked of Adi text now points only to T-399; no new ask and no capture retry from this runner."
+    },
+    {
+     "ts": "2026-10-11T22:38:20+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-115."
     }
    ],
    "order": 1382,
@@ -17575,12 +17590,17 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Same single sitting as T-115 and T-339, no extra sign-in for T-140: open a Claude Code session in the desktop app with Claude in Chrome connected to the Brave profile adi@growthclub.org (Tantra at https://usetantra.com is already signed in) and type: Act on T-115, T-339 and T-140.",
+   "needs_from_owner": "Same single sitting as T-115 and T-339, no extra sign-in for T-140: open a Claude Code session in the desktop app with Claude in Chrome connected to the Brave profile adi@growthclub.org (Tantra at https://usetantra.com is already signed in) and type: Act on T-115, T-339 and T-140. Only s3-tantra-pro-flow #5, #13 and #14 are left for T-140.",
    "log": [
     {
      "ts": "2026-10-11T11:45:27+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-140."
+    },
+    {
+     "ts": "2026-10-11T22:37:33+0530",
+     "who": "claude",
+     "note": "Ripple checked: s1-blog #2 and #6 are already real captures (no capture_needed left there), but s3-tantra-pro-flow #5, #13 and #14 still show capture_needed in app/src/content/guides/s3-nurture/s3-tantra-pro-flow.ts (lines 99, 182, 191), and T-140 is still blocked because its runner has no browser. So the fallback the ripple describes applies: the ask stays, now narrowed to those three slots."
     }
    ],
    "order": 3990,

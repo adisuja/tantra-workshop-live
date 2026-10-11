@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T22:36:57+0530",
+   "task_id": "T-070",
+   "mode": "feedback",
+   "status": "hold",
+   "result": "ok",
+   "summary": "T-070 stays on Adi's integration hold. Everything the notes asked for is done or was already in place, and I changed no files this run.\n\n1. **Backend finding (done):** I re-read `billing-webhook.processor.ts` in tantra-backend-v2 (f0b901e). `onPayment()` (lines 102 to 108) stores a payment row and r"
+  },
+  {
    "ts": "2026-10-11T22:35:27+0530",
    "task_id": "T-285",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-155 needed no change and stays in review. The note said the client account audit was done, but the audit sheet on disk says it was never run, and I ack'd the note.\n\n- **Variant A/B drafts with the day-3 follow-up:** done. The private client spec already records them in `workshop-plan/coord/T-155-c"
-  },
-  {
-   "ts": "2026-10-11T17:46:26+0530",
-   "task_id": "T-151",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-151 is back in review. The triage agent scored 28/30 (93%) on 30 fresh real reports and 29/30 on the original batch. The guide link in the app and the PR 166 steps still need Bharath. Item by item:\n\n- **One queue:** done. Widget, form and team-channel reports land in the same queue (`test_widget_a"
   }
  ],
  "state": "working",
- "message": "Acting on 2 note(s) for T-070: What the Tantra backend does when a workshop seat or VIP is paid",
- "task_id": "T-070",
+ "message": "Acting on 1 note(s) for T-399: Input from Adi for T-140: Same single sitting as T-115 and T-339, no extra sign-in for T-140: open a Claud",
+ "task_id": "T-399",
  "entries": [
-  "F-75036ce3",
-  "R-563592d2"
+  "R-480b59f1"
  ],
  "mode": "feedback",
- "started": "2026-10-11T22:36:17+0530",
+ "started": "2026-10-11T22:37:10+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
