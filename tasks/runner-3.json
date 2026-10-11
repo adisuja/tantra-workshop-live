@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T00:59:15+0530",
+   "task_id": "T-242",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Stopped at the 70-minute wall clock for one run; the work so far is committed and the next run continues. Last report: The funnel is up. Now I'll rerun the webinar walker, detached."
+  },
+  {
    "ts": "2026-10-11T23:48:54+0530",
    "task_id": "T-299",
    "mode": "feedback",
@@ -87,33 +95,30 @@
    "status": "doing",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-270 is still in doing: 1ef94a2 is deployed on the live Worker, but the two consent checks could not run on live, so the probe fix, mirror publish and move to revie"
-  },
-  {
-   "ts": "2026-10-11T21:44:57+0530",
-   "task_id": "T-284",
-   "mode": "feedback",
-   "status": "hold",
-   "result": "ok",
-   "summary": "F-777d2bc8 was already marked processed, so acking it found nothing new to do. T-284 is now on hold until Adi gives his verdicts in T-282, and nothing has gone live.\n\n**Completion check:**\n1. **Re-export the 5 changed videos:** done (checked earlier this run).\n   - Kie.ai 59 s, Stripe 85.5 s, HubSpo"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-242",
+ "task_id": "T-282",
  "entries": [
-  "F-5ef803d7"
+  "R-ab311869"
  ],
- "started": "2026-10-11T23:49:12+0530",
- "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
+ "started": "2026-10-12T00:59:56+0530",
+ "message": "Acting on 1 note(s) for T-282: Review the seven new walkthrough videos before they go on the centres and playbook",
  "slices": {
   "T-135": 1,
   "T-148": 1,
   "T-252": 1,
   "T-300": 2,
-  "T-242": 2,
+  "T-242": 3,
   "T-052": 1,
   "T-292": 1,
   "T-270": 1,
   "T-299": 1
+ },
+ "api_capped": {
+  "T-229": "2026-10-12T00:59:32+0530",
+  "T-272": "2026-10-12T00:59:43+0530",
+  "T-275": "2026-10-12T00:59:55+0530"
  }
 }
