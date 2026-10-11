@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T23:11:24+0530",
-  "version": 2109,
+  "updated": "2026-10-11T23:12:36+0530",
+  "version": 2112,
   "last_id": 410,
   "team": [
    {
@@ -6999,7 +6999,7 @@
     }
    ],
    "blockers": [
-    "Waiting on T-351 (Adi: unlock the Mac and grant Accessibility to Python.app; tracked as T-402)"
+    "Waiting on T-351 (Adi: unlock the Mac and grant Accessibility to Python.app; tracked as T-403)"
    ],
    "needs_from_owner": "",
    "log": [
@@ -7062,6 +7062,11 @@
      "ts": "2026-10-11T23:09:13+0530",
      "who": "claude",
      "note": "No captures: preflight from the runner still prints NOT READY (Accessibility NO, Mac locked), so no routine was created and nothing needs reverting. Preflight now also prints the Python binary and the runner's process chain (top is Python.app), and the ask lives only on T-351. Once preflight prints READY the next run captures all 5 slots under caffeinate."
+    },
+    {
+     "ts": "2026-10-11T23:12:04+0530",
+     "who": "claude",
+     "note": "Blocker now points at T-403, the single live ask (T-402 was dropped as its duplicate)."
     }
    ],
    "order": 1320,
@@ -17154,6 +17159,16 @@
      "ts": "2026-10-11T23:11:24+0530",
      "who": "claude",
      "note": "Every runner sweep now reruns the preflight under the runner's own Python (workshop-plan/tasks/runner.py shots_gate); the moment it prints READY it marks T-351 done and sends T-132 its start note. Tested with a mocked READY and NOT READY; the real run just now still prints NOT READY (Accessibility NO, Mac locked, Screen Recording yes). The grant goes on Python.app (the binary macOS checks from the runner), tracked as T-403."
+    },
+    {
+     "ts": "2026-10-11T23:12:10+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11: preflight from Python.app still prints NOT READY (Accessibility NO, Mac locked; Screen Recording yes, Claude window id 192 found). A mocked test of the runner's shots_gate closed T-351 and sent T-132 its start note only on READY, and did nothing on NOT READY or when already done. T-132's blocker now points at T-403, the single ask."
+    },
+    {
+     "ts": "2026-10-11T23:12:36+0530",
+     "who": "claude",
+     "note": "Checked 7 related task(s); updating T-132, T-403."
     }
    ],
    "order": 3510

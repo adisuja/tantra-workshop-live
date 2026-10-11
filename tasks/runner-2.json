@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T23:12:31+0530",
+   "task_id": "T-351",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-351 is still blocked: when I reran the preflight, it printed NOT READY because Accessibility is still off for Python.app and the Mac is locked. The only thing left is for you to unlock the Mac and turn on Accessibility for Python.app (tracked as T-403).\n\n- **Preflight names the binary macOS checks"
+  },
+  {
    "ts": "2026-10-11T23:09:35+0530",
    "task_id": "T-132",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "I re-checked T-254 and it's back in **review** for Adi and Bharath with an up-to-date log entry. Every probe passed, so I changed no code and pushed nothing. The ack returned 0 because note F-69307d55 had already been marked as handled.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Char"
-  },
-  {
-   "ts": "2026-10-11T18:23:14+0530",
-   "task_id": "T-154",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "Waiting on the pilot run (background job b73fi0wic) and a progress watcher."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-351",
+ "task_id": "T-404",
  "entries": [
-  "F-97be9e13",
-  "R-d0fc559f"
+  "F-f26f6575"
  ],
- "started": "2026-10-11T23:09:56+0530",
- "message": "Acting on 2 note(s) for T-351: Give the Launch Control agent macOS permission to capture and drive the Claude app",
+ "started": "2026-10-11T23:13:46+0530",
+ "message": "Acting on 1 note(s) for T-404: Paste an Anthropic API key for live centre AI drafting",
  "slices": {
   "T-072": 1,
   "T-245": 1,
