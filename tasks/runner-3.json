@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T13:22:14+0530",
+   "task_id": "T-134",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-134 is back in review. Both closing checks passed, so I changed, committed and pushed nothing.\n\n1. **Guide and screenshots on origin main: done.** The guide file and screenshots 01 and 03 to 07 are on origin main and match my local copy exactly.\n2. **Live guide shows the step 1 to 4 captures and t"
+  },
+  {
    "ts": "2026-10-11T13:05:28+0530",
    "task_id": "T-020",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "Stripe refund handling is already live, so I didn't redeploy and set T-238 to review for Adi, Aquila and Bharath.\n\n- **Already live:** commit 42a1a35 went out in Worker 7f8bfc45 and is in every deploy since, including the current live version 7bbeec3c.\n- **Why no redeploy:** deploying from 42a1a35, "
-  },
-  {
-   "ts": "2026-10-11T11:46:26+0530",
-   "task_id": "T-140",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-140 is still blocked: the two blog screenshots are done, but the three Tantra screenshots need a browser signed in to Tantra, and this run has none.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| s1-blog #2 and #6 real captures | Done | Both guide entries point at real images. The comm"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-134",
+ "task_id": "T-242",
  "entries": [
-  "F-b21f5e4b"
+  "F-15a68b48"
  ],
- "started": "2026-10-11T13:08:35+0530",
- "message": "Acting on 1 note(s) for T-134: Starter CRM: build the reference connections (prompts 01 to 06) so the planned steps get real screenshots",
+ "started": "2026-10-11T13:22:49+0530",
+ "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
  "slices": {
   "T-135": 1,
   "T-148": 1,
@@ -113,7 +113,6 @@
   "T-300": 2,
   "T-240": 1,
   "T-242": 1,
-  "T-134": 1,
   "T-052": 1,
   "T-263": 1,
   "T-191": 1

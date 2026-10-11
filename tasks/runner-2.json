@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T13:22:34+0530",
+   "task_id": "T-242",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "ok",
+   "summary": "Task T-242 moved to review; note F-15a68b48 acknowledged."
+  },
+  {
    "ts": "2026-10-11T13:05:48+0530",
    "task_id": "T-292",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "I found nothing left to fix on T-295, so I moved it back to review with Adi and Bharath. This run made no commit, push or publish because nothing in the repo changed.\n\n**One slip, reverted:** earlier in this run I overwrote the repo's existing `app/scripts/probe-funnel-overlap.mjs` with a probe of m"
-  },
-  {
-   "ts": "2026-10-11T11:46:53+0530",
-   "task_id": "T-240",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-240 is still in progress (status doing): the 3 original images are fine, but a 4th screenshot FAIL turned up and its fix isn't proven yet. I left note F-e85a68f0 u"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-242",
+ "task_id": "T-146",
  "entries": [
-  "F-15a68b48"
+  "F-d7a11533"
  ],
- "started": "2026-10-11T13:12:39+0530",
- "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
+ "started": "2026-10-11T13:22:45+0530",
+ "message": "Acting on 1 note(s) for T-146: Give teammates access to both GitHub repos",
  "slices": {
   "T-072": 1,
   "T-245": 1,
@@ -113,7 +113,6 @@
   "T-140": 1,
   "T-033": 1,
   "T-348": 1,
-  "T-242": 1,
   "T-299": 1,
   "T-229": 1,
   "T-240": 1,
