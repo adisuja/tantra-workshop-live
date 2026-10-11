@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T23:37:02+0530",
-  "version": 2122,
+  "updated": "2026-10-11T23:39:08+0530",
+  "version": 2123,
   "last_id": 410,
   "team": [
    {
@@ -15731,20 +15731,16 @@
    ],
    "evidence": [
     {
-     "label": "Probe chain summary (main a4b68db7)",
+     "label": "Local admin, AI connections",
+     "url": "http://localhost:8790/admin/?v=t292v#connections"
+    },
+    {
+     "label": "Probe chain summary",
      "url": "file:///tmp/t292-chain/summary.txt"
     },
     {
-     "label": "Deploy log, version b5612173",
-     "url": "file:///tmp/t292/deploy.log"
-    },
-    {
-     "label": "Live admin, AI connections",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=t292d#connections"
-    },
-    {
-     "label": "Local admin, AI connections",
-     "url": "http://localhost:8790/admin/?v=t292d#connections"
+     "label": "Baseline chain summary",
+     "url": "file:///tmp/chain-t300-base/summary.txt"
     }
    ],
    "blockers": [],
@@ -15804,6 +15800,11 @@
      "ts": "2026-10-11T23:37:02+0530",
      "who": "claude",
      "note": "Pushed main to origin (6a7dcca5..000bbb8e, includes 064e2b7c, d14448a9, 4f04c5cd) and deployed revops-centre as Worker version b5612173-deab-4ef4-b99a-2136ff3cb148, built from 000bbb8e. On a private stack, run-chain quick passed 10 steps; the 7 failing probes match the origin/main baseline exactly, are not caused by the routing or sign-in changes, and are noted on T-300. The live admin AI connections list was still 0 at 23:36 and I changed nothing there (the key is T-404); the local :8790 centre and its build were not touched."
+    },
+    {
+     "ts": "2026-10-11T23:39:08+0530",
+     "who": "claude",
+     "note": "Verify pass, nothing needed fixing. Local centre: connection 1 (Opus) is enabled at priority 1 and connection 3 (Sonnet / Haiku) is enabled at priority 5 with no error. Two fresh drafts on the brand card for test attendee 419 went the right way: the person draft used Opus (draft 1056) and the probe draft used Sonnet (draft 1057). Live: Worker version b5612173 is active, the live AI connections list is still 0 and I changed nothing (the key is on T-404). Commits 064e2b7c, d14448a9 and 4f04c5cd are on origin/main, and the 7 failing chain probes match the origin/main baseline."
     }
    ],
    "order": 2920

@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T23:39:27+0530",
+   "task_id": "T-292",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "I checked the previous report from scratch, everything holds up, and I've set T-292 to **done**. I changed no code in this run.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| Local admin shows connection 1 on and connection 3 on as the probe fallback | Done | The local centre lists conn"
+  },
+  {
    "ts": "2026-10-11T23:17:30+0530",
    "task_id": "T-020",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "turns",
    "summary": "(Held back from the public board: this note mentions a private client detail.)"
-  },
-  {
-   "ts": "2026-10-11T21:20:38+0530",
-   "task_id": "T-056",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-056 is still blocked: there's no Tantra key on this Mac that a script can read, so nothing was imported and no campaign was created.\n\n- **Save the key locally:** not done. The copy T-123 saved in the centre admin is locked with a secret only the Worker holds, so local scripts can't read it. The on"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-292",
+ "task_id": "T-234",
  "entries": [
-  "F-f744144c"
+  "R-b27534cd"
  ],
- "started": "2026-10-11T23:18:07+0530",
- "message": "Acting on 1 note(s) for T-292: Re-enable the Opus AI drafting connection in the local centre for real use",
+ "started": "2026-10-11T23:40:01+0530",
+ "message": "Acting on 1 note(s) for T-234: Workshop reminders through Tantra omni-channel campaigns: import every registrant with their own join and calendar links",
  "slices": {
   "T-072": 1,
   "T-245": 1,
@@ -117,7 +117,6 @@
   "T-229": 1,
   "T-240": 1,
   "T-278": 1,
-  "T-292": 1,
   "T-059": 1,
   "T-300": 1
  }
