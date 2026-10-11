@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T03:03:14+0530",
+   "task_id": "T-403",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-403 stays blocked. The ask already names the right app, and only Adi can unlock the Mac and turn on the Accessibility permission.\n\n- **Ask names the app macOS checks when the runner launches it:** done. I ran preflight in this run and the process chain goes from `claude` up to `/Library/Frameworks"
+  },
+  {
    "ts": "2026-10-12T03:01:29+0530",
    "task_id": "T-132",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "ok",
    "summary": "T-073 stays in **doing**: everything that can be built and checked before the sessions is in place. The lessons can't be cut until the 14 to 16 Oct sessions are recorded.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| Spec moved to meeting 88135386601, T-232 blocker removed, due 17 Oct "
-  },
-  {
-   "ts": "2026-10-12T02:20:56+0530",
-   "task_id": "T-153",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I re-checked the T-153 close-out from scratch and nothing needed fixing. It's back in review for Amal and Bharath. All the work was done in earlier runs, so this run made no code changes and no commits.\n\n- **Comment fix:** done. Line 12 of `workshop-plan/tasks/features/score.py` now says `signals.js"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-403",
+ "task_id": "T-191",
  "entries": [
-  "R-dc637864"
+  "F-411b56e7"
  ],
- "started": "2026-10-12T03:01:46+0530",
- "message": "Acting on 1 note(s) for T-403: Input from Adi for T-351: On this Mac: 1) unlock the screen and leave it unlocked with the Claude app open",
+ "started": "2026-10-12T03:04:10+0530",
+ "message": "Acting on 1 note(s) for T-191: Decide the calls still open from Nelbin's content pass",
  "slices": {
   "T-135": 1,
   "T-300": 2,

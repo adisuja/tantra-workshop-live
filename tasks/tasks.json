@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T03:01:11+0530",
-  "version": 2271,
-  "last_id": 415,
+  "updated": "2026-10-12T03:03:30+0530",
+  "version": 2276,
+  "last_id": 416,
   "team": [
    {
     "name": "Adi",
@@ -4487,6 +4487,11 @@
      "ts": "2026-10-12T03:01:11+0530",
      "who": "claude",
      "note": "Ripple from T-093: the combined review list had no ?v=1009b links, but the mirror has been rebuilt since, so all seven links now use the fresh ?v=d29a1055 (the latest mirror commit, which includes the T-093 changes). The key-art probe on the live mirror passes at 1440 and 390 with 0 broken images. I also fixed a false alarm in the probe: it flagged the /vip line 'Registration closes Tue 13 Oct', which is correct because the deadline, computed by cohort.ts, is the evening before Day 1."
+    },
+    {
+     "ts": "2026-10-12T03:03:08+0530",
+     "who": "claude",
+     "note": "Verify pass on the T-093 ripple: nothing had to change. The review list already uses ?v=d29a1055, and the mirror has no site changes since then (head 3da937dd only syncs the board), so those links are still fresh. All seven links answered 200 and the key-art probe on the live mirror passed again (ALL PASS, guarantee seal and 18 bonus key-art images found). Still waiting on Bhaskar's sign-off."
     }
    ],
    "order": 990,
@@ -17793,12 +17798,22 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "On this Mac: 1) unlock the screen and leave it unlocked with the Claude app open; 2) open System Settings > Privacy & Security > Accessibility and switch on Python (/Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app), adding it with the + button if it is not listed, plus any other app named in T-351's latest log line. Nothing else is needed; the agent confirms READY and captures the screenshots itself.",
+   "needs_from_owner": "On this Mac: 1) unlock the screen and leave it unlocked with the Claude app open; 2) open System Settings > Privacy & Security > Accessibility and switch on Python (/Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app), adding it with the + button (Cmd+Shift+G to paste the path) if it is not listed. Nothing else is needed; the agent confirms READY from the runner and captures the screenshots itself.",
    "log": [
     {
      "ts": "2026-10-11T12:49:32+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-351."
+    },
+    {
+     "ts": "2026-10-12T03:02:17+0530",
+     "who": "claude",
+     "note": "Ripple from T-351 checked: preflight run from the runner today shows the process chain topping out at Python.app (runner Python.app > claude > zsh > Python.app), so the ask already named the right app; I only removed the vague 'any other app' clause. Preflight still prints NOT READY (Accessibility NO, Mac locked; Screen Recording yes, Claude window found), and only a READY from the runner closes this."
+    },
+    {
+     "ts": "2026-10-12T03:02:56+0530",
+     "who": "claude",
+     "note": "Verify pass: the ripple's change is already in place. The ask names Python.app and says only a READY from the runner counts. Preflight run again today shows the process chain ending at Python.app (Python.app > claude > zsh > Python.app) and still prints NOT READY: Accessibility is off and the Mac is locked. Nothing else had to change."
     }
    ],
    "order": 4030,
@@ -18201,6 +18216,35 @@
    ],
    "order": 4150,
    "input_for": "T-398",
+   "kind": "input"
+  },
+  {
+   "id": "T-416",
+   "title": "Input from Adi for T-403: At this Mac: 1) unlock the screen and leave it unlocked with the Claude app open",
+   "area": "Infra",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (physical): macOS needs the login password and an in-person Accessibility toggle; the agent cannot type his password or grant itself TCC access.. Everything else in T-403 is being built around it. As soon as this is done, T-403 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "At this Mac: 1) unlock the screen and leave it unlocked with the Claude app open. 2) Open x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility (System Settings > Privacy & Security > Accessibility), click +, press Cmd+Shift+G, paste /Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app, add it and switch it on. Nothing else; the agent detects it and takes the screenshots itself.",
+   "log": [
+    {
+     "ts": "2026-10-12T03:03:30+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-403."
+    }
+   ],
+   "order": 4160,
+   "input_for": "T-403",
    "kind": "input"
   }
  ]
