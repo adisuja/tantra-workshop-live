@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T16:41:01+0530",
-  "version": 1965,
+  "updated": "2026-10-11T16:41:57+0530",
+  "version": 1968,
   "last_id": 408,
   "team": [
    {
@@ -10731,7 +10731,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "review",
+   "status": "blocked",
    "why": "Since the 2026-10-07 security fix (b08eeed) /cal/issue never returns a feed token to the browser, so a marketing sign-up only gets their centre link (/enter?t=) and private calendar link (/cal/p/<token>.ics) if we send them; nothing on main sends them, so the first real attendee would get no links.",
    "spec": "Owner model (memory google-and-reminder-model, 2026-10-07): attendee messages (email, WhatsApp, LinkedIn) run on a Tantra omni-channel campaign, and registrants are imported into it programmatically. Build: (1) In the centre Worker (cloud/src), on attendee creation (admin add in index.ts ~478, /cal/issue sign-up and /intake in cloud/src/calendar.ts), POST the attendee to the workshop's Tantra campaign: POST /email-campaigns/:id/contacts with {contacts:[{email, firstName, lastName, phone or whatsappPhone, tags:['workshop', week], customFields:{centre_link, calendar_link, google_cal_link, cohort_dates, zoom_join}}]} (contract: docs/onboarding-v3/analysis/integrations-tantra-api.md section 5; upserts by email, idempotent, 409 means retry). Reuse tantraUrl/tantraHeaders from cloud/src/connectors/stack.ts. Record event 'welcome_enrolled' per attendee; a revoked calendar link re-posts the contact with the new calendar_link. (2) Admin field for the workshop's Tantra API key and campaign id (secret stored like other vault keys, never in the repo). (3) Campaign step 1 in Tantra is the welcome email using those custom fields (copy per workshop-plan/COPY_RULES.md, no dashes), WhatsApp step if a phone is present (through Tantra, never Twilio). (4) Probe against vendor-sim first (add the route if missing), then live with the test identity the owner's Google test identity. Shares the same import with the per-day reminders (T-234).",
    "done_when": [
@@ -10742,26 +10742,26 @@
    ],
    "evidence": [
     {
-     "label": "pre.md free-lane confirmation",
-     "url": "workshop-plan/sequences/pre.md"
+     "label": "Vendor-sim probe (92 pass, rotation included)",
+     "url": "app/scripts/probe-tantra-reminders.mjs"
     },
     {
-     "label": "Drift check",
-     "url": "workshop-plan/sequences/check_confirmation.py"
+     "label": "Live go-live script",
+     "url": "app/scripts/e2e-tantra-reminders-live.mjs"
     },
     {
      "label": "Sent welcome copy",
      "url": "cloud/src/reminder-copy.ts"
     },
     {
-     "label": "Vendor-sim probe",
-     "url": "app/scripts/probe-tantra-reminders.mjs"
+     "label": "Centre chain step",
+     "url": "app/scripts/run-chain.sh"
     }
    ],
    "blockers": [
     "Go-live only: the workshop Tantra campaign id and its API key saved in the centre admin (build and probe against vendor-sim does not wait)"
    ],
-   "needs_from_owner": "",
+   "needs_from_owner": "Connect team@growthclub.org as a mailbox in the GrowthClub Tantra workspace (https://app.usetantra.com, Email Accounts, Connect account), the same ask as T-123. Then the live welcome test runs without you.",
    "log": [
     {
      "ts": "2026-10-07T22:53:58+0530",
@@ -10832,6 +10832,11 @@
      "ts": "2026-10-11T05:39:40+0530",
      "who": "claude",
      "note": "Verify pass: the free-lane confirmation in pre.md matches the sent welcome word for word, and a new check (python3 workshop-plan/sequences/check_confirmation.py) now fails if they drift; I also corrected the paid-lane note, since paid buyers currently get the same Registered message. The reminders probe passed 92 checks with 0 failures on a private local centre and vendor-sim (one welcome with own Zoom, calendar and centre links, a revoked calendar link rewrites the contact); the paid-buyer step was skipped for lack of a local payment test secret. The live send still waits on the Tantra key (T-337)."
+    },
+    {
+     "ts": "2026-10-11T16:41:57+0530",
+     "who": "claude",
+     "note": "The key was already saved sealed in Admin and redacted by the T-123 run. The reminders probe passes 92 checks with 0 failures on a private centre and vendor-sim, including one welcome with its own Zoom, calendar and centre links, and a rotated calendar link rewriting the contact. The live run stopped with nothing created because team@growthclub.org is not a connected mailbox in the GrowthClub Tantra workspace, so the live welcome email and contact cleanup wait on that one connection."
     }
    ],
    "order": 2280
@@ -16147,6 +16152,11 @@
      "ts": "2026-10-11T16:37:41+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-400, T-059, T-393, T-228."
+    },
+    {
+     "ts": "2026-10-11T16:41:57+0530",
+     "who": "claude",
+     "note": "Recheck from T-228 on 2026-10-11: the key is saved sealed in Admin and the Tantra API accepts it, but team@growthclub.org is still not a connected mailbox, so the live run stopped before creating any campaign. That one input is tracked on T-123."
     }
    ],
    "order": 3370,
