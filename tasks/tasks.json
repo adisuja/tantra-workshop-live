@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T02:13:18+0530",
-  "version": 2225,
+  "updated": "2026-10-12T02:17:48+0530",
+  "version": 2226,
   "last_id": 413,
   "team": [
    {
@@ -7634,6 +7634,11 @@
      "ts": "2026-10-12T02:11:46+0530",
      "who": "claude",
      "note": "Ripple from T-273 checked: the b-pass element already reads Two-Month Platform Pass in review_hub.py and in the committed index.html, the live mirror shows it with no '1 month, worth $99', and this task's spec and notes never carried the old wording, so nothing had to change. Regenerating only shuffled the repo file list, so I left index.html as committed; probe-review-hub.mjs reports ALL LINKS OK (423 links and anchors). Open https://adisuja.github.io/tantra-workshop-live/?v=t144r2#review and continue the one by one review."
+    },
+    {
+     "ts": "2026-10-12T02:17:48+0530",
+     "who": "claude",
+     "note": "Verify pass on the T-273 ripple: nothing had to change. The b-pass element reads 'Two-Month Platform Pass' in review_hub.py:439, in the regenerated hub (the regenerate only churned the repo file list, so it was reverted) and on the live mirror (no '1 month, worth $99'); T-144's spec never used the old wording, and probe-review-hub.mjs reports ALL LINKS OK (423 links). Open https://adisuja.github.io/tantra-workshop-live/?v=t144r3#review for the one by one review."
     }
    ],
    "order": 1440,
