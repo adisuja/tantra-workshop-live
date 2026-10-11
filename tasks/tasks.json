@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T21:21:29+0530",
-  "version": 2034,
+  "updated": "2026-10-11T21:26:50+0530",
+  "version": 2035,
   "last_id": 408,
   "team": [
    {
@@ -14165,6 +14165,11 @@
      "ts": "2026-10-11T21:21:29+0530",
      "who": "claude",
      "note": "H006 and H013 are fixed in 1d66ef0 (on origin/main). test_referrals.py passes 27/27, probe-referrals.mjs --live passes 13/13, and the live page matches main: it reads first_cohort, has no literal date, shows the monthly payout line, and keeps the Replies column and team total, so no republish was needed. H008 moved into T-006: the links.site step is now in runbook.md section 5 (a8c61474, pushed) and AUDIT.md says tracked in T-006. Open https://adisuja.github.io/tantra-workshop-live/referrals.html?v=1011c"
+    },
+    {
+     "ts": "2026-10-11T21:26:50+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-006."
     }
    ],
    "order": 2750
