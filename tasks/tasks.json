@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T10:56:30+0530",
-  "version": 1822,
+  "updated": "2026-10-11T10:59:29+0530",
+  "version": 1826,
   "last_id": 397,
   "team": [
    {
@@ -3796,12 +3796,16 @@
    ],
    "evidence": [
     {
-     "label": "Live admin, Attendees",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=t096"
+     "label": "Live admin sign-in",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t096b"
+    },
+    {
+     "label": "Local admin retirement",
+     "url": "app/src/app/admin/admin-client.tsx"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Open https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t096 and paste the owner key (~/.config/tantra/revops-admin-key) into the sign-in form (old ?k= links no longer sign in), then Attendees, Devices column, and confirm the flag and per-attendee override.",
+   "needs_from_owner": "Nelbin: open https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t096b, sign in with your admin token, open Attendees, check the Devices column and the per-attendee device cap on an attendee page, and confirm.",
    "log": [
     {
      "ts": "2026-09-23",
@@ -3832,6 +3836,11 @@
      "ts": "2026-10-10T16:35:33+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-23 was past; now 2026-10-16 (P2 rule)."
+    },
+    {
+     "ts": "2026-10-11T10:58:44+0530",
+     "who": "claude",
+     "note": "Re-checked live 2026-10-11 on Worker 5c45750f (migration 0027 applied, nothing pending): a test attendee opened its link from 2 device cookies, Devices showed 2; a cap of 1 saved, survived reload and flagged the row; a third device still got in. Test attendee deleted (ledgered). The local admin's Devices column is gone, replaced by a pointer; pushed as b5c541be. Nelbin: sign in at https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t096b then Attendees, Devices."
     }
    ],
    "order": 940,
@@ -15901,7 +15910,7 @@
    "title": "Trash two undeployed 'Tantra funnel forms receiver' Apps Script projects (boards@fintechcircle.com)",
    "area": "Ops",
    "owner": "Nelbin",
-   "assignee": "Claude",
+   "assignee": "Nelbin",
    "reviewers": [
     "Nelbin"
    ],
@@ -15926,6 +15935,21 @@
      "ts": "2026-10-10T04:03:06+0530",
      "who": "Orchestrator",
      "note": "People: assignee Nelbin → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-11T10:58:18+0530",
+     "who": "claude",
+     "note": "People: assignee Claude → Nelbin (by claude)."
+    },
+    {
+     "ts": "2026-10-11T10:58:18+0530",
+     "who": "claude",
+     "note": "Handed back to Nelbin: this run had no Claude in Chrome connection (no browser tool, Brave running without a debug port), so Browser 2 could not be driven and nothing was trashed or changed. Live receiver checked today: its health URL returns all six forms (free_registration, free_survey, paid_registration, paid_survey, checkout_start, checkout_return). Nelbin: signed in as boards@fintechcircle.com, open https://script.google.com/home, trash only the two 'Tantra funnel forms receiver' projects (leave the copy bound to the Work Tracker if boards@ cannot trash it, never touch 'Tantra Funnel'), then add a line to scripts/walkthroughs/REVERT_LEDGER.md."
+    },
+    {
+     "ts": "2026-10-11T10:59:29+0530",
+     "who": "claude",
+     "note": "Handed back to Nelbin per the Orchestrator's fallback: this run again had no Claude in Chrome tool and no browser with a debug port, so Browser 2 (boards@fintechcircle.com) could not be driven; nothing in Apps Script was changed. Nelbin: sign in as boards@fintechcircle.com at https://script.google.com/home, trash only the two 'Tantra funnel forms receiver' projects (leave 'Tantra Funnel' under adi@growthclub.org), then add a line to scripts/walkthroughs/REVERT_LEDGER.md. Checked today: the live receiver health URL still lists all six forms."
     }
    ],
    "order": 3800
