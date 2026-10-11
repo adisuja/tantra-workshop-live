@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T12:49:40+0530",
-  "version": 1916,
+  "updated": "2026-10-11T12:50:48+0530",
+  "version": 1917,
   "last_id": 403,
   "team": [
    {
@@ -6792,6 +6792,11 @@
      "ts": "2026-10-11T12:49:40+0530",
      "who": "claude",
      "note": "No captures this run: preflight (/Library/Frameworks/Python.framework/Versions/3.12/bin/python3 app/scripts/shots/claude-app-shots.py preflight) prints NOT READY because Accessibility is off and the Mac is locked, so no routine was created and nothing needs reverting. Demo folders are ready in /tmp/e-demo; all 5 slots are still capture_needed (check-guides total 57). T-351 is reopened with the failed checks; the agent captures all 5 once preflight prints READY."
+    },
+    {
+     "ts": "2026-10-11T12:50:48+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-351."
     }
    ],
    "order": 1320,
