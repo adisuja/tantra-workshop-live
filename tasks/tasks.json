@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T16:52:12+0530",
-  "version": 1973,
+  "updated": "2026-10-11T16:54:03+0530",
+  "version": 1974,
   "last_id": 408,
   "team": [
    {
@@ -1950,12 +1950,8 @@
      "url": "workshop-plan/ops/runbook.md"
     },
     {
-     "label": "Run 20261011-164656 results",
-     "url": "workshop-plan/ops/dryrun/20261011-164656/results.json"
-    },
-    {
-     "label": "Commit 5320259f on origin/main",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/5320259f"
+     "label": "Run 20261011-165232 results",
+     "url": "workshop-plan/ops/dryrun/20261011-165232/results.json"
     }
    ],
    "blockers": [
@@ -2052,6 +2048,11 @@
      "ts": "2026-10-11T16:48:45+0530",
      "who": "claude",
      "note": "The dry run now runs on its own: when :8790 is stale it starts a private centre and simulator, runs, and stops them (:8790 untouched). Run 20261011-164656 took SendFlow, Apex Growth and Sarah Chen from survey to email and WhatsApp in 10.3 s, 13.4 s and 14.6 s with no manual step, a separate refusal address bounced as designed, and all four attendees read test=1 revoked=1 afterwards. Timings are in runbook.md section 6, --require-real still refuses until the Tantra key exists, and main is pushed (5320259f, cd5590b included)."
+    },
+    {
+     "ts": "2026-10-11T16:54:03+0530",
+     "who": "claude",
+     "note": "Verify pass: I reran the harness myself (run 20261011-165232). It started and stopped its own private centre, left the :8790 process alone (PID 43749 before and after), and all three personas got email and WhatsApp in 10.9 s, 12.9 s and 14.3 s, while the refusal address bounced. All four attendees read test=1 revoked=1 afterwards, the rows are in runbook.md section 6, and cd5590b and 5320259f are both on origin. --require-real still refuses until the T-337 Tantra key exists."
     }
    ],
    "order": 240,
