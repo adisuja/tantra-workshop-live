@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T11:31:14+0530",
-  "version": 1863,
+  "updated": "2026-10-11T11:32:43+0530",
+  "version": 1864,
   "last_id": 398,
   "team": [
    {
@@ -2806,7 +2806,16 @@
     "Bharath records in the task log what the handler does with pdt_0NnpA6EIxXvDvS1F03N8Z",
     "A test purchase results in the promised plan on a test account (after T-005 key rotation, which is the last task after launch)"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Commit dab1571b (rename)",
+     "url": "app/src/app/api/checkout/route.ts"
+    },
+    {
+     "label": "Webhook route",
+     "url": "app/src/app/api/dodo/webhook/route.ts"
+    }
+   ],
    "blockers": [
     "On hold: backend fulfilment to be integrated later (owner)"
    ],
@@ -2856,6 +2865,11 @@
      "ts": "2026-10-10T20:30:42+0530",
      "who": "claude",
      "note": "From T-071: the Tantra Pro Course ($999, Dodo product pdt_0NpKlRqJAjyAf3axboQSR) has no automatic fulfilment. The centre Worker hook records a Pro payment as other_product and grants nothing, so the team emails course, community and coaching call access by hand after seeing the payment in the Tracker Payments tab. Automating that belongs here when this task is picked up."
+    },
+    {
+     "ts": "2026-10-11T11:32:43+0530",
+     "who": "claude",
+     "note": "What the backend does (read from local tantra-backend-v2 at f0b901e, src/domains/billing/webhooks/billing-webhook.processor.ts): a workshop payment for pdt_0NnpA6EIxXvDvS1F03N8Z arrives as a one-time payment.* event, so process() (line 59) sends it to onPayment() (lines 102 to 108), which stores a payment row and answers 200. ownerFor() (lines 147 to 161) matches only an existing billing account's subscription id or Dodo customer id, or metadata.userId (never the email), so a new workshop buyer is recorded as 'unmatched'; matched or not, no plan is granted, because only subscription.* events reach applySubscription and the catalog. Stripe payments (T-218) never reach this handler. The Tantra Pro Course ($999, pdt_0NpKlRqJAjyAf3axboQSR) gets the same treatment, so its access stays a manual email from the team. Integration plan: grant the Tantra Plan from the centre's attendee list (T-122, live /hooks/dodo) by calling the backend's existing BillingTrialCampaignService.grant (billing/admin/billing-trial-campaign.service.ts line 320) for each paid seat or VIP, and the Pro Course grants later through the same path. @Bharath: please confirm production runs this processor code (local clone f0b901e, 2026-10-08). Also done: 'Build Pass' renamed to '$99 seat / VIP' in app/src/app/api/checkout/route.ts line 5 and the webhook log line in app/src/app/api/dodo/webhook/route.ts line 116 (the forwarded event key build_pass_paid is left as is: it is a wire value, and DODO_FULFILMENT_WEBHOOK_URL is empty so nothing consumes it yet); tsc clean, commit dab1571b pushed to origin/main. Still on the owner's hold for integration."
     }
    ],
    "order": 420,
