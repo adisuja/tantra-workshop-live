@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T23:46:05+0530",
+   "task_id": "T-393",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "I closed T-393 as done. The key was already saved in Admin at 16:25, T-337 is done, and the mailbox step is tracked on T-123.\n\n- **Drop the key ask and close as satisfied:** done. T-393 now shows status done with an empty ask. I read T-337's status and log, and T-123's log, in tasks.json.\n- **Move t"
+  },
+  {
    "ts": "2026-10-11T23:45:07+0530",
    "task_id": "T-061",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-245 is blocked again. The sign-in works now, but production still refused the forget because Zoom still has meeting 89781893618, so it can't finish until Adi deletes that meeting in Zoom.\n\n- **Sign-in:** done. `POST /admin/enter` with the admin key returned 302 with a session cookie, so the auth p"
-  },
-  {
-   "ts": "2026-10-11T22:29:38+0530",
-   "task_id": "T-107",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I checked T-107 again live, cleaned up one probe record the earlier passes had missed, and moved the task back to review for Nelbin. The Apps Script part is still not done and waits on T-380.\n\n**Completion check (all evidence is from this run):**\n- **The 10-10 wiring-probe rows (19:50Z and 19:52Z, c"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-393: Input from Adi for T-337: Sign in at https://usetantra.com (GrowthClub workspace). Under Connectors, Email",
- "task_id": "T-393",
+ "message": "Acting on 1 note(s) for T-058: Connect team profiles + launch outreach",
+ "task_id": "T-058",
  "entries": [
-  "R-cfdda878"
+  "F-d903eaed"
  ],
  "mode": "feedback",
- "started": "2026-10-11T23:45:48+0530",
+ "started": "2026-10-11T23:47:07+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,

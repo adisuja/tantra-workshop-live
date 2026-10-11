@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T23:45:58+0530",
-  "version": 2136,
-  "last_id": 411,
+  "updated": "2026-10-11T23:47:49+0530",
+  "version": 2141,
+  "last_id": 412,
   "team": [
    {
     "name": "Adi",
@@ -2894,7 +2894,7 @@
     "T-056 list imported",
     "Each member connects their own LinkedIn in Tantra"
    ],
-   "needs_from_owner": "Bhaskar: once T-056 is imported, get the wave 1 members (the 2 existing Pro slots, buy nothing) to connect their own LinkedIn at https://usetantra.com/connectors/channels/linkedin using workshop-plan/outreach/connect-linkedin-guide.md, then start the campaign from launch-kit.md section 3. Bharath: can the team workspace get more LinkedIn slots at no charge? The list import is the sign-in already asked on T-056.",
+   "needs_from_owner": "Bhaskar: after the T-056 import, get the wave 1 members (the 2 existing Pro slots, buy nothing) connected at https://usetantra.com/connectors/channels/linkedin with workshop-plan/outreach/connect-linkedin-guide.md, then start the campaign from launch-kit.md section 3. Bharath: can the team workspace get more LinkedIn slots at no charge? Nothing is asked of Adi here; the list import stays on T-056.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2970,10 +2970,20 @@
      "ts": "2026-10-11T16:41:01+0530",
      "who": "Orchestrator",
      "note": "People: assignee Bhaskar → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-11T23:47:49+0530",
+     "who": "claude",
+     "note": "People: assignee Claude → Bhaskar (by claude)."
+    },
+    {
+     "ts": "2026-10-11T23:47:49+0530",
+     "who": "claude",
+     "note": "Bhaskar and Bharath (team note): the launch kit now cites the T-059 simulator test (each contact carried first_line and {{custom.first_line}} rendered its own line), and the connect guide tells anyone outside wave 1 they join wave 2, nothing bought. Bhaskar now owns connecting the 2 wave 1 members and starting the campaign after the T-056 import; Bharath, can the workspace get more LinkedIn slots at no charge? Open workshop-plan/outreach/launch-kit.md (3a, 3b) and workshop-plan/outreach/connect-linkedin-guide.md (the GitHub Pages mirror carries no outreach docs, so nothing to republish)."
     }
    ],
    "order": 370,
-   "assignee": "Claude",
+   "assignee": "Bhaskar",
    "reviewers": [
     "Bhaskar",
     "Bharath"
@@ -11307,6 +11317,11 @@
      "ts": "2026-10-11T16:48:28+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-123."
+    },
+    {
+     "ts": "2026-10-11T23:46:35+0530",
+     "who": "claude",
+     "note": "Already applied, so no agent run was needed: 2026-10-11T16:41 log confirms key saved in Admin and live test run completed (mailbox connection blocking as expected) (checked by Haiku against the log and commits)."
     }
    ],
    "order": 2280
@@ -18206,6 +18221,35 @@
    ],
    "order": 4110,
    "input_for": "T-052",
+   "kind": "input"
+  },
+  {
+   "id": "T-412",
+   "title": "Input from Adi for T-234: Open https://app.usetantra.com in the GrowthClub workspace, go to Email Accounts",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (signin): Connecting the mailbox needs the Google sign-in for team@growthclub.org, which only Adi holds.. Everything else in T-234 is being built around it. As soon as this is done, T-234 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Open https://app.usetantra.com in the GrowthClub workspace, go to Email Accounts, click Connect account, and sign in with Google as team@growthclub.org. This is the same single ask as T-123 and T-408.",
+   "log": [
+    {
+     "ts": "2026-10-11T23:46:36+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-234."
+    }
+   ],
+   "order": 4120,
+   "input_for": "T-234",
    "kind": "input"
   }
  ]
