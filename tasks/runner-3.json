@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T16:53:26+0530",
+   "task_id": "T-031",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "The retry is still waiting for the lock. I'll act on its result when the notification comes."
+  },
+  {
    "ts": "2026-10-11T16:45:22+0530",
    "task_id": "T-228",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "I re-ran the preview switch-off probe and it passes 29 of 29, so T-291 is back in review with no ask for Adi. /preview stays open because neither trigger has fired.\n\n- **Don't flip the setting:** done. Live `/preview` still answers 302.\n- **Run the probe on a local centre:** done. I started a fresh "
-  },
-  {
-   "ts": "2026-10-11T12:55:37+0530",
-   "task_id": "T-278",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-278 is back in review: every item still holds, re-checked in this run, and the calendar feeds test passes 67 of 67 after a fix to the test script.\n\n**COMPLETION CHECK**\n1. **Join button opens the attendee's own Zoom link on `/workshop/join` and `/masterclass/success/join`: done.**\n   - Opening the"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-031",
+ "task_id": "T-334",
  "entries": [
-  "R-e9e2c86c"
+  "F-bee27c2a"
  ],
- "started": "2026-10-11T16:51:42+0530",
- "message": "Acting on 1 note(s) for T-031: Claude Code agentic output pipeline",
+ "started": "2026-10-11T16:56:47+0530",
+ "message": "Acting on 1 note(s) for T-334: Input from Adi for T-145: Signed in as adisuja, open https://support.github.com/contact, pick topic 'Remov",
  "slices": {
   "T-135": 1,
   "T-148": 1,

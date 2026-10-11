@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T16:50:46+0530",
+   "task_id": "T-006",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-006 checks out: the runbook and `up.sh` are complete and already on GitHub, so I changed nothing and left the task in review for Bharath and Adi.\n\n- **Runbook covers all 19 jobs:** done. `workshop-plan/ops/runbook.md` section 1 gives each job's port, interpreter and health check. All 19 live plist"
+  },
+  {
    "ts": "2026-10-11T16:40:32+0530",
    "task_id": "T-058",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-073 stays blocked. The 7 to 9 Oct recordings aren't in Zoom, the database or this Mac, so there is nothing to cut. I fixed and deployed the parts that were broken: the course heading and the Drive source.\n\n**What I fixed (live page checked first):**\n- **Course heading:** the live page showed \"Tant"
-  },
-  {
-   "ts": "2026-10-11T11:00:57+0530",
-   "task_id": "T-380",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "ok",
-   "summary": "I couldn't trash the two projects, so T-380 is back in the queue with Nelbin. Nothing in the Apps Script account was changed.\n\nThis run again had no Claude in Chrome tool, and no Brave or Chrome window was open for remote control. (Port 9222 answered, but it was wrangler, not a browser.) So I couldn"
   }
  ],
  "state": "working",
- "message": "Acting on 2 note(s) for T-006: Local-first launch runbook + post-launch switch plan",
- "task_id": "T-006",
+ "message": "Acting on 1 note(s) for T-061: Free and paid lane follow-up campaigns in Tantra, with per-lane unit economics",
+ "task_id": "T-061",
  "entries": [
-  "F-97d21aaa",
-  "R-960f8578"
+  "F-f53a647f"
  ],
  "mode": "feedback",
- "started": "2026-10-11T16:46:55+0530",
+ "started": "2026-10-11T16:57:40+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
