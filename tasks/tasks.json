@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T06:11:05+0530",
-  "version": 1740,
+  "updated": "2026-10-11T06:16:15+0530",
+  "version": 1741,
   "last_id": 395,
   "team": [
    {
@@ -7605,24 +7605,24 @@
    ],
    "evidence": [
     {
-     "label": "First weekly bug report (regenerated 2026-10-11)",
-     "url": "workshop-plan/bugs/report-2026-10-09.md"
+     "label": "First weekly bug report",
+     "url": "workshop-plan/bugs/report-2026-10-09.md?v=1791679575"
     },
     {
      "label": "Severity levels",
-     "url": "docs/bug-pipeline/severity.md"
+     "url": "docs/bug-pipeline/severity.md?v=1791679575"
     },
     {
      "label": "Fix and CI patches for Bharath",
-     "url": "workshop-plan/tantra-product-patches/README.md"
+     "url": "workshop-plan/tantra-product-patches/README.md?v=1791679575"
     },
     {
      "label": "Pipeline",
-     "url": "workshop-plan/bugs/pipeline.py"
+     "url": "workshop-plan/bugs/pipeline.py?v=1791679575"
     },
     {
      "label": "Metrics for T-158",
-     "url": "workshop-plan/bugs/metrics.json"
+     "url": "workshop-plan/bugs/metrics.json?v=1791679575"
     }
    ],
    "blockers": [],
@@ -7662,6 +7662,11 @@
      "ts": "2026-10-11T06:11:05+0530",
      "who": "claude",
      "note": "Report fixed and regenerated: time to fix now runs from triage to merge, so the five in-review bugs show as open with 'none yet' (not 0.0 h), and it states they came from a code audit (GitHub issues: 0 on both repos). I did not re-push PRs 160 to 165: they are closed and your 2026-10-11 rule keeps agents out of Usetantra repos, so the five fixes and the CI rule stay as patches; today I applied each patch to a scratch copy of development and all five tests fail without the fix and pass with it (29 of 29), and the CI rule fails a src-only change. Left for Bharath: agree the severity levels, apply the patches with git am, merge, and make regression-test-required a required check. Open workshop-plan/bugs/report-2026-10-09.md."
+    },
+    {
+     "ts": "2026-10-11T06:16:15+0530",
+     "who": "claude",
+     "note": "Verify pass: I re-applied all five fix patches to a scratch copy of development and each test fails without its fix and passes with it (29 of 29), and the CI check script fails a src-only change and passes src plus test. Fixed two gaps: the pipeline now records a merge (pipeline.py merged ID) and counts deadlines from triage, and severity.md describes the patch flow instead of opening PRs. PRs 160 to 165 stay closed under Adi's 2026-10-11 rule, so Bharath still needs to agree the levels, apply and merge the patches with git am, and make regression-test-required a required check."
     }
    ],
    "order": 1520,

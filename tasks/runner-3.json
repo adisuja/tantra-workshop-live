@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T06:16:27+0530",
+   "task_id": "T-152",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "**COMPLETION CHECK, T-152 (status: review, reviewers Bharath and Adi, committed as 6a7fa5e, not pushed)**\n\nT-152 stays in review: the fixes, CI rule and report are verified locally, but nothing is merged or enforced on tantra-backend-v2 until Bharath acts.\n\n**Feedback F-cad904cd**\n\n1. **Confirm PRs "
+  },
+  {
    "ts": "2026-10-11T06:07:54+0530",
    "task_id": "T-061",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-223 stays in review: everything the Orchestrator asked for checks out on production, and the only thing left is the first real sign-up, which waits on an outside person, not on Adi.\n\n**COMPLETION CHECK**\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| 1a. T-229 is deployed | Done | Prod"
-  },
-  {
-   "ts": "2026-10-11T01:00:39+0530",
-   "task_id": "T-283",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-283 stays in review: the T-215 ripple needed wording fixes in four journey notes and no video rebuild.\n\nCOMPLETION CHECK\n- **Replace the \"waiting for access\" framing with the decided approach:** done. The journey notes for Twilio, Dodo, Google senders and Kie.ai still read as blocked or waiting on"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-152",
+ "task_id": "T-151",
  "entries": [
-  "F-cad904cd"
+  "R-29969af4"
  ],
- "started": "2026-10-11T06:08:50+0530",
- "message": "Acting on 1 note(s) for T-152: Bug pipeline: severity levels, agent reproduces and proposes the fix, human review, deploy",
+ "started": "2026-10-11T06:17:20+0530",
+ "message": "Acting on 1 note(s) for T-151: Feedback intake: one queue for every Tantra bug report and feature request",
  "slices": {
   "T-135": 1,
   "T-148": 1,
