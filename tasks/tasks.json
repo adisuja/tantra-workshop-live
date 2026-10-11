@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T23:47:49+0530",
-  "version": 2141,
+  "updated": "2026-10-11T23:48:43+0530",
+  "version": 2142,
   "last_id": 412,
   "team": [
    {
@@ -16264,16 +16264,16 @@
    ],
    "evidence": [
     {
-     "label": "Branch worktree",
-     "url": "/Users/adithyamurali/tantra-t299"
-    },
-    {
      "label": "Probe summary",
      "url": "/tmp/t299/probes-summary.txt"
     },
     {
-     "label": "Failing probe step",
-     "url": "/Users/adithyamurali/tantra-t299/app/scripts/probe-domain-chain.mjs"
+     "label": "Day 1 probe log",
+     "url": "/tmp/t299/p-day1.log"
+    },
+    {
+     "label": "Branch worktree",
+     "url": "/Users/adithyamurali/tantra-t299"
     }
    ],
    "blockers": [],
@@ -16318,6 +16318,11 @@
      "ts": "2026-10-11T16:16:36+0530",
      "who": "claude",
      "note": "Not merged, pushed or deployed yet: the four probes are not green. A fresh build now serves the several-senders calendar check, so the stale single-sender error is gone. probe-domain-chain still times out at its 'Check my inboxes' step (app/scripts/probe-domain-chain.mjs:187) because the vendor simulator on :8932 answers 404 to the /tantra/__inbox test hook, so the disconnected inbox never reaches Tantra GET /accounts. Next pass: start the simulator from the worktree's cloud/scripts/vendor-sim.py (or add the hook there), rerun /tmp/t299/run-probes.sh, fix day1 and day2 for the Title Case 'Describe Your Business' heading if they still stall, then do the approved merge, push, deploy, publish and LOG.md steps. Ripple from T-213: the Instantly watcher removal stays and the legacy campaign code is left to T-300, so nothing had to change."
+    },
+    {
+     "ts": "2026-10-11T23:48:43+0530",
+     "who": "claude",
+     "note": "Not merged, pushed or deployed yet, because three probes still fail. I merged main into branch t-299-vendor-inboxes (e18bf4e0 in /Users/adithyamurali/tantra-t299), and probe-domain-chain now passes 45 of 45, so the inbox gate correctly refuses a disconnected inbox. probe-day1 passes 22 checks, then times out at probe-day1.mjs:225 waiting for the Resend message 'DNS isn't in your Cloudflare account' (from cloud/src/jobs-stack.ts:275), probe-day2 stalls at probe-day2.mjs:85, and probe-stack fails with funnel URL undefined because day1 never finished. Next pass: find out why the Resend step's DNS message never shows, then rerun /tmp/t299/stack.sh and /tmp/t299/run-probes.sh, and do the approved merge, push, deploy, publish and LOG.md steps only once all four pass. centre.log has 8 'hung' lines, which I have not traced yet."
     }
    ],
    "order": 2990

@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T23:49:20+0530",
+   "task_id": "T-058",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "turns",
+   "summary": "T-058 is still blocked: the T-056 list import and the team's own LinkedIn connections are the only things left, and Bhaskar now owns both. I started no campaign and messaged no prospect.\n\n1. **First line in the launch kit:** done. The old `{first_line}` line had already been replaced with `{{custom."
+  },
+  {
    "ts": "2026-10-11T23:46:05+0530",
    "task_id": "T-393",
    "mode": "feedback",
@@ -87,24 +95,17 @@
    "status": "hold",
    "result": "ok",
    "summary": "I reworded T-041's blocker and left the task on hold. The tasks file now shows the new wording, there is still no ask of Adi, and note R-d00b0022 is acknowledged. Committed as 0cda65ea (not pushed).\n\n**Completion check:**\n- **Blocker wording:** done. It now reads \"Waits on T-040: its owner hold must"
-  },
-  {
-   "ts": "2026-10-11T22:31:38+0530",
-   "task_id": "T-245",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-245 is blocked again. The sign-in works now, but production still refused the forget because Zoom still has meeting 89781893618, so it can't finish until Adi deletes that meeting in Zoom.\n\n- **Sign-in:** done. `POST /admin/enter` with the admin key returned 302 with a session cookie, so the auth p"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-058: Connect team profiles + launch outreach",
- "task_id": "T-058",
+ "message": "Acting on 2 note(s) for T-034: Full dry run of the Day-1 pipeline",
+ "task_id": "T-034",
  "entries": [
-  "F-d903eaed"
+  "F-23f53c5f",
+  "R-e81680b7"
  ],
  "mode": "feedback",
- "started": "2026-10-11T23:47:07+0530",
+ "started": "2026-10-11T23:50:23+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
@@ -118,6 +119,7 @@
   "T-258": 1,
   "T-268": 1,
   "T-148": 1,
-  "T-242": 1
+  "T-242": 1,
+  "T-058": 1
  }
 }
