@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T00:29:00+0530",
+   "task_id": "T-056",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I checked T-056 again from scratch and it holds up. It's back in review with Bhaskar and Bharath as reviewers, and no invites have gone out.\n\n**Done when:**\n- **List imported, limit recorded: done.** Reading the lists back from Tantra (read-only) shows exactly one 'Workshop cold calendar' list (id 6"
+  },
+  {
    "ts": "2026-10-12T00:26:07+0530",
    "task_id": "T-265",
    "mode": "feedback",
@@ -87,23 +95,13 @@
    "status": "blocked",
    "result": "ok",
    "summary": "I made no changes for this update and T-061 stays blocked.\n\n- **Key no longer blocking (ripple ask):** already true. The key was saved in the live centre on 11 Oct, and `needs_from_owner` only asks for the mailbox.\n- **Email only, WhatsApp off:** already the case. `createLaneCampaigns` in `cloud/src"
-  },
-  {
-   "ts": "2026-10-11T23:43:22+0530",
-   "task_id": "T-407",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I checked the previous run's work against production and it holds up; nothing needed fixing. I couldn't add the 5 poll scopes myself, so they're still part of T-335 (Adi's one Zoom sign-in), and T-407 is back in review.\n\n**Completion check**\n1. **Poll scopes: not added, still part of T-335.** Again "
   }
  ],
- "state": "working",
- "message": "Acting on 1 note(s) for T-056: Cold calendar lists for the workshop, imported into Tantra",
- "task_id": "T-056",
- "entries": [
-  "F-3e814332"
- ],
- "mode": "feedback",
+ "state": "idle",
+ "message": "Last sweep handled 8 task(s).",
+ "task_id": null,
+ "entries": [],
+ "mode": null,
  "started": "2026-10-12T00:26:07+0530",
  "slices": {
   "T-156": 1,

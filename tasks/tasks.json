@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T00:26:45+0530",
-  "version": 2175,
+  "updated": "2026-10-12T00:28:49+0530",
+  "version": 2183,
   "last_id": 413,
   "team": [
    {
@@ -807,6 +807,16 @@
      "ts": "2026-10-11T16:50:33+0530",
      "who": "claude",
      "note": "Verify pass: commits 4121584, 4ebca0a and cb2899da are all on origin/main (origin/main = cb2899da), all 19 live com.tantra plists match their repo copies, and up.sh --check exits 0 (0 failed, 1 warning: codex-check, left to T-340). The Mongo section 2a matches the container (127.0.0.1:27017, unless-stopped, mongod --auth, anonymous access denied, mongo.env key names), and its backup and dry-run restore commands ran clean (111 KB archive). Nothing needed changing. Open workshop-plan/ops/runbook.md sections 1, 2a and 5."
+    },
+    {
+     "ts": "2026-10-12T00:27:16+0530",
+     "who": "claude",
+     "note": "Ripple from T-275 checked: runbook section 5 (workshop-plan/ops/runbook.md lines 244 to 246) already has the links.site step (set links.site in referrals.json to the production funnel domain, run referrals.py, probe-referrals.mjs --live, mark H008 fixed in AUDIT.md), committed as a8c61474 and already on origin/main, so nothing had to change and no push was needed. Open workshop-plan/ops/runbook.md section 5."
+    },
+    {
+     "ts": "2026-10-12T00:27:40+0530",
+     "who": "claude",
+     "note": "Ripple R-ebf1fa89 needed no change: runbook section 5 (workshop-plan/ops/runbook.md lines 244 to 246) already has the links.site step (referrals.json, referrals.py, probe-referrals.mjs --live, mark H008 fixed), its commit a8c61474 is on origin/main, and AUDIT.md H008 points at it. Verified this run: up.sh --check exit 0 (0 failed, 1 warning). Open workshop-plan/ops/runbook.md section 5."
     }
    ],
    "order": 60,
@@ -2576,83 +2586,26 @@
   },
   {
    "id": "T-056",
-   "title": "Cold calendar lists for the workshop, imported into Tantra",
-   "area": "Traffic",
+   "status": "review",
    "owner": "Bhaskar",
-   "priority": "P2",
-   "due": "2026-10-16",
-   "status": "blocked",
-   "why": "Second organic lane after content posting.",
-   "spec": "Build the cold calendar outreach list for the workshop and import it into Tantra as a contact list for a calendar-invite campaign. Owner model (2026-10-07): Tantra sends the cold calendar invites through a Google service account per Workspace user uploaded to Tantra; bought lists come pre-verified (no ZeroBounce or NeverBounce). Sources: reuse existing client lists where the person overlaps (UNVERIFIED that Adi still wants this), and LinkedIn Sales Navigator exports only if T-260 approves Sales Navigator. No Expandi, Apollo, HeyReach or Instantly. The import screen in Tantra shows the upload limit (s1-cold-calendar guide, b88a7a6), so record it when importing.",
-   "done_when": [
-    "List imported into Tantra with the import limit recorded on this task",
-    "Calendar-invite campaign created (not started) against the list"
-   ],
-   "evidence": [
-    {
-     "label": "Import + draft campaign script",
-     "url": "workshop-plan/ops/t056_cold_calendar.mjs"
-    }
-   ],
-   "blockers": [],
-   "needs_from_owner": "When you rotate the GrowthClub Tantra key (already asked on T-123), also save the new tk_live_ value as the only line of ~/.config/tantra/keys/tantra-workshop.key on this Mac. The admin vault copy is sealed, so local scripts can't read it. The next run executes 'node workshop-plan/ops/t056_cold_calendar.mjs --go': it imports the list and saves the calendar-invite campaign as a draft that is never started. T-059 reads the same file.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review: context updated. Expandi is not on the approved tool list, so the fallback is dropped; lists load into Tantra itself. UNVERIFIED whether reuse of client lists is still wanted."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: T-138 was archived (the guide no longer states an import limit); Tantra host check repeated 2026-10-08 (calendar.usetantra.com still times out); Sales Navigator is outside the approved list, so its use waits on T-260."
-    },
-    {
-     "ts": "2026-10-09T05:14:30+0530",
-     "who": "Orchestrator",
-     "note": "People: assignee Bhaskar → Claude (by Orchestrator)."
-    },
-    {
-     "ts": "2026-10-09T08:02:06+0530",
-     "who": "claude",
-     "note": "T-260 settled the Sales Navigator question (2026-10-09, O-5ba08511): Sales Navigator is replaced by data-vendor lists through the list-partner card, so build the cold calendar lists from those. Only the T-147 blocker remains."
-    },
-    {
-     "ts": "2026-10-10T03:53:09+0530",
-     "who": "claude",
-     "note": "Built the cleaned list (126 work-email contacts from the verified prospect CSV, 6 free-mail dropped, 0 duplicates, 0 invalid; saved outside the repo because it holds personal data). I have no Tantra login in this run and may not sign in as Adi, so the import, import limit and draft calendar-invite campaign are not done; T-058 stays blocked."
-    },
-    {
-     "ts": "2026-10-10T16:35:33+0530",
-     "who": "claude",
-     "note": "Board hygiene (T-129): due 2026-09-21 was past; now 2026-10-16 (P2 rule)."
-    },
-    {
-     "ts": "2026-10-11T08:23:20+0530",
-     "who": "claude",
-     "note": "The T-147 blocker is cleared, but this Mac has no Tantra API key or signed-in Tantra session, and I may not sign in as Adi, so the import and the campaign are not done yet. I built workshop-plan/ops/t056_cold_calendar.mjs: it imports the 126-contact list as 'Workshop cold calendar' and creates the smart_calendar invite campaign with the connected FintechCircle senders, never started, through the API (so the wizard's final send step is never touched). Dry run verified today (126 rows, 0 dropped, event next Wed 11:00 ET); --go stops cleanly at the missing key. No T-301 vendor CSVs have arrived to append yet. The import limit was last seen as 50,000 per upload on the import screen (archived T-138, not rechecked in this run, because the API has no screen)."
-    },
-    {
-     "ts": "2026-10-11T08:25:54+0530",
-     "who": "claude",
-     "note": "Verify pass: I checked the script against the Tantra API reference and found that /campaigns/create launches a campaign (it plans real invites). So I switched it to /campaigns/draft, which saves the calendar-invite campaign as a draft and sends nothing (commit cae0b4b). The auth header and base URL now match the Tantra client. Dry run today: 126 work emails, 0 dropped, event Wed 2026-10-14 11:00 ET. With --go it stops at 'No Tantra API key' because there is still no key on this Mac. The import, the per-upload limit and the draft campaign all run as soon as the key file exists. Open workshop-plan/ops/t056_cold_calendar.mjs."
-    },
-    {
-     "ts": "2026-10-11T21:20:15+0530",
-     "who": "claude",
-     "note": "I could not use the key from T-123: it is sealed in the centre admin with a Worker-only secret, so no local script can read it, and the only other copies sit in leaked git and mirror history that T-123 says must be rotated. Today the dry run still reads 126 work emails (0 dropped, event Wed 2026-10-14 11:00 ET), and --go stops at 'No Tantra API key'. Nothing was created in Tantra. The per-upload limit is 50,000 contacts, from the live Tantra import screen (workshop-plan/coord/status/c.md line 53; not rechecked by API). Open workshop-plan/ops/t056_cold_calendar.mjs."
-    }
-   ],
-   "order": 350,
    "assignee": "Claude",
    "reviewers": [
-    "Bhaskar"
-   ]
+    "Bhaskar",
+    "Bharath"
+   ],
+   "priority": "P2",
+   "due": "2026-10-16",
+   "area": "Traffic",
+   "order": 350,
+   "title": "T-056: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-057",
@@ -2769,7 +2722,6 @@
     }
    ],
    "blockers": [
-    "T-056 list imported",
     "Each member connects their own LinkedIn in Tantra"
    ],
    "needs_from_owner": "Bhaskar: after the T-056 import, get the wave 1 members (the 2 existing Pro slots, buy nothing) connected at https://usetantra.com/connectors/channels/linkedin with workshop-plan/outreach/connect-linkedin-guide.md, then start the campaign from launch-kit.md section 3. Bharath: can the team workspace get more LinkedIn slots at no charge? Nothing is asked of Adi here; the list import stays on T-056.",
@@ -2858,6 +2810,11 @@
      "ts": "2026-10-11T23:47:49+0530",
      "who": "claude",
      "note": "Bhaskar and Bharath (team note): the launch kit now cites the T-059 simulator test (each contact carried first_line and {{custom.first_line}} rendered its own line), and the connect guide tells anyone outside wave 1 they join wave 2, nothing bought. Bhaskar now owns connecting the 2 wave 1 members and starting the campaign after the T-056 import; Bharath, can the workspace get more LinkedIn slots at no charge? Open workshop-plan/outreach/launch-kit.md (3a, 3b) and workshop-plan/outreach/connect-linkedin-guide.md (the GitHub Pages mirror carries no outreach docs, so nothing to republish)."
+    },
+    {
+     "ts": "2026-10-12T00:27:43+0530",
+     "who": "claude",
+     "note": "T-056 is done on its side: the 'Workshop cold calendar' list (126 contacts) is now in the GrowthClub Tantra workspace, so that blocker is cleared. Only the LinkedIn connections remain."
     }
    ],
    "order": 370,
