@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T16:17:12+0530",
-  "version": 1947,
-  "last_id": 406,
+  "updated": "2026-10-11T16:18:32+0530",
+  "version": 1949,
+  "last_id": 407,
   "team": [
    {
     "name": "Adi",
@@ -10603,7 +10603,7 @@
    "blockers": [
     "Adi's confirmation to host from the console, and the Meeting SDK app credentials"
    ],
-   "needs_from_owner": "T-335: create the Meeting SDK app 'Tantra Live Control' (https://marketplace.zoom.us/develop/create, General App, Features, Embed, Meeting SDK on, do not publish) and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, then Save.",
+   "needs_from_owner": "One Zoom sign-in (marketplace.zoom.us) for two things: (1) create General App 'Tantra Live Control' at https://marketplace.zoom.us/develop/create (Features, Embed, Meeting SDK on, do not publish), or open it if it exists, and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, Save; (2) Manage, Tantra Centre, Scopes: add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin. Details in T-407.",
    "log": [
     {
      "ts": "2026-10-07T20:46:43+0530",
@@ -10654,6 +10654,11 @@
      "ts": "2026-10-10T20:05:05+0530",
      "who": "claude",
      "note": "Live Control now shows whether the Tantra Centre Zoom app holds the 5 poll scopes, read from Zoom's own token; it is deployed (Worker d6bc4a77, main pushed, migration 0019 already applied) and today says all 5 are still missing, because this run had no browser signed in to Zoom. probe-live-control passed 34/34 against a simulated seat, and the live page renders cleanly at 1440 and 390 px: open https://revops-centre.growthcluborg.workers.dev/admin/control?v=t226scopes2 (Polls card). Ripple from T-225: the seat already keeps mute all, no self-unmute and no video on by default for the 14 Oct cohort, so nothing had to change; the next browser-enabled run adds the scopes, and once T-335's Client ID and Secret are saved Claude runs the test meeting."
+    },
+    {
+     "ts": "2026-10-11T16:18:32+0530",
+     "who": "claude",
+     "note": "Checked live today: the validated Zoom app is Tantra Centre (Server-to-Server), which Zoom does not let run the Meeting SDK, and no Meeting SDK credentials are saved on Live Control; Tantra Centre also still lacks all 5 poll scopes. The full blocker list is in T-407 as you asked. Open https://revops-centre.growthcluborg.workers.dev/admin/control?v=t226blk1"
     }
    ],
    "order": 2260
@@ -17161,6 +17166,35 @@
    "order": 4060,
    "input_for": "T-020",
    "kind": "input"
+  },
+  {
+   "id": "T-407",
+   "title": "T-226 Live Control: updated blocker list (checked live 2026-10-11)",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Nelbin",
+    "Bharath"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "review",
+   "why": "Adi 2026-10-11 (F-532a89ae): give me an updated list of blockers for T-226, as a separate task.",
+   "spec": "Checked live on 2026-10-11 from the centre's Live Control status (/admin/api/zoom/control) and the seat's launchd log. Next session: cohort meeting 88135386601, Day 1 Wed 14 Oct 11:00 ET.\n1. BLOCKER (Adi, Zoom sign-in): Meeting SDK credentials are not saved (Seat credentials card: saved = no). The app validated earlier is Tantra Centre, a Server-to-Server OAuth app (T-224). Zoom only runs the Meeting SDK from a General App with Meeting SDK switched on, so Tantra Centre cannot be the seat. Fix: marketplace.zoom.us/develop/create, General App 'Tantra Live Control', Features, Embed, Meeting SDK on, do not publish; paste Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control (Seat credentials card), Save. If such a General App already exists, just paste its two values. (T-335)\n2. BLOCKER (Adi, same Zoom sign-in): Tantra Centre is missing all 5 poll scopes, read from Zoom's own token: meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin. Fix: marketplace.zoom.us, Manage, Tantra Centre, Scopes, Add those 5, Save. Without them run-sheet polls cannot be created ahead by REST, so none can be launched live.\n3. Follows from 1 (Claude): download ZoomSDK.framework from the new app's Embed page into cloud/seat/Frameworks and build the app bundle. Today the launchd seat (com.tantra.live-control, loaded) logs 'Built without ZoomSDK.framework'.\n4. Follows from 1 to 3 (Claude, with Adi hosting): the test meeting that proves chat, CTA and a live poll reaching zoom_polls, the room lock, and co-host promotion. The seat has never connected (no heartbeat).\n5. Content, not a Zoom blocker (Bhaskar for chat and CTA wording, Adi for polls): the production run sheet is empty (0 items for Day 1, 2 and 3), so nothing would post even with the seat live.\n6. Input (Nelbin): production co-host list is empty; add co-host emails on Live Control if anyone besides Adi co-hosts.\nNot a blocker: Zoom Support has not granted host mute or video locks (T-225, write test 2026-10-11 ignored); the seat's room lock covers both. Already done and live: ZOOM_BOT_KEY set, migration 0019, Live Control page, seat app code, launchd opener.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-11T16:18:26+0530",
+     "who": "claude",
+     "note": "Blocker list for T-226, checked live today: 2 need Adi's Zoom sign-in (Meeting SDK app credentials not saved; 5 poll scopes missing on Tantra Centre), the rest follow from those or are content. The app validated earlier is Tantra Centre (Server-to-Server), which cannot run the Meeting SDK. Read the spec; open https://revops-centre.growthcluborg.workers.dev/admin/control?v=t226blk1"
+    }
+   ],
+   "order": 4070
   }
  ]
 }
