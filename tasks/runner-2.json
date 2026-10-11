@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T11:46:53+0530",
+   "task_id": "T-240",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-240 is still in progress (status doing): the 3 original images are fine, but a 4th screenshot FAIL turned up and its fix isn't proven yet. I left note F-e85a68f0 u"
+  },
+  {
    "ts": "2026-10-11T11:35:46+0530",
    "task_id": "T-070",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-11T08:40:58+0530",
-   "task_id": "T-096",
-   "mode": "feedback",
-   "status": "review",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-240",
+ "task_id": "T-295",
  "entries": [
-  "F-e85a68f0"
+  "F-3ea6d735"
  ],
- "started": "2026-10-11T11:37:11+0530",
- "message": "Acting on 1 note(s) for T-240: Fix the 3 probe-details screenshot-fill failures",
+ "started": "2026-10-11T11:47:29+0530",
+ "message": "Acting on 1 note(s) for T-295: Funnel animation polish: phone caption overlap and missing Amazon, YouTube and Slack logos",
  "slices": {
   "T-072": 1,
   "T-245": 1,
@@ -115,6 +115,7 @@
   "T-348": 1,
   "T-242": 1,
   "T-299": 1,
-  "T-229": 1
+  "T-229": 1,
+  "T-240": 1
  }
 }

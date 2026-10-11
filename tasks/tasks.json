@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T11:43:03+0530",
-  "version": 1868,
-  "last_id": 398,
+  "updated": "2026-10-11T11:46:54+0530",
+  "version": 1874,
+  "last_id": 399,
   "team": [
    {
     "name": "Adi",
@@ -11104,7 +11104,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "review",
+   "status": "doing",
    "why": "Integrator sweep 2026-10-07 (run-chain 2026-10-07)",
    "spec": "node app/scripts/probe-details.mjs (static mode: probe-details - -) reports 3 screenshot-fill FAILs: app/public/.../masterclass/audience-room-1440.avif, the s1-cold-email step 18 shot (18.webp) and the s4-rsp step 13 shot (13.webp) each fill a different share of their column than their sibling images. Re-crop or re-export each to the siblings' aspect ratio (or fix the container class if the image is right), rerun probe-details, and mark the matching AUDIT.md rows (/Users/adithyamurali/tantra-round5-coord/AUDIT.md) fixed with the commit.",
    "done_when": [
@@ -11165,6 +11165,11 @@
      "ts": "2026-10-11T11:39:05+0530",
      "who": "claude",
      "note": "Nothing needed re-cropping: on a fresh static export of main (b24af229), probe-details reports 0 FAIL (11 WARN: dates and flowchart, owned by other tasks), with no screenshot-fill line for the 3 images, which were fixed earlier in c38ce69 and 6e7b2b6. At 1440 and 390 they render at their siblings' widths (s1-cold-email/18 is 694 and 308 px, audience-room is a full-bleed backdrop) except s4-rsp/13, which is sized so its text reads at 16 px, as the probe rule allows. No code changed, so nothing was pushed or republished. AUDIT G129 and LOG.md now record this check. Open the guide links at ?v=t240b."
+    },
+    {
+     "ts": "2026-10-11T11:46:40+0530",
+     "who": "claude",
+     "note": "Verify pass: a full runtime probe (not static) showed the 3 original images clear, but a 4th screenshot FAIL (s1-blog guide width, G146). Its shots are text-sized correctly, so I fixed the probe norm to skip measured shots (committed) and rebuilt the export. Left: re-stage the export to :4361, rerun the runtime probe for 0 screenshot FAILs, screenshot at 1440/390, push main, mark AUDIT G146 fixed and correct G129, add a LOG.md entry, then review."
     }
    ],
    "order": 2400
@@ -16528,6 +16533,35 @@
    ],
    "order": 3980,
    "input_for": "T-072",
+   "kind": "input"
+  },
+  {
+   "id": "T-399",
+   "title": "Input from Adi for T-140: Same single sitting as T-115 and T-339, no extra sign-in for T-140: open a Claud",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P3",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (physical): Only Adi can open the interactive desktop session with his signed-in Brave profile; the unattended runner has no browser tools.. Everything else in T-140 is being built around it. As soon as this is done, T-140 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Same single sitting as T-115 and T-339, no extra sign-in for T-140: open a Claude Code session in the desktop app with Claude in Chrome connected to the Brave profile adi@growthclub.org (Tantra at https://usetantra.com is already signed in) and type: Act on T-115, T-339 and T-140.",
+   "log": [
+    {
+     "ts": "2026-10-11T11:45:27+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-140."
+    }
+   ],
+   "order": 3990,
+   "input_for": "T-140",
    "kind": "input"
   }
  ]
