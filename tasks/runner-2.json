@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T04:21:29+0530",
+   "task_id": "T-409",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-409 is still blocked: the Apps Script has not been redeployed, and this run had no Claude in Chrome connection to do it.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Check for a Chrome connection on profile 'Browser 1' | Not connected | This session has no Chrome tools, so I didn't t"
+  },
+  {
    "ts": "2026-10-12T04:20:19+0530",
    "task_id": "T-123",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "I checked everything again and found nothing to fix, so T-268 is back in review. Nothing was pushed, redeployed or republished, and the task files are unchanged. When I acked F-bace4576, `pass.py` reported 0 notes acked, which most likely means the last run had already acked it.\n\n| Item | State | Wh"
-  },
-  {
-   "ts": "2026-10-12T00:27:48+0530",
-   "task_id": "T-006",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I didn't need to change anything for T-006. The links.site step was already in the runbook and already pushed, so the task stays in review. The ack for R-ebf1fa89 reported 0, which most likely means the earlier run had already acked it.\n\n- **links.site step in the switch plan:** Done. It's at `works"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-409",
+ "task_id": "T-270",
  "entries": [
-  "F-5012d34d"
+  "F-9269f185"
  ],
- "started": "2026-10-12T04:20:27+0530",
- "message": "Acting on 1 note(s) for T-409: Redeploy the 'Tantra Funnel' Apps Script as a new version so tier_qualifier answers reach the Work Tracker",
+ "started": "2026-10-12T04:22:45+0530",
+ "message": "Acting on 1 note(s) for T-270: New centre cards: teach by default, examples on every field, no paid auto-drafts",
  "slices": {
   "T-072": 1,
   "T-245": 1,

@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T04:20:01+0530",
-  "version": 2332,
+  "updated": "2026-10-12T04:22:14+0530",
+  "version": 2336,
   "last_id": 419,
   "team": [
    {
@@ -18131,7 +18131,7 @@
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Signed in as adi@growthclub.org: open https://script.google.com > project 'Tantra Funnel' > paste workshop-plan/ops/apps-script/Code.gs over Code.gs > Deploy > Manage deployments > edit (pencil) > Version: New version > Deploy. Or connect Claude in Chrome on profile 'Browser 1' so an agent can do it (no Chrome connection was available to the T-157 run on 2026-10-11).",
+   "needs_from_owner": "Signed in as adi@growthclub.org: open https://script.google.com > project 'Tantra Funnel' > paste workshop-plan/ops/apps-script/Code.gs over Code.gs > Deploy > Manage deployments > edit (pencil) > Version: New version > Deploy. Or connect Claude in Chrome on profile 'Browser 1' so an agent can do it.",
    "log": [
     {
      "ts": "2026-10-11T22:30:07+0530",
@@ -18142,6 +18142,21 @@
      "ts": "2026-10-12T02:31:13+0530",
      "who": "claude",
      "note": "Ripple from T-157 checked: the redeploy was not done there, and today's health GET of the exec URL still lists only the 6 original forms (no tier_qualifier), so nothing had to change and this stays the input task. This run also had no Claude in Chrome connection, so no browser redeploy was possible."
+    },
+    {
+     "ts": "2026-10-12T04:20:39+0530",
+     "who": "claude",
+     "note": "Checked 2026-10-12: the health GET of the exec URL still lists only the 6 original forms (no tier_qualifier), and this run had no Claude in Chrome connection, so no browser redeploy was possible. Per the Orchestrator, nothing was rerouted. Once the redeploy lands, the next run posts the probe row, publishes the qualifier to the mirror and reruns probe-tier-qualifier.mjs. Adi's input is tracked on T-414."
+    },
+    {
+     "ts": "2026-10-12T04:21:07+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-12: health GET of the exec URL still returns only the 6 original forms (no tier_qualifier), and this run had no Claude in Chrome connection, so no redeploy, probe row or mirror publish was done and no password was typed. Code.gs on disk carries tier_qualifier at line 136, ready to paste. Waiting on Adi's input (T-414)."
+    },
+    {
+     "ts": "2026-10-12T04:21:34+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-414, T-157."
     }
    ],
    "order": 4090
