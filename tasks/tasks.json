@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T18:37:13+0530",
-  "version": 2018,
+  "updated": "2026-10-11T18:42:09+0530",
+  "version": 2019,
   "last_id": 408,
   "team": [
    {
@@ -12567,23 +12567,23 @@
    "evidence": [
     {
      "label": "Pipeline chart",
-     "url": "http://localhost:4322/debug/guides?only=s5-pipeline&v=254c"
+     "url": "http://localhost:4322/debug/guides?only=s5-pipeline&v=254d836"
     },
     {
      "label": "Newsletter chart",
-     "url": "http://localhost:4322/debug/guides?only=s6-newsletter&v=254c"
+     "url": "http://localhost:4322/debug/guides?only=s6-newsletter&v=254d836"
     },
     {
      "label": "AI newsletter chart",
-     "url": "http://localhost:4322/debug/guides?only=s6-ai-newsletter&v=254c"
+     "url": "http://localhost:4322/debug/guides?only=s6-ai-newsletter&v=254d836"
     },
     {
      "label": "Blog chart",
-     "url": "http://localhost:4322/debug/guides?only=s1-blog&v=254c"
+     "url": "http://localhost:4322/debug/guides?only=s1-blog&v=254d836"
     },
     {
      "label": "Extra pipelines chart",
-     "url": "http://localhost:4322/debug/guides?only=s5-extra-pipelines&v=254c"
+     "url": "http://localhost:4322/debug/guides?only=s5-extra-pipelines&v=254d836"
     },
     {
      "label": "Chart screenshots 1440 and 390",
@@ -12632,6 +12632,11 @@
      "ts": "2026-10-11T18:25:28+0530",
      "who": "claude",
      "note": "T-130 verify pass 2026-10-11: check-guides passes on main (24 guides) with the chart node cap at 18 (validate.ts, raised in 12a53067, on origin/main), so this task's 17-node s5-pipeline chart is valid; the cap now carries a comment citing 36d9956 and eb2bb14."
+    },
+    {
+     "ts": "2026-10-11T18:42:09+0530",
+     "who": "claude",
+     "note": "Card brought up to date, no code changed. Beehiiv and Fireflies were removed from tools.ts in 25a8998 and their SVGs in 28fdc09, and Metricool, Canva and GoHighLevel are kept. Main and origin/main both contain 97096ab (with 36d9956 and 28fdc09), and all 15 AUDIT.md ids read fixed, with G126 recording 28fdc09. Re-run today on main 836d8abc (which includes 97096ab): probe-flows 24 charts PASS, probe-visual-tools PASS, probe-details static charts 24 of 24 pass with the same 3 WARN on untouched charts (s1-overview, s2-tantra-pro-funnel, s5-gohighlevel) and 0 FAIL. Its later runtime pass hung in the agentic centre calendar section, which has nothing to do with charts, so I stopped it. Nothing failed, so nothing was pushed. Open http://localhost:4322/debug/guides?only=s5-pipeline&v=254d836"
     }
    ],
    "order": 2540
