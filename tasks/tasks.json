@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T21:56:27+0530",
-  "version": 2045,
+  "updated": "2026-10-11T21:59:34+0530",
+  "version": 2050,
   "last_id": 408,
   "team": [
    {
@@ -8436,6 +8436,11 @@
      "ts": "2026-10-11T06:34:52+0530",
      "who": "claude",
      "note": "Verify pass commits 0372b91 and 0ed42a3 are pushed to main of the workshop repo (nothing left unpushed at the time of the push); board sync requested so the mirror shows review."
+    },
+    {
+     "ts": "2026-10-11T21:59:08+0530",
+     "who": "claude",
+     "note": "Checked against T-156's new signals.json: score.py already reads its shape (brands keyed by brand, status at_risk/high_result/steady, same thresholds), so no code change. Fixed one now-wrong rubric claim: the file exists (live, empty brands until workspace keys are set), and the rubric now names the fields and the brand-name match. 8 of 8 feature tests pass; open docs/feature-rubric.md."
     }
    ],
    "order": 1530,
@@ -14039,6 +14044,11 @@
      "ts": "2026-10-11T21:55:27+0530",
      "who": "claude",
      "note": "Checked again in a fresh run: the b-pass in review_hub.py and the offer ladder in index.html both say Two-Month Platform Pass, word for word from funnel.ts. vip-kit.ts is untouched, f341d58f is on origin/main, and the live mirror shows the new wording. Rebuilding the page changed nothing in either copy, the full link probe passes (ALL LINKS OK; its first run had one card miss from a slow page load, and that card loads fine when opened directly). The only 'Oct' left is the JS month list, and AUDIT.md H025 cites f341d58f. Open https://adisuja.github.io/tantra-workshop-live/?v=t273v3"
+    },
+    {
+     "ts": "2026-10-11T21:57:42+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-144."
     }
    ],
    "order": 2730
@@ -16972,57 +16982,25 @@
   },
   {
    "id": "T-380",
-   "title": "Trash two undeployed 'Tantra funnel forms receiver' Apps Script projects (boards@fintechcircle.com)",
-   "area": "Ops",
+   "status": "blocked",
    "owner": "Nelbin",
-   "assignee": "Claude",
+   "assignee": "Nelbin",
    "reviewers": [
     "Nelbin"
    ],
    "priority": "P3",
    "due": "",
-   "status": "queue",
-   "why": "Split from T-107: Claude has no session for boards@fintechcircle.com (the stored token is adi@growthclub.org, Drive scope drive.file only).",
-   "spec": "Sign in as boards@fintechcircle.com at https://script.google.com/home, trash both 'Tantra funnel forms receiver' projects. Never touch 'Tantra Funnel' under adi@growthclub.org.",
-   "done_when": [
-    "Only the Tantra Funnel Apps Script project remains"
-   ],
+   "area": "Ops",
+   "order": 3800,
+   "title": "T-380: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
    "evidence": [],
    "blockers": [],
    "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-10-10T03:59:32+0530",
-     "who": "claude",
-     "note": "Created from T-107 under orchestrator decision O-75c84b8c."
-    },
-    {
-     "ts": "2026-10-10T04:03:06+0530",
-     "who": "Orchestrator",
-     "note": "People: assignee Nelbin → Claude (by Orchestrator)."
-    },
-    {
-     "ts": "2026-10-11T10:58:18+0530",
-     "who": "claude",
-     "note": "People: assignee Claude → Nelbin (by claude)."
-    },
-    {
-     "ts": "2026-10-11T10:58:18+0530",
-     "who": "claude",
-     "note": "Handed back to Nelbin: this run had no Claude in Chrome connection (no browser tool, Brave running without a debug port), so Browser 2 could not be driven and nothing was trashed or changed. Live receiver checked today: its health URL returns all six forms (free_registration, free_survey, paid_registration, paid_survey, checkout_start, checkout_return). Nelbin: signed in as boards@fintechcircle.com, open https://script.google.com/home, trash only the two 'Tantra funnel forms receiver' projects (leave the copy bound to the Work Tracker if boards@ cannot trash it, never touch 'Tantra Funnel'), then add a line to scripts/walkthroughs/REVERT_LEDGER.md."
-    },
-    {
-     "ts": "2026-10-11T10:59:29+0530",
-     "who": "claude",
-     "note": "Handed back to Nelbin per the Orchestrator's fallback: this run again had no Claude in Chrome tool and no browser with a debug port, so Browser 2 (boards@fintechcircle.com) could not be driven; nothing in Apps Script was changed. Nelbin: sign in as boards@fintechcircle.com at https://script.google.com/home, trash only the two 'Tantra funnel forms receiver' projects (leave 'Tantra Funnel' under adi@growthclub.org), then add a line to scripts/walkthroughs/REVERT_LEDGER.md. Checked today: the live receiver health URL still lists all six forms."
-    },
-    {
-     "ts": "2026-10-11T11:01:41+0530",
-     "who": "Orchestrator",
-     "note": "People: assignee Nelbin → Claude (by Orchestrator)."
-    }
-   ],
-   "order": 3800
+   "log": [],
+   "held": true
   },
   {
    "id": "T-381",
