@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T22:25:59+0530",
+   "task_id": "T-074",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "The work checks out, but T-074 stays blocked: no newsletter has gone out because Tantra still says team@growthclub.org isn't a connected mailbox. That connection is tracked on T-123. The T-337 key is already saved, so this isn't a new key request. I re-ran the approved test send in this run and got "
+  },
+  {
    "ts": "2026-10-11T22:00:03+0530",
    "task_id": "T-380",
    "mode": "feedback",
@@ -87,25 +95,17 @@
    "status": "review",
    "result": "ok",
    "summary": "T-213 is back in review and now waits only on Nelbin's call with Endy (T-397). My earlier commits were already on origin, so I had nothing to merge, and I pushed main.\n\n- **Push:** Done, with no conflicts. Local main was 1 commit ahead of origin and 0 behind, and my commits 6a59a78, 5d8a0ca and 8087"
-  },
-  {
-   "ts": "2026-10-11T18:00:02+0530",
-   "task_id": "T-158",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "The dashboard passed this check. T-158 is back in review for Ben and Bharath, pushed as 1cbb90cc. The one thing I fixed: the backlog's experiment 5 was still called \"Build Pass\", a banned funnel name. It's now \"Masterclass abandoned-cart recovery\".\n\n1. **Dogfooding band:** done. On the live page it "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-074",
+ "task_id": "T-157",
  "entries": [
-  "F-2dda75a2",
-  "R-f1e8b83d"
+  "F-a998a04c",
+  "R-42897121"
  ],
- "started": "2026-10-11T22:02:42+0530",
- "message": "Acting on 2 note(s) for T-074: Weekly coaching call and community moderation rota for Tantra Pro members",
+ "started": "2026-10-11T22:28:33+0530",
+ "message": "Acting on 2 note(s) for T-157: Three products: define SaaS / Pro / Enterprise, one traffic experiment each, tier qualifier in every funnel",
  "slices": {
   "T-135": 1,
   "T-148": 1,

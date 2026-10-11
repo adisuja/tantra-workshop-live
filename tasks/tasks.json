@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T22:24:55+0530",
-  "version": 2057,
+  "updated": "2026-10-11T22:28:11+0530",
+  "version": 2059,
   "last_id": 408,
   "team": [
    {
@@ -3449,6 +3449,11 @@
      "ts": "2026-10-11T22:23:41+0530",
      "who": "claude",
      "note": "Verify pass: commit 53326f5b (7 T-074 files) is on origin/main, the live /pro welcome state links the Tuesday coaching call (probe-pro ALL PASS on the mirror, which got /pro only, no deletions), probe-pro-coaching passes 11 of 11 live, and the rota with the daily Tracker Payments access step and access email template is in workshop-plan/pro/moderation-rota.md. I re-ran the Adi test send now: the T-337 key is saved, but Tantra still says team@growthclub.org isn't a connected mailbox, so nothing went out and nothing was created. Course home for T-073: https://revops-centre.growthcluborg.workers.dev/pro/course?v=t074v (members only)."
+    },
+    {
+     "ts": "2026-10-11T22:26:41+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-073."
     }
    ],
    "order": 460,
@@ -12515,6 +12520,11 @@
      "ts": "2026-10-11T11:23:03+0530",
      "who": "claude",
      "note": "Checked 5 related task(s); updating T-157, T-072."
+    },
+    {
+     "ts": "2026-10-11T22:28:11+0530",
+     "who": "claude",
+     "note": "Already applied, so no agent run was needed: Log entry 2026-10-11T11:22 confirms 'items 3 and 7 were already closed'; item 3 ($199 tier named Scale) was marked closed per 2026-10-10T15:13. (checked by Haiku against the log and commits)."
     }
    ],
    "order": 2520
