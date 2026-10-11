@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T02:41:35+0530",
-  "version": 2245,
-  "last_id": 414,
+  "updated": "2026-10-12T02:43:35+0530",
+  "version": 2252,
+  "last_id": 415,
   "team": [
    {
     "name": "Adi",
@@ -4863,16 +4863,16 @@
    ],
    "evidence": [
     {
+     "label": "Cleanup command",
+     "url": "workshop-plan/ops/probe_cleanup.py"
+    },
+    {
      "label": "Sheet + ops.db backup",
      "url": "workshop-plan/ops/t107_deleted_rows.json"
     },
     {
      "label": "D1 backup",
      "url": "workshop-plan/ops/t107_d1_deleted_rows.json"
-    },
-    {
-     "label": "Cleanup command",
-     "url": "workshop-plan/ops/probe_cleanup.py"
     },
     {
      "label": "Apps Script trash",
@@ -4976,6 +4976,11 @@
      "ts": "2026-10-12T02:38:39+0530",
      "who": "claude",
      "note": "Packaged the matcher as workshop-plan/ops/probe_cleanup.py (dry run by default, --delete backs up then deletes across the six funnel tabs, ops.db, form-log.jsonl and the revops-centre D1), and both probe scripts now say to run it after every run. It backed up and deleted 3 new cohort-probe@example.com rows (Free Registrations, 10-11 17:17Z to 17:58Z); the cks_0NpUfO7QdBU1ktOdV4ddP wiring-probe row was already gone and is in the backup, and the probes were not re-run. Re-scan: 0 matches in the six tabs, ops.db, form-log and 45 D1 tables, and 0 in all 37 Tantra Tracker tabs (5,290 rows) after a fresh sync; the Apps Script trash is T-380 (Nelbin). Bharath added as reviewer for the new script."
+    },
+    {
+     "ts": "2026-10-12T02:41:51+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-12: probe_cleanup.py dry run found 0 matches in the six funnel tabs, ops.db, form-log.jsonl and all 45 revops-centre D1 tables, and a wider cell scan of every remaining row agreed (only the 2 public-preview@revops-centre.local rows, left alone by decision). After a fresh sync the Tantra Tracker has 0 probe rows in 37 tabs (5,290 rows). The 10-11 08:00Z wiring-probe Checkout Starts row is in t107_deleted_rows.json. Still open: trashing the two old Apps Script projects needs a boards@ sign-in (T-380, Nelbin)."
     }
    ],
    "order": 1050,
@@ -5556,6 +5561,11 @@
      "ts": "2026-10-11T12:16:12+0530",
      "who": "claude",
      "note": "Verify pass: the capture plan (commit d3241ce3, on origin/main) is correct. A script confirmed all 22 slots match their guide step, each with shots: [] and an exact capture_needed line. The capture tools it names (helper.js, cap.py, guide-slot.py) exist and their flags match. check-guides PASS (57 capture-needed). No screenshots yet: they need Adi's desktop session (T-384)."
+    },
+    {
+     "ts": "2026-10-12T02:43:32+0530",
+     "who": "claude",
+     "note": "Already applied, so no agent run was needed: 2026-10-11T12:14: manifest built for all 22 slots (19+T-140's 3) with URL, screen, blur selectors, WebP, capture_needed line. 2026-10-11T12:16: verified script confirms all 22 slots match guide steps. (checked by Haiku against the log and commits)."
     }
    ],
    "order": 1130,
@@ -12461,6 +12471,16 @@
      "ts": "2026-10-11T22:28:11+0530",
      "who": "claude",
      "note": "Already applied, so no agent run was needed: Log entry 2026-10-11T11:22 confirms 'items 3 and 7 were already closed'; item 3 ($199 tier named Scale) was marked closed per 2026-10-10T15:13. (checked by Haiku against the log and commits)."
+    },
+    {
+     "ts": "2026-10-12T02:42:36+0530",
+     "who": "claude",
+     "note": "Correction from T-072: /enterprise has NOT switched to Cal.com. The upstream commit was reverted, and the Cal.com embed (ENTERPRISE_CALCOM_URL, also called ENTERPRISE_BOOKING_URL in older notes) exists only as workshop-plan/tantra-product-patches/tantra-frontend-v2/adi-new-ui--5d6eecf642.patch for Bharath's team to apply; the live page still uses Calendly until then. Checked today: the patch is on disk with the Cal inline embed, and the patches README lists it with apply steps."
+    },
+    {
+     "ts": "2026-10-12T02:43:04+0530",
+     "who": "claude",
+     "note": "Verify pass on the T-072 ripple: nothing more had to change. The 2026-10-12 correction is in the log (/enterprise still uses Calendly; the Cal.com embed exists only as adi-new-ui--5d6eecf642.patch for Bharath's team), the patch holds Cal(\"inline\") and ENTERPRISE_CALCOM_URL, and README.md lists it with apply steps. The only other '/enterprise on Cal.com' wording is the immutable 2026-10-11 log line that the correction overrides."
     }
    ],
    "order": 2520
@@ -17522,12 +17542,17 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Sign in at https://app.cal.com/event-types as adisuja and create the event 'Tantra Enterprise Evaluation Call' with URL slug tantra-enterprise-evaluation-call, copying the fields from workshop-plan/build/T-072-calcom-event-draft.md (30 min, Google Meet, Mon-Fri 10:00-18:00 Asia/Kolkata).",
+   "needs_from_owner": "Sign in at https://app.cal.com/event-types as adisuja and create the event 'Tantra Enterprise Evaluation Call' with URL slug tantra-enterprise-evaluation-call (so it lives at https://cal.com/adisuja/tantra-enterprise-evaluation-call), copying the fields from workshop-plan/build/T-072-calcom-event-draft.md (30 min, Google Meet, Mon-Fri 10:00-18:00 Asia/Kolkata). This is the only input T-072 needs; once the event exists, T-072 is finished.",
    "log": [
     {
      "ts": "2026-10-11T11:20:59+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-072."
+    },
+    {
+     "ts": "2026-10-12T02:43:04+0530",
+     "who": "claude",
+     "note": "Ripple from T-072 checked: this stays the sole Adi input for T-072. I added the pinned URL cal.com/adisuja/tantra-enterprise-evaluation-call and stated that T-072 is finished once the event exists. Checked that the draft file exists and uses the slug; no agent signs in as Adi."
     }
    ],
    "order": 3980,
@@ -18059,6 +18084,35 @@
    ],
    "order": 4140,
    "input_for": "T-409",
+   "kind": "input"
+  },
+  {
+   "id": "T-415",
+   "title": "Input from Adi for T-398: Sign in at https://app.cal.com/event-types as adisuja and click New. Title: Tant",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (signin): The event must live on Adi's own Cal.com account; agents never sign in as Adi and no Cal.com key exists on this Mac.. Everything else in T-398 is being built around it. As soon as this is done, T-398 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Sign in at https://app.cal.com/event-types as adisuja and click New. Title: Tantra Enterprise Evaluation Call. URL slug: tantra-enterprise-evaluation-call. Duration: 30 minutes. Location: Google Meet. Availability: Mon-Fri 10:00-18:00 Asia/Kolkata. Visibility: public. Description: paste the block from workshop-plan/build/T-072-calcom-event-draft.md.",
+   "log": [
+    {
+     "ts": "2026-10-12T02:43:35+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-398."
+    }
+   ],
+   "order": 4150,
+   "input_for": "T-398",
    "kind": "input"
   }
  ]
