@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T08:02:16+0530",
-  "version": 1796,
+  "updated": "2026-10-11T08:04:07+0530",
+  "version": 1797,
   "last_id": 397,
   "team": [
    {
@@ -12725,11 +12725,11 @@
      "url": "cloud/scripts/probe-t266.mjs"
     },
     {
-     "label": "funnel worker",
+     "label": "worker",
      "url": "cloud/funnel/worker.js"
     },
     {
-     "label": "automation 2 check",
+     "label": "test run",
      "url": "cloud/src/jobs-day2.ts"
     },
     {
@@ -12737,8 +12737,8 @@
      "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
     },
     {
-     "label": "commit a4d990a",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/a4d990a"
+     "label": "centre",
+     "url": "https://revops-centre.growthcluborg.workers.dev/?v=d0e56be"
     }
    ],
    "blockers": [],
@@ -12773,6 +12773,11 @@
      "ts": "2026-10-11T08:02:16+0530",
      "who": "claude",
      "note": "The daily output now also goes by WhatsApp through a Tantra campaign (never Twilio). The centre test run checks automation 2 with a real test lead through /hooks/leads, and the s4-challenge note no longer says WhatsApp is not wired (commit a4d990a, pushed; centre Worker deployed as version 24f8c991). probe-t266 and probe-kept-tools both pass on the simulator and X082 is marked fixed in AUDIT.md; the real WhatsApp send waits only on the Tantra key already asked in T-337."
+    },
+    {
+     "ts": "2026-10-11T08:04:07+0530",
+     "who": "claude",
+     "note": "Verify pass: probe-t266 (all passed, incl. WhatsApp through the Tantra campaign, nothing via Twilio, automation 2 test lead) and probe-kept-tools (ALL PASS) re-run green; one gap fixed: the test run said automation 9 was 'not built' while waiting on the AI key, now 'setup' (d0e56be, pushed, centre Worker version 5c45750f live). AUDIT.md X076/X082/X098 all marked fixed with commits."
     }
    ],
    "order": 2660
