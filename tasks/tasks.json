@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T06:44:09+0530",
-  "version": 1758,
+  "updated": "2026-10-11T06:47:13+0530",
+  "version": 1759,
   "last_id": 396,
   "team": [
    {
@@ -7799,16 +7799,20 @@
    ],
    "evidence": [
     {
-     "label": "Pitch, pilot table, review steps",
+     "label": "Pitch, pilot table, review steps (updated 2026-10-11)",
      "url": "workshop-plan/pipeline/agentic-dev-cycle.md"
     },
     {
-     "label": "Pilot PR 160",
-     "url": "https://github.com/Usetantra/tantra-backend-v2/pull/160"
+     "label": "Patch: red suites green",
+     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fix_red-suites--f0b901e.patch"
     },
     {
-     "label": "Pilot PR 164",
-     "url": "https://github.com/Usetantra/tantra-backend-v2/pull/164"
+     "label": "Patch: pre-merge and preview scripts",
+     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/ci_premerge-and-preview--f0b901e.patch"
+    },
+    {
+     "label": "Pipeline dashboard (ship rate, PR to live, regression, overdue)",
+     "url": "http://localhost:8899/pipeline?v=1011a"
     }
    ],
    "blockers": [],
@@ -7838,6 +7842,11 @@
      "ts": "2026-10-09T19:57:34+0530",
      "who": "claude",
      "note": "Checked 2 related task(s); updating T-158."
+    },
+    {
+     "ts": "2026-10-11T06:47:13+0530",
+     "who": "claude",
+     "note": "Built the remaining basics as patch files for Bharath to apply, not as PRs or PR comments, because the owner's 2026-10-11 rule bars agents from writing to Usetantra repos (PRs 160 to 164 are closed, so no preview URL was posted there): one patch turns the red suites green (full run 106 suites passed, 0 failed, build passes), one adds scripts/premerge.sh and a per-branch scripts/preview.sh (compose config checked, not started because Docker was down). New bug intake is now stamped to the second, day-only requests are left out of the 24h ship rate, and the dashboard shows not merged yet with 5 PRs overdue until a fix is merged. Open http://localhost:8899/pipeline?v=1011a and workshop-plan/pipeline/agentic-dev-cycle.md; Bharath still has to apply the patches and agree the review steps."
     }
    ],
    "order": 1540,
