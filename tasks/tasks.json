@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T12:25:42+0530",
-  "version": 1894,
+  "updated": "2026-10-11T12:28:48+0530",
+  "version": 1895,
   "last_id": 401,
   "team": [
    {
@@ -3090,6 +3090,11 @@
      "ts": "2026-10-10T20:35:09+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-074, T-070."
+    },
+    {
+     "ts": "2026-10-11T12:28:48+0530",
+     "who": "claude",
+     "note": "Ripple from T-074, nothing on /pro had to change: buyers get the weekly coaching link (Zoom, Tue 11:00 ET) in the access email our team sends (moderation-rota.md step 2) and on the buyer-gated course home (cloud/src/course.ts, settings pro_coaching_url). I kept the raw link off the public /pro?paid=1 banner on purpose, since anyone can open that URL and it would publish a members-only Zoom link; the banner already says coaching call access arrives by email. The Orchestrator items were closed in the 2026-10-10 runs, and probe-pro.mjs re-run today on live /pro reports ALL PASS. Open https://adisuja.github.io/tantra-workshop-live/site/pro/?v=t071e"
     }
    ],
    "order": 430,
