@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T16:48:45+0530",
-  "version": 1970,
+  "updated": "2026-10-11T16:50:33+0530",
+  "version": 1972,
   "last_id": 408,
   "team": [
    {
@@ -722,11 +722,11 @@
    ],
    "evidence": [
     {
-     "label": "runbook (commit 4121584)",
+     "label": "runbook (on origin/main cb2899da)",
      "url": "workshop-plan/ops/runbook.md"
     },
     {
-     "label": "up.sh (19 jobs, exit 0)",
+     "label": "up.sh --check exit 0",
      "url": "workshop-plan/ops/up.sh"
     }
    ],
@@ -777,6 +777,16 @@
      "ts": "2026-10-11T05:50:03+0530",
      "who": "claude",
      "note": "Verify pass: up.sh and up.sh --check both exit 0 (0 failed, 3 warnings: centre-sheet 401, codex-check 401, MongoDB off until T-247), and all 19 live plists match their repo copies with no secret values. I corrected the runbook where it was wrong or thin: zoom-support-check runs daily at 09:10, the latest migration is 0027, the funnel Worker variables and the Zoom hook are now in the switch plan, and the attendee funnel hooks are no longer listed as centre hooks. Committed locally as 4121584 and not pushed: the owner's rule forbids cherry-picking onto origin/main, so it rides the next whole-main publish. Open workshop-plan/ops/runbook.md sections 1 and 5."
+    },
+    {
+     "ts": "2026-10-11T16:49:37+0530",
+     "who": "claude",
+     "note": "Pushed whole main to origin as cb2899da (fast-forward; 4121584 and 4ebca0a were already on origin/main), and added runbook section 2a for Tantra Mongo: Docker Desktop start, tantra-mongo on 127.0.0.1:27017 with restart unless-stopped, auth on, logins in ~/.config/tantra/mongo.env (names only), backup to ~/Backups/tantra/<date>/tantra_tracker.archive.gz and restore steps. Verified this run: the backup command wrote a 111 KB archive and a mongorestore dry run read it cleanly; up.sh --check exit 0 (0 failed, 1 warning: codex-check, T-340; MongoDB ok). All three done-when lines met. Open workshop-plan/ops/runbook.md sections 1, 2a and 5."
+    },
+    {
+     "ts": "2026-10-11T16:50:33+0530",
+     "who": "claude",
+     "note": "Verify pass: commits 4121584, 4ebca0a and cb2899da are all on origin/main (origin/main = cb2899da), all 19 live com.tantra plists match their repo copies, and up.sh --check exits 0 (0 failed, 1 warning: codex-check, left to T-340). The Mongo section 2a matches the container (127.0.0.1:27017, unless-stopped, mongod --auth, anonymous access denied, mongo.env key names), and its backup and dry-run restore commands ran clean (111 KB archive). Nothing needed changing. Open workshop-plan/ops/runbook.md sections 1, 2a and 5."
     }
    ],
    "order": 60,
