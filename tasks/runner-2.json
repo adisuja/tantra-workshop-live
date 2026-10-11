@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T12:40:08+0530",
+   "task_id": "T-385",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-385 is back in review for Bharath. I re-ran the library probe on both sites and the poll check passes.\n\n- **Keep the check and point it at a poll view:** done. The fix from the last run is in `app/scripts/probe-library.mjs` (lines 124 to 138). It jumps to the poll example (`#live-polls`), waits fo"
+  },
+  {
    "ts": "2026-10-11T12:31:01+0530",
    "task_id": "T-071",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-074 stays blocked: everything built checks out, and I added the missing weekly buyer job, but neither newsletter send can go out until our account has an email sender key.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Recurring \"Tantra Pro Weekly Coaching\" meeting (Tuesdays 11:00 ET, "
-  },
-  {
-   "ts": "2026-10-11T11:03:26+0530",
-   "task_id": "T-107",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I re-checked the cleanup and found nothing left to fix, so T-107 is in review for Nelbin. Every place scans clean, and I made no file changes, so there was nothing to commit. The ack command reported 0 changed because F-a0ca4550 and R-9a5ee669 were already acked last run.\n\n| Item | State | What I ch"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-385",
+ "task_id": "T-225",
  "entries": [
-  "F-00935951"
+  "F-b19e6293"
  ],
- "started": "2026-10-11T12:32:09+0530",
- "message": "Acting on 1 note(s) for T-385: probe-library: 'poll accepts a vote' check fails on the live centre and the mirror",
+ "started": "2026-10-11T12:41:34+0530",
+ "message": "Acting on 1 note(s) for T-225: Zoom Support ticket: host mute control and participant video disable (waiting on Zoom's reply)",
  "slices": {
   "T-072": 1,
   "T-245": 1,
