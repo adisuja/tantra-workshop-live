@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T06:34:52+0530",
-  "version": 1753,
+  "updated": "2026-10-11T06:36:04+0530",
+  "version": 1755,
   "last_id": 396,
   "team": [
    {
@@ -8059,7 +8059,15 @@
    "evidence": [
     {
      "label": "Pipeline dashboard",
-     "url": "http://localhost:8899/pipeline?v=2"
+     "url": "http://localhost:8899/pipeline?v=1791680764"
+    },
+    {
+     "label": "Screenshot at 1440",
+     "url": "http://localhost:8899/pipeline/snapshots/dashboard-1440.png?v=1791680764"
+    },
+    {
+     "label": "First weekly snapshot",
+     "url": "workshop-plan/pipeline/snapshots/2026-10-09.json"
     }
    ],
    "blockers": [],
@@ -8104,6 +8112,11 @@
      "ts": "2026-10-10T16:35:35+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-10-09 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-11T06:36:04+0530",
+     "who": "claude",
+     "note": "Closed out per the Orchestrator decision: the dashboard serves all 6 bands at /pipeline, the Monday 09:00 job com.tantra.pipeline-weekly is loaded, nothing names the client and pipeline/ is outside both the mirror export and sync_board. Added the three T-154 cards (24h ship rate, PR to live, Regression rate) with their definitions; they, Dogfooding and Customer tier mix show 'no data yet' until T-154, T-155 and T-157 land (logged in coord/LOG.md). Checked in a headless browser at 1440 (14 of 14 cards have a tag, caption and Counts note) and with a synthetic data test; committed and pushed as 0ccd9e0, which also carries T-153's weekly decision call in the snapshot job."
     }
    ],
    "order": 1580,
@@ -15538,14 +15551,36 @@
     "Client written OK saved",
     "Spec step 1 ticked in T-155 client experiment"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Email for Amal to send",
+     "url": "workshop-plan/coord/T-363-client-ok-request.md"
+    },
+    {
+     "label": "Paste the client reply here",
+     "url": "workshop-plan/coord/T-363-client-reply.md"
+    },
+    {
+     "label": "Draft variants A and B",
+     "url": "workshop-plan/coord/T-155-client-variants-draft.md"
+    },
+    {
+     "label": "Read-only audit sheet (not run)",
+     "url": "workshop-plan/coord/T-155-client-audit.md"
+    }
+   ],
    "blockers": [],
-   "needs_from_owner": "Amal: send the client the test description and get their written yes (email is fine). Attach or paste their reply here.",
+   "needs_from_owner": "Amal: fill the 6 blanks in workshop-plan/coord/T-363-client-ok-request.md, send it to the client, then paste their written yes into workshop-plan/coord/T-363-client-reply.md (or into a T-363 note). Tracked as T-364.",
    "log": [
     {
      "ts": "2026-10-09T20:00:30+0530",
      "who": "claude",
      "note": "Opened by T-155 per Orchestrator decision O-9d051af3."
+    },
+    {
+     "ts": "2026-10-11T06:35:45+0530",
+     "who": "claude",
+     "note": "Amal: the email to the client is ready in workshop-plan/coord/T-363-client-ok-request.md (test, stop rules and the 'Yes, approved' line are written; 6 marked blanks for you: contact name, list name and size, sender mailboxes, start and end dates, your name). Paste the reply word for word into workshop-plan/coord/T-363-client-reply.md. Also drafted variants A and B plus the day-3 follow-up from the client's own pack (workshop-plan/coord/T-155-client-variants-draft.md) and the audit sheet (workshop-plan/coord/T-155-client-audit.md). The audit itself is not run: Claude has no read access to the client workspace, so the sheet is ready for whoever is signed in. Checked: no long dashes, client not named in any of the files, nothing sent. Step 1 of the T-155 client spec stays unticked until the reply is saved."
     }
    ],
    "order": 3630
