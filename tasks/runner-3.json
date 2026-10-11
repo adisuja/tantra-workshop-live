@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T02:30:21+0530",
+   "task_id": "T-074",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-074 is still blocked: nothing was sent, because the GrowthClub Tantra workspace has 0 connected mailboxes and Adi's 12 Oct rule bans sending from growthclub.org, so the test send and issue 1 now wait only on the new mailbox from T-123.\n\n**Completion check (all from this run):**\n- **Recurring coach"
+  },
+  {
    "ts": "2026-10-12T02:26:47+0530",
    "task_id": "T-073",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-240 is back in review for Adi, Aquila and Bharath. On a fresh clean export of main (1eca04f6) the full runtime probe-details reports 0 FAIL, so none of the 3 images needed fixing.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Negative check on 3fff8f22 | Done | Using the probe's own f"
-  },
-  {
-   "ts": "2026-10-11T22:38:15+0530",
-   "task_id": "T-140",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-140 is still blocked. The three Tantra screenshots (s3-tantra-pro-flow #5, #13 and #14) can only be taken in the one desktop session already requested under T-115 and tracked as T-399.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| s1-blog #2 and #6 replaced with real captures | Done "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-074",
+ "task_id": "T-409",
  "entries": [
-  "F-696a9834"
+  "R-54f25fbb"
  ],
- "started": "2026-10-12T02:27:39+0530",
- "message": "Acting on 1 note(s) for T-074: Weekly coaching call and community moderation rota for Tantra Pro members",
+ "started": "2026-10-12T02:30:55+0530",
+ "message": "Acting on 1 note(s) for T-409: Redeploy the 'Tantra Funnel' Apps Script as a new version so tier_qualifier answers reach the Work Tracker",
  "slices": {
   "T-135": 1,
   "T-148": 1,

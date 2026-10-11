@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T02:28:18+0530",
-  "version": 2231,
+  "updated": "2026-10-12T02:30:50+0530",
+  "version": 2234,
   "last_id": 413,
   "team": [
    {
@@ -13754,23 +13754,19 @@
    "evidence": [
     {
      "label": "Live centre (Choose your tools)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-stack&v=t270c"
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-stack&v=t270d"
     },
     {
      "label": "Probe",
      "url": "app/scripts/probe-t270.mjs"
     },
     {
-     "label": "Screenshot: consent ask",
-     "url": "/tmp/probe-t270/consent-1440.png"
+     "label": "Mirror chunk with ev_length examples",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/_next/static/chunks/43fq5cdzevd66.js?v=t270d"
     },
     {
      "label": "Screenshot: Choose your tools",
      "url": "/tmp/probe-t270/start-stack-1440.png"
-    },
-    {
-     "label": "Mirror",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=t270c"
     }
    ],
    "blockers": [],
@@ -13815,6 +13811,11 @@
      "ts": "2026-10-12T02:28:11+0530",
      "who": "claude",
      "note": "Deployed revops-centre Worker 3275aef1 from main 1483de7c (includes 1ef94a2 ev_length examples) and pushed the probe fix that signs in through the admin form and stubs paid drafts; node app/scripts/probe-t270.mjs on the live centre passed 21/21, including the ask before the first draft and zero drafts before a yes. Published the mirror (tantra-workshop-live 6d5689b) and confirmed the ev_length examples are served on github.io; N070 in AUDIT.md now names 1ef94a2. Open https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-stack&v=t270c"
+    },
+    {
+     "ts": "2026-10-12T02:30:50+0530",
+     "who": "claude",
+     "note": "Verify pass: node app/scripts/probe-t270.mjs against the live centre passed 21/21 today, including the ask before the first draft and 0 drafts before a yes (test attendee revoked, AI drafting left on). check-examples passed 641/641, and the ev_length examples are served by both the live Worker and github.io. AUDIT.md marks N067 to N088 fixed, with 1ef94a2 next to N070. Open Choose your tools, then Write the Offer."
     }
    ],
    "order": 2700
