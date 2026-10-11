@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T11:26:56+0530",
+   "task_id": "T-135",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "error",
+   "summary": "[process exit 143; stderr: ''] The 2026-10-06 03:30 hold was lifted by the 03:41 publish (af5810d) after the fix. Waiting on probe-guides."
+  },
+  {
    "ts": "2026-10-11T11:14:39+0530",
    "task_id": "T-074",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-056 is still blocked: the list isn't imported and the campaign doesn't exist yet, because there's still no Tantra API key on this Mac.\n\n**What I fixed:** checking the script against Tantra's API code showed that the call it used to create the campaign, `/campaigns/create`, actually launches it, me"
-  },
-  {
-   "ts": "2026-10-11T08:19:49+0530",
-   "task_id": "T-275",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "I re-checked everything on T-275 and it passes, so it stays blocked on T-006: H006 and H013 are fixed and live, and H008 waits for a production domain.\n\n1. **1d66ef0 on origin/main:** Done. It's an ancestor of origin/main, and none of the referral files have unpushed commits.\n2. **H006 (no fixed coh"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-135",
+ "task_id": "T-129",
  "entries": [
-  "F-03b2abca"
+  "F-3c967c43"
  ],
- "started": "2026-10-11T11:15:34+0530",
- "message": "Acting on 1 note(s) for T-135: Guide screenshots Claude can capture now from our own pages and demo output (11 slots)",
+ "started": "2026-10-11T11:28:27+0530",
+ "message": "Acting on 1 note(s) for T-129: Board hygiene: past due dates, meta.day1, dash check, T-070 title, pitch cadence",
  "slices": {
   "T-072": 1,
   "T-245": 1,
