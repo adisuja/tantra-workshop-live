@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T02:30:50+0530",
-  "version": 2234,
-  "last_id": 413,
+  "updated": "2026-10-12T02:32:31+0530",
+  "version": 2238,
+  "last_id": 414,
   "team": [
    {
     "name": "Adi",
@@ -17868,6 +17868,11 @@
      "ts": "2026-10-11T22:30:07+0530",
      "who": "claude",
      "note": "Split out of T-157 per the Orchestrator's fallback: no Claude in Chrome connection was available, so no browser redeploy was possible and no password was typed."
+    },
+    {
+     "ts": "2026-10-12T02:31:13+0530",
+     "who": "claude",
+     "note": "Ripple from T-157 checked: the redeploy was not done there, and today's health GET of the exec URL still lists only the 6 original forms (no tier_qualifier), so nothing had to change and this stays the input task. This run also had no Claude in Chrome connection, so no browser redeploy was possible."
     }
    ],
    "order": 4090
@@ -17986,6 +17991,35 @@
    ],
    "order": 4130,
    "input_for": "T-228",
+   "kind": "input"
+  },
+  {
+   "id": "T-414",
+   "title": "Input from Adi for T-409: Signed in as adi@growthclub.org, open https://script.google.com/home > project '",
+   "area": "Ops",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (signin): Only adi@growthclub.org's Google session can redeploy this script; no credential on this Mac has Apps Script access.. Everything else in T-409 is being built around it. As soon as this is done, T-409 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Signed in as adi@growthclub.org, open https://script.google.com/home > project 'Tantra Funnel' > paste workshop-plan/ops/apps-script/Code.gs over Code.gs > Deploy > Manage deployments > edit (pencil) > Version: New version > Deploy. The agent does the rest.",
+   "log": [
+    {
+     "ts": "2026-10-12T02:32:31+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-409."
+    }
+   ],
+   "order": 4140,
+   "input_for": "T-409",
    "kind": "input"
   }
  ]

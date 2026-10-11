@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T02:31:10+0530",
+   "task_id": "T-270",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-270 is back in review for Adi and Bharath. Nothing needed fixing, and every item was re-checked in this run.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Teaching shows with no query parameter (N067) | Done | Live probe: 2 teaching panels on the card with no `?learn` |\n| Choose your "
+  },
+  {
    "ts": "2026-10-12T02:17:58+0530",
    "task_id": "T-144",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "I checked T-145 again and left it blocked: nothing had to change for the ripple note R-5e03cedd, and it is acknowledged. The waiting-on text already says what the note asked for (checked in tasks.json this run).\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Waiting-on text names T-341 a"
-  },
-  {
-   "ts": "2026-10-12T00:03:29+0530",
-   "task_id": "T-152",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I checked the previous run's work on disk and it holds up. T-152 is back in review with Bharath and Adi, with the verify note committed as 7adb6290. Nothing was pushed and nothing was written to any Usetantra repo.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| Spec says the fix and its"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-270: New centre cards: teach by default, examples on every field, no paid auto-drafts",
- "task_id": "T-270",
+ "message": "Acting on 1 note(s) for T-232: Back up every Zoom recording to the team Google Drive, then delete it from Zoom",
+ "task_id": "T-232",
  "entries": [
-  "F-a74ca775"
+  "R-f171e8bb"
  ],
  "mode": "feedback",
- "started": "2026-10-12T02:18:15+0530",
+ "started": "2026-10-12T02:31:27+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,

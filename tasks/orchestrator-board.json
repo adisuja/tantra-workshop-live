@@ -1,9 +1,9 @@
 {
  "running": null,
- "last_sweep": "2026-10-12T02:30:48+0530",
+ "last_sweep": "2026-10-12T02:32:31+0530",
  "counts": {
   "proceed": 28,
-  "needs_adi": 22,
+  "needs_adi": 23,
   "complete": 60,
   "resolve": 8,
   "finish": 20,
@@ -925,6 +925,11 @@
    "verdict": "drop",
    "ts": "2026-10-11T22:40:10+0530",
    "input_task": null
+  },
+  "T-409": {
+   "verdict": "needs_adi",
+   "ts": "2026-10-12T02:32:31+0530",
+   "input_task": "T-414"
   }
  }
 }
