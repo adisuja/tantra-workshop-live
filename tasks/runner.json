@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T00:22:51+0530",
+   "task_id": "T-263",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "I've moved T-263 to blocked. Everything checks out except the live Tantra sender check, which needs a FintechCircle Tantra API key that isn't on this machine. Nothing in the repo needed fixing, so there was nothing to commit.\n\n| Item | State |\n|---|---|\n| Event ending after midnight gets the next da"
+  },
+  {
    "ts": "2026-10-12T00:20:09+0530",
    "task_id": "T-223",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-135 is back in review for Amal. Everything checked out on a fresh verification today, so I changed no files and pushed or republished nothing. The ack command reported 0 notes acknowledged because F-a5259871 had already been acknowledged in the previous run.\n\n| Item | State and evidence from this "
-  },
-  {
-   "ts": "2026-10-11T22:54:50+0530",
-   "task_id": "T-108",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "**T-108 stays in review.** No code change was needed, so I made no commit. One mistake in the previous report is corrected on the board: the Amazon mark is on the **Book** board, not Book a Call.\n\n**Completion check (all evidence from this run):**\n- **Amazon and YouTube marks from T-295:** done. Bot"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-263: Centre: Tantra calendar workspace verification and invite campaign job fixes",
- "task_id": "T-263",
+ "message": "Acting on 1 note(s) for T-265: Centre: dashboard reads (Tantra campaign stats, Metricool clicks) and automated launch QA",
+ "task_id": "T-265",
  "entries": [
-  "F-dc684238"
+  "F-6cc5a0d1"
  ],
  "mode": "feedback",
- "started": "2026-10-12T00:20:10+0530",
+ "started": "2026-10-12T00:23:18+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
