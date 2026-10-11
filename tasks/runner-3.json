@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T18:25:46+0530",
+   "task_id": "T-130",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-130 stays in review. check-guides passes on main, so the guard needed no fix and I pushed nothing.\n\n- **check-guides on main:** passes, 24 guides.\n- **Node cap raised to 18 with a comment citing T-254 and eb2bb14:** the cap was already 18 on origin/main, set by commit 12a53067. It lives in `app/sr"
+  },
+  {
    "ts": "2026-10-11T18:23:34+0530",
    "task_id": "T-246",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-123 is blocked again: Tantra won't create the campaigns because team@growthclub.org isn't a connected mailbox in the GrowthClub workspace, and only Adi can connect it.\n\n**Completion check:**\n- **Save the key and sender:** done. The live admin reports the key saved (it is stored sealed and never re"
-  },
-  {
-   "ts": "2026-10-11T16:17:27+0530",
-   "task_id": "T-094",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-094 stays in review, waiting on Adi's sign-off. Nothing had to change: the T-100 probe result was already in its evidence, and the note R-f2b291e4 was already marked processed by the previous run, so `ack` reported 0.\n\n**Completion check:**\n- **T-100's 7-width probe added to evidence and log:** do"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-130",
+ "task_id": "T-263",
  "entries": [
-  "F-b3ddf6f1"
+  "F-52ad3764"
  ],
- "started": "2026-10-11T18:23:55+0530",
- "message": "Acting on 1 note(s) for T-130: Make the busiest guide flowcharts easier to read",
+ "started": "2026-10-11T18:27:33+0530",
+ "message": "Acting on 1 note(s) for T-263: Centre: Tantra calendar workspace verification and invite campaign job fixes",
  "slices": {
   "T-135": 1,
   "T-148": 1,

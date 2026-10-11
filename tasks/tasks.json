@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T18:24:44+0530",
-  "version": 2013,
+  "updated": "2026-10-11T18:25:35+0530",
+  "version": 2016,
   "last_id": 408,
   "team": [
    {
@@ -6762,6 +6762,16 @@
      "ts": "2026-10-11T18:24:44+0530",
      "who": "claude",
      "note": "check-guides now passes on main (24 guides, PASS). The 18-node cap was already raised in validate.ts by 12a53067 (T-255), which is on origin/main, so I made no script change and pushed nothing. probe-flows PASS (24 charts, 0 problems), probe-details 0 merge-span WARN, tsc 0 errors; I also fixed the stale 'keep it to 14' comment in schema.ts (local commit). Reviewers: 19 of the 24 charts are wider than a phone and scroll sideways at 390, so please judge that when you review."
+    },
+    {
+     "ts": "2026-10-11T18:25:35+0530",
+     "who": "claude",
+     "note": "Reviewers (Adi, Bharath): at 390, 19 of the 24 charts are wider than a phone and scroll sideways. That is the current behaviour, so judge it in review."
+    },
+    {
+     "ts": "2026-10-11T18:25:35+0530",
+     "who": "claude",
+     "note": "Verify pass: check-guides passes on main (24 guides). The chart node cap is already 18 on origin/main (validate.ts, 12a53067); check-guides.mjs has no cap of its own, so I only added the cap comment citing T-254 (36d9956) and eb2bb14 (local commit 836d8abc, not pushed because it changes no behaviour). probe-flows PASS, probe-details 0 merge-span WARN and 0 FAIL, tsc 0 errors, 0 gf-in in flow-chart.tsx, all seven findings marked fixed in eb2bb14 in AUDIT.md."
     }
    ],
    "order": 1280,
@@ -12617,6 +12627,11 @@
      "ts": "2026-10-11T18:24:44+0530",
      "who": "claude",
      "note": "T-130 check (2026-10-11): check-guides passes with the 17-node s5-pipeline chart. The cap is 18 in validate.ts (12a53067, on origin/main), so no change was needed."
+    },
+    {
+     "ts": "2026-10-11T18:25:28+0530",
+     "who": "claude",
+     "note": "T-130 verify pass 2026-10-11: check-guides passes on main (24 guides) with the chart node cap at 18 (validate.ts, raised in 12a53067, on origin/main), so this task's 17-node s5-pipeline chart is valid; the cap now carries a comment citing 36d9956 and eb2bb14."
     }
    ],
    "order": 2540
