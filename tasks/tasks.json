@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T17:51:41+0530",
-  "version": 1994,
+  "updated": "2026-10-11T17:52:59+0530",
+  "version": 1997,
   "last_id": 408,
   "team": [
    {
@@ -8582,6 +8582,11 @@
      "ts": "2026-10-11T07:02:03+0530",
      "who": "claude",
      "note": "Board sync published (v1764): the feedback counter and Report form are on the public board and the mirror, and probe-feedback.mjs passes live (9 checks) and local (6 checks). The FintechCircle draft and test send is now one command (workshop-plan/scripts/fintechcircle-experiment.mjs), proven on the vendor simulator with 16 checks passing and emails going only to the Adi test inbox. Still open, no new ask: funnel reminders and the real FintechCircle draft wait on the key in T-337 (then run T-234 --go, then this script --go), the client experiment waits on T-363, and starting on FintechCircle's real list is not approved and is the one open step for Amal and Aquila."
+    },
+    {
+     "ts": "2026-10-11T17:52:59+0530",
+     "who": "claude",
+     "note": "Ripple from T-363 checked on disk, nothing had to change: the A/B drafts with the day-3 follow-up are already recorded in the private client spec, but the read-only audit is NOT done (the audit sheet says not run, Claude has no read access to the client workspace), so it stays open, and step 1 stays unticked because check_client_ok.py still fails 9 of 9 (no client reply saved)."
     }
    ],
    "order": 1550,
@@ -16740,7 +16745,7 @@
    "title": "Input from Adi for T-363: Amal: send the client the prepared email in workshop-plan/coord/T-363-client-ok-",
    "area": "Ops",
    "owner": "Adi",
-   "assignee": "Adi",
+   "assignee": "Amal",
    "reviewers": [
     "Adi"
    ],
@@ -16752,12 +16757,22 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Amal: send the client the prepared email in workshop-plan/coord/T-363-client-ok-request.md, then paste their written yes into workshop-plan/coord/T-363-client-reply.md (or into a T-363 note).",
+   "needs_from_owner": "Amal: fill the 6 marked [[AMAL: ...]] blanks in workshop-plan/coord/T-363-client-ok-request.md (client contact name, list name and size, sender mailboxes, start date, end date, your name), send it to the client, then paste their written yes word for word into workshop-plan/coord/T-363-client-reply.md and set its status line to REPLY: RECEIVED.",
    "log": [
     {
      "ts": "2026-10-09T20:07:45+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-363."
+    },
+    {
+     "ts": "2026-10-11T17:52:18+0530",
+     "who": "claude",
+     "note": "Waiting text refreshed to match T-363: Amal fills the 6 marked blanks before sending, then pastes the reply. Checked on disk: the blanks are in T-363-client-ok-request.md and T-363-client-reply.md still reads REPLY: NOT RECEIVED, so this stays blocked."
+    },
+    {
+     "ts": "2026-10-11T17:52:18+0530",
+     "who": "claude",
+     "note": "People: assignee Adi → Amal (by claude)."
     }
    ],
    "order": 3640,
