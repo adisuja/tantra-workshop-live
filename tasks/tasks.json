@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T18:01:11+0530",
-  "version": 2001,
+  "updated": "2026-10-11T18:15:37+0530",
+  "version": 2005,
   "last_id": 408,
   "team": [
    {
@@ -11008,11 +11008,11 @@
    ],
    "evidence": [
     {
-     "label": "Helper with subdomain match (util.ts:123)",
+     "label": "Helper with subdomain match",
      "url": "cloud/src/util.ts"
     },
     {
-     "label": "Probe with subdomain refusal cases",
+     "label": "Probe with the refusal checks (67 of 67)",
      "url": "app/scripts/probe-calendar-feeds.mjs"
     },
     {
@@ -11097,6 +11097,11 @@
      "ts": "2026-10-11T17:57:30+0530",
      "who": "claude",
      "note": "The subdomain fix (51c7ee1) is pushed (on origin/main) and live: Worker 7f8bfc45 from 97096ab and every later deploy (now 9761eae3) contain it, so nothing needed a new push or deploy. On production, POSTing a@mail.example.com to /cal/issue and /intake gave the usual 200 answers but created no attendee (26 before and after, highest id still 126). Invite Status shows nothing failed (Zoom failed 0), and every example.* row is marked test; attendee 5 no longer exists (404). One extra refusal POST to /cal/issue with a .test address also created nothing. Open admin, Cohort Settings, Invite Status."
+    },
+    {
+     "ts": "2026-10-11T18:15:37+0530",
+     "who": "claude",
+     "note": "Verified again: the placeholder guard (51c7ee1, on origin/main) is live on Worker 9761eae3, so no push or deploy was needed. On production, a@mail.example.com posted to /cal/issue and /intake got the usual 200 answers (feed null), attendees stayed at 26 (highest id 126), Zoom and Google failed are 0, and no non-test placeholder address remains (attendee 5 no longer exists). Fresh local stacks: tsc clean, calendar feeds 67 of 67 (refusal checks 6 of 6), zoom-pro 60 of 60, tantra reminders 93 of 93. Open https://revops-centre.growthcluborg.workers.dev/admin/?v=9761eae3#settings, Cohort Settings, Invite Status."
     }
    ],
    "order": 2290
