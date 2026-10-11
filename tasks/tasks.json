@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T07:42:50+0530",
-  "version": 1785,
+  "updated": "2026-10-11T07:44:47+0530",
+  "version": 1787,
   "last_id": 397,
   "team": [
    {
@@ -12374,7 +12374,8 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
@@ -12393,12 +12394,12 @@
      "url": "/Users/adithyamurali/tantra-redesign/cloud/scripts/probe-resend-hooks.mjs"
     },
     {
-     "label": "live centre",
-     "url": "https://revops-centre.growthcluborg.workers.dev/?v=t262-8cf185d5"
+     "label": "fix",
+     "url": "/Users/adithyamurali/tantra-redesign/cloud/src/jobs.ts"
     },
     {
-     "label": "LOG.md",
-     "url": "/Users/adithyamurali/tantra-round5-coord/LOG.md"
+     "label": "centre",
+     "url": "https://revops-centre.growthcluborg.workers.dev/?v=t262b"
     }
    ],
    "blockers": [],
@@ -12428,6 +12429,16 @@
      "ts": "2026-10-11T07:42:50+0530",
      "who": "claude",
      "note": "Shipped: main pushed at 0d728f7 (includes 3caf4d0, no force) and revops-centre deployed from a clean worktree as Worker 8cf185d5-b76c-4ff4-bbf9-f9136a625c4b, no migration pending; live root answers 302. In that worktree tsc was clean and probe-resend-hooks.mjs passed all 16 checks against the simulator only (bounce and complaint suppress, forged signature refused, sim log shows DELETE /api-keys/key_full0001); no real Resend account touched."
+    },
+    {
+     "ts": "2026-10-11T07:44:44+0530",
+     "who": "claude",
+     "note": "Verify pass found one gap: if the funnel was already live when Resend verified, the bounce webhook's signing secret was stored but never reached the funnel Worker, so /hooks/resend would refuse every event. Fixed in af0a1d0 (the job now redeploys a live funnel). tsc clean, probe-resend-hooks.mjs passes all 16 checks on the simulator, main pushed, and revops-centre is live as version 305ddc97 (https://revops-centre.growthcluborg.workers.dev/?v=t262b returns 302)."
+    },
+    {
+     "ts": "2026-10-11T07:44:47+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
     }
    ],
    "order": 2620
