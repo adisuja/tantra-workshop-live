@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T00:29:48+0530",
-  "version": 2185,
+  "updated": "2026-10-12T01:43:50+0530",
+  "version": 2196,
   "last_id": 413,
   "team": [
    {
@@ -1986,6 +1986,11 @@
      "ts": "2026-10-11T22:43:20+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-034."
+    },
+    {
+     "ts": "2026-10-12T01:42:36+0530",
+     "who": "claude",
+     "note": "Adi gave the Tantra campaigns API key (2026-10-12). Saved sealed in the centre (admin settings tantra_key) and in ~/.config/tantra/keys/tantra-api.env (never in a repo). Verified: GET https://api.usetantra.com/api/v1/campaigns with header x-api-key returns 200 (1 campaign). The Tantra key is no longer a blocker."
     }
    ],
    "order": 230,
@@ -17479,6 +17484,11 @@
      "ts": "2026-10-11T23:45:58+0530",
      "who": "claude",
      "note": "Closed as satisfied: the Tantra key was saved, sealed, in Admin at 16:25 (T-337 is done, confirmed in the T-123 and T-337 logs). The only remaining input, connecting team@growthclub.org as a mailbox, is already tracked on T-123, so nothing is asked here."
+    },
+    {
+     "ts": "2026-10-12T01:42:36+0530",
+     "who": "claude",
+     "note": "Adi gave the Tantra campaigns API key (2026-10-12). Saved sealed in the centre (admin settings tantra_key) and in ~/.config/tantra/keys/tantra-api.env (never in a repo). Verified: GET https://api.usetantra.com/api/v1/campaigns with header x-api-key returns 200 (1 campaign). The Tantra key is no longer a blocker."
     }
    ],
    "order": 3930,
@@ -17682,9 +17692,9 @@
   },
   {
    "id": "T-400",
-   "status": "blocked",
+   "status": "queue",
    "owner": "Adi",
-   "assignee": "Adi",
+   "assignee": "Claude",
    "reviewers": [
     "Aquila"
    ],
@@ -17713,7 +17723,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "blocked",
+   "status": "done",
    "why": "",
    "spec": "Only Adi can do this (physical): The QR scan needs Adi's phone and Tantra login, and the test number is his own to name.. Everything else in T-400 is being built around it. As soon as this is done, T-400 finishes on its own.",
    "done_when": [],
@@ -17725,6 +17735,11 @@
      "ts": "2026-10-11T12:06:43+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-400."
+    },
+    {
+     "ts": "2026-10-12T01:42:36+0530",
+     "who": "claude",
+     "note": "Adi connected the workshop WhatsApp number in Tantra (2026-10-12). Verify it via the Tantra API and continue; the test number for the Day 1 'Adi test' message is still to be read from the connected account."
     }
    ],
    "order": 4010,
@@ -17969,6 +17984,11 @@
      "ts": "2026-10-11T16:34:37+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-123."
+    },
+    {
+     "ts": "2026-10-12T01:42:36+0530",
+     "who": "claude",
+     "note": "Adi gave the Tantra campaigns API key (2026-10-12). Saved sealed in the centre (admin settings tantra_key) and in ~/.config/tantra/keys/tantra-api.env (never in a repo). Verified: GET https://api.usetantra.com/api/v1/campaigns with header x-api-key returns 200 (1 campaign). The Tantra key is no longer a blocker."
     }
    ],
    "order": 4080,
