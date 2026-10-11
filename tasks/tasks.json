@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T17:59:41+0530",
-  "version": 2000,
+  "updated": "2026-10-11T18:01:11+0530",
+  "version": 2001,
   "last_id": 408,
   "team": [
    {
@@ -8825,6 +8825,11 @@
      "ts": "2026-10-11T17:59:41+0530",
      "who": "claude",
      "note": "Verify pass: all 6 bands and 23 of 23 cards (each tagged live or derived, with a caption and a Counts note) checked on the live page and in a fresh 1440 screenshot. Dogfooding shows 8 planned, 2 under way, 1 waiting on T-363, 0 with a result. Tier mix shows 4 tiers and 4 experiments; qualifier and customer counts stay 'no data yet' because this machine can't read the sheet and there is no customer export. test_dash.py passes, the client is never named, there are no dashes, and com.tantra.pipeline-weekly is loaded for Mondays at 09:00. T-154 ripple: nothing had to change, agentic-dev-cycle.md already describes the GitHub PR times. Renamed backlog experiment 5 from the banned 'Build Pass' to 'Masterclass'. Pushed as 1cbb90cc; open http://localhost:8899/pipeline?v=6"
+    },
+    {
+     "ts": "2026-10-11T18:01:11+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-154."
     }
    ],
    "order": 1580,

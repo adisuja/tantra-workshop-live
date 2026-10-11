@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T17:55:36+0530",
+   "task_id": "T-364",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "I updated T-364's waiting text to match T-363, and the task stays **blocked** because the client has not replied yet.\n\n- **Waiting text updated: done.** It now says Amal fills the 6 marked blanks before sending: contact name, list name and size, sender mailboxes, start date, end date and her name. T"
+  },
+  {
    "ts": "2026-10-11T17:45:55+0530",
    "task_id": "T-396",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "hold",
    "result": "ok",
    "summary": "T-146 stays on hold: Bhaskar and Aquila still haven't accepted their GitHub invites, so I left their invites alone, didn't re-send anything, and H034 stays open.\n\nWhat I checked:\n- **Collaborators:** The repo's collaborator list still shows only adisuja (admin), nelbinxav (Nelbin, write) and growthc"
-  },
-  {
-   "ts": "2026-10-11T13:22:34+0530",
-   "task_id": "T-242",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "ok",
-   "summary": "Task T-242 moved to review; note F-15a68b48 acknowledged."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-364",
+ "task_id": "T-154",
  "entries": [
-  "R-6a950738"
+  "F-388c35de"
  ],
- "started": "2026-10-11T17:52:07+0530",
- "message": "Acting on 1 note(s) for T-364: Input from Adi for T-363: Amal: send the client the prepared email in workshop-plan/coord/T-363-client-ok-",
+ "started": "2026-10-11T18:01:35+0530",
+ "message": "Acting on 1 note(s) for T-154: 24-hour agentic dev cycle: pitch to engineering, 3-5 request pilot, review steps, metrics",
  "slices": {
   "T-072": 1,
   "T-245": 1,
