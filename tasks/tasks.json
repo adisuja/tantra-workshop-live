@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T06:47:13+0530",
-  "version": 1759,
-  "last_id": 396,
+  "updated": "2026-10-11T06:50:05+0530",
+  "version": 1761,
+  "last_id": 397,
   "team": [
    {
     "name": "Adi",
@@ -7799,20 +7799,24 @@
    ],
    "evidence": [
     {
-     "label": "Pitch, pilot table, review steps (updated 2026-10-11)",
+     "label": "Pitch, pilot table, review steps",
      "url": "workshop-plan/pipeline/agentic-dev-cycle.md"
     },
     {
-     "label": "Patch: red suites green",
+     "label": "Red suite patch",
      "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fix_red-suites--f0b901e.patch"
     },
     {
-     "label": "Patch: pre-merge and preview scripts",
+     "label": "Pre-merge and preview patch",
      "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/ci_premerge-and-preview--f0b901e.patch"
     },
     {
-     "label": "Pipeline dashboard (ship rate, PR to live, regression, overdue)",
-     "url": "http://localhost:8899/pipeline?v=1011a"
+     "label": "Intake time test",
+     "url": "workshop-plan/bugs/test_ingest.py"
+    },
+    {
+     "label": "Ship rate dashboard",
+     "url": "http://localhost:8899/pipeline?v=1011b"
     }
    ],
    "blockers": [],
@@ -7847,6 +7851,11 @@
      "ts": "2026-10-11T06:47:13+0530",
      "who": "claude",
      "note": "Built the remaining basics as patch files for Bharath to apply, not as PRs or PR comments, because the owner's 2026-10-11 rule bars agents from writing to Usetantra repos (PRs 160 to 164 are closed, so no preview URL was posted there): one patch turns the red suites green (full run 106 suites passed, 0 failed, build passes), one adds scripts/premerge.sh and a per-branch scripts/preview.sh (compose config checked, not started because Docker was down). New bug intake is now stamped to the second, day-only requests are left out of the 24h ship rate, and the dashboard shows not merged yet with 5 PRs overdue until a fix is merged. Open http://localhost:8899/pipeline?v=1011a and workshop-plan/pipeline/agentic-dev-cycle.md; Bharath still has to apply the patches and agree the review steps."
+    },
+    {
+     "ts": "2026-10-11T06:50:05+0530",
+     "who": "claude",
+     "note": "Verify pass: both backend patches apply cleanly to a fresh copy of development f0b901e, the dashboard shows no data yet on the three metrics with 5 fix PRs past a review limit, and a new test (bugs/test_ingest.py) proves new requests are stamped to the second. I fixed one bug in the preview script (it polled a health URL the backend does not serve) and one stale line in the pitch. Still with Bharath: apply and merge the patches, agree the review limits; the preview was never started (Docker is down here) and no URL was posted on the closed PRs 160 to 164. Open http://localhost:8899/pipeline?v=1011b and workshop-plan/pipeline/agentic-dev-cycle.md."
     }
    ],
    "order": 1540,
@@ -15943,6 +15952,29 @@
     }
    ],
    "order": 3960
+  },
+  {
+   "id": "T-397",
+   "status": "queue",
+   "owner": "Nelbin",
+   "assignee": "Nelbin",
+   "reviewers": [
+    "Nelbin",
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "area": "Ops",
+   "order": 3970,
+   "title": "T-397: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   }
  ]
 }
