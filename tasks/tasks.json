@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T08:17:43+0530",
-  "version": 1805,
+  "updated": "2026-10-11T08:19:08+0530",
+  "version": 1806,
   "last_id": 397,
   "team": [
    {
@@ -13306,6 +13306,11 @@
      "ts": "2026-10-11T08:17:43+0530",
      "who": "claude",
      "note": "Checked H006 and H013: commit 1d66ef0 is on origin/main (now ab1f000), test_referrals.py passes 27/27, probe-referrals.mjs --live passes 13/13, and the Replies column and team total row are still there. The live page already reads first_cohort (2026-10-07 in the live stats), has no Date.UTC(2026,9,7) and shows the new monthly payout line, so nothing needed republishing. On hold until T-006: H008 stays open until the post-launch host switch, links.site left alone. Review: https://adisuja.github.io/tantra-workshop-live/referrals.html?v=1011"
+    },
+    {
+     "ts": "2026-10-11T08:19:08+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11: re-ran everything. 1d66ef0 is on origin/main, test_referrals.py passes 27/27, probe-referrals.mjs --live passes 13/13, and the live referrals.html is identical to main (reads first_cohort = 2026-10-07, new payout line, Replies column and team total), so nothing needed republishing. Still on hold behind T-006 for H008. Review: https://adisuja.github.io/tantra-workshop-live/referrals.html?v=1011b"
     }
    ],
    "order": 2750
