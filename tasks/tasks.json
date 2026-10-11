@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T06:40:08+0530",
-  "version": 1756,
+  "updated": "2026-10-11T06:42:47+0530",
+  "version": 1757,
   "last_id": 396,
   "team": [
    {
@@ -15566,20 +15566,24 @@
      "url": "workshop-plan/coord/T-363-client-ok-request.md"
     },
     {
-     "label": "Paste the client reply here",
+     "label": "Where the reply is pasted",
      "url": "workshop-plan/coord/T-363-client-reply.md"
     },
     {
-     "label": "Draft variants A and B",
+     "label": "Draft copy A and B",
      "url": "workshop-plan/coord/T-155-client-variants-draft.md"
     },
     {
-     "label": "Read-only audit sheet (not run)",
+     "label": "Audit sheet (not run)",
      "url": "workshop-plan/coord/T-155-client-audit.md"
+    },
+    {
+     "label": "Check that closes the task",
+     "url": "workshop-plan/coord/check_client_ok.py"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Amal: fill the 6 blanks in workshop-plan/coord/T-363-client-ok-request.md, send it to the client, then paste their written yes into workshop-plan/coord/T-363-client-reply.md (or into a T-363 note). Tracked as T-364.",
+   "needs_from_owner": "Amal: fill the marked blanks in workshop-plan/coord/T-363-client-ok-request.md, send it to the client, then paste their written yes into workshop-plan/coord/T-363-client-reply.md and add a T-363 note saying reply pasted (tracked as T-364).",
    "log": [
     {
      "ts": "2026-10-09T20:00:30+0530",
@@ -15590,6 +15594,11 @@
      "ts": "2026-10-11T06:35:45+0530",
      "who": "claude",
      "note": "Amal: the email to the client is ready in workshop-plan/coord/T-363-client-ok-request.md (test, stop rules and the 'Yes, approved' line are written; 6 marked blanks for you: contact name, list name and size, sender mailboxes, start and end dates, your name). Paste the reply word for word into workshop-plan/coord/T-363-client-reply.md. Also drafted variants A and B plus the day-3 follow-up from the client's own pack (workshop-plan/coord/T-155-client-variants-draft.md) and the audit sheet (workshop-plan/coord/T-155-client-audit.md). The audit itself is not run: Claude has no read access to the client workspace, so the sheet is ready for whoever is signed in. Checked: no long dashes, client not named in any of the files, nothing sent. Step 1 of the T-155 client spec stays unticked until the reply is saved."
+    },
+    {
+     "ts": "2026-10-11T06:42:47+0530",
+     "who": "claude",
+     "note": "Verify pass: the email for Amal is workshop-plan/coord/T-363-client-ok-request.md and the reply goes in workshop-plan/coord/T-363-client-reply.md. I fixed the draft A and B copy so every claim is quoted from the client's own pack, added the win rule and a clear end date to the email, and added check_client_ok.py (self test 5 of 5 pass, today it fails because no reply is saved). The client account audit was not run because there is no read access to their workspace on this machine."
     }
    ],
    "order": 3630
