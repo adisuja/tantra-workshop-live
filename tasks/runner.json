@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T04:05:36+0530",
+   "task_id": "T-263",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-263 is in review with Adi and Bharath, and every done-when item checked out again in this run. I found nothing to fix and changed no code.\n\n- **Event ending after midnight gets the next date:** done. `probe-t263` passed 21 of 21 today: 23:30 plus 60 minutes ends at 00:30 on the next date, and an e"
+  },
+  {
    "ts": "2026-10-12T04:03:20+0530",
    "task_id": "T-061",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-273 checks out and stays in review for Adi and Bharath. Nothing needed fixing, so I didn't republish or push anything. I committed this run's task note locally as 238e5efa.\n\n| Item | State | What I checked in this run |\n|---|---|---|\n| Live mirror shows the f341d58f hub | Done | Fetched the live p"
-  },
-  {
-   "ts": "2026-10-12T01:59:19+0530",
-   "task_id": "T-282",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-282 needed no changes and stays in review, waiting on Adi to approve or redo each of the 18 videos.\n\n- **Review link:** points at ?v=2efde3d. That matches tantra-walkthroughs commit 2efde3d. The review server on :8883 was down, so I restarted it, and the index and all 18 video pages now open.\n- **"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-263: Centre: Tantra calendar workspace verification and invite campaign job fixes",
- "task_id": "T-263",
+ "message": "Acting on 1 note(s) for T-237: Give the Tantra webinar a public registration page",
+ "task_id": "T-237",
  "entries": [
-  "F-8bc7b9da"
+  "F-16143391"
  ],
  "mode": "feedback",
- "started": "2026-10-12T04:04:12+0530",
+ "started": "2026-10-12T04:06:10+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,

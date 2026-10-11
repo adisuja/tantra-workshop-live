@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T04:05:08+0530",
-  "version": 2310,
+  "updated": "2026-10-12T04:06:56+0530",
+  "version": 2312,
   "last_id": 418,
   "team": [
    {
@@ -13521,6 +13521,11 @@
      "ts": "2026-10-12T04:04:52+0530",
      "who": "claude",
      "note": "Ready for sign-off. Today probe-t263 passed 21 of 21: an event at 23:30 plus 60 minutes ends at 00:30 the next date, the gate returns 422 until every sender is CONNECTED, and variant B reaches Tantra as its own campaign. All 8 ids are marked in AUDIT.md and live Worker 25396394 serves the build. As the Orchestrator decided, the read-only FintechCircle sender check moved to new input task T-418 (T-337 is done and holds the GrowthClub key, not FintechCircle's); once that key is saved, the result gets logged here."
+    },
+    {
+     "ts": "2026-10-12T04:05:24+0530",
+     "who": "claude",
+     "note": "Verify pass: probe-t263 passes 21 of 21 today (23:30 plus 60 minutes ends 00:30 the next date, variant B reaches Tantra as its own campaign with its own half of the list), the start-calendar-ws gate in cloud/src/agentic.ts:808-816 answers 422 until every sender shows CONNECTED, cloud tsc is clean, and AUDIT.md marks all 8 ids (7 fixed at 4dea9f2, N009 a manual step since Tantra has no reminders field). The live sender check lives on input task T-418, which waits on the FintechCircle Tantra key."
     }
    ],
    "order": 2630
