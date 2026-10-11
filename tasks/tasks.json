@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T06:32:35+0530",
-  "version": 1751,
+  "updated": "2026-10-11T06:34:52+0530",
+  "version": 1753,
   "last_id": 396,
   "team": [
    {
@@ -7714,6 +7714,10 @@
     {
      "label": "Changelog",
      "url": "workshop-plan/tasks/features/changelog/CHANGELOG.md"
+    },
+    {
+     "label": "Tests",
+     "url": "workshop-plan/tasks/features/test_features.py"
     }
    ],
    "blockers": [],
@@ -7758,6 +7762,16 @@
      "ts": "2026-10-11T06:27:47+0530",
      "who": "claude",
      "note": "Close-out check (2026-10-11): the build is commit b935a1d (plus 7a96aef for the retention signal), both confirmed in origin/main; the feature tests pass (6 of 6, one was added after the first run). Nothing was rebuilt. Follow-up T-396 (owner Bharath) covers confirming the seed.py inputs for FR-ad7abb and building it as a reviewed patch. Amal and Bharath: open docs/feature-rubric.md and workshop-plan/tasks/features/changelog/CHANGELOG.md to sign off."
+    },
+    {
+     "ts": "2026-10-11T06:33:44+0530",
+     "who": "claude",
+     "note": "Verify pass found and fixed five gaps: the weekly decision had no schedule (it now runs inside the Monday 09:00 pipeline job, followed by a changelog rebuild), shipped requests were decided again every week, releases could only be recorded by hand-editing JSON (new command: changelog.py release <version> <FR-id>), rebuilt draft notes repeated themselves, and intake requests with no inputs parked silently (now flagged in the decision and the log line). Verified with 8 passing unit tests (2 new) and a temp-folder run of the snapshot job that wrote a decision file, a log line and the changelog; commits 0372b91 and the one after it, not pushed. Still open for reviewers: Bharath confirms the seed inputs (T-396), requester notes are drafts a person sends, and the retention signal stays inactive until the T-156 report writes signals.json. Open docs/feature-rubric.md."
+    },
+    {
+     "ts": "2026-10-11T06:34:52+0530",
+     "who": "claude",
+     "note": "Verify pass commits 0372b91 and 0ed42a3 are pushed to main of the workshop repo (nothing left unpushed at the time of the push); board sync requested so the mirror shows review."
     }
    ],
    "order": 1530,
