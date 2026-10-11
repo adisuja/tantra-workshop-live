@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T08:19:49+0530",
+   "task_id": "T-275",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "I re-checked everything on T-275 and it passes, so it stays blocked on T-006: H006 and H013 are fixed and live, and H008 waits for a production domain.\n\n1. **1d66ef0 on origin/main:** Done. It's an ancestor of origin/main, and none of the referral files have unpushed commits.\n2. **H006 (no fixed coh"
+  },
+  {
    "ts": "2026-10-11T08:16:30+0530",
    "task_id": "T-272",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-025 is in review with one ask of Adi; nothing needed republishing, and note F-250d5e5b is acked.\n\nCOMPLETION CHECK\n1. **Set status to review:** done. The board reads `review` after the `pass.py set`, with Adi as reviewer.\n2. **Check `b5fb5a5` is on origin main:** done. After a fresh fetch, `git me"
-  },
-  {
-   "ts": "2026-10-11T06:24:49+0530",
-   "task_id": "T-341",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-341 stays blocked on Nelbin deleting the fork; the verify pass found nothing to fix.\n\nCOMPLETION CHECK\n- **Set owner and assignee to nelbinxav:** done. `tasks.json` read this run shows owner Nelbin and assignee Nelbin, with reviewers Bharath and Adi.\n- **Send the ask to Nelbin, not Adi:** done on "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-275",
+ "task_id": "T-056",
  "entries": [
-  "F-0abdac8c"
+  "F-a6c31c14"
  ],
- "started": "2026-10-11T08:17:08+0530",
- "message": "Acting on 1 note(s) for T-275: Referral dashboard: production link, cohort date source, payout wording",
+ "started": "2026-10-11T08:21:12+0530",
+ "message": "Acting on 1 note(s) for T-056: Cold calendar lists for the workshop, imported into Tantra",
  "slices": {
   "T-072": 1,
   "T-245": 1,
