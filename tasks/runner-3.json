@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T07:51:22+0530",
+   "task_id": "T-263",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-263 is set to doing, not review: everything is built, tested and pushed, but the centre worker is not deployed yet because the UI build failed.\n\n| Item | State | E"
+  },
+  {
    "ts": "2026-10-11T07:45:00+0530",
    "task_id": "T-262",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "turns",
    "summary": "T-052 stays blocked on the Tantra API key: the T-050 ripple needed no change, because the `pre.md` copy is already loaded into the nurture campaigns.\n\nCOMPLETION CHECK\n- **Load `pre.md` messages into the Tantra campaigns:** done. Rebuilding with `workshop-plan/sequences/build_nurture.py` gave 1 pre,"
-  },
-  {
-   "ts": "2026-10-11T05:30:52+0530",
-   "task_id": "T-337",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-337 stays blocked on Adi creating and pasting the Tantra API key; the request is reworded as the note asked, with one deviation on the section name, and committed as `5fe72ec` (not pushed).\n\nCOMPLETION CHECK\n- **Say the key unblocks T-228's live test and T-234:** done. The title, spec and `needs_f"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-263",
+ "task_id": "T-259",
  "entries": [
-  "F-e61ea2da"
+  "F-12a2ae88"
  ],
- "started": "2026-10-11T07:46:00+0530",
- "message": "Acting on 1 note(s) for T-263: Centre: Tantra calendar workspace verification and invite campaign job fixes",
+ "started": "2026-10-11T07:51:41+0530",
+ "message": "Acting on 1 note(s) for T-259: S2 to S5 guides: make the steps match what the centre already automates",
  "slices": {
   "T-135": 1,
   "T-148": 1,
@@ -114,6 +114,7 @@
   "T-240": 1,
   "T-242": 1,
   "T-134": 1,
-  "T-052": 1
+  "T-052": 1,
+  "T-263": 1
  }
 }
