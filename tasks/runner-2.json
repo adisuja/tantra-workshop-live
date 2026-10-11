@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T12:47:42+0530",
+   "task_id": "T-351",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I moved T-351 to review because only Adi can fix this at the Mac. I re-ran the preflight just now and it still printed NOT READY.\n\n- **Preflight re-run:** done. Screen Recording is granted and the Claude window was found (id 6880). Accessibility is still off, and the Mac was locked.\n- **\"Prints READ"
+  },
+  {
+   "ts": "2026-10-11T12:45:37+0530",
+   "task_id": "T-225",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-225 stays blocked on Zoom Support: when I wrote the two fields to the 14 Oct meeting again today, Zoom accepted the request and ignored both.\n\n| Item | State | What I saw this run |\n|---|---|---|\n| Write test on 88135386601 | Done, not granted | I ran the daily job's write test by hand. My command"
+  },
+  {
    "ts": "2026-10-11T12:40:08+0530",
    "task_id": "T-385",
    "mode": "feedback",
@@ -79,32 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-129 is back in review for Amal and Bharath. All six items were already done, so I changed nothing and only re-checked each one in this run.\n\n| Item | State | What I checked |\n|---|---|---|\n| 1. `pass.py validate` fails on any em or en dash, with a test | Done | `test_pass_dashes.py` passes; valida"
-  },
-  {
-   "ts": "2026-10-11T11:26:56+0530",
-   "task_id": "T-135",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "error",
-   "summary": "[process exit 143; stderr: ''] The 2026-10-06 03:30 hold was lifted by the 03:41 publish (af5810d) after the fix. Waiting on probe-guides."
-  },
-  {
-   "ts": "2026-10-11T11:14:39+0530",
-   "task_id": "T-074",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-074 stays blocked: everything built checks out, and I added the missing weekly buyer job, but neither newsletter send can go out until our account has an email sender key.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Recurring \"Tantra Pro Weekly Coaching\" meeting (Tuesdays 11:00 ET, "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-225",
+ "task_id": "T-132",
  "entries": [
-  "F-b19e6293"
+  "F-b25a034c"
  ],
- "started": "2026-10-11T12:41:34+0530",
- "message": "Acting on 1 note(s) for T-225: Zoom Support ticket: host mute control and participant video disable (waiting on Zoom's reply)",
+ "started": "2026-10-11T12:48:13+0530",
+ "message": "Acting on 1 note(s) for T-132: Stage 5 to 6 guides: real Claude Code screenshots (5 steps)",
  "slices": {
   "T-072": 1,
   "T-245": 1,

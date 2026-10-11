@@ -1,1 +1,1 @@
-{"task":"T-351","runs":[],"decisions":[]}
+{"task":"T-351","runs":[{"start":"2026-10-11T12:47:14+0530","end":"2026-10-11T12:47:42+0530","mode":"feedback","model":"opus","state":"ok","secs":28,"status":"review","session":"4810bf68-2779-4e05-b0b6-9eaed5cdb96a","notes":["R-cfdfa6f1"],"has_transcript":true,"summary":"I moved T-351 to review because only Adi can fix this at the Mac. I re-ran the preflight just now and it still printed NOT READY."}],"decisions":[]}

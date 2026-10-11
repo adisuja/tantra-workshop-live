@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T12:44:59+0530",
-  "version": 1906,
+  "updated": "2026-10-11T12:47:36+0530",
+  "version": 1907,
   "last_id": 401,
   "team": [
    {
@@ -16221,15 +16221,20 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "recheck",
+   "status": "review",
    "why": "T-132 needs five real Claude desktop app screenshots. The app is on screen, but macOS refuses the background agent both screen capture and clicks or keys, and only the person at the Mac can grant that.",
    "spec": "Checked 2026-10-09 from the unattended runner: screencapture -l on the Claude window returns 'could not create image from window', and System Events and Terminal Apple Events time out on an unanswered permission prompt. Probe: python3 app/scripts/shots/claude-app-shots.py preflight (prints READY when both grants are in place). Once READY, T-132 runs without anything else from Adi.",
    "done_when": [
     "python3 app/scripts/shots/claude-app-shots.py preflight prints READY"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Preflight probe",
+     "url": "app/scripts/shots/claude-app-shots.py"
+    }
+   ],
    "blockers": [],
-   "needs_from_owner": "",
+   "needs_from_owner": "At the Mac: open System Settings > Privacy & Security > Accessibility, click +, add /Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12 (and /Users/adithyamurali/.local/bin/claude) and switch them on. Then leave the Mac unlocked during the next T-132 run. Done when python3 app/scripts/shots/claude-app-shots.py preflight prints READY.",
    "log": [
     {
      "ts": "2026-10-09T09:30:56+0530",
@@ -16245,6 +16250,11 @@
      "ts": "2026-10-10T20:55:11+0530",
      "who": "claude",
      "note": "Flagged for a recheck by T-132: Marked done, but T-132 found Accessibility still not granted for the runner and the Mac locked; T-132 waits on it."
+    },
+    {
+     "ts": "2026-10-11T12:47:36+0530",
+     "who": "claude",
+     "note": "Reran the preflight on 2026-10-11: Screen Recording is granted and the Claude window is found (id 6880), but Accessibility is still NO and the Mac was locked, so it prints NOT READY. T-132 stays waiting until both are fixed at the Mac."
     }
    ],
    "order": 3510
