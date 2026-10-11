@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T11:15:13+0530",
-  "version": 1845,
+  "updated": "2026-10-11T11:18:15+0530",
+  "version": 1847,
   "last_id": 397,
   "team": [
    {
@@ -2968,20 +2968,16 @@
      "url": "workshop-plan/build/T-072-calcom-event-draft.md"
     },
     {
-     "label": "Embed screenshot (demo event)",
-     "url": "/tmp/t072-embed.png"
+     "label": "Cal.com swap patch",
+     "url": "workshop-plan/tantra-product-patches/tantra-frontend-v2/adi-new-ui--5d6eecf642.patch"
     },
     {
      "label": "Mirror challenge board",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/challenge/?v=t072v2"
-    },
-    {
-     "label": "Frontend commit",
-     "url": "https://github.com/Usetantra/tantra-frontend-v2/commit/5d6eecf"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/challenge/?v=t072v3"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Sign in at https://app.cal.com/event-types as adisuja and create the event 'Tantra Enterprise Evaluation Call' (slug tantra-enterprise-evaluation-call) using the fields in workshop-plan/build/T-072-calcom-event-draft.md. /enterprise switches to the embed within 10 minutes.",
+   "needs_from_owner": "Sign up or log in at https://app.cal.com/signup with username adisuja (or tell us the handle you use), then at https://app.cal.com/event-types create 'Tantra Enterprise Evaluation Call', slug tantra-enterprise-evaluation-call, with the fields in workshop-plan/build/T-072-calcom-event-draft.md.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -3027,6 +3023,11 @@
      "ts": "2026-10-11T00:29:06+0530",
      "who": "claude",
      "note": "Adi 2026-10-11: agents never touch Usetantra repos (frontend, backend, new UI, decks, MCP). This task's upstream PRs/commits were closed, deleted or reverted; the work is kept as patches in workshop-plan/tantra-product-patches/ (README indexes them). Any further Tantra product change goes there as a patch or spec, never upstream."
+    },
+    {
+     "ts": "2026-10-11T11:18:15+0530",
+     "who": "claude",
+     "note": "Checked again today: git grep for Chaperone in app/src/components finds nothing, probe-funnel-boards.mjs prints ALL BOARDS FIT, and the live mirror challenge board shows Tantra Enterprise 7 times and Chaperone 0 in a headless browser, so this repo needed no change and no republish. I did not clone or push tantra-frontend-v2: your 2026-10-11 rule (no agent touches Usetantra repos) replaces the Orchestrator's push approval. The Cal.com swap stays as patch adi-new-ui--5d6eecf642 in workshop-plan/tantra-product-patches/ for Bharath to apply. cal.com/adisuja returns 404 (a real handle like cal.com/rick returns 200), so the Cal.com account or username does not exist yet."
     }
    ],
    "order": 440,
@@ -11294,7 +11295,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "doing",
+   "status": "blocked",
    "why": "Integrator sweep 2026-10-07 (Integrator notes 2026-10-07)",
    "spec": "Add a guarded admin action 'Forget this meeting' on the Zoom panel (cloud/admin-ui/admin.js) backed by an admin route in cloud/src/index.ts (Zoom block near line 620) that, for a meeting already deleted in Zoom (check with a GET that returns 3001) and confirmed by typing its id, deletes its rows from zoom_meetings, zoom_events, zoom_attendance, zoom_recordings, zoom_chat, zoom_polls and zoom_engagement and its R2 transcript, and logs it in centre_events. Run it on 89781893618 in production. The Tantra Tracker drops it on the next tracker_sync run (workshop-plan/ops/tracker_sync.py). Never edit D1 by hand.",
    "done_when": [
@@ -11313,7 +11314,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "",
+   "needs_from_owner": "Delete the test meeting in Zoom: sign in at https://zoom.us/meeting, open Upcoming, choose 'Tantra Centre Test Session (safe to delete)' (ID 897 8189 3618) and click Delete. Do not also empty Recently Deleted. Then reply 'deleted' on this task.",
    "log": [
     {
      "ts": "2026-10-07T23:25:35+0530",
@@ -11339,6 +11340,11 @@
      "ts": "2026-10-10T15:39:24+0530",
      "who": "claude",
      "note": "Built and deployed: POST /admin/api/zoom/forget (refuses unless the typed id matches and Zoom answers 3001, then one D1 batch delete, R2 transcript delete and a zoom_forget event) plus a Forget this meeting button on the admin Zoom panel; probe-zoom-pro.mjs passed 59 of 59 twice on vendor-sim plus wrangler dev, including refusing a meeting still in Zoom; commit 9431027, Worker version dc802b2c. Left for the next pass: the production forget on 89781893618 (my first call sent the wrong admin auth header and got admin only, so nothing was deleted; use the header deliver.py/tracker_sync.py send), then tracker_sync.py and checking Zoom Sessions and Zoom Attendance, then git push of main."
+    },
+    {
+     "ts": "2026-10-11T11:17:56+0530",
+     "who": "claude",
+     "note": "Ran the production forget on 89781893618 (signed in through /admin/enter the way tracker_sync.py does). The guard refused it: Zoom still has the meeting live (read-only GET /admin/api/zoom/check/89781893618 shows topic 'Tantra Centre Test Session (safe to delete)', 1 registrant), so the 2026-10-07 deletion never went through. Nothing was deleted, and GET /admin/api/zoom still lists it. This also confirms in production that the action refuses a meeting that still exists in Zoom. Commits 9431027 and a0900f9 are already on origin/main, so no push was needed. Once it is deleted in Zoom, the next pass runs the forget and tracker_sync.py."
     }
    ],
    "order": 2450
