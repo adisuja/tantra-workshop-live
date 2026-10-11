@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T06:09:01+0530",
-  "version": 1738,
+  "updated": "2026-10-11T06:11:05+0530",
+  "version": 1740,
   "last_id": 395,
   "team": [
    {
@@ -3527,6 +3527,11 @@
      "ts": "2026-10-11T06:09:01+0530",
      "who": "claude",
      "note": "Closed: no n8n dependency is left. The grep for n8n.growthclub and NEXT_PUBLIC_LEAD_WEBHOOK_URL is empty in app code and in the runbook, the live /pro page and its 12 bundles have no n8n.growthclub.org (no republish needed), and one wiring-probe checkout start from live /pro landed as row 10 of Checkout Starts (lane pro, no payment), which I then deleted and logged in the revert ledger. probe-workshop.mjs passes (47 ok, 0 defects) and probe-pro.mjs passes (38 checks); probe-pro now stubs the tracker so it stops writing 5 junk rows per run. Open https://adisuja.github.io/tantra-workshop-live/site/pro/?v=1791679141"
+    },
+    {
+     "ts": "2026-10-11T06:10:04+0530",
+     "who": "claude",
+     "note": "Pushed: origin/main and local main match at cfa401c. T-030 needs no change: it was already removed from the board as a duplicate (it sits in the archive), and its one leftover item, the n8n form on the old /pro page, is gone."
     }
    ],
    "order": 870,
@@ -7600,7 +7605,7 @@
    ],
    "evidence": [
     {
-     "label": "First weekly bug report",
+     "label": "First weekly bug report (regenerated 2026-10-11)",
      "url": "workshop-plan/bugs/report-2026-10-09.md"
     },
     {
@@ -7608,28 +7613,16 @@
      "url": "docs/bug-pipeline/severity.md"
     },
     {
-     "label": "PR 160",
-     "url": "https://github.com/Usetantra/tantra-backend-v2/pull/160"
+     "label": "Fix and CI patches for Bharath",
+     "url": "workshop-plan/tantra-product-patches/README.md"
     },
     {
-     "label": "PR 161",
-     "url": "https://github.com/Usetantra/tantra-backend-v2/pull/161"
+     "label": "Pipeline",
+     "url": "workshop-plan/bugs/pipeline.py"
     },
     {
-     "label": "PR 162",
-     "url": "https://github.com/Usetantra/tantra-backend-v2/pull/162"
-    },
-    {
-     "label": "PR 163",
-     "url": "https://github.com/Usetantra/tantra-backend-v2/pull/163"
-    },
-    {
-     "label": "PR 164",
-     "url": "https://github.com/Usetantra/tantra-backend-v2/pull/164"
-    },
-    {
-     "label": "CI PR 165",
-     "url": "https://github.com/Usetantra/tantra-backend-v2/pull/165"
+     "label": "Metrics for T-158",
+     "url": "workshop-plan/bugs/metrics.json"
     }
    ],
    "blockers": [],
@@ -7664,6 +7657,11 @@
      "ts": "2026-10-11T00:29:06+0530",
      "who": "claude",
      "note": "Adi 2026-10-11: agents never touch Usetantra repos (frontend, backend, new UI, decks, MCP). This task's upstream PRs/commits were closed, deleted or reverted; the work is kept as patches in workshop-plan/tantra-product-patches/ (README indexes them). Any further Tantra product change goes there as a patch or spec, never upstream."
+    },
+    {
+     "ts": "2026-10-11T06:11:05+0530",
+     "who": "claude",
+     "note": "Report fixed and regenerated: time to fix now runs from triage to merge, so the five in-review bugs show as open with 'none yet' (not 0.0 h), and it states they came from a code audit (GitHub issues: 0 on both repos). I did not re-push PRs 160 to 165: they are closed and your 2026-10-11 rule keeps agents out of Usetantra repos, so the five fixes and the CI rule stay as patches; today I applied each patch to a scratch copy of development and all five tests fail without the fix and pass with it (29 of 29), and the CI rule fails a src-only change. Left for Bharath: agree the severity levels, apply the patches with git am, merge, and make regression-test-required a required check. Open workshop-plan/bugs/report-2026-10-09.md."
     }
    ],
    "order": 1520,
