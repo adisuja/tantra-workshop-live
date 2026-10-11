@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T02:55:25+0530",
-  "version": 2264,
+  "updated": "2026-10-12T02:56:20+0530",
+  "version": 2265,
   "last_id": 415,
   "team": [
    {
@@ -14548,6 +14548,11 @@
      "ts": "2026-10-11T22:56:07+0530",
      "who": "claude",
      "note": "Superseded: the 2026-10-10T20:47 ripple to T-093 re-asked a settled choice. 11 questions is final (O-a511256b) and is what the live mirror shows on /workshop/success, checked today at 1440 and 390. Nothing else on T-278 changes."
+    },
+    {
+     "ts": "2026-10-12T02:56:20+0530",
+     "who": "claude",
+     "note": "Already applied, so no agent run was needed: 2026-10-11T22:56 log explicitly marks ripple superseded, records 11 questions final (O-a511256b) (checked by Haiku against the log and commits)."
     }
    ],
    "order": 2780
