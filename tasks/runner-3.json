@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T23:01:10+0530",
+   "task_id": "T-093",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-093 is back in review for Bhaskar and Bharath. On this verify pass every Orchestrator item still holds, and the only change I made was refreshing the review links to `?v=b96e2610`, the current mirror commit.\n\n| Item | State and evidence from this run |\n|---|---|\n| 1. Mark the 10-10 20:47 ripple as"
+  },
+  {
    "ts": "2026-10-11T22:52:36+0530",
    "task_id": "T-240",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "I checked everything again from scratch and found nothing to fix. T-258 is back in review, I changed no files, and the live centre is version b6423609: https://revops-centre.growthcluborg.workers.dev/onboarding/?v=b6423609\n\n| Item | State | What I saw this run |\n|---|---|---|\n| Every listed step has"
-  },
-  {
-   "ts": "2026-10-11T18:37:30+0530",
-   "task_id": "T-263",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-263 is in review with Adi and Bharath, but one check is still undone: I could not run the live Tantra sender check because there is no FintechCircle Tantra key on this machine. Everything else checked out in this verify pass, and I found nothing to fix, so I made no code changes or commits.\n\n| Ite"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-093",
+ "task_id": "T-191",
  "entries": [
-  "F-3e09a952"
+  "F-5535d4a7"
  ],
- "started": "2026-10-11T22:53:04+0530",
- "message": "Acting on 1 note(s) for T-093: Free-lane funnel pages",
+ "started": "2026-10-11T23:02:15+0530",
+ "message": "Acting on 1 note(s) for T-191: Decide the calls still open from Nelbin's content pass",
  "slices": {
   "T-135": 1,
   "T-148": 1,

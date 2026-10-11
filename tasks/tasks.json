@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T23:00:52+0530",
-  "version": 2099,
+  "updated": "2026-10-11T23:01:59+0530",
+  "version": 2101,
   "last_id": 410,
   "team": [
    {
@@ -4124,6 +4124,11 @@
      "ts": "2026-10-11T23:00:52+0530",
      "who": "claude",
      "note": "Verify pass: every Orchestrator item holds. funnel.ts, the two-funnel memory and AUDIT M033 all say 11 questions, both T-093 and T-278 record that 11 is final, and the live mirror reads Answer these 11 questions. I re-ran the click test (add-on, bonus tile, No thanks) on the live mirror at 1440 and 390, and all of it passes. probe-workshop is ok on 44 page checks at 5 widths, and its only failures are the 3 /api checks, which GitHub Pages cannot serve. Review links now use the current mirror commit (?v=b96e2610)."
+    },
+    {
+     "ts": "2026-10-11T23:01:19+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-278, T-101."
     }
    ],
    "order": 910,
@@ -17449,6 +17454,11 @@
      "ts": "2026-10-11T12:39:53+0530",
      "who": "claude",
      "note": "Verify pass: re-ran node app/scripts/probe-library.mjs today on the live centre and the mirror, PASS on both with 31 checks and 0 failures, including 'poll accepts a vote' (interaction checks run at 1440; layout checks at all four widths). The fix in 57df3a90 opens the #live-polls view first and still fails on 'no poll found'. It is pushed (main matches origin/main) and logged in coord/LOG.md line 93."
+    },
+    {
+     "ts": "2026-10-11T23:01:59+0530",
+     "who": "claude",
+     "note": "Already applied, so no agent run was needed: 2026-10-11T12:39 log (after notes): probe PASS on both live centre and mirror, fix pushed to main, logged coord/LOG.md (checked by Haiku against the log and commits)."
     }
    ],
    "order": 3850
