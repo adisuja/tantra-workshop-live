@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T03:20:52+0530",
+   "task_id": "T-034",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-034 is blocked again: the production dry run works, but the real email and WhatsApp sends still need T-408 (team@growthclub.org connected as a Tantra mailbox) and T-400 (the WhatsApp test number).\n\n| Item | State and what I checked this run |\n|---|---|\n| 1. Dry run on the production centre with th"
+  },
+  {
    "ts": "2026-10-12T03:16:02+0530",
    "task_id": "T-234",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-158 is back in review for Ben and Bharath. The dashboard checks out, the screenshot is retaken, and the close-out is logged, committed and pushed (93ad5697). Both notes are acked.\n\n- **Figure check:** done. `test_dash.py` passes, and /pipeline serves 6 bands with 23 of 23 cards, each tagged live o"
-  },
-  {
-   "ts": "2026-10-12T00:17:31+0530",
-   "task_id": "T-151",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I checked everything again myself: three of the four done-when items pass, and the in-app guide link is still waiting on Bharath to apply the patch. T-151 stays in review with Amal and Bharath as reviewers.\n\n**Completion check (all evidence from this run):**\n\n| Item | State | Evidence |\n|---|---|---"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-034",
+ "task_id": "T-299",
  "entries": [
-  "F-90db32ec"
+  "F-10d6ae30"
  ],
- "started": "2026-10-12T03:16:38+0530",
- "message": "Acting on 1 note(s) for T-034: Full dry run of the Day-1 pipeline",
+ "started": "2026-10-12T03:21:11+0530",
+ "message": "Acting on 1 note(s) for T-299: Centre: cold email inboxes come from the inbox vendor only, several calendar senders, and a sign-up inbox card",
  "slices": {
   "T-072": 1,
   "T-245": 1,
