@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T00:18:30+0530",
+   "task_id": "T-158",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-158 is back in review for Ben and Bharath. The dashboard checks out, the screenshot is retaken, and the close-out is logged, committed and pushed (93ad5697). Both notes are acked.\n\n- **Figure check:** done. `test_dash.py` passes, and /pipeline serves 6 bands with 23 of 23 cards, each tagged live o"
+  },
+  {
+   "ts": "2026-10-12T00:17:31+0530",
+   "task_id": "T-151",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I checked everything again myself: three of the four done-when items pass, and the in-app guide link is still waiting on Bharath to apply the patch. T-151 stays in review with Amal and Bharath as reviewers.\n\n**Completion check (all evidence from this run):**\n\n| Item | State | Evidence |\n|---|---|---"
+  },
+  {
    "ts": "2026-10-12T00:15:32+0530",
    "task_id": "T-396",
    "mode": "feedback",
@@ -79,32 +95,17 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-225 stays blocked on Zoom Support. Zoom still hasn't switched on either field, and the room on 88135386601 is back to normal.\n\n- **Write test logged:** done. The 12:42 log line reads \"Write test 2026-10-11 on 88135386601: not granted\". I did not PATCH again, since the decision said once.\n- **Room "
-  },
-  {
-   "ts": "2026-10-11T23:04:18+0530",
-   "task_id": "T-300",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. I've merged origin/main into the branch and run the chain on both the branch and a clean origin/main. All but one failure also happens on main. I fixed that one (a s"
-  },
-  {
-   "ts": "2026-10-11T22:36:03+0530",
-   "task_id": "T-148",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-148 is in review. The 404 is still live: the deck's cover background requests `tantra-logo.png` at the site root, and Bharath needs to apply two patches to fix it.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| 1. Check whether the 404 came back | Done: it is back | The root `tantra-lo"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-151",
+ "task_id": "T-213",
  "entries": [
-  "F-85db8ee0"
+  "F-ffd9e05d",
+  "R-b28d8998"
  ],
- "started": "2026-10-12T00:15:33+0530",
- "message": "Acting on 1 note(s) for T-151: Feedback intake: one queue for every Tantra bug report and feature request",
+ "started": "2026-10-12T00:18:31+0530",
+ "message": "Acting on 2 note(s) for T-213: Set up the Endy Inboxes white-label partnership",
  "slices": {
   "T-072": 1,
   "T-245": 1,

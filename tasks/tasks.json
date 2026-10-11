@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T00:10:19+0530",
-  "version": 2159,
+  "updated": "2026-10-12T00:18:15+0530",
+  "version": 2164,
   "last_id": 413,
   "team": [
    {
@@ -8789,6 +8789,11 @@
      "ts": "2026-10-12T00:10:19+0530",
      "who": "claude",
      "note": "The key is now reachable without leaving Admin: I deployed an admin-only Tantra proxy on the centre (401 without sign-in, 403 off its allowlist), and the FintechCircle script uses it; the live preflight passed 4 of 4, read only. I did not run the test send: the workspace has exactly one connected mailbox, and it is the cold mailbox the Orchestrator banned as a sender, with nothing on file showing it is FintechCircle's, so the script now refuses --go from it and nothing was created in Tantra. The send runs as soon as a FintechCircle mailbox or team@growthclub.org (T-123) shows connected; funnel reminders stay on T-123/T-234, the client test on T-363, no new ask."
+    },
+    {
+     "ts": "2026-10-12T00:18:04+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-12, nothing to fix: the centre's admin-only Tantra proxy answers 401 without sign-in and 403 outside its allowlist, the FintechCircle preflight through it passed 4 of 4 live (read only), and --go stops at the cold-mailbox guard with nothing created (no run file, so no revert or ledger row is owed). The test send is still held: the only connected mailbox in the GrowthClub workspace is the cold one the Orchestrator banned at 16:34 and 23:45 on 11 Oct; it runs with the same command and SENDER set once team@growthclub.org (the T-123 ask) or a FintechCircle mailbox is connected. Mirror shows T-155 in review with no mailbox named: https://adisuja.github.io/tantra-workshop-live/tasks.html?v=20261012b"
     }
    ],
    "order": 1550,
@@ -8960,23 +8965,15 @@
    "evidence": [
     {
      "label": "Pipeline dashboard",
-     "url": "http://localhost:8899/pipeline?v=6"
+     "url": "http://localhost:8899/pipeline?v=7"
     },
     {
      "label": "1440 screenshot",
      "url": "workshop-plan/pipeline/snapshots/dashboard-1440.png"
     },
     {
-     "label": "Weekly snapshot",
-     "url": "workshop-plan/pipeline/snapshots/2026-10-09.json"
-    },
-    {
      "label": "Figure check",
      "url": "workshop-plan/pipeline/test_dash.py"
-    },
-    {
-     "label": "Experiment status",
-     "url": "workshop-plan/dogfooding/status.json"
     }
    ],
    "blockers": [],
@@ -9046,6 +9043,11 @@
      "ts": "2026-10-11T18:01:11+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-154."
+    },
+    {
+     "ts": "2026-10-12T00:18:15+0530",
+     "who": "claude",
+     "note": "Close-out: test_dash.py passes and /pipeline serves 6 bands with 23 of 23 cards tagged live or derived, each with a caption and Counts note, no client named. Dogfooding and Customer tier mix read real files; 'no data yet' remains on 24h ship rate, PR to live and Regression rate (no fix PR merged or live), Qualifier answers (no sheet access) and Customers by tier (no customer export). T-154 ripple: its local pilot timings already show in the Ship rate band labelled 'local preview, not production', KPI captions intact, so nothing had to change. Weekly job com.tantra.pipeline-weekly is loaded for Monday 09:00; screenshot retaken; pushed as 93ad5697. Open http://localhost:8899/pipeline?v=7"
     }
    ],
    "order": 1580,
