@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T02:59:24+0530",
+   "task_id": "T-407",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I verified the T-225 change in T-407's blocker list and fixed one stale claim. T-407 stays in review.\n\n| Item | State |\n|---|---|\n| T-225 line in the spec | **Done, corrected.** The list still said the 09:10 log fix was \"pending\". The code shows it is already in: commit `5c1badf4` adds the write tes"
+  },
+  {
+   "ts": "2026-10-12T02:58:06+0530",
+   "task_id": "T-197",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-197 is back in review: I applied the T-240 ripple, and probe-details gives 0 FAIL on a clean export of main.\n\n- **Spec updated:** done. It now records that G146 was fixed by 3fff8f22 and that G129 cites c38ce69 and 6e7b2b6. Both AUDIT.md rows already said this, so I didn't edit AUDIT.md.\n- **probe"
+  },
+  {
    "ts": "2026-10-12T02:51:01+0530",
    "task_id": "T-033",
    "mode": "feedback",
@@ -79,32 +95,16 @@
    "status": "queue",
    "result": "ok",
    "summary": "I checked T-380 again: it's in the queue for Nelbin and nothing in Apps Script was trashed, because this runner has no browser.\n\n**Completion check:**\n- **Reassign to Nelbin:** done. tasks.json shows owner, assignee and reviewer are all Nelbin.\n- **Status set to queue, not blocked, with no ask to Ad"
-  },
-  {
-   "ts": "2026-10-12T02:10:40+0530",
-   "task_id": "T-284",
-   "mode": "feedback",
-   "status": "hold",
-   "result": "ok",
-   "summary": "I re-checked the prep and found nothing to fix, so T-284 stays on `hold` waiting for Adi's verdicts in T-282. Nothing was re-exported, committed or pushed, and nothing went live.\n\n**What the orchestrator note asked for:**\n- **Web copies for the 5 replaced videos:** checked and correct. Each web copy"
-  },
-  {
-   "ts": "2026-10-12T02:06:36+0530",
-   "task_id": "T-059",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "turns",
-   "summary": "T-059 is still blocked: the script and the draft test now pass this check, but the live test send still needs a connected sending mailbox, which waits on T-123.\n\n**What this check found and fixed (committed in 2c30ae79, not pushed):**\n- **Two first lines broke the style rules.** Sam's added a guess "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-197",
+ "task_id": "T-132",
  "entries": [
-  "R-0c250a88"
+  "R-d2433c7a"
  ],
- "started": "2026-10-12T02:52:06+0530",
- "message": "Acting on 1 note(s) for T-197: Round 5 #3 (Lane A): Epic full-system audit: every element, question, card and section (AUDIT.md + probe-details.mjs)",
+ "started": "2026-10-12T02:59:48+0530",
+ "message": "Acting on 1 note(s) for T-132: Stage 5 to 6 guides: real Claude Code screenshots (5 steps)",
  "slices": {
   "T-135": 1,
   "T-300": 2,
