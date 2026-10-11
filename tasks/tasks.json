@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T11:46:54+0530",
-  "version": 1874,
+  "updated": "2026-10-11T11:48:17+0530",
+  "version": 1875,
   "last_id": 399,
   "team": [
    {
@@ -11040,24 +11040,20 @@
    ],
    "evidence": [
     {
-     "label": "Probe (ALL PASS)",
+     "label": "Probe (ALL PASS on origin/main dab1571)",
      "url": "cloud/scripts/probe-stripe-refunds.mjs"
+    },
+    {
+     "label": "Live centre",
+     "url": "https://revops-centre.growthcluborg.workers.dev/?v=t238"
     },
     {
      "label": "Refund handler",
      "url": "cloud/funnel/worker.js"
-    },
-    {
-     "label": "Payment link metadata and webhook events",
-     "url": "cloud/src/connectors/build.ts"
-    },
-    {
-     "label": "Sim refund route",
-     "url": "cloud/scripts/vendor-sim.py"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Yes or no: run 'cd cloud && npx wrangler deploy' (the main cloud Worker, which carries funnel/worker.js to attendee funnels) so Stripe refund handling goes live? The approved cloud/funnel deploy cannot ship it.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-07T23:25:35+0530",
@@ -11088,6 +11084,11 @@
      "ts": "2026-10-10T17:23:18+0530",
      "who": "claude",
      "note": "Verify pass: the Stripe refund code checks out end to end and the probe now also covers the payment lookup, an unknown payment and a badly signed refund (node cloud/scripts/probe-stripe-refunds.mjs, ALL PASS, commit 73a8a4a pushed). It is not live: the approved cloud/funnel deploy is only a local preview config, and attendee funnels get worker.js through the main cloud Worker. In production the funnel Worker has no Stripe key, so it relies on the metadata Stripe copies onto the charge, which the payment link now sets."
+    },
+    {
+     "ts": "2026-10-11T11:48:17+0530",
+     "who": "claude",
+     "note": "Stripe refund handling is already live: commit 42a1a35 went out in Worker 7f8bfc45 (built from 97096ab) and is in every deploy since, including the live version 7bbeec3c. I did not redeploy from 42a1a35 because that would roll back 245 later commits. In a clean worktree at origin/main dab1571, cloud tsc is clean and node cloud/scripts/probe-stripe-refunds.mjs prints ALL PASS: a full refund is tagged and counted, while a partial refund, another product's refund or a badly signed refund changes nothing. The centre answers 302/303. Logged in LOG.md."
     }
    ],
    "order": 2380
