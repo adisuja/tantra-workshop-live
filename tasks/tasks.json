@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T06:16:15+0530",
-  "version": 1741,
+  "updated": "2026-10-11T06:21:18+0530",
+  "version": 1743,
   "last_id": 395,
   "team": [
    {
@@ -3532,6 +3532,11 @@
      "ts": "2026-10-11T06:10:04+0530",
      "who": "claude",
      "note": "Pushed: origin/main and local main match at cfa401c. T-030 needs no change: it was already removed from the board as a duplicate (it sits in the archive), and its one leftover item, the n8n form on the old /pro page, is gone."
+    },
+    {
+     "ts": "2026-10-11T06:21:18+0530",
+     "who": "claude",
+     "note": "Verify pass (fresh reviewer, 2026-10-11): nothing had to change. Dependency grep (n8n.growthclub, NEXT_PUBLIC_LEAD_WEBHOOK_URL) is empty in app/src, app/scripts, app/.env.example, cloud and the runbook; local main equals origin/main at cfa401c; the live /pro page and its 12 bundles have no n8n.growthclub. probe-pro.mjs passes on the live mirror (37 PASS, checkout start posted to the Apps Script receiver with lane pro in all 4 regions) and probe-workshop.mjs passes locally on :4322 (47 ok, clean). I did not fire a second real checkout start (one was approved and used); the tab has no T-087 row left. Side finding, not touched: 4 wiring-probe /vip rows from 2026-10-10 (rows 6 to 9) sit in the Checkout Starts tab from another lane. Open https://adisuja.github.io/tantra-workshop-live/site/pro/?v=20261011b"
     }
    ],
    "order": 870,
