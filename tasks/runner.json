@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T08:04:21+0530",
+   "task_id": "T-266",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I re-ran everything for T-266 and fixed one gap: the test run still said automation 9 was \"not built\" while it waited on the AI key. It now uses the \"setup\" status, which the code defines for something built that needs a next step (commit d0e56be). That commit is pushed and the centre Worker is rede"
+  },
+  {
    "ts": "2026-10-11T07:53:12+0530",
    "task_id": "T-136",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-034 stays blocked only on the Tantra API key already asked in T-337: the dry run now runs the real day output, PDF and delivery code for all three personas, with t"
-  },
-  {
-   "ts": "2026-10-11T05:28:39+0530",
-   "task_id": "T-058",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-058 stays blocked: the feedback's changes are all on disk and verified, but nothing is launched until members connect their own LinkedIn and the T-056 list is imported.\n\nCOMPLETION CHECK\n- **Remove the T-057 wait, readiness YES (app at usetantra.com):** done. `workshop-plan/outreach/launch-kit.md`"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-266: Automation 9: challenge daily survey to AI output to PDF delivery loop",
- "task_id": "T-266",
+ "message": "Acting on 1 note(s) for T-268: Live room: Zoom and WebinarGeek setup cards and weekly broadcast scheduling",
+ "task_id": "T-268",
  "entries": [
-  "F-4369de04"
+  "F-ba55da7f"
  ],
  "mode": "feedback",
- "started": "2026-10-11T07:53:31+0530",
+ "started": "2026-10-11T08:04:59+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
