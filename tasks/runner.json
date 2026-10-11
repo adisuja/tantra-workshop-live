@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T22:48:55+0530",
+   "task_id": "T-400",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-400 is still blocked: Adi still has to connect the workshop WhatsApp number (QR scan) and send the test number (tracked as T-401).\n\n- **Workshop WhatsApp number shows Connected:** not done. I checked the live centre read-only: the Tantra key is saved and the sender is team@growthclub.org, but no W"
+  },
+  {
    "ts": "2026-10-11T22:43:15+0530",
    "task_id": "T-033",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "review",
    "result": "error",
    "summary": "API Error: Connection refused — a firewall or proxy may be blocking it (ECONNREFUSED)"
-  },
-  {
-   "ts": "2026-10-11T18:24:24+0530",
-   "task_id": "T-235",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "The verify pass found no gaps, so T-235 is back in review. All of its code is already on origin, and every probe passed on a fresh local centre and simulator.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Commit any uncommitted work | Done (nothing to commit) | `git status` shows no cha"
   }
  ],
  "state": "working",
- "message": "Acting on 2 note(s) for T-400: Input: connect the workshop WhatsApp number in Tantra and name the test number",
- "task_id": "T-400",
+ "message": "Acting on 1 note(s) for T-108: Animated funnels in the playbook: the three main funnels, the Whole Machine and the 17 other types",
+ "task_id": "T-108",
  "entries": [
-  "F-275a69c8",
-  "R-84d2fd61"
+  "R-acfab02a"
  ],
  "mode": "feedback",
- "started": "2026-10-11T22:43:59+0530",
+ "started": "2026-10-11T22:49:12+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
