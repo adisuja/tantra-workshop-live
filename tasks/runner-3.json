@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T11:43:20+0530",
+   "task_id": "T-300",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-300 is built and pushed on `t300-ruled-out-cleanup` (184d5cb2), but it stays in `doing`: the domain-chain probe ran against a server with older code, not this bran"
+  },
+  {
    "ts": "2026-10-11T11:36:23+0530",
    "task_id": "T-005",
    "mode": "feedback",
@@ -87,30 +95,20 @@
    "status": "review",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-11T08:40:57+0530",
-   "task_id": "T-107",
-   "mode": "feedback",
-   "status": "review",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
- "state": "working",
- "mode": "feedback",
- "task_id": "T-300",
- "entries": [
-  "F-1f30bf72"
- ],
+ "state": "idle",
+ "mode": null,
+ "task_id": null,
+ "entries": [],
  "started": "2026-10-11T11:37:20+0530",
- "message": "Acting on 1 note(s) for T-300: Remove the dormant code and text of the ruled-out tools (T-251 parts 2 and 3)",
+ "message": "Last sweep handled 8 task(s).",
  "slices": {
   "T-135": 1,
   "T-148": 1,
   "T-252": 1,
   "T-289": 1,
-  "T-300": 1,
+  "T-300": 2,
   "T-240": 1,
   "T-242": 1,
   "T-134": 1,
