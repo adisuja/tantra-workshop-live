@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T13:32:45+0530",
+   "task_id": "T-094",
+   "mode": "feedback",
+   "status": "review",
+   "result": "provider",
+   "summary": "API Error: 402 [cerebras] All 1 connection(s) credits exhausted — please reconnect in the dashboard"
+  },
+  {
    "ts": "2026-10-11T13:32:17+0530",
    "task_id": "T-280",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "doing",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. The emailed join links are built and pass their probes on a local centre, but I haven't pushed, deployed or logged anything, so T-278 is set to **doing**, not review"
-  },
-  {
-   "ts": "2026-10-11T12:11:45+0530",
-   "task_id": "T-145",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-145 is still blocked: the GitHub API today (2026-10-11) still opens commit 5b9f57d6 by its SHA, and Nelbin's fork still exists, so the task can't close yet.\n\n**Completion check:**\n- **Ripple R-35d1f725 (recheck and log whether 5b9f57d6 is reachable):** Done. Nothing on T-145 itself had to change, "
   }
  ],
- "state": "working",
+ "state": "paused",
  "mode": "feedback",
- "task_id": "T-299",
+ "task_id": null,
  "entries": [
-  "F-d645fdec",
-  "R-a53ef748"
+  "R-f2b291e4"
  ],
- "started": "2026-10-11T13:32:32+0530",
- "message": "Acting on 2 note(s) for T-299: Centre: cold email inboxes come from the inbox vendor only, several calendar senders, and a sign-up inbox card",
+ "started": "2026-10-11T13:32:42+0530",
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 73% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 15:51.",
  "slices": {
   "T-072": 1,
   "T-245": 1,

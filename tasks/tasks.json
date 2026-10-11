@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T13:32:09+0530",
-  "version": 1936,
+  "updated": "2026-10-11T13:33:09+0530",
+  "version": 1939,
   "last_id": 406,
   "team": [
    {
@@ -4517,7 +4517,7 @@
    "owner": "Ben",
    "priority": "P1",
    "due": "2026-10-14",
-   "status": "review",
+   "status": "done",
    "why": "Every button and link on the live site must go somewhere real.",
    "spec": "Run cd /Users/adithyamurali/tantra-redesign/app && node scripts/probe-live-wiring.mjs (defaults to https://adisuja.github.io/tantra-workshop-live/site). It clicks the real buttons on the join pages, /vip and both lanes, follows checkout as far as Dodo's hosted page without paying, and fails on any wrong landing or 4xx. Fix any base-path 404 with internalHref()/apiUrl() from app/src/lib/asset.ts, rebuild and republish (check /Users/adithyamurali/tantra-round5-coord/LOG.md for publish holds first; T-141 holds the library). Only the WhatsApp community placeholder (T-040, on hold) may report PEND. Any probe rows it leaves in the Work Tracker are cleaned in T-107.",
    "done_when": [
@@ -4526,23 +4526,23 @@
    "evidence": [
     {
      "label": "Live workshop page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=1011b"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=1011c"
     },
     {
      "label": "Live join page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=1011b"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=1011c"
     },
     {
      "label": "Live workshop success page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/success/?v=1011b"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/success/?v=1011c"
     },
     {
      "label": "Live masterclass join page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=1011b"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=1011c"
     },
     {
      "label": "Live VIP page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1011b"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1011c"
     },
     {
      "label": "Probe script",
@@ -4616,6 +4616,16 @@
      "ts": "2026-10-11T01:29:59+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-107."
+    },
+    {
+     "ts": "2026-10-11T13:32:25+0530",
+     "who": "claude",
+     "note": "Re-ran probe-live-wiring.mjs once with the defaults, per the Orchestrator decision, against the current live mirror: mirror main was 53ff1cd (a board sync 19ffb31 to 53ff1cd landed mid run; it changed only tasks/ files, so site/ is identical, checked via the GitHub compare API). Every row passes on this mirror (run 2026-10-11 08:00:17Z to 08:02:01Z): 31 of 31 pass, 0 fail, 0 pending, and no page carries the WhatsApp placeholder. Checkout stops at the Dodo hosted page (session cks_0NpUfO7QdBU1ktOdV4ddP) carrying the prefilled wiring-probe@example.com; nothing was paid, nothing changed on the site, so no fix commit or republish was needed. Evidence links refreshed with cache-buster v=1011c; Ben and Bharath can spot check the Live workshop and Live VIP links. Full output:\nPASS  /workshop/join/ → \"button:has-text(\"the add-on\")\" → https://adisuja.github.io/tantra-workshop-live/site/vip/\nPASS  /workshop/join/ → \"button[aria-label='The Automation Vault']\" → https://adisuja.github.io/tantra-workshop-live/site/vip/\nPASS  /workshop/join/ → \"text=No thanks, keep my seat\" → https://adisuja.github.io/tantra-workshop-live/site/onboarding/\nPASS  /vip/success/ → \"text=Open my onboarding centre\" → https://adisuja.github.io/tantra-workshop-live/site/onboarding/\nPASS  /vip/ → \"a[href$='#vip-library']\" → https://adisuja.github.io/tantra-workshop-live/site/vip/#vip-library\nPASS  /workshop/success/ → \"button:has-text('Skip for now')\" → https://adisuja.github.io/tantra-workshop-live/site/workshop/join/\nPASS  /masterclass/success/ → \"button:has-text('Skip for now')\" → https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/\nPASS  /masterclass/success/join/ → \"button:has-text('Open my onboarding centre')\" → https://adisuja.github.io/tantra-workshop-live/site/onboarding/\nPASS  /masterclass/success/join/ → \"button[aria-label='The Automation Vault']\" → https://adisuja.github.io/tantra-workshop-live/site/onboarding/\nPASS  /vip checkout → https://checkout.dodopayments.com/session/cks_0NpUfO7QdBU1ktOdV4ddP?email=wiring-probe%40example.com\nPASS  Dodo checkout carries the prefilled email\nPASS  no failed requests on /workshop/\nPASS  200 https://adisuja.github.io/tantra-workshop-live/site/privacy-policy  ← /workshop/\nPASS  200 https://adisuja.github.io/tantra-workshop-live/site/terms-of-service  ← /workshop/\nPASS  no failed requests on /workshop/success/\nPASS  200 https://adisuja.github.io/tantra-workshop-live/site/privacy-policy/  ← /workshop/success/\nPASS  200 https://adisuja.github.io/tantra-workshop-live/site/terms-of-service/  ← /workshop/success/\nPASS  no failed requests on /workshop/join/\nPASS  200 https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Frevops-centre.growthcluborg.workers.dev%2Fcal%2F2026-10-14.ics  ← /workshop/join/\nPASS  200 https://revops-centre.growthcluborg.workers.dev/cal/2026-10-14.ics  ← /workshop/join/\nPASS  200 https://outlook.live.com/calendar/0/addfromweb?url=https%3A%2F%2Frevops-centre.growthcluborg.workers.dev%2Fcal%2F2026-10-14.ics  ← /workshop/join/\nPASS  200 https://outlook.office.com/calendar/0/addfromweb?url=https%3A%2F%2Frevops-centre.growthcluborg.workers.dev%2Fcal%2F2026-10-14.ics  ← /workshop/join/\nPASS  200 https://revops-centre.growthcluborg.workers.dev/cal/2026-10-14.ics?download=1  ← /workshop/join/\nPASS  no failed requests on /vip/\nPASS  200 https://adisuja.github.io/tantra-workshop-live/site/vip/  ← /vip/\nPASS  no failed requests on /vip/success/\nPASS  no failed requests on /masterclass/\nPASS  no failed requests on /masterclass/success/\nPASS  no failed requests on /masterclass/success/join/\nPASS  no failed requests on /onboarding/\nPASS  200 https://adisuja.github.io/tantra-workshop-live/site/onboarding/  ← /onboarding/\n\nALL WIRING PASSES"
+    },
+    {
+     "ts": "2026-10-11T13:33:09+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11: the 13:32 log entry holds the full probe output (31 PASS, 0 FAIL, 0 PEND, ALL WIRING PASSES) against mirror 53ff1cd, which is still the mirror head, so no re-run was needed (Orchestrator: re-run only if the mirror changes). T-107 carries the probe email and run times, and all five v=1011c evidence links return 200."
     }
    ],
    "order": 1000,
@@ -4968,6 +4978,11 @@
      "ts": "2026-10-11T11:03:14+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-11: re-scanned live and found 0 probe, placeholder or @example.com rows in all 6 Work Tracker funnel tabs, 0 in the 9 revops-centre D1 email tables plus events.meta, 0 in all 37 Tantra Tracker tabs (5,150 rows), 0 in ops.db attendees and form-log.jsonl. The 10-10 wiring-probe rows (19:50Z, 19:52Z) are in the backup and gone from the sheet. T-193 is archived as a duplicate of T-107. Trashing the old Apps Script projects needs a boards@ sign-in and is tracked in T-380 (Nelbin)."
+    },
+    {
+     "ts": "2026-10-11T13:32:30+0530",
+     "who": "claude",
+     "note": "T-102 re-ran probe-live-wiring.mjs on the live mirror 2026-10-11 08:00:17Z to 08:02:01Z (mirror main 53ff1cd). It re-wrote the usual test rows under the probe email wiring-probe@example.com (a Checkout Starts row and the Join/Intake rows, stopping at the Dodo hosted page cks_0NpUfO7QdBU1ktOdV4ddP, no payment). Delete these wiring-probe@example.com rows from the Free and Paid Registrations, Intake Survey, and Checkout Starts/Cheout Returns tabs alongside the other probe rows in T-102/T-004. All 31 wiring rows passed this run, so there is no new FAILED probe row to triage."
     }
    ],
    "order": 1050,
