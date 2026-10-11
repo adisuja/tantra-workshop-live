@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T16:18:32+0530",
-  "version": 1949,
+  "updated": "2026-10-11T16:25:43+0530",
+  "version": 1955,
   "last_id": 407,
   "team": [
    {
@@ -10659,6 +10659,11 @@
      "ts": "2026-10-11T16:18:32+0530",
      "who": "claude",
      "note": "Checked live today: the validated Zoom app is Tantra Centre (Server-to-Server), which Zoom does not let run the Meeting SDK, and no Meeting SDK credentials are saved on Live Control; Tantra Centre also still lacks all 5 poll scopes. The full blocker list is in T-407 as you asked. Open https://revops-centre.growthcluborg.workers.dev/admin/control?v=t226blk1"
+    },
+    {
+     "ts": "2026-10-11T16:24:27+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11: the blocker list is T-407 (in review), and production D1 confirms it today: no Meeting SDK credentials saved (zoom_sdk_enc absent), the seat has never connected (no zoom_seat), the Day 1 to 3 run sheet and co-host list are empty; the launchd seat logs 'Built without ZoomSDK.framework'. The app validated earlier is Tantra Centre (Server-to-Server), which cannot run the Meeting SDK, so the one input is still the General App's Client ID and Secret plus the 5 poll scopes (one Zoom sign-in). The code itself is green: probe-live-control passed 34/34 on a local centre with the real seat binary."
     }
    ],
    "order": 2260
@@ -11518,7 +11523,8 @@
    "assignee": "Claude",
    "reviewers": [
     "Adi",
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ],
    "priority": "P2",
    "due": "",
@@ -11531,16 +11537,16 @@
    ],
    "evidence": [
     {
-     "label": "Webinar walker report",
-     "url": "/tmp/walk/1-webinar/report.json"
+     "label": "Walker",
+     "url": "app/scripts/walk-ui.mjs"
     },
     {
      "label": "Webinar walker log",
-     "url": "/tmp/t242/walk-webinar.log"
+     "url": "/tmp/t242c/walk-webinar.log"
     },
     {
-     "label": "Walker",
-     "url": "app/scripts/walk-ui.mjs"
+     "label": "Webinar report",
+     "url": "/tmp/walk/242-webinar/report.json"
     }
    ],
    "blockers": [],
@@ -11565,6 +11571,16 @@
      "ts": "2026-10-10T22:07:47+0530",
      "who": "claude",
      "note": "The walkers now wait up to 120s for every job to settle and open rail cards by card id; pushed to main (77d66cd) and logged in the coord LOG. Webinar walker on a private stack built from main: no job left waiting and no Kie.ai timing finding, but 8 findings remain from 3 other fixture drifts (calendar sender email not on the calendar domain, Twilio EIN value rejected by the new guard, Day 3 live key check on a test key). Left for the next pass: fix those three in the walker, then run challenge, rsp and the run-chain (private stack still up on 8890, 8891, 8892, 8894, state in /tmp/t242)."
+    },
+    {
+     "ts": "2026-10-11T16:24:59+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi/Aquila → Adi/Aquila/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-11T16:25:00+0530",
+     "who": "claude",
+     "note": "The three fixture fixes are in app/scripts/walk-ui.mjs, committed locally as a1c8b18a but not pushed yet: the calendar sender is now on the calendar domain, the EIN is bare, and the Dodo key is swapped to a simulated live key before d3-live-key. All three walkers are rerunning on a fresh private stack (/tmp/t242c: centre 8970, sim 8972, funnel 8974), with logs in /tmp/t242c/walk-<shape>.log and reports in /tmp/walk/242-<shape>/report.json. Left for the next pass: check those reports for 0 findings, then run the run-chain against /tmp/t242c, push a1c8b18a to main, log it in the coord LOG and move this to review."
     }
    ],
    "order": 2420
@@ -16073,7 +16089,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "blocked",
+   "status": "done",
    "why": "",
    "spec": "Only Adi can do this (credential): only Adi can sign in to his Tantra workspace and create an API key. This one key unblocks two tasks: the live test of the welcome email (T-228) and the session reminders (T-234). Save it in one place only: Admin, Cohort Settings, the Tantra API key field, which stores it encrypted and never shows it again. Do not put it anywhere else. Everything else in T-228 and T-234 is built around it, and both finish on their own once the key is saved.",
    "done_when": [],
@@ -16090,6 +16106,11 @@
      "ts": "2026-10-11T05:29:56+0530",
      "who": "claude",
      "note": "Reworded the request after the T-228 update: it now says the one key unblocks both T-228's live test and T-234, that it is saved only in Admin, Cohort Settings (stored encrypted), and the ~/.config mentions are gone. Checked cloud/admin-ui/admin.js: the field is 'Tantra API key' under the heading 'Session Reminders' (there is no heading called 'Tantra Messaging' on the page), so the steps name what Adi will actually see. Still blocked on Adi creating and pasting the key."
+    },
+    {
+     "ts": "2026-10-11T16:25:43+0530",
+     "who": "claude",
+     "note": "Adi's GrowthClub Tantra key is now saved, sealed, in the centre admin (Session Reminders reports key saved; the settings API never returns it). I replaced it with [saved in admin] in the board note and run logs. It had already been published in the public board mirror's history and in this repo's history (commit 746afc0e), so it should be rotated, which is tracked on T-123."
     }
    ],
    "order": 3370,
