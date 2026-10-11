@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T04:10:08+0530",
-  "version": 2315,
+  "updated": "2026-10-12T04:13:38+0530",
+  "version": 2319,
   "last_id": 418,
   "team": [
    {
@@ -2850,6 +2850,11 @@
      "ts": "2026-10-12T00:27:43+0530",
      "who": "claude",
      "note": "T-056 is done on its side: the 'Workshop cold calendar' list (126 contacts) is now in the GrowthClub Tantra workspace, so that blocker is cleared. Only the LinkedIn connections remain."
+    },
+    {
+     "ts": "2026-10-12T04:12:58+0530",
+     "who": "claude",
+     "note": "T-056 is finished: the list 'Workshop cold calendar' (126 contacts) and the calendar draft are in Tantra (read back 2026-10-12). This task's only remaining blocker is its own LinkedIn connect step for Bhaskar."
     }
    ],
    "order": 370,
@@ -11854,16 +11859,20 @@
    ],
    "evidence": [
     {
+     "label": "Centre fix",
+     "url": "app/src/app/onboarding/centre/centre.tsx"
+    },
+    {
      "label": "Walker",
      "url": "app/scripts/walk-ui.mjs"
     },
     {
-     "label": "Webinar walker log",
-     "url": "/tmp/t242c/walk-webinar.log"
-    },
-    {
      "label": "Webinar report",
      "url": "/tmp/walk/242-webinar/report.json"
+    },
+    {
+     "label": "Run-chain summary",
+     "url": "/tmp/t242c/chain/summary.txt"
     }
    ],
    "blockers": [],
@@ -11898,6 +11907,11 @@
      "ts": "2026-10-11T16:25:00+0530",
      "who": "claude",
      "note": "The three fixture fixes are in app/scripts/walk-ui.mjs, committed locally as a1c8b18a but not pushed yet: the calendar sender is now on the calendar domain, the EIN is bare, and the Dodo key is swapped to a simulated live key before d3-live-key. All three walkers are rerunning on a fresh private stack (/tmp/t242c: centre 8970, sim 8972, funnel 8974), with logs in /tmp/t242c/walk-<shape>.log and reports in /tmp/walk/242-<shape>/report.json. Left for the next pass: check those reports for 0 findings, then run the run-chain against /tmp/t242c, push a1c8b18a to main, log it in the coord LOG and move this to review."
+    },
+    {
+     "ts": "2026-10-12T04:13:38+0530",
+     "who": "claude",
+     "note": "The last finding (d3-live-key: no Connect button on a done card while the key is replaced) was a centre bug, fixed in centre.tsx (a178675b). On a rebuilt /tmp/t242c stack, d3-live-key now passes, and the earlier webinar run had all 21 jobs done with no Kie.ai finding. The webinar walker is rerunning alone (log /tmp/t242c/walk-webinar.log, report /tmp/walk/242-webinar/report.json), and the full run-chain (which walks challenge and rsp one at a time) starts automatically when it ends (summary /tmp/t242c/chain/summary.txt). Left: read both, and if the walkers show 0 findings, push main, log in the coord LOG and move to review."
     }
    ],
    "order": 2420
