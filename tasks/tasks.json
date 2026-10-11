@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T18:22:18+0530",
-  "version": 2009,
+  "updated": "2026-10-11T18:24:44+0530",
+  "version": 2013,
   "last_id": 408,
   "team": [
    {
@@ -6757,6 +6757,11 @@
      "ts": "2026-10-11T07:26:01+0530",
      "who": "claude",
      "note": "Renderer shipped in eb2bb14 (plus 6e1facf for the three near-miss charts at 390), on main via e696111; AUDIT.md marks all seven findings fixed in eb2bb14 with the live 2026-10-10 measurements (24 charts 1360 px and left to right at 1440, top to bottom at 390, 0 gf-in chips, 0 labels over a card), and probe-details rerun today shows 0 merge-span WARN and 0 FAIL. Adi: open any busy chart (s5-webinar-stages, s4-rsp, s1-cold-email) at 1440 and 390 and check the branches read without tracing lines."
+    },
+    {
+     "ts": "2026-10-11T18:24:44+0530",
+     "who": "claude",
+     "note": "check-guides now passes on main (24 guides, PASS). The 18-node cap was already raised in validate.ts by 12a53067 (T-255), which is on origin/main, so I made no script change and pushed nothing. probe-flows PASS (24 charts, 0 problems), probe-details 0 merge-span WARN, tsc 0 errors; I also fixed the stale 'keep it to 14' comment in schema.ts (local commit). Reviewers: 19 of the 24 charts are wider than a phone and scroll sideways at 390, so please judge that when you review."
     }
    ],
    "order": 1280,
@@ -11350,7 +11355,7 @@
     },
     {
      "label": "Cohort Settings (live admin)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=1011#settings"
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=1011b#settings"
     }
    ],
    "blockers": [
@@ -11392,6 +11397,11 @@
      "ts": "2026-10-11T18:22:18+0530",
      "who": "claude",
      "note": "Origin now has everything: the T-235 code (followups.ts, followup-copy.ts, migration 0024, probe) was already on origin/main with local main 0 behind, so no merge was needed, and I pushed the remaining board commits (main = origin/main = 6c40e376, no force). Re-ran on a fresh local centre plus simulator: probe-tantra-reminders 92/92 (no-show added once to the replay campaign with the right replay_url, low-engagement attendee once to the nudge, second run adds nobody, threshold 40 shown in Cohort Settings), probe-nurture and probe-lanes all pass. No Worker code changed, so no redeploy (live Worker unchanged, tantra_followups still Off); switching it on waits only on the Tantra key (T-337), then the live run under T-123."
+    },
+    {
+     "ts": "2026-10-11T18:24:11+0530",
+     "who": "claude",
+     "note": "Verify pass: all T-235 code (followups.ts, followup-copy.ts, zoom-pro.ts hook, settings.ts, migration 0024, probe) is identical on origin/main 6c40e376, so no merge, push or redeploy was needed (no Worker change; tantra_followups stays Off). On a fresh local centre and simulator, probe-tantra-reminders passed 94 of 94 (no-show added once to the replay campaign with the right replay_url, low-engagement attendee added once to the nudge campaign, a second run adds nobody, threshold 40 shown in Cohort Settings), probe-nurture passed 30 of 30, probe-lanes 21 of 21, and tsc is clean. Switching it on waits only on the Tantra key (T-337), then the live e2e under T-123."
     }
    ],
    "order": 2350
@@ -11915,7 +11925,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Funnels deployed before 8a62369 still answer Zoom's URL check without a signature, which let anyone forge signed Zoom events (for example a fake replay link).",
    "spec": "List production attendees with a deployed funnel (admin https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Attendees, each attendee's 'Deploy the funnel' job; or GET /admin/api/export endpoints rows). For each non-test funnel deployed before 2026-10-07 22:24, rerun the deploy-funnel job from the attendee page (startOrRerun in cloud/src/jobs.ts). Then check each funnel's /hooks/zoom answers an unsigned endpoint.url_validation with 401. If T-236 lands first, one redeploy covers both.",
    "done_when": [
@@ -11924,7 +11934,7 @@
    ],
    "evidence": [
     {
-     "label": "Coord LOG line with export counts (2026-10-11 T-246)",
+     "label": "Coord LOG line (2026-10-11 T-246 close)",
      "url": "/Users/adithyamurali/tantra-round5-coord/LOG.md"
     },
     {
@@ -11959,6 +11969,11 @@
      "ts": "2026-10-11T07:11:37+0530",
      "who": "claude",
      "note": "Ran the Orchestrator's plan on the live centre: the export (now HTTP 200) shows 24 attendees, all test, with 0 jobs, 0 funnel state rows and 0 Cloudflare connections, so no funnel has ever been deployed from production and nothing runs the old worker. Nothing was redeployed and there was no test funnel to send the unsigned Zoom check to; any funnel deployed from now on refuses it with 401 (cloud/funnel/worker.js, /hooks/zoom). Counts are logged in coord LOG.md (2026-10-11, T-246)."
+    },
+    {
+     "ts": "2026-10-11T18:23:24+0530",
+     "who": "claude",
+     "note": "Closed per the Orchestrator plan. The live attendee list has 26 attendees, all test (overview: 0 live), and none has a funnel URL (plan_url empty on all, 0 devices; the 07:11 export also showed 0 funnel state rows and 0 Cloudflare connections), so no unsigned Zoom check could be sent and nothing runs the old worker. Nothing was redeployed or changed; counts are in coord LOG.md (2026-10-11 T-246 close)."
     }
    ],
    "order": 2460
@@ -12597,6 +12612,11 @@
      "ts": "2026-10-11T07:31:35+0530",
      "who": "claude",
      "note": "Verify pass, nothing had to change: app/src has no beehiiv or fireflies references and both SVGs are gone, while the Metricool, Canva and GoHighLevel logos are still in place. All 15 AUDIT.md rows are marked fixed, with G126 recording follow-up 28fdc09, which is on origin/main (local and origin level). Checks: probe-visual-tools PASS, probe-flows 24 charts PASS (the unwired-lane self-test fails as it should), 10 charts render at 1440 and 390 with 0 chip or label problems, probe-details 0 FAIL, app build passes. The same 3 chart WARN appear on the commit before T-254, so none are new."
+    },
+    {
+     "ts": "2026-10-11T18:24:44+0530",
+     "who": "claude",
+     "note": "T-130 check (2026-10-11): check-guides passes with the 17-node s5-pipeline chart. The cap is 18 in validate.ts (12a53067, on origin/main), so no change was needed."
     }
    ],
    "order": 2540
