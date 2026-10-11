@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T23:14:57+0530",
-  "version": 2114,
+  "updated": "2026-10-11T23:17:16+0530",
+  "version": 2116,
   "last_id": 410,
   "team": [
    {
@@ -1070,7 +1070,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Read https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a and reply with approval or changes by section. Changed since 2026-10-07: Day 1 and Day 3 steps (16 product screenshots), Day 1 plus Day 2 S2 and S6 (replaced tools out), Day 2 S3 (89% labelled teaching model beside the 25 to 40% and 45 to 70% reference bands), the reverse squeeze page section (full whiteboard scope), and the funnel sections (What Are Funnels, The Other 17 Funnel Types, The Whole Machine: rebuilt animations, Apollo out).",
+   "needs_from_owner": "Read https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a and reply with approval or changes by section. Changed since 2026-10-07: Day 1 and Day 3 steps (16 product screenshots), replaced tools out of Day 1 plus Day 2 S2 and S6, Day 2 S3 (89% labelled teaching model beside the 25 to 40% and 45 to 70% bands), the reverse squeeze page section, and the rebuilt funnel sections (What Are Funnels, The Other 17 Funnel Types, The Whole Machine).",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -1131,6 +1131,16 @@
      "ts": "2026-10-11T13:09:35+0530",
      "who": "claude",
      "note": "Already applied, so no agent run was needed: Commit ba377c98 (2026-10-10) shows spec rewritten, done-when ticked, mirror resynced, ask updated; probe logs confirm passes. (checked by Haiku against the log and commits)."
+    },
+    {
+     "ts": "2026-10-11T23:16:42+0530",
+     "who": "claude",
+     "note": "Nothing changed, per the Orchestrator decision. Checked today: the source playbook (including T-278's 12:25 edit) is byte-identical to the served copy and to the live mirror once its asset paths are rewritten. Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a and reply with approval or changes by section (tracked as T-406)."
+    },
+    {
+     "ts": "2026-10-11T23:17:16+0530",
+     "who": "claude",
+     "note": "Verify pass for Orchestrator decision O-98af5c69: nothing needed changing. Checked today: source and served copies have the same hash, the live mirror matches the source exactly (asset paths rewritten), probe-playbook is clean at 360, 768, 1024 and 1440 on the live mirror, the only ruled-out tool match is the adverb 'instantly', and the 89% carries its teaching model label. Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a and reply with approval or changes by section (tracked as T-406)."
     }
    ],
    "order": 110,
