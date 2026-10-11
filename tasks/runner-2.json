@@ -99,12 +99,12 @@
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-272",
+ "task_id": "T-056",
  "entries": [
-  "F-00413de5"
+  "F-7758f270"
  ],
- "started": "2026-10-11T21:09:55+0530",
- "message": "Acting on 1 note(s) for T-272: Centre admin: per-teammate auth, per-cohort session settings, ruled-out vendors out of the admin",
+ "started": "2026-10-11T21:19:19+0530",
+ "message": "Acting on 1 note(s) for T-056: Cold calendar lists for the workshop, imported into Tantra",
  "slices": {
   "T-072": 1,
   "T-245": 1,
