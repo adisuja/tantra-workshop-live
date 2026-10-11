@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T03:16:02+0530",
+   "task_id": "T-234",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-234 is still blocked, and I did not run the go-live: there is still no sending mailbox it could use.\n\n| Item | State and evidence from this run |\n|---|---|\n| Simulator probe (sign-up lands in Registered; added once to Day before, 1 hour before and We're live; a second scheduler run adds nobody) | "
+  },
+  {
    "ts": "2026-10-12T03:10:48+0530",
    "task_id": "T-052",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "I checked everything again myself: three of the four done-when items pass, and the in-app guide link is still waiting on Bharath to apply the patch. T-151 stays in review with Amal and Bharath as reviewers.\n\n**Completion check (all evidence from this run):**\n\n| Item | State | Evidence |\n|---|---|---"
-  },
-  {
-   "ts": "2026-10-12T00:15:32+0530",
-   "task_id": "T-396",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I re-checked T-396 from scratch, and it is back in review waiting on Bharath. The patch works, but on one of seven runs two tests failed and I couldn't reproduce it.\n\n- **Effort check against the code:** done. The endpoint is already on `development` and the `contactListIds` lock is still in `EmailC"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-234",
+ "task_id": "T-034",
  "entries": [
-  "F-5e2cb306"
+  "F-90db32ec"
  ],
- "started": "2026-10-12T03:11:12+0530",
- "message": "Acting on 1 note(s) for T-234: Workshop reminders through Tantra omni-channel campaigns: import every registrant with their own join and calendar links",
+ "started": "2026-10-12T03:16:38+0530",
+ "message": "Acting on 1 note(s) for T-034: Full dry run of the Day-1 pipeline",
  "slices": {
   "T-072": 1,
   "T-245": 1,
@@ -119,7 +119,6 @@
   "T-278": 1,
   "T-059": 1,
   "T-300": 1,
-  "T-234": 1,
   "T-242": 1
  },
  "api_capped": {
