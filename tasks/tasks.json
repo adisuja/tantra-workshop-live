@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T07:58:36+0530",
-  "version": 1794,
+  "updated": "2026-10-11T08:02:16+0530",
+  "version": 1796,
   "last_id": 397,
   "team": [
    {
@@ -12157,6 +12157,11 @@
      "ts": "2026-10-11T07:58:36+0530",
      "who": "claude",
      "note": "The calendar service-account sign-in now reads its own Google client (gcp_client_id and the sealed secret, admin Settings), never the Drive one, so it stays hidden and the Workspace card shows guide steps 1 to 4 by hand until that client is saved; no input is asked of Adi. The one-grant path is built but dormant and verified on the vendor simulator only: probe-s1-auto passed 54 of 54 (a Drive client alone keeps the button hidden, a sim_ gcp client shows it), both typechecks 0 errors, main pushed and revops-centre deployed as version 9eca4944. Open https://revops-centre.growthcluborg.workers.dev/onboarding/?v=9eca4944"
+    },
+    {
+     "ts": "2026-10-11T08:00:55+0530",
+     "who": "claude",
+     "note": "Verify pass, nothing had to change: the calendar service-account sign-in reads only its own gcp client (never the Drive one), and with no client saved the calendar Workspace card shows guide steps 1 to 4 by hand. Both typechecks have 0 errors and probe-s1-auto passed 56 of 56 against a fresh simulator, including the new checks (Drive client alone keeps the button hidden, a sim_ gcp client shows it). Live Worker 9eca4944 has the fix and /api/gcp/start refuses requests without a session (401). The one-grant path is built but dormant and has only run against the simulator."
     }
    ],
    "order": 2580
@@ -12720,12 +12725,20 @@
      "url": "cloud/scripts/probe-t266.mjs"
     },
     {
-     "label": "worker",
+     "label": "funnel worker",
      "url": "cloud/funnel/worker.js"
+    },
+    {
+     "label": "automation 2 check",
+     "url": "cloud/src/jobs-day2.ts"
     },
     {
      "label": "audit",
      "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
+    },
+    {
+     "label": "commit a4d990a",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/a4d990a"
     }
    ],
    "blockers": [],
@@ -12755,6 +12768,11 @@
      "ts": "2026-10-10T01:44:46+0530",
      "who": "claude",
      "note": "Checked 11 related task(s); updating T-136."
+    },
+    {
+     "ts": "2026-10-11T08:02:16+0530",
+     "who": "claude",
+     "note": "The daily output now also goes by WhatsApp through a Tantra campaign (never Twilio). The centre test run checks automation 2 with a real test lead through /hooks/leads, and the s4-challenge note no longer says WhatsApp is not wired (commit a4d990a, pushed; centre Worker deployed as version 24f8c991). probe-t266 and probe-kept-tools both pass on the simulator and X082 is marked fixed in AUDIT.md; the real WhatsApp send waits only on the Tantra key already asked in T-337."
     }
    ],
    "order": 2660
