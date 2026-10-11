@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T13:05:28+0530",
+   "task_id": "T-020",
+   "mode": "feedback",
+   "status": "review",
+   "result": "error",
+   "summary": "[process exit 143; stderr: ''] Now the probes, plus a live check once Pages rebuilds."
+  },
+  {
    "ts": "2026-10-11T13:02:19+0530",
    "task_id": "T-303",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-140 is still blocked: the two blog screenshots are done, but the three Tantra screenshots need a browser signed in to Tantra, and this run has none.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| s1-blog #2 and #6 real captures | Done | Both guide entries point at real images. The comm"
-  },
-  {
-   "ts": "2026-10-11T11:43:20+0530",
-   "task_id": "T-300",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-300 is built and pushed on `t300-ruled-out-cleanup` (184d5cb2), but it stays in `doing`: the domain-chain probe ran against a server with older code, not this bran"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-020",
+ "task_id": "T-134",
  "entries": [
-  "F-b9b6fb19"
+  "F-b21f5e4b"
  ],
- "started": "2026-10-11T13:03:55+0530",
- "message": "Acting on 1 note(s) for T-020: The Tantra Playbook (Day-1 deliverable)",
+ "started": "2026-10-11T13:08:35+0530",
+ "message": "Acting on 1 note(s) for T-134: Starter CRM: build the reference connections (prompts 01 to 06) so the planned steps get real screenshots",
  "slices": {
   "T-135": 1,
   "T-148": 1,
