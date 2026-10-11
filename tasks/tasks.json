@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T23:42:04+0530",
-  "version": 2129,
+  "updated": "2026-10-11T23:44:16+0530",
+  "version": 2133,
   "last_id": 410,
   "team": [
    {
@@ -18047,8 +18047,8 @@
    "done_when": [],
    "evidence": [
     {
-     "label": "Live Control run sheet",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/control?v=t407rs1"
+     "label": "Live Control",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/control?v=t407vp2"
     },
     {
      "label": "Run sheet draft",
@@ -18072,6 +18072,16 @@
      "ts": "2026-10-11T23:41:42+0530",
      "who": "claude",
      "note": "Run sheets drafted and saved on Live Control: 24 items over Days 1 to 3 (chat, CTA, polls), with a live GET showing 4 chat, 1 CTA and 3 polls per day; Bhaskar reviews the wording and Adi the polls. No Zoom-signed-in browser was available, so the 5 poll scopes go into T-335's single sign-in, which is now the only Adi item. Adi stays the sole host. Open https://revops-centre.growthcluborg.workers.dev/admin/control?v=t407rs1"
+    },
+    {
+     "ts": "2026-10-11T23:43:12+0530",
+     "who": "claude",
+     "note": "Verify pass: production D1 holds the 24-item Day 1 to 3 run sheet (4 chat, 1 CTA, 3 polls per day), identical to workshop-plan/ops/live-control-runsheet-draft.json, no long dashes, '8 Decisions' matches the Day 1 curriculum and the CTA link opens the onboarding centre; co-host list is empty and no SDK credentials are saved. No Zoom-signed-in browser was reachable again, so the 5 poll scopes stay folded into T-335 (Adi's one Zoom sign-in). Open https://revops-centre.growthcluborg.workers.dev/admin/control?v=t407vp2"
+    },
+    {
+     "ts": "2026-10-11T23:43:27+0530",
+     "who": "claude",
+     "note": "Checked 3 related task(s); updating T-335, T-226."
     }
    ],
    "order": 4070

@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T23:43:22+0530",
+   "task_id": "T-407",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I checked the previous run's work against production and it holds up; nothing needed fixing. I couldn't add the 5 poll scopes myself, so they're still part of T-335 (Adi's one Zoom sign-in), and T-407 is back in review.\n\n**Completion check**\n1. **Poll scopes: not added, still part of T-335.** Again "
+  },
+  {
    "ts": "2026-10-11T23:33:56+0530",
    "task_id": "T-135",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "The full pilot rerun (base plus the five fixes, about 20 minutes) is still going in the background. I'll pick up when it finishes."
-  },
-  {
-   "ts": "2026-10-11T21:05:10+0530",
-   "task_id": "T-265",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "(Held back from the public board: this note mentions a private client detail.)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-407: T-226 Live Control: updated blocker list (checked live 2026-10-11)",
- "task_id": "T-407",
+ "message": "Acting on 1 note(s) for T-061: Free and paid lane follow-up campaigns in Tantra, with per-lane unit economics",
+ "task_id": "T-061",
  "entries": [
-  "F-a3d8eca4"
+  "R-74279083"
  ],
  "mode": "feedback",
- "started": "2026-10-11T23:35:20+0530",
+ "started": "2026-10-11T23:43:57+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,

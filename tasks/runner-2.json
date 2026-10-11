@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T23:43:04+0530",
+   "task_id": "T-234",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "turns",
+   "summary": "T-234 stays blocked. Nothing had to change for this update: the \"waiting on the API key\" ask was already cleared, and T-123's go-live owns the live campaigns and the test send. I re-ran the reminders probe today and it passes all 92 checks.\n\n- **Clear the waiting-on for the key:** Done. It says \"The"
+  },
+  {
    "ts": "2026-10-11T23:39:27+0530",
    "task_id": "T-292",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "I checked every item from scratch and they all hold. T-273 is back in review for Adi and Bharath. I didn't change any files, so there was nothing to commit.\n\n| Item | State | What I checked in this run |\n|---|---|---|\n| Free platform pass entry (b-pass) in `review_hub.py` | Done | Line 438 says \"Two"
-  },
-  {
-   "ts": "2026-10-11T21:32:51+0530",
-   "task_id": "T-059",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "turns",
-   "summary": "(Held back from the public board: this note mentions a private client detail.)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-234",
+ "task_id": "T-052",
  "entries": [
-  "R-b27534cd"
+  "R-d73d14ce"
  ],
- "started": "2026-10-11T23:40:01+0530",
- "message": "Acting on 1 note(s) for T-234: Workshop reminders through Tantra omni-channel campaigns: import every registrant with their own join and calendar links",
+ "started": "2026-10-11T23:43:15+0530",
+ "message": "Acting on 1 note(s) for T-052: Load both nurture sequences into Tantra campaigns",
  "slices": {
   "T-072": 1,
   "T-245": 1,
@@ -118,6 +118,7 @@
   "T-240": 1,
   "T-278": 1,
   "T-059": 1,
-  "T-300": 1
+  "T-300": 1,
+  "T-234": 1
  }
 }
