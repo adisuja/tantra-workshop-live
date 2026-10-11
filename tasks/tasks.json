@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T11:32:43+0530",
-  "version": 1864,
+  "updated": "2026-10-11T11:35:09+0530",
+  "version": 1866,
   "last_id": 398,
   "team": [
    {
@@ -644,16 +644,16 @@
    ],
    "evidence": [
     {
-     "label": "Rotation steps (runbook section 3)",
+     "label": "Rotation runbook",
      "url": "workshop-plan/ops/runbook.md"
     },
     {
-     "label": "Signed /hooks/dodo probe",
+     "label": "Signed hook probe",
      "url": "app/scripts/probe-centre-dodo-hook.mjs"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "T-382: the regenerated live Dodo API key and the live /hooks/dodo endpoint signing secret pasted into app/.env.local as DODO_PAYMENTS_API_KEY and DODO_WEBHOOK_SECRET (https://app.dodopayments.com > Developer > API Keys, then Webhooks).",
+   "needs_from_owner": "T-382: the regenerated live Dodo API key and the signing secret of the live endpoint for https://revops-centre.growthcluborg.workers.dev/hooks/dodo, pasted into app/.env.local as DODO_PAYMENTS_API_KEY and DODO_WEBHOOK_SECRET (https://app.dodopayments.com > Developer > API Keys, then Webhooks).",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -689,6 +689,11 @@
      "ts": "2026-10-11T11:29:45+0530",
      "who": "claude",
      "note": "Everything but the Dodo dashboard step is ready: runbook section 3 has the exact wrangler secret put commands (both DODO_WEBHOOK_SECRET and DODO_ENDPOINT_WEBHOOK_SECRET must change, or the leaked one keeps working) and the new probe-centre-dodo-hook.mjs passed all 6 checks against a local centre with a test secret; the live centre already refuses unsigned and forged events. Waiting on T-382; T-005 stays the last task."
+    },
+    {
+     "ts": "2026-10-11T11:35:09+0530",
+     "who": "claude",
+     "note": "Verify pass: the signed /hooks/dodo probe passed all 6 checks on a local centre with test secrets (both Worker secret names accepted, retired secret refused), the live centre refuses unsigned and forged events, and probe-workshop.mjs passed checkout and forged-webhook checks against the dev server. Fixed the runbook probe command to the real dev port 4322 (workshop-plan/ops/runbook.md section 3). Waiting only on T-382: the new live key and endpoint secret."
     }
    ],
    "order": 50,
@@ -2870,6 +2875,11 @@
      "ts": "2026-10-11T11:32:43+0530",
      "who": "claude",
      "note": "What the backend does (read from local tantra-backend-v2 at f0b901e, src/domains/billing/webhooks/billing-webhook.processor.ts): a workshop payment for pdt_0NnpA6EIxXvDvS1F03N8Z arrives as a one-time payment.* event, so process() (line 59) sends it to onPayment() (lines 102 to 108), which stores a payment row and answers 200. ownerFor() (lines 147 to 161) matches only an existing billing account's subscription id or Dodo customer id, or metadata.userId (never the email), so a new workshop buyer is recorded as 'unmatched'; matched or not, no plan is granted, because only subscription.* events reach applySubscription and the catalog. Stripe payments (T-218) never reach this handler. The Tantra Pro Course ($999, pdt_0NpKlRqJAjyAf3axboQSR) gets the same treatment, so its access stays a manual email from the team. Integration plan: grant the Tantra Plan from the centre's attendee list (T-122, live /hooks/dodo) by calling the backend's existing BillingTrialCampaignService.grant (billing/admin/billing-trial-campaign.service.ts line 320) for each paid seat or VIP, and the Pro Course grants later through the same path. @Bharath: please confirm production runs this processor code (local clone f0b901e, 2026-10-08). Also done: 'Build Pass' renamed to '$99 seat / VIP' in app/src/app/api/checkout/route.ts line 5 and the webhook log line in app/src/app/api/dodo/webhook/route.ts line 116 (the forwarded event key build_pass_paid is left as is: it is a wire value, and DODO_FULFILMENT_WEBHOOK_URL is empty so nothing consumes it yet); tsc clean, commit dab1571b pushed to origin/main. Still on the owner's hold for integration."
+    },
+    {
+     "ts": "2026-10-11T11:34:47+0530",
+     "who": "claude",
+     "note": "Verify pass: re-read tantra-backend-v2 at f0b901e (unchanged) and the logged findings hold: payment.* goes to onPayment() (lines 102 to 108), which stores a row and answers 200, ownerFor() never matches by email, and no plan is granted. One correction to the integration plan: BillingTrialCampaignService.grant (line 320) is private, and the only public entry, run(), is a bulk free-week campaign over existing users. So granting a seat's plan needs a small new public per-user method plus an admin route in the backend (Ben/Bharath's work, written as a spec under workshop-plan/tantra-product-patches/ when this leaves hold). Renames verified: no 'Build Pass' left in either route file, tsc clean, dab1571b is on origin/main. Still on the owner's hold."
     }
    ],
    "order": 420,
