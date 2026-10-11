@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T08:35:48+0530",
+   "task_id": "T-081",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I moved T-081 to review and acknowledged F-ff269d5b. I didn't re-check the doc this run because the run budget ran out.\n\n- **Six funnel tabs in the Consolidated Funnel Doc:** were added on 2026-10-10 at 03:55, according to the task log. Nothing new was built this run, and the tabs weren't re-checked"
+  },
+  {
+   "ts": "2026-10-11T08:34:50+0530",
+   "task_id": "T-271",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-271 is back in review for Adi and Bharath, but I did not rerun probe-t271-cards, probe-day1 or probe-day2: the run budget was too small to start the local stack.\n\n- **Evidence in the log:** written into the T-271 log as the orchestrator asked. The branch is t-271-card-copy, with fixes in 767e3a6 a"
+  },
+  {
    "ts": "2026-10-11T08:33:09+0530",
    "task_id": "T-284",
    "mode": "feedback",
@@ -79,32 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-061 stays blocked on the one existing ask, the GrowthClub Tantra API key (T-337); the verify pass found one gap, which is fixed and pushed but not yet deployed.\n\nCOMPLETION CHECK\n\n- **Lane routing code, migration 0023, simulator route, probe:** done. `app/scripts/probe-lanes.mjs` passed 21 of 21 o"
-  },
-  {
-   "ts": "2026-10-11T05:54:35+0530",
-   "task_id": "T-053",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-053 is back in review with Bhaskar: the verify pass found three teammates posting identical text on the same day, fixed it, and republished the page to the board and the mirror.\n\nCOMPLETION CHECK\n- **Draft for every member in meta.team plus both partners:** done. The rebuild covers 9 members (adi,"
-  },
-  {
-   "ts": "2026-10-11T05:45:12+0530",
-   "task_id": "T-050",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-050 stays in review with Bhaskar: the verify pass found two gaps in `workshop-plan/sequences/pre.md`, both fixed and committed (12c1221, not pushed).\n\nCOMPLETION CHECK\n- **Every message for both lanes:** done. The file has 9 messages (free: confirmation, prepare, VIP, day-before, 1-hour; paid: con"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-271",
+ "task_id": "T-096",
  "entries": [
-  "F-e4531c4d"
+  "F-9f32088b"
  ],
- "started": "2026-10-11T08:34:28+0530",
- "message": "Acting on 1 note(s) for T-271: New centre cards: copy accuracy (counts, thresholds, tags, promises)",
+ "started": "2026-10-11T08:36:25+0530",
+ "message": "Acting on 1 note(s) for T-096: Device cap per attendee link in the live centre admin",
  "slices": {
   "T-135": 1,
   "T-148": 1,
