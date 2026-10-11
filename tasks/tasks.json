@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T12:10:01+0530",
-  "version": 1890,
+  "updated": "2026-10-11T12:11:06+0530",
+  "version": 1891,
   "last_id": 401,
   "team": [
    {
@@ -7530,6 +7530,11 @@
      "ts": "2026-10-11T12:10:01+0530",
      "who": "claude",
      "note": "Ripple from T-111 checked, nothing on T-145 had to change. GitHub API recheck 2026-10-11: 5b9f57d6 is on neither branch of adisuja/tantra-workshop-live (compare says diverged for main and claude/relaxed-curie-lrdw8i), but it still opens by SHA, as does 0cf43d86, and the fork nelbinxav/tantra-workshop-live still exists. Still blocked on T-341 (Nelbin deletes the fork) and T-334 (Adi pastes the Support request)."
+    },
+    {
+     "ts": "2026-10-11T12:11:06+0530",
+     "who": "claude",
+     "note": "Ripple from T-111: nothing on T-145 had to change. GitHub API recheck 2026-10-11 (verify pass): 5b9f57d6 and 0cf43d86 still open by SHA on adisuja/tantra-workshop-live, but neither branch (main, claude/relaxed-curie-lrdw8i) contains 5b9f57d6 (compare says diverged), and the fork nelbinxav/tantra-workshop-live still exists. The Support text is ready to paste (no placeholders, names both SHAs and the fork), so T-145 still waits on T-341 (Nelbin) and T-334 (Adi)."
     }
    ],
    "order": 1450,
