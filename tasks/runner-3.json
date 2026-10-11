@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T18:13:57+0530",
+   "task_id": "T-397",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "ok",
+   "summary": "T-397 stays in queue with Nelbin. The call with Endy hasn't happened yet, so nothing needed changing on disk this run.\n\n- **Brief covers all four items:** done. `workshop-plan/ops/endy-call-brief.md` has the lead address question, the proposed 20% recurring share, delivery through the service accoun"
+  },
+  {
    "ts": "2026-10-11T18:02:09+0530",
    "task_id": "T-213",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "done",
    "result": "ok",
    "summary": "I checked T-102 again and it is still done: the full probe output is in the task log (31 passed, 0 failed, 0 pending), and the live mirror has not changed since that run. I did not run the probe again, because the Orchestrator said to re-run only if the mirror changes.\n\n**COMPLETION CHECK:**\n- **Pro"
-  },
-  {
-   "ts": "2026-10-11T13:29:37+0530",
-   "task_id": "T-223",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-223: applied the ripple (spec now cites Worker a9f57c7a on main 95d8630e, subdomain fix 51c7ee15 cited, stale clause dropped) and ran the two approved production reads (meeting 88135386601 for 14 to 16 Oct: registered 0, waitlist 0, failed 0, session_sync empty, no non-test attendee, cap 98), logg"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-397",
+ "task_id": "T-237",
  "entries": [
-  "F-87b96097",
-  "R-efbb72f4"
+  "F-d4f7707f"
  ],
- "started": "2026-10-11T18:07:39+0530",
- "message": "Acting on 2 note(s) for T-397: Hold the Endy Inboxes call and record the agreement",
+ "started": "2026-10-11T18:17:27+0530",
+ "message": "Acting on 1 note(s) for T-237: Give the Tantra webinar a public registration page",
  "slices": {
   "T-135": 1,
   "T-148": 1,

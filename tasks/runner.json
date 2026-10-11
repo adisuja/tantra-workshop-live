@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T18:15:58+0530",
+   "task_id": "T-229",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-229 is in review: the placeholder-email guard is live in production, and this run's checks all passed.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| H"
+  },
+  {
    "ts": "2026-10-11T17:53:06+0530",
    "task_id": "T-155",
    "mode": "feedback",
@@ -87,24 +95,13 @@
    "status": "review",
    "result": "ok",
    "summary": "T-289 is back in review. The relay is fully retired and I made one more cleanup commit, but I didn't push it, and the runbook says 19 jobs rather than 14.\n\n- **Jobs stopped (done):** `launchctl list | grep revops-relay` returns nothing, and no revops cloudflared process is running.\n- **Plists delete"
-  },
-  {
-   "ts": "2026-10-11T11:22:39+0530",
-   "task_id": "T-252",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-252 is back in review. I didn't push the branch or open the PR the Orchestrator approved, because Adi's 2026-10-11 rule (agents never touch Usetantra repos) came after that approval and overrides it. The work stays as patches under `workshop-plan/tantra-product-patches/`. Note F-edb0b565 is acknow"
   }
  ],
- "state": "working",
- "message": "Acting on 2 note(s) for T-229: Zoom registrations: keep placeholder emails out of sign-ups",
- "task_id": "T-229",
- "entries": [
-  "F-e0e951a6",
-  "R-f0fabd2e"
- ],
- "mode": "feedback",
+ "state": "idle",
+ "message": "Last sweep handled 8 task(s).",
+ "task_id": null,
+ "entries": [],
+ "mode": null,
  "started": "2026-10-11T17:56:24+0530",
  "slices": {
   "T-156": 1,

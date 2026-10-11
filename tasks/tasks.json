@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T18:15:37+0530",
-  "version": 2005,
+  "updated": "2026-10-11T18:17:47+0530",
+  "version": 2007,
   "last_id": 408,
   "team": [
    {
@@ -11102,6 +11102,11 @@
      "ts": "2026-10-11T18:15:37+0530",
      "who": "claude",
      "note": "Verified again: the placeholder guard (51c7ee1, on origin/main) is live on Worker 9761eae3, so no push or deploy was needed. On production, a@mail.example.com posted to /cal/issue and /intake got the usual 200 answers (feed null), attendees stayed at 26 (highest id 126), Zoom and Google failed are 0, and no non-test placeholder address remains (attendee 5 no longer exists). Fresh local stacks: tsc clean, calendar feeds 67 of 67 (refusal checks 6 of 6), zoom-pro 60 of 60, tantra reminders 93 of 93. Open https://revops-centre.growthcluborg.workers.dev/admin/?v=9761eae3#settings, Cohort Settings, Invite Status."
+    },
+    {
+     "ts": "2026-10-11T18:17:33+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-223."
     }
    ],
    "order": 2290
