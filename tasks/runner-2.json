@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T12:06:53+0530",
+   "task_id": "T-295",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I found nothing left to fix on T-295, so I moved it back to review with Adi and Bharath. This run made no commit, push or publish because nothing in the repo changed.\n\n**One slip, reverted:** earlier in this run I overwrote the repo's existing `app/scripts/probe-funnel-overlap.mjs` with a probe of m"
+  },
+  {
    "ts": "2026-10-11T11:46:53+0530",
    "task_id": "T-240",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-11T08:41:01+0530",
-   "task_id": "T-107",
-   "mode": "feedback",
-   "status": "review",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-295",
+ "task_id": "T-339",
  "entries": [
-  "F-3ea6d735"
+  "F-10a9eabc"
  ],
- "started": "2026-10-11T11:47:29+0530",
- "message": "Acting on 1 note(s) for T-295: Funnel animation polish: phone caption overlap and missing Amazon, YouTube and Slack logos",
+ "started": "2026-10-11T12:07:46+0530",
+ "message": "Acting on 1 note(s) for T-339: Input from Adi for T-133: sign in to Twilio (https://console.twilio.com) in the Claude in Chrome Brave profile",
  "slices": {
   "T-072": 1,
   "T-245": 1,
