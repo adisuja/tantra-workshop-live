@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T04:13:38+0530",
-  "version": 2319,
+  "updated": "2026-10-12T04:18:10+0530",
+  "version": 2327,
   "last_id": 418,
   "team": [
    {
@@ -13622,7 +13622,7 @@
   },
   {
    "id": "T-265",
-   "status": "blocked",
+   "status": "doing",
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
@@ -14090,7 +14090,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "A shared admin key in a URL cannot be revoked per person, and one set of links cannot serve a weekly rolling cohort.",
    "spec": "In cloud/src/index.ts and cloud/admin-ui/admin.js (live admin https://revops-centre.growthcluborg.workers.dev/admin, entered before this change with the shared key in the URL query, the shared ADMIN_KEY checked at index.ts:728): H057 replace the shared key in a URL with per-teammate revocable tokens (D1 table with revoke) accepted by POST form; H058 store join and recording links per cohort week and pick them by the attendee's cohort (weekly rolling cohort Wed to Fri 11:00 ET; Zoom Pro already makes one meeting per cohort in cloud/src/zoom-pro.ts, so read join links from there); H059 add a read-only preview of the invite description and reminder times to Cohort Settings; N097 add session_minutes and per-day slides/description fields to Cohort Settings; H062 remove the 'Connect your email verifier' gates (cards go with T-251) and every ruled-out vendor from the VENDOR map in admin.js (GoDaddy, Instantly, SendGrid, Calendly, HeyReach, Apollo, BuiltWith, NeverBounce, ZeroBounce; Wistia and others follow T-260), and add a one-line legend for 'not yet' vs 'open'; H065 use plural() in the Overview stat. When done, mark H057, H058, H059, H062, H065, N097 fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Merge order: build on main after T-251 lands (branch tantra-walkthroughs: e4bd0b8 removes the ruled-out tools and rewrites workshop-cards.ts, agentic.ts, jobs.ts, agent.tsx and coverage.json; probe fixes 043b5ab and aa22a3f, no READY yet in /Users/adithyamurali/tantra-round5-coord/LOG.md). Until then branch from tantra-walkthroughs; AUDIT.md line numbers predate that change.",
    "done_when": [
@@ -14102,11 +14102,15 @@
    "evidence": [
     {
      "label": "Admin sign-in form",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t272d"
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t272e"
     },
     {
-     "label": "Probe",
-     "url": "app/scripts/probe-admin-tokens.mjs"
+     "label": "Waiting list",
+     "url": "workshop-plan/tasks/WAITING_ON_ADI.md"
+    },
+    {
+     "label": "Grouped waiting list",
+     "url": "workshop-plan/tasks/WAITING_ON_ADI_GROUPED.md"
     }
    ],
    "blockers": [],
@@ -14151,6 +14155,16 @@
      "ts": "2026-10-12T01:56:36+0530",
      "who": "claude",
      "note": "Sign-in link sweep (2026-10-12): replaced /admin/enter?k=<key> with https://revops-centre.growthcluborg.workers.dev/admin/enter plus 'paste the owner key from ~/.config/tantra/revops-admin-key into the form' in the T-336 ask and the T-232, T-291, T-229 and T-246 specs, and reworded this task's own spec. T-335, T-393 and T-225 had no ?k= left in their ask or spec. A grep of tasks.json for enter?k= in spec, ask, why, title and done_when now counts 0 (old log lines kept as history, probe-admin-tokens.mjs untouched); ready for Adi and Bharath."
+    },
+    {
+     "ts": "2026-10-12T04:16:31+0530",
+     "who": "claude",
+     "note": "Replaced the last dead ?k= sign-in links in WAITING_ON_ADI.md (T-335, T-336, T-393) and WAITING_ON_ADI_GROUPED.md (Tantra API key section, line 43) with https://revops-centre.growthcluborg.workers.dev/admin/enter plus 'paste the owner key from ~/.config/tantra/revops-admin-key into the form'. No script generates these files; a grep for enter?k= now counts 0 in both (was 3 and 2). Commit e09b8393, pushed to main; Adi and Bharath review the finished work."
+    },
+    {
+     "ts": "2026-10-12T04:17:09+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-12: grep finds 0 enter?k= in WAITING_ON_ADI.md and WAITING_ON_ADI_GROUPED.md, every sign-in there points at https://revops-centre.growthcluborg.workers.dev/admin/enter with the paste-the-owner-key hint (fix e09b8393 is on origin/main). I added the same hint to the T-408 line, which had the bare link (1f854318, committed, not pushed). No script generates these files. Adi and Bharath review."
     }
    ],
    "order": 2720
@@ -17781,7 +17795,7 @@
   },
   {
    "id": "T-400",
-   "status": "queue",
+   "status": "blocked",
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [

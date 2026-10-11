@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T04:17:32+0530",
+   "task_id": "T-265",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-265 is in `doing`: the simulator test-run passed and the fix (389886e3) is pushed, but I couldn't redeploy revops-centre because the website build fails in a `/tmp"
+  },
+  {
    "ts": "2026-10-12T04:05:18+0530",
    "task_id": "T-299",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "I checked the previous report against the repo and production. It holds up, so T-237 is back in review with nothing pushed or redeployed. Note F-477dd370 had already been acknowledged by the last run (\"acked 0\").\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Fix a67da2c on origin/main ("
-  },
-  {
-   "ts": "2026-10-12T00:19:36+0530",
-   "task_id": "T-213",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-213 stays in review. Two of the three done_when items pass in this run; the third (the agreement with Endy) is still waiting on Nelbin's call (T-397).\n\n- **Publish 6a59a78 and 5d8a0ca:** nothing to push. After `git fetch`, both commits (and 80878cb) are already on origin/main, so I skipped the che"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-265",
+ "task_id": "T-380",
  "entries": [
-  "F-5fbc405e"
+  "F-6b3a3753"
  ],
- "started": "2026-10-12T04:05:36+0530",
- "message": "Acting on 1 note(s) for T-265: Centre: dashboard reads (Tantra campaign stats, Metricool clicks) and automated launch QA",
+ "started": "2026-10-12T04:17:40+0530",
+ "message": "Acting on 1 note(s) for T-380: Trash two undeployed 'Tantra funnel forms receiver' Apps Script projects (boards@fintechcircle.com)",
  "slices": {
   "T-072": 1,
   "T-245": 1,
@@ -119,7 +119,8 @@
   "T-278": 1,
   "T-059": 1,
   "T-300": 1,
-  "T-242": 1
+  "T-242": 1,
+  "T-265": 1
  },
  "api_capped": {
   "T-229": "2026-10-12T00:30:11+0530",

@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T04:17:23+0530",
+   "task_id": "T-272",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "T-272 is done: neither waiting list Adi reads has any `?k=` sign-in links left, and I acked note F-6449aa40.\n\n**Completion check (all checked this run):**\n- **WAITING_ON_ADI.md:** done. A grep for `enter?k=` finds 0. Each sign-in now points to https://revops-centre.growthcluborg.workers.dev/admin/en"
+  },
+  {
    "ts": "2026-10-12T04:15:33+0530",
    "task_id": "T-059",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-398 is still blocked on you: only you can sign in to your own Cal.com account (adisuja) and create the event. Its input now says it's the only thing T-072 needs, and that T-072 is finished once the event exists.\n\n- **Pinned slug and URL:** done. The input keeps the slug tantra-enterprise-evaluatio"
-  },
-  {
-   "ts": "2026-10-12T02:42:14+0530",
-   "task_id": "T-245",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-245 is still blocked. The code checks out, but Zoom refused the delete again today because our Zoom app is missing the delete permission, so nothing was deleted.\n\n**Completion check:**\n- **Delete-in-Zoom step on the forget route: done.** I read the code. It deletes in Zoom only when the typed id m"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-272: Centre admin: per-teammate auth, per-cohort session settings, ruled-out vendors out of the admin",
- "task_id": "T-272",
+ "message": "Acting on 1 note(s) for T-144: Workshop Hub Review tab: every funnel element with preview, source and approve or feedback",
+ "task_id": "T-144",
  "entries": [
-  "F-6449aa40"
+  "F-08919a75"
  ],
  "mode": "feedback",
- "started": "2026-10-12T04:15:51+0530",
+ "started": "2026-10-12T04:18:24+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
