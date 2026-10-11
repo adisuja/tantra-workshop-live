@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T23:45:07+0530",
+   "task_id": "T-061",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "I made no changes for this update and T-061 stays blocked.\n\n- **Key no longer blocking (ripple ask):** already true. The key was saved in the live centre on 11 Oct, and `needs_from_owner` only asks for the mailbox.\n- **Email only, WhatsApp off:** already the case. `createLaneCampaigns` in `cloud/src"
+  },
+  {
    "ts": "2026-10-11T23:43:22+0530",
    "task_id": "T-407",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "I checked T-107 again live, cleaned up one probe record the earlier passes had missed, and moved the task back to review for Nelbin. The Apps Script part is still not done and waits on T-380.\n\n**Completion check (all evidence is from this run):**\n- **The 10-10 wiring-probe rows (19:50Z and 19:52Z, c"
-  },
-  {
-   "ts": "2026-10-11T22:20:30+0530",
-   "task_id": "T-154",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "The full pilot rerun (base plus the five fixes, about 20 minutes) is still going in the background. I'll pick up when it finishes."
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-061: Free and paid lane follow-up campaigns in Tantra, with per-lane unit economics",
- "task_id": "T-061",
+ "message": "Acting on 1 note(s) for T-393: Input from Adi for T-337: Sign in at https://usetantra.com (GrowthClub workspace). Under Connectors, Email",
+ "task_id": "T-393",
  "entries": [
-  "R-74279083"
+  "R-cfdda878"
  ],
  "mode": "feedback",
- "started": "2026-10-11T23:43:57+0530",
+ "started": "2026-10-11T23:45:48+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,

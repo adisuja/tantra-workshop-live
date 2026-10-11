@@ -1,1 +1,1 @@
-{"task":"T-393","runs":[],"decisions":[]}
+{"task":"T-393","runs":[{"start":"2026-10-11T23:45:48+0530","end":"2026-10-11T23:46:05+0530","mode":"feedback","model":"opus","state":"ok","secs":16,"status":"done","session":"223932f3-f616-453e-acc9-b4b5aba72e73","notes":["R-cfdda878"],"has_transcript":true,"summary":"I closed T-393 as done. The key was already saved in Admin at 16:25, T-337 is done, and the mailbox step is tracked on T-123."}],"decisions":[]}

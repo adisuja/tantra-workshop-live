@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T23:44:16+0530",
-  "version": 2133,
-  "last_id": 410,
+  "updated": "2026-10-11T23:45:58+0530",
+  "version": 2136,
+  "last_id": 411,
   "team": [
    {
     "name": "Adi",
@@ -17617,18 +17617,23 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "blocked",
+   "status": "done",
    "why": "",
    "spec": "Only Adi can do this (credential): Creating a Tantra API key requires signing in as Adi to his GrowthClub workspace; no key is stored locally.. Everything else in T-337 is being built around it. As soon as this is done, T-337 finishes on its own.",
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Sign in at https://usetantra.com (GrowthClub workspace). Under Connectors, Email Accounts, confirm team@growthclub.org is connected. Then Connectors, API Keys, Create Key, name it 'workshop-reminders', copy it. Open https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key from ~/.config/tantra/revops-admin-key>, go to Cohort Settings, Tantra Messaging, paste into the Tantra API key field, click Save.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-11T05:31:32+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-337."
+    },
+    {
+     "ts": "2026-10-11T23:45:58+0530",
+     "who": "claude",
+     "note": "Closed as satisfied: the Tantra key was saved, sealed, in Admin at 16:25 (T-337 is done, confirmed in the T-123 and T-337 logs). The only remaining input, connecting team@growthclub.org as a mailbox, is already tracked on T-123, so nothing is asked here."
     }
    ],
    "order": 3930,
@@ -18172,6 +18177,35 @@
    ],
    "order": 4100,
    "input_for": "T-140",
+   "kind": "input"
+  },
+  {
+   "id": "T-411",
+   "title": "Input from Adi for T-052: Same single ask as T-123, no new one: at https://app.usetantra.com (GrowthClub w",
+   "area": "Traffic",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (signin): Connecting the mailbox needs the Google sign-in for team@growthclub.org; no growthclub.org service account or credential is on file.. Everything else in T-052 is being built around it. As soon as this is done, T-052 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Same single ask as T-123, no new one: at https://app.usetantra.com (GrowthClub workspace), go to Email Accounts, Connect account, and sign in as team@growthclub.org so it shows as Connected.",
+   "log": [
+    {
+     "ts": "2026-10-11T23:45:42+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-052."
+    }
+   ],
+   "order": 4110,
+   "input_for": "T-052",
    "kind": "input"
   }
  ]

@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T23:45:15+0530",
+   "task_id": "T-052",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "I left T-052 blocked. The note asked me to unblock it because the Tantra key is saved, but one setup step is still missing: team@growthclub.org has not been connected as an email account in the GrowthClub Tantra workspace. T-123 and T-234 are blocked on the same step. When T-228 tried the live run e"
+  },
+  {
    "ts": "2026-10-11T23:43:04+0530",
    "task_id": "T-234",
    "mode": "feedback",
@@ -87,24 +95,17 @@
    "status": "review",
    "result": "ok",
    "summary": "I checked T-153 against T-156's new signals.json. score.py needed no change, and I fixed one wrong claim in the rubric. The task stays in review; it's committed (dbdeaa11), not pushed, and note R-d6c48722 is acked.\n\n**What the feedback asked for:**\n- **Check T-153's scoring against the new signals.j"
-  },
-  {
-   "ts": "2026-10-11T21:55:45+0530",
-   "task_id": "T-273",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I checked every item from scratch and they all hold. T-273 is back in review for Adi and Bharath. I didn't change any files, so there was nothing to commit.\n\n| Item | State | What I checked in this run |\n|---|---|---|\n| Free platform pass entry (b-pass) in `review_hub.py` | Done | Line 438 says \"Two"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-052",
+ "task_id": "T-123",
  "entries": [
-  "R-d73d14ce"
+  "F-a08b5c0e",
+  "R-a4ef8758"
  ],
- "started": "2026-10-11T23:43:15+0530",
- "message": "Acting on 1 note(s) for T-052: Load both nurture sequences into Tantra campaigns",
+ "started": "2026-10-11T23:46:19+0530",
+ "message": "Acting on 2 note(s) for T-123: Attendee messages actually send (Tantra omni-channel campaigns)",
  "slices": {
   "T-072": 1,
   "T-245": 1,
