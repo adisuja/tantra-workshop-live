@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T07:14:16+0530",
-  "version": 1773,
+  "updated": "2026-10-11T07:19:58+0530",
+  "version": 1774,
   "last_id": 397,
   "team": [
    {
@@ -11195,12 +11195,24 @@
    ],
    "evidence": [
     {
+     "label": "Tantra Tracker sheet",
+     "url": "https://docs.google.com/spreadsheets/d/1clliPUw9w5kOL9CJmV2i8v62zwhJh9TLU3DyA1-M8Dc/edit"
+    },
+    {
+     "label": "tracker log (last run: MongoDB written)",
+     "url": "/Users/adithyamurali/Library/Logs/tantra-tracker.log"
+    },
+    {
      "label": "credentials file (not printed)",
      "url": "/Users/adithyamurali/.config/tantra/mongo.env"
     },
     {
-     "label": "backup",
+     "label": "backup (restore tested)",
      "url": "/Users/adithyamurali/backups/tantra-mongo-2026-10-09/all.archive"
+    },
+    {
+     "label": "commit b7160a2 tracker_sync.py",
+     "url": "/Users/adithyamurali/tantra-redesign/workshop-plan/ops/tracker_sync.py"
     }
    ],
    "blockers": [],
@@ -11245,6 +11257,11 @@
      "ts": "2026-10-09T20:25:39+0530",
      "who": "claude",
      "note": "Checked 8 related task(s); updating T-061."
+    },
+    {
+     "ts": "2026-10-11T07:19:58+0530",
+     "who": "claude",
+     "note": "The scheduled tracker sync now writes MongoDB again: its launchd job was still passing the old no-login address, so the locked container refused it; the script now takes the login from ~/.config/tantra/mongo.env, logs 'MongoDB written' on every run, keeps going on the attendee list if the centre export fails (the export answers 200 again, so no Worker redeploy was needed), and stores all 391 blockers instead of 36. Verified this run: launchd run exit 0 with 'MongoDB written: tantra_tracker: 5200 documents in 30 collections' and the sheet written, tantra-mongo up on 127.0.0.1:27017 only (refused from the LAN address) with restart unless-stopped, anonymous access denied, backend user still sees tantra_dev_local with 62 collections and 6168 docs, and the backup restores cleanly into a throwaway container. Still open: Docker Desktop itself was down again at the start of this run and had to be opened by hand, and no backend .env was changed (off limits), so Ben uses MONGO_BACKEND_URI from mongo.env."
     }
    ],
    "order": 2470
