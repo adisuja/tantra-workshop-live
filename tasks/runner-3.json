@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T11:18:52+0530",
+   "task_id": "T-245",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "I've blocked T-245: the production forget on 89781893618 was refused because the meeting still exists in Zoom. The 2026-10-07 log said it was deleted, but that never took effect.\n\n| Item | State |\n|---|---|\n| Production forget on 89781893618 | **Refused, nothing deleted.** I signed in the same way `"
+  },
+  {
    "ts": "2026-10-11T11:14:50+0530",
    "task_id": "T-157",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-284 is still blocked: the v2 videos can't go live until Adi gives an approve or redo verdict on each one in T-282. Everything that doesn't need those verdicts is staged and checked. Note F-f2cbf8e2 had already been acknowledged in an earlier run, so the ack changed nothing.\n\n- **Web copies: done.*"
-  },
-  {
-   "ts": "2026-10-11T08:28:52+0530",
-   "task_id": "T-259",
-   "mode": "feedback",
-   "status": "review",
-   "result": "error",
-   "summary": "[process exit 143; stderr: \"⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors\"] Waiting on the light-theme probe. When it finishes I'll record the result and mov"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-245",
+ "task_id": "T-276",
  "entries": [
-  "F-485f0c6a"
+  "F-d47736c2"
  ],
- "started": "2026-10-11T11:16:25+0530",
- "message": "Acting on 1 note(s) for T-245: Add an admin way to forget a Zoom test session",
+ "started": "2026-10-11T11:20:58+0530",
+ "message": "Acting on 1 note(s) for T-276: Docs: bring ONBOARDING_V3_SPEC.md and coverage.json up to date",
  "slices": {
   "T-135": 1,
   "T-148": 1,

@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T11:18:15+0530",
-  "version": 1847,
-  "last_id": 397,
+  "updated": "2026-10-11T11:20:59+0530",
+  "version": 1849,
+  "last_id": 398,
   "team": [
    {
     "name": "Adi",
@@ -16379,6 +16379,35 @@
    "needs_from_owner": "",
    "log": [],
    "held": true
+  },
+  {
+   "id": "T-398",
+   "title": "Input from Adi for T-072: Sign in at https://app.cal.com/event-types as adisuja and create the event 'Tant",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (signin): The event lives on Adi's own Cal.com account; agents never sign in as Adi, and no Cal.com key exists in ~/.config/tantra.. Everything else in T-072 is being built around it. As soon as this is done, T-072 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Sign in at https://app.cal.com/event-types as adisuja and create the event 'Tantra Enterprise Evaluation Call' with URL slug tantra-enterprise-evaluation-call, copying the fields from workshop-plan/build/T-072-calcom-event-draft.md (30 min, Google Meet, Mon-Fri 10:00-18:00 Asia/Kolkata).",
+   "log": [
+    {
+     "ts": "2026-10-11T11:20:59+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-072."
+    }
+   ],
+   "order": 3980,
+   "input_for": "T-072",
+   "kind": "input"
   }
  ]
 }
