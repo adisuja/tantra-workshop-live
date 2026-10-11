@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T11:46:26+0530",
+   "task_id": "T-140",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-140 is still blocked: the two blog screenshots are done, but the three Tantra screenshots need a browser signed in to Tantra, and this run has none.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| s1-blog #2 and #6 real captures | Done | Both guide entries point at real images. The comm"
+  },
+  {
    "ts": "2026-10-11T11:43:20+0530",
    "task_id": "T-300",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "blocked",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-11T08:41:01+0530",
-   "task_id": "T-121",
-   "mode": "feedback",
-   "status": "review",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-140",
+ "task_id": "T-238",
  "entries": [
-  "F-7ac92182",
-  "R-3fd1f10e"
+  "F-b448c77c"
  ],
- "started": "2026-10-11T11:43:51+0530",
- "message": "Acting on 2 note(s) for T-140: Stage 1 to 3 guides: screenshots that can only be taken once their source exists",
+ "started": "2026-10-11T11:47:25+0530",
+ "message": "Acting on 1 note(s) for T-238: Wire Stripe refunds (parked by Adi)",
  "slices": {
   "T-135": 1,
   "T-148": 1,
