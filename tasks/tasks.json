@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T07:51:09+0530",
-  "version": 1791,
+  "updated": "2026-10-11T07:52:52+0530",
+  "version": 1793,
   "last_id": 397,
   "team": [
    {
@@ -6734,14 +6734,31 @@
    "owner": "Amal",
    "priority": "P3",
    "due": "2026-10-23",
-   "status": "queue",
+   "status": "review",
    "why": "The step shows attended-day-N plus a 'Day N Output Delivered' event. True attendance tracking and the daily output delivery (automation 9) aren't built yet, so there is nothing real to capture.",
    "spec": "s5-challenge-stages #2 wants a contact timeline with attended-day-N and a daily output-delivered event from the attendee's challenge funnel. That loop is automation 9 in the funnel worker (cloud/src/jobs-day2.ts reports it not built), tracked in T-266. Once T-266 ships, run it on the simulator for a test attendee and capture the timeline.",
    "done_when": [
     "A test attendee's timeline shows attended-day-N and output_delivered_dayN",
     "Slot replaced and check-guides capture-needed down by 1"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Guide step 2 shot",
+     "url": "http://localhost:3000/guides/s5-challenge-stages/02.webp?v=t136-1011"
+    },
+    {
+     "label": "Guide page",
+     "url": "http://localhost:3000/guides/s5-challenge-stages?v=t136-1011"
+    },
+    {
+     "label": "Timeline route",
+     "url": "cloud/funnel/worker.js"
+    },
+    {
+     "label": "Probe",
+     "url": "cloud/scripts/probe-t266.mjs"
+    }
+   ],
    "blockers": [
     "T-266 automation 9 (daily survey to AI output to PDF delivery)"
    ],
@@ -6776,12 +6793,23 @@
      "ts": "2026-10-11T07:49:06+0530",
      "who": "claude",
      "note": "Ripple from T-266: nothing had to change, the task was already unheld to queue. Rechecked today: node cloud/scripts/probe-t266.mjs passes 14/14 (survey, AI output, HTML and PDF links, one output_delivered event per day), and check-guides shows capture-needed 58. Gap for the capture run: the worker logs output_delivered with the day in its data (not output_delivered_dayN, and survey_submitted not survey_submitted_dayN), and no contact timeline screen shows it, because the CRM sync pushes tags only. So the next pass needs either a per-contact timeline view in cloud/funnel/worker.js or the delivery pushed to the CRM, plus the guide's event names fixed to match."
+    },
+    {
+     "ts": "2026-10-11T07:52:52+0530",
+     "who": "claude",
+     "note": "People: reviewers Amal → Amal/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-11T07:52:52+0530",
+     "who": "claude",
+     "note": "Built a per-contact timeline in the funnel Worker (/crm/contact, linked from each /crm card) that shows attended-day-N, survey_submitted_dayN and output_delivered_dayN with the live page and PDF; probe-t266 passes 20 of 20 on the simulator, including the new timeline checks. Its screenshot replaces the s5-challenge-stages step 2 slot and check-guides capture-needed went from 58 to 57 (commit 8e1d904); Bharath is added for the Worker route."
     }
    ],
    "order": 1360,
    "assignee": "Claude",
    "reviewers": [
-    "Amal"
+    "Amal",
+    "Bharath"
    ]
   },
   {
