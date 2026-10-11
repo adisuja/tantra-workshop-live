@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T11:35:09+0530",
-  "version": 1866,
+  "updated": "2026-10-11T11:39:05+0530",
+  "version": 1867,
   "last_id": 398,
   "team": [
    {
@@ -11115,23 +11115,23 @@
    "evidence": [
     {
      "label": "s1-cold-email guide",
-     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/onboarding/guides/s1-cold-email/?v=t240"
+     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/onboarding/guides/s1-cold-email/?v=t240b"
     },
     {
      "label": "s4-rsp guide",
-     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/onboarding/guides/s4-rsp/?v=t240"
+     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/onboarding/guides/s4-rsp/?v=t240b"
     },
     {
      "label": "masterclass",
-     "url": "http://127.0.0.1:4361/tantra-workshop-live/masterclass/?v=t240"
+     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/masterclass/?v=t240b"
     },
     {
      "label": "screenshots 1440 and 390",
      "url": "/tmp/t240/"
     },
     {
-     "label": "probe report",
-     "url": "/tmp/probe-details/report.json"
+     "label": "probe log",
+     "url": "/tmp/t240-probe.log"
     },
     {
      "label": "AUDIT G129",
@@ -11160,6 +11160,11 @@
      "ts": "2026-10-10T16:52:20+0530",
      "who": "claude",
      "note": "No image or CSS change was needed. The 3 screenshot-fill FAILs no longer fire on main: they were cleared by the probe rules in c38ce69 and the recrops in 6e7b2b6. A full probe-details run against the staged mirror lists none of them, and at 1440 and 390 I measured s1-cold-email/18 at 85% fill (sibling median 81%), s4-rsp/13 with its text at about 16px, and audience-room as a full-bleed backdrop. AUDIT G129 and LOG.md are updated; there was nothing to push or publish, and the 7 probe FAILs still open (dates, playbook overflow, s2/s5 titles, s5-challenge-stages) belong to other tasks."
+    },
+    {
+     "ts": "2026-10-11T11:39:05+0530",
+     "who": "claude",
+     "note": "Nothing needed re-cropping: on a fresh static export of main (b24af229), probe-details reports 0 FAIL (11 WARN: dates and flowchart, owned by other tasks), with no screenshot-fill line for the 3 images, which were fixed earlier in c38ce69 and 6e7b2b6. At 1440 and 390 they render at their siblings' widths (s1-cold-email/18 is 694 and 308 px, audience-room is a full-bleed backdrop) except s4-rsp/13, which is sized so its text reads at 16 px, as the probe rule allows. No code changed, so nothing was pushed or republished. AUDIT G129 and LOG.md now record this check. Open the guide links at ?v=t240b."
     }
    ],
    "order": 2400
