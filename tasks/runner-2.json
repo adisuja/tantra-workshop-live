@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T08:26:33+0530",
+   "task_id": "T-056",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-056 is still blocked: the list isn't imported and the campaign doesn't exist yet, because there's still no Tantra API key on this Mac.\n\n**What I fixed:** checking the script against Tantra's API code showed that the call it used to create the campaign, `/campaigns/create`, actually launches it, me"
+  },
+  {
    "ts": "2026-10-11T08:19:49+0530",
    "task_id": "T-275",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-153 stays in review: the verify pass found six gaps, all fixed, tested, committed and pushed. The public mirror shows review, but my two new log notes had not reac"
-  },
-  {
-   "ts": "2026-10-11T06:26:03+0530",
-   "task_id": "T-025",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-025 is in review with one ask of Adi; nothing needed republishing, and note F-250d5e5b is acked.\n\nCOMPLETION CHECK\n1. **Set status to review:** done. The board reads `review` after the `pass.py set`, with Adi as reviewer.\n2. **Check `b5fb5a5` is on origin main:** done. After a fresh fetch, `git me"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-056",
+ "task_id": "T-059",
  "entries": [
-  "F-a6c31c14"
+  "F-2ab4651a"
  ],
- "started": "2026-10-11T08:21:12+0530",
- "message": "Acting on 1 note(s) for T-056: Cold calendar lists for the workshop, imported into Tantra",
+ "started": "2026-10-11T08:27:10+0530",
+ "message": "Acting on 1 note(s) for T-059: AI-personalised first lines for our workshop outreach on Tantra campaigns",
  "slices": {
   "T-072": 1,
   "T-245": 1,
