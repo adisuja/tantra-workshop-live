@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T22:20:35+0530",
-  "version": 2055,
+  "updated": "2026-10-11T22:23:41+0530",
+  "version": 2056,
   "last_id": 408,
   "team": [
    {
@@ -3346,19 +3346,19 @@
    ],
    "evidence": [
     {
-     "label": "/pro welcome state (live)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/pro/?paid=1&status=succeeded&payment_id=pay_probe&v=t074c"
+     "label": "/pro welcome state",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/pro/?paid=1&status=succeeded&payment_id=pay_probe&v=t074v"
     },
     {
      "label": "Pro course home",
-     "url": "https://revops-centre.growthcluborg.workers.dev/pro/course?v=t074c"
+     "url": "https://revops-centre.growthcluborg.workers.dev/pro/course?v=t074v"
     },
     {
      "label": "Registration page",
      "url": "https://us06web.zoom.us/meeting/register/JNx3usQKShek1rGMvx07FQ"
     },
     {
-     "label": "Rota and access email",
+     "label": "Rota",
      "url": "workshop-plan/pro/moderation-rota.md"
     },
     {
@@ -3366,22 +3366,14 @@
      "url": "cloud/src/pro-newsletter.ts"
     },
     {
-     "label": "Newsletter script",
-     "url": "app/scripts/pro-newsletter.mjs"
-    },
-    {
      "label": "Probe",
      "url": "app/scripts/probe-pro-coaching.mjs"
-    },
-    {
-     "label": "Member list",
-     "url": "workshop-plan/pro/pro_members.py"
     }
    ],
    "blockers": [
     "Email sender for the Pro access email (see needs_from_owner)"
    ],
-   "needs_from_owner": "Waiting only on T-123: connect team@growthclub.org in Tantra under Connectors, Email Accounts at https://usetantra.com (the T-337 API key is already saved). Then the Adi test send and issue 1 (test inbox and team only) go out with node app/scripts/pro-newsletter.mjs --send-test and --send-issue after the Tue 13 Oct call.",
+   "needs_from_owner": "Waiting only on T-123: connect team@growthclub.org in the GrowthClub Tantra workspace (app.usetantra.com, Email Accounts, Connect account). The T-337 key is already saved. Then the Adi test send runs (node app/scripts/pro-newsletter.mjs --send-test) and issue 1 goes to the test inbox and team after the Tue 13 Oct call (--send-issue).",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -3452,6 +3444,11 @@
      "ts": "2026-10-11T22:20:03+0530",
      "who": "claude",
      "note": "The live /pro welcome state now links the Tuesday coaching call. The hand-sent access email template in the rota carries the same link, and the newsletter now sends through the Tantra key saved in Cohort Settings (Worker 6a8dc55a, mirror 92ff0c6 /pro only, main pushed). Checked live: probe-pro all pass, probe-pro-coaching 11/11. The Adi test send ran but stopped before sending because team@growthclub.org is not a connected Tantra mailbox, which is the same input T-123 tracks (the T-337 key is already saved). For T-073: the course home with the coaching link is https://revops-centre.growthcluborg.workers.dev/pro/course?v=t074c"
+    },
+    {
+     "ts": "2026-10-11T22:23:41+0530",
+     "who": "claude",
+     "note": "Verify pass: commit 53326f5b (7 T-074 files) is on origin/main, the live /pro welcome state links the Tuesday coaching call (probe-pro ALL PASS on the mirror, which got /pro only, no deletions), probe-pro-coaching passes 11 of 11 live, and the rota with the daily Tracker Payments access step and access email template is in workshop-plan/pro/moderation-rota.md. I re-ran the Adi test send now: the T-337 key is saved, but Tantra still says team@growthclub.org isn't a connected mailbox, so nothing went out and nothing was created. Course home for T-073: https://revops-centre.growthcluborg.workers.dev/pro/course?v=t074v (members only)."
     }
    ],
    "order": 460,
