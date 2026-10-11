@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T05:42:34+0530",
-  "version": 1717,
+  "updated": "2026-10-11T05:46:02+0530",
+  "version": 1721,
   "last_id": 394,
   "team": [
    {
@@ -706,6 +706,10 @@
     {
      "label": "up.sh",
      "url": "workshop-plan/ops/up.sh"
+    },
+    {
+     "label": "commit 4ebca0a (local, not pushed)",
+     "url": "workshop-plan/ops/runbook.md"
     }
    ],
    "blockers": [],
@@ -745,6 +749,11 @@
      "ts": "2026-10-10T16:35:32+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-22 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-11T05:46:02+0530",
+     "who": "claude",
+     "note": "Runbook and up.sh now cover all 19 com.tantra jobs (pipeline-weekly was missing), section 4 names the right mirror (tantra-workshop-live, with tantra-review noted as the separate team site), and the R2 output hosting note from T-032 was already in the runbook. Verified on 2026-10-11: up.sh and up.sh --check both exit 0 with 0 failed and 3 warnings (centre-sheet admin export 401, codex-check 401, MongoDB not running per T-247); all 19 live plists are byte-identical to their repo copies and hold no secret values. Committed locally as 4ebca0a and not pushed: the cherry-pick push is ruled out by the newer whole-main rule (it split history twice on 2026-10-10), so this rides the next whole-main publish. Open workshop-plan/ops/runbook.md."
     }
    ],
    "order": 60,
@@ -1767,19 +1776,19 @@
      "url": "workshop-plan/ops/dryrun_day1.py"
     },
     {
-     "label": "Runbook dry-run section + results table",
+     "label": "Runbook section 6: stage table and results",
      "url": "workshop-plan/ops/runbook.md"
     },
     {
-     "label": "Sim run results",
-     "url": "workshop-plan/ops/dryrun/20261009-050950/results.json"
+     "label": "Run 20261011-054418 results",
+     "url": "workshop-plan/ops/dryrun/20261011-054418/results.json"
     }
    ],
    "blockers": [
     "T-032",
     "T-033"
    ],
-   "needs_from_owner": "Nothing from Adi: waits on T-032 (PDF + link, still queued) and T-033 (being built against a stub DayOutput, so it still needs real T-031/T-032 outputs); then run python3 workshop-plan/ops/dryrun_day1.py --require-real and record the timings.",
+   "needs_from_owner": "Nothing new from Adi: T-031 and T-032 are real. Waits only on the T-033 live send, which needs the Tantra API key already asked in T-337. Then: python3 workshop-plan/ops/dryrun_day1.py --require-real",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -1845,12 +1854,23 @@
      "ts": "2026-10-11T01:35:58+0530",
      "who": "claude",
      "note": "T-031 verify pass: dryrun_day1.py and centre_sheet.py now sign in to the centre admin by POST (commit 0365f09, pushed), so the harness no longer gets 401 from the Worker. Nothing else changed here; T-034 still waits on T-032 and T-033."
+    },
+    {
+     "ts": "2026-10-11T05:45:20+0530",
+     "who": "claude",
+     "note": "People: reviewers Aquila → Aquila/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-11T05:45:20+0530",
+     "who": "claude",
+     "note": "The dry run now drives the real stage code itself (dayoutput.py, render_pdf.py, deliver.py) on a run-scoped ledger: run 20261011-054418 took all three personas from survey to delivery with no manual step in 15.0 s, 8.7 s and 8.7 s, with day output and PDF plus link real and delivery on the real code against the vendor simulator (email and WhatsApp seen for Apex and Sarah; the simulator bounces the +sendflow address by its one in five rule, so that row proves the refusal path). Verified: timings are in runbook.md section 6, all three attendees read test=1 revoked=1 afterwards, cleanup and settings restore now run even when a stage fails, and --require-real still refuses until the Tantra key (T-337) exists. Two things to know: the centre on :8790 serves an older Worker build without the T-032 and T-033 routes, so I ran against a temporary local centre from this repo on :8796 (stopped now), and the T-006 ripple needed no change because the runbook was extended, not overwritten. Commit cd5590b, not pushed."
     }
    ],
    "order": 240,
    "assignee": "Claude",
    "reviewers": [
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ]
   },
   {
@@ -2090,10 +2110,6 @@
     {
      "label": "Sequence copy",
      "url": "workshop-plan/sequences/pre.md"
-    },
-    {
-     "label": "Generated campaign copy",
-     "url": "cloud/src/generated/nurture-copy.ts"
     }
    ],
    "blockers": [],
@@ -2133,6 +2149,11 @@
      "ts": "2026-10-11T05:41:59+0530",
      "who": "claude",
      "note": "Copy pass done on workshop-plan/sequences/pre.md: the prepare, VIP, day-before and 1-hour messages are rewritten for both lanes (pain-first intros, sharper subjects, no unsourced 'most people' claim, the wrong 'same link for all three days' line fixed, VIP described only with what /vip itself says). The confirmation is unchanged because it is locked word for word to the Registered campaign already being sent. Checked: banned terms 0, dashes 0, literal dates 0, check_confirmation.py passes, build_nurture.py rebuilt cloud/src/generated/nurture-copy.ts and it type checks; the new prepare and VIP words reach registrants on the next Worker deploy, and the live day-before and 1-hour sends still use T-234's own copy in cloud/src/reminder-copy.ts."
+    },
+    {
+     "ts": "2026-10-11T05:44:59+0530",
+     "who": "claude",
+     "note": "Verify pass: the day-before and 1-hour emails now open on a specific pain in both lanes, and their headers say plainly that the live reminders still send T-234's own wording until T-234 adopts this copy. Rechecked in this run: all 9 messages in 3 channels each, 0 banned terms, dashes or literal dates, the confirmation lock passes, and the generated campaign copy is in sync and type checks. Open workshop-plan/sequences/pre.md; the prepare and VIP words reach registrants only on the next Worker deploy, which I did not run."
     }
    ],
    "order": 290,

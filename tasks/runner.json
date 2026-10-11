@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T05:45:32+0530",
+   "task_id": "T-034",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-034 stays blocked only on the Tantra API key already asked in T-337: the dry run now runs the real day output, PDF and delivery code for all three personas, with t"
+  },
+  {
    "ts": "2026-10-11T05:28:39+0530",
    "task_id": "T-058",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "doing",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. COMPLETION CHECK for T-299 (status set to doing): not merged, pushed, deployed or published this run.\n\n- **Vendor-only inbox path, no mailbox-building or Instantly w"
-  },
-  {
-   "ts": "2026-10-10T21:04:36+0530",
-   "task_id": "T-297",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-297 stays in review: the verify pass found nothing to fix, and all four calls are on disk and live on the mirror.\n\n**Completion check** (evidence from this run)\n\n| Item | State | Evidence |\n|---|---|---|\n| Call 1: keep the 89%, labelled teaching model in body and figure caption, neither number a r"
   }
  ],
  "state": "working",
- "message": "Acting on 2 note(s) for T-034: Full dry run of the Day-1 pipeline",
- "task_id": "T-034",
+ "message": "Acting on 1 note(s) for T-197: Round 5 #3 (Lane A): Epic full-system audit: every element, question, card and section (AUDIT.md + probe-details.mjs)",
+ "task_id": "T-197",
  "entries": [
-  "R-97849613",
-  "F-2a882161"
+  "F-f7a9ff1d"
  ],
  "mode": "feedback",
- "started": "2026-10-11T05:30:20+0530",
+ "started": "2026-10-11T05:46:07+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
@@ -116,6 +115,7 @@
   "T-226": 1,
   "T-299": 1,
   "T-139": 1,
-  "T-020": 1
+  "T-020": 1,
+  "T-034": 1
  }
 }
