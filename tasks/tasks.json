@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T16:57:10+0530",
-  "version": 1975,
+  "updated": "2026-10-11T17:07:34+0530",
+  "version": 1981,
   "last_id": 408,
   "team": [
    {
@@ -1701,24 +1701,32 @@
    ],
    "evidence": [
     {
+     "label": "Centre Day 1 card (preview)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/preview?card=d1-session&v=20261011b"
+    },
+    {
      "label": "Hosted day1 HTML",
-     "url": "https://revops-centre.growthcluborg.workers.dev/o/xpEvUSJjNnYQXZmqflDlaer0FNbv9gSPgtxwoJulwxg?v=20261011"
+     "url": "https://revops-centre.growthcluborg.workers.dev/o/xpEvUSJjNnYQXZmqflDlaer0FNbv9gSPgtxwoJulwxg?v=20261011b"
     },
     {
      "label": "Hosted day1 PDF",
-     "url": "https://revops-centre.growthcluborg.workers.dev/o/xpEvUSJjNnYQXZmqflDlaer0FNbv9gSPgtxwoJulwxg.pdf?v=20261011"
+     "url": "https://revops-centre.growthcluborg.workers.dev/o/xpEvUSJjNnYQXZmqflDlaer0FNbv9gSPgtxwoJulwxg.pdf?v=20261011b"
+    },
+    {
+     "label": "390px centre screenshot",
+     "url": "/tmp/t032/centre-d1-390.png"
+    },
+    {
+     "label": "390px output screenshot",
+     "url": "/tmp/t032/output-d1-390.png"
+    },
+    {
+     "label": "Centre code",
+     "url": "/Users/adithyamurali/tantra-redesign/app/src/app/onboarding/centre/centre.tsx"
     },
     {
      "label": "Probe",
      "url": "/Users/adithyamurali/tantra-redesign/workshop-plan/ops/probe_outputs.py"
-    },
-    {
-     "label": "Worker code",
-     "url": "/Users/adithyamurali/tantra-redesign/cloud/src/outputs.ts"
-    },
-    {
-     "label": "Renderer",
-     "url": "/Users/adithyamurali/tantra-redesign/workshop-plan/ops/render_pdf.py"
     }
    ],
    "blockers": [],
@@ -1793,6 +1801,11 @@
      "ts": "2026-10-11T05:53:52+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-031, T-034, T-033."
+    },
+    {
+     "ts": "2026-10-11T17:07:34+0530",
+     "who": "claude",
+     "note": "The centre now shows 'Open your Day N output' and 'Download PDF' on each day's session card from /api/me outputs (nothing when empty, no time lock); rebuilt and deployed (Worker version 9761eae3), commit 6c65c86c pushed to main. Verified from the public URL as attendee 4 in a headless iPhone browser at 390px: both links show on the Day 1 card, HTML 200 and PDF 200 (%PDF) open with no sideways scroll, and probe_outputs.py prints ok for HTML, PDF and wrong token 404. Open the Day 1 card via the preview link below."
     }
    ],
    "order": 220,
@@ -1916,6 +1929,11 @@
      "ts": "2026-10-11T12:02:21+0530",
      "who": "claude",
      "note": "Verify pass: I re-ran everything on a fresh local centre and simulator. probe-day-delivery passed 26/26, probe-output-delivery 17/17 and probe-tantra-reminders 92/92. The real /o/<token> and .pdf link source and the email-carrying Resend idempotency key are in commit 605e4609, which is on origin/main and live as Worker 559158f9 (admin delivery API answers 401 signed out). Still blocked only on the T-337 Tantra key, with the WhatsApp number asked in T-400."
+    },
+    {
+     "ts": "2026-10-11T17:07:34+0530",
+     "who": "claude",
+     "note": "T-032 update: the onboarding centre now shows each attendee's Day N output link and PDF on that day's session card (deployed, commit 6c65c86c), read from /api/me outputs. Nothing else changes here."
     }
    ],
    "order": 230,
@@ -2053,6 +2071,11 @@
      "ts": "2026-10-11T16:54:03+0530",
      "who": "claude",
      "note": "Verify pass: I reran the harness myself (run 20261011-165232). It started and stopped its own private centre, left the :8790 process alone (PID 43749 before and after), and all three personas got email and WhatsApp in 10.9 s, 12.9 s and 14.3 s, while the refusal address bounced. All four attendees read test=1 revoked=1 afterwards, the rows are in runbook.md section 6, and cd5590b and 5320259f are both on origin. --require-real still refuses until the T-337 Tantra key exists."
+    },
+    {
+     "ts": "2026-10-11T17:07:34+0530",
+     "who": "claude",
+     "note": "T-032 update: the onboarding centre now shows each attendee's Day N output link and PDF on that day's session card (deployed, commit 6c65c86c), read from /api/me outputs. Nothing else changes here."
     }
    ],
    "order": 240,
@@ -7254,6 +7277,11 @@
      "ts": "2026-10-11T07:52:52+0530",
      "who": "claude",
      "note": "Built a per-contact timeline in the funnel Worker (/crm/contact, linked from each /crm card) that shows attended-day-N, survey_submitted_dayN and output_delivered_dayN with the live page and PDF; probe-t266 passes 20 of 20 on the simulator, including the new timeline checks. Its screenshot replaces the s5-challenge-stages step 2 slot and check-guides capture-needed went from 58 to 57 (commit 8e1d904); Bharath is added for the Worker route."
+    },
+    {
+     "ts": "2026-10-11T17:07:34+0530",
+     "who": "claude",
+     "note": "T-032 update: the onboarding centre now shows each attendee's Day N output link and PDF on that day's session card (deployed, commit 6c65c86c), read from /api/me outputs. Nothing else changes here."
     }
    ],
    "order": 1360,
