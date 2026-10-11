@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T16:27:48+0530",
+   "task_id": "T-226",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-226 is still blocked: the seat can't join a real meeting until you do one Zoom sign-in. The separate blocker list you asked for is T-407, and I checked it against production today.\n\n**What production shows today (read-only check):**\n- **Seat credentials:** none are saved on Live Control. The app v"
+  },
+  {
    "ts": "2026-10-11T16:16:52+0530",
    "task_id": "T-299",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-225 stays blocked on Zoom Support: when I wrote the two fields to the 14 Oct meeting again today, Zoom accepted the request and ignored both.\n\n| Item | State | What I saw this run |\n|---|---|---|\n| Write test on 88135386601 | Done, not granted | I ran the daily job's write test by hand. My command"
-  },
-  {
-   "ts": "2026-10-11T12:40:08+0530",
-   "task_id": "T-385",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-385 is back in review for Bharath. I re-ran the library probe on both sites and the poll check passes.\n\n- **Keep the check and point it at a poll view:** done. The fix from the last run is in `app/scripts/probe-library.mjs` (lines 124 to 138). It jumps to the poll example (`#live-polls`), waits fo"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-226",
+ "task_id": "T-337",
  "entries": [
-  "F-532a89ae"
+  "F-923755d4"
  ],
- "started": "2026-10-11T16:16:55+0530",
- "message": "Acting on 1 note(s) for T-226: Tantra Host Console: Adi hosts every session from a Mac app that runs chat posts, polls, call-to-action links, mute and video control, co-hosts",
+ "started": "2026-10-11T16:34:09+0530",
+ "message": "Acting on 1 note(s) for T-337: Input from Adi for T-228 and T-234: create a Tantra API key and save it in Admin, Cohort Settings",
  "slices": {
   "T-072": 1,
   "T-245": 1,

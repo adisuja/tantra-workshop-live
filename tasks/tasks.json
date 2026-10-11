@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T16:31:24+0530",
-  "version": 1958,
-  "last_id": 407,
+  "updated": "2026-10-11T16:34:37+0530",
+  "version": 1961,
+  "last_id": 408,
   "team": [
    {
     "name": "Adi",
@@ -16121,6 +16121,11 @@
      "ts": "2026-10-11T16:25:43+0530",
      "who": "claude",
      "note": "Adi's GrowthClub Tantra key is now saved, sealed, in the centre admin (Session Reminders reports key saved; the settings API never returns it). I replaced it with [saved in admin] in the board note and run logs. It had already been published in the public board mirror's history and in this repo's history (commit 746afc0e), so it should be rotated, which is tracked on T-123."
+    },
+    {
+     "ts": "2026-10-11T16:34:22+0530",
+     "who": "claude",
+     "note": "This note from the Orchestrator (05:31) is out of date: Adi's key was saved, sealed, in Admin, Cohort Settings, Session Reminders at 16:25, so nothing here had to change and T-337 stays done. I did not print the admin link with the admin key, because that would put a secret in the board. The steps after the key (create campaigns, Check, test send) belong to T-234, which is now blocked because team@growthclub.org is not a connected mailbox in the GrowthClub workspace."
     }
    ],
    "order": 3370,
@@ -17226,6 +17231,35 @@
     }
    ],
    "order": 4070
+  },
+  {
+   "id": "T-408",
+   "title": "Input from Adi for T-123: Sign in at https://app.usetantra.com (GrowthClub workspace). 1) Open Email Accou",
+   "area": "Delivery",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (signin): Connecting the mailbox needs the team@growthclub.org Google sign-in, and rotating a Tantra key needs Adi's own Tantra login.. Everything else in T-123 is being built around it. As soon as this is done, T-123 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Sign in at https://app.usetantra.com (GrowthClub workspace). 1) Open Email Accounts, click Connect account, and sign in as team@growthclub.org. 2) Open Connectors, API Keys, rotate the 'workshop-reminders' key and copy the new one. 3) Sign in at https://revops-centre.growthcluborg.workers.dev/admin/enter, open Cohort Settings, Session Reminders, paste it into the Tantra API key field, and click Save.",
+   "log": [
+    {
+     "ts": "2026-10-11T16:34:37+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-123."
+    }
+   ],
+   "order": 4080,
+   "input_for": "T-123",
+   "kind": "input"
   }
  ]
 }
