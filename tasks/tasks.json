@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T23:17:16+0530",
-  "version": 2116,
+  "updated": "2026-10-11T23:23:27+0530",
+  "version": 2117,
   "last_id": 410,
   "team": [
    {
@@ -61,7 +61,7 @@
    ],
    "priority": "P1",
    "due": "2026-10-14",
-   "status": "doing",
+   "status": "review",
    "why": "Several attendee-facing surfaces still say two different things (session format, Day 1 labels, Day 2 hours, task numbering) during a live cohort; each needs one answer from Adi before Claude makes main consistent.",
    "spec": "Open content calls from Nelbin's content pass (PR #3 content-pass and PR #4 aquila-client-content on adisuja/3-day-tantra-ai-revops-workshop, both already contained in main; PR #2 merged 2026-10-06) and issue #1 sections 3 and 6. For each answer Adi gives, Claude edits main directly (sources: app/src/lib/calendar.ts, curriculum.ts, card-education.ts, workshop-cards.ts, the Day Engine components, workshop-plan/build/*.py for the deck and survey), re-runs the probes (check-guides, probe-details, probe-onboarding-tabs, probe-headings) and logs the decision here. Unsourced hour figures (agent.tsx:653, funnel-os-types/system.tsx:211, the playbook) are handled by Claude under the no-invented-stats rule in T-256, not by this decision.",
    "done_when": [
@@ -71,16 +71,16 @@
    ],
    "evidence": [
     {
-     "label": "Playbook Day 1 on the mirror (5 to 6 h)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t191c#d1"
+     "label": "Playbook Day 1 on the mirror (5 to 6 h, 390 px fit)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t191d#d1"
     },
     {
-     "label": "/workshop on the mirror",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=t191c"
+     "label": "Live onboarding on the Worker",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?v=t191d"
     },
     {
-     "label": "Onboarding library on localhost",
-     "url": "http://localhost:4322/debug/onboarding?v=t191c"
+     "label": "Onboarding centre on the mirror",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=t191d"
     },
     {
      "label": "One source for day titles and hours",
@@ -164,6 +164,11 @@
      "ts": "2026-10-11T12:31:37+0530",
      "who": "claude",
      "note": "Day 1 header now reads 5 to 6 h from one source (DAY_HOURS in app/src/lib/day-titles.ts, landed in main 9ea3b9a0, pushed) and the mirror is republished as ae397ec2e. tsc, check-guides, probe-headings, probe-onboarding-tabs and probe-anonymity pass; with the agentic section skipped, probe-details has the date and 390 px playbook failures gone, and its one remaining FAIL (s5-rsp-stages pinned grid) comes from T-135. Left: build and deploy the revops-centre Worker from the clean worktree /private/tmp/t191-wt, then move to review. Ripple R-da29e551 (89% teaching model) needed no change here. Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t191c#d1"
+    },
+    {
+     "ts": "2026-10-11T23:23:27+0530",
+     "who": "claude",
+     "note": "Nothing needed rebuilding or pushing: main and origin/main already have the Day 1 header at 5 to 6 h from DAY_HOURS (9ea3b9a0). Both remaining '4 to 6 h' (onboarding-tasks.ts:446, playbook.html:3251) are the Day 3 automations step's own estimate, so I kept them. The mirror playbook is 390 px wide on a 390 px phone (scrollWidth 390, measured headless today). The live Worker bundle already has the new day titles, 5 to 6 and the links.welcome hide check, so I did not redeploy. Today's checks: tsc, check-guides, probe-anonymity and probe-headings pass; probe-onboarding-tabs has 0 FAIL on the mirror. probe-details on the mirror (centre skipped) has 1 FAIL: '7 to 9 Oct' on referrals.html is the first cohort's real dates (T-275, owner Adi), not a T-191 surface. Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t191d#d1"
     }
    ],
    "order": 1
