@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T17:07:34+0530",
-  "version": 1981,
+  "updated": "2026-10-11T17:08:50+0530",
+  "version": 1982,
   "last_id": 408,
   "team": [
    {
@@ -8195,33 +8195,57 @@
    "due": "2026-10-14",
    "status": "review",
    "why": "Owner voice notes, 2026-09-26: the funnel's job is to get everyone using Tantra and reporting every bug and feature request; both get resolved through a fast agentic dev cycle so customers stay for the business results. Owner assigned all of this to Claude end to end.",
-   "spec": "Severity levels with deadlines (P0 same day, P1 within 24 h, P2 within the week). Agent flow: reproduce, write a failing test, open a fix PR, human review, deploy, notify reporter. Every fix carries a regression test. Weekly report: open bugs by severity, time to fix, bugs that came back. Input queue comes from T-151. Product code: GitHub Usetantra/tantra-backend-v2 (branch development) and Usetantra/tantra-mcp (contract notes in docs/onboarding-v3/analysis/integrations-tantra-api.md); clone outside this repo and run locally. Claude-built automation only (no n8n). Metrics feed the T-158 dashboard.",
+   "spec": "Severity levels with deadlines (P0 same day, P1 within 24 h, P2 within the week, P3 backlog). Agent flow: triage, reproduce, write a failing test, fix, save the fix plus its regression test as a patch in workshop-plan/tantra-product-patches/; the agent flow ends at 'patch plus regression test handed to Bharath'. Bharath applies (git am), merges and deploys; then pipeline.py merged ID records it and the reporter is notified. Agents never write to any Usetantra repo (Adi 2026-10-11). Every fix carries a regression test. Weekly report: open bugs by severity, time to fix (triage to merge), bugs that came back. Input queue comes from T-151. Claude-built automation only (no n8n). Metrics feed the T-158 dashboard.",
    "done_when": [
     "Severity levels written and agreed with Bharath",
-    "Flow run end to end on 5 real bugs",
-    "PRs without a regression test cannot merge (CI rule on tantra-backend-v2)",
+    "Flow run end to end on 5 real bugs, ending at patch plus regression test handed to Bharath",
+    "regression-test-required workflow delivered as a patch, with apply steps for Bharath",
     "First weekly bug report posted"
    ],
    "evidence": [
     {
      "label": "First weekly bug report",
-     "url": "workshop-plan/bugs/report-2026-10-09.md?v=1791679575"
+     "url": "workshop-plan/bugs/report-2026-10-09.md?v=1791700000"
     },
     {
      "label": "Severity levels",
-     "url": "docs/bug-pipeline/severity.md?v=1791679575"
+     "url": "docs/bug-pipeline/severity.md?v=1791700000"
     },
     {
-     "label": "Fix and CI patches for Bharath",
-     "url": "workshop-plan/tantra-product-patches/README.md?v=1791679575"
+     "label": "Patch index (README)",
+     "url": "workshop-plan/tantra-product-patches/README.md?v=1791700000"
+    },
+    {
+     "label": "Bug 1 fix + regression test patch (was PR #160, closed)",
+     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fix_bug-1-unipile-account-id-regex--f7ef2beb53.patch?v=1791700000"
+    },
+    {
+     "label": "Bug 2 fix + regression test patch (was PR #161, closed)",
+     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fix_bug-2-phone-extension-no-space--2f84eb6668.patch?v=1791700000"
+    },
+    {
+     "label": "Bug 3 fix + regression test patch (was PR #162, closed)",
+     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fix_bug-3-asyncpool-concurrency--5fafc5b7b4.patch?v=1791700000"
+    },
+    {
+     "label": "Bug 4 fix + regression test patch (was PR #163, closed)",
+     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fix_bug-4-unsubscribe-search-regex--384f290500.patch?v=1791700000"
+    },
+    {
+     "label": "Bug 5 fix + regression test patch (was PR #164, closed)",
+     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fix_bug-5-calendar-html-link-text-url--a5af3635a3.patch?v=1791700000"
+    },
+    {
+     "label": "CI rule regression-test-required patch (was PR #165, closed)",
+     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/ci_regression-test-required--442706bc7a.patch?v=1791700000"
     },
     {
      "label": "Pipeline",
-     "url": "workshop-plan/bugs/pipeline.py?v=1791679575"
+     "url": "workshop-plan/bugs/pipeline.py?v=1791700000"
     },
     {
      "label": "Metrics for T-158",
-     "url": "workshop-plan/bugs/metrics.json?v=1791679575"
+     "url": "workshop-plan/bugs/metrics.json?v=1791700000"
     }
    ],
    "blockers": [],
@@ -8266,6 +8290,11 @@
      "ts": "2026-10-11T06:16:15+0530",
      "who": "claude",
      "note": "Verify pass: I re-applied all five fix patches to a scratch copy of development and each test fails without its fix and passes with it (29 of 29), and the CI check script fails a src-only change and passes src plus test. Fixed two gaps: the pipeline now records a merge (pipeline.py merged ID) and counts deadlines from triage, and severity.md describes the patch flow instead of opening PRs. PRs 160 to 165 stay closed under Adi's 2026-10-11 rule, so Bharath still needs to agree the levels, apply and merge the patches with git am, and make regression-test-required a required check."
+    },
+    {
+     "ts": "2026-10-11T17:08:50+0530",
+     "who": "claude",
+     "note": "Card brought in line with the no-Usetantra-writes rule: evidence now links the five fix patches and the CI rule patch (PRs 160 to 165 marked closed), and spec and done_when end the agent flow at 'patch plus regression test handed to Bharath'. pipeline.py's fix step now denies git push, gh and git remote to the agent and itself exports the fix with git format-patch into tantra-product-patches; the regenerated report and metrics.json show all five bugs as 'patch ready, awaiting Bharath' with time to fix 'none yet'. Open workshop-plan/bugs/report-2026-10-09.md?v=1791700000."
     }
    ],
    "order": 1520,
