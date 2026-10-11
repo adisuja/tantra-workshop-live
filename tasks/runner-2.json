@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T12:11:45+0530",
+   "task_id": "T-145",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-145 is still blocked: the GitHub API today (2026-10-11) still opens commit 5b9f57d6 by its SHA, and Nelbin's fork still exists, so the task can't close yet.\n\n**Completion check:**\n- **Ripple R-35d1f725 (recheck and log whether 5b9f57d6 is reachable):** Done. Nothing on T-145 itself had to change, "
+  },
+  {
    "ts": "2026-10-11T12:08:30+0530",
    "task_id": "T-339",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-11T08:41:50+0530",
-   "task_id": "T-073",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-145",
+ "task_id": "T-278",
  "entries": [
-  "R-35d1f725"
+  "F-6ddf16a9"
  ],
- "started": "2026-10-11T12:09:36+0530",
- "message": "Acting on 1 note(s) for T-145: Decide: rewrite the public mirror repo's history to remove the leaked library commit",
+ "started": "2026-10-11T12:13:09+0530",
+ "message": "Acting on 1 note(s) for T-278: Join and success pages: one seat-link resolver, community fallback, footer links, sample dates",
  "slices": {
   "T-072": 1,
   "T-245": 1,
