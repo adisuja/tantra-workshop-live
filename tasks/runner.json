@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T17:11:10+0530",
+   "task_id": "T-061",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-061 is still blocked, but on a different input now. The Tantra key is saved in the live centre (T-337 is done). Creating the two lane campaigns also needs team@growthclub.org connected as a mailbox in the GrowthClub Tantra workspace, and it isn't yet. That's the same ask already on T-123 and T-228"
+  },
+  {
    "ts": "2026-10-11T16:50:46+0530",
    "task_id": "T-006",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "turns",
    "summary": "T-148 is blocked: the cover logo still 404s on the live deck, and I didn't push the fix again because Adi's 2026-10-11 rule says agents never touch Usetantra repos. That rule came after the Orchestrator's 2026-10-10 approval, and the earlier fix was reverted under it.\n\n- **Edit the slide sources, re"
-  },
-  {
-   "ts": "2026-10-11T11:11:16+0530",
-   "task_id": "T-073",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-073 stays blocked. The 7 to 9 Oct recordings aren't in Zoom, the database or this Mac, so there is nothing to cut. I fixed and deployed the parts that were broken: the course heading and the Drive source.\n\n**What I fixed (live page checked first):**\n- **Course heading:** the live page showed \"Tant"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-061: Free and paid lane follow-up campaigns in Tantra, with per-lane unit economics",
- "task_id": "T-061",
+ "message": "Acting on 1 note(s) for T-151: Feedback intake: one queue for every Tantra bug report and feature request",
+ "task_id": "T-151",
  "entries": [
-  "F-f53a647f"
+  "F-4d87da86"
  ],
  "mode": "feedback",
- "started": "2026-10-11T16:57:40+0530",
+ "started": "2026-10-11T17:17:48+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
