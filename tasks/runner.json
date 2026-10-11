@@ -97,14 +97,14 @@
    "summary": "T-259 is in review for Adi and Bharath: the verify pass found nothing to fix, so there was no commit and no push.\n\n**COMPLETION CHECK** (evidence from this run)\n\n| Item | State |\n|---|---|\n| `cf3d5ff` on origin/main, tree clean | Done for the task's files. `cf3d5ff` and `b880b67` are ancestors of or"
   }
  ],
- "state": "paused",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 73% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 15:51.",
- "task_id": null,
+ "state": "working",
+ "message": "Acting on 1 note(s) for T-001: /masterclass landing page",
+ "task_id": "T-001",
  "entries": [
-  "F-403ff48e"
+  "F-200e1788"
  ],
  "mode": "feedback",
- "started": "2026-10-11T13:28:49+0530",
+ "started": "2026-10-11T15:56:19+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
