@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T17:29:31+0530",
-  "version": 1989,
+  "updated": "2026-10-11T17:43:27+0530",
+  "version": 1990,
   "last_id": 408,
   "team": [
    {
@@ -17083,7 +17083,7 @@
    ],
    "priority": "P1",
    "due": "2026-10-16",
-   "status": "queue",
+   "status": "review",
    "why": "T-153's first weekly decision (2026-10-09) picked FR-ad7abb as the one build-now item (score 72.0, demand 2). Its rubric inputs in seed.py are Claude's first-pass estimates, and the rubric says build-now work goes through Bharath before it touches a product repo.",
    "spec": "Step 1: Bharath confirms or corrects the four inputs for FR-ad7abb in workshop-plan/tasks/features/seed.py line 14 (revenue 5, retention 4, effort 2, strategic fit 5); re-run weekly.py if any change, and stop if it no longer scores build now. Step 2: build the endpoint that adds a lead to a running campaign (enrollment today happens once, in start(), and contactListIds are locked while the campaign is active; see memory/lead-intake-feature-gap.md) with a regression test. Deliver it as a patch plus short spec under workshop-plan/tantra-product-patches/ for Bharath to apply as a branch and PR, because the standing rule bars this agent from writing to any Usetantra repo. No product-repo change before Bharath's review. Step 3: when it ships, add the release to features/data/releases.json so the changelog and the per-requester notes generate.",
    "done_when": [
@@ -17092,7 +17092,20 @@
     "Bharath has reviewed the patch before any product-repo change",
     "Release recorded in releases.json and the changelog entry generated once it ships"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Spec",
+     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fr-ad7abb_add-lead-running-campaign--SPEC.md"
+    },
+    {
+     "label": "Patch",
+     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fr-ad7abb_add-lead-running-campaign-test--f0b901e.patch"
+    },
+    {
+     "label": "Apply steps",
+     "url": "workshop-plan/tantra-product-patches/README.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -17100,6 +17113,11 @@
      "ts": "2026-10-11T06:27:40+0530",
      "who": "claude",
      "note": "Created from T-153 close-out (Orchestrator decision O-d6861b99). Waiting on Bharath to confirm the seed.py inputs first."
+    },
+    {
+     "ts": "2026-10-11T17:43:27+0530",
+     "who": "claude",
+     "note": "Endpoint already exists on development (e571b78), so no second build: I delivered a tests-only patch with the FR-ad7abb regression test (one lead joins an active campaign, repeat is idempotent, contactListIds lock holds; mutation check fails it when the lock is removed) and stubs that make the red contact-append suite green again. 27 of 27 tests pass on a scratch clone of f0b901e; no Usetantra repo touched. Bharath: open the spec, confirm the four seed.py inputs (5, 4, 2, 5, kept as is, still build now 72.0) and whether e571b78 is in production, then apply per the README."
     }
    ],
    "order": 3960
