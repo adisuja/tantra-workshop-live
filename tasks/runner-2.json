@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T21:08:04+0530",
+   "task_id": "T-247",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "Everything checks out except two gaps, which I fixed: the runbook still said nothing restarts Docker, and the `up.sh` health check didn't know about the new keepalive job. T-247 is back in review. My fix is committed as 9af89f1a but not pushed, because the approved push covered only the script, plis"
+  },
+  {
    "ts": "2026-10-11T18:58:38+0530",
    "task_id": "T-254",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-253 is back in review: every item the Orchestrator asked for checks out, and I didn't need to change or commit anything.\n\n| Item | State | What I checked in this run |\n|---|---|---|\n| 1. Deploy the centre Worker with ad3ebaf and the HubSpot fix (a21b666) | Done | Both commits are in `main`. The li"
-  },
-  {
-   "ts": "2026-10-11T13:32:45+0530",
-   "task_id": "T-094",
-   "mode": "feedback",
-   "status": "review",
-   "result": "provider",
-   "summary": "API Error: 402 [cerebras] All 1 connection(s) credits exhausted — please reconnect in the dashboard"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-247",
+ "task_id": "T-272",
  "entries": [
-  "F-820de747"
+  "F-00413de5"
  ],
- "started": "2026-10-11T20:55:39+0530",
- "message": "Acting on 1 note(s) for T-247: Bring the Tantra Tracker MongoDB copy back (Docker is stopped) and harden the container",
+ "started": "2026-10-11T21:09:55+0530",
+ "message": "Acting on 1 note(s) for T-272: Centre admin: per-teammate auth, per-cohort session settings, ruled-out vendors out of the admin",
  "slices": {
   "T-072": 1,
   "T-245": 1,

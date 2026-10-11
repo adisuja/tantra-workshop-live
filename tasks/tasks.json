@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T21:06:18+0530",
-  "version": 2028,
+  "updated": "2026-10-11T21:07:34+0530",
+  "version": 2029,
   "last_id": 408,
   "team": [
    {
@@ -12029,12 +12029,12 @@
      "url": "/Users/adithyamurali/Library/Logs/tantra-tracker.log"
     },
     {
-     "label": "keepalive script",
-     "url": "workshop-plan/ops/docker_keepalive.py"
+     "label": "runbook section 2a",
+     "url": "workshop-plan/ops/runbook.md"
     },
     {
-     "label": "keepalive plist",
-     "url": "workshop-plan/ops/com.tantra.docker-keepalive.plist"
+     "label": "keepalive script",
+     "url": "workshop-plan/ops/docker_keepalive.py"
     }
    ],
    "blockers": [],
@@ -12099,6 +12099,11 @@
      "ts": "2026-10-11T21:06:18+0530",
      "who": "claude",
      "note": "Docker Desktop now recovers on its own: launchd com.tantra.docker-keepalive (every 5 min, workshop-plan/ops/docker_keepalive.py and its plist, pushed to main at ba1573a1) runs docker info, opens Docker, and after 3 min kills and relaunches it; Docker start-at-login is on (AutoStart true), and tracker_sync logs one 'MongoDB UNREACHABLE' line when Mongo is down. Verified tonight: I quit Docker at 20:56, the keepalive found it at 20:57, relaunched it by 21:00:33 with tantra-mongo back on 127.0.0.1:27017 (restart unless-stopped), and the tracker log went written, UNREACHABLE, then 'MongoDB written: 5190 documents' unaided. The homebrew mongodb-community plist is present with RunAtLoad but is not loaded and mongod is not installed, so nothing else holds 27017 (left in place, as asked)."
+    },
+    {
+     "ts": "2026-10-11T21:07:34+0530",
+     "who": "claude",
+     "note": "Verify pass: the docker-keepalive launchd job is loaded and its log shows tonight's recovery (Docker down at 20:57, killed and relaunched, engine and tantra-mongo back at 21:00:33, then the tracker log went from MongoDB UNREACHABLE back to MongoDB written: 5190 documents). AutoStart is true, tantra-mongo is up with unless-stopped on 127.0.0.1:27017 with --auth (anonymous access denied), and the script, plist and tracker_sync change are on origin/main. I fixed the runbook, which still said nothing restarts Docker, and added the job to up.sh. up.sh --check exits 0 and reports docker-keepalive ok (commit 9af89f1a, local only). The Homebrew mongodb plist is present but not loaded, and mongod is not installed."
     }
    ],
    "order": 2470
