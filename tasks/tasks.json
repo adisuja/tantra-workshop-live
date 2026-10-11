@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T23:12:36+0530",
-  "version": 2112,
+  "updated": "2026-10-11T23:14:57+0530",
+  "version": 2114,
   "last_id": 410,
   "team": [
    {
@@ -7337,6 +7337,11 @@
      "ts": "2026-10-11T13:27:39+0530",
      "who": "claude",
      "note": "Verify pass: all 11 captures are real WebPs on main and byte-identical on the live mirror. check-guides went from 73 to 62 at 512c734 and passes now, probe-guides passes all 250 renders, and probe-anonymity passes. I removed the throwaway capture scripts, one of which held the test sign-up email (638a3600). Open the two links below to see the thank-you page and the CRM capture."
+    },
+    {
+     "ts": "2026-10-11T23:14:57+0530",
+     "who": "claude",
+     "note": "Closed out today: probe-guides PASS on all 8 guides (10 renders each, 5 widths, light and dark), check-guides PASS with capture-needed 57 (62 at 512c734, 73 before), and all 11 captures are byte-identical on the live mirror. 512c734 is already on origin/main and no publish hold is open, so nothing needed pushing or republishing. The 4 old undersized files that failed at 512c734 (s1-blog/07, s1-social/06, s4-webinar/17, s5-extra-pipelines/06) were since fixed by other tasks. Amal: open the guides link to sign off."
     }
    ],
    "order": 1350,
@@ -17894,12 +17899,17 @@
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Only if real attendees should get AI drafts on the live centre: paste an Anthropic API key at https://revops-centre.growthcluborg.workers.dev/admin/ (AI connections tab, Add connection, type Anthropic, field API key). Local Opus drafting for Adi's own review already works without it.",
+   "needs_from_owner": "The Anthropic API key, tracked as T-405: paste it at https://revops-centre.growthcluborg.workers.dev/admin/ (AI connections tab, Add connection, type Anthropic, field API key).",
    "log": [
     {
      "ts": "2026-10-11T13:04:07+0530",
      "who": "claude",
      "note": "Split out of T-292 by Orchestrator decision O-40ffe493."
+    },
+    {
+     "ts": "2026-10-11T23:14:17+0530",
+     "who": "claude",
+     "note": "Checked this run: nothing else to build. The Worker already drafts through an Anthropic connection (cloud/src/ai.ts lines 220 and 329), the admin bundle offers the Anthropic type, and the live admin at https://revops-centre.growthcluborg.workers.dev/admin/?v=20261011 answers. Waiting only on the key, tracked as T-405; once it is saved, this task runs the live draft check and closes."
     }
    ],
    "order": 4040
