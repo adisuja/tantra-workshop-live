@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T07:44:47+0530",
-  "version": 1787,
+  "updated": "2026-10-11T07:47:07+0530",
+  "version": 1788,
   "last_id": 397,
   "team": [
    {
@@ -12061,7 +12061,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "doing",
    "why": "Owner rule (minimal inputs): the centre asks only for sign-ups, keys, top-ups and decisions; these S1 steps are still done by hand.",
    "spec": "Add jobs and auto/you blocks so cold email step 5 (MX/SPF/DKIM/DMARC check) and step 12 (suppression and send-date stamp), cold calendar steps 1 to 4, 6 and 11 (GCP project, service account, key; Tantra campaign status to the sheet), blog step 7 (GA4 Data API gate) and S2 step 7 (GA4 property, stream, key event) run in the centre, leaving only grants and approvals to the attendee. Closes audit findings G098, G099, G104, G105, G110, G011, X016. Per finding: G098 (app/src/content/guides/s1-traffic/s1-cold-email.ts): Have dns-foundation run automated MX/SPF/DKIM/DMARC lookups and report pass/fail; make step 5 an auto block. G099 (app/src/content/guides/s1-traffic/s1-cold-email.ts): Automate suppression from Tantra bounces/unsubscribes and stamp the send date via the Sheets API; add an auto block to step 12. G104 (app/src/content/guides/s1-traffic/s1-cold-calendar.ts): Automate project, API enable, service account and key via Resource Manager/Service Usage/IAM/Org Policy APIs, leaving only the delegation click. G105 (app/src/content/guides/s1-traffic/s1-cold-calendar.ts): Pull campaign status from the Tantra API and stamp the sheet via the Sheets API; add auto blocks to steps 6 and 11. G110 (app/src/content/guides/s1-traffic/s1-blog.ts): Pull GA4 Data API weekly into the dashboard and compute the 3%/1% gate automatically. G011 (app/src/content/guides/s2-landing/s2-tantra-pro-funnel.ts): Add a GA4 Admin API job (property, web stream, key event) and an auto/you block on step 7 so the attendee only grants access. X016 (app/src/content/guides/s1-traffic/s1-cold-calendar.ts): Automate project, service account and key creation after one OAuth grant, leaving only the DWD Authorize click human. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Owner model (google-and-reminder-model, 2026-10-07): cold email inboxes and their domains, Workspace users and SPF/DKIM/DMARC are bought from the inbox vendor (Endy, T-213) and connected to Tantra, so step 5 (G098) becomes an automated check of the vendor-provided records, not a setup step; cold calendar invites use a Google service account for EACH Workspace user, uploaded to Tantra (G104, X016 automate creating those per user). No paid email verification anywhere (ZeroBounce/NeverBounce are ruled out). Merge order: build on main after T-251 lands (branch tantra-walkthroughs: e4bd0b8 removes the ruled-out tools and rewrites workshop-cards.ts, agentic.ts, jobs.ts, agent.tsx and coverage.json; probe fixes 043b5ab and aa22a3f, no READY yet in /Users/adithyamurali/tantra-round5-coord/LOG.md). Until then branch from tantra-walkthroughs; AUDIT.md line numbers predate that change.",
    "done_when": [
@@ -12109,6 +12109,11 @@
      "ts": "2026-10-10T01:29:17+0530",
      "who": "claude",
      "note": "Built, merged to main (73e8272, pushed) and live on the centre Worker (e42e784e): four new jobs (dns-check, gcp-service-accounts, outreach-sync, ga4-gate) with auto/you blocks on cold email steps 5 and 12, cold calendar steps 1 to 6 and 11, blog step 7 and S2 step 7; all seven findings marked fixed in AUDIT.md. Verified on the vendor simulator only (probe-s1-auto 51 of 51 pass, both typechecks 0, cards checked in a headless browser at 1440 and 390); nothing has run against a real Google or Tantra account yet. The deploy is origin/main plus T-258 only, so T-261 is on main but not deployed. The Build my service accounts button stays hidden in production until the Google OAuth client below is saved; until then the card tells attendees to follow the guide by hand."
+    },
+    {
+     "ts": "2026-10-11T07:47:07+0530",
+     "who": "claude",
+     "note": "Pass 1 of the Orchestrator fix: the calendar service-account sign-in now reads its own client (gcp_client_id plus sealed gcp_client_secret_enc, new Calendar Service Accounts fields in admin Settings), never the Drive one, and while it is empty the calendar Workspace card shows guide steps 1 to 4 by hand; probe-s1-auto now checks that a Drive client alone keeps the button hidden and a sim_ gcp client shows it. Both typechecks pass (0 errors) and the work is committed (62dff8d, plus c635187 from another lane). Left: run the probe on a local centre from this checkout (on port 8796 the admin enter link set no session, so every step after sign-in returned 401), then push, deploy revops-centre, and set review with the dormant one-grant note."
     }
    ],
    "order": 2580
