@@ -97,12 +97,15 @@
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
- "state": "idle",
- "mode": null,
- "task_id": null,
- "entries": [],
- "started": "2026-10-11T11:37:20+0530",
- "message": "Last sweep handled 8 task(s).",
+ "state": "working",
+ "mode": "feedback",
+ "task_id": "T-140",
+ "entries": [
+  "F-7ac92182",
+  "R-3fd1f10e"
+ ],
+ "started": "2026-10-11T11:43:51+0530",
+ "message": "Acting on 2 note(s) for T-140: Stage 1 to 3 guides: screenshots that can only be taken once their source exists",
  "slices": {
   "T-135": 1,
   "T-148": 1,
