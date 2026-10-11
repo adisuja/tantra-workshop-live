@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T05:28:12+0530",
-  "version": 1697,
+  "updated": "2026-10-11T05:29:56+0530",
+  "version": 1698,
   "last_id": 391,
   "team": [
    {
@@ -14963,7 +14963,7 @@
   },
   {
    "id": "T-337",
-   "title": "Input from Adi for T-234: Sign in at https://usetantra.com in your own GrowthClub workspace. Make sure tea",
+   "title": "Input from Adi for T-228 and T-234: create a Tantra API key and save it in Admin, Cohort Settings",
    "area": "Product",
    "owner": "Adi",
    "assignee": "Adi",
@@ -14974,16 +14974,21 @@
    "due": "",
    "status": "blocked",
    "why": "",
-   "spec": "Only Adi can do this (credential): Only Adi can sign in to his Tantra workspace and create an API key. No Tantra key is stored anywhere in ~/.config/tantra.. Everything else in T-234 is being built around it. As soon as this is done, T-234 finishes on its own.",
+   "spec": "Only Adi can do this (credential): only Adi can sign in to his Tantra workspace and create an API key. This one key unblocks two tasks: the live test of the welcome email (T-228) and the session reminders (T-234). Save it in one place only: Admin, Cohort Settings, the Tantra API key field, which stores it encrypted and never shows it again. Do not put it anywhere else. Everything else in T-228 and T-234 is built around it, and both finish on their own once the key is saved.",
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Sign in at https://usetantra.com in your own GrowthClub workspace. Make sure team@growthclub.org is connected under Connectors, Email Accounts. Then go to Connectors, API Keys, Create Key, name it 'workshop-reminders', and paste the key at https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key from ~/.config/tantra/revops-admin-key>, Cohort Settings, Session Reminders, Tantra API key field, Save.",
+   "needs_from_owner": "Sign in at https://usetantra.com in your own GrowthClub workspace. Make sure team@growthclub.org is connected under Connectors, Email Accounts. Then go to Connectors, API Keys, Create Key, and name it 'workshop-reminders'. Sign in to Admin at https://revops-centre.growthcluborg.workers.dev/admin/enter with your admin token, open Cohort Settings, paste the key into the Tantra API key field (under the Session Reminders heading, the Tantra messaging settings) and press Save. It is stored encrypted. This one key unblocks T-228's live test and T-234.",
    "log": [
     {
      "ts": "2026-10-09T05:05:40+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-234."
+    },
+    {
+     "ts": "2026-10-11T05:29:56+0530",
+     "who": "claude",
+     "note": "Reworded the request after the T-228 update: it now says the one key unblocks both T-228's live test and T-234, that it is saved only in Admin, Cohort Settings (stored encrypted), and the ~/.config mentions are gone. Checked cloud/admin-ui/admin.js: the field is 'Tantra API key' under the heading 'Session Reminders' (there is no heading called 'Tantra Messaging' on the page), so the steps name what Adi will actually see. Still blocked on Adi creating and pasting the key."
     }
    ],
    "order": 3370,
