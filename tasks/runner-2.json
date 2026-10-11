@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T08:16:30+0530",
+   "task_id": "T-272",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-272 is back in review for Adi and Bharath: the live admin and the local probe both pass on this repo's code. I found one ?k= link still handed out, fixed it, committed it and pushed it to main.\n\n**Completion check**\n1. **Admin entry needs no key in the URL, and one teammate's token can be revoked "
+  },
+  {
    "ts": "2026-10-11T08:08:35+0530",
    "task_id": "T-265",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-341 stays blocked on Nelbin deleting the fork; the verify pass found nothing to fix.\n\nCOMPLETION CHECK\n- **Set owner and assignee to nelbinxav:** done. `tasks.json` read this run shows owner Nelbin and assignee Nelbin, with reviewers Bharath and Adi.\n- **Send the ask to Nelbin, not Adi:** done on "
-  },
-  {
-   "ts": "2026-10-11T06:21:32+0530",
-   "task_id": "T-087",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-087 verified and kept at `done`: nothing needed fixing, and the only gap is that the real Work Tracker row landing was not re-proven this run.\n\n**COMPLETION CHECK** (evidence from this run)\n\n| Item | State | Evidence |\n|---|---|---|\n| Done-when 1: dependency grep returns nothing | Done | `git grep"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-272",
+ "task_id": "T-275",
  "entries": [
-  "F-a1c8649e"
+  "F-0abdac8c"
  ],
- "started": "2026-10-11T08:09:58+0530",
- "message": "Acting on 1 note(s) for T-272: Centre admin: per-teammate auth, per-cohort session settings, ruled-out vendors out of the admin",
+ "started": "2026-10-11T08:17:08+0530",
+ "message": "Acting on 1 note(s) for T-275: Referral dashboard: production link, cohort date source, payout wording",
  "slices": {
   "T-072": 1,
   "T-245": 1,

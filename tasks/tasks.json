@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T08:16:17+0530",
-  "version": 1803,
+  "updated": "2026-10-11T08:17:43+0530",
+  "version": 1805,
   "last_id": 397,
   "team": [
    {
@@ -13263,7 +13263,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "blocked",
    "why": "Teammates share these links; a review-mirror link and a vague payout line undercut the programme.",
    "spec": "H006: emit the first cohort date from app/src/lib/cohort.ts into referrals.stats.json (workshop-plan/ops/referrals.py, which already ports saleCohortFor) and read it in workshop-plan/referrals.html instead of a literal. H013: replace 'Payouts follow Adi's schedule' with the cadence Adi picks (see needs_from_owner). H008: point links.site in workshop-plan/ops/referrals.json at the production funnel domain once one exists; today it is the review mirror and the owner's local-first rule means no host is planned before launch, so leave H008 open until then. Verify with /usr/bin/python3 workshop-plan/ops/test_referrals.py and node app/scripts/probe-referrals.mjs --live. Mark the ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md.",
    "done_when": [
@@ -13272,8 +13272,19 @@
     "links.site is the production domain (once it exists)",
     "H006, H013 (and later H008) marked fixed in AUDIT.md with the commit"
    ],
-   "evidence": [],
-   "blockers": [],
+   "evidence": [
+    {
+     "label": "Live referral dashboard",
+     "url": "https://adisuja.github.io/tantra-workshop-live/referrals.html?v=1011"
+    },
+    {
+     "label": "Local dashboard",
+     "url": "http://localhost:8899/workshop-plan/referrals.html?v=1011"
+    }
+   ],
+   "blockers": [
+    "T-006"
+   ],
    "needs_from_owner": "",
    "log": [
     {
@@ -13290,6 +13301,11 @@
      "ts": "2026-10-10T03:45:50+0530",
      "who": "claude",
      "note": "H006 and H013 done (commit 1d66ef0, pushed, mirror republished): the dashboard reads first_cohort from referrals.stats.json and the payout line now says 'Paid monthly, once the refund window on each sale has closed.' Tests 12/12 and the Python suite pass. Open: H008 (links.site on the production domain), waiting on the post-launch host switch T-006. Replies columns preserved. Open http://localhost:8899/workshop-plan/referrals.html?v=275"
+    },
+    {
+     "ts": "2026-10-11T08:17:43+0530",
+     "who": "claude",
+     "note": "Checked H006 and H013: commit 1d66ef0 is on origin/main (now ab1f000), test_referrals.py passes 27/27, probe-referrals.mjs --live passes 13/13, and the Replies column and team total row are still there. The live page already reads first_cohort (2026-10-07 in the live stats), has no Date.UTC(2026,9,7) and shows the new monthly payout line, so nothing needed republishing. On hold until T-006: H008 stays open until the post-launch host switch, links.site left alone. Review: https://adisuja.github.io/tantra-workshop-live/referrals.html?v=1011"
     }
    ],
    "order": 2750
