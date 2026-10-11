@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T22:56:07+0530",
-  "version": 2098,
+  "updated": "2026-10-11T23:00:52+0530",
+  "version": 2099,
   "last_id": 410,
   "team": [
    {
@@ -4042,19 +4042,19 @@
    "evidence": [
     {
      "label": "Free registration",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=8e90c36d"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=b96e2610"
     },
     {
      "label": "Thank-you 1, survey (11 questions)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/success/?v=8e90c36d"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/success/?v=b96e2610"
     },
     {
      "label": "Thank-you 2, the fork",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=8e90c36d"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=b96e2610"
     },
     {
      "label": "Paid join page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=8e90c36d"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=b96e2610"
     }
    ],
    "blockers": [],
@@ -4119,6 +4119,11 @@
      "ts": "2026-10-11T22:56:07+0530",
      "who": "claude",
      "note": "Superseded: the 2026-10-10T20:47 ripple; 11 questions is final (O-a511256b). The funnel.ts diagram and the two-funnel memory now say 11-q intake, AUDIT M033 is marked fixed in a8e393a and 49cd90e, and main is pushed. On the live mirror (commit 8e90c36d) the add-on, bonus tile and No thanks clicks pass at 1440 and 390, /workshop/success reads 11 questions, and probe-workshop passes every page at 5 widths (only its 3 /api checks fail, because a static mirror has no API). For Bhaskar and Bharath: open https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=8e90c36d, then /workshop/success/?v=8e90c36d and /workshop/join/?v=8e90c36d. The community link stays a placeholder under T-040 and does not block sign-off."
+    },
+    {
+     "ts": "2026-10-11T23:00:52+0530",
+     "who": "claude",
+     "note": "Verify pass: every Orchestrator item holds. funnel.ts, the two-funnel memory and AUDIT M033 all say 11 questions, both T-093 and T-278 record that 11 is final, and the live mirror reads Answer these 11 questions. I re-ran the click test (add-on, bonus tile, No thanks) on the live mirror at 1440 and 390, and all of it passes. probe-workshop is ok on 44 page checks at 5 widths, and its only failures are the 3 /api checks, which GitHub Pages cannot serve. Review links now use the current mirror commit (?v=b96e2610)."
     }
    ],
    "order": 910,
