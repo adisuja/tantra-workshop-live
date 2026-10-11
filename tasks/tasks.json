@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T12:16:12+0530",
-  "version": 1893,
+  "updated": "2026-10-11T12:25:42+0530",
+  "version": 1894,
   "last_id": 401,
   "team": [
    {
@@ -13824,7 +13824,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "review",
+   "status": "doing",
    "why": "Join pages are the last step before the live session; an empty join button or a pending link loses the attendee.",
    "spec": "Export one seat-link resolver from app/src/lib/funnel.ts used by sessions.ts and both join pages and set the Zoom join URL in the deployed env, give the pending community link an actionable fallback and promise only live reminders, decide free-lane intake length (owner), derive VIP sample dates from cohortFor(), relabel webinar and cold calendar template names on /vip, use slashed privacy and terms links in success-shell.tsx, add the calendar why line and a claim URL or actionable pending state in curriculum.ts. Closes audit findings M070, O013, M034, M050, M033, M052, M054, M061, O011. Per finding: M070 (app/src/lib/funnel.ts): Export one seat-link resolver (per-day override then SEAT_URL, no placeholder) and use it in sessions.ts and both join pages. O013 (app/src/lib/sessions.ts): The join button must carry a working Zoom link. Zoom Pro is live: each weekly cohort gets its own meeting from cloud/src/zoom-pro.ts (7 to 9 Oct cohort: meeting 87002851906) and each attendee gets their own registrant join link (session_sync, private calendar feed T-220), so prefer that per-attendee link (via the centre or the attendee's feed) over a static NEXT_PUBLIC_SEAT_URL, which would point at last week's meeting. M034 (app/src/app/workshop/success/success-client.tsx): Set NEXT_PUBLIC_COMMUNITY_URL once the group exists, or give the done stage an actionable fallback. M050 (app/src/app/workshop/join/join-client.tsx): Reword 'Join the Cohort Group' so it promises only what is live: calendar reminders now, Tantra campaign reminders once T-234 ships; the WhatsApp groups are on hold (T-040). M033 (app/src/app/workshop/success/success-client.tsx): Owner decision: shorten the free-lane intake toward the paid lane's 11 questions or keep and accept the length. M052 (app/src/lib/preview-data-2.ts): Derive sample dates from cohortFor() or use undated samples in fields.ts and preview-data-2.ts. M054 (app/src/components/masterclass/vip-exhibits.tsx): Filter or relabel 'webinar' and 'cold calendar' template names in the /vip template list (as done for the prompt pack). M061 (app/src/components/masterclass/success-shell.tsx): Point footer links at /privacy-policy/ and /terms-of-service/. O011 (app/src/lib/curriculum.ts): Add a why line to the calendar step (each live day builds on the last, so missing one breaks the next) and publish NEXT_PUBLIC_PLATFORM_CLAIM_URL or replace the pending state with an actionable instruction. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md.",
    "done_when": [
@@ -13910,6 +13910,11 @@
      "ts": "2026-10-10T20:47:39+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-093."
+    },
+    {
+     "ts": "2026-10-11T12:25:42+0530",
+     "who": "claude",
+     "note": "The emailed join link is in place: the confirmation and reminder emails and the private feed now link each attendee's own join page with their feed token, the free page for free seats and the paid page for paid seats (commit e0fa5452, swept in under a T-115 label, plus the probe in the latest commit). On a local centre the reminder probe passes 96 of 96, including both new link checks, and probe-own-join (16) and probe-join-own-link (30, all 3 states on both pages) pass. Still to do: open the link from the rendered email in a browser, run probe-cohort and probe-calendar-feeds, push main, deploy revops-centre from the clean worktree /tmp/t278-wt (run cloud/scripts/build.sh first), and update the AUDIT.md and LOG.md rows. Then move this to review."
     }
    ],
    "order": 2780
