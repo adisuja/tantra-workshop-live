@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T11:53:15+0530",
-  "version": 1878,
-  "last_id": 399,
+  "updated": "2026-10-11T11:59:40+0530",
+  "version": 1879,
+  "last_id": 400,
   "team": [
    {
     "name": "Adi",
@@ -16569,6 +16569,28 @@
    "order": 3990,
    "input_for": "T-140",
    "kind": "input"
+  },
+  {
+   "id": "T-400",
+   "status": "blocked",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Aquila"
+   ],
+   "priority": "P1",
+   "due": "2026-10-14",
+   "area": "Delivery",
+   "order": 4000,
+   "title": "T-400: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   }
  ]
 }
