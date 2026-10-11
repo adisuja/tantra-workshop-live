@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T06:51:58+0530",
-  "version": 1763,
+  "updated": "2026-10-11T06:52:25+0530",
+  "version": 1764,
   "last_id": 397,
   "team": [
    {
@@ -10240,7 +10240,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "blocked",
    "why": "Production attendee 5 signed up as you@example.com (not marked test) and its three Zoom registrations hit Zoom's 3-per-person-per-day limit (HTTP 429). The 429 back-off shipped in c106985; what is left is keeping placeholder addresses away from Zoom, Google and the coming Tantra reminder import (T-234).",
    "spec": "1) In the admin (https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Attendees, attendee 5, tick the Test checkbox: #testChk sends PATCH /admin/api/attendees/5 {test:true}) so Invite Status stops counting its failed Zoom rows. 2) Refuse reserved and placeholder domains (example.com, example.net, example.org, *.test, *.invalid, *.localhost, *.example) at every sign-up door: POST /cal/issue (cloud/src/calendar.ts, issue()), POST /intake (cloud/src/live.ts) and the admin add form (cloud/src/index.ts), answering with the same shape as today so nothing leaks. Put the check in one helper in cloud/src/util.ts and reuse it in the T-234 Tantra import. 3) Add a check to app/scripts/probe-calendar-feeds.mjs that an example.com sign-up is refused (local: SIM_PORT=8902 python3 cloud/scripts/vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs). Live evidence 2026-10-08: attendee 5 (you@example.com, test 0) produced 3 failed Zoom rows (429 daily registrant limit). Also clean that row up through the admin (mark it test) rather than editing D1.",
    "done_when": [
@@ -10250,16 +10250,20 @@
    ],
    "evidence": [
     {
-     "label": "Live admin: Cohort Settings, Invite Status (0 failed)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/#settings"
+     "label": "Helper with subdomain match",
+     "url": "cloud/src/util.ts"
     },
     {
-     "label": "Probe with the refusal checks",
+     "label": "Probe with the refusal checks (67 of 67 locally)",
      "url": "app/scripts/probe-calendar-feeds.mjs"
+    },
+    {
+     "label": "Live admin: Cohort Settings, Invite Status",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=51c7ee1#settings"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "",
+   "needs_from_owner": "Deploy the revops-centre Worker from main (51c7ee1 or later): cd cloud && npm run deploy. I may not deploy without an approved decision naming this step.",
    "log": [
     {
      "ts": "2026-10-07T22:53:58+0530",
@@ -10325,6 +10329,11 @@
      "ts": "2026-10-11T01:09:04+0530",
      "who": "claude",
      "note": "Found while verifying T-223 on 2026-10-11: isPlaceholderEmail in cloud/src/util.ts:117 catches you@example.com but not subdomains (a@mail.example.com and a@x.example.org return false), although the decision asked for subdomains too. Fix: change the first pattern to /(^|\\.)example\\.(com|net|org)$/, add a probe case, then deploy."
+    },
+    {
+     "ts": "2026-10-11T06:52:25+0530",
+     "who": "claude",
+     "note": "Ripple checked: the helper T-237 shares is the right one and all three doors use it, so nothing was rebuilt. I closed the one gap against the decision: subdomains (a@mail.example.com, a@x.example.org) are now refused too (commit 51c7ee1, cloud/src/util.ts:121). Verified on a fresh local stack: probe-calendar-feeds 67 of 67 with two new subdomain cases, and /intake plus /cal/issue with subdomain addresses gave the usual answer with 0 attendees and no new session_sync row. Production still runs the older check (exact example.com only) until the Worker is deployed."
     }
    ],
    "order": 2290
