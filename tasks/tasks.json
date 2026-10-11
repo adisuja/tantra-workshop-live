@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T11:39:05+0530",
-  "version": 1867,
+  "updated": "2026-10-11T11:43:03+0530",
+  "version": 1868,
   "last_id": 398,
   "team": [
    {
@@ -15236,7 +15236,7 @@
    ],
    "evidence": [
     {
-     "label": "branch t300-ruled-out-cleanup",
+     "label": "worktree",
      "url": "file:///private/tmp/wt-t300"
     },
     {
@@ -15265,6 +15265,11 @@
      "ts": "2026-10-10T16:44:29+0530",
      "who": "claude",
      "note": "All five parts are built on branch t300-ruled-out-cleanup (worktree /private/tmp/wt-t300, head 2220026, merged with main): dead connectors and jobs removed, Disconnect and delete key for retired providers, verification copy rewritten, survey regenerated, denylist probe (proven to fail on a planted name). Passing: both tsc, check-coverage, check-examples, probe-visual-tools; the done_when grep only hits examples/data. Left: run-chain probes fail (domain-chain 'Choose your tools asks three questions' and the capacity plan, day1/day2 stuck on Choose your tools, stack calendar card, shapes, workshop checkout). Next run: compare each against main, fix the ones this branch caused, then push the branch and post READY. check-guides and check-playbook-anchors fail the same way on main."
+    },
+    {
+     "ts": "2026-10-11T11:43:03+0530",
+     "who": "claude",
+     "note": "All five parts are built and pushed on branch t300-ruled-out-cleanup (184d5cb2, also carries T-299). The deck and survey now say the vendor delivers the list verified and we run only the free checks. Passing in this run: both tsc, check-coverage, check-guides, check-examples, probe-visual-tools (fails on a planted Calendly) and the done_when grep (only examples/data). Left: probe-domain-chain fails 4 T-299 checks because the launchd centre on :8790 serves tantra-onboarding-v2 code, not this branch. Next run: rerun the chain against a centre built from the branch, then post READY in LOG.md."
     }
    ],
    "order": 3000
