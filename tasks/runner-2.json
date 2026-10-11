@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T11:03:26+0530",
+   "task_id": "T-107",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I re-checked the cleanup and found nothing left to fix, so T-107 is in review for Nelbin. Every place scans clean, and I made no file changes, so there was nothing to commit. The ack command reported 0 changed because F-a0ca4550 and R-9a5ee669 were already acked last run.\n\n| Item | State | What I ch"
+  },
+  {
    "ts": "2026-10-11T08:43:05+0530",
    "task_id": "T-157",
    "mode": "feedback",
@@ -87,25 +95,17 @@
    "status": "review",
    "result": "ok",
    "summary": "T-272 is back in review for Adi and Bharath: the live admin and the local probe both pass on this repo's code. I found one ?k= link still handed out, fixed it, committed it and pushed it to main.\n\n**Completion check**\n1. **Admin entry needs no key in the URL, and one teammate's token can be revoked "
-  },
-  {
-   "ts": "2026-10-11T08:08:35+0530",
-   "task_id": "T-265",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "(Held back from the public board: this note mentions a private client detail.)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-107",
+ "task_id": "T-074",
  "entries": [
-  "F-a0ca4550",
-  "R-9a5ee669"
+  "F-5e21758a",
+  "R-76a13ade"
  ],
- "started": "2026-10-11T10:56:31+0530",
- "message": "Acting on 2 note(s) for T-107: Delete wiring test rows (ops.db + Work Tracker)",
+ "started": "2026-10-11T11:04:18+0530",
+ "message": "Acting on 2 note(s) for T-074: Weekly coaching call and community moderation rota for Tantra Pro members",
  "slices": {
   "T-072": 1,
   "T-245": 1,
