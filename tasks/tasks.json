@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T18:45:14+0530",
-  "version": 2021,
+  "updated": "2026-10-11T18:47:11+0530",
+  "version": 2023,
   "last_id": 408,
   "team": [
    {
@@ -7238,23 +7238,19 @@
    "evidence": [
     {
      "label": "Guide step 2 shot",
-     "url": "http://localhost:4322/guides/s5-challenge-stages/02.webp?v=t136-1011b"
+     "url": "http://localhost:4322/guides/s5-challenge-stages/02.webp?v=t136-1011d"
     },
     {
      "label": "Guide render",
-     "url": "http://localhost:4322/debug/guides?only=s5-challenge-stages&v=t136-1011b"
-    },
-    {
-     "label": "Guide source",
-     "url": "app/src/content/guides/s5-pipeline/s5-challenge-stages.ts"
-    },
-    {
-     "label": "Timeline route",
-     "url": "cloud/funnel/worker.js"
+     "url": "http://localhost:4322/debug/guides?only=s5-challenge-stages&v=t136-1011d"
     },
     {
      "label": "Probe",
      "url": "cloud/scripts/probe-t266.mjs"
+    },
+    {
+     "label": "Commit",
+     "url": "c6382640"
     }
    ],
    "blockers": [
@@ -7311,6 +7307,11 @@
      "ts": "2026-10-11T18:43:38+0530",
      "who": "claude",
      "note": "Dropped the old PLANNED line from the guide header so the event names match the worker timeline (attended-day-N, survey_submitted_dayN, output_delivered_dayN). Step 2 already shows the real /crm/contact shot of a test attendee. Verified today: probe-t266 all passed, check-guides capture-needed 57 (down from 58), probe-guides PASS on s5-challenge-stages (light and dark, 1440 and 390). Pushed main at 836be373. Open the guide step 2 shot to sign off."
+    },
+    {
+     "ts": "2026-10-11T18:46:56+0530",
+     "who": "claude",
+     "note": "Step 2 now shows one test attendee across three days on /crm/contact: attended-day-1 to attended-day-3, then survey_submitted_dayN and output_delivered_dayN (live page and PDF) for Days 1 and 2. probe-t266 passes, including a new three-day timeline check; check-guides shows capture-needed 57; probe-guides passes in light and dark at 1440 and 390 px. Pushed to main at c6382640. Open the guide link to review."
     }
    ],
    "order": 1360,
@@ -12932,6 +12933,11 @@
      "ts": "2026-10-11T18:45:14+0530",
      "who": "claude",
      "note": "Re-ran probe-s1-auto on a fresh simulator (:8912) and local centre (:8913, wrangler dev --local, new D1): 56 of 56 pass, including the checks that a Drive client alone keeps Build my service accounts hidden and a sim_ gcp client shows it. The admin sign-in worked once the probe got its own ports, so no harness change was needed. Both typechecks have 0 errors and the fix (62dff8d) was already on origin/main, so nothing to push. I redeployed revops-centre from a clean origin/main worktree (836be373) as version b6423609; live /api/gcp/start returns 401 without a session. The one-grant service-account path is built but dormant and has only run on the simulator. Nothing is asked of Adi. Open https://revops-centre.growthcluborg.workers.dev/onboarding/?v=b6423609"
+    },
+    {
+     "ts": "2026-10-11T18:47:11+0530",
+     "who": "claude",
+     "note": "Verify pass, nothing had to change. probe-s1-auto passed 56 of 56 on a fresh simulator (:8922) and fresh local centre (:8923, wrangler dev --local, new D1); a Drive client alone keeps Build my service accounts hidden and a sim_ gcp client shows it; both typechecks 0 errors; every listed step (cold email 5 and 12, cold calendar 1 to 4, 6, 11, blog 7, S2 7) has an auto block and all seven findings are fixed in AUDIT.md. Live Worker is b6423609 (built from origin/main with fix 62dff8d) and /api/gcp/start returns 401 without a session; the one-grant service-account path is built but dormant and verified on the simulator only."
     }
    ],
    "order": 2580
