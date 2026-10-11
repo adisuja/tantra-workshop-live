@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T21:59:34+0530",
-  "version": 2050,
+  "updated": "2026-10-11T22:19:13+0530",
+  "version": 2052,
   "last_id": 408,
   "team": [
    {
@@ -3308,7 +3308,7 @@
   },
   {
    "id": "T-073",
-   "status": "blocked",
+   "status": "doing",
    "owner": "Amal",
    "assignee": "Claude",
    "reviewers": [
@@ -3316,7 +3316,7 @@
     "Bharath"
    ],
    "priority": "P2",
-   "due": "2026-10-16",
+   "due": "2026-10-17",
    "area": "Product",
    "order": 450,
    "title": "T-073: held back (private client detail)",
@@ -8468,8 +8468,12 @@
    ],
    "evidence": [
     {
-     "label": "Pitch, pilot table, review steps",
+     "label": "Pitch, pilot table, local timings, review steps",
      "url": "workshop-plan/pipeline/agentic-dev-cycle.md"
+    },
+    {
+     "label": "Local pilot timings (JSON)",
+     "url": "workshop-plan/pipeline/local_pilot.json"
     },
     {
      "label": "Red suite patch",
@@ -8480,12 +8484,16 @@
      "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/ci_premerge-and-preview--f0b901e.patch"
     },
     {
+     "label": "Five fix patches (fix_bug-1 to fix_bug-5)",
+     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/"
+    },
+    {
      "label": "Intake time test",
      "url": "workshop-plan/bugs/test_ingest.py"
     },
     {
      "label": "Ship rate dashboard",
-     "url": "http://localhost:8899/pipeline?v=1011b"
+     "url": "http://localhost:8899/pipeline?v=1011c"
     }
    ],
    "blockers": [],
@@ -8530,6 +8538,11 @@
      "ts": "2026-10-11T06:50:41+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-158."
+    },
+    {
+     "ts": "2026-10-11T22:19:13+0530",
+     "who": "claude",
+     "note": "Ran the local pilot end to end: on a scratch copy of development f0b901e with both infrastructure patches, the base and each of the 5 bug fixes passed scripts/premerge.sh in 101 to 329 s, and its preview answered ok on /health 50 to 54 s after up (local preview, not production). Four tests that failed only under load are now fixed in the red-suites patch, and the timings table is in agentic-dev-cycle.md. The ripple needed no change because the doc had nothing stale about empty bands. Open http://localhost:8899/pipeline?v=1011c and workshop-plan/pipeline/agentic-dev-cycle.md. Bharath still has to apply the patches and agree the review limits."
     }
    ],
    "order": 1540,
