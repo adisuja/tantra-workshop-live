@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T02:06:36+0530",
+   "task_id": "T-059",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "turns",
+   "summary": "T-059 is still blocked: the script and the draft test now pass this check, but the live test send still needs a connected sending mailbox, which waits on T-123.\n\n**What this check found and fixed (committed in 2c30ae79, not pushed):**\n- **Two first lines broke the style rules.** Sam's added a guess "
+  },
+  {
    "ts": "2026-10-12T01:58:52+0530",
    "task_id": "T-229",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "The work checks out, but T-074 stays blocked: no newsletter has gone out because Tantra still says team@growthclub.org isn't a connected mailbox. That connection is tracked on T-123. The T-337 key is already saved, so this isn't a new key request. I re-ran the approved test send in this run and got "
-  },
-  {
-   "ts": "2026-10-11T22:00:03+0530",
-   "task_id": "T-380",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "**Completion check:**\n- **Trash the two 'Tantra funnel forms receiver' projects:** Blocked. Nothing was trashed and nothing in Apps Script changed. This session has no Claude in Chrome tool. Ports 9222 and 9223 are closed, and 9229 turned out to be a wrangler debugger, not Browser 2.\n- **Only 'Tantr"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-059",
+ "task_id": "T-284",
  "entries": [
-  "F-b12f88cc"
+  "F-e91e4c44"
  ],
- "started": "2026-10-12T01:59:11+0530",
- "message": "Acting on 1 note(s) for T-059: AI-personalised first lines for our workshop outreach on Tantra campaigns",
+ "started": "2026-10-12T02:08:17+0530",
+ "message": "Acting on 1 note(s) for T-284: Put the approved 4K walkthroughs on both onboarding centres and the playbook",
  "slices": {
   "T-135": 1,
   "T-148": 1,
@@ -114,7 +114,8 @@
   "T-052": 1,
   "T-292": 1,
   "T-270": 1,
-  "T-299": 1
+  "T-299": 1,
+  "T-059": 1
  },
  "api_capped": {
   "T-229": "2026-10-12T00:59:32+0530",

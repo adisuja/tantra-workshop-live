@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T02:03:38+0530",
-  "version": 2217,
+  "updated": "2026-10-12T02:08:47+0530",
+  "version": 2220,
   "last_id": 413,
   "team": [
    {
@@ -14013,6 +14013,11 @@
      "ts": "2026-10-12T02:03:38+0530",
      "who": "claude",
      "note": "The live mirror (adisuja/tantra-workshop-live, HEAD fa84ecc75) serves exactly the f341d58f hub: it has 'Two-Month Platform Pass' and no '1 month, worth', so nothing had to be republished. probe-review-hub.mjs on live says ALL LINKS OK (423 links on 23 pages). The 08:26 'one thing left for Bhaskar' about vip-kit.ts no longer applies: vip-kit.ts:95 already says Two-Month Platform Pass, matching funnel.ts:86-102. Open https://adisuja.github.io/tantra-workshop-live/?v=t273f341"
+    },
+    {
+     "ts": "2026-10-12T02:07:32+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-12: the live mirror and local hub both show Two-Month Platform Pass in the ladder and b-pass with no '1 month, worth' (the only live/local difference is review-data from T-148/T-072), probe-review-hub.mjs says ALL LINKS OK (423 links, 23 pages), no October dates or eyebrows remain, and AUDIT.md marks all ten ids fixed. vip-kit.ts:95 already matches funnel.ts. Open https://adisuja.github.io/tantra-workshop-live/?v=t273f341"
     }
    ],
    "order": 2730
@@ -14892,6 +14897,11 @@
      "ts": "2026-10-11T21:45:02+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-282."
+    },
+    {
+     "ts": "2026-10-12T02:08:47+0530",
+     "who": "claude",
+     "note": "Checked the 5 web copies T-283 replaced against their 4K masters (mtime, and duration read from the mp4 header since ffprobe is not installed): kie 59 s, stripe 85.5 s, hubspot 69.5 s, zoho 84 s, wistia 82 s. Each web copy is from 10-11, newer than its 10-09 master, and the lengths match exactly. Nothing needed re-exporting, the V2 seconds already match, and the branch is clean at 075d1686, so there was nothing to push. All 18 stay held. Waiting on Adi's verdicts in T-282."
     }
    ],
    "order": 2840

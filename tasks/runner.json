@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T02:07:45+0530",
+   "task_id": "T-273",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-273 checks out and stays in review for Adi and Bharath. Nothing needed fixing, so I didn't republish or push anything. I committed this run's task note locally as 238e5efa.\n\n| Item | State | What I checked in this run |\n|---|---|---|\n| Live mirror shows the f341d58f hub | Done | Fetched the live p"
+  },
+  {
    "ts": "2026-10-12T01:59:19+0530",
    "task_id": "T-282",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-032 is back in review for Aquila and Bharath. Nothing needed rebuilding: the day output links were already committed, pushed and live.\n\n1. **Commit:** done. centre.tsx is committed as 6c65c86c and already on origin/main, with no uncommitted changes. I didn't run tsc because there was nothing new t"
-  },
-  {
-   "ts": "2026-10-12T00:00:54+0530",
-   "task_id": "T-034",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "I re-checked the earlier run against production myself and re-ran the dry run. Output pages and PDFs are real for all three test personas, but no email or WhatsApp went out, so T-034 stays blocked on T-123 and T-400.\n\n**COMPLETION CHECK**\n- **Harness pointed at the production centre with three test "
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-273: Workshop Hub (index.html): review data, offer ladder, cohort dates and header",
- "task_id": "T-273",
+ "message": "Acting on 1 note(s) for T-144: Workshop Hub Review tab: every funnel element with preview, source and approve or feedback",
+ "task_id": "T-144",
  "entries": [
-  "F-5a8126be"
+  "R-b3e5064f"
  ],
  "mode": "feedback",
- "started": "2026-10-12T01:59:55+0530",
+ "started": "2026-10-12T02:07:59+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
