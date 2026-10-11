@@ -97,14 +97,12 @@
    "summary": "I checked the previous report from scratch, everything holds up, and I've set T-292 to **done**. I changed no code in this run.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| Local admin shows connection 1 on and connection 3 on as the probe fallback | Done | The local centre lists conn"
   }
  ],
- "state": "working",
- "mode": "feedback",
- "task_id": "T-335",
- "entries": [
-  "R-c40463ba"
- ],
- "started": "2026-10-12T00:35:33+0530",
- "message": "Acting on 1 note(s) for T-335: Input from Adi for T-226: At https://marketplace.zoom.us/develop/create choose General App and name it 'Ta",
+ "state": "idle",
+ "mode": null,
+ "task_id": null,
+ "entries": [],
+ "started": "2026-10-12T00:37:20+0530",
+ "message": "Last sweep handled 0 task(s).",
  "slices": {
   "T-072": 1,
   "T-245": 1,
@@ -155,6 +153,18 @@
   "T-403": "2026-10-12T00:35:08+0530",
   "T-300": "2026-10-12T00:35:15+0530",
   "T-191": "2026-10-12T00:35:25+0530",
-  "T-020": "2026-10-12T00:35:33+0530"
+  "T-020": "2026-10-12T00:35:33+0530",
+  "T-335": "2026-10-12T00:35:43+0530",
+  "T-226": "2026-10-12T00:35:55+0530",
+  "T-052": "2026-10-12T00:36:03+0530",
+  "T-061": "2026-10-12T00:36:11+0530",
+  "T-234": "2026-10-12T00:36:19+0530",
+  "T-034": "2026-10-12T00:36:30+0530",
+  "T-228": "2026-10-12T00:36:47+0530",
+  "T-299": "2026-10-12T00:36:54+0530",
+  "T-223": "2026-10-12T00:37:01+0530",
+  "T-151": "2026-10-12T00:37:13+0530",
+  "T-158": "2026-10-12T00:37:20+0530",
+  "T-263": "2026-10-12T00:37:28+0530"
  }
 }
