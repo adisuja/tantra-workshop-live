@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T07:02:03+0530",
-  "version": 1768,
+  "updated": "2026-10-11T07:11:37+0530",
+  "version": 1772,
   "last_id": 397,
   "team": [
    {
@@ -10593,6 +10593,10 @@
     {
      "label": "Migration",
      "url": "cloud/migrations/0024_followups.sql"
+    },
+    {
+     "label": "Cohort Settings (live admin)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=1011#settings"
     }
    ],
    "blockers": [
@@ -10624,6 +10628,11 @@
      "ts": "2026-10-09T20:13:24+0530",
      "who": "claude",
      "note": "Built and deployed (Worker 5c25a0af, migration 0024 applied, feature OFF). 'Create reminder campaigns' now also makes drafts 'Missed today: replay' and 'Low engagement nudge'; after each attendance pull, no-shows (no attendance row) go to the replay and attendees under the day score threshold (default 40, Cohort Settings > Post-Session Follow-Ups) go to the nudge, once each via D1 ledger followup_pushes. Probe-tantra-reminders now 91/91 against the simulator (replay once with right replay_url, nudge once, second run adds nobody, threshold read live, no recording waits then centre link); nurture and lane probes still pass. Not done: push to origin (main is 149 ahead and 29 behind, T-234 code is not on origin, so no clean T-235-only push); turning it on needs the Tantra key saved, then tantra_followups=On and Start the two campaigns in Tantra. Nudge goes out a day after the session (after the settled second pull)."
+    },
+    {
+     "ts": "2026-10-11T07:11:24+0530",
+     "who": "claude",
+     "note": "Checked again on 2026-10-11, nothing had to change: the replay and nudge campaigns the T-123 ripple asks for are already built (cloud/src/followups.ts and followup-copy.ts, created by the same 'Create reminder campaigns' button), committed and on origin main. Re-ran probe-tantra-reminders on a fresh local centre and simulator: 92 of 92 pass (no-show added once to the replay campaign with the right replay_url, low-engagement attendee added once to the nudge campaign, second run adds nobody, threshold and on/off switch in Cohort Settings). Live: migration 0024 is applied (followup_pushes exists, 0 rows), Worker e61e9802 (10 Oct) includes it, tantra_followups is still Off by default; I did not redeploy (not needed, and another lane has an uncommitted funnel change in the tree) and did not sign in to the live admin, so open Cohort Settings, Post-Session Follow-Ups at https://revops-centre.growthcluborg.workers.dev/admin/?v=1011#settings to see it. Left to switch on: tantra_followups=On and Start the two campaigns in Tantra."
     }
    ],
    "order": 2350
@@ -11122,7 +11131,16 @@
     "Every live attendee funnel's deploy-funnel job ran after 2026-10-07 22:24",
     "An unsigned Zoom URL check against each funnel is refused"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Coord LOG line with export counts (2026-10-11 T-246)",
+     "url": "/Users/adithyamurali/tantra-round5-coord/LOG.md"
+    },
+    {
+     "label": "Signed Zoom URL check in the funnel worker",
+     "url": "cloud/funnel/worker.js"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -11145,6 +11163,11 @@
      "ts": "2026-10-09T20:22:05+0530",
      "who": "claude",
      "note": "Nothing to redeploy: the live centre has 25 attendees and all are test (overview: 0 live attendees), so no production funnel runs the old worker; any real attendee who deploys now gets the signed Zoom URL check. Separately, GET /admin/api/export returns HTTP 500 on the live Worker (attendees and overview work); I used /admin/api/attendees instead. Logged in coord LOG.md."
+    },
+    {
+     "ts": "2026-10-11T07:11:37+0530",
+     "who": "claude",
+     "note": "Ran the Orchestrator's plan on the live centre: the export (now HTTP 200) shows 24 attendees, all test, with 0 jobs, 0 funnel state rows and 0 Cloudflare connections, so no funnel has ever been deployed from production and nothing runs the old worker. Nothing was redeployed and there was no test funnel to send the unsigned Zoom check to; any funnel deployed from now on refuses it with 401 (cloud/funnel/worker.js, /hooks/zoom). Counts are logged in coord LOG.md (2026-10-11, T-246)."
     }
    ],
    "order": 2460

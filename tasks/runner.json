@@ -97,12 +97,14 @@
    "summary": "T-150 stays in review for Amal: the verify pass found no gaps, so nothing was changed, pushed or published this run.\n\nCOMPLETION CHECK (all evidence from this run)\n1. **`review_hub.py` reports no unknown element:** done. It wrote 382 elements with no PROBLEMS line, and the regenerated `workshop-plan"
   }
  ],
- "state": "idle",
- "message": "Last sweep handled 8 task(s).",
- "task_id": null,
- "entries": [],
- "mode": null,
- "started": "2026-10-11T07:01:04+0530",
+ "state": "working",
+ "message": "Acting on 1 note(s) for T-246: Redeploy attendee funnels that run the old funnel worker",
+ "task_id": "T-246",
+ "entries": [
+  "F-8ffcb1f2"
+ ],
+ "mode": "feedback",
+ "started": "2026-10-11T07:10:52+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
