@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T05:39:40+0530",
-  "version": 1713,
+  "updated": "2026-10-11T05:42:34+0530",
+  "version": 1717,
   "last_id": 394,
   "team": [
    {
@@ -2090,6 +2090,10 @@
     {
      "label": "Sequence copy",
      "url": "workshop-plan/sequences/pre.md"
+    },
+    {
+     "label": "Generated campaign copy",
+     "url": "cloud/src/generated/nurture-copy.ts"
     }
    ],
    "blockers": [],
@@ -2124,6 +2128,11 @@
      "ts": "2026-10-10T16:35:32+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-20 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-11T05:41:59+0530",
+     "who": "claude",
+     "note": "Copy pass done on workshop-plan/sequences/pre.md: the prepare, VIP, day-before and 1-hour messages are rewritten for both lanes (pain-first intros, sharper subjects, no unsourced 'most people' claim, the wrong 'same link for all three days' line fixed, VIP described only with what /vip itself says). The confirmation is unchanged because it is locked word for word to the Registered campaign already being sent. Checked: banned terms 0, dashes 0, literal dates 0, check_confirmation.py passes, build_nurture.py rebuilt cloud/src/generated/nurture-copy.ts and it type checks; the new prepare and VIP words reach registrants on the next Worker deploy, and the live day-before and 1-hour sends still use T-234's own copy in cloud/src/reminder-copy.ts."
     }
    ],
    "order": 290,
@@ -2465,9 +2474,7 @@
      "url": "https://usetantra.com/connectors/channels/linkedin"
     }
    ],
-   "blockers": [
-    "T-147"
-   ],
+   "blockers": [],
    "needs_from_owner": "",
    "log": [
     {
@@ -2504,6 +2511,21 @@
      "ts": "2026-10-10T16:35:33+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-19 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-11T05:41:12+0530",
+     "who": "claude",
+     "note": "Orchestrator decision carried out and rechecked 2026-10-11: T-147 blocker removed (T-147 is done). App URL https://usetantra.com answers 200 today, and /connectors/channels/linkedin and /campaigns redirect to its sign-in. Caps per profile, read from the redacted screenshot saved on 2026-10-09 (workshop-plan/tasks/evidence/T-057-linkedin-limits.png, not re-read in the live app today): 80 connection requests/day (180/week), 120 messages/day (600/week), 80 profile visits/day (400/week), all platform maximums. We run at 20 to 25 connects/day, never above 75, and 75 messages/day. Readiness YES dated 2026-10-07 (Adi's statement plus the app check). T-058 no longer waits on this task (its launch kit carries these caps). Still open: Bharath's written yes with a date."
+    },
+    {
+     "ts": "2026-10-11T05:42:00+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11, nothing had to change. Rechecked today: https://usetantra.com answers 200 and /connectors/channels/linkedin and /campaigns redirect to its sign-in; calendar.usetantra.com still times out but app/src/lib/seo/site.ts:41 now defaults to https://usetantra.com, so the spec's calendar reference is out of date. The redacted screenshot (workshop-plan/tasks/evidence/T-057-linkedin-limits.png) shows per profile 80 connection requests/day (180/week), 120 messages/day (600/week), 80 profile visits/day (400/week), all platform maximums; working ramp 20 to 25 connects/day, never above 75, 75 messages/day; the launch kit carries the same numbers. Readiness YES dated 2026-10-07, T-147 blocker gone. Only open item: Bharath's written yes or no with a date."
+    },
+    {
+     "ts": "2026-10-11T05:42:34+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-058."
     }
    ],
    "order": 360,
