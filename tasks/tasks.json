@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T04:31:00+0530",
-  "version": 2340,
+  "updated": "2026-10-12T04:32:28+0530",
+  "version": 2341,
   "last_id": 419,
   "team": [
    {
@@ -13954,19 +13954,19 @@
    "evidence": [
     {
      "label": "Live centre (Choose your tools)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-stack&v=t270e"
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-stack&v=t270f"
     },
     {
      "label": "Probe",
      "url": "app/scripts/probe-t270.mjs"
     },
     {
-     "label": "Screenshot: consent ask",
-     "url": "/tmp/probe-t270/consent-1440.png"
+     "label": "Mirror chunk with ev_length examples",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/_next/static/chunks/43fq5cdzevd66.js?v=t270f"
     },
     {
-     "label": "Mirror chunk with ev_length examples",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/_next/static/chunks/43fq5cdzevd66.js?v=t270e"
+     "label": "Screenshot: Choose your tools",
+     "url": "/tmp/probe-t270/start-stack-1440.png"
     }
    ],
    "blockers": [],
@@ -14021,6 +14021,11 @@
      "ts": "2026-10-12T04:26:46+0530",
      "who": "claude",
      "note": "Live centre: probe-t270 made the test attendee 'Adi test T-270' and passed 18 of 18. An empty AI card asks before the first draft and sent 0 drafts, and the probe never answered yes on live. The yes path passed on local wrangler dev: the answer is stored and 1 draft fires after it. The probe change is pushed in bd8df50c. The mirror (6d5689b) already serves the ev_length examples and the default teaching panel, and AUDIT.md lists 1ef94a2 beside N070, so neither needed redoing. Open https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-stack&v=t270e"
+    },
+    {
+     "ts": "2026-10-12T04:32:28+0530",
+     "who": "claude",
+     "note": "Verify pass 12 Oct: probe-t270 on the live centre passed every check with test attendee 'Adi test T-270' (made and revoked by the probe). An empty AI card asks first, 0 drafts went out before an answer, and the no is stored. On local wrangler dev (port 8797, stopped after) the yes is stored and 1 draft fires on open. check-examples passed 641/641. All T-270 code and the probe match origin/main, and AUDIT.md marks N067 to N088 fixed (1ef94a2 beside N070). The centre runs only on the Worker, not on the github.io mirror, which serves the ev_length examples. Open https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-stack&v=t270f"
     }
    ],
    "order": 2700

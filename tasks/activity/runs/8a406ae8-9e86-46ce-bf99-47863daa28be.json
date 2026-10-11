@@ -1,1 +1,1 @@
-{"session":"8a406ae8-9e86-46ce-bf99-47863daa28be","task":"T-034","public":true,"events":[]}
+{"session":"8a406ae8-9e86-46ce-bf99-47863daa28be","task":"T-034","public":true,"events":[{"k":"tool","ts":"2026-10-11T23:01:57.484Z","id":"toolu_013w4G4zarfw9r3AVpsw9oqt","name":"Bash","head":"Find stale mailbox references in runbook and harness","input":"$ grep -n \"T-408\\|T-123\\|resend\\|Resend\" workshop-plan/ops/runbook.md | head -20; grep -n \"T-408\\|T-123\\|resend\" workshop-plan/ops/dryrun_day1.py | head"}]}

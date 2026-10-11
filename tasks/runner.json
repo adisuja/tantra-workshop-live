@@ -97,14 +97,14 @@
    "summary": "T-157 is back in review after a fresh verify pass. Nothing new had to change on disk, so I made no commit. Bhaskar and Bharath are already its reviewers.\n\n- **Stale blockers:** done. Both blockers and the ask to Adi are empty in tasks.json.\n- **One-pagers, qualifier copy and spec:** done.\n  - **Acco"
   }
  ],
- "state": "working",
- "message": "Acting on 1 note(s) for T-034: Full dry run of the Day-1 pipeline",
- "task_id": "T-034",
+ "state": "paused",
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 71% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 06:51.",
+ "task_id": null,
  "entries": [
-  "R-fa668313"
+  "R-aef060e6"
  ],
  "mode": "feedback",
- "started": "2026-10-12T04:31:51+0530",
+ "started": "2026-10-12T04:32:54+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
@@ -125,6 +125,14 @@
   "T-245": "2026-10-12T04:31:22+0530",
   "T-398": "2026-10-12T04:31:32+0530",
   "T-384": "2026-10-12T04:31:39+0530",
-  "T-252": "2026-10-12T04:31:50+0530"
+  "T-252": "2026-10-12T04:31:50+0530",
+  "T-034": "2026-10-12T04:32:00+0530",
+  "T-033": "2026-10-12T04:32:08+0530",
+  "T-148": "2026-10-12T04:32:19+0530",
+  "T-403": "2026-10-12T04:32:29+0530",
+  "T-407": "2026-10-12T04:32:39+0530",
+  "T-101": "2026-10-12T04:32:47+0530",
+  "T-335": "2026-10-12T04:32:54+0530",
+  "T-228": "2026-10-12T04:33:04+0530"
  }
 }
