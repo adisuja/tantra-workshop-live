@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T12:59:36+0530",
+   "task_id": "T-291",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I re-ran the preview switch-off probe and it passes 29 of 29, so T-291 is back in review with no ask for Adi. /preview stays open because neither trigger has fired.\n\n- **Don't flip the setting:** done. Live `/preview` still answers 302.\n- **Run the probe on a local centre:** done. I started a fresh "
+  },
+  {
    "ts": "2026-10-11T12:55:37+0530",
    "task_id": "T-278",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-005 is still blocked on your T-382 input: a new live Dodo API key and the webhook signing secret. Everything else is ready and checked. I found and fixed one mistake: the runbook told you to run the probe against port 4430, but the dev server runs on 4322. That is fixed in `workshop-plan/ops/runbo"
-  },
-  {
-   "ts": "2026-10-11T11:26:54+0530",
-   "task_id": "T-285",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-285 is back in review for Adi and Bharath. The card copy fixes were already live, so I didn't redeploy the Worker or republish the mirror.\n\n1. **T-257 image sizes:** fixed already. `check-guides` passes (exit 0, 24 guides, 194 shots), so those 4 failures are gone.\n2. **Worker deploy:** skipped. Th"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-291",
+ "task_id": "T-303",
  "entries": [
-  "F-66f30116"
+  "F-3326c271"
  ],
- "started": "2026-10-11T12:57:02+0530",
- "message": "Acting on 1 note(s) for T-291: Switch the open /preview link to personal links only before the first real attendee gets a centre link",
+ "started": "2026-10-11T13:01:29+0530",
+ "message": "Acting on 1 note(s) for T-303: Transcribe the reference VSL and write Richard's own VSL recording script",
  "slices": {
   "T-135": 1,
   "T-148": 1,
