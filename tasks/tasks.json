@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T02:11:46+0530",
-  "version": 2224,
+  "updated": "2026-10-12T02:13:18+0530",
+  "version": 2225,
   "last_id": 413,
   "team": [
    {
@@ -8443,6 +8443,11 @@
      "ts": "2026-10-11T21:59:08+0530",
      "who": "claude",
      "note": "Checked against T-156's new signals.json: score.py already reads its shape (brands keyed by brand, status at_risk/high_result/steady, same thresholds), so no code change. Fixed one now-wrong rubric claim: the file exists (live, empty brands until workspace keys are set), and the rubric now names the fields and the brand-name match. 8 of 8 feature tests pass; open docs/feature-rubric.md."
+    },
+    {
+     "ts": "2026-10-12T02:13:18+0530",
+     "who": "claude",
+     "note": "Ripple checked: the 06:33 claim that the retention signal stays inactive until T-156 writes signals.json is superseded; the file is live with an empty brands map until workspace keys are set. Rubric fix dbdeaa11 was already pushed; fixed the stale score.py comment in aac8b950 (pushed), 8 of 8 feature tests pass. Amal and Bharath: open docs/feature-rubric.md to sign off; T-396 stays the follow-up."
     }
    ],
    "order": 1530,
