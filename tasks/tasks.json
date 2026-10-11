@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T03:10:23+0530",
-  "version": 2285,
+  "updated": "2026-10-12T03:19:18+0530",
+  "version": 2292,
   "last_id": 417,
   "team": [
    {
@@ -2907,7 +2907,7 @@
   },
   {
    "id": "T-061",
-   "status": "blocked",
+   "status": "doing",
    "owner": "Aquila",
    "assignee": "Claude",
    "reviewers": [
@@ -18163,8 +18163,7 @@
   },
   {
    "id": "T-413",
-   "title": "Input from Adi for T-228: See T-408: sign in at https://usetantra.com (GrowthClub workspace), open Ema",
-   "area": "Delivery",
+   "status": "blocked",
    "owner": "Adi",
    "assignee": "Adi",
    "reviewers": [
@@ -18172,23 +18171,17 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "blocked",
-   "why": "",
-   "spec": "Only Adi can do this (signin): Needs the Google sign-in for team@growthclub.org and a Tantra key rotation, both reserved for Adi.. Everything else in T-228 is being built around it. As soon as this is done, T-228 finishes on its own.",
+   "area": "Delivery",
+   "order": 4130,
+   "title": "T-413: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "See T-408: sign in at https://usetantra.com (GrowthClub workspace), open Email Accounts, click Connect account and sign in as team@growthclub.org; then rotate the 'workshop-reminders' key and paste it at https://revops-centre.growthcluborg.workers.dev/admin/enter, Cohort Settings, Session Reminders, Tantra API key, Save.",
-   "log": [
-    {
-     "ts": "2026-10-12T00:09:40+0530",
-     "who": "claude",
-     "note": "Opened by the Orchestrator for T-228."
-    }
-   ],
-   "order": 4130,
-   "input_for": "T-228",
-   "kind": "input"
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-414",
