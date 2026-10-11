@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T06:27:47+0530",
-  "version": 1749,
+  "updated": "2026-10-11T06:32:35+0530",
+  "version": 1751,
   "last_id": 396,
   "team": [
    {
@@ -8328,24 +8328,16 @@
    ],
    "evidence": [
     {
-     "label": "Live old centre, Day 1 Watch",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/reference/?v=20261011#d1-watch"
+     "label": "Old centre, Day 1 Watch (live)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/reference/?v=t197v1011#d1-watch"
     },
     {
-     "label": "AUDIT.md",
+     "label": "Probe fix db7ed17",
+     "url": "app/scripts/probe-details.mjs"
+    },
+    {
+     "label": "Audit",
      "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
-    },
-    {
-     "label": "probe-details output",
-     "url": "/tmp/t197-details3.log"
-    },
-    {
-     "label": "probe-own-join output",
-     "url": "/tmp/t197-ownjoin.log"
-    },
-    {
-     "label": "Coordination log",
-     "url": "/Users/adithyamurali/tantra-round5-coord/LOG.md"
     }
    ],
    "blockers": [],
@@ -8395,6 +8387,11 @@
      "ts": "2026-10-11T06:23:37+0530",
      "who": "claude",
      "note": "Checked and closed out what I could: the old centre fix 729da61 is already in origin/main and live (T-278 publish: mirror 8b59f66, Worker 22952e72), so I made no new deploy; on the live page each day shows its own Zoom link when the attendee feed answers and the fallback chip when it does not, and probe-own-join passes 16/16. probe-details on a clean export of main is NOT at 0 yet: 5 FAIL, 56 WARN with the local centre section skipped because it stalled; I fixed the two this run could (the playbook 66px phone overflow and a false date FAIL, both in commit b678662, live after the next publish) and logged the other five as AUDIT rows G143 and G144 (guide title sizes, T-135), G145 (pinned scene, T-025) and G146 (two screenshot widths, T-240). AUDIT.md is recounted at 520 findings with all 63 P0 fixed and none open."
+    },
+    {
+     "ts": "2026-10-11T06:31:30+0530",
+     "who": "claude",
+     "note": "Verify pass: 729da61 is on pushed main, the old centre Join button code reads the attendee's own Zoom link end to end, and AUDIT.md has no open P0. The two guide title FAILs in probe-details were false alarms from the probe and are fixed in db7ed17 (local commit); the full re-run was still going when this run ended (/tmp/t197v-details2.log), and the pinned scene (T-025) and two short screenshots (T-240) are still expected to FAIL, so 0 FAIL is not met. probe-own-join was not re-run this time (no local admin key), and I made no new deploy or publish because the fix is already live from the T-278 publish."
     }
    ],
    "order": 1970
