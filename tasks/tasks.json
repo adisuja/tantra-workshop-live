@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T02:44:53+0530",
-  "version": 2255,
+  "updated": "2026-10-12T02:47:01+0530",
+  "version": 2258,
   "last_id": 415,
   "team": [
    {
@@ -7967,12 +7967,13 @@
    "due": "",
    "status": "review",
    "why": "The cover slide is the first thing a webinar viewer sees, and its large background Tantra mark is still a 404.",
-   "spec": "Deck: https://usetantra.github.io/tantra-webinar-deck/ (repo Usetantra/tantra-webinar-deck, GitHub Pages; sources in private Usetantra/webinar-deck; hosting notes in memory webinar-deck-hosting). The cover slide's CSS background url('tantra-logo.png') (index.html lines 83 and 348) requests the site root, which 404s, while uploads/tantra-logo.png is 200. Agents never write to Usetantra repos (Adi 2026-10-11), so the fix (url('tantra-logo.png') to url('uploads/tantra-logo.png')) lives as two git am patches in workshop-plan/tantra-product-patches/{tantra-webinar-deck,webinar-deck}/ with apply steps in its README. Keep the hub note on team/webinar-deck (review_hub.py) and AUDIT.md H038 at 'patch ready, reverted upstream' until Bharath applies them. Work ends at: patch and apply steps handed to Bharath.",
+   "spec": "Deck: https://usetantra.github.io/tantra-webinar-deck/ (repo Usetantra/tantra-webinar-deck, GitHub Pages; sources in private Usetantra/webinar-deck). The cover slide's CSS background url('tantra-logo.png') requests the site root, which 404s, while uploads/tantra-logo.png is 200. Agents never write to Usetantra repos (Adi 2026-10-11), so the fix (url('tantra-logo.png') to url('uploads/tantra-logo.png')) lives as two git am patches in workshop-plan/tantra-product-patches/{tantra-webinar-deck,webinar-deck}/ with apply steps in its README (T-148 section). Work ends at: patches and git am steps handed to Bharath; hub note and AUDIT H038 say patch ready. Bharath applies and pushes; a later pass then drops the hub note and marks H038 fixed.",
    "done_when": [
-    "Read-only curl records the live state: root tantra-logo.png 404 or 200, uploads/tantra-logo.png 200",
+    "Read-only curl records the live state (root tantra-logo.png and uploads/tantra-logo.png)",
     "Both patches apply cleanly with git am on a scratch copy",
-    "review_hub.py carries the cover-logo note on webinar-deck, workshop-plan/index.html regenerated, AUDIT.md H038 reads patch ready, reverted upstream",
-    "Patch and apply steps handed to Bharath (README section T-148)"
+    "README in workshop-plan/tantra-product-patches/ has index rows and git am steps (T-148 section) for both patches",
+    "Hub note on team/webinar-deck (review_hub.py) and AUDIT.md H038 say patch ready",
+    "Patches and git am steps handed to Bharath in one reviewer note"
    ],
    "evidence": [
     {
@@ -7984,16 +7985,16 @@
      "url": "workshop-plan/tantra-product-patches/webinar-deck/main--097f6bd6a5.patch"
     },
     {
-     "label": "Apply steps for Bharath (README, T-148 section)",
+     "label": "Apply steps for Bharath (README, T-148 section, commit 3c6e5bee)",
      "url": "workshop-plan/tantra-product-patches/README.md"
     },
     {
-     "label": "Hub with restored note (commit dafd6b00)",
-     "url": "workshop-plan/index.html?v=t148c"
+     "label": "Hub with cover-logo note",
+     "url": "workshop-plan/index.html?v=t148d"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Bharath applies workshop-plan/tantra-product-patches/tantra-webinar-deck/main--b3def23f6b.patch in Usetantra/tantra-webinar-deck and webinar-deck/main--097f6bd6a5.patch in Usetantra/webinar-deck with git am, then pushes main (steps in tantra-product-patches/README.md, T-148 section).",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-26T00:17:50+0530",
@@ -8054,6 +8055,16 @@
      "ts": "2026-10-11T22:36:10+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-152."
+    },
+    {
+     "ts": "2026-10-12T02:47:01+0530",
+     "who": "claude",
+     "note": "Reworded per the Orchestrator: the task now ends at patches and git am steps handed to Bharath, and the Asked of Adi field is cleared. Rechecked 2026-10-12: live root tantra-logo.png 404, uploads 200; the published patch applies with git am on the live index.html (leaves 0 url('tantra-logo.png')) and the source patch's deck.html hunk applies too; README rows and steps confirmed, verify step tightened (commit 3c6e5bee, pushed to the workshop repo); hub note and AUDIT H038 already say patch ready."
+    },
+    {
+     "ts": "2026-10-12T02:47:01+0530",
+     "who": "claude",
+     "note": "Bharath (reviewer): from a checkout of adisuja/3-day-tantra-ai-revops-workshop, run in a clone of Usetantra/webinar-deck: git am <repo>/workshop-plan/tantra-product-patches/webinar-deck/main--097f6bd6a5.patch && git push origin main; then in a clone of Usetantra/tantra-webinar-deck: git am <repo>/workshop-plan/tantra-product-patches/tantra-webinar-deck/main--b3def23f6b.patch && git push origin main. After Pages republishes, curl -s https://usetantra.github.io/tantra-webinar-deck/ | grep -c \"url('tantra-logo.png')\" should print 0. Full steps: tantra-product-patches/README.md, T-148 section."
     }
    ],
    "order": 1480,
@@ -8742,7 +8753,7 @@
    "due": "2026-10-20",
    "status": "review",
    "why": "Owner voice notes, 2026-09-26: whichever product a funnel targets, buyers spread across all tiers, so every funnel needs a qualifier and the mix must be measured.",
-   "spec": "Use the owner's ladder (memory tantra-plan-lineup): Tantra Pro $99/mo (includes the workshop cohort seat; up to 5 LinkedIn or WhatsApp accounts), the $199/mo tier (up to 15; name pending on T-252), extra LinkedIn or WhatsApp accounts at $20 each, Tantra Pro course $999, Tantra Enterprise $9,999 (coaching plus done-with-you build, 1 year of platform access). Constants live in tantra-frontend-v2 src/lib/billing/pricing.ts (no checkout on this Mac: ~/tantra-frontend-v2 is empty, same blocker as T-252). The Enterprise booking link must move from Calendly (ruled out 2026-10-07) to a Cal.com event. Write a one-pager per offer, run one traffic experiment per offer, add a tier qualifier to both funnels (free /workshop and paid /masterclass) that routes each buyer to the right tier, and track the tier mix per 100 customers. No invented stats.",
+   "spec": "Use the owner's ladder (memory tantra-plan-lineup) and Adi's standing pricing rule: Tantra Pro $99/mo (includes the workshop cohort seat; $999/yr on annual billing per T-252 item 8), Tantra Scale $199/mo (name settled on T-252), extra LinkedIn or WhatsApp accounts at $20 each, Tantra Pro course $999, Tantra Enterprise $9,999 (coaching plus done-with-you build, 1 year of platform access). Account allowances and trial length are not settled (owner line-up 5/15 and 14 days vs live Dodo catalog 2/12 and 7 days, open on T-252), so the copy leaves them out, as on T-287. Usetantra repos are never touched: Tantra product changes live as patches in workshop-plan/tantra-product-patches/. Write a one-pager per offer, run one traffic experiment per offer (Bhaskar posts), add a tier qualifier to both funnels (free /workshop with no prices, paid /masterclass) that routes each buyer to the right tier, and track the tier mix per 100 customers (tier_mix.py). Mirror publish waits on the Apps Script redeploy (T-409). No invented stats.",
    "done_when": [
     "One-pager per offer with inclusions and the owner's prices",
     "One live traffic experiment per offer",
@@ -8752,11 +8763,11 @@
    "evidence": [
     {
      "label": "Free join page (no prices)",
-     "url": "http://localhost:4322/workshop/join?v=t157d"
+     "url": "http://localhost:4377/workshop/join?v=t157e"
     },
     {
      "label": "Paid join page",
-     "url": "http://localhost:4322/masterclass/success/join?v=t157d"
+     "url": "http://localhost:4377/masterclass/success/join?v=t157e"
     },
     {
      "label": "Qualifier probe",
@@ -8779,10 +8790,7 @@
      "url": "T-409"
     }
    ],
-   "blockers": [
-    "$199 tier name (T-252)",
-    "tantra-frontend-v2 source not on this Mac"
-   ],
+   "blockers": [],
    "needs_from_owner": "",
    "log": [
     {
@@ -8844,6 +8852,11 @@
      "ts": "2026-10-11T22:30:51+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-409."
+    },
+    {
+     "ts": "2026-10-12T02:46:48+0530",
+     "who": "claude",
+     "note": "Reconciled with T-252: the four one-pagers, the qualifier answers and result copy no longer state account counts or trial length (T-252 left 5/15 vs 2/12 open), keep $20 per extra account per Adi's pricing rule (the catalog's $10 is not settled either), add Pro $999/yr, and fix the Enterprise line (live page still uses Calendly; Cal.com is only a patch). Blockers cleared, probe-tier-qualifier.mjs passes 16 of 16 on a fresh dev server; the Apps Script health GET still lists 6 forms, so the probe row and mirror publish stay held on T-409. Bhaskar posts the experiments; open http://localhost:4377/workshop/join?v=t157e and http://localhost:4377/masterclass/success/join?v=t157e (run npx next dev -p 4377 in app/)."
     }
    ],
    "order": 1570,

@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T02:47:09+0530",
+   "task_id": "T-148",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-148 is in review with Bharath and Bhaskar; the deck's cover logo is still broken live until Bharath applies the two patches.\n\n| Item | State |\n|---|---|\n| Live state (checked today, read-only) | Root `tantra-logo.png` still returns 404; `uploads/tantra-logo.png` returns 200 |\n| Published deck patc"
+  },
+  {
    "ts": "2026-10-12T02:44:46+0530",
    "task_id": "T-140",
    "mode": "feedback",
@@ -87,27 +95,18 @@
    "status": "review",
    "result": "ok",
    "summary": "T-229 is back in review for Nelbin, Aquila and Bharath. The placeholder guard is already live on production, so no deploy was needed. Note F-0b44dc8c is acknowledged.\n\n- **Guard is live:** done. The live Worker version is f97bb618, built from commit 93ad569, which contains the fix 51c7ee1 (confirmed"
-  },
-  {
-   "ts": "2026-10-12T00:59:15+0530",
-   "task_id": "T-242",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Stopped at the 70-minute wall clock for one run; the work so far is committed and the next run continues. Last report: The funnel is up. Now I'll rerun the webinar walker, detached."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-148",
+ "task_id": "T-033",
  "entries": [
-  "F-70acb352"
+  "F-a1dea395"
  ],
- "started": "2026-10-12T02:45:59+0530",
- "message": "Acting on 1 note(s) for T-148: Webinar deck v3: the Tantra logo image is missing (404)",
+ "started": "2026-10-12T02:47:39+0530",
+ "message": "Acting on 1 note(s) for T-033: WhatsApp + email delivery automation",
  "slices": {
   "T-135": 1,
-  "T-148": 1,
   "T-300": 2,
   "T-242": 3,
   "T-052": 1,
