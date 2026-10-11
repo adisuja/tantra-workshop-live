@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T07:00:30+0530",
+   "task_id": "T-235",
+   "mode": "feedback",
+   "status": "review",
+   "result": "error",
+   "summary": "[process exit 143; stderr: ''] T-235's code is committed and already on origin, and the threshold field is in Cohort Settings; now bringing up an isolated local centre and simulator to run the probe."
+  },
+  {
    "ts": "2026-10-11T06:58:25+0530",
    "task_id": "T-213",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "hold",
    "result": "ok",
    "summary": "T-146 is on hold: Bhaskar's and Aquila's invites are still pending, so H034 stays open until they accept.\n\nCOMPLETION CHECK\n1. **Delete the \"Asked of Adi\" section:** done. `needs_from_owner` was already empty on disk and stays empty; scope is Nelbin, Bhaskar and Aquila only.\n2. **Run collaborators a"
-  },
-  {
-   "ts": "2026-10-10T21:58:31+0530",
-   "task_id": "T-001",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-001 stays in review: everything the Orchestrator note asked for is verified on the live mirror, and the only thing left is Adi's copy sign-off.\n\nCOMPLETION CHECK (evidence from this run):\n\n1. **Funnel numbers match the FunnelOS board: done.** `day-art.tsx`, `visuals.tsx` and `funnel-os-types/syste"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-235: Post-session follow-ups through Tantra: replay to no-shows, nudge on low engagement",
- "task_id": "T-235",
+ "message": "Acting on 1 note(s) for T-237: Give the Tantra webinar a public registration page",
+ "task_id": "T-237",
  "entries": [
-  "F-bb81a15c"
+  "F-74af7720"
  ],
  "mode": "feedback",
- "started": "2026-10-11T06:59:52+0530",
+ "started": "2026-10-11T07:01:04+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
