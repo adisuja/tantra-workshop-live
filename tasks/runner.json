@@ -97,12 +97,14 @@
    "summary": "T-289 is back in review. The relay is fully retired and I made one more cleanup commit, but I didn't push it, and the runbook says 19 jobs rather than 14.\n\n- **Jobs stopped (done):** `launchctl list | grep revops-relay` returns nothing, and no revops cloudflared process is running.\n- **Plists delete"
   }
  ],
- "state": "idle",
- "message": "Last sweep handled 8 task(s).",
- "task_id": null,
- "entries": [],
- "mode": null,
- "started": "2026-10-11T17:56:24+0530",
+ "state": "working",
+ "message": "Acting on 1 note(s) for T-235: Post-session follow-ups through Tantra: replay to no-shows, nudge on low engagement",
+ "task_id": "T-235",
+ "entries": [
+  "F-346ec149"
+ ],
+ "mode": "feedback",
+ "started": "2026-10-11T18:19:17+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
