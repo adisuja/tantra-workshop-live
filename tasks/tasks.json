@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T21:01:07+0530",
-  "version": 2026,
+  "updated": "2026-10-11T21:06:18+0530",
+  "version": 2028,
   "last_id": 408,
   "team": [
    {
@@ -12021,20 +12021,20 @@
    ],
    "evidence": [
     {
-     "label": "Tantra Tracker sheet",
-     "url": "https://docs.google.com/spreadsheets/d/1clliPUw9w5kOL9CJmV2i8v62zwhJh9TLU3DyA1-M8Dc/edit"
+     "label": "keepalive log",
+     "url": "/Users/adithyamurali/Library/Logs/tantra-docker-keepalive.log"
     },
     {
      "label": "tracker log",
      "url": "/Users/adithyamurali/Library/Logs/tantra-tracker.log"
     },
     {
-     "label": "backup (dry-run restore OK)",
-     "url": "/Users/adithyamurali/backups/tantra-mongo-2026-10-09/all.archive"
+     "label": "keepalive script",
+     "url": "workshop-plan/ops/docker_keepalive.py"
     },
     {
-     "label": "credentials file (not printed)",
-     "url": "/Users/adithyamurali/.config/tantra/mongo.env"
+     "label": "keepalive plist",
+     "url": "workshop-plan/ops/com.tantra.docker-keepalive.plist"
     }
    ],
    "blockers": [],
@@ -12094,6 +12094,11 @@
      "ts": "2026-10-11T07:24:45+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-006."
+    },
+    {
+     "ts": "2026-10-11T21:06:18+0530",
+     "who": "claude",
+     "note": "Docker Desktop now recovers on its own: launchd com.tantra.docker-keepalive (every 5 min, workshop-plan/ops/docker_keepalive.py and its plist, pushed to main at ba1573a1) runs docker info, opens Docker, and after 3 min kills and relaunches it; Docker start-at-login is on (AutoStart true), and tracker_sync logs one 'MongoDB UNREACHABLE' line when Mongo is down. Verified tonight: I quit Docker at 20:56, the keepalive found it at 20:57, relaunched it by 21:00:33 with tantra-mongo back on 127.0.0.1:27017 (restart unless-stopped), and the tracker log went written, UNREACHABLE, then 'MongoDB written: 5190 documents' unaided. The homebrew mongodb-community plist is present with RunAtLoad but is not loaded and mongod is not installed, so nothing else holds 27017 (left in place, as asked)."
     }
    ],
    "order": 2470
