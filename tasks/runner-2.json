@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T11:30:51+0530",
+   "task_id": "T-040",
+   "mode": "feedback",
+   "status": "hold",
+   "result": "ok",
+   "summary": "T-040 stays on hold with nothing asked of Adi. I cleared the ask, set the only blocker to \"Owner hold (2026-09-24); groups created by Nelbin when the hold lifts.\", left the placeholder link in place and acked F-1fa9f6e7.\n\n**Completion check:**\n- **Keep T-040 on hold:** done. Reading tasks.json after"
+  },
+  {
+   "ts": "2026-10-11T11:29:17+0530",
+   "task_id": "T-129",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-129 is back in review for Amal and Bharath. All six items were already done, so I changed nothing and only re-checked each one in this run.\n\n| Item | State | What I checked |\n|---|---|---|\n| 1. `pass.py validate` fails on any em or en dash, with a test | Done | `test_pass_dashes.py` passes; valida"
+  },
+  {
    "ts": "2026-10-11T11:26:56+0530",
    "task_id": "T-135",
    "mode": "feedback",
@@ -79,32 +95,17 @@
    "status": "doing",
    "result": "ok",
    "summary": "I added the missing ev_length examples and pushed them, but T-270 is not ready for review. The live consent check, the Worker deploy and the mirror publish are still open, so I left the task in doing.\n\n| Item | State | Evidence |\n|---|---|---|\n| 1. 9fca8f3 on origin/main | Done | It was already ther"
-  },
-  {
-   "ts": "2026-10-11T08:31:28+0530",
-   "task_id": "T-059",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-059 is still blocked because the live test email can't go out until the Tantra key from T-337 exists. Everything that doesn't need that key checked out again in this run.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| (1) Commit and push `first_lines.py` and `outreach/t059` only | Don"
-  },
-  {
-   "ts": "2026-10-11T08:26:33+0530",
-   "task_id": "T-056",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-056 is still blocked: the list isn't imported and the campaign doesn't exist yet, because there's still no Tantra API key on this Mac.\n\n**What I fixed:** checking the script against Tantra's API code showed that the call it used to create the campaign, `/campaigns/create`, actually launches it, me"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-129",
+ "task_id": "T-070",
  "entries": [
-  "F-3c967c43"
+  "F-f5b965db",
+  "R-bddc03fc"
  ],
- "started": "2026-10-11T11:28:27+0530",
- "message": "Acting on 1 note(s) for T-129: Board hygiene: past due dates, meta.day1, dash check, T-070 title, pitch cadence",
+ "started": "2026-10-11T11:31:46+0530",
+ "message": "Acting on 2 note(s) for T-070: What the Tantra backend does when a workshop seat or VIP is paid",
  "slices": {
   "T-072": 1,
   "T-245": 1,

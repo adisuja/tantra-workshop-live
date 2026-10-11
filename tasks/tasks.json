@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T11:29:10+0530",
-  "version": 1859,
+  "updated": "2026-10-11T11:31:14+0530",
+  "version": 1863,
   "last_id": 398,
   "team": [
    {
@@ -633,7 +633,7 @@
    "owner": "Adi",
    "priority": "P1",
    "due": "2026-10-14",
-   "status": "queue",
+   "status": "blocked",
    "why": "Both secrets entered a chat transcript on Sep 18. Until rotated, anyone with that transcript can mint checkouts or forge webhooks.",
    "spec": "In the Dodo dashboard: regenerate the live API key and the webhook signing secret, then paste both into app/.env.local. I will restart the dev server and re-run the checkout probe. The onboarding centre Worker (revops-centre) also stores a Dodo webhook secret for its /hooks/dodo route: update it there too, or /hooks/dodo will fail signature checks. The secret it holds today belongs to the disabled staging endpoint; when the live Dodo endpoint for /hooks/dodo is created it brings its own secret, so store that one in the Worker.",
    "done_when": [
@@ -642,9 +642,18 @@
     "probe-workshop.mjs checkout + webhook checks pass",
     "Centre /hooks/dodo accepts a signed Dodo test event"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Rotation steps (runbook section 3)",
+     "url": "workshop-plan/ops/runbook.md"
+    },
+    {
+     "label": "Signed /hooks/dodo probe",
+     "url": "app/scripts/probe-centre-dodo-hook.mjs"
+    }
+   ],
    "blockers": [],
-   "needs_from_owner": "",
+   "needs_from_owner": "T-382: the regenerated live Dodo API key and the live /hooks/dodo endpoint signing secret pasted into app/.env.local as DODO_PAYMENTS_API_KEY and DODO_WEBHOOK_SECRET (https://app.dodopayments.com > Developer > API Keys, then Webhooks).",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -675,6 +684,11 @@
      "ts": "2026-10-10T16:35:32+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-10-01 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-11T11:29:45+0530",
+     "who": "claude",
+     "note": "Everything but the Dodo dashboard step is ready: runbook section 3 has the exact wrangler secret put commands (both DODO_WEBHOOK_SECRET and DODO_ENDPOINT_WEBHOOK_SECRET must change, or the leaked one keeps working) and the new probe-centre-dodo-hook.mjs passed all 6 checks against a local centre with a test secret; the live centre already refuses unsigned and forged events. Waiting on T-382; T-005 stays the last task."
     }
    ],
    "order": 50,
@@ -2003,9 +2017,9 @@
    ],
    "evidence": [],
    "blockers": [
-    "On hold by owner (2026-09-24); placeholder in use"
+    "Owner hold (2026-09-24); groups created by Nelbin when the hold lifts."
    ],
-   "needs_from_owner": "On hold by your choice (2026-09-24). The join pages still show the placeholder link, and the weekly cohorts start as soon as real sign-ups arrive. When ready, reply on this task with the WhatsApp community invite link (WhatsApp > Communities > your community > Invite members > Copy link).",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2041,6 +2055,16 @@
      "ts": "2026-10-10T16:35:32+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-20 was past; now none (cleared: on hold, nothing depends on a deadline)."
+    },
+    {
+     "ts": "2026-10-11T11:30:19+0530",
+     "who": "claude",
+     "note": "Kept on hold per the Orchestrator: nothing is asked of Adi now. When the hold lifts, Nelbin creates the chat group and the read-only announcement group and pastes the invite link here; Claude then sets NEXT_PUBLIC_COMMUNITY_URL, rebuilds, republishes and runs probe-funnels.mjs. Checked app/src/lib/funnel.ts: placeholder (line 126) and COMMUNITY_PENDING (line 129) left unchanged."
+    },
+    {
+     "ts": "2026-10-11T11:31:14+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-041."
     }
    ],
    "order": 260,
@@ -16197,12 +16221,17 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Open the Dodo dashboard (https://app.dodopayments.com) > Developer > API Keys and regenerate the live key. Then go to Webhooks, open the live /hooks/dodo endpoint (create it if missing) and copy its signing secret. Paste both into app/.env.local as DODO_API_KEY and DODO_WEBHOOK_SECRET. Claude then updates the Worker and runs the probes.",
+   "needs_from_owner": "Open https://app.dodopayments.com > Developer > API Keys and regenerate the live key. Then go to Webhooks, open the live endpoint for https://revops-centre.growthcluborg.workers.dev/hooks/dodo (create it if missing) and copy its signing secret. Paste both into app/.env.local as DODO_PAYMENTS_API_KEY and DODO_WEBHOOK_SECRET. Claude then updates both Worker secrets and runs the probes.",
    "log": [
     {
      "ts": "2026-10-10T16:42:54+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-005."
+    },
+    {
+     "ts": "2026-10-11T11:29:45+0530",
+     "who": "claude",
+     "note": "Corrected the key name: the app reads DODO_PAYMENTS_API_KEY, not DODO_API_KEY (app/src/lib/dodo.ts:52)."
     }
    ],
    "order": 3820,
