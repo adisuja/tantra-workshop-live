@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T13:05:48+0530",
+   "task_id": "T-292",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-292 is not done: the probe chain hasn't passed yet, so nothing is pushed and the live Worker is not deployed. I set it to `doing` and did not ack F-aaaa255d, so th"
+  },
+  {
    "ts": "2026-10-11T12:58:05+0530",
    "task_id": "T-253",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "turns",
    "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-240 is still in progress (status doing): the 3 original images are fine, but a 4th screenshot FAIL turned up and its fix isn't proven yet. I left note F-e85a68f0 u"
-  },
-  {
-   "ts": "2026-10-11T11:35:46+0530",
-   "task_id": "T-070",
-   "mode": "feedback",
-   "status": "hold",
-   "result": "ok",
-   "summary": "I checked the earlier T-070 work and it holds up, apart from one fix to the integration plan. T-070 stays on hold and both notes are acked.\n\n**What I fixed:** the earlier plan said to grant the plan through the backend's `BillingTrialCampaignService.grant`. That method is private. The only public wa"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-292",
+ "task_id": "T-242",
  "entries": [
-  "F-aaaa255d"
+  "F-15a68b48"
  ],
- "started": "2026-10-11T12:58:55+0530",
- "message": "Acting on 1 note(s) for T-292: Re-enable the Opus AI drafting connection in the local centre for real use",
+ "started": "2026-10-11T13:12:39+0530",
+ "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
  "slices": {
   "T-072": 1,
   "T-245": 1,
@@ -117,6 +117,7 @@
   "T-299": 1,
   "T-229": 1,
   "T-240": 1,
-  "T-278": 1
+  "T-278": 1,
+  "T-292": 1
  }
 }

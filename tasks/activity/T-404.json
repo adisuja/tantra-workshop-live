@@ -1,1 +1,1 @@
-{"task":"T-404","runs":[],"decisions":[]}
+{"task":"T-404","runs":[],"decisions":[{"id":"O-edce2bec","ts":"2026-10-11T13:13:43+0530","status_before":"blocked","verdict":"needs_adi","tokens":{"in":12895,"out":1351,"usd":0.0786},"session":"e0aa1fda-332a-4b04-9093-b4534e4d0e60","has_transcript":true,"decision":"","why":"T-404 is blocked awaiting an Anthropic API key for live attendee AI drafting (needs_from_owner). Prior decision on T-292 (2026-10-10) required creating a separate input task for the same credential. Policy mandates escalating only credential requests to Adi."}]}
