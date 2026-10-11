@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T11:24:36+0530",
+   "task_id": "T-289",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-289 is back in review. The relay is fully retired and I made one more cleanup commit, but I didn't push it, and the runbook says 19 jobs rather than 14.\n\n- **Jobs stopped (done):** `launchctl list | grep revops-relay` returns nothing, and no revops cloudflared process is running.\n- **Plists delete"
+  },
+  {
    "ts": "2026-10-11T11:22:39+0530",
    "task_id": "T-252",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "I re-ran everything for T-266 and fixed one gap: the test run still said automation 9 was \"not built\" while it waited on the AI key. It now uses the \"setup\" status, which the code defines for something built that needs a next step (commit d0e56be). That commit is pushed and the centre Worker is rede"
-  },
-  {
-   "ts": "2026-10-11T07:53:12+0530",
-   "task_id": "T-136",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I built the missing contact timeline and captured it, so T-136 is now in review with Amal and Bharath as reviewers (commit 8e1d904, not pushed).\n\nThe ripple note asked to unhold the task and move it to queue. It was already in queue, so that needed no change. The capture the note asked for still had"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-289: Retire the Namecheap relay launchd jobs",
- "task_id": "T-289",
+ "message": "Acting on 1 note(s) for T-290: Attendee funnel thank-you page: community and next-step blocks never render because no card asks for them",
+ "task_id": "T-290",
  "entries": [
-  "F-449aa3c5"
+  "F-d30859fe"
  ],
  "mode": "feedback",
- "started": "2026-10-11T11:23:43+0530",
+ "started": "2026-10-11T11:25:28+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
