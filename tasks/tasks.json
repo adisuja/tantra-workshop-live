@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T23:04:00+0530",
-  "version": 2102,
+  "updated": "2026-10-11T23:07:33+0530",
+  "version": 2104,
   "last_id": 410,
   "team": [
    {
@@ -10982,6 +10982,16 @@
      "ts": "2026-10-11T12:44:59+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-11: I re-ran the daily job's write test on 88135386601 (it ran twice by mistake). Both times Zoom took the PATCH (204) but ignored both fields, and the job restored the room, so request_permission_to_unmute_participants reads true again. A rehearsal for 13 Oct showed the job skips the test within 36 hours and adds the not granted in time line, and a second --log run today added no log entry. Still waiting on Zoom Support. T-226 covers mute and video, and T-226 itself waits on T-335."
+    },
+    {
+     "ts": "2026-10-11T23:06:00+0530",
+     "who": "claude",
+     "note": "The Orchestrator's write test already ran at 12:42 today (log line 'Write test 2026-10-11 on 88135386601: not granted'), so I did not run it a third time; a read-only GET now shows request_permission_to_unmute_participants true, mute false and video absent, so the room is restored and Zoom has not granted. Today's 09:10 entry lacked the write test only because that code was committed at 12:42 (5c1badf4); the note text includes it (zoom_support_check.mjs lines 150-151), the loaded launchd job passes --apply --log, so tomorrow's 09:10 entry will carry it. Waiting only on Zoom Support, one entry a day, T-226 covers mute and video."
+    },
+    {
+     "ts": "2026-10-11T23:07:33+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11: a read-only GET of 88135386601 shows the room restored (request_permission_to_unmute_participants true, host mute field false, video field absent), so Zoom has still not granted; the 12:42 log line holds today's write test. Today's 09:10 entry lacked it only because the write-test code was committed at 12:42; I added a guard so a same-day rerun never PATCHes again (proved: --apply today printed 'already ran today'), and tomorrow's 09:10 run will test and log it. Waits only on Zoom Support; T-226 Live Control is the fallback and itself waits on T-335."
     }
    ],
    "order": 2250
