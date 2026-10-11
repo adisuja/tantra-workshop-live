@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T04:18:10+0530",
-  "version": 2327,
-  "last_id": 418,
+  "updated": "2026-10-12T04:20:01+0530",
+  "version": 2332,
+  "last_id": 419,
   "team": [
    {
     "name": "Adi",
@@ -18433,6 +18433,35 @@
     }
    ],
    "order": 4180
+  },
+  {
+   "id": "T-419",
+   "title": "Input from Adi for T-400: Add a note on T-400 with the WhatsApp number, with country code (e.g. +91XXXXXXX",
+   "area": "Delivery",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (reserved): It is Adi's personal phone number; Tantra's API returns none and it is not recorded anywhere on this Mac.. Everything else in T-400 is being built around it. As soon as this is done, T-400 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Add a note on T-400 with the WhatsApp number, with country code (e.g. +91XXXXXXXXXX), that should receive the 'Adi test' Day 1 message. Use a number other than the one you connected in https://usetantra.com, Connectors, WhatsApp, if you have one.",
+   "log": [
+    {
+     "ts": "2026-10-12T04:19:23+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-400."
+    }
+   ],
+   "order": 4190,
+   "input_for": "T-400",
+   "kind": "input"
   }
  ]
 }
