@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T04:15:33+0530",
+   "task_id": "T-059",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "(Held back from the public board: this note mentions a private client detail.)"
+  },
+  {
+   "ts": "2026-10-12T04:14:11+0530",
+   "task_id": "T-056",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I checked T-056 again and it stays in review. The list and the unsent calendar-invite draft are both in Tantra, and I changed nothing there. All checks this run were read-only, so there was no code to commit.\n\n**Completion check (evidence from this run):**\n- **List imported:** done. 'Workshop cold c"
+  },
+  {
    "ts": "2026-10-12T04:10:15+0530",
    "task_id": "T-247",
    "mode": "feedback",
@@ -79,32 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-245 is still blocked. The code checks out, but Zoom refused the delete again today because our Zoom app is missing the delete permission, so nothing was deleted.\n\n**Completion check:**\n- **Delete-in-Zoom step on the forget route: done.** I read the code. It deletes in Zoom only when the typed id m"
-  },
-  {
-   "ts": "2026-10-12T02:34:13+0530",
-   "task_id": "T-232",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "(Held back from the public board: this note mentions a private client detail.)"
-  },
-  {
-   "ts": "2026-10-12T02:31:10+0530",
-   "task_id": "T-270",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-270 is back in review for Adi and Bharath. Nothing needed fixing, and every item was re-checked in this run.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Teaching shows with no query parameter (N067) | Done | Live probe: 2 teaching panels on the card with no `?learn` |\n| Choose your "
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-056: Cold calendar lists for the workshop, imported into Tantra",
- "task_id": "T-056",
+ "message": "Acting on 1 note(s) for T-272: Centre admin: per-teammate auth, per-cohort session settings, ruled-out vendors out of the admin",
+ "task_id": "T-272",
  "entries": [
-  "F-9f051e84"
+  "F-6449aa40"
  ],
  "mode": "feedback",
- "started": "2026-10-12T04:11:09+0530",
+ "started": "2026-10-12T04:15:51+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
