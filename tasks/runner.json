@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T11:15:31+0530",
+   "task_id": "T-148",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "turns",
+   "summary": "T-148 is blocked: the cover logo still 404s on the live deck, and I didn't push the fix again because Adi's 2026-10-11 rule says agents never touch Usetantra repos. That rule came after the Orchestrator's 2026-10-10 approval, and the earlier fix was reverted under it.\n\n- **Edit the slide sources, re"
+  },
+  {
    "ts": "2026-10-11T11:11:16+0530",
    "task_id": "T-073",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "I found nothing to fix, so T-261 is back in review for Adi and Bharath. The note F-65f5fd5b had already been acked by the previous run, so `ack` returned 0.\n\n**Completion check (everything below was checked in this run):**\n- **Domain with DNS outside Cloudflare, Day 0 with no record added by hand:**"
-  },
-  {
-   "ts": "2026-10-11T07:32:00+0530",
-   "task_id": "T-254",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-254 is back in review for Adi and Bharath. I found nothing to fix: the Beehiiv and Fireflies cleanup is in 28fdc09, which is on origin/main, and every chart check passes.\n\n**COMPLETION CHECK**\n- **Corrected nodes and edges render at 1440 and 390:** done. I checked each finding's edges in the chart"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-148: Webinar deck v3: the Tantra logo image is missing (404)",
- "task_id": "T-148",
+ "message": "Acting on 1 note(s) for T-072: Tantra Enterprise ($9,999): move the booking page to Cal.com and retire 'Chaperone'",
+ "task_id": "T-072",
  "entries": [
-  "F-3c98063d"
+  "F-73c39eee"
  ],
  "mode": "feedback",
- "started": "2026-10-11T11:13:02+0530",
+ "started": "2026-10-11T11:16:51+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
@@ -118,6 +118,7 @@
   "T-020": 1,
   "T-034": 1,
   "T-258": 1,
-  "T-268": 1
+  "T-268": 1,
+  "T-148": 1
  }
 }
