@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T23:23:27+0530",
-  "version": 2117,
+  "updated": "2026-10-11T23:33:44+0530",
+  "version": 2118,
   "last_id": 410,
   "team": [
    {
@@ -7299,20 +7299,16 @@
    ],
    "evidence": [
     {
-     "label": "s2 thank-you 390px",
-     "url": "http://localhost:4322/guides/s2-tantra-pro-funnel/16.webp?v=t135v"
+     "label": "all guides",
+     "url": "http://localhost:4322/debug/guides?v=t135v2"
     },
     {
      "label": "s5-rsp CRM depth tags (live mirror)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/guides/s5-rsp-stages/01.webp?v=t135v"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/guides/s5-rsp-stages/01.webp?v=t135v2"
     },
     {
-     "label": "referral dashboard",
-     "url": "http://localhost:4322/guides/s4-challenge/16.webp?v=t135v"
-    },
-    {
-     "label": "all guides",
-     "url": "http://localhost:4322/debug/guides?v=t135v"
+     "label": "s2 thank-you 390px",
+     "url": "http://localhost:4322/guides/s2-tantra-pro-funnel/16.webp?v=t135v2"
     }
    ],
    "blockers": [],
@@ -7357,6 +7353,11 @@
      "ts": "2026-10-11T23:14:57+0530",
      "who": "claude",
      "note": "Closed out today: probe-guides PASS on all 8 guides (10 renders each, 5 widths, light and dark), check-guides PASS with capture-needed 57 (62 at 512c734, 73 before), and all 11 captures are byte-identical on the live mirror. 512c734 is already on origin/main and no publish hold is open, so nothing needed pushing or republishing. The 4 old undersized files that failed at 512c734 (s1-blog/07, s1-social/06, s4-webinar/17, s5-extra-pipelines/06) were since fixed by other tasks. Amal: open the guides link to sign off."
+    },
+    {
+     "ts": "2026-10-11T23:33:44+0530",
+     "who": "claude",
+     "note": "Verify pass: all 11 WebP captures are wired into their guides and byte-identical on the live mirror; 512c734 is on origin/main and no newer publish hold is open, so nothing was pushed or republished. probe-guides PASS on all 8 guides (10 renders each); check-guides PASS (73 to 62 at 512c734, 57 now). The 4 undersized FAILs at 512c734 were s1-blog/07, s1-social/06, s4-webinar/17 and s5-extra-pipelines/06. Amal: open the guides page below."
     }
    ],
    "order": 1350,
