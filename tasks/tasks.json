@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T00:22:23+0530",
-  "version": 2171,
+  "updated": "2026-10-12T00:26:45+0530",
+  "version": 2175,
   "last_id": 413,
   "team": [
    {
@@ -12223,6 +12223,10 @@
     {
      "label": "keepalive script",
      "url": "workshop-plan/ops/docker_keepalive.py"
+    },
+    {
+     "label": "keepalive plist",
+     "url": "workshop-plan/ops/com.tantra.docker-keepalive.plist"
     }
    ],
    "blockers": [],
@@ -12292,6 +12296,16 @@
      "ts": "2026-10-11T21:07:34+0530",
      "who": "claude",
      "note": "Verify pass: the docker-keepalive launchd job is loaded and its log shows tonight's recovery (Docker down at 20:57, killed and relaunched, engine and tantra-mongo back at 21:00:33, then the tracker log went from MongoDB UNREACHABLE back to MongoDB written: 5190 documents). AutoStart is true, tantra-mongo is up with unless-stopped on 127.0.0.1:27017 with --auth (anonymous access denied), and the script, plist and tracker_sync change are on origin/main. I fixed the runbook, which still said nothing restarts Docker, and added the job to up.sh. up.sh --check exits 0 and reports docker-keepalive ok (commit 9af89f1a, local only). The Homebrew mongodb plist is present but not loaded, and mongod is not installed."
+    },
+    {
+     "ts": "2026-10-12T00:26:13+0530",
+     "who": "claude",
+     "note": "The keepalive the Orchestrator asked for was already built in the 21:06 run, and I checked every part again on 2026-10-12 00:22. com.tantra.docker-keepalive is loaded and logs 'ok: engine up, tantra-mongo running' every 5 minutes. Its log shows the quit test at 20:57, where it killed and relaunched Docker by 21:00:33. Docker AutoStart is true, tantra-mongo is up with unless-stopped on 127.0.0.1:27017 with --auth, and the latest tracker run logged 'MongoDB written: 5249 documents'. The script, plist, tracker_sync UNREACHABLE line and runbook 2a/row 20 are on origin/main. The Homebrew mongodb-community plist is present but not loaded and mongod is not installed, so it does not hold 27017. Open the keepalive log to check."
+    },
+    {
+     "ts": "2026-10-12T00:26:45+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-12 00:25. I changed no code. All six Orchestrator items are on disk: com.tantra.docker-keepalive is loaded and logs ok every 5 min, and its log shows the quit test recovering on its own (Docker down 20:57, killed and relaunched 21:00:17, tantra-mongo back 21:00:33). AutoStart is true. The Homebrew mongodb plist is present but not loaded, and mongod is not installed. tracker_sync.py:780 logs MongoDB UNREACHABLE. The script, plist, tracker_sync and runbook (row 20, section 2a) match origin/main. Done-when checks: tantra-mongo is up with unless-stopped on 127.0.0.1:27017 under mongod --auth, anonymous listDatabases is refused, and the latest tracker run logged 'MongoDB written: 5249 documents'."
     }
    ],
    "order": 2470

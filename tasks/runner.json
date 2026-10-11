@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T00:26:07+0530",
+   "task_id": "T-265",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "turns",
+   "summary": "I deployed the parser fix live, but the live test-run still couldn't run, so T-265 is blocked again. This time it needs a Cloudflare token from Adi.\n\n- **Re-enable attendee 60 and read its enter link:** done. I signed in with the owner key, sent the PATCH with `{revoked:false,test:true}`, and the GE"
+  },
+  {
    "ts": "2026-10-12T00:22:51+0530",
    "task_id": "T-263",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "I checked the previous run's work against production and it holds up; nothing needed fixing. I couldn't add the 5 poll scopes myself, so they're still part of T-335 (Adi's one Zoom sign-in), and T-407 is back in review.\n\n**Completion check**\n1. **Poll scopes: not added, still part of T-335.** Again "
-  },
-  {
-   "ts": "2026-10-11T23:33:56+0530",
-   "task_id": "T-135",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-135 is back in review for Amal. Everything checked out on a fresh verification today, so I changed no files and pushed or republished nothing. The ack command reported 0 notes acknowledged because F-a5259871 had already been acknowledged in the previous run.\n\n| Item | State and evidence from this "
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-265: Centre: dashboard reads (Tantra campaign stats, Metricool clicks) and automated launch QA",
- "task_id": "T-265",
+ "message": "Acting on 1 note(s) for T-056: Cold calendar lists for the workshop, imported into Tantra",
+ "task_id": "T-056",
  "entries": [
-  "F-6cc5a0d1"
+  "F-3e814332"
  ],
  "mode": "feedback",
- "started": "2026-10-12T00:23:18+0530",
+ "started": "2026-10-12T00:26:07+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
@@ -118,7 +118,8 @@
   "T-268": 1,
   "T-148": 1,
   "T-242": 1,
-  "T-058": 1
+  "T-058": 1,
+  "T-265": 1
  },
  "api_capped": {
   "T-229": "2026-10-12T00:18:33+0530"
