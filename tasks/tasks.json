@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T08:19:08+0530",
-  "version": 1806,
+  "updated": "2026-10-11T08:23:23+0530",
+  "version": 1808,
   "last_id": 397,
   "team": [
    {
@@ -2462,11 +2462,18 @@
     "List imported into Tantra with the import limit recorded on this task",
     "Calendar-invite campaign created (not started) against the list"
    ],
-   "evidence": [],
-   "blockers": [
-    "T-147 calendar.usetantra.com times out from this Mac (rechecked 2026-10-08)"
+   "evidence": [
+    {
+     "label": "Import + campaign script",
+     "url": "workshop-plan/ops/t056_cold_calendar.mjs"
+    },
+    {
+     "label": "Cleaned list (personal data, outside repo)",
+     "url": "/Users/adithyamurali/pro-workflows-suite/followup-engine/Processed_Phase1/workshop_cold_calendar.csv"
+    }
    ],
-   "needs_from_owner": "Sign in to usetantra.com as Adi (or paste a Tantra API key) so the import can run: Contacts > Import > upload /Users/adithyamurali/pro-workflows-suite/followup-engine/Processed_Phase1/workshop_cold_calendar.csv as list 'Workshop cold calendar'. Then the draft calendar-invite campaign and the import limit are done in minutes.",
+   "blockers": [],
+   "needs_from_owner": "One Tantra API key: at https://usetantra.com/api-keys click Create API Key (name it 'workshop-agent'), then save the tk_live_ value as the only line of ~/.config/tantra/keys/tantra-workshop.key. The next run executes 'node workshop-plan/ops/t056_cold_calendar.mjs --go' (import, then the campaign created unstarted) and logs the result.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2502,6 +2509,11 @@
      "ts": "2026-10-10T16:35:33+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-21 was past; now 2026-10-16 (P2 rule)."
+    },
+    {
+     "ts": "2026-10-11T08:23:20+0530",
+     "who": "claude",
+     "note": "The T-147 blocker is cleared, but this Mac has no Tantra API key or signed-in Tantra session, and I may not sign in as Adi, so the import and the campaign are not done yet. I built workshop-plan/ops/t056_cold_calendar.mjs: it imports the 126-contact list as 'Workshop cold calendar' and creates the smart_calendar invite campaign with the connected FintechCircle senders, never started, through the API (so the wizard's final send step is never touched). Dry run verified today (126 rows, 0 dropped, event next Wed 11:00 ET); --go stops cleanly at the missing key. No T-301 vendor CSVs have arrived to append yet. The import limit was last seen as 50,000 per upload on the import screen (archived T-138, not rechecked in this run, because the API has no screen)."
     }
    ],
    "order": 350,
