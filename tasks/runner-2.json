@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T03:06:07+0530",
+   "task_id": "T-242",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Stopped at the 70-minute wall clock for one run; the work so far is committed and the next run continues. Last report: Now I'm rerunning the webinar walker on its own."
+  },
+  {
    "ts": "2026-10-12T00:29:57+0530",
    "task_id": "T-268",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "turns",
    "summary": "T-234 stays blocked. Nothing had to change for this update: the \"waiting on the API key\" ask was already cleared, and T-123's go-live owns the live campaigns and the test send. I re-ran the reminders probe today and it passes all 92 checks.\n\n- **Clear the waiting-on for the key:** Done. It says \"The"
-  },
-  {
-   "ts": "2026-10-11T23:39:27+0530",
-   "task_id": "T-292",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "I checked the previous report from scratch, everything holds up, and I've set T-292 to **done**. I changed no code in this run.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| Local admin shows connection 1 on and connection 3 on as the probe fallback | Done | The local centre lists conn"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-242",
+ "task_id": "T-020",
  "entries": [
-  "F-5ef803d7"
+  "R-b8df640c"
  ],
- "started": "2026-10-12T01:56:04+0530",
- "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
+ "started": "2026-10-12T03:06:22+0530",
+ "message": "Acting on 1 note(s) for T-020: The Tantra Playbook (Day-1 deliverable)",
  "slices": {
   "T-072": 1,
   "T-245": 1,
@@ -119,7 +119,8 @@
   "T-278": 1,
   "T-059": 1,
   "T-300": 1,
-  "T-234": 1
+  "T-234": 1,
+  "T-242": 1
  },
  "api_capped": {
   "T-229": "2026-10-12T00:30:11+0530",
