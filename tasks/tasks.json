@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T11:27:04+0530",
-  "version": 1857,
+  "updated": "2026-10-11T11:29:10+0530",
+  "version": 1859,
   "last_id": 398,
   "team": [
    {
@@ -6229,7 +6229,7 @@
    "evidence": [
     {
      "label": "Live board",
-     "url": "https://adisuja.github.io/tantra-workshop-live/tasks.html?v=1539"
+     "url": "https://adisuja.github.io/tantra-workshop-live/tasks.html?v=1540"
     },
     {
      "label": "Dash test",
@@ -6293,6 +6293,11 @@
      "ts": "2026-10-10T16:41:20+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-10: re-checked every item on disk. test_pass_dashes.py passes and validate passes on 239 tasks, meta.day1 is gone with no code reading it, 0 open tasks are past due, T-070 has no Build Pass and stays on hold. T-071, the deck offer slide (content.py, Day 3 final block, shown once) and the s4-challenge guide (offer on the last day only) all say close of Day 3, and AUDIT.md marks H042 to H055 fixed. The live mirror board (v1539) has the same data, so nothing had to change."
+    },
+    {
+     "ts": "2026-10-11T11:29:10+0530",
+     "who": "claude",
+     "note": "Re-verified 2026-10-11, nothing had to change: test_pass_dashes.py passes and validate exits 0, meta.day1 is gone, 0 open tasks are past due, T-070 reads 'workshop seat or VIP' (on hold), and T-071, the deck offer slide (content.py Close block, $999 once in deck.html) and the s4-challenge guide ('Last day only') all say close of Day 3. AUDIT.md marks H042 to H055 fixed, commit e3dccc5d is already on origin/main, and the live board tasks.json matches."
     }
    ],
    "order": 1270,
@@ -14480,24 +14485,24 @@
    ],
    "evidence": [
     {
-     "label": "T-290 commit on origin/main",
-     "url": "git show 3199bef"
-    },
-    {
-     "label": "Branch: origin/main (contains 3199bef and d1ff5ca)",
+     "label": "Commit 3199bef on origin/main",
      "url": "git branch -r --contains 3199bef"
     },
     {
-     "label": "probe-shapes log, local only",
-     "url": "/tmp/t290-shapes3.log"
+     "label": "Commit d1ff5ca on origin/main",
+     "url": "git show d1ff5ca"
+    },
+    {
+     "label": "probe-shapes log (local only)",
+     "url": "/tmp/t290-verify.log"
     },
     {
      "label": "Card fields",
-     "url": "app/src/lib/workshop-cards.ts"
+     "url": "app/src/lib/workshop-cards.ts:1155"
     },
     {
-     "label": "Part 2 and thanks render",
-     "url": "cloud/funnel/worker.js"
+     "label": "Thanks render",
+     "url": "cloud/funnel/worker.js:1337"
     }
    ],
    "blockers": [],
@@ -14527,6 +14532,11 @@
      "ts": "2026-10-11T11:27:04+0530",
      "who": "claude",
      "note": "No push was needed: git fetch shows the T-290 commit 3199bef (and d1ff5ca, which is actually a T-285 commit) already on origin/main. I did not push the 3 unrelated local commits from T-289 and T-276. I reran the checks this run: check-examples (641, 0 failing), check-coverage OK and probe-shapes ALL PASS (48), all against this checkout's worker on :8795 with a private sim. That covers filled and empty blocks on /thanks for every shape and on RSP Part 2. The /tmp logs and the :8794 preview are local only, and live redeploys stay with T-246."
+    },
+    {
+     "ts": "2026-10-11T11:28:44+0530",
+     "who": "claude",
+     "note": "Verify pass: commit 3199bef (with the fields from d1ff5ca) is already on origin/main, so no push was needed, and the uncommitted cloud/funnel/worker.js change belongs to another lane. Rechecked on disk: the three optional fields on both page cards (d2-page for webinar and challenge, d2-page-rsp for RSP), https-only community link, education lines, /thanks and RSP Part 2 render only when filled. check-examples (641, 0 failing), check-coverage (OK) and probe-shapes (48 PASS, ALL PASS, against this checkout's worker on :8795 and a private simulator on :8796) all pass. The log /tmp/t290-verify.log and the local previews are local only; live funnel redeploys stay with T-246."
     }
    ],
    "order": 2900
