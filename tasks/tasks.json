@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T10:59:29+0530",
-  "version": 1826,
+  "updated": "2026-10-11T11:03:30+0530",
+  "version": 1831,
   "last_id": 397,
   "team": [
    {
@@ -4612,7 +4612,16 @@
     "T-193 closed as merged into this task",
     "Only the 'Tantra Funnel' Apps Script project remains"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Sheet backup",
+     "url": "workshop-plan/ops/t107_deleted_rows.json"
+    },
+    {
+     "label": "D1 backup",
+     "url": "workshop-plan/ops/t107_d1_deleted_rows.json"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -4675,6 +4684,16 @@
      "ts": "2026-10-11T01:24:30+0530",
      "who": "claude",
      "note": "T-102 wiring probe wrote two more test rows to the Work Tracker (Checkout Starts): email wiring-probe@example.com, run 1 2026-10-10 19:50:24Z to 19:52:06Z (Dodo session cks_0NpSQYdr3E6LG7ZhMyFhu), run 2 2026-10-10 19:52:23Z to 19:54:02Z (Dodo session cks_0NpSQvpVHTrAxYPcEiDx5). Delete exactly these along with the earlier wiring-probe rows."
+    },
+    {
+     "ts": "2026-10-11T11:01:34+0530",
+     "who": "claude",
+     "note": "Deleted 26 probe rows that new runs added since 10-10 (6 cohort/wiring-probe-t296 in Free Registrations, 3 utm-probe plus the 4 wiring-probe rows of 10-10 19:37Z to 19:52Z in Checkout Starts, 13 pay_probe rows in Checkout Returns), the 4 currency-probe lines in form-log.jsonl, and one probe webhook event (id 436) from the revops-centre D1; all backed up first. Re-scan shows 0 @example.com/probe rows in all six tabs, 0 in nine D1 email tables, ops.db and all 37 Tantra Tracker tabs after a fresh sync. T-193 is already archived as a duplicate of T-107; Apps Script trashing is T-380 (Nelbin)."
+    },
+    {
+     "ts": "2026-10-11T11:03:14+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11: re-scanned live and found 0 probe, placeholder or @example.com rows in all 6 Work Tracker funnel tabs, 0 in the 9 revops-centre D1 email tables plus events.meta, 0 in all 37 Tantra Tracker tabs (5,150 rows), 0 in ops.db attendees and form-log.jsonl. The 10-10 wiring-probe rows (19:50Z, 19:52Z) are in the backup and gone from the sheet. T-193 is archived as a duplicate of T-107. Trashing the old Apps Script projects needs a boards@ sign-in and is tracked in T-380 (Nelbin)."
     }
    ],
    "order": 1050,
@@ -15910,7 +15929,7 @@
    "title": "Trash two undeployed 'Tantra funnel forms receiver' Apps Script projects (boards@fintechcircle.com)",
    "area": "Ops",
    "owner": "Nelbin",
-   "assignee": "Nelbin",
+   "assignee": "Claude",
    "reviewers": [
     "Nelbin"
    ],
@@ -15950,6 +15969,11 @@
      "ts": "2026-10-11T10:59:29+0530",
      "who": "claude",
      "note": "Handed back to Nelbin per the Orchestrator's fallback: this run again had no Claude in Chrome tool and no browser with a debug port, so Browser 2 (boards@fintechcircle.com) could not be driven; nothing in Apps Script was changed. Nelbin: sign in as boards@fintechcircle.com at https://script.google.com/home, trash only the two 'Tantra funnel forms receiver' projects (leave 'Tantra Funnel' under adi@growthclub.org), then add a line to scripts/walkthroughs/REVERT_LEDGER.md. Checked today: the live receiver health URL still lists all six forms."
+    },
+    {
+     "ts": "2026-10-11T11:01:41+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Nelbin → Claude (by Orchestrator)."
     }
    ],
    "order": 3800
