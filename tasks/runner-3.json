@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T01:58:52+0530",
+   "task_id": "T-229",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-229 is back in review for Nelbin, Aquila and Bharath. The placeholder guard is already live on production, so no deploy was needed. Note F-0b44dc8c is acknowledged.\n\n- **Guard is live:** done. The live Worker version is f97bb618, built from commit 93ad569, which contains the fix 51c7ee1 (confirmed"
+  },
+  {
    "ts": "2026-10-12T00:59:15+0530",
    "task_id": "T-242",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "**Completion check:**\n- **Trash the two 'Tantra funnel forms receiver' projects:** Blocked. Nothing was trashed and nothing in Apps Script changed. This session has no Claude in Chrome tool. Ports 9222 and 9223 are closed, and 9229 turned out to be a wrangler debugger, not Browser 2.\n- **Only 'Tantr"
-  },
-  {
-   "ts": "2026-10-11T21:56:43+0530",
-   "task_id": "T-270",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-270 is still in doing: 1ef94a2 is deployed on the live Worker, but the two consent checks could not run on live, so the probe fix, mirror publish and move to revie"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-229",
+ "task_id": "T-059",
  "entries": [
-  "F-0b44dc8c"
+  "F-b12f88cc"
  ],
- "started": "2026-10-12T01:56:33+0530",
- "message": "Acting on 1 note(s) for T-229: Zoom registrations: keep placeholder emails out of sign-ups",
+ "started": "2026-10-12T01:59:11+0530",
+ "message": "Acting on 1 note(s) for T-059: AI-personalised first lines for our workshop outreach on Tantra campaigns",
  "slices": {
   "T-135": 1,
   "T-148": 1,

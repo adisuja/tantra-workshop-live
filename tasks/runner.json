@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T01:59:19+0530",
+   "task_id": "T-282",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-282 needed no changes and stays in review, waiting on Adi to approve or redo each of the 18 videos.\n\n- **Review link:** points at ?v=2efde3d. That matches tantra-walkthroughs commit 2efde3d. The review server on :8883 was down, so I restarted it, and the index and all 18 video pages now open.\n- **"
+  },
+  {
+   "ts": "2026-10-12T01:58:16+0530",
+   "task_id": "T-275",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "**COMPLETION CHECK** (all checks below were run this pass):\n\n- **No hardcoded cohort date in referrals.html, and the probe passes:** Done. The page has no `Date.UTC(2026,9,7)` and gets the first cohort date from `DATA.first_cohort` (`workshop-plan/referrals.html:238`). `probe-referrals.mjs --live` p"
+  },
+  {
    "ts": "2026-10-12T01:56:45+0530",
    "task_id": "T-272",
    "mode": "feedback",
@@ -79,32 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "I re-checked the earlier run against production myself and re-ran the dry run. Output pages and PDFs are real for all three test personas, but no email or WhatsApp went out, so T-034 stays blocked on T-123 and T-400.\n\n**COMPLETION CHECK**\n- **Harness pointed at the production centre with three test "
-  },
-  {
-   "ts": "2026-10-11T23:49:20+0530",
-   "task_id": "T-058",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "turns",
-   "summary": "T-058 is still blocked: the T-056 list import and the team's own LinkedIn connections are the only things left, and Bhaskar now owns both. I started no campaign and messaged no prospect.\n\n1. **First line in the launch kit:** done. The old `{first_line}` line had already been replaced with `{{custom."
-  },
-  {
-   "ts": "2026-10-11T23:46:05+0530",
-   "task_id": "T-393",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "I closed T-393 as done. The key was already saved in Admin at 16:25, T-337 is done, and the mailbox step is tracked on T-123.\n\n- **Drop the key ask and close as satisfied:** done. T-393 now shows status done with an empty ask. I read T-337's status and log, and T-123's log, in tasks.json.\n- **Move t"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-275: Referral dashboard: production link, cohort date source, payout wording",
- "task_id": "T-275",
+ "message": "Acting on 1 note(s) for T-273: Workshop Hub (index.html): review data, offer ladder, cohort dates and header",
+ "task_id": "T-273",
  "entries": [
-  "F-3fc8e0be"
+  "F-5a8126be"
  ],
  "mode": "feedback",
- "started": "2026-10-12T01:57:17+0530",
+ "started": "2026-10-12T01:59:55+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,

@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T01:58:08+0530",
-  "version": 2213,
+  "updated": "2026-10-12T01:59:14+0530",
+  "version": 2215,
   "last_id": 413,
   "team": [
    {
@@ -11028,6 +11028,11 @@
      "ts": "2026-10-12T01:57:38+0530",
      "who": "claude",
      "note": "The placeholder guard is live, so no deploy was needed: Worker f97bb618 was built from 93ad569, which contains fix 51c7ee1 (checked with git merge-base). On production I posted a@mail.example.com to /cal/issue and /intake. Both gave the usual 200 answers (feed null), attendees stayed at 29 (highest id 129, no new ids), Invite Status still has no session_sync rows (so Zoom failed is 0) and no placeholder address is left untagged as test. Attendees 5 and 66 return 404, so the mark-as-test item is met. Open https://revops-centre.growthcluborg.workers.dev/admin/?v=f97bb618#settings, Cohort Settings, Invite Status."
+    },
+    {
+     "ts": "2026-10-12T01:58:42+0530",
+     "who": "claude",
+     "note": "Added from a fresh local stack in this run (vendor sim on 8902, wrangler dev on 8900, new D1): probe-calendar-feeds 67 of 67 with 0 failures. The 6 refusal checks passed, covering example.com/.org, .invalid, .test, mail.example.com and x.example.org: no attendee was created and the simulated Zoom and Google never saw those addresses."
     }
    ],
    "order": 2290
@@ -14686,6 +14691,11 @@
      "ts": "2026-10-10T20:50:39+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-10: the review index holds and nothing had to change. Checked from the files: 18 cards, labelled 10 recorded in the account, 5 docs based (Kie.ai, Stripe, HubSpot, Zoho, Wistia) and 3 docs only until sign-in (Twilio, Dodo, Google senders); all 36 page and thumbnail links and all 18 videos load on :8883, every file is 3840x2160 and under 2:00 (longest 1:59), and regenerating the index gives an identical page. Still waiting on Adi: open http://localhost:8883/wt-review/index.html?v=2efde3d and reply approve or redo per video."
+    },
+    {
+     "ts": "2026-10-12T01:59:14+0530",
+     "who": "claude",
+     "note": "Ripple from T-284 checked, nothing had to change: the review link already points at ?v=2efde3d (tantra-walkthroughs 2efde3d), the index lists the same 18 tools T-284 staged as held (no google-signin), and T-284 waits on exactly this review, so each approve here unblocks that video in T-284. The review server on :8883 was down; restarted it and all 18 pages load. Open http://localhost:8883/wt-review/index.html?v=2efde3d and reply approve or redo per video."
     }
    ],
    "order": 2820
