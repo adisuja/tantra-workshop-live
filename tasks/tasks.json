@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T01:43:50+0530",
-  "version": 2196,
+  "updated": "2026-10-12T01:46:23+0530",
+  "version": 2203,
   "last_id": 413,
   "team": [
    {
@@ -3250,137 +3250,26 @@
   },
   {
    "id": "T-074",
-   "title": "Weekly coaching call and community moderation rota for Tantra Pro members",
-   "area": "Product",
-   "owner": "Amal",
-   "priority": "P2",
-   "due": "2026-10-16",
    "status": "blocked",
-   "why": "The $999 Tantra Pro course promises group coaching and a community; members stay (and pay) only if both run every week.",
-   "spec": "(1) Create a recurring weekly Zoom Pro meeting on the the owner's Google test identity account for Pro coaching (same room settings as the workshop meetings, T-223). (2) Write a moderation rota from the team roster (Amal lead, plus Nelbin and Bhaskar) for the WhatsApp community (T-040 creates it). (3) Send a weekly member newsletter drawn from the coaching call via Resend or Tantra email (no Beehiiv). Start once the Pro course is on sale (T-071).",
-   "done_when": [
-    "Recurring coaching meeting exists and its link is in the Pro course home",
-    "Rota published to the team (written in the task log)",
-    "First weekly newsletter sent"
-   ],
-   "evidence": [
-    {
-     "label": "/pro welcome state",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/pro/?paid=1&status=succeeded&payment_id=pay_probe&v=t074v"
-    },
-    {
-     "label": "Pro course home",
-     "url": "https://revops-centre.growthcluborg.workers.dev/pro/course?v=t074v"
-    },
-    {
-     "label": "Registration page",
-     "url": "https://us06web.zoom.us/meeting/register/JNx3usQKShek1rGMvx07FQ"
-    },
-    {
-     "label": "Rota",
-     "url": "workshop-plan/pro/moderation-rota.md"
-    },
-    {
-     "label": "Newsletter sender",
-     "url": "cloud/src/pro-newsletter.ts"
-    },
-    {
-     "label": "Probe",
-     "url": "app/scripts/probe-pro-coaching.mjs"
-    }
-   ],
-   "blockers": [
-    "Email sender for the Pro access email (see needs_from_owner)"
-   ],
-   "needs_from_owner": "Waiting only on T-123: connect team@growthclub.org in the GrowthClub Tantra workspace (usetantra.com, Email Accounts, Connect account). The T-337 key is already saved. Then the Adi test send runs (node app/scripts/pro-newsletter.mjs --send-test) and issue 1 goes to the test inbox and team after the Tue 13 Oct call (--send-issue).",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review 2026-10-08: still accurate. Still needed; no newer task covers coaching cadence or moderation rota."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: made actionable against current tools: coaching on a recurring Zoom Pro meeting, community in the WhatsApp group (T-040, on hold), newsletter on Resend or Tantra email (Beehiiv is not approved, T-260). Depends on the Pro course existing (T-071)."
-    },
-    {
-     "ts": "2026-10-09T05:15:10+0530",
-     "who": "Orchestrator",
-     "note": "People: assignee Amal → Claude (by Orchestrator)."
-    },
-    {
-     "ts": "2026-10-10T04:14:10+0530",
-     "who": "claude",
-     "note": "People: reviewers Amal → Amal/Bharath (by claude)."
-    },
-    {
-     "ts": "2026-10-10T04:14:10+0530",
-     "who": "claude",
-     "note": "Built and deployed: weekly 'Tantra Pro Weekly Coaching' Zoom Pro meeting 81507619710 (Tuesdays 11:00 ET, 60 min, registration on, workshop room settings, 50 occurrences from 13 Oct), link stored as settings key pro_coaching_url; probe-pro-coaching 7/7 passes live. Rota (Amal lead, Nelbin/Bhaskar alternating, check times, escalation, rules) is in workshop-plan/pro/moderation-rota.md; newsletter template and renderer are app/scripts/pro-newsletter.mjs, but the 'Adi test' send did not go out because no Resend/Tantra sender key exists in this environment, and I did not push (it would publish the whole main branch). Still to do once T-071 ships: show pro_coaching_url on the Pro course home and send the first member newsletter."
-    },
-    {
-     "ts": "2026-10-10T16:35:33+0530",
-     "who": "claude",
-     "note": "Board hygiene (T-129): due 2026-10-07 was past; now 2026-10-16 (P2 rule)."
-    },
-    {
-     "ts": "2026-10-10T20:30:42+0530",
-     "who": "claude",
-     "note": "From T-071: Tantra Pro Course buyers are not added to the coaching call or the community automatically. Each purchase shows in the Tracker Payments tab (tracker_sync.py polls Dodo and writes the product name), and the team emails the access by hand. The rota should include that step until fulfilment is automated."
-    },
-    {
-     "ts": "2026-10-11T11:07:48+0530",
-     "who": "claude",
-     "note": "The Pro course home now shows the weekly coaching link (Tue 11:00 ET Zoom meeting 81507619710), deployed and pushed; probe-pro-coaching passes 8/8 live. Rota (in workshop-plan/pro/moderation-rota.md): Amal leads, Nelbin odd ISO weeks, Bhaskar even weeks, checks 09:00 and 18:00 ET, escalation moderator to Amal to Bharath, starter rules, plus a manual step at 09:00 to email new Tantra Pro Course buyers their access from the Tracker Payments tab, since fulfilment is not automatic (T-071). /pro needed no change (copy already says access, including coaching, arrives by email); the test and issue 1 newsletter sends wait only on a sender key."
-    },
-    {
-     "ts": "2026-10-11T11:12:41+0530",
-     "who": "claude",
-     "note": "Verify pass: the Tuesday 11:00 ET coaching meeting, the link on the Pro course home and the rota (Amal leads, Nelbin and Bhaskar alternate by week, checks at 09:00 and 18:00 ET, escalation to Amal then Bharath, 7 starter rules) all check out, and probe-pro-coaching passes 9 of 9 live. I also built the missing weekly buyer job: workshop-plan/pro/pro_members.py rebuilds the newsletter list from paid, unrefunded Tantra Pro Course payments in Dodo (0 today), and pro-newsletter.mjs gained --send-issue (test inbox plus team) and --send-members. The test send and issue 1 are still not sent because our account has no email sender key (checked the centre's database and this machine), and the link stays off the public /pro page because buyers get access by team email (fulfilment gap from T-071)."
-    },
-    {
-     "ts": "2026-10-11T11:15:05+0530",
-     "who": "claude",
-     "note": "Checked 12 related task(s); updating T-073, T-071."
-    },
-    {
-     "ts": "2026-10-11T12:30:32+0530",
-     "who": "claude",
-     "note": "From T-071 verify pass: removed the stale 'T-071 Pro course not on sale yet' blocker, since /pro has sold the Tantra Pro Course on Dodo (pdt_0NpKlRqJAjyAf3axboQSR) since 2026-10-10. Pro fulfilment is still manual: the team emails course, community and coaching access to each buyer (rota step 2) until the access email has a sender."
-    },
-    {
-     "ts": "2026-10-11T22:19:54+0530",
-     "who": "claude",
-     "note": "Rota (full text in workshop-plan/pro/moderation-rota.md): Lead Amal. Moderator on duty: Nelbin in odd ISO weeks, Bhaskar in even weeks; they join the Tue 11:00 ET coaching call and post the recording and weekly task the same day. Checks Mon to Fri at 09:00 and 18:00 ET plus a Saturday 11:00 sweep, answers within one working day. New member access (manual until fulfilment is automated): at 09:00 the moderator on duty opens the Tracker Payments tab, finds new 'Tantra Pro Course' payments, emails each buyer the course home, the coaching registration link and the community invite using the Pro Access Email template, and marks the row sent. Escalation: rule break, remove and warn privately; repeat, Amal decides; billing or access, move to private and hand to Nelbin; anything unsettled, Amal, then Bharath for technical issues; long product questions, Tuesday's call; legal, harassment or safety, Amal acts at once and tells Adi the same day. Starter rules: be useful and kind; no selling, affiliate links or cold DMs; never post client data, keys or passwords; one question per thread with what you tried; share wins; long questions go to the call; members only, do not share invites."
-    },
-    {
-     "ts": "2026-10-11T22:20:03+0530",
-     "who": "claude",
-     "note": "The live /pro welcome state now links the Tuesday coaching call. The hand-sent access email template in the rota carries the same link, and the newsletter now sends through the Tantra key saved in Cohort Settings (Worker 6a8dc55a, mirror 92ff0c6 /pro only, main pushed). Checked live: probe-pro all pass, probe-pro-coaching 11/11. The Adi test send ran but stopped before sending because team@growthclub.org is not a connected Tantra mailbox, which is the same input T-123 tracks (the T-337 key is already saved). For T-073: the course home with the coaching link is https://revops-centre.growthcluborg.workers.dev/pro/course?v=t074c"
-    },
-    {
-     "ts": "2026-10-11T22:23:41+0530",
-     "who": "claude",
-     "note": "Verify pass: commit 53326f5b (7 T-074 files) is on origin/main, the live /pro welcome state links the Tuesday coaching call (probe-pro ALL PASS on the mirror, which got /pro only, no deletions), probe-pro-coaching passes 11 of 11 live, and the rota with the daily Tracker Payments access step and access email template is in workshop-plan/pro/moderation-rota.md. I re-ran the Adi test send now: the T-337 key is saved, but Tantra still says team@growthclub.org isn't a connected mailbox, so nothing went out and nothing was created. Course home for T-073: https://revops-centre.growthcluborg.workers.dev/pro/course?v=t074v (members only)."
-    },
-    {
-     "ts": "2026-10-11T22:26:41+0530",
-     "who": "claude",
-     "note": "Checked 12 related task(s); updating T-073."
-    }
-   ],
-   "order": 460,
+   "owner": "Amal",
    "assignee": "Claude",
    "reviewers": [
     "Amal",
     "Bharath"
-   ]
+   ],
+   "priority": "P2",
+   "due": "2026-10-16",
+   "area": "Product",
+   "order": 460,
+   "title": "T-074: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-080",
@@ -10990,8 +10879,7 @@
   },
   {
    "id": "T-228",
-   "title": "Welcome email: every new attendee gets their centre link and private calendar link",
-   "area": "Delivery",
+   "status": "blocked",
    "owner": "Aquila",
    "assignee": "Claude",
    "reviewers": [
@@ -11001,130 +10889,17 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "blocked",
-   "why": "Since the 2026-10-07 security fix (b08eeed) /cal/issue never returns a feed token to the browser, so a marketing sign-up only gets their centre link (/enter?t=) and private calendar link (/cal/p/<token>.ics) if we send them; nothing on main sends them, so the first real attendee would get no links.",
-   "spec": "Owner model (memory google-and-reminder-model, 2026-10-07): attendee messages (email, WhatsApp, LinkedIn) run on a Tantra omni-channel campaign, and registrants are imported into it programmatically. Build: (1) In the centre Worker (cloud/src), on attendee creation (admin add in index.ts ~478, /cal/issue sign-up and /intake in cloud/src/calendar.ts), POST the attendee to the workshop's Tantra campaign: POST /email-campaigns/:id/contacts with {contacts:[{email, firstName, lastName, phone or whatsappPhone, tags:['workshop', week], customFields:{centre_link, calendar_link, google_cal_link, cohort_dates, zoom_join}}]} (contract: docs/onboarding-v3/analysis/integrations-tantra-api.md section 5; upserts by email, idempotent, 409 means retry). Reuse tantraUrl/tantraHeaders from cloud/src/connectors/stack.ts. Record event 'welcome_enrolled' per attendee; a revoked calendar link re-posts the contact with the new calendar_link. (2) Admin field for the workshop's Tantra API key and campaign id (secret stored like other vault keys, never in the repo). (3) Campaign step 1 in Tantra is the welcome email using those custom fields (copy per workshop-plan/COPY_RULES.md, no dashes), WhatsApp step if a phone is present (through Tantra, never Twilio). (4) Probe against vendor-sim first (add the route if missing), then live with the test identity the owner's Google test identity. Shares the same import with the per-day reminders (T-234).",
-   "done_when": [
-    "A new sign-up appears as an enrolled contact in the workshop Tantra campaign within a minute, with centre_link and calendar_link filled",
-    "The test identity receives exactly one welcome email whose calendar link opens its private feed with its own Zoom join link",
-    "Rotating the calendar link in the admin updates the contact and the next message carries the new link",
-    "Probe against vendor-sim passes and is added to the centre chain"
-   ],
-   "evidence": [
-    {
-     "label": "Vendor-sim probe (92 pass, rotation included)",
-     "url": "app/scripts/probe-tantra-reminders.mjs"
-    },
-    {
-     "label": "Live go-live script",
-     "url": "app/scripts/e2e-tantra-reminders-live.mjs"
-    },
-    {
-     "label": "Sent welcome copy",
-     "url": "cloud/src/reminder-copy.ts"
-    },
-    {
-     "label": "Centre chain step",
-     "url": "app/scripts/run-chain.sh"
-    }
-   ],
-   "blockers": [
-    "Go-live only: the workshop Tantra campaign id and its API key saved in the centre admin (build and probe against vendor-sim does not wait)"
-   ],
-   "needs_from_owner": "See T-408 (one input task): connect team@growthclub.org in the GrowthClub Tantra workspace (usetantra.com, Email Accounts, Connect account), rotate the Tantra key (Connectors, API Keys) and paste the new one at https://revops-centre.growthcluborg.workers.dev/admin/ under Cohort Settings, Session Reminders, Tantra API key.",
-   "log": [
-    {
-     "ts": "2026-10-07T22:53:58+0530",
-     "who": "claude",
-     "note": "Gap found while consolidating the S3 calendar-feeds follow-ups (2026-10-07)."
-    },
-    {
-     "ts": "2026-10-07T23:07:14+0530",
-     "who": "claude",
-     "note": "For the next session: code in cloud/src/invites.ts (Google and Zoom sync), cloud/src/calendar.ts (feeds, /cal/issue), cloud/admin-ui/admin.js (Calendar Invites panel). Live status read-only: GET /admin/api/calendar with the key in ~/.config/tantra/revops-admin-key. Local test: SIM_PORT=8902 vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs (BROWSER=1 for pages). Links to send: the admin's POST /admin/api/attendees response already returns link (/enter?t=) and calendar (/cal/p/<token>.ics) per person, and GET /admin/api/attendees/<id> returns attendee.feed. /cal/issue (sign-ups) deliberately never returns a token to the browser (Integrator fix b08eeed), so the email is the only way a marketing sign-up receives their private link. Inputs it waits on are tracked in T-123 (sending provider and from-address) and T-217 (Tantra /emails/batch endpoint)."
-    },
-    {
-     "ts": "2026-10-07T23:08:48+0530",
-     "who": "claude",
-     "note": "Gap found while consolidating the S3 calendar-feeds follow-ups (2026-10-07)."
-    },
-    {
-     "ts": "2026-10-07T23:08:48+0530",
-     "who": "claude",
-     "note": "For the next session: code in cloud/src/invites.ts (Google and Zoom sync), cloud/src/calendar.ts (feeds, /cal/issue), cloud/admin-ui/admin.js (Calendar Invites panel). Live status read-only: GET /admin/api/calendar with the key in ~/.config/tantra/revops-admin-key. Local test: SIM_PORT=8902 vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs (BROWSER=1 for pages). Links to send: the admin's POST /admin/api/attendees response already returns link (/enter?t=) and calendar (/cal/p/<token>.ics) per person, and GET /admin/api/attendees/<id> returns attendee.feed. /cal/issue (sign-ups) deliberately never returns a token to the browser (Integrator fix b08eeed), so the email is the only way a marketing sign-up receives their private link. Inputs it waits on are tracked in T-123 (sending provider and from-address) and T-217 (Tantra /emails/batch endpoint)."
-    },
-    {
-     "ts": "2026-10-07T23:09:19+0530",
-     "who": "claude",
-     "note": "For the next session: code in cloud/src/invites.ts (Google and Zoom sync), cloud/src/calendar.ts (feeds, /cal/issue), cloud/admin-ui/admin.js (Calendar Invites panel). Live status read-only: GET /admin/api/calendar with the key in ~/.config/tantra/revops-admin-key. Local test: SIM_PORT=8902 vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs (BROWSER=1 for pages). Links to send: the admin's POST /admin/api/attendees response already returns link (/enter?t=) and calendar (/cal/p/<token>.ics) per person, and GET /admin/api/attendees/<id> returns attendee.feed. /cal/issue (sign-ups) deliberately never returns a token to the browser (Integrator fix b08eeed), so the email is the only way a marketing sign-up receives their private link. Inputs it waits on are tracked in T-123 (sending provider and from-address) and T-217 (Tantra /emails/batch endpoint)."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review 2026-10-08: still accurate. Verified: no welcome sender exists on main; cloud/src/index.ts line 478 only returns the links in the admin response. The first cohort is live now (Wed 7 to Fri 9 Oct), so this stays P0."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: rewritten to the owner's 2026-10-07 reminder model: the welcome goes out as step 1 of the workshop's Tantra omni-channel campaign, with the centre registering each new attendee into that campaign (POST /email-campaigns/:id/contacts, live in tantra-backend-v2 since PR #142, 2026-10-01); no home-built sender, no dependency on T-123/T-217/T-236 /emails/batch or Resend."
-    },
-    {
-     "ts": "2026-10-08T00:49:40+0530",
-     "who": "claude",
-     "note": "Pass 2 correction: no real cohort is running yet."
-    },
-    {
-     "ts": "2026-10-09T05:17:49+0530",
-     "who": "claude",
-     "note": "Folded into T-234: the Registered reminder campaign is this welcome (centre link, private calendar link, each day's own join link; cloud/src/reminder-copy.ts, checked against COPY_RULES, no dashes). Nothing to build here; it goes live and closes with T-234 once Adi's GrowthClub Tantra key lands (T-337)."
-    },
-    {
-     "ts": "2026-10-09T19:07:51+0530",
-     "who": "claude",
-     "note": "Nothing separate to build: the welcome is the Registered campaign built in T-234 (cloud/src/reminders.ts, reminder-copy.ts), enrolled from admin add (index.ts) and /cal/issue (calendar.ts), carrying centre, private calendar and Zoom join links; it passed probe-tantra-reminders 51/51 against vendor-sim. This supersedes the Orchestrator's second enrolWelcome build, which would duplicate it. Live send evidence arrives when T-234 goes live with the Tantra key (T-337)."
-    },
-    {
-     "ts": "2026-10-09T19:08:06+0530",
-     "who": "claude",
-     "note": "Checked 12 related task(s); updating T-337."
-    },
-    {
-     "ts": "2026-10-11T05:36:15+0530",
-     "who": "claude",
-     "note": "Ripple from T-050: the two did differ, so I rewrote the confirmation in workshop-plan/sequences/pre.md to match the welcome that is actually sent (COPY.registered in cloud/src/reminder-copy.ts), because Adi's T-050 decision makes the T-228 welcome the reference. The free lane email subject, body and WhatsApp now match word for word after placeholder mapping (script check: all three True), the paid lane carries the same links with its masterclass opening, the placeholder table names the real Tantra fields, and rebuilding the nurture copy gives no diff. No Worker code changed, so nothing to deploy; open workshop-plan/sequences/pre.md. Live send still waits on the Tantra key (T-337)."
-    },
-    {
-     "ts": "2026-10-11T05:39:40+0530",
-     "who": "claude",
-     "note": "People: reviewers Aquila/Adi → Aquila/Adi/Bharath (by claude)."
-    },
-    {
-     "ts": "2026-10-11T05:39:40+0530",
-     "who": "claude",
-     "note": "Verify pass: the free-lane confirmation in pre.md matches the sent welcome word for word, and a new check (python3 workshop-plan/sequences/check_confirmation.py) now fails if they drift; I also corrected the paid-lane note, since paid buyers currently get the same Registered message. The reminders probe passed 92 checks with 0 failures on a private local centre and vendor-sim (one welcome with own Zoom, calendar and centre links, a revoked calendar link rewrites the contact); the paid-buyer step was skipped for lack of a local payment test secret. The live send still waits on the Tantra key (T-337)."
-    },
-    {
-     "ts": "2026-10-11T16:41:57+0530",
-     "who": "claude",
-     "note": "The key was already saved sealed in Admin and redacted by the T-123 run. The reminders probe passes 92 checks with 0 failures on a private centre and vendor-sim, including one welcome with its own Zoom, calendar and centre links, and a rotated calendar link rewriting the contact. The live run stopped with nothing created because team@growthclub.org is not a connected mailbox in the GrowthClub Tantra workspace, so the live welcome email and contact cleanup wait on that one connection."
-    },
-    {
-     "ts": "2026-10-11T16:48:28+0530",
-     "who": "claude",
-     "note": "Checked 12 related task(s); updating T-123."
-    },
-    {
-     "ts": "2026-10-11T23:46:35+0530",
-     "who": "claude",
-     "note": "Already applied, so no agent run was needed: 2026-10-11T16:41 log confirms key saved in Admin and live test run completed (mailbox connection blocking as expected) (checked by Haiku against the log and commits)."
-    },
-    {
-     "ts": "2026-10-12T00:03:42+0530",
-     "who": "claude",
-     "note": "Ask now points at T-408, the single input task (Orchestrator decision on T-123). The old key was exposed, so it must be rotated before go-live."
-    }
-   ],
-   "order": 2280
+   "area": "Delivery",
+   "order": 2280,
+   "title": "T-228: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-229",
@@ -17963,8 +17738,7 @@
   },
   {
    "id": "T-408",
-   "title": "Input from Adi for T-123: Sign in at https://usetantra.com (GrowthClub workspace). 1) Open Email Accou",
-   "area": "Delivery",
+   "status": "blocked",
    "owner": "Adi",
    "assignee": "Adi",
    "reviewers": [
@@ -17972,28 +17746,17 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "blocked",
-   "why": "",
-   "spec": "Only Adi can do this (signin): Connecting the mailbox needs the team@growthclub.org Google sign-in, and rotating a Tantra key needs Adi's own Tantra login.. Everything else in T-123 is being built around it. As soon as this is done, T-123 finishes on its own.",
+   "area": "Delivery",
+   "order": 4080,
+   "title": "T-408: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Sign in at https://usetantra.com (GrowthClub workspace). 1) Open Email Accounts, click Connect account, and sign in as team@growthclub.org. 2) Open Connectors, API Keys, rotate the 'workshop-reminders' key and copy the new one. 3) Sign in at https://revops-centre.growthcluborg.workers.dev/admin/enter, open Cohort Settings, Session Reminders, paste it into the Tantra API key field, and click Save.",
-   "log": [
-    {
-     "ts": "2026-10-11T16:34:37+0530",
-     "who": "claude",
-     "note": "Opened by the Orchestrator for T-123."
-    },
-    {
-     "ts": "2026-10-12T01:42:36+0530",
-     "who": "claude",
-     "note": "Adi gave the Tantra campaigns API key (2026-10-12). Saved sealed in the centre (admin settings tantra_key) and in ~/.config/tantra/keys/tantra-api.env (never in a repo). Verified: GET https://api.usetantra.com/api/v1/campaigns with header x-api-key returns 200 (1 campaign). The Tantra key is no longer a blocker."
-    }
-   ],
-   "order": 4080,
-   "input_for": "T-123",
-   "kind": "input"
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-409",
