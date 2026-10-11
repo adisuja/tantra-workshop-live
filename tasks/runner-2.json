@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T11:14:39+0530",
+   "task_id": "T-074",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-074 stays blocked: everything built checks out, and I added the missing weekly buyer job, but neither newsletter send can go out until our account has an email sender key.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Recurring \"Tantra Pro Weekly Coaching\" meeting (Tuesdays 11:00 ET, "
+  },
+  {
    "ts": "2026-10-11T11:03:26+0530",
    "task_id": "T-107",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "I re-checked everything on T-275 and it passes, so it stays blocked on T-006: H006 and H013 are fixed and live, and H008 waits for a production domain.\n\n1. **1d66ef0 on origin/main:** Done. It's an ancestor of origin/main, and none of the referral files have unpushed commits.\n2. **H006 (no fixed coh"
-  },
-  {
-   "ts": "2026-10-11T08:16:30+0530",
-   "task_id": "T-272",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-272 is back in review for Adi and Bharath: the live admin and the local probe both pass on this repo's code. I found one ?k= link still handed out, fixed it, committed it and pushed it to main.\n\n**Completion check**\n1. **Admin entry needs no key in the URL, and one teammate's token can be revoked "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-074",
+ "task_id": "T-135",
  "entries": [
-  "F-5e21758a",
-  "R-76a13ade"
+  "F-03b2abca"
  ],
- "started": "2026-10-11T11:04:18+0530",
- "message": "Acting on 2 note(s) for T-074: Weekly coaching call and community moderation rota for Tantra Pro members",
+ "started": "2026-10-11T11:15:34+0530",
+ "message": "Acting on 1 note(s) for T-135: Guide screenshots Claude can capture now from our own pages and demo output (11 slots)",
  "slices": {
   "T-072": 1,
   "T-245": 1,

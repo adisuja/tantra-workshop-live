@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T11:13:34+0530",
-  "version": 1843,
+  "updated": "2026-10-11T11:15:13+0530",
+  "version": 1845,
   "last_id": 397,
   "team": [
    {
@@ -3154,6 +3154,11 @@
      "ts": "2026-10-11T11:12:41+0530",
      "who": "claude",
      "note": "Verify pass: the Tuesday 11:00 ET coaching meeting, the link on the Pro course home and the rota (Amal leads, Nelbin and Bhaskar alternate by week, checks at 09:00 and 18:00 ET, escalation to Amal then Bharath, 7 starter rules) all check out, and probe-pro-coaching passes 9 of 9 live. I also built the missing weekly buyer job: workshop-plan/pro/pro_members.py rebuilds the newsletter list from paid, unrefunded Tantra Pro Course payments in Dodo (0 today), and pro-newsletter.mjs gained --send-issue (test inbox plus team) and --send-members. The test send and issue 1 are still not sent because our account has no email sender key (checked the centre's database and this machine), and the link stays off the public /pro page because buyers get access by team email (fulfilment gap from T-071)."
+    },
+    {
+     "ts": "2026-10-11T11:15:05+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-073, T-071."
     }
    ],
    "order": 460,
@@ -8268,6 +8273,11 @@
      "ts": "2026-10-11T11:13:29+0530",
      "who": "claude",
      "note": "Re-checked 2026-10-11: the Orchestrator note was already carried out (one-pagers, experiments.md, tier_mix.py and the qualifier on both join pages; probe-tier-qualifier.mjs passes 16 of 16 again today), and its frontend-v2 clone and push steps are superseded by Adi's 2026-10-11 rule, so that work stays as patches in workshop-plan/tantra-product-patches/. The live Apps Script still lists only 6 forms (no tier_qualifier), so the mirror publish stays held until it is redeployed; open http://localhost:4322/workshop/join?v=t157c and http://localhost:4322/masterclass/success/join?v=t157c"
+    },
+    {
+     "ts": "2026-10-11T11:15:13+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-252."
     }
    ],
    "order": 1570,
