@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T06:42:47+0530",
-  "version": 1757,
+  "updated": "2026-10-11T06:44:09+0530",
+  "version": 1758,
   "last_id": 396,
   "team": [
    {
@@ -15599,6 +15599,11 @@
      "ts": "2026-10-11T06:42:47+0530",
      "who": "claude",
      "note": "Verify pass: the email for Amal is workshop-plan/coord/T-363-client-ok-request.md and the reply goes in workshop-plan/coord/T-363-client-reply.md. I fixed the draft A and B copy so every claim is quoted from the client's own pack, added the win rule and a clear end date to the email, and added check_client_ok.py (self test 5 of 5 pass, today it fails because no reply is saved). The client account audit was not run because there is no read access to their workspace on this machine."
+    },
+    {
+     "ts": "2026-10-11T06:44:09+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-364, T-155."
     }
    ],
    "order": 3630
