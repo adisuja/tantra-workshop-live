@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T22:39:49+0530",
+   "task_id": "T-399",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-399 is still blocked. Its ask now covers only three Tantra screenshots (s3-tantra-pro-flow #5, #13 and #14), which still need Adi's desktop session because this runner has no browser. I committed one fix to the capture manifest (5aa14a82).\n\n| Item | State |\n|---|---|\n| s1-blog #2 and #6 | **Done.*"
+  },
+  {
    "ts": "2026-10-11T22:36:57+0530",
    "task_id": "T-070",
    "mode": "feedback",
@@ -87,24 +95,17 @@
    "status": "review",
    "result": "ok",
    "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-229 is in review: the placeholder-email guard is live in production, and this run's checks all passed.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| H"
-  },
-  {
-   "ts": "2026-10-11T17:53:06+0530",
-   "task_id": "T-155",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-155 needed no change and stays in review. The note said the client account audit was done, but the audit sheet on disk says it was never run, and I ack'd the note.\n\n- **Variant A/B drafts with the day-3 follow-up:** done. The private client spec already records them in `workshop-plan/coord/T-155-c"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-399: Input from Adi for T-140: Same single sitting as T-115 and T-339, no extra sign-in for T-140: open a Claud",
- "task_id": "T-399",
+ "message": "Acting on 2 note(s) for T-033: WhatsApp + email delivery automation",
+ "task_id": "T-033",
  "entries": [
-  "R-480b59f1"
+  "F-af7960d3",
+  "R-dd7814e7"
  ],
  "mode": "feedback",
- "started": "2026-10-11T22:37:10+0530",
+ "started": "2026-10-11T22:40:52+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,

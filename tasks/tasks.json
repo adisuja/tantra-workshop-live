@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T22:38:20+0530",
-  "version": 2080,
+  "updated": "2026-10-11T22:40:15+0530",
+  "version": 2084,
   "last_id": 409,
   "team": [
    {
@@ -636,7 +636,7 @@
    "owner": "Adi",
    "priority": "P1",
    "due": "2026-10-14",
-   "status": "blocked",
+   "status": "hold",
    "why": "Both secrets entered a chat transcript on Sep 18. Until rotated, anyone with that transcript can mint checkouts or forge webhooks.",
    "spec": "In the Dodo dashboard: regenerate the live API key and the webhook signing secret, then paste both into app/.env.local. I will restart the dev server and re-run the checkout probe. The onboarding centre Worker (revops-centre) also stores a Dodo webhook secret for its /hooks/dodo route: update it there too, or /hooks/dodo will fail signature checks. The secret it holds today belongs to the disabled staging endpoint; when the live Dodo endpoint for /hooks/dodo is created it brings its own secret, so store that one in the Worker.",
    "done_when": [
@@ -697,6 +697,11 @@
      "ts": "2026-10-11T11:35:09+0530",
      "who": "claude",
      "note": "Verify pass: the signed /hooks/dodo probe passed all 6 checks on a local centre with test secrets (both Worker secret names accepted, retired secret refused), the live centre refuses unsigned and forged events, and probe-workshop.mjs passed checkout and forged-webhook checks against the dev server. Fixed the runbook probe command to the real dev port 4322 (workshop-plan/ops/runbook.md section 3). Waiting only on T-382: the new live key and endpoint secret."
+    },
+    {
+     "ts": "2026-10-11T22:40:15+0530",
+     "who": "claude",
+     "note": "Parked: Adi's standing rule is no Dodo key rotation until after launch (owner-launch-constraints). Reopen after launch."
     }
    ],
    "order": 50,
@@ -17246,7 +17251,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "blocked",
+   "status": "hold",
    "why": "",
    "spec": "Only Adi can do this (reserved): Owner's written rule reserves Dodo key rotation for after launch, and regenerating live credentials in his account is something only Adi can do.. Everything else in T-005 is being built around it. As soon as this is done, T-005 finishes on its own.",
    "done_when": [],
@@ -17263,6 +17268,11 @@
      "ts": "2026-10-11T11:29:45+0530",
      "who": "claude",
      "note": "Corrected the key name: the app reads DODO_PAYMENTS_API_KEY, not DODO_API_KEY (app/src/lib/dodo.ts:52)."
+    },
+    {
+     "ts": "2026-10-11T22:40:15+0530",
+     "who": "claude",
+     "note": "Parked: Adi's standing rule is no Dodo key rotation until after launch (owner-launch-constraints). Reopen after launch."
     }
    ],
    "order": 3820,
@@ -17584,11 +17594,16 @@
    ],
    "priority": "P3",
    "due": "",
-   "status": "blocked",
+   "status": "dropped",
    "why": "",
    "spec": "Only Adi can do this (physical): Only Adi can open the interactive desktop session with his signed-in Brave profile; the unattended runner has no browser tools.. Everything else in T-140 is being built around it. As soon as this is done, T-140 finishes on its own.",
    "done_when": [],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Capture manifest rows 95 to 97",
+     "url": "scripts/walkthroughs/journeys/guide-t115-capture-manifest.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "Same single sitting as T-115 and T-339, no extra sign-in for T-140: open a Claude Code session in the desktop app with Claude in Chrome connected to the Brave profile adi@growthclub.org (Tantra at https://usetantra.com is already signed in) and type: Act on T-115, T-339 and T-140. Only s3-tantra-pro-flow #5, #13 and #14 are left for T-140.",
    "log": [
@@ -17601,6 +17616,16 @@
      "ts": "2026-10-11T22:37:33+0530",
      "who": "claude",
      "note": "Ripple checked: s1-blog #2 and #6 are already real captures (no capture_needed left there), but s3-tantra-pro-flow #5, #13 and #14 still show capture_needed in app/src/content/guides/s3-nurture/s3-tantra-pro-flow.ts (lines 99, 182, 191), and T-140 is still blocked because its runner has no browser. So the fallback the ripple describes applies: the ask stays, now narrowed to those three slots."
+    },
+    {
+     "ts": "2026-10-11T22:39:13+0530",
+     "who": "claude",
+     "note": "Ripple checked: s1-blog #2 and #6 are real captures on disk, but s3-tantra-pro-flow #5, #13 and #14 still carry capture_needed and the unattended runner has no browser, so the ask stays (only those three slots). Fixed the capture manifest so #5 and #14 save to 18.webp and 19.webp instead of overwriting the step 4 and step 8 images."
+    },
+    {
+     "ts": "2026-10-11T22:40:10+0530",
+     "who": "claude",
+     "note": "Dropped by the Orchestrator: T-399's ripple note (2026-10-11T11:46) makes Adi's sign-in a fallback only. T-140 decisions of 2026-10-09 and 2026-10-10T17:04 named local tantra-frontend-v2 as the second route, and no log shows it tried. never-wait-on-owner: one batched ask, not three."
     }
    ],
    "order": 3990,
