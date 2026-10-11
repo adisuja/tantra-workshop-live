@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T11:24:27+0530",
-  "version": 1855,
+  "updated": "2026-10-11T11:27:04+0530",
+  "version": 1857,
   "last_id": 398,
   "team": [
    {
@@ -14182,20 +14182,20 @@
    ],
    "evidence": [
     {
+     "label": "Live mirror chunk",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/_next/static/chunks/3gni33e2k693m.js?v=1791698179"
+    },
+    {
+     "label": "Live Worker chunk",
+     "url": "https://revops-centre.growthcluborg.workers.dev/_next/static/chunks/2s5krkg0n28bt.js?v=1791698179"
+    },
+    {
      "label": "workshop-cards.ts",
      "url": "app/src/lib/workshop-cards.ts"
     },
     {
      "label": "card-education.ts",
      "url": "app/src/lib/card-education.ts"
-    },
-    {
-     "label": "walkthroughs.ts",
-     "url": "app/src/lib/walkthroughs.ts"
-    },
-    {
-     "label": "channels.ts",
-     "url": "cloud/src/connectors/channels.ts"
     }
    ],
    "blockers": [],
@@ -14215,6 +14215,11 @@
      "ts": "2026-10-10T16:08:43+0530",
      "who": "claude",
      "note": "Card copy fixed for WebinarGeek, Metricool, Cal.com, GA4 (account level), GoHighLevel scopes, HubSpot service key and eight scopes, Wistia API Home, Stripe sandbox and two-step check, Zoom, Kie.ai $0.03 to $0.08, Twilio emailed code and the Tantra mailboxes card (service account plus Verify & Add), in workshop-cards.ts, card-education.ts, walkthroughs.ts and channels.ts. These landed in 78e6b4e and are already on origin/main. check-examples (597, 0 failing), check-walkthroughs (12 ok), tsc and probe-stack (23 pass, 2 fail only for the missing day2 funnel precondition) all pass. check-guides fails only on 4 T-257 image sizes. Still to do: the revops-centre Worker deploy and the mirror publish from a clean worktree at origin/main."
+    },
+    {
+     "ts": "2026-10-11T11:26:19+0530",
+     "who": "claude",
+     "note": "The card copy fixes (commit de7e475e) are already live. I fetched the deployed revops-centre Worker chunk and the published mirror chunk (cache-busted) and both show Metricool /register, WebinarGeek /register, HubSpot Development, Keys, Service keys and Wistia API Home. I made no redeploy or publish because both already run builds that contain the fix (Worker from af0a1d0, mirror from e66dda5). Shipping origin/main now would also release other lanes' unrelated changes. Checks run today: check-guides PASS with exit 0 (the 4 T-257 image-size failures are gone), check-examples 641/0 failing, check-walkthroughs 12 ok, tsc clean for app and cloud. The probe-stack day2 funnel failure is a precondition problem outside this task. Per tool: WebinarGeek Webinar ID from the API reference icon and /register. Metricool /register. Cal.com New. GA4 account level. GoHighLevel UI scope labels and pipelines scopes, plus the Labs toggle. HubSpot service key, Development, Keys, Service keys, eight scopes. Wistia Settings, API Home. Stripe sandbox and the two-step check. Zoom longer authenticated label. Kie.ai $0.03 to $0.08. Twilio emailed code. Tantra service account plus Accounts, Verify & Add."
     }
    ],
    "order": 2850
@@ -14475,12 +14480,16 @@
    ],
    "evidence": [
     {
-     "label": "Commit 3199bef",
+     "label": "T-290 commit on origin/main",
      "url": "git show 3199bef"
     },
     {
-     "label": "probe-shapes log",
-     "url": "/tmp/t290-shapes2.log"
+     "label": "Branch: origin/main (contains 3199bef and d1ff5ca)",
+     "url": "git branch -r --contains 3199bef"
+    },
+    {
+     "label": "probe-shapes log, local only",
+     "url": "/tmp/t290-shapes3.log"
     },
     {
      "label": "Card fields",
@@ -14513,6 +14522,11 @@
      "ts": "2026-10-10T16:14:51+0530",
      "who": "claude",
      "note": "All three funnel shapes now ask for the optional community link, join link text and next step. Webinar and challenge show them on /thanks. RSP sign-ups never reach /thanks, so they now see them at the top of Part 2 right after signing up. Empty fields hide every block with no empty link. check-examples (634 examples, 0 failing), check-coverage (OK) and probe-shapes (48 PASS, run against this checkout's worker on :8795) all pass. Committed as 3199bef but not pushed: the onboarding-v2 checkout has 5 unpushed commits main doesn't have (one includes walkthroughs held for Adi's review), so a push would make it diverge. :8794 runs that checkout, so this fix shows there only after onboarding-v2 merges main. Live redeploys are left to T-246."
+    },
+    {
+     "ts": "2026-10-11T11:27:04+0530",
+     "who": "claude",
+     "note": "No push was needed: git fetch shows the T-290 commit 3199bef (and d1ff5ca, which is actually a T-285 commit) already on origin/main. I did not push the 3 unrelated local commits from T-289 and T-276. I reran the checks this run: check-examples (641, 0 failing), check-coverage OK and probe-shapes ALL PASS (48), all against this checkout's worker on :8795 with a private sim. That covers filled and empty blocks on /thanks for every shape and on RSP Part 2. The /tmp logs and the :8794 preview are local only, and live redeploys stay with T-246."
     }
    ],
    "order": 2900
