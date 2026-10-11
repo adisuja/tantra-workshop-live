@@ -97,12 +97,15 @@
    "summary": "T-134 is back in review. Both closing checks passed, so I changed, committed and pushed nothing.\n\n1. **Guide and screenshots on origin main: done.** The guide file and screenshots 01 and 03 to 07 are on origin main and match my local copy exactly.\n2. **Live guide shows the step 1 to 4 captures and t"
   }
  ],
- "state": "idle",
- "mode": null,
- "task_id": null,
- "entries": [],
- "started": "2026-10-11T17:18:06+0530",
- "message": "Last sweep handled 8 task(s).",
+ "state": "working",
+ "mode": "feedback",
+ "task_id": "T-158",
+ "entries": [
+  "F-1e7c99bd",
+  "R-aa339922"
+ ],
+ "started": "2026-10-11T17:55:07+0530",
+ "message": "Acting on 2 note(s) for T-158: Pipeline dashboard modelled on a client's webinar desk",
  "slices": {
   "T-135": 1,
   "T-148": 1,
