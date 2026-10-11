@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T01:46:23+0530",
-  "version": 2203,
+  "updated": "2026-10-12T01:58:08+0530",
+  "version": 2213,
   "last_id": 413,
   "team": [
    {
@@ -10916,7 +10916,7 @@
    "due": "",
    "status": "review",
    "why": "Production attendee 5 signed up as you@example.com (not marked test) and its three Zoom registrations hit Zoom's 3-per-person-per-day limit (HTTP 429). The 429 back-off shipped in c106985; what is left is keeping placeholder addresses away from Zoom, Google and the coming Tantra reminder import (T-234).",
-   "spec": "1) In the admin (https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Attendees, attendee 5, tick the Test checkbox: #testChk sends PATCH /admin/api/attendees/5 {test:true}) so Invite Status stops counting its failed Zoom rows. 2) Refuse reserved and placeholder domains (example.com, example.net, example.org, *.test, *.invalid, *.localhost, *.example) at every sign-up door: POST /cal/issue (cloud/src/calendar.ts, issue()), POST /intake (cloud/src/live.ts) and the admin add form (cloud/src/index.ts), answering with the same shape as today so nothing leaks. Put the check in one helper in cloud/src/util.ts and reuse it in the T-234 Tantra import. 3) Add a check to app/scripts/probe-calendar-feeds.mjs that an example.com sign-up is refused (local: SIM_PORT=8902 python3 cloud/scripts/vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs). Live evidence 2026-10-08: attendee 5 (you@example.com, test 0) produced 3 failed Zoom rows (429 daily registrant limit). Also clean that row up through the admin (mark it test) rather than editing D1.",
+   "spec": "1) In the admin (https://revops-centre.growthcluborg.workers.dev/admin/enter (paste the owner key from ~/.config/tantra/revops-admin-key into the form), Attendees, attendee 5, tick the Test checkbox: #testChk sends PATCH /admin/api/attendees/5 {test:true}) so Invite Status stops counting its failed Zoom rows. 2) Refuse reserved and placeholder domains (example.com, example.net, example.org, *.test, *.invalid, *.localhost, *.example) at every sign-up door: POST /cal/issue (cloud/src/calendar.ts, issue()), POST /intake (cloud/src/live.ts) and the admin add form (cloud/src/index.ts), answering with the same shape as today so nothing leaks. Put the check in one helper in cloud/src/util.ts and reuse it in the T-234 Tantra import. 3) Add a check to app/scripts/probe-calendar-feeds.mjs that an example.com sign-up is refused (local: SIM_PORT=8902 python3 cloud/scripts/vendor-sim.py + wrangler dev, then node app/scripts/probe-calendar-feeds.mjs). Live evidence 2026-10-08: attendee 5 (you@example.com, test 0) produced 3 failed Zoom rows (429 daily registrant limit). Also clean that row up through the admin (mark it test) rather than editing D1.",
    "done_when": [
     "Attendee 5 shows as test in the admin and no failed Zoom rows for non-test attendees remain under Invite Status",
     "POST /cal/issue and /intake with an example.com address create no attendee and no session_sync row",
@@ -10924,16 +10924,16 @@
    ],
    "evidence": [
     {
+     "label": "Live admin: Cohort Settings, Invite Status (Worker f97bb618)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=f97bb618#settings"
+    },
+    {
      "label": "Helper with subdomain match",
      "url": "cloud/src/util.ts"
     },
     {
-     "label": "Probe with the refusal checks (67 of 67)",
+     "label": "Probe with the refusal checks",
      "url": "app/scripts/probe-calendar-feeds.mjs"
-    },
-    {
-     "label": "Live admin: Cohort Settings, Invite Status",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=9761eae3#settings"
     }
    ],
    "blockers": [],
@@ -11023,6 +11023,11 @@
      "ts": "2026-10-11T18:17:33+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-223."
+    },
+    {
+     "ts": "2026-10-12T01:57:38+0530",
+     "who": "claude",
+     "note": "The placeholder guard is live, so no deploy was needed: Worker f97bb618 was built from 93ad569, which contains fix 51c7ee1 (checked with git merge-base). On production I posted a@mail.example.com to /cal/issue and /intake. Both gave the usual 200 answers (feed null), attendees stayed at 29 (highest id 129, no new ids), Invite Status still has no session_sync rows (so Zoom failed is 0) and no placeholder address is left untagged as test. Attendees 5 and 66 return 404, so the mark-as-test item is met. Open https://revops-centre.growthcluborg.workers.dev/admin/?v=f97bb618#settings, Cohort Settings, Invite Status."
     }
    ],
    "order": 2290
@@ -11872,7 +11877,7 @@
    "due": "",
    "status": "done",
    "why": "Funnels deployed before 8a62369 still answer Zoom's URL check without a signature, which let anyone forge signed Zoom events (for example a fake replay link).",
-   "spec": "List production attendees with a deployed funnel (admin https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Attendees, each attendee's 'Deploy the funnel' job; or GET /admin/api/export endpoints rows). For each non-test funnel deployed before 2026-10-07 22:24, rerun the deploy-funnel job from the attendee page (startOrRerun in cloud/src/jobs.ts). Then check each funnel's /hooks/zoom answers an unsigned endpoint.url_validation with 401. If T-236 lands first, one redeploy covers both.",
+   "spec": "List production attendees with a deployed funnel (admin https://revops-centre.growthcluborg.workers.dev/admin/enter (paste the owner key from ~/.config/tantra/revops-admin-key into the form), Attendees, each attendee's 'Deploy the funnel' job; or GET /admin/api/export endpoints rows). For each non-test funnel deployed before 2026-10-07 22:24, rerun the deploy-funnel job from the attendee page (startOrRerun in cloud/src/jobs.ts). Then check each funnel's /hooks/zoom answers an unsigned endpoint.url_validation with 401. If T-236 lands first, one redeploy covers both.",
    "done_when": [
     "Every live attendee funnel's deploy-funnel job ran after 2026-10-07 22:24",
     "An unsigned Zoom URL check against each funnel is refused"
@@ -13858,7 +13863,7 @@
    "due": "",
    "status": "review",
    "why": "A shared admin key in a URL cannot be revoked per person, and one set of links cannot serve a weekly rolling cohort.",
-   "spec": "In cloud/src/index.ts and cloud/admin-ui/admin.js (live admin https://revops-centre.growthcluborg.workers.dev/admin, entered today via https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, the shared ADMIN_KEY checked at index.ts:728): H057 replace the shared key in a URL with per-teammate revocable tokens (D1 table with revoke) accepted by POST form; H058 store join and recording links per cohort week and pick them by the attendee's cohort (weekly rolling cohort Wed to Fri 11:00 ET; Zoom Pro already makes one meeting per cohort in cloud/src/zoom-pro.ts, so read join links from there); H059 add a read-only preview of the invite description and reminder times to Cohort Settings; N097 add session_minutes and per-day slides/description fields to Cohort Settings; H062 remove the 'Connect your email verifier' gates (cards go with T-251) and every ruled-out vendor from the VENDOR map in admin.js (GoDaddy, Instantly, SendGrid, Calendly, HeyReach, Apollo, BuiltWith, NeverBounce, ZeroBounce; Wistia and others follow T-260), and add a one-line legend for 'not yet' vs 'open'; H065 use plural() in the Overview stat. When done, mark H057, H058, H059, H062, H065, N097 fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Merge order: build on main after T-251 lands (branch tantra-walkthroughs: e4bd0b8 removes the ruled-out tools and rewrites workshop-cards.ts, agentic.ts, jobs.ts, agent.tsx and coverage.json; probe fixes 043b5ab and aa22a3f, no READY yet in /Users/adithyamurali/tantra-round5-coord/LOG.md). Until then branch from tantra-walkthroughs; AUDIT.md line numbers predate that change.",
+   "spec": "In cloud/src/index.ts and cloud/admin-ui/admin.js (live admin https://revops-centre.growthcluborg.workers.dev/admin, entered before this change with the shared key in the URL query, the shared ADMIN_KEY checked at index.ts:728): H057 replace the shared key in a URL with per-teammate revocable tokens (D1 table with revoke) accepted by POST form; H058 store join and recording links per cohort week and pick them by the attendee's cohort (weekly rolling cohort Wed to Fri 11:00 ET; Zoom Pro already makes one meeting per cohort in cloud/src/zoom-pro.ts, so read join links from there); H059 add a read-only preview of the invite description and reminder times to Cohort Settings; N097 add session_minutes and per-day slides/description fields to Cohort Settings; H062 remove the 'Connect your email verifier' gates (cards go with T-251) and every ruled-out vendor from the VENDOR map in admin.js (GoDaddy, Instantly, SendGrid, Calendly, HeyReach, Apollo, BuiltWith, NeverBounce, ZeroBounce; Wistia and others follow T-260), and add a one-line legend for 'not yet' vs 'open'; H065 use plural() in the Overview stat. When done, mark H057, H058, H059, H062, H065, N097 fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Merge order: build on main after T-251 lands (branch tantra-walkthroughs: e4bd0b8 removes the ruled-out tools and rewrites workshop-cards.ts, agentic.ts, jobs.ts, agent.tsx and coverage.json; probe fixes 043b5ab and aa22a3f, no READY yet in /Users/adithyamurali/tantra-round5-coord/LOG.md). Until then branch from tantra-walkthroughs; AUDIT.md line numbers predate that change.",
    "done_when": [
     "Admin entry works without a key in the URL, and one teammate's token can be revoked alone",
     "Two cohort weeks show different join links in the admin",
@@ -13912,6 +13917,11 @@
      "ts": "2026-10-11T21:12:03+0530",
      "who": "claude",
      "note": "Live check on Worker version 11f4dff4 (2026-10-11): GET /admin/enter?k=<owner key> set no cookie, a POST with the owner key signed in; test tokens t272-a (id 5) and t272-b (id 6) both signed in, after revoking A it got 401 and could not sign in again while B kept 200, then B was revoked too (all 6 test tokens are now revoked). Cohort Settings lists Wed 7 to Fri 9 Oct on Zoom meeting 87002851906 and Wed 14 to Fri 16 Oct on 88135386601. The scripts already sign in by POST, and I replaced the last two ?k= sign-in lines in the 2026-10-02 and 2026-10-06 handoff docs (efe396a3, pushed); no Worker code changed, so no deploy. Sign in at https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t272d, then open Teammates and Cohort Settings."
+    },
+    {
+     "ts": "2026-10-12T01:56:36+0530",
+     "who": "claude",
+     "note": "Sign-in link sweep (2026-10-12): replaced /admin/enter?k=<key> with https://revops-centre.growthcluborg.workers.dev/admin/enter plus 'paste the owner key from ~/.config/tantra/revops-admin-key into the form' in the T-336 ask and the T-232, T-291, T-229 and T-246 specs, and reworded this task's own spec. T-335, T-393 and T-225 had no ?k= left in their ask or spec. A grep of tasks.json for enter?k= in spec, ask, why, title and done_when now counts 0 (old log lines kept as history, probe-admin-tokens.mjs untouched); ready for Adi and Bharath."
     }
    ],
    "order": 2720
@@ -14085,7 +14095,7 @@
    "evidence": [
     {
      "label": "Live referral dashboard",
-     "url": "https://adisuja.github.io/tantra-workshop-live/referrals.html?v=1011c"
+     "url": "https://adisuja.github.io/tantra-workshop-live/referrals.html?v=1012"
     },
     {
      "label": "T-006 switch step (runbook.md section 5, a8c61474)",
@@ -14129,6 +14139,16 @@
      "ts": "2026-10-11T21:26:50+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-006."
+    },
+    {
+     "ts": "2026-10-12T01:57:32+0530",
+     "who": "claude",
+     "note": "Closed out: the links.site step is already in runbook.md section 5 (a8c61474, on origin/main) and T-006 already notes it; AUDIT.md H008 now reads 'tracked in T-006 switch step' (coord folder is not a git repo, so no commit there). H006 and H013 stay fixed in 1d66ef0; links.site left alone, no blockers or asks. Open https://adisuja.github.io/tantra-workshop-live/referrals.html?v=1011b"
+    },
+    {
+     "ts": "2026-10-12T01:58:08+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-12: test_referrals.py 27 PASS 0 FAIL, probe-referrals.mjs --live 13/13, referrals.html reads first_cohort with the monthly payout line (1d66ef0 on origin/main). The links.site step is in runbook.md section 5 lines 244 to 246 (a8c61474 on origin/main), AUDIT.md H008 says tracked in T-006 switch step, and T-006 logs the step; links.site left alone. Open https://adisuja.github.io/tantra-workshop-live/referrals.html?v=1012"
     }
    ],
    "order": 2750
@@ -15260,7 +15280,7 @@
    "due": "",
    "status": "review",
    "why": "The open link is a shared attendee that runs real actions if someone pastes a real vendor key, so it must close once the build is final.",
-   "spec": "Trigger (Orchestrator O-5308a6a2, 2026-10-09): set Cohort Settings 'Open preview link' to 'Off: personal links only' before the first non-test attendee is sent a centre link, or as soon as Adi calls the build complete in review, whichever comes first. Until then /preview stays open, as Adi asked on 2026-10-05. Prep is live (Worker f6301391, commit 8690ef6): while the open preview is on the centre refuses to add a real attendee in the admin (409 with the fix in the message) and holds real attendees' reminders and day outputs (cloud/src/settings.ts heldByPreview, reminders.ts, jobs-delivery.ts, index.ts); switching it off makes /preview answer 403, ends every session /preview handed out and gives the shared demo attendee (the Tantra demo funnel, T-214) a new personal link under Attendees, Copy link. Users of /preview: app/scripts/fill-preview.mjs and app/scripts/probe-live-qa.mjs now enter by the demo attendee's personal link from the admin API (app/scripts/test-attendee.mjs) and take the admin enter link as their argument; the walkers already made their own test attendees; the hub and playbook carry no /preview link; T-278 does not use it. To flip: open https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key>, Cohort Settings, 'Open preview link (/preview)', choose 'Off: personal links only', Save. Then confirm a signed-out GET https://revops-centre.growthcluborg.workers.dev/preview answers 403 and the demo attendee's new personal link opens the centre, and log the date here. Who flips it: nobody has to ask Adi. The 409 guard forces the switch-off before any real attendee can be added, so whoever adds the first real attendee (or the T-228 welcome-email build) flips it with the steps above. The day output hold and release are proven by app/scripts/probe-preview-close.mjs (29 checks).",
+   "spec": "Trigger (Orchestrator O-5308a6a2, 2026-10-09): set Cohort Settings 'Open preview link' to 'Off: personal links only' before the first non-test attendee is sent a centre link, or as soon as Adi calls the build complete in review, whichever comes first. Until then /preview stays open, as Adi asked on 2026-10-05. Prep is live (Worker f6301391, commit 8690ef6): while the open preview is on the centre refuses to add a real attendee in the admin (409 with the fix in the message) and holds real attendees' reminders and day outputs (cloud/src/settings.ts heldByPreview, reminders.ts, jobs-delivery.ts, index.ts); switching it off makes /preview answer 403, ends every session /preview handed out and gives the shared demo attendee (the Tantra demo funnel, T-214) a new personal link under Attendees, Copy link. Users of /preview: app/scripts/fill-preview.mjs and app/scripts/probe-live-qa.mjs now enter by the demo attendee's personal link from the admin API (app/scripts/test-attendee.mjs) and take the admin enter link as their argument; the walkers already made their own test attendees; the hub and playbook carry no /preview link; T-278 does not use it. To flip: open https://revops-centre.growthcluborg.workers.dev/admin/enter (paste the owner key from ~/.config/tantra/revops-admin-key into the form), Cohort Settings, 'Open preview link (/preview)', choose 'Off: personal links only', Save. Then confirm a signed-out GET https://revops-centre.growthcluborg.workers.dev/preview answers 403 and the demo attendee's new personal link opens the centre, and log the date here. Who flips it: nobody has to ask Adi. The 409 guard forces the switch-off before any real attendee can be added, so whoever adds the first real attendee (or the T-228 welcome-email build) flips it with the steps above. The day output hold and release are proven by app/scripts/probe-preview-close.mjs (29 checks).",
    "done_when": [
     "Cohort Settings shows Off: personal links only and a signed-out GET /preview answers 403",
     "The demo attendee personal link still opens the centre after the switch and fill-preview.mjs and probe-live-qa.mjs run through it",

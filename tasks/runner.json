@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T01:56:45+0530",
+   "task_id": "T-272",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-272 is back in review after this run removed the `?k=` sign-in links from the other tasks; a grep of `tasks.json` now finds 0 `enter?k=` in any spec, ask, why, title or done_when field.\n\n| Item | State |\n|---|---|\n| T-336 ask | **Done.** Now says `https://revops-centre.growthcluborg.workers.dev/ad"
+  },
+  {
    "ts": "2026-10-12T00:29:00+0530",
    "task_id": "T-056",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "done",
    "result": "ok",
    "summary": "I closed T-393 as done. The key was already saved in Admin at 16:25, T-337 is done, and the mailbox step is tracked on T-123.\n\n- **Drop the key ask and close as satisfied:** done. T-393 now shows status done with an empty ask. I read T-337's status and log, and T-123's log, in tasks.json.\n- **Move t"
-  },
-  {
-   "ts": "2026-10-11T23:45:07+0530",
-   "task_id": "T-061",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "I made no changes for this update and T-061 stays blocked.\n\n- **Key no longer blocking (ripple ask):** already true. The key was saved in the live centre on 11 Oct, and `needs_from_owner` only asks for the mailbox.\n- **Email only, WhatsApp off:** already the case. `createLaneCampaigns` in `cloud/src"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-272: Centre admin: per-teammate auth, per-cohort session settings, ruled-out vendors out of the admin",
- "task_id": "T-272",
+ "message": "Acting on 1 note(s) for T-275: Referral dashboard: production link, cohort date source, payout wording",
+ "task_id": "T-275",
  "entries": [
-  "F-4d521c61"
+  "F-3fc8e0be"
  ],
  "mode": "feedback",
- "started": "2026-10-12T01:56:01+0530",
+ "started": "2026-10-12T01:57:17+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
