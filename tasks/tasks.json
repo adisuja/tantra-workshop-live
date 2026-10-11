@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T12:42:58+0530",
-  "version": 1905,
+  "updated": "2026-10-11T12:44:59+0530",
+  "version": 1906,
   "last_id": 401,
   "team": [
    {
@@ -10467,6 +10467,11 @@
      "ts": "2026-10-11T12:42:58+0530",
      "who": "claude",
      "note": "Write test 2026-10-11 on 88135386601: not granted. Zoom took the PATCH (204) but silently ignored both fields (mute read back false, video absent), so I restored the room through the centre and confirmed request_permission_to_unmute_participants is true again. The daily 09:10 job (--apply, already in the plist) now repeats this test on the furthest-out cohort meeting, skips it within 36 hours of the start, restores automatically, and logs once a day; this waits only on Zoom Support, with T-226 Live Control as the fallback."
+    },
+    {
+     "ts": "2026-10-11T12:44:59+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11: I re-ran the daily job's write test on 88135386601 (it ran twice by mistake). Both times Zoom took the PATCH (204) but ignored both fields, and the job restored the room, so request_permission_to_unmute_participants reads true again. A rehearsal for 13 Oct showed the job skips the test within 36 hours and adds the not granted in time line, and a second --log run today added no log entry. Still waiting on Zoom Support. T-226 covers mute and video, and T-226 itself waits on T-335."
     }
    ],
    "order": 2250
