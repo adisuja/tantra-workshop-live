@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T12:39:53+0530",
-  "version": 1904,
+  "updated": "2026-10-11T12:42:58+0530",
+  "version": 1905,
   "last_id": 401,
   "team": [
    {
@@ -10462,6 +10462,11 @@
      "ts": "2026-10-11T09:10:10+0530",
      "who": "claude",
      "note": "Zoom check 2026-10-11: not granted yet. disable_participant_video is in no answer and the mute field is still at its default (/users/me/settings 200, /accounts/me/settings 400, /accounts/me/lock_settings 400, /meetings/88135386601 200); the centre's Zoom Support locks stay off and Live Control (T-226) covers mute and video."
+    },
+    {
+     "ts": "2026-10-11T12:42:58+0530",
+     "who": "claude",
+     "note": "Write test 2026-10-11 on 88135386601: not granted. Zoom took the PATCH (204) but silently ignored both fields (mute read back false, video absent), so I restored the room through the centre and confirmed request_permission_to_unmute_participants is true again. The daily 09:10 job (--apply, already in the plist) now repeats this test on the furthest-out cohort meeting, skips it within 36 hours of the start, restores automatically, and logs once a day; this waits only on Zoom Support, with T-226 Live Control as the fallback."
     }
    ],
    "order": 2250
