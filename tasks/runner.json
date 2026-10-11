@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T04:10:15+0530",
+   "task_id": "T-247",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-247 is back in review for Adi, Aquila and Bharath. Commit 9af89f1a was already on origin/main, so I pushed nothing.\n\n| Item | State |\n|---|---|\n| 1. Push 9af89f1a | Done, and no push was needed. After `git fetch`, 9af89f1a is already in origin/main. It went out as part of de8ac300, and the current"
+  },
+  {
    "ts": "2026-10-12T04:09:02+0530",
    "task_id": "T-237",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-270 is back in review for Adi and Bharath. Nothing needed fixing, and every item was re-checked in this run.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Teaching shows with no query parameter (N067) | Done | Live probe: 2 teaching panels on the card with no `?learn` |\n| Choose your "
-  },
-  {
-   "ts": "2026-10-12T02:17:58+0530",
-   "task_id": "T-144",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-144 needed no changes. The Review tab already says \"Two-Month Platform Pass\", the link probe passes, and the task stays in review.\n\n- **b-pass element after regeneration:** Done. I re-ran `review_hub.py` and the regenerated hub still reads \"Two-Month Platform Pass\", matching `review_hub.py:439` an"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-247: Bring the Tantra Tracker MongoDB copy back (Docker is stopped) and harden the container",
- "task_id": "T-247",
+ "message": "Acting on 1 note(s) for T-056: Cold calendar lists for the workshop, imported into Tantra",
+ "task_id": "T-056",
  "entries": [
-  "F-f642a932"
+  "F-9f051e84"
  ],
  "mode": "feedback",
- "started": "2026-10-12T04:09:46+0530",
+ "started": "2026-10-12T04:11:09+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,

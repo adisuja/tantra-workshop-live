@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T04:06:56+0530",
-  "version": 2312,
+  "updated": "2026-10-12T04:10:08+0530",
+  "version": 2315,
   "last_id": 418,
   "team": [
    {
@@ -12224,6 +12224,11 @@
      "ts": "2026-10-12T00:26:45+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-12 00:25. I changed no code. All six Orchestrator items are on disk: com.tantra.docker-keepalive is loaded and logs ok every 5 min, and its log shows the quit test recovering on its own (Docker down 20:57, killed and relaunched 21:00:17, tantra-mongo back 21:00:33). AutoStart is true. The Homebrew mongodb plist is present but not loaded, and mongod is not installed. tracker_sync.py:780 logs MongoDB UNREACHABLE. The script, plist, tracker_sync and runbook (row 20, section 2a) match origin/main. Done-when checks: tantra-mongo is up with unless-stopped on 127.0.0.1:27017 under mongod --auth, anonymous listDatabases is refused, and the latest tracker run logged 'MongoDB written: 5249 documents'."
+    },
+    {
+     "ts": "2026-10-12T04:10:08+0530",
+     "who": "claude",
+     "note": "No push was needed: after git fetch, commit 9af89f1a is already on origin/main (published through de8ac300; origin/main head is c6accada), so I pushed nothing. Evidence from the logs on 2026-10-12 04:08: the keepalive brought Docker back on its own 5 times between 21:00 and 22:16 on 2026-10-11 (21:00 kill and relaunch, then 21:16, 21:19, 22:01 and 22:16 by reopening Docker), 6 counting 18:31, and has logged ok every 5 minutes since 22:16. The tracker log has 214 'MongoDB written' lines, latest 5332 documents, and tantra-mongo is running with unless-stopped on 127.0.0.1:27017 only."
     }
    ],
    "order": 2470
@@ -18370,7 +18375,7 @@
    "title": "Input from Adi for T-263: save the FintechCircle Tantra API key for the read-only sender check",
    "area": "Product",
    "owner": "Adi",
-   "assignee": "Adi",
+   "assignee": "Claude",
    "reviewers": [
     "Adi",
     "Nelbin"
@@ -18392,6 +18397,11 @@
      "ts": "2026-10-12T04:04:46+0530",
      "who": "claude",
      "note": "Split out of T-263 by Orchestrator decision O-182ec31e (T-337 is done and held the GrowthClub key, not FintechCircle's)."
+    },
+    {
+     "ts": "2026-10-12T04:09:42+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Adi → Claude (by Orchestrator)."
     }
    ],
    "order": 4180
