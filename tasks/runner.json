@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T07:09:51+0530",
+   "task_id": "T-237",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-237 is in review. The verify pass found one fault, which is fixed and committed locally (a67da2c) but not deployed. `ack F-74af7720` returned \"acked 0\", which I read as the previous run having already acknowledged it.\n\n**COMPLETION CHECK** (evidence from this run)\n\nDone_when\n1. **Public sign-up re"
+  },
+  {
    "ts": "2026-10-11T07:00:30+0530",
    "task_id": "T-235",
    "mode": "feedback",
@@ -87,23 +95,13 @@
    "status": "review",
    "result": "ok",
    "summary": "T-150 stays in review for Amal: the verify pass found no gaps, so nothing was changed, pushed or published this run.\n\nCOMPLETION CHECK (all evidence from this run)\n1. **`review_hub.py` reports no unknown element:** done. It wrote 382 elements with no PROBLEMS line, and the regenerated `workshop-plan"
-  },
-  {
-   "ts": "2026-10-11T00:53:22+0530",
-   "task_id": "T-146",
-   "mode": "feedback",
-   "status": "hold",
-   "result": "ok",
-   "summary": "T-146 is on hold: Bhaskar's and Aquila's invites are still pending, so H034 stays open until they accept.\n\nCOMPLETION CHECK\n1. **Delete the \"Asked of Adi\" section:** done. `needs_from_owner` was already empty on disk and stays empty; scope is Nelbin, Bhaskar and Aquila only.\n2. **Run collaborators a"
   }
  ],
- "state": "working",
- "message": "Acting on 1 note(s) for T-237: Give the Tantra webinar a public registration page",
- "task_id": "T-237",
- "entries": [
-  "F-74af7720"
- ],
- "mode": "feedback",
+ "state": "idle",
+ "message": "Last sweep handled 8 task(s).",
+ "task_id": null,
+ "entries": [],
+ "mode": null,
  "started": "2026-10-11T07:01:04+0530",
  "slices": {
   "T-156": 1,

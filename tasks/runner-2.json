@@ -99,12 +99,13 @@
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-155",
+ "task_id": "T-235",
  "entries": [
-  "F-70514f95"
+  "F-bb81a15c",
+  "R-08fbd69f"
  ],
- "started": "2026-10-11T06:54:22+0530",
- "message": "Acting on 1 note(s) for T-155: Dogfooding: run Tantra on our own funnel and on one client account and FintechCircle, with team-wide feedback",
+ "started": "2026-10-11T07:09:41+0530",
+ "message": "Acting on 2 note(s) for T-235: Post-session follow-ups through Tantra: replay to no-shows, nudge on low engagement",
  "slices": {
   "T-072": 1,
   "T-245": 1,
