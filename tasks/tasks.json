@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T06:22:55+0530",
-  "version": 1744,
+  "updated": "2026-10-11T06:23:58+0530",
+  "version": 1746,
   "last_id": 395,
   "team": [
    {
@@ -8316,7 +8316,28 @@
     "AUDIT.md has no P0 row with status open that does not name its task",
     "probe-details 0 FAIL on main"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Live old centre, Day 1 Watch",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/reference/?v=20261011#d1-watch"
+    },
+    {
+     "label": "AUDIT.md",
+     "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
+    },
+    {
+     "label": "probe-details output",
+     "url": "/tmp/t197-details3.log"
+    },
+    {
+     "label": "probe-own-join output",
+     "url": "/tmp/t197-ownjoin.log"
+    },
+    {
+     "label": "Coordination log",
+     "url": "/Users/adithyamurali/tantra-round5-coord/LOG.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -8359,6 +8380,11 @@
      "ts": "2026-10-09T19:18:34+0530",
      "who": "claude",
      "note": "O013 is fixed (729da61: the old centre's Join button and calendar read the attendee's own Zoom link from their feed token, probe-own-join 16/16 on a local centre). AUDIT.md has no open P0 without a task (X001 to X003 fixed in T-260, X051 tracked in T-260, H056 fixed in T-122, O013 and M033 fixed). probe-details now 0 FAIL on main (static, 30 WARN); I made it skip workshop-plan/library, whose verbatim client dates caused the 2 FAILs. Not done: the mirror publish and Worker deploy, because the shared tree has other lanes' uncommitted work and no Worker code changed."
+    },
+    {
+     "ts": "2026-10-11T06:23:37+0530",
+     "who": "claude",
+     "note": "Checked and closed out what I could: the old centre fix 729da61 is already in origin/main and live (T-278 publish: mirror 8b59f66, Worker 22952e72), so I made no new deploy; on the live page each day shows its own Zoom link when the attendee feed answers and the fallback chip when it does not, and probe-own-join passes 16/16. probe-details on a clean export of main is NOT at 0 yet: 5 FAIL, 56 WARN with the local centre section skipped because it stalled; I fixed the two this run could (the playbook 66px phone overflow and a false date FAIL, both in commit b678662, live after the next publish) and logged the other five as AUDIT rows G143 and G144 (guide title sizes, T-135), G145 (pinned scene, T-025) and G146 (two screenshot widths, T-240). AUDIT.md is recounted at 520 findings with all 63 P0 fixed and none open."
     }
    ],
    "order": 1970
@@ -15279,6 +15305,11 @@
      "ts": "2026-10-11T06:22:55+0530",
      "who": "claude",
      "note": "Owner and assignee were already Nelbin (nelbinxav) and the ask already goes to him with the Danger Zone steps, so I only added the closing rule: T-145 closes once the fork returns 404 and 5b9f57d6 can't be opened on adisuja's repo. Checked the GitHub API on 2026-10-11: the fork still returns 200 and 5b9f57d6 still opens on adisuja/tantra-workshop-live (200), so this stays blocked on Nelbin deleting the fork."
+    },
+    {
+     "ts": "2026-10-11T06:23:58+0530",
+     "who": "claude",
+     "note": "Verify pass (fresh reviewer, 2026-10-11): nothing had to change. On the board, owner and assignee are Nelbin, the ask is addressed to Nelbin with the Danger Zone steps, and the spec and ask both carry the T-145 closing rule. GitHub checked today: the fork still returns 200 and 5b9f57d6 still opens on adisuja/tantra-workshop-live, so this stays blocked on Nelbin deleting the fork."
     }
    ],
    "order": 3410,
