@@ -1,6 +1,30 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T08:41:05+0530",
+   "task_id": "T-121",
+   "mode": "feedback",
+   "status": "review",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
+   "ts": "2026-10-11T08:41:01+0530",
+   "task_id": "T-107",
+   "mode": "feedback",
+   "status": "review",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
+   "ts": "2026-10-11T08:40:58+0530",
+   "task_id": "T-096",
+   "mode": "feedback",
+   "status": "review",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
    "ts": "2026-10-11T08:36:28+0530",
    "task_id": "T-270",
    "mode": "feedback",
@@ -71,40 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-130 is back in review for Adi. I did paperwork only, with no rebuild and no code changes, so there was nothing to commit.\n\n1. **Log line: done.** The note says the renderer shipped in eb2bb14, with 6e1facf for the three charts that were slightly too wide for a phone. I checked today that both comm"
-  },
-  {
-   "ts": "2026-10-11T07:24:20+0530",
-   "task_id": "T-247",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I checked T-247 again from scratch, and every check except the push passes. I changed no code this run, so there was nothing new to commit. The task is in review for Adi, Aquila and Bharath. The ack command reported 0 notes, so both notes appear to have been acknowledged already.\n\n| Item | State | W"
-  },
-  {
-   "ts": "2026-10-11T07:11:32+0530",
-   "task_id": "T-235",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-235 stays in review: nothing had to change, and the probe re-run in this run passed 92 of 92.\n\nCOMPLETION CHECK\n- **Commit anything uncommitted:** done. No T-235 files are uncommitted, and commit 83edbc4 is already on origin/main, so there was nothing to commit or push.\n- **Threshold visible and e"
-  },
-  {
-   "ts": "2026-10-11T06:53:37+0530",
-   "task_id": "T-229",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "turns",
-   "summary": "T-229 is blocked on one step: deploying the revops-centre Worker (`cd cloud && npm run deploy`), which I may not do without an approved decision.\n\nCOMPLETION CHECK\n- **Ripple R-165bb4b5 (verify the shared helper, skip rebuilding):** done. `isPlaceholderEmail` in `cloud/src/util.ts:121` is the single"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-096",
+ "task_id": "T-073",
  "entries": [
-  "F-9f32088b"
+  "F-04b63b02"
  ],
- "started": "2026-10-11T08:39:58+0530",
- "message": "Acting on 1 note(s) for T-096: Device cap per attendee link in the live centre admin",
+ "started": "2026-10-11T08:41:24+0530",
+ "message": "Acting on 1 note(s) for T-073: Cut session recordings into the Tantra Pro course",
  "slices": {
   "T-072": 1,
   "T-245": 1,

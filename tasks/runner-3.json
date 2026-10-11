@@ -1,6 +1,30 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T08:41:06+0530",
+   "task_id": "T-073",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
+   "ts": "2026-10-11T08:41:01+0530",
+   "task_id": "T-121",
+   "mode": "feedback",
+   "status": "review",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
+   "ts": "2026-10-11T08:40:57+0530",
+   "task_id": "T-107",
+   "mode": "feedback",
+   "status": "review",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
    "ts": "2026-10-11T08:35:48+0530",
    "task_id": "T-081",
    "mode": "feedback",
@@ -71,41 +95,17 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-363 stays blocked on the client's written yes through Amal (tracked as T-364). Everything around the ask is built and committed in `5253fe2`, not pushed; the read-only audit of the client account was not run.\n\n**Completion check**\n\n| # | Item | State | Evidence from this run |\n|---|------|-------|"
-  },
-  {
-   "ts": "2026-10-11T06:32:59+0530",
-   "task_id": "T-151",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-151 stays in review: the intake feeds T-153's store directly and triage now meets the 90% bar on Sonnet, but the guide is still not linked in the app.\n\nCOMPLETION CHECK\n- **Feed T-153's schema directly (the ripple note):** done. `features_feed.py` writes every report triaged as a feature into T-15"
-  },
-  {
-   "ts": "2026-10-11T06:16:27+0530",
-   "task_id": "T-152",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "**COMPLETION CHECK, T-152 (status: review, reviewers Bharath and Adi, committed as 6a7fa5e, not pushed)**\n\nT-152 stays in review: the fixes, CI rule and report are verified locally, but nothing is merged or enforced on tantra-backend-v2 until Bharath acts.\n\n**Feedback F-cad904cd**\n\n1. **Confirm PRs "
-  },
-  {
-   "ts": "2026-10-11T06:07:54+0530",
-   "task_id": "T-061",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-061 stays blocked on the one existing ask, the GrowthClub Tantra API key (T-337); the verify pass found one gap, which is fixed and pushed but not yet deployed.\n\nCOMPLETION CHECK\n\n- **Lane routing code, migration 0023, simulator route, probe:** done. `app/scripts/probe-lanes.mjs` passed 21 of 21 o"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-107",
+ "task_id": "T-074",
  "entries": [
-  "F-a0ca4550",
-  "R-9a5ee669"
+  "F-5e21758a",
+  "R-76a13ade"
  ],
- "started": "2026-10-11T08:39:57+0530",
- "message": "Acting on 2 note(s) for T-107: Delete wiring test rows (ops.db + Work Tracker)",
+ "started": "2026-10-11T08:41:30+0530",
+ "message": "Acting on 2 note(s) for T-074: Weekly coaching call and community moderation rota for Tantra Pro members",
  "slices": {
   "T-135": 1,
   "T-148": 1,
