@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T17:22:58+0530",
+   "task_id": "T-341",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-341 is still blocked on Nelbin: their fork was still live on today's GitHub check, so the task can't close yet.\n\n**Completion check (all checked this run):**\n1. **Read-only API check of the fork:** done. `nelbinxav/tantra-workshop-live` returned 200, so the fork still exists.\n2. **Check of commit "
+  },
+  {
    "ts": "2026-10-11T17:07:40+0530",
    "task_id": "T-032",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-292 is not done: the probe chain hasn't passed yet, so nothing is pushed and the live Worker is not deployed. I set it to `doing` and did not ack F-aaaa255d, so th"
-  },
-  {
-   "ts": "2026-10-11T12:58:05+0530",
-   "task_id": "T-253",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "error",
-   "summary": "[process exit 143; stderr: ''] My Cal.com, Stripe and Dodo guards were already committed in 1deec78, which T-278's runner swept up. I'll cite that commit, then update CHECKS.md and the ledger."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-341",
+ "task_id": "T-396",
  "entries": [
-  "F-88d25617"
+  "F-e4e225ad"
  ],
- "started": "2026-10-11T17:14:18+0530",
- "message": "Acting on 1 note(s) for T-341: Delete the fork nelbinxav/tantra-workshop-live (still holds the T-145 leak)",
+ "started": "2026-10-11T17:32:25+0530",
+ "message": "Acting on 1 note(s) for T-396: Confirm inputs for FR-ad7abb (add a lead to a running campaign), then build it as a reviewed patch for Bharath",
  "slices": {
   "T-072": 1,
   "T-245": 1,
