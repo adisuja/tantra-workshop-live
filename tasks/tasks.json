@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T18:42:09+0530",
-  "version": 2019,
+  "updated": "2026-10-11T18:45:14+0530",
+  "version": 2021,
   "last_id": 408,
   "team": [
    {
@@ -7238,11 +7238,15 @@
    "evidence": [
     {
      "label": "Guide step 2 shot",
-     "url": "http://localhost:3000/guides/s5-challenge-stages/02.webp?v=t136-1011"
+     "url": "http://localhost:4322/guides/s5-challenge-stages/02.webp?v=t136-1011b"
     },
     {
-     "label": "Guide page",
-     "url": "http://localhost:3000/guides/s5-challenge-stages?v=t136-1011"
+     "label": "Guide render",
+     "url": "http://localhost:4322/debug/guides?only=s5-challenge-stages&v=t136-1011b"
+    },
+    {
+     "label": "Guide source",
+     "url": "app/src/content/guides/s5-pipeline/s5-challenge-stages.ts"
     },
     {
      "label": "Timeline route",
@@ -7302,6 +7306,11 @@
      "ts": "2026-10-11T17:07:34+0530",
      "who": "claude",
      "note": "T-032 update: the onboarding centre now shows each attendee's Day N output link and PDF on that day's session card (deployed, commit 6c65c86c), read from /api/me outputs. Nothing else changes here."
+    },
+    {
+     "ts": "2026-10-11T18:43:38+0530",
+     "who": "claude",
+     "note": "Dropped the old PLANNED line from the guide header so the event names match the worker timeline (attended-day-N, survey_submitted_dayN, output_delivered_dayN). Step 2 already shows the real /crm/contact shot of a test attendee. Verified today: probe-t266 all passed, check-guides capture-needed 57 (down from 58), probe-guides PASS on s5-challenge-stages (light and dark, 1440 and 390). Pushed main at 836be373. Open the guide step 2 shot to sign off."
     }
    ],
    "order": 1360,
@@ -12866,7 +12875,7 @@
    "evidence": [
     {
      "label": "Centre (live)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?v=9eca4944"
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?v=b6423609"
     },
     {
      "label": "Probe",
@@ -12918,6 +12927,11 @@
      "ts": "2026-10-11T08:00:55+0530",
      "who": "claude",
      "note": "Verify pass, nothing had to change: the calendar service-account sign-in reads only its own gcp client (never the Drive one), and with no client saved the calendar Workspace card shows guide steps 1 to 4 by hand. Both typechecks have 0 errors and probe-s1-auto passed 56 of 56 against a fresh simulator, including the new checks (Drive client alone keeps the button hidden, a sim_ gcp client shows it). Live Worker 9eca4944 has the fix and /api/gcp/start refuses requests without a session (401). The one-grant path is built but dormant and has only run against the simulator."
+    },
+    {
+     "ts": "2026-10-11T18:45:14+0530",
+     "who": "claude",
+     "note": "Re-ran probe-s1-auto on a fresh simulator (:8912) and local centre (:8913, wrangler dev --local, new D1): 56 of 56 pass, including the checks that a Drive client alone keeps Build my service accounts hidden and a sim_ gcp client shows it. The admin sign-in worked once the probe got its own ports, so no harness change was needed. Both typechecks have 0 errors and the fix (62dff8d) was already on origin/main, so nothing to push. I redeployed revops-centre from a clean origin/main worktree (836be373) as version b6423609; live /api/gcp/start returns 401 without a session. The one-grant service-account path is built but dormant and has only run on the simulator. Nothing is asked of Adi. Open https://revops-centre.growthcluborg.workers.dev/onboarding/?v=b6423609"
     }
    ],
    "order": 2580
