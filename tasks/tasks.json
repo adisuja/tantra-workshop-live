@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T16:25:43+0530",
-  "version": 1955,
+  "updated": "2026-10-11T16:31:24+0530",
+  "version": 1958,
   "last_id": 407,
   "team": [
    {
@@ -2776,14 +2776,14 @@
     },
     {
      "label": "Referral dashboard (Replies column)",
-     "url": "workshop-plan/referrals.html"
+     "url": "workshop-plan/referrals.html?v=1011b"
     }
    ],
    "blockers": [
     "T-056 list imported",
     "Each member connects their own LinkedIn in Tantra"
    ],
-   "needs_from_owner": "Each participating member signs in at https://usetantra.com/connectors/channels/linkedin and connects their own LinkedIn (guide: workshop-plan/outreach/connect-linkedin-guide.md). Pro shows 2 of 2 accounts in use, so a third profile needs an extra account (+$20) first. The list import is the sign-in already asked on T-056.",
+   "needs_from_owner": "Not an ask for Adi. Bhaskar: once the T-056 list is imported (its own sign-in ask), get the wave 1 members (2 existing slots) connected at https://usetantra.com/connectors/channels/linkedin using the connect guide, then start the campaign yourself from launch-kit.md section 3.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2834,10 +2834,20 @@
      "ts": "2026-10-11T05:28:04+0530",
      "who": "claude",
      "note": "Verify pass: the T-057 wait is gone and readiness YES, the caps and the 2 of 2 Pro accounts are all in the launch kit (checked on disk). I added the weekly limits from T-057 (180 connects, 600 messages, 400 visits) and a probe check for the Replies column: probe-referrals 15 of 15, referral tests 27 of 27. Nothing is launched: every member still shows not connected and the T-056 list is not imported. Open workshop-plan/outreach/launch-kit.md and workshop-plan/referrals.html?v=1011a."
+    },
+    {
+     "ts": "2026-10-11T16:31:24+0530",
+     "who": "claude",
+     "note": "People: assignee Claude → Bhaskar (by claude)."
+    },
+    {
+     "ts": "2026-10-11T16:31:24+0530",
+     "who": "claude",
+     "note": "Bhaskar and Bharath: the launch kit now shows how the first line works (Tantra help centre: put the T-059 line in a custom field called firstLine at import, use {{firstLine}} in the LinkedIn step). Wave 1 is the 2 profiles that fit the existing slots, nothing bought. Bharath, can the team workspace get more LinkedIn slots at no charge? Bhaskar now owns connecting members and starting the campaign after T-056 is imported. Referral tests 27/27, probe-referrals 15/15. Open workshop-plan/outreach/launch-kit.md (the mirror carries no outreach docs, so it was not republished)."
     }
    ],
    "order": 370,
-   "assignee": "Claude",
+   "assignee": "Bhaskar",
    "reviewers": [
     "Bhaskar"
    ]
