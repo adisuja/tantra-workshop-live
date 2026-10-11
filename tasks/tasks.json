@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T21:07:34+0530",
-  "version": 2029,
+  "updated": "2026-10-11T21:12:03+0530",
+  "version": 2030,
   "last_id": 408,
   "team": [
    {
@@ -13904,7 +13904,7 @@
    "evidence": [
     {
      "label": "Admin sign-in form",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t272c"
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t272d"
     },
     {
      "label": "Probe",
@@ -13943,6 +13943,11 @@
      "ts": "2026-10-11T08:16:17+0530",
      "who": "claude",
      "note": "Verify pass: the live checks all passed on Worker 24f8c991 (previously 5c45750f). ?k= signs nobody in, the owner key works by POST, and after I revoked test token A it was locked out while B kept working; both are now revoked. Weeks 7 to 9 Oct and 14 to 16 Oct sit on different Zoom meetings (87002851906 and 88135386601), the local probe passes 18 of 18 on this repo's code, no ruled-out vendor shows in the live admin.js, and I replaced the last ?k= link (local-stack.sh, ab1f000, pushed). Sign in at https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t272c and open Teammates and Cohort Settings."
+    },
+    {
+     "ts": "2026-10-11T21:12:03+0530",
+     "who": "claude",
+     "note": "Live check on Worker version 11f4dff4 (2026-10-11): GET /admin/enter?k=<owner key> set no cookie, a POST with the owner key signed in; test tokens t272-a (id 5) and t272-b (id 6) both signed in, after revoking A it got 401 and could not sign in again while B kept 200, then B was revoked too (all 6 test tokens are now revoked). Cohort Settings lists Wed 7 to Fri 9 Oct on Zoom meeting 87002851906 and Wed 14 to Fri 16 Oct on 88135386601. The scripts already sign in by POST, and I replaced the last two ?k= sign-in lines in the 2026-10-02 and 2026-10-06 handoff docs (efe396a3, pushed); no Worker code changed, so no deploy. Sign in at https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t272d, then open Teammates and Cohort Settings."
     }
    ],
    "order": 2720
