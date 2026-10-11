@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T11:03:40+0530",
-  "version": 1832,
+  "updated": "2026-10-11T11:07:48+0530",
+  "version": 1833,
   "last_id": 397,
   "team": [
    {
@@ -3060,26 +3060,98 @@
   },
   {
    "id": "T-074",
-   "status": "blocked",
+   "title": "Weekly coaching call and community moderation rota for Tantra Pro members",
+   "area": "Product",
    "owner": "Amal",
+   "priority": "P2",
+   "due": "2026-10-16",
+   "status": "blocked",
+   "why": "The $999 Tantra Pro course promises group coaching and a community; members stay (and pay) only if both run every week.",
+   "spec": "(1) Create a recurring weekly Zoom Pro meeting on the the owner's Google test identity account for Pro coaching (same room settings as the workshop meetings, T-223). (2) Write a moderation rota from the team roster (Amal lead, plus Nelbin and Bhaskar) for the WhatsApp community (T-040 creates it). (3) Send a weekly member newsletter drawn from the coaching call via Resend or Tantra email (no Beehiiv). Start once the Pro course is on sale (T-071).",
+   "done_when": [
+    "Recurring coaching meeting exists and its link is in the Pro course home",
+    "Rota published to the team (written in the task log)",
+    "First weekly newsletter sent"
+   ],
+   "evidence": [
+    {
+     "label": "Pro course home (admin)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/pro/course?v=1791697068"
+    },
+    {
+     "label": "Registration page",
+     "url": "https://us06web.zoom.us/meeting/register/JNx3usQKShek1rGMvx07FQ"
+    },
+    {
+     "label": "Rota",
+     "url": "workshop-plan/pro/moderation-rota.md"
+    },
+    {
+     "label": "Probe",
+     "url": "app/scripts/probe-pro-coaching.mjs"
+    },
+    {
+     "label": "Newsletter",
+     "url": "app/scripts/pro-newsletter.mjs"
+    }
+   ],
+   "blockers": [
+    "T-071 Pro course not on sale yet"
+   ],
+   "needs_from_owner": "One email sender for our own account: either save the Tantra API key and sender mailbox in Cohort Settings at https://revops-centre.growthcluborg.workers.dev/admin/ (fields 'Tantra API key' and 'sender mailbox'), or put a Resend API key in ~/.config/tantra/resend-api-key and the verified from address in ~/.config/tantra/pro-newsletter-from. Then the 'Adi test' send and issue 1 (after the 13 Oct call) go out.",
+   "log": [
+    {
+     "ts": "2026-09-18T18:00:00-04:00",
+     "who": "claude",
+     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-10-08T00:21:42+0530",
+     "who": "claude",
+     "note": "Task Command Center review 2026-10-08: still accurate. Still needed; no newer task covers coaching cadence or moderation rota."
+    },
+    {
+     "ts": "2026-10-08T00:48:49+0530",
+     "who": "claude",
+     "note": "Pass 2 (2026-10-08): pass 2: made actionable against current tools: coaching on a recurring Zoom Pro meeting, community in the WhatsApp group (T-040, on hold), newsletter on Resend or Tantra email (Beehiiv is not approved, T-260). Depends on the Pro course existing (T-071)."
+    },
+    {
+     "ts": "2026-10-09T05:15:10+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Amal → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-10T04:14:10+0530",
+     "who": "claude",
+     "note": "People: reviewers Amal → Amal/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-10T04:14:10+0530",
+     "who": "claude",
+     "note": "Built and deployed: weekly 'Tantra Pro Weekly Coaching' Zoom Pro meeting 81507619710 (Tuesdays 11:00 ET, 60 min, registration on, workshop room settings, 50 occurrences from 13 Oct), link stored as settings key pro_coaching_url; probe-pro-coaching 7/7 passes live. Rota (Amal lead, Nelbin/Bhaskar alternating, check times, escalation, rules) is in workshop-plan/pro/moderation-rota.md; newsletter template and renderer are app/scripts/pro-newsletter.mjs, but the 'Adi test' send did not go out because no Resend/Tantra sender key exists in this environment, and I did not push (it would publish the whole main branch). Still to do once T-071 ships: show pro_coaching_url on the Pro course home and send the first member newsletter."
+    },
+    {
+     "ts": "2026-10-10T16:35:33+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-10-07 was past; now 2026-10-16 (P2 rule)."
+    },
+    {
+     "ts": "2026-10-10T20:30:42+0530",
+     "who": "claude",
+     "note": "From T-071: Tantra Pro Course buyers are not added to the coaching call or the community automatically. Each purchase shows in the Tracker Payments tab (tracker_sync.py polls Dodo and writes the product name), and the team emails the access by hand. The rota should include that step until fulfilment is automated."
+    },
+    {
+     "ts": "2026-10-11T11:07:48+0530",
+     "who": "claude",
+     "note": "The Pro course home now shows the weekly coaching link (Tue 11:00 ET Zoom meeting 81507619710), deployed and pushed; probe-pro-coaching passes 8/8 live. Rota (in workshop-plan/pro/moderation-rota.md): Amal leads, Nelbin odd ISO weeks, Bhaskar even weeks, checks 09:00 and 18:00 ET, escalation moderator to Amal to Bharath, starter rules, plus a manual step at 09:00 to email new Tantra Pro Course buyers their access from the Tracker Payments tab, since fulfilment is not automatic (T-071). /pro needed no change (copy already says access, including coaching, arrives by email); the test and issue 1 newsletter sends wait only on a sender key."
+    }
+   ],
+   "order": 460,
    "assignee": "Claude",
    "reviewers": [
     "Amal",
     "Bharath"
-   ],
-   "priority": "P2",
-   "due": "2026-10-16",
-   "area": "Product",
-   "order": 460,
-   "title": "T-074: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [],
-   "held": true
+   ]
   },
   {
    "id": "T-080",
