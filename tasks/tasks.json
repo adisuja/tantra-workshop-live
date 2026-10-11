@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T22:19:13+0530",
-  "version": 2052,
+  "updated": "2026-10-11T22:20:35+0530",
+  "version": 2055,
   "last_id": 408,
   "team": [
    {
@@ -3346,16 +3346,28 @@
    ],
    "evidence": [
     {
+     "label": "/pro welcome state (live)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/pro/?paid=1&status=succeeded&payment_id=pay_probe&v=t074c"
+    },
+    {
+     "label": "Pro course home",
+     "url": "https://revops-centre.growthcluborg.workers.dev/pro/course?v=t074c"
+    },
+    {
      "label": "Registration page",
      "url": "https://us06web.zoom.us/meeting/register/JNx3usQKShek1rGMvx07FQ"
     },
     {
-     "label": "Pro course home",
-     "url": "https://revops-centre.growthcluborg.workers.dev/pro/course?v=t074b"
+     "label": "Rota and access email",
+     "url": "workshop-plan/pro/moderation-rota.md"
     },
     {
-     "label": "Rota",
-     "url": "workshop-plan/pro/moderation-rota.md"
+     "label": "Newsletter sender",
+     "url": "cloud/src/pro-newsletter.ts"
+    },
+    {
+     "label": "Newsletter script",
+     "url": "app/scripts/pro-newsletter.mjs"
     },
     {
      "label": "Probe",
@@ -3364,16 +3376,12 @@
     {
      "label": "Member list",
      "url": "workshop-plan/pro/pro_members.py"
-    },
-    {
-     "label": "Newsletter",
-     "url": "app/scripts/pro-newsletter.mjs"
     }
    ],
    "blockers": [
     "Email sender for the Pro access email (see needs_from_owner)"
    ],
-   "needs_from_owner": "One email sender for our own account: either save the Tantra API key and sender mailbox in Cohort Settings at https://revops-centre.growthcluborg.workers.dev/admin/ , or a Resend API key and verified From address in ~/.config/tantra/resend-api-key and ~/.config/tantra/pro-newsletter-from. Then the Adi test send runs, and issue 1 goes out after the Tue 13 Oct call.",
+   "needs_from_owner": "Waiting only on T-123: connect team@growthclub.org in Tantra under Connectors, Email Accounts at https://usetantra.com (the T-337 API key is already saved). Then the Adi test send and issue 1 (test inbox and team only) go out with node app/scripts/pro-newsletter.mjs --send-test and --send-issue after the Tue 13 Oct call.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -3434,6 +3442,16 @@
      "ts": "2026-10-11T12:30:32+0530",
      "who": "claude",
      "note": "From T-071 verify pass: removed the stale 'T-071 Pro course not on sale yet' blocker, since /pro has sold the Tantra Pro Course on Dodo (pdt_0NpKlRqJAjyAf3axboQSR) since 2026-10-10. Pro fulfilment is still manual: the team emails course, community and coaching access to each buyer (rota step 2) until the access email has a sender."
+    },
+    {
+     "ts": "2026-10-11T22:19:54+0530",
+     "who": "claude",
+     "note": "Rota (full text in workshop-plan/pro/moderation-rota.md): Lead Amal. Moderator on duty: Nelbin in odd ISO weeks, Bhaskar in even weeks; they join the Tue 11:00 ET coaching call and post the recording and weekly task the same day. Checks Mon to Fri at 09:00 and 18:00 ET plus a Saturday 11:00 sweep, answers within one working day. New member access (manual until fulfilment is automated): at 09:00 the moderator on duty opens the Tracker Payments tab, finds new 'Tantra Pro Course' payments, emails each buyer the course home, the coaching registration link and the community invite using the Pro Access Email template, and marks the row sent. Escalation: rule break, remove and warn privately; repeat, Amal decides; billing or access, move to private and hand to Nelbin; anything unsettled, Amal, then Bharath for technical issues; long product questions, Tuesday's call; legal, harassment or safety, Amal acts at once and tells Adi the same day. Starter rules: be useful and kind; no selling, affiliate links or cold DMs; never post client data, keys or passwords; one question per thread with what you tried; share wins; long questions go to the call; members only, do not share invites."
+    },
+    {
+     "ts": "2026-10-11T22:20:03+0530",
+     "who": "claude",
+     "note": "The live /pro welcome state now links the Tuesday coaching call. The hand-sent access email template in the rota carries the same link, and the newsletter now sends through the Tantra key saved in Cohort Settings (Worker 6a8dc55a, mirror 92ff0c6 /pro only, main pushed). Checked live: probe-pro all pass, probe-pro-coaching 11/11. The Adi test send ran but stopped before sending because team@growthclub.org is not a connected Tantra mailbox, which is the same input T-123 tracks (the T-337 key is already saved). For T-073: the course home with the coaching link is https://revops-centre.growthcluborg.workers.dev/pro/course?v=t074c"
     }
    ],
    "order": 460,
@@ -8543,6 +8561,11 @@
      "ts": "2026-10-11T22:19:13+0530",
      "who": "claude",
      "note": "Ran the local pilot end to end: on a scratch copy of development f0b901e with both infrastructure patches, the base and each of the 5 bug fixes passed scripts/premerge.sh in 101 to 329 s, and its preview answered ok on /health 50 to 54 s after up (local preview, not production). Four tests that failed only under load are now fixed in the red-suites patch, and the timings table is in agentic-dev-cycle.md. The ripple needed no change because the doc had nothing stale about empty bands. Open http://localhost:8899/pipeline?v=1011c and workshop-plan/pipeline/agentic-dev-cycle.md. Bharath still has to apply the patches and agree the review limits."
+    },
+    {
+     "ts": "2026-10-11T22:20:35+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-158."
     }
    ],
    "order": 1540,
