@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T08:55:01+0530",
-  "version": 1819,
+  "updated": "2026-10-11T09:10:10+0530",
+  "version": 1820,
   "last_id": 397,
   "team": [
    {
@@ -10067,6 +10067,11 @@
      "ts": "2026-10-10T20:45:17+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-10: Zoom has still not granted the two fields (read-only check today: no disable_participant_video anywhere, mute field at its default on 88135386601). I fixed three gaps in the daily job: it now checks only cohort workshop meetings (it was treating the 9 Oct coaching call as next week's cohort), it adds the 'not granted in time for the 14 Oct cohort' line by itself on 13 Oct, and it closes this task on a confirmed grant; Check in Zoom now also lists both Support fields (local probe 60 of 60 passed, commit not deployed, so it ships with the next centre deploy). Heads up: the fallback T-226 is itself blocked on T-335 (Live Control app credentials), so mute and video are not enforced for 14 Oct until that lands."
+    },
+    {
+     "ts": "2026-10-11T09:10:10+0530",
+     "who": "claude",
+     "note": "Zoom check 2026-10-11: not granted yet. disable_participant_video is in no answer and the mute field is still at its default (/users/me/settings 200, /accounts/me/settings 400, /accounts/me/lock_settings 400, /meetings/88135386601 200); the centre's Zoom Support locks stay off and Live Control (T-226) covers mute and video."
     }
    ],
    "order": 2250
