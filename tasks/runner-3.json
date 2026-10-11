@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T02:10:40+0530",
+   "task_id": "T-284",
+   "mode": "feedback",
+   "status": "hold",
+   "result": "ok",
+   "summary": "I re-checked the prep and found nothing to fix, so T-284 stays on `hold` waiting for Adi's verdicts in T-282. Nothing was re-exported, committed or pushed, and nothing went live.\n\n**What the orchestrator note asked for:**\n- **Web copies for the 5 replaced videos:** checked and correct. Each web copy"
+  },
+  {
    "ts": "2026-10-12T02:06:36+0530",
    "task_id": "T-059",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-157 is in review, but the Apps Script redeploy and the mirror publish didn't happen. This run had no Chrome connection to the Browser 1 profile, so I opened that redeploy as its own task for Adi, T-409, and didn't type any password.\n\n| Item | State |\n|---|---|\n| Redeploy the Apps Script | Not done"
-  },
-  {
-   "ts": "2026-10-11T22:25:59+0530",
-   "task_id": "T-074",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "The work checks out, but T-074 stays blocked: no newsletter has gone out because Tantra still says team@growthclub.org isn't a connected mailbox. That connection is tracked on T-123. The T-337 key is already saved, so this isn't a new key request. I re-ran the approved test send in this run and got "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-284",
+ "task_id": "T-380",
  "entries": [
-  "F-e91e4c44"
+  "F-a3a5e6a9"
  ],
- "started": "2026-10-12T02:08:17+0530",
- "message": "Acting on 1 note(s) for T-284: Put the approved 4K walkthroughs on both onboarding centres and the playbook",
+ "started": "2026-10-12T02:10:55+0530",
+ "message": "Acting on 1 note(s) for T-380: Trash two undeployed 'Tantra funnel forms receiver' Apps Script projects (boards@fintechcircle.com)",
  "slices": {
   "T-135": 1,
   "T-148": 1,

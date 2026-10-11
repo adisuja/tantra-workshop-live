@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T02:08:47+0530",
-  "version": 2220,
+  "updated": "2026-10-12T02:11:03+0530",
+  "version": 2222,
   "last_id": 413,
   "team": [
    {
@@ -14902,6 +14902,11 @@
      "ts": "2026-10-12T02:08:47+0530",
      "who": "claude",
      "note": "Checked the 5 web copies T-283 replaced against their 4K masters (mtime, and duration read from the mp4 header since ffprobe is not installed): kie 59 s, stripe 85.5 s, hubspot 69.5 s, zoho 84 s, wistia 82 s. Each web copy is from 10-11, newer than its 10-09 master, and the lengths match exactly. Nothing needed re-exporting, the V2 seconds already match, and the branch is clean at 075d1686, so there was nothing to push. All 18 stay held. Waiting on Adi's verdicts in T-282."
+    },
+    {
+     "ts": "2026-10-12T02:10:20+0530",
+     "who": "claude",
+     "note": "Verify pass 10-12: the 5 web copies T-283 replaced are newer than their 4K masters and match them exactly (Kie.ai 59 s, Stripe 85.5 s, HubSpot 69.5 s, Zoho 84 s, Wistia 82 s, all 2560x1440 with poster, captions and meta.json), so nothing was re-exported or pushed. The V2 table has all 18 tools with the right seconds, every one held, and check-walkthroughs, check-guides and check-playbook-anchors pass; tantra-walkthroughs 075d1686 matches origin. Waiting on Adi's verdicts in T-282: http://localhost:8883/wt-review/index.html?v=2efde3d"
     }
    ],
    "order": 2840
@@ -17044,7 +17049,7 @@
   },
   {
    "id": "T-380",
-   "status": "blocked",
+   "status": "queue",
    "owner": "Nelbin",
    "assignee": "Nelbin",
    "reviewers": [
