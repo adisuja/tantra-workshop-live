@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T16:41:57+0530",
-  "version": 1968,
+  "updated": "2026-10-11T16:48:45+0530",
+  "version": 1970,
   "last_id": 408,
   "team": [
    {
@@ -1927,14 +1927,18 @@
      "url": "workshop-plan/ops/runbook.md"
     },
     {
-     "label": "Run 20261011-054418 results",
-     "url": "workshop-plan/ops/dryrun/20261011-054418/results.json"
+     "label": "Run 20261011-164656 results",
+     "url": "workshop-plan/ops/dryrun/20261011-164656/results.json"
+    },
+    {
+     "label": "Commit 5320259f on origin/main",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/5320259f"
     }
    ],
    "blockers": [
     "T-033"
    ],
-   "needs_from_owner": "Nothing new from Adi: T-031 and T-032 are real. Waits only on the T-033 live send, which needs the Tantra API key already asked in T-337. Then: python3 workshop-plan/ops/dryrun_day1.py --require-real",
+   "needs_from_owner": "Nothing new from Adi: T-031 day output and T-032 PDF and link are verified (render_pdf.py, probe_outputs.py, runbook section 6). Waits only on the T-033 live send, which needs the Tantra key already asked in T-337. Then: python3 workshop-plan/ops/dryrun_day1.py --require-real",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2020,6 +2024,11 @@
      "ts": "2026-10-11T11:59:47+0530",
      "who": "claude",
      "note": "T-033 ripple: dryrun_day1.py rerun on a private simulator stack (run 20261011-115532): all 3 personas got real day output, PDF and delivery code (sim vendor) in 10 to 15 s; timings are in ops/runbook.md."
+    },
+    {
+     "ts": "2026-10-11T16:48:45+0530",
+     "who": "claude",
+     "note": "The dry run now runs on its own: when :8790 is stale it starts a private centre and simulator, runs, and stops them (:8790 untouched). Run 20261011-164656 took SendFlow, Apex Growth and Sarah Chen from survey to email and WhatsApp in 10.3 s, 13.4 s and 14.6 s with no manual step, a separate refusal address bounced as designed, and all four attendees read test=1 revoked=1 afterwards. Timings are in runbook.md section 6, --require-real still refuses until the Tantra key exists, and main is pushed (5320259f, cd5590b included)."
     }
    ],
    "order": 240,
@@ -10837,6 +10846,11 @@
      "ts": "2026-10-11T16:41:57+0530",
      "who": "claude",
      "note": "The key was already saved sealed in Admin and redacted by the T-123 run. The reminders probe passes 92 checks with 0 failures on a private centre and vendor-sim, including one welcome with its own Zoom, calendar and centre links, and a rotated calendar link rewriting the contact. The live run stopped with nothing created because team@growthclub.org is not a connected mailbox in the GrowthClub Tantra workspace, so the live welcome email and contact cleanup wait on that one connection."
+    },
+    {
+     "ts": "2026-10-11T16:48:28+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-123."
     }
    ],
    "order": 2280
