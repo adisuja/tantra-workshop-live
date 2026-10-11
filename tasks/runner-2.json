@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T06:24:49+0530",
+   "task_id": "T-341",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-341 stays blocked on Nelbin deleting the fork; the verify pass found nothing to fix.\n\nCOMPLETION CHECK\n- **Set owner and assignee to nelbinxav:** done. `tasks.json` read this run shows owner Nelbin and assignee Nelbin, with reviewers Bharath and Adi.\n- **Send the ask to Nelbin, not Adi:** done on "
+  },
+  {
    "ts": "2026-10-11T06:21:32+0530",
    "task_id": "T-087",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-253 stays blocked on the test keys only; the verify pass found one gap (no record for the Twilio unused template variable check) and fixed it in `cloud/src/connectors/CHECKS.md`.\n\nCOMPLETION CHECK\n\n- **Zoom event subscription by API:** done. I re-ran the check live in this run and Zoom refused bot"
-  },
-  {
-   "ts": "2026-10-10T20:51:16+0530",
-   "task_id": "T-282",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-282 stays in review: the verify pass found no gaps in the review index, and it is still waiting on Adi's approve or redo per video.\n\nCOMPLETION CHECK\n- **Refresh the video count and list:** done. The served index shows 18 cards, each with its step count and length, and regenerating it with `review"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-341",
+ "task_id": "T-025",
  "entries": [
-  "R-9d53da45"
+  "F-250d5e5b"
  ],
- "started": "2026-10-11T06:22:35+0530",
- "message": "Acting on 1 note(s) for T-341: Delete the fork nelbinxav/tantra-workshop-live (still holds the T-145 leak)",
+ "started": "2026-10-11T06:25:37+0530",
+ "message": "Acting on 1 note(s) for T-025: Reverse-squeeze content at full whiteboard scope",
  "slices": {
   "T-072": 1,
   "T-245": 1,
