@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T01:59:14+0530",
-  "version": 2215,
+  "updated": "2026-10-12T02:03:38+0530",
+  "version": 2217,
   "last_id": 413,
   "team": [
    {
@@ -13954,11 +13954,11 @@
    "evidence": [
     {
      "label": "Live hub",
-     "url": "https://adisuja.github.io/tantra-workshop-live/?v=t273v3"
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=t273f341"
     },
     {
      "label": "Local hub",
-     "url": "file:///Users/adithyamurali/tantra-redesign/workshop-plan/index.html?v=t273v3"
+     "url": "file:///Users/adithyamurali/tantra-redesign/workshop-plan/index.html?v=t273f341"
     }
    ],
    "blockers": [],
@@ -14008,6 +14008,11 @@
      "ts": "2026-10-11T21:57:42+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-144."
+    },
+    {
+     "ts": "2026-10-12T02:03:38+0530",
+     "who": "claude",
+     "note": "The live mirror (adisuja/tantra-workshop-live, HEAD fa84ecc75) serves exactly the f341d58f hub: it has 'Two-Month Platform Pass' and no '1 month, worth', so nothing had to be republished. probe-review-hub.mjs on live says ALL LINKS OK (423 links on 23 pages). The 08:26 'one thing left for Bhaskar' about vip-kit.ts no longer applies: vip-kit.ts:95 already says Two-Month Platform Pass, matching funnel.ts:86-102. Open https://adisuja.github.io/tantra-workshop-live/?v=t273f341"
     }
    ],
    "order": 2730
