@@ -99,13 +99,13 @@
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-235",
+ "task_id": "T-217",
  "entries": [
-  "F-bb81a15c",
-  "R-08fbd69f"
+  "F-b7d07f86",
+  "R-fc69507f"
  ],
- "started": "2026-10-11T07:01:34+0530",
- "message": "Acting on 2 note(s) for T-235: Post-session follow-ups through Tantra: replay to no-shows, nudge on low engagement",
+ "started": "2026-10-11T07:09:59+0530",
+ "message": "Acting on 2 note(s) for T-217: Attendee funnel reminders through a Tantra omni-channel campaign (registrant import by webhook)",
  "slices": {
   "T-135": 1,
   "T-148": 1,
