@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T08:32:31+0530",
-  "version": 1814,
+  "updated": "2026-10-11T08:35:39+0530",
+  "version": 1817,
   "last_id": 397,
   "team": [
    {
@@ -3189,6 +3189,11 @@
      "ts": "2026-10-10T16:35:33+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-22 was past; now 2026-10-16 (P2 rule)."
+    },
+    {
+     "ts": "2026-10-11T08:35:39+0530",
+     "who": "claude",
+     "note": "The Orchestrator's request was already carried out on 2026-10-10 03:55: six Funnel tabs, each with a one-line description and a #gid= Work Tracker link, Checkout Returns marked unverified. Nothing new was built this run, and I did not re-read the doc this run because the run budget ran out. FYI Nelbin: please open https://docs.google.com/document/d/1p7-I7hMaHE3uJYw1oKz8VsJdpBwPi4hjzuZ_hgOnx-Q/edit?tab=t.dr12g7dtpiel and sign off."
     }
    ],
    "order": 480,
@@ -12894,7 +12899,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "doing",
    "why": "Owner rule 2026-10-03 (new centre must educate): every card teaches why and how.",
    "spec": "Show card-education outcome, why and how by default (not only ?learn), preselect and describe each start-stack option with cost, add per-business examples (software, consultancy, course, solo) to every typed field, ask before the first paid AI draft, and link the foundations chapters on the Day 0 card with a readable funnel board. Closes audit findings N067, N068, N069, N070, N080, N088. Per finding: N067 (app/src/app/onboarding/centre/centre.tsx): Show the education outcome/why/how by default on each card, not only behind ?learn. N068 (app/src/lib/workshop-cards.ts): Preselect the first option and add a one-line description and cost per option. N069 (app/src/lib/workshop-cards.ts): Add per-business examples to every typed field. N070 (app/src/lib/workshop-cards.ts): Add solo examples (and d1_funnel_reason examples) to these fields. N080 (app/src/app/onboarding/centre/centre.tsx): Ask before the first paid draft, or only auto-draft on the attendee's current next task. N088 (app/src/lib/workshop-cards.ts): Link the foundations chapters on the card and make the funnel board readable in the 616px frame (or open full size). When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Merge order: build on main after T-251 lands (branch tantra-walkthroughs: e4bd0b8 removes the ruled-out tools and rewrites workshop-cards.ts, agentic.ts, jobs.ts, agent.tsx and coverage.json; probe fixes 043b5ab and aa22a3f, no READY yet in /Users/adithyamurali/tantra-round5-coord/LOG.md). Until then branch from tantra-walkthroughs; AUDIT.md line numbers predate that change.",
    "done_when": [
@@ -12960,6 +12965,11 @@
      "ts": "2026-10-10T03:54:35+0530",
      "who": "claude",
      "note": "Live: every typed field now has a software, consultancy, course and solo example; Choose your tools preselects the first option on each line and says what each option does and costs; an AI card asks once before drafting and only auto-drafts after a yes (stored per attendee); the Day 0 funnels card links the four foundations chapters and opens each board full size. Verified with node app/scripts/probe-t270.mjs (21/21 on my own stack) and check-examples (597/597), then pushed main 147b841, deployed Worker 4cc3b694 and published mirror 11ef710. N067 to N088 marked fixed in AUDIT.md. Open the centre and go to Choose your tools, then Write the Offer."
+    },
+    {
+     "ts": "2026-10-11T08:35:15+0530",
+     "who": "claude",
+     "note": "9fca8f3 was already on origin/main. ev_length had only a software example, so I added software, consultancy, course and solo examples on both cards (1ef94a2, pushed); check-examples passes 641/641 and probe-t270 passes its two data checks. Left for the next pass: the probe's browser step times out on page.fill, so the live consent check is not yet re-verified, and the revops-centre Worker deploy plus mirror publish for 1ef94a2 are still to do."
     }
    ],
    "order": 2700
@@ -13023,6 +13033,11 @@
      "ts": "2026-10-10T03:51:52+0530",
      "who": "claude",
      "note": "Fixed 16 card findings plus X073 on branch t-271-card-copy (pushed, 767e3a6 + probe 517cfde): card copy now matches each card's fields and jobs, and a prospect list can pull straight from a connected GoHighLevel, HubSpot or Zoho CRM. Checked on my own local stack with the new probe-t271-cards: 38/38 pass (HubSpot 234 kept and 26 Germany left out, GoHighLevel 130, Zoho 42), typecheck clean. N051 is obsolete; N089 becomes obsolete once T-299 lands (it removes the DKIM card). Main's day-1 probes have been stalling since T-269's Title Case headings, so I did not run them. AUDIT.md and the READY line in LOG.md are updated."
+    },
+    {
+     "ts": "2026-10-11T08:34:42+0530",
+     "who": "claude",
+     "note": "Ready for Adi's review of the card copy. Branch t-271-card-copy (fixes 767e3a6, probe 517cfde, built on main c0c487f, pushed). READY is at LOG.md line 884, and AUDIT.md marks 16 ids fixed. N051 is obsolete (T-251 removed the Sales Navigator text). N089 is obsolete once T-299 merges. Checked today: T-299 is not on origin/main yet (start-dkim is still in workshop-cards.ts there), so no rebase or new READY line was needed. I did not rerun probe-t271-cards, probe-day1 or probe-day2 this run because the run budget ran out. The last recorded result is 38/38 for probe-t271-cards on 2026-10-10."
     }
    ],
    "order": 2710
