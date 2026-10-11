@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T08:31:33+0530",
-  "version": 1813,
+  "updated": "2026-10-11T08:32:31+0530",
+  "version": 1814,
   "last_id": 397,
   "team": [
    {
@@ -13894,7 +13894,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "hold",
+   "status": "blocked",
    "why": "The live centres and playbook still carry the v1 videos (1456 px, Log-in based, some docs-only). The v2 4K videos replace them only after Adi approves each one (T-282).",
    "spec": "FIRST, and without waiting for T-282: commit and push the v2 pipeline now. /Users/adithyamurali/tantra-walkthroughs (branch tantra-walkthroughs, HEAD 978559b) holds about 45 uncommitted changes: scripts/walkthroughs/{AGENT_BRIEF.md,addstep.py,finalize.sh,pwrec.mjs,journeys/*.md,REVERT_LEDGER.md,recordings/*,motion/}, app/public/walkthrough-review.html. Commit motion/, pwrec.mjs, cap.py, verify.py, render.sh, review.py, finalize.sh, journeys/, recordings/*.jsonl and the ledger; gitignore frames, scripts/walkthroughs/node_modules and the 4K masters (check free disk). THEN, per approved tool (after T-282): export a web copy (1080p or 1440p H.264 plus poster and captions) beside the 4K master; update app/src/lib/walkthroughs.ts (cards, seconds, guide text from journeys/<tool>.md; remove the tool from HELD_FOR_REVIEW); WatchHow on the agentic centre card and the old centre Day 0 list; app/scripts/embed-walkthroughs.mjs; titlecase.py + embed.py; check-walkthroughs, check-guides, check-playbook-anchors. The Sign in with Google video is already gone (T-286 removed the feature, main 981dbf3): do not re-add google-signin. 19 recorded walkthroughs remain in walkthroughs.ts, 12 live and 7 held for review. Then deploy and publish via the Integrator.",
    "done_when": [
@@ -13920,7 +13920,7 @@
    "blockers": [
     "T-282"
    ],
-   "needs_from_owner": "",
+   "needs_from_owner": "Approve or redo each video in T-282: http://localhost:8883/wt-review/index.html?v=6b0a712",
    "log": [
     {
      "ts": "2026-10-09T00:06:32+0530",
@@ -13946,6 +13946,11 @@
      "ts": "2026-10-11T08:31:33+0530",
      "who": "claude",
      "note": "Staged all 18 v2 videos (calcom, cloudflare, dodo, ga4, ghl, google-senders, hubspot, kie, metricool, resend, stripe, tantra, tantra-reminders, twilio, webinargeek, wistia, zoho, zoom): 1440p web copies, posters and captions sit beside each 4K master, and walkthroughs.ts now has a V2 table (title, seconds) with every tool in V2_HELD_FOR_REVIEW, so the 12 live v1 videos are unchanged (checked by loading the module). check-walkthroughs, check-guides and check-playbook-anchors pass (I mapped the new d3-live-key card to the launch step, it failed on main too) and tsc is clean; pushed tantra-walkthroughs 6b0a712. Waiting on T-282: per approved tool, remove it from both held sets, run webcopy.py --publish, embed, checks, then READY for the Integrator."
+    },
+    {
+     "ts": "2026-10-11T08:32:31+0530",
+     "who": "claude",
+     "note": "Verify pass: all 18 v2 web copies (mp4, poster, captions) exist under wt-review/<tool>/web in the tantra-walkthroughs worktree, the V2 table in app/src/lib/walkthroughs.ts:373 has all 18 tools (no google-signin) and every one is in V2_HELD_FOR_REVIEW, so the 12 live v1 videos are unchanged. check-walkthroughs, check-guides and check-playbook-anchors pass, and branch 6b0a712 matches origin/tantra-walkthroughs. The swap per tool starts as soon as Adi approves it in T-282."
     }
    ],
    "order": 2840
