@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T05:55:11+0530",
-  "version": 1730,
+  "updated": "2026-10-11T05:58:02+0530",
+  "version": 1732,
   "last_id": 394,
   "team": [
    {
@@ -15003,7 +15003,7 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Signed in as adisuja, open https://support.github.com/contact, pick topic 'Removing sensitive data', paste the full text of workshop-plan/ops/t145_github_support_request.md into the message box, and click Send.",
+   "needs_from_owner": "Signed in as adisuja, open https://support.github.com/contact and pick topic 'Removing sensitive data'. From workshop-plan/ops/t145_github_support_request.md, put the 'Subject:' line in the subject field, paste everything from 'Hello,' to 'Thank you.' into the message box, and click Send. Leave out the heading and the notes above the divider line: those are for you, not GitHub. (Why not Claude: GitHub Support has no API, only this signed-in web form, and the agent's rules forbid signing in as you or messaging outside parties.)",
    "log": [
     {
      "ts": "2026-10-09T05:04:52+0530",
@@ -15014,6 +15014,16 @@
      "ts": "2026-10-09T19:29:54+0530",
      "who": "claude",
      "note": "Updated the description: the GitHub support request can be sent now without waiting for the fork deletion, and it now also covers the fork network (nelbinxav/tantra-workshop-live). Checked the request file already contains that wording. Still needs Adi to send it."
+    },
+    {
+     "ts": "2026-10-11T05:56:26+0530",
+     "who": "claude",
+     "note": "Exact blocker, two parts. (1) Technical: GitHub Support has no API. The only way to file the purge request is the web form at support.github.com/contact inside a browser session signed in as adisuja; the gh token on this machine (scopes gist, read:org, repo, workflow) can read and push repos but cannot open a support ticket. (2) Permission: the Launch Control run rules say never message outside people and never sign in as Adi, and list both as off limits even with approval; a board note cannot widen them and this run's approval named no outward step. If you want the agent to send it, that rule in the runner prompt has to change (I may not edit it); otherwise it is one paste by you. Checked today: the request file has no placeholders and pastes as is, 5b9f57d6 and 0cf43d86 still open by SHA on adisuja/tantra-workshop-live, and the fork nelbinxav/tantra-workshop-live still exists."
+    },
+    {
+     "ts": "2026-10-11T05:58:02+0530",
+     "who": "claude",
+     "note": "Verify pass: the blocker stands and I rechecked it today. The gh token here has scopes gist, read:org, repo, workflow, so it cannot open a support ticket, and the run rules forbid signing in as you or messaging outside parties even with approval. One fix made: the ask used to say paste the full file, which would have sent our internal notes to GitHub, so it now says exactly which lines to paste. Checked via the GitHub API: 5b9f57d6 and 0cf43d86 still open by SHA and the fork nelbinxav/tantra-workshop-live still exists."
     }
    ],
    "order": 3340,
