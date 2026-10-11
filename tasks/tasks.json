@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T22:43:20+0530",
-  "version": 2088,
+  "updated": "2026-10-11T22:44:30+0530",
+  "version": 2090,
   "last_id": 410,
   "team": [
    {
@@ -11815,11 +11815,12 @@
    "assignee": "Claude",
    "reviewers": [
     "Adi",
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ],
    "priority": "P2",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "Integrator sweep 2026-10-07 (run-chain 2026-10-07)",
    "spec": "node app/scripts/probe-details.mjs (static mode: probe-details - -) reports 3 screenshot-fill FAILs: app/public/.../masterclass/audience-room-1440.avif, the s1-cold-email step 18 shot (18.webp) and the s4-rsp step 13 shot (13.webp) each fill a different share of their column than their sibling images. Re-crop or re-export each to the siblings' aspect ratio (or fix the container class if the image is right), rerun probe-details, and mark the matching AUDIT.md rows (/Users/adithyamurali/tantra-round5-coord/AUDIT.md) fixed with the commit.",
    "done_when": [
@@ -11830,26 +11831,34 @@
    "evidence": [
     {
      "label": "s1-cold-email guide",
-     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/onboarding/guides/s1-cold-email/?v=t240b"
+     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/onboarding/guides/s1-cold-email/?v=t240c"
     },
     {
      "label": "s4-rsp guide",
-     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/onboarding/guides/s4-rsp/?v=t240b"
+     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/onboarding/guides/s4-rsp/?v=t240c"
+    },
+    {
+     "label": "s1-blog guide",
+     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/onboarding/guides/s1-blog/?v=t240c"
     },
     {
      "label": "masterclass",
-     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/masterclass/?v=t240b"
+     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/masterclass/?v=t240c"
     },
     {
      "label": "screenshots 1440 and 390",
      "url": "/tmp/t240/"
     },
     {
-     "label": "probe log",
+     "label": "probe log (0 FAIL)",
      "url": "/tmp/t240-probe.log"
     },
     {
-     "label": "AUDIT G129",
+     "label": "negative check",
+     "url": "/tmp/t240-negative.log"
+    },
+    {
+     "label": "AUDIT G129 G146",
      "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
     }
    ],
@@ -11890,6 +11899,16 @@
      "ts": "2026-10-11T17:29:31+0530",
      "who": "claude",
      "note": "T-197 re-run 2026-10-11 on a clean export of main 6c65c86c: probe-details shows 0 screenshot FAILs after 3fff8f22 (log /tmp/t197x-details2.log)."
+    },
+    {
+     "ts": "2026-10-11T22:44:30+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi/Aquila → Adi/Aquila/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-11T22:44:30+0530",
+     "who": "claude",
+     "note": "Full runtime probe-details on a clean export of main 30ea25fc staged at :4361 reports 0 FAIL (56 WARN, none a screenshot-fill FAIL); the 3 original images stay clear (c38ce69, 6e7b2b6) and G146 is fixed by probe norm 3fff8f22, with a negative check proving an unmeasured wrong-width shot still FAILs. Screenshots at 1440 and 390 are in /tmp/t240/; AUDIT G129 and G146 and LOG.md updated. No push needed (3fff8f22 and c5b0dcd4 were already on origin/main) and no mirror republish (no shipped asset changed)."
     }
    ],
    "order": 2400

@@ -97,12 +97,15 @@
    "summary": "The verify pass found no gaps, so T-235 is back in review. All of its code is already on origin, and every probe passed on a fresh local centre and simulator.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Commit any uncommitted work | Done (nothing to commit) | `git status` shows no cha"
   }
  ],
- "state": "idle",
- "message": "Last sweep handled 8 task(s).",
- "task_id": null,
- "entries": [],
- "mode": null,
- "started": "2026-10-11T22:40:52+0530",
+ "state": "working",
+ "message": "Acting on 2 note(s) for T-400: Input: connect the workshop WhatsApp number in Tantra and name the test number",
+ "task_id": "T-400",
+ "entries": [
+  "F-275a69c8",
+  "R-84d2fd61"
+ ],
+ "mode": "feedback",
+ "started": "2026-10-11T22:43:59+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
