@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T12:47:36+0530",
-  "version": 1907,
-  "last_id": 401,
+  "updated": "2026-10-11T12:49:40+0530",
+  "version": 1916,
+  "last_id": 403,
   "team": [
    {
     "name": "Adi",
@@ -6782,6 +6782,16 @@
      "ts": "2026-10-10T20:55:11+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-351 (done, now recheck)."
+    },
+    {
+     "ts": "2026-10-11T12:48:27+0530",
+     "who": "claude",
+     "note": "No captures this run: preflight under /Library/Frameworks/Python.framework/Versions/3.12/bin/python3 still prints NOT READY (Accessibility NO, Mac locked; Screen Recording yes, Claude window found). No routine was created, so nothing to revert or commit; T-351 is reopened with the failed checks and T-132 runs as soon as it reads READY."
+    },
+    {
+     "ts": "2026-10-11T12:49:40+0530",
+     "who": "claude",
+     "note": "No captures this run: preflight (/Library/Frameworks/Python.framework/Versions/3.12/bin/python3 app/scripts/shots/claude-app-shots.py preflight) prints NOT READY because Accessibility is off and the Mac is locked, so no routine was created and nothing needs reverting. Demo folders are ready in /tmp/e-demo; all 5 slots are still capture_needed (check-guides total 57). T-351 is reopened with the failed checks; the agent captures all 5 once preflight prints READY."
     }
    ],
    "order": 1320,
@@ -13870,7 +13880,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "Join pages are the last step before the live session; an empty join button or a pending link loses the attendee.",
    "spec": "Export one seat-link resolver from app/src/lib/funnel.ts used by sessions.ts and both join pages and set the Zoom join URL in the deployed env, give the pending community link an actionable fallback and promise only live reminders, decide free-lane intake length (owner), derive VIP sample dates from cohortFor(), relabel webinar and cold calendar template names on /vip, use slashed privacy and terms links in success-shell.tsx, add the calendar why line and a claim URL or actionable pending state in curriculum.ts. Closes audit findings M070, O013, M034, M050, M033, M052, M054, M061, O011. Per finding: M070 (app/src/lib/funnel.ts): Export one seat-link resolver (per-day override then SEAT_URL, no placeholder) and use it in sessions.ts and both join pages. O013 (app/src/lib/sessions.ts): The join button must carry a working Zoom link. Zoom Pro is live: each weekly cohort gets its own meeting from cloud/src/zoom-pro.ts (7 to 9 Oct cohort: meeting 87002851906) and each attendee gets their own registrant join link (session_sync, private calendar feed T-220), so prefer that per-attendee link (via the centre or the attendee's feed) over a static NEXT_PUBLIC_SEAT_URL, which would point at last week's meeting. M034 (app/src/app/workshop/success/success-client.tsx): Set NEXT_PUBLIC_COMMUNITY_URL once the group exists, or give the done stage an actionable fallback. M050 (app/src/app/workshop/join/join-client.tsx): Reword 'Join the Cohort Group' so it promises only what is live: calendar reminders now, Tantra campaign reminders once T-234 ships; the WhatsApp groups are on hold (T-040). M033 (app/src/app/workshop/success/success-client.tsx): Owner decision: shorten the free-lane intake toward the paid lane's 11 questions or keep and accept the length. M052 (app/src/lib/preview-data-2.ts): Derive sample dates from cohortFor() or use undated samples in fields.ts and preview-data-2.ts. M054 (app/src/components/masterclass/vip-exhibits.tsx): Filter or relabel 'webinar' and 'cold calendar' template names in the /vip template list (as done for the prompt pack). M061 (app/src/components/masterclass/success-shell.tsx): Point footer links at /privacy-policy/ and /terms-of-service/. O011 (app/src/lib/curriculum.ts): Add a why line to the calendar step (each live day builds on the last, so missing one breaks the next) and publish NEXT_PUBLIC_PLATFORM_CLAIM_URL or replace the pending state with an actionable instruction. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md.",
    "done_when": [
@@ -13881,28 +13891,28 @@
    ],
    "evidence": [
     {
-     "label": "Free join page (add &f=<feed token> for the pending or own-link state)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=t278v"
+     "label": "Free join page (add &f=<feed token> for pending or own link)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=t278w"
     },
     {
      "label": "Paid join page (add &f=<feed token>)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=t278v"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=t278w"
     },
     {
-     "label": "VIP page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t278v"
+     "label": "Email link probe",
+     "url": "/Users/adithyamurali/tantra-redesign/app/scripts/probe-email-join-link.mjs"
     },
     {
-     "label": "Own-link probe",
+     "label": "Own-link probe, 3 states",
      "url": "/Users/adithyamurali/tantra-redesign/app/scripts/probe-join-own-link.mjs"
     },
     {
-     "label": "Own-link screenshot, free page",
-     "url": "/tmp/join-own-free-own.png"
+     "label": "Email link screenshot, free",
+     "url": "/tmp/email-join-free.png"
     },
     {
-     "label": "Own-link screenshot, paid page",
-     "url": "/tmp/join-own-paid-own.png"
+     "label": "Email link screenshot, paid",
+     "url": "/tmp/email-join-paid.png"
     },
     {
      "label": "AUDIT.md",
@@ -13961,6 +13971,11 @@
      "ts": "2026-10-11T12:25:42+0530",
      "who": "claude",
      "note": "The emailed join link is in place: the confirmation and reminder emails and the private feed now link each attendee's own join page with their feed token, the free page for free seats and the paid page for paid seats (commit e0fa5452, swept in under a T-115 label, plus the probe in the latest commit). On a local centre the reminder probe passes 96 of 96, including both new link checks, and probe-own-join (16) and probe-join-own-link (30, all 3 states on both pages) pass. Still to do: open the link from the rendered email in a browser, run probe-cohort and probe-calendar-feeds, push main, deploy revops-centre from the clean worktree /tmp/t278-wt (run cloud/scripts/build.sh first), and update the AUDIT.md and LOG.md rows. Then move this to review."
+    },
+    {
+     "ts": "2026-10-11T12:48:42+0530",
+     "who": "claude",
+     "note": "The confirmation and reminder emails and the private feed now link each attendee's own join page (free or paid), and opening that link from a rendered email on a local centre with a Zoom-registered attendee puts their own Zoom link on the button on both pages (probe-email-join-link 10 of 10; probe-calendar-feeds 67, probe-own-join 16, probe-cohort and tsc all pass). Main is pushed (95d8630e) and the centre Worker is deployed from a clean worktree as version a9f57c7a with no migration pending; nothing was sent, and the mirror did not need a republish because no page changed since ae397ec2e. Open both join pages below; add &f=<feed token> for the pending or own-link state."
     }
    ],
    "order": 2780
@@ -16221,7 +16236,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "review",
+   "status": "blocked",
    "why": "T-132 needs five real Claude desktop app screenshots. The app is on screen, but macOS refuses the background agent both screen capture and clicks or keys, and only the person at the Mac can grant that.",
    "spec": "Checked 2026-10-09 from the unattended runner: screencapture -l on the Claude window returns 'could not create image from window', and System Events and Terminal Apple Events time out on an unanswered permission prompt. Probe: python3 app/scripts/shots/claude-app-shots.py preflight (prints READY when both grants are in place). Once READY, T-132 runs without anything else from Adi.",
    "done_when": [
@@ -16255,6 +16270,16 @@
      "ts": "2026-10-11T12:47:36+0530",
      "who": "claude",
      "note": "Reran the preflight on 2026-10-11: Screen Recording is granted and the Claude window is found (id 6880), but Accessibility is still NO and the Mac was locked, so it prints NOT READY. T-132 stays waiting until both are fixed at the Mac."
+    },
+    {
+     "ts": "2026-10-11T12:48:27+0530",
+     "who": "claude",
+     "note": "Reopened by T-132 run 2026-10-11: preflight under /Library/Frameworks/Python.framework/Versions/3.12/bin/python3 prints NOT READY. Failed checks: accessibility NO (System Events cannot drive the Claude app) and screen unlocked NO; Screen Recording yes and the Claude window is found (id 6880)."
+    },
+    {
+     "ts": "2026-10-11T12:49:40+0530",
+     "who": "claude",
+     "note": "Rechecked from the T-132 run 2026-10-11: preflight under /Library/Frameworks/Python.framework/Versions/3.12/bin/python3 still prints NOT READY. Failed checks: accessibility NO and screen unlocked NO; screen recording yes, Claude window id 6880 found."
     }
    ],
    "order": 3510
@@ -16864,6 +16889,64 @@
    ],
    "order": 4010,
    "input_for": "T-400",
+   "kind": "input"
+  },
+  {
+   "id": "T-402",
+   "title": "Input from Adi for T-132: At the Mac: 1) unlock it and leave it unlocked with the Claude app open. 2) Open",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (physical): macOS lets only the person at the Mac type the login password and switch on an Accessibility grant.. Everything else in T-132 is being built around it. As soon as this is done, T-132 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "At the Mac: 1) unlock it and leave it unlocked with the Claude app open. 2) Open x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility (System Settings > Privacy & Security > Accessibility), click +, press Cmd+Shift+G, add /Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app and switch it on. Check: python3 app/scripts/shots/claude-app-shots.py preflight prints READY.",
+   "log": [
+    {
+     "ts": "2026-10-11T12:49:32+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-132."
+    }
+   ],
+   "order": 4020,
+   "input_for": "T-132",
+   "kind": "input"
+  },
+  {
+   "id": "T-403",
+   "title": "Input from Adi for T-351: On this Mac: 1) unlock the screen and leave it unlocked with the Claude app open",
+   "area": "Infra",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (physical): macOS lets only the logged-in person at the Mac unlock it and grant Accessibility; the agent cannot type his password.. Everything else in T-351 is being built around it. As soon as this is done, T-351 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "On this Mac: 1) unlock the screen and leave it unlocked with the Claude app open; 2) open System Settings > Privacy & Security > Accessibility and switch on Python (/Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app), adding it with the + button if it is not listed, plus any other app named in T-351's latest log line. Nothing else is needed; the agent confirms READY and captures the screenshots itself.",
+   "log": [
+    {
+     "ts": "2026-10-11T12:49:32+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-351."
+    }
+   ],
+   "order": 4030,
+   "input_for": "T-351",
    "kind": "input"
   }
  ]
