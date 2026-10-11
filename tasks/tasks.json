@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T00:03:10+0530",
-  "version": 2149,
+  "updated": "2026-10-12T00:05:00+0530",
+  "version": 2154,
   "last_id": 412,
   "team": [
    {
@@ -7822,7 +7822,7 @@
     "T-334",
     "T-341"
    ],
-   "needs_from_owner": "Two tracked steps remain, neither is Adi's choice: T-341 (Nelbin deletes his fork nelbinxav/tantra-workshop-live) and T-334 (Adi pastes the prepared GitHub Support text). Claude rechecks via the API and closes T-145 when the fork and SHA 5b9f57d6 both return 404.",
+   "needs_from_owner": "Waiting on two tracked steps, neither is Adi's choice: T-341 is Nelbin's step (delete his fork nelbinxav/tantra-workshop-live, still 200 on the 2026-10-12 API check) and T-334 is Adi's GitHub Support paste. T-145 closes once the fork returns 404 and 5b9f57d6 no longer opens on adisuja/tantra-workshop-live.",
    "log": [
     {
      "ts": "2026-09-26T00:17:50+0530",
@@ -7888,6 +7888,16 @@
      "ts": "2026-10-11T12:11:06+0530",
      "who": "claude",
      "note": "Ripple from T-111: nothing on T-145 had to change. GitHub API recheck 2026-10-11 (verify pass): 5b9f57d6 and 0cf43d86 still open by SHA on adisuja/tantra-workshop-live, but neither branch (main, claude/relaxed-curie-lrdw8i) contains 5b9f57d6 (compare says diverged), and the fork nelbinxav/tantra-workshop-live still exists. The Support text is ready to paste (no placeholders, names both SHAs and the fork), so T-145 still waits on T-341 (Nelbin) and T-334 (Adi)."
+    },
+    {
+     "ts": "2026-10-12T00:03:43+0530",
+     "who": "claude",
+     "note": "Updated the waiting-on text: T-341 is Nelbin's step, and T-145 closes once his fork returns 404 and 5b9f57d6 no longer opens on adisuja's repo. GitHub API recheck 2026-10-12: the fork nelbinxav/tantra-workshop-live, 5b9f57d6 and 0cf43d86 all still return 200, so T-145 stays blocked on T-341 (Nelbin) and T-334 (Adi)."
+    },
+    {
+     "ts": "2026-10-12T00:05:00+0530",
+     "who": "claude",
+     "note": "Verify pass for ripple R-5e03cedd: the waiting-on text already names T-341 as Nelbin's step and says T-145 closes once the fork returns 404 and 5b9f57d6 no longer opens on adisuja/tantra-workshop-live, so nothing else had to change. GitHub API recheck 2026-10-12: the fork, 5b9f57d6 and 0cf43d86 still return 200, and neither branch (main, claude/relaxed-curie-lrdw8i) contains 5b9f57d6 (compare says diverged), so Option B holds and T-145 still waits on T-341 (Nelbin) and T-334 (Adi's Support paste)."
     }
    ],
    "order": 1450,
@@ -11129,7 +11139,7 @@
    "blockers": [
     "Go-live only: the workshop Tantra campaign id and its API key saved in the centre admin (build and probe against vendor-sim does not wait)"
    ],
-   "needs_from_owner": "Connect team@growthclub.org as a mailbox in the GrowthClub Tantra workspace (https://app.usetantra.com, Email Accounts, Connect account), the same ask as T-123. Then the live welcome test runs without you.",
+   "needs_from_owner": "See T-408 (one input task): connect team@growthclub.org in the GrowthClub Tantra workspace (app.usetantra.com, Email Accounts, Connect account), rotate the Tantra key (Connectors, API Keys) and paste the new one at https://revops-centre.growthcluborg.workers.dev/admin/ under Cohort Settings, Session Reminders, Tantra API key.",
    "log": [
     {
      "ts": "2026-10-07T22:53:58+0530",
@@ -11215,6 +11225,11 @@
      "ts": "2026-10-11T23:46:35+0530",
      "who": "claude",
      "note": "Already applied, so no agent run was needed: 2026-10-11T16:41 log confirms key saved in Admin and live test run completed (mailbox connection blocking as expected) (checked by Haiku against the log and commits)."
+    },
+    {
+     "ts": "2026-10-12T00:03:42+0530",
+     "who": "claude",
+     "note": "Ask now points at T-408, the single input task (Orchestrator decision on T-123). The old key was exposed, so it must be rotated before go-live."
     }
    ],
    "order": 2280

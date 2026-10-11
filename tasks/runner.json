@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T00:05:47+0530",
+   "task_id": "T-145",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "I checked T-145 again and left it blocked: nothing had to change for the ripple note R-5e03cedd, and it is acknowledged. The waiting-on text already says what the note asked for (checked in tasks.json this run).\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Waiting-on text names T-341 a"
+  },
+  {
    "ts": "2026-10-12T00:03:29+0530",
    "task_id": "T-152",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-033 is still blocked. The live Day 1 send can't run until the team@growthclub.org mailbox is connected in Tantra (T-123) and WhatsApp is set up (T-400). No code changed, so there was nothing to commit.\n\n- **Resend fallback live:** done. Commit 605e4609 is on origin/main, the live Worker is version"
-  },
-  {
-   "ts": "2026-10-11T22:39:49+0530",
-   "task_id": "T-399",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-399 is still blocked. Its ask now covers only three Tantra screenshots (s3-tantra-pro-flow #5, #13 and #14), which still need Adi's desktop session because this runner has no browser. I committed one fix to the capture manifest (5aa14a82).\n\n| Item | State |\n|---|---|\n| s1-blog #2 and #6 | **Done.*"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-145: Decide: rewrite the public mirror repo's history to remove the leaked library commit",
- "task_id": "T-145",
+ "message": "Acting on 1 note(s) for T-155: Dogfooding: run Tantra on our own funnel and on one client account and FintechCircle, with team-wide feedback",
+ "task_id": "T-155",
  "entries": [
-  "R-5e03cedd"
+  "F-3ba35fdf"
  ],
  "mode": "feedback",
- "started": "2026-10-12T00:03:30+0530",
+ "started": "2026-10-12T00:05:48+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,

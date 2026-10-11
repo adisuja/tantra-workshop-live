@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T00:04:14+0530",
+   "task_id": "T-123",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-123 stays blocked: go-live is waiting on T-408. Adi needs to connect team@growthclub.org in the GrowthClub Tantra workspace, rotate the Tantra key and paste the new one in Admin.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Remove the exposed key from the public board mirror's histor"
+  },
+  {
    "ts": "2026-10-11T23:45:15+0530",
    "task_id": "T-052",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "doing",
    "result": "ok",
    "summary": "T-073 is in **doing**: the course automation is fixed, live and committed, and lessons will publish on their own once the 14 to 16 Oct sessions are recorded.\n\n**Completion check**\n- **Ask to Adi withdrawn, task re-scoped to meeting 88135386601, T-232 blocker removed, due 2026-10-17:** done. pass.py "
-  },
-  {
-   "ts": "2026-10-11T21:59:17+0530",
-   "task_id": "T-153",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I checked T-153 against T-156's new signals.json. score.py needed no change, and I fixed one wrong claim in the rubric. The task stays in review; it's committed (dbdeaa11), not pushed, and note R-d6c48722 is acked.\n\n**What the feedback asked for:**\n- **Check T-153's scoring against the new signals.j"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-123",
+ "task_id": "T-396",
  "entries": [
-  "F-a08b5c0e",
-  "R-a4ef8758"
+  "F-239a6678"
  ],
- "started": "2026-10-11T23:46:19+0530",
- "message": "Acting on 2 note(s) for T-123: Attendee messages actually send (Tantra omni-channel campaigns)",
+ "started": "2026-10-12T00:04:15+0530",
+ "message": "Acting on 1 note(s) for T-396: Confirm inputs for FR-ad7abb (add a lead to a running campaign), then build it as a reviewed patch for Bharath",
  "slices": {
   "T-072": 1,
   "T-245": 1,
