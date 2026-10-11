@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T07:26:01+0530",
-  "version": 1778,
+  "updated": "2026-10-11T07:31:35+0530",
+  "version": 1779,
   "last_id": 397,
   "team": [
    {
@@ -11784,23 +11784,27 @@
    "evidence": [
     {
      "label": "Pipeline chart",
-     "url": "http://localhost:4322/debug/guides?only=s5-pipeline&v=254"
+     "url": "http://localhost:4322/debug/guides?only=s5-pipeline&v=254c"
     },
     {
      "label": "Newsletter chart",
-     "url": "http://localhost:4322/debug/guides?only=s6-newsletter&v=254"
+     "url": "http://localhost:4322/debug/guides?only=s6-newsletter&v=254c"
     },
     {
      "label": "AI newsletter chart",
-     "url": "http://localhost:4322/debug/guides?only=s6-ai-newsletter&v=254"
+     "url": "http://localhost:4322/debug/guides?only=s6-ai-newsletter&v=254c"
     },
     {
      "label": "Blog chart",
-     "url": "http://localhost:4322/debug/guides?only=s1-blog&v=254"
+     "url": "http://localhost:4322/debug/guides?only=s1-blog&v=254c"
     },
     {
      "label": "Extra pipelines chart",
-     "url": "http://localhost:4322/debug/guides?only=s5-extra-pipelines&v=254"
+     "url": "http://localhost:4322/debug/guides?only=s5-extra-pipelines&v=254c"
+    },
+    {
+     "label": "Chart screenshots 1440 and 390",
+     "url": "file:///tmp/t254-shots/"
     }
    ],
    "blockers": [],
@@ -11830,6 +11834,11 @@
      "ts": "2026-10-11T07:14:16+0530",
      "who": "claude",
      "note": "Beehiiv and Fireflies are gone from the guide tools: T-260 had already removed the entries from tools.ts (25a8998), so I deleted the two leftover SVG files in 28fdc09 and amended the G126 row in AUDIT.md. Verified this run: no beehiiv or fireflies reference in app/src, app build passes, probe-visual-tools PASS (after syncing the stale materials playbook copy, one CSS line), probe-flows 24 charts PASS, probe-details 0 FAIL with the same 3 chart WARN on charts this task did not touch. Merge of origin/main was a no-op (0 behind) and main is pushed: origin/main is now 28fdc09. Open http://localhost:4322/debug/guides?only=s5-pipeline&v=28fdc09"
+    },
+    {
+     "ts": "2026-10-11T07:31:35+0530",
+     "who": "claude",
+     "note": "Verify pass, nothing had to change: app/src has no beehiiv or fireflies references and both SVGs are gone, while the Metricool, Canva and GoHighLevel logos are still in place. All 15 AUDIT.md rows are marked fixed, with G126 recording follow-up 28fdc09, which is on origin/main (local and origin level). Checks: probe-visual-tools PASS, probe-flows 24 charts PASS (the unwired-lane self-test fails as it should), 10 charts render at 1440 and 390 with 0 chip or label problems, probe-details 0 FAIL, app build passes. The same 3 chart WARN appear on the commit before T-254, so none are new."
     }
    ],
    "order": 2540
