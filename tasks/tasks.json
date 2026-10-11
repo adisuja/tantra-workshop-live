@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T08:26:00+0530",
-  "version": 1810,
+  "updated": "2026-10-11T08:29:22+0530",
+  "version": 1811,
   "last_id": 397,
   "team": [
    {
@@ -2702,74 +2702,25 @@
   },
   {
    "id": "T-059",
-   "title": "AI-personalised first lines for our workshop outreach on Tantra campaigns",
-   "area": "Traffic",
-   "owner": "Aquila",
-   "priority": "P2",
-   "due": "2026-10-16",
    "status": "blocked",
-   "why": "Personalised first lines lift reply and registration rates on the outreach that fills each weekly cohort; today every prospect gets the same opener.",
-   "spec": "Our own outreach for the weekly cohort runs as Tantra omni-channel campaigns (email from vendor-bought inboxes connected to Tantra, LinkedIn through Tantra; owner model in memory google-and-reminder-model.md). Prospect lists come pre-verified from the data vendors (no Apollo, no paid verification). Steps: (1) confirm in Tantra whether a campaign step can use a per-contact custom field (for example {first_line}); (2) write a small script that takes a lead CSV (name, title, company, profile and company summary) and generates one first line per lead with Claude or OpenAI, in the style of the proven client playbook (no client name in public files); (3) import the leads with the first_line field into a test Tantra campaign and send to the the owner's Google test identity test identity first; (4) run one real batch against a control batch without personalisation. Approved tools only; no HeyReach, Instantly or Apollo.",
-   "done_when": [
-    "A script in the repo turns a lead CSV into per-lead first lines (path recorded in the task log)",
-    "A test Tantra campaign shows the personalised first line in the received test email",
-    "One real batch and one control batch sent, with reply rates of both recorded in the task log"
-   ],
-   "evidence": [
-    {
-     "label": "Personalization engine spec",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/305808f/workshop-plan/ops/personalization-engine-spec.md"
-    }
-   ],
-   "blockers": [],
-   "needs_from_owner": "Tantra API key: in Tantra go to Settings > API Keys, create one, and save it in the file ~/.config/tantra/tantra-api-key (no other Tantra key exists on this machine). Then run: python3 workshop-plan/scripts/first_lines.py tantra-test workshop-plan/outreach/t059/sample_first_lines.csv",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    },
-    {
-     "ts": "2026-09-26T00:17:27+0530",
-     "who": "claude",
-     "note": "Title no longer names the client (tasks.json is public on the mirror)."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review 2026-10-08: still accurate. Still a valid P2 outreach improvement; no newer task covers it."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: rewritten onto the approved stack (Tantra omni-channel campaigns, Claude/OpenAI for first lines, data-vendor lists); assignee Aquila kept. UNVERIFIED whether Tantra campaigns accept a per-contact custom first-line variable (cloud/src/jobs-tantra.ts shows no custom-variable use)."
-    },
-    {
-     "ts": "2026-10-09T05:14:30+0530",
-     "who": "Orchestrator",
-     "note": "People: assignee Aquila → Claude (by Orchestrator)."
-    },
-    {
-     "ts": "2026-10-10T03:55:50+0530",
-     "who": "claude",
-     "note": "Built workshop-plan/scripts/first_lines.py (Claude first lines tested on 3 sample leads, 3/3 clean, no dashes; A/B split with reply tracker tested). Tantra templates fill contact fields as {{custom.first_line}} (same syntax the live reminder funnel uses), so no per-contact body workaround is needed. The test campaign is not built because there is no Tantra key on this machine; not pushed either, since the worktree holds other lanes' uncommitted changes. Real and control batches go with T-058 once T-056's list is imported."
-    },
-    {
-     "ts": "2026-10-10T15:41:33+0530",
-     "who": "claude",
-     "note": "Personalization engine spec items written for the AI first lines (from T-250): workshop-plan/ops/personalization-engine-spec.md, pushed in 305808f. Status unchanged."
-    },
-    {
-     "ts": "2026-10-10T16:35:33+0530",
-     "who": "claude",
-     "note": "Board hygiene (T-129): due 2026-09-22 was past; now 2026-10-16 (P2 rule)."
-    }
-   ],
-   "order": 380,
+   "owner": "Aquila",
    "assignee": "Claude",
    "reviewers": [
     "Aquila"
-   ]
+   ],
+   "priority": "P2",
+   "due": "2026-10-16",
+   "area": "Traffic",
+   "order": 380,
+   "title": "T-059: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-060",
