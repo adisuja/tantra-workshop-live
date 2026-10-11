@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T13:05:39+0530",
-  "version": 1924,
+  "updated": "2026-10-11T13:09:35+0530",
+  "version": 1925,
   "last_id": 404,
   "team": [
    {
@@ -1101,6 +1101,11 @@
      "ts": "2026-10-10T21:40:34+0530",
      "who": "claude",
      "note": "Verify pass: nothing needed fixing. Checked today: the live mirror playbook is identical to the source on main (only the two asset paths rewritten), the served copy has the same hash and the embedded parts regenerate with no change; probe-playbook is clean at 360, 768, 1024 and 1440 on the served copy and the live mirror, probe-visual-tools passes, all 16 Day 1 and Day 3 screenshots load at 1440 and 390, the six review anchors exist, and there are no long dashes or replaced tools in the visible text. Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a and reply with approval or changes by section."
+    },
+    {
+     "ts": "2026-10-11T13:09:35+0530",
+     "who": "claude",
+     "note": "Already applied, so no agent run was needed: Commit ba377c98 (2026-10-10) shows spec rewritten, done-when ticked, mirror resynced, ask updated; probe logs confirm passes. (checked by Haiku against the log and commits)."
     }
    ],
    "order": 110,
