@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T03:19:18+0530",
-  "version": 2292,
+  "updated": "2026-10-12T03:32:14+0530",
+  "version": 2301,
   "last_id": 417,
   "team": [
    {
@@ -8944,7 +8944,7 @@
    "evidence": [
     {
      "label": "Pipeline dashboard",
-     "url": "http://localhost:8899/pipeline?v=7"
+     "url": "http://localhost:8899/pipeline?v=8"
     },
     {
      "label": "1440 screenshot",
@@ -8953,6 +8953,10 @@
     {
      "label": "Figure check",
      "url": "workshop-plan/pipeline/test_dash.py"
+    },
+    {
+     "label": "Weekly snapshot 2026-10-12",
+     "url": "workshop-plan/pipeline/snapshots/2026-10-12.json"
     }
    ],
    "blockers": [],
@@ -9027,6 +9031,11 @@
      "ts": "2026-10-12T00:18:15+0530",
      "who": "claude",
      "note": "Close-out: test_dash.py passes and /pipeline serves 6 bands with 23 of 23 cards tagged live or derived, each with a caption and Counts note, no client named. Dogfooding and Customer tier mix read real files; 'no data yet' remains on 24h ship rate, PR to live and Regression rate (no fix PR merged or live), Qualifier answers (no sheet access) and Customers by tier (no customer export). T-154 ripple: its local pilot timings already show in the Ship rate band labelled 'local preview, not production', KPI captions intact, so nothing had to change. Weekly job com.tantra.pipeline-weekly is loaded for Monday 09:00; screenshot retaken; pushed as 93ad5697. Open http://localhost:8899/pipeline?v=7"
+    },
+    {
+     "ts": "2026-10-12T03:32:14+0530",
+     "who": "claude",
+     "note": "First Monday run: kickstarted com.tantra.pipeline-weekly, which wrote pipeline/snapshots/2026-10-12.json and its LOG line. I fixed two faults it showed in dash.py: snapshots were dated in UTC (so the 09:00 IST run would file as Sunday), and under launchd gh could not be found (all 5 PR lookups failed, now 0). A same-day rerun now replaces its LOG line instead of adding one. test_dash.py passes and http://localhost:8899/pipeline?v=8 shows 6 bands, with all 23 cards keeping their live/derived tag and Counts note next to the local preview table. Pushed as 025b2fd4."
     }
    ],
    "order": 1580,
