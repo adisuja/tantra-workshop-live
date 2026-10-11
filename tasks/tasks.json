@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T00:18:15+0530",
-  "version": 2164,
+  "updated": "2026-10-12T00:19:59+0530",
+  "version": 2168,
   "last_id": 413,
   "team": [
    {
@@ -10621,8 +10621,7 @@
   },
   {
    "id": "T-223",
-   "title": "Zoom Pro meetings in the centre: per-cohort meeting, presentation room, cap and waitlist, live board, attendance",
-   "area": "Product",
+   "status": "review",
    "owner": "Nelbin",
    "assignee": "Claude",
    "reviewers": [
@@ -10632,85 +10631,17 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "review",
-   "why": "Our workshop and the Tantra webinar run on Zoom Pro meetings: each registrant needs their own join link, and attendance, recordings, chat and polls must land in the centre and the Tantra Tracker. The live centre has no real attendees yet (D1 read 2026-10-08 00:50 IST: attendees 1 to 4 are test, attendee 5 'Alex' you@example.com is a placeholder), so the live proof so far is the 2026-10-07 test session 89781893618 (webhooks, 119 s attendance, recording and chat saved, then deleted in Zoom).",
-   "spec": "Code live: the T-229 placeholder guard (core 8c94364, subdomains such as mail.example.com in 51c7ee15) runs on Worker a9f57c7a (deployed 2026-10-11 from main base 95d8630e). probe-zoom-pro.mjs passes 60 of 60 on a fresh stack of main (2026-10-11). /cal/issue, /intake and the admin add form silently skip placeholder emails: example.com, example.net and example.org with their subdomains, plus the .test, .invalid, .localhost and .example endings. Live read on 2026-10-11 through GET /admin/api/zoom and /admin/api/calendar in production: zoom enabled 1, cap 98, Support locks 0 (T-225); session_sync holds no rows at all, so Invite Status shows Zoom failed 0 and no non-test attendee is registered anywhere (test attendee 122 is not counted). The centre holds 24 attendees, all 24 test, and the old placeholders (attendees 5 and 66) are no longer in the centre at all. The centre created meeting 88135386601 for the Wed 14 to Fri 16 Oct cohort (three sessions at 11:00 ET, passcode on) with registered 0 and waitlist 0. One condition left, the first real sign-up on the Wed 14 to Fri 16 Oct cohort (or the next cohort if nobody real signs up that week): confirm in the centre admin (admin Zoom Sessions) that they are registered on meeting 88135386601 with their own join link (registered 1 or more, failed 0), then after their session press Read attendance and check the live board, zoom_attendance and the Zoom Attendance tab in the Tracker. Then mark it done. Open https://revops-centre.growthcluborg.workers.dev/admin/?v=20261011b#settings",
-   "done_when": [
-    "The first real attendee is registered on their cohort's meeting with their own join link (admin Zoom Sessions shows registered 1 or more, failed 0)",
-    "A real session shows its joins on the admin live board",
-    "zoom_attendance holds rows for that session and the Tracker's Zoom Attendance tab shows them"
-   ],
-   "evidence": [
-    {
-     "label": "Live admin: Zoom Sessions and Invite Status",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=20261011b#settings"
-    }
-   ],
+   "area": "Product",
+   "order": 2230,
+   "title": "T-223: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
    "blockers": [],
    "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-10-07T20:46:43+0530",
-     "who": "claude",
-     "note": "Built, Fable-reviewed (1 P0 fixed), deployed to Worker 4bdce626 with migration 0014. probe-zoom-pro 43/43 on the shared stack."
-    },
-    {
-     "ts": "2026-10-07T23:25:35+0530",
-     "who": "claude",
-     "note": "Round 2 live (Worker 06ee20f9): recordings, chat, transcript, polls, engagement per registrant, Tracker tabs (migration 0015), meeting passcodes, Zoom 3-per-day backoff, deleted meetings recreated. Live account test passed."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review: context updated. Code is live (cd7a90e, a3db29a, 99b8083, d31a7e3; Worker 06ee20f9) and the real meeting 87002851906 exists for Wed 7 to Fri 9 Oct, but production zoom_events and zoom_attendance hold rows only for the deleted test meeting, so no real session has fed the live board or attendance yet."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: read the live admin (GET /admin/api/zoom and /admin/api/calendar, read-only) at 2026-10-08 00:40 IST: production meeting 87002851906 shows registered 0 and no attendance for Day 1 (Wed 7 Oct 11:00 ET has passed), and the last invite sync reports zoom failed 3, registered 0; only the deleted test meeting 89781893618 has attendance. The code is live, the real-session proof is not."
-    },
-    {
-     "ts": "2026-10-08T00:49:40+0530",
-     "who": "claude",
-     "note": "Pass 2 correction: The live centre has no real attendees yet (D1 read 2026-10-08 00:50 IST: attendees 1 to 4 are test, attendee 5 'Alex' you@example.com is a placeholder). The 3 failures are that placeholder (T-229). Back to review; next is T-234."
-    },
-    {
-     "ts": "2026-10-09T17:42:35+0530",
-     "who": "claude",
-     "note": "People: reviewers Adi/Aquila → Adi/Aquila/Bharath (by claude)."
-    },
-    {
-     "ts": "2026-10-09T17:42:35+0530",
-     "who": "claude",
-     "note": "Shipped T-229 so the false 'zoom failed 3' is gone: the live admin now shows 0 failed, and placeholder emails can no longer sign up or reach Zoom (Worker bc7ea5ad, commit pushed). The 14 to 16 Oct meeting 88135386601 already exists with every room setting correct and the cap is still 98; probe-zoom-pro passes 58/58. Stays in review for one thing only: the first real sign-up (the 1 registered on last week's meeting was the placeholder adi@example.com, now marked test)."
-    },
-    {
-     "ts": "2026-10-09T17:42:49+0530",
-     "who": "claude",
-     "note": "Checked 12 related task(s); updating T-229."
-    },
-    {
-     "ts": "2026-10-09T17:51:17+0530",
-     "who": "claude",
-     "note": "Rechecked the 05:09 Orchestrator note against production at 17:52 IST: everything it asked for was already shipped at 17:42 today (T-229 live on Worker bc7ea5ad and pushed, probe-zoom-pro 58/58), so nothing was rebuilt. Live read just now: Invite Status shows Zoom failed 0, attendees 5 and 66 (the placeholders) are marked test, the 14 to 16 Oct meeting 88135386601 exists with 0 registered, and there is still no real (non-test) attendee. Stays in review for the one remaining condition: the first real sign-up, then Read attendance after their session."
-    },
-    {
-     "ts": "2026-10-11T01:05:14+0530",
-     "who": "claude",
-     "note": "All of the Orchestrator's pre-work is checked on production (read-only, 2026-10-11 01:05 IST): attendee 5 is already test (all 24 attendees are, so no PATCH was sent), Invite Status shows Zoom failed 0, the cap is 98, and the Wed 14 to Fri 16 Oct meeting 88135386601 exists with every room setting as set, three sessions at 11:00 ET and 0 registrants. probe-zoom-pro passes 60/60 on a fresh stack of main; the shared local stack scores 48 pass, 6 fail, but it serves the older onboarding-v2 branch with last week's state, so it does not measure main. The spec now cites main fa7f53d and Worker e61e9802 and names the 14 Oct cohort; it stays in review only for the first real sign-up: https://revops-centre.growthcluborg.workers.dev/admin/?v=20261011#settings"
-    },
-    {
-     "ts": "2026-10-11T01:09:03+0530",
-     "who": "claude",
-     "note": "Verify pass 2026-10-11: rechecked everything on production and nothing had to be rebuilt. Worker e61e9802 runs main fa7f53d, Invite Status shows Zoom failed 0, meeting 88135386601 (Wed 14 to Fri 16 Oct) has every room setting as set with cap 98, and probe-zoom-pro passes 60 of 60 on both a fresh stack and the shared stack. One correction to the last report: attendees 5 and 66 are no longer in the centre at all (not marked test), so no PATCH was sent. Stays in review only for the first real sign-up (0 non-test attendees today), which waits on an outside person. Open https://revops-centre.growthcluborg.workers.dev/admin/?v=20261011b#settings"
-    },
-    {
-     "ts": "2026-10-11T13:29:30+0530",
-     "who": "claude",
-     "note": "Ran the two reads the Orchestrator approved (GET /admin/api/zoom and /admin/api/calendar in production, 2026-10-11 08:00 UTC): meeting 88135386601 for the 14 to 16 Oct cohort shows registered 0, waitlist 0 and failed 0, session_sync holds no rows at all, and there is still no non-test attendee registered (the cap is 98, zoom enabled). The 20:06 ripple is applied: the spec now cites Worker a9f57c7a on main 95d8630e (deployed 2026-10-11), which already includes the T-229 subdomain fix 51c7ee15, and drops the old line that subdomains were not caught yet. Stays in review for the first real sign-up; the cohort week starts Wed 14 Oct, so nothing more to do until a real person signs up. Open https://revops-centre.growthcluborg.workers.dev/admin/?v=20261011b#settings"
-    }
-   ],
-   "order": 2230
+   "log": [],
+   "held": true
   },
   {
    "id": "T-224",

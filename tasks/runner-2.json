@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T00:19:36+0530",
+   "task_id": "T-213",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-213 stays in review. Two of the three done_when items pass in this run; the third (the agreement with Endy) is still waiting on Nelbin's call (T-397).\n\n- **Publish 6a59a78 and 5d8a0ca:** nothing to push. After `git fetch`, both commits (and 80878cb) are already on origin/main, so I skipped the che"
+  },
+  {
    "ts": "2026-10-12T00:18:30+0530",
    "task_id": "T-158",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "No screenshots this run: preflight still prints NOT READY because Accessibility is off and the Mac is locked. T-132 stays blocked on T-351.\n\n- **Preflight prints the Python binary and the runner's process chain:** done. Committed in `ed632323`. Run from the runner, the chain starts at Python.app, so"
-  },
-  {
-   "ts": "2026-10-11T23:08:08+0530",
-   "task_id": "T-225",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-225 stays blocked on Zoom Support. Zoom still hasn't switched on either field, and the room on 88135386601 is back to normal.\n\n- **Write test logged:** done. The 12:42 log line reads \"Write test 2026-10-11 on 88135386601: not granted\". I did not PATCH again, since the decision said once.\n- **Room "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-213",
+ "task_id": "T-237",
  "entries": [
-  "F-ffd9e05d",
-  "R-b28d8998"
+  "F-477dd370"
  ],
- "started": "2026-10-12T00:18:31+0530",
- "message": "Acting on 2 note(s) for T-213: Set up the Endy Inboxes white-label partnership",
+ "started": "2026-10-12T00:19:39+0530",
+ "message": "Acting on 1 note(s) for T-237: Give the Tantra webinar a public registration page",
  "slices": {
   "T-072": 1,
   "T-245": 1,
