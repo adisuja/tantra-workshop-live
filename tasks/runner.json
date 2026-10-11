@@ -97,14 +97,14 @@
    "summary": "API Error: 402 [cerebras] All 1 connection(s) credits exhausted — please reconnect in the dashboard"
   }
  ],
- "state": "paused",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 71% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 20:51.",
- "task_id": null,
+ "state": "working",
+ "message": "Acting on 1 note(s) for T-265: Centre: dashboard reads (Tantra campaign stats, Metricool clicks) and automated launch QA",
+ "task_id": "T-265",
  "entries": [
-  "F-b7aa66e7"
+  "F-e7198afb"
  ],
  "mode": "feedback",
- "started": "2026-10-11T18:32:31+0530",
+ "started": "2026-10-11T20:55:43+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
