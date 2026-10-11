@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T03:23:45+0530",
+   "task_id": "T-228",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-228 is still blocked. The reminders probe passed 93 checks with 0 failures on vendor-sim, but the live welcome email can't run: the GrowthClub workspace has no connected mailbox, and the sender the Orchestrator approved (team@growthclub.org) is the one Adi ruled out on 2026-10-12.\n\n| Item | State "
+  },
+  {
    "ts": "2026-10-12T03:17:51+0530",
    "task_id": "T-061",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "I re-checked the earlier work: the correction is on disk and T-252 is back in review with the T-072 ripple (note R-7faa9568) handled. Nothing needed fixing, so I changed no files and made no commit.\n\n**Completion check (all checked this run):**\n- **No claim that `/enterprise` switched to Cal.com: do"
-  },
-  {
-   "ts": "2026-10-12T02:42:03+0530",
-   "task_id": "T-107",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-107 is back in review for Nelbin and Bharath. Today's checks found no probe or test rows left anywhere, but one done_when item is still open: trashing the two old Apps Script projects, which is tracked in T-380.\n\n**Completion check (all checked in this run):**\n1. **Dry run of the matcher:** done. "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-228",
+ "task_id": "T-223",
  "entries": [
-  "F-5ad2cc15"
+  "F-9165bee2"
  ],
- "started": "2026-10-12T03:18:30+0530",
- "message": "Acting on 1 note(s) for T-228: Welcome email: every new attendee gets their centre link and private calendar link",
+ "started": "2026-10-12T03:24:32+0530",
+ "message": "Acting on 1 note(s) for T-223: Zoom Pro meetings in the centre: per-cohort meeting, presentation room, cap and waitlist, live board, attendance",
  "slices": {
   "T-135": 1,
   "T-300": 2,
