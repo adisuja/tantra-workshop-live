@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T12:36:47+0530",
-  "version": 1903,
+  "updated": "2026-10-11T12:39:53+0530",
+  "version": 1904,
   "last_id": 401,
   "team": [
    {
@@ -16562,20 +16562,16 @@
    ],
    "evidence": [
     {
-     "label": "Probe fix (commit 57df3a90)",
-     "url": "app/scripts/probe-library.mjs"
-    },
-    {
-     "label": "Live centre poll view",
+     "label": "Poll view (live centre)",
      "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/templates/?v=57df3a90#live-polls"
     },
     {
-     "label": "Mirror poll view",
+     "label": "Poll view (mirror)",
      "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/templates/?v=57df3a90#live-polls"
     },
     {
-     "label": "Log line",
-     "url": "workshop-plan/coord/LOG.md"
+     "label": "Probe fix",
+     "url": "app/scripts/probe-library.mjs"
     }
    ],
    "blockers": [],
@@ -16590,6 +16586,11 @@
      "ts": "2026-10-11T12:36:47+0530",
      "who": "claude",
      "note": "The poll was not removed, so the 'poll accepts a vote' check now opens the #live-polls deep link before voting ('no poll found' still fails). probe-library passes at all four widths on the live centre and the mirror; commit 57df3a90 is pushed to main and logged in coord/LOG.md."
+    },
+    {
+     "ts": "2026-10-11T12:39:53+0530",
+     "who": "claude",
+     "note": "Verify pass: re-ran node app/scripts/probe-library.mjs today on the live centre and the mirror, PASS on both with 31 checks and 0 failures, including 'poll accepts a vote' (interaction checks run at 1440; layout checks at all four widths). The fix in 57df3a90 opens the #live-polls view first and still fails on 'no poll found'. It is pushed (main matches origin/main) and logged in coord/LOG.md line 93."
     }
    ],
    "order": 3850
