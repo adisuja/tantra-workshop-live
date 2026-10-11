@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T17:46:12+0530",
-  "version": 1992,
+  "updated": "2026-10-11T17:48:07+0530",
+  "version": 1993,
   "last_id": 408,
   "team": [
    {
@@ -9044,20 +9044,16 @@
    ],
    "evidence": [
     {
-     "label": "probe-details run (0 FAIL)",
-     "url": "/tmp/t197x-details2.log"
+     "label": "Old centre, Day 1 Watch (live)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/reference/?v=t197r1011#d1-watch"
     },
     {
-     "label": "Probe fix 9799d599",
+     "label": "Probe",
      "url": "app/scripts/probe-details.mjs"
     },
     {
      "label": "Audit",
      "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
-    },
-    {
-     "label": "Old centre, Day 1 Watch (live)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/reference/?v=t197v1011b#d1-watch"
     }
    ],
    "blockers": [],
@@ -9117,6 +9113,11 @@
      "ts": "2026-10-11T17:29:31+0530",
      "who": "claude",
      "note": "Pushed main to 9799d599 (probe fixes 1670dddf and 9799d599; db7ed17 and the playbook overflow fix were already on main), and probe-details on a clean export of main now gives 0 FAIL, 56 WARN, with G145 fixed as a probe false positive and G146 passing after T-240. AUDIT.md has no open P0, and live is still Worker 22952e72 and mirror 8b59f66: no republish, because no shipped asset changed."
+    },
+    {
+     "ts": "2026-10-11T17:48:07+0530",
+     "who": "claude",
+     "note": "Verify pass: main 9799d599 is on origin/main (nothing new to push), and probe-details on a clean export of main gives 0 FAIL, 56 WARN, exit 0 (/tmp/t197r-details2.log; the admin-centre section was skipped because the local admin key is stale, and every section before it was 0 FAIL). O013 checked at runtime with a stubbed attendee feed: Days 1 to 3 Join buttons open the attendee's own Zoom link, and with no feed token the 'Join link not published yet' chip shows (6/6 PASS). AUDIT.md has no open P0. No shipped asset changed, so there was no republish (Worker 22952e72, mirror 8b59f66)."
     }
    ],
    "order": 1970
