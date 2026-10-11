@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T12:02:21+0530",
-  "version": 1882,
-  "last_id": 400,
+  "updated": "2026-10-11T12:07:58+0530",
+  "version": 1889,
+  "last_id": 401,
   "team": [
    {
     "name": "Adi",
@@ -14975,35 +14975,43 @@
    "evidence": [
     {
      "label": "Book a Call",
-     "url": "http://localhost:4322/funnels/book-call?v=t295b"
+     "url": "http://localhost:4322/funnels/book-call?v=t295c"
     },
     {
      "label": "Waterfall",
-     "url": "http://localhost:4322/funnels/waterfall?v=t295b"
+     "url": "http://localhost:4322/funnels/waterfall?v=t295c"
     },
     {
      "label": "Hub and Spoke",
-     "url": "http://localhost:4322/funnels/hub-spoke?v=t295b"
+     "url": "http://localhost:4322/funnels/hub-spoke?v=t295c"
     },
     {
      "label": "Book (Amazon mark)",
-     "url": "http://localhost:4322/funnels/book?v=t295b"
+     "url": "http://localhost:4322/funnels/book?v=t295c"
     },
     {
-     "label": "Caption and ribbon 390px",
-     "url": "/tmp/t295b/ov-waterfall-20.png"
+     "label": "Overlap probe 390/350",
+     "url": "/tmp/t295c/overlap-existing-390.txt"
     },
     {
-     "label": "Cards in flight 390px",
-     "url": "/tmp/t295b/ov-hub-spoke-94.png"
+     "label": "Board probe task routes",
+     "url": "/tmp/t295c/probe-routes.txt"
     },
     {
-     "label": "Settled 390px",
-     "url": "/tmp/t295b/s-waterfall-100.png"
+     "label": "Board probe default",
+     "url": "/tmp/t295c/probe.txt"
     },
     {
-     "label": "Probe output",
-     "url": "/tmp/t295b/probe-after.txt"
+     "label": "Caption 390px",
+     "url": "/tmp/t295c/book-call-15.png"
+    },
+    {
+     "label": "Cards 390px 3x",
+     "url": "/tmp/t295c/z-book-call-96.png"
+    },
+    {
+     "label": "Hub and Spoke settle",
+     "url": "/tmp/t295c/f-hub-spoke-92.png"
     }
    ],
    "blockers": [],
@@ -15028,6 +15036,16 @@
      "ts": "2026-10-11T11:53:15+0530",
      "who": "claude",
      "note": "Rechecked on main: the engine fix (e5fbf41) is on origin/main and in the mirror already published from e66dda5 (c516789), so I made no new commit, push or publish. Today at 390 px I scrolled Book a Call, Waterfall and Hub and Spoke through 51 frames each: the caption sits above the ribbon, and the cards are clean mid-flight and settled. Amazon and YouTube load as real SVG marks on /funnels/book and /funnels/hub-spoke, and no funnel uses Slack, so no Team chat tile was needed. probe-funnel-boards: ALL BOARDS FIT at 1440, 1024, 760, 390 and 350 (85 PASS, 0 FAIL); probe-visual-tools: PASS."
+    },
+    {
+     "ts": "2026-10-11T12:06:34+0530",
+     "who": "claude",
+     "note": "Verify pass found nothing left to fix: the engine fix (e5fbf41) is on origin/main unchanged, so no commit, push or publish was needed. The repo's caption, card and clip probe gives 0 overlap frames in 261 per route at 390 and 350 px on Book a Call, Waterfall and Hub and Spoke, probe-funnel-boards gives ALL BOARDS FIT at five widths (85 PASS default routes, 120 PASS on the task routes), probe-visual-tools passes, and Amazon and YouTube render as marks with no Slack anywhere. Open http://localhost:4322/funnels/book-call?v=t295c, http://localhost:4322/funnels/waterfall?v=t295c and http://localhost:4322/funnels/hub-spoke?v=t295c."
+    },
+    {
+     "ts": "2026-10-11T12:07:15+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-108."
     }
    ],
    "order": 2950
@@ -15900,7 +15918,7 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Sign in to https://console.twilio.com in the Brave profile Claude in Chrome uses (Tantra is already signed in there), then open a Claude Code session in the desktop app with Claude in Chrome connected and type: Act on T-133. Claude only drafts and captures, and never saves or sends.",
+   "needs_from_owner": "One sitting clears T-339, T-350 and T-115 (tracked as T-383): in Brave profile adi@growthclub.org, open https://console.twilio.com and sign in with the code Twilio emails you. Then open a Claude Code desktop session with Claude in Chrome connected and type: Act on T-133, then Act on T-115. Claude drafts and captures only, and never saves or sends.",
    "log": [
     {
      "ts": "2026-10-09T05:06:54+0530",
@@ -15916,6 +15934,11 @@
      "ts": "2026-10-10T20:18:16+0530",
      "who": "claude",
      "note": "Ripple from T-115 checked: needs_from_owner already asks for Twilio only, so I only retitled the task to drop the old Tantra sign-in wording. Tantra is signed in per the 2026-10-09 log. This unattended run has no browser to re-check it, so the interactive T-133 session confirms it on its first step. Still blocked on Adi signing in to Twilio."
+    },
+    {
+     "ts": "2026-10-11T12:07:58+0530",
+     "who": "claude",
+     "note": "Orchestrator decision applied: no screenshots exist yet, so the approved commit and mirror publish are left until they do. One desktop session clears T-339, T-350 (same Twilio sign-in) and T-115 (same session), tracked as T-383. Nothing was built because this runner has no browser."
     }
    ],
    "order": 3390,
@@ -16696,6 +16719,35 @@
    "needs_from_owner": "",
    "log": [],
    "held": true
+  },
+  {
+   "id": "T-401",
+   "title": "Input from Adi for T-400: Open https://usetantra.com, go to Connectors, WhatsApp, and connect the workshop",
+   "area": "Delivery",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (physical): The QR scan needs Adi's phone and Tantra login, and the test number is his own to name.. Everything else in T-400 is being built around it. As soon as this is done, T-400 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Open https://usetantra.com, go to Connectors, WhatsApp, and connect the workshop WhatsApp number by scanning the QR code with that phone. Then add a note on T-400 with the WhatsApp number (with country code) that should receive the 'Adi test' Day 1 message.",
+   "log": [
+    {
+     "ts": "2026-10-11T12:06:43+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-400."
+    }
+   ],
+   "order": 4010,
+   "input_for": "T-400",
+   "kind": "input"
   }
  ]
 }
