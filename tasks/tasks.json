@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T23:07:33+0530",
-  "version": 2104,
+  "updated": "2026-10-11T23:09:13+0530",
+  "version": 2107,
   "last_id": 410,
   "team": [
    {
@@ -6999,9 +6999,9 @@
     }
    ],
    "blockers": [
-    "macOS refuses the background agent screen capture and clicks on this Mac until T-351 is granted"
+    "Waiting on T-351 (Adi: unlock the Mac and grant Accessibility to Python.app; tracked as T-402)"
    ],
-   "needs_from_owner": "Two things on this Mac: 1) unlock the screen and leave it unlocked with the Claude app open (the agent cannot type your password); 2) System Settings, Privacy and Security, Accessibility: switch on Python (/Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app), adding it with the + button if it is not listed. Check: python3 app/scripts/shots/claude-app-shots.py preflight prints READY.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-25T19:38:41+0530",
@@ -7057,6 +7057,11 @@
      "ts": "2026-10-11T12:50:48+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-351."
+    },
+    {
+     "ts": "2026-10-11T23:09:13+0530",
+     "who": "claude",
+     "note": "No captures: preflight from the runner still prints NOT READY (Accessibility NO, Mac locked), so no routine was created and nothing needs reverting. Preflight now also prints the Python binary and the runner's process chain (top is Python.app), and the ask lives only on T-351. Once preflight prints READY the next run captures all 5 slots under caffeinate."
     }
    ],
    "order": 1320,
@@ -10992,6 +10997,11 @@
      "ts": "2026-10-11T23:07:33+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-11: a read-only GET of 88135386601 shows the room restored (request_permission_to_unmute_participants true, host mute field false, video field absent), so Zoom has still not granted; the 12:42 log line holds today's write test. Today's 09:10 entry lacked it only because the write-test code was committed at 12:42; I added a guard so a same-day rerun never PATCHes again (proved: --apply today printed 'already ran today'), and tomorrow's 09:10 run will test and log it. Waits only on Zoom Support; T-226 Live Control is the fallback and itself waits on T-335."
+    },
+    {
+     "ts": "2026-10-11T23:08:14+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-407."
     }
    ],
    "order": 2250
@@ -17099,7 +17109,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "At the Mac: open System Settings > Privacy & Security > Accessibility, click +, add /Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12 (and /Users/adithyamurali/.local/bin/claude) and switch them on. Then leave the Mac unlocked during the next T-132 run. Done when python3 app/scripts/shots/claude-app-shots.py preflight prints READY.",
+   "needs_from_owner": "At the Mac: 1) unlock it and leave it unlocked with the Claude app open. 2) System Settings, Privacy and Security, Accessibility (x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility): click +, press Cmd+Shift+G, add /Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app and switch it on. Check: python3 app/scripts/shots/claude-app-shots.py preflight prints READY.",
    "log": [
     {
      "ts": "2026-10-09T09:30:56+0530",
@@ -17130,6 +17140,11 @@
      "ts": "2026-10-11T12:49:40+0530",
      "who": "claude",
      "note": "Rechecked from the T-132 run 2026-10-11: preflight under /Library/Frameworks/Python.framework/Versions/3.12/bin/python3 still prints NOT READY. Failed checks: accessibility NO and screen unlocked NO; screen recording yes, Claude window id 6880 found."
+    },
+    {
+     "ts": "2026-10-11T23:09:13+0530",
+     "who": "claude",
+     "note": "Preflight now prints the binary and process chain macOS checks: from the runner it is launchd job Python.app (/Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python) then ~/.local/bin/claude then Python.app, so the Accessibility grant must go on Python.app, not bin/python3.12. Rerun 2026-10-11: Screen Recording yes, Claude window found, Accessibility NO, Mac locked, NOT READY."
     }
    ],
    "order": 3510

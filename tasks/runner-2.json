@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T23:09:35+0530",
+   "task_id": "T-132",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "No screenshots this run: preflight still prints NOT READY because Accessibility is off and the Mac is locked. T-132 stays blocked on T-351.\n\n- **Preflight prints the Python binary and the runner's process chain:** done. Committed in `ed632323`. Run from the runner, the chain starts at Python.app, so"
+  },
+  {
+   "ts": "2026-10-11T23:08:08+0530",
+   "task_id": "T-225",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-225 stays blocked on Zoom Support. Zoom still hasn't switched on either field, and the room on 88135386601 is back to normal.\n\n- **Write test logged:** done. The 12:42 log line reads \"Write test 2026-10-11 on 88135386601: not granted\". I did not PATCH again, since the decision said once.\n- **Room "
+  },
+  {
    "ts": "2026-10-11T23:04:18+0530",
    "task_id": "T-300",
    "mode": "feedback",
@@ -79,32 +95,17 @@
    "status": "review",
    "result": "ok",
    "summary": "Waiting on the pilot run (background job b73fi0wic) and a progress watcher."
-  },
-  {
-   "ts": "2026-10-11T17:55:36+0530",
-   "task_id": "T-364",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "I updated T-364's waiting text to match T-363, and the task stays **blocked** because the client has not replied yet.\n\n- **Waiting text updated: done.** It now says Amal fills the 6 marked blanks before sending: contact name, list name and size, sender mailboxes, start date, end date and her name. T"
-  },
-  {
-   "ts": "2026-10-11T17:45:55+0530",
-   "task_id": "T-396",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-396 is back in review for Bharath. Every claim in the earlier report held up when I re-ran it from scratch, so I changed no files and made no commit. The ack call returned \"acked 0\": F-e4e225ad was already acked last run.\n\nCOMPLETION CHECK:\n1. **Endpoint that adds one lead to a running campaign: d"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-225",
+ "task_id": "T-351",
  "entries": [
-  "F-da4774f2"
+  "F-97be9e13",
+  "R-d0fc559f"
  ],
- "started": "2026-10-11T23:05:25+0530",
- "message": "Acting on 1 note(s) for T-225: Zoom Support ticket: host mute control and participant video disable (waiting on Zoom's reply)",
+ "started": "2026-10-11T23:09:56+0530",
+ "message": "Acting on 2 note(s) for T-351: Give the Launch Control agent macOS permission to capture and drive the Claude app",
  "slices": {
   "T-072": 1,
   "T-245": 1,
