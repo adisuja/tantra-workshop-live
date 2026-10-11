@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T16:50:33+0530",
-  "version": 1972,
+  "updated": "2026-10-11T16:52:12+0530",
+  "version": 1973,
   "last_id": 408,
   "team": [
    {
@@ -1593,6 +1593,14 @@
     {
      "label": "Pipeline source (commit f842c8b, on origin main)",
      "url": "file:///Users/adithyamurali/tantra-redesign/workshop-plan/ops/dayoutput.py"
+    },
+    {
+     "label": "T-032 hosted Day 1 HTML for the same row",
+     "url": "https://revops-centre.growthcluborg.workers.dev/o/xpEvUSJjNnYQXZmqflDlaer0FNbv9gSPgtxwoJulwxg?v=20261011"
+    },
+    {
+     "label": "T-032 hosted Day 1 PDF",
+     "url": "https://revops-centre.growthcluborg.workers.dev/o/xpEvUSJjNnYQXZmqflDlaer0FNbv9gSPgtxwoJulwxg.pdf?v=20261011"
     }
    ],
    "blockers": [],
@@ -1662,6 +1670,11 @@
      "ts": "2026-10-11T01:33:36+0530",
      "who": "claude",
      "note": "Found and fixed a real break: the job was ticking, but the day output step had failed since 2026-10-09 14:38Z (HTTP 500, then 401 from 22:15Z) because the Worker's admin sign-in became POST only; dayoutput.py, deliver.py and tracker_sync.py now sign in by POST (commit f842c8b). Checked: the next scheduled tick (tick.log line 3004, 2026-10-10T20:03:03Z) shows day_outputs unchanged 1 with no packages_distributions error and day1.html untouched; dayoutput.py --check passes against the pushed template (8 sections, 37 slots, no problems) so no regeneration and the T-024 blocker is removed; probe_outputs.py is green and main is pushed to origin (0332ee4, 8141e8d and f842c8b are on origin main, no merge was needed, origin had nothing new). Left for their own tasks: centre_sheet.py and dryrun_day1.py still use the old sign-in address and will get 401 until switched the same way."
+    },
+    {
+     "ts": "2026-10-11T16:52:12+0530",
+     "who": "claude",
+     "note": "Ripple from T-032: nothing in T-031 said the PDF or link step was pending, so no wording had to change; the T-032 hosted HTML and PDF for this live row are now in the evidence. Checked today: probe_outputs.py prints ok (HTML 200, PDF 200, wrong token 404), tick.log line 3093 (11:04Z) shows day_outputs unchanged 1 and the last packages_distributions error is line 2814, before the Python 3.12 switch."
     }
    ],
    "order": 210,
