@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T17:53:06+0530",
+   "task_id": "T-155",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-155 needed no change and stays in review. The note said the client account audit was done, but the audit sheet on disk says it was never run, and I ack'd the note.\n\n- **Variant A/B drafts with the day-3 follow-up:** done. The private client spec already records them in `workshop-plan/coord/T-155-c"
+  },
+  {
    "ts": "2026-10-11T17:46:26+0530",
    "task_id": "T-151",
    "mode": "feedback",
@@ -87,24 +95,17 @@
    "status": "review",
    "result": "ok",
    "summary": "T-252 is back in review. I didn't push the branch or open the PR the Orchestrator approved, because Adi's 2026-10-11 rule (agents never touch Usetantra repos) came after that approval and overrides it. The work stays as patches under `workshop-plan/tantra-product-patches/`. Note F-edb0b565 is acknow"
-  },
-  {
-   "ts": "2026-10-11T11:19:15+0530",
-   "task_id": "T-072",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-072 is blocked again. The Chaperone rename and the Cal.com swap are finished on our side, but the event can't be created because Adi doesn't have a Cal.com account under that name yet (cal.com/adisuja returns 404). Nothing in this repo needed changing, so I made no commit.\n\n| Item | State |\n|---|-"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-155: Dogfooding: run Tantra on our own funnel and on one client account and FintechCircle, with team-wide feedback",
- "task_id": "T-155",
+ "message": "Acting on 2 note(s) for T-229: Zoom registrations: keep placeholder emails out of sign-ups",
+ "task_id": "T-229",
  "entries": [
-  "R-f62eb4c8"
+  "F-e0e951a6",
+  "R-f0fabd2e"
  ],
  "mode": "feedback",
- "started": "2026-10-11T17:52:45+0530",
+ "started": "2026-10-11T17:56:24+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
