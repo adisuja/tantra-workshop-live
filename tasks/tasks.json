@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T07:31:35+0530",
-  "version": 1779,
+  "updated": "2026-10-11T07:34:37+0530",
+  "version": 1781,
   "last_id": 397,
   "team": [
    {
@@ -11923,22 +11923,14 @@
    "evidence": [
     {
      "label": "S3 guide, live mirror",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s3-tantra-pro-flow/?v=t256"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s3-tantra-pro-flow/?v=t256d"
     },
     {
-     "label": "S1 ads guide, live mirror",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s1-ads/?v=t256"
+     "label": "S3 guide, local",
+     "url": "http://localhost:4322/onboarding/guides/s3-tantra-pro-flow/?v=t256d"
     },
     {
-     "label": "Playbook, live mirror",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t256"
-    },
-    {
-     "label": "All guides, local",
-     "url": "http://localhost:4322/debug/guides?v=t256"
-    },
-    {
-     "label": "Audit file with the 12 ids marked",
+     "label": "Audit file (G023 row has e66dda5)",
      "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
     }
    ],
@@ -11964,6 +11956,11 @@
      "ts": "2026-10-10T00:49:20+0530",
      "who": "claude",
      "note": "All 12 audit findings are fixed and live: the five unsourced claims are gone (also from the playbook and the Stage 5 card), the S3 chart, step 3 and step 4 carry one reminder schedule sentence with no T-minus notation, no-show comes from Webinar ended with no live view in S3, S4 and S5, s1-ads reuses the Stage 2 generate_lead event, the slug is ops-webinar-weekly and Copy buttons are named. Checked by git grep (no quoted claim left), typecheck, the leak probe on the export, a headless screenshot of the S3 chart and the live mirror pages; check-guides has one failure that predates this work (s5-pipeline chart has more than 14 nodes) and the rendered probe-guides run hung on the shared dev server, so it did not finish. Pushed to origin main (e3ac1ca, 0330ca0) and published to the mirror; the centre Worker was not redeployed because two remote migrations from other tasks (0023, 0025) are pending, so the one card line ships with the next Integrator deploy. Ripple from T-191: nothing else had to change in committed guide copy, but another lane's uncommitted chart in s2-tantra-pro-funnel.ts labels lanes Free Lane and Paid Lane and should be renamed before it lands."
+    },
+    {
+     "ts": "2026-10-11T07:33:52+0530",
+     "who": "claude",
+     "note": "S3 step 4 and the scheduler prompt now use the same schedule sentence as the chart and step 3, with the per-channel split in a separate sentence after it (e66dda5, pushed, AUDIT G023 row updated, mirror c516789). I kept the 15 minutes before touch because T-139 added it to the chart and step 3 on 2026-10-10 to match the funnel's WhatsApp send. Verified: the sentence appears 7 times in the file, the five quoted claims are gone (git grep), 0 U+2212 characters, one WhatsApp paragraph (Tantra, not Twilio), tsc 0 errors, probe-guides on S3 PASS at 1440 and 390, the live mirror shows the new text. check-guides has 4 failures, all small screenshots in other guides that this task did not touch."
     }
    ],
    "order": 2560
@@ -12312,6 +12309,10 @@
      "url": "/Users/adithyamurali/tantra-redesign/cloud/scripts/probe-dns-elsewhere.mjs"
     },
     {
+     "label": "live centre",
+     "url": "https://revops-centre.growthcluborg.workers.dev/?v=t261-8cbbcb2"
+    },
+    {
      "label": "AUDIT.md",
      "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
     }
@@ -12338,6 +12339,11 @@
      "ts": "2026-10-10T01:16:56+0530",
      "who": "claude",
      "note": "Built in 5be6f60 (local, not pushed or deployed: main carries other lanes' uncommitted work, so the Worker deploy needs a clean worktree). Resend and DMARC-report domains outside Cloudflare now become a pending zone with the nameservers shown and records written only once active; a missing workers.dev address is created by PUT; the start-cf-registrar gate runs the Registrar domain-check; Workspace proof leads with Sign in with Google plus a registrar TXT how-to; the agent registers the calendar domain. Verified with node cloud/scripts/probe-dns-elsewhere.mjs (16 pass against the simulator) and tsc clean; the full Day 0 simulator walk and the calendar-domain gate were not run end to end. All 7 ids marked fixed in AUDIT.md."
+    },
+    {
+     "ts": "2026-10-11T07:34:37+0530",
+     "who": "claude",
+     "note": "Shipped: 5be6f60 is on origin/main (pushed at 8cbbcb2), and the live Worker 7f8bfc45 already runs it because it was built from 97096ab and cloud/src has not changed since, so I did not deploy again. I extended probe-dns-elsewhere so a domain whose DNS is outside Cloudflare goes from pending zone to active and the agent writes all 5 Resend and DMARC records. It passes 18/18 on the simulator, the registrar gate refuses a token with no registrar access, tsc is clean, the live centre answers 302, and all 7 ids in AUDIT.md cite 5be6f60."
     }
    ],
    "order": 2610
