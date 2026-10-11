@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T05:55:30+0530",
+   "task_id": "T-051",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-051 is in review for Bhaskar: `workshop-plan/sequences/post.md` now carries the settled name \"Tantra Pro Course\", and the change is pushed to main as `41d119d`.\n\nCOMPLETION CHECK\n- **T-116 name ripple in `post.md`: done.** The `{{PRO_COURSE_NAME}}` value in the placeholder table reads \"Tantra Pro "
+  },
+  {
    "ts": "2026-10-11T05:53:27+0530",
    "task_id": "T-032",
    "mode": "feedback",
@@ -87,24 +95,17 @@
    "status": "review",
    "result": "ok",
    "summary": "**T-111 stays in review for Amal and Bharath. Every item holds on a fresh check, and I fixed one misleading comment.**\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| T-141 answered and the rule written in `LANES.md` | Done | T-141 is `done`; the rule is at `workshop-plan/coord/LANES.md` "
-  },
-  {
-   "ts": "2026-10-10T20:27:26+0530",
-   "task_id": "T-348",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "turns",
-   "summary": "T-348 stays blocked on Adi typing the Google password (T-349); the capture kit held up under a fresh mock test, with one small fix committed in 0bd30b6.\n\nCOMPLETION CHECK\n- **Keep T-348 as the single input task, never type or look for the password:** done. Status is blocked, and `needs_from_owner` a"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-051",
+ "task_id": "T-334",
  "entries": [
-  "F-481b391f"
+  "F-24e4b7db",
+  "F-dc1d30ac"
  ],
- "started": "2026-10-11T05:54:24+0530",
- "message": "Acting on 1 note(s) for T-051: Draft the post-workshop nurture sequence",
+ "started": "2026-10-11T05:55:55+0530",
+ "message": "Acting on 2 note(s) for T-334: Input from Adi for T-145: Signed in as adisuja, open https://support.github.com/contact, pick topic 'Remov",
  "slices": {
   "T-072": 1,
   "T-245": 1,

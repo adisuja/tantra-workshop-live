@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T05:54:25+0530",
-  "version": 1728,
+  "updated": "2026-10-11T05:55:11+0530",
+  "version": 1730,
   "last_id": 394,
   "team": [
    {
@@ -2190,7 +2190,7 @@
    "due": "2026-10-14",
    "status": "review",
    "why": "The upsell to Tantra Pro and Enterprise continues after Day 3, and retention into the paid plan starts here.",
-   "spec": "Write the post-workshop sequence copy, end of Day 3 to +14 days: replay links (Zoom cloud recordings per cohort day, T-223), the Tantra Pro course offer ($999, name pending T-116), Tantra Enterprise ($9,999, 1 year platform access, Cal.com call-booking CTA), and retention nudges into the Tantra Plan (Pro $99/mo). It will run as a Tantra omni-channel campaign (email, WhatsApp, LinkedIn steps) that attendees enter at Day 3 end (T-052); write each message per channel. No invented stats, no dashes, Backlinko voice (workshop-plan/COPY_RULES.md). Same-day replay to no-shows and low-engagement nudges are T-235, not here. Save to workshop-plan/sequences/post.md.",
+   "spec": "Write the post-workshop sequence copy, end of Day 3 to +14 days: replay links (Zoom cloud recordings per cohort day, T-223), the Tantra Pro Course ($999, one time), Tantra Enterprise ($9,999, 1 year platform access, Cal.com call-booking CTA), and retention nudges into the Tantra Plan (Pro $99/mo). It will run as a Tantra omni-channel campaign (email, WhatsApp, LinkedIn steps) that attendees enter at Day 3 end (T-052); write each message per channel. No invented stats, no dashes, Backlinko voice (workshop-plan/COPY_RULES.md). Same-day replay to no-shows and low-engagement nudges are T-235, not here. Save to workshop-plan/sequences/post.md.",
    "done_when": [
     "workshop-plan/sequences/post.md exists covering day 3 to +14 days",
     "Offer names and prices match the owner ladder (Pro $99/mo, Pro course $999, Enterprise $9,999)",
@@ -2239,6 +2239,11 @@
      "ts": "2026-10-10T16:35:32+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-22 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-11T05:55:11+0530",
+     "who": "claude",
+     "note": "Applied the T-116 name: the course token now reads Tantra Pro Course (capital C) in the placeholder table, the step 3 heading and the sequence map, and the spec line matches. Copy lint on post.md is clean (no dashes, no banned words, no literal dates, no stats; prices $99/mo, $999, $9,999 with 1 year). Bhaskar: open workshop-plan/sequences/post.md to sign off."
     }
    ],
    "order": 300,
