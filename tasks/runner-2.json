@@ -97,12 +97,12 @@
    "summary": "I checked the previous report from scratch, everything holds up, and I've set T-292 to **done**. I changed no code in this run.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| Local admin shows connection 1 on and connection 3 on as the probe fallback | Done | The local centre lists conn"
   }
  ],
- "state": "idle",
+ "state": "paused",
  "mode": null,
  "task_id": null,
  "entries": [],
  "started": "2026-10-12T00:37:20+0530",
- "message": "Last sweep handled 0 task(s).",
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 75% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 01:51.",
  "slices": {
   "T-072": 1,
   "T-245": 1,
