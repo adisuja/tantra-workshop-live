@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T08:12:28+0530",
-  "version": 1802,
+  "updated": "2026-10-11T08:16:17+0530",
+  "version": 1803,
   "last_id": 397,
   "team": [
    {
@@ -13087,15 +13087,11 @@
    "evidence": [
     {
      "label": "Admin sign-in form",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t272b"
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t272c"
     },
     {
      "label": "Probe",
      "url": "app/scripts/probe-admin-tokens.mjs"
-    },
-    {
-     "label": "Script fix",
-     "url": "app/scripts/test-attendee.mjs"
     }
    ],
    "blockers": [],
@@ -13125,6 +13121,11 @@
      "ts": "2026-10-11T08:12:26+0530",
      "who": "claude",
      "note": "Live check on Worker 5c45750f (2026-10-11), 10/10 pass: GET /admin/enter?k=<owner key> signs nobody in, a POST with the owner key does, two test tokens (ids 1, 2) both signed in, revoking A cut A off while B kept working, then B was revoked too. Cohort Settings lists Wed 7 to Fri 9 Oct on Zoom meeting 87002851906 and Wed 14 to Fri 16 Oct on 88135386601, so the two weeks get different join links. Every ?k= hand-out is fixed (scripts sign in by POST with ADMIN_KEY plus the centre origin, two memories, T-096's ask, automation matrix; TEAM_GUIDE already used the form), commit 53e12d6 pushed; no Worker code changed, so no deploy."
+    },
+    {
+     "ts": "2026-10-11T08:16:17+0530",
+     "who": "claude",
+     "note": "Verify pass: the live checks all passed on Worker 24f8c991 (previously 5c45750f). ?k= signs nobody in, the owner key works by POST, and after I revoked test token A it was locked out while B kept working; both are now revoked. Weeks 7 to 9 Oct and 14 to 16 Oct sit on different Zoom meetings (87002851906 and 88135386601), the local probe passes 18 of 18 on this repo's code, no ruled-out vendor shows in the live admin.js, and I replaced the last ?k= link (local-stack.sh, ab1f000, pushed). Sign in at https://revops-centre.growthcluborg.workers.dev/admin/enter?v=t272c and open Teammates and Cohort Settings."
     }
    ],
    "order": 2720
