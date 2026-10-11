@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T16:37:41+0530",
-  "version": 1964,
+  "updated": "2026-10-11T16:41:01+0530",
+  "version": 1965,
   "last_id": 408,
   "team": [
    {
@@ -2854,10 +2854,15 @@
      "ts": "2026-10-11T16:36:38+0530",
      "who": "claude",
      "note": "Verify pass: the run caps, wave 1 on 2 slots and Bhaskar's steps are all in the kit, and I fixed the first line tag to {{custom.first_line}} (the T-059 tool and our live funnel both write custom.first_line; a simulator run carried each contact's line). Assignee is now Bhaskar (reviewers Bhaskar, Bharath); referral tests 27/27, probe-referrals 15/15. Bharath, a question for you: can the team workspace get more LinkedIn slots at no charge? Open workshop-plan/outreach/launch-kit.md (3a, 3b, 5)."
+    },
+    {
+     "ts": "2026-10-11T16:41:01+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Bhaskar → Claude (by Orchestrator)."
     }
    ],
    "order": 370,
-   "assignee": "Bhaskar",
+   "assignee": "Claude",
    "reviewers": [
     "Bhaskar",
     "Bharath"
