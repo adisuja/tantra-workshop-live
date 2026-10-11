@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T00:00:25+0530",
-  "version": 2145,
+  "updated": "2026-10-12T00:03:10+0530",
+  "version": 2149,
   "last_id": 412,
   "team": [
    {
@@ -1737,15 +1737,15 @@
    "evidence": [
     {
      "label": "Centre Day 1 card (preview)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/preview?card=d1-session&v=20261011b"
+     "url": "https://revops-centre.growthcluborg.workers.dev/preview?card=d1-session&v=20261012"
     },
     {
      "label": "Hosted day1 HTML",
-     "url": "https://revops-centre.growthcluborg.workers.dev/o/xpEvUSJjNnYQXZmqflDlaer0FNbv9gSPgtxwoJulwxg?v=20261011b"
+     "url": "https://revops-centre.growthcluborg.workers.dev/o/xpEvUSJjNnYQXZmqflDlaer0FNbv9gSPgtxwoJulwxg?v=20261012"
     },
     {
      "label": "Hosted day1 PDF",
-     "url": "https://revops-centre.growthcluborg.workers.dev/o/xpEvUSJjNnYQXZmqflDlaer0FNbv9gSPgtxwoJulwxg.pdf?v=20261011b"
+     "url": "https://revops-centre.growthcluborg.workers.dev/o/xpEvUSJjNnYQXZmqflDlaer0FNbv9gSPgtxwoJulwxg.pdf?v=20261012"
     },
     {
      "label": "390px centre screenshot",
@@ -1754,14 +1754,6 @@
     {
      "label": "390px output screenshot",
      "url": "/tmp/t032/output-d1-390.png"
-    },
-    {
-     "label": "Centre code",
-     "url": "/Users/adithyamurali/tantra-redesign/app/src/app/onboarding/centre/centre.tsx"
-    },
-    {
-     "label": "Probe",
-     "url": "/Users/adithyamurali/tantra-redesign/workshop-plan/ops/probe_outputs.py"
     }
    ],
    "blockers": [],
@@ -1841,6 +1833,11 @@
      "ts": "2026-10-11T17:07:34+0530",
      "who": "claude",
      "note": "The centre now shows 'Open your Day N output' and 'Download PDF' on each day's session card from /api/me outputs (nothing when empty, no time lock); rebuilt and deployed (Worker version 9761eae3), commit 6c65c86c pushed to main. Verified from the public URL as attendee 4 in a headless iPhone browser at 390px: both links show on the Day 1 card, HTML 200 and PDF 200 (%PDF) open with no sideways scroll, and probe_outputs.py prints ok for HTML, PDF and wrong token 404. Open the Day 1 card via the preview link below."
+    },
+    {
+     "ts": "2026-10-12T00:01:55+0530",
+     "who": "claude",
+     "note": "Checked today, nothing needed rebuilding: centre.tsx is committed as 6c65c86c and already on origin/main, and the live centre already shows the links, so I did no new deploy or push. A headless iPhone browser at 390px on the public workers.dev address shows 'Open your Day 1 output' and 'Download PDF' on attendee 4's Day 1 card with no errors, the output page has no sideways scroll, and probe_outputs.py prints ok (HTML 200, PDF 200 %PDF, wrong token 404). Mobile check is that headless iPhone run over the public URL, not a real phone on mobile data. Related: T-033 can read the stored link from /api/me outputs, nothing changed for T-034 or T-136."
     }
    ],
    "order": 220,
@@ -8360,11 +8357,11 @@
    "due": "2026-10-14",
    "status": "review",
    "why": "Owner voice notes, 2026-09-26: the funnel's job is to get everyone using Tantra and reporting every bug and feature request; both get resolved through a fast agentic dev cycle so customers stay for the business results. Owner assigned all of this to Claude end to end.",
-   "spec": "Severity levels with deadlines (P0 same day, P1 within 24 h, P2 within the week, P3 backlog). Agent flow: triage, reproduce, write a failing test, fix, save the fix plus its regression test as a patch in workshop-plan/tantra-product-patches/; the agent flow ends at 'patch plus regression test handed to Bharath'. Bharath applies (git am), merges and deploys; then pipeline.py merged ID records it and the reporter is notified. Agents never write to any Usetantra repo (Adi 2026-10-11). Every fix carries a regression test. Weekly report: open bugs by severity, time to fix (triage to merge), bugs that came back. Input queue comes from T-151. Claude-built automation only (no n8n). Metrics feed the T-158 dashboard.",
+   "spec": "Severity levels with deadlines (P0 same day, P1 within 24 h, P2 within the week, P3 backlog). Agent flow: triage, reproduce, write a failing test, fix, then save the fix and its regression test as a patch in workshop-plan/tantra-product-patches/; Bharath applies it with git am, reviews, merges and deploys; pipeline.py merged ID records the merge; notify reporter. Agents never write to any Usetantra repo (Adi 2026-10-11). Every fix carries a regression test. Weekly report: open bugs by severity, time to fix (triage to merge), bugs that came back. Input queue comes from T-151. Claude-built automation only (no n8n). Metrics feed the T-158 dashboard.",
    "done_when": [
     "Severity levels written and agreed with Bharath",
-    "Flow run end to end on 5 real bugs, ending at patch plus regression test handed to Bharath",
-    "regression-test-required workflow delivered as a patch, with apply steps for Bharath",
+    "Flow run on 5 real bugs through patch plus red-then-green regression test (done; merge is Bharath's)",
+    "regression-test-required workflow delivered as a patch with apply steps; Bharath makes it a required check on development",
     "First weekly bug report posted"
    ],
    "evidence": [
@@ -8465,6 +8462,21 @@
      "ts": "2026-10-11T17:11:20+0530",
      "who": "claude",
      "note": "Verify pass: the fix step no longer branches or commits in the local tantra-backend-v2 clone; it now works in a scratch copy (git archive, no remote) and the agent is denied git push, gh and git remote, and I added apply steps for Bharath to the patch README. Proved it: all five fix patches plus the CI patch apply with git am on a scratch copy of development and the five suites pass (133 of 133), and the clone stayed unchanged. Left for Bharath: agree the severity levels, apply and merge the patches, make regression-test-required a required check. Open workshop-plan/bugs/report-2026-10-09.md?v=1791710000 and workshop-plan/tantra-product-patches/README.md?v=1791710000"
+    },
+    {
+     "ts": "2026-10-12T00:02:30+0530",
+     "who": "claude",
+     "note": "Bharath's three review actions: 1) agree the severity levels in docs/bug-pipeline/severity.md; 2) git am the five fix patches and the CI patch onto development, then merge and deploy (apply steps in workshop-plan/tantra-product-patches/README.md); 3) set regression-test-required as a required check on development."
+    },
+    {
+     "ts": "2026-10-12T00:02:37+0530",
+     "who": "claude",
+     "note": "Card text brought in line with the patch flow: spec now ends at 'patch in tantra-product-patches, Bharath applies with git am, merges, deploys, pipeline.py merged records it', and done_when drops the PR and CI merge wording (checked: no 'PR' or 'clone' left). Ripple from T-148: the patch README now says plainly that agents never push or open PRs in Usetantra repos and every push step is Bharath's after review. Open workshop-plan/tantra-product-patches/README.md?v=1791790000"
+    },
+    {
+     "ts": "2026-10-12T00:03:10+0530",
+     "who": "claude",
+     "note": "Verify pass: the card's spec now ends at the patch handoff (git am by Bharath, then pipeline.py merged), done_when has the Orchestrator's wording, and the log lists Bharath's three actions. The patch README says agents never push or open PRs in Usetantra repos. I checked the card and README on disk (no PR or clone wording, no long dashes) and both are committed in 49d4655a. Open workshop-plan/tantra-product-patches/README.md?v=1791800000"
     }
    ],
    "order": 1520,

@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T00:03:29+0530",
+   "task_id": "T-152",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I checked the previous run's work on disk and it holds up. T-152 is back in review with Bharath and Adi, with the verify note committed as 7adb6290. Nothing was pushed and nothing was written to any Usetantra repo.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| Spec says the fix and its"
+  },
+  {
+   "ts": "2026-10-12T00:02:05+0530",
+   "task_id": "T-032",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-032 is back in review for Aquila and Bharath. Nothing needed rebuilding: the day output links were already committed, pushed and live.\n\n1. **Commit:** done. centre.tsx is committed as 6c65c86c and already on origin/main, with no uncommitted changes. I didn't run tsc because there was nothing new t"
+  },
+  {
    "ts": "2026-10-12T00:00:54+0530",
    "task_id": "T-034",
    "mode": "feedback",
@@ -79,32 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-399 is still blocked. Its ask now covers only three Tantra screenshots (s3-tantra-pro-flow #5, #13 and #14), which still need Adi's desktop session because this runner has no browser. I committed one fix to the capture manifest (5aa14a82).\n\n| Item | State |\n|---|---|\n| s1-blog #2 and #6 | **Done.*"
-  },
-  {
-   "ts": "2026-10-11T22:36:57+0530",
-   "task_id": "T-070",
-   "mode": "feedback",
-   "status": "hold",
-   "result": "ok",
-   "summary": "T-070 stays on Adi's integration hold. Everything the notes asked for is done or was already in place, and I changed no files this run.\n\n1. **Backend finding (done):** I re-read `billing-webhook.processor.ts` in tantra-backend-v2 (f0b901e). `onPayment()` (lines 102 to 108) stores a payment row and r"
-  },
-  {
-   "ts": "2026-10-11T22:35:27+0530",
-   "task_id": "T-285",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-285 is back in review, and nothing had to be deployed or published because the copy fixes (commit 78e6b4e) are already live on both the Worker and the mirror.\n\n- **Ancestry check (done):** 78e6b4e is included in every commit the Worker was deployed from (fa7f53d, af0a1d0, 95d8630e, 53326f5b, 605e4"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-032: PDF + live-link generation",
- "task_id": "T-032",
+ "message": "Acting on 1 note(s) for T-145: Decide: rewrite the public mirror repo's history to remove the leaked library commit",
+ "task_id": "T-145",
  "entries": [
-  "F-b6a9ff1b"
+  "R-5e03cedd"
  ],
  "mode": "feedback",
- "started": "2026-10-12T00:01:16+0530",
+ "started": "2026-10-12T00:03:30+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
