@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T02:59:15+0530",
-  "version": 2268,
+  "updated": "2026-10-12T03:01:11+0530",
+  "version": 2271,
   "last_id": 415,
   "team": [
    {
@@ -4424,31 +4424,31 @@
    "evidence": [
     {
      "label": "Free join",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=t101b"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=d29a1055"
     },
     {
-     "label": "Paid join (intro rewritten)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=t101b"
+     "label": "Paid join",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=d29a1055"
     },
     {
      "label": "Payment confirmed",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t101b"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=d29a1055"
     },
     {
      "label": "Onboarding",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=t101b"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=d29a1055"
     },
     {
      "label": "VIP page, guarantee seal",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t101b"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=d29a1055"
     },
     {
      "label": "Screenshots at 1440 and 390 (10 files)",
      "url": "workshop-plan/evidence/T-101/"
     },
     {
-     "label": "Probe output, ALL PASS",
-     "url": "workshop-plan/evidence/T-101/probe-keyart-2026-10-09.txt"
+     "label": "Probe output 2026-10-12, ALL PASS",
+     "url": "workshop-plan/evidence/T-101/probe-keyart-2026-10-12.txt"
     },
     {
      "label": "Probe",
@@ -4456,7 +4456,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Bhaskar: one review list for all the funnel visuals (this task with T-092, T-093 and T-094). Open in order: https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=t101b , https://adisuja.github.io/tantra-workshop-live/site/workshop/success/?v=t101b , https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=t101b , https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t101b , https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=t101b , https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=t101b , https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=t101b (use the theme switch in the header for T-092). Then approve or reply with changes per page.",
+   "needs_from_owner": "Bhaskar: one review list for all the funnel visuals (this task with T-092, T-093 and T-094). Open in order: https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=d29a1055 , https://adisuja.github.io/tantra-workshop-live/site/workshop/success/?v=d29a1055 , https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=d29a1055 , https://adisuja.github.io/tantra-workshop-live/site/vip/?v=d29a1055 , https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=d29a1055 , https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=d29a1055 , https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=d29a1055 (the first three plus the paid join page are T-093; use the theme switch in the header for T-092). Then approve or reply with changes per page.",
    "log": [
     {
      "ts": "2026-09-24",
@@ -4482,6 +4482,11 @@
      "ts": "2026-10-10T16:35:33+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-24 was past; now 2026-10-16 (P2 rule)."
+    },
+    {
+     "ts": "2026-10-12T03:01:11+0530",
+     "who": "claude",
+     "note": "Ripple from T-093: the combined review list had no ?v=1009b links, but the mirror has been rebuilt since, so all seven links now use the fresh ?v=d29a1055 (the latest mirror commit, which includes the T-093 changes). The key-art probe on the live mirror passes at 1440 and 390 with 0 broken images. I also fixed a false alarm in the probe: it flagged the /vip line 'Registration closes Tue 13 Oct', which is correct because the deadline, computed by cohort.ts, is the evening before Day 1."
     }
    ],
    "order": 990,
@@ -6876,6 +6881,16 @@
      "ts": "2026-10-11T23:12:04+0530",
      "who": "claude",
      "note": "Blocker now points at T-403, the single live ask (T-402 was dropped as its duplicate)."
+    },
+    {
+     "ts": "2026-10-12T02:59:59+0530",
+     "who": "claude",
+     "note": "Ripple from T-351 checked: nothing had to change, the duplicate owner ask is already gone (needs_from_owner empty, blocker points at T-403). Preflight rerun 2026-10-12 still prints NOT READY (Accessibility NO, Mac locked; Screen Recording yes, Claude window found), so no routine was created and nothing needs reverting; the five captures start once the runner's preflight prints READY."
+    },
+    {
+     "ts": "2026-10-12T03:00:34+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-12: preflight from the runner still prints NOT READY (Accessibility NO, Mac locked; Screen Recording yes, Claude window found; top of chain is Python.app), so no routine was created and nothing needs reverting. needs_from_owner stays empty and the ask lives only on T-403; check-guides still shows capture-needed 57 with all 5 slots pending, and captures start once preflight reads READY."
     }
    ],
    "order": 1320,
