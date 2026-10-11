@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T17:08:50+0530",
-  "version": 1982,
+  "updated": "2026-10-11T17:11:20+0530",
+  "version": 1983,
   "last_id": 408,
   "team": [
    {
@@ -8205,47 +8205,47 @@
    "evidence": [
     {
      "label": "First weekly bug report",
-     "url": "workshop-plan/bugs/report-2026-10-09.md?v=1791700000"
+     "url": "workshop-plan/bugs/report-2026-10-09.md?v=1791710000"
     },
     {
      "label": "Severity levels",
-     "url": "docs/bug-pipeline/severity.md?v=1791700000"
+     "url": "docs/bug-pipeline/severity.md?v=1791710000"
     },
     {
-     "label": "Patch index (README)",
-     "url": "workshop-plan/tantra-product-patches/README.md?v=1791700000"
+     "label": "Patch index and apply steps for Bharath (README)",
+     "url": "workshop-plan/tantra-product-patches/README.md?v=1791710000"
     },
     {
      "label": "Bug 1 fix + regression test patch (was PR #160, closed)",
-     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fix_bug-1-unipile-account-id-regex--f7ef2beb53.patch?v=1791700000"
+     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fix_bug-1-unipile-account-id-regex--f7ef2beb53.patch?v=1791710000"
     },
     {
      "label": "Bug 2 fix + regression test patch (was PR #161, closed)",
-     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fix_bug-2-phone-extension-no-space--2f84eb6668.patch?v=1791700000"
+     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fix_bug-2-phone-extension-no-space--2f84eb6668.patch?v=1791710000"
     },
     {
      "label": "Bug 3 fix + regression test patch (was PR #162, closed)",
-     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fix_bug-3-asyncpool-concurrency--5fafc5b7b4.patch?v=1791700000"
+     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fix_bug-3-asyncpool-concurrency--5fafc5b7b4.patch?v=1791710000"
     },
     {
      "label": "Bug 4 fix + regression test patch (was PR #163, closed)",
-     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fix_bug-4-unsubscribe-search-regex--384f290500.patch?v=1791700000"
+     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fix_bug-4-unsubscribe-search-regex--384f290500.patch?v=1791710000"
     },
     {
      "label": "Bug 5 fix + regression test patch (was PR #164, closed)",
-     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fix_bug-5-calendar-html-link-text-url--a5af3635a3.patch?v=1791700000"
+     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fix_bug-5-calendar-html-link-text-url--a5af3635a3.patch?v=1791710000"
     },
     {
      "label": "CI rule regression-test-required patch (was PR #165, closed)",
-     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/ci_regression-test-required--442706bc7a.patch?v=1791700000"
+     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/ci_regression-test-required--442706bc7a.patch?v=1791710000"
     },
     {
      "label": "Pipeline",
-     "url": "workshop-plan/bugs/pipeline.py?v=1791700000"
+     "url": "workshop-plan/bugs/pipeline.py?v=1791710000"
     },
     {
      "label": "Metrics for T-158",
-     "url": "workshop-plan/bugs/metrics.json?v=1791700000"
+     "url": "workshop-plan/bugs/metrics.json?v=1791710000"
     }
    ],
    "blockers": [],
@@ -8295,6 +8295,11 @@
      "ts": "2026-10-11T17:08:50+0530",
      "who": "claude",
      "note": "Card brought in line with the no-Usetantra-writes rule: evidence now links the five fix patches and the CI rule patch (PRs 160 to 165 marked closed), and spec and done_when end the agent flow at 'patch plus regression test handed to Bharath'. pipeline.py's fix step now denies git push, gh and git remote to the agent and itself exports the fix with git format-patch into tantra-product-patches; the regenerated report and metrics.json show all five bugs as 'patch ready, awaiting Bharath' with time to fix 'none yet'. Open workshop-plan/bugs/report-2026-10-09.md?v=1791700000."
+    },
+    {
+     "ts": "2026-10-11T17:11:20+0530",
+     "who": "claude",
+     "note": "Verify pass: the fix step no longer branches or commits in the local tantra-backend-v2 clone; it now works in a scratch copy (git archive, no remote) and the agent is denied git push, gh and git remote, and I added apply steps for Bharath to the patch README. Proved it: all five fix patches plus the CI patch apply with git am on a scratch copy of development and the five suites pass (133 of 133), and the clone stayed unchanged. Left for Bharath: agree the severity levels, apply and merge the patches, make regression-test-required a required check. Open workshop-plan/bugs/report-2026-10-09.md?v=1791710000 and workshop-plan/tantra-product-patches/README.md?v=1791710000"
     }
    ],
    "order": 1520,
