@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T11:59:47+0530",
-  "version": 1881,
+  "updated": "2026-10-11T12:02:21+0530",
+  "version": 1882,
   "last_id": 400,
   "team": [
    {
@@ -1880,6 +1880,11 @@
      "ts": "2026-10-11T11:59:47+0530",
      "who": "claude",
      "note": "Delivery now reads the real T-032 links (/o/<token> and .pdf from attendee_outputs), and the Resend key also carries the email so a reused attendee id can never drop a send. On a private simulator stack: probe-day-delivery 26/26, probe-output-delivery 17/17, probe-tantra-reminders 92/0, and dryrun_day1 delivered all 3 personas in 10 to 15 s. Deployed as Worker 559158f9 and pushed (main 605e4609). Waits only on the T-337 key; the WhatsApp ask moved to T-400."
+    },
+    {
+     "ts": "2026-10-11T12:02:21+0530",
+     "who": "claude",
+     "note": "Verify pass: I re-ran everything on a fresh local centre and simulator. probe-day-delivery passed 26/26, probe-output-delivery 17/17 and probe-tantra-reminders 92/92. The real /o/<token> and .pdf link source and the email-carrying Resend idempotency key are in commit 605e4609, which is on origin/main and live as Worker 559158f9 (admin delivery API answers 401 signed out). Still blocked only on the T-337 Tantra key, with the WhatsApp number asked in T-400."
     }
    ],
    "order": 230,
