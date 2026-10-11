@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T11:59:40+0530",
-  "version": 1879,
+  "updated": "2026-10-11T11:59:47+0530",
+  "version": 1881,
   "last_id": 400,
   "team": [
    {
@@ -1773,26 +1773,121 @@
   },
   {
    "id": "T-033",
-   "status": "blocked",
+   "title": "WhatsApp + email delivery automation",
+   "area": "Delivery",
    "owner": "Aquila",
+   "priority": "P1",
+   "due": "2026-10-14",
+   "status": "blocked",
+   "why": "Same-day delivery before the next session is what makes the loop feel magical.",
+   "spec": "After T-031 (day outputs) and T-032 (PDF and link), send each attendee their output link the same day by email and WhatsApp. Owner model (google-and-reminder-model, 2026-10-07): attendee messages run on Tantra omni-channel campaigns, and contacts are imported into the campaign programmatically by webhook; Tantra sending is live. So: on each delivered output, push or update the attendee contact in the Tantra campaign with the output link as a contact field, and let the campaign's email and WhatsApp steps send it. UNVERIFIED that a Tantra campaign step can insert a per-contact link field; if it cannot, send the email through Resend (approved) and keep WhatsApp on Tantra. Never Twilio for WhatsApp. Reuse the same webhook import as the reminders (T-234) and the umbrella T-123; recipients come from the centre attendee records; test identity the owner's Google test identity.",
+   "done_when": [
+    "the owner's Google test identity receives the Day 1 output link by email and WhatsApp within 10 minutes of a pipeline run",
+    "The send is idempotent per attendee and day (no duplicate on the next tick)",
+    "No Twilio WhatsApp, n8n or SendGrid call in the path"
+   ],
+   "evidence": [
+    {
+     "label": "Delivery module",
+     "url": "cloud/src/jobs-delivery.ts"
+    },
+    {
+     "label": "Probe (output delivery, 17/17)",
+     "url": "app/scripts/probe-output-delivery.mjs"
+    },
+    {
+     "label": "Probe (day delivery, 26/26)",
+     "url": "app/scripts/probe-day-delivery.mjs"
+    },
+    {
+     "label": "Day 1 dry run on the simulator (3/3)",
+     "url": "workshop-plan/ops/dryrun/20261011-115532/results.json"
+    },
+    {
+     "label": "Live delivery status (admin)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/api/delivery?v=t033r4"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "The GrowthClub Tantra API key, asked as T-337: paste it at https://revops-centre.growthcluborg.workers.dev/admin/#settings, field Tantra API key. The WhatsApp connect and test number are asked separately as T-400. With both in, I create the 3 Day-output campaigns and run the Day 1 test send to Adi test only.",
+   "log": [
+    {
+     "ts": "2026-09-18T18:00:00-04:00",
+     "who": "claude",
+     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
+    },
+    {
+     "ts": "2026-09-18T20:42:47+0530",
+     "who": "claude",
+     "note": "Owner: build the automation code yourself. Reassigned from Bhaskar Dev to Claude."
+    },
+    {
+     "ts": "2026-09-25",
+     "who": "Claude",
+     "note": "Blocks T-123 (launch-critical messages)."
+    },
+    {
+     "ts": "2026-10-06T01:37:57+0530",
+     "who": "claude",
+     "note": "Owner 2026-10-06: the playbook and both centres promise each day's answers run through an AI workflow and come back the same day as a PDF and a live link by WhatsApp and email, for every attendee. Not built yet (no PDF generation or WhatsApp/email delivery in cloud/src); keep this open until it runs end to end per attendee."
+    },
+    {
+     "ts": "2026-10-08T00:21:42+0530",
+     "who": "claude",
+     "note": "Task Command Center review: context updated. Blockers stale: approved senders are now Tantra email or Resend for email and Tantra (WhatsApp) or Twilio; Tantra per-contact send endpoint is still pending (tantra-reminder-endpoint-pending)."
+    },
+    {
+     "ts": "2026-10-08T00:48:49+0530",
+     "who": "claude",
+     "note": "Pass 2 (2026-10-08): pass 2: dropped the stale T-236 /emails/batch blocker and Twilio WhatsApp; per the owner model (2026-10-07) attendee messages run on Tantra omni-channel campaigns with contacts imported by webhook, WhatsApp never via Twilio."
+    },
+    {
+     "ts": "2026-10-09T05:37:52+0530",
+     "who": "claude",
+     "note": "People: reviewers Aquila → Aquila/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-09T05:37:52+0530",
+     "who": "claude",
+     "note": "Built and live: cloud/src/jobs-delivery.ts puts each delivered day output into a per-day Tantra campaign (email + WhatsApp, both through Tantra since T-234 proved {{custom.*}} renders in both), with a D1 ledger (migration 0020, applied remotely) so a second tick never resends; workshop-plan/ops/deliver.py posts T-031/T-032 rows from ops.db each tick. Verified with app/scripts/probe-day-delivery.mjs 27/27 on the simulator (stub Day 1 email + WhatsApp with the link, no duplicate on repost or next tick, 409 retry sends once, no Twilio/n8n/SendGrid or other vendor touched), probe-tantra-reminders still all pass, Worker deployed from clean HEAD 2fc74a9 and pushed to main; the real send to Adi test waits on the Tantra key and a WhatsApp number, and the stub swaps out once T-031/T-032 write day_outputs."
+    },
+    {
+     "ts": "2026-10-09T05:37:58+0530",
+     "who": "claude",
+     "note": "Correction: probe-day-delivery.mjs passed 26/26 checks (not 27); everything else in the previous note stands."
+    },
+    {
+     "ts": "2026-10-09T05:38:07+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-034."
+    },
+    {
+     "ts": "2026-10-10T16:35:32+0530",
+     "who": "claude",
+     "note": "Board hygiene (T-129): due 2026-09-22 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-10T20:15:04+0530",
+     "who": "claude",
+     "note": "Added a Resend email fallback (Cohort Settings delivery_email_via=resend, WhatsApp stays on WhatsApp-only Tantra campaigns) and app/scripts/probe-output-delivery.mjs on T-032's /o/<token> and .pdf links: 17/17 pass on the simulator (one send each way, ticks and reposts add nobody, no Twilio, n8n or SendGrid), and probe-day-delivery still passes. The ripple needed only a comment because deliver.py already takes links from attendee_outputs. Commit is local and not pushed or deployed because the coordination LOG says publish held; the live Day 1 send waits only on the inputs below."
+    },
+    {
+     "ts": "2026-10-11T05:53:09+0530",
+     "who": "claude",
+     "note": "T-032 ripple: the PDF and link are built and verified live (probe ok on attendee 4 day1), and T-031 is real, so both stale blockers are removed. Still blocked only on the input already in needs_from_owner."
+    },
+    {
+     "ts": "2026-10-11T11:59:47+0530",
+     "who": "claude",
+     "note": "Delivery now reads the real T-032 links (/o/<token> and .pdf from attendee_outputs), and the Resend key also carries the email so a reused attendee id can never drop a send. On a private simulator stack: probe-day-delivery 26/26, probe-output-delivery 17/17, probe-tantra-reminders 92/0, and dryrun_day1 delivered all 3 personas in 10 to 15 s. Deployed as Worker 559158f9 and pushed (main 605e4609). Waits only on the T-337 key; the WhatsApp ask moved to T-400."
+    }
+   ],
+   "order": 230,
    "assignee": "Claude",
    "reviewers": [
     "Aquila",
     "Bharath"
-   ],
-   "priority": "P1",
-   "due": "2026-10-14",
-   "area": "Delivery",
-   "order": 230,
-   "title": "T-033: held back (private client detail)",
-   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
-   "spec": "",
-   "done_when": [],
-   "evidence": [],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [],
-   "held": true
+   ]
   },
   {
    "id": "T-034",
@@ -1907,6 +2002,11 @@
      "ts": "2026-10-11T05:53:09+0530",
      "who": "claude",
      "note": "T-032 ripple: T-032 is verified live and in review, so it is dropped as a blocker. Waits only on T-033."
+    },
+    {
+     "ts": "2026-10-11T11:59:47+0530",
+     "who": "claude",
+     "note": "T-033 ripple: dryrun_day1.py rerun on a private simulator stack (run 20261011-115532): all 3 personas got real day output, PDF and delivery code (sim vendor) in 10 to 15 s; timings are in ops/runbook.md."
     }
    ],
    "order": 240,
