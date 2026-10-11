@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T12:50:48+0530",
-  "version": 1917,
+  "updated": "2026-10-11T12:55:18+0530",
+  "version": 1918,
   "last_id": 403,
   "team": [
    {
@@ -13896,28 +13896,28 @@
    ],
    "evidence": [
     {
-     "label": "Free join page (add &f=<feed token> for pending or own link)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=t278w"
+     "label": "Free join page (add &f=<feed token>)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=t278v2"
     },
     {
      "label": "Paid join page (add &f=<feed token>)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=t278w"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=t278v2"
     },
     {
-     "label": "Email link probe",
+     "label": "VIP page",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=t278v2"
+    },
+    {
+     "label": "Email join-link probe",
      "url": "/Users/adithyamurali/tantra-redesign/app/scripts/probe-email-join-link.mjs"
     },
     {
-     "label": "Own-link probe, 3 states",
-     "url": "/Users/adithyamurali/tantra-redesign/app/scripts/probe-join-own-link.mjs"
-    },
-    {
-     "label": "Email link screenshot, free",
+     "label": "Email join screenshots",
      "url": "/tmp/email-join-free.png"
     },
     {
-     "label": "Email link screenshot, paid",
-     "url": "/tmp/email-join-paid.png"
+     "label": "VIP screenshot",
+     "url": "/tmp/vip-t278v2.png"
     },
     {
      "label": "AUDIT.md",
@@ -13981,6 +13981,11 @@
      "ts": "2026-10-11T12:48:42+0530",
      "who": "claude",
      "note": "The confirmation and reminder emails and the private feed now link each attendee's own join page (free or paid), and opening that link from a rendered email on a local centre with a Zoom-registered attendee puts their own Zoom link on the button on both pages (probe-email-join-link 10 of 10; probe-calendar-feeds 67, probe-own-join 16, probe-cohort and tsc all pass). Main is pushed (95d8630e) and the centre Worker is deployed from a clean worktree as version a9f57c7a with no migration pending; nothing was sent, and the mirror did not need a republish because no page changed since ae397ec2e. Open both join pages below; add &f=<feed token> for the pending or own-link state."
+    },
+    {
+     "ts": "2026-10-11T12:55:18+0530",
+     "who": "claude",
+     "note": "Verify pass: every item holds. Both join pages open the attendee's own Zoom link from the emailed ?f= link (probe-email-join-link 10/10, probe-join-own-link 30/30 in all 3 states, probe-own-join 16/16), /vip shows only upcoming dates (13 to 16 Oct) and no webinar or cold calendar labels in headless Chromium, footer links return 200 with no redirect, and all 9 AUDIT.md rows cite a8e393a or 97cf452. probe-calendar-feeds now pins zoom_auto off (commit 630ec740, pushed) and passes 67/67; tsc and probe-cohort pass; Worker a9f57c7a needed no redeploy."
     }
    ],
    "order": 2780
