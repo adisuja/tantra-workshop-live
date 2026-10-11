@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T05:29:56+0530",
-  "version": 1698,
-  "last_id": 391,
+  "updated": "2026-10-11T05:32:17+0530",
+  "version": 1707,
+  "last_id": 394,
   "team": [
    {
     "name": "Adi",
@@ -15577,6 +15577,35 @@
    ],
    "order": 3870,
    "input_for": "T-253",
+   "kind": "input"
+  },
+  {
+   "id": "T-393",
+   "title": "Input from Adi for T-337: Sign in at https://usetantra.com (GrowthClub workspace). Under Connectors, Email",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (credential): Creating a Tantra API key requires signing in as Adi to his GrowthClub workspace; no key is stored locally.. Everything else in T-337 is being built around it. As soon as this is done, T-337 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Sign in at https://usetantra.com (GrowthClub workspace). Under Connectors, Email Accounts, confirm team@growthclub.org is connected. Then Connectors, API Keys, Create Key, name it 'workshop-reminders', copy it. Open https://revops-centre.growthcluborg.workers.dev/admin/enter?k=<key from ~/.config/tantra/revops-admin-key>, go to Cohort Settings, Tantra Messaging, paste into the Tantra API key field, click Save.",
+   "log": [
+    {
+     "ts": "2026-10-11T05:31:32+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-337."
+    }
+   ],
+   "order": 3930,
+   "input_for": "T-337",
    "kind": "input"
   }
  ]
