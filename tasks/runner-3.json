@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T21:44:57+0530",
+   "task_id": "T-284",
+   "mode": "feedback",
+   "status": "hold",
+   "result": "ok",
+   "summary": "F-777d2bc8 was already marked processed, so acking it found nothing new to do. T-284 is now on hold until Adi gives his verdicts in T-282, and nothing has gone live.\n\n**Completion check:**\n1. **Re-export the 5 changed videos:** done (checked earlier this run).\n   - Kie.ai 59 s, Stripe 85.5 s, HubSpo"
+  },
+  {
    "ts": "2026-10-11T21:23:52+0530",
    "task_id": "T-275",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "**T-152:** it's back in review with Bharath and Adi. I found one real gap and fixed it: the fix step was creating branches and commits inside the local Tantra backend clone, which Adi's 2026-10-11 rule forbids. Committed as 4f8e6c9b, nothing pushed.\n\n**Completion check (all evidence from this run):*"
-  },
-  {
-   "ts": "2026-10-11T17:00:34+0530",
-   "task_id": "T-334",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-334 is still blocked: GitHub only takes the purge request from Adi's signed-in adisuja account, and the agent may not sign in as Adi or message outside parties. I posted that as the plain answer on the task and acked F-bee27c2a.\n\n- **Exact blocker explained:** done. orchestrator.py lines 74-75 for"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-284",
+ "task_id": "T-270",
  "entries": [
-  "F-777d2bc8"
+  "F-e0743104"
  ],
- "started": "2026-10-11T21:28:59+0530",
- "message": "Acting on 1 note(s) for T-284: Put the approved 4K walkthroughs on both onboarding centres and the playbook",
+ "started": "2026-10-11T21:45:15+0530",
+ "message": "Acting on 1 note(s) for T-270: New centre cards: teach by default, examples on every field, no paid auto-drafts",
  "slices": {
   "T-135": 1,
   "T-148": 1,
