@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T07:24:45+0530",
-  "version": 1777,
+  "updated": "2026-10-11T07:26:01+0530",
+  "version": 1778,
   "last_id": 397,
   "team": [
    {
@@ -6210,24 +6210,64 @@
    ],
    "evidence": [
     {
-     "label": "Centre: reverse squeeze chart (open at 1440)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/guides/s4-rsp/?v=t130c"
+     "label": "Centre: webinar stages chart",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/guides/s5-webinar-stages/?v=t130d"
+    },
+    {
+     "label": "Centre: reverse squeeze chart",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/guides/s4-rsp/?v=t130d"
+    },
+    {
+     "label": "Centre: cold email chart",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/guides/s1-cold-email/?v=t130d"
     },
     {
      "label": "Centre: pipeline chart, the busiest",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/guides/s5-pipeline/?v=t130c"
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/guides/s5-pipeline/?v=t130d"
     },
     {
-     "label": "Mirror: challenge stages (open on a phone)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s5-challenge-stages/?v=t130c"
+     "label": "Mirror: webinar stages chart",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s5-webinar-stages/?v=t130d"
+    },
+    {
+     "label": "Mirror: reverse squeeze chart",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s4-rsp/?v=t130d"
     },
     {
      "label": "Mirror: cold email chart",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s1-cold-email/?v=t130c"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/guides/s1-cold-email/?v=t130d"
     },
     {
-     "label": "Screenshots at 1440 and 390",
-     "url": "/tmp/t130-final-centre"
+     "label": "Screenshot s4-rsp 1440",
+     "url": "/tmp/t130-final-centre/s4-rsp-1440.png"
+    },
+    {
+     "label": "Screenshot s4-rsp 390",
+     "url": "/tmp/t130-final-centre/s4-rsp-390.png"
+    },
+    {
+     "label": "Screenshot s5-pipeline 1440",
+     "url": "/tmp/t130-final-centre/s5-pipeline-1440.png"
+    },
+    {
+     "label": "Screenshot s5-pipeline 390",
+     "url": "/tmp/t130-final-centre/s5-pipeline-390.png"
+    },
+    {
+     "label": "Screenshot s1-overview 1440",
+     "url": "/tmp/t130-final-centre/s1-overview-1440.png"
+    },
+    {
+     "label": "Screenshot s1-overview 390",
+     "url": "/tmp/t130-final-centre/s1-overview-390.png"
+    },
+    {
+     "label": "Screenshot s5-challenge-stages 1440",
+     "url": "/tmp/t130-final-centre/s5-challenge-stages-1440.png"
+    },
+    {
+     "label": "Screenshot s5-challenge-stages 390",
+     "url": "/tmp/t130-final-centre/s5-challenge-stages-390.png"
     }
    ],
    "blockers": [],
@@ -6267,6 +6307,11 @@
      "ts": "2026-10-10T16:35:34+0530",
      "who": "claude",
      "note": "Board hygiene (T-129): due 2026-09-28 was past; now 2026-10-14 (P1 rule)."
+    },
+    {
+     "ts": "2026-10-11T07:26:01+0530",
+     "who": "claude",
+     "note": "Renderer shipped in eb2bb14 (plus 6e1facf for the three near-miss charts at 390), on main via e696111; AUDIT.md marks all seven findings fixed in eb2bb14 with the live 2026-10-10 measurements (24 charts 1360 px and left to right at 1440, top to bottom at 390, 0 gf-in chips, 0 labels over a card), and probe-details rerun today shows 0 merge-span WARN and 0 FAIL. Adi: open any busy chart (s5-webinar-stages, s4-rsp, s1-cold-email) at 1440 and 390 and check the branches read without tracing lines."
     }
    ],
    "order": 1280,
