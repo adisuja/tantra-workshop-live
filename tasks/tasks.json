@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T05:36:15+0530",
-  "version": 1709,
+  "updated": "2026-10-11T05:39:40+0530",
+  "version": 1713,
   "last_id": 394,
   "team": [
    {
@@ -9974,7 +9974,8 @@
    "assignee": "Claude",
    "reviewers": [
     "Aquila",
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P0",
    "due": "",
@@ -9989,12 +9990,20 @@
    ],
    "evidence": [
     {
-     "label": "pre.md confirmation (aligned)",
+     "label": "pre.md free-lane confirmation",
      "url": "workshop-plan/sequences/pre.md"
+    },
+    {
+     "label": "Drift check",
+     "url": "workshop-plan/sequences/check_confirmation.py"
     },
     {
      "label": "Sent welcome copy",
      "url": "cloud/src/reminder-copy.ts"
+    },
+    {
+     "label": "Vendor-sim probe",
+     "url": "app/scripts/probe-tantra-reminders.mjs"
     }
    ],
    "blockers": [
@@ -10061,6 +10070,16 @@
      "ts": "2026-10-11T05:36:15+0530",
      "who": "claude",
      "note": "Ripple from T-050: the two did differ, so I rewrote the confirmation in workshop-plan/sequences/pre.md to match the welcome that is actually sent (COPY.registered in cloud/src/reminder-copy.ts), because Adi's T-050 decision makes the T-228 welcome the reference. The free lane email subject, body and WhatsApp now match word for word after placeholder mapping (script check: all three True), the paid lane carries the same links with its masterclass opening, the placeholder table names the real Tantra fields, and rebuilding the nurture copy gives no diff. No Worker code changed, so nothing to deploy; open workshop-plan/sequences/pre.md. Live send still waits on the Tantra key (T-337)."
+    },
+    {
+     "ts": "2026-10-11T05:39:40+0530",
+     "who": "claude",
+     "note": "People: reviewers Aquila/Adi → Aquila/Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-11T05:39:40+0530",
+     "who": "claude",
+     "note": "Verify pass: the free-lane confirmation in pre.md matches the sent welcome word for word, and a new check (python3 workshop-plan/sequences/check_confirmation.py) now fails if they drift; I also corrected the paid-lane note, since paid buyers currently get the same Registered message. The reminders probe passed 92 checks with 0 failures on a private local centre and vendor-sim (one welcome with own Zoom, calendar and centre links, a revoked calendar link rewrites the contact); the paid-buyer step was skipped for lack of a local payment test secret. The live send still waits on the Tantra key (T-337)."
     }
    ],
    "order": 2280
@@ -14718,7 +14737,7 @@
    "evidence": [
     {
      "label": "Public board",
-     "url": "https://tantra-board.growthcluborg.workers.dev/tasks.html?v=20261011a"
+     "url": "https://tantra-board.growthcluborg.workers.dev/tasks.html?v=20261011b"
     },
     {
      "label": "Probe (public board)",
@@ -14756,6 +14775,11 @@
      "ts": "2026-10-11T05:27:55+0530",
      "who": "claude",
      "note": "Ready to review at https://tantra-board.growthcluborg.workers.dev/tasks.html?v=20261011a . Re-verified on the hardened build 2026-10-11 05:22 to 05:28 IST: (1) probe-public-board.mjs --live is clean (72 checks, exit 0, public and local both v1678, 397 notes identical, keyless 'Adi' arrives as 'Visitor: Adi' untrusted); (2) a note sent from the live page at 05:27:12 reached the Mac inbox in 14.5 s through the background importer (W-731338e67f), one POST to the Worker, 0 github.com requests, 0 new tabs; (3) the old adisuja.github.io/tantra-workshop-live/tasks.html landed on the Worker in a headless browser; (4) probe-board-actions.mjs passes 70 of 70 including 'no action opened github.com or a new tab'. Its first run showed 4 failures, all in the probe and not the board: a sandbox task (T-389) left by the run that was killed at 01:35 matched the same title, and the roster check predated Vaibhavi. Both fixed in the probe (commit e298321), T-389 removed, 25 probe notes acked. Nothing failed on the Worker, so no redeploy and no push."
+    },
+    {
+     "ts": "2026-10-11T05:39:34+0530",
+     "who": "claude",
+     "note": "Ready to review at https://tantra-board.growthcluborg.workers.dev/tasks.html?v=20261011b . Verify pass 2026-10-11 05:28 to 05:45 IST, all four checks clean: probe-public-board.mjs --live exit 0 (72 ok, 0 fail, incl. no GitHub calls, keyless 'Adi' arriving as 'Visitor: Adi' untrusted, github.io origin refused); a note sent from the live page at 05:38:01 reached the Mac inbox in 2.4 s (W-6bf7901991); the old github.io address forwarded to the Worker in a headless browser with 0 github.com requests and 0 popups; probe-board-actions.mjs exit 0 (70 ok, no action opened github.com or a new tab). No probe failed, so no redeploy and no push; sandbox tasks removed, 14 probe notes acked, and commit 2590cd5 only drops stale 'GitHub issues' wording from pass.py and runner.py."
     }
    ],
    "order": 3220
