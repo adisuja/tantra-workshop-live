@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T00:09:40+0530",
-  "version": 2158,
+  "updated": "2026-10-12T00:10:19+0530",
+  "version": 2159,
   "last_id": 413,
   "team": [
    {
@@ -8721,28 +8721,20 @@
    ],
    "evidence": [
     {
-     "label": "Public board with counter + Report form",
-     "url": "https://tantra-board.growthcluborg.workers.dev/?v=1764"
-    },
-    {
-     "label": "Mirror board",
-     "url": "https://adisuja.github.io/tantra-workshop-live/tasks.html?v=1764"
-    },
-    {
-     "label": "FintechCircle draft + test-send script",
-     "url": "workshop-plan/scripts/fintechcircle-experiment.mjs"
-    },
-    {
-     "label": "FintechCircle experiment spec (status updated)",
+     "label": "FintechCircle spec (status 2026-10-12)",
      "url": "workshop-plan/dogfooding/FINTECHCIRCLE_EXPERIMENT.md"
     },
     {
-     "label": "Growth backlog (8 ideas, each with a metric)",
-     "url": "workshop-plan/dogfooding/GROWTH_BACKLOG.md"
+     "label": "Script with centre proxy mode and cold-mailbox guard",
+     "url": "workshop-plan/scripts/fintechcircle-experiment.mjs"
     },
     {
-     "label": "Client experiment spec (private)",
-     "url": "workshop-plan/coord/T-155-client-experiment-private.md"
+     "label": "Proxy route (adminApi tantra-proxy)",
+     "url": "cloud/src/index.ts"
+    },
+    {
+     "label": "Public board",
+     "url": "https://tantra-board.growthcluborg.workers.dev/?v=20261012"
     }
    ],
    "blockers": [],
@@ -8792,6 +8784,11 @@
      "ts": "2026-10-11T17:52:59+0530",
      "who": "claude",
      "note": "Ripple from T-363 checked on disk, nothing had to change: the A/B drafts with the day-3 follow-up are already recorded in the private client spec, but the read-only audit is NOT done (the audit sheet says not run, Claude has no read access to the client workspace), so it stays open, and step 1 stays unticked because check_client_ok.py still fails 9 of 9 (no client reply saved)."
+    },
+    {
+     "ts": "2026-10-12T00:10:19+0530",
+     "who": "claude",
+     "note": "The key is now reachable without leaving Admin: I deployed an admin-only Tantra proxy on the centre (401 without sign-in, 403 off its allowlist), and the FintechCircle script uses it; the live preflight passed 4 of 4, read only. I did not run the test send: the workspace has exactly one connected mailbox, and it is the cold mailbox the Orchestrator banned as a sender, with nothing on file showing it is FintechCircle's, so the script now refuses --go from it and nothing was created in Tantra. The send runs as soon as a FintechCircle mailbox or team@growthclub.org (T-123) shows connected; funnel reminders stay on T-123/T-234, the client test on T-363, no new ask."
     }
    ],
    "order": 1550,
