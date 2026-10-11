@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T08:55:14+0530",
+   "task_id": "T-259",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-259 is in review for Adi and Bharath: the verify pass found nothing to fix, so there was no commit and no push.\n\n**COMPLETION CHECK** (evidence from this run)\n\n| Item | State |\n|---|---|\n| `cf3d5ff` on origin/main, tree clean | Done for the task's files. `cf3d5ff` and `b880b67` are ancestors of or"
+  },
+  {
    "ts": "2026-10-11T08:28:54+0530",
    "task_id": "T-273",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-213 is back in review: the verify pass found and fixed one real fault in the lead hand-off, and the Endy agreement itself still waits on Nelbin's call (T-397). My two commits (6a59a78, 5d8a0ca) are local only, not pushed.\n\n**COMPLETION CHECK**\n\n| Item | State | Evidence from this run |\n|---|---|--"
-  },
-  {
-   "ts": "2026-10-11T06:40:21+0530",
-   "task_id": "T-158",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "COMPLETION CHECK (T-158, verify pass)\n\n**Orchestrator note F-c1eda33f**\n1. **Page returns 200 with all 6 bands:** done. A headless load at 1440 returned 200 with Feedback volume, Bug pipeline, Feature pipeline, Ship rate, Dogfooding experiments and Customer tier mix. No board restart was needed.\n2. "
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-259: S2 to S5 guides: make the steps match what the centre already automates",
- "task_id": "T-259",
+ "message": "Acting on 1 note(s) for T-096: Device cap per attendee link in the live centre admin",
+ "task_id": "T-096",
  "entries": [
-  "F-12a2ae88"
+  "F-9f32088b"
  ],
  "mode": "feedback",
- "started": "2026-10-11T08:29:31+0530",
+ "started": "2026-10-11T08:56:34+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
