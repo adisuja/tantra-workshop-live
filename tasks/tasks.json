@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T22:50:15+0530",
-  "version": 2093,
+  "updated": "2026-10-11T22:54:36+0530",
+  "version": 2096,
   "last_id": 410,
   "team": [
    {
@@ -5291,6 +5291,11 @@
      "ts": "2026-10-11T22:50:15+0530",
      "who": "claude",
      "note": "Ripple from T-295 checked, nothing had to change: in a headless browser on the live mirror today, Book a Call shows the Amazon mark, Hub and Spoke shows the YouTube mark, and no Slack tile or text appears on Book a Call, Waterfall or Hub and Spoke (Slack was already taken out of every board by T-260; Waterfall uses no Amazon or YouTube channel). The T-295 engine fix (e5fbf41) is in the published mirror build, so the seven review links above already show it."
+    },
+    {
+     "ts": "2026-10-11T22:54:36+0530",
+     "who": "claude",
+     "note": "Ripple from T-295 checked again on the live mirror today, and nothing had to change. The Amazon mark shows on the Book funnel (/funnels/book) and the YouTube mark on Hub and Spoke. Book a Call and Waterfall have no Amazon or YouTube channel, so they correctly show neither (the last note wrongly said Book a Call; it is the Book board). No board shows Slack or a 'Team chat' label: T-260 removed Slack and there is no Team chat in the source. The seven review links are unchanged and already show T-295's build."
     }
    ],
    "order": 1060,
@@ -11836,31 +11841,31 @@
    "evidence": [
     {
      "label": "s1-cold-email guide",
-     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/onboarding/guides/s1-cold-email/?v=t240c"
+     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/onboarding/guides/s1-cold-email/?v=t240v"
     },
     {
      "label": "s4-rsp guide",
-     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/onboarding/guides/s4-rsp/?v=t240c"
+     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/onboarding/guides/s4-rsp/?v=t240v"
     },
     {
      "label": "s1-blog guide",
-     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/onboarding/guides/s1-blog/?v=t240c"
+     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/onboarding/guides/s1-blog/?v=t240v"
     },
     {
      "label": "masterclass",
-     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/masterclass/?v=t240c"
+     "url": "http://127.0.0.1:4361/tantra-workshop-live/site/masterclass/?v=t240v"
     },
     {
      "label": "screenshots 1440 and 390",
      "url": "/tmp/t240/"
     },
     {
-     "label": "probe log (0 FAIL)",
-     "url": "/tmp/t240-probe.log"
+     "label": "probe log",
+     "url": "/tmp/t240v-probe.log"
     },
     {
      "label": "negative check",
-     "url": "/tmp/t240-negative.log"
+     "url": "/tmp/t240v-negative.log"
     },
     {
      "label": "AUDIT G129 G146",
@@ -11914,6 +11919,16 @@
      "ts": "2026-10-11T22:44:30+0530",
      "who": "claude",
      "note": "Full runtime probe-details on a clean export of main 30ea25fc staged at :4361 reports 0 FAIL (56 WARN, none a screenshot-fill FAIL); the 3 original images stay clear (c38ce69, 6e7b2b6) and G146 is fixed by probe norm 3fff8f22, with a negative check proving an unmeasured wrong-width shot still FAILs. Screenshots at 1440 and 390 are in /tmp/t240/; AUDIT G129 and G146 and LOG.md updated. No push needed (3fff8f22 and c5b0dcd4 were already on origin/main) and no mirror republish (no shipped asset changed)."
+    },
+    {
+     "ts": "2026-10-11T22:52:22+0530",
+     "who": "claude",
+     "note": "Verified again on a clean export of main 1eca04f6: the runtime probe-details reports 0 FAIL (56 WARN, none of them a fill FAIL), and a negative check confirms an unmeasured 381px shot still FAILs. The 3 images match their siblings at 1440 and 390 (screenshots in /tmp/t240/), so there was nothing to fix, push or republish. Separate finding: the s1-cold-email/18.webp capture is itself clipped on its right edge."
+    },
+    {
+     "ts": "2026-10-11T22:52:41+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-197."
     }
    ],
    "order": 2400
