@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T03:35:17+0530",
-  "version": 2302,
+  "updated": "2026-10-12T03:51:50+0530",
+  "version": 2304,
   "last_id": 417,
   "team": [
    {
@@ -16178,6 +16178,11 @@
      "ts": "2026-10-11T23:48:43+0530",
      "who": "claude",
      "note": "Not merged, pushed or deployed yet, because three probes still fail. I merged main into branch t-299-vendor-inboxes (e18bf4e0 in /Users/adithyamurali/tantra-t299), and probe-domain-chain now passes 45 of 45, so the inbox gate correctly refuses a disconnected inbox. probe-day1 passes 22 checks, then times out at probe-day1.mjs:225 waiting for the Resend message 'DNS isn't in your Cloudflare account' (from cloud/src/jobs-stack.ts:275), probe-day2 stalls at probe-day2.mjs:85, and probe-stack fails with funnel URL undefined because day1 never finished. Next pass: find out why the Resend step's DNS message never shows, then rerun /tmp/t299/stack.sh and /tmp/t299/run-probes.sh, and do the approved merge, push, deploy, publish and LOG.md steps only once all four pass. centre.log has 8 'hung' lines, which I have not traced yet."
+    },
+    {
+     "ts": "2026-10-12T03:51:50+0530",
+     "who": "claude",
+     "note": "From T-300 (2026-10-12): on a clean origin/main b9cf6efe private stack, probe-domain-chain, probe-day1, probe-day2 and probe-context stop on 'Describe your business' (the centre now shows 'Describe Your Business'), and probe-stack fails its live funnel and GoHighLevel checks. Logs: /tmp/chain-t300-base/*.log."
     }
    ],
    "order": 2990
@@ -16194,7 +16199,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "The owner ruled these tools out on 2026-10-07; leftover code, survey options and 'verified list' promises can still surface them or promise a check we do not run.",
    "spec": "The ruled-out tools (GoDaddy, Microsoft 365, Instantly, SendGrid, ZeroBounce, NeverBounce, BuiltWith, HeyReach, Calendly, Apollo, WhatsApp Cloud API card) are gone from the choices but still live as dormant code and text. Do: (1) delete the connectors and jobs nothing reaches: cloud/src/connectors/instantly.ts, m365.ts, jobs-m365.ts, the HeyReach, Calendly, SendGrid ('sendgrid-domain' job id in app/src/lib/workshop-cards.ts JobId and cloud/admin-ui/admin.js) and email-verifier jobs, the dashboard stats in cloud/src/dashboard.ts and the admin Microsoft 365 app setting (overlaps T-272 H062; coordinate). (2) Give attendees who already connected a removed tool a way to disconnect it and wipe the stored key (disconnect used to run through the removed card). (3) Rewrite the remaining promises of paid email checks: 'your verified list' on the Tantra cards (workshop-cards.ts around line 1333), 'Verify every email' in guides and the playbook. Owner rule 2026-10-07: no paid verification (NeverBounce, ZeroBounce); the free checks stay (dedupe, format, company domain) because the data vendors deliver lists already verified. (4) workshop-plan/survey.html still asks about GoDaddy, SendGrid, Apollo and BuiltWith: update it and regenerate the survey. (5) Add every ruled-out name to app/scripts/probe-visual-tools.mjs so none can return. Keep verbatim client library examples (app/src/lib/examples/data/real-growth.ts) unchanged. Coordinate with T-272 and T-264, which touch the same files.",
    "done_when": [
@@ -16213,8 +16218,8 @@
      "url": "file:///tmp/chain-t300-base/summary.txt"
     },
     {
-     "label": "worktree",
-     "url": "file:///private/tmp/wt-t300"
+     "label": "branch",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/tree/t300-ruled-out-cleanup"
     }
    ],
    "blockers": [],
@@ -16249,6 +16254,11 @@
      "ts": "2026-10-11T23:37:02+0530",
      "who": "claude",
      "note": "From T-292 run-chain quick at main a4b68db7 (logs /tmp/t292-chain/*.log): probe-domain-chain, probe-day1, probe-day2, probe-stack, probe-shapes, probe-workshop and probe-context still fail exactly as on the origin/main baseline in /tmp/chain-t300-base (probe-context times out on the Describe your business button in both). They are left for this task; T-292 did not change them."
+    },
+    {
+     "ts": "2026-10-12T03:51:50+0530",
+     "who": "claude",
+     "note": "Verified again on a private stack built from branch t300-ruled-out-cleanup (623ec9ff, now pushed). Both tsc, check-coverage, check-guides and the done_when grep pass (it only hits the verbatim examples). probe-visual-tools fails on a planted Calendly, and every chain failure that remains also happens on clean origin/main (listed in the READY line in LOG.md; one follow-up: cloud/funnel/worker.js still has a SendGrid path)."
     }
    ],
    "order": 3000
