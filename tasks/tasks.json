@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T02:17:48+0530",
-  "version": 2226,
+  "updated": "2026-10-12T02:20:37+0530",
+  "version": 2227,
   "last_id": 413,
   "team": [
    {
@@ -8453,6 +8453,11 @@
      "ts": "2026-10-12T02:13:18+0530",
      "who": "claude",
      "note": "Ripple checked: the 06:33 claim that the retention signal stays inactive until T-156 writes signals.json is superseded; the file is live with an empty brands map until workspace keys are set. Rubric fix dbdeaa11 was already pushed; fixed the stale score.py comment in aac8b950 (pushed), 8 of 8 feature tests pass. Amal and Bharath: open docs/feature-rubric.md to sign off; T-396 stays the follow-up."
+    },
+    {
+     "ts": "2026-10-12T02:20:37+0530",
+     "who": "claude",
+     "note": "Verify pass 10-12: confirmed score.py line 12 now says signals.json is live and an empty brands map means no signal, commits aac8b950 and dbdeaa11 are on origin/main, and 8 of 8 feature tests pass. Board sync check lists T-153 as not held, and a sync was queued. Amal and Bharath: open docs/feature-rubric.md to sign off; T-396 stays the follow-up."
     }
    ],
    "order": 1530,
