@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T06:50:05+0530",
-  "version": 1761,
+  "updated": "2026-10-11T06:51:58+0530",
+  "version": 1763,
   "last_id": 397,
   "team": [
    {
@@ -7856,6 +7856,11 @@
      "ts": "2026-10-11T06:50:05+0530",
      "who": "claude",
      "note": "Verify pass: both backend patches apply cleanly to a fresh copy of development f0b901e, the dashboard shows no data yet on the three metrics with 5 fix PRs past a review limit, and a new test (bugs/test_ingest.py) proves new requests are stamped to the second. I fixed one bug in the preview script (it polled a health URL the backend does not serve) and one stale line in the pitch. Still with Bharath: apply and merge the patches, agree the review limits; the preview was never started (Docker is down here) and no URL was posted on the closed PRs 160 to 164. Open http://localhost:8899/pipeline?v=1011b and workshop-plan/pipeline/agentic-dev-cycle.md."
+    },
+    {
+     "ts": "2026-10-11T06:50:41+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-158."
     }
    ],
    "order": 1540,
@@ -9093,8 +9098,7 @@
   },
   {
    "id": "T-213",
-   "title": "Set up the Endy Inboxes white-label partnership",
-   "area": "Ops",
+   "status": "review",
    "owner": "Nelbin",
    "assignee": "Claude",
    "reviewers": [
@@ -9104,73 +9108,17 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
-   "why": "Owner model 2026-10-07: attendees' cold email inboxes are bought from an inbox vendor (Endy is the partner) who handles domains, Workspace users and SPF/DKIM/DMARC, then connected to Tantra; the partnership needs an agreed hand-off and revenue share so the team does no per-attendee work.",
-   "spec": "Already built: the start-endy card (app/src/lib/workshop-cards.ts:356, 'Get your inboxes through our partner', never names Endy) records each attendee who picks the partner option as a row in the Inbox Partner Leads tab (Name, Email, Mailboxes, Domains, Date) of the Tantra Work Tracker (workshop-plan/ops/centre_sheet.py, sheet https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit). What Endy's site says (checked by the session 2026-10-07): they give full admin control of the domains and Workspace users, host the DNS in their own Cloudflare, and connect the inboxes to the platform you choose; it is a manual service. How their inboxes connect to Tantra: the attendee gives Endy the Google service account client ID plus the three scopes (calendar, send mail, read replies), then in Tantra Accounts uses Verify and Add; the centre then confirms every inbox shows Connected and Gmail capable. To do (Nelbin): one call with Endy Inboxes to agree (a) the lead hand-off (Endy reads the Inbox Partner Leads tab, or Claude adds one email per new lead to an address Endy gives), (b) a revenue share per referred attendee, (c) that Endy delivers inbox logins or connects them to Tantra (not Instantly), (d) pricing and turnaround. Record the agreement here. Claude then wires the hand-off chosen in (a) and the vendor-only card changes in the cold-email inbox task (the new task titled 'Centre: cold email inboxes come from the inbox vendor only...'). Code note: cloud/src/agentic.ts:25 and 460-519 and cloud/src/jobs.ts:564-566 still watch Instantly for Endy's uploads and must switch to Tantra. Adi also gave an Instantly API key for the FintechCircle account (2026-10-07 18:26, in the chat) so Claude could fetch two Endy-hosted inbox accounts to learn the workflow; this was NOT done and Instantly is otherwise ruled out. NEEDS-ESCALATION: ask Adi whether that read-only fetch is still wanted before using the key.",
-   "done_when": [
-    "Agreement with Endy (hand-off method, revenue share, delivery into Tantra) recorded in the task log",
-    "A test lead in Inbox Partner Leads reaches Endy by the agreed method without anyone forwarding it",
-    "The start-endy flow no longer references Instantly anywhere in cloud/src"
-   ],
-   "evidence": [
-    {
-     "label": "Call brief",
-     "url": "workshop-plan/ops/endy-call-brief.md"
-    },
-    {
-     "label": "Hand-off script",
-     "url": "workshop-plan/ops/endy_leads.py"
-    },
-    {
-     "label": "Probe",
-     "url": "cloud/scripts/probe-no-instantly-endy.mjs"
-    }
-   ],
+   "area": "Ops",
+   "order": 2130,
+   "title": "T-213: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
    "blockers": [],
    "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-10-05T21:31:06+0530",
-     "who": "claude",
-     "note": "Added."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review 2026-10-08: still accurate. Still valid: partner mailbox option and the Inbox Partner Leads tab exist (workshop-plan/ops/centre_sheet.py, app/src/lib/card-education.ts). Note: the start-endy hand-off uploads inboxes to Instantly or Tantra (b6b2431) and Instantly was ruled out on 2026-10-07, so the Tantra path is the one to agr"
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: why, spec and done_when filled from the 2026-10-07 owner model (cold email inboxes are bought from an inbox vendor, Endy is the partner, and connected to Tantra); found that cloud/src/agentic.ts:460-519 and cloud/src/jobs.ts:564-566 still wait for Endy's inboxes in Instantly (ruled out), which T-251 must move to Tantra."
-    },
-    {
-     "ts": "2026-10-09T00:06:32+0530",
-     "who": "claude",
-     "note": "2026-10-08 findings: endyinboxes.com (Starter $35/mo for 10 Google Workspace inboxes, +$3.50 each; 20 to 25 cold emails per inbox a day; book a call, they buy domains, set MX/SPF/DKIM/DMARC, give full admin control and upload inboxes to the sending platform). Instantly shows the owner's Endy inboxes as IMAP/SMTP accounts. For Tantra the inboxes must be reached by a Google service account with domain-wide delegation (gmail.send, gmail.modify, calendar): give Endy the service account's numeric client ID and the three scopes, or authorise it with the admin access Endy hands over; then Tantra Accounts, Verify & Add. Manual service, so the card is a hand-off (order, then confirm in Tantra), not an API job."
-    },
-    {
-     "ts": "2026-10-09T00:25:38+0530",
-     "who": "claude",
-     "note": "Session sweep (2026-10-09): source: fcd892f2 2026-10-07T18:26 (Adi: Endy hosts accounts in their Cloudflare and connects them to Tantra or Instantly; manual service) and 2026-10-08T18:41 final report. Adds the Endy process found by the session and the unused Instantly key."
-    },
-    {
-     "ts": "2026-10-09T05:12:22+0530",
-     "who": "Orchestrator",
-     "note": "People: assignee Nelbin → Claude (by Orchestrator)."
-    },
-    {
-     "ts": "2026-10-09T20:03:54+0530",
-     "who": "claude",
-     "note": "People: reviewers Nelbin/Adi → Nelbin/Adi/Bharath (by claude)."
-    },
-    {
-     "ts": "2026-10-09T20:03:54+0530",
-     "who": "claude",
-     "note": "Start-endy warm-up job now waits for inboxes Connected and Gmail capable in Tantra Accounts (Instantly gone from that path; node cloud/scripts/probe-no-instantly-endy.mjs passes, tsc clean) and the centre worker is deployed. Lead hand-off: workshop-plan/ops/endy_leads.py mails one email per new Inbox Partner Leads row to ENDY_LEAD_EMAIL (team inbox adi@growthclub.org until Endy gives one); test row 'endy-test-lead' was written, mailed to the team inbox and deleted. Not pushed: local main is 144 ahead and 29 behind origin, so a push needs a merge first. Nelbin: hold the call using workshop-plan/ops/endy-call-brief.md (incl. 20% share, client ID + 3 scopes) and record the agreement here."
-    }
-   ],
-   "order": 2130
+   "log": [],
+   "held": true
   },
   {
    "id": "T-214",

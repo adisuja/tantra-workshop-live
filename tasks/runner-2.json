@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T06:50:18+0530",
+   "task_id": "T-154",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-154 stays in review with Bharath: the verify pass found and fixed one real bug in the preview script, and the backend work is still patch files, not PRs.\n\n**Completion check**\n\n1. **Red suites: done as a patch, not a PR.** `fix_red-suites--f0b901e.patch` touches four spec files only and applies cl"
+  },
+  {
    "ts": "2026-10-11T06:35:53+0530",
    "task_id": "T-153",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "paused",
    "summary": "Stopped: Adi paused the agent from the board."
-  },
-  {
-   "ts": "2026-10-11T01:21:20+0530",
-   "task_id": "T-299",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-299 is set to `doing` and F-0dba77f5 is acked: nothing is merged, pushed, deployed or published yet, because the four chain probes are not green.\n\nCOMPLETION CHECK"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-154",
+ "task_id": "T-229",
  "entries": [
-  "F-5b220644"
+  "R-165bb4b5"
  ],
- "started": "2026-10-11T06:36:50+0530",
- "message": "Acting on 1 note(s) for T-154: 24-hour agentic dev cycle: pitch to engineering, 3-5 request pilot, review steps, metrics",
+ "started": "2026-10-11T06:51:16+0530",
+ "message": "Acting on 1 note(s) for T-229: Zoom registrations: keep placeholder emails out of sign-ups",
  "slices": {
   "T-072": 1,
   "T-245": 1,
