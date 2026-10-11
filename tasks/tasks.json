@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T13:04:07+0530",
-  "version": 1923,
+  "updated": "2026-10-11T13:05:39+0530",
+  "version": 1924,
   "last_id": 404,
   "team": [
    {
@@ -14914,7 +14914,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "review",
+   "status": "doing",
    "why": "Adi's own review drafts should come from the best model, while probes stay on the cheap one; right now the best connection is off and nobody tracks it.",
    "spec": "To save usage during the round 5 and 6 builds the local centre's test AI drafting was moved from Opus to Sonnet and Haiku: in the centre admin AI connections tab (local stack :8790, admin URL from tantra-onboarding-v2/cloud/.dev.vars ADMIN_KEY), connection 1 'Claude Code, Adi' (Opus) is disabled and connection 3 'Claude Code, probe budget (Sonnet / Haiku)' is enabled with priority 5, and its last_error shows a session-limit message from 2026-10-07. Before Adi reviews real drafts (card copy, brand rules, outreach first lines) or the first cohort uses AI drafting: enable connection 1, leave connection 3 as the fallback for probes and walkers, check that probes pick the cheap connection (priority or per-task model map in Model per task), and clear connection 3's stale last_error. Also check the live Worker's AI connections list for the same state; the live centre is a different database.",
    "done_when": [
@@ -14933,7 +14933,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Only if real attendees should get AI drafts on the live centre: paste an Anthropic API key at https://revops-centre.growthcluborg.workers.dev/admin/ (AI connections tab, Add connection, type Anthropic, field API key). Local Opus drafting for Adi's own review already works without it.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-09T00:25:38+0530",
@@ -14974,6 +14974,11 @@
      "ts": "2026-10-10T20:55:22+0530",
      "who": "claude",
      "note": "Already applied, so no agent run was needed: 2026-10-09T12:56 log confirms all work: Opus priority 1, probe fallback clean, test drafts routed correctly (person=Opus, probe=Sonnet), live Worker checked, task ready for review (checked by Haiku against the log and commits)."
+    },
+    {
+     "ts": "2026-10-11T13:05:39+0530",
+     "who": "claude",
+     "note": "Live key ask moved to its own task T-404 (owner Adi). Commit 2c3323a is merged on main as 064e2b7c (not pushed yet). The local probe chain run failed because every centre probe still signed in by GET ?k=, which T-272 removed, so I fixed that in d14448a9 (app/scripts/admin-sign-in.mjs, POST sign-in). Left: rerun bash app/scripts/run-chain.sh quick on a private stack at main HEAD, then push main (no force), run build.sh and wrangler deploy, do a read-only check of the live AI connections list, and mark done."
     }
    ],
    "order": 2920
