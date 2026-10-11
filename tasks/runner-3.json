@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T22:00:03+0530",
+   "task_id": "T-380",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "**Completion check:**\n- **Trash the two 'Tantra funnel forms receiver' projects:** Blocked. Nothing was trashed and nothing in Apps Script changed. This session has no Claude in Chrome tool. Ports 9222 and 9223 are closed, and 9229 turned out to be a wrangler debugger, not Browser 2.\n- **Only 'Tantr"
+  },
+  {
    "ts": "2026-10-11T21:56:43+0530",
    "task_id": "T-270",
    "mode": "feedback",
@@ -87,24 +95,17 @@
    "status": "review",
    "result": "ok",
    "summary": "The dashboard passed this check. T-158 is back in review for Ben and Bharath, pushed as 1cbb90cc. The one thing I fixed: the backlog's experiment 5 was still called \"Build Pass\", a banned funnel name. It's now \"Masterclass abandoned-cart recovery\".\n\n1. **Dogfooding band:** done. On the live page it "
-  },
-  {
-   "ts": "2026-10-11T17:48:31+0530",
-   "task_id": "T-197",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-197 is back in review: the probe gives 0 FAIL on main and the old centre's Join buttons open the attendee's own Zoom link; nothing new needed pushing, fixing or re"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-380",
+ "task_id": "T-074",
  "entries": [
-  "F-50db9ee7"
+  "F-2dda75a2",
+  "R-f1e8b83d"
  ],
- "started": "2026-10-11T21:57:18+0530",
- "message": "Acting on 1 note(s) for T-380: Trash two undeployed 'Tantra funnel forms receiver' Apps Script projects (boards@fintechcircle.com)",
+ "started": "2026-10-11T22:02:42+0530",
+ "message": "Acting on 2 note(s) for T-074: Weekly coaching call and community moderation rota for Tantra Pro members",
  "slices": {
   "T-135": 1,
   "T-148": 1,
