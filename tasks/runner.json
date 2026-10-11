@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T09:08:53+0530",
+   "task_id": "T-096",
+   "mode": "feedback",
+   "status": "review",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · [cerebras/gpt-oss-120b] [429]: upstream error (reset after 1m)"
+  },
+  {
    "ts": "2026-10-11T08:55:14+0530",
    "task_id": "T-259",
    "mode": "feedback",
@@ -87,19 +95,11 @@
    "status": "review",
    "result": "error",
    "summary": "[process exit 143; stderr: ''] T-235's code is committed and already on origin, and the threshold field is in Cohort Settings; now bringing up an isolated local centre and simulator to run the probe."
-  },
-  {
-   "ts": "2026-10-11T06:58:25+0530",
-   "task_id": "T-213",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-213 is back in review: the verify pass found and fixed one real fault in the lead hand-off, and the Endy agreement itself still waits on Nelbin's call (T-397). My two commits (6a59a78, 5d8a0ca) are local only, not pushed.\n\n**COMPLETION CHECK**\n\n| Item | State | Evidence from this run |\n|---|---|--"
   }
  ],
- "state": "working",
- "message": "Acting on 1 note(s) for T-096: Device cap per attendee link in the live centre admin",
- "task_id": "T-096",
+ "state": "paused",
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 77% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 10:51.",
+ "task_id": null,
  "entries": [
   "F-9f32088b"
  ],
