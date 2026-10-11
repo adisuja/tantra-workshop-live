@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T02:20:37+0530",
-  "version": 2227,
+  "updated": "2026-10-12T02:28:18+0530",
+  "version": 2231,
   "last_id": 413,
   "team": [
    {
@@ -13742,7 +13742,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "Owner rule 2026-10-03 (new centre must educate): every card teaches why and how.",
    "spec": "Show card-education outcome, why and how by default (not only ?learn), preselect and describe each start-stack option with cost, add per-business examples (software, consultancy, course, solo) to every typed field, ask before the first paid AI draft, and link the foundations chapters on the Day 0 card with a readable funnel board. Closes audit findings N067, N068, N069, N070, N080, N088. Per finding: N067 (app/src/app/onboarding/centre/centre.tsx): Show the education outcome/why/how by default on each card, not only behind ?learn. N068 (app/src/lib/workshop-cards.ts): Preselect the first option and add a one-line description and cost per option. N069 (app/src/lib/workshop-cards.ts): Add per-business examples to every typed field. N070 (app/src/lib/workshop-cards.ts): Add solo examples (and d1_funnel_reason examples) to these fields. N080 (app/src/app/onboarding/centre/centre.tsx): Ask before the first paid draft, or only auto-draft on the attendee's current next task. N088 (app/src/lib/workshop-cards.ts): Link the foundations chapters on the card and make the funnel board readable in the 616px frame (or open full size). When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Merge order: build on main after T-251 lands (branch tantra-walkthroughs: e4bd0b8 removes the ruled-out tools and rewrites workshop-cards.ts, agentic.ts, jobs.ts, agent.tsx and coverage.json; probe fixes 043b5ab and aa22a3f, no READY yet in /Users/adithyamurali/tantra-round5-coord/LOG.md). Until then branch from tantra-walkthroughs; AUDIT.md line numbers predate that change.",
    "done_when": [
@@ -13754,15 +13754,23 @@
    "evidence": [
     {
      "label": "Live centre (Choose your tools)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-stack&v=t270b"
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-stack&v=t270c"
     },
     {
      "label": "Probe",
      "url": "app/scripts/probe-t270.mjs"
     },
     {
+     "label": "Screenshot: consent ask",
+     "url": "/tmp/probe-t270/consent-1440.png"
+    },
+    {
      "label": "Screenshot: Choose your tools",
      "url": "/tmp/probe-t270/start-stack-1440.png"
+    },
+    {
+     "label": "Mirror",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=t270c"
     }
    ],
    "blockers": [],
@@ -13802,6 +13810,11 @@
      "ts": "2026-10-11T21:56:27+0530",
      "who": "claude",
      "note": "Deployed revops-centre Worker 81d596cf (1ef94a2 ev_length examples live). The live probe passes every teaching, start-stack, examples and Day 0 check, but the two consent checks cannot run on the live preview: its shared test attendee has finished Day 1, so the ask is correctly hidden, and the local admin key is refused on live. Left: run the consent checks in admin mode on local wrangler dev (or point the preview run at an open, empty Day 2 AI card and skip the paid yes), push the probe fix (local commit 430a1201), then publish the mirror and move to review. Open https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-stack&v=t270b"
+    },
+    {
+     "ts": "2026-10-12T02:28:11+0530",
+     "who": "claude",
+     "note": "Deployed revops-centre Worker 3275aef1 from main 1483de7c (includes 1ef94a2 ev_length examples) and pushed the probe fix that signs in through the admin form and stubs paid drafts; node app/scripts/probe-t270.mjs on the live centre passed 21/21, including the ask before the first draft and zero drafts before a yes. Published the mirror (tantra-workshop-live 6d5689b) and confirmed the ev_length examples are served on github.io; N070 in AUDIT.md now names 1ef94a2. Open https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-stack&v=t270c"
     }
    ],
    "order": 2700

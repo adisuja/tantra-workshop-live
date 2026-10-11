@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T02:26:47+0530",
+   "task_id": "T-073",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "ok",
+   "summary": "T-073 stays in **doing**: everything that can be built and checked before the sessions is in place. The lessons can't be cut until the 14 to 16 Oct sessions are recorded.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| Spec moved to meeting 88135386601, T-232 blocker removed, due 17 Oct "
+  },
+  {
    "ts": "2026-10-12T02:20:56+0530",
    "task_id": "T-153",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-140 is still blocked. The three Tantra screenshots (s3-tantra-pro-flow #5, #13 and #14) can only be taken in the one desktop session already requested under T-115 and tracked as T-399.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| s1-blog #2 and #6 replaced with real captures | Done "
-  },
-  {
-   "ts": "2026-10-11T22:35:45+0530",
-   "task_id": "T-289",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-289 is done. I didn't push anything because origin/main already had commits aad13c1 and 361e8e5c, so there was nothing to cherry-pick.\n\n- **Push aad13c1:** not needed. `git fetch` shows origin/main (f7ffea17) already contains aad13c1 and 361e8e5c.\n- **Relay jobs not in launchctl:** `launchctl list"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-073",
+ "task_id": "T-074",
  "entries": [
-  "F-6142f792",
-  "R-944ca808"
+  "F-696a9834"
  ],
- "started": "2026-10-12T02:21:52+0530",
- "message": "Acting on 2 note(s) for T-073: Cut session recordings into the Tantra Pro course",
+ "started": "2026-10-12T02:27:39+0530",
+ "message": "Acting on 1 note(s) for T-074: Weekly coaching call and community moderation rota for Tantra Pro members",
  "slices": {
   "T-135": 1,
   "T-148": 1,
