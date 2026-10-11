@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T03:09:49+0530",
+   "task_id": "T-335",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-335 is still blocked on Adi's one Zoom sign-in. I left the ask as it was because the live state shows the request is still correct.\n\n**Completion check:**\n- **Rewrite the ask so it covers only the Meeting SDK app credentials:** not done, on purpose. Live Control (`/admin/api/zoom/control`, checked"
+  },
+  {
    "ts": "2026-10-12T03:07:25+0530",
    "task_id": "T-191",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-409 stays blocked. The Apps Script still hasn't been redeployed, so nothing in this task needed to change.\n\n- **Ripple R-54f25fbb (compare with T-157):** Done. T-157's log shows the redeploy never happened there because no Chrome connection was available. A health check I ran today on the exec URL"
-  },
-  {
-   "ts": "2026-10-12T02:30:21+0530",
-   "task_id": "T-074",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-074 is still blocked: nothing was sent, because the GrowthClub Tantra workspace has 0 connected mailboxes and Adi's 12 Oct rule bans sending from growthclub.org, so the test send and issue 1 now wait only on the new mailbox from T-123.\n\n**Completion check (all from this run):**\n- **Recurring coach"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-335",
+ "task_id": "T-061",
  "entries": [
-  "R-c40463ba"
+  "F-474ff553"
  ],
- "started": "2026-10-12T03:07:37+0530",
- "message": "Acting on 1 note(s) for T-335: Input from Adi for T-226: At https://marketplace.zoom.us/develop/create choose General App and name it 'Ta",
+ "started": "2026-10-12T03:10:57+0530",
+ "message": "Acting on 1 note(s) for T-061: Free and paid lane follow-up campaigns in Tantra, with per-lane unit economics",
  "slices": {
   "T-135": 1,
   "T-300": 2,

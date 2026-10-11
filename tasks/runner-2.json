@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T03:10:48+0530",
+   "task_id": "T-052",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-052 is still blocked: team@growthclub.org isn't connected in the GrowthClub Tantra workspace, so I didn't create the campaigns or run the live test.\n\n- **Update the ask:** done. needs_from_owner now points only at T-411, which is the same ask as T-123 and T-408 (connect the mailbox and save the ro"
+  },
+  {
+   "ts": "2026-10-12T03:09:12+0530",
+   "task_id": "T-226",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-226 stays blocked on T-335; I updated its ask to match the live state, but the poll scopes are not added yet, although the ripple note said they were.\n\n- **Run sheets drafted:** done. I checked them live on Live Control just now: 24 chat, CTA and poll items covering Days 1 to 3.\n- **Host is Adi, c"
+  },
+  {
    "ts": "2026-10-12T03:07:48+0530",
    "task_id": "T-020",
    "mode": "feedback",
@@ -79,32 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "I re-checked T-396 from scratch, and it is back in review waiting on Bharath. The patch works, but on one of seven runs two tests failed and I couldn't reproduce it.\n\n- **Effort check against the code:** done. The endpoint is already on `development` and the `contactListIds` lock is still in `EmailC"
-  },
-  {
-   "ts": "2026-10-12T00:04:14+0530",
-   "task_id": "T-123",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-123 stays blocked: go-live is waiting on T-408. Adi needs to connect team@growthclub.org in the GrowthClub Tantra workspace, rotate the Tantra key and paste the new one in Admin.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Remove the exposed key from the public board mirror's histor"
-  },
-  {
-   "ts": "2026-10-11T23:45:15+0530",
-   "task_id": "T-052",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "I left T-052 blocked. The note asked me to unblock it because the Tantra key is saved, but one setup step is still missing: team@growthclub.org has not been connected as an email account in the GrowthClub Tantra workspace. T-123 and T-234 are blocked on the same step. When T-228 tried the live run e"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-226",
+ "task_id": "T-234",
  "entries": [
-  "R-a0de51f7"
+  "F-5e2cb306"
  ],
- "started": "2026-10-12T03:08:12+0530",
- "message": "Acting on 1 note(s) for T-226: Tantra Host Console: Adi hosts every session from a Mac app that runs chat posts, polls, call-to-action links, mute and video control, co-hosts",
+ "started": "2026-10-12T03:11:12+0530",
+ "message": "Acting on 1 note(s) for T-234: Workshop reminders through Tantra omni-channel campaigns: import every registrant with their own join and calendar links",
  "slices": {
   "T-072": 1,
   "T-245": 1,

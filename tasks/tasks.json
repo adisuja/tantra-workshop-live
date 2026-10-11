@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T03:07:50+0530",
-  "version": 2280,
-  "last_id": 416,
+  "updated": "2026-10-12T03:10:23+0530",
+  "version": 2285,
+  "last_id": 417,
   "team": [
    {
     "name": "Adi",
@@ -10916,7 +10916,7 @@
    "blockers": [
     "Adi's confirmation to host from the console, and the Meeting SDK app credentials"
    ],
-   "needs_from_owner": "Only T-335: One Zoom sign-in at https://marketplace.zoom.us covers everything: (1) at https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), or open it if it exists, and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, Save; (2) in the same sign-in, Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, meeting:delete:meeting:admin, Save. Nothing else to change.",
+   "needs_from_owner": "Only T-335, one Zoom sign-in at https://marketplace.zoom.us: (1) at https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), or open it if it exists, and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, Save; (2) in the same sign-in, Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, meeting:delete:meeting:admin, Save. The scopes are listed only because no run has had a browser signed in to Zoom; Claude adds them itself whenever one is available. The run sheets and the co-host list are already done.",
    "log": [
     {
      "ts": "2026-10-07T20:46:43+0530",
@@ -10987,6 +10987,11 @@
      "ts": "2026-10-12T02:39:06+0530",
      "who": "claude",
      "note": "Added meeting:delete:meeting:admin to the Zoom sign-in scope list: T-245 needs it to delete the test meeting 89781893618 in Zoom (Zoom answered 400 code 4711, token lacks meeting:delete:meeting:admin)."
+    },
+    {
+     "ts": "2026-10-12T03:08:53+0530",
+     "who": "claude",
+     "note": "Ripple from T-407 checked live today: the Day 1 to 3 run sheets are saved on Live Control (24 chat, CTA and poll items), the host is Adi and the co-host list is empty. The 5 poll scopes are NOT added yet: Live Control still reads all 5 as missing, so they stay in the same single T-335 sign-in. Open https://revops-centre.growthcluborg.workers.dev/admin/control?v=t226rip1"
     }
    ],
    "order": 2260
@@ -16646,6 +16651,11 @@
      "ts": "2026-10-12T03:07:50+0530",
      "who": "claude",
      "note": "Ripple checked: the poll scopes stay in this ask, because the Orchestrator decision (T-407) moves them to Claude only with a Zoom-signed-in browser, and none was available, so T-226 and T-407 still fold them into this one sign-in. Only change: added meeting:delete:meeting:admin (found missing by T-245) so this ask matches T-226 word for word; items 2 and 3 of T-407 stay queued behind it."
+    },
+    {
+     "ts": "2026-10-12T03:09:25+0530",
+     "who": "claude",
+     "note": "Verify pass: nothing had to change. Live Control (/admin/api/zoom/control, checked 2026-10-12) still shows all 5 poll scopes missing and no seat credentials saved, and no Zoom-signed-in browser is available to Claude, so per Orchestrator decision O-695a03c5 the scopes stay folded into this one sign-in; the ask matches T-226 and T-407 word for word, with full URLs, and T-407 items 2 and 3 stay queued behind it."
     }
    ],
    "order": 3350,
@@ -18265,6 +18275,35 @@
    ],
    "order": 4160,
    "input_for": "T-403",
+   "kind": "input"
+  },
+  {
+   "id": "T-417",
+   "title": "Input from Adi for T-335: Sign in at https://marketplace.zoom.us once. (1) At https://marketplace.zoom.us/",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (credential): Needs Adi's Zoom login and 2FA and creates a new credential on his account; the keys exist nowhere on this Mac.. Everything else in T-335 is being built around it. As soon as this is done, T-335 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Sign in at https://marketplace.zoom.us once. (1) At https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), then paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card and click Save. (2) In the same sign-in: Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, Save.",
+   "log": [
+    {
+     "ts": "2026-10-12T03:10:06+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-335."
+    }
+   ],
+   "order": 4170,
+   "input_for": "T-335",
    "kind": "input"
   }
  ]
