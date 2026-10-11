@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T22:40:15+0530",
-  "version": 2084,
-  "last_id": 409,
+  "updated": "2026-10-11T22:43:20+0530",
+  "version": 2088,
+  "last_id": 410,
   "team": [
    {
     "name": "Adi",
@@ -1863,7 +1863,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "The GrowthClub Tantra API key, asked as T-337: paste it at https://revops-centre.growthcluborg.workers.dev/admin/#settings, field Tantra API key. The WhatsApp connect and test number are asked separately as T-400. With both in, I create the 3 Day-output campaigns and run the Day 1 test send to Adi test only.",
+   "needs_from_owner": "Waits on T-123 (connect team@growthclub.org as a mailbox in the GrowthClub Tantra workspace) and T-400 (WhatsApp connect and test number). Nothing to answer here.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -1944,6 +1944,16 @@
      "ts": "2026-10-11T17:07:34+0530",
      "who": "claude",
      "note": "T-032 update: the onboarding centre now shows each attendee's Day N output link and PDF on that day's session card (deployed, commit 6c65c86c), read from /api/me outputs. Nothing else changes here."
+    },
+    {
+     "ts": "2026-10-11T22:42:49+0530",
+     "who": "claude",
+     "note": "The Tantra key is saved, but Create delivery campaigns on the live centre stopped with 'team@growthclub.org isn't a connected mailbox in this Tantra workspace', so no campaign or contact was made and the Day 1 send can't run yet; that mailbox is T-123's open ask, so the key ask is gone from here. I reran the probes on a fresh local centre and simulator: probe-output-delivery 17/17, probe-day-delivery and probe-tantra-reminders all pass. The fallback commit 605e4609 is on origin/main, the live Worker is version abef49e6, and delivery code has not changed since."
+    },
+    {
+     "ts": "2026-10-11T22:43:20+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-034."
     }
    ],
    "order": 230,
@@ -17916,6 +17926,35 @@
     }
    ],
    "order": 4090
+  },
+  {
+   "id": "T-410",
+   "title": "Input from Adi for T-140: One sitting (already tracked as T-399 and T-384, no new sign-in): open the Claud",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P3",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (physical): Only Adi can open the interactive desktop session on his signed-in Brave; the unattended runner has no browser tools.. Everything else in T-140 is being built around it. As soon as this is done, T-140 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "One sitting (already tracked as T-399 and T-384, no new sign-in): open the Claude Code desktop app, start a session with Claude in Chrome connected to the Brave profile adi@growthclub.org (https://usetantra.com is already signed in), and type: Act on T-115, T-339 and T-140.",
+   "log": [
+    {
+     "ts": "2026-10-11T22:41:24+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-140."
+    }
+   ],
+   "order": 4100,
+   "input_for": "T-140",
+   "kind": "input"
   }
  ]
 }

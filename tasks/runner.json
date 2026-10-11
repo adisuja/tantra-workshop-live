@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T22:43:15+0530",
+   "task_id": "T-033",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-033 is still blocked. The live Day 1 send can't run until the team@growthclub.org mailbox is connected in Tantra (T-123) and WhatsApp is set up (T-400). No code changed, so there was nothing to commit.\n\n- **Resend fallback live:** done. Commit 605e4609 is on origin/main, the live Worker is version"
+  },
+  {
    "ts": "2026-10-11T22:39:49+0530",
    "task_id": "T-399",
    "mode": "feedback",
@@ -87,24 +95,13 @@
    "status": "review",
    "result": "ok",
    "summary": "The verify pass found no gaps, so T-235 is back in review. All of its code is already on origin, and every probe passed on a fresh local centre and simulator.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Commit any uncommitted work | Done (nothing to commit) | `git status` shows no cha"
-  },
-  {
-   "ts": "2026-10-11T18:15:58+0530",
-   "task_id": "T-229",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-229 is in review: the placeholder-email guard is live in production, and this run's checks all passed.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| H"
   }
  ],
- "state": "working",
- "message": "Acting on 2 note(s) for T-033: WhatsApp + email delivery automation",
- "task_id": "T-033",
- "entries": [
-  "F-af7960d3",
-  "R-dd7814e7"
- ],
- "mode": "feedback",
+ "state": "idle",
+ "message": "Last sweep handled 8 task(s).",
+ "task_id": null,
+ "entries": [],
+ "mode": null,
  "started": "2026-10-11T22:40:52+0530",
  "slices": {
   "T-156": 1,
