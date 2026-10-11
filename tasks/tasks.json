@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T13:29:30+0530",
-  "version": 1932,
-  "last_id": 405,
+  "updated": "2026-10-11T13:32:09+0530",
+  "version": 1936,
+  "last_id": 406,
   "team": [
    {
     "name": "Adi",
@@ -14090,7 +14090,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "recheck",
+   "status": "done",
    "why": "Found while renaming the board on 2026-10-08; predates that change.",
    "spec": "python3 workshop-plan/build/review_hub.py reports 'flow d-prove: unknown element onboarding/d1-prove'. Point the flow at the current card id (check app/src/lib/workshop-cards.ts) or drop that step, then regenerate workshop-plan/index.html.",
    "done_when": [
@@ -14099,7 +14099,7 @@
    "evidence": [
     {
      "label": "User Flows, live",
-     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1791546319#flows"
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=1791700000#flows"
     },
     {
      "label": "Flow data",
@@ -14138,6 +14138,16 @@
      "ts": "2026-10-11T01:04:19+0530",
      "who": "claude",
      "note": "Flagged for a recheck by T-150: It was waiting on this fix being logged, committed and verified live; T-150 note says its log lacks that record."
+    },
+    {
+     "ts": "2026-10-11T13:31:28+0530",
+     "who": "claude",
+     "note": "Rechecked T-280 and the fix is already in place, committed, pushed and live: the d-prove step points at playbook/d3 (review_hub.py:390), review_hub.py printed no PROBLEMS this run, and the freshly fetched live hub shows d-prove linking playbook/d3 with #tasks redirecting to tasks.html and no 'Launch Control' text (fix at ab41816, hub regen at acb387a, log at 3a5fe389, all on origin/main a46a2ff). Nothing had to change. Aside: regenerating surfaced a pre-existing +1 line-anchor drift on 93 workshop-cards.ts source links from a T-278 edit, which I left uncommitted since it is outside this recheck."
+    },
+    {
+     "ts": "2026-10-11T13:32:09+0530",
+     "who": "claude",
+     "note": "Verified 2026-10-11: review_hub.py prints no PROBLEMS and regenerates index.html byte-identical to main; flow d-prove points at playbook/d3 (review_hub.py:390), fixed in ab41816 and regenerated in acb387a, both on origin/main (mirror 1843bc2). Live hub fetched fresh: d-prove links to playbook/d3, #tasks redirects to tasks.html, zero 'Launch Control' strings and no legacy tasks section."
     }
    ],
    "order": 2800
@@ -17057,6 +17067,35 @@
    ],
    "order": 4050,
    "input_for": "T-404",
+   "kind": "input"
+  },
+  {
+   "id": "T-406",
+   "title": "Input from Adi for T-020: Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a and re",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (outside_person): He is the owner and named reviewer of this P0 content; only his read closes the last done-when.. Everything else in T-020 is being built around it. As soon as this is done, T-020 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a and reply on T-020 with approval or changes by section (changed since 2026-10-07: Day 1/Day 3 screenshots, replaced tools out, Day 2 S3 89% teaching model, reverse squeeze, rebuilt funnels).",
+   "log": [
+    {
+     "ts": "2026-10-11T13:31:34+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-020."
+    }
+   ],
+   "order": 4060,
+   "input_for": "T-020",
    "kind": "input"
   }
  ]
