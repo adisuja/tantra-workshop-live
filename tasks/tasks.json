@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T17:26:02+0530",
-  "version": 1986,
+  "updated": "2026-10-11T17:29:31+0530",
+  "version": 1989,
   "last_id": 408,
   "team": [
    {
@@ -1503,6 +1503,11 @@
      "ts": "2026-10-11T06:25:52+0530",
      "who": "claude",
      "note": "Close-out check (2026-10-11): nothing had to be republished. Commit b5fb5a5 is on origin main, and the live page https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t025b#d2-the-reverse-squeeze-funnel-end-to-end serves #d2-rsp-s1-traffic, #d2-rsp-crm-map and #d2-rsp-first-tests (fetched fresh, one match each). The comparison is in workshop-plan/coord/T-025_RSP_COMPARISON.md."
+    },
+    {
+     "ts": "2026-10-11T17:29:31+0530",
+     "who": "claude",
+     "note": "T-197 9799d599: the probe-details pinned scene FAIL (AUDIT G145) was a probe false positive from the library Page Outline sidebar, now fixed in the probe; no T-025 copy changed."
     }
    ],
    "order": 160,
@@ -9039,16 +9044,20 @@
    ],
    "evidence": [
     {
-     "label": "Old centre, Day 1 Watch (live)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/reference/?v=t197v1011#d1-watch"
+     "label": "probe-details run (0 FAIL)",
+     "url": "/tmp/t197x-details2.log"
     },
     {
-     "label": "Probe fix db7ed17",
+     "label": "Probe fix 9799d599",
      "url": "app/scripts/probe-details.mjs"
     },
     {
      "label": "Audit",
      "url": "/Users/adithyamurali/tantra-round5-coord/AUDIT.md"
+    },
+    {
+     "label": "Old centre, Day 1 Watch (live)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/reference/?v=t197v1011b#d1-watch"
     }
    ],
    "blockers": [],
@@ -9103,6 +9112,11 @@
      "ts": "2026-10-11T06:31:30+0530",
      "who": "claude",
      "note": "Verify pass: 729da61 is on pushed main, the old centre Join button code reads the attendee's own Zoom link end to end, and AUDIT.md has no open P0. The two guide title FAILs in probe-details were false alarms from the probe and are fixed in db7ed17 (local commit); the full re-run was still going when this run ended (/tmp/t197v-details2.log), and the pinned scene (T-025) and two short screenshots (T-240) are still expected to FAIL, so 0 FAIL is not met. probe-own-join was not re-run this time (no local admin key), and I made no new deploy or publish because the fix is already live from the T-278 publish."
+    },
+    {
+     "ts": "2026-10-11T17:29:31+0530",
+     "who": "claude",
+     "note": "Pushed main to 9799d599 (probe fixes 1670dddf and 9799d599; db7ed17 and the playbook overflow fix were already on main), and probe-details on a clean export of main now gives 0 FAIL, 56 WARN, with G145 fixed as a probe false positive and G146 passing after T-240. AUDIT.md has no open P0, and live is still Worker 22952e72 and mirror 8b59f66: no republish, because no shipped asset changed."
     }
    ],
    "order": 1970
@@ -11576,6 +11590,11 @@
      "ts": "2026-10-11T11:46:40+0530",
      "who": "claude",
      "note": "Verify pass: a full runtime probe (not static) showed the 3 original images clear, but a 4th screenshot FAIL (s1-blog guide width, G146). Its shots are text-sized correctly, so I fixed the probe norm to skip measured shots (committed) and rebuilt the export. Left: re-stage the export to :4361, rerun the runtime probe for 0 screenshot FAILs, screenshot at 1440/390, push main, mark AUDIT G146 fixed and correct G129, add a LOG.md entry, then review."
+    },
+    {
+     "ts": "2026-10-11T17:29:31+0530",
+     "who": "claude",
+     "note": "T-197 re-run 2026-10-11 on a clean export of main 6c65c86c: probe-details shows 0 screenshot FAILs after 3fff8f22 (log /tmp/t197x-details2.log)."
     }
    ],
    "order": 2400
