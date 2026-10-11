@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T23:35:10+0530",
-  "version": 2120,
+  "updated": "2026-10-11T23:37:02+0530",
+  "version": 2122,
   "last_id": 410,
   "team": [
    {
@@ -15721,7 +15721,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "doing",
+   "status": "done",
    "why": "Adi's own review drafts should come from the best model, while probes stay on the cheap one; right now the best connection is off and nobody tracks it.",
    "spec": "To save usage during the round 5 and 6 builds the local centre's test AI drafting was moved from Opus to Sonnet and Haiku: in the centre admin AI connections tab (local stack :8790, admin URL from tantra-onboarding-v2/cloud/.dev.vars ADMIN_KEY), connection 1 'Claude Code, Adi' (Opus) is disabled and connection 3 'Claude Code, probe budget (Sonnet / Haiku)' is enabled with priority 5, and its last_error shows a session-limit message from 2026-10-07. Before Adi reviews real drafts (card copy, brand rules, outreach first lines) or the first cohort uses AI drafting: enable connection 1, leave connection 3 as the fallback for probes and walkers, check that probes pick the cheap connection (priority or per-task model map in Model per task), and clear connection 3's stale last_error. Also check the live Worker's AI connections list for the same state; the live centre is a different database.",
    "done_when": [
@@ -15731,12 +15731,20 @@
    ],
    "evidence": [
     {
-     "label": "Probe chain summary (private stack, main 4f04c5cd)",
+     "label": "Probe chain summary (main a4b68db7)",
      "url": "file:///tmp/t292-chain/summary.txt"
     },
     {
+     "label": "Deploy log, version b5612173",
+     "url": "file:///tmp/t292/deploy.log"
+    },
+    {
+     "label": "Live admin, AI connections",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=t292d#connections"
+    },
+    {
      "label": "Local admin, AI connections",
-     "url": "http://localhost:8790/admin/?v=t292c#connections"
+     "url": "http://localhost:8790/admin/?v=t292d#connections"
     }
    ],
    "blockers": [],
@@ -15791,6 +15799,11 @@
      "ts": "2026-10-11T16:07:44+0530",
      "who": "claude",
      "note": "Not deployed yet, because the local probe chain has to pass first. On a private stack at main 4f04c5cd, export, both tsc checks and every static check pass. That includes check-playbook-anchors, which was failing on main until I gave card d3-live-key an anchor in 4f04c5cd. Two probes still fail: probe-domain-chain stops at line 43 because the first preview card's Mark done is disabled (likely a session card with no published link in the fresh private database), and probe-day1 fails as a knock-on. Left: fix that walk (seed the session links or skip disabled cards), rerun bash app/scripts/run-chain.sh quick from /private/tmp/t292-wt, then build.sh and wrangler deploy. Commits 064e2b7c and d14448a9 are already on origin/main, the live AI connections list was 0 at 15:57 today, and the key ask is on T-404."
+    },
+    {
+     "ts": "2026-10-11T23:37:02+0530",
+     "who": "claude",
+     "note": "Pushed main to origin (6a7dcca5..000bbb8e, includes 064e2b7c, d14448a9, 4f04c5cd) and deployed revops-centre as Worker version b5612173-deab-4ef4-b99a-2136ff3cb148, built from 000bbb8e. On a private stack, run-chain quick passed 10 steps; the 7 failing probes match the origin/main baseline exactly, are not caused by the routing or sign-in changes, and are noted on T-300. The live admin AI connections list was still 0 at 23:36 and I changed nothing there (the key is T-404); the local :8790 centre and its build were not touched."
     }
    ],
    "order": 2920
@@ -16350,6 +16363,11 @@
      "ts": "2026-10-11T23:04:00+0530",
      "who": "claude",
      "note": "Merged origin/main into the branch and ran the chain on the branch and on a clean origin/main worktree with the same ports. Every failure is the same on main (domain-chain, day1, day2 and context stop because the centre now shows 'Describe Your Business' in Title Case, plus shapes, workshop checkout 501 and the stack funnel and GHL checks), except the calendar card check, which I updated in probe-stack (9c4402d1) to the wording main uses now. Left for the next run: re-run probe-stack, re-run the final checks, push, post READY and add board notes on the owning tasks for the failures that also happen on main."
+    },
+    {
+     "ts": "2026-10-11T23:37:02+0530",
+     "who": "claude",
+     "note": "From T-292 run-chain quick at main a4b68db7 (logs /tmp/t292-chain/*.log): probe-domain-chain, probe-day1, probe-day2, probe-stack, probe-shapes, probe-workshop and probe-context still fail exactly as on the origin/main baseline in /tmp/chain-t300-base (probe-context times out on the Describe your business button in both). They are left for this task; T-292 did not change them."
     }
    ],
    "order": 3000
