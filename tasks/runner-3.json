@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T03:07:25+0530",
+   "task_id": "T-191",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I deployed the revops-centre Worker (live version d6adc350), so the live centre now shows Day 1 at 5 to 6 h, and T-191 is in review for Adi, Bhaskar and Bharath.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Clean worktree at origin/main with 9ea3b9a0 | Done | `/private/tmp/t191-wt` was"
+  },
+  {
    "ts": "2026-10-12T03:03:14+0530",
    "task_id": "T-403",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-074 is still blocked: nothing was sent, because the GrowthClub Tantra workspace has 0 connected mailboxes and Adi's 12 Oct rule bans sending from growthclub.org, so the test send and issue 1 now wait only on the new mailbox from T-123.\n\n**Completion check (all from this run):**\n- **Recurring coach"
-  },
-  {
-   "ts": "2026-10-12T02:26:47+0530",
-   "task_id": "T-073",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "ok",
-   "summary": "T-073 stays in **doing**: everything that can be built and checked before the sessions is in place. The lessons can't be cut until the 14 to 16 Oct sessions are recorded.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| Spec moved to meeting 88135386601, T-232 blocker removed, due 17 Oct "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-191",
+ "task_id": "T-335",
  "entries": [
-  "F-411b56e7"
+  "R-c40463ba"
  ],
- "started": "2026-10-12T03:04:10+0530",
- "message": "Acting on 1 note(s) for T-191: Decide the calls still open from Nelbin's content pass",
+ "started": "2026-10-12T03:07:37+0530",
+ "message": "Acting on 1 note(s) for T-335: Input from Adi for T-226: At https://marketplace.zoom.us/develop/create choose General App and name it 'Ta",
  "slices": {
   "T-135": 1,
   "T-300": 2,

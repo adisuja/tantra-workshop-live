@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T03:07:48+0530",
+   "task_id": "T-020",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-020 is back in review with nothing changed. This pass confirmed that the review link (`?v=1012a`), the \"changed since\" list and the live mirror are all up to date.\n\nCompletion check:\n- **Review link refreshed:** done. The ask and all 8 evidence links point to https://adisuja.github.io/tantra-works"
+  },
+  {
    "ts": "2026-10-12T03:06:07+0530",
    "task_id": "T-242",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "I left T-052 blocked. The note asked me to unblock it because the Tantra key is saved, but one setup step is still missing: team@growthclub.org has not been connected as an email account in the GrowthClub Tantra workspace. T-123 and T-234 are blocked on the same step. When T-228 tried the live run e"
-  },
-  {
-   "ts": "2026-10-11T23:43:04+0530",
-   "task_id": "T-234",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "turns",
-   "summary": "T-234 stays blocked. Nothing had to change for this update: the \"waiting on the API key\" ask was already cleared, and T-123's go-live owns the live campaigns and the test send. I re-ran the reminders probe today and it passes all 92 checks.\n\n- **Clear the waiting-on for the key:** Done. It says \"The"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-020",
+ "task_id": "T-226",
  "entries": [
-  "R-b8df640c"
+  "R-a0de51f7"
  ],
- "started": "2026-10-12T03:06:22+0530",
- "message": "Acting on 1 note(s) for T-020: The Tantra Playbook (Day-1 deliverable)",
+ "started": "2026-10-12T03:08:12+0530",
+ "message": "Acting on 1 note(s) for T-226: Tantra Host Console: Adi hosts every session from a Mac app that runs chat posts, polls, call-to-action links, mute and video control, co-hosts",
  "slices": {
   "T-072": 1,
   "T-245": 1,

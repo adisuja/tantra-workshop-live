@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T03:03:30+0530",
-  "version": 2276,
+  "updated": "2026-10-12T03:07:50+0530",
+  "version": 2280,
   "last_id": 416,
   "team": [
    {
@@ -71,16 +71,16 @@
    ],
    "evidence": [
     {
-     "label": "Playbook Day 1 on the mirror (5 to 6 h)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t191v#d1"
+     "label": "Live Worker centre (d6adc350)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?v=t191w"
+    },
+    {
+     "label": "Playbook Day 1 on the mirror",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t191w#d1"
     },
     {
      "label": "Onboarding on the mirror",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=t191v"
-    },
-    {
-     "label": "Live Worker centre",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?v=t191v"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=t191w"
     },
     {
      "label": "One source for day titles and hours",
@@ -179,6 +179,11 @@
      "ts": "2026-10-11T23:35:10+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-020."
+    },
+    {
+     "ts": "2026-10-12T03:07:09+0530",
+     "who": "claude",
+     "note": "Deployed the revops-centre Worker as version d6adc350-218d-4179-8eed-5f66fcfac6db. It was built from a clean detached worktree at origin/main 3c6e5bee (which contains 9ea3b9a0); the mirror stays at ae397ec2e and no D1 migration was run. Worker tsc and build.sh both passed. On the live Worker, the 'Adi test' /api/me plan shows Day 1 at 5 to 6 h, the bundle holds DAY_HOURS {1:'5 to 6',2:'13 to 17',3:'14 to 19'} and 'Offer, Buyer and Channels', the private feed's .json lists the three sessions and its .ics titles match day-titles.ts, and links.welcome is null, so a headless render of the centre shows no welcome video card. The s5-rsp-stages probe FAIL stays with T-135. Open https://revops-centre.growthcluborg.workers.dev/onboarding/?v=t191w"
     }
    ],
    "order": 1
@@ -1063,39 +1068,39 @@
    "evidence": [
     {
      "label": "Playbook (live mirror)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a"
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1012a"
     },
     {
-     "label": "Day 1: product screenshots on each step",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a#d1"
+     "label": "Day plan timeline (Day 1 header 5 to 6 h)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1012a#d1"
     },
     {
      "label": "Day 2 S3: show-up figure labelled teaching model",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a#d2-s3-the-nurture-engine-where-show-up-is-won"
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1012a#d2-s3-the-nurture-engine-where-show-up-is-won"
     },
     {
      "label": "Day 3: product screenshots",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a#d3"
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1012a#d3"
     },
     {
-     "label": "What Are Funnels (three main animations, rebuilt)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a#funnels"
+     "label": "What Are Funnels",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1012a#funnels"
     },
     {
      "label": "The Other 17 Funnel Types",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a#bigpic-the-other-17-funnel-types"
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1012a#bigpic-the-other-17-funnel-types"
     },
     {
      "label": "The Whole Machine on One Page",
-     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a#bigpic-the-whole-machine-on-one-page"
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1012a#bigpic-the-whole-machine-on-one-page"
     },
     {
      "label": "Local served copy",
-     "url": "http://localhost:4322/materials/playbook.html?v=1010a"
+     "url": "http://localhost:4322/materials/playbook.html?v=1012a"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Read https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a and reply with approval or changes by section. Changed since 2026-10-07: Day 1 and Day 3 steps (16 product screenshots), replaced tools out of Day 1 plus Day 2 S2 and S6, Day 2 S3 (89% labelled teaching model beside the 25 to 40% and 45 to 70% bands), the reverse squeeze page section, and the rebuilt funnel sections (What Are Funnels, The Other 17 Funnel Types, The Whole Machine).",
+   "needs_from_owner": "Read https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1012a and reply with approval or changes by section. Changed since 2026-10-07: Day 1 and Day 3 steps (16 product screenshots), replaced tools out of Day 1 plus Day 2 S2 and S6, Day 2 S3 (89% labelled teaching model beside the 25 to 40% and 45 to 70% bands), the reverse squeeze page section, the rebuilt funnel sections (What Are Funnels, The Other 17 Funnel Types, The Whole Machine), the Day 1 header hours (now 5 to 6 h, the sum of the step estimates) and the 390 px phone overflow fix.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -1166,6 +1171,16 @@
      "ts": "2026-10-11T23:17:16+0530",
      "who": "claude",
      "note": "Verify pass for Orchestrator decision O-98af5c69: nothing needed changing. Checked today: source and served copies have the same hash, the live mirror matches the source exactly (asset paths rewritten), probe-playbook is clean at 360, 768, 1024 and 1440 on the live mirror, the only ruled-out tool match is the adverb 'instantly', and the 89% carries its teaching model label. Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1010a and reply with approval or changes by section (tracked as T-406)."
+    },
+    {
+     "ts": "2026-10-12T03:06:49+0530",
+     "who": "claude",
+     "note": "Review link refreshed to https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1012a and the 'changed since' list now names the Day 1 header hours (5 to 6 h) and the 390 px overflow fix. Checked today: the live mirror playbook is byte-identical to the source on main (asset paths rewritten), the served copy has the same hash, and headless at 390 px the mirror is 390 px wide with the Day 1 header reading 5 to 6 h."
+    },
+    {
+     "ts": "2026-10-12T03:07:40+0530",
+     "who": "claude",
+     "note": "Verify pass: nothing needed changing. Checked today: the source playbook and the served copy are identical, the live mirror matches the source exactly, the Day 1 header reads 5 to 6 h, and at 390 px the page is exactly 390 px wide; probe-playbook is clean at 360, 768, 1024 and 1440 on the live mirror. Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1012a and reply with approval or changes by section."
     }
    ],
    "order": 110,
@@ -16615,7 +16630,7 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "One Zoom sign-in at https://marketplace.zoom.us covers everything: (1) at https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), or open it if it exists, and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, Save; (2) in the same sign-in, Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, Save. Nothing else to change.",
+   "needs_from_owner": "One Zoom sign-in at https://marketplace.zoom.us covers everything: (1) at https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), or open it if it exists, and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, Save; (2) in the same sign-in, Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, meeting:delete:meeting:admin, Save. Nothing else to change.",
    "log": [
     {
      "ts": "2026-10-09T05:04:54+0530",
@@ -16626,6 +16641,11 @@
      "ts": "2026-10-11T23:41:35+0530",
      "who": "claude",
      "note": "Ask widened per Orchestrator O-695a03c5: the same Zoom sign-in also adds the 5 Tantra Centre poll scopes (no signed-in browser was available to Claude). This is now the only Adi item for Live Control (T-407)."
+    },
+    {
+     "ts": "2026-10-12T03:07:50+0530",
+     "who": "claude",
+     "note": "Ripple checked: the poll scopes stay in this ask, because the Orchestrator decision (T-407) moves them to Claude only with a Zoom-signed-in browser, and none was available, so T-226 and T-407 still fold them into this one sign-in. Only change: added meeting:delete:meeting:admin (found missing by T-245) so this ask matches T-226 word for word; items 2 and 3 of T-407 stay queued behind it."
     }
    ],
    "order": 3350,
