@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T11:20:59+0530",
-  "version": 1849,
+  "updated": "2026-10-11T11:23:25+0530",
+  "version": 1853,
   "last_id": 398,
   "team": [
    {
@@ -7592,10 +7592,15 @@
      "ts": "2026-10-11T11:13:34+0530",
      "who": "claude",
      "note": "Not re-pushed: the Orchestrator's 2026-10-10 push approval is superseded by Adi's 2026-10-11 rule that agents never touch Usetantra repos, and the earlier fix was reverted, so the live cover again requests the root tantra-logo.png (checked now: 404, while uploads/tantra-logo.png is 200; deck lines 83 and 348). The fix is ready as patches in workshop-plan/tantra-product-patches/tantra-webinar-deck/main--b3def23f6b.patch and webinar-deck/main--097f6bd6a5.patch, and AUDIT.md H038 now says open again. Assigned to Bharath because applying a patch to a Usetantra repo has to be done by a person with access."
+    },
+    {
+     "ts": "2026-10-11T11:23:25+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Bharath → Claude (by Orchestrator)."
     }
    ],
    "order": 1480,
-   "assignee": "Bharath",
+   "assignee": "Claude",
    "reviewers": [
     "Bhaskar",
     "Bharath"
@@ -11795,16 +11800,16 @@
    ],
    "evidence": [
     {
-     "label": "PR 197",
-     "url": "https://github.com/Usetantra/tantra-frontend-v2/pull/197"
+     "label": "Pricing patch",
+     "url": "workshop-plan/tantra-product-patches/tantra-frontend-v2/pricing-lineup-2026-10--a3c38d7ce8.patch"
     },
     {
-     "label": "Dodo spec",
-     "url": "https://github.com/Usetantra/tantra-frontend-v2/blob/pricing-lineup-2026-10/docs/dodo-product-spec-2026-10.md"
+     "label": "Enterprise Cal.com patch",
+     "url": "workshop-plan/tantra-product-patches/tantra-frontend-v2/adi-new-ui--5d6eecf642.patch"
     },
     {
-     "label": "Annual toggle screenshot",
-     "url": "/tmp/t252-pricing-annual.png"
+     "label": "Patch index",
+     "url": "workshop-plan/tantra-product-patches/README.md"
     }
    ],
    "blockers": [],
@@ -11844,6 +11849,16 @@
      "ts": "2026-10-11T00:29:06+0530",
      "who": "claude",
      "note": "Adi 2026-10-11: agents never touch Usetantra repos (frontend, backend, new UI, decks, MCP). This task's upstream PRs/commits were closed, deleted or reverted; the work is kept as patches in workshop-plan/tantra-product-patches/ (README indexes them). Any further Tantra product change goes there as a patch or spec, never upstream."
+    },
+    {
+     "ts": "2026-10-11T11:22:27+0530",
+     "who": "claude",
+     "note": "Not pushed and no PR: Adi's 2026-10-11 rule (agents never touch Usetantra repos) supersedes the 2026-10-10 push approval, so the work stays as patches. Checked today: workshop-plan/tantra-product-patches/tantra-frontend-v2/pricing-lineup-2026-10--a3c38d7ce8.patch covers items 2, 4, 5, 6, 8 and the Dodo spec (Enterprise $9,999 with 1 year, Pro $999/yr toggle, no add-on help lines), and adi-new-ui--5d6eecf642.patch covers items 1 and 9 (SMS removed, /enterprise on Cal.com); items 3 and 7 were already closed. Account figures stay on the owner line-up (5 and 15 accounts, $20 extra, 14-day trial) because Adi's standing pricing rule says +$20, so the live Dodo catalog (2, 12, $10, 7 days) is what has to change, as the Dodo spec says."
+    },
+    {
+     "ts": "2026-10-11T11:23:03+0530",
+     "who": "claude",
+     "note": "Checked 5 related task(s); updating T-157, T-072."
     }
    ],
    "order": 2520
@@ -13480,7 +13495,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Newcomers read the spec first; it still describes Namecheap and a fixed first cohort.",
    "spec": "In docs/onboarding-v3/ONBOARDING_V3_SPEC.md: dates relative to the weekly cohort, Day 0 card 3 with description and 5/10/15/30 min reminders, approved vendor set (Cloudflare Registrar, Twilio, Choose your tools) with ruled-out vendors removed, an owner and date for each manual step, Title Case headings. Update docs/onboarding-v3/coverage.json notes as automations land. Closes audit findings H069, H070, H071, H072, H073, X108. Per finding: H069 (docs/onboarding-v3/ONBOARDING_V3_SPEC.md): Rewrite the dates relative to each weekly cohort (Wed to Fri 11:00 ET). H070 (docs/onboarding-v3/ONBOARDING_V3_SPEC.md): Add the event description and 5, 10, 15, 30 minute reminders to the card 3 requirement. H071 (docs/onboarding-v3/ONBOARDING_V3_SPEC.md): Update sections 4, 6 and 8 to the approved vendor set (Cloudflare Registrar, Twilio, Choose your tools) and drop ruled-out vendors. H072 (docs/onboarding-v3/ONBOARDING_V3_SPEC.md): Automate or explicitly own each manual step and give every open item an owner and date. H073 (docs/onboarding-v3/ONBOARDING_V3_SPEC.md): Title Case every heading in the spec. X108 (docs/onboarding-v3/coverage.json): Update the notes as each automation lands; the remaining human-only entries need an owner decision. When done, mark these ids fixed in /Users/adithyamurali/tantra-round5-coord/AUDIT.md. Merge order: build on main after T-251 lands (branch tantra-walkthroughs: e4bd0b8 removes the ruled-out tools and rewrites workshop-cards.ts, agentic.ts, jobs.ts, agent.tsx and coverage.json; probe fixes 043b5ab and aa22a3f, no READY yet in /Users/adithyamurali/tantra-round5-coord/LOG.md). Until then branch from tantra-walkthroughs; AUDIT.md line numbers predate that change.",
    "done_when": [
@@ -13500,6 +13515,10 @@
     {
      "label": "Commit 7bc886a",
      "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/7bc886a"
+    },
+    {
+     "label": "Commit 7b03ad46",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/7b03ad46"
     }
    ],
    "blockers": [],
@@ -13524,6 +13543,11 @@
      "ts": "2026-10-10T15:57:52+0530",
      "who": "claude",
      "note": "ALARM: run over budget ($2.34): 33 calls, peak context 48k. Slice the next run smaller."
+    },
+    {
+     "ts": "2026-10-11T11:22:22+0530",
+     "who": "claude",
+     "note": "Spec and coverage.json are on the approved stack with cohort-relative dates, Day 0 card 3 reminders (30/15/10/5 min) and an owner and due date for every manual step. This pass gave the last unowned human-only step (Endy Inboxes order) an owner, Nelbin, due 2026-10-16, and pushed main (1377fc00..7b03ad46). Verified: the ruled-out vendor grep returns nothing, no dashes, titlecase.py changed 0 headings, check-coverage OK, all 6 AUDIT ids show the fix SHAs and LOG.md has the READY entry."
     }
    ],
    "order": 2760
