@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T18:29:38+0530",
+   "task_id": "T-247",
+   "mode": "feedback",
+   "status": "review",
+   "result": "error",
+   "summary": "API Error: Connection refused — a firewall or proxy may be blocking it (ECONNREFUSED)"
+  },
+  {
    "ts": "2026-10-11T18:24:24+0530",
    "task_id": "T-235",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-135 is in review for Amal. All 11 guide screenshots are real captures, and the checks passed again in this run. No push or mirror republish was needed because the work was already on origin and on the live mirror.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| 1. 11 slots replaced with"
-  },
-  {
-   "ts": "2026-10-11T11:29:02+0530",
-   "task_id": "T-290",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-290 checks out and is back in review for Adi, Aquila and Bharath. Nothing needed pushing: the T-290 commit 3199bef and the earlier field commit d1ff5ca are both already on origin/main.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Three optional fields on the page cards for all three "
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-247: Bring the Tantra Tracker MongoDB copy back (Docker is stopped) and harden the container",
- "task_id": "T-247",
+ "message": "Acting on 1 note(s) for T-136: s5-challenge-stages step 2: capture the daily-output loop once it exists",
+ "task_id": "T-136",
  "entries": [
-  "F-820de747"
+  "F-b7aa66e7"
  ],
  "mode": "feedback",
- "started": "2026-10-11T18:24:43+0530",
+ "started": "2026-10-11T18:32:31+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
