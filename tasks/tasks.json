@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T16:34:37+0530",
-  "version": 1961,
+  "updated": "2026-10-11T16:36:38+0530",
+  "version": 1963,
   "last_id": 408,
   "team": [
    {
@@ -2783,7 +2783,7 @@
     "T-056 list imported",
     "Each member connects their own LinkedIn in Tantra"
    ],
-   "needs_from_owner": "Not an ask for Adi. Bhaskar: once the T-056 list is imported (its own sign-in ask), get the wave 1 members (2 existing slots) connected at https://usetantra.com/connectors/channels/linkedin using the connect guide, then start the campaign yourself from launch-kit.md section 3.",
+   "needs_from_owner": "Bhaskar: once T-056 is imported, get the wave 1 members (the 2 existing Pro slots, buy nothing) to connect their own LinkedIn at https://usetantra.com/connectors/channels/linkedin using workshop-plan/outreach/connect-linkedin-guide.md, then start the campaign from launch-kit.md section 3. Bharath: can the team workspace get more LinkedIn slots at no charge? The list import is the sign-in already asked on T-056.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2844,12 +2844,23 @@
      "ts": "2026-10-11T16:31:24+0530",
      "who": "claude",
      "note": "Bhaskar and Bharath: the launch kit now shows how the first line works (Tantra help centre: put the T-059 line in a custom field called firstLine at import, use {{firstLine}} in the LinkedIn step). Wave 1 is the 2 profiles that fit the existing slots, nothing bought. Bharath, can the team workspace get more LinkedIn slots at no charge? Bhaskar now owns connecting members and starting the campaign after T-056 is imported. Referral tests 27/27, probe-referrals 15/15. Open workshop-plan/outreach/launch-kit.md (the mirror carries no outreach docs, so it was not republished)."
+    },
+    {
+     "ts": "2026-10-11T16:36:32+0530",
+     "who": "claude",
+     "note": "People: reviewers Bhaskar → Bhaskar/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-11T16:36:38+0530",
+     "who": "claude",
+     "note": "Verify pass: the run caps, wave 1 on 2 slots and Bhaskar's steps are all in the kit, and I fixed the first line tag to {{custom.first_line}} (the T-059 tool and our live funnel both write custom.first_line; a simulator run carried each contact's line). Assignee is now Bhaskar (reviewers Bhaskar, Bharath); referral tests 27/27, probe-referrals 15/15. Bharath, a question for you: can the team workspace get more LinkedIn slots at no charge? Open workshop-plan/outreach/launch-kit.md (3a, 3b, 5)."
     }
    ],
    "order": 370,
    "assignee": "Bhaskar",
    "reviewers": [
-    "Bhaskar"
+    "Bhaskar",
+    "Bharath"
    ]
   },
   {
