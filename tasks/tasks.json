@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T18:17:47+0530",
-  "version": 2007,
+  "updated": "2026-10-11T18:22:18+0530",
+  "version": 2009,
   "last_id": 408,
   "team": [
    {
@@ -11387,6 +11387,11 @@
      "ts": "2026-10-11T07:11:24+0530",
      "who": "claude",
      "note": "Checked again on 2026-10-11, nothing had to change: the replay and nudge campaigns the T-123 ripple asks for are already built (cloud/src/followups.ts and followup-copy.ts, created by the same 'Create reminder campaigns' button), committed and on origin main. Re-ran probe-tantra-reminders on a fresh local centre and simulator: 92 of 92 pass (no-show added once to the replay campaign with the right replay_url, low-engagement attendee added once to the nudge campaign, second run adds nobody, threshold and on/off switch in Cohort Settings). Live: migration 0024 is applied (followup_pushes exists, 0 rows), Worker e61e9802 (10 Oct) includes it, tantra_followups is still Off by default; I did not redeploy (not needed, and another lane has an uncommitted funnel change in the tree) and did not sign in to the live admin, so open Cohort Settings, Post-Session Follow-Ups at https://revops-centre.growthcluborg.workers.dev/admin/?v=1011#settings to see it. Left to switch on: tantra_followups=On and Start the two campaigns in Tantra."
+    },
+    {
+     "ts": "2026-10-11T18:22:18+0530",
+     "who": "claude",
+     "note": "Origin now has everything: the T-235 code (followups.ts, followup-copy.ts, migration 0024, probe) was already on origin/main with local main 0 behind, so no merge was needed, and I pushed the remaining board commits (main = origin/main = 6c40e376, no force). Re-ran on a fresh local centre plus simulator: probe-tantra-reminders 92/92 (no-show added once to the replay campaign with the right replay_url, low-engagement attendee once to the nudge, second run adds nobody, threshold 40 shown in Cohort Settings), probe-nurture and probe-lanes all pass. No Worker code changed, so no redeploy (live Worker unchanged, tantra_followups still Off); switching it on waits only on the Tantra key (T-337), then the live run under T-123."
     }
    ],
    "order": 2350

@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T18:20:21+0530",
+   "task_id": "T-237",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-237 stays in review. I re-checked everything in this run, found nothing new to fix, and changed no code.\n\n| Item | State | What I checked in this run |\n|---|---|---|\n| Public sign-up registers into the webinar and returns the person's own join link | Done | Probe passes on a fresh local stack. On "
+  },
+  {
    "ts": "2026-10-11T18:13:57+0530",
    "task_id": "T-397",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-292 is still in progress and I have not deployed the Worker: the local probe chain still fails two probes. The next run picks up from here.\n\n| Item | State |\n|---|"
-  },
-  {
-   "ts": "2026-10-11T13:33:17+0530",
-   "task_id": "T-102",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "I checked T-102 again and it is still done: the full probe output is in the task log (31 passed, 0 failed, 0 pending), and the live mirror has not changed since that run. I did not run the probe again, because the Orchestrator said to re-run only if the mirror changes.\n\n**COMPLETION CHECK:**\n- **Pro"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-237",
+ "task_id": "T-246",
  "entries": [
-  "F-d4f7707f"
+  "F-cba1377b"
  ],
- "started": "2026-10-11T18:17:27+0530",
- "message": "Acting on 1 note(s) for T-237: Give the Tantra webinar a public registration page",
+ "started": "2026-10-11T18:22:40+0530",
+ "message": "Acting on 1 note(s) for T-246: Redeploy attendee funnels that run the old funnel worker",
  "slices": {
   "T-135": 1,
   "T-148": 1,
