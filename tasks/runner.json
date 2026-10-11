@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T22:33:05+0530",
+   "task_id": "T-041",
+   "mode": "feedback",
+   "status": "hold",
+   "result": "ok",
+   "summary": "I reworded T-041's blocker and left the task on hold. The tasks file now shows the new wording, there is still no ask of Adi, and note R-d00b0022 is acknowledged. Committed as 0cda65ea (not pushed).\n\n**Completion check:**\n- **Blocker wording:** done. It now reads \"Waits on T-040: its owner hold must"
+  },
+  {
    "ts": "2026-10-11T22:31:38+0530",
    "task_id": "T-245",
    "mode": "feedback",
@@ -87,30 +95,21 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-061 is still blocked, but on a different input now. The Tantra key is saved in the live centre (T-337 is done). Creating the two lane campaigns also needs team@growthclub.org connected as a mailbox in the GrowthClub Tantra workspace, and it isn't yet. That's the same ask already on T-123 and T-228"
-  },
-  {
-   "ts": "2026-10-11T16:50:46+0530",
-   "task_id": "T-006",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-006 checks out: the runbook and `up.sh` are complete and already on GitHub, so I changed nothing and left the task in review for Bharath and Adi.\n\n- **Runbook covers all 19 jobs:** done. `workshop-plan/ops/runbook.md` section 1 gives each job's port, interpreter and health check. All 19 live plist"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-041: Add admins to both WhatsApp groups",
- "task_id": "T-041",
+ "message": "Acting on 1 note(s) for T-285: Card copy fixes found while recording the walkthroughs",
+ "task_id": "T-285",
  "entries": [
-  "R-d00b0022"
+  "F-c3d417eb"
  ],
  "mode": "feedback",
- "started": "2026-10-11T22:32:34+0530",
+ "started": "2026-10-11T22:33:16+0530",
  "slices": {
   "T-156": 1,
   "T-157": 1,
   "T-276": 1,
   "T-285": 1,
-  "T-041": 1,
   "T-295": 1,
   "T-226": 1,
   "T-299": 1,
