@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T18:47:11+0530",
-  "version": 2023,
+  "updated": "2026-10-11T18:58:17+0530",
+  "version": 2024,
   "last_id": 408,
   "team": [
    {
@@ -12577,23 +12577,23 @@
    "evidence": [
     {
      "label": "Pipeline chart",
-     "url": "http://localhost:4322/debug/guides?only=s5-pipeline&v=254d836"
+     "url": "http://localhost:4322/debug/guides?only=s5-pipeline&v=254v"
     },
     {
      "label": "Newsletter chart",
-     "url": "http://localhost:4322/debug/guides?only=s6-newsletter&v=254d836"
+     "url": "http://localhost:4322/debug/guides?only=s6-newsletter&v=254v"
     },
     {
      "label": "AI newsletter chart",
-     "url": "http://localhost:4322/debug/guides?only=s6-ai-newsletter&v=254d836"
+     "url": "http://localhost:4322/debug/guides?only=s6-ai-newsletter&v=254v"
     },
     {
      "label": "Blog chart",
-     "url": "http://localhost:4322/debug/guides?only=s1-blog&v=254d836"
+     "url": "http://localhost:4322/debug/guides?only=s1-blog&v=254v"
     },
     {
      "label": "Extra pipelines chart",
-     "url": "http://localhost:4322/debug/guides?only=s5-extra-pipelines&v=254d836"
+     "url": "http://localhost:4322/debug/guides?only=s5-extra-pipelines&v=254v"
     },
     {
      "label": "Chart screenshots 1440 and 390",
@@ -12647,6 +12647,11 @@
      "ts": "2026-10-11T18:42:09+0530",
      "who": "claude",
      "note": "Card brought up to date, no code changed. Beehiiv and Fireflies were removed from tools.ts in 25a8998 and their SVGs in 28fdc09, and Metricool, Canva and GoHighLevel are kept. Main and origin/main both contain 97096ab (with 36d9956 and 28fdc09), and all 15 AUDIT.md ids read fixed, with G126 recording 28fdc09. Re-run today on main 836d8abc (which includes 97096ab): probe-flows 24 charts PASS, probe-visual-tools PASS, probe-details static charts 24 of 24 pass with the same 3 WARN on untouched charts (s1-overview, s2-tantra-pro-funnel, s5-gohighlevel) and 0 FAIL. Its later runtime pass hung in the agentic centre calendar section, which has nothing to do with charts, so I stopped it. Nothing failed, so nothing was pushed. Open http://localhost:4322/debug/guides?only=s5-pipeline&v=254d836"
+    },
+    {
+     "ts": "2026-10-11T18:58:17+0530",
+     "who": "claude",
+     "note": "Card brought up to date, no code changed: tools.ts lost its Beehiiv and Fireflies entries in 25a8998 and their SVG files went in 28fdc09, while the Metricool, Canva and GoHighLevel logos stay. Both commits and 36d9956 are on origin/main, which has moved on from 97096ab to c17207f, and all 15 ids in AUDIT.md read fixed, with G126 recording follow-up 28fdc09. Re-run on 836be37: probe-flows 24 charts PASS (an unwired lane fails as it should), probe-visual-tools PASS, probe-details 0 FAIL with the same 3 chart WARN on s1-overview, s2-tantra-pro-funnel and s5-gohighlevel (all outside this task), and the 10 charts render at 1440 and 390 with 0 chips. Open http://localhost:4322/debug/guides?only=s5-pipeline&v=254v"
     }
    ],
    "order": 2540
