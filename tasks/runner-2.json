@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T11:35:46+0530",
+   "task_id": "T-070",
+   "mode": "feedback",
+   "status": "hold",
+   "result": "ok",
+   "summary": "I checked the earlier T-070 work and it holds up, apart from one fix to the integration plan. T-070 stays on hold and both notes are acked.\n\n**What I fixed:** the earlier plan said to grant the plan through the backend's `BillingTrialCampaignService.grant`. That method is private. The only public wa"
+  },
+  {
    "ts": "2026-10-11T11:30:51+0530",
    "task_id": "T-040",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "review",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-11T08:36:28+0530",
-   "task_id": "T-270",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "ok",
-   "summary": "I added the missing ev_length examples and pushed them, but T-270 is not ready for review. The live consent check, the Worker deploy and the mirror publish are still open, so I left the task in doing.\n\n| Item | State | Evidence |\n|---|---|---|\n| 1. 9fca8f3 on origin/main | Done | It was already ther"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-070",
+ "task_id": "T-240",
  "entries": [
-  "F-f5b965db",
-  "R-bddc03fc"
+  "F-e85a68f0"
  ],
- "started": "2026-10-11T11:31:46+0530",
- "message": "Acting on 2 note(s) for T-070: What the Tantra backend does when a workshop seat or VIP is paid",
+ "started": "2026-10-11T11:37:11+0530",
+ "message": "Acting on 1 note(s) for T-240: Fix the 3 probe-details screenshot-fill failures",
  "slices": {
   "T-072": 1,
   "T-245": 1,
