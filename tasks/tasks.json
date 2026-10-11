@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T16:01:42+0530",
-  "version": 1941,
+  "updated": "2026-10-11T16:03:35+0530",
+  "version": 1943,
   "last_id": 406,
   "team": [
    {
@@ -12189,7 +12189,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "review",
    "why": "Connectors that assume the wrong API behaviour fail silently for attendees during the live build day.",
    "spec": "Lane G built connectors from vendor docs; each remaining behaviour needs one real check ONLY on a free or test account Adi creates himself, never a live client account (vendor-accounts-no-change-rule), then delete what was created and log it in scripts/walkthroughs/REVERT_LEDGER.md. Remaining: WebinarGeek (broadcast create, subscription watch_link, webhook trigger names, poll-vote webhook, registration before publishing, GET /subscriptions attendance after a 5 minute live test); Zoom (only event subscriptions created by API; the rest verified 2026-10-07); Cal.com free (event types without username, textarea booking fields); Tantra our own workspace (contact import with linkedin and custom fields, /email-campaigns/:id/start preconditions, Zoom connector with an API key: do these inside T-234); Twilio upgraded trial for SMS only (opt-in image as signed URL, registration number validation, unused template variable); Dodo test mode (static link without redirect_url, test checkout host); Stripe test mode (restricted-key permission names); Metricool Advanced trial (image normalize response, default LinkedIn target). GoHighLevel, HubSpot and Zoho checks wait on T-260 (whether those CRMs stay offered). Record each result next to the connector in cloud/src/connectors and fix any wrong assumption.",
    "done_when": [
@@ -12202,23 +12202,28 @@
      "url": "cloud/src/connectors/CHECKS.md"
     },
     {
-     "label": "Check script",
+     "label": "Check script (live checks once T-387 keys land)",
      "url": "cloud/scripts/connector-checks.mjs"
     },
     {
-     "label": "Guard probe (17/17)",
+     "label": "Guard probe",
      "url": "cloud/scripts/probe-connector-guards.mjs"
+    },
+    {
+     "label": "Full simulator probe (86 PASS)",
+     "url": "app/scripts/probe-connectors.mjs"
     },
     {
      "label": "Revert ledger",
      "url": "scripts/walkthroughs/REVERT_LEDGER.md"
+    },
+    {
+     "label": "Live centre",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?v=t253b"
     }
    ],
-   "blockers": [
-    "Free or test accounts for WebinarGeek, Cal.com, Twilio, Dodo test mode, Stripe test mode and Metricool (Adi creates them; Claude never signs up or enters passwords)",
-    "CRM checks wait on T-260"
-   ],
-   "needs_from_owner": "Test keys, pasted as KEY=value lines into ~/.config/tantra/keys/vendor-test.env (skip any vendor you do not want checked): WEBINARGEEK_TEST_API_KEY and WEBINARGEEK_TEST_WEBINAR_ID (trial at https://www.webinargeek.com with the API switched on by support, key under Account, Integrations, API, plus one unpublished live test webinar's ID); CALCOM_TEST_API_KEY (free account at https://cal.com/signup, Settings, Developer, API keys); DODO_TEST_API_KEY (https://app.dodopayments.com, switch to Test mode, Developer, API Keys); STRIPE_TEST_RESTRICTED_KEY (https://dashboard.stripe.com/test/apikeys, Create restricted key, starts rk_test_); TANTRA_TEST_API_KEY (https://usetantra.com, FintechCircle workspace, Connectors, API Keys, Create Key). Optional CRM test accounts: GHL_TEST_TOKEN and GHL_TEST_LOCATION_ID (a test sub-account's private integration), HUBSPOT_TEST_TOKEN (free test portal), ZOHO_TEST_CLIENT_ID, ZOHO_TEST_CLIENT_SECRET, ZOHO_TEST_REFRESH_TOKEN (free test org).",
+   "blockers": [],
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-08T00:21:42+0530",
@@ -12264,6 +12269,16 @@
      "ts": "2026-10-10T21:01:50+0530",
      "who": "claude",
      "note": "Verify pass: every check script, guard and CHECKS.md row was re-read and re-run (Zoom live again: 401, nothing created; guard probe all pass; tsc clean). One gap fixed: the Twilio unused template variable check had no record, so CHECKS.md now says it no longer applies because T-264 removed the Twilio template and SMS is plain text (commit 4e57d09, local only, not pushed because main also carries two other lanes' unpushed commits). The T-264 ripple needed no change; still blocked only on the test keys."
+    },
+    {
+     "ts": "2026-10-11T16:01:51+0530",
+     "who": "claude",
+     "note": "WebinarGeek, Cal.com, Dodo and Stripe are now docs plus defensive in CHECKS.md (watch_link read top level or nested, commit 8920d3d, pushed), the full simulator probe passes 86/86 after one probe fix (9b2b64b), and the centre Worker with every connector guard is live as version ece95c38 (built from a clean copy of main, page and admin 401 checked). Keys for the optional live checks now sit on T-387 and the Tantra key on T-337, so nothing here waits on Adi; the ledger records nothing outstanding."
+    },
+    {
+     "ts": "2026-10-11T16:03:35+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11: the code for every Orchestrator item is on disk and in main (WebinarGeek watch_link top level or nested, Cal.com with and without username plus the textarea to text fallback, Dodo always sends redirect_url, Stripe 403 names the permission). CHECKS.md rows say docs + defensive, live check optional (T-387). Re-ran today: probe-connector-guards.mjs all pass, tsc clean, full probe-connectors.mjs ALL PASS (86 checks, launch-card section included this time). Live revops-centre is version ece95c38, deployed after the last cloud commit 9b2b64b: /onboarding/ serves the Onboarding Centre and /admin/api/me answers 401. REVERT_LEDGER row 49 says nothing is outstanding. Live vendor checks still wait only on T-387 keys."
     }
    ],
    "order": 2530
