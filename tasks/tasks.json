@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T17:15:01+0530",
-  "version": 1984,
+  "updated": "2026-10-11T17:19:33+0530",
+  "version": 1985,
   "last_id": 408,
   "team": [
    {
@@ -16425,6 +16425,11 @@
      "ts": "2026-10-11T17:15:01+0530",
      "who": "claude",
      "note": "Nelbin, this one is yours and it is P0: your fork nelbinxav/tantra-workshop-live was cut after the leak, so it still holds commit 5b9f57d6 with the client figures, and only you can delete it. Open https://github.com/nelbinxav/tantra-workshop-live/settings, scroll to Danger Zone, click Delete this repository and confirm. I checked the GitHub API today (2026-10-11): the fork still returns 200, so this stays blocked on you; I recheck on every run and close it on 404, and T-145 closes once the fork is 404 and 5b9f57d6 no longer opens on adisuja's repo."
+    },
+    {
+     "ts": "2026-10-11T17:19:33+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-11: rechecked the GitHub API and the fork still returns 200 (5b9f57d6 also still opens on adisuja, 200), so this stays blocked on Nelbin. The orchestrator verdict is proceed, so the board keeps T-341 out of Adi's Waiting on you list and shows the ask under What Claude needs from Nelbin. The Danger Zone steps, the T-145 closing line and the P0 note to Nelbin are all in place."
     }
    ],
    "order": 3410,
