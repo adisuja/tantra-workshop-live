@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T05:58:02+0530",
-  "version": 1732,
-  "last_id": 394,
+  "updated": "2026-10-11T06:00:03+0530",
+  "version": 1736,
+  "last_id": 395,
   "team": [
    {
     "name": "Adi",
@@ -2782,7 +2782,8 @@
    "owner": "Aquila",
    "assignee": "Claude",
    "reviewers": [
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "2026-10-14",
@@ -15726,6 +15727,35 @@
    ],
    "order": 3930,
    "input_for": "T-337",
+   "kind": "input"
+  },
+  {
+   "id": "T-395",
+   "title": "Input from Adi for T-334: Signed in as adisuja, open https://support.github.com/contact, pick topic 'Remov",
+   "area": "Infra",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (outside_person): GitHub Support only acts on a request from the repo owner's account; hard rules bar Claude from sending outside messages as Adi.. Everything else in T-334 is being built around it. As soon as this is done, T-334 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Signed in as adisuja, open https://support.github.com/contact, pick topic 'Removing sensitive data', paste the full text of workshop-plan/ops/t145_github_support_request.md into the message box, click Send, then mark T-334 sent.",
+   "log": [
+    {
+     "ts": "2026-10-11T06:00:03+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-334."
+    }
+   ],
+   "order": 3950,
+   "input_for": "T-334",
    "kind": "input"
   }
  ]
