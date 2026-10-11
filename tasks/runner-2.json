@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-11T08:08:35+0530",
+   "task_id": "T-265",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "(Held back from the public board: this note mentions a private client detail.)"
+  },
+  {
    "ts": "2026-10-11T08:01:06+0530",
    "task_id": "T-258",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "done",
    "result": "ok",
    "summary": "T-087 verified and kept at `done`: nothing needed fixing, and the only gap is that the real Work Tracker row landing was not re-proven this run.\n\n**COMPLETION CHECK** (evidence from this run)\n\n| Item | State | Evidence |\n|---|---|---|\n| Done-when 1: dependency grep returns nothing | Done | `git grep"
-  },
-  {
-   "ts": "2026-10-11T05:58:48+0530",
-   "task_id": "T-334",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-334 stays blocked: the blocker holds on recheck, and the only thing left is Adi sending the GitHub Support request from the adisuja account.\n\nCOMPLETION CHECK\n- **Give Adi the exact blocker (F-dc1d30ac):** Done. The T-334 log entry of 2026-10-11 gives both parts, and I rechecked each today.\n  - Te"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-265",
+ "task_id": "T-272",
  "entries": [
-  "F-0921ce22"
+  "F-a1c8649e"
  ],
- "started": "2026-10-11T08:01:44+0530",
- "message": "Acting on 1 note(s) for T-265: Centre: dashboard reads (Tantra campaign stats, Metricool clicks) and automated launch QA",
+ "started": "2026-10-11T08:09:58+0530",
+ "message": "Acting on 1 note(s) for T-272: Centre admin: per-teammate auth, per-cohort session settings, ruled-out vendors out of the admin",
  "slices": {
   "T-072": 1,
   "T-245": 1,
