@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T11:23:25+0530",
-  "version": 1853,
+  "updated": "2026-10-11T11:24:27+0530",
+  "version": 1855,
   "last_id": 398,
   "team": [
    {
@@ -13513,12 +13513,8 @@
      "url": "docs/onboarding-v3/coverage.json"
     },
     {
-     "label": "Commit 7bc886a",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/7bc886a"
-    },
-    {
-     "label": "Commit 7b03ad46",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/7b03ad46"
+     "label": "Commit 0aad7e3d",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/0aad7e3d"
     }
    ],
    "blockers": [],
@@ -13548,6 +13544,11 @@
      "ts": "2026-10-11T11:22:22+0530",
      "who": "claude",
      "note": "Spec and coverage.json are on the approved stack with cohort-relative dates, Day 0 card 3 reminders (30/15/10/5 min) and an owner and due date for every manual step. This pass gave the last unowned human-only step (Endy Inboxes order) an owner, Nelbin, due 2026-10-16, and pushed main (1377fc00..7b03ad46). Verified: the ruled-out vendor grep returns nothing, no dashes, titlecase.py changed 0 headings, check-coverage OK, all 6 AUDIT ids show the fix SHAs and LOG.md has the READY entry."
+    },
+    {
+     "ts": "2026-10-11T11:23:50+0530",
+     "who": "claude",
+     "note": "Verify pass: the spec passes every check (vendor grep empty, no dashes, all 16 headings checked with title_case(), card 3 description and 30/15/10/5 min reminders, Twilio SMS only, cohort.ts dates). I fixed one gap: the coverage.json M365 note still described an unowned human DKIM/SMTP step, so it now says the path is ruled out (0aad7e3d, pushed; check-coverage OK). AUDIT.md rows cite 0aad7e3d and LOG.md has the READY entry."
     }
    ],
    "order": 2760
@@ -14417,8 +14418,12 @@
      "url": "/Users/adithyamurali/tantra-backups/2026-10-09/"
     },
     {
-     "label": "Commit",
+     "label": "Commit (relay cleanup)",
      "url": "aad13c1"
+    },
+    {
+     "label": "Commit (trycloudflare removed)",
+     "url": "361e8e5c"
     }
    ],
    "blockers": [],
@@ -14438,6 +14443,11 @@
      "ts": "2026-10-10T16:04:02+0530",
      "who": "claude",
      "note": "Relay retired: both plists backed up to ~/tantra-backups/2026-10-09/*.plist.DISARMED, both jobs booted out, plists and logs deleted, no revops cloudflared process left. Checked: launchctl list has no revops-relay, up.sh --check shows both not loaded (0 failed), git grep in cloud/ and app/ finds no 8793 or relay URL (probe-admin-tokens default moved to the centre's :8790; hmacHex in relay.ts kept), tsc in cloud/ exits 0; runbook updated to 18 plists and the retired section. Commit aad13c1 is local only: main carries 2 other lanes' commits ahead of origin, so a push would ship more than the approved cleanup; it goes out with the next whole-main publish. The trycloudflare hit in app/next.config.ts is the dev preview allowance, not the relay, so it stays."
+    },
+    {
+     "ts": "2026-10-11T11:24:27+0530",
+     "who": "claude",
+     "note": "Rechecked on disk: launchctl list has no revops-relay, both plists are gone from LaunchAgents (backups in ~/tantra-backups/2026-10-09/*.DISARMED), no revops cloudflared process, up.sh --check shows both retired jobs not loaded (0 failed). I removed the last trycloudflare hit, the allowedDevOrigins line in app/next.config.ts, because no quick tunnel runs anymore. git grep in cloud/ and app/ for 8793, REVOPS_RELAY, relay_url and trycloudflare now returns nothing (hmacHex kept), and tsc is clean in cloud/ and app/ (commit 361e8e5c). Not pushed: origin/main has another lane's commit that main lacks, so pushing would need a merge into a shared dirty tree; it goes out with the next whole-main publish (aad13c1 is already on origin). The runbook says 19 active plists, not 14, because other lanes added jobs since; the relay pair is only in the retired section. Key files in ~/.config/tantra are left alone."
     }
    ],
    "order": 2890
