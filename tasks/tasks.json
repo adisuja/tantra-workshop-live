@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T22:23:41+0530",
-  "version": 2056,
+  "updated": "2026-10-11T22:24:55+0530",
+  "version": 2057,
   "last_id": 408,
   "team": [
    {
@@ -5041,6 +5041,14 @@
     {
      "label": "D1 backup",
      "url": "workshop-plan/ops/t107_d1_deleted_rows.json"
+    },
+    {
+     "label": "Work Tracker",
+     "url": "https://docs.google.com/spreadsheets/d/1I0vs3k4Wz-xsvMaeGd-9t4VhaFzW2v7lvUI2Mg3Iyvc/edit"
+    },
+    {
+     "label": "Apps Script trash: T-380",
+     "url": "workshop-plan/tasks/T-380.md"
     }
    ],
    "blockers": [],
@@ -5120,6 +5128,11 @@
      "ts": "2026-10-11T13:32:30+0530",
      "who": "claude",
      "note": "T-102 re-ran probe-live-wiring.mjs on the live mirror 2026-10-11 08:00:17Z to 08:02:01Z (mirror main 53ff1cd). It re-wrote the usual test rows under the probe email wiring-probe@example.com (a Checkout Starts row and the Join/Intake rows, stopping at the Dodo hosted page cks_0NpUfO7QdBU1ktOdV4ddP, no payment). Delete these wiring-probe@example.com rows from the Free and Paid Registrations, Intake Survey, and Checkout Starts/Cheout Returns tabs alongside the other probe rows in T-102/T-004. All 31 wiring rows passed this run, so there is no new FAILED probe row to triage."
+    },
+    {
+     "ts": "2026-10-11T22:24:55+0530",
+     "who": "claude",
+     "note": "Backed up (t107_deleted_rows.json) then deleted the 4 probe rows added since the last pass: 3 cohort-probe@example.com in Free Registrations (10-11 07:09, 07:24, 10:37Z) and the wiring-probe@example.com Checkout Starts row from T-102's 10-11 08:00Z run, plus the 'placeholder' line in form-log.jsonl. The 10-10 19:50Z/19:52Z wiring-probe rows were already deleted on 10-11 and are in the backup. Re-scan: 0 probe/@example.com/placeholder rows in the six funnel tabs, 0 in the 9 revops-centre D1 email tables and events.meta, 0 in ops.db, and 0 in all 37 Tantra Tracker tabs (5,169 rows) after a fresh sync. Left alone: 2 public-preview@revops-centre.local rows in Free Intake Survey (not in the approved row class). T-193 was archived 2026-10-08 as a duplicate of this task; the Apps Script trash is T-380 (Nelbin)."
     }
    ],
    "order": 1050,
