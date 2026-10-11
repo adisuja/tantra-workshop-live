@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-11T16:36:38+0530",
-  "version": 1963,
+  "updated": "2026-10-11T16:37:41+0530",
+  "version": 1964,
   "last_id": 408,
   "team": [
    {
@@ -16137,6 +16137,11 @@
      "ts": "2026-10-11T16:34:22+0530",
      "who": "claude",
      "note": "This note from the Orchestrator (05:31) is out of date: Adi's key was saved, sealed, in Admin, Cohort Settings, Session Reminders at 16:25, so nothing here had to change and T-337 stays done. I did not print the admin link with the admin key, because that would put a secret in the board. The steps after the key (create campaigns, Check, test send) belong to T-234, which is now blocked because team@growthclub.org is not a connected mailbox in the GrowthClub workspace."
+    },
+    {
+     "ts": "2026-10-11T16:37:41+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-400, T-059, T-393, T-228."
     }
    ],
    "order": 3370,
