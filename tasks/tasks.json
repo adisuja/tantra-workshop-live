@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T00:06:02+0530",
-  "version": 2155,
-  "last_id": 412,
+  "updated": "2026-10-12T00:09:40+0530",
+  "version": 2158,
+  "last_id": 413,
   "team": [
    {
     "name": "Adi",
@@ -17653,6 +17653,11 @@
      "ts": "2026-10-12T00:06:02+0530",
      "who": "claude",
      "note": "Patch is now in git am format (README and spec apply steps updated). Re-checked today on a fresh git archive of development f0b901e: git am applies, 27 of 27 tests pass, and with the contactListIds lock switched off only the new test fails. Inputs kept (5, 4, 2, 5, score 72.0, build now) since the endpoint already exists in e571b78. Bharath: open workshop-plan/tantra-product-patches/tantra-backend-v2/fr-ad7abb_add-lead-running-campaign--SPEC.md, confirm the four inputs, then git am the patch. releases.json waits until it ships."
+    },
+    {
+     "ts": "2026-10-12T00:09:30+0530",
+     "who": "claude",
+     "note": "Verify pass: I re-applied the patch with git am to a fresh copy of development f0b901e. With the patch 27 of 27 tests pass, without it 14 fail, and with the contactListIds lock removed only the new test fails (one first-run failure on a just-started Mongo did not reproduce in six reruns; noted in the spec, commit 35671fe8). Bharath: open the spec, confirm the four inputs (5, 4, 2, 5), then apply the patch with git am."
     }
    ],
    "order": 3960
@@ -18168,6 +18173,35 @@
    ],
    "order": 4120,
    "input_for": "T-234",
+   "kind": "input"
+  },
+  {
+   "id": "T-413",
+   "title": "Input from Adi for T-228: See T-408: sign in at https://app.usetantra.com (GrowthClub workspace), open Ema",
+   "area": "Delivery",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (signin): Needs the Google sign-in for team@growthclub.org and a Tantra key rotation, both reserved for Adi.. Everything else in T-228 is being built around it. As soon as this is done, T-228 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "See T-408: sign in at https://app.usetantra.com (GrowthClub workspace), open Email Accounts, click Connect account and sign in as team@growthclub.org; then rotate the 'workshop-reminders' key and paste it at https://revops-centre.growthcluborg.workers.dev/admin/enter, Cohort Settings, Session Reminders, Tantra API key, Save.",
+   "log": [
+    {
+     "ts": "2026-10-12T00:09:40+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-228."
+    }
+   ],
+   "order": 4130,
+   "input_for": "T-228",
    "kind": "input"
   }
  ]
