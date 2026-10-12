@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T17:26:55+0530",
+   "task_id": "T-424",
+   "mode": "queue",
+   "status": "doing",
+   "result": "paused",
+   "summary": "Stopped: Adi paused the agent from the board."
+  },
+  {
    "ts": "2026-10-12T12:55:36+0530",
    "task_id": "T-073",
    "mode": "queue",
@@ -39,19 +47,11 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-234 is blocked on you: reminders are built and pass 51/51 checks against the local simulator (commit 534c607, not deployed), but sending from the real Tantra workspace needs the workspace and mailbox, an API key, and a deploy of 534c607 including database migration 0017. Once those are in, I creat"
-  },
-  {
-   "ts": "2026-09-25T22:40:14+0530",
-   "task_id": "T-127",
-   "mode": "queue",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-127 → **review**: `/onboarding/plan` now serves each attendee's own generated plan (session-gated, no token in URL) and Before Day 1 step 2 links to it — verified live that each session gets its own plan and no-cookie leaks nothing; the email link stays open on T-123."
   }
  ],
- "state": "working",
- "message": "Continuing T-424: Fix the seven chain probes that went red after 2026-10-07",
- "task_id": "T-424",
+ "state": "disabled",
+ "message": "Paused from the board; T-424 was stopped mid-run and resumes on Resume.",
+ "task_id": null,
  "entries": [],
  "mode": "queue",
  "started": "2026-10-12T16:56:07+0530",
