@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T14:00:23+0530",
-  "version": 2500,
+  "updated": "2026-10-12T14:26:36+0530",
+  "version": 2501,
   "last_id": 424,
   "team": [
    {
@@ -12042,24 +12042,24 @@
    ],
    "evidence": [
     {
+     "label": "Run-chain summary",
+     "url": "workshop-plan/tasks/evidence/T-242/chain-1557/summary.txt"
+    },
+    {
      "label": "Webinar report",
-     "url": "/tmp/walk/242-webinar/report.json"
+     "url": "workshop-plan/tasks/evidence/T-242/chain-1557/report-webinar.json"
     },
     {
      "label": "Challenge report",
-     "url": "/tmp/walk/1-challenge/report.json"
+     "url": "workshop-plan/tasks/evidence/T-242/chain-1557/report-challenge.json"
     },
     {
      "label": "Rsp report",
-     "url": "/tmp/walk/1-rsp/report.json"
+     "url": "workshop-plan/tasks/evidence/T-242/chain-1557/report-rsp.json"
     },
     {
-     "label": "Rsp log",
-     "url": "/tmp/t242c/walk-rsp.log"
-    },
-    {
-     "label": "Run-chain summary",
-     "url": "/tmp/t242c/chain/summary.txt"
+     "label": "Baseline of red probes (T-424)",
+     "url": "workshop-plan/tasks/evidence/T-242/baseline-probes/summary-0909.txt"
     },
     {
      "label": "Walker",
@@ -12118,6 +12118,11 @@
      "ts": "2026-10-12T12:29:19+0530",
      "who": "claude",
      "note": "All three walkers now pass with 0 findings and every job done, and none has a Kie.ai finding: webinar 21 of 21 jobs, challenge 75 of 75 cards and 20 of 20 jobs, rsp 72 of 72 cards and 19 of 19 jobs. Each ran alone on the private stack after a simulator reset. The earlier chain failures came from my own stack rebuild at 09:03 (stale assets, then the rsp kill), not from the walker or a chain timeout, and the chain probe failures are the same on the origin/main baseline. All T-242 commits were already on origin/main, so nothing new was pushed; the coord LOG has the entry."
+    },
+    {
+     "ts": "2026-10-12T14:26:36+0530",
+     "who": "claude",
+     "note": "The run-chain reran once on the untouched /tmp/t242c stack, and all three walkers pass with 0 findings and no Kie.ai finding: webinar 75 of 75 cards and 20 of 20 jobs, challenge 75 of 75 and 20 of 20, rsp 72 of 72 and 19 of 19. The reports and summary are copied into the repo at workshop-plan/tasks/evidence/T-242/chain-1557 and pushed to main in 314dd103. The coord LOG line is added. The red chain probes match the baseline and are tracked in T-424."
     }
    ],
    "order": 2420
