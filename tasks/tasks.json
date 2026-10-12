@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T08:22:51+0530",
-  "version": 2447,
+  "updated": "2026-10-12T08:24:37+0530",
+  "version": 2450,
   "last_id": 422,
   "team": [
    {
@@ -18602,6 +18602,21 @@
      "ts": "2026-10-12T07:39:36+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-12: the ask already gives both routes (Claude in Chrome on 'Browser 1' self-redeploy, else Adi's manual redeploy) and matches T-409, so nothing else had to change. Health GET of the exec URL still lists only the 6 original forms (no tier_qualifier), and this run had no Chrome connection, so it stays blocked."
+    },
+    {
+     "ts": "2026-10-12T08:23:45+0530",
+     "who": "claude",
+     "note": "Orchestrator decision taken in: the ask carries both routes (self-redeploy via Claude in Chrome on 'Browser 1', else Adi's manual redeploy). This unattended run has no Claude in Chrome connection, and the health GET of the exec URL just now still lists only the 6 original forms (no tier_qualifier), so the redeploy has not happened. Once it lists tier_qualifier, the next run posts the probe row, publishes the qualifier and finishes T-409."
+    },
+    {
+     "ts": "2026-10-12T08:24:17+0530",
+     "who": "claude",
+     "note": "Checked again 2026-10-12: the live exec URL health GET still lists only the 6 original forms (no tier_qualifier), and this unattended run has no Claude in Chrome connection, so the redeploy could not be done here. The ask already carries both routes (connect Chrome on 'Browser 1', or redeploy 'Tantra Funnel' by hand as a new version); once it lands, the probe row, mirror publish and T-409 finish follow."
+    },
+    {
+     "ts": "2026-10-12T08:24:37+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-409, T-422."
     }
    ],
    "order": 4140,
