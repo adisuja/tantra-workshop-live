@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T07:34:52+0530",
-  "version": 2404,
-  "last_id": 421,
+  "updated": "2026-10-12T07:40:05+0530",
+  "version": 2409,
+  "last_id": 422,
   "team": [
    {
     "name": "Adi",
@@ -16297,6 +16297,11 @@
      "ts": "2026-10-12T04:05:08+0530",
      "who": "claude",
      "note": "Not merged, pushed or deployed yet: probe-domain-chain (45 of 45) and probe-day1 (36 of 36) now pass after I changed probe-day1 to accept either Resend text and moved probe-day2's channels step to where main now puts it (commit 09612ae8 on branch t-299-vendor-inboxes). probe-day2 still fails at page drafting because my private stack sent drafts to LOCAL_RUNNER_URL 127.0.0.1:1 from .dev.vars, which never answers; I pointed /tmp/t299/stack.sh at the real runner on :8791 instead. Next pass: reset the simulator, rerun /tmp/t299/stack.sh then /tmp/t299/run-probes.sh, and once all four pass merge main (now 461f03d8), rerun both tsc checks, then do the approved push, deploy, mirror publish and the LOG.md MERGED line."
+    },
+    {
+     "ts": "2026-10-12T07:39:34+0530",
+     "who": "claude",
+     "note": "Not merged, pushed or deployed yet, because probe-day2 and probe-stack still need a green run. I found both causes of the day2 failure. First, the probe never answered the ask-once autodraft question from T-270, so the pages card never drafted (fixed in b3b4f010 on branch t-299-vendor-inboxes). Second, the private funnel read its config from the shared simulator on :8792 instead of the private one on :8932, so the page build never came up (fixed in /tmp/t299/stack.sh). The four probes are rerunning on a fresh private stack, with results going to /tmp/t299/probes-summary.txt. Next pass: read the results, and once all four pass, merge main, rerun both tsc checks, then do the approved push, centre Worker deploy, mirror publish and the LOG.md MERGED line. The 'hung' lines in centre.log look like event streams cancelled on page navigation, which is harmless, but I have not fully proven that."
     }
    ],
    "order": 2990
@@ -18449,12 +18454,22 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Signed in as adi@growthclub.org, open https://script.google.com/home > project 'Tantra Funnel' > paste workshop-plan/ops/apps-script/Code.gs over Code.gs > Deploy > Manage deployments > edit (pencil) > Version: New version > Deploy. The agent does the rest.",
+   "needs_from_owner": "EITHER connect Claude in Chrome on profile 'Browser 1' (signed in as adi@growthclub.org) and the agent redeploys the script itself, OR do it by hand: signed in as adi@growthclub.org, open https://script.google.com/home > project 'Tantra Funnel' > paste workshop-plan/ops/apps-script/Code.gs over Code.gs > Deploy > Manage deployments > edit (pencil) > Version: New version > Deploy. The manual steps are needed only if Chrome is not connected. The agent then finishes T-409.",
    "log": [
     {
      "ts": "2026-10-12T02:32:31+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-409."
+    },
+    {
+     "ts": "2026-10-12T07:38:29+0530",
+     "who": "claude",
+     "note": "Updated the ask to match T-409: the agent redeploys itself if Claude in Chrome is connected on profile 'Browser 1'; the manual redeploy is only the fallback. Checked the live exec URL health GET just now: it still lists only the 6 old forms, no tier_qualifier, so the redeploy has not happened and this stays the single input for T-409."
+    },
+    {
+     "ts": "2026-10-12T07:39:36+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-12: the ask already gives both routes (Claude in Chrome on 'Browser 1' self-redeploy, else Adi's manual redeploy) and matches T-409, so nothing else had to change. Health GET of the exec URL still lists only the 6 original forms (no tier_qualifier), and this run had no Chrome connection, so it stays blocked."
     }
    ],
    "order": 4140,
@@ -18651,6 +18666,35 @@
    "needs_from_owner": "",
    "log": [],
    "held": true
+  },
+  {
+   "id": "T-422",
+   "title": "Input from Adi for T-414: Either connect Claude in Chrome on profile 'Browser 1' (adi@growthclub.org) so t",
+   "area": "Ops",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (signin): Only adi@growthclub.org's Google session can redeploy this script; no credential on this Mac has Apps Script access.. Everything else in T-414 is being built around it. As soon as this is done, T-414 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Either connect Claude in Chrome on profile 'Browser 1' (adi@growthclub.org) so the agent redeploys itself, or, signed in as adi@growthclub.org, open https://script.google.com/home > project 'Tantra Funnel' > paste workshop-plan/ops/apps-script/Code.gs over Code.gs > Deploy > Manage deployments > edit (pencil) > Version: New version > Deploy.",
+   "log": [
+    {
+     "ts": "2026-10-12T07:40:05+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-414."
+    }
+   ],
+   "order": 4220,
+   "input_for": "T-414",
+   "kind": "input"
   }
  ]
 }

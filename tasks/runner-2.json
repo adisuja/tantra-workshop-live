@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:39:49+0530",
+   "task_id": "T-414",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "I checked T-414 again and it stays blocked: the Apps Script still hasn't been redeployed.\n\n- **Ripple R-d3e93d9a (add the Chrome self-redeploy route):** done. I read T-414's ask in `tasks.json` this run. It gives both routes: the agent redeploys the script itself if Claude in Chrome is connected on "
+  },
+  {
    "ts": "2026-10-12T07:37:55+0530",
    "task_id": "T-242",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-270 checks out and is back in review for Adi and Bharath. I found no gaps and changed no code, because everything was already on origin/main.\n\n| Item | State | What I saw this run |\n|---|---|---|\n| Teaching shows with no query parameter (N067) | Done | The live probe found 2 teaching panels on a p"
-  },
-  {
-   "ts": "2026-10-12T04:21:29+0530",
-   "task_id": "T-409",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-409 is still blocked: the Apps Script has not been redeployed, and this run had no Claude in Chrome connection to do it.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Check for a Chrome connection on profile 'Browser 1' | Not connected | This session has no Chrome tools, so I didn't t"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-414",
+ "task_id": "T-157",
  "entries": [
-  "R-d3e93d9a"
+  "R-1e2a4927"
  ],
- "started": "2026-10-12T07:38:01+0530",
- "message": "Acting on 1 note(s) for T-414: Input from Adi for T-409: Signed in as adi@growthclub.org, open https://script.google.com/home > project '",
+ "started": "2026-10-12T07:40:15+0530",
+ "message": "Acting on 1 note(s) for T-157: Three products: define SaaS / Pro / Enterprise, one traffic experiment each, tier qualifier in every funnel",
  "slices": {
   "T-072": 1,
   "T-250": 1,

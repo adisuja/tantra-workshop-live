@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:39:46+0530",
+   "task_id": "T-299",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-299 isn't merged, pushed or deployed yet. I found and fixed both causes of the probe-day2 failure, but the probe rerun on a fresh private stack was still running w"
+  },
+  {
    "ts": "2026-10-12T07:22:34+0530",
    "task_id": "T-263",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-228 is still blocked. The reminders probe passed 93 checks with 0 failures on vendor-sim, but the live welcome email can't run: the GrowthClub workspace has no connected mailbox, and the sender the Orchestrator approved (team@growthclub.org) is the one Adi ruled out on 2026-10-12.\n\n| Item | State "
-  },
-  {
-   "ts": "2026-10-12T03:17:51+0530",
-   "task_id": "T-061",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-061 is still in progress (status doing): the change is pushed and tested locally, but nothing is deployed and none of the live steps have run yet.\n\n**COMPLETION CH"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-299",
+ "task_id": "T-242",
  "entries": [
-  "F-9676bdac"
+  "F-f1fe8020"
  ],
- "started": "2026-10-12T07:22:48+0530",
- "message": "Acting on 1 note(s) for T-299: Centre: cold email inboxes come from the inbox vendor only, several calendar senders, and a sign-up inbox card",
+ "started": "2026-10-12T07:40:11+0530",
+ "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
  "slices": {
   "T-135": 1,
   "T-300": 2,
@@ -112,7 +112,7 @@
   "T-052": 1,
   "T-292": 1,
   "T-270": 1,
-  "T-299": 1,
+  "T-299": 2,
   "T-059": 1
  },
  "api_capped": {
