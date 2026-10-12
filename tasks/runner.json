@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:31:51+0530",
+   "task_id": "T-300",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-300 is back in review: I fixed the one real branch regression, pushed the branch at 0958fe70, and added the updated READY line to LOG.md.\n\nThe regression was in `a"
+  },
+  {
    "ts": "2026-10-12T07:13:13+0530",
    "task_id": "T-229",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "(Held back from the public board: this note mentions a private client detail.)"
-  },
-  {
-   "ts": "2026-10-12T04:14:11+0530",
-   "task_id": "T-056",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I checked T-056 again and it stays in review. The list and the unsent calendar-invite draft are both in Tantra, and I changed nothing there. All checks this run were read-only, so there was no code to commit.\n\n**Completion check (evidence from this run):**\n- **List imported:** done. 'Workshop cold c"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-300: Remove the dormant code and text of the ruled-out tools (T-251 parts 2 and 3)",
- "task_id": "T-300",
+ "message": "Acting on 1 note(s) for T-265: Centre: dashboard reads (Tantra campaign stats, Metricool clicks) and automated launch QA",
+ "task_id": "T-265",
  "entries": [
-  "F-e1d794ba"
+  "F-a1fdd4f6"
  ],
  "mode": "feedback",
- "started": "2026-10-12T07:13:40+0530",
+ "started": "2026-10-12T07:32:12+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,

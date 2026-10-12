@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T07:27:45+0530",
-  "version": 2398,
+  "updated": "2026-10-12T07:33:08+0530",
+  "version": 2403,
   "last_id": 421,
   "team": [
    {
@@ -16328,20 +16328,16 @@
      "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/tree/t300-ruled-out-cleanup"
     },
     {
+     "label": "probe-connectors log",
+     "url": "file:///tmp/t300-conn-branch.log"
+    },
+    {
+     "label": "probe-visual-tools planted-name log",
+     "url": "file:///tmp/t300-vt-plant.log"
+    },
+    {
      "label": "probe-workshop rerun",
-     "url": "file:///tmp/t300-workshop.log"
-    },
-    {
-     "label": "probe-stack rerun",
-     "url": "file:///tmp/t300-probe-stack.log"
-    },
-    {
-     "label": "probe-visual-tools",
-     "url": "file:///tmp/t300-pvt.log"
-    },
-    {
-     "label": "origin/main baseline chain",
-     "url": "file:///tmp/chain-t300-base/summary.txt"
+     "url": "file:///tmp/t300-ws2.log"
     }
    ],
    "blockers": [],
@@ -16386,6 +16382,11 @@
      "ts": "2026-10-12T07:22:53+0530",
      "who": "claude",
      "note": "Removed the SendGrid send path from the funnel worker (722c9091, pushed) and posted the new READY line for the Integrator. Reruns show the branch adds no failures: the probe-workshop CTA #2 fail was a flake (all 4 CTAs ok on rerun), probe-details has 0 FAIL, probe-stack has the same 2 FAILs as main, and both tsc, check-coverage, check-guides, the done_when grep and the denylist pass. Remaining main-only failures: checkout 501 and the Unipile hub hit (noted on T-273); worker.js still has a Calendly webhook path as a follow-up."
+    },
+    {
+     "ts": "2026-10-12T07:31:35+0530",
+     "who": "claude",
+     "note": "Verify pass found probe-connectors crashing on the branch because it still called the deleted HeyReach and Instantly connectors. It now tests the Tantra-only launch job with every refusal kept (77 pass), and the fix is pushed at 0958fe70. Both tsc, check-coverage, check-guides, the done_when grep and the denylist (it fails on a planted Calendly) pass; probe-workshop CTA #2 passed on two reruns (flake), and only the /api/checkout 501s remain, which also fail on main. Follow-up: cloud/funnel/worker.js still has a Calendly webhook path."
     }
    ],
    "order": 3000
