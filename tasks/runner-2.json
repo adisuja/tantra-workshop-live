@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:33:51+0530",
+   "task_id": "T-400",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "turns",
+   "summary": "(Held back from the public board: this note mentions a private client detail.)"
+  },
+  {
    "ts": "2026-10-12T07:30:03+0530",
    "task_id": "T-059",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "(Held back from the public board: this note mentions a private client detail.)"
-  },
-  {
-   "ts": "2026-10-12T04:18:57+0530",
-   "task_id": "T-380",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "ok",
-   "summary": "T-380 is correctly queued with Nelbin, but the two Apps Script projects are still not trashed, so the task isn't finished.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Status queue, assignee Nelbin, no ask for Adi | Done | Read back from `tasks.json`: status `queue`, Nelbin as owner, a"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-400",
+ "task_id": "T-242",
  "entries": [
-  "F-0f2ddf8e",
-  "R-36f7125a"
+  "F-f1fe8020"
  ],
- "started": "2026-10-12T07:30:21+0530",
- "message": "Acting on 2 note(s) for T-400: Input: connect the workshop WhatsApp number in Tantra and name the test number",
+ "started": "2026-10-12T07:34:02+0530",
+ "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
  "slices": {
   "T-072": 1,
   "T-250": 1,
@@ -119,7 +118,8 @@
   "T-059": 2,
   "T-300": 1,
   "T-242": 1,
-  "T-265": 1
+  "T-265": 1,
+  "T-400": 1
  },
  "api_capped": {
   "T-229": "2026-10-12T00:30:11+0530",
