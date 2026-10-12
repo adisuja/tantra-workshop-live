@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T11:57:29+0530",
+   "task_id": "T-299",
+   "mode": "queue",
+   "status": "doing",
+   "result": "ok",
+   "summary": "The four probes are running against the clean private stack. I'll pick up when they finish."
+  },
+  {
    "ts": "2026-10-12T06:53:49+0530",
    "task_id": "T-073",
    "mode": "queue",
@@ -39,21 +47,13 @@
    "status": "review",
    "result": "ok",
    "summary": "T-126 → **review**. Done and verified this pass:\n\n- **Survey answers sync to ops + survive a device change** — each day POSTs to ops `/api/survey` (debounced) and hydrates on a fresh device; the POST now *merges* so a second/offline device can't overwrite another's answers. Proven with a two-device "
-  },
-  {
-   "ts": "2026-09-25T21:47:29+0530",
-   "task_id": "T-125",
-   "mode": "queue",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-125 → review. Both join pages now offer Google Calendar + one-file .ics for all three sessions, and the session link shows \"arrives before Day 1\" while the Zoom link is still pending; verified via tsc, eslint, curl, and clean headless screenshots (`/tmp/workshop-join.png`, `/tmp/masterclass-succes"
   }
  ],
- "state": "working",
- "message": "Continuing T-299: Centre: cold email inboxes come from the inbox vendor only, several calendar senders, and a sign-up inbox card",
- "task_id": "T-299",
+ "state": "idle",
+ "message": "Nothing waiting.",
+ "task_id": null,
  "entries": [],
- "mode": "queue",
+ "mode": null,
  "started": "2026-10-12T11:55:21+0530",
  "api_capped": {
   "T-073": "2026-10-12T04:30:40+0530",
