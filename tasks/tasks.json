@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T08:44:47+0530",
-  "version": 2470,
+  "updated": "2026-10-12T08:47:56+0530",
+  "version": 2480,
   "last_id": 423,
   "team": [
    {
@@ -2767,7 +2767,7 @@
    "due": "2026-10-14",
    "status": "blocked",
    "why": "T-057 readiness is YES (2026-10-09) and the T-056 list is imported (2026-10-12). Now waits only on each wave 1 member connecting LinkedIn.",
-   "spec": "Each team member connects their own LinkedIn profile in Tantra (needs their own login, so not Claude), then campaigns launch from the T-056 list with first lines from T-059 and each member's referral link (T-211). Respect the daily caps recorded in T-057. Track replies and registrations per member on the referral dashboard.",
+   "spec": "Each team member connects their own LinkedIn profile in Tantra (needs their own login, so not Claude). The GrowthClub workspace has 2 LinkedIn/WhatsApp slots: 1 holds the reminder WhatsApp number, 1 is free (read 2026-10-12). Bhaskar connects first into the free slot; Vaibhavi waits until Bharath confirms a third slot at no charge. Then the draft campaign 'Workshop LinkedIn: wave 1' (6acc47385f16ab824d7d8132, 3 LinkedIn steps, never started) launches from the T-056 list with first lines from T-059 and each member's referral link (T-211). Respect the daily caps recorded in T-057 (20 to 25 connects/day, 75 messages/day). Track replies and registrations per member on the referral dashboard.",
    "done_when": [
     "Every participating team member's profile shows connected in Tantra",
     "First campaign running within the T-057 caps",
@@ -2783,16 +2783,25 @@
      "url": "workshop-plan/ops/outreach.json"
     },
     {
-     "label": "Draft read-back",
+     "label": "Draft read-back (6acc47385f16ab824d7d8132)",
      "url": "workshop-plan/ops/dryrun/t058/result.json"
     },
     {
      "label": "Connect guide",
      "url": "workshop-plan/outreach/connect-linkedin-guide.md"
+    },
+    {
+     "label": "LinkedIn URL loader",
+     "url": "workshop-plan/ops/t058_linkedin_urls.py"
+    },
+    {
+     "label": "LinkedIn URL read-back (44 of 126)",
+     "url": "workshop-plan/ops/dryrun/t058/linkedin_urls.json"
     }
    ],
    "blockers": [
-    "Each wave 1 member connects their own LinkedIn in Tantra"
+    "Bhaskar connects their own LinkedIn at https://usetantra.com/connectors/channels/linkedin into the free slot (team step, not Adi)",
+    "Vendor re-export with a LinkedIn Profile URL column for the 82 contacts still without one (Bhaskar)"
    ],
    "needs_from_owner": "",
    "log": [
@@ -2925,10 +2934,25 @@
      "ts": "2026-10-12T08:11:53+0530",
      "who": "Orchestrator",
      "note": "People: assignee Bhaskar → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-12T08:46:08+0530",
+     "who": "claude",
+     "note": "People: assignee Claude → Bhaskar (by claude)."
+    },
+    {
+     "ts": "2026-10-12T08:46:08+0530",
+     "who": "claude",
+     "note": "Bhaskar and Bharath (team note): Tantra skips a LinkedIn step for any contact without a profile URL, so I loaded 44 URLs (exact email matches from our own vendor exports, no paid enrichment) onto 'Workshop cold calendar'; read back 126 contacts, 44 with a URL, all correct. Draft 6acc47385f16ab824d7d8132 is still a draft with 3 steps and was not started. Bhaskar: ask the vendor to re-export the same 126 contacts with a LinkedIn Profile URL column for the other 82 (then rerun workshop-plan/ops/t058_linkedin_urls.py --apply), connect your LinkedIn at https://usetantra.com/connectors/channels/linkedin into the 1 free slot, pick it as sender, set 20 to 25 connects/day and 75 messages/day, then start. Bharath: can the workspace get a third slot at no charge for Vaibhavi? Open workshop-plan/outreach/launch-kit.md (3d) and connect-linkedin-guide.md."
+    },
+    {
+     "ts": "2026-10-12T08:47:16+0530",
+     "who": "claude",
+     "note": "Verify pass (re-read Tantra live, GET only): 44 of the 126 'Workshop cold calendar' contacts carry a LinkedIn URL, and all 44 match the source. Draft 6acc47385f16ab824d7d8132 is still a draft with 3 LinkedIn steps, and there are 0 LinkedIn accounts. Tantra's help centre confirms that a contact with no profile skips the LinkedIn steps. Bhaskar: connect your LinkedIn at https://usetantra.com/connectors/channels/linkedin, pick it as sender, set 20 to 25 connects/day and 75 messages/day, then start, and ask the list vendor to re-export the other 82 with a LinkedIn Profile URL column. Open workshop-plan/outreach/launch-kit.md (3d)."
     }
    ],
    "order": 370,
-   "assignee": "Claude",
+   "assignee": "Bhaskar",
    "reviewers": [
     "Bhaskar",
     "Bharath"
@@ -14426,6 +14450,11 @@
      "ts": "2026-10-12T08:32:26+0530",
      "who": "claude",
      "note": "Verify pass: the bug-1 patch is now fix_bug-1-linkedin-account-id-regex--f7ef2beb53.patch, every file-name reference uses it (only the upstream branch name keeps the old word, and the hub does not show it), and the hub has no 'unipile'. probe-visual-tools says PASS. probe-review-hub says ALL LINKS OK on live (423 links) and on the local file. A fresh rebuild fixed four stale workshop-cards.ts source anchors (on main as 8eb66895, pushed), and I republished the hub to the mirror (602f467d1). AUDIT.md marks all ten ids fixed. Open https://adisuja.github.io/tantra-workshop-live/?v=t273v602"
+    },
+    {
+     "ts": "2026-10-12T08:45:50+0530",
+     "who": "claude",
+     "note": "Already applied, so no agent run was needed: 2026-10-12T08:32 verify: patch renamed, all file-name references updated, probes pass. (checked by Haiku against the log and commits)."
     }
    ],
    "order": 2730
@@ -18867,7 +18896,7 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Adi's one input for T-414 and T-409 (no other forms or rerouting). Either connect Claude in Chrome on profile 'Browser 1' (adi@growthclub.org) so the agent redeploys itself, or, signed in as adi@growthclub.org, open https://script.google.com/home > project 'Tantra Funnel' > paste workshop-plan/ops/apps-script/Code.gs over Code.gs > Deploy > Manage deployments > edit (pencil) > Version: New version > Deploy.",
+   "needs_from_owner": "Adi's one input for T-414 and T-409 (tracked as T-423). Either connect Claude in Chrome on profile 'Browser 1' (adi@growthclub.org) so the agent redeploys itself, or, signed in as adi@growthclub.org, open https://script.google.com/home > project 'Tantra Funnel' > paste workshop-plan/ops/apps-script/Code.gs over Code.gs > Deploy > Manage deployments > edit (pencil) > Version: New version > Deploy.",
    "log": [
     {
      "ts": "2026-10-12T07:40:05+0530",
@@ -18883,6 +18912,16 @@
      "ts": "2026-10-12T08:43:57+0530",
      "who": "claude",
      "note": "Verify pass: the ask already names both routes (connect Claude in Chrome on 'Browser 1', or redeploy 'Tantra Funnel' by hand) and says it is Adi's one input for T-414 and T-409, so nothing had to change. Health GET of the live exec URL today still lists no tier_qualifier, so the redeploy has not happened yet; workshop-plan/ops/apps-script/Code.gs is ready to paste."
+    },
+    {
+     "ts": "2026-10-12T08:47:27+0530",
+     "who": "claude",
+     "note": "Checked again: this unattended run has no Claude in Chrome connection to 'Browser 1', and the health GET of the live exec URL still lists only the 6 old forms (no tier_qualifier), so the redeploy has not happened. The probe row, mirror publish and closing T-414, T-409 and T-157 all run right after it. Code.gs is ready to paste."
+    },
+    {
+     "ts": "2026-10-12T08:47:56+0530",
+     "who": "claude",
+     "note": "Verify pass: this unattended run has no Claude in Chrome tools, so Browser 1 is not connected and I could not redeploy. Health GET of the live exec URL today still lists only the 6 old forms (no tier_qualifier); Code.gs on disk carries tier_qualifier and is ready to paste. Probe row, mirror publish and closing T-414/T-409/T-157 follow once the redeploy lands."
     }
    ],
    "order": 4220,
