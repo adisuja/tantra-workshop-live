@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T07:55:11+0530",
-  "version": 2430,
+  "updated": "2026-10-12T08:05:42+0530",
+  "version": 2438,
   "last_id": 422,
   "team": [
    {
@@ -2765,22 +2765,26 @@
    ],
    "evidence": [
     {
-     "label": "Launch kit",
+     "label": "Launch kit (3b, 3c, 3d)",
      "url": "workshop-plan/outreach/launch-kit.md"
+    },
+    {
+     "label": "Outreach counts and wave 1",
+     "url": "workshop-plan/ops/outreach.json"
+    },
+    {
+     "label": "Draft read-back",
+     "url": "workshop-plan/ops/dryrun/t058/result.json"
     },
     {
      "label": "Connect guide",
      "url": "workshop-plan/outreach/connect-linkedin-guide.md"
-    },
-    {
-     "label": "Referral dashboard (Replies column)",
-     "url": "workshop-plan/referrals.html?v=1011b"
     }
    ],
    "blockers": [
     "Each wave 1 member connects their own LinkedIn in Tantra"
    ],
-   "needs_from_owner": "Bhaskar: get the wave 1 members (the 2 existing Pro slots, buy nothing) connected at https://usetantra.com/connectors/channels/linkedin with workshop-plan/outreach/connect-linkedin-guide.md, then start the campaign from launch-kit.md section 3 (the T-056 list 'Workshop cold calendar' is already imported). Bharath: can the team workspace get more LinkedIn slots at no charge? Nothing is asked of Adi here.",
+   "needs_from_owner": "Bhaskar: connect your own LinkedIn at https://usetantra.com/connectors/channels/linkedin (connect-linkedin-guide.md) into the 1 free slot, pick it as sender on draft 6acc47385f16ab824d7d8132, set 20 to 25 connects/day and 75 messages/day, then start it. Vaibhavi (wave 1, second) connects once a slot is free. Nothing is asked of Adi.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2886,10 +2890,20 @@
      "ts": "2026-10-12T07:27:45+0530",
      "who": "Orchestrator",
      "note": "People: assignee Bhaskar → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-12T08:05:41+0530",
+     "who": "claude",
+     "note": "People: assignee Claude → Bhaskar (by claude)."
+    },
+    {
+     "ts": "2026-10-12T08:05:42+0530",
+     "who": "claude",
+     "note": "Bhaskar and Bharath (team note): the GrowthClub workspace has 0 LinkedIn accounts and 1 WhatsApp number, so 1 of 2 slots is free. Wave 1 is Bhaskar, then Vaibhavi. Bharath, can the workspace get a third slot at no charge? Freeing the WhatsApp slot would stop the reminders. The LinkedIn draft 'Workshop LinkedIn: wave 1' (6acc47385f16ab824d7d8132) is in Tantra, read back as draft, 3 steps, never started. None of the 126 contacts has a first line or a LinkedIn URL, so it opens with a {{firstName}}/{{company}} fallback. Check the preview before starting. Open workshop-plan/outreach/launch-kit.md (3b to 3d)."
     }
    ],
    "order": 370,
-   "assignee": "Claude",
+   "assignee": "Bhaskar",
    "reviewers": [
     "Bhaskar",
     "Bharath"
@@ -18723,7 +18737,7 @@
    "id": "T-421",
    "status": "queue",
    "owner": "Nelbin",
-   "assignee": "Nelbin",
+   "assignee": "Claude",
    "reviewers": [
     "Nelbin",
     "Adi"
