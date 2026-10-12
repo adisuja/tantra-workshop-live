@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:59:02+0530",
+   "task_id": "T-421",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "ok",
+   "summary": "T-421 needed no change after the T-418 update, so it stays in queue with Nelbin. I left a note on it and acknowledged R-87fb768b.\n\n- **Use tantra-workshop.key for the rerun:** already in the task. Its spec already names that key for rerunning `check-tantra-senders.mjs`, so nothing needed editing.\n- "
+  },
+  {
    "ts": "2026-10-12T07:57:43+0530",
    "task_id": "T-228",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "turns",
    "summary": "I checked T-059 again: the centre proxy change is in place and works, so I didn't change anything. The task stays blocked until T-408 provides the sending mailbox.\n\n**Completion check:**\n- **Ripple R-c34273ad (call Tantra through the centre proxy, not a local key):** done.\n  - **Code:** `workshop-pl"
-  },
-  {
-   "ts": "2026-10-12T07:27:26+0530",
-   "task_id": "T-058",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "I removed the T-056 import wait from T-058 and the launch kit. T-058 stays blocked, now only on the wave 1 members connecting their own LinkedIn in Tantra, and R-bbca1f21 is acked.\n\n**Completion check:**\n- **Import wait removed:** Done. I checked T-056's latest log entry, which shows the list 'Works"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-421",
+ "task_id": "T-263",
  "entries": [
-  "R-87fb768b"
+  "R-22d66114"
  ],
- "started": "2026-10-12T07:58:19+0530",
- "message": "Acting on 1 note(s) for T-421: Connect the missing FintechCircle calendar senders in Tantra",
+ "started": "2026-10-12T08:00:16+0530",
+ "message": "Acting on 1 note(s) for T-263: Centre: Tantra calendar workspace verification and invite campaign job fixes",
  "slices": {
   "T-250": 1,
   "T-301": 1,
