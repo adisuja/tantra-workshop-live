@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T08:11:53+0530",
-  "version": 2443,
+  "updated": "2026-10-12T08:18:00+0530",
+  "version": 2444,
   "last_id": 422,
   "team": [
    {
@@ -16413,20 +16413,28 @@
    ],
    "evidence": [
     {
+     "label": "main 15373459",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/15373459"
+    },
+    {
      "label": "branch",
      "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/tree/t300-ruled-out-cleanup"
     },
     {
      "label": "probe-connectors log",
-     "url": "file:///tmp/t300-conn-branch.log"
+     "url": "file:///tmp/t300f-conn.log"
+    },
+    {
+     "label": "probe-stack log",
+     "url": "file:///tmp/t300f-stack.log"
     },
     {
      "label": "probe-visual-tools planted-name log",
-     "url": "file:///tmp/t300-vt-plant.log"
+     "url": "file:///tmp/t300g-vt-plant.log"
     },
     {
-     "label": "probe-workshop rerun",
-     "url": "file:///tmp/t300-ws2.log"
+     "label": "probe-visual-tools after merge",
+     "url": "file:///tmp/t300h-vt.log"
     }
    ],
    "blockers": [],
@@ -16476,6 +16484,11 @@
      "ts": "2026-10-12T07:31:35+0530",
      "who": "claude",
      "note": "Verify pass found probe-connectors crashing on the branch because it still called the deleted HeyReach and Instantly connectors. It now tests the Tantra-only launch job with every refusal kept (77 pass), and the fix is pushed at 0958fe70. Both tsc, check-coverage, check-guides, the done_when grep and the denylist (it fails on a planted Calendly) pass; probe-workshop CTA #2 passed on two reruns (flake), and only the /api/checkout 501s remain, which also fail on main. Follow-up: cloud/funnel/worker.js still has a Calendly webhook path."
+    },
+    {
+     "ts": "2026-10-12T08:18:00+0530",
+     "who": "claude",
+     "note": "Removed the Calendly poll, webhook and simulator routes (Cal.com is the only booking hook; past Calendly bookings still count), fixed probe-connectors to sign in by POST, merged and pushed main at 15373459, and posted the superseding READY line. Both tsc, check-coverage, check-guides, probe-visual-tools, the denylist plant test and the done_when grep pass, probe-connectors is ALL PASS (78), and probe-stack shows only the same 2 FAILs as main. Left for the Integrator in the next run: wrangler deploy of revops-centre from a clean worktree of 15373459, republish the mirror and survey, verify live, then post DEPLOYED."
     }
    ],
    "order": 3000
