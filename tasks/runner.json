@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:07:46+0530",
+   "task_id": "T-335",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-335 is still blocked. I read Live Control (`/admin/api/zoom/control`) again in this run: Seat credentials still show `saved: false` and all 5 Tantra Centre poll scopes are still missing. The task stays blocked on Adi's one Zoom sign-in (T-417), and F-c33a5864 was already marked processed by the ea"
+  },
+  {
+   "ts": "2026-10-12T07:05:55+0530",
+   "task_id": "T-407",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-407 is back in review after the final sync: the spec now lists all 6 missing Tantra Centre scopes and the T-225 line is up to date. T-335 is still the only thing Adi has to do.\n\nCompletion check:\n1. **Sixth scope in item 1:** done. It now says Live Control reads 6 scopes missing (the 5 poll scopes"
+  },
+  {
    "ts": "2026-10-12T07:04:09+0530",
    "task_id": "T-403",
    "mode": "feedback",
@@ -79,32 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-237 is back in review for Adi, Aquila and Bharath. The join-link rate-limit fix (a67da2c) is live in production, so nothing was deployed.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Fix a67da2c is in the live Worker | Done | `git merge-base --is-ancestor a67da2c origin/main` passed."
-  },
-  {
-   "ts": "2026-10-12T04:05:36+0530",
-   "task_id": "T-263",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-263 is in review with Adi and Bharath, and every done-when item checked out again in this run. I found nothing to fix and changed no code.\n\n- **Event ending after midnight gets the next date:** done. `probe-t263` passed 21 of 21 today: 23:30 plus 60 minutes ends at 00:30 on the next date, and an e"
-  },
-  {
-   "ts": "2026-10-12T04:03:20+0530",
-   "task_id": "T-061",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-061 is back in review: I found the cause of the paid sign-up failure, fixed it, deployed it, and checked everything else again.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Sender optional when creating the campaigns (`lane.ts`) | Done | The code is in place. The probe passed its no-"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-407: T-226 Live Control: updated blocker list (checked live 2026-10-11)",
- "task_id": "T-407",
+ "message": "Acting on 1 note(s) for T-228: Welcome email: every new attendee gets their centre link and private calendar link",
+ "task_id": "T-228",
  "entries": [
-  "F-02c772bb"
+  "R-aef060e6"
  ],
  "mode": "feedback",
- "started": "2026-10-12T07:05:10+0530",
+ "started": "2026-10-12T07:08:03+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,

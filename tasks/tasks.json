@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T07:04:36+0530",
-  "version": 2369,
+  "updated": "2026-10-12T07:07:14+0530",
+  "version": 2372,
   "last_id": 420,
   "team": [
    {
@@ -16832,6 +16832,16 @@
      "ts": "2026-10-12T03:09:25+0530",
      "who": "claude",
      "note": "Verify pass: nothing had to change. Live Control (/admin/api/zoom/control, checked 2026-10-12) still shows all 5 poll scopes missing and no seat credentials saved, and no Zoom-signed-in browser is available to Claude, so per Orchestrator decision O-695a03c5 the scopes stay folded into this one sign-in; the ask matches T-226 and T-407 word for word, with full URLs, and T-407 items 2 and 3 stay queued behind it."
+    },
+    {
+     "ts": "2026-10-12T07:06:28+0530",
+     "who": "claude",
+     "note": "Orchestrator decision applied, ask unchanged. Live Control (/admin/api/zoom/control, read 2026-10-12) still shows Seat credentials not saved and all 5 poll scopes missing, and no Zoom-signed-in browser is available, so this stays blocked on Adi's one Zoom sign-in (tracked as T-417); once both read present, this task closes and T-226 builds the seat and runs the test meeting."
+    },
+    {
+     "ts": "2026-10-12T07:07:14+0530",
+     "who": "claude",
+     "note": "Checked Live Control (/admin/api/zoom/control) on 2026-10-12 in this run: Seat credentials still read saved: false and all 5 Tantra Centre poll scopes still read missing. Per Orchestrator O-0a1d02db the ask stays unchanged (one Zoom sign-in, tracked as T-417), and I did not create the Zoom app. The seat build, the T-226 test meeting and closing this task wait on that sign-in."
     }
    ],
    "order": 3350,
@@ -18170,12 +18180,12 @@
    "due": "",
    "status": "review",
    "why": "Adi 2026-10-11 (F-532a89ae): give me an updated list of blockers for T-226, as a separate task.",
-   "spec": "Checked live on 2026-10-11 from Live Control (/admin/api/zoom/control). The only Adi item is T-335.\n1. ADI (T-335, one Zoom sign-in): One Zoom sign-in at https://marketplace.zoom.us covers everything: (1) at https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), or open it if it exists, and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, Save; (2) in the same sign-in, Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, plus meeting:delete:meeting:admin (found missing by T-245 on 2026-10-12), Save. Nothing else to change. Claude found no Zoom-signed-in browser this run, so the 5 poll scopes are folded into this same sign-in; Live Control reads all 5 missing today.\n2. Queued behind T-335 (Claude): download ZoomSDK.framework from the new app's Embed page into cloud/seat/Frameworks and build the seat app (launchd com.tantra.live-control logs 'Built without ZoomSDK.framework' today).\n3. Queued behind T-335 (Claude, Adi hosting): the test meeting proving chat, CTA, a live poll reaching zoom_polls, the room lock and co-host promotion. The seat has never connected.\n4. Done for review: Day 1, 2 and 3 run sheets drafted (24 items: chat, CTA, polls) and saved on https://revops-centre.growthcluborg.workers.dev/admin/control; copy in workshop-plan/ops/live-control-runsheet-draft.json. Bhaskar reviews chat and CTA wording, Adi reviews polls.\n5. Decided: Adi is the only host; the co-host list stays empty unless Nelbin adds emails on Live Control.\nNot a blocker: Zoom Support has not granted host mute or video locks (T-225, waiting on Zoom); the seat's room lock covers both. T-225 state per the Orchestrator decision: the write test runs once by hand today (it ran at 12:42 on 2026-10-11, 'not granted', room restored), the 09:10 daily log fix is now in the code (commits 5c1badf4 and 9c303f20: a same-day rerun prints 'Write test already ran today' and never PATCHes again), so from the 2026-10-12 09:10 run the check writes one entry per day with no reruns. Already live: ZOOM_BOT_KEY, migration 0019, Live Control page, seat app code, launchd opener.",
+   "spec": "Checked live on 2026-10-11 from Live Control (/admin/api/zoom/control). The only Adi item is T-335.\n1. ADI (T-335, one Zoom sign-in): One Zoom sign-in at https://marketplace.zoom.us covers everything: (1) at https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), or open it if it exists, and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, Save; (2) in the same sign-in, Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, plus meeting:delete:meeting:admin (found missing by T-245 on 2026-10-12), Save. Nothing else to change. Claude found no Zoom-signed-in browser this run, so the 5 poll scopes are folded into this same sign-in; Live Control reads all 6 missing today: the 5 poll scopes plus meeting:delete:meeting:admin.\n2. Queued behind T-335 (Claude): download ZoomSDK.framework from the new app's Embed page into cloud/seat/Frameworks and build the seat app (launchd com.tantra.live-control logs 'Built without ZoomSDK.framework' today).\n3. Queued behind T-335 (Claude, Adi hosting): the test meeting proving chat, CTA, a live poll reaching zoom_polls, the room lock and co-host promotion. The seat has never connected.\n4. Done for review: Day 1, 2 and 3 run sheets drafted (24 items: chat, CTA, polls) and saved on https://revops-centre.growthcluborg.workers.dev/admin/control; copy in workshop-plan/ops/live-control-runsheet-draft.json. Bhaskar reviews chat and CTA wording, Adi reviews polls.\n5. Decided: Adi is the only host; the co-host list stays empty unless Nelbin adds emails on Live Control.\nNot a blocker: Zoom Support has not granted host mute or video locks (T-225, waiting on Zoom); the seat's room lock covers both. The T-225 write test ran once on 2026-10-11 (12:42, 'not granted', room restored), a same-day rerun guard is in place (commits 5c1badf4 and 9c303f20: a rerun prints 'Write test already ran today' and never PATCHes again), and the 09:10 daily job logs one entry per day. Already live: ZOOM_BOT_KEY, migration 0019, Live Control page, seat app code, launchd opener.",
    "done_when": [],
    "evidence": [
     {
      "label": "Live Control",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/control?v=t407vp2"
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/control?v=t407f1"
     },
     {
      "label": "Run sheet draft",
@@ -18224,6 +18234,11 @@
      "ts": "2026-10-12T02:59:15+0530",
      "who": "claude",
      "note": "Verify pass on the T-225 ripple: the blocker list was already updated, but its claim that the 09:10 log fix is pending was out of date (the fix and the once-a-day guard are committed in zoom_support_check.mjs, 5c1badf4 and 9c303f20), so that line now says so; everything else is unchanged and Adi still has only the one Zoom sign-in on T-335. Open https://revops-centre.growthcluborg.workers.dev/admin/control?v=t407vp3"
+    },
+    {
+     "ts": "2026-10-12T07:05:45+0530",
+     "who": "claude",
+     "note": "Final sync: item 1 now says Live Control reads 6 Tantra Centre scopes missing (the 5 poll scopes plus meeting:delete:meeting:admin), matching the asks on T-226 and T-335, which I checked carry the same 6. The T-225 line now says the write test ran once on 2026-10-11 (not granted), the same-day rerun guard is in place (checked in zoom_support_check.mjs line 134), and the 09:10 job logs one entry a day. T-335 is still the only thing Adi has to do. Open https://revops-centre.growthcluborg.workers.dev/admin/control?v=t407f1"
     }
    ],
    "order": 4070
