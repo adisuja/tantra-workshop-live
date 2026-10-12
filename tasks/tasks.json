@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T08:18:00+0530",
-  "version": 2444,
+  "updated": "2026-10-12T08:20:48+0530",
+  "version": 2446,
   "last_id": 422,
   "team": [
    {
@@ -14337,11 +14337,11 @@
    "evidence": [
     {
      "label": "Live hub",
-     "url": "https://adisuja.github.io/tantra-workshop-live/?v=t273f341"
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=t273p727"
     },
     {
      "label": "Local hub",
-     "url": "file:///Users/adithyamurali/tantra-redesign/workshop-plan/index.html?v=t273f341"
+     "url": "file:///Users/adithyamurali/tantra-redesign/workshop-plan/index.html?v=t273p727"
     }
    ],
    "blockers": [],
@@ -14406,6 +14406,11 @@
      "ts": "2026-10-12T07:22:53+0530",
      "who": "claude",
      "note": "From T-300: probe-visual-tools fails on main because workshop-plan/index.html review-data lists the patch file fix_bug-1-unipile-account-id-regex--f7ef2beb53.patch (added in f341d58f), which trips the banned 'Unipile' name. Rename the patch entry or move it out of the hub; T-300 did not weaken the probe."
+    },
+    {
+     "ts": "2026-10-12T08:20:48+0530",
+     "who": "claude",
+     "note": "Renamed the bug-1 patch to fix_bug-1-linkedin-account-id-regex--f7ef2beb53.patch, updated its 7 references and rebuilt the hub (main 8dc71a0d + 727bb8e6, pushed; mirror db3676997). index.html and the live page have no 'unipile' left, probe-visual-tools PASS and probe-review-hub says ALL LINKS OK both locally and on live (423 links, 23 pages). Open https://adisuja.github.io/tantra-workshop-live/?v=t273p727"
     }
    ],
    "order": 2730
@@ -16489,6 +16494,11 @@
      "ts": "2026-10-12T08:18:00+0530",
      "who": "claude",
      "note": "Removed the Calendly poll, webhook and simulator routes (Cal.com is the only booking hook; past Calendly bookings still count), fixed probe-connectors to sign in by POST, merged and pushed main at 15373459, and posted the superseding READY line. Both tsc, check-coverage, check-guides, probe-visual-tools, the denylist plant test and the done_when grep pass, probe-connectors is ALL PASS (78), and probe-stack shows only the same 2 FAILs as main. Left for the Integrator in the next run: wrangler deploy of revops-centre from a clean worktree of 15373459, republish the mirror and survey, verify live, then post DEPLOYED."
+    },
+    {
+     "ts": "2026-10-12T08:20:48+0530",
+     "who": "claude",
+     "note": "From T-273: the hub review-data no longer names the vendor; the bug-1 patch is now fix_bug-1-linkedin-account-id-regex--f7ef2beb53.patch (main 727bb8e6, mirror db3676997) and probe-visual-tools passes on main without any probe change."
     }
    ],
    "order": 3000
