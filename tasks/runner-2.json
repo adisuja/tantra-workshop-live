@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:54:38+0530",
+   "task_id": "T-123",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "(Held back from the public board: this note mentions a private client detail.)"
+  },
+  {
    "ts": "2026-10-12T07:53:13+0530",
    "task_id": "T-033",
    "mode": "feedback",
@@ -87,22 +95,16 @@
    "status": "done",
    "result": "ok",
    "summary": "(Held back from the public board: this note mentions a private client detail.)"
-  },
-  {
-   "ts": "2026-10-12T07:15:49+0530",
-   "task_id": "T-234",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "(Held back from the public board: this note mentions a private client detail.)"
   }
  ],
- "state": "idle",
- "mode": null,
- "task_id": null,
- "entries": [],
- "started": "2026-10-12T07:45:10+0530",
- "message": "Last sweep handled 8 task(s).",
+ "state": "working",
+ "mode": "feedback",
+ "task_id": "T-228",
+ "entries": [
+  "R-dba953bc"
+ ],
+ "started": "2026-10-12T07:54:55+0530",
+ "message": "Acting on 1 note(s) for T-228: Welcome email: every new attendee gets their centre link and private calendar link",
  "slices": {
   "T-250": 1,
   "T-301": 1,

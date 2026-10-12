@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T07:52:47+0530",
-  "version": 2427,
+  "updated": "2026-10-12T07:55:11+0530",
+  "version": 2430,
   "last_id": 422,
   "team": [
    {
@@ -12647,9 +12647,9 @@
    "why": "The public pricing page and product billing contradict the owner's plan line-up (memory tantra-plan-lineup), which is a trust problem for every workshop attendee who checks Tantra's pricing.",
    "spec": "Source: GitHub Usetantra/tantra-frontend-v2 (private), branch adi-new-ui (handoff SESSION_HANDOFF_2026_09_29_TANTRA_FRONTEND_V2.md; work there was uncommitted on 2026-09-29, check what reached the branch). Clone read-only (gh repo clone Usetantra/tantra-frontend-v2 -- -b adi-new-ui) and re-verify each open item in code before asking Adi: (1) SMS in the enterprise call description although Tantra has no SMS channel; (2) /pricing Enterprise card and FAQ versus the owner's coaching plus build with 1 year of platform access; (3) name of the $199 plan ('Scale' placeholder); (4) Telegram on pricing (removed from public surfaces 2026-09-30 per frontend-v2-ground-truth-docs); (5) 'Start Free' CTAs with no free plan (Pro has a 14-day $0 trial); (6) about 10 help-centre add-on articles (content/help/multichannel-outreach/...) and ToS/Privacy add-on mentions; (7) Dodo products: no Scale, no $20 extra-account product, Pro trial, in-app /billing still sells $10 add-ons; (8) annual pricing ($999/yr Pro in Dodo, not shown); (9) /enterprise embeds Calendly (src/lib/marketing/enterprise-call.ts ENTERPRISE_CALENDLY_URL) while Calendly is ruled out: recommended move to Cal.com. Then put only the still-open items to Adi as one list with a recommended answer each.",
    "done_when": [
-    "Each of the 9 items is delivered as a patch (or recorded as already closed) in workshop-plan/tantra-product-patches/tantra-frontend-v2/, logged item by item in the task log",
-    "The patches apply cleanly in the stated order onto adi-new-ui, and npm test and the voice probe pass on the patched tree",
-    "workshop-plan/tantra-product-patches/README.md has a T-252 section with the git am order and apply steps for Bharath's team to apply upstream"
+    "Each of the 9 items is verified or decided and logged in the task log, item by item, with its patch in workshop-plan/tantra-product-patches/tantra-frontend-v2/",
+    "The four patches apply in the README order onto adi-new-ui, and npm test and the voice probe pass on the patched tree",
+    "Bharath's team applies the patches upstream (steps in the README T-252 section) and updates the Dodo products per docs/dodo-product-spec-2026-10.md"
    ],
    "evidence": [
     {
@@ -12790,6 +12790,11 @@
      "ts": "2026-10-12T07:12:11+0530",
      "who": "claude",
      "note": "Verify pass: on a fresh git-archive copy of adi-new-ui (7a55658, no remote) the four patches applied with git am in the README order, vitest passed 310 of 310, and the voice probe found nothing on 39 pages at 3 widths apart from the PostHog env warning. The done-when, the 5 evidence entries and the README T-252 section are on origin/main. Separately, /webinar still lists SMS in its FAQ. That is outside the nine items, so Bharath's team may want to fix it."
+    },
+    {
+     "ts": "2026-10-12T07:55:11+0530",
+     "who": "claude",
+     "note": "Done-when now matches the Orchestrator wording (verified or decided per item, patches apply with tests and voice probe, Bharath's team applies upstream and updates Dodo). Re-checked today: the four patches apply cleanly with git am in README order on a scratch copy of adi-new-ui at 7a55658; items 1 to 9, the 5 evidence entries (incl. item 7 patch) and the README T-252 section (line 60) are on the card. Open workshop-plan/tantra-product-patches/README.md."
     }
    ],
    "order": 2520
