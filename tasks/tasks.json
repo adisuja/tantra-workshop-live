@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T18:35:45+0530",
-  "version": 2509,
+  "updated": "2026-10-12T22:21:34+0530",
+  "version": 2511,
   "last_id": 424,
   "team": [
    {
@@ -18297,7 +18297,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Real attendees on the live centre get no AI drafts until the live Worker has an Anthropic connection; the Claude Code logins only serve test attendees.",
    "spec": "",
    "done_when": [
@@ -18321,6 +18321,11 @@
      "ts": "2026-10-12T18:35:45+0530",
      "who": "claude",
      "note": "Own-systems work: do it with workshop-plan/tasks/centre_admin.py, never ask Adi (Adi 2026-10-12). The Anthropic key is already on this Mac at ~/.config/tantra/anthropic-api-key."
+    },
+    {
+     "ts": "2026-10-12T22:21:34+0530",
+     "who": "claude",
+     "note": "Done by the agent with centre_admin.py, no ask of Adi. The Mac's key is not scoped to a workspace, so Anthropic refused it without the anthropic-workspace-id header. Commit e2f08d2b makes Anthropic connections accept an optional Workspace ID (sealed with the key; admin form field shown for the Anthropic type), deployed to live as version 6765de16 from a clean worktree. Live admin now lists 'Anthropic (agent added T-404)', enabled, Test: claude-sonnet-5-5 answered. A real headless-browser draft on live (admin preview, card d2-page) came back ok on claude-opus-5-5; one earlier attempt got a one-off 403 from Anthropic and is logged and resolved (problem 360). Review: https://revops-centre.growthcluborg.workers.dev/admin/?v=t404b#connections"
     }
    ],
    "order": 4040
@@ -18336,7 +18341,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "done",
    "why": "",
    "spec": "Only Adi can do this (credential): Only Adi possesses the Anthropic API key needed for live attendee AI drafting.. Everything else in T-404 is being built around it. As soon as this is done, T-404 finishes on its own.",
    "done_when": [],
@@ -18353,6 +18358,11 @@
      "ts": "2026-10-12T18:35:45+0530",
      "who": "claude",
      "note": "Own-systems work: do it with workshop-plan/tasks/centre_admin.py, never ask Adi (Adi 2026-10-12). The Anthropic key is already on this Mac at ~/.config/tantra/anthropic-api-key."
+    },
+    {
+     "ts": "2026-10-12T22:21:34+0530",
+     "who": "claude",
+     "note": "Not needed from Adi: the agent saved the key from ~/.config/tantra/anthropic-api-key through centre_admin.py (see T-404)."
     }
    ],
    "order": 4050,
