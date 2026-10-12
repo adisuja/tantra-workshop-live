@@ -97,12 +97,14 @@
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-242 is still in doing: I fixed the last webinar finding, but this run never got a clean walker report or a run-chain result, so nothing was pushed.\n\n**Completion c"
   }
  ],
- "state": "idle",
- "mode": null,
- "task_id": null,
- "entries": [],
- "started": "2026-10-12T12:41:59+0530",
- "message": "Last sweep handled 0 task(s).",
+ "state": "working",
+ "mode": "feedback",
+ "task_id": "T-424",
+ "entries": [
+  "F-2bdd04d2"
+ ],
+ "started": "2026-10-12T13:22:30+0530",
+ "message": "Acting on 1 note(s) for T-424: Fix the seven chain probes that went red after 2026-10-07",
  "slices": {
   "T-135": 1,
   "T-300": 2,
