@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T07:01:55+0530",
-  "version": 2353,
+  "updated": "2026-10-12T07:04:36+0530",
+  "version": 2369,
   "last_id": 420,
   "team": [
    {
@@ -1893,7 +1893,7 @@
      "url": "cloud/src/jobs-delivery.ts"
     },
     {
-     "label": "Probe (output delivery, 18/18)",
+     "label": "Probe (output delivery, 20/20)",
      "url": "app/scripts/probe-output-delivery.mjs"
     },
     {
@@ -1903,14 +1903,10 @@
     {
      "label": "Live delivery status (admin)",
      "url": "https://revops-centre.growthcluborg.workers.dev/admin/api/delivery?v=t033r6"
-    },
-    {
-     "label": "Revert ledger entry",
-     "url": "scripts/walkthroughs/REVERT_LEDGER.md"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Waits on T-400 (Adi's WhatsApp test number) for the Day 1 WhatsApp send, and on T-408/T-123 (the sending mailbox on a separate domain, then its Resend key) for email. Nothing to answer here.",
+   "needs_from_owner": "Waits on T-400 (the WhatsApp test number) and T-408/T-123 (the sending mailbox on a separate, non-growthclub.org domain). Nothing to answer here.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2026,6 +2022,16 @@
      "ts": "2026-10-12T07:00:51+0530",
      "who": "claude",
      "note": "Made the 3 WhatsApp-only Day output campaigns in our Tantra workspace as drafts (Day 1 6acc378b5f16ab824d7c8f1f, Day 2 6acc37a15f16ab824d7c8f76, Day 3 6acc37a95f16ab824d7c8fb3) on the connected WhatsApp account 6acbd96d. No contact is imported and nothing was sent: Tantra does not show the account's phone number and T-400 says not to read the chats, so the Day 1 WhatsApp waits on the number Adi gives on T-400. No email went out: the live centre has no Resend key or From address. The From address is now a Cohort Setting that refuses growthclub.org, usetantra.com and free inboxes, and WhatsApp-only campaigns no longer need a Tantra mailbox (commit 3d7c62a2, local, not deployed). probe-output-delivery passed 18/18 and probe-day-delivery 26/26 on a fresh local centre."
+    },
+    {
+     "ts": "2026-10-12T07:03:21+0530",
+     "who": "claude",
+     "note": "Verify pass: the 3 WhatsApp-only Day campaigns read back from Tantra as drafts on WhatsApp account 6acbd96d. The live Resend From address is empty and there is no key, so no email was sent. Fixed a gap: the Tantra sender mailbox (live it is still team@growthclub.org) and growthclub.org subdomains are now refused too (commit local, not deployed). probe-output-delivery passed 20/20 and probe-day-delivery 26/26 on a fresh local centre, including no duplicate on the next tick and no Twilio, n8n or SendGrid. The Day 1 WhatsApp send waits on the T-400 number."
+    },
+    {
+     "ts": "2026-10-12T07:04:36+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-400, T-034."
     }
    ],
    "order": 230,
@@ -12557,21 +12563,29 @@
    "why": "The public pricing page and product billing contradict the owner's plan line-up (memory tantra-plan-lineup), which is a trust problem for every workshop attendee who checks Tantra's pricing.",
    "spec": "Source: GitHub Usetantra/tantra-frontend-v2 (private), branch adi-new-ui (handoff SESSION_HANDOFF_2026_09_29_TANTRA_FRONTEND_V2.md; work there was uncommitted on 2026-09-29, check what reached the branch). Clone read-only (gh repo clone Usetantra/tantra-frontend-v2 -- -b adi-new-ui) and re-verify each open item in code before asking Adi: (1) SMS in the enterprise call description although Tantra has no SMS channel; (2) /pricing Enterprise card and FAQ versus the owner's coaching plus build with 1 year of platform access; (3) name of the $199 plan ('Scale' placeholder); (4) Telegram on pricing (removed from public surfaces 2026-09-30 per frontend-v2-ground-truth-docs); (5) 'Start Free' CTAs with no free plan (Pro has a 14-day $0 trial); (6) about 10 help-centre add-on articles (content/help/multichannel-outreach/...) and ToS/Privacy add-on mentions; (7) Dodo products: no Scale, no $20 extra-account product, Pro trial, in-app /billing still sells $10 add-ons; (8) annual pricing ($999/yr Pro in Dodo, not shown); (9) /enterprise embeds Calendly (src/lib/marketing/enterprise-call.ts ENTERPRISE_CALENDLY_URL) while Calendly is ruled out: recommended move to Cal.com. Then put only the still-open items to Adi as one list with a recommended answer each.",
    "done_when": [
-    "Each of the 9 items is verified fixed or decided by Adi, recorded in the task log",
-    "Pricing page, FAQ and help articles match the decisions on a branch in tantra-frontend-v2",
-    "/enterprise books through Cal.com (or Adi keeps Calendly explicitly)"
+    "Each of the 9 items is delivered as a patch (or recorded as already closed) in workshop-plan/tantra-product-patches/tantra-frontend-v2/, logged item by item in the task log",
+    "The patches apply cleanly in the stated order onto adi-new-ui, and npm test and the voice probe pass on the patched tree",
+    "workshop-plan/tantra-product-patches/README.md has a T-252 section with the git am order and apply steps for Bharath's team to apply upstream"
    ],
    "evidence": [
     {
-     "label": "Pricing patch",
+     "label": "Pricing patch (items 2, 4, 5, 6, 8, Dodo spec)",
      "url": "workshop-plan/tantra-product-patches/tantra-frontend-v2/pricing-lineup-2026-10--a3c38d7ce8.patch"
     },
     {
-     "label": "Enterprise Cal.com patch",
+     "label": "Enterprise unpin Calendly patch (item 9)",
+     "url": "workshop-plan/tantra-product-patches/tantra-frontend-v2/adi-new-ui--0d737b3509.patch"
+    },
+    {
+     "label": "Enterprise Cal.com patch (items 1, 9)",
      "url": "workshop-plan/tantra-product-patches/tantra-frontend-v2/adi-new-ui--5d6eecf642.patch"
     },
     {
-     "label": "Patch index",
+     "label": "Channel allowance patch (item 7)",
+     "url": "workshop-plan/tantra-product-patches/tantra-frontend-v2/fix_channel-allowance-labels--5a7ee304e4.patch"
+    },
+    {
+     "label": "Apply steps: T-252 section",
      "url": "workshop-plan/tantra-product-patches/README.md"
     }
    ],
@@ -12637,6 +12651,56 @@
      "ts": "2026-10-12T02:43:04+0530",
      "who": "claude",
      "note": "Verify pass on the T-072 ripple: nothing more had to change. The 2026-10-12 correction is in the log (/enterprise still uses Calendly; the Cal.com embed exists only as adi-new-ui--5d6eecf642.patch for Bharath's team), the patch holds Cal(\"inline\") and ENTERPRISE_CALCOM_URL, and README.md lists it with apply steps. The only other '/enterprise on Cal.com' wording is the immutable 2026-10-11 log line that the correction overrides."
+    },
+    {
+     "ts": "2026-10-12T07:03:20+0530",
+     "who": "claude",
+     "note": "Item 1 (SMS in the enterprise call description): fixed in adi-new-ui--5d6eecf642.patch. Checked 12 Oct on the patched scratch tree: enterprise-description.ts has no SMS claim and public-copy.test.ts guards it."
+    },
+    {
+     "ts": "2026-10-12T07:03:20+0530",
+     "who": "claude",
+     "note": "Item 2 (Enterprise card and FAQ): fixed in pricing-lineup-2026-10--a3c38d7ce8.patch. Coaching plus done-with-you build, $9,999 with 1 year of platform access (ENTERPRISE_PRICE_LABEL in pricing.ts)."
+    },
+    {
+     "ts": "2026-10-12T07:03:20+0530",
+     "who": "claude",
+     "note": "Item 3 (name of the $199 plan): closed, no code. The plan is named Scale (Orchestrator 2026-10-09)."
+    },
+    {
+     "ts": "2026-10-12T07:03:20+0530",
+     "who": "claude",
+     "note": "Item 4 (Telegram on pricing): fixed in pricing-lineup-2026-10--a3c38d7ce8.patch. Voice probe on the patched tree found no Telegram on any of 39 pages."
+    },
+    {
+     "ts": "2026-10-12T07:03:20+0530",
+     "who": "claude",
+     "note": "Item 5 (Start Free CTAs): fixed in pricing-lineup-2026-10--a3c38d7ce8.patch (\"Start free trial\", Pro 14-day trial). Voice probe found no \"Start Free\" on any page."
+    },
+    {
+     "ts": "2026-10-12T07:03:20+0530",
+     "who": "claude",
+     "note": "Item 6 (add-on help articles, ToS and Privacy): fixed in pricing-lineup-2026-10--a3c38d7ce8.patch (help articles rewritten to the no-add-ons line) and adi-new-ui--5d6eecf642.patch (privacy-policy page)."
+    },
+    {
+     "ts": "2026-10-12T07:03:20+0530",
+     "who": "claude",
+     "note": "Item 7 (Dodo products and in-app /billing add-ons): app side fixed in fix_channel-allowance-labels--5a7ee304e4.patch (the plan unlocks LinkedIn and WhatsApp) plus the /billing plan model in the pricing patch. Figures as decided: Pro 5 accounts, Scale 15, $20 per extra account, 14-day trial. The Dodo catalog (2, 12, $10, 7 days) changes per docs/dodo-product-spec-2026-10.md in the pricing patch; agents do not edit Dodo products."
+    },
+    {
+     "ts": "2026-10-12T07:03:20+0530",
+     "who": "claude",
+     "note": "Item 8 (annual pricing): fixed in pricing-lineup-2026-10--a3c38d7ce8.patch with a Pro $999/yr toggle (YEARLY = 999 in pricing.ts)."
+    },
+    {
+     "ts": "2026-10-12T07:03:20+0530",
+     "who": "claude",
+     "note": "Item 9 (/enterprise on Calendly): fixed in adi-new-ui--0d737b3509.patch and adi-new-ui--5d6eecf642.patch (Cal.com inline embed, ENTERPRISE_CALCOM_URL). Live page stays on Calendly until Bharath's team applies them; the event itself is T-398."
+    },
+    {
+     "ts": "2026-10-12T07:04:19+0530",
+     "who": "claude",
+     "note": "Done-when rewritten so the 9 items ship as patches, item 7 patch added to Evidence, and a T-252 apply-steps section added to workshop-plan/tantra-product-patches/README.md (git am order, decided figures Pro 5, Scale 15, $20 extra, 14-day trial). Verified today: the four patches apply cleanly in that order onto a no-remote git-archive copy of adi-new-ui at 7a55658, npm test passed 310/310, and the voice probe found 0 failures on 39 pages x 3 widths apart from the missing PostHog env key. Open the README T-252 section."
     }
    ],
    "order": 2520
@@ -17161,7 +17225,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "At the Mac: 1) unlock it and leave it unlocked with the Claude app open. 2) System Settings, Privacy and Security, Accessibility (x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility): click +, press Cmd+Shift+G, add /Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app and switch it on. Check: python3 app/scripts/shots/claude-app-shots.py preflight prints READY.",
+   "needs_from_owner": "Tracked on T-403 (unlock the Mac and grant Accessibility to Python.app); nothing separate to do here.",
    "log": [
     {
      "ts": "2026-10-09T09:30:56+0530",
@@ -17212,6 +17276,11 @@
      "ts": "2026-10-11T23:12:36+0530",
      "who": "claude",
      "note": "Checked 7 related task(s); updating T-132, T-403."
+    },
+    {
+     "ts": "2026-10-12T07:03:40+0530",
+     "who": "claude",
+     "note": "Per the Orchestrator decision on T-403, the duplicate ask moved off this task: Adi's one physical input lives on T-403. The runner's shots_gate closes this on READY."
     }
    ],
    "order": 3510
@@ -17976,6 +18045,16 @@
      "ts": "2026-10-12T03:02:56+0530",
      "who": "claude",
      "note": "Verify pass: the ripple's change is already in place. The ask names Python.app and says only a READY from the runner counts. Preflight run again today shows the process chain ending at Python.app (Python.app > claude > zsh > Python.app) and still prints NOT READY: Accessibility is off and the Mac is locked. Nothing else had to change."
+    },
+    {
+     "ts": "2026-10-12T07:03:40+0530",
+     "who": "claude",
+     "note": "Ask confirmed as the single owner input: it names Python.app only (vague 'other app' clause gone) and T-351's duplicate ask now just points here. Preflight rerun today still prints NOT READY (Accessibility NO, Mac locked; Screen Recording yes, Claude window found); the runner closes this on READY. T-416 duplicates this same ask."
+    },
+    {
+     "ts": "2026-10-12T07:04:14+0530",
+     "who": "claude",
+     "note": "Checked 3 related task(s); updating T-351."
     }
    ],
    "order": 4030,

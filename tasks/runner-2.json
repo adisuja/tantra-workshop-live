@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:04:30+0530",
+   "task_id": "T-033",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-033 stays blocked. Nothing was sent on either channel. The WhatsApp test still needs the number from T-400, and email needs a sending mailbox on a separate domain (T-408/T-123). While verifying I found and fixed one gap: the From-address guard didn't cover Tantra's own sender mailbox, which is sti"
+  },
+  {
    "ts": "2026-10-12T06:56:01+0530",
    "task_id": "T-245",
    "mode": "feedback",
@@ -87,30 +95,21 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-226 stays blocked on T-335; I updated its ask to match the live state, but the poll scopes are not added yet, although the ripple note said they were.\n\n- **Run sheets drafted:** done. I checked them live on Live Control just now: 24 chat, CTA and poll items covering Days 1 to 3.\n- **Host is Adi, c"
-  },
-  {
-   "ts": "2026-10-12T03:07:48+0530",
-   "task_id": "T-020",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-020 is back in review with nothing changed. This pass confirmed that the review link (`?v=1012a`), the \"changed since\" list and the live mirror are all up to date.\n\nCompletion check:\n- **Review link refreshed:** done. The ask and all 8 evidence links point to https://adisuja.github.io/tantra-works"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-033",
+ "task_id": "T-101",
  "entries": [
-  "F-6976539b"
+  "F-e14f97bd"
  ],
- "started": "2026-10-12T06:56:38+0530",
- "message": "Acting on 1 note(s) for T-033: WhatsApp + email delivery automation",
+ "started": "2026-10-12T07:05:43+0530",
+ "message": "Acting on 1 note(s) for T-101: Key-art system across join, confirmation and onboarding pages",
  "slices": {
   "T-072": 1,
   "T-250": 1,
   "T-301": 1,
   "T-140": 1,
-  "T-033": 1,
   "T-348": 1,
   "T-299": 3,
   "T-229": 1,
