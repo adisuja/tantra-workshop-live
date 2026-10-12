@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T07:22:21+0530",
-  "version": 2387,
+  "updated": "2026-10-12T07:22:53+0530",
+  "version": 2390,
   "last_id": 420,
   "team": [
    {
@@ -13683,6 +13683,11 @@
      "ts": "2026-10-12T07:22:21+0530",
      "who": "claude",
      "note": "Verify pass: probe-t263 passes 21 of 21 today (23:30 plus 60 minutes ends 00:30 the next date, the start-calendar-ws gate in cloud/src/agentic.ts:808-816 answers 422 until every sender is CONNECTED, variant B reaches Tantra as its own campaign), cloud tsc is clean, and AUDIT.md marks all 8 ids at 4dea9f2. Live sender check: check-tantra-senders.mjs with the tantra-api.env key (GET only) says boards@fintechcircle.com is not in Tantra, so that key belongs to another workspace and T-418 stays the only open ask."
+    },
+    {
+     "ts": "2026-10-12T07:22:38+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-418."
     }
    ],
    "order": 2630
@@ -14404,6 +14409,11 @@
      "ts": "2026-10-12T02:07:32+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-12: the live mirror and local hub both show Two-Month Platform Pass in the ladder and b-pass with no '1 month, worth' (the only live/local difference is review-data from T-148/T-072), probe-review-hub.mjs says ALL LINKS OK (423 links, 23 pages), no October dates or eyebrows remain, and AUDIT.md marks all ten ids fixed. vip-kit.ts:95 already matches funnel.ts. Open https://adisuja.github.io/tantra-workshop-live/?v=t273f341"
+    },
+    {
+     "ts": "2026-10-12T07:22:53+0530",
+     "who": "claude",
+     "note": "From T-300: probe-visual-tools fails on main because workshop-plan/index.html review-data lists the patch file fix_bug-1-unipile-account-id-regex--f7ef2beb53.patch (added in f341d58f), which trips the banned 'Unipile' name. Rename the patch entry or move it out of the hub; T-300 did not weaken the probe."
     }
    ],
    "order": 2730
@@ -16406,16 +16416,24 @@
    ],
    "evidence": [
     {
-     "label": "branch chain",
-     "url": "file:///tmp/chain-t300/summary.txt"
+     "label": "branch",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/tree/t300-ruled-out-cleanup"
+    },
+    {
+     "label": "probe-workshop rerun",
+     "url": "file:///tmp/t300-workshop.log"
+    },
+    {
+     "label": "probe-stack rerun",
+     "url": "file:///tmp/t300-probe-stack.log"
+    },
+    {
+     "label": "probe-visual-tools",
+     "url": "file:///tmp/t300-pvt.log"
     },
     {
      "label": "origin/main baseline chain",
      "url": "file:///tmp/chain-t300-base/summary.txt"
-    },
-    {
-     "label": "branch",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/tree/t300-ruled-out-cleanup"
     }
    ],
    "blockers": [],
@@ -16455,6 +16473,11 @@
      "ts": "2026-10-12T03:51:50+0530",
      "who": "claude",
      "note": "Verified again on a private stack built from branch t300-ruled-out-cleanup (623ec9ff, now pushed). Both tsc, check-coverage, check-guides and the done_when grep pass (it only hits the verbatim examples). probe-visual-tools fails on a planted Calendly, and every chain failure that remains also happens on clean origin/main (listed in the READY line in LOG.md; one follow-up: cloud/funnel/worker.js still has a SendGrid path)."
+    },
+    {
+     "ts": "2026-10-12T07:22:53+0530",
+     "who": "claude",
+     "note": "Removed the SendGrid send path from the funnel worker (722c9091, pushed) and posted the new READY line for the Integrator. Reruns show the branch adds no failures: the probe-workshop CTA #2 fail was a flake (all 4 CTAs ok on rerun), probe-details has 0 FAIL, probe-stack has the same 2 FAILs as main, and both tsc, check-coverage, check-guides, the done_when grep and the denylist pass. Remaining main-only failures: checkout 501 and the Unipile hub hit (noted on T-273); worker.js still has a Calendly webhook path as a follow-up."
     }
    ],
    "order": 3000
