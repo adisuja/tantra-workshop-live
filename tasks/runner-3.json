@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T14:39:29+0530",
+   "task_id": "T-424",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-424 is still in doing and none of the seven probes is confirmed green yet: I fixed the three day2 causes, but the rerun was still going when this run hit its tool-"
+  },
+  {
    "ts": "2026-10-12T14:00:39+0530",
    "task_id": "T-424",
    "mode": "feedback",
@@ -87,23 +95,15 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-074 is still blocked on T-123/T-408: the newsletter can't send until a mailbox on a non-main domain is connected and `pro_newsletter_from` is set to it. The rest checks out, and I fixed one gap I found: a send could have gone out with placeholder links.\n\n**Completion check:**\n1. **T-074 off the te"
-  },
-  {
-   "ts": "2026-10-12T04:18:40+0530",
-   "task_id": "T-400",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-400 is still blocked on one input from Adi: the phone number, with country code, that should get the \"Adi test\" Day 1 WhatsApp message. Tantra's API doesn't return the connected phone's number anywhere.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| Deploy and push commit 9787eef2 | D"
   }
  ],
  "state": "working",
  "mode": "feedback",
  "task_id": "T-424",
  "entries": [
-  "F-36b59735"
+  "R-3f00c5ef"
  ],
- "started": "2026-10-12T14:02:57+0530",
+ "started": "2026-10-12T14:40:39+0530",
  "message": "Acting on 1 note(s) for T-424: Fix the seven chain probes that went red after 2026-10-07",
  "slices": {
   "T-135": 1,
@@ -114,7 +114,7 @@
   "T-270": 1,
   "T-299": 2,
   "T-059": 1,
-  "T-424": 2
+  "T-424": 3
  },
  "api_capped": {
   "T-229": "2026-10-12T00:59:32+0530",

@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T14:35:02+0530",
-  "version": 2505,
+  "updated": "2026-10-12T14:39:09+0530",
+  "version": 2506,
   "last_id": 424,
   "team": [
    {
@@ -19055,12 +19055,12 @@
    ],
    "evidence": [
     {
-     "label": "day2 run log",
+     "label": "rerun logs",
      "url": "/tmp/t424/r-day2.log"
     },
     {
-     "label": "day2 shots",
-     "url": "/tmp/t424/shots-day2/"
+     "label": "rerun rc",
+     "url": "/tmp/t424/r3.rc"
     }
    ],
    "blockers": [],
@@ -19090,6 +19090,11 @@
      "ts": "2026-10-12T14:34:31+0530",
      "who": "claude",
      "note": "From T-242 chain-1557 (/tmp/t242c/chain, workshop-plan/tasks/evidence/T-242/chain-1557/summary.txt), three probes are worse than the 09:09 baseline and belong here: export-site FAILs in 8s with an empty log (PASS in 19s at baseline), most likely because another export rebuilt the shared .export-scratch at 12:33 while the chain's build ran, and stage_site keeps only the last line of export-static.sh so the build error is lost; probe-tantra-reminders is 26 ok, 9 fail (was 88 ok, 5 fail), the Registered and plan email checks fail and it ends in TypeError reading 'at'; probe-workshop has 5 fail lines (was 3): /masterclass/success/join at 390px, /api/checkout mint and missing email, and /api/dodo/webhook forged signature."
+    },
+    {
+     "ts": "2026-10-12T14:39:09+0530",
+     "who": "claude",
+     "note": "Slice 4 (branch t424-chain-probes, commit ca58ff36, stack :8940-8944): handled the Orchestrator's three day2 causes. probe-day2 now answers the T-270 autodraft question once the admin preview has loaded (sent earlier, it got a 401). The private centre's runner is :8941, the stale runner is replaced and the funnel reads the private sim on :8942. run-chain now points CENTRE_PERSIST at the launchd D1 for probe-context. The rerun of domain-chain, day1 and day2 (/tmp/t424/run3.sh) was still going when this run ended. Left: confirm day2 drafts, then run stack, context and tantra-reminders (four link checks: calendar and centre link in the Registered body, plan_url equal to the enter link, traced to fieldsFor in cloud/src/reminders.ts:200) and workshop, then the full chain on a fresh stack, push, LOG.md, the T-299 note, the launchd restart and review."
     }
    ],
    "order": 4240
