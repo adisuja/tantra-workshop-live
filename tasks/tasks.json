@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T08:20:48+0530",
-  "version": 2446,
+  "updated": "2026-10-12T08:22:51+0530",
+  "version": 2447,
   "last_id": 422,
   "team": [
    {
@@ -16418,28 +16418,28 @@
    ],
    "evidence": [
     {
-     "label": "main 15373459",
+     "label": "live survey",
+     "url": "https://adisuja.github.io/tantra-workshop-live/survey.html?v=t300"
+    },
+    {
+     "label": "live site survey",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/materials/survey.html?v=t300"
+    },
+    {
+     "label": "live deck",
+     "url": "https://adisuja.github.io/tantra-workshop-live/deck.html?v=t300"
+    },
+    {
+     "label": "live playbook",
+     "url": "https://adisuja.github.io/tantra-workshop-live/playbook.html?v=t300"
+    },
+    {
+     "label": "centre admin",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin?v=t300"
+    },
+    {
+     "label": "main commit",
      "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/15373459"
-    },
-    {
-     "label": "branch",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/tree/t300-ruled-out-cleanup"
-    },
-    {
-     "label": "probe-connectors log",
-     "url": "file:///tmp/t300f-conn.log"
-    },
-    {
-     "label": "probe-stack log",
-     "url": "file:///tmp/t300f-stack.log"
-    },
-    {
-     "label": "probe-visual-tools planted-name log",
-     "url": "file:///tmp/t300g-vt-plant.log"
-    },
-    {
-     "label": "probe-visual-tools after merge",
-     "url": "file:///tmp/t300h-vt.log"
     }
    ],
    "blockers": [],
@@ -16499,6 +16499,11 @@
      "ts": "2026-10-12T08:20:48+0530",
      "who": "claude",
      "note": "From T-273: the hub review-data no longer names the vendor; the bug-1 patch is now fix_bug-1-linkedin-account-id-regex--f7ef2beb53.patch (main 727bb8e6, mirror db3676997) and probe-visual-tools passes on main without any probe change."
+    },
+    {
+     "ts": "2026-10-12T08:22:51+0530",
+     "who": "claude",
+     "note": "Merged to main (15373459), deployed the revops-centre Worker (version 7a94c18c, Calendly webhook now 404 live, past Calendly bookings still counted) and republished the mirror survey, deck and playbook, which now show 0 ruled-out names and only the free list checks. probe-visual-tools and check-guides pass on the deployed commit; open the survey and playbook links to review."
     }
    ],
    "order": 3000
