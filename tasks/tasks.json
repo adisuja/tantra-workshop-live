@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T08:11:30+0530",
-  "version": 2442,
+  "updated": "2026-10-12T08:11:53+0530",
+  "version": 2443,
   "last_id": 422,
   "team": [
    {
@@ -2910,10 +2910,15 @@
      "ts": "2026-10-12T08:11:30+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-400."
+    },
+    {
+     "ts": "2026-10-12T08:11:53+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Bhaskar → Claude (by Orchestrator)."
     }
    ],
    "order": 370,
-   "assignee": "Bhaskar",
+   "assignee": "Claude",
    "reviewers": [
     "Bhaskar",
     "Bharath"
