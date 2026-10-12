@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T07:10:07+0530",
-  "version": 2376,
+  "updated": "2026-10-12T07:12:11+0530",
+  "version": 2379,
   "last_id": 420,
   "team": [
    {
@@ -8996,12 +8996,12 @@
      "url": "workshop-plan/pipeline/test_dash.py"
     },
     {
-     "label": "First weekly review: snapshot 2026-10-12",
+     "label": "Weekly snapshot 2026-10-12 (first weekly review)",
      "url": "workshop-plan/pipeline/snapshots/2026-10-12.json"
     },
     {
-     "label": "First weekly review: coord/LOG.md line 99 (2026-10-12 03:32 PIPELINE WEEKLY SNAPSHOT)",
-     "url": "workshop-plan/coord/LOG.md"
+     "label": "Weekly review LOG line 99",
+     "url": "workshop-plan/coord/LOG.md#L99"
     }
    ],
    "blockers": [],
@@ -9091,6 +9091,11 @@
      "ts": "2026-10-12T07:10:07+0530",
      "who": "claude",
      "note": "First weekly review recorded in Evidence: snapshots/2026-10-12.json and coord/LOG.md line 99 (already pushed in 025b2fd4). test_dash.py passes, and launchctl shows com.tantra.pipeline-weekly loaded for Monday 09:00 with last exit 0. Checked at 07:09 IST, so today's 09:00 run had not come due yet; the schedule is correct and needed no fix, and no duplicate snapshot was written. Waiting on Ben and Bharath to sign off."
+    },
+    {
+     "ts": "2026-10-12T07:10:26+0530",
+     "who": "claude",
+     "note": "Verify pass: the 2026-10-12 snapshot and LOG.md line 99 are both in Evidence as the first weekly review, and test_dash.py passes. At 07:10 IST the 09:00 run has not come due yet; the plist is Monday 09:00, the job is loaded and its last exit was 0, so nothing was changed. Nothing new to commit or push. Open http://localhost:8899/pipeline?v=10"
     }
    ],
    "order": 1580,
@@ -11131,8 +11136,8 @@
    ],
    "evidence": [
     {
-     "label": "Live admin: Cohort Settings, Invite Status (Worker f97bb618)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=f97bb618#settings"
+     "label": "Live admin: Cohort Settings, Invite Status (Worker 3dc17ab7)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/?v=3dc17ab7#settings"
     },
     {
      "label": "Helper with subdomain match",
@@ -11240,6 +11245,11 @@
      "ts": "2026-10-12T01:58:42+0530",
      "who": "claude",
      "note": "Added from a fresh local stack in this run (vendor sim on 8902, wrangler dev on 8900, new D1): probe-calendar-feeds 67 of 67 with 0 failures. The 6 refusal checks passed, covering example.com/.org, .invalid, .test, mail.example.com and x.example.org: no attendee was created and the simulated Zoom and Google never saw those addresses."
+    },
+    {
+     "ts": "2026-10-12T07:10:31+0530",
+     "who": "claude",
+     "note": "Ripple from T-223 checked: the live-state numbers it quoted (Worker 9761eae3, 26 attendees) are out of date, so I brought them up to date. Production now runs Worker 3dc17ab7, and 51c7ee1 is on origin/main. Posting a@mail.example.com to /cal/issue and /intake on production got the usual 200 answers (feed null), but the attendee count stayed at 33 (highest id 141), no example.* address is left unmarked as test, attendee 5 returns 404, and Invite Status has no session_sync rows (Zoom failed 0). Open https://revops-centre.growthcluborg.workers.dev/admin/?v=3dc17ab7#settings, Cohort Settings, Invite Status."
     }
    ],
    "order": 2290
@@ -12715,6 +12725,11 @@
      "ts": "2026-10-12T07:04:19+0530",
      "who": "claude",
      "note": "Done-when rewritten so the 9 items ship as patches, item 7 patch added to Evidence, and a T-252 apply-steps section added to workshop-plan/tantra-product-patches/README.md (git am order, decided figures Pro 5, Scale 15, $20 extra, 14-day trial). Verified today: the four patches apply cleanly in that order onto a no-remote git-archive copy of adi-new-ui at 7a55658, npm test passed 310/310, and the voice probe found 0 failures on 39 pages x 3 widths apart from the missing PostHog env key. Open the README T-252 section."
+    },
+    {
+     "ts": "2026-10-12T07:12:11+0530",
+     "who": "claude",
+     "note": "Verify pass: on a fresh git-archive copy of adi-new-ui (7a55658, no remote) the four patches applied with git am in the README order, vitest passed 310 of 310, and the voice probe found nothing on 39 pages at 3 widths apart from the PostHog env warning. The done-when, the 5 evidence entries and the README T-252 section are on origin/main. Separately, /webinar still lists SMS in its FAQ. That is outside the nine items, so Bharath's team may want to fix it."
     }
    ],
    "order": 2520
