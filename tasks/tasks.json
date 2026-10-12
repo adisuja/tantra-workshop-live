@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T14:27:21+0530",
-  "version": 2502,
+  "updated": "2026-10-12T14:35:02+0530",
+  "version": 2505,
   "last_id": 424,
   "team": [
    {
@@ -12033,7 +12033,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Integrator sweep 2026-10-07 (run-chain 2026-10-07)",
    "spec": "run-chain walkers (app/scripts/walk-scenarios.mjs and walk-ui.mjs, reports read by the run-chain) end with the content-schedule job still waiting on the Kie.ai image job in the simulator (cloud/scripts/vendor-sim.py Kie routes). Either make the simulator finish the image task within the walker's wait, or make the walker poll the content-schedule job until done with a bounded timeout. Rerun the three walkers (rsp, webinar, challenge) and the run-chain.",
    "done_when": [
@@ -12128,6 +12128,16 @@
      "ts": "2026-10-12T14:27:21+0530",
      "who": "claude",
      "note": "Verify pass, nothing had to change. The run-chain summary in the repo (workshop-plan/tasks/evidence/T-242/chain-1557/summary.txt, identical to /tmp/t242c/chain/summary.txt and on origin/main 314dd103) shows walk-webinar, walk-challenge and walk-rsp all PASS. Each report has findings [] and every job done, including content-schedule; the only Kie.ai text is the d1-kie card label. The red chain probes are tracked in T-424 and the coord LOG has the entry."
+    },
+    {
+     "ts": "2026-10-12T14:34:31+0530",
+     "who": "claude",
+     "note": "Correction: the chain-1557 red probes do not all match the baseline. export-site failed (empty log, most likely a concurrent export rebuilding the shared .export-scratch at 12:33), and probe-tantra-reminders (26 ok, 9 fail, was 88/5) and probe-workshop (5 fail lines, was 3) got worse; all three are now logged on T-424 and fixed there. The T-242 done_when items hold: all three walkers PASS with findings [] and no Kie.ai finding."
+    },
+    {
+     "ts": "2026-10-12T14:35:02+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-424."
     }
    ],
    "order": 2420
@@ -19075,6 +19085,11 @@
      "ts": "2026-10-12T14:00:23+0530",
      "who": "claude",
      "note": "Slice 3 (branch t424-chain-probes, commit 943be45e, stack :8940-8944): after a sim reset, probe-domain-chain (43 PASS) and probe-day1 (36 PASS) are green, both from probe drift. probe-day2 now gets past the T-269 card order (channels before pages, probe drift), but 9 checks fail because the agent never drafts: there are no draft events in the private D1, so the next step is to trace the auto-draft trigger and the runner on :8941 (its pid 91096 dates from 12:43). probe-workshop now skips only the two Next API checks on the static export (STATIC_EXPORT=1 set by run-chain, still checked against a Next server), not yet rerun. Left: the day2 drafting cause, then stack, context, tantra-reminders, workshop, the full chain, push, LOG.md, the T-299 note and the launchd restart."
+    },
+    {
+     "ts": "2026-10-12T14:34:31+0530",
+     "who": "claude",
+     "note": "From T-242 chain-1557 (/tmp/t242c/chain, workshop-plan/tasks/evidence/T-242/chain-1557/summary.txt), three probes are worse than the 09:09 baseline and belong here: export-site FAILs in 8s with an empty log (PASS in 19s at baseline), most likely because another export rebuilt the shared .export-scratch at 12:33 while the chain's build ran, and stage_site keeps only the last line of export-static.sh so the build error is lost; probe-tantra-reminders is 26 ok, 9 fail (was 88 ok, 5 fail), the Registered and plan email checks fail and it ends in TypeError reading 'at'; probe-workshop has 5 fail lines (was 3): /masterclass/success/join at 390px, /api/checkout mint and missing email, and /api/dodo/webhook forged signature."
     }
    ],
    "order": 4240
