@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T13:44:19+0530",
+   "task_id": "T-242",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "Stopped at the 70-minute wall clock for one run; the work so far is committed and the next run continues. Last report: The chain's webinar walker passed. Challenge and rsp are still running, so I'm waiting on those."
+  },
+  {
    "ts": "2026-10-12T12:29:30+0530",
    "task_id": "T-242",
    "mode": "feedback",
@@ -87,14 +95,6 @@
    "status": "review",
    "result": "ok",
    "summary": "I've checked the earlier T-407 work again from scratch and fixed one wrong statement in the blocker list. The task is back in review and the note was already acknowledged by the earlier run (`processed: True`), so `ack` had nothing to do.\n\n- **Ripple change (note R-a44d70eb): done.** The spec now sa"
-  },
-  {
-   "ts": "2026-10-12T07:48:28+0530",
-   "task_id": "T-034",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "turns",
-   "summary": "T-034 is still blocked: email and WhatsApp can't be sent until T-408/T-123 and T-400 land. The ripple from T-033 is applied, committed in eba46774 (not pushed), and note R-fc77b190 is acked.\n\n- **Email sender:** done. Runbook section 6 (`workshop-plan/ops/runbook.md`) now says the Resend From addres"
   }
  ],
  "state": "working",
@@ -104,7 +104,7 @@
   "F-4a0eb028"
  ],
  "mode": "feedback",
- "started": "2026-10-12T12:31:54+0530",
+ "started": "2026-10-12T13:45:08+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
