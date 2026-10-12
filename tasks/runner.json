@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:48:28+0530",
+   "task_id": "T-034",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "turns",
+   "summary": "T-034 is still blocked: email and WhatsApp can't be sent until T-408/T-123 and T-400 land. The ripple from T-033 is applied, committed in eba46774 (not pushed), and note R-fc77b190 is acked.\n\n- **Email sender:** done. Runbook section 6 (`workshop-plan/ops/runbook.md`) now says the Resend From addres"
+  },
+  {
    "ts": "2026-10-12T07:46:42+0530",
    "task_id": "T-351",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "turns",
    "summary": "(Held back from the public board: this note mentions a private client detail.)"
-  },
-  {
-   "ts": "2026-10-12T06:54:40+0530",
-   "task_id": "T-384",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "Nothing needed changing on T-384, so it stays blocked and the note is acknowledged. Its ask (checked in `tasks.json` this run) already says \"Act on T-115, T-339 and T-140\", the same sentence as on T-410.\n\n- **Ripple change (the ask names T-140):** done. It was already in place, so I made no edit and"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-034: Full dry run of the Day-1 pipeline",
- "task_id": "T-034",
+ "message": "Acting on 1 note(s) for T-407: T-226 Live Control: updated blocker list (checked live 2026-10-11)",
+ "task_id": "T-407",
  "entries": [
-  "R-fc77b190"
+  "R-a44d70eb"
  ],
  "mode": "feedback",
- "started": "2026-10-12T07:47:00+0530",
+ "started": "2026-10-12T07:48:38+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
@@ -117,7 +117,7 @@
   "T-268": 1,
   "T-242": 1,
   "T-058": 1,
-  "T-034": 1,
+  "T-034": 2,
   "T-351": 1
  },
  "api_capped": {
