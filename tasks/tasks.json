@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T08:05:42+0530",
-  "version": 2438,
+  "updated": "2026-10-12T08:08:59+0530",
+  "version": 2439,
   "last_id": 422,
   "team": [
    {
@@ -12809,6 +12809,11 @@
      "ts": "2026-10-12T07:55:11+0530",
      "who": "claude",
      "note": "Done-when now matches the Orchestrator wording (verified or decided per item, patches apply with tests and voice probe, Bharath's team applies upstream and updates Dodo). Re-checked today: the four patches apply cleanly with git am in README order on a scratch copy of adi-new-ui at 7a55658; items 1 to 9, the 5 evidence entries (incl. item 7 patch) and the README T-252 section (line 60) are on the card. Open workshop-plan/tantra-product-patches/README.md."
+    },
+    {
+     "ts": "2026-10-12T08:08:59+0530",
+     "who": "claude",
+     "note": "Verify pass, 12 Oct: the card already has the Orchestrator done-when, all 5 Evidence entries and one log line per item 1 to 9, and it is on origin/main (323d94fb). I re-ran the proof in this run on a fresh git-archive copy of adi-new-ui (7a55658). The four patches applied with git am in the README order, vitest passed 310 of 310, and the voice probe failed only on the missing PostHog env key across 39 pages. Open workshop-plan/tantra-product-patches/README.md, section T-252."
     }
    ],
    "order": 2520

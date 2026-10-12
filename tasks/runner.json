@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T08:09:13+0530",
+   "task_id": "T-252",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-252 checks out and stays in review for Bhaskar and Bharath. I re-ran every proof myself and nothing needed fixing.\n\n| Item | State | What I saw this run |\n|---|---|---|\n| Done-when uses the Orchestrator's wording | Done | All three lines are on the card in `tasks.json`. \"Bharath's team applies ups"
+  },
+  {
    "ts": "2026-10-12T07:53:07+0530",
    "task_id": "T-226",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-407 is back in review after the final sync: the spec now lists all 6 missing Tantra Centre scopes and the T-225 line is up to date. T-335 is still the only thing Adi has to do.\n\nCompletion check:\n1. **Sixth scope in item 1:** done. It now says Live Control reads 6 scopes missing (the 5 poll scopes"
-  },
-  {
-   "ts": "2026-10-12T07:04:09+0530",
-   "task_id": "T-403",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-403 is still blocked: it needs Adi at the Mac to unlock it and switch on Accessibility for Python.app. T-351 now only points to T-403, so this ask is no longer repeated there. T-416 still repeats it, though.\n\n- **Ask text uses Python.app only:** done. The ask on T-403 names Python.app and no longe"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-252: Tantra marketing site: settle the open pricing and copy decisions from the frontend-v2 pass",
- "task_id": "T-252",
+ "message": "Acting on 1 note(s) for T-273: Workshop Hub (index.html): review data, offer ladder, cohort dates and header",
+ "task_id": "T-273",
  "entries": [
-  "F-78aa0f90"
+  "F-5cc81a37"
  ],
  "mode": "feedback",
- "started": "2026-10-12T07:54:46+0530",
+ "started": "2026-10-12T08:09:33+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
