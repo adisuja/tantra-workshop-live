@@ -97,12 +97,14 @@
    "summary": "T-158 is back in review for Ben and Bharath. The Monday 2026-10-12 snapshot checks out, and I fixed the duplicate feature-decision line the last run left open (pushed as 30d6f021).\n\n**Completion check:**\n1. **Snapshot file and LOG line:** done. `workshop-plan/pipeline/snapshots/2026-10-12.json` is o"
   }
  ],
- "state": "idle",
- "mode": null,
- "task_id": null,
- "entries": [],
- "started": "2026-10-12T09:39:49+0530",
- "message": "Last sweep handled 0 task(s).",
+ "state": "working",
+ "mode": "feedback",
+ "task_id": "T-424",
+ "entries": [
+  "F-b27293b6"
+ ],
+ "started": "2026-10-12T12:41:59+0530",
+ "message": "Acting on 1 note(s) for T-424: Fix the seven chain probes that went red after 2026-10-07",
  "slices": {
   "T-135": 1,
   "T-300": 2,
