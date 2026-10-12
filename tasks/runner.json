@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T08:40:01+0530",
+   "task_id": "T-263",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I acknowledged note F-96aaf510 again, and pass.py reported \"acked 0\" because the previous run had already processed it at 08:39. I checked that on disk. T-263 is back in review for Adi and Bharath, and I changed no code.\n\n**Completion check (all checked on disk in this run):**\n- **Log line that supe"
+  },
+  {
    "ts": "2026-10-12T08:38:28+0530",
    "task_id": "T-033",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "I re-checked everything on T-229 and nothing needed to change. It stays in review. I made no code edits, so there was nothing to commit.\n\n**Completion check:**\n- **Ripple (Worker id and attendee count in T-229's record):** already up to date. The task record already pointed at Worker 3dc17ab7, and `"
-  },
-  {
-   "ts": "2026-10-12T07:08:27+0530",
-   "task_id": "T-228",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-228 stays blocked on T-408 and nothing in it changed: T-412 is now dropped, so T-408 is still Adi's only input.\n\n- **Reference T-412 as an input:** not done, and it shouldn't be. Checked in tasks.json this run: T-412 is \"dropped\" and T-408 is \"blocked\".\n- **Log T-234's live-run evidence here:** no"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-263: Centre: Tantra calendar workspace verification and invite campaign job fixes",
- "task_id": "T-263",
+ "message": "Acting on 1 note(s) for T-400: Input: connect the workshop WhatsApp number in Tantra and name the test number",
+ "task_id": "T-400",
  "entries": [
-  "F-96aaf510"
+  "R-b481d2bc"
  ],
  "mode": "feedback",
- "started": "2026-10-12T08:39:00+0530",
+ "started": "2026-10-12T08:40:24+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
