@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-13T00:56:43+0530",
-  "version": 2522,
+  "updated": "2026-10-13T00:59:43+0530",
+  "version": 2523,
   "last_id": 424,
   "team": [
    {
@@ -19162,6 +19162,11 @@
      "ts": "2026-10-13T00:56:43+0530",
      "who": "claude",
      "note": "fields.tsx fix (preselected option no longer clears on click) deployed to live revops-centre as version 578ed7be from a clean worktree of origin/main 9e52100e (build.sh rebuilt the bundle). Live /onboarding/ and /admin/ answer 200; the AI connection test still passes."
+    },
+    {
+     "ts": "2026-10-13T00:59:43+0530",
+     "who": "claude",
+     "note": "Mirror: no republish needed. A clean export of origin/main 9e52100e equals the live mirror cdba319b1 apart from the build id and timestamps; the static export drops the centre, so the fields.tsx fix reaches attendees only through the revops-centre Worker (578ed7be). Live mirror checked: 200, 0 console errors."
     }
    ],
    "order": 4240
