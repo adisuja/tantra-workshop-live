@@ -97,12 +97,14 @@
    "summary": "T-144 is still in review waiting on Amal. The edits are committed on main but not pushed.\n\n- **1. Spec text:** Done, but not as the note worded it. The \"Before asking for review: regenerate…\" sentence now says the hub was regenerated and published to mirror fa67765 on 2026-10-12 and the probe passes"
   }
  ],
- "state": "idle",
- "message": "Last sweep handled 0 task(s).",
- "task_id": null,
- "entries": [],
- "mode": null,
- "started": "2026-10-12T09:37:03+0530",
+ "state": "working",
+ "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
+ "task_id": "T-242",
+ "entries": [
+  "F-5e1f627c"
+ ],
+ "mode": "feedback",
+ "started": "2026-10-12T09:40:03+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
