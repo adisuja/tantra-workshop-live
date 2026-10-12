@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T14:55:51+0530",
-  "version": 2507,
+  "updated": "2026-10-12T18:35:45+0530",
+  "version": 2509,
   "last_id": 424,
   "team": [
    {
@@ -18297,7 +18297,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "queue",
    "why": "Real attendees on the live centre get no AI drafts until the live Worker has an Anthropic connection; the Claude Code logins only serve test attendees.",
    "spec": "",
    "done_when": [
@@ -18316,6 +18316,11 @@
      "ts": "2026-10-11T23:14:17+0530",
      "who": "claude",
      "note": "Checked this run: nothing else to build. The Worker already drafts through an Anthropic connection (cloud/src/ai.ts lines 220 and 329), the admin bundle offers the Anthropic type, and the live admin at https://revops-centre.growthcluborg.workers.dev/admin/?v=20261011 answers. Waiting only on the key, tracked as T-405; once it is saved, this task runs the live draft check and closes."
+    },
+    {
+     "ts": "2026-10-12T18:35:45+0530",
+     "who": "claude",
+     "note": "Own-systems work: do it with workshop-plan/tasks/centre_admin.py, never ask Adi (Adi 2026-10-12). The Anthropic key is already on this Mac at ~/.config/tantra/anthropic-api-key."
     }
    ],
    "order": 4040
@@ -18331,7 +18336,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "queue",
    "why": "",
    "spec": "Only Adi can do this (credential): Only Adi possesses the Anthropic API key needed for live attendee AI drafting.. Everything else in T-404 is being built around it. As soon as this is done, T-404 finishes on its own.",
    "done_when": [],
@@ -18343,6 +18348,11 @@
      "ts": "2026-10-11T13:13:43+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-404."
+    },
+    {
+     "ts": "2026-10-12T18:35:45+0530",
+     "who": "claude",
+     "note": "Own-systems work: do it with workshop-plan/tasks/centre_admin.py, never ask Adi (Adi 2026-10-12). The Anthropic key is already on this Mac at ~/.config/tantra/anthropic-api-key."
     }
    ],
    "order": 4050,
