@@ -1444,7 +1444,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
         <div class="dp-lane" style="--r:7" role="rowheader">Traffic test</div>
         <div class="dp-lane" style="--r:8" role="rowheader">Optimise</div>
         <div class="dp-cell" style="--c:2;--r:3" data-lane="Strategy" data-day="Day 1" role="cell"><ul><li>Write the offer</li><li>Name the method and voice</li><li>Score it on the value equation</li><li>Define the buyer persona</li></ul></div>
-        <div class="dp-cell" style="--c:2;--r:4" data-lane="Plan" data-day="Day 1" role="cell"><ul><li>Build the verified prospect list</li><li>Pick the funnel</li><li>Set the event date and time</li></ul></div>
+        <div class="dp-cell" style="--c:2;--r:4" data-lane="Plan" data-day="Day 1" role="cell"><ul><li>Build the prospect list</li><li>Pick the funnel</li><li>Set the event date and time</li></ul></div>
         <div class="dp-cell" style="--c:3;--r:5" data-lane="Assets" data-day="Day 2" role="cell"><ul><li>Outreach templates, two per channel</li><li>Landing and thank-you pages</li><li>The Tantra Flow</li><li>Run of show and polls</li><li>The close chain</li><li>Weekly newsletter and the five tags</li></ul></div>
         <div class="dp-cell" style="--c:4;--r:6" data-lane="Build" data-day="Day 3" role="cell"><ul><li>Connect Claude Code to every tool</li><li>Brief it and approve the spec</li><li>Prove three automations</li><li>The self-filling dashboard</li></ul></div>
         <div class="dp-cell dp-test" style="--c:4;--r:7" data-lane="Traffic test" data-day="Day 3" role="cell"><ul><li>One small test run, every link tagged</li></ul></div>
@@ -1697,14 +1697,14 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
       <!-- ===================== 5 · PROSPECT LIST ===================== -->
       <figure class="shot" style="--shot-w:733px;--shot-min-w:151px"><img src="../guides/pb-d1/04.webp" alt="The buyer persona card with headcount band, revenue band, industry, geography and role filled by an AI draft for a demo brand" loading="lazy" decoding="async" width="1440" height="990"><figcaption>The buyer persona card, shown for a demo brand. Fields 1 to 5 are the filters your data tool uses.</figcaption></figure>
       <h3 id="d1-step-5-build-the-prospect-list">Step 5: Build the Prospect List</h3>
-      <p><b>Why:</b> Day 2's invites go to named people with verified contact details. Unverified addresses bounce and damage the sending domains from Step 8.</p>
+      <p><b>Why:</b> Day 2's invites go to named people with working contact details. Bad addresses bounce and damage the sending domains from Step 8.</p>
       <div class="tbl"><table>
         <thead><tr><th>Tool</th><th>What it is for</th><th>Use it when</th></tr></thead>
         <tbody>
           <tr><td data-label="Tool"><b>Our data partners</b></td><td data-label="What it is for">Pull the rows from contact databases such as ZoomInfo for you and quote before anything is bought</td><td data-label="Use it when">You have no database account of your own</td></tr>
           <tr><td data-label="Tool"><b>ZoomInfo</b></td><td data-label="What it is for">Large company and contact database with buying-intent signals</td><td data-label="Use it when">Mid-market or enterprise buyers, and a larger budget</td></tr>
           <tr><td data-label="Tool"><b>Clay</b></td><td data-label="What it is for">Combines many data providers; adds funding, hiring and tech stack; tries several sources per email</td><td data-label="Use it when">You need the trigger (field 10), or better email coverage</td></tr>
-          <tr><td data-label="Tool"><b>An email verifier</b></td><td data-label="What it is for">Checks every address can receive mail before you send</td><td data-label="Use it when">Always, before any cold email</td></tr>
+          <tr><td data-label="Tool"><b>Free list checks</b></td><td data-label="What it is for">Remove duplicates, catch malformed emails and confirm each email matches the company domain</td><td data-label="Use it when">Always, before any cold email. The list arrives already verified by the vendor, so you never pay for a verifier</td></tr>
         </tbody>
       </table></div>
       <div class="srcnote"><b>Prices</b> change often. Check each vendor's pricing page before you buy.</div>
@@ -1715,12 +1715,12 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
             <li>Pick one database. Enter persona fields 1 to 5 as filters and your exclusions as negative filters.</li>
             <li>Export a first list of a few hundred to 1,000 people into a sheet: first name, last name, title, company, website, email, LinkedIn URL, country.</li>
             <li>Remove duplicates by email, your existing customers, and anyone who matches an exclusion.</li>
-            <li>Verify every email and keep only the valid ones.</li>
+            <li>Check every email is well formed and matches the company's domain. Drop the ones that fail. The vendor verified the list before delivery, so there is no paid check.</li>
             <li>Check the rules on cold outreach in your buyers' countries (for example GDPR in the EU and UK) before anything sends.</li>
           </ol>
-          <p><b>Example, for a consultancy:</b> titles "Managing Partner" and "Partner", 25 to 120 employees, Accounting, United Kingdom. Export, remove existing clients, verify, save as the Day 2 invite list.</p>
+          <p><b>Example, for a consultancy:</b> titles "Managing Partner" and "Partner", 25 to 120 employees, Accounting, United Kingdom. Export, remove existing clients, run the free checks, save as the Day 2 invite list.</p>
         </div>
-        <div class="meta"><span><i>Tool</i>Our data partners or your own database, a sheet, a verifier</span><span><i>Time</i>60 min</span><span class="pv"><i>Proof</i>A sheet of named people, every email verified</span></div>
+        <div class="meta"><span><i>Tool</i>Our data partners or your own database, a sheet</span><span><i>Time</i>60 min</span><span class="pv"><i>Proof</i>A sheet of named people, deduped, every email well formed and on the company domain</span></div>
       </div>
 
 
@@ -1899,22 +1899,11 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
         </div>
       </details>
 <!-- /wt:tantra -->
-      <!-- wt:workspace -->
-      <details class="wt" id="wt-workspace"><summary>Watch how to connect Google Workspace<span class="len">1:02</span></summary>
-        <div class="wtb">
-          <video controls playsinline preload="none" poster="../walkthroughs/workspace/poster.jpg"><source src="../walkthroughs/workspace/workspace.mp4" type="video/mp4"><track kind="captions" src="../walkthroughs/workspace/captions.vtt" srclang="en" label="English"></video>
-          <h4>Which Plan</h4><p>Any Google Workspace plan with you as super admin. Business Starter is the smallest; every mailbox the agent creates is a paid seat.</p>
-          <h4>Permissions to Grant</h4><ul><li>Domain-wide delegation for the Client ID on your card, with exactly the scopes on your card: Directory domains, Directory users and Site Verification.</li><li>Nothing that reads mail, Drive or Calendar.</li></ul>
-          <h4>Where the Key Appears</h4><p>No key to copy. admin.google.com, Security, Access and data control, API controls, Manage Domain Wide Delegation, Add new. Your centre card shows the Client ID, the scopes and the proof value.</p>
-          <h4>Common Errors</h4><dl><dt>Authorize fails in the Admin console</dt><dd>The Client ID was cut short or a scope was pasted twice. Copy both again from your card.</dd><dt>The card still says not authorized</dt><dd>Google can take up to 24 hours to apply it, usually minutes. Wait, then click Connect again.</dd><dt>You don't see API controls</dt><dd>Only a super admin can set this up. Ask whoever owns the Workspace to sign in.</dd></dl>
-        </div>
-      </details>
-<!-- /wt:workspace -->
       <div class="box sum"><div class="h">Your Day 1 Summary</div>
         <ol>
           <li>Your offer is one sentence a stranger can repeat, scored on the value equation and placed on a ladder.</li>
           <li>Your method, voice and proof are written once, so every asset sounds the same.</li>
-          <li>Your buyer is defined as an account and a person, and a verified list of them exists.</li>
+          <li>Your buyer is defined as an account and a person, and a clean list of them exists.</li>
           <li>Your funnel, event date and every channel are set, with domain warm-up already running.</li>
           <li>It all lives in <b>one strategy doc</b> with five blocks (offer, buyer, voice, method and proof). Day 2 builds every asset from it.</li>
         </ol></div>
@@ -2093,7 +2082,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 
             <rect x="16" y="112" width="828" height="44" rx="8" fill="var(--panel)"/>
             <text x="32" y="130" class="svlabel" font-size="11">Cold email</text><text x="32" y="146" class="svmute" font-size="9.5">sequenced outreach</text>
-            <text x="200" y="130" class="svsub">20/day unwarmed → 50/day warmed · 2 to 3 weeks of warm-up · verify the list below 1% bounce</text>
+            <text x="200" y="130" class="svsub">20/day unwarmed → 50/day warmed · 2 to 3 weeks of warm-up · keep the list below 1% bounce</text>
             <text x="200" y="146" class="svmute" font-size="9.5">reject any purchased list with more than 2% duplicates</text>
             <text x="832" y="146" text-anchor="end" fill="var(--pink)" font-size="10">inbox placement for every domain</text>
 
@@ -2159,7 +2148,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
             <li>Check you own separate outreach domains. If you didn't set them up on Day 1, do it now (Cold Email guide, step 1). Never use your main brand domain.</li>
             <li>Run every domain through the Google Admin Toolbox check. SPF, DKIM, DMARC and MX must all pass.</li>
             <li>Open your sending tool and confirm warm-up is on for every inbox, with the daily limit at 20.</li>
-            <li>Verify your lead list: under 1% bounce, and reject any bought file with more than 2% duplicates.</li>
+            <li>Check your lead list: deduped, every email well formed and on the company domain. Reject any bought file with more than 2% duplicates.</li>
           </ol>
         </div>
         <div class="meta"><span><i>Owner</i>You</span><span><i>Tool</i>Domain registrar · DNS · sending platform</span><span><i>Time</i>30 min if connected on Day 1, 90 min if not; then 2 to 3 weeks of warm-up</span><span class="dl"><i>Deliverable</i>Authenticated domains in warm-up</span><span class="pv"><i>Proof</i>A test send lands in the primary inbox, not promotions</span></div>
@@ -2570,7 +2559,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
         <div class="fb">
           <div class="fc w"><b>Webinar Funnel</b><span>One shot. The offer lands once, near the end, and has to survive being heard without scroll-back, so repeat the link in chat on a cadence and put it on the slide too.</span></div>
           <div class="fc k"><b>Workshop · Challenge</b><span>Three shots, and the offer is only on the last day. Days one and two have to <em>earn</em> day three by shipping something real each time: the artifact is the proof that the method works.</span></div>
-          <div class="fc r"><b>Reverse Squeeze</b><span>Nothing is live at all. Part 2 is recorded and delivered instantly, which means the "run of show" is an edit decision list: where the proof lands, where the offer lands, and where you cut.</span></div>
+          <div class="fc r"><b>Reverse Squeeze</b><span>Nothing is live at all. Part 2 is recorded and delivered at once, which means the "run of show" is an edit decision list: where the proof lands, where the offer lands, and where you cut.</span></div>
         </div>
         <div class="fo"><b>Other types:</b> product launches run this four times across a video sequence · a sideways sales letter spreads the same beats over multiple pages instead of minutes · book-a-call funnels have no delivery stage at all: the call <b>is</b> the delivery, which is why the qualification form matters so much more there.</div>
       </div>
@@ -2754,7 +2743,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
       <p>The core idea: <strong>you give the valuable thing away before you ask for anything.</strong> Not a teaser. Not a preview. The actual thing. The opt-in comes afterwards, and it converts far better because by then you've earned it.</p>
       <div class="viz wide">
         <div class="vtitle">The Reverse Squeeze Page Funnel: All Six Stages, No Date, No Form up Front</div>
-        <svg viewBox="0 0 860 758" role="img" aria-label="Reverse squeeze funnel across six stages. Stage one: the same six traffic channels, but every link points at content rather than a form. Stage two: Part One delivered openly with watch-depth tracking and an opt-in bridge that appears at a threshold. Stage three: depth-triggered nurture with three branches by consumption level. Stage four: Part Two gated and delivered instantly. Stage five: a backend offer routed by engagement score into a low-ticket or premium branch. Stage six: a dual-path growth engine. A loop returns re-engaged contacts to the top.">
+        <svg viewBox="0 0 860 758" role="img" aria-label="Reverse squeeze funnel across six stages. Stage one: the same six traffic channels, but every link points at content rather than a form. Stage two: Part One delivered openly with watch-depth tracking and an opt-in bridge that appears at a threshold. Stage three: depth-triggered nurture with three branches by consumption level. Stage four: Part Two gated and delivered at once. Stage five: a backend offer routed by engagement score into a low-ticket or premium branch. Stage six: a dual-path growth engine. A loop returns re-engaged contacts to the top.">
           <defs>
             <marker id="r1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--pink)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
             <marker id="r2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>

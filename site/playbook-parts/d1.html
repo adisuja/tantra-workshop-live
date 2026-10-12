@@ -208,14 +208,14 @@
       <figure class="shot" style="--shot-w:733px;--shot-min-w:151px"><img src="../guides/pb-d1/04.webp" alt="The buyer persona card with headcount band, revenue band, industry, geography and role filled by an AI draft for a demo brand" loading="lazy" decoding="async" width="1440" height="990"><figcaption>The buyer persona card, shown for a demo brand. Fields 1 to 5 are the filters your data tool uses.</figcaption></figure>
       <div class="vipslot" data-step="d1-step-4-define-the-buyer-persona"></div>
 <h3 id="d1-step-5-build-the-prospect-list">Step 5: Build the Prospect List</h3>
-      <p><b>Why:</b> Day 2's invites go to named people with verified contact details. Unverified addresses bounce and damage the sending domains from Step 8.</p>
+      <p><b>Why:</b> Day 2's invites go to named people with working contact details. Bad addresses bounce and damage the sending domains from Step 8.</p>
       <div class="tbl"><table>
         <thead><tr><th>Tool</th><th>What it is for</th><th>Use it when</th></tr></thead>
         <tbody>
           <tr><td data-label="Tool"><b>Our data partners</b></td><td data-label="What it is for">Pull the rows from contact databases such as ZoomInfo for you and quote before anything is bought</td><td data-label="Use it when">You have no database account of your own</td></tr>
           <tr><td data-label="Tool"><b>ZoomInfo</b></td><td data-label="What it is for">Large company and contact database with buying-intent signals</td><td data-label="Use it when">Mid-market or enterprise buyers, and a larger budget</td></tr>
           <tr><td data-label="Tool"><b>Clay</b></td><td data-label="What it is for">Combines many data providers; adds funding, hiring and tech stack; tries several sources per email</td><td data-label="Use it when">You need the trigger (field 10), or better email coverage</td></tr>
-          <tr><td data-label="Tool"><b>An email verifier</b></td><td data-label="What it is for">Checks every address can receive mail before you send</td><td data-label="Use it when">Always, before any cold email</td></tr>
+          <tr><td data-label="Tool"><b>Free list checks</b></td><td data-label="What it is for">Remove duplicates, catch malformed emails and confirm each email matches the company domain</td><td data-label="Use it when">Always, before any cold email. The list arrives already verified by the vendor, so you never pay for a verifier</td></tr>
         </tbody>
       </table></div>
       <div class="srcnote"><b>Prices</b> change often. Check each vendor's pricing page before you buy.</div>
@@ -226,12 +226,12 @@
             <li>Pick one database. Enter persona fields 1 to 5 as filters and your exclusions as negative filters.</li>
             <li>Export a first list of a few hundred to 1,000 people into a sheet: first name, last name, title, company, website, email, LinkedIn URL, country.</li>
             <li>Remove duplicates by email, your existing customers, and anyone who matches an exclusion.</li>
-            <li>Verify every email and keep only the valid ones.</li>
+            <li>Check every email is well formed and matches the company's domain. Drop the ones that fail. The vendor verified the list before delivery, so there is no paid check.</li>
             <li>Check the rules on cold outreach in your buyers' countries (for example GDPR in the EU and UK) before anything sends.</li>
           </ol>
-          <p><b>Example, for a consultancy:</b> titles "Managing Partner" and "Partner", 25 to 120 employees, Accounting, United Kingdom. Export, remove existing clients, verify, save as the Day 2 invite list.</p>
+          <p><b>Example, for a consultancy:</b> titles "Managing Partner" and "Partner", 25 to 120 employees, Accounting, United Kingdom. Export, remove existing clients, run the free checks, save as the Day 2 invite list.</p>
         </div>
-        <div class="meta"><span><i>Tool</i>Our data partners or your own database, a sheet, a verifier</span><span><i>Time</i>60 min</span><span class="pv"><i>Proof</i>A sheet of named people, every email verified</span></div>
+        <div class="meta"><span><i>Tool</i>Our data partners or your own database, a sheet</span><span><i>Time</i>60 min</span><span class="pv"><i>Proof</i>A sheet of named people, deduped, every email well formed and on the company domain</span></div>
       </div>
       <figure class="shot" style="--shot-w:734px;--shot-min-w:135px"><img src="../guides/pb-d1/05.webp" alt="The Pick where your list comes from card: the database options, the cold outreach rules, countries to leave out and customer email domains to exclude" loading="lazy" decoding="async" width="1440" height="1112"><figcaption>The list source card: one database, the outreach rules checked, and who to leave out.</figcaption></figure>
       <div class="vipslot" data-step="d1-step-5-build-the-prospect-list"></div>
@@ -387,20 +387,11 @@
           <h4>Common Errors</h4><dl><dt>Invalid API key</dt><dd>The key was mistyped or revoked. Create a new one and paste it with the copy icon.</dd><dt>API key has expired</dt><dd>An expiry date was set. Create a new key with the expiry left empty.</dd><dt>You lost the key</dt><dd>It can't be shown again. Revoke it with the bin icon and create a new one.</dd></dl>
         </div>
       </details>
-      <details class="wt" id="wt-workspace"><summary>Watch how to connect Google Workspace<span class="len">1:02</span></summary>
-        <div class="wtb">
-          <video controls playsinline preload="none" poster="../walkthroughs/workspace/poster.jpg"><source src="../walkthroughs/workspace/workspace.mp4" type="video/mp4"><track kind="captions" src="../walkthroughs/workspace/captions.vtt" srclang="en" label="English"></video>
-          <h4>Which Plan</h4><p>Any Google Workspace plan with you as super admin. Business Starter is the smallest; every mailbox the agent creates is a paid seat.</p>
-          <h4>Permissions to Grant</h4><ul><li>Domain-wide delegation for the Client ID on your card, with exactly the scopes on your card: Directory domains, Directory users and Site Verification.</li><li>Nothing that reads mail, Drive or Calendar.</li></ul>
-          <h4>Where the Key Appears</h4><p>No key to copy. admin.google.com, Security, Access and data control, API controls, Manage Domain Wide Delegation, Add new. Your centre card shows the Client ID, the scopes and the proof value.</p>
-          <h4>Common Errors</h4><dl><dt>Authorize fails in the Admin console</dt><dd>The Client ID was cut short or a scope was pasted twice. Copy both again from your card.</dd><dt>The card still says not authorized</dt><dd>Google can take up to 24 hours to apply it, usually minutes. Wait, then click Connect again.</dd><dt>You don't see API controls</dt><dd>Only a super admin can set this up. Ask whoever owns the Workspace to sign in.</dd></dl>
-        </div>
-      </details>
       <div class="box sum"><div class="h">Your Day 1 Summary</div>
         <ol>
           <li>Your offer is one sentence a stranger can repeat, scored on the value equation and placed on a ladder.</li>
           <li>Your method, voice and proof are written once, so every asset sounds the same.</li>
-          <li>Your buyer is defined as an account and a person, and a verified list of them exists.</li>
+          <li>Your buyer is defined as an account and a person, and a clean list of them exists.</li>
           <li>Your funnel, event date and every channel are set, with domain warm-up already running.</li>
           <li>It all lives in <b>one strategy doc</b> with five blocks (offer, buyer, voice, method and proof). Day 2 builds every asset from it.</li>
         </ol></div>
