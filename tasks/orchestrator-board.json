@@ -1,11 +1,11 @@
 {
  "running": null,
- "last_sweep": "2026-10-12T09:19:14+0530",
+ "last_sweep": "2026-10-12T09:30:00+0530",
  "counts": {
   "keep_hold": 58,
   "needs_adi": 28,
-  "proceed": 15,
-  "complete": 69,
+  "proceed": 14,
+  "complete": 70,
   "resolve": 8,
   "finish": 13,
   "drop": 1
@@ -962,8 +962,8 @@
    "input_task": "T-422"
   },
   "T-421": {
-   "verdict": "proceed",
-   "ts": "2026-10-12T08:57:37+0530",
+   "verdict": "complete",
+   "ts": "2026-10-12T09:30:00+0530",
    "input_task": null
   },
   "T-422": {
