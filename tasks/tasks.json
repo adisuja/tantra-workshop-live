@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T08:24:37+0530",
-  "version": 2450,
+  "updated": "2026-10-12T08:32:26+0530",
+  "version": 2452,
   "last_id": 422,
   "team": [
    {
@@ -14337,11 +14337,11 @@
    "evidence": [
     {
      "label": "Live hub",
-     "url": "https://adisuja.github.io/tantra-workshop-live/?v=t273p727"
+     "url": "https://adisuja.github.io/tantra-workshop-live/?v=t273v602"
     },
     {
      "label": "Local hub",
-     "url": "file:///Users/adithyamurali/tantra-redesign/workshop-plan/index.html?v=t273p727"
+     "url": "file:///Users/adithyamurali/tantra-redesign/workshop-plan/index.html?v=t273v602"
     }
    ],
    "blockers": [],
@@ -14411,6 +14411,11 @@
      "ts": "2026-10-12T08:20:48+0530",
      "who": "claude",
      "note": "Renamed the bug-1 patch to fix_bug-1-linkedin-account-id-regex--f7ef2beb53.patch, updated its 7 references and rebuilt the hub (main 8dc71a0d + 727bb8e6, pushed; mirror db3676997). index.html and the live page have no 'unipile' left, probe-visual-tools PASS and probe-review-hub says ALL LINKS OK both locally and on live (423 links, 23 pages). Open https://adisuja.github.io/tantra-workshop-live/?v=t273p727"
+    },
+    {
+     "ts": "2026-10-12T08:32:26+0530",
+     "who": "claude",
+     "note": "Verify pass: the bug-1 patch is now fix_bug-1-linkedin-account-id-regex--f7ef2beb53.patch, every file-name reference uses it (only the upstream branch name keeps the old word, and the hub does not show it), and the hub has no 'unipile'. probe-visual-tools says PASS. probe-review-hub says ALL LINKS OK on live (423 links) and on the local file. A fresh rebuild fixed four stale workshop-cards.ts source anchors (on main as 8eb66895, pushed), and I republished the hub to the mirror (602f467d1). AUDIT.md marks all ten ids fixed. Open https://adisuja.github.io/tantra-workshop-live/?v=t273v602"
     }
    ],
    "order": 2730
