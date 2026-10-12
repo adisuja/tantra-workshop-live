@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:46:42+0530",
+   "task_id": "T-351",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "turns",
+   "summary": "I checked T-351 against the T-403 change and nothing needed changing, so it stays blocked and the note is acknowledged.\n\n- **Ask points only at T-403:** done. The task's \"needs from owner\" field already says only \"Tracked on T-403 (unlock the Mac and grant Accessibility to Python.app)\", which I conf"
+  },
+  {
+   "ts": "2026-10-12T07:45:01+0530",
+   "task_id": "T-144",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-144 is still in review waiting on Amal. The edits are committed on main but not pushed.\n\n- **1. Spec text:** Done, but not as the note worded it. The \"Before asking for review: regenerate…\" sentence now says the hub was regenerated and published to mirror fa67765 on 2026-10-12 and the probe passes"
+  },
+  {
    "ts": "2026-10-12T07:41:09+0530",
    "task_id": "T-265",
    "mode": "feedback",
@@ -79,32 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "Nothing needed changing on T-384, so it stays blocked and the note is acknowledged. Its ask (checked in `tasks.json` this run) already says \"Act on T-115, T-339 and T-140\", the same sentence as on T-410.\n\n- **Ripple change (the ask names T-140):** done. It was already in place, so I made no edit and"
-  },
-  {
-   "ts": "2026-10-12T04:31:11+0530",
-   "task_id": "T-144",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I re-checked T-144 and nothing needed fixing. It stays in review for Amal at https://adisuja.github.io/tantra-workshop-live/?v=fa67765#review. I committed the task log locally as 9914aab6 and did not push it.\n\n**Completion check (all evidence from this run):**\n1. **Hub regenerated on main and probe "
-  },
-  {
-   "ts": "2026-10-12T04:17:23+0530",
-   "task_id": "T-272",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-272 is done: neither waiting list Adi reads has any `?k=` sign-in links left, and I acked note F-6449aa40.\n\n**Completion check (all checked this run):**\n- **WAITING_ON_ADI.md:** done. A grep for `enter?k=` finds 0. Each sign-in now points to https://revops-centre.growthcluborg.workers.dev/admin/en"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-144: Workshop Hub Review tab: every funnel element with preview, source and approve or feedback",
- "task_id": "T-144",
+ "message": "Acting on 1 note(s) for T-034: Full dry run of the Day-1 pipeline",
+ "task_id": "T-034",
  "entries": [
-  "F-8e30f57c"
+  "R-fc77b190"
  ],
  "mode": "feedback",
- "started": "2026-10-12T07:41:43+0530",
+ "started": "2026-10-12T07:47:00+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
@@ -117,7 +117,8 @@
   "T-268": 1,
   "T-242": 1,
   "T-058": 1,
-  "T-034": 1
+  "T-034": 1,
+  "T-351": 1
  },
  "api_capped": {
   "T-229": "2026-10-12T00:18:33+0530",

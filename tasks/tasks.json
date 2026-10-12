@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T07:44:18+0530",
-  "version": 2417,
+  "updated": "2026-10-12T07:45:38+0530",
+  "version": 2419,
   "last_id": 422,
   "team": [
    {
@@ -7790,6 +7790,11 @@
      "ts": "2026-10-12T07:42:16+0530",
      "who": "claude",
      "note": "Committed as 7383cfe2 on main but not pushed. main is 5 commits ahead of origin, 4 of them from other lanes (T-074, T-265, T-157, T-299, and T-299 says it is not ready to push), so pushing main would publish more than the approved T-144 edit. The next Integrator publish carries it. Still waiting on Amal's review."
+    },
+    {
+     "ts": "2026-10-12T07:44:45+0530",
+     "who": "claude",
+     "note": "Verify pass: the spec, evidence (?v=fa67765, 475 elements) and Amal's log line are committed on main (7383cfe2, e707ddbc), and the live hub is byte-identical to main's index.html with Two-Month Platform Pass and no '1 month, worth $99'. Not pushed: main is 7 commits ahead of origin with other lanes' work (T-299 says it is not ready), so the next Integrator publish carries it. Amal: open https://adisuja.github.io/tantra-workshop-live/?v=fa67765#review and approve or request changes."
     }
    ],
    "order": 1440,
@@ -17302,6 +17307,11 @@
      "ts": "2026-10-12T07:03:40+0530",
      "who": "claude",
      "note": "Per the Orchestrator decision on T-403, the duplicate ask moved off this task: Adi's one physical input lives on T-403. The runner's shots_gate closes this on READY."
+    },
+    {
+     "ts": "2026-10-12T07:45:38+0530",
+     "who": "claude",
+     "note": "Ripple from T-403 checked: needs_from_owner already only points at T-403 (unlock the Mac, grant Accessibility to Python.app) with no duplicate ask or 'other app' wording, so nothing had to change. Preflight rerun 2026-10-12 still prints NOT READY (Accessibility NO, Mac locked; Screen Recording yes, Claude window id 192 found); the runner's shots_gate closes this on READY."
     }
    ],
    "order": 3510
