@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T12:53:07+0530",
-  "version": 2497,
+  "updated": "2026-10-12T13:12:55+0530",
+  "version": 2499,
   "last_id": 424,
   "team": [
    {
@@ -19051,6 +19051,11 @@
      "ts": "2026-10-12T12:53:07+0530",
      "who": "claude",
      "note": "Slice 1 on branch t424-chain-probes (worktree /private/tmp/t424-wt, private stack :8940-8944). probe-domain-chain now passes the tool card and calendar card: probe drift (Title Case titles, T-269 l-f- label ids, T-270 preselect, T-299 calendar domain field and new wording) plus one product bug fixed in centre/fields.tsx (pressing a preselected chip cleared it while it still looked picked, locking Mark done). Its last red check, 2 zones active, came from my stack's sim reset leaving the old simulator running; fixed, the sim now starts at 0 zones. Left: rerun domain-chain, then day1, day2, stack, context (CENTRE_PERSIST), tantra-reminders (plan_url and calendar link), the probe-workshop static-export skip, the full chain, push, LOG.md, the T-299 note and the launchd restart."
+    },
+    {
+     "ts": "2026-10-12T13:12:55+0530",
+     "who": "claude",
+     "note": "Slice 2 on branch t424-chain-probes (worktree /private/tmp/t424-wt, stack :8940-8944): probe-domain-chain is green (43 PASS); its last red came from probe drift, since T-261 now has the agent register an unowned calendar domain at Cloudflare first. probe-day1 and probe-day2 were updated for probe drift (T-269 Plan Your Day cards, T-261 wording 'DNS isn't active in your Cloudflare account', commit 197db067) but are not yet rerun after that last fix. Left: rerun reset, domain-chain, day1, day2 in order, then stack, context, tantra-reminders, workshop, the full chain, and the approved push, LOG.md, T-299 note and launchd restart."
     }
    ],
    "order": 4240
