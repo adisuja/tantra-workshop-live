@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T07:42:16+0530",
-  "version": 2414,
+  "updated": "2026-10-12T07:44:18+0530",
+  "version": 2417,
   "last_id": 422,
   "team": [
    {
@@ -3272,6 +3272,16 @@
      "ts": "2026-10-11T22:35:09+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-252, T-398."
+    },
+    {
+     "ts": "2026-10-12T07:42:31+0530",
+     "who": "claude",
+     "note": "Ripple from T-398: the patch README's last apply step said the embed goes live once Adi creates the event; it now says creating the event satisfies Adi's input, but /enterprise shows Cal.com only after Bharath's team applies adi-new-ui--5d6eecf642.patch upstream (commit f3dd5579; the event draft already said this). Checked today: cal.com/adisuja/tantra-enterprise-evaluation-call still returns 404 (T-398 open) and the Chaperone grep of app/src/components is empty. Bhaskar and Bharath to approve the copy."
+    },
+    {
+     "ts": "2026-10-12T07:43:40+0530",
+     "who": "claude",
+     "note": "Verify pass for the T-398 ripple: nothing had to change. README step 5 already says creating the Cal.com event covers Adi's input but /enterprise shows the calendar only after Bharath's team applies adi-new-ui--5d6eecf642.patch (the patch deletes calendly-embed.tsx, adds the Cal.com inline embed, and mentions Calendly only in comments). Checked today: Chaperone grep of app/src/components is empty, probe-funnel-boards.mjs against the mirror prints ALL BOARDS FIT, the mirror challenge board (https://adisuja.github.io/tantra-workshop-live/site/funnels/challenge/?v=t072v6) shows Tantra Enterprise 7 times and Chaperone 0, and cal.com/adisuja/tantra-enterprise-evaluation-call still returns 404, so this waits on T-398 plus Bhaskar and Bharath's copy approval."
     }
    ],
    "order": 440,
@@ -17587,6 +17597,11 @@
      "ts": "2026-10-12T06:53:56+0530",
      "who": "claude",
      "note": "Ripple from T-140 checked: the ask already reads 'Act on T-115, T-339 and T-140', the same sentence as T-410, so nothing had to change. Still waiting on Adi's one desktop sitting."
+    },
+    {
+     "ts": "2026-10-12T07:44:18+0530",
+     "who": "claude",
+     "note": "Orchestrator decision applied: nothing changed. The ask already reads 'Act on T-115, T-339 and T-140', and no captures were run on the unattended runner. Still waiting on Adi's one desktop sitting with Claude in Chrome (tracked as T-420)."
     }
    ],
    "order": 3840,
