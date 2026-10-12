@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T08:43:15+0530",
-  "version": 2467,
-  "last_id": 422,
+  "updated": "2026-10-12T08:44:47+0530",
+  "version": 2470,
+  "last_id": 423,
   "team": [
    {
     "name": "Adi",
@@ -18878,10 +18878,44 @@
      "ts": "2026-10-12T08:43:15+0530",
      "who": "claude",
      "note": "Ripple check: the ask already carried both routes (connect Claude in Chrome on 'Browser 1', or redeploy by hand). I added that this is Adi's one input for T-414 and T-409, and nothing else changed. Still blocked on the redeploy. workshop-plan/ops/apps-script/Code.gs is on disk, ready to paste."
+    },
+    {
+     "ts": "2026-10-12T08:43:57+0530",
+     "who": "claude",
+     "note": "Verify pass: the ask already names both routes (connect Claude in Chrome on 'Browser 1', or redeploy 'Tantra Funnel' by hand) and says it is Adi's one input for T-414 and T-409, so nothing had to change. Health GET of the live exec URL today still lists no tier_qualifier, so the redeploy has not happened yet; workshop-plan/ops/apps-script/Code.gs is ready to paste."
     }
    ],
    "order": 4220,
    "input_for": "T-414",
+   "kind": "input"
+  },
+  {
+   "id": "T-423",
+   "title": "Input from Adi for T-422: Either connect Claude in Chrome on profile 'Browser 1' (adi@growthclub.org) so t",
+   "area": "Ops",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (signin): Only adi@growthclub.org's Google session can redeploy this script; no credential on this Mac has Apps Script access.. Everything else in T-422 is being built around it. As soon as this is done, T-422 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Either connect Claude in Chrome on profile 'Browser 1' (adi@growthclub.org) so the agent redeploys itself, or, signed in as adi@growthclub.org, open https://script.google.com/home > project 'Tantra Funnel' > paste workshop-plan/ops/apps-script/Code.gs over Code.gs > Deploy > Manage deployments > edit (pencil) > Version: New version > Deploy.",
+   "log": [
+    {
+     "ts": "2026-10-12T08:44:47+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-422."
+    }
+   ],
+   "order": 4230,
+   "input_for": "T-422",
    "kind": "input"
   }
  ]
