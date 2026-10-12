@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:37:55+0530",
+   "task_id": "T-242",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "The run-chain is still running, so T-242 isn't finished. I'll read the walker results when the background wait reports back.\n\n**Completion check (so far)**\n1. **Check walk.pid and chain.pid:** done in the earlier part of this run. The new chain is PID 16831.\n2. **Report.json always written:** done i"
+  },
+  {
    "ts": "2026-10-12T07:33:51+0530",
    "task_id": "T-400",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-409 is still blocked: the Apps Script has not been redeployed, and this run had no Claude in Chrome connection to do it.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Check for a Chrome connection on profile 'Browser 1' | Not connected | This session has no Chrome tools, so I didn't t"
-  },
-  {
-   "ts": "2026-10-12T04:20:19+0530",
-   "task_id": "T-123",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "(Held back from the public board: this note mentions a private client detail.)"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-242",
+ "task_id": "T-414",
  "entries": [
-  "F-f1fe8020"
+  "R-d3e93d9a"
  ],
- "started": "2026-10-12T07:34:02+0530",
- "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
+ "started": "2026-10-12T07:38:01+0530",
+ "message": "Acting on 1 note(s) for T-414: Input from Adi for T-409: Signed in as adi@growthclub.org, open https://script.google.com/home > project '",
  "slices": {
   "T-072": 1,
   "T-250": 1,
@@ -117,7 +117,7 @@
   "T-278": 1,
   "T-059": 2,
   "T-300": 1,
-  "T-242": 1,
+  "T-242": 2,
   "T-265": 1,
   "T-400": 1
  },
