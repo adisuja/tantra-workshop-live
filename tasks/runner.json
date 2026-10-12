@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T08:38:28+0530",
+   "task_id": "T-033",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "turns",
+   "summary": "T-033 is still blocked: the Day 1 test email and WhatsApp can't be sent until Adi finishes T-408 (the sending domain) and T-419 (the test WhatsApp number). Everything else the Orchestrator asked for checks out in this run, and I changed no code.\n\n1. **Push and deploy:** done, nothing new to push or "
+  },
+  {
    "ts": "2026-10-12T08:32:40+0530",
    "task_id": "T-273",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-228 stays blocked on T-408 and nothing in it changed: T-412 is now dropped, so T-408 is still Adi's only input.\n\n- **Reference T-412 as an input:** not done, and it shouldn't be. Checked in tasks.json this run: T-412 is \"dropped\" and T-408 is \"blocked\".\n- **Log T-234's live-run evidence here:** no"
-  },
-  {
-   "ts": "2026-10-12T07:07:46+0530",
-   "task_id": "T-335",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-335 is still blocked. I read Live Control (`/admin/api/zoom/control`) again in this run: Seat credentials still show `saved: false` and all 5 Tantra Centre poll scopes are still missing. The task stays blocked on Adi's one Zoom sign-in (T-417), and F-c33a5864 was already marked processed by the ea"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-033: WhatsApp + email delivery automation",
- "task_id": "T-033",
+ "message": "Acting on 1 note(s) for T-263: Centre: Tantra calendar workspace verification and invite campaign job fixes",
+ "task_id": "T-263",
  "entries": [
-  "F-c448338f"
+  "F-96aaf510"
  ],
  "mode": "feedback",
- "started": "2026-10-12T08:33:29+0530",
+ "started": "2026-10-12T08:39:00+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
@@ -118,7 +118,8 @@
   "T-242": 1,
   "T-058": 1,
   "T-034": 2,
-  "T-351": 1
+  "T-351": 1,
+  "T-033": 1
  },
  "api_capped": {
   "T-229": "2026-10-12T00:18:33+0530",

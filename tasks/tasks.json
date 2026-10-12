@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T08:36:35+0530",
-  "version": 2454,
+  "updated": "2026-10-12T08:38:23+0530",
+  "version": 2456,
   "last_id": 422,
   "team": [
    {
@@ -1897,12 +1897,12 @@
      "url": "app/scripts/probe-day-delivery.mjs"
     },
     {
-     "label": "Probe (output delivery)",
+     "label": "Probe (output delivery, 20/20)",
      "url": "app/scripts/probe-output-delivery.mjs"
     },
     {
      "label": "Live delivery status (admin)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/api/delivery?v=t033v9"
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/api/delivery?v=t033v10"
     }
    ],
    "blockers": [],
@@ -2047,6 +2047,11 @@
      "ts": "2026-10-12T08:35:21+0530",
      "who": "claude",
      "note": "Nothing left to push or deploy: the delivery commits (3d7c62a2, a7d83a00) are on origin/main and in the live revops-centre Worker (version 7a94c18c from 8eb66895, no cloud change since). Live /admin/api/delivery shows delivery_whatsapp_account 6acbd96d05f08b0c4b56f207 running, wired to the 3 draft Day campaigns 6acc378b, 6acc37a1, 6acc37a9, with reminders whatsapp=null; probe-day-delivery passed 27/27 and probe-output-delivery passed on a fresh local centre. No Adi test attendee has a WhatsApp number (read only check), so the Day 1 WhatsApp waits on T-419 and the email on T-408."
+    },
+    {
+     "ts": "2026-10-12T08:37:09+0530",
+     "who": "claude",
+     "note": "Verify pass: both delivery commits are on origin/main and in the live revops-centre Worker (version 7a94c18c), so nothing new needed pushing or deploying. On a fresh local centre with the simulator, probe-day-delivery passed 27/27 and probe-output-delivery 20/20, covering no duplicate on the next tick and no Twilio, n8n or SendGrid call. Live /admin/api/delivery shows delivery_whatsapp_account 6acbd96d (running) wired to the 3 Day drafts, and reminders read whatsapp null. None of the 9 Adi test attendees has a WhatsApp number, so the Day 1 WhatsApp test waits on T-419 and the email test on T-408."
     }
    ],
    "order": 230,
@@ -18303,7 +18308,7 @@
    "due": "",
    "status": "review",
    "why": "Adi 2026-10-11 (F-532a89ae): give me an updated list of blockers for T-226, as a separate task.",
-   "spec": "Checked live on 2026-10-11 from Live Control (/admin/api/zoom/control). The only Adi item is T-335, whose single input is tracked as T-417.\n1. ADI (T-335, tracked as T-417, one Zoom sign-in): the ask is unchanged, the SDK app credentials plus the 5 poll scopes in one sign-in at https://marketplace.zoom.us: (1) at https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), or open it if it exists, and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, Save; (2) in the same sign-in, Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, plus meeting:delete:meeting:admin (found missing by T-245 on 2026-10-12), Save. The earlier ripple asking to strip the poll scopes from this ask is ignored (decision on T-335, 2026-10-12 03:10): no Zoom-signed-in browser is available to Claude, so they stay in Adi's one sign-in. Live Control checks the 5 poll scopes and reads all 5 missing today (re-read 2026-10-12); meeting:delete:meeting:admin is not in its check and comes from T-245's Zoom 400 (code 4711).\n2. Queued behind T-335 (Claude): download ZoomSDK.framework from the new app's Embed page into cloud/seat/Frameworks and build the seat app (launchd com.tantra.live-control logs 'Built without ZoomSDK.framework' today).\n3. Queued behind T-335 (Claude, Adi hosting): the test meeting proving chat, CTA, a live poll reaching zoom_polls, the room lock and co-host promotion. The seat has never connected.\n4. Done for review: Day 1, 2 and 3 run sheets drafted (24 items: chat, CTA, polls) and saved on https://revops-centre.growthcluborg.workers.dev/admin/control; copy in workshop-plan/ops/live-control-runsheet-draft.json. Bhaskar reviews chat and CTA wording, Adi reviews polls.\n5. Decided: Adi is the only host; the co-host list stays empty unless Nelbin adds emails on Live Control.\nNot a blocker: Zoom Support has not granted host mute or video locks (T-225, waiting on Zoom); the seat's room lock covers both. The T-225 write test ran once on 2026-10-11 (12:42, 'not granted', room restored), a same-day rerun guard is in place (commits 5c1badf4 and 9c303f20: a rerun prints 'Write test already ran today' and never PATCHes again), and the 09:10 daily job logs one entry per day. Already live: ZOOM_BOT_KEY, migration 0019, Live Control page, seat app code, launchd opener.",
+   "spec": "Checked live on 2026-10-11 from Live Control (/admin/api/zoom/control). The only Adi item is T-335 (tracked as T-417).\n1. ADI (T-335, tracked as T-417, one Zoom sign-in): the ask is unchanged, the SDK app credentials plus 6 Tantra Centre scopes (the 5 poll scopes and meeting:delete:meeting:admin) in one sign-in at https://marketplace.zoom.us: (1) at https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), or open it if it exists, and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, Save; (2) in the same sign-in, Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, plus meeting:delete:meeting:admin (found missing by T-245 on 2026-10-12), Save. The earlier ripple asking to strip the poll scopes from this ask is ignored (decision on T-335, 2026-10-12 03:10): no Zoom-signed-in browser is available to Claude, so they stay in Adi's one sign-in. Live Control checks the 5 poll scopes and reads all 5 missing today (re-read 2026-10-12); meeting:delete:meeting:admin is not in its check and comes from T-245's Zoom 400 (code 4711).\n2. Queued behind T-335 (Claude): download ZoomSDK.framework from the new app's Embed page into cloud/seat/Frameworks and build the seat app (launchd com.tantra.live-control logs 'Built without ZoomSDK.framework' today).\n3. Queued behind T-335 (Claude, Adi hosting): the test meeting proving chat, CTA, a live poll reaching zoom_polls, the room lock and co-host promotion. The seat has never connected.\n4. Done for review: Day 1, 2 and 3 run sheets drafted (24 items: chat, CTA, polls) and saved on https://revops-centre.growthcluborg.workers.dev/admin/control; copy in workshop-plan/ops/live-control-runsheet-draft.json. Bhaskar reviews chat and CTA wording, Adi reviews polls.\n5. Decided: Adi is the only host; the co-host list stays empty unless Nelbin adds emails on Live Control.\nNot a blocker: Zoom Support has not granted host mute or video locks (T-225, waiting on Zoom); the seat's room lock covers both. The T-225 write test ran once on 2026-10-11 (12:42, 'not granted', room restored), a same-day rerun guard is in place (commits 5c1badf4 and 9c303f20: a rerun prints 'Write test already ran today' and never PATCHes again), and the 09:10 daily job logs one entry per day. Already live: ZOOM_BOT_KEY, migration 0019, Live Control page, seat app code, launchd opener.",
    "done_when": [],
    "evidence": [
     {
@@ -18372,6 +18377,11 @@
      "ts": "2026-10-12T07:50:01+0530",
      "who": "claude",
      "note": "Verify pass on the T-417 ripple: the blocker list already says T-335's one Adi input is tracked as T-417, with the ask unchanged and the strip-the-poll-scopes ripple ignored. Re-reading Live Control today showed it checks only the 5 poll scopes (all missing, no seat credentials saved), so I corrected the 'reads all 6' line: meeting:delete:meeting:admin comes from T-245. Open https://revops-centre.growthcluborg.workers.dev/admin/control?v=t407vp4"
+    },
+    {
+     "ts": "2026-10-12T08:38:23+0530",
+     "who": "claude",
+     "note": "Spec now names T-417 in the opening line and item 1, and the ask keeps all 6 Tantra Centre scopes (5 poll scopes plus meeting:delete:meeting:admin); Live Control state unchanged, so no rerun. Open https://revops-centre.growthcluborg.workers.dev/admin/control?v=t407o5b"
     }
    ],
    "order": 4070
