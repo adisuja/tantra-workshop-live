@@ -49,12 +49,12 @@
    "summary": "T-125 → review. Both join pages now offer Google Calendar + one-file .ics for all three sessions, and the session link shows \"arrives before Day 1\" while the Zoom link is still pending; verified via tsc, eslint, curl, and clean headless screenshots (`/tmp/workshop-join.png`, `/tmp/masterclass-succes"
   }
  ],
- "state": "paused",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 75% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 11:51.",
- "task_id": null,
+ "state": "working",
+ "message": "Continuing T-299: Centre: cold email inboxes come from the inbox vendor only, several calendar senders, and a sign-up inbox card",
+ "task_id": "T-299",
  "entries": [],
- "mode": null,
- "started": "2026-10-12T11:35:24+0530",
+ "mode": "queue",
+ "started": "2026-10-12T11:55:21+0530",
  "api_capped": {
   "T-073": "2026-10-12T04:30:40+0530",
   "T-299": "2026-10-12T11:15:31+0530"

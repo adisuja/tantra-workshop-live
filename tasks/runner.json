@@ -97,12 +97,14 @@
    "summary": "I checked T-351 against the T-403 change and nothing needed changing, so it stays blocked and the note is acknowledged.\n\n- **Ask points only at T-403:** done. The task's \"needs from owner\" field already says only \"Tracked on T-403 (unlock the Mac and grant Accessibility to Python.app)\", which I conf"
   }
  ],
- "state": "paused",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 75% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 11:51.",
- "task_id": null,
- "entries": [],
- "mode": null,
- "started": "2026-10-12T09:40:03+0530",
+ "state": "working",
+ "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
+ "task_id": "T-242",
+ "entries": [
+  "F-5e1f627c"
+ ],
+ "mode": "feedback",
+ "started": "2026-10-12T11:55:42+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
