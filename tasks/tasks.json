@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T08:47:56+0530",
-  "version": 2480,
+  "updated": "2026-10-12T08:48:49+0530",
+  "version": 2483,
   "last_id": 423,
   "team": [
    {
@@ -18457,7 +18457,7 @@
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Tracked as one input on T-414 (T-422): connect Claude in Chrome on profile 'Browser 1' (adi@growthclub.org) so an agent redeploys itself, or, signed in as adi@growthclub.org, open https://script.google.com > 'Tantra Funnel' > paste workshop-plan/ops/apps-script/Code.gs > Deploy > Manage deployments > edit > Version: New version > Deploy.",
+   "needs_from_owner": "Tracked as one input on T-423 (under T-422, covering T-414 and T-409): connect Claude in Chrome on profile 'Browser 1' (adi@growthclub.org) so an agent redeploys itself, or, signed in as adi@growthclub.org, open https://script.google.com > 'Tantra Funnel' > paste workshop-plan/ops/apps-script/Code.gs > Deploy > Manage deployments > edit > Version: New version > Deploy.",
    "log": [
     {
      "ts": "2026-10-11T22:30:07+0530",
@@ -18488,6 +18488,11 @@
      "ts": "2026-10-12T08:42:35+0530",
      "who": "claude",
      "note": "Waiting-on now points to T-414/T-422 as the single input, with the self-redeploy route via Claude in Chrome 'Browser 1'. Checked today: the exec URL health GET still lists only the 6 original forms, and this run had no Claude in Chrome connection. Finish steps once it lands: confirm tier_qualifier is listed, post one probe row, publish the qualifier to the mirror, rerun probe-tier-qualifier.mjs."
+    },
+    {
+     "ts": "2026-10-12T08:48:49+0530",
+     "who": "claude",
+     "note": "Waiting-on now points to T-423, the single input for T-414 and T-409. Checked today: the exec URL health GET still lists only the 6 original forms (no tier_qualifier). This closes with evidence once the redeploy lands, the health GET shows tier_qualifier and a probe row reaches the Work Tracker."
     }
    ],
    "order": 4090
@@ -18922,6 +18927,11 @@
      "ts": "2026-10-12T08:47:56+0530",
      "who": "claude",
      "note": "Verify pass: this unattended run has no Claude in Chrome tools, so Browser 1 is not connected and I could not redeploy. Health GET of the live exec URL today still lists only the 6 old forms (no tier_qualifier); Code.gs on disk carries tier_qualifier and is ready to paste. Probe row, mirror publish and closing T-414/T-409/T-157 follow once the redeploy lands."
+    },
+    {
+     "ts": "2026-10-12T08:48:26+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-409, T-414."
     }
    ],
    "order": 4220,

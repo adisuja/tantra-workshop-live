@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T08:50:16+0530",
+   "task_id": "T-242",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Stopped at the 70-minute wall clock for one run; the work so far is committed and the next run continues. Last report: walk-webinar passed in the chain (0 findings). Challenge is running next, then rsp, about 35 min each."
+  },
+  {
    "ts": "2026-10-12T07:39:46+0530",
    "task_id": "T-299",
    "mode": "feedback",
@@ -87,14 +95,6 @@
    "status": "review",
    "result": "ok",
    "summary": "T-223 stays in review: the spec already had every change the Orchestrator asked for, production still shows no real sign-up, and nothing needed rebuilding.\n\n| Item | State and evidence from this run |\n|---|---|\n| 1. Spec ripple | **Done.** The spec says 51c7ee1 is on origin/main, is live on Worker 9"
-  },
-  {
-   "ts": "2026-10-12T03:23:45+0530",
-   "task_id": "T-228",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-228 is still blocked. The reminders probe passed 93 checks with 0 failures on vendor-sim, but the live welcome email can't run: the GrowthClub workspace has no connected mailbox, and the sender the Orchestrator approved (team@growthclub.org) is the one Adi ruled out on 2026-10-12.\n\n| Item | State "
   }
  ],
  "state": "working",
@@ -103,12 +103,12 @@
  "entries": [
   "F-f1fe8020"
  ],
- "started": "2026-10-12T07:40:11+0530",
+ "started": "2026-10-12T08:50:40+0530",
  "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
  "slices": {
   "T-135": 1,
   "T-300": 2,
-  "T-242": 4,
+  "T-242": 5,
   "T-052": 1,
   "T-292": 1,
   "T-270": 1,
