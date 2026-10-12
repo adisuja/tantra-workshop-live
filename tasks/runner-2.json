@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:09:01+0530",
+   "task_id": "T-101",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I'm finishing T-101. The task is back in review for Bhaskar, and nothing needed rebuilding or pushing because the probe found no defect.\n\nThe leftover `d29a1055` is only in an old log entry. It's no longer in the ask or the Evidence.\n\nCompletion check:\n1. **Mirror head and probe:** Done. The mirror "
+  },
+  {
    "ts": "2026-10-12T07:04:30+0530",
    "task_id": "T-033",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-052 is still blocked: team@growthclub.org isn't connected in the GrowthClub Tantra workspace, so I didn't create the campaigns or run the live test.\n\n- **Update the ask:** done. needs_from_owner now points only at T-411, which is the same ask as T-123 and T-408 (connect the mailbox and save the ro"
-  },
-  {
-   "ts": "2026-10-12T03:09:12+0530",
-   "task_id": "T-226",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-226 stays blocked on T-335; I updated its ask to match the live state, but the poll scopes are not added yet, although the ripple note said they were.\n\n- **Run sheets drafted:** done. I checked them live on Live Control just now: 24 chat, CTA and poll items covering Days 1 to 3.\n- **Host is Adi, c"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-101",
+ "task_id": "T-158",
  "entries": [
-  "F-e14f97bd"
+  "F-52594326"
  ],
- "started": "2026-10-12T07:05:43+0530",
- "message": "Acting on 1 note(s) for T-101: Key-art system across join, confirmation and onboarding pages",
+ "started": "2026-10-12T07:09:48+0530",
+ "message": "Acting on 1 note(s) for T-158: Pipeline dashboard modelled on a client's webinar desk",
  "slices": {
   "T-072": 1,
   "T-250": 1,

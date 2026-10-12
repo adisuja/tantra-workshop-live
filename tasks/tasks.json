@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T07:07:14+0530",
-  "version": 2372,
+  "updated": "2026-10-12T07:10:07+0530",
+  "version": 2376,
   "last_id": 420,
   "team": [
    {
@@ -4455,31 +4455,31 @@
    "evidence": [
     {
      "label": "Free join",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=d29a1055"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=e89977e9"
     },
     {
      "label": "Paid join",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=d29a1055"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=e89977e9"
     },
     {
      "label": "Payment confirmed",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=d29a1055"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=e89977e9"
     },
     {
      "label": "Onboarding",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=d29a1055"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=e89977e9"
     },
     {
      "label": "VIP page, guarantee seal",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=d29a1055"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=e89977e9"
     },
     {
      "label": "Screenshots at 1440 and 390 (10 files)",
      "url": "workshop-plan/evidence/T-101/"
     },
     {
-     "label": "Probe output 2026-10-12, ALL PASS",
-     "url": "workshop-plan/evidence/T-101/probe-keyart-2026-10-12.txt"
+     "label": "Probe output 2026-10-12 on mirror e89977e9, ALL PASS",
+     "url": "workshop-plan/evidence/T-101/probe-keyart-2026-10-12-e89977e9.txt"
     },
     {
      "label": "Probe",
@@ -4487,7 +4487,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Bhaskar: one review list for all the funnel visuals (this task with T-092, T-093 and T-094). Open in order: https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=d29a1055 , https://adisuja.github.io/tantra-workshop-live/site/workshop/success/?v=d29a1055 , https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=d29a1055 , https://adisuja.github.io/tantra-workshop-live/site/vip/?v=d29a1055 , https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=d29a1055 , https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=d29a1055 , https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=d29a1055 (the first three plus the paid join page are T-093; use the theme switch in the header for T-092). Then approve or reply with changes per page.",
+   "needs_from_owner": "Bhaskar: one review list for all the funnel visuals (this task with T-092, T-093 and T-094). Open in order: https://adisuja.github.io/tantra-workshop-live/site/workshop/?v=e89977e9 , https://adisuja.github.io/tantra-workshop-live/site/workshop/success/?v=e89977e9 , https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=e89977e9 , https://adisuja.github.io/tantra-workshop-live/site/vip/?v=e89977e9 , https://adisuja.github.io/tantra-workshop-live/site/vip/success/?v=e89977e9 , https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=e89977e9 , https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=e89977e9 (the first three plus the paid join page are T-093; use the theme switch in the header for T-092). Then approve or reply with changes per page.",
    "log": [
     {
      "ts": "2026-09-24",
@@ -4523,6 +4523,11 @@
      "ts": "2026-10-12T03:03:08+0530",
      "who": "claude",
      "note": "Verify pass on the T-093 ripple: nothing had to change. The review list already uses ?v=d29a1055, and the mirror has no site changes since then (head 3da937dd only syncs the board), so those links are still fresh. All seven links answered 200 and the key-art probe on the live mirror passed again (ALL PASS, guarantee seal and 18 bonus key-art images found). Still waiting on Bhaskar's sign-off."
+    },
+    {
+     "ts": "2026-10-12T07:08:48+0530",
+     "who": "claude",
+     "note": "Re-probed the live mirror at its current head e89977e9 (last site publish 6d5689be): the key-art probe passes at 1440 and 390 with 0 broken images and 0 failed requests on all five pages, and all seven review links answer 200, so nothing had to be rebuilt or pushed. The review list and Evidence now use one cache-buster, ?v=e89977e9, on all seven links (T-093 currently has no ask of its own, so this list is the single one). Probe output: workshop-plan/evidence/T-101/probe-keyart-2026-10-12-e89977e9.txt."
     }
    ],
    "order": 990,
@@ -8980,7 +8985,7 @@
    "evidence": [
     {
      "label": "Pipeline dashboard",
-     "url": "http://localhost:8899/pipeline?v=9"
+     "url": "http://localhost:8899/pipeline?v=10"
     },
     {
      "label": "1440 screenshot",
@@ -8991,8 +8996,12 @@
      "url": "workshop-plan/pipeline/test_dash.py"
     },
     {
-     "label": "Weekly snapshot 2026-10-12",
+     "label": "First weekly review: snapshot 2026-10-12",
      "url": "workshop-plan/pipeline/snapshots/2026-10-12.json"
+    },
+    {
+     "label": "First weekly review: coord/LOG.md line 99 (2026-10-12 03:32 PIPELINE WEEKLY SNAPSHOT)",
+     "url": "workshop-plan/coord/LOG.md"
     }
    ],
    "blockers": [],
@@ -9077,6 +9086,11 @@
      "ts": "2026-10-12T03:35:17+0530",
      "who": "claude",
      "note": "Verify pass: the 2026-10-12 snapshot and its single LOG line are there. I re-ran the job under launchd and it found all 5 PRs and wrote no second line. I also fixed the duplicate feature-decision line: a rerun on the same day now keeps that day's decision (pushed as 30d6f021). test_dash.py passes, and http://localhost:8899/pipeline?v=9 shows 6 bands, 23 of 23 cards tagged with a Counts note, the local preview table and no dashes. The sheet is still unreadable because this machine's Python is too old for the Google library."
+    },
+    {
+     "ts": "2026-10-12T07:10:07+0530",
+     "who": "claude",
+     "note": "First weekly review recorded in Evidence: snapshots/2026-10-12.json and coord/LOG.md line 99 (already pushed in 025b2fd4). test_dash.py passes, and launchctl shows com.tantra.pipeline-weekly loaded for Monday 09:00 with last exit 0. Checked at 07:09 IST, so today's 09:00 run had not come due yet; the schedule is correct and needed no fix, and no duplicate snapshot was written. Waiting on Ben and Bharath to sign off."
     }
    ],
    "order": 1580,
@@ -16842,6 +16856,11 @@
      "ts": "2026-10-12T07:07:14+0530",
      "who": "claude",
      "note": "Checked Live Control (/admin/api/zoom/control) on 2026-10-12 in this run: Seat credentials still read saved: false and all 5 Tantra Centre poll scopes still read missing. Per Orchestrator O-0a1d02db the ask stays unchanged (one Zoom sign-in, tracked as T-417), and I did not create the Zoom app. The seat build, the T-226 test meeting and closing this task wait on that sign-in."
+    },
+    {
+     "ts": "2026-10-12T07:07:52+0530",
+     "who": "claude",
+     "note": "Checked 10 related task(s); updating T-407, T-226."
     }
    ],
    "order": 3350,
