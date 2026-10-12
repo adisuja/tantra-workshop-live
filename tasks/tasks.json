@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-13T00:54:57+0530",
-  "version": 2521,
+  "updated": "2026-10-13T00:56:43+0530",
+  "version": 2522,
   "last_id": 424,
   "team": [
    {
@@ -19157,6 +19157,11 @@
      "ts": "2026-10-13T00:54:57+0530",
      "who": "claude",
      "note": "Done on branch t424-chain-probes, merged to main 7b39fb0d and pushed. Full run-chain (with the three walkers) on a fresh private stack: 22 pass, 0 fail; evidence workshop-plan/tasks/evidence/T-424/summary.txt. Cause per probe: probe-domain-chain, probe drift (Title Case titles, T-269 label ids, T-270 preselected tools, T-261/T-299 calendar domain registration and wording) plus one product bug fixed in centre/fields.tsx (pressing a preselected chip cleared it while it still looked picked, which locked Mark done). probe-day1, probe drift (T-269 Plan Your Day cards, T-261 Resend DNS wording). probe-day2, probe drift (T-270 autodraft question sent before the preview session existed, T-269 card order, T-268 weekly broadcasts, A/B cold email campaigns, T-258 outreach sheet card, Plan Your Day 3). probe-stack, cascade from day2 plus probe drift (T-123 Tantra confirmation is a campaign enrolment, T-264 live form screenshot). probe-context, probe drift (run-chain now points CENTRE_PERSIST at the right D1; sidebar labels carry a code prefix). probe-tantra-reminders, probe drift (local links use PUBLIC_URL, the admin uses the request origin, so links compare by path); its later follow-up failures came from reusing a stack, green on every fresh stack. probe-workshop, probe drift: the static export has no Next API routes, so STATIC_EXPORT=1 skips /api/checkout and /api/dodo/webhook there (still checked against a Next server); the 390px join failure was transient. export-site, tooling bug: a concurrent build wiped the shared .export-scratch and only the last output line was kept; now its own scratch dir and a full build log. Commits 22d1aa28, f025f0e3, 4ef01e20, merge of main with T-299 2c893a89 (probe-day1, day2, domain-chain and stack conflicts resolved to main's handling, one per card), evidence e212fcb2. No launchd job uses run-chain, nothing restarted. Left: the fields.tsx fix goes live on the next revops-centre deploy and mirror publish."
+    },
+    {
+     "ts": "2026-10-13T00:56:43+0530",
+     "who": "claude",
+     "note": "fields.tsx fix (preselected option no longer clears on click) deployed to live revops-centre as version 578ed7be from a clean worktree of origin/main 9e52100e (build.sh rebuilt the bundle). Live /onboarding/ and /admin/ answer 200; the AI connection test still passes."
     }
    ],
    "order": 4240
