@@ -49,8 +49,8 @@
    "summary": "T-125 → review. Both join pages now offer Google Calendar + one-file .ics for all three sessions, and the session link shows \"arrives before Day 1\" while the Zoom link is still pending; verified via tsc, eslint, curl, and clean headless screenshots (`/tmp/workshop-join.png`, `/tmp/masterclass-succes"
   }
  ],
- "state": "idle",
- "message": "Last sweep handled 0 task(s).",
+ "state": "paused",
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 75% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 11:51.",
  "task_id": null,
  "entries": [],
  "mode": null,
