@@ -97,12 +97,14 @@
    "summary": "T-034 is still blocked: email and WhatsApp can't be sent until T-408/T-123 and T-400 land. The ripple from T-033 is applied, committed in eba46774 (not pushed), and note R-fc77b190 is acked.\n\n- **Email sender:** done. Runbook section 6 (`workshop-plan/ops/runbook.md`) now says the Resend From addres"
   }
  ],
- "state": "idle",
- "message": "Last sweep handled 1 task(s).",
- "task_id": null,
- "entries": [],
- "mode": null,
- "started": "2026-10-12T11:55:42+0530",
+ "state": "working",
+ "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
+ "task_id": "T-242",
+ "entries": [
+  "F-4a0eb028"
+ ],
+ "mode": "feedback",
+ "started": "2026-10-12T12:31:54+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
