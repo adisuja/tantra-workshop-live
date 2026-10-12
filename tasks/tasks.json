@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T22:25:07+0530",
-  "version": 2518,
+  "updated": "2026-10-12T22:36:54+0530",
+  "version": 2519,
   "last_id": 424,
   "team": [
    {
@@ -16407,7 +16407,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "Adi's three reasons for Google Workspace (calendar invites by service account, vendor-supplied cold email inboxes, GA4 and sign-up address) differ from what the centre builds; building mailboxes ourselves and warming on Instantly contradicts the approved vendor stack.",
    "spec": "Adi's model (2026-10-07): (1) Cold calendar invites: one Google service account per Workspace user, each uploaded to Tantra. (2) Cold email: inboxes are Google Workspace users bought through the inbox vendor, who handles the domain cost and SPF, DKIM and DMARC, hosts the accounts in their own Cloudflare and connects them to Tantra; we never build mailboxes ourselves. (3) Google also gives GA4 and one address the attendee signs up to other tools with. The centre today still does the old thing. To build on a branch: A) cold email: make the partner card (id start-endy, app/src/lib/workshop-cards.ts around line 356, never names Endy) the only mailbox path; remove the 'MAIL_OWN' build-your-own path, the start-workspace card ('Let the agent into Google Workspace'), the mailboxes, m365-mailboxes and warmup jobs (cloud/src/agentic.ts, jobs.ts, jobs-m365.ts) and the Instantly warm-up watcher (cloud/src/connectors/instantly.ts, agentic.ts line 25). After the vendor delivers, the attendee gives the vendor the service account client ID and the three scopes, then in Tantra Accounts uses Verify and Add; the agent confirms in Tantra that every inbox shows Connected and Gmail capable and is warming (see T-213 for the vendor flow and T-263 for the Tantra GET /accounts check). B) calendar: the calendar-workspace card asks for several senders, with steps to create a service account per sender and upload each to Tantra (journey: scripts/walkthroughs/journeys/google-senders.md; Adi's note: one service account per Workspace covers every mailbox). C) add a short card 'Pick the address you sign up to tools with' (one Workspace user). D) update probes (probe-stack, probe-domain-chain, probe-day1/day2) and the simulator, then the 'Set Up Your Vendor Inboxes' walkthrough text. Ship on a branch, READY in /Users/adithyamurali/tantra-round5-coord/LOG.md; Integrator merges and deploys.",
    "done_when": [
@@ -16507,6 +16507,11 @@
      "ts": "2026-10-12T09:10:53+0530",
      "who": "claude",
      "note": "Not merged, pushed or deployed yet: probe-domain-chain (45 of 45), probe-day1 (36 of 36) and probe-stack (57 of 57) now pass on branch t-299-vendor-inboxes (a57a8951, main merged in a50ec245, both tsc checks clean). probe-day2 passes 52 checks, including the fixed A/B campaign, broadcast and new master outreach sheet steps, then stops because main now shows a 'Plan Your Day 3' card before 'Watch a test contact go through every automation' (p-day2.log line 53). Next pass: handle that card in probe-day2.mjs after line 318, rerun /tmp/t299/run-probes.sh on a clean stack, and once all four pass do the approved merge, push, Worker deploy, mirror publish and LOG.md MERGED line."
+    },
+    {
+     "ts": "2026-10-12T22:36:54+0530",
+     "who": "claude",
+     "note": "Merged, pushed and live. Branch t-299-vendor-inboxes (ec7b7072, with main merged in, app and cloud type checks clean) is merged into main as c16d3d9d and pushed to origin. On the private stack from clean state all four chain probes pass: probe-domain-chain 45 of 45, probe-day1 36 of 36, probe-day2 63 of 63 (now handles the Plan Your Day 3 card, commit 0ad6e8b2), probe-stack 57 of 57. The revops-centre Worker is deployed as version f476d853-153d-4600-a3f2-367e200e6d51 from a clean worktree of c16d3d9d with a fresh centre bundle, so the several-senders calendar copy is live; no D1 migration was pending. Mirror published as cdba319b1 (one changed chunk). MERGED line added to the coord LOG.md. Review: https://revops-centre.growthcluborg.workers.dev/admin/?v=t299m and the calendar card at https://revops-centre.growthcluborg.workers.dev/onboarding/?v=t299m"
     }
    ],
    "order": 2990
