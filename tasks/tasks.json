@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T07:50:57+0530",
-  "version": 2425,
+  "updated": "2026-10-12T07:52:47+0530",
+  "version": 2427,
   "last_id": 422,
   "team": [
    {
@@ -1893,16 +1893,16 @@
      "url": "cloud/src/jobs-delivery.ts"
     },
     {
-     "label": "Probe (day delivery, 27/27, no WhatsApp leak)",
+     "label": "Probe (day delivery, 27/27, incl. no WhatsApp leak into reminders, lanes, nurture)",
      "url": "app/scripts/probe-day-delivery.mjs"
     },
     {
-     "label": "Probe (output delivery, 20/20)",
+     "label": "Probe (output delivery)",
      "url": "app/scripts/probe-output-delivery.mjs"
     },
     {
      "label": "Live delivery status (admin)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/api/delivery?v=t033r7"
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/api/delivery?v=t033v8"
     }
    ],
    "blockers": [],
@@ -2037,6 +2037,11 @@
      "ts": "2026-10-12T07:50:57+0530",
      "who": "claude",
      "note": "Day output delivery now has its own WhatsApp account setting (delivery_whatsapp_account=6acbd96d, live and deployed from a7d83a00). The shared tantra_whatsapp is cleared, so reminders, follow-ups, lanes and nurture carry no WhatsApp: the live reminders status reads whatsapp null, and none of the 5 Tantra campaigns has a WhatsApp account. probe-day-delivery passed 27/27 (it now proves there is no leak) and probe-output-delivery passed 20/20. The 3 WhatsApp drafts read back as drafts. The Day 1 email waits on the T-408 sender, and the Day 1 WhatsApp on the T-419 number."
+    },
+    {
+     "ts": "2026-10-12T07:52:47+0530",
+     "who": "claude",
+     "note": "Verify pass: on a fresh local centre and simulator, probe-day-delivery and probe-output-delivery both passed. That includes the check that the delivery-only WhatsApp setting adds nothing to the 16 reminder, follow-up, lane and nurture campaigns, plus no duplicate on the next tick and no Twilio, n8n or SendGrid call. Live, the delivery-only WhatsApp account is 6acbd96d and reminders read whatsapp=null. Tantra still shows the 3 Day campaigns as drafts on that account with no sends. The Day 1 email waits on T-408 and the Day 1 WhatsApp on T-419, both still open."
     }
    ],
    "order": 230,
@@ -11030,7 +11035,7 @@
    "blockers": [
     "Adi's confirmation to host from the console, and the Meeting SDK app credentials"
    ],
-   "needs_from_owner": "Only T-335, one Zoom sign-in at https://marketplace.zoom.us: (1) at https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), or open it if it exists, and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, Save; (2) in the same sign-in, Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, meeting:delete:meeting:admin, Save. The scopes are listed only because no run has had a browser signed in to Zoom; Claude adds them itself whenever one is available. The run sheets and the co-host list are already done.",
+   "needs_from_owner": "Only T-335, now tracked as T-417 (ask unchanged): one Zoom sign-in at https://marketplace.zoom.us: (1) at https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), or open it if it exists, and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, Save; (2) in the same sign-in, Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, meeting:delete:meeting:admin, Save. Each run Claude checks Live Control; once the credentials and 5 poll scopes read present, Claude builds the seat with the SDK and runs the test meeting.",
    "log": [
     {
      "ts": "2026-10-07T20:46:43+0530",
@@ -11106,6 +11111,11 @@
      "ts": "2026-10-12T03:08:53+0530",
      "who": "claude",
      "note": "Ripple from T-407 checked live today: the Day 1 to 3 run sheets are saved on Live Control (24 chat, CTA and poll items), the host is Adi and the co-host list is empty. The 5 poll scopes are NOT added yet: Live Control still reads all 5 as missing, so they stay in the same single T-335 sign-in. Open https://revops-centre.growthcluborg.workers.dev/admin/control?v=t226rip1"
+    },
+    {
+     "ts": "2026-10-12T07:52:14+0530",
+     "who": "claude",
+     "note": "Ripple from T-417 applied: waiting-on now says T-335 is tracked as T-417, ask unchanged. Checked live today: Live Control still shows no seat credentials and all 5 poll scopes missing, with the Day 1 to 3 run sheet saved (24 items); probe-live-control passed 34/34 on a fresh local centre with the rebuilt seat binary. Open https://revops-centre.growthcluborg.workers.dev/admin/control?v=t226rip2"
     }
    ],
    "order": 2260

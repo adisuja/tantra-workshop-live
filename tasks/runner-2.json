@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:53:13+0530",
+   "task_id": "T-033",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-033 is still blocked: the code, deploy and drafts check out, but the Day 1 test email waits on T-408 and the Day 1 WhatsApp waits on T-419.\n\n**COMPLETION CHECK**\n\n1. **Separate WhatsApp account and sender settings used only by Day-output delivery: done.** I read the code. `delivery_whatsapp_accoun"
+  },
+  {
    "ts": "2026-10-12T07:44:34+0530",
    "task_id": "T-384",
    "mode": "feedback",
@@ -87,24 +95,14 @@
    "status": "blocked",
    "result": "ok",
    "summary": "(Held back from the public board: this note mentions a private client detail.)"
-  },
-  {
-   "ts": "2026-10-12T07:10:35+0530",
-   "task_id": "T-158",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "**Completion check:**\n\n| Item | State |\n|---|---|\n| Snapshot and log line in Evidence | Done. Evidence now holds `snapshots/2026-10-12.json` and `coord/LOG.md#L99`. The previous run had only added the snapshot. I saw line 99 on disk this run. |\n| `test_dash.py` | Done. It passes (\"ok\"), so there was"
   }
  ],
- "state": "working",
- "mode": "feedback",
- "task_id": "T-033",
- "entries": [
-  "F-1eb533c5"
- ],
+ "state": "idle",
+ "mode": null,
+ "task_id": null,
+ "entries": [],
  "started": "2026-10-12T07:45:10+0530",
- "message": "Acting on 1 note(s) for T-033: WhatsApp + email delivery automation",
+ "message": "Last sweep handled 8 task(s).",
  "slices": {
   "T-250": 1,
   "T-301": 1,
