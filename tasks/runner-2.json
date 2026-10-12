@@ -97,12 +97,14 @@
    "summary": "T-265 is in review for Adi and Bharath. The live centre already had both fixes, so I didn't need to deploy or change any code, and I committed nothing.\n\n1. **Deploy:** Nothing to do. The live revops-centre Worker is version 7a94c18c, which T-300 deployed from main 8eb66895. Both T-265 fixes (389886e"
   }
  ],
- "state": "idle",
- "mode": null,
- "task_id": null,
- "entries": [],
- "started": "2026-10-12T13:02:12+0530",
- "message": "Last sweep handled 0 task(s).",
+ "state": "working",
+ "mode": "feedback",
+ "task_id": "T-242",
+ "entries": [
+  "F-770fba11"
+ ],
+ "started": "2026-10-12T14:33:36+0530",
+ "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
  "slices": {
   "T-250": 1,
   "T-301": 1,
