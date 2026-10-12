@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T12:55:36+0530",
+   "task_id": "T-073",
+   "mode": "queue",
+   "status": "doing",
+   "result": "ok",
+   "summary": "T-073 is still in progress (`doing`). The lessons can't be cut yet because the 14 to 16 Oct sessions haven't happened, so nothing has been recorded.\n\n**Completion check:**\n- **Three day modules published from meeting 88135386601:** not done yet. Today is 12 Oct, so no recordings exist. The 15-minute"
+  },
+  {
    "ts": "2026-10-12T11:57:29+0530",
    "task_id": "T-299",
    "mode": "queue",
@@ -39,14 +47,6 @@
    "status": "review",
    "result": "ok",
    "summary": "T-127 → **review**: `/onboarding/plan` now serves each attendee's own generated plan (session-gated, no token in URL) and Before Day 1 step 2 links to it — verified live that each session gets its own plan and no-cookie leaks nothing; the email link stays open on T-123."
-  },
-  {
-   "ts": "2026-09-25T22:25:37+0530",
-   "task_id": "T-126",
-   "mode": "queue",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-126 → **review**. Done and verified this pass:\n\n- **Survey answers sync to ops + survive a device change** — each day POSTs to ops `/api/survey` (debounced) and hydrates on a fresh device; the POST now *merges* so a second/offline device can't overwrite another's answers. Proven with a two-device "
   }
  ],
  "state": "idle",
@@ -54,7 +54,7 @@
  "task_id": null,
  "entries": [],
  "mode": null,
- "started": "2026-10-12T11:55:21+0530",
+ "started": "2026-10-12T12:54:41+0530",
  "api_capped": {
   "T-073": "2026-10-12T04:30:40+0530",
   "T-299": "2026-10-12T11:15:31+0530"
