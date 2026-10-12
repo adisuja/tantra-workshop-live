@@ -97,12 +97,14 @@
    "summary": "**Completion check**\n\n| Item | State | Evidence |\n|---|---|---|\n| Remove the Calendly path from worker.js (poll, cron line, apply, /hooks/calendly, header comment, hooks.calendly) | Done | At 15373459 the deployed bundle has 0 calendlyPoll, 0 calendlyApply and 0 /hooks/calendly. The live /hooks/cale"
   }
  ],
- "state": "idle",
- "mode": null,
- "task_id": null,
- "entries": [],
- "started": "2026-10-12T08:57:56+0530",
- "message": "Last sweep handled 0 task(s).",
+ "state": "working",
+ "mode": "feedback",
+ "task_id": "T-421",
+ "entries": [
+  "F-38ac25a5"
+ ],
+ "started": "2026-10-12T09:17:07+0530",
+ "message": "Acting on 1 note(s) for T-421: Connect the missing FintechCircle calendar senders in Tantra",
  "slices": {
   "T-250": 1,
   "T-301": 1,
