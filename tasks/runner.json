@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T09:40:07+0530",
+   "task_id": "T-242",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
    "ts": "2026-10-12T09:11:03+0530",
    "task_id": "T-299",
    "mode": "feedback",
@@ -87,23 +95,13 @@
    "status": "blocked",
    "result": "turns",
    "summary": "I checked T-351 against the T-403 change and nothing needed changing, so it stays blocked and the note is acknowledged.\n\n- **Ask points only at T-403:** done. The task's \"needs from owner\" field already says only \"Tracked on T-403 (unlock the Mac and grant Accessibility to Python.app)\", which I conf"
-  },
-  {
-   "ts": "2026-10-12T07:45:01+0530",
-   "task_id": "T-144",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-144 is still in review waiting on Amal. The edits are committed on main but not pushed.\n\n- **1. Spec text:** Done, but not as the note worded it. The \"Before asking for review: regenerate…\" sentence now says the hub was regenerated and published to mirror fa67765 on 2026-10-12 and the probe passes"
   }
  ],
- "state": "working",
- "message": "Acting on 1 note(s) for T-242: Make the walkers wait for the Kie.ai image job",
- "task_id": "T-242",
- "entries": [
-  "F-5e1f627c"
- ],
- "mode": "feedback",
+ "state": "idle",
+ "message": "Last sweep handled 0 task(s).",
+ "task_id": null,
+ "entries": [],
+ "mode": null,
  "started": "2026-10-12T09:40:03+0530",
  "slices": {
   "T-156": 1,
