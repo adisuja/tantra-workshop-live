@@ -1,1 +1,1 @@
-{"session":"261d74c4-c20d-40b9-9c4d-12cb9b5379e2","task":"T-421","public":true,"events":[]}
+{"session":"261d74c4-c20d-40b9-9c4d-12cb9b5379e2","task":"T-421","public":true,"events":[{"k":"tool","ts":"2026-10-12T03:28:03.417Z","id":"toolu_01PBUgPAXUxJmz4NgsBVrZp8","name":"Bash","head":"Inspect check script usage and ledger row","input":"$ sed -n 1,25p cloud/scripts/check-tantra-senders.mjs | grep -iE \"usage|argv|pool|env\" | head; grep -c \"\" scripts/walkthroughs/REVERT_LEDGER.md; grep -n \"verify-bulk\" scripts/walkthroughs/REVERT_LEDGER.md | head -3"}]}
