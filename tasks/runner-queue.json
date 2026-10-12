@@ -49,12 +49,12 @@
    "summary": "T-127 → **review**: `/onboarding/plan` now serves each attendee's own generated plan (session-gated, no token in URL) and Before Day 1 step 2 links to it — verified live that each session gets its own plan and no-cookie leaks nothing; the email link stays open on T-123."
   }
  ],
- "state": "idle",
- "message": "Nothing waiting.",
- "task_id": null,
+ "state": "working",
+ "message": "Continuing T-424: Fix the seven chain probes that went red after 2026-10-07",
+ "task_id": "T-424",
  "entries": [],
- "mode": null,
- "started": "2026-10-12T12:54:41+0530",
+ "mode": "queue",
+ "started": "2026-10-12T16:56:07+0530",
  "api_capped": {
   "T-073": "2026-10-12T04:30:40+0530",
   "T-299": "2026-10-12T11:15:31+0530"
