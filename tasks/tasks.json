@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T07:26:32+0530",
-  "version": 2396,
+  "updated": "2026-10-12T07:27:45+0530",
+  "version": 2398,
   "last_id": 421,
   "team": [
    {
@@ -2746,7 +2746,7 @@
    "priority": "P1",
    "due": "2026-10-14",
    "status": "blocked",
-   "why": "T-057 readiness is YES (2026-10-09). Now waits on the T-056 import and each member connecting.",
+   "why": "T-057 readiness is YES (2026-10-09) and the T-056 list is imported (2026-10-12). Now waits only on each wave 1 member connecting LinkedIn.",
    "spec": "Each team member connects their own LinkedIn profile in Tantra (needs their own login, so not Claude), then campaigns launch from the T-056 list with first lines from T-059 and each member's referral link (T-211). Respect the daily caps recorded in T-057. Track replies and registrations per member on the referral dashboard.",
    "done_when": [
     "Every participating team member's profile shows connected in Tantra",
@@ -2768,9 +2768,9 @@
     }
    ],
    "blockers": [
-    "Each member connects their own LinkedIn in Tantra"
+    "Each wave 1 member connects their own LinkedIn in Tantra"
    ],
-   "needs_from_owner": "Bhaskar: after the T-056 import, get the wave 1 members (the 2 existing Pro slots, buy nothing) connected at https://usetantra.com/connectors/channels/linkedin with workshop-plan/outreach/connect-linkedin-guide.md, then start the campaign from launch-kit.md section 3. Bharath: can the team workspace get more LinkedIn slots at no charge? Nothing is asked of Adi here; the list import stays on T-056.",
+   "needs_from_owner": "Bhaskar: get the wave 1 members (the 2 existing Pro slots, buy nothing) connected at https://usetantra.com/connectors/channels/linkedin with workshop-plan/outreach/connect-linkedin-guide.md, then start the campaign from launch-kit.md section 3 (the T-056 list 'Workshop cold calendar' is already imported). Bharath: can the team workspace get more LinkedIn slots at no charge? Nothing is asked of Adi here.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2866,10 +2866,20 @@
      "ts": "2026-10-12T04:12:58+0530",
      "who": "claude",
      "note": "T-056 is finished: the list 'Workshop cold calendar' (126 contacts) and the calendar draft are in Tantra (read back 2026-10-12). This task's only remaining blocker is its own LinkedIn connect step for Bhaskar."
+    },
+    {
+     "ts": "2026-10-12T07:27:01+0530",
+     "who": "claude",
+     "note": "The T-056 import wait is gone: the launch kit (status line, launch gate, Bhaskar's steps) and this task now wait only on the wave 1 members connecting LinkedIn, since 'Workshop cold calendar' (126 contacts) was read back in Tantra on 2026-10-12. Open workshop-plan/outreach/launch-kit.md (top and section 3)."
+    },
+    {
+     "ts": "2026-10-12T07:27:45+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Bhaskar → Claude (by Orchestrator)."
     }
    ],
    "order": 370,
-   "assignee": "Bhaskar",
+   "assignee": "Claude",
    "reviewers": [
     "Bhaskar",
     "Bharath"

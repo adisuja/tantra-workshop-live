@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:27:26+0530",
+   "task_id": "T-058",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "I removed the T-056 import wait from T-058 and the launch kit. T-058 stays blocked, now only on the wave 1 members connecting their own LinkedIn in Tantra, and R-bbca1f21 is acked.\n\n**Completion check:**\n- **Import wait removed:** Done. I checked T-056's latest log entry, which shows the list 'Works"
+  },
+  {
    "ts": "2026-10-12T07:26:27+0530",
    "task_id": "T-418",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-265 is in `doing`: the simulator test-run passed and the fix (389886e3) is pushed, but I couldn't redeploy revops-centre because the website build fails in a `/tmp"
-  },
-  {
-   "ts": "2026-10-12T04:05:18+0530",
-   "task_id": "T-299",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-299 is not merged, pushed or deployed yet: two of the four probes pass, but probe-day2 still fails, so the approved steps have not run. The task is set to `doing` "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-058",
+ "task_id": "T-059",
  "entries": [
-  "R-bbca1f21"
+  "R-c34273ad"
  ],
- "started": "2026-10-12T07:26:41+0530",
- "message": "Acting on 1 note(s) for T-058: Connect team profiles + launch outreach",
+ "started": "2026-10-12T07:28:18+0530",
+ "message": "Acting on 1 note(s) for T-059: AI-personalised first lines for our workshop outreach on Tantra campaigns",
  "slices": {
   "T-072": 1,
   "T-250": 1,
