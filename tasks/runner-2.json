@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:30:03+0530",
+   "task_id": "T-059",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "turns",
+   "summary": "I checked T-059 again: the centre proxy change is in place and works, so I didn't change anything. The task stays blocked until T-408 provides the sending mailbox.\n\n**Completion check:**\n- **Ripple R-c34273ad (call Tantra through the centre proxy, not a local key):** done.\n  - **Code:** `workshop-pl"
+  },
+  {
    "ts": "2026-10-12T07:27:26+0530",
    "task_id": "T-058",
    "mode": "feedback",
@@ -87,24 +95,17 @@
    "status": "queue",
    "result": "ok",
    "summary": "T-380 is correctly queued with Nelbin, but the two Apps Script projects are still not trashed, so the task isn't finished.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Status queue, assignee Nelbin, no ask for Adi | Done | Read back from `tasks.json`: status `queue`, Nelbin as owner, a"
-  },
-  {
-   "ts": "2026-10-12T04:17:32+0530",
-   "task_id": "T-265",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-265 is in `doing`: the simulator test-run passed and the fix (389886e3) is pushed, but I couldn't redeploy revops-centre because the website build fails in a `/tmp"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-059",
+ "task_id": "T-400",
  "entries": [
-  "R-c34273ad"
+  "F-0f2ddf8e",
+  "R-36f7125a"
  ],
- "started": "2026-10-12T07:28:18+0530",
- "message": "Acting on 1 note(s) for T-059: AI-personalised first lines for our workshop outreach on Tantra campaigns",
+ "started": "2026-10-12T07:30:21+0530",
+ "message": "Acting on 2 note(s) for T-400: Input: connect the workshop WhatsApp number in Tantra and name the test number",
  "slices": {
   "T-072": 1,
   "T-250": 1,
@@ -115,7 +116,7 @@
   "T-229": 1,
   "T-240": 1,
   "T-278": 1,
-  "T-059": 1,
+  "T-059": 2,
   "T-300": 1,
   "T-242": 1,
   "T-265": 1
