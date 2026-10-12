@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T07:12:58+0530",
-  "version": 2381,
+  "updated": "2026-10-12T07:22:21+0530",
+  "version": 2387,
   "last_id": 420,
   "team": [
    {
@@ -13673,6 +13673,16 @@
      "ts": "2026-10-12T04:05:24+0530",
      "who": "claude",
      "note": "Verify pass: probe-t263 passes 21 of 21 today (23:30 plus 60 minutes ends 00:30 the next date, variant B reaches Tantra as its own campaign with its own half of the list), the start-calendar-ws gate in cloud/src/agentic.ts:808-816 answers 422 until every sender shows CONNECTED, cloud tsc is clean, and AUDIT.md marks all 8 ids (7 fixed at 4dea9f2, N009 a manual step since Tantra has no reminders field). The live sender check lives on input task T-418, which waits on the FintechCircle Tantra key."
+    },
+    {
+     "ts": "2026-10-12T07:21:43+0530",
+     "who": "claude",
+     "note": "Tried the live sender check: the key in ~/.config/tantra/keys/tantra-api.env is accepted by Tantra (200) but GET /accounts returns 0 accounts, even with search=fintechcircle, so it belongs to another workspace and T-418 (the FintechCircle key) stays the only open ask. Today probe-t263 passed 21 of 21 again (end time rolls past midnight, gate fails until CONNECTED, variant B reaches Tantra); reviewers Adi and Bharath."
+    },
+    {
+     "ts": "2026-10-12T07:22:21+0530",
+     "who": "claude",
+     "note": "Verify pass: probe-t263 passes 21 of 21 today (23:30 plus 60 minutes ends 00:30 the next date, the start-calendar-ws gate in cloud/src/agentic.ts:808-816 answers 422 until every sender is CONNECTED, variant B reaches Tantra as its own campaign), cloud tsc is clean, and AUDIT.md marks all 8 ids at 4dea9f2. Live sender check: check-tantra-senders.mjs with the tantra-api.env key (GET only) says boards@fintechcircle.com is not in Tantra, so that key belongs to another workspace and T-418 stays the only open ask."
     }
    ],
    "order": 2630
