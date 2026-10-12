@@ -97,14 +97,14 @@
    "summary": "T-157 is back in review after a fresh verify pass. Nothing new had to change on disk, so I made no commit. Bhaskar and Bharath are already its reviewers.\n\n- **Stale blockers:** done. Both blockers and the ask to Adi are empty in tasks.json.\n- **One-pagers, qualifier copy and spec:** done.\n  - **Acco"
   }
  ],
- "state": "paused",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 71% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 06:51.",
- "task_id": null,
+ "state": "working",
+ "message": "Acting on 1 note(s) for T-384: Input from Adi for T-115: Open the Claude Code desktop app, start a session with Claude in Chrome connecte",
+ "task_id": "T-384",
  "entries": [
-  "R-aef060e6"
+  "R-98e5e4cd"
  ],
  "mode": "feedback",
- "started": "2026-10-12T04:32:54+0530",
+ "started": "2026-10-12T06:53:48+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,

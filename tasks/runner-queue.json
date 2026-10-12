@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T06:53:49+0530",
+   "task_id": "T-073",
+   "mode": "queue",
+   "status": "doing",
+   "result": "ok",
+   "summary": "T-073 stays in doing: the cohort starts 14 Oct, so there are no recordings to cut yet. Everything that will cut them is running and checked today.\n\n- **Three day modules from the 14 to 16 Oct cohort published, with the URL and lesson list in the log:** waiting for the sessions. The 15-minute job is "
+  },
+  {
    "ts": "2026-10-09T00:31:57+0530",
    "task_id": "T-278",
    "mode": "queue",
@@ -39,23 +47,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-125 → review. Both join pages now offer Google Calendar + one-file .ics for all three sessions, and the session link shows \"arrives before Day 1\" while the Zoom link is still pending; verified via tsc, eslint, curl, and clean headless screenshots (`/tmp/workshop-join.png`, `/tmp/masterclass-succes"
-  },
-  {
-   "ts": "2026-09-25T21:33:17+0530",
-   "task_id": "T-124",
-   "mode": "queue",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-124 → **review**. Fixed `/vip` checkout dropping first-touch UTMs (both server-session POST and static hosted-link now use `resolveUtm()`); verified with new `probe-checkout-utm.mjs` (both paths PASS) and `probe-checkout-currency` (no regression); committed 777b084 — owner sign-off is a completed "
   }
  ],
- "state": "paused",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 71% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 06:51.",
+ "state": "idle",
+ "message": "Nothing waiting.",
  "task_id": null,
  "entries": [],
  "mode": null,
- "started": "2026-10-12T04:30:32+0530",
+ "started": "2026-10-12T06:53:08+0530",
  "api_capped": {
   "T-073": "2026-10-12T04:30:40+0530"
- }
+ },
+ "slices": {}
 }

@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T04:32:28+0530",
-  "version": 2341,
+  "updated": "2026-10-12T06:53:56+0530",
+  "version": 2344,
   "last_id": 419,
   "team": [
    {
@@ -17482,6 +17482,11 @@
      "ts": "2026-10-12T02:44:22+0530",
      "who": "claude",
      "note": "Ask now names T-140 too, so T-384 and T-410 carry the same sentence (Orchestrator decision on T-140)."
+    },
+    {
+     "ts": "2026-10-12T06:53:56+0530",
+     "who": "claude",
+     "note": "Ripple from T-140 checked: the ask already reads 'Act on T-115, T-339 and T-140', the same sentence as T-410, so nothing had to change. Still waiting on Adi's one desktop sitting."
     }
    ],
    "order": 3840,
@@ -17743,11 +17748,11 @@
    "due": "",
    "status": "blocked",
    "why": "",
-   "spec": "Only Adi can do this (signin): The event lives on Adi's own Cal.com account; agents never sign in as Adi, and no Cal.com key exists in ~/.config/tantra.. Everything else in T-072 is being built around it. As soon as this is done, T-072 finishes on its own.",
+   "spec": "Only Adi can do this (signin): the event lives on Adi's own Cal.com account; agents never sign in as Adi, and no Cal.com key exists in ~/.config/tantra. When https://cal.com/adisuja/tantra-enterprise-evaluation-call answers 200, the T-072 input is satisfied: log it on T-072, close T-398 and finish T-072. /enterprise shows the Cal.com embed only after Bharath's team applies workshop-plan/tantra-product-patches/tantra-frontend-v2/adi-new-ui--5d6eecf642.patch upstream. Adi's one input is tracked as T-415.",
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Sign in at https://app.cal.com/event-types as adisuja and create the event 'Tantra Enterprise Evaluation Call' with URL slug tantra-enterprise-evaluation-call (so it lives at https://cal.com/adisuja/tantra-enterprise-evaluation-call), copying the fields from workshop-plan/build/T-072-calcom-event-draft.md (30 min, Google Meet, Mon-Fri 10:00-18:00 Asia/Kolkata). This is the only input T-072 needs; once the event exists, T-072 is finished.",
+   "needs_from_owner": "Sign in at https://app.cal.com/event-types as adisuja and create the event 'Tantra Enterprise Evaluation Call' with URL slug tantra-enterprise-evaluation-call (so it lives at https://cal.com/adisuja/tantra-enterprise-evaluation-call), copying the fields from workshop-plan/build/T-072-calcom-event-draft.md (30 min, Google Meet, Mon-Fri 10:00-18:00 Asia/Kolkata). That satisfies the T-072 input; the /enterprise embed then needs Bharath's team to apply the adi-new-ui--5d6eecf642.patch upstream.",
    "log": [
     {
      "ts": "2026-10-11T11:20:59+0530",
@@ -17758,6 +17763,11 @@
      "ts": "2026-10-12T02:43:04+0530",
      "who": "claude",
      "note": "Ripple from T-072 checked: this stays the sole Adi input for T-072. I added the pinned URL cal.com/adisuja/tantra-enterprise-evaluation-call and stated that T-072 is finished once the event exists. Checked that the draft file exists and uses the slug; no agent signs in as Adi."
+    },
+    {
+     "ts": "2026-10-12T06:53:51+0530",
+     "who": "claude",
+     "note": "Corrected the task text and the WAITING_ON_ADI_GROUPED.md entry (still one entry for T-072 and T-398): the event satisfies the T-072 input, but /enterprise shows the embed only after Bharath's team applies patch adi-new-ui--5d6eecf642 upstream. Probed https://cal.com/adisuja/tantra-enterprise-evaluation-call today: 404, so the event does not exist yet and this stays blocked on Adi's input (T-415)."
     }
    ],
    "order": 3980,
