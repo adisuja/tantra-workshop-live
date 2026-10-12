@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:12:21+0530",
+   "task_id": "T-252",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I checked T-252 again from scratch: everything the Orchestrator asked for is in place and works, so it stays in review for Bhaskar and Bharath. I changed no files this time.\n\n| Item | State | What I checked this run |\n|---|---|---|\n| Done-when rewritten so the nine items ship as patches, with the ol"
+  },
+  {
    "ts": "2026-10-12T06:54:45+0530",
    "task_id": "T-398",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "I deployed the revops-centre Worker (live version d6adc350), so the live centre now shows Day 1 at 5 to 6 h, and T-191 is in review for Adi, Bhaskar and Bharath.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Clean worktree at origin/main with 9ea3b9a0 | Done | `/private/tmp/t191-wt` was"
-  },
-  {
-   "ts": "2026-10-12T03:03:14+0530",
-   "task_id": "T-403",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-403 stays blocked. The ask already names the right app, and only Adi can unlock the Mac and turn on the Accessibility permission.\n\n- **Ask names the app macOS checks when the runner launches it:** done. I ran preflight in this run and the process chain goes from `claude` up to `/Library/Frameworks"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-252",
+ "task_id": "T-061",
  "entries": [
-  "F-21d94cec"
+  "F-58d91180"
  ],
- "started": "2026-10-12T06:55:08+0530",
- "message": "Acting on 1 note(s) for T-252: Tantra marketing site: settle the open pricing and copy decisions from the frontend-v2 pass",
+ "started": "2026-10-12T07:13:28+0530",
+ "message": "Acting on 1 note(s) for T-061: Free and paid lane follow-up campaigns in Tantra, with per-lane unit economics",
  "slices": {
   "T-135": 1,
   "T-300": 2,

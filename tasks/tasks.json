@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T07:12:11+0530",
-  "version": 2379,
+  "updated": "2026-10-12T07:12:58+0530",
+  "version": 2381,
   "last_id": 420,
   "team": [
    {
@@ -11250,6 +11250,11 @@
      "ts": "2026-10-12T07:10:31+0530",
      "who": "claude",
      "note": "Ripple from T-223 checked: the live-state numbers it quoted (Worker 9761eae3, 26 attendees) are out of date, so I brought them up to date. Production now runs Worker 3dc17ab7, and 51c7ee1 is on origin/main. Posting a@mail.example.com to /cal/issue and /intake on production got the usual 200 answers (feed null), but the attendee count stayed at 33 (highest id 141), no example.* address is left unmarked as test, attendee 5 returns 404, and Invite Status has no session_sync rows (Zoom failed 0). Open https://revops-centre.growthcluborg.workers.dev/admin/?v=3dc17ab7#settings, Cohort Settings, Invite Status."
+    },
+    {
+     "ts": "2026-10-12T07:12:58+0530",
+     "who": "claude",
+     "note": "Verify pass: nothing had to change, because the live-state line already names Worker 3dc17ab7 and that is still what production runs. In this run on production, a@mail.example.com style posts to /cal/issue and /intake got the usual 200 answers but attendees stayed at 33 (highest id 141), Zoom and Google failed are 0, no placeholder address is left untagged as test, and attendee 5 returns 404. A fresh local stack with its own simulator state passed probe-calendar-feeds 67 of 67, including all 6 placeholder checks. Open https://revops-centre.growthcluborg.workers.dev/admin/?v=3dc17ab7#settings, Cohort Settings, Invite Status."
     }
    ],
    "order": 2290

@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:13:13+0530",
+   "task_id": "T-229",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I re-checked everything on T-229 and nothing needed to change. It stays in review. I made no code edits, so there was nothing to commit.\n\n**Completion check:**\n- **Ripple (Worker id and attendee count in T-229's record):** already up to date. The task record already pointed at Worker 3dc17ab7, and `"
+  },
+  {
    "ts": "2026-10-12T07:08:27+0530",
    "task_id": "T-228",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "I checked T-056 again and it stays in review. The list and the unsent calendar-invite draft are both in Tantra, and I changed nothing there. All checks this run were read-only, so there was no code to commit.\n\n**Completion check (evidence from this run):**\n- **List imported:** done. 'Workshop cold c"
-  },
-  {
-   "ts": "2026-10-12T04:10:15+0530",
-   "task_id": "T-247",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-247 is back in review for Adi, Aquila and Bharath. Commit 9af89f1a was already on origin/main, so I pushed nothing.\n\n| Item | State |\n|---|---|\n| 1. Push 9af89f1a | Done, and no push was needed. After `git fetch`, 9af89f1a is already in origin/main. It went out as part of de8ac300, and the current"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-229: Zoom registrations: keep placeholder emails out of sign-ups",
- "task_id": "T-229",
+ "message": "Acting on 1 note(s) for T-300: Remove the dormant code and text of the ruled-out tools (T-251 parts 2 and 3)",
+ "task_id": "T-300",
  "entries": [
-  "R-e6656443"
+  "F-e1d794ba"
  ],
  "mode": "feedback",
- "started": "2026-10-12T07:09:21+0530",
+ "started": "2026-10-12T07:13:40+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
