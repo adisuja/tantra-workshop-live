@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T12:32:51+0530",
-  "version": 2496,
+  "updated": "2026-10-12T12:53:07+0530",
+  "version": 2497,
   "last_id": 424,
   "team": [
    {
@@ -19026,7 +19026,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "doing",
    "why": "Split out of T-242 by the Orchestrator (F-4a0eb028): these probes were green on 2026-10-07 and fail on the current origin/main.",
    "spec": "In the run-chain (app/scripts/run-chain.sh) these steps fail on origin/main: probe-domain-chain (locator.click timeout), probe-day1 and probe-day2 (the centre stays on the 'Describe Your Business' card instead of reaching 'Join the Day 1/2 session'), probe-stack ('a live funnel to test against (undefined)', then GoHighLevel failed), probe-context (TypeError reading attendee_id), probe-tantra-reminders (Registered message lacks calendar/centre link and plan_url), probe-workshop (/api/checkout and /api/dodo/webhook on the static export). Baseline logs are in workshop-plan/tasks/evidence/T-242/baseline-probes/. Find each cause (probe drift vs a centre regression) and fix it; check with T-299, which is changing probe-day1 and the Day 1 cards.",
    "done_when": [
@@ -19046,6 +19046,11 @@
      "ts": "2026-10-12T12:32:47+0530",
      "who": "claude",
      "note": "Opened from T-242 (Orchestrator F-4a0eb028); baseline logs in workshop-plan/tasks/evidence/T-242/baseline-probes/."
+    },
+    {
+     "ts": "2026-10-12T12:53:07+0530",
+     "who": "claude",
+     "note": "Slice 1 on branch t424-chain-probes (worktree /private/tmp/t424-wt, private stack :8940-8944). probe-domain-chain now passes the tool card and calendar card: probe drift (Title Case titles, T-269 l-f- label ids, T-270 preselect, T-299 calendar domain field and new wording) plus one product bug fixed in centre/fields.tsx (pressing a preselected chip cleared it while it still looked picked, locking Mark done). Its last red check, 2 zones active, came from my stack's sim reset leaving the old simulator running; fixed, the sim now starts at 0 zones. Left: rerun domain-chain, then day1, day2, stack, context (CENTRE_PERSIST), tantra-reminders (plan_url and calendar link), the probe-workshop static-export skip, the full chain, push, LOG.md, the T-299 note and the launchd restart."
     }
    ],
    "order": 4240
