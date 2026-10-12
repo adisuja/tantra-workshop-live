@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T09:10:53+0530",
-  "version": 2487,
+  "updated": "2026-10-12T09:35:07+0530",
+  "version": 2491,
   "last_id": 423,
   "team": [
    {
@@ -12042,20 +12042,20 @@
    ],
    "evidence": [
     {
-     "label": "Centre fix",
-     "url": "app/src/app/onboarding/centre/centre.tsx"
-    },
-    {
-     "label": "Walker",
-     "url": "app/scripts/walk-ui.mjs"
-    },
-    {
      "label": "Webinar report",
      "url": "/tmp/walk/242-webinar/report.json"
     },
     {
+     "label": "Challenge log",
+     "url": "/tmp/t242c/walk-challenge.log"
+    },
+    {
      "label": "Run-chain summary",
      "url": "/tmp/t242c/chain/summary.txt"
+    },
+    {
+     "label": "Walker",
+     "url": "app/scripts/walk-ui.mjs"
     }
    ],
    "blockers": [],
@@ -12095,6 +12095,11 @@
      "ts": "2026-10-12T04:13:38+0530",
      "who": "claude",
      "note": "The last finding (d3-live-key: no Connect button on a done card while the key is replaced) was a centre bug, fixed in centre.tsx (a178675b). On a rebuilt /tmp/t242c stack, d3-live-key now passes, and the earlier webinar run had all 21 jobs done with no Kie.ai finding. The webinar walker is rerunning alone (log /tmp/t242c/walk-webinar.log, report /tmp/walk/242-webinar/report.json), and the full run-chain (which walks challenge and rsp one at a time) starts automatically when it ends (summary /tmp/t242c/chain/summary.txt). Left: read both, and if the walkers show 0 findings, push main, log in the coord LOG and move to review."
+    },
+    {
+     "ts": "2026-10-12T09:35:07+0530",
+     "who": "claude",
+     "note": "Webinar walker passes with 0 findings and all 21 jobs done, no Kie.ai finding, and both tsc checks pass (/tmp/walk/242-webinar/report.json, /tmp/t242c/chain/summary.txt). The private stack now serves its own asset build (/tmp/t242c/public, built at a17d6fbb) because the shared cloud/public was stale, and the one challenge finding (Tantra list already exists) came from an old simulator that survived the reset, so the sim was restarted clean and the challenge walker is rerunning (pid in /tmp/t242c/walk.pid, log /tmp/t242c/walk-challenge.log). Left: read the challenge report (/tmp/walk/1-challenge/report.json), run rsp, run the chain, then push and LOG.md per the Orchestrator decision; the T-242 commits are already on origin/main."
     }
    ],
    "order": 2420
