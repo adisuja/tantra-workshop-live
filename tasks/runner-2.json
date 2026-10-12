@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T08:26:16+0530",
+   "task_id": "T-265",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-265 is in review for Adi and Bharath. The live centre already had both fixes, so I didn't need to deploy or change any code, and I committed nothing.\n\n1. **Deploy:** Nothing to do. The live revops-centre Worker is version 7a94c18c, which T-300 deployed from main 8eb66895. Both T-265 fixes (389886e"
+  },
+  {
    "ts": "2026-10-12T08:24:32+0530",
    "task_id": "T-414",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "(Held back from the public board: this note mentions a private client detail.)"
-  },
-  {
-   "ts": "2026-10-12T07:40:37+0530",
-   "task_id": "T-157",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-157 stays in review with no file changes. The live Apps Script health check still lists only 6 forms and no `tier_qualifier`, so T-409's redeploy hasn't happened and the mirror publish is still on hold.\n\nCompletion check:\n- **Ripple R-1e2a4927 (record the hold order):** Done. The task note now say"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-265",
+ "task_id": "T-299",
  "entries": [
-  "F-c9a8dfc2"
+  "F-f73c8936"
  ],
- "started": "2026-10-12T08:25:24+0530",
- "message": "Acting on 1 note(s) for T-265: Centre: dashboard reads (Tantra campaign stats, Metricool clicks) and automated launch QA",
+ "started": "2026-10-12T08:26:32+0530",
+ "message": "Acting on 1 note(s) for T-299: Centre: cold email inboxes come from the inbox vendor only, several calendar senders, and a sign-up inbox card",
  "slices": {
   "T-250": 1,
   "T-301": 1,
@@ -116,7 +116,6 @@
   "T-278": 1,
   "T-059": 2,
   "T-242": 2,
-  "T-265": 1,
   "T-400": 1
  },
  "api_capped": {
