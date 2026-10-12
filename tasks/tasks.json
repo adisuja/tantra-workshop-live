@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T14:39:09+0530",
-  "version": 2506,
+  "updated": "2026-10-12T14:55:51+0530",
+  "version": 2507,
   "last_id": 424,
   "team": [
    {
@@ -19055,7 +19055,11 @@
    ],
    "evidence": [
     {
-     "label": "rerun logs",
+     "label": "reminders rerun",
+     "url": "/tmp/t424/r-rem.log"
+    },
+    {
+     "label": "day2 rerun",
      "url": "/tmp/t424/r-day2.log"
     },
     {
@@ -19095,6 +19099,11 @@
      "ts": "2026-10-12T14:39:09+0530",
      "who": "claude",
      "note": "Slice 4 (branch t424-chain-probes, commit ca58ff36, stack :8940-8944): handled the Orchestrator's three day2 causes. probe-day2 now answers the T-270 autodraft question once the admin preview has loaded (sent earlier, it got a 401). The private centre's runner is :8941, the stale runner is replaced and the funnel reads the private sim on :8942. run-chain now points CENTRE_PERSIST at the launchd D1 for probe-context. The rerun of domain-chain, day1 and day2 (/tmp/t424/run3.sh) was still going when this run ended. Left: confirm day2 drafts, then run stack, context and tantra-reminders (four link checks: calendar and centre link in the Registered body, plan_url equal to the enter link, traced to fieldsFor in cloud/src/reminders.ts:200) and workshop, then the full chain on a fresh stack, push, LOG.md, the T-299 note, the launchd restart and review."
+    },
+    {
+     "ts": "2026-10-12T14:55:51+0530",
+     "who": "claude",
+     "note": "Slice 5 (branch t424-chain-probes, commits 22d1aa28 and f025f0e3, stack :8940-8944): export-site was a tooling bug (a concurrent build wiped the shared .export-scratch and only the last line of output was kept), fixed with a per-chain scratch dir and a build log, two concurrent exports both pass; probe-tantra-reminders was probe drift (local links use PUBLIC_URL, the admin uses the request origin), now 93 ok 0 fail; domain-chain and day1 green; day2 fixed for probe drift (T-268 five weekly broadcasts, A/B cold email campaigns) and now stops at T-258's new 'Share Your Master Outreach Sheet' gsheets connect card; the workshop 390px join failure was transient (same page passes at 4 widths, CORS on /cal/issue is correct), and stack and context fail only as a cascade from day2 and the D1 location (CENTRE_PERSIST). Left: teach probe-day2 the outreach-sheet card (sheet_link field, sim gsheets), rerun day2, stack and context on the private stack, then the full chain on a fresh stack."
     }
    ],
    "order": 4240

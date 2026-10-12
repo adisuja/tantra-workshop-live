@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T14:56:04+0530",
+   "task_id": "T-424",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-424 is still \"doing\": the three probes from the ripple note are handled, but day2 still fails at a new card, so the full chain hasn't run yet.\n\n**Status of each it"
+  },
+  {
    "ts": "2026-10-12T14:39:29+0530",
    "task_id": "T-424",
    "mode": "feedback",
@@ -87,24 +95,14 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-398 stays blocked: the Cal.com event still doesn't exist (https://cal.com/adisuja/tantra-enterprise-evaluation-call returned 404 in this run), so it waits on Adi's sign-in, tracked as T-415.\n\n- **Task text corrected:** done. I checked tasks.json in this run. The T-398 spec and `needs_from_owner` n"
-  },
-  {
-   "ts": "2026-10-12T04:24:13+0530",
-   "task_id": "T-074",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-074 is still blocked on T-123/T-408: the newsletter can't send until a mailbox on a non-main domain is connected and `pro_newsletter_from` is set to it. The rest checks out, and I fixed one gap I found: a send could have gone out with placeholder links.\n\n**Completion check:**\n1. **T-074 off the te"
   }
  ],
- "state": "working",
- "mode": "feedback",
- "task_id": "T-424",
- "entries": [
-  "R-3f00c5ef"
- ],
+ "state": "idle",
+ "mode": null,
+ "task_id": null,
+ "entries": [],
  "started": "2026-10-12T14:40:39+0530",
- "message": "Acting on 1 note(s) for T-424: Fix the seven chain probes that went red after 2026-10-07",
+ "message": "Last sweep handled 1 task(s).",
  "slices": {
   "T-135": 1,
   "T-300": 2,
@@ -114,7 +112,7 @@
   "T-270": 1,
   "T-299": 2,
   "T-059": 1,
-  "T-424": 3
+  "T-424": 4
  },
  "api_capped": {
   "T-229": "2026-10-12T00:59:32+0530",
