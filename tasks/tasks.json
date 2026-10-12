@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T22:21:48+0530",
-  "version": 2512,
+  "updated": "2026-10-12T22:25:07+0530",
+  "version": 2518,
   "last_id": 424,
   "team": [
    {
@@ -8285,7 +8285,7 @@
    "owner": "Adi",
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "dropped",
    "why": "The critic sub-agent is meant to be Codex (a different model). Its token refresh fails with 401, so reviews fall back to Claude reviewing Claude.",
    "spec": "",
    "done_when": [
@@ -8303,7 +8303,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Adi's Codex sign-in, tracked as T-340: in Terminal on this Mac run `codex logout && codex login` and finish the ChatGPT sign-in at https://auth.openai.com. Nothing else is needed.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-09-26T00:17:50+0530",
@@ -8344,6 +8344,16 @@
      "ts": "2026-10-09T12:48:24+0530",
      "who": "claude",
      "note": "Re-run of the same Orchestrator decision: everything it asked for is already built (commits 2e5f3f7, 9bb1307). Rechecked 2026-10-09: check_codex.sh still fails with HTTP 401, the hourly launchd job com.tantra.codex-check is loaded and writing ~/.config/tantra/codex-check.json, and the critic config uses the labelled Fable 5 single-vendor fallback. Only Adi's sign-in (T-340) is left; when the check passes, the Codex critic pass runs and closes this task."
+    },
+    {
+     "ts": "2026-10-12T22:24:11+0530",
+     "who": "claude",
+     "note": "Dropped: Codex is removed from every review process (owner 2026-10-12); the second-model critic is Fable 5 via the critic agent, so no Codex sign-in is needed."
+    },
+    {
+     "ts": "2026-10-12T22:24:19+0530",
+     "who": "claude",
+     "note": "Unloaded launchd com.tantra.codex-check (plist renamed to com.tantra.codex-check.plist.disabled-2026-10-12) so the hourly Codex check no longer runs or reopens T-149."
     }
    ],
    "order": 1490,
@@ -17217,18 +17227,23 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "dropped",
    "why": "",
    "spec": "Only Adi can do this (signin): It needs Adi's own OpenAI account login and possibly 2FA. Claude may not sign in as Adi.. Everything else in T-149 is being built around it. As soon as this is done, T-149 finishes on its own.",
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "In Terminal on this Mac, run `codex logout && codex login`. Finish the ChatGPT sign-in in the browser page it opens (https://auth.openai.com). That's all: the hourly check will confirm it and close T-149 by itself.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-09T05:06:54+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-149."
+    },
+    {
+     "ts": "2026-10-12T22:24:11+0530",
+     "who": "claude",
+     "note": "Dropped: Codex is removed from every review process (owner 2026-10-12); the second-model critic is Fable 5 via the critic agent, so no Codex sign-in is needed."
     }
    ],
    "order": 3400,
@@ -18575,6 +18590,11 @@
      "ts": "2026-10-12T08:48:49+0530",
      "who": "claude",
      "note": "Waiting-on now points to T-423, the single input for T-414 and T-409. Checked today: the exec URL health GET still lists only the 6 original forms (no tier_qualifier). This closes with evidence once the redeploy lands, the health GET shows tier_qualifier and a probe row reaches the Work Tracker."
+    },
+    {
+     "ts": "2026-10-12T22:24:02+0530",
+     "who": "claude",
+     "note": "Browser 1 is connected now; only the adi@growthclub.org Google session is missing (see T-423)."
     }
    ],
    "order": 4090
@@ -19032,8 +19052,7 @@
   },
   {
    "id": "T-423",
-   "title": "Input from Adi for T-422: Either connect Claude in Chrome on profile 'Browser 1' (adi@growthclub.org) so t",
-   "area": "Ops",
+   "status": "blocked",
    "owner": "Adi",
    "assignee": "Adi",
    "reviewers": [
@@ -19041,23 +19060,17 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
-   "why": "",
-   "spec": "Only Adi can do this (signin): Only adi@growthclub.org's Google session can redeploy this script; no credential on this Mac has Apps Script access.. Everything else in T-422 is being built around it. As soon as this is done, T-422 finishes on its own.",
+   "area": "Ops",
+   "order": 4230,
+   "title": "T-423: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Either connect Claude in Chrome on profile 'Browser 1' (adi@growthclub.org) so the agent redeploys itself, or, signed in as adi@growthclub.org, open https://script.google.com/home > project 'Tantra Funnel' > paste workshop-plan/ops/apps-script/Code.gs over Code.gs > Deploy > Manage deployments > edit (pencil) > Version: New version > Deploy.",
-   "log": [
-    {
-     "ts": "2026-10-12T08:44:47+0530",
-     "who": "claude",
-     "note": "Opened by the Orchestrator for T-422."
-    }
-   ],
-   "order": 4230,
-   "input_for": "T-422",
-   "kind": "input"
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-424",
