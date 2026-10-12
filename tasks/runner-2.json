@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:41:43+0530",
+   "task_id": "T-074",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "(Held back from the public board: this note mentions a private client detail.)"
+  },
+  {
+   "ts": "2026-10-12T07:40:37+0530",
+   "task_id": "T-157",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-157 stays in review with no file changes. The live Apps Script health check still lists only 6 forms and no `tier_qualifier`, so T-409's redeploy hasn't happened and the mirror publish is still on hold.\n\nCompletion check:\n- **Ripple R-1e2a4927 (record the hold order):** Done. The task note now say"
+  },
+  {
    "ts": "2026-10-12T07:39:49+0530",
    "task_id": "T-414",
    "mode": "feedback",
@@ -79,32 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-033 stays blocked. Nothing was sent on either channel. The WhatsApp test still needs the number from T-400, and email needs a sending mailbox on a separate domain (T-408/T-123). While verifying I found and fixed one gap: the From-address guard didn't cover Tantra's own sender mailbox, which is sti"
-  },
-  {
-   "ts": "2026-10-12T06:56:01+0530",
-   "task_id": "T-245",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-245 is still blocked: Zoom refused the production delete of test meeting 89781893618 because the app is missing the `meeting:delete:meeting:admin` scope, so nothing was deleted.\n\n| Item | State |\n|---|---|\n| Probe covers `delete_in_zoom`, including refusing a topic without \"(safe to delete)\" | Don"
-  },
-  {
-   "ts": "2026-10-12T04:32:48+0530",
-   "task_id": "T-270",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-270 checks out and is back in review for Adi and Bharath. I found no gaps and changed no code, because everything was already on origin/main.\n\n| Item | State | What I saw this run |\n|---|---|---|\n| Teaching shows with no query parameter (N067) | Done | The live probe found 2 teaching panels on a p"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-157",
+ "task_id": "T-072",
  "entries": [
-  "R-1e2a4927"
+  "R-f1aa7f40"
  ],
- "started": "2026-10-12T07:40:15+0530",
- "message": "Acting on 1 note(s) for T-157: Three products: define SaaS / Pro / Enterprise, one traffic experiment each, tier qualifier in every funnel",
+ "started": "2026-10-12T07:42:12+0530",
+ "message": "Acting on 1 note(s) for T-072: Tantra Enterprise ($9,999): move the booking page to Cal.com and retire 'Chaperone'",
  "slices": {
   "T-072": 1,
   "T-250": 1,

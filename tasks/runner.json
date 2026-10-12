@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:41:09+0530",
+   "task_id": "T-265",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-265 is in review with Adi and Bharath. The dashboard reads were fixed, pushed and redeployed, but the dashboard has not yet shown live numbers for a real attendee."
+  },
+  {
    "ts": "2026-10-12T07:31:51+0530",
    "task_id": "T-300",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "done",
    "result": "ok",
    "summary": "T-272 is done: neither waiting list Adi reads has any `?k=` sign-in links left, and I acked note F-6449aa40.\n\n**Completion check (all checked this run):**\n- **WAITING_ON_ADI.md:** done. A grep for `enter?k=` finds 0. Each sign-in now points to https://revops-centre.growthcluborg.workers.dev/admin/en"
-  },
-  {
-   "ts": "2026-10-12T04:15:33+0530",
-   "task_id": "T-059",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "(Held back from the public board: this note mentions a private client detail.)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-265: Centre: dashboard reads (Tantra campaign stats, Metricool clicks) and automated launch QA",
- "task_id": "T-265",
+ "message": "Acting on 1 note(s) for T-144: Workshop Hub Review tab: every funnel element with preview, source and approve or feedback",
+ "task_id": "T-144",
  "entries": [
-  "F-a1fdd4f6"
+  "F-8e30f57c"
  ],
  "mode": "feedback",
- "started": "2026-10-12T07:32:12+0530",
+ "started": "2026-10-12T07:41:43+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
@@ -117,7 +117,6 @@
   "T-268": 1,
   "T-242": 1,
   "T-058": 1,
-  "T-265": 1,
   "T-034": 1
  },
  "api_capped": {
