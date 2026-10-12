@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T13:12:55+0530",
-  "version": 2499,
+  "updated": "2026-10-12T14:00:23+0530",
+  "version": 2500,
   "last_id": 424,
   "team": [
    {
@@ -19035,8 +19035,12 @@
    ],
    "evidence": [
     {
-     "label": "Baseline probe logs",
-     "url": "workshop-plan/tasks/evidence/T-242/baseline-probes/"
+     "label": "day2 run log",
+     "url": "/tmp/t424/r-day2.log"
+    },
+    {
+     "label": "day2 shots",
+     "url": "/tmp/t424/shots-day2/"
     }
    ],
    "blockers": [],
@@ -19056,6 +19060,11 @@
      "ts": "2026-10-12T13:12:55+0530",
      "who": "claude",
      "note": "Slice 2 on branch t424-chain-probes (worktree /private/tmp/t424-wt, stack :8940-8944): probe-domain-chain is green (43 PASS); its last red came from probe drift, since T-261 now has the agent register an unowned calendar domain at Cloudflare first. probe-day1 and probe-day2 were updated for probe drift (T-269 Plan Your Day cards, T-261 wording 'DNS isn't active in your Cloudflare account', commit 197db067) but are not yet rerun after that last fix. Left: rerun reset, domain-chain, day1, day2 in order, then stack, context, tantra-reminders, workshop, the full chain, and the approved push, LOG.md, T-299 note and launchd restart."
+    },
+    {
+     "ts": "2026-10-12T14:00:23+0530",
+     "who": "claude",
+     "note": "Slice 3 (branch t424-chain-probes, commit 943be45e, stack :8940-8944): after a sim reset, probe-domain-chain (43 PASS) and probe-day1 (36 PASS) are green, both from probe drift. probe-day2 now gets past the T-269 card order (channels before pages, probe drift), but 9 checks fail because the agent never drafts: there are no draft events in the private D1, so the next step is to trace the auto-draft trigger and the runner on :8941 (its pid 91096 dates from 12:43). probe-workshop now skips only the two Next API checks on the static export (STATIC_EXPORT=1 set by run-chain, still checked against a Next server), not yet rerun. Left: the day2 drafting cause, then stack, context, tantra-reminders, workshop, the full chain, push, LOG.md, the T-299 note and the launchd restart."
     }
    ],
    "order": 4240
