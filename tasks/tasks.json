@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T22:36:54+0530",
-  "version": 2519,
+  "updated": "2026-10-13T00:54:57+0530",
+  "version": 2521,
   "last_id": 424,
   "team": [
    {
@@ -16512,6 +16512,11 @@
      "ts": "2026-10-12T22:36:54+0530",
      "who": "claude",
      "note": "Merged, pushed and live. Branch t-299-vendor-inboxes (ec7b7072, with main merged in, app and cloud type checks clean) is merged into main as c16d3d9d and pushed to origin. On the private stack from clean state all four chain probes pass: probe-domain-chain 45 of 45, probe-day1 36 of 36, probe-day2 63 of 63 (now handles the Plan Your Day 3 card, commit 0ad6e8b2), probe-stack 57 of 57. The revops-centre Worker is deployed as version f476d853-153d-4600-a3f2-367e200e6d51 from a clean worktree of c16d3d9d with a fresh centre bundle, so the several-senders calendar copy is live; no D1 migration was pending. Mirror published as cdba319b1 (one changed chunk). MERGED line added to the coord LOG.md. Review: https://revops-centre.growthcluborg.workers.dev/admin/?v=t299m and the calendar card at https://revops-centre.growthcluborg.workers.dev/onboarding/?v=t299m"
+    },
+    {
+     "ts": "2026-10-13T00:54:57+0530",
+     "who": "claude",
+     "note": "T-424 merged main (with T-299) into t424-chain-probes: probe-day1, probe-day2, probe-domain-chain and probe-stack conflicted and were resolved to T-299's versions, so each card has one handling. Full run-chain on a fresh stack is 22 pass, 0 fail with them (main 7b39fb0d)."
     }
    ],
    "order": 2990
@@ -19089,7 +19094,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "Split out of T-242 by the Orchestrator (F-4a0eb028): these probes were green on 2026-10-07 and fail on the current origin/main.",
    "spec": "In the run-chain (app/scripts/run-chain.sh) these steps fail on origin/main: probe-domain-chain (locator.click timeout), probe-day1 and probe-day2 (the centre stays on the 'Describe Your Business' card instead of reaching 'Join the Day 1/2 session'), probe-stack ('a live funnel to test against (undefined)', then GoHighLevel failed), probe-context (TypeError reading attendee_id), probe-tantra-reminders (Registered message lacks calendar/centre link and plan_url), probe-workshop (/api/checkout and /api/dodo/webhook on the static export). Baseline logs are in workshop-plan/tasks/evidence/T-242/baseline-probes/. Find each cause (probe drift vs a centre regression) and fix it; check with T-299, which is changing probe-day1 and the Day 1 cards.",
    "done_when": [
@@ -19147,6 +19152,11 @@
      "ts": "2026-10-12T14:55:51+0530",
      "who": "claude",
      "note": "Slice 5 (branch t424-chain-probes, commits 22d1aa28 and f025f0e3, stack :8940-8944): export-site was a tooling bug (a concurrent build wiped the shared .export-scratch and only the last line of output was kept), fixed with a per-chain scratch dir and a build log, two concurrent exports both pass; probe-tantra-reminders was probe drift (local links use PUBLIC_URL, the admin uses the request origin), now 93 ok 0 fail; domain-chain and day1 green; day2 fixed for probe drift (T-268 five weekly broadcasts, A/B cold email campaigns) and now stops at T-258's new 'Share Your Master Outreach Sheet' gsheets connect card; the workshop 390px join failure was transient (same page passes at 4 widths, CORS on /cal/issue is correct), and stack and context fail only as a cascade from day2 and the D1 location (CENTRE_PERSIST). Left: teach probe-day2 the outreach-sheet card (sheet_link field, sim gsheets), rerun day2, stack and context on the private stack, then the full chain on a fresh stack."
+    },
+    {
+     "ts": "2026-10-13T00:54:57+0530",
+     "who": "claude",
+     "note": "Done on branch t424-chain-probes, merged to main 7b39fb0d and pushed. Full run-chain (with the three walkers) on a fresh private stack: 22 pass, 0 fail; evidence workshop-plan/tasks/evidence/T-424/summary.txt. Cause per probe: probe-domain-chain, probe drift (Title Case titles, T-269 label ids, T-270 preselected tools, T-261/T-299 calendar domain registration and wording) plus one product bug fixed in centre/fields.tsx (pressing a preselected chip cleared it while it still looked picked, which locked Mark done). probe-day1, probe drift (T-269 Plan Your Day cards, T-261 Resend DNS wording). probe-day2, probe drift (T-270 autodraft question sent before the preview session existed, T-269 card order, T-268 weekly broadcasts, A/B cold email campaigns, T-258 outreach sheet card, Plan Your Day 3). probe-stack, cascade from day2 plus probe drift (T-123 Tantra confirmation is a campaign enrolment, T-264 live form screenshot). probe-context, probe drift (run-chain now points CENTRE_PERSIST at the right D1; sidebar labels carry a code prefix). probe-tantra-reminders, probe drift (local links use PUBLIC_URL, the admin uses the request origin, so links compare by path); its later follow-up failures came from reusing a stack, green on every fresh stack. probe-workshop, probe drift: the static export has no Next API routes, so STATIC_EXPORT=1 skips /api/checkout and /api/dodo/webhook there (still checked against a Next server); the 390px join failure was transient. export-site, tooling bug: a concurrent build wiped the shared .export-scratch and only the last output line was kept; now its own scratch dir and a full build log. Commits 22d1aa28, f025f0e3, 4ef01e20, merge of main with T-299 2c893a89 (probe-day1, day2, domain-chain and stack conflicts resolved to main's handling, one per card), evidence e212fcb2. No launchd job uses run-chain, nothing restarted. Left: the fields.tsx fix goes live on the next revops-centre deploy and mirror publish."
     }
    ],
    "order": 4240
