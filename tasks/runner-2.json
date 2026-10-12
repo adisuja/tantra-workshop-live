@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T09:22:57+0530",
+   "task_id": "T-421",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-421 stays in review: all 20 FintechCircle senders are connected, so nothing needed uploading, verifying, dropping or pushing.\n\n| Item | State | What I saw in this run |\n|---|---|---|\n| 1. Check the service accounts, upload fintech-488411 only if missing | Done, no upload | `GET /connectors/service"
+  },
+  {
    "ts": "2026-10-12T08:52:18+0530",
    "task_id": "T-414",
    "mode": "feedback",
@@ -87,24 +95,14 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-414 is still blocked. The live 'Tantra Funnel' script hasn't been redeployed yet, and this run had no browser connection, so I couldn't do the redeploy myself.\n\n**Completion check:**\n- **Is Claude in Chrome connected on 'Browser 1'?** No. This run has no browser tools, so I couldn't redeploy from "
-  },
-  {
-   "ts": "2026-10-12T08:23:04+0530",
-   "task_id": "T-300",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "**Completion check**\n\n| Item | State | Evidence |\n|---|---|---|\n| Remove the Calendly path from worker.js (poll, cron line, apply, /hooks/calendly, header comment, hooks.calendly) | Done | At 15373459 the deployed bundle has 0 calendlyPoll, 0 calendlyApply and 0 /hooks/calendly. The live /hooks/cale"
   }
  ],
- "state": "working",
- "mode": "feedback",
- "task_id": "T-421",
- "entries": [
-  "F-38ac25a5"
- ],
+ "state": "idle",
+ "mode": null,
+ "task_id": null,
+ "entries": [],
  "started": "2026-10-12T09:17:07+0530",
- "message": "Acting on 1 note(s) for T-421: Connect the missing FintechCircle calendar senders in Tantra",
+ "message": "Last sweep handled 0 task(s).",
  "slices": {
   "T-250": 1,
   "T-301": 1,
