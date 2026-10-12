@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T06:55:42+0530",
-  "version": 2349,
+  "updated": "2026-10-12T06:58:56+0530",
+  "version": 2351,
   "last_id": 420,
   "team": [
    {
@@ -8135,6 +8135,11 @@
      "ts": "2026-10-12T02:47:01+0530",
      "who": "claude",
      "note": "Bharath (reviewer): from a checkout of adisuja/3-day-tantra-ai-revops-workshop, run in a clone of Usetantra/webinar-deck: git am <repo>/workshop-plan/tantra-product-patches/webinar-deck/main--097f6bd6a5.patch && git push origin main; then in a clone of Usetantra/tantra-webinar-deck: git am <repo>/workshop-plan/tantra-product-patches/tantra-webinar-deck/main--b3def23f6b.patch && git push origin main. After Pages republishes, curl -s https://usetantra.github.io/tantra-webinar-deck/ | grep -c \"url('tantra-logo.png')\" should print 0. Full steps: tantra-product-patches/README.md, T-148 section."
+    },
+    {
+     "ts": "2026-10-12T06:58:56+0530",
+     "who": "claude",
+     "note": "Asked of Adi is empty for T-148 in tasks.json. No generator existed for the Adi waiting lists, so I added workshop-plan/tasks/waiting_on_adi.py (drops asks whose field is empty or task is done/dropped, plus emptied group headings) and ran it: T-148, its 'Bharath applies the webinar deck patches' heading and 10 other stale asks are gone, --check prints 'stale: none' (commit f942c33b, pushed). Status stays review with Bharath to run the README T-148 git am steps."
     }
    ],
    "order": 1480,
