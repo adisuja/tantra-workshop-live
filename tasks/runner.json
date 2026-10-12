@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T08:41:55+0530",
+   "task_id": "T-400",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-400 stays blocked: Adi still needs to reply on T-419 with the WhatsApp number, with country code, that should get the 'Adi test' Day 1 message. Nothing had to change for the ripple.\n\n- **Ripple R-b481d2bc (is the existing WhatsApp number the workshop number):** Done. This run I read Tantra's Whats"
+  },
+  {
    "ts": "2026-10-12T08:40:01+0530",
    "task_id": "T-263",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-300 is back in review: I fixed the one real branch regression, pushed the branch at 0958fe70, and added the updated READY line to LOG.md.\n\nThe regression was in `a"
-  },
-  {
-   "ts": "2026-10-12T07:13:13+0530",
-   "task_id": "T-229",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I re-checked everything on T-229 and nothing needed to change. It stays in review. I made no code edits, so there was nothing to commit.\n\n**Completion check:**\n- **Ripple (Worker id and attendee count in T-229's record):** already up to date. The task record already pointed at Worker 3dc17ab7, and `"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-400: Input: connect the workshop WhatsApp number in Tantra and name the test number",
- "task_id": "T-400",
+ "message": "Acting on 1 note(s) for T-058: Connect team profiles + launch outreach",
+ "task_id": "T-058",
  "entries": [
-  "R-b481d2bc"
+  "F-78d8ca6f"
  ],
  "mode": "feedback",
- "started": "2026-10-12T08:40:24+0530",
+ "started": "2026-10-12T08:42:46+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
