@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T06:56:01+0530",
+   "task_id": "T-245",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-245 is still blocked: Zoom refused the production delete of test meeting 89781893618 because the app is missing the `meeting:delete:meeting:admin` scope, so nothing was deleted.\n\n| Item | State |\n|---|---|\n| Probe covers `delete_in_zoom`, including refusing a topic without \"(safe to delete)\" | Don"
+  },
+  {
    "ts": "2026-10-12T04:32:48+0530",
    "task_id": "T-270",
    "mode": "feedback",
@@ -87,27 +95,18 @@
    "status": "review",
    "result": "ok",
    "summary": "T-020 is back in review with nothing changed. This pass confirmed that the review link (`?v=1012a`), the \"changed since\" list and the live mirror are all up to date.\n\nCompletion check:\n- **Review link refreshed:** done. The ask and all 8 evidence links point to https://adisuja.github.io/tantra-works"
-  },
-  {
-   "ts": "2026-10-12T03:06:07+0530",
-   "task_id": "T-242",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Stopped at the 70-minute wall clock for one run; the work so far is committed and the next run continues. Last report: Now I'm rerunning the webinar walker on its own."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-245",
+ "task_id": "T-033",
  "entries": [
-  "F-7e139a1c"
+  "F-6976539b"
  ],
- "started": "2026-10-12T06:53:46+0530",
- "message": "Acting on 1 note(s) for T-245: Add an admin way to forget a Zoom test session",
+ "started": "2026-10-12T06:56:38+0530",
+ "message": "Acting on 1 note(s) for T-033: WhatsApp + email delivery automation",
  "slices": {
   "T-072": 1,
-  "T-245": 1,
   "T-250": 1,
   "T-301": 1,
   "T-140": 1,

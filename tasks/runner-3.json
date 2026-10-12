@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T06:54:45+0530",
+   "task_id": "T-398",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-398 stays blocked: the Cal.com event still doesn't exist (https://cal.com/adisuja/tantra-enterprise-evaluation-call returned 404 in this run), so it waits on Adi's sign-in, tracked as T-415.\n\n- **Task text corrected:** done. I checked tasks.json in this run. The T-398 spec and `needs_from_owner` n"
+  },
+  {
    "ts": "2026-10-12T04:24:13+0530",
    "task_id": "T-074",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-403 stays blocked. The ask already names the right app, and only Adi can unlock the Mac and turn on the Accessibility permission.\n\n- **Ask names the app macOS checks when the runner launches it:** done. I ran preflight in this run and the process chain goes from `claude` up to `/Library/Frameworks"
-  },
-  {
-   "ts": "2026-10-12T03:01:29+0530",
-   "task_id": "T-132",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-132 is still blocked on Adi: none of the 5 screenshots could be taken this run, because the preflight check still fails.\n\n- **All 5 slots show a real, redacted capture:** not done. The preflight printed NOT READY because Accessibility is off and the Mac is locked. Screen Recording works and the Cl"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-398",
+ "task_id": "T-252",
  "entries": [
-  "F-77441135"
+  "F-21d94cec"
  ],
- "started": "2026-10-12T06:53:23+0530",
- "message": "Acting on 1 note(s) for T-398: Input from Adi for T-072: Sign in at https://app.cal.com/event-types as adisuja and create the event 'Tant",
+ "started": "2026-10-12T06:55:08+0530",
+ "message": "Acting on 1 note(s) for T-252: Tantra marketing site: settle the open pricing and copy decisions from the frontend-v2 pass",
  "slices": {
   "T-135": 1,
   "T-300": 2,

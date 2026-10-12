@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T06:53:56+0530",
-  "version": 2344,
-  "last_id": 419,
+  "updated": "2026-10-12T06:55:42+0530",
+  "version": 2349,
+  "last_id": 420,
   "team": [
    {
     "name": "Adi",
@@ -12013,7 +12013,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "In the T-226 Zoom sign-in, open the Tantra Centre Server-to-Server OAuth app at https://marketplace.zoom.us/user/build, go to Scopes, add meeting:delete:meeting:admin, save, then reply 'done' on T-245. The next run deletes the test meeting, forgets it and runs tracker_sync.py.",
+   "needs_from_owner": "Only T-335: in that one Zoom sign-in (https://marketplace.zoom.us, Manage, Tantra Centre, Scopes) add meeting:delete:meeting:admin and save. The next run then deletes test meeting 89781893618, forgets it and runs tracker_sync.py.",
    "log": [
     {
      "ts": "2026-10-07T23:25:35+0530",
@@ -12059,6 +12059,11 @@
      "ts": "2026-10-12T02:41:35+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-12: the guarded delete-in-Zoom step on the forget route is live (commit 054299d1, on origin/main), and probe-zoom-pro.mjs passed 65 of 65 on a fresh local stack, including refusing a meeting still in Zoom and one without '(safe to delete)' in its topic. Retried the approved production delete on 89781893618 today. Zoom refused again with '400 code 4711: token does not contain scopes [meeting:delete:meeting:admin, meeting:delete:meeting]', so nothing was deleted and GET /admin/api/zoom still lists it. The scope is already in the T-226 sign-in ask, and tracker_sync is held until the forget succeeds."
+    },
+    {
+     "ts": "2026-10-12T06:55:42+0530",
+     "who": "claude",
+     "note": "Retried the approved production forget on 89781893618 with delete_in_zoom on 2026-10-12. Zoom refused it with '400 code 4711: Invalid access token, does not contain scopes:[meeting:delete:meeting:admin, meeting:delete:meeting]', so nothing was deleted and GET /admin/api/zoom still lists it. The code is already live and on origin/main (commit 054299d1), so no push or deploy was needed, and probe-zoom-pro.mjs passed 65 of 65 on a fresh vendor-sim plus wrangler dev stack, including all six forget and delete-in-Zoom checks. The only thing left is the meeting:delete:meeting:admin scope, which is already in the T-335 Zoom sign-in ask. tracker_sync.py waits until the forget succeeds."
     }
    ],
    "order": 2450
@@ -17768,6 +17773,16 @@
      "ts": "2026-10-12T06:53:51+0530",
      "who": "claude",
      "note": "Corrected the task text and the WAITING_ON_ADI_GROUPED.md entry (still one entry for T-072 and T-398): the event satisfies the T-072 input, but /enterprise shows the embed only after Bharath's team applies patch adi-new-ui--5d6eecf642 upstream. Probed https://cal.com/adisuja/tantra-enterprise-evaluation-call today: 404, so the event does not exist yet and this stays blocked on Adi's input (T-415)."
+    },
+    {
+     "ts": "2026-10-12T06:54:27+0530",
+     "who": "claude",
+     "note": "Verify pass 12 Oct: task text and the single T-072/T-398 entry in WAITING_ON_ADI_GROUPED.md say the event satisfies the T-072 input and /enterprise shows the embed only after Bharath's team applies adi-new-ui--5d6eecf642.patch upstream. The pinned URL is unchanged in the draft, README and patch. https://cal.com/adisuja/tantra-enterprise-evaluation-call still returns 404, so this waits on Adi's sign-in (T-415)."
+    },
+    {
+     "ts": "2026-10-12T06:54:52+0530",
+     "who": "claude",
+     "note": "Checked 9 related task(s); updating T-072."
     }
    ],
    "order": 3980,
@@ -18506,6 +18521,35 @@
    ],
    "order": 4190,
    "input_for": "T-400",
+   "kind": "input"
+  },
+  {
+   "id": "T-420",
+   "title": "Input from Adi for T-384: Open the Claude Code desktop app, start a session with Claude in Chrome connecte",
+   "area": "Content",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (physical): Only a desktop session Adi opens has Claude in Chrome; the unattended runner has no browser and must not take over his Brave.. Everything else in T-384 is being built around it. As soon as this is done, T-384 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Open the Claude Code desktop app, start a session with Claude in Chrome connected to the Brave profile adi@growthclub.org, and type: Act on T-115, T-339 and T-140. Optional in the same sitting: open https://admin.google.com/ac/users and type your Google password in the 'Enter your password' field (T-348).",
+   "log": [
+    {
+     "ts": "2026-10-12T06:54:54+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-384."
+    }
+   ],
+   "order": 4200,
+   "input_for": "T-384",
    "kind": "input"
   }
  ]
