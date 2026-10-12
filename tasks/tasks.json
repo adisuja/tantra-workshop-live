@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T06:58:56+0530",
-  "version": 2351,
+  "updated": "2026-10-12T07:01:55+0530",
+  "version": 2353,
   "last_id": 420,
   "team": [
    {
@@ -1893,7 +1893,7 @@
      "url": "cloud/src/jobs-delivery.ts"
     },
     {
-     "label": "Probe (output delivery, 17/17)",
+     "label": "Probe (output delivery, 18/18)",
      "url": "app/scripts/probe-output-delivery.mjs"
     },
     {
@@ -1901,16 +1901,16 @@
      "url": "app/scripts/probe-day-delivery.mjs"
     },
     {
-     "label": "Day 1 dry run on the simulator (3/3)",
-     "url": "workshop-plan/ops/dryrun/20261011-115532/results.json"
+     "label": "Live delivery status (admin)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/api/delivery?v=t033r6"
     },
     {
-     "label": "Live delivery status (admin)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/api/delivery?v=t033r5"
+     "label": "Revert ledger entry",
+     "url": "scripts/walkthroughs/REVERT_LEDGER.md"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Waits on T-123 (the sending mailbox on a separate, non-growthclub.org domain, then a Resend key for that domain or the mailbox connected in Tantra) and T-400 (the WhatsApp test number). Nothing to answer here.",
+   "needs_from_owner": "Waits on T-400 (Adi's WhatsApp test number) for the Day 1 WhatsApp send, and on T-408/T-123 (the sending mailbox on a separate domain, then its Resend key) for email. Nothing to answer here.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2021,6 +2021,11 @@
      "ts": "2026-10-12T02:51:06+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-034, T-400."
+    },
+    {
+     "ts": "2026-10-12T07:00:51+0530",
+     "who": "claude",
+     "note": "Made the 3 WhatsApp-only Day output campaigns in our Tantra workspace as drafts (Day 1 6acc378b5f16ab824d7c8f1f, Day 2 6acc37a15f16ab824d7c8f76, Day 3 6acc37a95f16ab824d7c8fb3) on the connected WhatsApp account 6acbd96d. No contact is imported and nothing was sent: Tantra does not show the account's phone number and T-400 says not to read the chats, so the Day 1 WhatsApp waits on the number Adi gives on T-400. No email went out: the live centre has no Resend key or From address. The From address is now a Cohort Setting that refuses growthclub.org, usetantra.com and free inboxes, and WhatsApp-only campaigns no longer need a Tantra mailbox (commit 3d7c62a2, local, not deployed). probe-output-delivery passed 18/18 and probe-day-delivery 26/26 on a fresh local centre."
     }
    ],
    "order": 230,
@@ -8140,6 +8145,11 @@
      "ts": "2026-10-12T06:58:56+0530",
      "who": "claude",
      "note": "Asked of Adi is empty for T-148 in tasks.json. No generator existed for the Adi waiting lists, so I added workshop-plan/tasks/waiting_on_adi.py (drops asks whose field is empty or task is done/dropped, plus emptied group headings) and ran it: T-148, its 'Bharath applies the webinar deck patches' heading and 10 other stale asks are gone, --check prints 'stale: none' (commit f942c33b, pushed). Status stays review with Bharath to run the README T-148 git am steps."
+    },
+    {
+     "ts": "2026-10-12T07:01:55+0530",
+     "who": "claude",
+     "note": "Verify pass: Asked of Adi is empty for T-148; waiting_on_adi.py --check prints 'stale: none' and neither WAITING_ON_ADI.md nor WAITING_ON_ADI_GROUPED.md mentions T-148 or its 'Bharath applies the webinar deck patches' heading (commit f942c33b is on origin/main). The board sync published v2351 (ok) and the live mirror shows T-148 in review with Bharath and Bhaskar. Waiting on Bharath to run the README T-148 git am steps."
     }
    ],
    "order": 1480,
