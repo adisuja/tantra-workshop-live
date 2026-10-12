@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T07:26:27+0530",
+   "task_id": "T-418",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "(Held back from the public board: this note mentions a private client detail.)"
+  },
+  {
    "ts": "2026-10-12T07:15:49+0530",
    "task_id": "T-234",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-299 is not merged, pushed or deployed yet: two of the four probes pass, but probe-day2 still fails, so the approved steps have not run. The task is set to `doing` "
-  },
-  {
-   "ts": "2026-10-12T03:20:52+0530",
-   "task_id": "T-034",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-034 is blocked again: the production dry run works, but the real email and WhatsApp sends still need T-408 (team@growthclub.org connected as a Tantra mailbox) and T-400 (the WhatsApp test number).\n\n| Item | State and what I checked this run |\n|---|---|\n| 1. Dry run on the production centre with th"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-418",
+ "task_id": "T-058",
  "entries": [
-  "F-88daf9d7"
+  "R-bbca1f21"
  ],
- "started": "2026-10-12T07:16:13+0530",
- "message": "Acting on 1 note(s) for T-418: Input from Adi for T-263: save the FintechCircle Tantra API key for the read-only sender check",
+ "started": "2026-10-12T07:26:41+0530",
+ "message": "Acting on 1 note(s) for T-058: Connect team profiles + launch outreach",
  "slices": {
   "T-072": 1,
   "T-250": 1,
