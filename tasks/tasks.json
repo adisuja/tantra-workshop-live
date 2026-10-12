@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T09:10:09+0530",
-  "version": 2486,
+  "updated": "2026-10-12T09:10:53+0530",
+  "version": 2487,
   "last_id": 423,
   "team": [
    {
@@ -16370,8 +16370,12 @@
      "url": "/tmp/t299/probes-summary.txt"
     },
     {
-     "label": "Day 1 probe log",
-     "url": "/tmp/t299/p-day1.log"
+     "label": "Day 2 probe log",
+     "url": "/tmp/t299/p-day2.log"
+    },
+    {
+     "label": "Stack probe log",
+     "url": "/tmp/t299/p-stack.log"
     },
     {
      "label": "Branch worktree",
@@ -16445,6 +16449,11 @@
      "ts": "2026-10-12T08:36:35+0530",
      "who": "claude",
      "note": "Not merged, pushed or deployed yet: probe-domain-chain passed again (45 of 45), but day1 failed because the simulator still held the previous run's GA4 proof record, so the refusal check never fired, and an orphaned runner from an earlier run was holding port 8931. I fixed day2's autodraft 401 (commit dbb3c94e on t-299-vendor-inboxes), restarted the private stack from clean state, and started a fresh four-probe run that writes /tmp/t299/probes-summary.txt. Next pass: read that file, and once all four probes pass, merge main, rerun both tsc checks, then push, deploy the centre Worker, publish the mirror and add the MERGED T-299 line to LOG.md."
+    },
+    {
+     "ts": "2026-10-12T09:10:53+0530",
+     "who": "claude",
+     "note": "Not merged, pushed or deployed yet: probe-domain-chain (45 of 45), probe-day1 (36 of 36) and probe-stack (57 of 57) now pass on branch t-299-vendor-inboxes (a57a8951, main merged in a50ec245, both tsc checks clean). probe-day2 passes 52 checks, including the fixed A/B campaign, broadcast and new master outreach sheet steps, then stops because main now shows a 'Plan Your Day 3' card before 'Watch a test contact go through every automation' (p-day2.log line 53). Next pass: handle that card in probe-day2.mjs after line 318, rerun /tmp/t299/run-probes.sh on a clean stack, and once all four pass do the approved merge, push, Worker deploy, mirror publish and LOG.md MERGED line."
     }
    ],
    "order": 2990
