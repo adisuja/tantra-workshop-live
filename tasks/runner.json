@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T08:32:40+0530",
+   "task_id": "T-273",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I checked every item and T-273 passes. It's back in review for Adi and Bharath. One fix came out of this pass: rebuilding the hub corrected four out-of-date source-line links, and I republished the mirror with them (live hub: https://adisuja.github.io/tantra-workshop-live/?v=t273v602).\n\n**Checklist:"
+  },
+  {
    "ts": "2026-10-12T08:09:13+0530",
    "task_id": "T-252",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-335 is still blocked. I read Live Control (`/admin/api/zoom/control`) again in this run: Seat credentials still show `saved: false` and all 5 Tantra Centre poll scopes are still missing. The task stays blocked on Adi's one Zoom sign-in (T-417), and F-c33a5864 was already marked processed by the ea"
-  },
-  {
-   "ts": "2026-10-12T07:05:55+0530",
-   "task_id": "T-407",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-407 is back in review after the final sync: the spec now lists all 6 missing Tantra Centre scopes and the T-225 line is up to date. T-335 is still the only thing Adi has to do.\n\nCompletion check:\n1. **Sixth scope in item 1:** done. It now says Live Control reads 6 scopes missing (the 5 poll scopes"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-273: Workshop Hub (index.html): review data, offer ladder, cohort dates and header",
- "task_id": "T-273",
+ "message": "Acting on 1 note(s) for T-033: WhatsApp + email delivery automation",
+ "task_id": "T-033",
  "entries": [
-  "F-5cc81a37"
+  "F-c448338f"
  ],
  "mode": "feedback",
- "started": "2026-10-12T08:09:33+0530",
+ "started": "2026-10-12T08:33:29+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
