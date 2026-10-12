@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-12T08:48:49+0530",
-  "version": 2483,
+  "updated": "2026-10-12T08:51:33+0530",
+  "version": 2485,
   "last_id": 423,
   "team": [
    {
@@ -18650,7 +18650,7 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "EITHER connect Claude in Chrome on profile 'Browser 1' (signed in as adi@growthclub.org) and the agent redeploys the script itself, OR do it by hand: signed in as adi@growthclub.org, open https://script.google.com/home > project 'Tantra Funnel' > paste workshop-plan/ops/apps-script/Code.gs over Code.gs > Deploy > Manage deployments > edit (pencil) > Version: New version > Deploy. The manual steps are needed only if Chrome is not connected. The agent then finishes T-409.",
+   "needs_from_owner": "Tracked as one input on T-423 (under T-422, covering T-414 and T-409); no further input tasks will be opened. At each run start the agent checks Claude in Chrome on profile 'Browser 1' (adi@growthclub.org) and redeploys the script itself if it is connected. Fallback by hand: signed in as adi@growthclub.org, open https://script.google.com/home > project 'Tantra Funnel' > paste workshop-plan/ops/apps-script/Code.gs over Code.gs > Deploy > Manage deployments > edit (pencil) > Version: New version > Deploy.",
    "log": [
     {
      "ts": "2026-10-12T02:32:31+0530",
@@ -18681,6 +18681,16 @@
      "ts": "2026-10-12T08:24:37+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-409, T-422."
+    },
+    {
+     "ts": "2026-10-12T08:50:44+0530",
+     "who": "claude",
+     "note": "Waiting-on now points to T-423 as the single input (via T-422), and says the agent checks Claude in Chrome on 'Browser 1' at each run start and redeploys itself if connected. Health GET of the exec URL just now still lists only the 6 original forms (no tier_qualifier), and this run has no Chrome connection, so it stays blocked."
+    },
+    {
+     "ts": "2026-10-12T08:51:33+0530",
+     "who": "claude",
+     "note": "Verify pass for the T-422 ripple: nothing had to change. The ask already names T-423 (through T-422) as the single input, says the agent checks Claude in Chrome on 'Browser 1' at each run start, and says no further input tasks will be opened (only the T-414 > T-422 > T-423 chain is open). The health GET of the exec URL just now still lists only the 6 original forms (no tier_qualifier), and this run had no Chrome connection, so it stays blocked."
     }
    ],
    "order": 4140,

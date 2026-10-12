@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-12T08:52:18+0530",
+   "task_id": "T-414",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-414 is still blocked. Nothing had to change for the T-422 ripple, and the Apps Script still hasn't been redeployed: the live script lists only the 6 original forms and no tier_qualifier.\n\nCOMPLETION CHECK:\n- **Waiting-on points to T-423 (through T-422) as the single input:** Done. I read T-414's l"
+  },
+  {
    "ts": "2026-10-12T08:50:01+0530",
    "task_id": "T-409",
    "mode": "feedback",
@@ -87,24 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "**Completion check**\n\n| Item | State | Evidence |\n|---|---|---|\n| Remove the Calendly path from worker.js (poll, cron line, apply, /hooks/calendly, header comment, hooks.calendly) | Done | At 15373459 the deployed bundle has 0 calendlyPoll, 0 calendlyApply and 0 /hooks/calendly. The live /hooks/cale"
-  },
-  {
-   "ts": "2026-10-12T08:11:22+0530",
-   "task_id": "T-058",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-058 is blocked and assigned to Bhaskar. Nothing is asked of Adi, and the campaign is still a draft that nobody started.\n\n**Completion check:**\n\n1. **Who holds the LinkedIn slots: done.** A live read-only check this run found 0 LinkedIn accounts in the GrowthClub workspace and 1 WhatsApp number, wh"
   }
  ],
- "state": "working",
- "mode": "feedback",
- "task_id": "T-414",
- "entries": [
-  "R-31f6535e"
- ],
+ "state": "idle",
+ "mode": null,
+ "task_id": null,
+ "entries": [],
  "started": "2026-10-12T08:50:18+0530",
- "message": "Acting on 1 note(s) for T-414: Input from Adi for T-409: Signed in as adi@growthclub.org, open https://script.google.com/home > project '",
+ "message": "Last sweep handled 2 task(s).",
  "slices": {
   "T-250": 1,
   "T-301": 1,
