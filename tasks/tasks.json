@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-13T18:40:30+0530",
-  "version": 2531,
+  "updated": "2026-10-14T02:52:33+0530",
+  "version": 2533,
   "last_id": 424,
   "team": [
    {
@@ -16517,6 +16517,11 @@
      "ts": "2026-10-13T00:54:57+0530",
      "who": "claude",
      "note": "T-424 merged main (with T-299) into t424-chain-probes: probe-day1, probe-day2, probe-domain-chain and probe-stack conflicted and were resolved to T-299's versions, so each card has one handling. Full run-chain on a fresh stack is 22 pass, 0 fail with them (main 7b39fb0d)."
+    },
+    {
+     "ts": "2026-10-14T02:52:33+0530",
+     "who": "claude",
+     "note": "14 Oct: T-299's card changes (start-endy, start-signup-inbox, new titles) had dropped off the live front-end after a later deploy reused a stale cloud/public; redeployed from main, live again."
     }
    ],
    "order": 2990
@@ -19187,6 +19192,11 @@
      "ts": "2026-10-13T00:59:43+0530",
      "who": "claude",
      "note": "Mirror: no republish needed. A clean export of origin/main 9e52100e equals the live mirror cdba319b1 apart from the build id and timestamps; the static export drops the centre, so the fields.tsx fix reaches attendees only through the revops-centre Worker (578ed7be). Live mirror checked: 200, 0 console errors."
+    },
+    {
+     "ts": "2026-10-14T02:52:33+0530",
+     "who": "claude",
+     "note": "14 Oct: found the live centre front-end was the 12 Oct 07:47 build (before T-299 merged), because later deploys rsynced the main checkout's stale cloud/public. Worker was current; only the static page was behind. Rebuilt cloud/public from main (59aed762) in a clean worktree and deployed (963 assets). Main checkout's cloud/public now matches live. 98 of 99 card deep links open the exact card."
     }
    ],
    "order": 4240
