@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-13T00:59:43+0530",
-  "version": 2523,
+  "updated": "2026-10-13T18:40:18+0530",
+  "version": 2529,
   "last_id": 424,
   "team": [
    {
@@ -18556,7 +18556,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "review",
    "why": "T-157: the live receiver lists only 6 forms, so qualifier answers from /workshop/join and /masterclass/success/join are rejected and the mirror publish is held.",
    "spec": "Code.gs is committed at workshop-plan/ops/apps-script/Code.gs (tier_qualifier at line 136). Redeploying the same deployment keeps the URL in app/src/lib/form-log.ts. After the redeploy, an agent checks the health GET, posts one probe row, publishes the T-157 qualifier to the mirror and reruns app/scripts/probe-tier-qualifier.mjs.",
    "done_when": [
@@ -18605,6 +18605,11 @@
      "ts": "2026-10-12T22:24:02+0530",
      "who": "claude",
      "note": "Browser 1 is connected now; only the adi@growthclub.org Google session is missing (see T-423)."
+    },
+    {
+     "ts": "2026-10-13T18:40:18+0530",
+     "who": "claude",
+     "note": "2026-10-13: Code.gs pasted into 'Tantra Funnel' as adi@growthclub.org (editor SHA-256 matches the committed file), deployment AKfycbxgZiV7... edited to Version 2 (same exec URL). Health GET lists 7 forms incl. tier_qualifier. One probe row posted: ok, tab 'Funnel · Tier Qualifier' (email probe+t409@growthclub.org). Still to do on T-157: mirror publish of the qualifier (check coord/LOG.md holds first) and probe-tier-qualifier.mjs."
     }
    ],
    "order": 4090
@@ -18756,7 +18761,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "done",
    "why": "",
    "spec": "Only Adi can do this (signin): Only adi@growthclub.org's Google session can redeploy this script; no credential on this Mac has Apps Script access.. Everything else in T-409 is being built around it. As soon as this is done, T-409 finishes on its own.",
    "done_when": [],
@@ -18803,6 +18808,11 @@
      "ts": "2026-10-12T08:51:33+0530",
      "who": "claude",
      "note": "Verify pass for the T-422 ripple: nothing had to change. The ask already names T-423 (through T-422) as the single input, says the agent checks Claude in Chrome on 'Browser 1' at each run start, and says no further input tasks will be opened (only the T-414 > T-422 > T-423 chain is open). The health GET of the exec URL just now still lists only the 6 original forms (no tier_qualifier), and this run had no Chrome connection, so it stays blocked."
+    },
+    {
+     "ts": "2026-10-13T18:40:18+0530",
+     "who": "claude",
+     "note": "Closed with T-423: redeploy done by the agent via Browser 1 (2026-10-13)."
     }
    ],
    "order": 4140,
@@ -18935,7 +18945,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "blocked",
+   "status": "done",
    "why": "",
    "spec": "Only Adi can do this (reserved): It is Adi's personal phone number; Tantra's API returns none and it is not recorded anywhere on this Mac.. Everything else in T-400 is being built around it. As soon as this is done, T-400 finishes on its own.",
    "done_when": [],
@@ -18947,6 +18957,11 @@
      "ts": "2026-10-12T04:19:23+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-400."
+    },
+    {
+     "ts": "2026-10-13T18:40:18+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-13: the test number +916282864296 is already on the nelbin@growthclub.org Tantra user account."
     }
    ],
    "order": 4190,
@@ -19017,7 +19032,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "done",
    "why": "",
    "spec": "Only Adi can do this (signin): Only adi@growthclub.org's Google session can redeploy this script; no credential on this Mac has Apps Script access.. Everything else in T-414 is being built around it. As soon as this is done, T-414 finishes on its own.",
    "done_when": [],
@@ -19054,6 +19069,11 @@
      "ts": "2026-10-12T08:48:26+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-409, T-414."
+    },
+    {
+     "ts": "2026-10-13T18:40:18+0530",
+     "who": "claude",
+     "note": "Closed with T-423: redeploy done by the agent via Browser 1 (2026-10-13)."
     }
    ],
    "order": 4220,
@@ -19062,7 +19082,7 @@
   },
   {
    "id": "T-423",
-   "status": "blocked",
+   "status": "done",
    "owner": "Adi",
    "assignee": "Adi",
    "reviewers": [
