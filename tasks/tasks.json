@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-14T17:05:02+0530",
-  "version": 2563,
+  "updated": "2026-10-14T18:36:15+0530",
+  "version": 2564,
   "last_id": 450,
   "team": [
    {
@@ -20252,6 +20252,11 @@
      "ts": "2026-10-14T17:05:02+0530",
      "who": "claude",
      "note": "All 18 audit items fixed and live (5d134c5c): rails follow the manual vs automated card variant, one truth on drafts and who starts campaigns, free month replaces the trial line, rails from 1440 px, 390 px bar and meta row, code formatting, playbook anchors, repeated rail lines cut, d2-close conditional steps, companion report sentences, 'What You Get', off-path notice. Live probes: rails 104/104 at 1440, free month both ways, prompt packs + API. walk-learn 0 findings locally. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=start-tantra&v=cv8 , evidence/T-450/"
+    },
+    {
+     "ts": "2026-10-14T18:36:15+0530",
+     "who": "claude",
+     "note": "Re-audit (Fable, pass-with-fixes): the 18 fixes hold live; full sweep of 76 reachable cards at 1440 and 390 clean. Its four remaining items fixed and live: connect cards' steps now exposed to the rails (11 cards' You Decide/Strong Answer arrows pointed at the title; probe-rail-anchors now fails on that), d2-reminders line, two anchors, report funnel name. Live rails probe: 104 cards, 0 failing at 1440, 653 lines at a single field or step. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=start-cloudflare&v=cv10"
     }
    ]
   }
