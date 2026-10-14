@@ -3,7 +3,7 @@
   "project": "The 3-Day AI RevOps Workshop",
   "updated": "2026-10-14T18:36:15+0530",
   "version": 2564,
-  "last_id": 450,
+  "last_id": 451,
   "team": [
    {
     "name": "Adi",
@@ -20257,6 +20257,39 @@
      "ts": "2026-10-14T18:36:15+0530",
      "who": "claude",
      "note": "Re-audit (Fable, pass-with-fixes): the 18 fixes hold live; full sweep of 76 reachable cards at 1440 and 390 clean. Its four remaining items fixed and live: connect cards' steps now exposed to the rails (11 cards' You Decide/Strong Answer arrows pointed at the title; probe-rail-anchors now fails on that), d2-reminders line, two anchors, report funnel name. Live rails probe: 104 cards, 0 failing at 1440, 653 lines at a single field or step. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=start-cloudflare&v=cv10"
+    }
+   ]
+  },
+  {
+   "id": "T-451",
+   "title": "Lane CV: Live companion: email the report and a sign-in link for a second browser",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "doing",
+   "why": "Left open by T-442: a lead who switches device gets a 409, and the report is only a link on screen.",
+   "spec": "When the centre has a delivery sender configured (resend_key_enc + delivery_from, the same path T-427 uses), the companion emails the report link once on first open and offers 'Send me a link to continue' on the 409; one-time link token, 30 minute expiry, single use; never sends without a configured sender (button hidden). Probe against the simulator's Resend.",
+   "done_when": [
+    "Report email and continue link work against the simulator",
+    "Hidden when no sender is configured",
+    "Probe green"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T18:42:40",
+     "msg": "Picked up in the hourly run"
     }
    ]
   }
