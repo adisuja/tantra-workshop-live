@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-15T03:33:46+0530",
-  "version": 2591,
+  "updated": "2026-10-15T03:40:08+0530",
+  "version": 2592,
   "last_id": 453,
   "team": [
    {
@@ -20880,6 +20880,118 @@
    ],
    "log": [
     "2026-10-15 03:30 created from the plan"
+   ]
+  },
+  {
+   "id": "T-467",
+   "title": "Content engine cards on Day 2 and the weekly content loop on Day 3",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Adi 2026-10-15: content workflows were documented in the playbook but missing from the cards; Day 2 needs content creation and publishing tasks, the dashboard needs content metrics in one view, and the OS must carry the content engine.",
+   "spec": "workshop-plan/REVOPS_OS_PLAN_2026_10_15.md, section Content engine; source https://adisuja.github.io/revops-content-engine-playbook/",
+   "done_when": [
+    "Probes pass; teaching, coverage and playbook sections ship with the cards"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "revops-os",
+    "content-engine"
+   ],
+   "log": [
+    "2026-10-15 03:48 created"
+   ]
+  },
+  {
+   "id": "T-468",
+   "title": "Dashboard widened to one view: content metrics from Metricool, GA4, Wistia and Tantra beside the funnel",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Adi 2026-10-15: content workflows were documented in the playbook but missing from the cards; Day 2 needs content creation and publishing tasks, the dashboard needs content metrics in one view, and the OS must carry the content engine.",
+   "spec": "workshop-plan/REVOPS_OS_PLAN_2026_10_15.md, section Content engine; source https://adisuja.github.io/revops-content-engine-playbook/",
+   "done_when": [
+    "Every content metric shows from the simulator; the OS kit builds the same view"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "revops-os",
+    "content-engine"
+   ],
+   "log": [
+    "2026-10-15 03:48 created"
+   ]
+  },
+  {
+   "id": "T-469",
+   "title": "Tantra RevOps OS content engine: knowledge, kits, setup and batch prompts",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Adi 2026-10-15: content workflows were documented in the playbook but missing from the cards; Day 2 needs content creation and publishing tasks, the dashboard needs content metrics in one view, and the OS must carry the content engine.",
+   "spec": "workshop-plan/REVOPS_OS_PLAN_2026_10_15.md, section Content engine; source https://adisuja.github.io/revops-content-engine-playbook/",
+   "done_when": [
+    "A test session runs one batch end to end into a live review link"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "revops-os",
+    "content-engine"
+   ],
+   "log": [
+    "2026-10-15 03:48 created"
+   ]
+  },
+  {
+   "id": "T-470",
+   "title": "Content task data and prompts, tested with the reviewer",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Adi 2026-10-15: content workflows were documented in the playbook but missing from the cards; Day 2 needs content creation and publishing tasks, the dashboard needs content metrics in one view, and the OS must carry the content engine.",
+   "spec": "workshop-plan/REVOPS_OS_PLAN_2026_10_15.md, section Content engine; source https://adisuja.github.io/revops-content-engine-playbook/",
+   "done_when": [
+    "Every content prompt passes the rubric"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "revops-os",
+    "content-engine"
+   ],
+   "log": [
+    "2026-10-15 03:48 created"
    ]
   }
  ]
