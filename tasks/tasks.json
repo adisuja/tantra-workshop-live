@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-14T18:36:15+0530",
-  "version": 2564,
+  "updated": "2026-10-14T18:50:01+0530",
+  "version": 2565,
   "last_id": 451,
   "team": [
    {
@@ -20272,7 +20272,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "Left open by T-442: a lead who switches device gets a 409, and the report is only a link on screen.",
    "spec": "When the centre has a delivery sender configured (resend_key_enc + delivery_from, the same path T-427 uses), the companion emails the report link once on first open and offers 'Send me a link to continue' on the 409; one-time link token, 30 minute expiry, single use; never sends without a configured sender (button hidden). Probe against the simulator's Resend.",
    "done_when": [
@@ -20290,6 +20290,11 @@
     {
      "at": "2026-10-14T18:42:40",
      "msg": "Picked up in the hourly run"
+    },
+    {
+     "ts": "2026-10-14T18:50:01+0530",
+     "who": "claude",
+     "note": "Live (70d7396f, migration 0029 applied). Report emailed once on first open (idempotent); 'Email me a link to continue here' on the second-browser 409: single use, 30 min, hashed, 3 per hour, only to an address that already started. Both stay off until a delivery sender (Resend key + delivery_from passing the mailbox rule) is set in the admin. probe-live-companion-email.mjs 39/39, probe-live-companion ALL PASS; /live loads with no page errors. Review: https://revops-centre.growthcluborg.workers.dev/live/?v=cv12"
     }
    ]
   }
