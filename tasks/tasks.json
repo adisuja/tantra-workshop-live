@@ -3,7 +3,7 @@
   "project": "The 3-Day AI RevOps Workshop",
   "updated": "2026-10-14T19:09:42+0530",
   "version": 2566,
-  "last_id": 451,
+  "last_id": 452,
   "team": [
    {
     "name": "Adi",
@@ -20318,6 +20318,46 @@
      "ts": "2026-10-14T18:50:01+0530",
      "who": "claude",
      "note": "Live (70d7396f, migration 0029 applied). Report emailed once on first open (idempotent); 'Email me a link to continue here' on the second-browser 409: single use, 30 min, hashed, 3 per hour, only to an address that already started. Both stay off until a delivery sender (Resend key + delivery_from passing the mailbox rule) is set in the admin. probe-live-companion-email.mjs 39/39, probe-live-companion ALL PASS; /live loads with no page errors. Review: https://revops-centre.growthcluborg.workers.dev/live/?v=cv12"
+    }
+   ]
+  },
+  {
+   "id": "T-452",
+   "title": "Centre: margin notes redesign (small notes level with their element) and the walkthrough videos on their cards",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "review",
+   "why": "Adi 2026-10-14 review: arrows pointed at the wrong elements, the panel design was not world-class, the panel text was too large and pulled focus from the form; recorded walkthrough videos were missing from relevant cards.",
+   "spec": "Branch centre-margin-notes. Left margin: a small sticky block about the whole card. Right margin: notes set level with the exact field, step or panel they explain, joined by a hairline; hover or focus lights the pair and dims the rest. 13.5px sans, a size step below the card. Every one of 804 lines pinned by hand (workshop-plan/research/rail-anchor-audit.md, check-rail-pins.mjs). The seven held walkthroughs (Tantra reminders, Google Workspace senders, Stripe, GoHighLevel, HubSpot, Zoho, Wistia) now show on their cards. Review build only; the live centre is unchanged until Adi approves.",
+   "done_when": [
+    "Adi approves the review build",
+    "Then deployed live and the playbook embed of the seven videos follows (T-284)"
+   ],
+   "evidence": [
+    {
+     "label": "review build",
+     "url": "https://review-revops-centre.growthcluborg.workers.dev/preview?card=d1-offer&v=mn1"
+    },
+    {
+     "label": "anchor audit",
+     "url": "../research/rail-anchor-audit.md"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T20:17:43",
+     "msg": "Review version uploaded (serves no live traffic): https://review-revops-centre.growthcluborg.workers.dev"
     }
    ]
   }
