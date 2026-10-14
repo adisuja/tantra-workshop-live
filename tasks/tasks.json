@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-14T07:21:34+0530",
-  "version": 2538,
+  "updated": "2026-10-14T08:05:31+0530",
+  "version": 2544,
   "last_id": 443,
   "team": [
    {
@@ -19242,6 +19242,11 @@
      "ts": "2026-10-14T07:21:34+0530",
      "who": "claude",
      "note": "Live (version 7644cefa). Every rail line has an arrow and points at a field, step or card region; the card has matching arrows; hover/focus draws the joining line through the gutter and rings the element; focusing a field lights its coaching; rails use the margins; fold lines scroll to their element under 1400 px. probe-rail-anchors.mjs: 98 cards, 0 failing on the live centre (1340 lines, 745 at a single field or step). Review: https://revops-centre.growthcluborg.workers.dev/preview?card=start-business&v=cv1 , screenshots in evidence/T-425."
+    },
+    {
+     "ts": "2026-10-14T08:05:31+0530",
+     "who": "claude",
+     "note": "v2.1 live (version 23244de9) after the Fable critic's review (verdict fail, 10 defects, all fixed): card arrows on fresh load, rarity-weighted matching against the rendered card + 6 hand pins (at), day colours, overlay ring/lines (no inline styles), no per-frame work, off-screen arrow, single-line highlight, named card arrows out of tab order, fold below 1500 px. probe-rail-anchors.mjs (stricter): 101 cards, 0 failing live at 1600. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=start-business&v=cv2 , https://revops-centre.growthcluborg.workers.dev/onboarding/?card=d1-persona&v=cv2 , evidence/T-425/live-v21-*.png"
     }
    ]
   },
@@ -19257,7 +19262,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Move the funnel-independent connect cards (Cal.com, GoHighLevel, HubSpot, Zoho, Metricool, Kie.ai, Twilio, Tantra WhatsApp, Resend, GA4) from Day 1 to Day 0, keep WebinarGeek/Zoom/Wistia right after d1-funnel, put start-plan back in Day 0 order, rewrite the four PHASES goals to the day model, add probe-day-model.mjs, re-run the chain probes.",
    "done_when": [
@@ -19280,6 +19285,11 @@
     {
      "at": "2026-10-14T06:40:04",
      "msg": "Added from Adi's 2026-10-14 centre vision call"
+    },
+    {
+     "ts": "2026-10-14T08:05:31+0530",
+     "who": "claude",
+     "note": "Live. Ten funnel-independent sign-ups moved to Day 0 (ids unchanged), phase goals name each day's job (Day 0 join/sign up/connect, Day 1 inputs + funnel pick, Day 2 build, Day 3 AI in Claude Code). probe-day-model.mjs green. start-plan left where it is (its plan needs Day 0 answers). Chain probes re-run tracked in T-424. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=d1-calcom&v=cv2"
     }
    ]
   },
@@ -19295,7 +19305,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Last card of each day: 'Day N done: run these prompts'. Unlocks when the day's applicable cards are done. Step 1 create one Claude project and paste the project instructions (approved answers as context), then one prompt per remaining task (promptFor), Copy each and Copy all. GET /api/prompts/day/:n returns the same; the day output pipeline includes it so email and WhatsApp (T-033, T-123) carry it.",
    "done_when": [
@@ -19318,6 +19328,11 @@
     {
      "at": "2026-10-14T06:40:04",
      "msg": "Added from Adi's 2026-10-14 centre vision call"
+    },
+    {
+     "ts": "2026-10-14T08:05:31+0530",
+     "who": "claude",
+     "note": "Live. Run Your Day N Prompts closes Days 1 to 3: project instructions (every answer), one prompt per AI card, the day's closing prompt, Copy each and Copy everything; GET /api/prompts/day/:n; day email + WhatsApp copy now carry {{custom.dayN_prompts_link}} (personal /enter link to the card). Note: Tantra delivery campaigns already created keep their old template until recreated. probe-day-prompts.mjs green live. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=d1-prompts&v=cv2 , https://revops-centre.growthcluborg.workers.dev/onboarding/?card=d2-prompts&v=cv2 , https://revops-centre.growthcluborg.workers.dev/onboarding/?card=d3-prompts&v=cv2"
     }
    ]
   },
@@ -19375,7 +19390,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Admin setting tantra_free_month (default 1). On: Tantra cards show that the first month is on us for paid attendees; off: that copy disappears. d2-channels presents Tantra omni-channel as one option among the channels. The grant mechanism lives in the Tantra backend (input task for Adi).",
    "done_when": [
@@ -19398,6 +19413,11 @@
     {
      "at": "2026-10-14T06:40:04",
      "msg": "Added from Adi's 2026-10-14 centre vision call"
+    },
+    {
+     "ts": "2026-10-14T08:05:31+0530",
+     "who": "claude",
+     "note": "Live. Admin switch tantra_free_month (Cohort Settings, default On) shows the free first month on Connect Tantra for paid seats; d2-channels lists Tantra omni-channel first and it unlocks the cold email, LinkedIn and calendar-invite cards. Granting the month waits on T-435. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=start-tantra&v=cv2 , https://revops-centre.growthcluborg.workers.dev/onboarding/?card=d2-channels&v=cv2 , admin https://revops-centre.growthcluborg.workers.dev/admin/"
     }
    ]
   },
@@ -19456,7 +19476,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Track per card open, time to done, field errors, autodraft use, Report a problem, help opens, abandon. Admin report: slowest, most reported, manual steps; weekly ranked list of features to build into Tantra.",
    "done_when": [
@@ -19479,6 +19499,11 @@
     {
      "at": "2026-10-14T06:40:04",
      "msg": "Added from Adi's 2026-10-14 centre vision call"
+    },
+    {
+     "ts": "2026-10-14T08:05:31+0530",
+     "who": "claude",
+     "note": "Live with the T-427 deploy. Four events the centre sent were being rejected (autodraft_answer, calendar_add, walkthrough_open, learn_link): now stored; blocked Mark done logs field_invalid. GET /admin/api/friction?days=7, admin Friction tab, workshop-plan/ops/friction_weekly.py (first report: research/friction-2026-10-14.md, 0 ranked rows until real attendees). Review: https://revops-centre.growthcluborg.workers.dev/admin/ (Friction tab)"
     }
    ]
   },
@@ -19863,7 +19888,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Seen while verifying T-425 (fold screenshot).",
    "spec": "centre.tsx renders card.done whenever selfMarked; on start-business it reads 'All six answered.' while six fields are empty. Show it only when the card is actually complete, or phrase it as the goal.",
    "done_when": [
@@ -19880,6 +19905,11 @@
     {
      "at": "2026-10-14T07:21:54",
      "msg": "Added during the centre-vision run"
+    },
+    {
+     "ts": "2026-10-14T08:05:31+0530",
+     "who": "claude",
+     "note": "Live: the finish line shows an empty circle and 'Done when:' until the card is done, a tick after. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=start-business&v=cv2"
     }
    ]
   }
