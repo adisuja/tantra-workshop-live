@@ -3,7 +3,7 @@
   "project": "The 3-Day AI RevOps Workshop",
   "updated": "2026-10-14T15:57:59+0530",
   "version": 2562,
-  "last_id": 449,
+  "last_id": 450,
   "team": [
    {
     "name": "Adi",
@@ -20214,6 +20214,39 @@
      "ts": "2026-10-14T09:02:19+0530",
      "who": "claude",
      "note": "Live (dacd171c). Re-approving cold email or LinkedIn edits the existing draft steps in place, adds new ones, removes dropped ones; a started campaign is never touched and the card shows 'Already started in Tantra: edit it there' (the backend does not enforce draft-only, so the job checks). probe-tantra-drafts 33 PASS; probe-t263 stub updated and green."
+    }
+   ]
+  },
+  {
+   "id": "T-450",
+   "title": "Lane CV: Fix the 18 defects from the attendee-eye audit of today's centre changes",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "doing",
+   "why": "Independent Fable audit (verdict fail) of every card changed on 2026-10-14 at 1600, 1440 and 390 px, plus /live.",
+   "spec": "Rails must follow the card variant (Google sign-in vs manual) on start-calendar-ws and start-tantra-mailboxes; one truth on who starts campaigns (agent starts only ticked channels on d3-launch approval) and draft not paused; free month replaces the trial line; 390 px action bar solid background and meta row stack; backticks render; rails from 1440 px; playbook anchors for start-calendar-ws and d2-linkedin-event; cut rail lines that restate steps; d2-close conditional copy; companion report sentence fixes; outcome leads read as reasons; no 'below' pointing at the bar; d3-launch loose ends; a notice for cards that do not apply.",
+   "done_when": [
+    "Each of the 18 items fixed or recorded as decided otherwise",
+    "probe-rail-anchors, probe-day-model, probe-playbook-anchors, probe-day-prompts green live",
+    "Screenshots at 1600, 1440, 390"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T16:12:42",
+     "msg": "Audit report: /tmp/cv-audit/ (screenshots, audit.json)"
     }
    ]
   }
