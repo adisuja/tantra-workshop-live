@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-14T06:41:42+0530",
-  "version": 2534,
-  "last_id": 437,
+  "updated": "2026-10-14T07:21:34+0530",
+  "version": 2538,
+  "last_id": 443,
   "team": [
    {
     "name": "Adi",
@@ -19213,7 +19213,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Rebuild app/src/app/onboarding/centre/learn.tsx so every item in the side rails (Why This Matters, If You Skip It, What It Unlocks, How It Works, A Strong Answer, field coaching, links) carries a target (a data-field or a data-learn-target region), starts with a minimal arrow icon pointing at the card, and on hover/focus draws a thin connector to that element and rings it in the day colour. Field coaching becomes one item per field. Rails use the screen margins. Under 1400 px the fold keeps a 'show me' per item. Default anchors per section, overrides in card-education.ts anchors.",
    "done_when": [
@@ -19237,6 +19237,11 @@
     {
      "at": "2026-10-14T06:40:04",
      "msg": "Added from Adi's 2026-10-14 centre vision call"
+    },
+    {
+     "ts": "2026-10-14T07:21:34+0530",
+     "who": "claude",
+     "note": "Live (version 7644cefa). Every rail line has an arrow and points at a field, step or card region; the card has matching arrows; hover/focus draws the joining line through the gutter and rings the element; focusing a field lights its coaching; rails use the margins; fold lines scroll to their element under 1400 px. probe-rail-anchors.mjs: 98 cards, 0 failing on the live centre (1340 lines, 745 at a single field or step). Review: https://revops-centre.growthcluborg.workers.dev/preview?card=start-business&v=cv1 , screenshots in evidence/T-425."
     }
    ]
   },
@@ -19328,7 +19333,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "For webinar, RSP and challenge, list every funnel element and whether the backend builds it, drafts it for approval or leaves it manual with a guide; source coverage.json + jobs*.ts. Publish as a review page; every manual row feeds the Tantra feature backlog.",
    "done_when": [
@@ -19350,6 +19355,11 @@
     {
      "at": "2026-10-14T06:40:04",
      "msg": "Added from Adi's 2026-10-14 centre vision call"
+    },
+    {
+     "ts": "2026-10-14T07:21:34+0530",
+     "who": "claude",
+     "note": "Matrix: 60 elements x 3 shapes (webinar 22 built/18 drafted/14 manual/2 missing). Review https://adisuja.github.io/tantra-review/centre-vision/coverage-matrix.html?v=cv1 . Findings split into T-438 to T-441."
     }
    ]
   },
@@ -19403,7 +19413,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Spec and prototype: /live/<session> shows one card per webinar segment, advanced by the host; at the end a personal RevOps report (funnel shape, equation model with their numbers, weakest stages, plan) as a hosted page; answers carry into the centre on purchase.",
    "done_when": [
@@ -19426,6 +19436,11 @@
     {
      "at": "2026-10-14T06:40:04",
      "msg": "Added from Adi's 2026-10-14 centre vision call"
+    },
+    {
+     "ts": "2026-10-14T07:21:34+0530",
+     "who": "claude",
+     "note": "Spec workshop-plan/specs/LIVE_COMPANION_SPEC.md + prototype https://adisuja.github.io/tantra-review/centre-vision/live-companion/?v=cv1 (6 pages, host bar, report). Decisions taken: first run in the next weekly cohort's webinar; the deck poll stays where it is (private deck repo is not ours to write); the out-of-session version goes on the free /workshop page in the same release. Build tracked in T-442."
     }
    ]
   },
@@ -19479,7 +19494,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Spec only, no writes to Usetantra repos: map centre modules (cards, education, connectors, vault, jobs, outputs, prompt packs, playbook) to Tantra app surfaces; phase 1 embed with SSO, phase 2 native onboarding from the same card JSON, phase 3 jobs become features in W7 order.",
    "done_when": [
@@ -19501,6 +19516,11 @@
     {
      "at": "2026-10-14T06:40:04",
      "msg": "Added from Adi's 2026-10-14 centre vision call"
+    },
+    {
+     "ts": "2026-10-14T07:21:34+0530",
+     "who": "claude",
+     "note": "Spec workshop-plan/specs/TANTRA_INSOURCE_SPEC.md (phase 1 embed with Clerk token via postMessage, phase 2 native checklist + /help from card JSON, phase 3 jobs ranked by minutes saved). Found: Tantra already has a billing override with expiry (PUT /admin/users/:id/billing/override, super admin only) for the free month; trial length conflict 7 vs 14 days."
     }
    ]
   },
@@ -19596,7 +19616,7 @@
    "due": "",
    "status": "blocked",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
-   "spec": "The centre can show and hide the free month (T-429). Granting it happens in the Tantra backend, which we never write to.",
+   "spec": "The centre can show and hide the free month (T-429). Granting it happens in the Tantra backend, which we never write to. Mechanism found by T-432: billing override with expiry, super admin only.",
    "done_when": [
     "Adi names the mechanism (a coupon code, a plan override or a trial extension) and who applies it"
    ],
@@ -19604,7 +19624,7 @@
    "blockers": [
     "Mechanism lives in the Tantra backend"
    ],
-   "needs_from_owner": "Reply on this task with how a paid attendee gets their free Tantra month (for example a coupon code we print on the card) and who applies it.",
+   "needs_from_owner": "Tantra already has a billing override with an expiry date (PUT /admin/users/:id/billing/override), callable only by a Tantra super admin. Reply on this task with either: a super admin API token for us to call it per paid attendee (saved to ~/.config/tantra/tantra-superadmin-token), or 'I apply it by hand'. Also: is the trial 7 days (backend) or 14 (front end)?",
    "tags": [
     "centre-vision"
    ],
@@ -19669,6 +19689,199 @@
    "needs_from_owner": "",
    "log": [],
    "held": true
+  },
+  {
+   "id": "T-438",
+   "title": "Lane CV: Challenge daily survey to AI output never runs (no card stores the anthropic key)",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Found by the T-428 coverage matrix (workshop-plan/research/funnel-coverage-matrix.json).",
+   "spec": "Automation 9 in the challenge funnel needs a per-attendee key named anthropic that no card collects, so every day stops at waiting. Either collect it on the challenge path (connect card, keycheck) or run it on the attendee's chosen AI from start-stack.",
+   "done_when": [
+    "A challenge test run produces the day output",
+    "probe-shapes covers it"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T07:21:54",
+     "msg": "Added during the centre-vision run"
+    }
+   ]
+  },
+  {
+   "id": "T-439",
+   "title": "Lane CV: Send the sales-stage follow-ups (enquiry, no booking, no-show, proposal)",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Found by the T-428 coverage matrix (workshop-plan/research/funnel-coverage-matrix.json).",
+   "spec": "pack-followups.ts writes them into the pack only (cloud/src/pack-followups.ts:106); no job or funnel message sends them. Wire them into the funnel Worker's scheduler with the same approval snapshot rules.",
+   "done_when": [
+    "Each sequence fires for a test contact in the simulator",
+    "Shown on the d2-close card"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T07:21:54",
+     "msg": "Added during the centre-vision run"
+    }
+   ]
+  },
+  {
+   "id": "T-440",
+   "title": "Lane CV: Automate cold email inbox setup with the existing gcpServiceAccounts job",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "Found by the T-428 coverage matrix (workshop-plan/research/funnel-coverage-matrix.json).",
+   "spec": "start-tantra-mailboxes asks for the Google Cloud project, service account and key by hand while gcpServiceAccounts already does it for calendar senders. Reuse it; the card asks only for the one Authorize click. Re-check against T-436 (Sign in with Google).",
+   "done_when": [
+    "Card asks only for sign-in/authorize",
+    "Probe green"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T07:21:54",
+     "msg": "Added during the centre-vision run"
+    }
+   ]
+  },
+  {
+   "id": "T-441",
+   "title": "Lane CV: Refresh coverage.json and add the missing LinkedIn event page card",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P3",
+   "due": "",
+   "status": "queue",
+   "why": "Found by the T-428 coverage matrix (workshop-plan/research/funnel-coverage-matrix.json).",
+   "spec": "docs/onboarding-v3/coverage.json is stale (blog now published by the funnel; Twilio toll-free verification now handled). No card for the LinkedIn event page; nothing builds LinkedIn or Google Ads campaigns (decide: card with guide, or out of scope).",
+   "done_when": [
+    "check-coverage.mjs passes on the refreshed file",
+    "Decision recorded for LinkedIn/Google Ads"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T07:21:54",
+     "msg": "Added during the centre-vision run"
+    }
+   ]
+  },
+  {
+   "id": "T-442",
+   "title": "Lane CV: Build the live webinar companion in the centre (Worker + /live page)",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "T-430 spec, Adi's 2026-10-14 call (Kadima model).",
+   "spec": "Build from workshop-plan/specs/LIVE_COMPANION_SPEC.md: migration 0028, public endpoints, host control in /admin/control, /live/<session> front end, report page, carry-in on purchase in payments.ts. Prototype at https://adisuja.github.io/tantra-review/centre-vision/live-companion/",
+   "done_when": [
+    "Walks six segments live against the local Worker",
+    "Report renders",
+    "Carry-in probe passes"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T07:21:54",
+     "msg": "Added during the centre-vision run"
+    }
+   ]
+  },
+  {
+   "id": "T-443",
+   "title": "Lane CV: Done line shows before the card is done (\"All six answered.\" with 6 fields empty)",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "Seen while verifying T-425 (fold screenshot).",
+   "spec": "centre.tsx renders card.done whenever selfMarked; on start-business it reads 'All six answered.' while six fields are empty. Show it only when the card is actually complete, or phrase it as the goal.",
+   "done_when": [
+    "Line hidden or reworded until the fields are answered",
+    "walk-learn has no finding"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T07:21:54",
+     "msg": "Added during the centre-vision run"
+    }
+   ]
   }
  ]
 }
