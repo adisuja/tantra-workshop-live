@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-14T08:51:32+0530",
-  "version": 2557,
+  "updated": "2026-10-14T09:02:19+0530",
+  "version": 2559,
   "last_id": 449,
   "team": [
    {
@@ -19843,7 +19843,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "Found by the T-428 coverage matrix (workshop-plan/research/funnel-coverage-matrix.json).",
    "spec": "start-tantra-mailboxes asks for the Google Cloud project, service account and key by hand while gcpServiceAccounts already does it for calendar senders. Reuse it; the card asks only for the one Authorize click. Re-check against T-436 (Sign in with Google).",
    "done_when": [
@@ -19865,6 +19865,11 @@
      "ts": "2026-10-14T08:23:30+0530",
      "who": "claude",
      "note": "Building now in an isolated worktree agent."
+    },
+    {
+     "ts": "2026-10-14T09:02:19+0530",
+     "who": "claude",
+     "note": "Live (dacd171c). start-tantra-mailboxes: list the delivered inboxes, one Google sign-in (Workspace admin), copy the Client ID and scopes to the partner; job gcp-mailboxes builds one service account, uploads the key to Tantra, waits for the partner's delegation (every 30 min for a week), verifies every inbox and sets each to Cold, starts the warm-up clock. Manual steps stay as the fallback. probe-t440 all passed. Still manual: the sign-in, forwarding to the partner, the partner's delegation click, typing the inbox list. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=start-tantra-mailboxes&v=cv6"
     }
    ]
   },
@@ -20171,7 +20176,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Found while fixing T-447: after the agent builds the draft, a re-approval only adds missing steps; changed copy stays old in Tantra.",
    "spec": "On re-approval of d2-cold-email or d2-linkedin, update the existing draft steps (email-campaigns and LinkedIn step update routes in the Tantra backend, read only to confirm) while the campaign is still a draft; never touch a started campaign; extend probe-tantra-drafts.mjs.",
    "done_when": [
@@ -20189,6 +20194,11 @@
     {
      "at": "2026-10-14T08:51:32",
      "msg": "Split out of T-447"
+    },
+    {
+     "ts": "2026-10-14T09:02:19+0530",
+     "who": "claude",
+     "note": "Live (dacd171c). Re-approving cold email or LinkedIn edits the existing draft steps in place, adds new ones, removes dropped ones; a started campaign is never touched and the card shows 'Already started in Tantra: edit it there' (the backend does not enforce draft-only, so the job checks). probe-tantra-drafts 33 PASS; probe-t263 stub updated and green."
     }
    ]
   }
