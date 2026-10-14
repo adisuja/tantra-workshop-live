@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-14T15:57:59+0530",
-  "version": 2562,
+  "updated": "2026-10-14T17:05:02+0530",
+  "version": 2563,
   "last_id": 450,
   "team": [
    {
@@ -20229,7 +20229,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "Independent Fable audit (verdict fail) of every card changed on 2026-10-14 at 1600, 1440 and 390 px, plus /live.",
    "spec": "Rails must follow the card variant (Google sign-in vs manual) on start-calendar-ws and start-tantra-mailboxes; one truth on who starts campaigns (agent starts only ticked channels on d3-launch approval) and draft not paused; free month replaces the trial line; 390 px action bar solid background and meta row stack; backticks render; rails from 1440 px; playbook anchors for start-calendar-ws and d2-linkedin-event; cut rail lines that restate steps; d2-close conditional copy; companion report sentence fixes; outcome leads read as reasons; no 'below' pointing at the bar; d3-launch loose ends; a notice for cards that do not apply.",
    "done_when": [
@@ -20247,6 +20247,11 @@
     {
      "at": "2026-10-14T16:12:42",
      "msg": "Audit report: /tmp/cv-audit/ (screenshots, audit.json)"
+    },
+    {
+     "ts": "2026-10-14T17:05:02+0530",
+     "who": "claude",
+     "note": "All 18 audit items fixed and live (5d134c5c): rails follow the manual vs automated card variant, one truth on drafts and who starts campaigns, free month replaces the trial line, rails from 1440 px, 390 px bar and meta row, code formatting, playbook anchors, repeated rail lines cut, d2-close conditional steps, companion report sentences, 'What You Get', off-path notice. Live probes: rails 104/104 at 1440, free month both ways, prompt packs + API. walk-learn 0 findings locally. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=start-tantra&v=cv8 , evidence/T-450/"
     }
    ]
   }
