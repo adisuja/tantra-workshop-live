@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-14T19:09:42+0530",
-  "version": 2566,
+  "updated": "2026-10-14T21:55:41+0530",
+  "version": 2567,
   "last_id": 452,
   "team": [
    {
@@ -20358,6 +20358,11 @@
     {
      "at": "2026-10-14T20:17:43",
      "msg": "Review version uploaded (serves no live traffic): https://review-revops-centre.growthcluborg.workers.dev"
+    },
+    {
+     "ts": "2026-10-14T21:55:41+0530",
+     "who": "claude",
+     "note": "Added per Adi's second review: the left margin lists every task of the workshop (day and task code, full name, in the playbook-link look), clickable, current highlighted, done ticked; tasks not on the attendee's path stay listed but greyed with the reason (other funnel, or not in their tool choices). The card's what-you-get block moved above the notes on the right. Coverage check: every funnel element in the coverage matrix maps to a real card for its funnel types, except the decided exclusions (LinkedIn and Google Ads campaigns) and UTM tags (built automatically, no task). Review build: https://review-revops-centre.growthcluborg.workers.dev/preview?card=d2-reminders&v=mn2"
     }
    ]
   }
