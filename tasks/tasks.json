@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-14T08:05:31+0530",
-  "version": 2544,
+  "updated": "2026-10-14T08:07:29+0530",
+  "version": 2548,
   "last_id": 443,
   "team": [
    {
@@ -19667,7 +19667,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "doing",
    "why": "From T-433 research (workshop-plan/research/google-workspace-oauth-2026-10-14.md), Adi's 2026-10-14 call.",
    "spec": "Worker OAuth flow (authorization code + PKCE, calendar.events, openid, email), refresh token in the vault per attendee, invites.ts creates events through the attendee's grant with sendUpdates=all; the centre card start-calendar-ws offers Sign in with Google first, service account as the Workspace-admin option, .ics fallback always. Works against the simulator until the real client id exists.",
    "done_when": [
@@ -19690,6 +19690,11 @@
     {
      "at": "2026-10-14T06:41:42",
      "msg": "Added from T-433"
+    },
+    {
+     "ts": "2026-10-14T08:06:55+0530",
+     "who": "claude",
+     "note": "Building now in an isolated worktree agent (centre-vision run)."
     }
    ]
   },
@@ -19727,7 +19732,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "doing",
    "why": "Found by the T-428 coverage matrix (workshop-plan/research/funnel-coverage-matrix.json).",
    "spec": "Automation 9 in the challenge funnel needs a per-attendee key named anthropic that no card collects, so every day stops at waiting. Either collect it on the challenge path (connect card, keycheck) or run it on the attendee's chosen AI from start-stack.",
    "done_when": [
@@ -19744,6 +19749,11 @@
     {
      "at": "2026-10-14T07:21:54",
      "msg": "Added during the centre-vision run"
+    },
+    {
+     "ts": "2026-10-14T08:07:29+0530",
+     "who": "claude",
+     "note": "Building now in an isolated worktree agent."
     }
    ]
   },
@@ -19759,7 +19769,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "doing",
    "why": "Found by the T-428 coverage matrix (workshop-plan/research/funnel-coverage-matrix.json).",
    "spec": "pack-followups.ts writes them into the pack only (cloud/src/pack-followups.ts:106); no job or funnel message sends them. Wire them into the funnel Worker's scheduler with the same approval snapshot rules.",
    "done_when": [
@@ -19776,6 +19786,11 @@
     {
      "at": "2026-10-14T07:21:54",
      "msg": "Added during the centre-vision run"
+    },
+    {
+     "ts": "2026-10-14T08:06:55+0530",
+     "who": "claude",
+     "note": "Building now in an isolated worktree agent (centre-vision run)."
     }
    ]
   },
@@ -19855,7 +19870,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "doing",
    "why": "T-430 spec, Adi's 2026-10-14 call (Kadima model).",
    "spec": "Build from workshop-plan/specs/LIVE_COMPANION_SPEC.md: migration 0028, public endpoints, host control in /admin/control, /live/<session> front end, report page, carry-in on purchase in payments.ts. Prototype at https://adisuja.github.io/tantra-review/centre-vision/live-companion/",
    "done_when": [
@@ -19873,6 +19888,11 @@
     {
      "at": "2026-10-14T07:21:54",
      "msg": "Added during the centre-vision run"
+    },
+    {
+     "ts": "2026-10-14T08:06:55+0530",
+     "who": "claude",
+     "note": "Building now in an isolated worktree agent (centre-vision run)."
     }
    ]
   },
