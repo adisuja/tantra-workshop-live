@@ -3,7 +3,7 @@
   "project": "The 3-Day AI RevOps Workshop",
   "updated": "2026-10-14T21:55:41+0530",
   "version": 2567,
-  "last_id": 452,
+  "last_id": 453,
   "team": [
    {
     "name": "Adi",
@@ -20363,6 +20363,56 @@
      "ts": "2026-10-14T21:55:41+0530",
      "who": "claude",
      "note": "Added per Adi's second review: the left margin lists every task of the workshop (day and task code, full name, in the playbook-link look), clickable, current highlighted, done ticked; tasks not on the attendee's path stay listed but greyed with the reason (other funnel, or not in their tool choices). The card's what-you-get block moved above the notes on the right. Coverage check: every funnel element in the coverage matrix maps to a real card for its funnel types, except the decided exclusions (LinkedIn and Google Ads campaigns) and UTM tags (built automatically, no task). Review build: https://review-revops-centre.growthcluborg.workers.dev/preview?card=d2-reminders&v=mn2"
+    }
+   ]
+  },
+  {
+   "id": "T-453",
+   "title": "Playbook by task (guides insourced), CRM build-out for GoHighLevel, HubSpot and Zoho, and the webinar deck cards",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Nelbin",
+    "Aquila"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "review",
+   "why": "Adi 2026-10-14 night: playbook as the single source of truth arranged by centre task; missing CRM setup tasks; a webinar deck task reverse engineered from four client decks.",
+   "spec": "Plan workshop-plan/PLAYBOOK_TASKS_DECK_CRM_PLAN_2026_10_14.md. Playbook: 113 task sections (#task-<card id>), 24 guides insourced, guide pages redirect, per-day task navigation with mobile toggle and previous/next strips; restructure map for Nelbin and Aquila. CRM: 7 new cards plus agent jobs; Zoho floor Professional; vendor paths checked against official docs. Deck: framework spec, cards d2-deck-story and d2-deck, generated HTML deck at /deck and in the pack. Two Fable reviews; all findings fixed. Review build only.",
+   "done_when": [
+    "Adi approves",
+    "Then deployed live with T-452"
+   ],
+   "evidence": [
+    {
+     "label": "playbook",
+     "url": "https://review-revops-centre.growthcluborg.workers.dev/materials/playbook.html#task-d1-offer"
+    },
+    {
+     "label": "deck card",
+     "url": "https://review-revops-centre.growthcluborg.workers.dev/preview?card=d2-deck-story"
+    },
+    {
+     "label": "sample deck",
+     "url": "https://adisuja.github.io/tantra-review/centre-vision/deck/sample-saas.html"
+    },
+    {
+     "label": "framework",
+     "url": "../specs/WEBINAR_DECK_FRAMEWORK.md"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-15T00:11:19",
+     "msg": "Review build uploaded; CRM card links for three test attendees are in workshop-plan/research/crm-review-links.md (local only)."
     }
    ]
   }
