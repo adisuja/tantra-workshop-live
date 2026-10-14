@@ -19400,7 +19400,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "hold",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Admin setting tantra_free_month (default 1). On: Tantra cards show that the first month is on us for paid attendees; off: that copy disappears. d2-channels presents Tantra omni-channel as one option among the channels. The grant mechanism lives in the Tantra backend (input task for Adi).",
    "done_when": [
@@ -19437,6 +19437,10 @@
      "ts": "2026-10-14T08:14:22+0530",
      "who": "claude",
      "note": "probe-free-month.mjs green live; cold WhatsApp (through Tantra) added as a channel option and unlocks Connect WhatsApp in Tantra."
+    },
+    {
+     "at": "2026-10-14T19:22:47",
+     "msg": "Adi 2026-10-14: free month on hold until the end (link to usetantra.com + Dodo promo code). The switch stays; the grant waits."
     }
    ]
   },
@@ -19676,9 +19680,9 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "hold",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
-   "spec": "The centre can show and hide the free month (T-429). Granting it happens in the Tantra backend, which we never write to. Mechanism found by T-432: billing override with expiry, super admin only.",
+   "spec": "The centre can show and hide the free month (T-429). Granting it happens in the Tantra backend, which we never write to. Mechanism found by T-432: billing override with expiry, super admin only. Decided direction (Adi): a link to the usetantra.com app with a Dodo Payments promo code.",
    "done_when": [
     "Adi names the mechanism (a coupon code, a plan override or a trial extension) and who applies it"
    ],
@@ -19686,11 +19690,16 @@
    "blockers": [
     "Mechanism lives in the Tantra backend"
    ],
-   "needs_from_owner": "Tantra already has a billing override with an expiry date (PUT /admin/users/:id/billing/override), callable only by a Tantra super admin. Reply on this task with either: a super admin API token for us to call it per paid attendee (saved to ~/.config/tantra/tantra-superadmin-token), or 'I apply it by hand'. Also: is the trial 7 days (backend) or 14 (front end)?",
+   "needs_from_owner": "",
    "tags": [
     "centre-vision"
    ],
-   "log": []
+   "log": [
+    {
+     "at": "2026-10-14T19:22:47",
+     "msg": "Adi 2026-10-14: hold until the very end. Plan: the free month is a link to usetantra.com plus a Dodo Payments promo code created for the usetantra.com app."
+    }
+   ]
   },
   {
    "id": "T-436",
@@ -19742,7 +19751,7 @@
   },
   {
    "id": "T-437",
-   "status": "blocked",
+   "status": "hold",
    "owner": "Adi",
    "assignee": "Adi",
    "reviewers": [
@@ -20019,7 +20028,7 @@
    ],
    "priority": "P3",
    "due": "",
-   "status": "blocked",
+   "status": "hold",
    "why": "Adi's 2026-10-14 call; gap found by the independent coverage review.",
    "evidence": [],
    "blockers": [],
@@ -20036,6 +20045,10 @@
      "ts": "2026-10-14T08:23:04+0530",
      "who": "claude",
      "note": "Searched every session transcript and ~/.config/tantra: the post is not there, and Slack is not connected here (and never posted to). The T-433 research already covers the Workspace MCP preview and the agentic OAuth client tag."
+    },
+    {
+     "at": "2026-10-14T19:22:47",
+     "msg": "Adi 2026-10-14: hold for now."
     }
    ],
    "title": "Lane CV: Reconcile Bhaskar's Google Workspace OAuth post with the T-433 research",
@@ -20168,7 +20181,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "hold",
    "why": "Only Adi or the Tantra team can answer these; Claude decided Q1, Q4, Q5, Q6, Q7 (spec, last section).",
    "spec": "workshop-plan/specs/TANTRA_INSOURCE_SPEC.md, section Open questions.",
    "done_when": [
@@ -20182,7 +20195,12 @@
    "tags": [
     "centre-vision"
    ],
-   "log": []
+   "log": [
+    {
+     "at": "2026-10-14T19:22:47",
+     "msg": "Adi 2026-10-14: hold; answered later, not now."
+    }
+   ]
   },
   {
    "id": "T-449",
