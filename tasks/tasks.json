@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-14T08:23:30+0530",
-  "version": 2555,
+  "updated": "2026-10-14T08:38:42+0530",
+  "version": 2556,
   "last_id": 447,
   "team": [
    {
@@ -19528,7 +19528,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Spec only, no writes to Usetantra repos: map centre modules (cards, education, connectors, vault, jobs, outputs, prompt packs, playbook) to Tantra app surfaces; phase 1 embed with SSO, phase 2 native onboarding from the same card JSON, phase 3 jobs become features in W7 order.",
    "done_when": [
@@ -19563,6 +19563,11 @@
     {
      "at": "2026-10-14T08:30:15",
      "msg": "Revision 2 re-reviewed: 16 of 18 fixed, 12 new or remaining defects (two critical: campaigns go ACTIVE on create; the billing override does not unlock the app shell). Revision 3 in progress; the campaign bug is T-447."
+    },
+    {
+     "ts": "2026-10-14T08:38:42+0530",
+     "who": "claude",
+     "note": "Spec passed the third Fable review (pass-with-fixes, fixes applied). workshop-plan/specs/TANTRA_INSOURCE_SPEC.md: phase 1 embed with Clerk SSO (10 min embed token, skipCache, sid/act/replay rules, bearer not cookies), phase 2 native checklist + /help from card JSON behind the leak gate, phase 3 jobs ranked by minutes saved. Free month: option A trial grant + shell reads entitlements (Tantra S+S, recommended) or option B legacy subscription PATCH (no Tantra code, needs a manual day 31 off). 12 owner questions Q1 to Q12 in the spec."
     }
    ]
   },
