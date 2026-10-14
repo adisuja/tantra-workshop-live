@@ -3,7 +3,7 @@
   "project": "The 3-Day AI RevOps Workshop",
   "updated": "2026-10-14T08:23:30+0530",
   "version": 2555,
-  "last_id": 445,
+  "last_id": 446,
   "team": [
    {
     "name": "Adi",
@@ -19871,7 +19871,7 @@
    ],
    "priority": "P3",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "Found by the T-428 coverage matrix (workshop-plan/research/funnel-coverage-matrix.json).",
    "spec": "docs/onboarding-v3/coverage.json is stale (blog now published by the funnel; Twilio toll-free verification now handled). No card for the LinkedIn event page; nothing builds LinkedIn or Google Ads campaigns (decide: card with guide, or out of scope).",
    "done_when": [
@@ -19893,6 +19893,10 @@
      "ts": "2026-10-14T08:23:30+0530",
      "who": "claude",
      "note": "Building now in an isolated worktree agent."
+    },
+    {
+     "at": "2026-10-14T08:26:03",
+     "msg": "coverage.json and the matrix refreshed after T-436 to T-439 (check-coverage OK: 134 steps, 100 cards, 25 jobs); review https://adisuja.github.io/tantra-review/centre-vision/coverage-matrix.html?v=cv4 . Decision: add a guided LinkedIn event page card (webinar and challenge, prefilled, after the registration page is live): T-446. LinkedIn and Google Ads campaigns stay out of scope until Meta ads show demand for a second paid channel."
     }
    ]
   },
@@ -20038,6 +20042,39 @@
    "done_when": [
     "An update posted each hour until 00:40 IST on 2026-10-15",
     "Every centre-vision task either in review with links or blocked on a named input"
+   ]
+  },
+  {
+   "id": "T-446",
+   "title": "Lane CV: LinkedIn event page card (guided, prefilled) for webinar and challenge funnels",
+   "area": "Product",
+   "owner": "Aquila",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Aquila"
+   ],
+   "priority": "P3",
+   "due": "",
+   "status": "queue",
+   "why": "T-441 decision: the only funnel element with no card; free distribution for webinar funnels; LinkedIn has no event API.",
+   "spec": "Kind human, funnel webinar and challenge, after the registration page is live (d2-page). Prefill event title, description, date and registration link from Day 1 and Day 2 answers with Copy buttons; checklist; a time estimate; teaching entry; rails anchors.",
+   "done_when": [
+    "Card renders for webinar and challenge only",
+    "Prefill matches the approved answers",
+    "probe-day-model and probe-rail-anchors green"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T08:26:03",
+     "msg": "Added from the T-441 decision"
+    }
    ]
   }
  ]
