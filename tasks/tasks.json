@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-14T08:14:22+0530",
-  "version": 2551,
+  "updated": "2026-10-14T08:23:30+0530",
+  "version": 2555,
   "last_id": 445,
   "team": [
    {
@@ -19680,7 +19680,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "From T-433 research (workshop-plan/research/google-workspace-oauth-2026-10-14.md), Adi's 2026-10-14 call.",
    "spec": "Worker OAuth flow (authorization code + PKCE, calendar.events, openid, email), refresh token in the vault per attendee, invites.ts creates events through the attendee's grant with sendUpdates=all; the centre card start-calendar-ws offers Sign in with Google first, service account as the Workspace-admin option, .ics fallback always. Works against the simulator until the real client id exists.",
    "done_when": [
@@ -19708,6 +19708,11 @@
      "ts": "2026-10-14T08:06:55+0530",
      "who": "claude",
      "note": "Building now in an isolated worktree agent (centre-vision run)."
+    },
+    {
+     "ts": "2026-10-14T08:22:36+0530",
+     "who": "claude",
+     "note": "Live (7f5bf9f9) but dormant until T-437: without GOOGLE_OAUTH_CLIENT_ID/SECRET the card shows only the service account path. Routes /api/google/start, /callback, /revoke, /test (test invite to own calendar); PKCE + signed single-use state; refresh token sealed in the vault, never returned; calendar-campaign sends through the grant when present (20/day, 50 after 60 days). probe-google-oauth.mjs 31 PASS. Decision: invites.ts (our own session invites from the organiser) stays as is. Gap: no probe for the campaign send through the grant yet."
     }
    ]
   },
@@ -19829,7 +19834,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "doing",
    "why": "Found by the T-428 coverage matrix (workshop-plan/research/funnel-coverage-matrix.json).",
    "spec": "start-tantra-mailboxes asks for the Google Cloud project, service account and key by hand while gcpServiceAccounts already does it for calendar senders. Reuse it; the card asks only for the one Authorize click. Re-check against T-436 (Sign in with Google).",
    "done_when": [
@@ -19846,6 +19851,11 @@
     {
      "at": "2026-10-14T07:21:54",
      "msg": "Added during the centre-vision run"
+    },
+    {
+     "ts": "2026-10-14T08:23:30+0530",
+     "who": "claude",
+     "note": "Building now in an isolated worktree agent."
     }
    ]
   },
@@ -19861,7 +19871,7 @@
    ],
    "priority": "P3",
    "due": "",
-   "status": "queue",
+   "status": "doing",
    "why": "Found by the T-428 coverage matrix (workshop-plan/research/funnel-coverage-matrix.json).",
    "spec": "docs/onboarding-v3/coverage.json is stale (blog now published by the funnel; Twilio toll-free verification now handled). No card for the LinkedIn event page; nothing builds LinkedIn or Google Ads campaigns (decide: card with guide, or out of scope).",
    "done_when": [
@@ -19878,6 +19888,11 @@
     {
      "at": "2026-10-14T07:21:54",
      "msg": "Added during the centre-vision run"
+    },
+    {
+     "ts": "2026-10-14T08:23:30+0530",
+     "who": "claude",
+     "note": "Building now in an isolated worktree agent."
     }
    ]
   },
@@ -19967,11 +19982,11 @@
    ],
    "priority": "P3",
    "due": "",
-   "status": "queue",
+   "status": "blocked",
    "why": "Adi's 2026-10-14 call; gap found by the independent coverage review.",
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "",
+   "needs_from_owner": "Paste the Google update you posted for Bhaskar (link or text) as a note on this task. I compare it with the research note and change the calendar-invite plan only if it adds something.",
    "tags": [
     "centre-vision"
    ],
@@ -19979,6 +19994,11 @@
     {
      "at": "2026-10-14T08:11:55",
      "msg": "Added after the coverage review"
+    },
+    {
+     "ts": "2026-10-14T08:23:04+0530",
+     "who": "claude",
+     "note": "Searched every session transcript and ~/.config/tantra: the post is not there, and Slack is not connected here (and never posted to). The T-433 research already covers the Workspace MCP preview and the agentic OAuth client tag."
     }
    ],
    "title": "Lane CV: Reconcile Bhaskar's Google Workspace OAuth post with the T-433 research",
