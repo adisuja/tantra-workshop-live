@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-14T02:52:33+0530",
-  "version": 2533,
-  "last_id": 424,
+  "updated": "2026-10-14T06:41:42+0530",
+  "version": 2534,
+  "last_id": 437,
   "team": [
    {
     "name": "Adi",
@@ -19200,6 +19200,475 @@
     }
    ],
    "order": 4240
+  },
+  {
+   "id": "T-425",
+   "title": "Lane CV: Coach Rails v2: every rail item points at the card element it explains",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "doing",
+   "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
+   "spec": "Rebuild app/src/app/onboarding/centre/learn.tsx so every item in the side rails (Why This Matters, If You Skip It, What It Unlocks, How It Works, A Strong Answer, field coaching, links) carries a target (a data-field or a data-learn-target region), starts with a minimal arrow icon pointing at the card, and on hover/focus draws a thin connector to that element and rings it in the day colour. Field coaching becomes one item per field. Rails use the screen margins. Under 1400 px the fold keeps a 'show me' per item. Default anchors per section, overrides in card-education.ts anchors.",
+   "done_when": [
+    "Every rail item on all 91 cards has an arrow and a visible target at 1500 px",
+    "Hover draws the connector and rings the target in each of the four day colours",
+    "No overlap with the card at 1366 to 1920 px; fold works under 1400 px",
+    "probe-rail-anchors.mjs passes on the live centre"
+   ],
+   "evidence": [
+    {
+     "label": "plan",
+     "url": "../CENTRE_VISION_PLAN_2026_10_14.md"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T06:40:04",
+     "msg": "Added from Adi's 2026-10-14 centre vision call"
+    }
+   ]
+  },
+  {
+   "id": "T-426",
+   "title": "Lane CV: Day model: Day 0 sign-ups, Day 1 inputs and funnel pick, Day 2 build, Day 3 orchestration",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
+   "spec": "Move the funnel-independent connect cards (Cal.com, GoHighLevel, HubSpot, Zoho, Metricool, Kie.ai, Twilio, Tantra WhatsApp, Resend, GA4) from Day 1 to Day 0, keep WebinarGeek/Zoom/Wistia right after d1-funnel, put start-plan back in Day 0 order, rewrite the four PHASES goals to the day model, add probe-day-model.mjs, re-run the chain probes.",
+   "done_when": [
+    "Card order matches the plan's day table",
+    "Phase goals rewritten",
+    "probe-day-model.mjs and the chain probes pass"
+   ],
+   "evidence": [
+    {
+     "label": "plan",
+     "url": "../CENTRE_VISION_PLAN_2026_10_14.md"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T06:40:04",
+     "msg": "Added from Adi's 2026-10-14 centre vision call"
+    }
+   ]
+  },
+  {
+   "id": "T-427",
+   "title": "Lane CV: End-of-day prompt pack card and API",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
+   "spec": "Last card of each day: 'Day N done: run these prompts'. Unlocks when the day's applicable cards are done. Step 1 create one Claude project and paste the project instructions (approved answers as context), then one prompt per remaining task (promptFor), Copy each and Copy all. GET /api/prompts/day/:n returns the same; the day output pipeline includes it so email and WhatsApp (T-033, T-123) carry it.",
+   "done_when": [
+    "Card renders for all three days and all three funnel shapes",
+    "API output equals the card",
+    "probe-day-prompts.mjs passes"
+   ],
+   "evidence": [
+    {
+     "label": "plan",
+     "url": "../CENTRE_VISION_PLAN_2026_10_14.md"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T06:40:04",
+     "msg": "Added from Adi's 2026-10-14 centre vision call"
+    }
+   ]
+  },
+  {
+   "id": "T-428",
+   "title": "Lane CV: Funnel-type coverage matrix (built by backend vs drafted vs manual)",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
+   "spec": "For webinar, RSP and challenge, list every funnel element and whether the backend builds it, drafts it for approval or leaves it manual with a guide; source coverage.json + jobs*.ts. Publish as a review page; every manual row feeds the Tantra feature backlog.",
+   "done_when": [
+    "Matrix covers every Day 2 card for all three shapes",
+    "Published with a cache-busted review link"
+   ],
+   "evidence": [
+    {
+     "label": "plan",
+     "url": "../CENTRE_VISION_PLAN_2026_10_14.md"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T06:40:04",
+     "msg": "Added from Adi's 2026-10-14 centre vision call"
+    }
+   ]
+  },
+  {
+   "id": "T-429",
+   "title": "Lane CV: Free month of Tantra for paid attendees, with an off switch",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
+   "spec": "Admin setting tantra_free_month (default 1). On: Tantra cards show that the first month is on us for paid attendees; off: that copy disappears. d2-channels presents Tantra omni-channel as one option among the channels. The grant mechanism lives in the Tantra backend (input task for Adi).",
+   "done_when": [
+    "Switch in the admin centre flips the copy live",
+    "d2-channels lists Tantra as one option",
+    "Probe covers both switch states"
+   ],
+   "evidence": [
+    {
+     "label": "plan",
+     "url": "../CENTRE_VISION_PLAN_2026_10_14.md"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T06:40:04",
+     "msg": "Added from Adi's 2026-10-14 centre vision call"
+    }
+   ]
+  },
+  {
+   "id": "T-430",
+   "title": "Lane CV: Live webinar companion and RevOps report lead magnet (Kadima model)",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
+   "spec": "Spec and prototype: /live/<session> shows one card per webinar segment, advanced by the host; at the end a personal RevOps report (funnel shape, equation model with their numbers, weakest stages, plan) as a hosted page; answers carry into the centre on purchase.",
+   "done_when": [
+    "Spec committed",
+    "Prototype walks 6 segments and renders a report",
+    "Review link"
+   ],
+   "evidence": [
+    {
+     "label": "plan",
+     "url": "../CENTRE_VISION_PLAN_2026_10_14.md"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T06:40:04",
+     "msg": "Added from Adi's 2026-10-14 centre vision call"
+    }
+   ]
+  },
+  {
+   "id": "T-431",
+   "title": "Lane CV: Friction log and weekly 'build into Tantra' backlog",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
+   "spec": "Track per card open, time to done, field errors, autodraft use, Report a problem, help opens, abandon. Admin report: slowest, most reported, manual steps; weekly ranked list of features to build into Tantra.",
+   "done_when": [
+    "Events recorded in D1",
+    "Admin report renders with seed data",
+    "Weekly list generator committed"
+   ],
+   "evidence": [
+    {
+     "label": "plan",
+     "url": "../CENTRE_VISION_PLAN_2026_10_14.md"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T06:40:04",
+     "msg": "Added from Adi's 2026-10-14 centre vision call"
+    }
+   ]
+  },
+  {
+   "id": "T-432",
+   "title": "Lane CV: Spec: insource the centre into the Tantra app as onboarding and help centre",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
+   "spec": "Spec only, no writes to Usetantra repos: map centre modules (cards, education, connectors, vault, jobs, outputs, prompt packs, playbook) to Tantra app surfaces; phase 1 embed with SSO, phase 2 native onboarding from the same card JSON, phase 3 jobs become features in W7 order.",
+   "done_when": [
+    "Spec committed in workshop-plan/",
+    "Reviewed by the critic agent"
+   ],
+   "evidence": [
+    {
+     "label": "plan",
+     "url": "../CENTRE_VISION_PLAN_2026_10_14.md"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T06:40:04",
+     "msg": "Added from Adi's 2026-10-14 centre vision call"
+    }
+   ]
+  },
+  {
+   "id": "T-433",
+   "title": "Lane CV: Google Workspace OAuth for agents: can it replace service account keys?",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "review",
+   "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
+   "spec": "Research the 2026-10-14 Google Workspace OAuth / OAuth MCP announcement; decide whether per-attendee Sign in with Google (calendar.events) replaces the service account key step for calendar invites.",
+   "done_when": [
+    "Research note with sources in workshop-plan/research/",
+    "Decision recorded; follow-up build task if yes"
+   ],
+   "evidence": [
+    {
+     "label": "plan",
+     "url": "../CENTRE_VISION_PLAN_2026_10_14.md"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T06:40:04",
+     "msg": "Added from Adi's 2026-10-14 centre vision call"
+    },
+    {
+     "ts": "2026-10-14T06:41:42+0530",
+     "who": "claude",
+     "note": "Research done: workshop-plan/research/google-workspace-oauth-2026-10-14.md. Decision: replace per-attendee service account keys with Sign in with Google (calendar.events) from our Worker, refresh token per attendee; keep .ics/add-to-calendar as fallback and service accounts as opt-in for Workspace admins. Workspace MCP is for chat agents and needs a pre-registered client per user, so not used. Verification (consent screen on our own domain) is on the critical path: unverified apps cap at 100 users and testing mode tokens expire after 7 days. Follow-ups: T-436 build, T-437 Adi input."
+    }
+   ]
+  },
+  {
+   "id": "T-434",
+   "title": "Lane CV: Playbook to cards sync for all three funnel types",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P3",
+   "due": "",
+   "status": "queue",
+   "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
+   "spec": "Every card links the playbook chapter for the attendee's funnel type once Nelbin and Aquila finish consolidating; probe that every card has a playbook anchor that resolves.",
+   "done_when": [
+    "Every card has an anchor per shape",
+    "Probe passes"
+   ],
+   "evidence": [
+    {
+     "label": "plan",
+     "url": "../CENTRE_VISION_PLAN_2026_10_14.md"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T06:40:04",
+     "msg": "Added from Adi's 2026-10-14 centre vision call"
+    }
+   ]
+  },
+  {
+   "id": "T-435",
+   "title": "Input from Adi for T-429: how the free Tantra month is granted",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Bharath"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
+   "spec": "The centre can show and hide the free month (T-429). Granting it happens in the Tantra backend, which we never write to.",
+   "done_when": [
+    "Adi names the mechanism (a coupon code, a plan override or a trial extension) and who applies it"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Mechanism lives in the Tantra backend"
+   ],
+   "needs_from_owner": "Reply on this task with how a paid attendee gets their free Tantra month (for example a coupon code we print on the card) and who applies it.",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": []
+  },
+  {
+   "id": "T-436",
+   "title": "Lane CV: Sign in with Google for calendar invites (replaces the service account key step)",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "From T-433 research (workshop-plan/research/google-workspace-oauth-2026-10-14.md), Adi's 2026-10-14 call.",
+   "spec": "Worker OAuth flow (authorization code + PKCE, calendar.events, openid, email), refresh token in the vault per attendee, invites.ts creates events through the attendee's grant with sendUpdates=all; the centre card start-calendar-ws offers Sign in with Google first, service account as the Workspace-admin option, .ics fallback always. Works against the simulator until the real client id exists.",
+   "done_when": [
+    "Flow works end to end against the simulator",
+    "A real test event lands in a test calendar once T-437 gives the client id",
+    "probe covers grant, refresh and revoke"
+   ],
+   "evidence": [
+    {
+     "label": "research",
+     "url": "../research/google-workspace-oauth-2026-10-14.md"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T06:41:42",
+     "msg": "Added from T-433"
+    }
+   ]
+  },
+  {
+   "id": "T-437",
+   "status": "blocked",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Bharath"
+   ],
+   "priority": "P1",
+   "due": "",
+   "area": "Product",
+   "order": null,
+   "title": "T-437: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   }
  ]
 }
