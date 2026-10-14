@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-14T21:55:41+0530",
-  "version": 2567,
+  "updated": "2026-10-15T03:18:39+0530",
+  "version": 2590,
   "last_id": 453,
   "team": [
    {
@@ -19218,7 +19218,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Rebuild app/src/app/onboarding/centre/learn.tsx so every item in the side rails (Why This Matters, If You Skip It, What It Unlocks, How It Works, A Strong Answer, field coaching, links) carries a target (a data-field or a data-learn-target region), starts with a minimal arrow icon pointing at the card, and on hover/focus draws a thin connector to that element and rings it in the day colour. Field coaching becomes one item per field. Rails use the screen margins. Under 1400 px the fold keeps a 'show me' per item. Default anchors per section, overrides in card-education.ts anchors.",
    "done_when": [
@@ -19252,6 +19252,11 @@
      "ts": "2026-10-14T08:05:31+0530",
      "who": "claude",
      "note": "v2.1 live (version 23244de9) after the Fable critic's review (verdict fail, 10 defects, all fixed): card arrows on fresh load, rarity-weighted matching against the rendered card + 6 hand pins (at), day colours, overlay ring/lines (no inline styles), no per-frame work, off-screen arrow, single-line highlight, named card arrows out of tab order, fold below 1500 px. probe-rail-anchors.mjs (stricter): 101 cards, 0 failing live at 1600. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=start-business&v=cv2 , https://revops-centre.growthcluborg.workers.dev/onboarding/?card=d1-persona&v=cv2 , evidence/T-425/live-v21-*.png"
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   },
@@ -19267,7 +19272,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Move the funnel-independent connect cards (Cal.com, GoHighLevel, HubSpot, Zoho, Metricool, Kie.ai, Twilio, Tantra WhatsApp, Resend, GA4) from Day 1 to Day 0, keep WebinarGeek/Zoom/Wistia right after d1-funnel, put start-plan back in Day 0 order, rewrite the four PHASES goals to the day model, add probe-day-model.mjs, re-run the chain probes.",
    "done_when": [
@@ -19300,6 +19305,11 @@
      "ts": "2026-10-14T15:57:59+0530",
      "who": "claude",
      "note": "Chain re-run after today's moves: all 22 run-chain steps pass on a fresh stack (evidence/T-426/chain-summary.txt). Product fixes found on the way and now live (d7f3b580): the LinkedIn event card could never be finished (now 'Event posted'), the mirror export broke on /live, a 390 px action bar overflow, the simulator marked drafts active. walk-learn repaired (POST sign-in, widths 1600/1440/390); its only real finding, d3-live-key without teaching, is fixed (T-434)."
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   },
@@ -19315,7 +19325,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Last card of each day: 'Day N done: run these prompts'. Unlocks when the day's applicable cards are done. Step 1 create one Claude project and paste the project instructions (approved answers as context), then one prompt per remaining task (promptFor), Copy each and Copy all. GET /api/prompts/day/:n returns the same; the day output pipeline includes it so email and WhatsApp (T-033, T-123) carry it.",
    "done_when": [
@@ -19343,6 +19353,11 @@
      "ts": "2026-10-14T08:05:31+0530",
      "who": "claude",
      "note": "Live. Run Your Day N Prompts closes Days 1 to 3: project instructions (every answer), one prompt per AI card, the day's closing prompt, Copy each and Copy everything; GET /api/prompts/day/:n; day email + WhatsApp copy now carry {{custom.dayN_prompts_link}} (personal /enter link to the card). Note: Tantra delivery campaigns already created keep their old template until recreated. probe-day-prompts.mjs green live. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=d1-prompts&v=cv2 , https://revops-centre.growthcluborg.workers.dev/onboarding/?card=d2-prompts&v=cv2 , https://revops-centre.growthcluborg.workers.dev/onboarding/?card=d3-prompts&v=cv2"
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   },
@@ -19358,7 +19373,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "For webinar, RSP and challenge, list every funnel element and whether the backend builds it, drafts it for approval or leaves it manual with a guide; source coverage.json + jobs*.ts. Publish as a review page; every manual row feeds the Tantra feature backlog.",
    "done_when": [
@@ -19385,6 +19400,11 @@
      "ts": "2026-10-14T07:21:34+0530",
      "who": "claude",
      "note": "Matrix: 60 elements x 3 shapes (webinar 22 built/18 drafted/14 manual/2 missing). Review https://adisuja.github.io/tantra-review/centre-vision/coverage-matrix.html?v=cv1 . Findings split into T-438 to T-441."
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   },
@@ -19456,7 +19476,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "review",
+   "status": "dropped",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Spec and prototype: /live/<session> shows one card per webinar segment, advanced by the host; at the end a personal RevOps report (funnel shape, equation model with their numbers, weakest stages, plan) as a hosted page; answers carry into the centre on purchase.",
    "done_when": [
@@ -19484,6 +19504,11 @@
      "ts": "2026-10-14T07:21:34+0530",
      "who": "claude",
      "note": "Spec workshop-plan/specs/LIVE_COMPANION_SPEC.md + prototype https://adisuja.github.io/tantra-review/centre-vision/live-companion/?v=cv1 (6 pages, host bar, report). Decisions taken: first run in the next weekly cohort's webinar; the deck poll stays where it is (private deck repo is not ours to write); the out-of-session version goes on the free /workshop page in the same release. Build tracked in T-442."
+    },
+    {
+     "ts": "2026-10-15T03:18:38+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15: scrap the survey; the onboarding centre replaces it. /live and its admin panel unrouted."
     }
    ]
   },
@@ -19499,7 +19524,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Track per card open, time to done, field errors, autodraft use, Report a problem, help opens, abandon. Admin report: slowest, most reported, manual steps; weekly ranked list of features to build into Tantra.",
    "done_when": [
@@ -19527,6 +19552,11 @@
      "ts": "2026-10-14T08:05:31+0530",
      "who": "claude",
      "note": "Live with the T-427 deploy. Four events the centre sent were being rejected (autodraft_answer, calendar_add, walkthrough_open, learn_link): now stored; blocked Mark done logs field_invalid. GET /admin/api/friction?days=7, admin Friction tab, workshop-plan/ops/friction_weekly.py (first report: research/friction-2026-10-14.md, 0 ranked rows until real attendees). Review: https://revops-centre.growthcluborg.workers.dev/admin/ (Friction tab)"
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   },
@@ -19542,7 +19572,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Spec only, no writes to Usetantra repos: map centre modules (cards, education, connectors, vault, jobs, outputs, prompt packs, playbook) to Tantra app surfaces; phase 1 embed with SSO, phase 2 native onboarding from the same card JSON, phase 3 jobs become features in W7 order.",
    "done_when": [
@@ -19582,6 +19612,11 @@
      "ts": "2026-10-14T08:38:42+0530",
      "who": "claude",
      "note": "Spec passed the third Fable review (pass-with-fixes, fixes applied). workshop-plan/specs/TANTRA_INSOURCE_SPEC.md: phase 1 embed with Clerk SSO (10 min embed token, skipCache, sid/act/replay rules, bearer not cookies), phase 2 native checklist + /help from card JSON behind the leak gate, phase 3 jobs ranked by minutes saved. Free month: option A trial grant + shell reads entitlements (Tantra S+S, recommended) or option B legacy subscription PATCH (no Tantra code, needs a manual day 31 off). 12 owner questions Q1 to Q12 in the spec."
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   },
@@ -19597,7 +19632,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Research the 2026-10-14 Google Workspace OAuth / OAuth MCP announcement; decide whether per-attendee Sign in with Google (calendar.events) replaces the service account key step for calendar invites.",
    "done_when": [
@@ -19624,6 +19659,11 @@
      "ts": "2026-10-14T06:41:42+0530",
      "who": "claude",
      "note": "Research done: workshop-plan/research/google-workspace-oauth-2026-10-14.md. Decision: replace per-attendee service account keys with Sign in with Google (calendar.events) from our Worker, refresh token per attendee; keep .ics/add-to-calendar as fallback and service accounts as opt-in for Workspace admins. Workspace MCP is for chat agents and needs a pre-registered client per user, so not used. Verification (consent screen on our own domain) is on the critical path: unverified apps cap at 100 users and testing mode tokens expire after 7 days. Follow-ups: T-436 build, T-437 Adi input."
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   },
@@ -19639,7 +19679,7 @@
    ],
    "priority": "P3",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Every card links the playbook chapter for the attendee's funnel type once Nelbin and Aquila finish consolidating; probe that every card has a playbook anchor that resolves.",
    "done_when": [
@@ -19666,6 +19706,11 @@
      "ts": "2026-10-14T09:17:34+0530",
      "who": "claude",
      "note": "Live. Every card links its playbook chapter for the attendee's funnel type (per-shape chapters for reverse squeeze on 30 cards); the learn panel and the header button now agree (12 dangling and 39 too-general links fixed, 23 cards had none). probe-playbook-anchors.mjs: webinar 95/96, rsp 87/87, challenge 94/95, 0 fail; added to run-chain.sh. Gap for Nelbin and Aquila: no LinkedIn event chapter (workshop-plan/research/playbook-gaps.md); challenge has no chapters of its own yet, cards use the shared Day 2 chapters' challenge blocks."
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   },
@@ -19713,7 +19758,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "From T-433 research (workshop-plan/research/google-workspace-oauth-2026-10-14.md), Adi's 2026-10-14 call.",
    "spec": "Worker OAuth flow (authorization code + PKCE, calendar.events, openid, email), refresh token in the vault per attendee, invites.ts creates events through the attendee's grant with sendUpdates=all; the centre card start-calendar-ws offers Sign in with Google first, service account as the Workspace-admin option, .ics fallback always. Works against the simulator until the real client id exists.",
    "done_when": [
@@ -19746,6 +19791,11 @@
      "ts": "2026-10-14T08:22:36+0530",
      "who": "claude",
      "note": "Live (7f5bf9f9) but dormant until T-437: without GOOGLE_OAUTH_CLIENT_ID/SECRET the card shows only the service account path. Routes /api/google/start, /callback, /revoke, /test (test invite to own calendar); PKCE + signed single-use state; refresh token sealed in the vault, never returned; calendar-campaign sends through the grant when present (20/day, 50 after 60 days). probe-google-oauth.mjs 31 PASS. Decision: invites.ts (our own session invites from the organiser) stays as is. Gap: no probe for the campaign send through the grant yet."
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   },
@@ -19783,7 +19833,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Found by the T-428 coverage matrix (workshop-plan/research/funnel-coverage-matrix.json).",
    "spec": "Automation 9 in the challenge funnel needs a per-attendee key named anthropic that no card collects, so every day stops at waiting. Either collect it on the challenge path (connect card, keycheck) or run it on the attendee's chosen AI from start-stack.",
    "done_when": [
@@ -19810,6 +19860,11 @@
      "ts": "2026-10-14T08:14:22+0530",
      "who": "claude",
      "note": "Live (fca22c7b). New Day 1 challenge-only card d1-anthropic collects the Claude Console key with a real key check; deploy-funnel binds it as AI_KEY; probe-t266 extended (31 checks pass). Review: https://revops-centre.growthcluborg.workers.dev/preview?card=d1-anthropic&v=cv3 (shows for challenge attendees)"
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   },
@@ -19825,7 +19880,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Found by the T-428 coverage matrix (workshop-plan/research/funnel-coverage-matrix.json).",
    "spec": "pack-followups.ts writes them into the pack only (cloud/src/pack-followups.ts:106); no job or funnel message sends them. Wire them into the funnel Worker's scheduler with the same approval snapshot rules.",
    "done_when": [
@@ -19852,6 +19907,11 @@
      "ts": "2026-10-14T08:14:22+0530",
      "who": "claude",
      "note": "Merged and deployed (fca22c7b); attendee funnels pick it up on their next deploy-funnel run. Four sales follow-ups now send by email from approved fields on d2-close (enquiry 2 h, no booking 2 days, call no-show 15 min via Cal.com no-show webhook or CRM tag, proposal 48 h via CRM tag); new /hooks/crm-tag webhook; booked/paid contacts never get them. probe-t439.mjs all passed on main. UNVERIFIED: Cal.com BOOKING_NO_SHOW_UPDATED payload shape. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=d2-close&v=cv3"
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   },
@@ -19867,7 +19927,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Found by the T-428 coverage matrix (workshop-plan/research/funnel-coverage-matrix.json).",
    "spec": "start-tantra-mailboxes asks for the Google Cloud project, service account and key by hand while gcpServiceAccounts already does it for calendar senders. Reuse it; the card asks only for the one Authorize click. Re-check against T-436 (Sign in with Google).",
    "done_when": [
@@ -19894,6 +19954,11 @@
      "ts": "2026-10-14T09:02:19+0530",
      "who": "claude",
      "note": "Live (dacd171c). start-tantra-mailboxes: list the delivered inboxes, one Google sign-in (Workspace admin), copy the Client ID and scopes to the partner; job gcp-mailboxes builds one service account, uploads the key to Tantra, waits for the partner's delegation (every 30 min for a week), verifies every inbox and sets each to Cold, starts the warm-up clock. Manual steps stay as the fallback. probe-t440 all passed. Still manual: the sign-in, forwarding to the partner, the partner's delegation click, typing the inbox list. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=start-tantra-mailboxes&v=cv6"
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   },
@@ -19909,7 +19974,7 @@
    ],
    "priority": "P3",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Found by the T-428 coverage matrix (workshop-plan/research/funnel-coverage-matrix.json).",
    "spec": "docs/onboarding-v3/coverage.json is stale (blog now published by the funnel; Twilio toll-free verification now handled). No card for the LinkedIn event page; nothing builds LinkedIn or Google Ads campaigns (decide: card with guide, or out of scope).",
    "done_when": [
@@ -19935,6 +20000,11 @@
     {
      "at": "2026-10-14T08:26:03",
      "msg": "coverage.json and the matrix refreshed after T-436 to T-439 (check-coverage OK: 134 steps, 100 cards, 25 jobs); review https://adisuja.github.io/tantra-review/centre-vision/coverage-matrix.html?v=cv4 . Decision: add a guided LinkedIn event page card (webinar and challenge, prefilled, after the registration page is live): T-446. LinkedIn and Google Ads campaigns stay out of scope until Meta ads show demand for a second paid channel."
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   },
@@ -19950,7 +20020,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "review",
+   "status": "dropped",
    "why": "T-430 spec, Adi's 2026-10-14 call (Kadima model).",
    "spec": "Build from workshop-plan/specs/LIVE_COMPANION_SPEC.md: migration 0028, public endpoints, host control in /admin/control, /live/<session> front end, report page, carry-in on purchase in payments.ts. Prototype at https://adisuja.github.io/tantra-review/centre-vision/live-companion/",
    "done_when": [
@@ -19977,6 +20047,11 @@
     {
      "at": "2026-10-14T08:30:15",
      "msg": "Live (b958e486, migration 0028 applied remotely). Host creates a session in Admin, Live Companion panel (/admin/control) and steps six segments; attendees at /live/<session> follow within 5 s; report frozen at /r/<token>; any-time lead magnet at /live/ ; carry-in on purchase via ?lc= token or email, typed answers win. probe-live-companion.mjs ALL PASS (61). Screenshots evidence/T-442/. Not built: magic-link for a second browser and emailing the report (need the reminder path). The ?lc= checkout pass-through is in the marketing app (masterclass), which ships with the next site export. Review: https://revops-centre.growthcluborg.workers.dev/live/?v=cv5"
+    },
+    {
+     "ts": "2026-10-15T03:18:38+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15: scrap the survey; the onboarding centre replaces it. /live and its admin panel unrouted."
     }
    ]
   },
@@ -19992,7 +20067,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Seen while verifying T-425 (fold screenshot).",
    "spec": "centre.tsx renders card.done whenever selfMarked; on start-business it reads 'All six answered.' while six fields are empty. Show it only when the card is actually complete, or phrase it as the goal.",
    "done_when": [
@@ -20014,6 +20089,11 @@
      "ts": "2026-10-14T08:05:31+0530",
      "who": "claude",
      "note": "Live: the finish line shows an empty circle and 'Done when:' until the card is done, a tick after. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=start-business&v=cv2"
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   },
@@ -20107,7 +20187,7 @@
    ],
    "priority": "P3",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "T-441 decision: the only funnel element with no card; free distribution for webinar funnels; LinkedIn has no event API.",
    "spec": "Kind human, funnel webinar and challenge, after the registration page is live (d2-page). Prefill event title, description, date and registration link from Day 1 and Day 2 answers with Copy buttons; checklist; a time estimate; teaching entry; rails anchors.",
    "done_when": [
@@ -20129,6 +20209,11 @@
     {
      "at": "2026-10-14T08:30:15",
      "msg": "Live (6c1a39ec): d2-linkedin-event for webinar and challenge, prefilled name, date, registration link (utm_source=linkedin) and description with Copy buttons; teaching entry; rails probe green. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=d2-linkedin-event&v=cv5"
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   },
@@ -20144,7 +20229,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Found by the insourcing spec review: POST /campaigns/create finalises to SCHEDULED or ACTIVE in the Tantra backend, while the cards promise campaigns are built paused and never started by the agent.",
    "spec": "Build cold outreach campaigns with /campaigns/draft, launch only on the attendee's click (/campaigns/:id/launch); simulator mirrors production; probe asserts no cold campaign is ever ACTIVE without the click; read-only check whether real attendee campaigns were created this way.",
    "done_when": [
@@ -20167,6 +20252,11 @@
      "ts": "2026-10-14T08:51:32+0530",
      "who": "claude",
      "note": "Live (9950220a). Only the calendar-invite build was sending (Tantra /campaigns/create goes ACTIVE; the Google sign-in path also sent at build). Now: draft via /campaigns/draft, PATCH on re-approval, stored body replayed to /campaigns/:id/launch only on the d3-launch click, poll until ready, never twice. Email and LinkedIn were already drafts. Simulator now mirrors production; probe-tantra-drafts.mjs all passed and fails if reverted. Real impact: none, the live centre has 36 attendees, all test, no Tantra or Google calendar connections. Open: re-approving email/LinkedIn after build only adds missing steps (T-449)."
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   },
@@ -20214,7 +20304,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Found while fixing T-447: after the agent builds the draft, a re-approval only adds missing steps; changed copy stays old in Tantra.",
    "spec": "On re-approval of d2-cold-email or d2-linkedin, update the existing draft steps (email-campaigns and LinkedIn step update routes in the Tantra backend, read only to confirm) while the campaign is still a draft; never touch a started campaign; extend probe-tantra-drafts.mjs.",
    "done_when": [
@@ -20237,6 +20327,11 @@
      "ts": "2026-10-14T09:02:19+0530",
      "who": "claude",
      "note": "Live (dacd171c). Re-approving cold email or LinkedIn edits the existing draft steps in place, adds new ones, removes dropped ones; a started campaign is never touched and the card shows 'Already started in Tantra: edit it there' (the backend does not enforce draft-only, so the job checks). probe-tantra-drafts 33 PASS; probe-t263 stub updated and green."
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   },
@@ -20252,7 +20347,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Independent Fable audit (verdict fail) of every card changed on 2026-10-14 at 1600, 1440 and 390 px, plus /live.",
    "spec": "Rails must follow the card variant (Google sign-in vs manual) on start-calendar-ws and start-tantra-mailboxes; one truth on who starts campaigns (agent starts only ticked channels on d3-launch approval) and draft not paused; free month replaces the trial line; 390 px action bar solid background and meta row stack; backticks render; rails from 1440 px; playbook anchors for start-calendar-ws and d2-linkedin-event; cut rail lines that restate steps; d2-close conditional copy; companion report sentence fixes; outcome leads read as reasons; no 'below' pointing at the bar; d3-launch loose ends; a notice for cards that do not apply.",
    "done_when": [
@@ -20280,6 +20375,11 @@
      "ts": "2026-10-14T18:36:15+0530",
      "who": "claude",
      "note": "Re-audit (Fable, pass-with-fixes): the 18 fixes hold live; full sweep of 76 reachable cards at 1440 and 390 clean. Its four remaining items fixed and live: connect cards' steps now exposed to the rails (11 cards' You Decide/Strong Answer arrows pointed at the title; probe-rail-anchors now fails on that), d2-reminders line, two anchors, report funnel name. Live rails probe: 104 cards, 0 failing at 1440, 653 lines at a single field or step. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=start-cloudflare&v=cv10"
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   },
@@ -20295,7 +20395,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "review",
+   "status": "dropped",
    "why": "Left open by T-442: a lead who switches device gets a 409, and the report is only a link on screen.",
    "spec": "When the centre has a delivery sender configured (resend_key_enc + delivery_from, the same path T-427 uses), the companion emails the report link once on first open and offers 'Send me a link to continue' on the 409; one-time link token, 30 minute expiry, single use; never sends without a configured sender (button hidden). Probe against the simulator's Resend.",
    "done_when": [
@@ -20318,6 +20418,11 @@
      "ts": "2026-10-14T18:50:01+0530",
      "who": "claude",
      "note": "Live (70d7396f, migration 0029 applied). Report emailed once on first open (idempotent); 'Email me a link to continue here' on the second-browser 409: single use, 30 min, hashed, 3 per hour, only to an address that already started. Both stay off until a delivery sender (Resend key + delivery_from passing the mailbox rule) is set in the admin. probe-live-companion-email.mjs 39/39, probe-live-companion ALL PASS; /live loads with no page errors. Review: https://revops-centre.growthcluborg.workers.dev/live/?v=cv12"
+    },
+    {
+     "ts": "2026-10-15T03:18:38+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15: scrap the survey; the onboarding centre replaces it. /live and its admin panel unrouted."
     }
    ]
   },
@@ -20332,7 +20437,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Adi 2026-10-14 review: arrows pointed at the wrong elements, the panel design was not world-class, the panel text was too large and pulled focus from the form; recorded walkthrough videos were missing from relevant cards.",
    "spec": "Branch centre-margin-notes. Left margin: a small sticky block about the whole card. Right margin: notes set level with the exact field, step or panel they explain, joined by a hairline; hover or focus lights the pair and dims the rest. 13.5px sans, a size step below the card. Every one of 804 lines pinned by hand (workshop-plan/research/rail-anchor-audit.md, check-rail-pins.mjs). The seven held walkthroughs (Tantra reminders, Google Workspace senders, Stripe, GoHighLevel, HubSpot, Zoho, Wistia) now show on their cards. Review build only; the live centre is unchanged until Adi approves.",
    "done_when": [
@@ -20363,6 +20468,11 @@
      "ts": "2026-10-14T21:55:41+0530",
      "who": "claude",
      "note": "Added per Adi's second review: the left margin lists every task of the workshop (day and task code, full name, in the playbook-link look), clickable, current highlighted, done ticked; tasks not on the attendee's path stay listed but greyed with the reason (other funnel, or not in their tool choices). The card's what-you-get block moved above the notes on the right. Coverage check: every funnel element in the coverage matrix maps to a real card for its funnel types, except the decided exclusions (LinkedIn and Google Ads campaigns) and UTM tags (built automatically, no task). Review build: https://review-revops-centre.growthcluborg.workers.dev/preview?card=d2-reminders&v=mn2"
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   },
@@ -20379,7 +20489,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "Adi 2026-10-14 night: playbook as the single source of truth arranged by centre task; missing CRM setup tasks; a webinar deck task reverse engineered from four client decks.",
    "spec": "Plan workshop-plan/PLAYBOOK_TASKS_DECK_CRM_PLAN_2026_10_14.md. Playbook: 113 task sections (#task-<card id>), 24 guides insourced, guide pages redirect, per-day task navigation with mobile toggle and previous/next strips; restructure map for Nelbin and Aquila. CRM: 7 new cards plus agent jobs; Zoho floor Professional; vendor paths checked against official docs. Deck: framework spec, cards d2-deck-story and d2-deck, generated HTML deck at /deck and in the pack. Two Fable reviews; all findings fixed. Review build only.",
    "done_when": [
@@ -20413,6 +20523,11 @@
     {
      "at": "2026-10-15T00:11:19",
      "msg": "Review build uploaded; CRM card links for three test attendees are in workshop-plan/research/crm-review-links.md (local only)."
+    },
+    {
+     "ts": "2026-10-15T03:18:39+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
    ]
   }
