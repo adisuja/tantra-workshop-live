@@ -3,7 +3,7 @@
   "project": "The 3-Day AI RevOps Workshop",
   "updated": "2026-10-14T08:38:42+0530",
   "version": 2556,
-  "last_id": 447,
+  "last_id": 448,
   "team": [
    {
     "name": "Adi",
@@ -20126,6 +20126,33 @@
      "msg": "Fix building in an isolated worktree agent"
     }
    ]
+  },
+  {
+   "id": "T-448",
+   "title": "Input from Adi for T-432: the seven Tantra-side answers for insourcing the centre",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Bharath"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "Only Adi or the Tantra team can answer these; Claude decided Q1, Q4, Q5, Q6, Q7 (spec, last section).",
+   "spec": "workshop-plan/specs/TANTRA_INSOURCE_SPEC.md, section Open questions.",
+   "done_when": [
+    "Each of Q2, Q3, Q8, Q9, Q10, Q11, Q12 answered on this task"
+   ],
+   "evidence": [],
+   "blockers": [
+    "Tantra team decisions"
+   ],
+   "needs_from_owner": "Reply on this task: Q2 who on the Tantra team builds phase 1 and by when; Q3 free month path A (trial grant + shell reads entitlements, recommended) or B (legacy override, needs a day 31 switch-off); Q8 the real Pro trial length (7 or 14 days); Q9 access to Tantra production Clerk (issuer, JWKS URL, a webhook endpoint); Q10 who owns problems reported by Tantra users; Q11 should running campaigns keep sending after a plan expires; Q12 is BILLING_V2_ENABLED on in Tantra production.",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": []
   }
  ]
 }
