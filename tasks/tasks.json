@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-14T08:07:29+0530",
-  "version": 2548,
-  "last_id": 443,
+  "updated": "2026-10-14T08:14:22+0530",
+  "version": 2551,
+  "last_id": 445,
   "team": [
    {
     "name": "Adi",
@@ -19266,7 +19266,7 @@
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Move the funnel-independent connect cards (Cal.com, GoHighLevel, HubSpot, Zoho, Metricool, Kie.ai, Twilio, Tantra WhatsApp, Resend, GA4) from Day 1 to Day 0, keep WebinarGeek/Zoom/Wistia right after d1-funnel, put start-plan back in Day 0 order, rewrite the four PHASES goals to the day model, add probe-day-model.mjs, re-run the chain probes.",
    "done_when": [
-    "Card order matches the plan's day table",
+    "Card order matches the plan's day table (start-plan stays after the Day 1 session by decision)",
     "Phase goals rewritten",
     "probe-day-model.mjs and the chain probes pass"
    ],
@@ -19418,6 +19418,15 @@
      "ts": "2026-10-14T08:05:31+0530",
      "who": "claude",
      "note": "Live. Admin switch tantra_free_month (Cohort Settings, default On) shows the free first month on Connect Tantra for paid seats; d2-channels lists Tantra omni-channel first and it unlocks the cold email, LinkedIn and calendar-invite cards. Granting the month waits on T-435. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=start-tantra&v=cv2 , https://revops-centre.growthcluborg.workers.dev/onboarding/?card=d2-channels&v=cv2 , admin https://revops-centre.growthcluborg.workers.dev/admin/"
+    },
+    {
+     "at": "2026-10-14T08:11:55",
+     "msg": "probe-free-month.mjs added: flips the switch on the live centre through the admin API, checks the card both ways, restores the value. Green."
+    },
+    {
+     "ts": "2026-10-14T08:14:22+0530",
+     "who": "claude",
+     "note": "probe-free-month.mjs green live; cold WhatsApp (through Tantra) added as a channel option and unlocks Connect WhatsApp in Tantra."
     }
    ]
   },
@@ -19519,7 +19528,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "review",
+   "status": "doing",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Spec only, no writes to Usetantra repos: map centre modules (cards, education, connectors, vault, jobs, outputs, prompt packs, playbook) to Tantra app surfaces; phase 1 embed with SSO, phase 2 native onboarding from the same card JSON, phase 3 jobs become features in W7 order.",
    "done_when": [
@@ -19546,6 +19555,10 @@
      "ts": "2026-10-14T07:21:34+0530",
      "who": "claude",
      "note": "Spec workshop-plan/specs/TANTRA_INSOURCE_SPEC.md (phase 1 embed with Clerk token via postMessage, phase 2 native checklist + /help from card JSON, phase 3 jobs ranked by minutes saved). Found: Tantra already has a billing override with expiry (PUT /admin/users/:id/billing/override, super admin only) for the free month; trial length conflict 7 vs 14 days."
+    },
+    {
+     "at": "2026-10-14T08:11:55",
+     "msg": "Critic review of the spec running (done_when)."
     }
    ]
   },
@@ -19732,7 +19745,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "Found by the T-428 coverage matrix (workshop-plan/research/funnel-coverage-matrix.json).",
    "spec": "Automation 9 in the challenge funnel needs a per-attendee key named anthropic that no card collects, so every day stops at waiting. Either collect it on the challenge path (connect card, keycheck) or run it on the attendee's chosen AI from start-stack.",
    "done_when": [
@@ -19754,6 +19767,11 @@
      "ts": "2026-10-14T08:07:29+0530",
      "who": "claude",
      "note": "Building now in an isolated worktree agent."
+    },
+    {
+     "ts": "2026-10-14T08:14:22+0530",
+     "who": "claude",
+     "note": "Live (fca22c7b). New Day 1 challenge-only card d1-anthropic collects the Claude Console key with a real key check; deploy-funnel binds it as AI_KEY; probe-t266 extended (31 checks pass). Review: https://revops-centre.growthcluborg.workers.dev/preview?card=d1-anthropic&v=cv3 (shows for challenge attendees)"
     }
    ]
   },
@@ -19769,7 +19787,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "Found by the T-428 coverage matrix (workshop-plan/research/funnel-coverage-matrix.json).",
    "spec": "pack-followups.ts writes them into the pack only (cloud/src/pack-followups.ts:106); no job or funnel message sends them. Wire them into the funnel Worker's scheduler with the same approval snapshot rules.",
    "done_when": [
@@ -19791,6 +19809,11 @@
      "ts": "2026-10-14T08:06:55+0530",
      "who": "claude",
      "note": "Building now in an isolated worktree agent (centre-vision run)."
+    },
+    {
+     "ts": "2026-10-14T08:14:22+0530",
+     "who": "claude",
+     "note": "Merged and deployed (fca22c7b); attendee funnels pick it up on their next deploy-funnel run. Four sales follow-ups now send by email from approved fields on d2-close (enquiry 2 h, no booking 2 days, call no-show 15 min via Cal.com no-show webhook or CRM tag, proposal 48 h via CRM tag); new /hooks/crm-tag webhook; booked/paid contacts never get them. probe-t439.mjs all passed on main. UNVERIFIED: Cal.com BOOKING_NO_SHOW_UPDATED payload shape. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=d2-close&v=cv3"
     }
    ]
   },
@@ -19931,6 +19954,70 @@
      "who": "claude",
      "note": "Live: the finish line shows an empty circle and 'Done when:' until the card is done, a tick after. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=start-business&v=cv2"
     }
+   ]
+  },
+  {
+   "id": "T-444",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P3",
+   "due": "",
+   "status": "queue",
+   "why": "Adi's 2026-10-14 call; gap found by the independent coverage review.",
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T08:11:55",
+     "msg": "Added after the coverage review"
+    }
+   ],
+   "title": "Lane CV: Reconcile Bhaskar's Google Workspace OAuth post with the T-433 research",
+   "spec": "Adi said he would post Google's 2026-10-14 Workspace OAuth / OAuth MCP update in the channel with Bhaskar. Read that post (search session transcripts and ~/.config/tantra first), compare it with workshop-plan/research/google-workspace-oauth-2026-10-14.md, and update the T-433 decision and T-436 if anything changes. Never post in Slack.",
+   "done_when": [
+    "Post found and compared, or noted as not yet posted",
+    "Research note updated with anything new"
+   ]
+  },
+  {
+   "id": "T-445",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "doing",
+   "why": "Adi's 2026-10-14 call; gap found by the independent coverage review.",
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T08:11:55",
+     "msg": "Added after the coverage review"
+    }
+   ],
+   "title": "Lane CV: Hourly progress updates for the 18 hour centre-vision run",
+   "spec": "The session runs a recurring job every hour at :13 (2026-10-14 07:13 to 2026-10-15 00:40 IST): pass.py, a short chat update (done with review links, in progress, next, inputs only Adi can give), then the next centre-vision task. Parallel builds run as isolated worktree agents and merge to main after verification.",
+   "done_when": [
+    "An update posted each hour until 00:40 IST on 2026-10-15",
+    "Every centre-vision task either in review with links or blocked on a named input"
    ]
   }
  ]
