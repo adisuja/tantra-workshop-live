@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-14T09:10:08+0530",
-  "version": 2560,
+  "updated": "2026-10-14T09:17:34+0530",
+  "version": 2561,
   "last_id": 449,
   "team": [
    {
@@ -19630,7 +19630,7 @@
    ],
    "priority": "P3",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Every card links the playbook chapter for the attendee's funnel type once Nelbin and Aquila finish consolidating; probe that every card has a playbook anchor that resolves.",
    "done_when": [
@@ -19652,6 +19652,11 @@
     {
      "at": "2026-10-14T06:40:04",
      "msg": "Added from Adi's 2026-10-14 centre vision call"
+    },
+    {
+     "ts": "2026-10-14T09:17:34+0530",
+     "who": "claude",
+     "note": "Live. Every card links its playbook chapter for the attendee's funnel type (per-shape chapters for reverse squeeze on 30 cards); the learn panel and the header button now agree (12 dangling and 39 too-general links fixed, 23 cards had none). probe-playbook-anchors.mjs: webinar 95/96, rsp 87/87, challenge 94/95, 0 fail; added to run-chain.sh. Gap for Nelbin and Aquila: no LinkedIn event chapter (workshop-plan/research/playbook-gaps.md); challenge has no chapters of its own yet, cards use the shared Day 2 chapters' challenge blocks."
     }
    ]
   },
