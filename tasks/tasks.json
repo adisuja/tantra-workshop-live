@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-15T03:18:39+0530",
-  "version": 2590,
+  "updated": "2026-10-15T03:33:46+0530",
+  "version": 2591,
   "last_id": 453,
   "team": [
    {
@@ -20529,6 +20529,357 @@
      "who": "claude",
      "note": "Adi 2026-10-15 approved: made the main centre and deployed live."
     }
+   ]
+  },
+  {
+   "id": "T-454",
+   "title": "Tantra RevOps OS skeleton: brief, setup for four assistants, api.mjs with routing, logging and guards",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "doing",
+   "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
+   "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
+   "done_when": [
+    "Opens in Claude Code and passes the setup prompt"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "revops-os"
+   ],
+   "log": [
+    "2026-10-15 03:30 created from the plan"
+   ]
+  },
+  {
+   "id": "T-455",
+   "title": "Tantra RevOps OS knowledge: funnels, Tantra channels, CRM, integrations, voice, equations",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
+   "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
+   "done_when": [
+    "Every task guide's references resolve"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "revops-os"
+   ],
+   "log": [
+    "2026-10-15 03:30 created from the plan"
+   ]
+  },
+  {
+   "id": "T-456",
+   "title": "Tantra RevOps OS task guides: one per centre card, generated from the playbook",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
+   "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
+   "done_when": [
+    "One guide per card; check script passes"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "revops-os"
+   ],
+   "log": [
+    "2026-10-15 03:30 created from the plan"
+   ]
+  },
+  {
+   "id": "T-457",
+   "title": "Tantra RevOps OS kits: funnel Worker and config schema, deck, sequences, CRM scripts",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
+   "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
+   "done_when": [
+    "A test session deploys a funnel from a config"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "revops-os"
+   ],
+   "log": [
+    "2026-10-15 03:30 created from the plan"
+   ]
+  },
+  {
+   "id": "T-458",
+   "title": "Build and serve the Tantra RevOps OS zip and chat edition from the centre",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
+   "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
+   "done_when": [
+    "Zip downloads from the review build"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "revops-os"
+   ],
+   "log": [
+    "2026-10-15 03:30 created from the plan"
+   ]
+  },
+  {
+   "id": "T-459",
+   "title": "Centre: three Day 0 RevOps OS cards, retire the Funnel OS pack cards, rename everywhere",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
+   "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
+   "done_when": [
+    "Probes pass; teaching, coverage and playbook sections ship with the cards"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "revops-os"
+   ],
+   "log": [
+    "2026-10-15 03:30 created from the plan"
+   ]
+  },
+  {
+   "id": "T-460",
+   "title": "Prompt packs v2: context prompt, one prompt per build task, wrap prompt, email and WhatsApp link",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
+   "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
+   "done_when": [
+    "probe-day-prompts v2 passes"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "revops-os"
+   ],
+   "log": [
+    "2026-10-15 03:30 created from the plan"
+   ]
+  },
+  {
+   "id": "T-461",
+   "title": "Test harness: fill the centre as Tantra, run every day's prompts in fresh Claude Code sessions",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
+   "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
+   "done_when": [
+    "Days 0 to 3 run unattended"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "revops-os"
+   ],
+   "log": [
+    "2026-10-15 03:30 created from the plan"
+   ]
+  },
+  {
+   "id": "T-462",
+   "title": "Reviewer agent and improver loop for every prompt and output",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
+   "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
+   "done_when": [
+    "Every prompt passes the rubric"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "revops-os"
+   ],
+   "log": [
+    "2026-10-15 03:30 created from the plan"
+   ]
+  },
+  {
+   "id": "T-463",
+   "title": "Spot checks: RSP, challenge, chat edition, Codex",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
+   "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
+   "done_when": [
+    "Logged in the test log"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "revops-os"
+   ],
+   "log": [
+    "2026-10-15 03:30 created from the plan",
+    {
+     "ts": "2026-10-15T03:33:46+0530",
+     "who": "claude",
+     "note": "Codex dropped by Adi 2026-10-15; RSP, challenge and chat edition only"
+    }
+   ]
+  },
+  {
+   "id": "T-464",
+   "status": "queue",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "area": "Product",
+   "order": null,
+   "title": "T-464: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
+  },
+  {
+   "id": "T-465",
+   "title": "Fable critic on the whole RevOps OS build",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
+   "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
+   "done_when": [
+    "No open findings"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "revops-os"
+   ],
+   "log": [
+    "2026-10-15 03:30 created from the plan"
+   ]
+  },
+  {
+   "id": "T-466",
+   "title": "RevOps OS review build and links for Adi, then live after approval",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
+   "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
+   "done_when": [
+    "Adi approves"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "revops-os"
+   ],
+   "log": [
+    "2026-10-15 03:30 created from the plan"
    ]
   }
  ]
