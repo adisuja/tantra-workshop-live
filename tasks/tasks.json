@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-14T08:38:42+0530",
-  "version": 2556,
-  "last_id": 448,
+  "updated": "2026-10-14T08:51:32+0530",
+  "version": 2557,
+  "last_id": 449,
   "team": [
    {
     "name": "Adi",
@@ -20106,7 +20106,7 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "Found by the insourcing spec review: POST /campaigns/create finalises to SCHEDULED or ACTIVE in the Tantra backend, while the cards promise campaigns are built paused and never started by the agent.",
    "spec": "Build cold outreach campaigns with /campaigns/draft, launch only on the attendee's click (/campaigns/:id/launch); simulator mirrors production; probe asserts no cold campaign is ever ACTIVE without the click; read-only check whether real attendee campaigns were created this way.",
    "done_when": [
@@ -20124,6 +20124,11 @@
     {
      "at": "2026-10-14T08:30:15",
      "msg": "Fix building in an isolated worktree agent"
+    },
+    {
+     "ts": "2026-10-14T08:51:32+0530",
+     "who": "claude",
+     "note": "Live (9950220a). Only the calendar-invite build was sending (Tantra /campaigns/create goes ACTIVE; the Google sign-in path also sent at build). Now: draft via /campaigns/draft, PATCH on re-approval, stored body replayed to /campaigns/:id/launch only on the d3-launch click, poll until ready, never twice. Email and LinkedIn were already drafts. Simulator now mirrors production; probe-tantra-drafts.mjs all passed and fails if reverted. Real impact: none, the live centre has 36 attendees, all test, no Tantra or Google calendar connections. Open: re-approving email/LinkedIn after build only adds missing steps (T-449)."
     }
    ]
   },
@@ -20153,6 +20158,39 @@
     "centre-vision"
    ],
    "log": []
+  },
+  {
+   "id": "T-449",
+   "title": "Lane CV: Re-approving the cold email or LinkedIn card should update the Tantra draft's existing steps",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi",
+    "Bharath"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "Found while fixing T-447: after the agent builds the draft, a re-approval only adds missing steps; changed copy stays old in Tantra.",
+   "spec": "On re-approval of d2-cold-email or d2-linkedin, update the existing draft steps (email-campaigns and LinkedIn step update routes in the Tantra backend, read only to confirm) while the campaign is still a draft; never touch a started campaign; extend probe-tantra-drafts.mjs.",
+   "done_when": [
+    "Edited copy reaches the draft",
+    "Started campaigns untouched",
+    "Probe green"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "centre-vision"
+   ],
+   "log": [
+    {
+     "at": "2026-10-14T08:51:32",
+     "msg": "Split out of T-447"
+    }
+   ]
   }
  ]
 }
