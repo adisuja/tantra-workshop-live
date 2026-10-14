@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-14T18:50:01+0530",
-  "version": 2565,
+  "updated": "2026-10-14T19:09:42+0530",
+  "version": 2566,
   "last_id": 451,
   "team": [
    {
@@ -20056,7 +20056,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "doing",
+   "status": "hold",
    "why": "Adi's 2026-10-14 call; gap found by the independent coverage review.",
    "evidence": [],
    "blockers": [],
@@ -20068,6 +20068,11 @@
     {
      "at": "2026-10-14T08:11:55",
      "msg": "Added after the coverage review"
+    },
+    {
+     "ts": "2026-10-14T19:09:42+0530",
+     "who": "claude",
+     "note": "Stopped by Adi 2026-10-14 evening: all centre work frozen until he reviews and approves every recent change. No deploys to revops-centre until then."
     }
    ],
    "title": "Lane CV: Hourly progress updates for the 18 hour centre-vision run",
