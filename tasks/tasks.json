@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-14T09:17:34+0530",
-  "version": 2561,
+  "updated": "2026-10-14T15:57:59+0530",
+  "version": 2562,
   "last_id": 449,
   "team": [
    {
@@ -19295,6 +19295,11 @@
      "ts": "2026-10-14T08:05:31+0530",
      "who": "claude",
      "note": "Live. Ten funnel-independent sign-ups moved to Day 0 (ids unchanged), phase goals name each day's job (Day 0 join/sign up/connect, Day 1 inputs + funnel pick, Day 2 build, Day 3 AI in Claude Code). probe-day-model.mjs green. start-plan left where it is (its plan needs Day 0 answers). Chain probes re-run tracked in T-424. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=d1-calcom&v=cv2"
+    },
+    {
+     "ts": "2026-10-14T15:57:59+0530",
+     "who": "claude",
+     "note": "Chain re-run after today's moves: all 22 run-chain steps pass on a fresh stack (evidence/T-426/chain-summary.txt). Product fixes found on the way and now live (d7f3b580): the LinkedIn event card could never be finished (now 'Event posted'), the mirror export broke on /live, a 390 px action bar overflow, the simulator marked drafts active. walk-learn repaired (POST sign-in, widths 1600/1440/390); its only real finding, d3-live-key without teaching, is fixed (T-434)."
     }
    ]
   },
