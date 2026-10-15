@@ -21065,6 +21065,11 @@
      "ts": "2026-10-16T00:05:05+0530",
      "who": "claude",
      "note": "Built 2026-10-16: four new Day 0 cards (start-os-assistant, start-os-install, start-os-skills, start-os-signups) plus start-os-open and start-os-setup rewritten; skills for Claude Code, Codex and claude.ai; settings.json with a .env guard hook; codex config; doctor.mjs; .env inline-comment parsing bug fixed in all five readers; playbook sections; tested live in Claude Code (hook, skills, doctor, setup prompt passed on Sonnet). Commits 40a30d0e, 661e8eec, 24d1d1a0."
+    },
+    {
+     "ts": "2026-10-16T00:11:46+0530",
+     "who": "claude",
+     "note": "Fable critic: pass with fixes, all 14 fixed (e24e4c91). Deployed LIVE at 882f1fcf on Adi's go-live answer (2026-10-15 #10); review build matches."
     }
    ]
   },
@@ -21200,6 +21205,38 @@
    "log": [
     {
      "ts": "2026-10-16T00:05:05+0530",
+     "who": "claude",
+     "note": "created"
+    }
+   ]
+  },
+  {
+   "id": "T-477",
+   "title": "Publish the marketing pages so the no-refund and pricing copy can be reviewed",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "2026-10-16: the /masterclass/vip 'What you keep' section (no refund, owner 2026-10-15) is on main but the marketing site has no reviewable host: the centre Worker does not serve /masterclass, and the GitHub Pages mirror publish has been held since 2026-10-06 (tantra-round5-coord/LOG.md).",
+   "spec": "memory pricing-2026-10-15; mirror-publish-holds",
+   "done_when": [
+    "/masterclass and /vip load on a reviewable URL",
+    "The page shows no refund promise anywhere"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "revops-os"
+   ],
+   "log": [
+    {
+     "ts": "2026-10-16T00:11:46+0530",
      "who": "claude",
      "note": "created"
     }
