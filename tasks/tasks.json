@@ -21035,6 +21035,33 @@
    "log": [
     "2026-10-15 07:32 created from the walk"
    ]
+  },
+  {
+   "id": "T-472",
+   "title": "Set up your AI assistant: Day 0 cards, playbook chapter and OS files for skills, plugins, MCP, settings, installs and outside sign-ups (Claude Code, Codex, ChatGPT, Claude)",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "Adi 2026-10-15: attendees need every skill, plugin, sign-in and pre-configuration listed and set up as the first step of the Tantra RevOps OS setup, for every assistant.",
+   "spec": "Research workshop-plan/research/ai-assistant-setup-research.md; handoff SESSION_HANDOFF_2026_10_15_AI_ASSISTANT_SETUP.md",
+   "done_when": [
+    "Cards, playbook chapter and OS files shipped with the ship rule, prompts pass the reviewer, Adi approves"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "revops-os"
+   ],
+   "log": [
+    "2026-10-15 18:45 research done, handoff written"
+   ]
   }
  ]
 }
