@@ -21241,6 +21241,39 @@
      "note": "created"
     }
    ]
+  },
+  {
+   "id": "T-478",
+   "title": "Task card redesign: pick one of four directions, then roll it out to every centre card",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "blocked",
+   "why": "Adi 2026-10-16: the card face looks like a sticky note; he asked for four variations designed in the context of the page, to pick one for every card in the series.",
+   "spec": "Rig https://revops-centre.growthcluborg.workers.dev/design/card-variants (app/public/design/card-variants.html), commit afaf3418",
+   "done_when": [
+    "Adi picks a direction (or a mix)",
+    "centre.tsx and centre.module.css carry it for every card kind (session, decide, connect, approve, human, watch)",
+    "check-rail-pins, probe-day-model and a 4-viewport visual probe pass"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Pick A Ticket, B Run sheet, C Spread or D Open page on the rig page (or name parts to combine).",
+   "tags": [
+    "revops-os"
+   ],
+   "log": [
+    {
+     "ts": "2026-10-16T00:39:35+0530",
+     "who": "claude",
+     "note": "Four directions built and live on the rig; waiting for the pick"
+    }
+   ]
   }
  ]
 }
