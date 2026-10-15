@@ -21117,7 +21117,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "blocked",
+   "status": "hold",
    "why": "Claude Code was tested live on 2026-10-16 (hook blocks .env, skills load, doctor runs, setup prompt passed). Codex is installed on the Mac but not signed in, so its run waits for one sign-in.",
    "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md; research workshop-plan/research/ai-assistant-setup-research.md",
    "done_when": [
@@ -21128,7 +21128,7 @@
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Run codex login once in a terminal on the Mac and sign in with the ChatGPT account (Plus or Pro).",
+   "needs_from_owner": "",
    "tags": [
     "revops-os"
    ],
@@ -21137,6 +21137,11 @@
      "ts": "2026-10-16T00:05:05+0530",
      "who": "claude",
      "note": "created"
+    },
+    {
+     "ts": "2026-10-16T00:49:23+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-16: Codex is not available for now. Held; Claude Code stays the tested path."
     }
    ]
   },
@@ -21189,7 +21194,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "blocked",
+   "status": "dropped",
    "why": "Reviewer proposal: refuse a sign-up address on a free mailbox (gmail.com) or an outreach or calendar domain, and warn when it is not on the website's domain.",
    "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md; research workshop-plan/research/ai-assistant-setup-research.md",
    "done_when": [
@@ -21198,7 +21203,7 @@
    ],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Decide: block free mailboxes and outreach domains, and only warn when the address is not on the website domain (recommended), or leave the card as it is.",
+   "needs_from_owner": "",
    "tags": [
     "revops-os"
    ],
@@ -21207,6 +21212,11 @@
      "ts": "2026-10-16T00:05:05+0530",
      "who": "claude",
      "note": "created"
+    },
+    {
+     "ts": "2026-10-16T00:49:23+0530",
+     "who": "claude",
+     "note": "Adi 2026-10-16: eliminate the sign-up email rule no matter what. Removed from D0.10 task data, the card step, its teaching and google-workspace.md; D0.10 now only records the address and lists the sign-ups."
     }
    ]
   },
