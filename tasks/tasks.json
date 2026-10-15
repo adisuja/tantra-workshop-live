@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-16T00:05:05+0530",
-  "version": 2596,
+  "updated": "2026-10-16T00:06:53+0530",
+  "version": 2597,
   "last_id": 453,
   "team": [
    {
@@ -21146,7 +21146,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Owner approved the reviewer card changes 2026-10-16. D0.13 cannot see which domains the owner ticked or typed; D0.35 cannot see the service account email, the _revops-proof value or the Measurement ID.",
    "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md; research workshop-plan/research/ai-assistant-setup-research.md",
    "done_when": [
@@ -21165,6 +21165,11 @@
      "ts": "2026-10-16T00:05:05+0530",
      "who": "claude",
      "note": "created"
+    },
+    {
+     "ts": "2026-10-16T00:06:53+0530",
+     "who": "claude",
+     "note": "State block carries proposed_domains, own_domains, google_sa_email, domain_proof, ga4; verified on the local stack"
     }
    ]
   },
