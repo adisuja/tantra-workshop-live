@@ -20993,6 +20993,33 @@
    "log": [
     "2026-10-15 03:48 created"
    ]
+  },
+  {
+   "id": "T-471",
+   "title": "UI walk as Tantra (webinar): fix the 8 cards that did not finish and update the walker's expectations",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "The 2026-10-15 walk of the Tantra RevOps OS test attendee (fixture tantra-revops, local stack, simulator) finished 81 of 88 cards and 12 of 17 jobs.",
+   "spec": "Report workshop-plan/research/walk-tantra-revops-2026-10-15.json. Not finished: d1-list-build, d2-twilio (Twilio not found), d2-live (Zoom polls not found), d2-close (locked, 2 fields), d2-ghl-workflows (GHL 404), d2-calendar-campaign (Tantra said {}), d2-outreach-sheet (simulate 500 and sheet not shared), d3-launch (waits on the calendar campaign); ga4-gate failed. 46 findings are walker expectations: OPTION_CARDS lacks the Zoom path for a fixture that picks Zoom, and the new content cards.",
+   "done_when": [
+    "A clean walk with the tantra-revops fixture, or each remaining finding explained as simulator-only"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "tags": [
+    "revops-os"
+   ],
+   "log": [
+    "2026-10-15 07:32 created from the walk"
+   ]
   }
  ]
 }
