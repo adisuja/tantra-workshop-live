@@ -97,12 +97,14 @@
    "summary": "T-226 is still blocked on Adi's one Zoom sign-in. I made the change the ripple note asked for: the \"waiting on\" text now says T-335 is tracked as T-417, and the ask itself is unchanged.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Waiting-on names T-417, ask unchanged | Done | `pass.py"
   }
  ],
- "state": "idle",
- "message": "Nothing waiting.",
- "task_id": null,
- "entries": [],
- "mode": null,
- "started": "2026-10-12T13:45:08+0530",
+ "state": "working",
+ "message": "Acting on 1 note(s) for T-058: Connect team profiles + launch outreach",
+ "task_id": "T-058",
+ "entries": [
+  "F-8b9f2905"
+ ],
+ "mode": "feedback",
+ "started": "2026-10-18T14:50:37+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,

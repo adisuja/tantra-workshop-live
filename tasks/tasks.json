@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-18T06:38:10+0530",
-  "version": 2607,
+  "updated": "2026-10-18T14:51:26+0530",
+  "version": 2608,
   "last_id": 453,
   "team": [
    {
@@ -2764,7 +2764,7 @@
    "area": "Traffic",
    "owner": "Bhaskar",
    "priority": "P1",
-   "due": "2026-10-14",
+   "due": "2026-10-21",
    "status": "blocked",
    "why": "T-057 readiness is YES (2026-10-09) and the T-056 list is imported (2026-10-12). Now waits only on each wave 1 member connecting LinkedIn.",
    "spec": "Each team member connects their own LinkedIn profile in Tantra (needs their own login, so not Claude). The GrowthClub workspace has 2 LinkedIn/WhatsApp slots: 1 holds the reminder WhatsApp number, 1 is free (read 2026-10-12). Bhaskar connects first into the free slot; Vaibhavi waits until Bharath confirms a third slot at no charge. Then the draft campaign 'Workshop LinkedIn: wave 1' (6acc47385f16ab824d7d8132, 3 LinkedIn steps, never started) launches from the T-056 list with first lines from T-059 and each member's referral link (T-211). Respect the daily caps recorded in T-057 (20 to 25 connects/day, 75 messages/day). Track replies and registrations per member on the referral dashboard.",
@@ -2949,6 +2949,11 @@
      "ts": "2026-10-12T08:47:16+0530",
      "who": "claude",
      "note": "Verify pass (re-read Tantra live, GET only): 44 of the 126 'Workshop cold calendar' contacts carry a LinkedIn URL, and all 44 match the source. Draft 6acc47385f16ab824d7d8132 is still a draft with 3 LinkedIn steps, and there are 0 LinkedIn accounts. Tantra's help centre confirms that a contact with no profile skips the LinkedIn steps. Bhaskar: connect your LinkedIn at https://usetantra.com/connectors/channels/linkedin, pick it as sender, set 20 to 25 connects/day and 75 messages/day, then start, and ask the list vendor to re-export the other 82 with a LinkedIn Profile URL column. Open workshop-plan/outreach/launch-kit.md (3d)."
+    },
+    {
+     "ts": "2026-10-18T14:51:26+0530",
+     "who": "claude",
+     "note": "Bhaskar and Bharath (team note): read Tantra live today (GET only): the GrowthClub workspace still has 0 LinkedIn accounts (only the WhatsApp reminder number), and draft 6acc47385f16ab824d7d8132 is still a draft with 3 LinkedIn steps and no sender, so I changed nothing in Tantra and moved the due date to 2026-10-21. Bhaskar: connect your LinkedIn at https://usetantra.com/connectors/channels/linkedin, pick it as sender on the draft, set 20 to 25 connects/day and 75 messages/day, then start it yourself, and ask the vendor to re-export LinkedIn URLs for the 82 contacts still missing them. Bharath: can the workspace get a third slot at no charge for Vaibhavi? Open workshop-plan/outreach/launch-kit.md (3b)."
     }
    ],
    "order": 370,

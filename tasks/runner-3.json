@@ -97,12 +97,14 @@
    "summary": "T-398 stays blocked: the Cal.com event still doesn't exist (https://cal.com/adisuja/tantra-enterprise-evaluation-call returned 404 in this run), so it waits on Adi's sign-in, tracked as T-415.\n\n- **Task text corrected:** done. I checked tasks.json in this run. The T-398 spec and `needs_from_owner` n"
   }
  ],
- "state": "idle",
- "mode": null,
- "task_id": null,
- "entries": [],
- "started": "2026-10-12T14:40:39+0530",
- "message": "Nothing waiting.",
+ "state": "working",
+ "mode": "feedback",
+ "task_id": "T-033",
+ "entries": [
+  "F-37e581ed"
+ ],
+ "started": "2026-10-18T14:50:30+0530",
+ "message": "Acting on 1 note(s) for T-033: WhatsApp + email delivery automation",
  "slices": {
   "T-135": 1,
   "T-300": 2,

@@ -97,12 +97,14 @@
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. I couldn't get T-299 merged or deployed this run, because only one of the four probes passed. I set the task back to doing and started a fresh probe run on a clean s"
   }
  ],
- "state": "idle",
- "mode": null,
- "task_id": null,
- "entries": [],
- "started": "2026-10-12T14:33:36+0530",
- "message": "Nothing waiting.",
+ "state": "working",
+ "mode": "feedback",
+ "task_id": "T-034",
+ "entries": [
+  "F-96ee3cb6"
+ ],
+ "started": "2026-10-18T14:50:30+0530",
+ "message": "Acting on 1 note(s) for T-034: Full dry run of the Day-1 pipeline",
  "slices": {
   "T-250": 1,
   "T-301": 1,
