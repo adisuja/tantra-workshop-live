@@ -97,14 +97,14 @@
    "summary": "T-242 stays in **review** with nothing changed. This verify pass found the evidence and the run-chain result exactly as the earlier run reported them.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| All three walkers finish with every job done and 0 findings | Done | The three reports in "
   }
  ],
- "state": "paused",
- "message": "Working on a task.",
- "task_id": null,
+ "state": "working",
+ "message": "Acting on 1 note(s) for T-461: Test harness: fill the centre as Tantra, run every day's prompts in fresh Claude Code sessions",
+ "task_id": "T-461",
  "entries": [
-  "F-9b9eb009"
+  "F-86ebe510"
  ],
  "mode": "feedback",
- "started": "2026-10-18T15:44:51+0530",
+ "started": "2026-10-18T16:49:13+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,

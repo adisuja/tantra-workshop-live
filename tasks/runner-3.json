@@ -97,14 +97,14 @@
    "summary": "I've left T-033 blocked: Tantra still refuses every write with 402 `subscription_inactive` because the plan is cancelled, so no Day 1 WhatsApp went out. F-6ecfaf63 is acknowledged, and I changed no repo files, so there was nothing to commit, push or deploy.\n\n1. **Number on the Adi test record:** don"
   }
  ],
- "state": "paused",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
+ "task_id": "T-475",
  "entries": [
   "F-cba92356"
  ],
- "started": "2026-10-18T16:17:03+0530",
- "message": "Working on a task.",
+ "started": "2026-10-18T16:49:10+0530",
+ "message": "Acting on 1 note(s) for T-475: Export start-domains ticks and d1-ga4 values to answers and centre state",
  "slices": {
   "T-135": 1,
   "T-300": 2,
