@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-19T00:12:35+0530",
+   "task_id": "T-478",
+   "mode": "queue",
+   "status": "review",
+   "result": "ok",
+   "summary": "I checked the Ticket card again on a fresh local build and it passes every check, but it isn't pushed or live yet because this run had no approval to push or deploy. T-478 is in review.\n\n**What I changed:** one line in `centre.tsx`. Only single-choice fields now count as pre-filled before the save l"
+  },
+  {
    "ts": "2026-10-18T15:34:29+0530",
    "task_id": "T-073",
    "mode": "queue",
@@ -73,11 +81,11 @@
    "summary": "T-234 is blocked on you: reminders are built and pass 51/51 checks against the local simulator (commit 534c607, not deployed), but sending from the real Tantra workspace needs the workspace and mailbox, an API key, and a deploy of 534c607 including database migration 0017. Once those are in, I creat"
   }
  ],
- "state": "working",
- "message": "Continuing T-478: Task card redesign: pick one of four directions, then roll it out to every centre card",
- "task_id": "T-478",
+ "state": "paused",
+ "message": "Working on a task.",
+ "task_id": null,
  "entries": [],
- "mode": "queue",
+ "mode": null,
  "started": "2026-10-19T00:01:52+0530",
  "api_capped": {
   "T-073": "2026-10-12T04:30:40+0530",
