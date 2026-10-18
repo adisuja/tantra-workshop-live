@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-18T15:16:21+0530",
+   "task_id": "T-470",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model gemini-3.6-flash are cooling down"
+  },
+  {
+   "ts": "2026-10-18T15:14:54+0530",
+   "task_id": "T-468",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "provider",
+   "summary": "API Error: 502 [gemini/gemini-3.5-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.5-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. If it persis"
+  },
+  {
    "ts": "2026-10-18T15:10:21+0530",
    "task_id": "T-466",
    "mode": "feedback",
@@ -79,32 +95,16 @@
    "status": "doing",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-424 is still in doing and none of the seven probes is confirmed green yet: I fixed the three day2 causes, but the rerun was still going when this run hit its tool-"
-  },
-  {
-   "ts": "2026-10-12T14:00:39+0530",
-   "task_id": "T-424",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-424 is still in `doing`: probe-domain-chain and probe-day1 now pass on the private stack, but probe-day2 still fails 9 checks and the other four probes have not be"
-  },
-  {
-   "ts": "2026-10-12T12:53:20+0530",
-   "task_id": "T-424",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-424 is in progress (status doing): probe-domain-chain gets past the two cards it stuck on, but none of the seven probes passes yet, and nothing has been pushed.\n\nW"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-468",
+ "task_id": "T-475",
  "entries": [
-  "F-c287da2b"
+  "F-cba92356"
  ],
- "started": "2026-10-18T15:10:25+0530",
- "message": "Acting on 1 note(s) for T-468: Dashboard widened to one view: content metrics from Metricool, GA4, Wistia and Tantra beside the funnel",
+ "started": "2026-10-18T15:17:06+0530",
+ "message": "Acting on 1 note(s) for T-475: Export start-domains ticks and d1-ga4 values to answers and centre state",
  "slices": {
   "T-135": 1,
   "T-300": 2,

@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-18T15:16:12+0530",
+   "task_id": "T-469",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model gemini-3.6-flash are cooling down"
+  },
+  {
+   "ts": "2026-10-18T15:14:51+0530",
+   "task_id": "T-467",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "provider",
+   "summary": "API Error: 502 [gemini/gemini-3.5-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.5-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. If it persis"
+  },
+  {
    "ts": "2026-10-18T15:10:17+0530",
    "task_id": "T-465",
    "mode": "feedback",
@@ -79,32 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-242 is now in review. All three walkers pass with 0 findings and every job done, and none of them shows a Kie.ai finding.\n\n**What each item asked for:**\n1. **Challenge walker: done.** Run on its own against the test stack: 75 of 75 cards, 20 of 20 jobs, 0 findings, and the report was written (`/tm"
-  },
-  {
-   "ts": "2026-10-12T09:40:07+0530",
-   "task_id": "T-242",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-12T09:11:03+0530",
-   "task_id": "T-299",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-299 is still in progress: 3 of the 4 probes pass, but day2 still fails, so I have not merged, pushed, deployed or published anything.\n\n**COMPLETION CHECK**\n- **Pro"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-467: Content engine cards on Day 2 and the weekly content loop on Day 3",
- "task_id": "T-467",
+ "message": "Acting on 1 note(s) for T-471: UI walk as Tantra (webinar): fix the 8 cards that did not finish and update the walker's expectations",
+ "task_id": "T-471",
  "entries": [
-  "F-ff244706"
+  "F-a3cc3ecc"
  ],
  "mode": "feedback",
- "started": "2026-10-18T15:10:21+0530",
+ "started": "2026-10-18T15:17:06+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
