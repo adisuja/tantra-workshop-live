@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-16T00:06:53+0530",
-  "version": 2597,
+  "updated": "2026-10-18T06:27:52+0530",
+  "version": 2604,
   "last_id": 453,
   "team": [
    {
@@ -2067,8 +2067,8 @@
    "owner": "Aquila",
    "assignee": "Claude",
    "reviewers": [
-    "Aquila",
-    "Bharath"
+    "Bharath",
+    "Aquila"
    ],
    "priority": "P0",
    "due": "2026-10-14",

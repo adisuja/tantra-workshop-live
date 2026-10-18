@@ -102,7 +102,7 @@
  "task_id": null,
  "entries": [],
  "started": "2026-10-12T14:33:36+0530",
- "message": "Last sweep handled 0 task(s).",
+ "message": "Nothing waiting.",
  "slices": {
   "T-250": 1,
   "T-301": 1,

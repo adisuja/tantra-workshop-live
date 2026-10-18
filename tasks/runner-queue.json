@@ -49,8 +49,8 @@
    "summary": "T-234 is blocked on you: reminders are built and pass 51/51 checks against the local simulator (commit 534c607, not deployed), but sending from the real Tantra workspace needs the workspace and mailbox, an API key, and a deploy of 534c607 including database migration 0017. Once those are in, I creat"
   }
  ],
- "state": "disabled",
- "message": "Paused from the board; T-424 was stopped mid-run and resumes on Resume.",
+ "state": "idle",
+ "message": "Recovered from an error: AttributeError: 'str' object has no attribute 'get'",
  "task_id": null,
  "entries": [],
  "mode": "queue",
