@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-18T16:17:07+0530",
+   "task_id": "T-475",
+   "mode": "feedback",
+   "status": "review",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
    "ts": "2026-10-18T15:44:20+0530",
    "task_id": "T-455",
    "mode": "feedback",
@@ -87,23 +95,15 @@
    "status": "blocked",
    "result": "turns",
    "summary": "I've left T-033 blocked: Tantra still refuses every write with 402 `subscription_inactive` because the plan is cancelled, so no Day 1 WhatsApp went out. F-6ecfaf63 is acknowledged, and I changed no repo files, so there was nothing to commit, push or deploy.\n\n1. **Number on the Adi test record:** don"
-  },
-  {
-   "ts": "2026-10-18T14:59:44+0530",
-   "task_id": "T-058",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "turns",
-   "summary": "T-058 is blocked again and assigned back to Bhaskar, because their LinkedIn still isn't connected in Tantra.\n\n**Completion check:**\n- **Read the channel accounts (GET only):** done. The GrowthClub workspace has 1 account, status running. I didn't print the account type, but it matches the WhatsApp r"
   }
  ],
  "state": "paused",
  "mode": "feedback",
  "task_id": null,
  "entries": [
-  "F-802cd0c8"
+  "F-cba92356"
  ],
- "started": "2026-10-18T15:45:16+0530",
+ "started": "2026-10-18T16:17:03+0530",
  "message": "Working on a task.",
  "slices": {
   "T-135": 1,
