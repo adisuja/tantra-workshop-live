@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-18T15:17:22+0530",
+   "task_id": "T-478",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. The Ticket card is built and passes every probe, but it's only on the review build: not pushed or live yet, because the probe found one gating bug, and T-478 is set "
+  },
+  {
    "ts": "2026-10-18T15:00:34+0530",
    "task_id": "T-034",
    "mode": "feedback",
@@ -87,24 +95,14 @@
    "status": "review",
    "result": "ok",
    "summary": "(Held back from the public board: this note mentions a private client detail.)"
-  },
-  {
-   "ts": "2026-10-12T08:38:30+0530",
-   "task_id": "T-407",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I updated the T-407 spec so the opening line reads \"The only Adi item is T-335 (tracked as T-417)\", and it stays in review for Adi.\n\n| Item | State |\n|---|---|\n| Opening line names T-417 | Done. Read back from `tasks.json` after the edit. |\n| Item 1 names T-417 (\"ADI (T-335, tracked as T-417, one Zo"
   }
  ],
- "state": "working",
- "mode": "feedback",
- "task_id": "T-478",
- "entries": [
-  "F-6d82c36e"
- ],
- "started": "2026-10-18T15:00:35+0530",
- "message": "Acting on 1 note(s) for T-478: Task card redesign: pick one of four directions, then roll it out to every centre card",
+ "state": "idle",
+ "mode": null,
+ "task_id": null,
+ "entries": [],
+ "started": "2026-10-18T15:21:30+0530",
+ "message": "Last sweep handled 1 task(s).",
  "slices": {
   "T-250": 1,
   "T-301": 1,
@@ -118,7 +116,8 @@
   "T-400": 1,
   "T-409": 1,
   "T-424": 1,
-  "T-034": 1
+  "T-034": 1,
+  "T-478": 1
  },
  "api_capped": {
   "T-229": "2026-10-12T00:30:11+0530",
