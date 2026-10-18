@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-18T15:34:29+0530",
+   "task_id": "T-073",
+   "mode": "queue",
+   "status": "doing",
+   "result": "provider",
+   "summary": "API Error: 503 [gemini/gemini-3.8-flash] Model gemini-3.7-flash server_error (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. If it persists, check your inference gateway (localhost:20128)."
+  },
+  {
    "ts": "2026-10-18T15:23:09+0530",
    "task_id": "T-462",
    "mode": "queue",
@@ -65,11 +73,11 @@
    "summary": "T-234 is blocked on you: reminders are built and pass 51/51 checks against the local simulator (commit 534c607, not deployed), but sending from the real Tantra workspace needs the workspace and mailbox, an API key, and a deploy of 534c607 including database migration 0017. Once those are in, I creat"
   }
  ],
- "state": "working",
- "message": "Continuing T-073: Cut session recordings into the Tantra Pro course",
- "task_id": "T-073",
+ "state": "idle",
+ "message": "Last sweep handled 0 task(s).",
+ "task_id": null,
  "entries": [],
- "mode": "queue",
+ "mode": null,
  "started": "2026-10-18T15:23:11+0530",
  "api_capped": {
   "T-073": "2026-10-12T04:30:40+0530",
