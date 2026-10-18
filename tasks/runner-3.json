@@ -97,14 +97,12 @@
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
- "state": "paused",
+ "state": "idle",
  "mode": "feedback",
  "task_id": null,
- "entries": [
-  "F-a1529c6e"
- ],
+ "entries": [],
  "started": "2026-10-18T16:49:51+0530",
- "message": "Working on a task.",
+ "message": "Recovered from an error: FileNotFoundError: [Errno 2] No such file or directory: '/Users/adithyamurali/tantra-redesign/workshop-plan/tasks/overflow.json.tmp' -> '/U",
  "slices": {
   "T-135": 1,
   "T-300": 2,
