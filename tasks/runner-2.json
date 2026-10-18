@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-18T15:44:51+0530",
+   "task_id": "T-461",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "provider",
+   "summary": "API Error: 502 [gemini/gemini-3-flash-preview] [502]: Request exceeded queue budget maxWaitMs=29999ms for gemini/gemini-3-flash-preview — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. "
+  },
+  {
    "ts": "2026-10-18T15:35:05+0530",
    "task_id": "T-475",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "I checked the T-422 ask again and nothing had to change. It is still **blocked**, waiting on Adi to redeploy the 'Tantra Funnel' Apps Script (committed 0499d8b4).\n\nCOMPLETION CHECK:\n- **Both routes are in the ask:** done. The live task text names both: connect Claude in Chrome on 'Browser 1' so the "
-  },
-  {
-   "ts": "2026-10-12T08:42:55+0530",
-   "task_id": "T-409",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-409 is still blocked. Its waiting-on text now points to T-414/T-422 as the one input, and the redeploy itself hasn't been done.\n\n**Completion check:**\n- **Waiting-on points to T-414/T-422 as the single input:** done. I updated it with pass.py and the output confirmed the change.\n- **Agent can rede"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-461",
+ "task_id": "T-455",
  "entries": [
-  "F-86ebe510"
+  "F-a1529c6e"
  ],
- "started": "2026-10-18T15:36:11+0530",
- "message": "Acting on 1 note(s) for T-461: Test harness: fill the centre as Tantra, run every day's prompts in fresh Claude Code sessions",
+ "started": "2026-10-18T15:45:00+0530",
+ "message": "Acting on 1 note(s) for T-455: Tantra RevOps OS knowledge: funnels, Tantra channels, CRM, integrations, voice, equations",
  "slices": {
   "T-250": 1,
   "T-301": 1,
