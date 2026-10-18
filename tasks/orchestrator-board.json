@@ -2,12 +2,12 @@
  "running": "2026-10-18T14:58:52+0530",
  "last_sweep": "2026-10-18T14:53:46+0530",
  "counts": {
-  "proceed": 15,
+  "proceed": 30,
   "needs_adi": 25,
   "complete": 76,
   "keep_hold": 56,
   "resolve": 9,
-  "finish": 15,
+  "finish": 16,
   "drop": 1
  },
  "tasks": {
@@ -994,6 +994,86 @@
   "T-475": {
    "verdict": "finish",
    "ts": "2026-10-18T15:00:01+0530",
+   "input_task": null
+  },
+  "T-461": {
+   "verdict": "proceed",
+   "ts": "2026-10-18T15:01:08+0530",
+   "input_task": null
+  },
+  "T-462": {
+   "verdict": "proceed",
+   "ts": "2026-10-18T15:01:08+0530",
+   "input_task": null
+  },
+  "T-455": {
+   "verdict": "finish",
+   "ts": "2026-10-18T15:01:36+0530",
+   "input_task": null
+  },
+  "T-456": {
+   "verdict": "proceed",
+   "ts": "2026-10-18T15:01:36+0530",
+   "input_task": null
+  },
+  "T-457": {
+   "verdict": "proceed",
+   "ts": "2026-10-18T15:02:18+0530",
+   "input_task": null
+  },
+  "T-458": {
+   "verdict": "proceed",
+   "ts": "2026-10-18T15:02:18+0530",
+   "input_task": null
+  },
+  "T-459": {
+   "verdict": "proceed",
+   "ts": "2026-10-18T15:02:18+0530",
+   "input_task": null
+  },
+  "T-460": {
+   "verdict": "proceed",
+   "ts": "2026-10-18T15:02:18+0530",
+   "input_task": null
+  },
+  "T-463": {
+   "verdict": "proceed",
+   "ts": "2026-10-18T15:02:18+0530",
+   "input_task": null
+  },
+  "T-464": {
+   "verdict": "proceed",
+   "ts": "2026-10-18T15:02:18+0530",
+   "input_task": null
+  },
+  "T-465": {
+   "verdict": "proceed",
+   "ts": "2026-10-18T15:02:18+0530",
+   "input_task": null
+  },
+  "T-466": {
+   "verdict": "proceed",
+   "ts": "2026-10-18T15:02:18+0530",
+   "input_task": null
+  },
+  "T-467": {
+   "verdict": "proceed",
+   "ts": "2026-10-18T15:02:18+0530",
+   "input_task": null
+  },
+  "T-468": {
+   "verdict": "proceed",
+   "ts": "2026-10-18T15:02:18+0530",
+   "input_task": null
+  },
+  "T-469": {
+   "verdict": "proceed",
+   "ts": "2026-10-18T15:02:29+0530",
+   "input_task": null
+  },
+  "T-470": {
+   "verdict": "proceed",
+   "ts": "2026-10-18T15:02:35+0530",
    "input_task": null
   }
  }

@@ -1,1 +1,1 @@
-{"task":"T-464","runs":[],"decisions":[]}
+{"task":"T-464","runs":[],"decisions":[{"id":"O-98fb272b","ts":"2026-10-18T15:02:18+0530","status_before":"queue","verdict":"proceed","tokens":{"in":53660,"out":1283,"usd":0.1336792},"session":"2b5f23de-371d-4212-b305-ba8716f8c35c","has_transcript":true,"decision":"(Held back from the public board: this note mentions a private client detail.)","why":""}]}

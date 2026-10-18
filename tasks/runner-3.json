@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-18T15:03:01+0530",
+   "task_id": "T-033",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "turns",
+   "summary": "I've left T-033 blocked: Tantra still refuses every write with 402 `subscription_inactive` because the plan is cancelled, so no Day 1 WhatsApp went out. F-6ecfaf63 is acknowledged, and I changed no repo files, so there was nothing to commit, push or deploy.\n\n1. **Number on the Adi test record:** don"
+  },
+  {
    "ts": "2026-10-18T14:59:44+0530",
    "task_id": "T-058",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-263 is back in review with Adi and Bharath as reviewers and nothing asked of Adi. The FintechCircle sender check still has no result: the saved key belongs to a different workspace, so T-418 stays blocked as the only open ask.\n\n**Completion check (all evidence from this run):**\n- **Event ending af"
-  },
-  {
-   "ts": "2026-10-12T07:20:19+0530",
-   "task_id": "T-061",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-061 is back in review with Aquila and Bharath. I found one gap and fixed it: with the sender left empty, which is the live setting until the T-408 mailbox exists, "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-033",
+ "task_id": "T-273",
  "entries": [
-  "F-6ecfaf63"
+  "F-203ec4d4"
  ],
- "started": "2026-10-18T14:59:45+0530",
- "message": "Acting on 1 note(s) for T-033: WhatsApp + email delivery automation",
+ "started": "2026-10-18T15:03:01+0530",
+ "message": "Acting on 1 note(s) for T-273: Workshop Hub (index.html): review data, offer ladder, cohort dates and header",
  "slices": {
   "T-135": 1,
   "T-300": 2,
@@ -115,7 +115,7 @@
   "T-299": 2,
   "T-059": 1,
   "T-424": 4,
-  "T-033": 1,
+  "T-033": 2,
   "T-058": 1
  },
  "api_capped": {

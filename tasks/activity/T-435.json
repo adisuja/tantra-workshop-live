@@ -1,1 +1,1 @@
-{"task":"T-435","runs":[],"decisions":[]}
+{"task":"T-435","runs":[],"decisions":[{"id":"O-1ff3bf1a","ts":"2026-10-18T15:03:29+0530","status_before":"hold","verdict":"keep_hold","tokens":{"in":24375,"out":487,"usd":0.0972834},"session":"af959dc8-3694-4a6c-8603-e507e7b30db2","has_transcript":true,"decision":"","why":"Adi put T-429 and T-435 on hold himself; [redacted] says not to work on them until the very end. He chose a usetantra.com link plus a Dodo promo code. Making that code changes the live Dodo account, so it waits for his go-ahead."}]}

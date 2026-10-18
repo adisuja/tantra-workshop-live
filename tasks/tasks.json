@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-18T15:00:17+0530",
-  "version": 2618,
+  "updated": "2026-10-18T15:01:57+0530",
+  "version": 2622,
   "last_id": 453,
   "team": [
    {
@@ -1874,202 +1874,26 @@
   },
   {
    "id": "T-033",
-   "title": "WhatsApp + email delivery automation",
-   "area": "Delivery",
-   "owner": "Aquila",
-   "priority": "P1",
-   "due": "2026-10-14",
    "status": "blocked",
-   "why": "Same-day delivery before the next session is what makes the loop feel magical.",
-   "spec": "After T-031 (day outputs) and T-032 (PDF and link), send each attendee their output link the same day by email and WhatsApp. Owner model (google-and-reminder-model, 2026-10-07): attendee messages run on Tantra omni-channel campaigns, and contacts are imported into the campaign programmatically by webhook; Tantra sending is live. So: on each delivered output, push or update the attendee contact in the Tantra campaign with the output link as a contact field, and let the campaign's email and WhatsApp steps send it. UNVERIFIED that a Tantra campaign step can insert a per-contact link field; if it cannot, send the email through Resend (approved) and keep WhatsApp on Tantra. Never Twilio for WhatsApp. Reuse the same webhook import as the reminders (T-234) and the umbrella T-123; recipients come from the centre attendee records; test identity the owner's Google test identity.",
-   "done_when": [
-    "the owner's Google test identity receives the Day 1 output link by email and WhatsApp within 10 minutes of a pipeline run",
-    "The send is idempotent per attendee and day (no duplicate on the next tick)",
-    "No Twilio WhatsApp, n8n or SendGrid call in the path"
-   ],
-   "evidence": [
-    {
-     "label": "Delivery module",
-     "url": "cloud/src/jobs-delivery.ts"
-    },
-    {
-     "label": "Probe (day delivery, 27/27)",
-     "url": "app/scripts/probe-day-delivery.mjs"
-    },
-    {
-     "label": "Probe (output delivery, 20/20)",
-     "url": "app/scripts/probe-output-delivery.mjs"
-    },
-    {
-     "label": "Live delivery status (admin)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/admin/api/delivery?v=t033v11"
-    }
-   ],
-   "blockers": [],
-   "needs_from_owner": "Reactivate the GrowthClub Tantra workspace plan at https://usetantra.com (Billing). The Tantra API answers 402 subscription_inactive (status cancelled), so the Day 1 WhatsApp test to +916282864296 cannot be imported or started. The email leg still waits on T-408.",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    },
-    {
-     "ts": "2026-09-18T20:42:47+0530",
-     "who": "claude",
-     "note": "Owner: build the automation code yourself. Reassigned from Bhaskar Dev to Claude."
-    },
-    {
-     "ts": "2026-09-25",
-     "who": "Claude",
-     "note": "Blocks T-123 (launch-critical messages)."
-    },
-    {
-     "ts": "2026-10-06T01:37:57+0530",
-     "who": "claude",
-     "note": "Owner 2026-10-06: the playbook and both centres promise each day's answers run through an AI workflow and come back the same day as a PDF and a live link by WhatsApp and email, for every attendee. Not built yet (no PDF generation or WhatsApp/email delivery in cloud/src); keep this open until it runs end to end per attendee."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review: context updated. Blockers stale: approved senders are now Tantra email or Resend for email and Tantra (WhatsApp) or Twilio; Tantra per-contact send endpoint is still pending (tantra-reminder-endpoint-pending)."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: dropped the stale T-236 /emails/batch blocker and Twilio WhatsApp; per the owner model (2026-10-07) attendee messages run on Tantra omni-channel campaigns with contacts imported by webhook, WhatsApp never via Twilio."
-    },
-    {
-     "ts": "2026-10-09T05:37:52+0530",
-     "who": "claude",
-     "note": "People: reviewers Aquila → Aquila/Bharath (by claude)."
-    },
-    {
-     "ts": "2026-10-09T05:37:52+0530",
-     "who": "claude",
-     "note": "Built and live: cloud/src/jobs-delivery.ts puts each delivered day output into a per-day Tantra campaign (email + WhatsApp, both through Tantra since T-234 proved {{custom.*}} renders in both), with a D1 ledger (migration 0020, applied remotely) so a second tick never resends; workshop-plan/ops/deliver.py posts T-031/T-032 rows from ops.db each tick. Verified with app/scripts/probe-day-delivery.mjs 27/27 on the simulator (stub Day 1 email + WhatsApp with the link, no duplicate on repost or next tick, 409 retry sends once, no Twilio/n8n/SendGrid or other vendor touched), probe-tantra-reminders still all pass, Worker deployed from clean HEAD 2fc74a9 and pushed to main; the real send to Adi test waits on the Tantra key and a WhatsApp number, and the stub swaps out once T-031/T-032 write day_outputs."
-    },
-    {
-     "ts": "2026-10-09T05:37:58+0530",
-     "who": "claude",
-     "note": "Correction: probe-day-delivery.mjs passed 26/26 checks (not 27); everything else in the previous note stands."
-    },
-    {
-     "ts": "2026-10-09T05:38:07+0530",
-     "who": "claude",
-     "note": "Checked 12 related task(s); updating T-034."
-    },
-    {
-     "ts": "2026-10-10T16:35:32+0530",
-     "who": "claude",
-     "note": "Board hygiene (T-129): due 2026-09-22 was past; now 2026-10-14 (P1 rule)."
-    },
-    {
-     "ts": "2026-10-10T20:15:04+0530",
-     "who": "claude",
-     "note": "Added a Resend email fallback (Cohort Settings delivery_email_via=resend, WhatsApp stays on WhatsApp-only Tantra campaigns) and app/scripts/probe-output-delivery.mjs on T-032's /o/<token> and .pdf links: 17/17 pass on the simulator (one send each way, ticks and reposts add nobody, no Twilio, n8n or SendGrid), and probe-day-delivery still passes. The ripple needed only a comment because deliver.py already takes links from attendee_outputs. Commit is local and not pushed or deployed because the coordination LOG says publish held; the live Day 1 send waits only on the inputs below."
-    },
-    {
-     "ts": "2026-10-11T05:53:09+0530",
-     "who": "claude",
-     "note": "T-032 ripple: the PDF and link are built and verified live (probe ok on attendee 4 day1), and T-031 is real, so both stale blockers are removed. Still blocked only on the input already in needs_from_owner."
-    },
-    {
-     "ts": "2026-10-11T11:59:47+0530",
-     "who": "claude",
-     "note": "Delivery now reads the real T-032 links (/o/<token> and .pdf from attendee_outputs), and the Resend key also carries the email so a reused attendee id can never drop a send. On a private simulator stack: probe-day-delivery 26/26, probe-output-delivery 17/17, probe-tantra-reminders 92/0, and dryrun_day1 delivered all 3 personas in 10 to 15 s. Deployed as Worker 559158f9 and pushed (main 605e4609). Waits only on the T-337 key; the WhatsApp ask moved to T-400."
-    },
-    {
-     "ts": "2026-10-11T12:02:21+0530",
-     "who": "claude",
-     "note": "Verify pass: I re-ran everything on a fresh local centre and simulator. probe-day-delivery passed 26/26, probe-output-delivery 17/17 and probe-tantra-reminders 92/92. The real /o/<token> and .pdf link source and the email-carrying Resend idempotency key are in commit 605e4609, which is on origin/main and live as Worker 559158f9 (admin delivery API answers 401 signed out). Still blocked only on the T-337 Tantra key, with the WhatsApp number asked in T-400."
-    },
-    {
-     "ts": "2026-10-11T17:07:34+0530",
-     "who": "claude",
-     "note": "T-032 update: the onboarding centre now shows each attendee's Day N output link and PDF on that day's session card (deployed, commit 6c65c86c), read from /api/me outputs. Nothing else changes here."
-    },
-    {
-     "ts": "2026-10-11T22:42:49+0530",
-     "who": "claude",
-     "note": "The Tantra key is saved, but Create delivery campaigns on the live centre stopped with 'team@growthclub.org isn't a connected mailbox in this Tantra workspace', so no campaign or contact was made and the Day 1 send can't run yet; that mailbox is T-123's open ask, so the key ask is gone from here. I reran the probes on a fresh local centre and simulator: probe-output-delivery 17/17, probe-day-delivery and probe-tantra-reminders all pass. The fallback commit 605e4609 is on origin/main, the live Worker is version abef49e6, and delivery code has not changed since."
-    },
-    {
-     "ts": "2026-10-11T22:43:20+0530",
-     "who": "claude",
-     "note": "Checked 12 related task(s); updating T-034."
-    },
-    {
-     "ts": "2026-10-12T01:42:36+0530",
-     "who": "claude",
-     "note": "Adi gave the Tantra campaigns API key (2026-10-12). Saved sealed in the centre (admin settings tantra_key) and in ~/.config/tantra/keys/tantra-api.env (never in a repo). Verified: GET https://api.usetantra.com/api/v1/campaigns with header x-api-key returns 200 (1 campaign). The Tantra key is no longer a blocker."
-    },
-    {
-     "ts": "2026-10-12T02:49:00+0530",
-     "who": "claude",
-     "note": "Live centre now has delivery_email_via=resend (re-read via /admin/api/delivery), and a delivery run stops cleanly with nothing sent. Tantra WhatsApp shows Connected (account 6acbd96d, running). No test email went out because no Resend key exists on the Worker, the centre or ~/.config/tantra, and Adi's 12 Oct rule needs a sender on the new non-main domain (T-123). No WhatsApp campaigns were created because T-400 still needs the test number, which the Tantra API does not expose. No code changed."
-    },
-    {
-     "ts": "2026-10-12T02:50:39+0530",
-     "who": "claude",
-     "note": "Verify pass: nothing could be sent yet. There is no Resend key anywhere (not in the Worker secrets, the centre or ~/.config/tantra/keys) and no From address, and Adi ruled email must come from a new mailbox on a separate domain (T-123). The live centre reads email_via=resend with the WhatsApp account 6acbd96d05f08b0c4b56f207 running. On a fresh local centre and simulator, probe-day-delivery passed 26/26 and probe-output-delivery 17/17, including no duplicate on the next tick and no Twilio, SendGrid or n8n call. No code changed."
-    },
-    {
-     "ts": "2026-10-12T02:51:06+0530",
-     "who": "claude",
-     "note": "Checked 12 related task(s); updating T-034, T-400."
-    },
-    {
-     "ts": "2026-10-12T07:00:51+0530",
-     "who": "claude",
-     "note": "Made the 3 WhatsApp-only Day output campaigns in our Tantra workspace as drafts (Day 1 6acc378b5f16ab824d7c8f1f, Day 2 6acc37a15f16ab824d7c8f76, Day 3 6acc37a95f16ab824d7c8fb3) on the connected WhatsApp account 6acbd96d. No contact is imported and nothing was sent: Tantra does not show the account's phone number and T-400 says not to read the chats, so the Day 1 WhatsApp waits on the number Adi gives on T-400. No email went out: the live centre has no Resend key or From address. The From address is now a Cohort Setting that refuses growthclub.org, usetantra.com and free inboxes, and WhatsApp-only campaigns no longer need a Tantra mailbox (commit 3d7c62a2, local, not deployed). probe-output-delivery passed 18/18 and probe-day-delivery 26/26 on a fresh local centre."
-    },
-    {
-     "ts": "2026-10-12T07:03:21+0530",
-     "who": "claude",
-     "note": "Verify pass: the 3 WhatsApp-only Day campaigns read back from Tantra as drafts on WhatsApp account 6acbd96d. The live Resend From address is empty and there is no key, so no email was sent. Fixed a gap: the Tantra sender mailbox (live it is still team@growthclub.org) and growthclub.org subdomains are now refused too (commit local, not deployed). probe-output-delivery passed 20/20 and probe-day-delivery 26/26 on a fresh local centre, including no duplicate on the next tick and no Twilio, n8n or SendGrid. The Day 1 WhatsApp send waits on the T-400 number."
-    },
-    {
-     "ts": "2026-10-12T07:04:36+0530",
-     "who": "claude",
-     "note": "Checked 12 related task(s); updating T-400, T-034."
-    },
-    {
-     "ts": "2026-10-12T07:50:57+0530",
-     "who": "claude",
-     "note": "Day output delivery now has its own WhatsApp account setting (delivery_whatsapp_account=6acbd96d, live and deployed from a7d83a00). The shared tantra_whatsapp is cleared, so reminders, follow-ups, lanes and nurture carry no WhatsApp: the live reminders status reads whatsapp null, and none of the 5 Tantra campaigns has a WhatsApp account. probe-day-delivery passed 27/27 (it now proves there is no leak) and probe-output-delivery passed 20/20. The 3 WhatsApp drafts read back as drafts. The Day 1 email waits on the T-408 sender, and the Day 1 WhatsApp on the T-419 number."
-    },
-    {
-     "ts": "2026-10-12T07:52:47+0530",
-     "who": "claude",
-     "note": "Verify pass: on a fresh local centre and simulator, probe-day-delivery and probe-output-delivery both passed. That includes the check that the delivery-only WhatsApp setting adds nothing to the 16 reminder, follow-up, lane and nurture campaigns, plus no duplicate on the next tick and no Twilio, n8n or SendGrid call. Live, the delivery-only WhatsApp account is 6acbd96d and reminders read whatsapp=null. Tantra still shows the 3 Day campaigns as drafts on that account with no sends. The Day 1 email waits on T-408 and the Day 1 WhatsApp on T-419, both still open."
-    },
-    {
-     "ts": "2026-10-12T08:35:21+0530",
-     "who": "claude",
-     "note": "Nothing left to push or deploy: the delivery commits (3d7c62a2, a7d83a00) are on origin/main and in the live revops-centre Worker (version 7a94c18c from 8eb66895, no cloud change since). Live /admin/api/delivery shows delivery_whatsapp_account 6acbd96d05f08b0c4b56f207 running, wired to the 3 draft Day campaigns 6acc378b, 6acc37a1, 6acc37a9, with reminders whatsapp=null; probe-day-delivery passed 27/27 and probe-output-delivery passed on a fresh local centre. No Adi test attendee has a WhatsApp number (read only check), so the Day 1 WhatsApp waits on T-419 and the email on T-408."
-    },
-    {
-     "ts": "2026-10-12T08:37:09+0530",
-     "who": "claude",
-     "note": "Verify pass: both delivery commits are on origin/main and in the live revops-centre Worker (version 7a94c18c), so nothing new needed pushing or deploying. On a fresh local centre with the simulator, probe-day-delivery passed 27/27 and probe-output-delivery 20/20, covering no duplicate on the next tick and no Twilio, n8n or SendGrid call. Live /admin/api/delivery shows delivery_whatsapp_account 6acbd96d (running) wired to the 3 Day drafts, and reminders read whatsapp null. None of the 9 Adi test attendees has a WhatsApp number, so the Day 1 WhatsApp test waits on T-419 and the email test on T-408."
-    },
-    {
-     "ts": "2026-10-18T14:53:11+0530",
-     "who": "claude",
-     "note": "Saved +916282864296 as the WhatsApp number on Adi test (id 127, read back to confirm). The delivery commits were already on origin/main and live, so nothing was pushed or deployed. Tantra refused to add Adi test to Day 1 WhatsApp campaign 6acc378b with 402 subscription_inactive (plan status cancelled), so no WhatsApp went out and the no-duplicate check could not run."
-    },
-    {
-     "ts": "2026-10-18T14:58:47+0530",
-     "who": "claude",
-     "note": "Verify pass 2026-10-18: +916282864296 is saved on Adi test (id 127), and the delivery commits are on origin/main, so nothing needed pushing. Importing into Day 1 WhatsApp campaign 6acc378b still gets 402 subscription_inactive (plan cancelled), so no WhatsApp went out. On a fresh local centre, probe-day-delivery passed 27/27 (after I fixed a stale merge tag check) and probe-output-delivery passed 20/20, including no duplicate on the next tick and no Twilio, n8n or SendGrid."
-    }
-   ],
-   "order": 230,
+   "owner": "Aquila",
    "assignee": "Claude",
    "reviewers": [
     "Aquila",
     "Bharath"
-   ]
+   ],
+   "priority": "P1",
+   "due": "2026-10-14",
+   "area": "Delivery",
+   "order": 230,
+   "title": "T-033: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-034",
@@ -10942,7 +10766,8 @@
    "assignee": "Claude",
    "reviewers": [
     "Adi",
-    "Aquila"
+    "Aquila",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
@@ -10956,12 +10781,12 @@
    ],
    "evidence": [
     {
-     "label": "Zoom Pro doc: why these two fields (section 1, row No REST setting locks mic and camera; section 3 step 4)",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/main/docs/onboarding-v3/analysis/zoom-pro-meetings.md"
+     "label": "Daily check script (commit 448dbc65)",
+     "url": "workshop-plan/ops/zoom_support_check.mjs"
     },
     {
-     "label": "Daily read-only Zoom check script",
-     "url": "workshop-plan/ops/zoom_support_check.mjs"
+     "label": "launchd job",
+     "url": "workshop-plan/ops/com.tantra.zoom-support-check.plist"
     },
     {
      "label": "Daily job log",
@@ -11112,6 +10937,16 @@
      "ts": "2026-10-18T14:56:40+0530",
      "who": "claude",
      "note": "Zoom check 2026-10-18: not granted yet. disable_participant_video is in no answer and the mute field is still at its default (/users/me/settings 200, /accounts/me/settings 400, /accounts/me/lock_settings 400). The centre's Zoom Support locks stay off and Live Control (T-226) covers mute and video."
+    },
+    {
+     "ts": "2026-10-18T15:01:47+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi/Aquila → Adi/Aquila/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-18T15:01:47+0530",
+     "who": "claude",
+     "note": "Fixed the daily Zoom check: it now reads the Zoom app through Cloudflare's D1 API, then wrangler with 3 retries, then a saved encrypted copy (proved by a run with no npx at all), and the job also runs at login so a 09:10 missed while the Mac is off still happens (16 and 17 Oct were missed that way). launchd ran it today with exit 0 and logged the 2026-10-18 entry: not granted. There was no write test today because the centre has no 21 Oct cohort meeting yet (the centre creates it when that cohort's first attendee registers), and the daily run picks it up then; still waiting on Zoom Support, T-226 covers mute and video."
     }
    ],
    "order": 2250

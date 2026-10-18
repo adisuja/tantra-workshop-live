@@ -1,1 +1,1 @@
-{"task":"T-437","runs":[],"decisions":[]}
+{"task":"T-437","runs":[],"decisions":[{"id":"O-3cff8588","ts":"2026-10-18T15:03:29+0530","status_before":"hold","verdict":"needs_adi","tokens":{"in":50410,"out":1246,"usd":0.1221276},"session":"707c7c7c-0127-4893-887a-30a685a3e601","has_transcript":true,"decision":"(Held back from the public board: this note mentions a private client detail.)","why":""}]}
