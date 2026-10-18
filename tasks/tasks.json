@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-18T06:29:56+0530",
-  "version": 2605,
+  "updated": "2026-10-18T06:38:10+0530",
+  "version": 2607,
   "last_id": 453,
   "team": [
    {
@@ -20543,17 +20543,31 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
    "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
    "done_when": [
     "Opens in Claude Code and passes the setup prompt"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Setup run, plan login (passes)",
+     "url": "revops-os/tests/runs/t454-setup/plan-login.md"
+    },
+    {
+     "label": "Setup run, API key in shell (stops on FAIL)",
+     "url": "revops-os/tests/runs/t454-setup/with-api-key-in-shell.md"
+    },
+    {
+     "label": "OS source",
+     "url": "revops-os/os/"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "tags": [
@@ -20564,6 +20578,16 @@
      "ts": "2026-10-15 03:30",
      "who": "system",
      "note": "created from the plan"
+    },
+    {
+     "ts": "2026-10-18T06:38:10+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-18T06:38:10+0530",
+     "who": "claude",
+     "note": "Ran the Day 0 setup prompt headless in Claude Code (Sonnet) in a fresh trusted copy of the built OS: no permission prompts, doctor.mjs and api.mjs tools ran, and the five-line answer was correct; with an API key in the shell it correctly stopped on the doctor FAIL. Skeleton ships CLAUDE.md/AGENTS.md, README for four assistants, STATUS.md, .env.example, api.mjs and doctor.mjs; I dropped .mcp.json.example because doctor.mjs lists the optional connections instead. Reviewers: Adi, plus Bharath for the development side."
     }
    ]
   },
