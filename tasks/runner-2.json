@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-18T17:21:14+0530",
+   "task_id": "T-475",
+   "mode": "feedback",
+   "status": "review",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.6 are cooling down"
+  },
+  {
    "ts": "2026-10-18T16:17:09+0530",
    "task_id": "T-461",
    "mode": "feedback",
@@ -87,23 +95,15 @@
    "status": "blocked",
    "result": "turns",
    "summary": "I updated T-409's waiting-on note to point at T-423 and left the task blocked. The redeploy still hasn't happened: today's health check of the script URL still lists only the 6 original forms, with no tier_qualifier.\n\n**Completion check:**\n- **Point waiting-on at T-423:** done. T-409 now says Adi's "
-  },
-  {
-   "ts": "2026-10-12T08:48:21+0530",
-   "task_id": "T-422",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-422 is still blocked: the Apps Script redeploy hasn't happened, and this run couldn't do it.\n\n- **Claude in Chrome on 'Browser 1':** not connected. This unattended run has no browser tools, so I couldn't redeploy the script myself.\n- **Live exec URL check:** I opened it today and it still lists on"
   }
  ],
  "state": "paused",
  "mode": "feedback",
  "task_id": null,
  "entries": [
-  "F-86ebe510"
+  "F-cba92356"
  ],
- "started": "2026-10-18T16:17:04+0530",
+ "started": "2026-10-18T17:20:54+0530",
  "message": "Working on a task.",
  "slices": {
   "T-250": 1,
