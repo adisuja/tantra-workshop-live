@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-18T15:44:20+0530",
+   "task_id": "T-455",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "provider",
+   "summary": "API Error: 502 [gemini/gemini-3-flash-preview] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3-flash-preview — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. "
+  },
+  {
    "ts": "2026-10-18T15:34:30+0530",
    "task_id": "T-461",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "turns",
    "summary": "T-058 is blocked again and assigned back to Bhaskar, because their LinkedIn still isn't connected in Tantra.\n\n**Completion check:**\n- **Read the channel accounts (GET only):** done. The GrowthClub workspace has 1 account, status running. I didn't print the account type, but it matches the WhatsApp r"
-  },
-  {
-   "ts": "2026-10-18T14:59:00+0530",
-   "task_id": "T-033",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "turns",
-   "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. I've blocked T-033 again: the Day 1 WhatsApp test still can't go out because the GrowthClub Tantra workspace plan is cancelled, so you need to reactivate it at https"
   }
  ],
- "state": "working",
+ "state": "paused",
  "mode": "feedback",
- "task_id": "T-455",
+ "task_id": null,
  "entries": [
-  "F-a1529c6e"
+  "F-802cd0c8"
  ],
- "started": "2026-10-18T15:35:06+0530",
- "message": "Acting on 1 note(s) for T-455: Tantra RevOps OS knowledge: funnels, Tantra channels, CRM, integrations, voice, equations",
+ "started": "2026-10-18T15:45:16+0530",
+ "message": "Working on a task.",
  "slices": {
   "T-135": 1,
   "T-300": 2,

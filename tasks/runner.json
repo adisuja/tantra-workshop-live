@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-18T15:45:23+0530",
+   "task_id": "T-429",
+   "mode": "feedback",
+   "status": "hold",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model gemini-3-flash-preview are cooling down"
+  },
+  {
    "ts": "2026-10-18T15:38:21+0530",
    "task_id": "T-471",
    "mode": "feedback",
@@ -87,19 +95,11 @@
    "status": "review",
    "result": "ok",
    "summary": "T-242 stays in **review** with nothing changed. This verify pass found the evidence and the run-chain result exactly as the earlier run reported them.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| All three walkers finish with every job done and 0 findings | Done | The three reports in "
-  },
-  {
-   "ts": "2026-10-12T13:44:19+0530",
-   "task_id": "T-242",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "Stopped at the 70-minute wall clock for one run; the work so far is committed and the next run continues. Last report: The chain's webinar walker passed. Challenge and rsp are still running, so I'm waiting on those."
   }
  ],
- "state": "working",
- "message": "Acting on 1 note(s) for T-429: Lane CV: Free month of Tantra for paid attendees, with an off switch",
- "task_id": "T-429",
+ "state": "paused",
+ "message": "Working on a task.",
+ "task_id": null,
  "entries": [
   "F-9b9eb009"
  ],
