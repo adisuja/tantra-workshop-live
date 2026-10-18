@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-18T14:53:11+0530",
-  "version": 2610,
+  "updated": "2026-10-18T14:53:46+0530",
+  "version": 2611,
   "last_id": 453,
   "team": [
    {
@@ -2964,10 +2964,15 @@
      "ts": "2026-10-18T14:53:01+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-18 (GET only, re-read live): GrowthClub workspace still has 0 LinkedIn accounts (1 WhatsApp, the reminder number), and draft 6acc47385f16ab824d7d8132 is still a draft with 3 LinkedIn steps (day 0, 1, 4) and no sender, so nothing was changed in Tantra; launch-kit.md 3b and ops/outreach.json match this read, due is 2026-10-21. Bhaskar: connect at https://usetantra.com/connectors/channels/linkedin, pick it as sender on the draft, set 20 to 25 connects/day and 75 messages/day, start it, and get the vendor re-export for the 82 contacts without LinkedIn URLs. Bharath: can we get a third slot for Vaibhavi at no charge?"
+    },
+    {
+     "ts": "2026-10-18T14:53:46+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Bhaskar → Claude (by Orchestrator)."
     }
    ],
    "order": 370,
-   "assignee": "Bhaskar",
+   "assignee": "Claude",
    "reviewers": [
     "Bhaskar",
     "Bharath"
