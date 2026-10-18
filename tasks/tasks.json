@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-18T15:13:32+0530",
-  "version": 2632,
+  "updated": "2026-10-18T15:17:11+0530",
+  "version": 2634,
   "last_id": 479,
   "team": [
    {
@@ -21309,11 +21309,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "blocked",
+   "status": "doing",
    "why": "Adi 2026-10-16: the card face looks like a sticky note; he asked for four variations designed in the context of the page, to pick one for every card in the series.",
    "spec": "Rig https://revops-centre.growthcluborg.workers.dev/design/card-variants (app/public/design/card-variants.html), commit afaf3418",
    "done_when": [
@@ -21321,7 +21322,16 @@
     "centre.tsx and centre.module.css carry it for every card kind (session, decide, connect, approve, human, watch)",
     "check-rail-pins, probe-day-model and a 4-viewport visual probe pass"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Probe shots",
+     "url": "/tmp/t478-shots/"
+    },
+    {
+     "label": "Review build",
+     "url": "https://review-revops-centre.growthcluborg.workers.dev/onboarding/?card=start-os-assistant&v=1816391d"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "Pick A Ticket, B Run sheet, C Spread or D Open page on the rig page (or name parts to combine).",
    "tags": [
@@ -21332,6 +21342,16 @@
      "ts": "2026-10-16T00:39:35+0530",
      "who": "claude",
      "note": "Four directions built and live on the rig; waiting for the pick"
+    },
+    {
+     "ts": "2026-10-18T15:17:11+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-18T15:17:11+0530",
+     "who": "claude",
+     "note": "Ticket card (A plus the B button lock) is built for all six kinds in commits 1816391d and 8ef38493 on main in worktree /private/tmp/t478. It is on the review build only and not yet pushed or live. check-rail-pins (119 cards), probe-day-model and a 24-shot probe (6 kinds x 1440/1024/768/390: stub colour, primary inside the card, no overflow, finish line in the foot) all pass. Left: on preselect cards (e.g. start-os-assistant) the first open shows a choice but the button is still locked with '1 field to finish' until the auto-save lands, so treat preselect fields as filled in the gate (centre.tsx L374 to 378, L339). Then re-probe, git push origin main, deploy-clean.sh live plus --preview review, and move to review."
     }
    ]
   },
