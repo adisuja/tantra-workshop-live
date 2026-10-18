@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-18T15:23:09+0530",
+   "task_id": "T-462",
+   "mode": "queue",
+   "status": "doing",
+   "result": "ok",
+   "summary": "I checked the round 5 fixes on disk and they hold up. I fixed one gap that was still open, and T-462 stays in **doing** because the rounds that prove every prompt passes aren't finished.\n\n**Previous report, checked in this run:**\n- **No double `check-checks` block: done.** In a temporary project, ru"
+  },
+  {
    "ts": "2026-10-18T15:00:30+0530",
    "task_id": "T-461",
    "mode": "queue",
@@ -58,11 +66,11 @@
   }
  ],
  "state": "working",
- "message": "Continuing T-462: Reviewer agent and improver loop for every prompt and output",
- "task_id": "T-462",
+ "message": "Continuing T-073: Cut session recordings into the Tantra Pro course",
+ "task_id": "T-073",
  "entries": [],
  "mode": "queue",
- "started": "2026-10-18T15:00:30+0530",
+ "started": "2026-10-18T15:23:11+0530",
  "api_capped": {
   "T-073": "2026-10-12T04:30:40+0530",
   "T-299": "2026-10-12T11:15:31+0530"

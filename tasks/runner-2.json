@@ -97,12 +97,14 @@
    "summary": "(Held back from the public board: this note mentions a private client detail.)"
   }
  ],
- "state": "idle",
- "mode": null,
- "task_id": null,
- "entries": [],
- "started": "2026-10-18T15:21:30+0530",
- "message": "Last sweep handled 1 task(s).",
+ "state": "working",
+ "mode": "feedback",
+ "task_id": "T-475",
+ "entries": [
+  "F-cba92356"
+ ],
+ "started": "2026-10-18T15:23:03+0530",
+ "message": "Acting on 1 note(s) for T-475: Export start-domains ticks and d1-ga4 values to answers and centre state",
  "slices": {
   "T-250": 1,
   "T-301": 1,
