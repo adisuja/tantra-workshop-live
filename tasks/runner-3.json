@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-18T15:34:30+0530",
+   "task_id": "T-461",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "provider",
+   "summary": "API Error: 502 [gemini/gemini-3.8-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.8-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. If it persis"
+  },
+  {
    "ts": "2026-10-18T15:20:59+0530",
    "task_id": "T-475",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "turns",
    "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. I've blocked T-033 again: the Day 1 WhatsApp test still can't go out because the GrowthClub Tantra workspace plan is cancelled, so you need to reactivate it at https"
-  },
-  {
-   "ts": "2026-10-12T14:56:04+0530",
-   "task_id": "T-424",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-424 is still \"doing\": the three probes from the ripple note are handled, but day2 still fails at a new card, so the full chain hasn't run yet.\n\n**Status of each it"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-461",
+ "task_id": "T-455",
  "entries": [
-  "F-86ebe510"
+  "F-a1529c6e"
  ],
- "started": "2026-10-18T15:23:56+0530",
- "message": "Acting on 1 note(s) for T-461: Test harness: fill the centre as Tantra, run every day's prompts in fresh Claude Code sessions",
+ "started": "2026-10-18T15:35:06+0530",
+ "message": "Acting on 1 note(s) for T-455: Tantra RevOps OS knowledge: funnels, Tantra channels, CRM, integrations, voice, equations",
  "slices": {
   "T-135": 1,
   "T-300": 2,
