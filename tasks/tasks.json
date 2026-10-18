@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-18T14:51:26+0530",
-  "version": 2608,
+  "updated": "2026-10-18T14:53:11+0530",
+  "version": 2610,
   "last_id": 453,
   "team": [
    {
@@ -1906,7 +1906,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Waits on T-408 and T-419, nothing to answer here.",
+   "needs_from_owner": "Reactivate the GrowthClub Tantra workspace plan at https://usetantra.com (Billing). The API answers 402 subscription_inactive, status cancelled. The Day 1 email still waits on T-408.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -2052,6 +2052,11 @@
      "ts": "2026-10-12T08:37:09+0530",
      "who": "claude",
      "note": "Verify pass: both delivery commits are on origin/main and in the live revops-centre Worker (version 7a94c18c), so nothing new needed pushing or deploying. On a fresh local centre with the simulator, probe-day-delivery passed 27/27 and probe-output-delivery 20/20, covering no duplicate on the next tick and no Twilio, n8n or SendGrid call. Live /admin/api/delivery shows delivery_whatsapp_account 6acbd96d (running) wired to the 3 Day drafts, and reminders read whatsapp null. None of the 9 Adi test attendees has a WhatsApp number, so the Day 1 WhatsApp test waits on T-419 and the email test on T-408."
+    },
+    {
+     "ts": "2026-10-18T14:53:11+0530",
+     "who": "claude",
+     "note": "Saved +916282864296 as the WhatsApp number on Adi test (id 127, read back to confirm). The delivery commits were already on origin/main and live, so nothing was pushed or deployed. Tantra refused to add Adi test to Day 1 WhatsApp campaign 6acc378b with 402 subscription_inactive (plan status cancelled), so no WhatsApp went out and the no-duplicate check could not run."
     }
    ],
    "order": 230,
@@ -2954,6 +2959,11 @@
      "ts": "2026-10-18T14:51:26+0530",
      "who": "claude",
      "note": "Bhaskar and Bharath (team note): read Tantra live today (GET only): the GrowthClub workspace still has 0 LinkedIn accounts (only the WhatsApp reminder number), and draft 6acc47385f16ab824d7d8132 is still a draft with 3 LinkedIn steps and no sender, so I changed nothing in Tantra and moved the due date to 2026-10-21. Bhaskar: connect your LinkedIn at https://usetantra.com/connectors/channels/linkedin, pick it as sender on the draft, set 20 to 25 connects/day and 75 messages/day, then start it yourself, and ask the vendor to re-export LinkedIn URLs for the 82 contacts still missing them. Bharath: can the workspace get a third slot at no charge for Vaibhavi? Open workshop-plan/outreach/launch-kit.md (3b)."
+    },
+    {
+     "ts": "2026-10-18T14:53:01+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-18 (GET only, re-read live): GrowthClub workspace still has 0 LinkedIn accounts (1 WhatsApp, the reminder number), and draft 6acc47385f16ab824d7d8132 is still a draft with 3 LinkedIn steps (day 0, 1, 4) and no sender, so nothing was changed in Tantra; launch-kit.md 3b and ops/outreach.json match this read, due is 2026-10-21. Bhaskar: connect at https://usetantra.com/connectors/channels/linkedin, pick it as sender on the draft, set 20 to 25 connects/day and 75 messages/day, start it, and get the vendor re-export for the 82 contacts without LinkedIn URLs. Bharath: can we get a third slot for Vaibhavi at no charge?"
     }
    ],
    "order": 370,
