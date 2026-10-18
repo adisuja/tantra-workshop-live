@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-19T00:07:16+0530",
+   "task_id": "T-475",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-475 is not finished: the export fix works locally, but the D0.13 and D0.35 rerun is still running and the fix is not on origin/main yet. I left the task in **doing"
+  },
+  {
    "ts": "2026-10-18T16:49:56+0530",
    "task_id": "T-455",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "queue",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-18T15:09:52+0530",
-   "task_id": "T-459",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
- "state": "working",
+ "state": "paused",
  "mode": "feedback",
- "task_id": "T-475",
+ "task_id": null,
  "entries": [
   "F-cba92356"
  ],
  "started": "2026-10-19T00:01:52+0530",
- "message": "Acting on 1 note(s) for T-475: Export start-domains ticks and d1-ga4 values to answers and centre state",
+ "message": "Working on a task.",
  "slices": {
   "T-135": 1,
   "T-300": 2,
@@ -116,7 +116,8 @@
   "T-059": 1,
   "T-424": 4,
   "T-033": 2,
-  "T-058": 1
+  "T-058": 1,
+  "T-475": 1
  },
  "api_capped": {
   "T-229": "2026-10-12T00:59:32+0530",

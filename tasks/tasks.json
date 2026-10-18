@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-19T00:06:22+0530",
-  "version": 2643,
+  "updated": "2026-10-19T00:07:31+0530",
+  "version": 2646,
   "last_id": 480,
   "team": [
    {
@@ -20758,8 +20758,8 @@
      "url": "workshop-plan/research/revops-os-test-log.md"
     },
     {
-     "label": "Fix commit",
-     "url": "5c3fe359"
+     "label": "Round 5 reviews",
+     "url": "revops-os/tests/runs/d0-r5/log"
     }
    ],
    "blockers": [],
@@ -20792,6 +20792,11 @@
      "ts": "2026-10-18T15:19:40+0530",
      "who": "claude",
      "note": "Verify pass: rec.mjs guard re-tested in a temp project (via rec.mjs 1 check-checks block, bare run adds the second), no stale check.md in guides, build 0 problems, no dashes; fixed the last round 5 gap (10 Day 0 guides asked for PASS alone on a line rec.mjs cannot write) in 53974518 and set reviewers Adi, Bharath. Left: round 5 is still running (PID 4833, paused at the usage window at prompt 9 of 24), then round 6 from a fresh project until 24 of 24 pass, then Days 1 to 3. Log: workshop-plan/research/revops-os-test-log.md"
+    },
+    {
+     "ts": "2026-10-19T00:07:31+0530",
+     "who": "claude",
+     "note": "Checked on 2026-10-19: Day 0 round 5 (PID 4833) is still running but paused at the usage window (last log line 23:54). 4 of its first 6 prompts pass, and both failures (D0.12 retyped ready count, D0.15 doubled check block) are already fixed in the guides. Logged in revops-os-test-log.md (f898da04). Left: finish round 5 once the window resets, round 6 from a fresh project until 24 of 24 pass, then Days 1 to 3, then push and send to review."
     }
    ]
   },
@@ -21194,11 +21199,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "doing",
    "why": "Owner approved the reviewer card changes 2026-10-16. D0.13 cannot see which domains the owner ticked or typed; D0.35 cannot see the service account email, the _revops-proof value or the Measurement ID.",
    "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md; research workshop-plan/research/ai-assistant-setup-research.md",
    "done_when": [
@@ -21206,7 +21212,20 @@
     "google_sa_email and the proof value reach answers; ga4.measurement_id reaches CentreState",
     "D0.13 and D0.35 rerun in the test harness and pass"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Export excerpt (answers + state block)",
+     "url": "revops-os/tests/runs/t475-d0/export-excerpt.txt"
+    },
+    {
+     "label": "Fix commit (local, series-deck-finish)",
+     "url": "65cc063a"
+    },
+    {
+     "label": "Harness run dir",
+     "url": "revops-os/tests/runs/t475-d0/"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "tags": [
@@ -21222,6 +21241,16 @@
      "ts": "2026-10-16T00:06:53+0530",
      "who": "claude",
      "note": "State block carries proposed_domains, own_domains, google_sa_email, domain_proof, ga4; verified on the local stack"
+    },
+    {
+     "ts": "2026-10-19T00:07:01+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-19T00:07:01+0530",
+     "who": "claude",
+     "note": "Fixed: the context prompt now also writes dom_picked, dom_own, google_sa_email and domain_proof to context/answers.json (app/src/lib/prompt-pack.ts centreAnswers, swept into commit 65cc063a on series-deck-finish). A fresh export from a private local centre (simulator only) shows all four in answers.json and ga4.measurement_id G-SIM7892 in the state block. Left for the next pass: read the D0.13 and D0.35 verdicts from harness run t475-d0 (started in the background, PID in /tmp/t475/harness.pid), push the fix onto origin/main as a new commit from a worktree off origin/main (this branch is 31 ahead and 6 behind, so no branch push), then move to review."
     }
    ]
   },
