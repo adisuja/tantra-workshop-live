@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-18T14:53:46+0530",
-  "version": 2611,
+  "updated": "2026-10-18T14:56:40+0530",
+  "version": 2612,
   "last_id": 453,
   "team": [
    {
@@ -11092,6 +11092,11 @@
      "ts": "2026-10-15T09:10:07+0530",
      "who": "claude",
      "note": "Zoom check 2026-10-15: could not run (Command failed: npx wrangler d1 execute revops-centre --remote --json --command SELECT value FROM settings WHERE key = 'zoom_s2s_enc')."
+    },
+    {
+     "ts": "2026-10-18T14:56:40+0530",
+     "who": "claude",
+     "note": "Zoom check 2026-10-18: not granted yet. disable_participant_video is in no answer and the mute field is still at its default (/users/me/settings 200, /accounts/me/settings 400, /accounts/me/lock_settings 400). The centre's Zoom Support locks stay off and Live Control (T-226) covers mute and video."
     }
    ],
    "order": 2250
