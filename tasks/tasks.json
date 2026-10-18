@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-18T15:01:57+0530",
-  "version": 2622,
-  "last_id": 453,
+  "updated": "2026-10-18T15:04:23+0530",
+  "version": 2630,
+  "last_id": 479,
   "team": [
    {
     "name": "Adi",
@@ -8369,7 +8369,7 @@
     },
     {
      "label": "Bug 1 fix + regression test patch (was PR #160, closed)",
-     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fix_bug-1-unipile-account-id-regex--f7ef2beb53.patch?v=1791710000"
+     "url": "workshop-plan/tantra-product-patches/tantra-backend-v2/fix_bug-1-linkedin-account-id-regex--f7ef2beb53.patch?v=t152l1018"
     },
     {
      "label": "Bug 2 fix + regression test patch (was PR #161, closed)",
@@ -8467,6 +8467,16 @@
      "ts": "2026-10-12T00:03:10+0530",
      "who": "claude",
      "note": "Verify pass: the card's spec now ends at the patch handoff (git am by Bharath, then pipeline.py merged), done_when has the Orchestrator's wording, and the log lists Bharath's three actions. The patch README says agents never push or open PRs in Usetantra repos. I checked the card and README on disk (no PR or clone wording, no long dashes) and both are committed in 49d4655a. Open workshop-plan/tantra-product-patches/README.md?v=1791800000"
+    },
+    {
+     "ts": "2026-10-18T15:03:25+0530",
+     "who": "claude",
+     "note": "Fixed the dead Bug 1 evidence link: it now points at fix_bug-1-linkedin-account-id-regex--f7ef2beb53.patch (the file was renamed under T-273). Open workshop-plan/tantra-product-patches/tantra-backend-v2/fix_bug-1-linkedin-account-id-regex--f7ef2beb53.patch?v=t152l1018"
+    },
+    {
+     "ts": "2026-10-18T15:03:49+0530",
+     "who": "claude",
+     "note": "Bug 1 evidence link fix is on main as c8f48cf2 (pushed; local f77ada10). The link now opens fix_bug-1-linkedin-account-id-regex--f7ef2beb53.patch, which exists on disk."
     }
    ],
    "order": 1520,
@@ -10947,6 +10957,11 @@
      "ts": "2026-10-18T15:01:47+0530",
      "who": "claude",
      "note": "Fixed the daily Zoom check: it now reads the Zoom app through Cloudflare's D1 API, then wrangler with 3 retries, then a saved encrypted copy (proved by a run with no npx at all), and the job also runs at login so a 09:10 missed while the Mac is off still happens (16 and 17 Oct were missed that way). launchd ran it today with exit 0 and logged the 2026-10-18 entry: not granted. There was no write test today because the centre has no 21 Oct cohort meeting yet (the centre creates it when that cohort's first attendee registers), and the daily run picks it up then; still waiting on Zoom Support, T-226 covers mute and video."
+    },
+    {
+     "ts": "2026-10-18T15:04:23+0530",
+     "who": "claude",
+     "note": "Verify pass: the Cloudflare API read was still failing (the all-access token sees no account), so the check now also tries the cloudflare-os-test token, which reads revops-centre. A run with no npx on its PATH read Zoom live and exited 0 (commit 5c22f427). Today's log has its 2026-10-18 entry (not granted). The centre has no 21 Oct cohort meeting yet, so no write test ran. Waiting only on Zoom Support, and T-226 covers mute and video."
     }
    ],
    "order": 2250
@@ -14398,6 +14413,11 @@
      "ts": "2026-10-12T08:45:50+0530",
      "who": "claude",
      "note": "Already applied, so no agent run was needed: 2026-10-12T08:32 verify: patch renamed, all file-name references updated, probes pass. (checked by Haiku against the log and commits)."
+    },
+    {
+     "ts": "2026-10-18T15:03:49+0530",
+     "who": "claude",
+     "note": "Finished the last item from the 2026-10-12 decision: T-152's Bug 1 evidence link now points at the renamed fix_bug-1-linkedin-account-id-regex--f7ef2beb53.patch (pushed to main as c8f48cf2). tasks.json has no live link to the old unipile name left, only the historical log note, and the hub work itself was already done. Keep for Adi and Bharath review."
     }
    ],
    "order": 2730
@@ -20034,7 +20054,7 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "hold",
+   "status": "dropped",
    "why": "Adi's 2026-10-14 call; gap found by the independent coverage review.",
    "evidence": [],
    "blockers": [],
@@ -20051,6 +20071,11 @@
      "ts": "2026-10-14T19:09:42+0530",
      "who": "claude",
      "note": "Stopped by Adi 2026-10-14 evening: all centre work frozen until he reviews and approves every recent change. No deploys to revops-centre until then."
+    },
+    {
+     "ts": "2026-10-18T15:03:30+0530",
+     "who": "claude",
+     "note": "Dropped by the Orchestrator: The window in the spec (2026-10-14 07:13 to 2026-10-15 00:40 IST) is over. Adi froze the centre on 2026-10-14 (memory centre-frozen-pending-review, T-445 log 19:09). Reviews now happen on each task (T-425 to T-453, handoff SESSION_HANDOFF_2026_10_15_CENTRE), so nothing is left to build here."
     }
    ],
    "title": "Lane CV: Hourly progress updates for the 18 hour centre-vision run",
@@ -20150,7 +20175,7 @@
    "title": "Input from Adi for T-432: the seven Tantra-side answers for insourcing the centre",
    "area": "Product",
    "owner": "Adi",
-   "assignee": "Adi",
+   "assignee": "Claude",
    "reviewers": [
     "Bharath"
    ],
@@ -20174,6 +20199,11 @@
     {
      "at": "2026-10-14T19:22:47",
      "msg": "Adi 2026-10-14: hold; answered later, not now."
+    },
+    {
+     "ts": "2026-10-18T15:03:35+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Adi → Claude (by Orchestrator)."
     }
    ]
   },
@@ -21284,6 +21314,28 @@
      "note": "Four directions built and live on the rig; waiting for the pick"
     }
    ]
+  },
+  {
+   "id": "T-479",
+   "status": "blocked",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "area": "Product",
+   "order": 4790,
+   "title": "T-479: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   }
  ]
 }
