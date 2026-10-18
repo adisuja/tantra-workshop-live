@@ -1,1 +1,1 @@
-{"task":"T-472","runs":[],"decisions":[]}
+{"task":"T-472","runs":[],"decisions":[{"id":"O-a83f5704","ts":"2026-10-18T15:00:01+0530","status_before":"review","verdict":"complete","tokens":{"in":26144,"out":349,"usd":0.1033684},"session":"a51c209a-330d-4985-99c9-86385f1aa9ad","has_transcript":true,"decision":"","why":"T-472 log for 2026-10-16: cards, playbook sections and OS files are built, tested live in Claude Code, and all 14 Fable critic fixes are in (e24e4c91). It is live at 882f1fcf. Real Codex and chat runs are tracked in T-473 and T-474. Only Adi's review is left."}]}
