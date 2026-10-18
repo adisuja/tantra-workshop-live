@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-19T00:03:43+0530",
+   "task_id": "T-409",
+   "mode": "feedback",
+   "status": "done",
+   "result": "ok",
+   "summary": "I checked T-409 again this run and it holds up: it stays done, and the publish of the two qualifier pages to the mirror is still open on T-157.\n\n- **Health GET: done.** I called the exec URL from `app/src/lib/form-log.ts:43` today. It returned `{\"ok\":true,\"forms\":[...]}` with 7 forms, including `tie"
+  },
+  {
    "ts": "2026-10-18T17:21:14+0530",
    "task_id": "T-461",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "queue",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-18T15:09:33+0530",
-   "task_id": "T-475",
-   "mode": "feedback",
-   "status": "review",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-409: Redeploy the 'Tantra Funnel' Apps Script as a new version so tier_qualifier answers reach the Work Tracker",
- "task_id": "T-409",
+ "message": "Acting on 1 note(s) for T-461: Test harness: fill the centre as Tantra, run every day's prompts in fresh Claude Code sessions",
+ "task_id": "T-461",
  "entries": [
-  "F-65052c0b"
+  "F-86ebe510"
  ],
  "mode": "feedback",
- "started": "2026-10-19T00:01:54+0530",
+ "started": "2026-10-19T00:03:44+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,

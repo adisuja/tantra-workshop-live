@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-18T15:19:40+0530",
-  "version": 2635,
-  "last_id": 479,
+  "updated": "2026-10-19T00:03:36+0530",
+  "version": 2640,
+  "last_id": 480,
   "team": [
    {
     "name": "Adi",
@@ -8950,6 +8950,11 @@
      "ts": "2026-10-12T07:40:30+0530",
      "who": "claude",
      "note": "Ripple from T-409 checked: no file had to change. The Apps Script health GET still lists only 6 forms (no tier_qualifier), so the hold stays as recorded: once T-409's redeploy lands and the health GET lists tier_qualifier, post the probe row, publish the qualifier to the mirror, rerun probe-tier-qualifier.mjs and close the hold with evidence, using the tier_qualifier form key only. Open http://localhost:4377/workshop/join?v=t157g and http://localhost:4377/masterclass/success/join?v=t157g (run npx next dev -p 4377 in app/)."
+    },
+    {
+     "ts": "2026-10-19T00:02:45+0530",
+     "who": "claude",
+     "note": "Hold lifted: T-409 is done. The Tantra Funnel receiver lists tier_qualifier (health GET 2026-10-19, 7 forms), so qualifier answers from /workshop/join and /masterclass/success/join now land in the Work Tracker. Next on this task: check coord/LOG.md for holds, publish both pages to adisuja/tantra-workshop-live (T-477 also publishes main to the mirror; do not race it), rerun app/scripts/probe-tier-qualifier.mjs against the mirror and add the live links."
     }
    ],
    "order": 1570,
@@ -18466,13 +18471,22 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "review",
+   "status": "done",
    "why": "T-157: the live receiver lists only 6 forms, so qualifier answers from /workshop/join and /masterclass/success/join are rejected and the mirror publish is held.",
    "spec": "Code.gs is committed at workshop-plan/ops/apps-script/Code.gs (tier_qualifier at line 136). Redeploying the same deployment keeps the URL in app/src/lib/form-log.ts. After the redeploy, an agent checks the health GET, posts one probe row, publishes the T-157 qualifier to the mirror and reruns app/scripts/probe-tier-qualifier.mjs.",
    "done_when": [
     "Health GET of the exec URL lists tier_qualifier"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Deleted row backup",
+     "url": "workshop-plan/ops/t107_deleted_rows.json"
+    },
+    {
+     "label": "Exec URL (health GET)",
+     "url": "https://script.google.com/macros/s/AKfycbxgZiV7RLX8t5cE8fR8TN8a2tMe_0ufQnMsc5OpCJJU6CsVns__QS7qNWhoESTHiiKAnw/exec"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "Tracked as one input on T-423 (under T-422, covering T-414 and T-409): connect Claude in Chrome on profile 'Browser 1' (adi@growthclub.org) so an agent redeploys itself, or, signed in as adi@growthclub.org, open https://script.google.com > 'Tantra Funnel' > paste workshop-plan/ops/apps-script/Code.gs > Deploy > Manage deployments > edit > Version: New version > Deploy.",
    "log": [
@@ -18525,6 +18539,16 @@
      "ts": "2026-10-18T15:00:17+0530",
      "who": "Orchestrator",
      "note": "People: assignee Adi → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-19T00:02:45+0530",
+     "who": "claude",
+     "note": "Health GET of the exec URL re-run 2026-10-19 returns {\"ok\":true,\"forms\":[\"free_registration\",\"free_survey\",\"paid_registration\",\"paid_survey\",\"checkout_start\",\"checkout_return\",\"tier_qualifier\"]} (7 forms incl. tier_qualifier). The probe row for probe+t409@growthclub.org was deleted from the Work Tracker tab Funnel · Tier Qualifier (backed up first in workshop-plan/ops/t107_deleted_rows.json); a re-read shows 0 rows left and 0 matches in form-log.jsonl. The mirror publish and probe-tier-qualifier.mjs rerun move to T-157."
+    },
+    {
+     "ts": "2026-10-19T00:03:36+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-19: health GET of the exec URL in app/src/lib/form-log.ts:43 returns {\"ok\":true,\"forms\":[free_registration, free_survey, paid_registration, paid_survey, checkout_start, checkout_return, tier_qualifier]} (7 forms). Read the Work Tracker tab 'Funnel · Tier Qualifier' directly: 0 data rows, 0 probe+t409 hits; the deleted row is backed up in workshop-plan/ops/t107_deleted_rows.json. T-157 carries the hold-lifted note; mirror publish and probe rerun are T-157's work."
     }
    ],
    "order": 4090
@@ -21381,6 +21405,35 @@
    "needs_from_owner": "",
    "log": [],
    "held": true
+  },
+  {
+   "id": "T-480",
+   "title": "Input from Adi for T-033: At https://usetantra.com, open Settings → Billing in the GrowthClub workspace an",
+   "area": "Delivery",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (money): Reactivating a cancelled paid subscription spends money. Only Adi can approve that.. Everything else in T-033 is being built around it. As soon as this is done, T-033 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "At https://usetantra.com, open Settings → Billing in the GrowthClub workspace and reactivate the plan (status is currently 'cancelled').",
+   "log": [
+    {
+     "ts": "2026-10-19T00:02:47+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-033."
+    }
+   ],
+   "order": 4800,
+   "input_for": "T-033",
+   "kind": "input"
   }
  ]
 }
