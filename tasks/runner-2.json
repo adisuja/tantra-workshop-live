@@ -97,14 +97,14 @@
    "summary": "T-242 is done. My earlier \"red probes match the baseline\" line was wrong and is corrected, the three probes that got worse are now noted on T-424, and the log update is pushed to main (1ed96c76, no force).\n\nThe export-site log from the chain-1557 run is empty (0 bytes), so I can't prove the cause; t"
   }
  ],
- "state": "paused",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
+ "task_id": "T-455",
  "entries": [
   "F-a1529c6e"
  ],
- "started": "2026-10-19T23:57:54+0530",
- "message": "Working on a task.",
+ "started": "2026-10-20T02:06:15+0530",
+ "message": "Acting on 1 note(s) for T-455: Tantra RevOps OS knowledge: funnels, Tantra channels, CRM, integrations, voice, equations",
  "slices": {
   "T-250": 1,
   "T-301": 1,
