@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-20T02:17:27+0530",
+   "task_id": "T-456",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I rebuilt and checked T-456 from scratch and it's back in review with Adi and Bharath. I found and fixed one gap, and the guides are still not pushed.\n\n**Completion check (all evidence from this run):**\n- **One guide per card:** done. A fresh build wrote guides for all 122 centre cards, and every ca"
+  },
+  {
    "ts": "2026-10-20T02:10:41+0530",
    "task_id": "T-455",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. The Ticket card is built and passes every probe, but it's only on the review build: not pushed or live yet, because the probe found one gating bug, and T-478 is set "
-  },
-  {
-   "ts": "2026-10-18T15:00:34+0530",
-   "task_id": "T-034",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. I re-ran the Day 1 dry run on the production centre, but the WhatsApp leg didn't send: Tantra refused it with 402 subscription_inactive, because the GrowthClub works"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-456",
+ "task_id": "T-459",
  "entries": [
-  "F-802cd0c8"
+  "F-f89f20dc"
  ],
- "started": "2026-10-20T02:10:54+0530",
- "message": "Acting on 1 note(s) for T-456: Tantra RevOps OS task guides: one per centre card, generated from the playbook",
+ "started": "2026-10-20T02:17:40+0530",
+ "message": "Acting on 1 note(s) for T-459: Centre: three Day 0 RevOps OS cards, retire the Funnel OS pack cards, rename everywhere",
  "slices": {
   "T-250": 1,
   "T-301": 1,

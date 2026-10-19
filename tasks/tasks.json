@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-20T02:15:45+0530",
-  "version": 2653,
+  "updated": "2026-10-20T02:18:36+0530",
+  "version": 2656,
   "last_id": 480,
   "team": [
    {
@@ -20614,20 +20614,16 @@
    ],
    "evidence": [
     {
-     "label": "Generator",
-     "url": "revops-os/build.py"
+     "label": "Sample guide",
+     "url": "revops-os/dist/tantra-revops-os/tasks/day0/D0.09-start-os-setup.md"
     },
     {
      "label": "Check script",
      "url": "revops-os/scripts/check-task-guides.mjs"
     },
     {
-     "label": "Sample guide (API calls with confirm)",
-     "url": "revops-os/dist/tantra-revops-os/tasks/day3/D3.13-d3-replies.md"
-    },
-    {
-     "label": "Sample no-prompt guide",
-     "url": "revops-os/dist/tantra-revops-os/tasks/day0/"
+     "label": "Generator",
+     "url": "revops-os/build.py"
     }
    ],
    "blockers": [],
@@ -20650,6 +20646,11 @@
      "ts": "2026-10-20T02:15:45+0530",
      "who": "claude",
      "note": "Every one of the 122 centre cards now gets a task guide from revops-os/build.py: 99 with goal, inputs, linked knowledge, steps, API calls with their --confirm flags, deliverables, checks and chat steps, and 23 human-only cards marked no prompt. The new revops-os/scripts/check-task-guides.mjs passes with 0 problems (one guide per card, sections, links resolve, no banned vendor, no long dashes). Committed as 0ab050c9 on branch series-deck-finish but not pushed: that branch has diverged from origin/main with about 46 other-lane commits, so it ships with the next main publish (open tasks/day3/D3.13-d3-replies.md in the dist folder)."
+    },
+    {
+     "ts": "2026-10-20T02:17:15+0530",
+     "who": "claude",
+     "note": "Verify pass: rebuilt from scratch, all 122 cards have a guide (99 with a prompt, 23 marked no prompt) and check-task-guides.mjs reports 0 problems. Fixed one gap: 8 human-only guides (start-os-* and d0-prompts) dropped their playbook teaching; they now carry it, and the check fails if any card lacks its #task section or its playbook text (tested by stripping one). Not pushed: this branch is 47 commits ahead and 6 behind origin/main with other lanes' work, so a push would publish far more than the approved guides; they ship with the next main publish."
     }
    ]
   },
@@ -20660,17 +20661,27 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "doing",
    "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
    "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
    "done_when": [
     "A test session deploys a funnel from a config"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Config schema",
+     "url": "revops-os/os/kits/funnel/config.schema.json"
+    },
+    {
+     "label": "Equations runner source",
+     "url": "revops-os/kit-src/equations/run-equations.ts"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "tags": [
@@ -20681,6 +20692,16 @@
      "ts": "2026-10-15 03:30",
      "who": "system",
      "note": "created from the plan"
+    },
+    {
+     "ts": "2026-10-20T02:18:36+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-20T02:18:36+0530",
+     "who": "claude",
+     "note": "Built in revops-os/os/kits: funnel/config.schema.json, validate-config.mjs (deploy.mjs now refuses an invalid config) and a new equations/run-equations.mjs runner (bundled by build-kits.sh, --check current, runs webinar and rsp in /tmp/os-kit-test-webinar). These files went in with commit 0dde85d4. Left for the next pass: a Tantra example config in kits/funnel/examples, a nurture and newsletter draft in kits/tantra/examples, README rows, re-running run-kit-test.mjs, then the fresh claude -p session that deploys a funnel to the sim and answers 200, plus its transcript, the push and review."
     }
    ]
   },
