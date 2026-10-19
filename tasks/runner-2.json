@@ -97,12 +97,14 @@
    "summary": "T-414 is still blocked. Nothing had to change for the T-422 ripple, and the Apps Script still hasn't been redeployed: the live script lists only the 6 original forms and no tier_qualifier.\n\nCOMPLETION CHECK:\n- **Waiting-on points to T-423 (through T-422) as the single input:** Done. I read T-414's l"
   }
  ],
- "state": "paused",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
- "entries": [],
- "started": "2026-10-18T18:22:17+0530",
- "message": "Working on a task.",
+ "task_id": "T-455",
+ "entries": [
+  "F-a1529c6e"
+ ],
+ "started": "2026-10-19T18:52:19+0530",
+ "message": "Acting on 1 note(s) for T-455: Tantra RevOps OS knowledge: funnels, Tantra channels, CRM, integrations, voice, equations",
  "slices": {
   "T-250": 1,
   "T-301": 1,

@@ -97,14 +97,14 @@
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
- "state": "paused",
- "message": "Working on a task.",
- "task_id": null,
+ "state": "working",
+ "message": "Acting on 1 note(s) for T-456: Tantra RevOps OS task guides: one per centre card, generated from the playbook",
+ "task_id": "T-456",
  "entries": [
-  "F-a2f4ea52"
+  "F-802cd0c8"
  ],
  "mode": "feedback",
- "started": "2026-10-19T00:06:35+0530",
+ "started": "2026-10-19T18:52:22+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
