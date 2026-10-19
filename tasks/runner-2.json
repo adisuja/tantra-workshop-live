@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-19T23:58:03+0530",
+   "task_id": "T-455",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
    "ts": "2026-10-19T23:24:46+0530",
    "task_id": "T-455",
    "mode": "feedback",
@@ -87,14 +95,6 @@
    "status": "done",
    "result": "ok",
    "summary": "T-242 is done. My earlier \"red probes match the baseline\" line was wrong and is corrected, the three probes that got worse are now noted on T-424, and the log update is pushed to main (1ed96c76, no force).\n\nThe export-site log from the chain-1557 run is empty (0 bytes), so I can't prove the cause; t"
-  },
-  {
-   "ts": "2026-10-12T13:13:06+0530",
-   "task_id": "T-424",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-424 is still in `doing`. probe-domain-chain passes now, and probe-day1 and probe-day2 are fixed but not rerun. The other four probes, the full chain and the approv"
   }
  ],
  "state": "paused",
@@ -103,7 +103,7 @@
  "entries": [
   "F-a1529c6e"
  ],
- "started": "2026-10-19T23:24:37+0530",
+ "started": "2026-10-19T23:57:54+0530",
  "message": "Working on a task.",
  "slices": {
   "T-250": 1,
