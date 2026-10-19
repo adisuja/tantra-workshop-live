@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-20T02:10:28+0530",
-  "version": 2651,
+  "updated": "2026-10-20T02:15:45+0530",
+  "version": 2653,
   "last_id": 480,
   "team": [
    {
@@ -20601,17 +20601,35 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
    "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
    "done_when": [
     "One guide per card; check script passes"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Generator",
+     "url": "revops-os/build.py"
+    },
+    {
+     "label": "Check script",
+     "url": "revops-os/scripts/check-task-guides.mjs"
+    },
+    {
+     "label": "Sample guide (API calls with confirm)",
+     "url": "revops-os/dist/tantra-revops-os/tasks/day3/D3.13-d3-replies.md"
+    },
+    {
+     "label": "Sample no-prompt guide",
+     "url": "revops-os/dist/tantra-revops-os/tasks/day0/"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "tags": [
@@ -20622,6 +20640,16 @@
      "ts": "2026-10-15 03:30",
      "who": "system",
      "note": "created from the plan"
+    },
+    {
+     "ts": "2026-10-20T02:15:45+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-20T02:15:45+0530",
+     "who": "claude",
+     "note": "Every one of the 122 centre cards now gets a task guide from revops-os/build.py: 99 with goal, inputs, linked knowledge, steps, API calls with their --confirm flags, deliverables, checks and chat steps, and 23 human-only cards marked no prompt. The new revops-os/scripts/check-task-guides.mjs passes with 0 problems (one guide per card, sections, links resolve, no banned vendor, no long dashes). Committed as 0ab050c9 on branch series-deck-finish but not pushed: that branch has diverged from origin/main with about 46 other-lane commits, so it ships with the next main publish (open tasks/day3/D3.13-d3-replies.md in the dist folder)."
     }
    ]
   },
