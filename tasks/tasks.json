@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-20T02:18:36+0530",
-  "version": 2656,
+  "updated": "2026-10-20T02:21:50+0530",
+  "version": 2658,
   "last_id": 480,
   "team": [
    {
@@ -20712,17 +20712,35 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
    "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
    "done_when": [
     "Zip downloads from the review build"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "OS zip (review build)",
+     "url": "https://ec5330e7-revops-centre.growthcluborg.workers.dev/os/tantra-revops-os.zip?v=88e032d6"
+    },
+    {
+     "label": "Chat edition zip (review build)",
+     "url": "https://ec5330e7-revops-centre.growthcluborg.workers.dev/os/tantra-revops-os-chat.zip?v=88e032d6"
+    },
+    {
+     "label": "curl and unzip evidence",
+     "url": "workshop-plan/tasks/evidence/T-458/review-build-2026-10-20.txt"
+    },
+    {
+     "label": "Commit 88e032d6",
+     "url": "app/scripts/build-revops-os.mjs"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "tags": [
@@ -20733,6 +20751,16 @@
      "ts": "2026-10-15 03:30",
      "who": "system",
      "note": "created from the plan"
+    },
+    {
+     "ts": "2026-10-20T02:21:50+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-20T02:21:50+0530",
+     "who": "claude",
+     "note": "New app/scripts/build-revops-os.mjs builds tantra-revops-os.zip (290 files) and a 12 file chat edition, both stamped with VERSION (git sha and date); cloud/scripts/build.sh ships them to public/os and the centre serves them as application/zip attachments. Review build uploaded as Worker preview version ec5330e7 (not promoted, since this branch is not main, and not pushed for the same reason); I curled and unzipped both live: HTTP 200, right headers, VERSION 88e032d6. Open the two links to download."
     }
    ]
   },
