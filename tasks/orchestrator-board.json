@@ -1,10 +1,10 @@
 {
  "running": null,
- "last_sweep": "2026-10-20T02:38:48+0530",
+ "last_sweep": "2026-10-20T02:47:30+0530",
  "counts": {
-  "keep_hold": 59,
+  "keep_hold": 58,
   "needs_adi": 27,
-  "proceed": 26,
+  "proceed": 27,
   "complete": 77,
   "resolve": 9,
   "finish": 23,
@@ -672,8 +672,8 @@
    "input_task": "T-398"
   },
   "T-073": {
-   "verdict": "keep_hold",
-   "ts": "2026-10-12T12:55:45+0530",
+   "verdict": "proceed",
+   "ts": "2026-10-20T02:47:30+0530",
    "input_task": null
   },
   "T-074": {

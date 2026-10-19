@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-20T02:46:54+0530",
+   "task_id": "T-073",
+   "mode": "queue",
+   "status": "doing",
+   "result": "ok",
+   "summary": "T-073 stays in progress: Zoom still has no recordings on meeting 88135386601, so the 14 to 16 Oct cohort never ran and there's nothing to cut yet. The course home and the 15-minute job both checked out, and nothing needed fixing, so I made no commit.\n\n**COMPLETION CHECK**\n- **Three day modules from "
+  },
+  {
    "ts": "2026-10-19T18:43:44+0530",
    "task_id": "T-073",
    "mode": "queue",
@@ -87,21 +95,13 @@
    "status": "doing",
    "result": "ok",
    "summary": "T-073 stays in doing: the cohort starts 14 Oct, so there are no recordings to cut yet. Everything that will cut them is running and checked today.\n\n- **Three day modules from the 14 to 16 Oct cohort published, with the URL and lesson list in the log:** waiting for the sessions. The 15-minute job is "
-  },
-  {
-   "ts": "2026-10-09T00:31:57+0530",
-   "task_id": "T-278",
-   "mode": "queue",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-278 is blocked on one question for you (M033): keep the 18-question free-lane intake, or shorten it to match the paid lane's 11? I recommend shortening. Seven of the nine audit items are fixed in commit 97cf452 and marked fixed in AUDIT.md. The join pages still can't show each attendee's own Zoom "
   }
  ],
- "state": "working",
- "message": "Continuing T-073: Cut session recordings into the Tantra Pro course",
- "task_id": "T-073",
+ "state": "idle",
+ "message": "Nothing waiting.",
+ "task_id": null,
  "entries": [],
- "mode": "queue",
+ "mode": null,
  "started": "2026-10-20T02:38:49+0530",
  "api_capped": {
   "T-073": "2026-10-12T04:30:40+0530",
