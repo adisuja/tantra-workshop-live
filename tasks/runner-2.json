@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-20T02:10:41+0530",
+   "task_id": "T-455",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-455 is back in review with Adi and Bharath. I checked every item again myself, and everything passes except the push, which I held back on purpose.\n\n| Item | State | What I checked in this run |\n|---|---|---|\n| 1. `channels/newsletters.md` (Tantra or Resend newsletter, Metricool for social) | Done"
+  },
+  {
    "ts": "2026-10-19T23:58:03+0530",
    "task_id": "T-455",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. I re-ran the Day 1 dry run on the production centre, but the WhatsApp leg didn't send: Tantra refused it with 402 subscription_inactive, because the GrowthClub works"
-  },
-  {
-   "ts": "2026-10-12T14:34:58+0530",
-   "task_id": "T-242",
-   "mode": "feedback",
-   "status": "done",
-   "result": "ok",
-   "summary": "T-242 is done. My earlier \"red probes match the baseline\" line was wrong and is corrected, the three probes that got worse are now noted on T-424, and the log update is pushed to main (1ed96c76, no force).\n\nThe export-site log from the chain-1557 run is empty (0 bytes), so I can't prove the cause; t"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-455",
+ "task_id": "T-456",
  "entries": [
-  "F-a1529c6e"
+  "F-802cd0c8"
  ],
- "started": "2026-10-20T02:06:15+0530",
- "message": "Acting on 1 note(s) for T-455: Tantra RevOps OS knowledge: funnels, Tantra channels, CRM, integrations, voice, equations",
+ "started": "2026-10-20T02:10:54+0530",
+ "message": "Acting on 1 note(s) for T-456: Tantra RevOps OS task guides: one per centre card, generated from the playbook",
  "slices": {
   "T-250": 1,
   "T-301": 1,

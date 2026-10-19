@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-20T02:09:25+0530",
-  "version": 2650,
+  "updated": "2026-10-20T02:10:28+0530",
+  "version": 2651,
   "last_id": 480,
   "team": [
    {
@@ -20550,10 +20550,6 @@
    ],
    "evidence": [
     {
-     "label": "check-refs output",
-     "url": "/tmp/t455-refs.txt"
-    },
-    {
      "label": "check-refs.mjs",
      "url": "revops-os/os/scripts/check-refs.mjs"
     },
@@ -20564,6 +20560,10 @@
     {
      "label": "Newsletters channel",
      "url": "revops-os/os/knowledge/channels/newsletters.md"
+    },
+    {
+     "label": "Commit",
+     "url": "c81352a8"
     }
    ],
    "blockers": [],
@@ -20586,6 +20586,11 @@
      "ts": "2026-10-20T02:09:25+0530",
      "who": "claude",
      "note": "Added knowledge/README.md (index of every knowledge file), channels/newsletters.md (Tantra/Resend newsletter, Metricool for social) and os/scripts/check-refs.mjs, which checks every knowledge/ and kits/ path, heading and #anchor cited in tasks, knowledge, CLAUDE.md, AGENTS.md, README and api.mjs. On the rebuilt dist it reports refs ok: 649 citations in 183 files, with no dashes and no banned vendors in knowledge (Twilio already SMS only, WhatsApp via Tantra). Committed as c81352a8 but not pushed because the branch carries other lanes' commits. For T-456: guides D2.07 (Highest-Leverage), D2.23 (unlock-all) and D0.16 (leverage/unlock) break the voice rules."
+    },
+    {
+     "ts": "2026-10-20T02:10:28+0530",
+     "who": "claude",
+     "note": "Verify pass: check-refs.mjs resolves all 649 knowledge/ and kits/ citations in 183 dist files (191 in os/), and a planted bad heading, bad anchor and two missing files all failed it (exit 1). Knowledge has no banned vendors (probe-visual-tools list), no dashes, newsletters.md and README index every knowledge file; not pushed because this branch carries 44 other lanes' commits, so publishing stays with the main-branch publish. Voice fixes left for T-456: D2.07 'Highest-Leverage', D2.23 'unlock-all'."
     }
    ]
   },
