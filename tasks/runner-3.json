@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-19T18:44:16+0530",
+   "task_id": "T-465",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "provider",
+   "summary": "API Error: 502 [gemini/gemini-3.8-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.8-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. If it persis"
+  },
+  {
    "ts": "2026-10-19T18:28:59+0530",
    "task_id": "T-464",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "queue",
    "result": "provider",
    "summary": "API Error: 502 [gemini/gemini-3-flash-preview] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3-flash-preview — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. "
-  },
-  {
-   "ts": "2026-10-18T15:34:30+0530",
-   "task_id": "T-461",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "provider",
-   "summary": "API Error: 502 [gemini/gemini-3.8-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.8-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. If it persis"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-465",
+ "task_id": "T-466",
  "entries": [
-  "F-729b4808"
+  "F-166eed51"
  ],
- "started": "2026-10-19T18:29:06+0530",
- "message": "Acting on 1 note(s) for T-465: Fable critic on the whole RevOps OS build",
+ "started": "2026-10-19T18:44:53+0530",
+ "message": "Acting on 1 note(s) for T-466: RevOps OS review build and links for Adi, then live after approval",
  "slices": {
   "T-135": 1,
   "T-300": 2,
