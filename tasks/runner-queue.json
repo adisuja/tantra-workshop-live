@@ -97,12 +97,12 @@
    "summary": "T-278 is blocked on one question for you (M033): keep the 18-question free-lane intake, or shorten it to match the paid lane's 11? I recommend shortening. Seven of the nine audit items are fixed in commit 97cf452 and marked fixed in AUDIT.md. The join pages still can't show each attendee's own Zoom "
   }
  ],
- "state": "paused",
- "message": "Working on a task.",
- "task_id": null,
+ "state": "working",
+ "message": "Continuing T-073: Cut session recordings into the Tantra Pro course",
+ "task_id": "T-073",
  "entries": [],
- "mode": null,
- "started": "2026-10-19T18:33:51+0530",
+ "mode": "queue",
+ "started": "2026-10-20T02:38:49+0530",
  "api_capped": {
   "T-073": "2026-10-12T04:30:40+0530",
   "T-299": "2026-10-12T11:15:31+0530"
