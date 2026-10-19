@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-19T18:19:08+0530",
-  "version": 2648,
+  "updated": "2026-10-20T02:09:25+0530",
+  "version": 2650,
   "last_id": 480,
   "team": [
    {
@@ -20537,17 +20537,35 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
    "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
    "done_when": [
     "Every task guide's references resolve"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "check-refs output",
+     "url": "/tmp/t455-refs.txt"
+    },
+    {
+     "label": "check-refs.mjs",
+     "url": "revops-os/os/scripts/check-refs.mjs"
+    },
+    {
+     "label": "Knowledge index",
+     "url": "revops-os/os/knowledge/README.md"
+    },
+    {
+     "label": "Newsletters channel",
+     "url": "revops-os/os/knowledge/channels/newsletters.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "tags": [
@@ -20558,6 +20576,16 @@
      "ts": "2026-10-15 03:30",
      "who": "system",
      "note": "created from the plan"
+    },
+    {
+     "ts": "2026-10-20T02:09:25+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-20T02:09:25+0530",
+     "who": "claude",
+     "note": "Added knowledge/README.md (index of every knowledge file), channels/newsletters.md (Tantra/Resend newsletter, Metricool for social) and os/scripts/check-refs.mjs, which checks every knowledge/ and kits/ path, heading and #anchor cited in tasks, knowledge, CLAUDE.md, AGENTS.md, README and api.mjs. On the rebuilt dist it reports refs ok: 649 citations in 183 files, with no dashes and no banned vendors in knowledge (Twilio already SMS only, WhatsApp via Tantra). Committed as c81352a8 but not pushed because the branch carries other lanes' commits. For T-456: guides D2.07 (Highest-Leverage), D2.23 (unlock-all) and D0.16 (leverage/unlock) break the voice rules."
     }
    ]
   },
