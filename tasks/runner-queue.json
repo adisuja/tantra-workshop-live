@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-19T18:28:50+0530",
+   "task_id": "T-475",
+   "mode": "queue",
+   "status": "doing",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
    "ts": "2026-10-19T18:27:27+0530",
    "task_id": "T-462",
    "mode": "queue",
@@ -94,7 +102,7 @@
  "task_id": null,
  "entries": [],
  "mode": null,
- "started": "2026-10-19T18:25:48+0530",
+ "started": "2026-10-19T18:28:46+0530",
  "api_capped": {
   "T-073": "2026-10-12T04:30:40+0530",
   "T-299": "2026-10-12T11:15:31+0530"
