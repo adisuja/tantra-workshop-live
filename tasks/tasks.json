@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-20T02:25:02+0530",
-  "version": 2660,
+  "updated": "2026-10-20T02:27:13+0530",
+  "version": 2665,
   "last_id": 480,
   "team": [
    {
@@ -20725,20 +20725,16 @@
    ],
    "evidence": [
     {
-     "label": "OS zip (review build)",
-     "url": "https://ec5330e7-revops-centre.growthcluborg.workers.dev/os/tantra-revops-os.zip?v=88e032d6"
+     "label": "Full OS zip (review build)",
+     "url": "https://t458-revops-centre.growthcluborg.workers.dev/os/tantra-revops-os.zip?v=55d82466"
     },
     {
      "label": "Chat edition zip (review build)",
-     "url": "https://ec5330e7-revops-centre.growthcluborg.workers.dev/os/tantra-revops-os-chat.zip?v=88e032d6"
+     "url": "https://t458-revops-centre.growthcluborg.workers.dev/os/tantra-revops-os-chat.zip?v=55d82466"
     },
     {
-     "label": "curl and unzip evidence",
-     "url": "workshop-plan/tasks/evidence/T-458/review-build-2026-10-20.txt"
-    },
-    {
-     "label": "Commit 88e032d6",
-     "url": "app/scripts/build-revops-os.mjs"
+     "label": "Curl and unzip evidence",
+     "url": "workshop-plan/tasks/evidence/T-458/review-build-2026-10-20-verify.txt"
     }
    ],
    "blockers": [],
@@ -20761,6 +20757,16 @@
      "ts": "2026-10-20T02:21:50+0530",
      "who": "claude",
      "note": "New app/scripts/build-revops-os.mjs builds tantra-revops-os.zip (290 files) and a 12 file chat edition, both stamped with VERSION (git sha and date); cloud/scripts/build.sh ships them to public/os and the centre serves them as application/zip attachments. Review build uploaded as Worker preview version ec5330e7 (not promoted, since this branch is not main, and not pushed for the same reason); I curled and unzipped both live: HTTP 200, right headers, VERSION 88e032d6. Open the two links to download."
+    },
+    {
+     "ts": "2026-10-20T02:26:20+0530",
+     "who": "claude",
+     "note": "Verify pass: both zips download from the new review build (preview t458, commit 55d82466, live traffic unchanged) with application/zip attachment headers, VERSION 55d82466, 291 and 13 files. Fixed one gap: the chat edition's INSTRUCTIONS.md was 12,046 characters, over ChatGPT's 8,000-character project instructions box, so it now drops the two long sections (5,308 characters) and the full brief ships as 00-brief.md; the build flags it if it ever goes over again. Open the two links below."
+    },
+    {
+     "ts": "2026-10-20T02:26:40+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-473."
     }
    ]
   },
@@ -20771,11 +20777,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "doing",
    "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
    "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
    "done_when": [
@@ -20792,6 +20799,16 @@
      "ts": "2026-10-15 03:30",
      "who": "system",
      "note": "created from the plan"
+    },
+    {
+     "ts": "2026-10-20T02:26:01+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-20T02:26:01+0530",
+     "who": "claude",
+     "note": "On branch t459-revops-os-cards (worktree /tmp/t459): the three Day 0 OS cards, the d3-connect and d3-brief rewrites and the rename are in; the setup prompt now starts context/business.md and the prompt pack has a Refresh your OS context button (/api/pack). check-guides, playbook anchors and tasks, coverage, probe-day-prompts (48 packs), probe-day-model (122 cards), check-task-guides and both tsc runs pass. Left: build.sh fails under /tmp (Turbopack rejects the symlinked path, so rebuild from /private/tmp/t459), then probe-guides and probe-flows on a private stack, merge, push, deploy and the LOG.md entry."
     }
    ]
   },
@@ -20815,19 +20832,15 @@
    ],
    "evidence": [
     {
-     "label": "Day 1 pack (plain text, open /preview first)",
+     "label": "Day 1 pack (plain text)",
      "url": "https://revops-centre.growthcluborg.workers.dev/api/prompts/day/1.txt?v=4405538f"
     },
     {
-     "label": "Day 2 pack JSON",
-     "url": "https://revops-centre.growthcluborg.workers.dev/api/prompts/day/2?v=4405538f"
+     "label": "Centre preview",
+     "url": "https://revops-centre.growthcluborg.workers.dev/preview?v=4405538f"
     },
     {
-     "label": "Pack builder",
-     "url": "app/src/lib/prompt-pack.ts"
-    },
-    {
-     "label": "Probe v2",
+     "label": "Probe",
      "url": "app/scripts/probe-day-prompts.mjs"
     }
    ],
@@ -20851,6 +20864,11 @@
      "ts": "2026-10-20T02:25:02+0530",
      "who": "claude",
      "note": "Prompt packs v2 are live (Worker 4405538f, commit 55d82466 pushed to origin branch series-deck-finish): context prompt first, one prompt per build card naming its tasks/ guide, the card's answers, the outputs/ files to write and a self-check, then the wrap prompt; human-only cards get none, and the day email/WhatsApp prompts link (/enter?t=..&pack=N) now lands on the plain-text pack. probe-day-prompts v2 passes locally and live (48 packs, 4 assistants incl. chat editions, API, .txt, the /enter redirect); open https://revops-centre.growthcluborg.workers.dev/preview then https://revops-centre.growthcluborg.workers.dev/api/prompts/day/1.txt?v=4405538f. The delivery campaigns could not be recreated because none exist and Tantra refuses to create them until the sender mailbox is set (T-408), and they will pick up the new link from code when created; T-461/T-462 can read the packs from the live endpoint."
+    },
+    {
+     "ts": "2026-10-20T02:27:13+0530",
+     "who": "claude",
+     "note": "Verify pass: the probe-day-prompts v2 run passed locally and against the live Worker (48 packs, the JSON and .txt API, and /enter?pack=N landing on the day's .txt). Every one of the 99 prompt guides exists in the OS zip and has a Done when section, and each heading is in the chat edition. The three Day 1 to 3 delivery campaigns still can't be made: I ran it again today and Tantra said 'Set the sender mailbox in Cohort Settings first', and that waits on T-408. The code is pushed to origin/series-deck-finish but not merged into main, because main would also publish 55 commits from other lanes (Bharath's call)."
     }
    ]
   },

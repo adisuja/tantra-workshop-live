@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-20T02:26:36+0530",
+   "task_id": "T-458",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-458 is back in review with Adi and Bharath. Both zips download from a new review build. That build is only a preview, so live traffic still runs main. I also fixed one gap the earlier run missed.\n\n**The gap:** the chat edition's `INSTRUCTIONS.md` was 12,046 characters, but ChatGPT's project instru"
+  },
+  {
    "ts": "2026-10-19T00:08:12+0530",
    "task_id": "T-462",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "queue",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-18T15:10:10+0530",
-   "task_id": "T-463",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-458: Build and serve the Tantra RevOps OS zip and chat edition from the centre",
- "task_id": "T-458",
+ "message": "Working on a task.",
+ "task_id": "T-464",
  "entries": [
-  "F-b8da390b"
+  "F-59a8ca50"
  ],
  "mode": "feedback",
- "started": "2026-10-20T02:17:00+0530",
+ "started": "2026-10-20T02:26:47+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
