@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-20T02:21:50+0530",
-  "version": 2658,
+  "updated": "2026-10-20T02:25:02+0530",
+  "version": 2660,
   "last_id": 480,
   "team": [
    {
@@ -20802,17 +20802,35 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
    "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
    "done_when": [
     "probe-day-prompts v2 passes"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Day 1 pack (plain text, open /preview first)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/api/prompts/day/1.txt?v=4405538f"
+    },
+    {
+     "label": "Day 2 pack JSON",
+     "url": "https://revops-centre.growthcluborg.workers.dev/api/prompts/day/2?v=4405538f"
+    },
+    {
+     "label": "Pack builder",
+     "url": "app/src/lib/prompt-pack.ts"
+    },
+    {
+     "label": "Probe v2",
+     "url": "app/scripts/probe-day-prompts.mjs"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "tags": [
@@ -20823,6 +20841,16 @@
      "ts": "2026-10-15 03:30",
      "who": "system",
      "note": "created from the plan"
+    },
+    {
+     "ts": "2026-10-20T02:25:02+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-20T02:25:02+0530",
+     "who": "claude",
+     "note": "Prompt packs v2 are live (Worker 4405538f, commit 55d82466 pushed to origin branch series-deck-finish): context prompt first, one prompt per build card naming its tasks/ guide, the card's answers, the outputs/ files to write and a self-check, then the wrap prompt; human-only cards get none, and the day email/WhatsApp prompts link (/enter?t=..&pack=N) now lands on the plain-text pack. probe-day-prompts v2 passes locally and live (48 packs, 4 assistants incl. chat editions, API, .txt, the /enter redirect); open https://revops-centre.growthcluborg.workers.dev/preview then https://revops-centre.growthcluborg.workers.dev/api/prompts/day/1.txt?v=4405538f. The delivery campaigns could not be recreated because none exist and Tantra refuses to create them until the sender mailbox is set (T-408), and they will pick up the new link from code when created; T-461/T-462 can read the packs from the live endpoint."
     }
    ]
   },
