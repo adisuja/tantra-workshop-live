@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-19T18:55:23+0530",
+   "task_id": "T-455",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "provider",
+   "summary": "API Error: 502 [gemini/gemini-3-flash-preview] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3-flash-preview — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. "
+  },
+  {
    "ts": "2026-10-18T18:22:22+0530",
    "task_id": "T-475",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-421 stays in review: all 20 FintechCircle senders are connected, so nothing needed uploading, verifying, dropping or pushing.\n\n| Item | State | What I saw in this run |\n|---|---|---|\n| 1. Check the service accounts, upload fintech-488411 only if missing | Done, no upload | `GET /connectors/service"
-  },
-  {
-   "ts": "2026-10-12T08:52:18+0530",
-   "task_id": "T-414",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-414 is still blocked. Nothing had to change for the T-422 ripple, and the Apps Script still hasn't been redeployed: the live script lists only the 6 original forms and no tier_qualifier.\n\nCOMPLETION CHECK:\n- **Waiting-on points to T-423 (through T-422) as the single input:** Done. I read T-414's l"
   }
  ],
- "state": "working",
+ "state": "paused",
  "mode": "feedback",
- "task_id": "T-455",
+ "task_id": null,
  "entries": [
   "F-a1529c6e"
  ],
  "started": "2026-10-19T18:52:19+0530",
- "message": "Acting on 1 note(s) for T-455: Tantra RevOps OS knowledge: funnels, Tantra channels, CRM, integrations, voice, equations",
+ "message": "Working on a task.",
  "slices": {
   "T-250": 1,
   "T-301": 1,
