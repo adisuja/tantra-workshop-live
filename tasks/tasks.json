@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-19T00:12:22+0530",
-  "version": 2647,
+  "updated": "2026-10-19T18:19:08+0530",
+  "version": 2648,
   "last_id": 480,
   "team": [
    {
@@ -10967,6 +10967,11 @@
      "ts": "2026-10-18T15:04:23+0530",
      "who": "claude",
      "note": "Verify pass: the Cloudflare API read was still failing (the all-access token sees no account), so the check now also tries the cloudflare-os-test token, which reads revops-centre. A run with no npx on its PATH read Zoom live and exited 0 (commit 5c22f427). Today's log has its 2026-10-18 entry (not granted). The centre has no 21 Oct cohort meeting yet, so no write test ran. Waiting only on Zoom Support, and T-226 covers mute and video."
+    },
+    {
+     "ts": "2026-10-19T18:19:08+0530",
+     "who": "claude",
+     "note": "Zoom check 2026-10-19: not granted yet. disable_participant_video is in no answer and the mute field is still at its default (/users/me/settings 200, /accounts/me/settings 400, /accounts/me/lock_settings 400). No upcoming cohort meeting in the centre yet (it is made when the next cohort's first attendee registers), so no meeting was read or write-tested; the next daily run picks it up. The centre's Zoom Support locks stay off and Live Control (T-226) covers mute and video."
     }
    ],
    "order": 2250
