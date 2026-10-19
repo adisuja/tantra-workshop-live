@@ -97,12 +97,12 @@
    "summary": "T-234 is blocked on you: reminders are built and pass 51/51 checks against the local simulator (commit 534c607, not deployed), but sending from the real Tantra workspace needs the workspace and mailbox, an API key, and a deploy of 534c607 including database migration 0017. Once those are in, I creat"
   }
  ],
- "state": "idle",
- "message": "Last sweep handled 0 task(s).",
- "task_id": null,
+ "state": "working",
+ "message": "Continuing T-073: Cut session recordings into the Tantra Pro course",
+ "task_id": "T-073",
  "entries": [],
- "mode": null,
- "started": "2026-10-19T18:28:46+0530",
+ "mode": "queue",
+ "started": "2026-10-19T18:33:51+0530",
  "api_capped": {
   "T-073": "2026-10-12T04:30:40+0530",
   "T-299": "2026-10-12T11:15:31+0530"
