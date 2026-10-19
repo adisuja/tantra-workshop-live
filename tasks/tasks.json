@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-20T02:39:58+0530",
-  "version": 2669,
+  "updated": "2026-10-20T02:40:51+0530",
+  "version": 2670,
   "last_id": 480,
   "team": [
    {
@@ -21096,6 +21096,11 @@
      "ts": "2026-10-20T02:39:58+0530",
      "who": "claude",
      "note": "Not built yet, on purpose: the review build waits on T-455 to T-465 (now in blockers). Today T-457, T-459, T-461, T-462 are still in progress and T-463 and T-465 have not started, so the critic has open work. Once T-465 has no open findings, this task runs deploy-clean.sh --preview review, checks the zip, centre probes, probe-day-prompts v2 and a Day 0 to 3 transcript, then goes to review with ?v=t466 links."
+    },
+    {
+     "ts": "2026-10-20T02:40:51+0530",
+     "who": "claude",
+     "note": "Verify pass: re-checked tasks.json today. T-466 lists T-455 to T-465 as blockers. T-457, T-459, T-461 and T-462 are in doing, T-463 and T-465 are in queue (T-465 has no critic run or findings log yet), and the rest are in review. So the approved review deploy is not run yet. It runs once T-465 has no open findings, then the zip, probes and Day 0 to 3 transcript checks follow, with ?v=t466 links for Adi."
     }
    ]
   },

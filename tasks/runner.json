@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-20T02:42:18+0530",
+   "task_id": "T-466",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "turns",
+   "summary": "T-466 stays in queue: its review build can't start yet because T-465 (the Fable critic pass) hasn't run, so I didn't do the approved deploy. I updated the task note, and the ack returned \"acked 0\", so F-166eed51 was probably already acknowledged last run.\n\n- **Blockers T-455 to T-465 on T-466:** don"
+  },
+  {
    "ts": "2026-10-20T02:39:28+0530",
    "task_id": "T-464",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "queue",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model gemini-3.6-flash are cooling down"
-  },
-  {
-   "ts": "2026-10-18T15:14:51+0530",
-   "task_id": "T-467",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "provider",
-   "summary": "API Error: 502 [gemini/gemini-3.5-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.5-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. If it persis"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-466: RevOps OS review build and links for Adi, then live after approval",
- "task_id": "T-466",
+ "message": "Acting on 1 note(s) for T-467: Content engine cards on Day 2 and the weekly content loop on Day 3",
+ "task_id": "T-467",
  "entries": [
-  "F-166eed51"
+  "F-ff244706"
  ],
  "mode": "feedback",
- "started": "2026-10-20T02:39:41+0530",
+ "started": "2026-10-20T02:42:33+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
@@ -117,7 +117,8 @@
   "T-268": 1,
   "T-034": 2,
   "T-351": 1,
-  "T-033": 1
+  "T-033": 1,
+  "T-466": 1
  },
  "api_capped": {
   "T-229": "2026-10-12T00:18:33+0530",
