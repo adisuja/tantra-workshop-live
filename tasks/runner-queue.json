@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-19T18:43:44+0530",
+   "task_id": "T-073",
+   "mode": "queue",
+   "status": "doing",
+   "result": "provider",
+   "summary": "API Error: 502 [gemini/gemini-3.8-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.8-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. If it persis"
+  },
+  {
    "ts": "2026-10-19T18:28:50+0530",
    "task_id": "T-475",
    "mode": "queue",
@@ -87,21 +95,13 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-278 is blocked on one question for you (M033): keep the 18-question free-lane intake, or shorten it to match the paid lane's 11? I recommend shortening. Seven of the nine audit items are fixed in commit 97cf452 and marked fixed in AUDIT.md. The join pages still can't show each attendee's own Zoom "
-  },
-  {
-   "ts": "2026-10-08T03:07:47+0530",
-   "task_id": "T-234",
-   "mode": "queue",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-234 is blocked on you: reminders are built and pass 51/51 checks against the local simulator (commit 534c607, not deployed), but sending from the real Tantra workspace needs the workspace and mailbox, an API key, and a deploy of 534c607 including database migration 0017. Once those are in, I creat"
   }
  ],
- "state": "working",
- "message": "Continuing T-073: Cut session recordings into the Tantra Pro course",
- "task_id": "T-073",
+ "state": "idle",
+ "message": "Nothing waiting.",
+ "task_id": null,
  "entries": [],
- "mode": "queue",
+ "mode": null,
  "started": "2026-10-19T18:33:51+0530",
  "api_capped": {
   "T-073": "2026-10-12T04:30:40+0530",
