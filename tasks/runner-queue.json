@@ -81,8 +81,8 @@
    "summary": "T-234 is blocked on you: reminders are built and pass 51/51 checks against the local simulator (commit 534c607, not deployed), but sending from the real Tantra workspace needs the workspace and mailbox, an API key, and a deploy of 534c607 including database migration 0017. Once those are in, I creat"
   }
  ],
- "state": "paused",
- "message": "Working on a task.",
+ "state": "idle",
+ "message": "Recovered from an error: FileNotFoundError: [Errno 2] No such file or directory: '/Users/adithyamurali/tantra-redesign/workshop-plan/tasks/overflow.json.tmp' -> '/U",
  "task_id": null,
  "entries": [],
  "mode": null,
