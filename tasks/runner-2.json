@@ -97,12 +97,12 @@
    "summary": "T-421 stays in review: all 20 FintechCircle senders are connected, so nothing needed uploading, verifying, dropping or pushing.\n\n| Item | State | What I saw in this run |\n|---|---|---|\n| 1. Check the service accounts, upload fintech-488411 only if missing | Done, no upload | `GET /connectors/service"
   }
  ],
- "state": "paused",
+ "state": "idle",
  "mode": "feedback",
  "task_id": null,
  "entries": [],
  "started": "2026-10-19T18:52:19+0530",
- "message": "Working on a task.",
+ "message": "Recovered from an error: FileNotFoundError: [Errno 2] No such file or directory: '/Users/adithyamurali/tantra-redesign/workshop-plan/tasks/overflow.json.tmp' -> '/U",
  "slices": {
   "T-250": 1,
   "T-301": 1,
