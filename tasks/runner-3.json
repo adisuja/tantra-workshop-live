@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-20T02:19:23+0530",
+   "task_id": "T-457",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-457 is still in progress (status `doing`): the funnel config check, schema and equations runner are built and verified. But the done_when proof, a fresh test sessi"
+  },
+  {
    "ts": "2026-10-19T20:07:44+0530",
    "task_id": "T-455",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-18T16:49:17+0530",
-   "task_id": "T-475",
-   "mode": "feedback",
-   "status": "review",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-457",
+ "task_id": "T-460",
  "entries": [
-  "F-53cb8034"
+  "F-5ffc2792"
  ],
- "started": "2026-10-20T02:11:59+0530",
- "message": "Acting on 1 note(s) for T-457: Tantra RevOps OS kits: funnel Worker and config schema, deck, sequences, CRM scripts",
+ "started": "2026-10-20T02:19:30+0530",
+ "message": "Acting on 1 note(s) for T-460: Prompt packs v2: context prompt, one prompt per build task, wrap prompt, email and WhatsApp link",
  "slices": {
   "T-135": 1,
   "T-300": 2,
@@ -117,7 +117,8 @@
   "T-424": 4,
   "T-033": 2,
   "T-058": 1,
-  "T-475": 1
+  "T-475": 1,
+  "T-457": 1
  },
  "api_capped": {
   "T-229": "2026-10-12T00:59:32+0530",
