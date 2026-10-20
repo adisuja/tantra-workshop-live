@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-20T17:49:15+0530",
-  "version": 2678,
+  "updated": "2026-10-20T17:50:44+0530",
+  "version": 2681,
   "last_id": 480,
   "team": [
    {
@@ -20985,20 +20985,12 @@
    ],
    "evidence": [
     {
-     "label": "Test log, T-463 section",
+     "label": "Test log T-463 section",
      "url": "workshop-plan/research/revops-os-test-log.md"
     },
     {
-     "label": "RSP packs",
-     "url": "revops-os/tests/packs/rsp"
-    },
-    {
-     "label": "Challenge packs",
-     "url": "revops-os/tests/packs/challenge"
-    },
-    {
-     "label": "Chat-edition packs",
-     "url": "revops-os/tests/packs/challenge-chat"
+     "label": "Runs",
+     "url": "revops-os/tests/runs/rsp"
     }
    ],
    "blockers": [],
@@ -21021,6 +21013,11 @@
      "ts": "2026-10-20T17:49:15+0530",
      "who": "claude",
      "note": "Made test attendees for RSP and challenge on the centre, pulled their Day 0 to 3 packs (tools mode, plus a chat-mode challenge pack), and committed them with a T-463 section in the test log. A static check of the 14 shape-only prompts passed (every guide exists, has Done when, links resolve). Still to do: the three runs (rsp, challenge, chat-challenge, PIDs 11354/11356/11358) are queued behind the usage window until about 22:30 IST. After that: digest, fix failures in the T-456 guides and T-460 packs, rerun, log the results, then move to review."
+    },
+    {
+     "ts": "2026-10-20T17:50:44+0530",
+     "who": "claude",
+     "note": "Verified on disk: both test attendees exist on the centre, the RSP (67), challenge (73) and chat (73, chat mode) packs are committed, and all three runs are live (PIDs 11354, 11356, 11358) with the first prompt done in each; the chat edition's first output gives paste-ready files. The other prompts wait for the usage window reset at 22:30 IST (owner token rule), so what is left: score the results, fix failures, rerun, log, then review."
     }
    ]
   },
@@ -21258,17 +21255,31 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "doing",
    "why": "Adi 2026-10-15: content workflows were documented in the playbook but missing from the cards; Day 2 needs content creation and publishing tasks, the dashboard needs content metrics in one view, and the OS must carry the content engine.",
    "spec": "workshop-plan/REVOPS_OS_PLAN_2026_10_15.md, section Content engine; source https://adisuja.github.io/revops-content-engine-playbook/",
    "done_when": [
     "A test session runs one batch end to end into a live review link"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Review store (live)",
+     "url": "https://os-test-tantra-review-store.growthcluborg.workers.dev/?v=1760960000"
+    },
+    {
+     "label": "Store kit",
+     "url": "revops-os/os/kits/content/review-store.mjs"
+    },
+    {
+     "label": "Test pack",
+     "url": "revops-os/tests/packs/t469-content/day-2.json"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "tags": [
@@ -21280,6 +21291,16 @@
      "ts": "2026-10-15 03:48",
      "who": "system",
      "note": "created"
+    },
+    {
+     "ts": "2026-10-20T17:50:12+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-20T17:50:12+0530",
+     "who": "claude",
+     "note": "The content kit now has a Cloudflare review store (kits/content/review-store.mjs, commit 12279e18). It is live and verified: POST, de-duplication, bad-event rejection, GET and CORS. The empty public repo adisuja/tantra-content-review is ready for the studio. Left: the fresh-session test batch (pack revops-os/tests/packs/t469-content) ran its context card, then the usage guard paused it for 282 min, so the next run resumes it, publishes the 6-post studio to GitHub Pages and checks the 200."
     }
    ]
   },
