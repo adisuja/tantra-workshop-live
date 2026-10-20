@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-20T17:51:59+0530",
+   "task_id": "T-469",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "ok",
+   "summary": "T-469 is now in `doing`: the content kit and a live review store are built and committed, but the 6-post test batch and the review studio publish are still to do. The fresh test session paused itself for 282 minutes on the usage guard, so I stopped it.\n\n**Completion check:**\n- **Content knowledge** "
+  },
+  {
    "ts": "2026-10-20T17:43:36+0530",
    "task_id": "T-468",
    "mode": "feedback",
@@ -87,19 +95,11 @@
    "status": "hold",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model gemini-3-flash-preview are cooling down"
-  },
-  {
-   "ts": "2026-10-18T15:38:21+0530",
-   "task_id": "T-471",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "provider",
-   "summary": "API Error: 502 [gemini/gemini-3.7-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.7-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 3s). This is a server-side issue, usually temporary — try again in a moment. If it persists, "
   }
  ],
- "state": "working",
- "message": "Acting on 1 note(s) for T-469: Tantra RevOps OS content engine: knowledge, kits, setup and batch prompts",
- "task_id": "T-469",
+ "state": "paused",
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 82% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 22:31.",
+ "task_id": null,
  "entries": [
   "F-dbdb4542"
  ],

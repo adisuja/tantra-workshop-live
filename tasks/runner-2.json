@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-20T17:56:03+0530",
+   "task_id": "T-467",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "budget",
+   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
+  },
+  {
    "ts": "2026-10-20T17:52:11+0530",
    "task_id": "T-463",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "queue",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.6 are cooling down"
-  },
-  {
-   "ts": "2026-10-18T15:44:51+0530",
-   "task_id": "T-461",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "provider",
-   "summary": "API Error: 502 [gemini/gemini-3-flash-preview] [502]: Request exceeded queue budget maxWaitMs=29999ms for gemini/gemini-3-flash-preview — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. "
   }
  ],
- "state": "working",
+ "state": "paused",
  "mode": "feedback",
- "task_id": "T-467",
+ "task_id": null,
  "entries": [
   "F-ff244706"
  ],
  "started": "2026-10-20T17:54:57+0530",
- "message": "Acting on 1 note(s) for T-467: Content engine cards on Day 2 and the weekly content loop on Day 3",
+ "message": "Holding to stay under 80% of the 5-hour usage window: T-467 stopped at 82%; OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 22:31.",
  "slices": {
   "T-250": 1,
   "T-301": 1,

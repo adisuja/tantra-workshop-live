@@ -97,8 +97,8 @@
    "summary": "The four probes are running against the clean private stack. I'll pick up when they finish."
   }
  ],
- "state": "idle",
- "message": "Nothing waiting.",
+ "state": "paused",
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 82% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 22:31.",
  "task_id": null,
  "entries": [],
  "mode": null,
