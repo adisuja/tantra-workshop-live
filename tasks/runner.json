@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-20T17:43:36+0530",
+   "task_id": "T-468",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-468 is set to doing: the content dashboard and the OS kit's matching view are built and pass the new probe (83 of 83 checks), but nothing is pushed to main or depl"
+  },
+  {
    "ts": "2026-10-20T02:42:18+0530",
    "task_id": "T-466",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "queue",
    "result": "provider",
    "summary": "API Error: 502 [gemini/gemini-3.7-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.7-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 3s). This is a server-side issue, usually temporary — try again in a moment. If it persists, "
-  },
-  {
-   "ts": "2026-10-18T15:16:12+0530",
-   "task_id": "T-469",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model gemini-3.6-flash are cooling down"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-468: Dashboard widened to one view: content metrics from Metricool, GA4, Wistia and Tantra beside the funnel",
- "task_id": "T-468",
+ "message": "Acting on 1 note(s) for T-469: Tantra RevOps OS content engine: knowledge, kits, setup and batch prompts",
+ "task_id": "T-469",
  "entries": [
-  "F-c287da2b"
+  "F-dbdb4542"
  ],
  "mode": "feedback",
- "started": "2026-10-20T17:34:48+0530",
+ "started": "2026-10-20T17:43:47+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
@@ -118,7 +118,8 @@
   "T-034": 2,
   "T-351": 1,
   "T-033": 1,
-  "T-466": 1
+  "T-466": 1,
+  "T-468": 1
  },
  "api_capped": {
   "T-229": "2026-10-12T00:18:33+0530",
