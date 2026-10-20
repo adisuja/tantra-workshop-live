@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-20T17:52:29+0530",
+   "task_id": "T-467",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "budget",
+   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
+  },
+  {
    "ts": "2026-10-20T02:27:27+0530",
    "task_id": "T-460",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-475 is not finished: the export fix works locally, but the D0.13 and D0.35 rerun is still running and the fix is not on origin/main yet. I left the task in **doing"
-  },
-  {
-   "ts": "2026-10-18T16:49:56+0530",
-   "task_id": "T-455",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.6 are cooling down"
   }
  ],
- "state": "working",
+ "state": "paused",
  "mode": "feedback",
- "task_id": "T-467",
+ "task_id": null,
  "entries": [
   "F-ff244706"
  ],
  "started": "2026-10-20T17:34:55+0530",
- "message": "Acting on 1 note(s) for T-467: Content engine cards on Day 2 and the weekly content loop on Day 3",
+ "message": "Holding to stay under 80% of the 5-hour usage window: T-467 stopped at 0%; OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 22:31.",
  "slices": {
   "T-135": 1,
   "T-300": 2,
