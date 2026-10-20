@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-20T17:43:26+0530",
-  "version": 2677,
+  "updated": "2026-10-20T17:49:15+0530",
+  "version": 2678,
   "last_id": 480,
   "team": [
    {
@@ -20977,13 +20977,30 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "doing",
    "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
    "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
    "done_when": [
     "Logged in the test log"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Test log, T-463 section",
+     "url": "workshop-plan/research/revops-os-test-log.md"
+    },
+    {
+     "label": "RSP packs",
+     "url": "revops-os/tests/packs/rsp"
+    },
+    {
+     "label": "Challenge packs",
+     "url": "revops-os/tests/packs/challenge"
+    },
+    {
+     "label": "Chat-edition packs",
+     "url": "revops-os/tests/packs/challenge-chat"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "tags": [
@@ -20999,6 +21016,11 @@
      "ts": "2026-10-15T03:33:46+0530",
      "who": "claude",
      "note": "Codex dropped by Adi 2026-10-15; RSP, challenge and chat edition only"
+    },
+    {
+     "ts": "2026-10-20T17:49:15+0530",
+     "who": "claude",
+     "note": "Made test attendees for RSP and challenge on the centre, pulled their Day 0 to 3 packs (tools mode, plus a chat-mode challenge pack), and committed them with a T-463 section in the test log. A static check of the 14 shape-only prompts passed (every guide exists, has Done when, links resolve). Still to do: the three runs (rsp, challenge, chat-challenge, PIDs 11354/11356/11358) are queued behind the usage window until about 22:30 IST. After that: digest, fix failures in the T-456 guides and T-460 packs, rerun, log the results, then move to review."
     }
    ]
   },
