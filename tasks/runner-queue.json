@@ -97,12 +97,12 @@
    "summary": "T-073 stays in doing: the cohort starts 14 Oct, so there are no recordings to cut yet. Everything that will cut them is running and checked today.\n\n- **Three day modules from the 14 to 16 Oct cohort published, with the URL and lesson list in the log:** waiting for the sessions. The 15-minute job is "
   }
  ],
- "state": "idle",
- "message": "Nothing waiting.",
- "task_id": null,
+ "state": "working",
+ "message": "Continuing T-465: Fable critic on the whole RevOps OS build",
+ "task_id": "T-465",
  "entries": [],
- "mode": null,
- "started": "2026-10-20T02:38:49+0530",
+ "mode": "queue",
+ "started": "2026-10-20T17:34:34+0530",
  "api_capped": {
   "T-073": "2026-10-12T04:30:40+0530",
   "T-299": "2026-10-12T11:15:31+0530"

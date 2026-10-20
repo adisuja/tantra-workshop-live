@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-20T02:40:51+0530",
-  "version": 2670,
+  "updated": "2026-10-20T02:48:50+0530",
+  "version": 2674,
   "last_id": 480,
   "team": [
    {
@@ -21027,17 +21027,31 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "doing",
    "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
    "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
    "done_when": [
     "No open findings"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "OS brief",
+     "url": "revops-os/os/BRIEF.md"
+    },
+    {
+     "label": "api.mjs",
+     "url": "revops-os/os/scripts/api.mjs"
+    },
+    {
+     "label": "Plan",
+     "url": "workshop-plan/REVOPS_OS_PLAN_2026_10_15.md"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "tags": [
@@ -21048,6 +21062,16 @@
      "ts": "2026-10-15 03:30",
      "who": "system",
      "note": "created from the plan"
+    },
+    {
+     "ts": "2026-10-20T02:48:50+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-20T02:48:50+0530",
+     "who": "claude",
+     "note": "Fable critic round 1 (plan plus T-454 skeleton): 13 findings, all on T-454, all fixed. R1-01 chat mode had no step 5 substitute; R1-02 key location conflicted (now .env in the local OS folder only); R1-03 tool read block was true only in Claude Code; R1-04 tools bullet shipped in chat INSTRUCTIONS; R1-05 banned phrase end to end; R1-06 plan row named files that do not exist; R1-07 one approval unlocked every guarded call (line must now name the tool); R1-08 sim_ key without SIM_URL hit the real API (now fails); R1-09 guard bypass by URL encoding, trailing slash or --query (normalised); R1-10 missing guards on Resend broadcasts, CRM sequence enrolment, HubSpot bulk archive, payouts and invoice send, Tantra scheduledAt; R1-11 query secrets in the log; R1-12 responses not redacted; R1-13 --help read as a tool. Fix commits 18417bd5 (api.mjs, swept in by the runner) and 3a401fad. Verified in a dist copy with sim keys: every bypass refused, approval without the tool name refused, sim key without SIM_URL fails, log holds the bare path, --help lists tools, build 0 problems. Left: round 2 on T-455, T-456, T-458, T-460 (in review), then rounds as T-457, T-459, T-461, T-462 reach review, and the final zip plus chat edition round after T-463."
     }
    ]
   },
