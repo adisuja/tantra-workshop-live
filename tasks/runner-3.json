@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-21T16:59:38+0530",
+   "task_id": "T-467",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-467 is back in review with Adi and Bharath. All seven content cards check out with their probes passing, but nothing was pushed, nothing was published, and two Day"
+  },
+  {
    "ts": "2026-10-20T17:52:29+0530",
    "task_id": "T-467",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "queue",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-19T00:07:16+0530",
-   "task_id": "T-475",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-475 is not finished: the export fix works locally, but the D0.13 and D0.35 rerun is still running and the fix is not on origin/main yet. I left the task in **doing"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-467",
+ "task_id": "T-478",
  "entries": [
-  "F-ff244706"
+  "F-c708f7c9"
  ],
- "started": "2026-10-21T16:14:00+0530",
- "message": "Acting on 1 note(s) for T-467: Content engine cards on Day 2 and the weekly content loop on Day 3",
+ "started": "2026-10-21T16:59:54+0530",
+ "message": "Acting on 1 note(s) for T-478: Task card redesign: pick one of four directions, then roll it out to every centre card",
  "slices": {
   "T-135": 1,
   "T-300": 2,
