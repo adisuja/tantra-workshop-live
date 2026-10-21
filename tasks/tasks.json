@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T16:58:35+0530",
-  "version": 2713,
+  "updated": "2026-10-21T17:10:52+0530",
+  "version": 2719,
   "last_id": 482,
   "team": [
    {
@@ -8850,15 +8850,15 @@
    ],
    "evidence": [
     {
-     "label": "Free join page (no prices)",
-     "url": "http://localhost:4377/workshop/join?v=t157f"
+     "label": "Live free join (no prices)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=t157h"
     },
     {
-     "label": "Paid join page",
-     "url": "http://localhost:4377/masterclass/success/join?v=t157f"
+     "label": "Live paid join",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=t157h"
     },
     {
-     "label": "Qualifier probe",
+     "label": "Qualifier probe (16/16 on live mirror)",
      "url": "app/scripts/probe-tier-qualifier.mjs"
     },
     {
@@ -8872,10 +8872,6 @@
     {
      "label": "Tier-mix report",
      "url": "workshop-plan/ops/tier_mix.py"
-    },
-    {
-     "label": "Apps Script redeploy (input task)",
-     "url": "T-409"
     }
    ],
    "blockers": [],
@@ -8960,6 +8956,11 @@
      "ts": "2026-10-19T00:02:45+0530",
      "who": "claude",
      "note": "Hold lifted: T-409 is done. The Tantra Funnel receiver lists tier_qualifier (health GET 2026-10-19, 7 forms), so qualifier answers from /workshop/join and /masterclass/success/join now land in the Work Tracker. Next on this task: check coord/LOG.md for holds, publish both pages to adisuja/tantra-workshop-live (T-477 also publishes main to the mirror; do not race it), rerun app/scripts/probe-tier-qualifier.mjs against the mirror and add the live links."
+    },
+    {
+     "ts": "2026-10-21T17:10:52+0530",
+     "who": "claude",
+     "note": "Qualifier is live: the mirror (T-477 publish today from main 06f00427, which holds every T-157 commit and has no later change to these pages) already serves it, so no second push was needed. probe-tier-qualifier.mjs passes 16 of 16 against the live mirror with no price on the free lane (probe now waits for network idle), and one real row posted from the live /workshop/join landed in 'Funnel · Tier Qualifier' and was deleted (backup in workshop-plan/ops/t107_deleted_rows.json, re-read shows 0 rows). Open https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=t157h and https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=t157h; Bhaskar posts the experiments in experiments.md and the tier-mix report waits for 100 customers."
     }
    ],
    "order": 1570,
@@ -21818,20 +21819,40 @@
    ],
    "evidence": [
     {
-     "label": "Probe shots (24 + foot)",
-     "url": "/tmp/t478-shots/"
+     "label": "Live (sign in as test attendee)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/preview?v=b7544479"
     },
     {
-     "label": "Preselect probe",
-     "url": "/private/tmp/t478/app/t478-preselect.mjs"
+     "label": "Review build",
+     "url": "https://review-revops-centre.growthcluborg.workers.dev/preview?v=b7544479"
+    },
+    {
+     "label": "Cards per kind: session start-calendar, decide start-os-assistant, connect start-cloudflare, human start-cf-registrar, approve start-domains, watch d1-check",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-os-assistant&v=b7544479"
+    },
+    {
+     "label": "Rig (B, C, D)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/design/card-variants?v=b7544479"
+    },
+    {
+     "label": "Live probe shots",
+     "url": "/tmp/t478-shots-live/"
+    },
+    {
+     "label": "Review probe shots",
+     "url": "/tmp/t478-shots-review/"
+    },
+    {
+     "label": "Probe",
+     "url": "app/scripts/probe-t478-ticket.mjs"
     },
     {
      "label": "Commit",
-     "url": "/private/tmp/t478 (git show 24029e53)"
+     "url": "git show b7544479"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Pick A Ticket, B Run sheet, C Spread or D Open page on the rig page (or name parts to combine).",
+   "needs_from_owner": "",
    "tags": [
     "revops-os"
    ],
@@ -21860,6 +21881,11 @@
      "ts": "2026-10-19T00:12:22+0530",
      "who": "claude",
      "note": "Verified the Ticket card again on a fresh local build of main in /private/tmp/t478 (now commit 24029e53, which also limits the preselect fill to single-choice fields, matching what the field shows). With saves blocked, start-os-assistant opens with Mark done enabled at 300 ms and 2.5 s and no 'to finish' line; the connect card still locks; the 24-shot probe (6 kinds at 1440/1024/768/390) failed 0, check-rail-pins and probe-day-model passed (119 cards). Not pushed or deployed: this run carried no approval code, so git push origin main (origin/main is 3 commits ahead, rebase first), deploy-clean.sh live and --preview review are still to do; the review build link is stale until then."
+    },
+    {
+     "ts": "2026-10-21T17:10:19+0530",
+     "who": "claude",
+     "note": "The Ticket card (A plus the B button lock, with preselected choices counting as filled) is pushed as b7544479 and live as version e7efe282, and the review build is in step. check-rail-pins, probe-day-model (119 cards) and the 24-shot probe all pass locally, live and on review, and start-os-assistant opens with Mark done enabled. Open /preview, then any card below. B, C and D are still on the rig, and switching to one is a CSS swap."
     }
    ]
   },
