@@ -97,12 +97,14 @@
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
- "state": "paused",
- "mode": null,
- "task_id": null,
- "entries": [],
- "started": "2026-10-21T17:36:49+0530",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 78% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 21:11.",
+ "state": "working",
+ "mode": "feedback",
+ "task_id": "T-468",
+ "entries": [
+  "F-3a9694c8"
+ ],
+ "started": "2026-10-21T21:15:16+0530",
+ "message": "Acting on 1 note(s) for T-468: Dashboard widened to one view: content metrics from Metricool, GA4, Wistia and Tantra beside the funnel",
  "slices": {
   "T-135": 1,
   "T-300": 2,
