@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-21T17:19:38+0530",
+   "task_id": "T-461",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "ok",
+   "summary": "T-461 stays in **doing**. Day 0 is not finished, so Days 1 to 3 have not started and nothing has been pushed.\n\nThe repeat failure of card 0.10 had a cause I could fix. A run restarted with `--from` kept its old 18 October guide files, which still mentioned check.md 6 times. `run.py` now copies the l"
+  },
+  {
    "ts": "2026-10-21T17:02:26+0530",
    "task_id": "T-033",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-464 is back in review. I checked every create from the round against the live accounts today, and all 7 ledger rows are still reverted.\n\n**What I checked:**\n\n| Item | State | What I saw this run |\n| --- | --- | --- |\n| Ledger lists every create (what, where, ID, time) | Done | `workshop-plan/resea"
-  },
-  {
-   "ts": "2026-10-20T02:26:36+0530",
-   "task_id": "T-458",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-458 is back in review with Adi and Bharath. Both zips download from a new review build. That build is only a preview, so live traffic still runs main. I also fixed one gap the earlier run missed.\n\n**The gap:** the chat edition's `INSTRUCTIONS.md` was 12,046 characters, but ChatGPT's project instru"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-461: Test harness: fill the centre as Tantra, run every day's prompts in fresh Claude Code sessions",
- "task_id": "T-461",
+ "message": "Acting on 1 note(s) for T-456: Tantra RevOps OS task guides: one per centre card, generated from the playbook",
+ "task_id": "T-456",
  "entries": [
-  "F-d6031805"
+  "F-92320046"
  ],
  "mode": "feedback",
- "started": "2026-10-21T17:02:53+0530",
+ "started": "2026-10-21T17:19:56+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,

@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T17:16:11+0530",
-  "version": 2723,
+  "updated": "2026-10-21T17:19:21+0530",
+  "version": 2726,
   "last_id": 482,
   "team": [
    {
@@ -20656,16 +20656,16 @@
    ],
    "evidence": [
     {
+     "label": "Pushed branch agent/t455-knowledge (f29d8af9)",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/tree/agent/t455-knowledge"
+    },
+    {
      "label": "check-refs.mjs",
      "url": "revops-os/os/scripts/check-refs.mjs"
     },
     {
      "label": "Knowledge index",
      "url": "revops-os/os/knowledge/README.md"
-    },
-    {
-     "label": "Newsletters channel",
-     "url": "revops-os/os/knowledge/channels/newsletters.md"
     },
     {
      "label": "Commit",
@@ -20697,6 +20697,11 @@
      "ts": "2026-10-20T02:10:28+0530",
      "who": "claude",
      "note": "Verify pass: check-refs.mjs resolves all 649 knowledge/ and kits/ citations in 183 dist files (191 in os/), and a planted bad heading, bad anchor and two missing files all failed it (exit 1). Knowledge has no banned vendors (probe-visual-tools list), no dashes, newsletters.md and README index every knowledge file; not pushed because this branch carries 44 other lanes' commits, so publishing stays with the main-branch publish. Voice fixes left for T-456: D2.07 'Highest-Leverage', D2.23 'unlock-all'."
+    },
+    {
+     "ts": "2026-10-21T17:18:46+0530",
+     "who": "claude",
+     "note": "Final check: check-refs.mjs resolves every knowledge/ and kits/ citation (191 in os/, 1022 in 183 files of the rebuilt dist; nothing left pending for T-457), check-dashes finds no dashes and the 25-name BANNED scan finds 0 hits in os/knowledge. twilio.md says SMS only, with WhatsApp through Tantra. The commit is pushed as branch agent/t455-knowledge (f29d8af9, c81352a8 cherry-picked onto origin/main), not straight to main, because main is 98 commits behind this branch and nearly all of them belong to other lanes. The main-branch publish carries it from here."
     }
    ]
   },
@@ -21064,6 +21069,11 @@
      "ts": "2026-10-19T00:07:31+0530",
      "who": "claude",
      "note": "Checked on 2026-10-19: Day 0 round 5 (PID 4833) is still running but paused at the usage window (last log line 23:54). 4 of its first 6 prompts pass, and both failures (D0.12 retyped ready count, D0.15 doubled check block) are already fixed in the guides. Logged in revops-os-test-log.md (f898da04). Left: finish round 5 once the window resets, round 6 from a fresh project until 24 of 24 pass, then Days 1 to 3, then push and send to review."
+    },
+    {
+     "ts": "2026-10-21T17:19:21+0530",
+     "who": "claude",
+     "note": "Day 0 round 5 restarted at 17:18 from start-endy (PID 34586) with the review fixes for D0.19 and D0.20, the BRIEF.md rec.mjs rule and a resume that loads the latest guides (a0a8c4d2; budget guard fix 43b0f460). Checked that the run's project now has the new D0.19 wording and no stale check.md in D0.20. It is waiting for the 5-hour window (67%, over the 60% guard). Left: 0.09 to 0.24 plus reruns of 0.04, 0.06, 0.07 and 0.08 until 24 of 24 pass, then Days 1 to 3 and a push after each day. Log: workshop-plan/research/revops-os-test-log.md"
     }
    ]
   },
