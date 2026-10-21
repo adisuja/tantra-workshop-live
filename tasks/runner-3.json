@@ -97,14 +97,14 @@
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-457 is still in progress (status `doing`): the funnel config check, schema and equations runner are built and verified. But the done_when proof, a fresh test sessi"
   }
  ],
- "state": "paused",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
+ "task_id": "T-463",
  "entries": [
-  "F-3a9694c8"
+  "F-a5385982"
  ],
- "started": "2026-10-21T21:15:16+0530",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 70% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 02:11.",
+ "started": "2026-10-22T02:13:30+0530",
+ "message": "Acting on 1 note(s) for T-463: Spot checks: RSP, challenge, chat edition, Codex",
  "slices": {
   "T-135": 1,
   "T-300": 2,
