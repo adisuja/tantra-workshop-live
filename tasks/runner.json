@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-21T16:44:01+0530",
+   "task_id": "T-429",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I checked T-429 again and moved it to review for Bharath and Adi. The live probe passed 7 of 7, it tested both switch states, and it left the switch at \"1\".\n\n**Completion check (all checked in this run):**\n- **The admin switch flips the copy live:** done. The `tantra_free_month` setting defaults to "
+  },
+  {
    "ts": "2026-10-21T16:39:42+0530",
    "task_id": "T-380",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.6 are cooling down"
-  },
-  {
-   "ts": "2026-10-18T16:49:53+0530",
-   "task_id": "T-462",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.6 are cooling down"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-429: Lane CV: Free month of Tantra for paid attendees, with an off switch",
- "task_id": "T-429",
+ "message": "Acting on 1 note(s) for T-448: Input from Adi for T-432: the seven Tantra-side answers for insourcing the centre",
+ "task_id": "T-448",
  "entries": [
-  "F-9b9eb009"
+  "F-8b307a77"
  ],
  "mode": "feedback",
- "started": "2026-10-21T16:39:54+0530",
+ "started": "2026-10-21T16:44:15+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,

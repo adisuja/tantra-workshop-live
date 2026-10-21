@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T16:39:41+0530",
-  "version": 2695,
-  "last_id": 480,
+  "updated": "2026-10-21T16:45:24+0530",
+  "version": 2700,
+  "last_id": 482,
   "team": [
    {
     "name": "Adi",
@@ -19364,12 +19364,12 @@
    "owner": "Bharath",
    "assignee": "Claude",
    "reviewers": [
-    "Adi",
-    "Bharath"
+    "Bharath",
+    "Adi"
    ],
    "priority": "P1",
    "due": "",
-   "status": "hold",
+   "status": "review",
    "why": "From Adi's 2026-10-14 call with Bharath (centre vision). Plan: workshop-plan/CENTRE_VISION_PLAN_2026_10_14.md",
    "spec": "Admin setting tantra_free_month (default 1). On: Tantra cards show that the first month is on us for paid attendees; off: that copy disappears. d2-channels presents Tantra omni-channel as one option among the channels. The grant mechanism lives in the Tantra backend (input task for Adi).",
    "done_when": [
@@ -19379,8 +19379,20 @@
    ],
    "evidence": [
     {
-     "label": "plan",
-     "url": "../CENTRE_VISION_PLAN_2026_10_14.md"
+     "label": "probe 2026-10-21: 7 of 7 pass; off: start-tantra offer=false, d2-channels lists Tantra=true; on: start-tantra offer=true, d2-channels lists Tantra=true; left at 1",
+     "url": "../../app/scripts/probe-free-month.mjs"
+    },
+    {
+     "label": "start-tantra",
+     "url": "https://revops-centre.growthcluborg.workers.dev/preview?card=start-tantra&v=cv4"
+    },
+    {
+     "label": "d2-channels",
+     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?card=d2-channels&v=cv4"
+    },
+    {
+     "label": "admin",
+     "url": "https://revops-centre.growthcluborg.workers.dev/admin/"
     }
    ],
    "blockers": [],
@@ -19410,6 +19422,21 @@
     {
      "at": "2026-10-14T19:22:47",
      "msg": "Adi 2026-10-14: free month on hold until the end (link to usetantra.com + Dodo promo code). The switch stays; the grant waits."
+    },
+    {
+     "ts": "2026-10-21T16:42:15+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi/Bharath → Bharath/Adi (by claude)."
+    },
+    {
+     "ts": "2026-10-21T16:42:15+0530",
+     "who": "claude",
+     "note": "Off hold. probe-free-month.mjs now runs Off then On live and ends at 1: 7 of 7 pass. Off: no free month copy on Connect Tantra or d2-channels. On: the offer is back on Connect Tantra. d2-channels lists Tantra omni-channel both ways. Nothing was left behind, so no redeploy. The grant stays on T-435. Review: https://revops-centre.growthcluborg.workers.dev/preview?card=start-tantra&v=cv3 , https://revops-centre.growthcluborg.workers.dev/onboarding/?card=d2-channels&v=cv3 , admin https://revops-centre.growthcluborg.workers.dev/admin/"
+    },
+    {
+     "ts": "2026-10-21T16:43:44+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-21: probe-free-month.mjs ran live, 7 of 7 pass. Off: no offer on start-tantra, d2-channels lists Tantra omni-channel. On: offer back on start-tantra, d2-channels unchanged. Switch left at 1. The live admin.js has the Free month of Tantra switch in Cohort Settings, and there is no separate badge in the code, so no fix or redeploy was needed. Open https://revops-centre.growthcluborg.workers.dev/preview?card=start-tantra&v=cv4 and https://revops-centre.growthcluborg.workers.dev/onboarding/?card=d2-channels&v=cv4"
     }
    ]
   },
@@ -21827,6 +21854,67 @@
    "order": 4800,
    "input_for": "T-033",
    "kind": "input"
+  },
+  {
+   "id": "T-481",
+   "title": "Insource phase 1: patches for the Tantra page, sidebar item, gate exception, CSP and shell fix",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Claude",
+   "reviewers": [
+    "Ben",
+    "Bharath"
+   ],
+   "priority": "P2",
+   "due": "2026-10-28",
+   "status": "queue",
+   "why": "T-448 Q2: Claude drafts phase 1, Ben and Bharath review, target 2026-10-28.",
+   "spec": "workshop-plan/specs/TANTRA_INSOURCE_SPEC.md sections 6, 7 and 11 (Q2). Deliver as patches under workshop-plan/tantra-product-patches/ (agents never open PRs in Usetantra repos); Ben reviews the backend part, Bharath reviews, applies and merges.",
+   "done_when": [
+    "Patches for page, sidebar item, gate exception, CSP and shell fix (shell reads GET /billing/me) under workshop-plan/tantra-product-patches/ with apply steps",
+    "Each patch has a test and is listed in the patches README for Bharath"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-21T16:45:24+0530",
+     "who": "claude",
+     "note": "Opened from T-448 Q2."
+    }
+   ],
+   "order": 4810
+  },
+  {
+   "id": "T-482",
+   "title": "Input from Bharath: Clerk production webhook endpoint and signing secret for the centre",
+   "area": "Product",
+   "owner": "Bharath",
+   "assignee": "Bharath",
+   "reviewers": [
+    "Bharath"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "T-448 Q9: issuer and JWKS are public (https://clerk.usetantra.com, /.well-known/jwks.json, checked 2026-10-21); the session and user events webhook needs a Clerk dashboard login.",
+   "spec": "",
+   "done_when": [
+    "Endpoint exists in Clerk production",
+    "CLERK_WEBHOOK_SECRET stored on the centre Worker"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "In the Clerk dashboard (production instance clerk.usetantra.com) > Webhooks > Add Endpoint: URL = the centre Worker /api/clerk/webhook, events user.deleted, session.ended, session.revoked; store the Signing Secret (whsec_...) as the centre Worker secret CLERK_WEBHOOK_SECRET. Reply here when done (never paste the secret in a note).",
+   "log": [
+    {
+     "ts": "2026-10-21T16:45:24+0530",
+     "who": "claude",
+     "note": "Opened from T-448 Q9."
+    }
+   ],
+   "order": 4820
   }
  ]
 }
