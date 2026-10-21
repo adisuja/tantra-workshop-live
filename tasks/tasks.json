@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T17:10:52+0530",
-  "version": 2719,
+  "updated": "2026-10-21T17:13:20+0530",
+  "version": 2721,
   "last_id": 482,
   "team": [
    {
@@ -8850,15 +8850,15 @@
    ],
    "evidence": [
     {
-     "label": "Live free join (no prices)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=t157h"
+     "label": "Live free join page",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=t157v"
     },
     {
-     "label": "Live paid join",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=t157h"
+     "label": "Live paid join page",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=t157v"
     },
     {
-     "label": "Qualifier probe (16/16 on live mirror)",
+     "label": "Qualifier probe",
      "url": "app/scripts/probe-tier-qualifier.mjs"
     },
     {
@@ -8961,6 +8961,11 @@
      "ts": "2026-10-21T17:10:52+0530",
      "who": "claude",
      "note": "Qualifier is live: the mirror (T-477 publish today from main 06f00427, which holds every T-157 commit and has no later change to these pages) already serves it, so no second push was needed. probe-tier-qualifier.mjs passes 16 of 16 against the live mirror with no price on the free lane (probe now waits for network idle), and one real row posted from the live /workshop/join landed in 'Funnel · Tier Qualifier' and was deleted (backup in workshop-plan/ops/t107_deleted_rows.json, re-read shows 0 rows). Open https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=t157h and https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=t157h; Bhaskar posts the experiments in experiments.md and the tier-mix report waits for 100 customers."
+    },
+    {
+     "ts": "2026-10-21T17:12:52+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-21: probe-tier-qualifier.mjs passes 16 of 16 on the live mirror (free lane shows no price, paid lane does), the one live probe row from /workshop/join was deleted and tier_mix.py now reads 0 rows from the Work Tracker, and the four one-pagers match the 2026-10-15 owner prices. Qualifier live is done; Bhaskar still posts the experiments in experiments.md and the tier-mix report waits for 100 customers. Open https://adisuja.github.io/tantra-workshop-live/site/workshop/join/?v=t157v and https://adisuja.github.io/tantra-workshop-live/site/masterclass/success/join/?v=t157v"
     }
    ],
    "order": 1570,
@@ -21819,36 +21824,24 @@
    ],
    "evidence": [
     {
-     "label": "Live (sign in as test attendee)",
+     "label": "Live preview",
      "url": "https://revops-centre.growthcluborg.workers.dev/preview?v=b7544479"
     },
     {
-     "label": "Review build",
+     "label": "Review preview",
      "url": "https://review-revops-centre.growthcluborg.workers.dev/preview?v=b7544479"
-    },
-    {
-     "label": "Cards per kind: session start-calendar, decide start-os-assistant, connect start-cloudflare, human start-cf-registrar, approve start-domains, watch d1-check",
-     "url": "https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-os-assistant&v=b7544479"
-    },
-    {
-     "label": "Rig (B, C, D)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/design/card-variants?v=b7544479"
-    },
-    {
-     "label": "Live probe shots",
-     "url": "/tmp/t478-shots-live/"
-    },
-    {
-     "label": "Review probe shots",
-     "url": "/tmp/t478-shots-review/"
     },
     {
      "label": "Probe",
      "url": "app/scripts/probe-t478-ticket.mjs"
     },
     {
-     "label": "Commit",
-     "url": "git show b7544479"
+     "label": "Shots (live)",
+     "url": "/tmp/t478v-live/"
+    },
+    {
+     "label": "Rig (B, C, D)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/design/card-variants?v=b7544479"
     }
    ],
    "blockers": [],
@@ -21886,6 +21879,11 @@
      "ts": "2026-10-21T17:10:19+0530",
      "who": "claude",
      "note": "The Ticket card (A plus the B button lock, with preselected choices counting as filled) is pushed as b7544479 and live as version e7efe282, and the review build is in step. check-rail-pins, probe-day-model (119 cards) and the 24-shot probe all pass locally, live and on review, and start-os-assistant opens with Mark done enabled. Open /preview, then any card below. B, C and D are still on the rig, and switching to one is a CSS swap."
+    },
+    {
+     "ts": "2026-10-21T17:13:20+0530",
+     "who": "claude",
+     "note": "Verify pass: the Ticket card commits (930c94b9 to b7544479) are on origin/main. A fresh check at origin/main passed tsc, check-rail-pins (119 cards) and probe-day-model. The 24-shot probe (6 kinds at 1440/1024/768/390, with saves blocked) failed 0 of 24 on both live and review, so start-os-assistant opens with Mark done enabled and no 'to finish' line. Open one card per kind on live: https://revops-centre.growthcluborg.workers.dev/preview?v=b7544479 (session start-calendar, decide start-os-assistant, connect start-cloudflare, human start-cf-registrar, approve start-domains, watch d1-check). B, C and D are still on the rig, and switching to one is a CSS swap."
     }
    ]
   },
