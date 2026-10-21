@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-21T16:56:51+0530",
+   "task_id": "T-225",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-225 is still blocked because Zoom Support hasn't granted the two settings. Today's read of the 21 Oct cohort meeting 83352618490 shows mute control still false and no video field.\n\n**Checklist (everything below was checked in this run):**\n- **Daily check in the task log:** done, with one correctio"
+  },
+  {
    "ts": "2026-10-21T16:51:03+0530",
    "task_id": "T-444",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "ok",
    "summary": "T-462 stays in doing: Day 0 round 5 is still running but stuck waiting for the usage limit to reset, so the prompts can't all pass yet.\n\n| Item | State |\n|---|---|\n| Finish Day 0 with fresh `claude -p` runs and rubric reviews | **Not done.** Round 5 (PID 4833) has been waiting since 23:54 with the l"
-  },
-  {
-   "ts": "2026-10-19T00:06:12+0530",
-   "task_id": "T-461",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "ok",
-   "summary": "(Held back from the public board: this note mentions a private client detail.)"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-225: Zoom Support ticket: host mute control and participant video disable (waiting on Zoom's reply)",
- "task_id": "T-225",
+ "message": "Acting on 1 note(s) for T-033: WhatsApp + email delivery automation",
+ "task_id": "T-033",
  "entries": [
-  "F-1d226e1e"
+  "F-b4283ced"
  ],
  "mode": "feedback",
- "started": "2026-10-21T16:52:11+0530",
+ "started": "2026-10-21T16:57:11+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,

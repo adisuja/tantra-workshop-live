@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T16:47:44+0530",
-  "version": 2703,
+  "updated": "2026-10-21T16:56:29+0530",
+  "version": 2709,
   "last_id": 482,
   "team": [
    {
@@ -10987,6 +10987,21 @@
      "ts": "2026-10-21T16:13:37+0530",
      "who": "claude",
      "note": "Zoom check 2026-10-21: could not run (fetch failed)."
+    },
+    {
+     "ts": "2026-10-21T16:53:15+0530",
+     "who": "claude",
+     "note": "Zoom check 2026-10-21: not granted yet. disable_participant_video is in no answer and the mute field is still at its default (/users/me/settings 200, /accounts/me/settings 400, /accounts/me/lock_settings 400). No upcoming cohort meeting in the centre yet (it is made when the next cohort's first attendee registers), so no meeting was read or write-tested; the next daily run picks it up. The centre's Zoom Support locks stay off and Live Control (T-226) covers mute and video."
+    },
+    {
+     "ts": "2026-10-21T16:54:04+0530",
+     "who": "claude",
+     "note": "Today's 16:13 run failed because the network was not up yet at login, so the check now waits and retries before it logs a failure (commit 916e61e3). A manual run then logged 2026-10-21: not granted. I created the 21 Oct cohort meeting 83352618490 through the centre's cohort sync, and reading it shows no grant. It starts within 36 hours, so no write test ran. Still waiting on Zoom Support, and T-226 enforces mute and video."
+    },
+    {
+     "ts": "2026-10-21T16:56:29+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-21: today's logged check ran before the 21 Oct cohort meeting existed, so I re-read Zoom now. The script picks up 83352618490 from the centre and it shows mute control still false and no video field: not granted, so T-226 Live Control stays the cover for mute and video (T-226 is itself waiting on the Zoom sign-in in T-417). A simulated 'fetch failed' run retried after 30s and then read Zoom live, and launchd has the installed job (RunAtLoad, 09:10, --log --apply)."
     }
    ],
    "order": 2250
@@ -20079,16 +20094,21 @@
    "owner": "Bharath",
    "assignee": "Claude",
    "reviewers": [
-    "Adi",
-    "Bharath"
+    "Bharath",
+    "Adi"
    ],
    "priority": "P3",
    "due": "",
-   "status": "hold",
+   "status": "review",
    "why": "Adi's 2026-10-14 call; gap found by the independent coverage review.",
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Research note",
+     "url": "workshop-plan/research/google-workspace-oauth-2026-10-14.md"
+    }
+   ],
    "blockers": [],
-   "needs_from_owner": "Paste the Google update you posted for Bhaskar (link or text) as a note on this task. I compare it with the research note and change the calendar-invite plan only if it adds something.",
+   "needs_from_owner": "",
    "tags": [
     "centre-vision"
    ],
@@ -20105,6 +20125,16 @@
     {
      "at": "2026-10-14T19:22:47",
      "msg": "Adi 2026-10-14: hold for now."
+    },
+    {
+     "ts": "2026-10-21T16:50:46+0530",
+     "who": "claude",
+     "note": "Post not found as of 2026-10-18 (sessions, second brain, ~/.config/tantra), so I added a dated update to the research note saying so; T-433, T-436 and T-437 unchanged. Committed 7bfa7efb and pushed to origin branch series-deck-finish (not main, no Pages publish). If the post ever shows up in a session or note, reopen T-444 and compare it then."
+    },
+    {
+     "ts": "2026-10-21T16:50:47+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi/Bharath → Bharath/Adi (by claude)."
     }
    ],
    "title": "Lane CV: Reconcile Bhaskar's Google Workspace OAuth post with the T-433 research",
@@ -20298,6 +20328,11 @@
      "ts": "2026-10-21T16:47:44+0530",
      "who": "claude",
      "note": "Verify pass: the Q11 copy was claimed but missing from the centre, so I added 'Keep your plan active to keep campaigns sending.' as help on the d3-launch card (app/src/lib/workshop-cards.ts, tsc clean, loaded back via tsx). Re-ran the approved GETs today: billing/me 404, api/v1/billing/me 401 (still unknown), and Clerk issuer and JWKS match spec section 11. Usetantra PRs stay patch files per Adi's 2026-10-11 rule (T-481 and T-482 are queued for Bharath)."
+    },
+    {
+     "ts": "2026-10-21T16:48:36+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-481."
     }
    ]
   },
