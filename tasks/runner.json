@@ -1,6 +1,30 @@
 {
  "history": [
   {
+   "ts": "2026-10-21T17:29:51+0530",
+   "task_id": "T-465",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
+   "ts": "2026-10-21T17:29:38+0530",
+   "task_id": "T-073",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
+   "ts": "2026-10-21T17:29:00+0530",
+   "task_id": "T-464",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-464 checks out and is back in review for Adi. Nothing needed fixing and I repeated no outward step.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Ledger shows everything reverted (done_when) | Done | `revert-ledger.md` on disk has 7 rows. All 7 say \"reverted\" and give GET evidence. It"
+  },
+  {
    "ts": "2026-10-21T17:26:44+0530",
    "task_id": "T-460",
    "mode": "feedback",
@@ -71,40 +95,16 @@
    "status": "queue",
    "result": "ok",
    "summary": "T-380 is still in queue with Nelbin. Nothing in Apps Script was trashed, because this runner has no browser and is barred from retrying.\n\n- **Spec matches the Orchestrator decision:** done. I read it back from tasks.json this run. It says there is one standalone 'Tantra funnel forms receiver' under "
-  },
-  {
-   "ts": "2026-10-21T16:35:12+0530",
-   "task_id": "T-477",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I checked T-477 again and it's back in review for Adi and Bhaskar. /masterclass and /vip are live on the mirror and neither has any refund wording.\n\n1. **No open publish hold: done.** The only hold in `tantra-round5-coord/LOG.md` was set on 10-06 at 03:30 and lifted at 03:41 the same day. No newer h"
-  },
-  {
-   "ts": "2026-10-20T17:51:59+0530",
-   "task_id": "T-469",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "ok",
-   "summary": "T-469 is now in `doing`: the content kit and a live review store are built and committed, but the 6-post test batch and the review studio publish are still to do. The fresh test session paused itself for 282 minutes on the usage guard, so I stopped it.\n\n**Completion check:**\n- **Content knowledge** "
-  },
-  {
-   "ts": "2026-10-20T17:43:36+0530",
-   "task_id": "T-468",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-468 is set to doing: the content dashboard and the OS kit's matching view are built and pass the new probe (83 of 83 checks), but nothing is pushed to main or depl"
   }
  ],
  "state": "working",
- "message": "Working on a task.",
- "task_id": "T-464",
+ "message": "Acting on 1 note(s) for T-468: Dashboard widened to one view: content metrics from Metricool, GA4, Wistia and Tantra beside the funnel",
+ "task_id": "T-468",
  "entries": [
-  "F-7559bf20"
+  "F-3a9694c8"
  ],
  "mode": "feedback",
- "started": "2026-10-21T17:27:34+0530",
+ "started": "2026-10-21T17:29:57+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,

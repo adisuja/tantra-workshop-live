@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T17:26:35+0530",
-  "version": 2737,
+  "updated": "2026-10-21T17:28:51+0530",
+  "version": 2739,
   "last_id": 482,
   "team": [
    {
@@ -21187,8 +21187,7 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi",
-    "Bharath"
+    "Adi"
    ],
    "priority": "P1",
    "due": "",
