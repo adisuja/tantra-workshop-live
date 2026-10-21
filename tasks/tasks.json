@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T17:13:20+0530",
-  "version": 2721,
+  "updated": "2026-10-21T17:16:11+0530",
+  "version": 2723,
   "last_id": 482,
   "team": [
    {
@@ -21668,16 +21668,16 @@
    ],
    "evidence": [
     {
+     "label": "main commit",
+     "url": "78bbbd67"
+    },
+    {
+     "label": "Harness run dir (t475-d0b)",
+     "url": "revops-os/tests/runs/t475-d0b/"
+    },
+    {
      "label": "Export excerpt (answers + state block)",
      "url": "revops-os/tests/runs/t475-d0/export-excerpt.txt"
-    },
-    {
-     "label": "Fix commit (local, series-deck-finish)",
-     "url": "65cc063a"
-    },
-    {
-     "label": "Harness run dir",
-     "url": "revops-os/tests/runs/t475-d0/"
     }
    ],
    "blockers": [],
@@ -21705,6 +21705,11 @@
      "ts": "2026-10-19T00:07:01+0530",
      "who": "claude",
      "note": "Fixed: the context prompt now also writes dom_picked, dom_own, google_sa_email and domain_proof to context/answers.json (app/src/lib/prompt-pack.ts centreAnswers, swept into commit 65cc063a on series-deck-finish). A fresh export from a private local centre (simulator only) shows all four in answers.json and ga4.measurement_id G-SIM7892 in the state block. Left for the next pass: read the D0.13 and D0.35 verdicts from harness run t475-d0 (started in the background, PID in /tmp/t475/harness.pid), push the fix onto origin/main as a new commit from a worktree off origin/main (this branch is 31 ahead and 6 behind, so no branch push), then move to review."
+    },
+    {
+     "ts": "2026-10-21T17:16:11+0530",
+     "who": "claude",
+     "note": "The fix is on origin/main as 78bbbd67 (only the centreAnswers hunk from 65cc063a, cherry-picked from a worktree off origin/main, tsc clean, pushed). The old t475-d0 run had died. A new run, t475-d0b, uses a fresh project, a private sim on port 18975 seeded from the t475 centre state, the fixed-export context prompt, and the current cards 0.01 d0-context, 0.08 start-domains (D0.17) and 0.22 d1-ga4 (D0.37) with the Fable reviewer. It is running detached (PID in revops-os/tests/runs/t475-d0b/harness.pid) but waits about 235 min, because the subscription window is at 65% against the 60% cap. Left for the next pass: read the three review.json verdicts, fix and rerun anything that fails, then set review."
     }
    ]
   },
