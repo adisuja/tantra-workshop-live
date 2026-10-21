@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T16:39:07+0530",
-  "version": 2693,
+  "updated": "2026-10-21T16:39:41+0530",
+  "version": 2695,
   "last_id": 480,
   "team": [
    {
@@ -21397,17 +21397,27 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "doing",
    "why": "The 2026-10-15 walk of the Tantra RevOps OS test attendee (fixture tantra-revops, local stack, simulator) finished 81 of 88 cards and 12 of 17 jobs.",
    "spec": "Report workshop-plan/research/walk-tantra-revops-2026-10-15.json. Not finished: d1-list-build, d2-twilio (Twilio not found), d2-live (Zoom polls not found), d2-close (locked, 2 fields), d2-ghl-workflows (GHL 404), d2-calendar-campaign (Tantra said {}), d2-outreach-sheet (simulate 500 and sheet not shared), d3-launch (waits on the calendar campaign); ga4-gate failed. 46 findings are walker expectations: OPTION_CARDS lacks the Zoom path for a fixture that picks Zoom, and the new content cards.",
    "done_when": [
     "A clean walk with the tantra-revops fixture, or each remaining finding explained as simulator-only"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "walker fix",
+     "url": "app/scripts/walk-ui.mjs"
+    },
+    {
+     "label": "rerun log",
+     "url": "/tmp/t471/walk.log"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "tags": [
@@ -21418,6 +21428,16 @@
      "ts": "2026-10-15 07:32",
      "who": "system",
      "note": "created from the walk"
+    },
+    {
+     "ts": "2026-10-21T16:39:41+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-21T16:39:41+0530",
+     "who": "claude",
+     "note": "Found the main cause: the 2026-10-15 walk ran on the launchd stack, which runs the Oct 12 copy in ~/tantra-onboarding-v2. Its simulator has no GA4 Data, Twilio balance or GHL workflow routes, and this checkout's simulator has all three. I fixed the walker so it fills the fields a pick opens, which was the d2-close cause (commit d104b76c), and started a fresh walk from this checkout on a private stack (centre 8940, sim 8942, funnel 8944) that writes /tmp/walk/t471. Left to do: read that report, patch any simulator gaps that remain, run both tsc checks, push main, add the LOG line, then review."
     }
    ]
   },
