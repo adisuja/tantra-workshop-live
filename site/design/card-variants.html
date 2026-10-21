@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Task card: four directions | Tantra RevOps Workshop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --wall: #f2f1ed; --ink: #17181c; --ink-2: #4a4c55; --marker: #1d4ed8; --marker-hover: #1a43bb; --paper: #fffefb;
+  --f-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --f-ui: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--wall); color: var(--ink); font-family: var(--f-ui); font-size: 17px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+::selection { background: #ffe27a; color: var(--ink); }
+:focus-visible { outline: 2.5px solid var(--marker); outline-offset: 3px; border-radius: 6px; }
+button { font: inherit; color: inherit; }
+b { font-weight: 700; }
+svg.i { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- review chrome (not part of any design) ---------- */
+.rig { position: sticky; top: 0; z-index: 50; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; padding: 12px clamp(14px, 3vw, 32px); background: #17181c; color: #f2f1ed; font-size: 14px; }
+.rig .grp { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.rig .lab { color: #a7a8ae; font-weight: 600; margin-right: 4px; }
+.rig button { border: 1px solid #3a3b42; background: transparent; color: #f2f1ed; padding: 6px 12px; border-radius: 999px; cursor: pointer; font-weight: 600; font-size: 13.5px; }
+.rig button[aria-pressed="true"] { background: #f2f1ed; color: #17181c; border-color: #f2f1ed; }
+.rig button:hover:not([aria-pressed="true"]) { border-color: #f2f1ed; }
+.rig .say { flex-basis: 100%; color: #cfd0d4; font-size: 14px; max-width: 110ch; }
+.rig .say b { color: #fff; }
+
+/* ---------- the page frame, as in the centre ---------- */
+.top { display: flex; justify-content: space-between; align-items: center; padding: 22px clamp(20px, 4vw, 48px); }
+.brand { display: flex; align-items: center; gap: 14px; font-family: var(--f-display); font-weight: 700; font-size: 17px; letter-spacing: -0.01em; }
+.brand .bar { width: 1px; height: 20px; background: #c9c8c2; }
+.pb { display: inline-flex; align-items: center; gap: 8px; background: var(--ink); color: #fff; text-decoration: none; font-weight: 650; font-size: 14.5px; padding: 11px 18px; border-radius: 999px; }
+.frame { display: grid; grid-template-columns: 262px minmax(0, 1fr) 290px; gap: 0 clamp(24px, 3vw, 40px); max-width: 1440px; margin: 8px auto 0; padding: 0 clamp(20px, 3vw, 48px) 120px; align-items: start; }
+.list { position: sticky; top: 80px; padding-top: 18px; font-size: 13.5px; }
+.list h2 { display: flex; justify-content: space-between; margin: 0 0 10px; font-size: 13.5px; font-weight: 700; }
+.list h2 span { color: var(--ink-2); font-weight: 600; }
+.list ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.list li { display: grid; grid-template-columns: 16px minmax(0, 1fr); gap: 8px; padding: 6px 8px; border-radius: 6px; color: var(--ink); }
+.list li .c { color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.list li[data-on] { background: #e4e2db; font-weight: 600; }
+.list li svg { width: 14px; height: 14px; margin-top: 3px; }
+.rail { padding-top: 18px; font-size: 14.5px; color: var(--ink-2); }
+.rail .o { font-size: 17px; color: var(--ink); font-weight: 500; line-height: 1.45; margin: 0 0 18px; }
+.rail .k { font-size: 12.5px; font-weight: 700; color: var(--ink-2); margin: 0 0 2px; }
+.rail p { margin: 0 0 14px; }
+.rail hr { border: 0; border-top: 1px solid #dddbd3; margin: 18px 0; }
+.rail .you b { color: var(--ink); }
+.stage { display: flex; flex-direction: column; align-items: center; padding-top: 18px; min-width: 0; }
+.backrow { display: flex; justify-content: center; align-items: center; gap: 26px; margin-top: 18px; }
+.back { background: none; border: 0; color: var(--ink-2); font-weight: 600; cursor: pointer; padding: 10px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; border-radius: 12px; background: var(--marker); color: #fff; font-weight: 700; font-size: 16px; padding: 14px 22px; min-height: 50px; cursor: pointer; transition: background 160ms var(--ease), transform 160ms var(--ease); white-space: nowrap; }
+.btn:hover { background: var(--marker-hover); }
+.btn:active { transform: translateY(1px); }
+.btn[disabled] { background: #c9cad1; color: #5b5d66; cursor: not-allowed; }
+.report { margin-top: 16px; background: none; border: 0; padding: 0; font-size: 13.5px; color: var(--ink-2); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.serif { font-family: var(--serif); }
+.md b { font-weight: 700; }
+
+/* shared field pieces */
+.opts { display: grid; gap: 10px; margin: 6px 0 0; }
+.opt { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 12px; align-items: start; text-align: left; width: 100%; padding: 14px 16px; border-radius: 12px; border: 1.5px solid color-mix(in srgb, var(--ink) 16%, transparent); background: color-mix(in srgb, #fff 70%, transparent); cursor: pointer; transition: border-color 160ms var(--ease), background 160ms var(--ease); }
+.opt:hover { border-color: color-mix(in srgb, var(--ink) 40%, transparent); }
+.opt[aria-checked="true"] { border-color: var(--ink); background: #fff; }
+.opt .dot { width: 20px; height: 20px; border-radius: 50%; border: 1.75px solid color-mix(in srgb, var(--ink) 55%, transparent); margin-top: 2px; display: grid; place-items: center; }
+.opt[aria-checked="true"] .dot::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--ink); }
+.opt .ol { font-weight: 700; font-size: 16px; }
+.opt .on { display: block; font-size: 14.5px; color: var(--ink-2); margin-top: 2px; line-height: 1.45; }
+.inp { display: grid; gap: 6px; margin: 0 0 14px; }
+.inp label { font-weight: 650; font-size: 14.5px; }
+.inp input { font: inherit; font-size: 16px; padding: 12px 14px; border-radius: 10px; border: 1.5px solid color-mix(in srgb, var(--ink) 22%, transparent); background: #fff; color: var(--ink); }
+.inp input::placeholder { color: #75777f; }
+.inp input:focus { outline: none; border-color: var(--marker); box-shadow: 0 0 0 3px color-mix(in srgb, var(--marker) 22%, transparent); }
+.uses { font-size: 14.5px; color: var(--ink-2); margin: 4px 0 0; line-height: 1.5; }
+
+/* ================= CURRENT (the live card, for comparison) ================= */
+.v-now { position: relative; width: min(720px, 100%); background: var(--hue); border-radius: 4px; padding: 44px 52px 36px; box-shadow: 0 1px 2px rgba(23,24,28,.06), 0 22px 40px -18px rgba(23,24,28,.32); }
+.v-now .meta { display: flex; justify-content: space-between; margin-bottom: 18px; }
+.v-now .code { font-family: var(--f-display); font-weight: 700; font-size: 15px; }
+.v-now .time { font-size: 14.5px; font-weight: 500; }
+.v-now .pv { margin: 0 0 14px; padding: 10px 14px; border-radius: 10px; background: rgba(255,255,255,.65); font-family: var(--serif); font-size: 21px; font-weight: 600; }
+.v-now h1 { font-family: var(--f-display); font-weight: 800; letter-spacing: -0.025em; line-height: 1.08; font-size: clamp(34px, 4.6vw, 52px); margin: 0 0 16px; text-wrap: balance; }
+.v-now .why { font-family: var(--serif); font-size: 21px; line-height: 1.6; margin: 0 0 18px; color: color-mix(in srgb, var(--ink) 80%, var(--hue)); }
+.v-now ol { list-style: none; counter-reset: s; margin: 6px 0 0; padding: 0; display: grid; gap: 10px; }
+.v-now ol li { counter-increment: s; display: grid; grid-template-columns: 30px 1fr; font-family: var(--serif); font-size: 21px; line-height: 1.6; }
+.v-now ol li::before { content: counter(s); font-family: var(--f-display); font-weight: 700; font-size: 18px; color: color-mix(in srgb, var(--ink) 55%, var(--hue)); line-height: 1.6; }
+.v-now .tear { margin: 26px 0 16px; border-top: 1.5px dashed color-mix(in srgb, var(--ink) 28%, var(--hue)); }
+.v-now .done { display: flex; gap: 10px; font-family: var(--serif); font-size: 21px; line-height: 1.6; }
+.v-now .done svg { margin-top: 8px; }
+.v-now .fieldwrap, .v-now .inputs { margin-top: 22px; }
+.v-now-cta { position: sticky; bottom: 22px; margin-top: -26px; z-index: 5; }
+
+/* ================= A: TICKET (colour restrained to a stub) ================= */
+.v-a { width: min(700px, 100%); background: var(--paper); border-radius: 18px; box-shadow: 0 1px 2px rgba(23,24,28,.05), 0 24px 48px -26px rgba(23,24,28,.35); overflow: hidden; }
+.v-a .stub { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 32px; background: var(--hue); font-weight: 650; font-size: 14.5px; }
+.v-a .stub .id { font-family: var(--f-display); font-weight: 700; letter-spacing: 0.01em; font-variant-numeric: tabular-nums; }
+.v-a .stub .t { display: inline-flex; align-items: center; gap: 6px; color: color-mix(in srgb, var(--ink) 80%, var(--hue)); }
+.v-a .body { padding: 34px 40px 30px; }
+.v-a .status { display: flex; gap: 10px; align-items: flex-start; margin: 0 0 22px; padding: 12px 16px; border-radius: 12px; background: color-mix(in srgb, var(--hue) 28%, #fff); font-size: 15.5px; line-height: 1.45; }
+.v-a .status b { white-space: nowrap; }
+.v-a .status svg { margin-top: 1px; }
+.v-a h1 { font-family: var(--f-display); font-weight: 800; font-size: clamp(30px, 3.4vw, 40px); line-height: 1.1; letter-spacing: -0.028em; margin: 0 0 14px; text-wrap: balance; }
+.v-a .why { font-family: var(--serif); font-size: 19px; line-height: 1.6; color: var(--ink-2); margin: 0 0 22px; max-width: 58ch; }
+.v-a ol { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; gap: 14px; max-width: 60ch; }
+.v-a ol li { counter-increment: s; display: grid; grid-template-columns: 34px minmax(0, 1fr); font-family: var(--serif); font-size: 19px; line-height: 1.6; }
+.v-a ol li::before { content: counter(s); display: grid; place-items: center; width: 24px; height: 24px; margin-top: 4px; border-radius: 50%; background: color-mix(in srgb, var(--hue) 55%, #fff); font-family: var(--f-display); font-weight: 700; font-size: 13.5px; }
+.v-a .fieldwrap, .v-a .inputs { margin-top: 26px; }
+.v-a .perf { position: relative; height: 0; border-top: 2px dashed color-mix(in srgb, var(--ink) 18%, transparent); margin: 0 22px; }
+.v-a .perf::before, .v-a .perf::after { content: ""; position: absolute; top: -13px; width: 24px; height: 24px; border-radius: 50%; background: var(--wall); }
+.v-a .perf::before { left: -34px; } .v-a .perf::after { right: -34px; }
+.v-a .foot { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 22px 40px 26px; }
+.v-a .dw { display: flex; gap: 10px; align-items: flex-start; font-size: 15.5px; line-height: 1.45; color: var(--ink-2); }
+.v-a .dw b { color: var(--ink); }
+.v-a .dw svg { margin-top: 1px; }
+.v-a .rep { padding: 0 40px 22px; margin-top: -8px; }
+
+/* ================= B: RUN SHEET (steps are the structure) ================= */
+.v-b { width: min(700px, 100%); background: color-mix(in srgb, var(--hue) 34%, #fff); border-radius: 16px; box-shadow: 0 1px 2px rgba(23,24,28,.05), 0 20px 40px -24px rgba(23,24,28,.3); padding: 30px 36px 28px; }
+.v-b .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; font-size: 14px; font-weight: 650; color: color-mix(in srgb, var(--ink) 78%, var(--hue)); margin-bottom: 12px; }
+.v-b .meta .id { font-family: var(--f-display); font-weight: 700; color: var(--ink); background: var(--hue); padding: 3px 10px; border-radius: 999px; font-variant-numeric: tabular-nums; }
+.v-b .meta .prog { margin-left: auto; font-variant-numeric: tabular-nums; }
+.v-b h1 { font-family: var(--f-display); font-weight: 800; font-size: clamp(28px, 3vw, 34px); line-height: 1.12; letter-spacing: -0.025em; margin: 0 0 10px; text-wrap: balance; }
+.v-b .why { font-family: var(--serif); font-size: 18px; line-height: 1.55; color: var(--ink-2); margin: 0 0 18px; max-width: 60ch; }
+.v-b .rows { list-style: none; margin: 8px 0 0; padding: 0; border-top: 1px solid color-mix(in srgb, var(--ink) 14%, transparent); }
+.v-b .row { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 14px; align-items: start; padding: 16px 6px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, transparent); font-family: var(--serif); font-size: 18.5px; line-height: 1.55; }
+.v-b .row.tick { cursor: pointer; border-radius: 8px; transition: background 160ms var(--ease); }
+.v-b .row.tick:hover { background: color-mix(in srgb, var(--hue) 45%, #fff); }
+.v-b .box { width: 24px; height: 24px; margin-top: 2px; border-radius: 7px; border: 1.75px solid color-mix(in srgb, var(--ink) 45%, transparent); background: #fff; display: grid; place-items: center; transition: background 160ms var(--ease), border-color 160ms var(--ease); }
+.v-b .row[aria-checked="true"] .box { background: var(--ink); border-color: var(--ink); color: #fff; }
+.v-b .row[aria-checked="true"] .txt { color: color-mix(in srgb, var(--ink) 55%, transparent); }
+.v-b .box svg { width: 15px; height: 15px; stroke-width: 2.4; opacity: 0; }
+.v-b .row[aria-checked="true"] .box svg { opacity: 1; }
+.v-b .row.wait { font-family: var(--f-ui); font-size: 15px; color: var(--ink-2); }
+.v-b .row.wait .box { border-style: dashed; background: transparent; }
+.v-b .row.field { grid-template-columns: 1fr; }
+.v-b .row .n { font-family: var(--f-display); font-weight: 700; font-size: 16px; color: color-mix(in srgb, var(--ink) 50%, transparent); text-align: center; line-height: 1.75; }
+.v-b .finish { display: flex; flex-wrap: wrap; gap: 14px 18px; align-items: center; justify-content: space-between; margin-top: 22px; }
+.v-b .finish p { margin: 0; display: flex; gap: 10px; align-items: flex-start; font-size: 15.5px; line-height: 1.45; color: var(--ink-2); max-width: 40ch; }
+.v-b .finish p b { color: var(--ink); }
+
+/* ================= C: SPREAD (two pages side by side) ================= */
+.v-c { width: min(880px, 100%); display: grid; grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); border-radius: 14px; overflow: hidden; box-shadow: 0 1px 2px rgba(23,24,28,.06), 0 26px 50px -26px rgba(23,24,28,.38); }
+.v-c .lp { background: var(--hue); padding: 34px 32px 30px; }
+.v-c .lpin { position: sticky; top: 96px; display: flex; flex-direction: column; gap: 14px; }
+.v-c .lp .day { font-weight: 700; font-size: 14px; display: flex; justify-content: space-between; color: color-mix(in srgb, var(--ink) 78%, var(--hue)); }
+.v-c .lp .num { font-family: var(--f-display); font-weight: 800; font-size: clamp(76px, 9vw, 112px); line-height: 0.85; letter-spacing: -0.045em; color: color-mix(in srgb, var(--ink) 88%, var(--hue)); font-variant-numeric: tabular-nums; margin-top: 6px; }
+.v-c .lp h1 { font-family: var(--f-display); font-weight: 800; font-size: clamp(25px, 2.5vw, 30px); line-height: 1.12; letter-spacing: -0.022em; margin: 6px 0 0; text-wrap: balance; }
+.v-c .lp .why { font-family: var(--serif); font-size: 16.5px; line-height: 1.55; margin: 0; color: color-mix(in srgb, var(--ink) 82%, var(--hue)); }
+.v-c .lp .status { margin-top: 10px; display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 10px; background: rgba(255,255,255,.62); font-size: 14.5px; line-height: 1.45; }
+.v-c .rp { position: relative; background: var(--paper); padding: 34px 36px 26px; display: flex; flex-direction: column; }
+.v-c .rp::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 22px; background: linear-gradient(90deg, rgba(23,24,28,.07), rgba(23,24,28,0)); pointer-events: none; }
+.v-c .rp .k { font-weight: 700; font-size: 13px; color: var(--ink-2); margin: 0 0 10px; }
+.v-c ol { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; gap: 14px; }
+.v-c ol li { counter-increment: s; display: grid; grid-template-columns: 28px minmax(0, 1fr); font-family: var(--serif); font-size: 18px; line-height: 1.55; }
+.v-c ol li::before { content: counter(s); font-family: var(--f-display); font-weight: 700; font-size: 16px; color: color-mix(in srgb, var(--ink) 50%, transparent); line-height: 1.75; }
+.v-c .fieldwrap, .v-c .inputs { margin-top: 22px; }
+.v-c .end { margin-top: auto; padding-top: 24px; }
+.v-c .dw { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.45; color: var(--ink-2); margin: 0 0 14px; padding-top: 18px; border-top: 1px solid #e8e6df; }
+.v-c .dw b { color: var(--ink); }
+.v-c .end .btn { width: 100%; }
+
+/* ================= D: OPEN PAGE (no container) ================= */
+.v-d { width: min(680px, 100%); padding: 6px 0 0; }
+.v-d .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-size: 14px; font-weight: 650; color: var(--ink-2); }
+.v-d .meta .sw { width: 12px; height: 12px; border-radius: 3px; background: var(--hue); box-shadow: inset 0 0 0 1px rgba(23,24,28,.15); }
+.v-d .meta .id { font-family: var(--f-display); font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+.v-d h1 { font-family: var(--f-display); font-weight: 800; font-size: clamp(38px, 5vw, 60px); line-height: 1.04; letter-spacing: -0.035em; margin: 16px 0 18px; text-wrap: balance; }
+.v-d h1 span { background: linear-gradient(transparent 60%, var(--hue) 60%, var(--hue) 94%, transparent 94%); -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 4px; margin: 0 -4px; }
+.v-d .status { display: flex; gap: 10px; align-items: flex-start; font-size: 15.5px; line-height: 1.45; color: var(--ink); margin: 0 0 22px; }
+.v-d .status .chip { display: inline-flex; align-items: center; gap: 6px; flex: none; padding: 3px 10px; border-radius: 999px; background: var(--ink); color: #fff; font-size: 13px; font-weight: 700; }
+.v-d .why { font-family: var(--serif); font-size: 20px; line-height: 1.6; color: var(--ink-2); margin: 0 0 26px; max-width: 58ch; }
+.v-d ol { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; gap: 22px; max-width: 58ch; }
+.v-d ol li { counter-increment: s; position: relative; font-family: var(--serif); font-size: 21px; line-height: 1.6; padding-left: 0; }
+.v-d ol li::before { content: counter(s); position: absolute; left: -56px; top: -2px; width: 40px; text-align: right; font-family: var(--f-display); font-weight: 800; font-size: 32px; line-height: 1.2; letter-spacing: -0.03em; color: color-mix(in srgb, var(--ink) 30%, transparent); }
+.v-d .fieldwrap, .v-d .inputs { margin-top: 30px; }
+.v-d .bar { position: sticky; bottom: 18px; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 40px; padding: 14px 14px 14px 22px; border-radius: 18px; background: #fff; box-shadow: 0 1px 2px rgba(23,24,28,.06), 0 18px 40px -16px rgba(23,24,28,.35); }
+.v-d .bar p { margin: 0; display: flex; gap: 10px; align-items: flex-start; font-size: 15.5px; line-height: 1.45; color: var(--ink-2); }
+.v-d .bar p b { color: var(--ink); }
+.v-d .rep { margin-top: 14px; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1180px) { .frame { grid-template-columns: minmax(0, 1fr) 270px; } .list { display: none; } }
+@media (max-width: 900px) {
+  .frame { grid-template-columns: minmax(0, 1fr); }
+  .rail { display: none; }
+  .v-c { grid-template-columns: 1fr; }
+  .v-c .lp .num { font-size: 72px; }
+}
+@media (max-width: 600px) {
+  .top .pb { display: none; }
+  .rig .say { display: none; }
+  .v-now { padding: 26px 22px 24px; }
+  .v-a .stub, .v-a .body, .v-a .foot, .v-a .rep { padding-left: 22px; padding-right: 22px; }
+  .v-a .foot { flex-direction: column; align-items: stretch; }
+  .v-a .perf { margin: 0 10px; } .v-a .perf::before { left: -22px; } .v-a .perf::after { right: -22px; }
+  .v-b { padding: 24px 20px; }
+  .v-c .lp, .v-c .rp { padding: 26px 22px; }
+  .v-d ol li::before { position: static; display: block; text-align: left; font-size: 24px; margin-bottom: 2px; width: auto; }
+  .v-d .bar { flex-direction: column; align-items: stretch; padding: 16px; }
+  .btn { width: 100%; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .stage:not([data-still]) > * { animation: rise 520ms var(--ease) both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+}
+</style>
+</head>
+<body>
+<div class="rig" role="toolbar" aria-label="Review controls">
+  <div class="grp" id="vgrp"><span class="lab">Direction</span></div>
+  <div class="grp" id="cgrp"><span class="lab">Card</span></div>
+  <p class="say" id="say"></p>
+</div>
+<header class="top">
+  <div class="brand">TANTRA <span class="bar"></span> RevOps Workshop</div>
+  <a class="pb" href="#" onclick="return false">Tantra RevOps Playbook <svg class="i" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+</header>
+<div class="frame">
+  <aside class="list" id="list" aria-label="Tasks"></aside>
+  <main class="stage" id="stage"></main>
+  <aside class="rail" id="rail" aria-label="Notes on this card"></aside>
+</div>
+<script>
+const DATA = {"cards": {"start-groups": {"id": "start-groups", "code": "D0·02", "day": 0, "title": "Join the two WhatsApp groups", "why": null, "steps": ["Join the announcements group: session links and changes arrive here.", "Join your cohort group: ask questions and post each day's build for review."], "done": "You're in both groups.", "time": "2 min", "kind": "session", "outcome": "You get session links and changes the moment they go out, and you have a place to get each day's build reviewed.", "skip": "You miss a changed join link, and your builds go unreviewed while the cohort is still running.", "you": ["Join both groups from the phone you actually check.", "Post each day's build in the cohort group for review."], "status": "Invite link arrives before Day 1."}, "start-os-assistant": {"id": "start-os-assistant", "code": "D0·04", "day": 0, "title": "Pick the AI assistant that builds your funnel", "why": "From Day 0 to Day 3 your own AI builds your funnel, your outreach and your CRM. The plan you already pay for decides which one: Claude Pro and Max include Claude Code, and ChatGPT Plus and Pro include Codex. Both run on your computer, so they can read your folder and call every tool for you.", "steps": ["Pick the plan you already pay for. Claude Pro or Max: Claude Code. ChatGPT Plus or Pro: Codex.", "Pick a chat-only project only if you cannot install anything on this computer. It still finishes every task, but you do the pasting and clicking it describes."], "done": "Picked. The next cards set it up.", "time": "2 min", "kind": "decide", "outcome": "You know which AI builds your funnel for the next three days, and it is one you already pay for.", "skip": "You start Day 2 in a browser chat that cannot run anything, and spend the afternoon pasting files a local agent would have written and deployed for you.", "you": ["Pick the assistant that comes with the plan you already pay for.", "Pick a chat-only project only when you cannot install anything on this computer."], "field": {"label": "The assistant you will run your prompts in", "options": [{"label": "Claude Code (Claude Pro or Max)", "note": "Runs on your computer: in the Claude desktop app's Code tab or in a terminal. Reads your folder, runs the scripts and calls every tool's API for you. Included in Claude Pro and Max; the free plan has no Claude Code."}, {"label": "Codex (ChatGPT Plus or Pro)", "note": "Runs on your computer: in the ChatGPT desktop app or in a terminal. Reads your folder, runs the scripts and calls every tool's API for you. Included in ChatGPT Plus and Pro."}, {"label": "Claude project, chat only (fallback)", "note": "Fallback. Works in the browser and cannot run anything: it writes every file and gives you the exact clicks, and you paste and press. Claude Pro or above."}, {"label": "ChatGPT project, chat only (fallback)", "note": "Fallback. Works in the browser and cannot touch your files: it writes every file and gives you the exact clicks, and you paste and press. ChatGPT Plus or above."}]}}, "d2-meta": {"id": "d2-meta", "code": "D2·32", "day": 2, "title": "Connect your Meta ad account", "why": null, "steps": ["You need a Meta business portfolio with an ad account that has a payment method, a Facebook Page, and a pixel (Events Manager calls it a dataset). Create any that are missing at **business.facebook.com**.", "Open **Business Settings → Users → System users → Add** and make an **Admin** system user. Click **Assign assets** and give it your ad account, your pixel and your Page, each with **full control**.", "Click **Generate new token**, pick your app (no app yet? create one at developers.facebook.com, type **Business**) and tick **ads_management**, **ads_read**, **business_management**, **leads_retrieval**, **pages_show_list**, **pages_read_engagement**, **pages_manage_ads** and **pages_manage_metadata**. Copy the token.", "Paste it below with your ad account ID (the number after **act=** in the Ads Manager address) and your pixel ID (under the dataset's name in Events Manager)."], "done": "Connected. The agent can build your paused campaign and send every registration to Meta.", "time": "10 min", "kind": "connect", "outcome": "Your Meta ad account connected, so the agent can build a paused campaign and send every registration back to Meta.", "skip": "Your paid ads have no campaign built for them, and Meta never learns which clicks became registrations.", "you": ["Create the business portfolio, ad account with a payment method, Facebook Page and pixel if any are missing.", "Make an Admin system user and give it full control of the ad account, pixel and Page.", "Generate the token and paste it with your ad account ID and pixel ID.", "Switch the campaign on in Ads Manager when you are ready. The agent never does."], "inputs": [{"label": "System user access token", "secret": true, "placeholder": ""}, {"label": "Ad account ID", "secret": false, "placeholder": "the number after act="}, {"label": "Pixel (dataset) ID", "secret": false, "placeholder": "15 or 16 digits"}, {"label": "Facebook Page ID (only if the system user has more than one Page)", "secret": false, "placeholder": ""}, {"label": "App secret (instant form leads arrive the second they're sent, not within 10 minutes)", "secret": true, "placeholder": ""}], "uses": "Checks your pixel is on your pages and sends every registration to Meta from your funnel's server. Builds your retargeting pool, a registrants audience and a lookalike, then your campaign, ad set and two ads, all paused. It never switches anything on and never spends: you do that in Ads Manager. It reads your weekly cost per registration and, if you pick it, your instant form leads.", "action": "Connect Meta"}}, "lists": {"0": [{"code": "D0·01", "title": "Watch the welcome", "id": "start-welcome"}, {"code": "D0·02", "title": "Join the two WhatsApp groups", "id": "start-groups"}, {"code": "D0·03", "title": "Add the three sessions to your calendar", "id": "start-calendar"}, {"code": "D0·04", "title": "Pick the AI assistant that builds your funnel", "id": "start-os-assistant"}, {"code": "D0·05", "title": "Install your assistant and what it runs on", "id": "start-os-install"}, {"code": "D0·06", "title": "Download Tantra RevOps OS", "id": "start-os-download"}, {"code": "D0·07", "title": "Open the folder in your assistant", "id": "start-os-open"}, {"code": "D0·08", "title": "Add the skills, plugin and connections", "id": "start-os-skills"}, {"code": "D0·09", "title": "Set up Tantra RevOps OS", "id": "start-os-setup"}, {"code": "D0·10", "title": "Describe your business", "id": "start-business"}, {"code": "D0·11", "title": "Set your sending plan", "id": "start-sending"}], "2": [{"code": "D2·01", "title": "Join the Day 2 session", "id": "d2-session"}, {"code": "D2·02", "title": "Plan Your Day 2", "id": "d2-daystart"}, {"code": "D2·03", "title": "Confirm your sending domains are authenticated and warming", "id": "d2-warmup"}, {"code": "D2·04", "title": "Pick the channels you'll run", "id": "d2-channels"}, {"code": "D2·05", "title": "Approve your registration and thank-you pages", "id": "d2-page"}, {"code": "D2·06", "title": "Create your LinkedIn event", "id": "d2-linkedin-event"}, {"code": "D2·07", "title": "Record Part 1 and Part 2", "id": "d2-record"}, {"code": "D2·08", "title": "Approve your Part 1 and Part 2 pages", "id": "d2-page-rsp"}, {"code": "D2·09", "title": "Approve your SMS sender", "id": "d2-twilio"}, {"code": "D2·10", "title": "Approve every reminder and follow-up", "id": "d2-reminders"}, {"code": "D2·11", "title": "Approve your depth-triggered follow-ups", "id": "d2-reminders-rsp"}]}};
+const HUE = { 0: "#FFE27A", 1: "#FFB59E", 2: "#AFD3FF", 3: "#AEE7BD" };
+const SMALL = new Set(["a", "an", "and", "as", "at", "but", "by", "for", "in", "of", "on", "or", "the", "to", "with"]);
+const tc = (s) => s.split(" ").map((w, i) => i && SMALL.has(w) ? w : w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const md = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
+const I = {
+  clock: '<svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>',
+  wait: '<svg class="i" viewBox="0 0 24 24"><path d="M7 3.5h10M7 20.5h10M8 3.5c0 4 8 5 8 8.5s-8 4.5-8 8.5M16 3.5c0 4-8 5-8 8.5s8 4.5 8 8.5"/></svg>',
+  ring: '<svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5"/></svg>',
+  flag: '<svg class="i" viewBox="0 0 24 24"><path d="M5.5 21V4.5M5.5 4.5h11l-2.2 4 2.2 4h-11"/></svg>',
+  check: '<svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+  arrow: '<svg class="i" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></svg>',
+};
+const VARIANTS = [
+  ["now", "Current", "<b>Current card</b>, rebuilt here for side by side review. The next-task button floats outside the card, Done when sits below the fold, and the full day colour fills the whole slab."],
+  ["a", "A · Ticket", "<b>A, Ticket. Colour restrained.</b> A paper card; the day colour lives only on the stub at the top. Not-ready news gets its own line. The finish line and the action sit together on the tear-off foot, inside the card."],
+  ["b", "B · Run sheet", "<b>B, Run sheet. Steps become the structure.</b> Every step is a row you tick. A not-ready step says so on its own row. The button wakes up when every row is ticked, so done means done."],
+  ["c", "C · Spread", "<b>C, Spread. Two pages side by side.</b> The day-colour page says what and why, with the task number large enough to find again. The white page holds only the doing, ending in the action."],
+  ["d", "D · Open page", "<b>D, Open page. No container.</b> The task reads like a page of the playbook: the title highlighted in the day colour, steps hung on big numerals, and the finish line pinned in one bar that follows you down."],
+];
+const CARDS = [["start-groups", "WhatsApp groups (simple)"], ["start-os-assistant", "Pick your assistant (decision)"], ["d2-meta", "Connect Meta (Day 2, connect)"]];
+const q = new URLSearchParams(location.search);
+let V = VARIANTS.some((v) => v[0] === q.get("v")) ? q.get("v") : "a";
+let C = CARDS.some((c) => c[0] === q.get("card")) ? q.get("card") : "start-groups";
+let picked = 0, ticks = {}, still = false;
+
+function action(c) { return c.action || (c.kind === "decide" ? "Save and continue" : "Mark done and continue"); }
+function fieldHtml(c, cls) {
+  if (c.field) return `<div class="fieldwrap"><p style="margin:0 0 10px;font-weight:700;font-size:15px">${esc(c.field.label)}</p><div class="opts" role="radiogroup" aria-label="${esc(c.field.label)}">${c.field.options.map((o, i) => `<button type="button" class="opt" role="radio" aria-checked="${i === picked}" data-pick="${i}"><span class="dot"></span><span><span class="ol">${esc(o.label)}</span><span class="on">${esc(o.note)}</span></span></button>`).join("")}</div></div>`;
+  if (c.inputs) return `<div class="inputs">${c.inputs.map((f, i) => `<div class="inp"><label for="in${i}">${esc(f.label)}</label><input id="in${i}" ${f.secret ? 'type="password" autocomplete="off"' : 'type="text"'} placeholder="${esc(f.placeholder || "")}"></div>`).join("")}<p class="uses">${esc(c.uses)}</p></div>`;
+  return "";
+}
+const steps = (c) => `<ol>${c.steps.map((s) => `<li><span class="md">${md(s)}</span></li>`).join("")}</ol>`;
+const num = (c) => c.code.split("·")[1];
+
+const R = {
+  now: (c) => `<article class="v-now"><div class="meta"><span class="code">${c.code}</span><span class="time">You: ${c.time}</span></div>${c.status ? `<p class="pv">${esc(c.status)}</p>` : ""}<h1>${esc(tc(c.title))}</h1>${c.why ? `<p class="why">${esc(c.why)}</p>` : ""}${steps(c)}${fieldHtml(c)}<div class="tear"></div><p class="done">${I.ring}<span><b>Done when:</b> ${esc(c.done)}</span></p><button class="report" type="button">Report a problem</button></article><div class="v-now-cta"><div class="backrow"><button class="back" type="button">Back</button><button class="btn" type="button">Go to my next task</button></div></div>`,
+  a: (c) => `<article class="v-a"><div class="stub"><span class="id">Day ${c.day} · Task ${num(c)}</span><span class="t">${I.clock}${c.time}</span></div><div class="body">${c.status ? `<p class="status">${I.wait}<span><b>Not ready yet.</b> ${esc(c.status)}</span></p>` : ""}<h1>${esc(tc(c.title))}</h1>${c.why ? `<p class="why">${esc(c.why)}</p>` : ""}${steps(c)}${fieldHtml(c)}</div><div class="perf" aria-hidden="true"></div><div class="foot"><p class="dw" style="margin:0">${I.flag}<span><b>Done when</b> ${esc(c.done)}</span></p><button class="btn" type="button">${esc(action(c))} ${I.arrow}</button></div><div class="rep"><button class="report" type="button" style="margin:0">Report a problem</button></div></article><div class="backrow"><button class="back" type="button">Back</button></div>`,
+  b: (c) => {
+    const tickable = c.kind === "session";
+    const n = c.steps.length, got = c.steps.filter((_, i) => ticks[i]).length;
+    const ready = tickable ? got === n : true;
+    const rows = c.steps.map((s, i) => tickable
+      ? `<li class="row tick" role="checkbox" tabindex="0" aria-checked="${!!ticks[i]}" data-tick="${i}"><span class="box">${I.check}</span><span class="txt md">${md(s)}</span></li>`
+      : `<li class="row"><span class="n">${i + 1}</span><span class="txt md">${md(s)}</span></li>`).join("");
+    const wait = c.status ? `<li class="row wait"><span class="box"></span><span><b>Waiting on the team.</b> ${esc(c.status)} You can tick these once it lands.</span></li>` : "";
+    const field = c.field || c.inputs ? `<li class="row field">${fieldHtml(c)}</li>` : "";
+    return `<article class="v-b"><div class="meta"><span class="id">${c.code}</span><span>${I.clock.replace('class="i"', 'class="i" style="width:15px;height:15px;vertical-align:-3px"')} ${c.time}</span>${tickable ? `<span class="prog">${got} of ${n} steps</span>` : ""}</div><h1>${esc(tc(c.title))}</h1>${c.why ? `<p class="why">${esc(c.why)}</p>` : ""}<ul class="rows">${wait}${rows}${field}</ul><div class="finish"><p>${I.flag}<span><b>Done when</b> ${esc(c.done)}</span></p><button class="btn" type="button" ${ready ? "" : "disabled"}>${ready ? esc(action(c)) : `Tick ${n - got} more ${n - got === 1 ? "step" : "steps"}`}</button></div><button class="report" type="button">Report a problem</button></article><div class="backrow"><button class="back" type="button">Back</button></div>`;
+  },
+  c: (c) => `<article class="v-c"><section class="lp"><div class="lpin"><div class="day"><span>Day ${c.day}</span><span>${c.time}</span></div><div class="num" aria-label="Task ${num(c)}">${num(c)}</div><h1>${esc(tc(c.title))}</h1>${c.why ? `<p class="why">${esc(c.why)}</p>` : ""}${c.status ? `<p class="status">${I.wait}<span><b>Not ready yet.</b> ${esc(c.status)}</span></p>` : ""}</div></section><section class="rp"><p class="k">Do this</p>${steps(c)}${fieldHtml(c)}<div class="end"><p class="dw">${I.flag}<span><b>Done when</b> ${esc(c.done)}</span></p><button class="btn" type="button">${esc(action(c))} ${I.arrow}</button><button class="report" type="button">Report a problem</button></div></section></article><div class="backrow"><button class="back" type="button">Back</button></div>`,
+  d: (c) => `<article class="v-d"><div class="meta"><span class="sw"></span><span class="id">${c.code}</span><span>Day ${c.day}</span><span>${c.time}</span></div><h1><span>${esc(tc(c.title))}</span></h1>${c.status ? `<p class="status"><span class="chip">${I.wait.replace('class="i"', 'class="i" style="width:14px;height:14px"')}Not ready</span><span>${esc(c.status)}</span></p>` : ""}${c.why ? `<p class="why">${esc(c.why)}</p>` : ""}${steps(c)}${fieldHtml(c)}<div class="bar"><p>${I.flag}<span><b>Done when</b> ${esc(c.done)}</span></p><button class="btn" type="button">${esc(action(c))} ${I.arrow}</button></div><button class="report rep" type="button">Report a problem</button></article>`,
+};
+
+function listHtml(c) {
+  const L = DATA.lists[c.day] || [];
+  const ix = Math.max(0, L.findIndex((x) => x.id === c.id));
+  return `<h2>Day ${c.day} <span>${ix} of ${L.length}</span></h2><ol>${L.map((x, i) => `<li ${x.id === c.id ? "data-on" : ""}>${i < ix ? I.check.replace('class="i"', 'class="i" style="color:#1f7a3f"') : I.ring.replace('class="i"', 'class="i" style="color:#8a8b92"')}<span><span class="c">${x.code}</span> ${esc(tc(x.title))}</span></li>`).join("")}</ol>`;
+}
+function railHtml(c) {
+  return `${c.outcome ? `<p class="o">${esc(c.outcome)}</p>` : ""}${c.skip ? `<p class="k">Skip it</p><p>${esc(c.skip)}</p>` : ""}<hr>${(c.you || []).map((y) => `<p class="you"><b>You</b> ${esc(y.charAt(0).toLowerCase() + y.slice(1))}</p>`).join("")}`;
+}
+function render() {
+  const c = DATA.cards[C];
+  document.documentElement.style.setProperty("--hue", HUE[c.day]);
+  const st = document.getElementById("stage");
+  if (still) st.setAttribute("data-still", ""); else st.removeAttribute("data-still");
+  st.innerHTML = R[V](c);
+  document.getElementById("list").innerHTML = listHtml(c);
+  document.getElementById("rail").innerHTML = railHtml(c);
+  document.getElementById("say").innerHTML = VARIANTS.find((v) => v[0] === V)[2];
+  for (const b of document.querySelectorAll("[data-v]")) b.setAttribute("aria-pressed", b.dataset.v === V);
+  for (const b of document.querySelectorAll("[data-c]")) b.setAttribute("aria-pressed", b.dataset.c === C);
+  const u = new URL(location.href); u.searchParams.set("v", V); u.searchParams.set("card", C); history.replaceState(null, "", u);
+}
+document.getElementById("vgrp").insertAdjacentHTML("beforeend", VARIANTS.map((v) => `<button type="button" data-v="${v[0]}">${v[1]}</button>`).join(""));
+document.getElementById("cgrp").insertAdjacentHTML("beforeend", CARDS.map((c) => `<button type="button" data-c="${c[0]}">${c[1]}</button>`).join(""));
+document.addEventListener("click", (e) => {
+  const t = e.target.closest("[data-v],[data-c],[data-tick],[data-pick]");
+  if (!t) return;
+  still = !!(t.dataset.tick || t.dataset.pick);
+  if (t.dataset.v) { V = t.dataset.v; ticks = {}; }
+  else if (t.dataset.c) { C = t.dataset.c; ticks = {}; picked = 0; }
+  else if (t.dataset.tick) ticks[t.dataset.tick] = !ticks[t.dataset.tick];
+  else if (t.dataset.pick) picked = +t.dataset.pick;
+  render();
+});
+document.addEventListener("keydown", (e) => {
+  const t = e.target.closest("[data-tick]");
+  if (t && (e.key === " " || e.key === "Enter")) { e.preventDefault(); t.click(); }
+});
+render();
+</script>
+</body>
+</html>
