@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-21T21:21:43+0530",
+   "task_id": "T-465",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "budget",
+   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
+  },
+  {
    "ts": "2026-10-21T17:46:28+0530",
    "task_id": "T-463",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-459 is half done and set to doing: the card work is built and checked, but the browser probes, merge, push, deploy and LOG.md entry are still to do. My centre buil"
-  },
-  {
-   "ts": "2026-10-20T02:17:27+0530",
-   "task_id": "T-456",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I rebuilt and checked T-456 from scratch and it's back in review with Adi and Bharath. I found and fixed one gap, and the guides are still not pushed.\n\n**Completion check (all evidence from this run):**\n- **One guide per card:** done. A fresh build wrote guides for all 122 centre cards, and every ca"
   }
  ],
- "state": "working",
+ "state": "paused",
  "mode": "feedback",
- "task_id": "T-465",
+ "task_id": null,
  "entries": [
   "F-6c962c73"
  ],
  "started": "2026-10-21T21:15:30+0530",
- "message": "Acting on 1 note(s) for T-465: Fable critic on the whole RevOps OS build",
+ "message": "Holding to stay under 80% of the 5-hour usage window: T-465 stopped at 81%; OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 02:11.",
  "slices": {
   "T-250": 1,
   "T-301": 1,

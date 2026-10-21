@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-21T21:21:31+0530",
+   "task_id": "T-463",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "budget",
+   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
+  },
+  {
    "ts": "2026-10-21T19:29:56+0530",
    "task_id": "T-444",
    "mode": "feedback",
@@ -87,19 +95,11 @@
    "status": "doing",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-21T17:29:38+0530",
-   "task_id": "T-073",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
- "state": "working",
- "message": "Acting on 1 note(s) for T-463: Spot checks: RSP, challenge, chat edition, Codex",
- "task_id": "T-463",
+ "state": "paused",
+ "message": "Holding to stay under 80% of the 5-hour usage window: T-463 stopped at 81%; OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 02:11.",
+ "task_id": null,
  "entries": [
   "F-a5385982"
  ],
