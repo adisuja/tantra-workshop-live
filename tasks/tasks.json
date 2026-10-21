@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T16:22:47+0530",
-  "version": 2684,
+  "updated": "2026-10-21T16:31:58+0530",
+  "version": 2687,
   "last_id": 480,
   "team": [
    {
@@ -323,6 +323,11 @@
      "ts": "2026-10-11T16:01:42+0530",
      "who": "claude",
      "note": "Verified today: no $50M figure in the masterclass source or on the live mirror, the mirror page shows $99, and probe-funnels is clean on all 10 pages at 390 and 1440, both on the mirror and locally. I also fixed a gap: the /masterclass share card used the sitewide product description, which says 'webinar'. It now uses the page's own title and description (commit 757b2ecd, checked locally). This reaches the mirror at the next publish. Adi: copy sign-off at https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791714702"
+    },
+    {
+     "ts": "2026-10-21T16:31:58+0530",
+     "who": "claude",
+     "note": "T-477 republished the mirror from main 06f00427 (live commit c3c56128e). https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792580485023 and https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1792580485023 both load with status 200 in a headless browser. A grep of the export found 0 matches for refund, money-back or risk-free; the only 'guarantee' is the footer disclaimer saying results are not a guarantee."
     }
    ],
    "order": 0,
@@ -21602,18 +21607,28 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bhaskar"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "2026-10-16: the /masterclass/vip 'What you keep' section (no refund, owner 2026-10-15) is on main but the marketing site has no reviewable host: the centre Worker does not serve /masterclass, and the GitHub Pages mirror publish has been held since 2026-10-06 (tantra-round5-coord/LOG.md).",
    "spec": "memory pricing-2026-10-15; mirror-publish-holds",
    "done_when": [
     "/masterclass and /vip load on a reviewable URL",
     "The page shows no refund promise anywhere"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "/masterclass (live)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792580485023"
+    },
+    {
+     "label": "/vip (live)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1792580485023"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "tags": [
@@ -21624,6 +21639,16 @@
      "ts": "2026-10-16T00:11:46+0530",
      "who": "claude",
      "note": "created"
+    },
+    {
+     "ts": "2026-10-21T16:31:58+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bhaskar (by claude)."
+    },
+    {
+     "ts": "2026-10-21T16:31:58+0530",
+     "who": "claude",
+     "note": "Published main 06f00427 to the mirror (live commit c3c56128e): https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792580485023 and https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1792580485023 both load with status 200, and on /vip the 'What you keep' section (Keep the Engine for Life) shows. The export and the live pages have 0 matches for refund, money-back or risk-free on /masterclass, /masterclass/success, /vip, /vip/success and /workshop; the only 'guarantee' is the footer disclaimer, so nothing needed removing and main was not pushed. probe-anonymity passes after allow-listing four public vendor setup links from the playbook (commit 7341749b on local branch t477-anon-allow, not on main yet). probe-onboarding-tabs fails because /onboarding is now the new Centre (since 10-15) and the probe still tests the old tab layout, so that probe needs rewriting."
     }
    ]
   },
