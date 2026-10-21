@@ -1,13 +1,13 @@
 {
  "running": null,
- "last_sweep": "2026-10-21T21:10:10+0530",
+ "last_sweep": "2026-10-21T21:32:59+0530",
  "counts": {
-  "keep_hold": 60,
+  "keep_hold": 61,
   "needs_adi": 27,
   "proceed": 23,
   "complete": 82,
   "resolve": 9,
-  "finish": 22,
+  "finish": 21,
   "drop": 2
  },
  "tasks": {
@@ -1062,8 +1062,8 @@
    "input_task": null
   },
   "T-468": {
-   "verdict": "finish",
-   "ts": "2026-10-20T17:44:32+0530",
+   "verdict": "keep_hold",
+   "ts": "2026-10-21T21:32:59+0530",
    "input_task": null
   },
   "T-469": {
