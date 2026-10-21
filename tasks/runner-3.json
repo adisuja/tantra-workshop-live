@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-21T17:44:08+0530",
+   "task_id": "T-073",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "ok",
+   "summary": "T-073 stays in **doing**, now due 2026-10-24. The 14 to 16 Oct cohort never ran on meeting 88135386601, so there was nothing to cut, and the job is now watching the 21 to 23 Oct meeting.\n\n**Completion check (all checked this run):**\n- **Read the job log and Zoom, read-only: done.** `/tmp/course-auto"
+  },
+  {
    "ts": "2026-10-21T17:33:37+0530",
    "task_id": "T-457",
    "mode": "feedback",
@@ -87,24 +95,14 @@
    "status": "queue",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-19T18:56:00+0530",
-   "task_id": "T-466",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model gemini-3-flash-preview are cooling down"
   }
  ],
- "state": "working",
- "mode": "feedback",
- "task_id": "T-073",
- "entries": [
-  "F-82ba9808"
- ],
+ "state": "paused",
+ "mode": null,
+ "task_id": null,
+ "entries": [],
  "started": "2026-10-21T17:36:49+0530",
- "message": "Acting on 1 note(s) for T-073: Cut session recordings into the Tantra Pro course",
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 78% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 21:11.",
  "slices": {
   "T-135": 1,
   "T-300": 2,
