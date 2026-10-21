@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-21T17:22:21+0530",
+   "task_id": "T-462",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "ok",
+   "summary": "T-462 stays in doing: Day 0 round 5 is running but waiting for the 5-hour usage window, so none of the reruns or the Days 1 to 3 rounds have happened yet. A fresh check this run shows the window really is at 69% on the account the test runs bill (the limit is 60%), and it resets around 21:09 IST.\n\n1"
+  },
+  {
    "ts": "2026-10-21T17:13:04+0530",
    "task_id": "T-157",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "queue",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-19T18:55:23+0530",
-   "task_id": "T-455",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "provider",
-   "summary": "API Error: 502 [gemini/gemini-3-flash-preview] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3-flash-preview — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 1m 36s). This is a server-side issue, usually temporary — try again in a moment. "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-462",
+ "task_id": "T-459",
  "entries": [
-  "F-8cb882c1"
+  "F-517da884"
  ],
- "started": "2026-10-21T17:13:26+0530",
- "message": "Acting on 1 note(s) for T-462: Reviewer agent and improver loop for every prompt and output",
+ "started": "2026-10-21T17:24:10+0530",
+ "message": "Acting on 1 note(s) for T-459: Centre: three Day 0 RevOps OS cards, retire the Funnel OS pack cards, rename everywhere",
  "slices": {
   "T-250": 1,
   "T-301": 1,

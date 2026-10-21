@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T17:21:56+0530",
-  "version": 2735,
+  "updated": "2026-10-21T17:24:51+0530",
+  "version": 2736,
   "last_id": 482,
   "team": [
    {
@@ -20978,11 +20978,15 @@
    "evidence": [
     {
      "label": "Day 1 pack (plain text)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/api/prompts/day/1.txt?v=4405538f"
+     "url": "https://revops-centre.growthcluborg.workers.dev/api/prompts/day/1.txt?v=da98df78"
     },
     {
      "label": "Centre preview",
-     "url": "https://revops-centre.growthcluborg.workers.dev/preview?v=4405538f"
+     "url": "https://revops-centre.growthcluborg.workers.dev/preview?v=da98df78"
+    },
+    {
+     "label": "v2 on main branch (ab2d7c9a)",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/tree/agent/t460-v2-on-main"
     },
     {
      "label": "Probe",
@@ -21014,6 +21018,11 @@
      "ts": "2026-10-20T02:27:13+0530",
      "who": "claude",
      "note": "Verify pass: the probe-day-prompts v2 run passed locally and against the live Worker (48 packs, the JSON and .txt API, and /enter?pack=N landing on the day's .txt). Every one of the 99 prompt guides exists in the OS zip and has a Done when section, and each heading is in the chat edition. The three Day 1 to 3 delivery campaigns still can't be made: I ran it again today and Tantra said 'Set the sender mailbox in Cohort Settings first', and that waits on T-408. The code is pushed to origin/series-deck-finish but not merged into main, because main would also publish 55 commits from other lanes (Bharath's call)."
+    },
+    {
+     "ts": "2026-10-21T17:24:51+0530",
+     "who": "claude",
+     "note": "Live had lost v2: T-478 redeployed the centre from main today and v2 only lived on series-deck-finish. I ported the v2 commit onto origin/main (os-tasks.ts regenerated, local probe and tsc pass), pushed it to origin/agent/t460-v2-on-main (ab2d7c9a), and deployed that commit (Worker da98df78, T-478's ticket cards included). probe-day-prompts v2 now passes against the live origin: 48 packs, JSON and .txt API, the '(v2 deployed)' self-check, /enter?pack=N. The Day 1 to 3 delivery campaigns were refused again ('Set the sender mailbox in Cohort Settings first', waits on T-408); they will use the /enter?pack=N link from code when created. Bharath: main does not contain v2 yet, so the next deploy from main drops it again until agent/t460-v2-on-main is merged into main. Open https://revops-centre.growthcluborg.workers.dev/api/prompts/day/1.txt?v=da98df78"
     }
    ]
   },
