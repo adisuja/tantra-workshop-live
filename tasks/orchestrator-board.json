@@ -1,6 +1,6 @@
 {
- "running": "2026-10-21T18:25:56+0530",
- "last_sweep": "2026-10-21T18:15:53+0530",
+ "running": null,
+ "last_sweep": "2026-10-21T18:25:58+0530",
  "counts": {
   "keep_hold": 60,
   "needs_adi": 27,
