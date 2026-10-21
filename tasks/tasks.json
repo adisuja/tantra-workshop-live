@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T17:31:25+0530",
-  "version": 2740,
+  "updated": "2026-10-21T17:33:27+0530",
+  "version": 2741,
   "last_id": 482,
   "team": [
    {
@@ -20825,12 +20825,12 @@
      "url": "revops-os/kit-src/test/evidence/T-457/transcript.txt"
     },
     {
-     "label": "Local curl 200",
-     "url": "revops-os/kit-src/test/evidence/T-457/curl.txt"
+     "label": "Local verify re-run 17/17",
+     "url": "revops-os/kit-src/test/evidence/T-457/verify-local-rerun.md"
     },
     {
-     "label": "Verify 17 of 17",
-     "url": "revops-os/kit-src/test/evidence/T-457/verify-local.md"
+     "label": "curl output",
+     "url": "revops-os/kit-src/test/evidence/T-457/curl.txt"
     }
    ],
    "blockers": [],
@@ -20858,6 +20858,11 @@
      "ts": "2026-10-21T17:31:25+0530",
      "who": "claude",
      "note": "Added a validated Tantra example funnel config, draft-only nurture and newsletter campaigns with README rows, and a deploy.mjs fix so the first deploy accepts an empty base; the kit test passes 47 of 47. A fresh claude -p session built, validated and deployed the Tantra funnel to the vendor sim with sim_ keys; run locally with wrangler dev and a local D1, it answers GET / 200 and verify passes 17 of 17 (evidence in revops-os/kit-src/test/evidence/T-457/). Committed as 16a1e604 on series-deck-finish, not pushed: main has diverged and the rules ban cherry-picking onto main, so it ships when that branch merges into main."
+    },
+    {
+     "ts": "2026-10-21T17:33:27+0530",
+     "who": "claude",
+     "note": "Verify pass: re-checked everything on disk. The Tantra example config validates, the nurture and newsletter drafts dry-run as draft only, both README rows exist, and the kit test passes 47 of 47. I re-ran the claude -p session's deployed Worker under local wrangler dev: it answers 200 and verify passes 17 of 17 (new evidence file committed in 166ac476). Not pushed: this checkout is on series-deck-finish, 107 commits ahead of main and 11 behind, and pushing main now would also publish other lanes' work, so it ships when the branch merges."
     }
    ]
   },
