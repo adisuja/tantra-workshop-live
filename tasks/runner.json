@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-21T17:20:51+0530",
+   "task_id": "T-456",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-456 is back in review with all checks passing, but it is not pushed: the approved push can't be done as approved. I've added one yes/no question for Adi on the task.\n\n1. **Rebuild and checks:** done. I ran the card export and `build.py`, then `check-task-guides.mjs`. It reported \"122 cards, 99 gui"
+  },
+  {
    "ts": "2026-10-21T17:19:38+0530",
    "task_id": "T-461",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "queue",
    "result": "turns",
    "summary": "T-466 stays in queue: its review build can't start yet because T-465 (the Fable critic pass) hasn't run, so I didn't do the approved deploy. I updated the task note, and the ack returned \"acked 0\", so F-166eed51 was probably already acknowledged last run.\n\n- **Blockers T-455 to T-465 on T-466:** don"
-  },
-  {
-   "ts": "2026-10-20T02:39:28+0530",
-   "task_id": "T-464",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-464 is back in review. I checked every create from the round against the live accounts today, and all 7 ledger rows are still reverted.\n\n**What I checked:**\n\n| Item | State | What I saw this run |\n| --- | --- | --- |\n| Ledger lists every create (what, where, ID, time) | Done | `workshop-plan/resea"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-456: Tantra RevOps OS task guides: one per centre card, generated from the playbook",
- "task_id": "T-456",
+ "message": "Acting on 1 note(s) for T-460: Prompt packs v2: context prompt, one prompt per build task, wrap prompt, email and WhatsApp link",
+ "task_id": "T-460",
  "entries": [
-  "F-92320046"
+  "F-e25cc4ad"
  ],
  "mode": "feedback",
- "started": "2026-10-21T17:19:56+0530",
+ "started": "2026-10-21T17:21:11+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,

@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T17:19:21+0530",
-  "version": 2726,
+  "updated": "2026-10-21T17:21:56+0530",
+  "version": 2735,
   "last_id": 482,
   "team": [
    {
@@ -20656,10 +20656,6 @@
    ],
    "evidence": [
     {
-     "label": "Pushed branch agent/t455-knowledge (f29d8af9)",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/tree/agent/t455-knowledge"
-    },
-    {
      "label": "check-refs.mjs",
      "url": "revops-os/os/scripts/check-refs.mjs"
     },
@@ -20668,8 +20664,12 @@
      "url": "revops-os/os/knowledge/README.md"
     },
     {
-     "label": "Commit",
-     "url": "c81352a8"
+     "label": "Newsletters channel",
+     "url": "revops-os/os/knowledge/channels/newsletters.md"
+    },
+    {
+     "label": "Commit c81352a8 (branch agent/t455-knowledge f29d8af9)",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/f29d8af9"
     }
    ],
    "blockers": [],
@@ -20702,6 +20702,21 @@
      "ts": "2026-10-21T17:18:46+0530",
      "who": "claude",
      "note": "Final check: check-refs.mjs resolves every knowledge/ and kits/ citation (191 in os/, 1022 in 183 files of the rebuilt dist; nothing left pending for T-457), check-dashes finds no dashes and the 25-name BANNED scan finds 0 hits in os/knowledge. twilio.md says SMS only, with WhatsApp through Tantra. The commit is pushed as branch agent/t455-knowledge (f29d8af9, c81352a8 cherry-picked onto origin/main), not straight to main, because main is 98 commits behind this branch and nearly all of them belong to other lanes. The main-branch publish carries it from here."
+    },
+    {
+     "ts": "2026-10-21T17:19:59+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-21: check-refs.mjs resolves 191 citations in os/ and 1022 in 183 files of the rebuilt dist (a planted bad path fails it with exit 1). check-dashes and the 25-name banned scan find nothing in os/knowledge, twilio.md says SMS only with WhatsApp on Tantra, the README indexes every knowledge file, and check-task-guides reports 0 problems across 122 cards. Commit c81352a8 is on origin as branch agent/t455-knowledge (f29d8af9, 1 commit on current origin/main). It is not on main because the rule says never cherry-pick onto origin/main, so the main-branch publish will carry it."
+    },
+    {
+     "ts": "2026-10-21T17:20:14+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-466."
+    },
+    {
+     "ts": "2026-10-21T17:20:42+0530",
+     "who": "claude",
+     "note": "Refs check re-run on 2026-10-21 for T-456: os/scripts/check-refs.mjs reports 'refs ok: 191 citations in 58 files' in revops-os/os and 'refs ok: 1022 citations in 183 files' in the built dist, every path and heading resolves."
     }
    ]
   },
@@ -20729,16 +20744,20 @@
      "url": "revops-os/dist/tantra-revops-os/tasks/day0/D0.09-start-os-setup.md"
     },
     {
-     "label": "Check script",
+     "label": "Check script (0 problems, 122 cards)",
      "url": "revops-os/scripts/check-task-guides.mjs"
     },
     {
      "label": "Generator",
      "url": "revops-os/build.py"
+    },
+    {
+     "label": "Commit 0ab050c9 (branch series-deck-finish)",
+     "url": "revops-os/build.py"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "",
+   "needs_from_owner": "Yes or no: may I merge origin/main into series-deck-finish and run 'git push origin series-deck-finish:main', which publishes all 100 branch commits from every lane, not only T-456?",
    "tags": [
     "revops-os"
    ],
@@ -20762,6 +20781,11 @@
      "ts": "2026-10-20T02:17:15+0530",
      "who": "claude",
      "note": "Verify pass: rebuilt from scratch, all 122 cards have a guide (99 with a prompt, 23 marked no prompt) and check-task-guides.mjs reports 0 problems. Fixed one gap: 8 human-only guides (start-os-* and d0-prompts) dropped their playbook teaching; they now carry it, and the check fails if any card lacks its #task section or its playbook text (tested by stripping one). Not pushed: this branch is 47 commits ahead and 6 behind origin/main with other lanes' work, so a push would publish far more than the approved guides; they ship with the next main publish."
+    },
+    {
+     "ts": "2026-10-21T17:20:42+0530",
+     "who": "claude",
+     "note": "Re-ran export, build and checks: check-task-guides.mjs reports '122 cards, 99 guides with a prompt, 23 marked no prompt, 0 problems' and check-refs.mjs reports 1022 citations in 183 files all resolving, so nothing needed fixing (work is commit 0ab050c9; dist is gitignored build output). Not pushed: origin/main lacks 0ab050c9 and this branch is 100 commits ahead and 12 behind, and the guides depend on other branch-only revops-os/os changes, so the approved revops-os-only push cannot be done without a cherry-pick (your rule forbids it) or publishing every lane's work."
     }
    ]
   },
@@ -20878,6 +20902,16 @@
      "ts": "2026-10-20T02:26:40+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-473."
+    },
+    {
+     "ts": "2026-10-21T17:21:24+0530",
+     "who": "claude",
+     "note": "The T-458 work is already safe on GitHub, so I did not push. Branch series-deck-finish on origin (tip 7bfa7efb) already holds all of it: 88e032d6 (build script, build.sh wiring, /os routes), 57bba71b, db0f566b and 8974c272 (evidence and the chat-edition fix), and 55d82466 (checked today with git merge-base --is-ancestor after a fetch). Nothing went to main and the t458 preview is still not promoted. Open the two zip links below."
+    },
+    {
+     "ts": "2026-10-21T17:21:56+0530",
+     "who": "claude",
+     "note": "Verify pass 2026-10-21: all five T-458 commits (88e032d6, 57bba71b, db0f566b, 8974c272, 55d82466) are on origin/series-deck-finish (tip 7bfa7efb), not on main, so no push was needed; the t458 preview is not promoted. Re-curled both zips just now: HTTP 200, application/zip attachment, VERSION 55d82466, 291 and 13 files, chat INSTRUCTIONS.md 5,308 characters with no dashes. Open the two zip links below."
     }
    ]
   },
@@ -21074,6 +21108,11 @@
      "ts": "2026-10-21T17:19:21+0530",
      "who": "claude",
      "note": "Day 0 round 5 restarted at 17:18 from start-endy (PID 34586) with the review fixes for D0.19 and D0.20, the BRIEF.md rec.mjs rule and a resume that loads the latest guides (a0a8c4d2; budget guard fix 43b0f460). Checked that the run's project now has the new D0.19 wording and no stale check.md in D0.20. It is waiting for the 5-hour window (67%, over the 60% guard). Left: 0.09 to 0.24 plus reruns of 0.04, 0.06, 0.07 and 0.08 until 24 of 24 pass, then Days 1 to 3 and a push after each day. Log: workshop-plan/research/revops-os-test-log.md"
+    },
+    {
+     "ts": "2026-10-21T17:21:23+0530",
+     "who": "claude",
+     "note": "Verify pass: Day 0 round 5 (PID 34586, from start-endy with the fixed D0.19 and D0.20 guides, same as the release) is alive and correctly waiting. A fresh probe of the billed account reads 69% (guard is 60%), resetting about 21:09 IST. The API keys reset daily ($0 today) but are skipped by Adi's $10 per key work cap. Left: Day 0 to 24 of 24 with check-checks clean, then Days 1 to 3 (max 4 rounds per prompt), push after each day, then review. Log: workshop-plan/research/revops-os-test-log.md (9dfc9013)."
     }
    ]
   },
@@ -21614,6 +21653,11 @@
      "ts": "2026-10-16T00:05:05+0530",
      "who": "claude",
      "note": "created"
+    },
+    {
+     "ts": "2026-10-21T17:20:34+0530",
+     "who": "claude",
+     "note": "Nothing had to change: still on hold per Adi's 2026-10-15 call. Checked the upload source for when it is unheld: app/public/os/tantra-revops-os-chat.zip (served at /os/tantra-revops-os-chat.zip) exists with 13 entries (VERSION built from 683880f6 on 2026-10-21, INSTRUCTIONS.md, brief, knowledge, day 0 to 3 tasks, kits, 4 skill zips), so the Claude.ai and ChatGPT project runs will upload that."
     }
    ]
   },
