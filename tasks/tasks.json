@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T17:42:17+0530",
-  "version": 2744,
+  "updated": "2026-10-21T19:25:01+0530",
+  "version": 2745,
   "last_id": 482,
   "team": [
    {
@@ -22064,6 +22064,11 @@
      "ts": "2026-10-21T16:45:24+0530",
      "who": "claude",
      "note": "Opened from T-448 Q2."
+    },
+    {
+     "ts": "2026-10-21T19:25:01+0530",
+     "who": "claude",
+     "note": "Ripple from T-448 checked: nothing had to change. The PR wording in that decision conflicts with Adi's standing rule (2026-10-11) that agents never open PRs or write to Usetantra repos, and spec section 11 Q2 already records the reconciliation: phase 1 ships as patches under workshop-plan/tantra-product-patches/, Ben reviews the backend part, Bharath applies, opens the PRs and merges, target 2026-10-28. The PRO_TRIAL_DAYS 14 to 7 fix is likewise a patch (tantra-frontend-v2/fix_pro-trial-days-7--SPEC.md, spec Q8), so the task stays in queue as it was."
     }
    ],
    "order": 4810
