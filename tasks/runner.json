@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-21T18:02:22+0530",
+   "task_id": "T-463",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "budget",
+   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
+  },
+  {
    "ts": "2026-10-21T18:01:03+0530",
    "task_id": "T-468",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "done",
    "result": "ok",
    "summary": "I checked everything again: all seven answers are written in the spec. One thing the earlier run reported was missing, and I've added it. T-448 is now done, committed as `deef7609`. Note F-8b307a77 was already acknowledged (the ack command found nothing new to mark).\n\n| Item | State | Evidence from "
-  },
-  {
-   "ts": "2026-10-21T16:44:01+0530",
-   "task_id": "T-429",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I checked T-429 again and moved it to review for Bharath and Adi. The live probe passed 7 of 7, it tested both switch states, and it left the switch at \"1\".\n\n**Completion check (all checked in this run):**\n- **The admin switch flips the copy live:** done. The `tantra_free_month` setting defaults to "
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-463: Spot checks: RSP, challenge, chat edition, Codex",
- "task_id": "T-463",
+ "message": "Acting on 1 note(s) for T-469: Tantra RevOps OS content engine: knowledge, kits, setup and batch prompts",
+ "task_id": "T-469",
  "entries": [
-  "F-a5385982"
+  "F-7416e982"
  ],
  "mode": "feedback",
- "started": "2026-10-21T18:01:17+0530",
+ "started": "2026-10-21T18:08:22+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
