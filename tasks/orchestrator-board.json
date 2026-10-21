@@ -1,13 +1,13 @@
 {
  "running": null,
- "last_sweep": "2026-10-21T16:24:07+0530",
+ "last_sweep": "2026-10-21T16:34:39+0530",
  "counts": {
-  "keep_hold": 59,
+  "keep_hold": 58,
   "needs_adi": 27,
   "proceed": 24,
   "complete": 77,
   "resolve": 9,
-  "finish": 25,
+  "finish": 26,
   "drop": 2
  },
  "tasks": {
@@ -222,8 +222,8 @@
    "input_task": null
   },
   "T-001": {
-   "verdict": "keep_hold",
-   "ts": "2026-10-11T16:14:01+0530",
+   "verdict": "finish",
+   "ts": "2026-10-21T16:34:38+0530",
    "input_task": null
   },
   "T-021": {
@@ -1078,7 +1078,7 @@
   },
   "T-477": {
    "verdict": "proceed",
-   "ts": "2026-10-18T15:03:29+0530",
+   "ts": "2026-10-21T16:34:39+0530",
    "input_task": null
   },
   "T-471": {

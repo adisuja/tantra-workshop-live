@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T16:31:58+0530",
-  "version": 2687,
+  "updated": "2026-10-21T16:34:59+0530",
+  "version": 2688,
   "last_id": 480,
   "team": [
    {
@@ -21622,11 +21622,11 @@
    "evidence": [
     {
      "label": "/masterclass (live)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792580485023"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792580699"
     },
     {
      "label": "/vip (live)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1792580485023"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1792580699"
     }
    ],
    "blockers": [],
@@ -21649,6 +21649,11 @@
      "ts": "2026-10-21T16:31:58+0530",
      "who": "claude",
      "note": "Published main 06f00427 to the mirror (live commit c3c56128e): https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792580485023 and https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1792580485023 both load with status 200, and on /vip the 'What you keep' section (Keep the Engine for Life) shows. The export and the live pages have 0 matches for refund, money-back or risk-free on /masterclass, /masterclass/success, /vip, /vip/success and /workshop; the only 'guarantee' is the footer disclaimer, so nothing needed removing and main was not pushed. probe-anonymity passes after allow-listing four public vendor setup links from the playbook (commit 7341749b on local branch t477-anon-allow, not on main yet). probe-onboarding-tabs fails because /onboarding is now the new Centre (since 10-15) and the probe still tests the old tab layout, so that probe needs rewriting."
+    },
+    {
+     "ts": "2026-10-21T16:34:59+0530",
+     "who": "claude",
+     "note": "Verify pass: the live mirror pages /masterclass, /masterclass/success, /vip, /vip/success and /workshop all return 200 today with 0 refund, money-back or risk-free text (the only 'guarantee' is the footer line saying results are not a guarantee); /vip keeps 'What you keep'. No publish hold is open after the 2026-10-06 one lifted at 03:41. The probe-anonymity allow-list fix is now committed on this checkout (fff41f56) and probe-anonymity --export PASSES (3154 files). Open https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792580699 and https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1792580699"
     }
    ]
   },

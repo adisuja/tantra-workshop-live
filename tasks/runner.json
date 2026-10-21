@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-21T16:35:12+0530",
+   "task_id": "T-477",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "I checked T-477 again and it's back in review for Adi and Bhaskar. /masterclass and /vip are live on the mirror and neither has any refund wording.\n\n1. **No open publish hold: done.** The only hold in `tantra-round5-coord/LOG.md` was set on 10-06 at 03:30 and lifted at 03:41 the same day. No newer h"
+  },
+  {
    "ts": "2026-10-20T17:51:59+0530",
    "task_id": "T-469",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-18T15:45:23+0530",
-   "task_id": "T-429",
-   "mode": "feedback",
-   "status": "hold",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model gemini-3-flash-preview are cooling down"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-477: Publish the marketing pages so the no-refund and pricing copy can be reviewed",
- "task_id": "T-477",
+ "message": "Acting on 1 note(s) for T-380: Trash two undeployed 'Tantra funnel forms receiver' Apps Script projects (boards@fintechcircle.com)",
+ "task_id": "T-380",
  "entries": [
-  "F-d7c23217"
+  "F-d49dfe89"
  ],
  "mode": "feedback",
- "started": "2026-10-21T16:13:52+0530",
+ "started": "2026-10-21T16:35:35+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
