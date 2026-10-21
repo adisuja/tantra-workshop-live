@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-21T18:37:42+0530",
+   "task_id": "T-470",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "budget",
+   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
+  },
+  {
    "ts": "2026-10-21T18:36:26+0530",
    "task_id": "T-469",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-225 is still blocked because Zoom Support hasn't granted the two settings. Today's read of the 21 Oct cohort meeting 83352618490 shows mute control still false and no video field.\n\n**Checklist (everything below was checked in this run):**\n- **Daily check in the task log:** done, with one correctio"
-  },
-  {
-   "ts": "2026-10-21T16:51:03+0530",
-   "task_id": "T-444",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "I did what the Orchestrator decided: the research note now has a dated line saying the Slack post was not found, and T-444 is in review for Bharath. I didn't read or post in Slack.\n\n- **Post found and compared, or noted as not yet posted:** done, as \"not yet posted\". I did not search again this run."
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-470: Content task data and prompts, tested with the reviewer",
- "task_id": "T-470",
+ "message": "Acting on 1 note(s) for T-001: /masterclass landing page",
+ "task_id": "T-001",
  "entries": [
-  "F-401bcf3f"
+  "F-d8faad8b"
  ],
  "mode": "feedback",
- "started": "2026-10-21T18:36:36+0530",
+ "started": "2026-10-21T18:41:54+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
