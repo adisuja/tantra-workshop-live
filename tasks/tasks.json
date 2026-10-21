@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T16:34:59+0530",
-  "version": 2688,
+  "updated": "2026-10-21T16:39:07+0530",
+  "version": 2693,
   "last_id": 480,
   "team": [
    {
@@ -21169,17 +21169,35 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "review",
    "why": "Adi 2026-10-15: content workflows were documented in the playbook but missing from the cards; Day 2 needs content creation and publishing tasks, the dashboard needs content metrics in one view, and the OS must carry the content engine.",
    "spec": "workshop-plan/REVOPS_OS_PLAN_2026_10_15.md, section Content engine; source https://adisuja.github.io/revops-content-engine-playbook/",
    "done_when": [
     "Probes pass; teaching, coverage and playbook sections ship with the cards"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Day 2 content bucket",
+     "url": "http://localhost:4322/debug/onboarding?v=t467c#task-d2-content-bucket"
+    },
+    {
+     "label": "Schedule in Metricool",
+     "url": "http://localhost:4322/debug/onboarding?v=t467c#task-d2-content-schedule"
+    },
+    {
+     "label": "Day 3 weekly content loop",
+     "url": "http://localhost:4322/debug/onboarding?v=t467c#task-d3-content-loop"
+    },
+    {
+     "label": "Fix commit",
+     "url": "b698339d (series-deck-finish)"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "tags": [
@@ -21191,6 +21209,21 @@
      "ts": "2026-10-15 03:48",
      "who": "system",
      "note": "created"
+    },
+    {
+     "ts": "2026-10-21T16:38:22+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-21T16:38:22+0530",
+     "who": "claude",
+     "note": "Seven content cards sit near the end of Day 2 for every attendee, whatever their funnel pick: context bucket, content tools, formats and cadence, first batch, approve, and schedule in Metricool. Day 3 has the weekly content loop. Each card ships with its teaching, rail pins, coverage row and playbook section. This run I fixed the schedule card's deep link (it fell back to the Day 2 overview) and the tabs probe (it followed a playbook task's Next link). check-guides, probe-details (0 fail), probe-onboarding-tabs, probe-headings, probe-visual-tools and check-rail-pins all pass. I did not push: the cards are already on origin/main, but this checkout's branch carries 74 commits from other lanes, so the push and mirror publish belong to the merge lane."
+    },
+    {
+     "ts": "2026-10-21T16:38:27+0530",
+     "who": "claude",
+     "note": "Correction: six content cards on Day 2 (not seven) plus the one Day 3 weekly loop card. Everything else in the previous note stands."
     }
    ]
   },

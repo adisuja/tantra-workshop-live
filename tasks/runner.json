@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-21T16:39:42+0530",
+   "task_id": "T-380",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "ok",
+   "summary": "T-380 is still in queue with Nelbin. Nothing in Apps Script was trashed, because this runner has no browser and is barred from retrying.\n\n- **Spec matches the Orchestrator decision:** done. I read it back from tasks.json this run. It says there is one standalone 'Tantra funnel forms receiver' under "
+  },
+  {
    "ts": "2026-10-21T16:35:12+0530",
    "task_id": "T-477",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.6 are cooling down"
-  },
-  {
-   "ts": "2026-10-18T16:49:46+0530",
-   "task_id": "T-461",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-380: Trash two undeployed 'Tantra funnel forms receiver' Apps Script projects (boards@fintechcircle.com)",
- "task_id": "T-380",
+ "message": "Acting on 1 note(s) for T-429: Lane CV: Free month of Tantra for paid attendees, with an off switch",
+ "task_id": "T-429",
  "entries": [
-  "F-d49dfe89"
+  "F-9b9eb009"
  ],
  "mode": "feedback",
- "started": "2026-10-21T16:35:35+0530",
+ "started": "2026-10-21T16:39:54+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
