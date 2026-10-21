@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-21T18:43:00+0530",
+   "task_id": "T-001",
+   "mode": "feedback",
+   "status": "review",
+   "result": "budget",
+   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
+  },
+  {
    "ts": "2026-10-21T18:37:42+0530",
    "task_id": "T-470",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "ok",
    "summary": "T-033 is still blocked: Adi needs to reactivate the GrowthClub Tantra plan (tracked as T-480), so no Day 1 WhatsApp or email was sent this run. No files changed, so there was nothing to commit.\n\n| Requirement | State and evidence from this run |\n|---|---|\n| Adi test gets the Day 1 link by WhatsApp w"
-  },
-  {
-   "ts": "2026-10-21T16:56:51+0530",
-   "task_id": "T-225",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-225 is still blocked because Zoom Support hasn't granted the two settings. Today's read of the 21 Oct cohort meeting 83352618490 shows mute control still false and no video field.\n\n**Checklist (everything below was checked in this run):**\n- **Daily check in the task log:** done, with one correctio"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-001: /masterclass landing page",
- "task_id": "T-001",
+ "message": "Acting on 1 note(s) for T-477: Publish the marketing pages so the no-refund and pricing copy can be reviewed",
+ "task_id": "T-477",
  "entries": [
-  "F-d8faad8b"
+  "F-3782808d"
  ],
  "mode": "feedback",
- "started": "2026-10-21T18:41:54+0530",
+ "started": "2026-10-21T18:46:30+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
