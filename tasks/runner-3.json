@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-22T02:17:41+0530",
+   "task_id": "T-463",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "budget",
+   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
+  },
+  {
    "ts": "2026-10-21T21:19:47+0530",
    "task_id": "T-468",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-460 is in review: the prompt packs v2 checks pass locally and on the live Worker. The Day 1 to 3 delivery campaigns still can't be created until Tantra has a sender mailbox, which waits on T-408. I changed no code in this run, so there was nothing to commit.\n\n| Item | State | What I checked this r"
-  },
-  {
-   "ts": "2026-10-20T02:19:23+0530",
-   "task_id": "T-457",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-457 is still in progress (status `doing`): the funnel config check, schema and equations runner are built and verified. But the done_when proof, a fresh test sessi"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-463",
+ "task_id": "T-469",
  "entries": [
-  "F-a5385982"
+  "F-7416e982"
  ],
- "started": "2026-10-22T02:13:30+0530",
- "message": "Acting on 1 note(s) for T-463: Spot checks: RSP, challenge, chat edition, Codex",
+ "started": "2026-10-22T02:20:47+0530",
+ "message": "Acting on 1 note(s) for T-469: Tantra RevOps OS content engine: knowledge, kits, setup and batch prompts",
  "slices": {
   "T-135": 1,
   "T-300": 2,

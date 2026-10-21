@@ -1,6 +1,30 @@
 {
  "history": [
   {
+   "ts": "2026-10-22T02:21:00+0530",
+   "task_id": "T-467",
+   "mode": "feedback",
+   "status": "review",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.6 are cooling down"
+  },
+  {
+   "ts": "2026-10-22T02:20:55+0530",
+   "task_id": "T-470",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "budget",
+   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
+  },
+  {
+   "ts": "2026-10-22T02:17:47+0530",
+   "task_id": "T-469",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "budget",
+   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
+  },
+  {
    "ts": "2026-10-21T21:21:31+0530",
    "task_id": "T-463",
    "mode": "feedback",
@@ -71,40 +95,16 @@
    "status": "doing",
    "result": "provider",
    "summary": "API Error: 502 [gemini/gemini-3.7-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.7-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 3s). This is a server-side issue, usually temporary — try again in a moment. If it persists, "
-  },
-  {
-   "ts": "2026-10-21T18:02:22+0530",
-   "task_id": "T-463",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "budget",
-   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
-  },
-  {
-   "ts": "2026-10-21T18:01:03+0530",
-   "task_id": "T-468",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "provider",
-   "summary": "API Error: 502 [gemini/gemini-3.5-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.5-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 3s). This is a server-side issue, usually temporary — try again in a moment. If it persists, "
-  },
-  {
-   "ts": "2026-10-21T17:29:51+0530",
-   "task_id": "T-465",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
- "state": "working",
- "message": "Acting on 1 note(s) for T-469: Tantra RevOps OS content engine: knowledge, kits, setup and batch prompts",
- "task_id": "T-469",
+ "state": "paused",
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 91% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 07:11.",
+ "task_id": null,
  "entries": [
-  "F-7416e982"
+  "F-b9a27392"
  ],
  "mode": "feedback",
- "started": "2026-10-22T02:13:34+0530",
+ "started": "2026-10-22T02:20:56+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,

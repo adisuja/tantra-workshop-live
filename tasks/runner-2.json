@@ -97,14 +97,12 @@
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-459 is half done and set to doing: the card work is built and checked, but the browser probes, merge, push, deploy and LOG.md entry are still to do. My centre buil"
   }
  ],
- "state": "working",
+ "state": "idle",
  "mode": "feedback",
- "task_id": "T-465",
- "entries": [
-  "F-6c962c73"
- ],
+ "task_id": null,
+ "entries": [],
  "started": "2026-10-22T02:13:39+0530",
- "message": "Acting on 1 note(s) for T-465: Fable critic on the whole RevOps OS build",
+ "message": "Recovered from an error: FileNotFoundError: [Errno 2] No such file or directory: '/Users/adithyamurali/tantra-redesign/workshop-plan/tasks/overflow.json.tmp' -> '/U",
  "slices": {
   "T-250": 1,
   "T-301": 1,
