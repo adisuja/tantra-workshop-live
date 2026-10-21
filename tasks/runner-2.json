@@ -97,14 +97,14 @@
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.6 are cooling down"
   }
  ],
- "state": "paused",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
+ "task_id": "T-470",
  "entries": [
-  "F-ff244706"
+  "F-afceae55"
  ],
- "started": "2026-10-20T17:54:57+0530",
- "message": "Holding to stay under 80% of the 5-hour usage window: T-467 stopped at 82%; OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 22:31.",
+ "started": "2026-10-21T16:13:45+0530",
+ "message": "Acting on 1 note(s) for T-470: Content task data and prompts, tested with the reviewer",
  "slices": {
   "T-250": 1,
   "T-301": 1,
