@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T17:28:51+0530",
-  "version": 2739,
+  "updated": "2026-10-21T17:31:25+0530",
+  "version": 2740,
   "last_id": 482,
   "team": [
    {
@@ -20801,7 +20801,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "doing",
+   "status": "review",
    "why": "Adi 2026-10-15: the centre hands out Tantra RevOps OS on Day 0 and personalised prompts at the end of each day; every prompt must finish its task end to end in Claude Code, Codex, Claude Pro or ChatGPT Pro.",
    "spec": "Plan workshop-plan/REVOPS_OS_PLAN_2026_10_15.md",
    "done_when": [
@@ -20809,12 +20809,28 @@
    ],
    "evidence": [
     {
-     "label": "Config schema",
-     "url": "revops-os/os/kits/funnel/config.schema.json"
+     "label": "Tantra example config",
+     "url": "revops-os/os/kits/funnel/examples/tantra.config.json"
     },
     {
-     "label": "Equations runner source",
-     "url": "revops-os/kit-src/equations/run-equations.ts"
+     "label": "Nurture draft",
+     "url": "revops-os/os/kits/tantra/examples/nurture.json"
+    },
+    {
+     "label": "Newsletter draft",
+     "url": "revops-os/os/kits/tantra/examples/newsletter.json"
+    },
+    {
+     "label": "Session transcript",
+     "url": "revops-os/kit-src/test/evidence/T-457/transcript.txt"
+    },
+    {
+     "label": "Local curl 200",
+     "url": "revops-os/kit-src/test/evidence/T-457/curl.txt"
+    },
+    {
+     "label": "Verify 17 of 17",
+     "url": "revops-os/kit-src/test/evidence/T-457/verify-local.md"
     }
    ],
    "blockers": [],
@@ -20837,6 +20853,11 @@
      "ts": "2026-10-20T02:18:36+0530",
      "who": "claude",
      "note": "Built in revops-os/os/kits: funnel/config.schema.json, validate-config.mjs (deploy.mjs now refuses an invalid config) and a new equations/run-equations.mjs runner (bundled by build-kits.sh, --check current, runs webinar and rsp in /tmp/os-kit-test-webinar). These files went in with commit 0dde85d4. Left for the next pass: a Tantra example config in kits/funnel/examples, a nurture and newsletter draft in kits/tantra/examples, README rows, re-running run-kit-test.mjs, then the fresh claude -p session that deploys a funnel to the sim and answers 200, plus its transcript, the push and review."
+    },
+    {
+     "ts": "2026-10-21T17:31:25+0530",
+     "who": "claude",
+     "note": "Added a validated Tantra example funnel config, draft-only nurture and newsletter campaigns with README rows, and a deploy.mjs fix so the first deploy accepts an empty base; the kit test passes 47 of 47. A fresh claude -p session built, validated and deployed the Tantra funnel to the vendor sim with sim_ keys; run locally with wrangler dev and a local D1, it answers GET / 200 and verify passes 17 of 17 (evidence in revops-os/kit-src/test/evidence/T-457/). Committed as 16a1e604 on series-deck-finish, not pushed: main has diverged and the rules ban cherry-picking onto main, so it ships when that branch merges into main."
     }
    ]
   },
