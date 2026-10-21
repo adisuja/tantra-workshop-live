@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T17:37:47+0530",
-  "version": 2742,
+  "updated": "2026-10-21T17:42:17+0530",
+  "version": 2744,
   "last_id": 482,
   "team": [
    {
@@ -20980,6 +20980,11 @@
      "ts": "2026-10-20T02:26:01+0530",
      "who": "claude",
      "note": "On branch t459-revops-os-cards (worktree /tmp/t459): the three Day 0 OS cards, the d3-connect and d3-brief rewrites and the rename are in; the setup prompt now starts context/business.md and the prompt pack has a Refresh your OS context button (/api/pack). check-guides, playbook anchors and tasks, coverage, probe-day-prompts (48 packs), probe-day-model (122 cards), check-task-guides and both tsc runs pass. Left: build.sh fails under /tmp (Turbopack rejects the symlinked path, so rebuild from /private/tmp/t459), then probe-guides and probe-flows on a private stack, merge, push, deploy and the LOG.md entry."
+    },
+    {
+     "ts": "2026-10-21T17:42:17+0530",
+     "who": "claude",
+     "note": "Pushed main 90578a13: coverage.json now says Tantra RevOps OS, the setup prompt starts context/business.md, the prompt pack has Refresh your OS context (/api/pack), Slack is out of a card example, and probe-visual-tools no longer flags the dayplan visual. check-guides, probe-day-model (119 cards), probe-day-prompts (48 packs), probe-visual-tools, probe-flows static and tsc pass; d3-connect and d3-brief were already rewritten and no d3-pack cards remain. Left: finish probe-guides (dev server PID 43146 in worktree /private/tmp/t459m; light 1440, 1366 and 1024 ok so far), deploy revops-centre from /private/tmp/t459m (live lacks Refresh your OS context), the LOG.md entry, evidence/T-459, then review."
     }
    ]
   },
