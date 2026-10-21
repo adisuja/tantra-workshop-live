@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T19:25:01+0530",
-  "version": 2745,
+  "updated": "2026-10-21T19:29:44+0530",
+  "version": 2747,
   "last_id": 482,
   "team": [
    {
@@ -20100,8 +20100,7 @@
    "owner": "Bharath",
    "assignee": "Claude",
    "reviewers": [
-    "Bharath",
-    "Adi"
+    "Bharath"
    ],
    "priority": "P3",
    "due": "",
@@ -20109,7 +20108,7 @@
    "why": "Adi's 2026-10-14 call; gap found by the independent coverage review.",
    "evidence": [
     {
-     "label": "Research note",
+     "label": "Research note (2026-10-18 update, lines 79-81)",
      "url": "workshop-plan/research/google-workspace-oauth-2026-10-14.md"
     }
    ],
@@ -20141,6 +20140,16 @@
      "ts": "2026-10-21T16:50:47+0530",
      "who": "claude",
      "note": "People: reviewers Adi/Bharath → Bharath/Adi (by claude)."
+    },
+    {
+     "ts": "2026-10-21T19:29:44+0530",
+     "who": "claude",
+     "note": "People: reviewers Bharath/Adi → Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-21T19:29:44+0530",
+     "who": "claude",
+     "note": "Rechecked 2026-10-21: no post in sessions dated 10-19 to 10-21 (all 16 transcripts that mention Workspace MCP or OAuth MCP are T-444's own runs). Reopen T-444 if the post appears in a session or note. The research note was already committed (7bfa7efb) and pushed, so it needed no new commit. T-433, T-436 and T-437 unchanged, Asked of Adi cleared."
     }
    ],
    "title": "Lane CV: Reconcile Bhaskar's Google Workspace OAuth post with the T-433 research",
