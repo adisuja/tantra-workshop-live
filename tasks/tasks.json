@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T16:13:37+0530",
-  "version": 2682,
+  "updated": "2026-10-21T16:22:47+0530",
+  "version": 2684,
   "last_id": 480,
   "team": [
    {
@@ -21316,11 +21316,12 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
-   "status": "queue",
+   "status": "doing",
    "why": "Adi 2026-10-15: content workflows were documented in the playbook but missing from the cards; Day 2 needs content creation and publishing tasks, the dashboard needs content metrics in one view, and the OS must carry the content engine.",
    "spec": "workshop-plan/REVOPS_OS_PLAN_2026_10_15.md, section Content engine; source https://adisuja.github.io/revops-content-engine-playbook/",
    "done_when": [
@@ -21338,6 +21339,16 @@
      "ts": "2026-10-15 03:48",
      "who": "system",
      "note": "created"
+    },
+    {
+     "ts": "2026-10-21T16:22:46+0530",
+     "who": "claude",
+     "note": "Content task data and guides for D2.35 to D2.40 and D3.08 are in place and vendor clean. The first harness run used live test attendee 165, which has no business or content answers, so its content prompts produced honest 'missing answers' reports. That doesn't prove anything (D2 context passed the Fable reviewer 6 of 6). Left: load the 219 Tantra answers (revops-os/tests/packs/t470-content/tantra-fields.json, mapped to cards via CARD_BY_ID) plus content-answers.json onto a test attendee with put-answers.mjs, re-fetch packs, rerun run.py until every content prompt passes, log it in revops-os-test-log.md, then deploy-clean.sh --preview review."
+    },
+    {
+     "ts": "2026-10-21T16:22:47+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
     }
    ]
   },
