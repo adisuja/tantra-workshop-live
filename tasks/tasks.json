@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T19:29:44+0530",
-  "version": 2747,
+  "updated": "2026-10-21T21:19:38+0530",
+  "version": 2748,
   "last_id": 482,
   "team": [
    {
@@ -21419,8 +21419,7 @@
   },
   {
    "id": "T-468",
-   "title": "Dashboard widened to one view: content metrics from Metricool, GA4, Wistia and Tantra beside the funnel",
-   "area": "Product",
+   "status": "review",
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
@@ -21429,57 +21428,17 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "doing",
-   "why": "Adi 2026-10-15: content workflows were documented in the playbook but missing from the cards; Day 2 needs content creation and publishing tasks, the dashboard needs content metrics in one view, and the OS must carry the content engine.",
-   "spec": "workshop-plan/REVOPS_OS_PLAN_2026_10_15.md, section Content engine; source https://adisuja.github.io/revops-content-engine-playbook/",
-   "done_when": [
-    "Every content metric shows from the simulator; the OS kit builds the same view"
-   ],
-   "evidence": [
-    {
-     "label": "Content view 375",
-     "url": "/tmp/t468-content-375.png"
-    },
-    {
-     "label": "Content view 768",
-     "url": "/tmp/t468-content-768.png"
-    },
-    {
-     "label": "Content view 1280",
-     "url": "/tmp/t468-content-1280.png"
-    },
-    {
-     "label": "Probe",
-     "url": "app/scripts/probe-t468.mjs"
-    },
-    {
-     "label": "Kit README",
-     "url": "revops-os/os/kits/dashboard/README.md"
-    }
-   ],
+   "area": "Product",
+   "order": null,
+   "title": "T-468: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
    "blockers": [],
    "needs_from_owner": "",
-   "tags": [
-    "revops-os",
-    "content-engine"
-   ],
-   "log": [
-    {
-     "ts": "2026-10-15 03:48",
-     "who": "system",
-     "note": "created"
-    },
-    {
-     "ts": "2026-10-20T17:43:26+0530",
-     "who": "claude",
-     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
-    },
-    {
-     "ts": "2026-10-20T17:43:26+0530",
-     "who": "claude",
-     "note": "Built and verified on branch series-deck-finish (commits 4812441c, d181951e): app/scripts/probe-t468.mjs ALL PASS (83 checks), covering every content tile and table at 375, 768 and 1280 with no sideways scroll, plus the OS kit (revops-os/os/kits/dashboard/sync.mjs) reading the simulator with the same keys and sending the funnel an identical Content panel; cloud tsc is clean. Left for the next pass: cherry-pick both commits onto main, rebuild the kits there, check LOG.md for publish held, push main, then wrangler deploy revops-centre and check it live."
-    }
-   ]
+   "log": [],
+   "held": true
   },
   {
    "id": "T-469",
