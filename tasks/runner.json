@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-21T17:02:26+0530",
+   "task_id": "T-033",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-033 is still blocked: Adi needs to reactivate the GrowthClub Tantra plan (tracked as T-480), so no Day 1 WhatsApp or email was sent this run. No files changed, so there was nothing to commit.\n\n| Requirement | State and evidence from this run |\n|---|---|\n| Adi test gets the Day 1 link by WhatsApp w"
+  },
+  {
    "ts": "2026-10-21T16:56:51+0530",
    "task_id": "T-225",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-458 is back in review with Adi and Bharath. Both zips download from a new review build. That build is only a preview, so live traffic still runs main. I also fixed one gap the earlier run missed.\n\n**The gap:** the chat edition's `INSTRUCTIONS.md` was 12,046 characters, but ChatGPT's project instru"
-  },
-  {
-   "ts": "2026-10-19T00:08:12+0530",
-   "task_id": "T-462",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "ok",
-   "summary": "T-462 stays in doing: Day 0 round 5 is still running but stuck waiting for the usage limit to reset, so the prompts can't all pass yet.\n\n| Item | State |\n|---|---|\n| Finish Day 0 with fresh `claude -p` runs and rubric reviews | **Not done.** Round 5 (PID 4833) has been waiting since 23:54 with the l"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-033: WhatsApp + email delivery automation",
- "task_id": "T-033",
+ "message": "Acting on 1 note(s) for T-461: Test harness: fill the centre as Tantra, run every day's prompts in fresh Claude Code sessions",
+ "task_id": "T-461",
  "entries": [
-  "F-b4283ced"
+  "F-d6031805"
  ],
  "mode": "feedback",
- "started": "2026-10-21T16:57:11+0530",
+ "started": "2026-10-21T17:02:53+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
@@ -117,7 +117,6 @@
   "T-268": 1,
   "T-034": 2,
   "T-351": 1,
-  "T-033": 1,
   "T-466": 1,
   "T-468": 1
  },
