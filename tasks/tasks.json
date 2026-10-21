@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-21T17:33:27+0530",
-  "version": 2741,
+  "updated": "2026-10-21T17:37:47+0530",
+  "version": 2742,
   "last_id": 482,
   "team": [
    {
@@ -3238,7 +3238,7 @@
     "Bharath"
    ],
    "priority": "P2",
-   "due": "2026-10-17",
+   "due": "2026-10-24",
    "area": "Product",
    "order": 450,
    "title": "T-073: held back (private client detail)",
