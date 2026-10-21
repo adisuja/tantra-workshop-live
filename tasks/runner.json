@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-21T18:50:35+0530",
+   "task_id": "T-467",
+   "mode": "feedback",
+   "status": "review",
+   "result": "budget",
+   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
+  },
+  {
    "ts": "2026-10-21T18:43:00+0530",
    "task_id": "T-001",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "ok",
    "summary": "T-461 stays in **doing**. Day 0 is not finished, so Days 1 to 3 have not started and nothing has been pushed.\n\nThe repeat failure of card 0.10 had a cause I could fix. A run restarted with `--from` kept its old 18 October guide files, which still mentioned check.md 6 times. `run.py` now copies the l"
-  },
-  {
-   "ts": "2026-10-21T17:02:26+0530",
-   "task_id": "T-033",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "ok",
-   "summary": "T-033 is still blocked: Adi needs to reactivate the GrowthClub Tantra plan (tracked as T-480), so no Day 1 WhatsApp or email was sent this run. No files changed, so there was nothing to commit.\n\n| Requirement | State and evidence from this run |\n|---|---|\n| Adi test gets the Day 1 link by WhatsApp w"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-467: Content engine cards on Day 2 and the weekly content loop on Day 3",
- "task_id": "T-467",
+ "message": "Acting on 1 note(s) for T-471: UI walk as Tantra (webinar): fix the 8 cards that did not finish and update the walker's expectations",
+ "task_id": "T-471",
  "entries": [
-  "F-b9a27392"
+  "F-39fe160f"
  ],
  "mode": "feedback",
- "started": "2026-10-21T18:48:26+0530",
+ "started": "2026-10-21T18:54:07+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
