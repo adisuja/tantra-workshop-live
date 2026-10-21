@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-21T17:26:44+0530",
+   "task_id": "T-460",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-460 is back in review. The prompt packs v2 probe passes locally and on the live centre, but the day delivery campaigns are still blocked on T-408, and v2 still isn't merged into main.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Probe passes locally, days 0 to 3 | Done | Passed on th"
+  },
+  {
    "ts": "2026-10-21T17:20:51+0530",
    "task_id": "T-456",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-468 is set to doing: the content dashboard and the OS kit's matching view are built and pass the new probe (83 of 83 checks), but nothing is pushed to main or depl"
-  },
-  {
-   "ts": "2026-10-20T02:42:18+0530",
-   "task_id": "T-466",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "turns",
-   "summary": "T-466 stays in queue: its review build can't start yet because T-465 (the Fable critic pass) hasn't run, so I didn't do the approved deploy. I updated the task note, and the ack returned \"acked 0\", so F-166eed51 was probably already acknowledged last run.\n\n- **Blockers T-455 to T-465 on T-466:** don"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-460: Prompt packs v2: context prompt, one prompt per build task, wrap prompt, email and WhatsApp link",
- "task_id": "T-460",
+ "message": "Working on a task.",
+ "task_id": "T-464",
  "entries": [
-  "F-e25cc4ad"
+  "F-7559bf20"
  ],
  "mode": "feedback",
- "started": "2026-10-21T17:21:11+0530",
+ "started": "2026-10-21T17:27:34+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
