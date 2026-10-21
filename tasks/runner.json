@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-21T19:24:36+0530",
+   "task_id": "T-471",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "provider",
+   "summary": "API Error: 502 [gemini/gemini-3-flash-preview] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3-flash-preview — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 3s). This is a server-side issue, usually temporary — try again in a moment. If i"
+  },
+  {
    "ts": "2026-10-21T18:50:35+0530",
    "task_id": "T-467",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-456 is back in review with all checks passing, but it is not pushed: the approved push can't be done as approved. I've added one yes/no question for Adi on the task.\n\n1. **Rebuild and checks:** done. I ran the card export and `build.py`, then `check-task-guides.mjs`. It reported \"122 cards, 99 gui"
-  },
-  {
-   "ts": "2026-10-21T17:19:38+0530",
-   "task_id": "T-461",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "ok",
-   "summary": "T-461 stays in **doing**. Day 0 is not finished, so Days 1 to 3 have not started and nothing has been pushed.\n\nThe repeat failure of card 0.10 had a cause I could fix. A run restarted with `--from` kept its old 18 October guide files, which still mentioned check.md 6 times. `run.py` now copies the l"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-471: UI walk as Tantra (webinar): fix the 8 cards that did not finish and update the walker's expectations",
- "task_id": "T-471",
+ "message": "Acting on 1 note(s) for T-481: Insource phase 1: patches for the Tantra page, sidebar item, gate exception, CSP and shell fix",
+ "task_id": "T-481",
  "entries": [
-  "F-39fe160f"
+  "R-af7d0c9b"
  ],
  "mode": "feedback",
- "started": "2026-10-21T18:54:07+0530",
+ "started": "2026-10-21T19:24:45+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
