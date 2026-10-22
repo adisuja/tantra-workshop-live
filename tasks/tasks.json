@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-23T00:51:12+0530",
-  "version": 2783,
+  "updated": "2026-10-23T00:53:03+0530",
+  "version": 2786,
   "last_id": 501,
   "team": [
    {
@@ -20639,20 +20639,16 @@
    ],
    "evidence": [
     {
+     "label": "Cloudflare knowledge",
+     "url": "revops-os/os/knowledge/integrations/cloudflare.md"
+    },
+    {
+     "label": "Tantra API knowledge",
+     "url": "revops-os/os/knowledge/channels/tantra-api.md"
+    },
+    {
      "label": "check-refs.mjs",
      "url": "revops-os/os/scripts/check-refs.mjs"
-    },
-    {
-     "label": "Knowledge index",
-     "url": "revops-os/os/knowledge/README.md"
-    },
-    {
-     "label": "Newsletters channel",
-     "url": "revops-os/os/knowledge/channels/newsletters.md"
-    },
-    {
-     "label": "Commit c81352a8 (branch agent/t455-knowledge f29d8af9)",
-     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/f29d8af9"
     }
    ],
    "blockers": [],
@@ -20700,6 +20696,21 @@
      "ts": "2026-10-21T17:20:42+0530",
      "who": "claude",
      "note": "Refs check re-run on 2026-10-21 for T-456: os/scripts/check-refs.mjs reports 'refs ok: 191 citations in 58 files' in revops-os/os and 'refs ok: 1022 citations in 183 files' in the built dist, every path and heading resolves."
+    },
+    {
+     "ts": "2026-10-23T00:52:13+0530",
+     "who": "claude",
+     "note": "Added the T-464 Cloudflare fact to knowledge/integrations/cloudflare.md: binding a Worker custom domain (PUT /workers/domains) needs a token with Workers admin rights, and error 10000 on that call alone means add that right rather than recreate the token. The page stays on workers.dev, which is also what gets probed. The Tantra facts (lists delete at /contacts/lists/:id, campaign DELETE is a soft delete with deleted:true) were already in channels/tantra-api.md lines 114, 206 and 394-395. check-refs reports 191 citations ok and check-dashes reports none (commit 675632cc). api.mjs itself belongs to T-454 and was not touched."
+    },
+    {
+     "ts": "2026-10-23T00:52:45+0530",
+     "who": "claude",
+     "note": "Verify pass: tantra-api.md lines 114 and 394 say lists delete at DELETE /contacts/lists/:id, line 206 and 395 say a campaign DELETE is soft (204, then deleted: true), and cloudflare.md line 78 (commit 675632cc) says only a Workers admin token binds a custom domain via PUT /workers/domains (10000 otherwise) and to probe workers.dev. check-refs.mjs reports 191 citations ok and check-dashes finds no dashes in knowledge; api.mjs is T-454's."
+    },
+    {
+     "ts": "2026-10-23T00:53:03+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-454."
     }
    ]
   },
