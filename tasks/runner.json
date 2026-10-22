@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-23T00:58:03+0530",
+   "task_id": "T-073",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-073 stays blocked on T-223 (the first real sign-up), not on Adi. No cohort has recorded yet, so the course has nothing to publish. I committed this as 7a08b2d5 and did not push it.\n\n**Completion check**\n- **Spec and done-when rewritten around the first cohort that records: done.** I read them in `"
+  },
+  {
    "ts": "2026-10-23T00:55:26+0530",
    "task_id": "T-461",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "budget",
    "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
-  },
-  {
-   "ts": "2026-10-22T14:42:05+0530",
-   "task_id": "T-470",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "ok",
-   "summary": "Round 2 is running in the background. I'll pick it up when the first three reviews land."
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-073: Cut session recordings into the Tantra Pro course",
- "task_id": "T-073",
+ "message": "Acting on 1 note(s) for T-475: Export start-domains ticks and d1-ga4 values to answers and centre state",
+ "task_id": "T-475",
  "entries": [
-  "F-ecbdbb60"
+  "F-352bcaad"
  ],
  "mode": "feedback",
- "started": "2026-10-23T00:55:41+0530",
+ "started": "2026-10-23T00:58:48+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,

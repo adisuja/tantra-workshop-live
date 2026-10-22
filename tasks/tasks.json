@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-23T00:56:22+0530",
-  "version": 2789,
+  "updated": "2026-10-23T00:57:32+0530",
+  "version": 2793,
   "last_id": 501,
   "team": [
    {
@@ -20711,6 +20711,11 @@
      "ts": "2026-10-23T00:53:03+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-454."
+    },
+    {
+     "ts": "2026-10-23T00:56:35+0530",
+     "who": "claude",
+     "note": "Refs check re-run on a clean worktree of origin/main with T-456 shipped: 'refs ok: 189 citations in 58 files, every path and heading resolves'. The T-455 knowledge (index, newsletters channel, check-refs.mjs) is now on main as b42e0afc."
     }
    ]
   },
@@ -20734,24 +20739,24 @@
    ],
    "evidence": [
     {
-     "label": "Sample guide",
-     "url": "revops-os/dist/tantra-revops-os/tasks/day0/D0.09-start-os-setup.md"
+     "label": "Main commit 6e692636",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/6e692636"
     },
     {
-     "label": "Check script (0 problems, 122 cards)",
+     "label": "Guides commit 4fb2d8c3",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/4fb2d8c3"
+    },
+    {
+     "label": "Check script",
      "url": "revops-os/scripts/check-task-guides.mjs"
     },
     {
      "label": "Generator",
      "url": "revops-os/build.py"
-    },
-    {
-     "label": "Commit 0ab050c9 (branch series-deck-finish)",
-     "url": "revops-os/build.py"
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Yes or no: may I merge origin/main into series-deck-finish and run 'git push origin series-deck-finish:main', which publishes all 100 branch commits from every lane, not only T-456?",
+   "needs_from_owner": "",
    "tags": [
     "revops-os"
    ],
@@ -20785,6 +20790,16 @@
      "ts": "2026-10-22T23:39:13+0530",
      "who": "claude",
      "note": "Session 2026-10-22: task guides regenerated for all 138 cards after T-484; check-task-guides clean."
+    },
+    {
+     "ts": "2026-10-23T00:56:35+0530",
+     "who": "claude",
+     "note": "Shipped to main: 4fb2d8c3 (guides) and b42e0afc (T-455 knowledge) cherry-picked onto origin/main, plus 6e692636, which drops guide data for d3-replies, d3-reinvite and d3-kpis because those 3 cards are not on main yet (they arrive with commit 12222e2a; the branch keeps them). On 6e692636: check-task-guides reports '119 cards, 96 guides with a prompt, 23 marked no prompt, 0 problems' and check-refs reports 189 citations in 58 files all resolving. The Pages mirror needed no publish: the export matched live/site except the build id and timestamps, since the centre runs on its Worker."
+    },
+    {
+     "ts": "2026-10-23T00:56:51+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-466, T-455."
     }
    ]
   },
