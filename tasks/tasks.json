@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-23T01:46:53+0530",
-  "version": 2803,
+  "updated": "2026-10-23T03:19:27+0530",
+  "version": 2808,
   "last_id": 501,
   "team": [
    {
@@ -22479,7 +22479,7 @@
    "title": "Input from Adi for T-484: Tantra Pro trial terms and annual prices on the Invitation",
    "area": "Product",
    "owner": "Adi",
-   "assignee": "Claude",
+   "assignee": "Adi",
    "reviewers": [
     "Adi"
    ],
@@ -22502,6 +22502,11 @@
      "ts": "2026-10-22T23:42:27+0530",
      "who": "Orchestrator",
      "note": "People: assignee Adi → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-23T03:19:27+0530",
+     "who": "claude",
+     "note": "People: assignee Claude → Adi (by claude)."
     }
    ],
    "order": 4870
@@ -22511,7 +22516,7 @@
    "title": "Input from Adi for T-484: growth KPIs and the tag names for the path card and the re-invite list",
    "area": "Product",
    "owner": "Adi",
-   "assignee": "Claude",
+   "assignee": "Adi",
    "reviewers": [
     "Adi"
    ],
@@ -22534,6 +22539,11 @@
      "ts": "2026-10-22T23:42:28+0530",
      "who": "Orchestrator",
      "note": "People: assignee Adi → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-23T03:19:27+0530",
+     "who": "claude",
+     "note": "People: assignee Claude → Adi (by claude)."
     }
    ],
    "order": 4880
@@ -22543,7 +22553,7 @@
    "title": "Input from Adi for T-484: confirm the structure and vendor defaults (B5 to B15 and three build-or-not calls)",
    "area": "Product",
    "owner": "Adi",
-   "assignee": "Claude",
+   "assignee": "Adi",
    "reviewers": [
     "Adi"
    ],
@@ -22566,6 +22576,11 @@
      "ts": "2026-10-22T23:42:28+0530",
      "who": "Orchestrator",
      "note": "People: assignee Adi → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-23T03:19:27+0530",
+     "who": "claude",
+     "note": "People: assignee Claude → Adi (by claude)."
     }
    ],
    "order": 4890
@@ -22575,7 +22590,7 @@
    "title": "Input from Adi for T-484: three source conflicts (the /masterclass cinematic, opens in the KPI model, experiment sizing)",
    "area": "Product",
    "owner": "Adi",
-   "assignee": "Claude",
+   "assignee": "Adi",
    "reviewers": [
     "Adi"
    ],
@@ -22598,6 +22613,11 @@
      "ts": "2026-10-22T23:42:28+0530",
      "who": "Orchestrator",
      "note": "People: assignee Adi → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-23T03:19:27+0530",
+     "who": "claude",
+     "note": "People: assignee Claude → Adi (by claude)."
     }
    ],
    "order": 4900
@@ -22607,7 +22627,7 @@
    "title": "Input from Adi for T-484: welcome video and the welcome, announcement and cohort links plus QR",
    "area": "Product",
    "owner": "Adi",
-   "assignee": "Claude",
+   "assignee": "Adi",
    "reviewers": [
     "Adi"
    ],
@@ -22630,6 +22650,11 @@
      "ts": "2026-10-22T23:42:28+0530",
      "who": "Orchestrator",
      "note": "People: assignee Adi → Claude (by Orchestrator)."
+    },
+    {
+     "ts": "2026-10-23T03:19:27+0530",
+     "who": "claude",
+     "note": "People: assignee Claude → Adi (by claude)."
     }
    ],
    "order": 4910
