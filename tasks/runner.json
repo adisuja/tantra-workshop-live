@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-22T14:51:38+0530",
+   "task_id": "T-467",
+   "mode": "feedback",
+   "status": "review",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
    "ts": "2026-10-22T14:49:45+0530",
    "task_id": "T-477",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "budget",
    "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
-  },
-  {
-   "ts": "2026-10-21T18:43:00+0530",
-   "task_id": "T-001",
-   "mode": "feedback",
-   "status": "review",
-   "result": "budget",
-   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-467: Content engine cards on Day 2 and the weekly content loop on Day 3",
- "task_id": "T-467",
+ "message": "Acting on 1 note(s) for T-471: UI walk as Tantra (webinar): fix the 8 cards that did not finish and update the walker's expectations",
+ "task_id": "T-471",
  "entries": [
-  "F-b9a27392"
+  "F-39fe160f"
  ],
  "mode": "feedback",
- "started": "2026-10-22T14:51:06+0530",
+ "started": "2026-10-22T14:52:26+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
