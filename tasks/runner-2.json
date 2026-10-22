@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-22T16:00:13+0530",
+   "task_id": "T-455",
+   "mode": "feedback",
+   "status": "review",
+   "result": "provider",
+   "summary": "API Error: 502 [gemini/gemini-3.5-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.5-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 3s). This is a server-side issue, usually temporary — try again in a moment. If it persists, "
+  },
+  {
    "ts": "2026-10-22T15:29:16+0530",
    "task_id": "T-466",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model gemini-3-flash-preview are cooling down"
-  },
-  {
-   "ts": "2026-10-21T17:42:35+0530",
-   "task_id": "T-459",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. I pushed the T-459 fixes to main (90578a13), but the job isn't finished: the live centre still doesn't have the new \"Refresh your OS context\" button. The deploy and "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-455",
+ "task_id": "T-456",
  "entries": [
-  "F-80f34552"
+  "F-843f0ca4"
  ],
- "started": "2026-10-22T15:29:16+0530",
- "message": "Acting on 1 note(s) for T-455: Tantra RevOps OS knowledge: funnels, Tantra channels, CRM, integrations, voice, equations",
+ "started": "2026-10-22T16:01:58+0530",
+ "message": "Acting on 1 note(s) for T-456: Tantra RevOps OS task guides: one per centre card, generated from the playbook",
  "slices": {
   "T-250": 1,
   "T-301": 1,
