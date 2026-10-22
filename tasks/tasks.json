@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-22T14:53:10+0530",
-  "version": 2753,
+  "updated": "2026-10-22T19:36:38+0530",
+  "version": 2755,
   "last_id": 482,
   "team": [
    {
@@ -246,11 +246,11 @@
    "evidence": [
     {
      "label": "Landing page (mirror)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791714702"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792677847"
     },
     {
-     "label": "Landing page (local)",
-     "url": "http://localhost:4322/masterclass?v=1791714702"
+     "label": "VIP (mirror)",
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1792677847"
     },
     {
      "label": "Share metadata",
@@ -262,7 +262,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1791714702 and reply on this task with copy changes, or approve.",
+   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792677847 and reply on this task with copy changes, or approve.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -328,6 +328,11 @@
      "ts": "2026-10-21T16:31:58+0530",
      "who": "claude",
      "note": "T-477 republished the mirror from main 06f00427 (live commit c3c56128e). https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792580485023 and https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1792580485023 both load with status 200 in a headless browser. A grep of the export found 0 matches for refund, money-back or risk-free; the only 'guarantee' is the footer disclaimer saying results are not a guarantee."
+    },
+    {
+     "ts": "2026-10-22T19:36:38+0530",
+     "who": "claude",
+     "note": "The mirror is current. Live commit bdbf38751 was built from main 41b1fcac, which includes 757b2ecd (the /masterclass share card) and the T-477 no-refund copy, and no app change has landed on origin/main since, so I did not republish. Checked today on the mirror: /masterclass and /vip have no $50M, refund or money-back, and 'webinar' only appears in hidden site schema; probe-funnels is clean on all 10 pages at 390 and 1440; probe-workshop has 44 ok, and its 3 fails are the checkout API checks a static mirror cannot answer. Adi: copy sign-off at https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792677847"
     }
    ],
    "order": 0,
@@ -21896,6 +21901,11 @@
      "ts": "2026-10-21T16:34:59+0530",
      "who": "claude",
      "note": "Verify pass: the live mirror pages /masterclass, /masterclass/success, /vip, /vip/success and /workshop all return 200 today with 0 refund, money-back or risk-free text (the only 'guarantee' is the footer line saying results are not a guarantee); /vip keeps 'What you keep'. No publish hold is open after the 2026-10-06 one lifted at 03:41. The probe-anonymity allow-list fix is now committed on this checkout (fff41f56) and probe-anonymity --export PASSES (3154 files). Open https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792580699 and https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1792580699"
+    },
+    {
+     "ts": "2026-10-22T19:36:38+0530",
+     "who": "claude",
+     "note": "Checked from T-001 on 2026-10-22: the T-477 publish ran (live c3c56128e from main 06f00427), and a later publish bdbf38751 from main 41b1fcac is now live. No app change has landed on origin/main since 41b1fcac. On the live mirror, /masterclass and /vip have 0 hits for $50M, refund or money-back, and /vip shows 'What you keep'."
     }
    ]
   },
