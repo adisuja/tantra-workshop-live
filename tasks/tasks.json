@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-22T19:52:42+0530",
-  "version": 2763,
+  "updated": "2026-10-22T20:04:03+0530",
+  "version": 2764,
   "last_id": 482,
   "team": [
    {
@@ -20844,28 +20844,28 @@
    ],
    "evidence": [
     {
+     "label": "Funnel Worker",
+     "url": "cloud/funnel/worker.js"
+    },
+    {
+     "label": "Config validator warnings",
+     "url": "revops-os/os/kits/funnel/validate-config.mjs"
+    },
+    {
+     "label": "Deploy warnings",
+     "url": "revops-os/os/kits/funnel/deploy.mjs"
+    },
+    {
+     "label": "Kit Worker copy",
+     "url": "revops-os/os/kits/funnel/worker.js"
+    },
+    {
      "label": "Tantra example config",
      "url": "revops-os/os/kits/funnel/examples/tantra.config.json"
     },
     {
-     "label": "Nurture draft",
-     "url": "revops-os/os/kits/tantra/examples/nurture.json"
-    },
-    {
-     "label": "Newsletter draft",
-     "url": "revops-os/os/kits/tantra/examples/newsletter.json"
-    },
-    {
      "label": "Session transcript",
      "url": "revops-os/kit-src/test/evidence/T-457/transcript.txt"
-    },
-    {
-     "label": "Local verify re-run 17/17",
-     "url": "revops-os/kit-src/test/evidence/T-457/verify-local-rerun.md"
-    },
-    {
-     "label": "curl output",
-     "url": "revops-os/kit-src/test/evidence/T-457/curl.txt"
     }
    ],
    "blockers": [],
@@ -20898,6 +20898,11 @@
      "ts": "2026-10-21T17:33:27+0530",
      "who": "claude",
      "note": "Verify pass: re-checked everything on disk. The Tantra example config validates, the nurture and newsletter drafts dry-run as draft only, both README rows exist, and the kit test passes 47 of 47. I re-ran the claude -p session's deployed Worker under local wrangler dev: it answers 200 and verify passes 17 of 17 (new evidence file committed in 166ac476). Not pushed: this checkout is on series-deck-finish, 107 commits ahead of main and 11 behind, and pushing main now would also publish other lanes' work, so it ships when the branch merges."
+    },
+    {
+     "ts": "2026-10-22T20:04:03+0530",
+     "who": "claude",
+     "note": "The funnel Worker now drops a Wistia embed that has no real 10-character media id (no more 'Media not found.') and hides the event date on every public page once the event is over, logs a warning, and flags it on the dashboard; validate-config.mjs and deploy.mjs print both as warnings. Checked in this run: a stale config with a placeholder video renders / and /thanks at 200 with no iframe and no date, a fresh config keeps both, and the kit test passes 47 of 47. Commits dc821206 and 24e67421 on series-deck-finish, not pushed."
     }
    ]
   },
