@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-22T14:49:39+0530",
+   "task_id": "T-001",
+   "mode": "feedback",
+   "status": "review",
+   "result": "budget",
+   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
+  },
+  {
    "ts": "2026-10-22T14:41:34+0530",
    "task_id": "T-463",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "turns",
    "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-470 isn't finished: no content prompt has a passing review yet, so I set it to `doing` (not `review`), committed the test pack and answers file as `e4bdf3d0`, and "
-  },
-  {
-   "ts": "2026-10-20T17:56:03+0530",
-   "task_id": "T-467",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "budget",
-   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-001",
+ "task_id": "T-467",
  "entries": [
-  "F-d8faad8b"
+  "F-b9a27392"
  ],
- "started": "2026-10-22T14:42:26+0530",
- "message": "Acting on 1 note(s) for T-001: /masterclass landing page",
+ "started": "2026-10-22T14:52:20+0530",
+ "message": "Acting on 1 note(s) for T-467: Content engine cards on Day 2 and the weekly content loop on Day 3",
  "slices": {
   "T-250": 1,
   "T-301": 1,

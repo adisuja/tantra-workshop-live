@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-22T14:51:16+0530",
+   "task_id": "T-470",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
+   "ts": "2026-10-22T14:49:10+0530",
+   "task_id": "T-465",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "budget",
+   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
+  },
+  {
    "ts": "2026-10-22T02:22:02+0530",
    "task_id": "T-469",
    "mode": "feedback",
@@ -79,32 +95,16 @@
    "status": "review",
    "result": "ok",
    "summary": "T-478 checks out: the Ticket card is on origin/main and live, and I've moved the task to review for Adi and Bharath. I made no code changes this run.\n\n| Item | State | Evidence from this run |\n|---|---|---|\n| Adi picks a direction | Done | The Orchestrator decision ([2864591970bb]) chose A Ticket pl"
-  },
-  {
-   "ts": "2026-10-21T16:59:38+0530",
-   "task_id": "T-467",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-467 is back in review with Adi and Bharath. All seven content cards check out with their probes passing, but nothing was pushed, nothing was published, and two Day"
-  },
-  {
-   "ts": "2026-10-20T17:52:29+0530",
-   "task_id": "T-467",
-   "mode": "feedback",
-   "status": "queue",
-   "result": "budget",
-   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-465",
+ "task_id": "T-001",
  "entries": [
-  "F-6c962c73"
+  "F-d8faad8b"
  ],
- "started": "2026-10-22T14:31:41+0530",
- "message": "Acting on 1 note(s) for T-465: Fable critic on the whole RevOps OS build",
+ "started": "2026-10-22T14:51:56+0530",
+ "message": "Acting on 1 note(s) for T-001: /masterclass landing page",
  "slices": {
   "T-135": 1,
   "T-300": 2,

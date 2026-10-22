@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-22T14:49:45+0530",
+   "task_id": "T-477",
+   "mode": "feedback",
+   "status": "review",
+   "result": "budget",
+   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
+  },
+  {
    "ts": "2026-10-22T14:42:05+0530",
    "task_id": "T-470",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "budget",
    "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
-  },
-  {
-   "ts": "2026-10-21T18:37:42+0530",
-   "task_id": "T-470",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "budget",
-   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-477: Publish the marketing pages so the no-refund and pricing copy can be reviewed",
- "task_id": "T-477",
+ "message": "Acting on 1 note(s) for T-467: Content engine cards on Day 2 and the weekly content loop on Day 3",
+ "task_id": "T-467",
  "entries": [
-  "F-3782808d"
+  "F-b9a27392"
  ],
  "mode": "feedback",
- "started": "2026-10-22T14:42:32+0530",
+ "started": "2026-10-22T14:51:06+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
