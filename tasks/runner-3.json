@@ -1,6 +1,46 @@
 {
  "history": [
   {
+   "ts": "2026-10-22T19:58:54+0530",
+   "task_id": "T-466",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
+   "ts": "2026-10-22T19:58:21+0530",
+   "task_id": "T-462",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
+   "ts": "2026-10-22T19:58:17+0530",
+   "task_id": "T-461",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
+   "ts": "2026-10-22T19:58:11+0530",
+   "task_id": "T-034",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
+   "ts": "2026-10-22T19:58:07+0530",
+   "task_id": "T-482",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
    "ts": "2026-10-22T19:52:59+0530",
    "task_id": "T-470",
    "mode": "feedback",
@@ -55,56 +95,16 @@
    "status": "doing",
    "result": "budget",
    "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
-  },
-  {
-   "ts": "2026-10-22T02:22:02+0530",
-   "task_id": "T-469",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "ok",
-   "summary": "T-469 stays in `doing`: the test run has built the content context bucket, but the subscription window is at 92% and the 6-post batch can't run until it resets in about 289 minutes.\n\n| Item | State |\n|---|---|\n| Resume run t469-content | Running. `run.py` (pid 95181) is still going in the background"
-  },
-  {
-   "ts": "2026-10-22T02:17:41+0530",
-   "task_id": "T-463",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "budget",
-   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
-  },
-  {
-   "ts": "2026-10-21T21:19:47+0530",
-   "task_id": "T-468",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-468 is shipped and in review for Adi and Bharath: the content dashboard work is on main and pushed, and the revops-centre Worker is live with it.\n\n**Completion check (every item from the Orchestrator note):**\n1. **Content probe and regression:** done. On main, `probe-t468.mjs` passed 73 of 73, inc"
-  },
-  {
-   "ts": "2026-10-21T17:44:08+0530",
-   "task_id": "T-073",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "ok",
-   "summary": "T-073 stays in **doing**, now due 2026-10-24. The 14 to 16 Oct cohort never ran on meeting 88135386601, so there was nothing to cut, and the job is now watching the 21 to 23 Oct meeting.\n\n**Completion check (all checked this run):**\n- **Read the job log and Zoom, read-only: done.** `/tmp/course-auto"
-  },
-  {
-   "ts": "2026-10-21T17:33:37+0530",
-   "task_id": "T-457",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-457 is back in review: every item checked out again in this run except the push, which I held.\n\n1. **Tantra example config:** done. `validate-config.mjs` passes `funnel/examples/tantra.config.json` (webinar funnel, 22 messages). It uses the usetantra.com logo, site and privacy links and carries th"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-482",
+ "task_id": "T-457",
  "entries": [
-  "F-443eacc2"
+  "F-daf2873a"
  ],
- "started": "2026-10-22T19:55:51+0530",
- "message": "Acting on 1 note(s) for T-482: Input from Bharath: Clerk production webhook endpoint and signing secret for the centre",
+ "started": "2026-10-22T19:58:55+0530",
+ "message": "Acting on 1 note(s) for T-457: Tantra RevOps OS kits: funnel Worker and config schema, deck, sequences, CRM scripts",
  "slices": {
   "T-135": 1,
   "T-300": 2,
