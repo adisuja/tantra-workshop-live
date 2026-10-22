@@ -99,12 +99,12 @@
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-456",
+ "task_id": "T-465",
  "entries": [
-  "F-843f0ca4"
+  "F-6c962c73"
  ],
- "started": "2026-10-22T16:01:58+0530",
- "message": "Acting on 1 note(s) for T-456: Tantra RevOps OS task guides: one per centre card, generated from the playbook",
+ "started": "2026-10-22T16:06:25+0530",
+ "message": "Acting on 1 note(s) for T-465: Fable critic on the whole RevOps OS build",
  "slices": {
   "T-250": 1,
   "T-301": 1,
