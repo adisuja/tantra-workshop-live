@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-23T00:46:09+0530",
-  "version": 2781,
+  "updated": "2026-10-23T00:48:00+0530",
+  "version": 2782,
   "last_id": 501,
   "team": [
    {
@@ -21001,12 +21001,16 @@
    ],
    "evidence": [
     {
-     "label": "Day 1 pack (plain text)",
-     "url": "https://revops-centre.growthcluborg.workers.dev/api/prompts/day/1.txt?v=t460r3"
+     "label": "Tantra API reference (plan check, list delete, soft delete)",
+     "url": "revops-os/os/knowledge/channels/tantra-api.md"
     },
     {
-     "label": "Centre preview",
-     "url": "https://revops-centre.growthcluborg.workers.dev/preview?v=t460r3"
+     "label": "Day 3 task source",
+     "url": "revops-os/tasks/day3.json"
+    },
+    {
+     "label": "Built D3.03 guide",
+     "url": "revops-os/dist/tantra-revops-os/tasks/day3/D3.03-d3-test-run.md"
     },
     {
      "label": "Probe",
@@ -21048,6 +21052,11 @@
      "ts": "2026-10-21T17:26:35+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-21: probe-day-prompts v2 passes locally (48 packs, per-task rule, setup prompt; tsc clean on commit ab2d7c9a) and live against revops-centre (API and .txt for days 0 to 3, the (v2 deployed) self-check, /enter?pack=N landing on the .txt). The day delivery campaigns are still refused today ('Set the sender mailbox in Cohort Settings first', sender null), so they wait on T-408; nothing was created. v2 sits on origin/agent/t460-v2-on-main, one fast-forward commit ahead of main: Bharath, merge it into main or the next deploy from main drops v2 again. Open https://revops-centre.growthcluborg.workers.dev/api/prompts/day/1.txt?v=t460r3 from a personal link."
+    },
+    {
+     "ts": "2026-10-23T00:48:00+0530",
+     "who": "claude",
+     "note": "The Day 3 guides now act on the T-464 findings (commit 32259432). D3.03 test run, D3.04 connect and D3.09 launch have the owner check Tantra Billing before anything else, and a 402 subscription_inactive counts as a lapsed plan (setup, not a fail; the launch stops there). The Tantra API reference now gives DELETE /contacts/lists/:id for lists and says a deleted campaign is done once it reads deleted:true. I rebuilt the OS and ran probe-day-prompts v2 locally (48 packs pass), and the dash check is clean. The live centre zip picks this up at the next centre deploy, and T-461 can read it now in revops-os/dist/tantra-revops-os/tasks/day3/."
     }
    ]
   },
