@@ -97,14 +97,14 @@
    "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
   }
  ],
- "state": "paused",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
+ "task_id": "T-465",
  "entries": [
-  "F-7416e982"
+  "F-6c962c73"
  ],
- "started": "2026-10-22T02:20:47+0530",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 92% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 07:11.",
+ "started": "2026-10-22T14:31:41+0530",
+ "message": "Acting on 1 note(s) for T-465: Fable critic on the whole RevOps OS build",
  "slices": {
   "T-135": 1,
   "T-300": 2,

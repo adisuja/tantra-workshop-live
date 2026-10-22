@@ -97,14 +97,14 @@
    "summary": "T-463 is still in progress (status **doing**). All three runs are live, but only the first of each run's 67 or 73 prompts has finished. The rest are paused until the usage window resets at 22:30 IST: the window was at 75% at 17:50, and Adi's token rule says to wait. I logged the current progress in "
   }
  ],
- "state": "paused",
+ "state": "working",
  "mode": "feedback",
- "task_id": null,
+ "task_id": "T-463",
  "entries": [
-  "F-6c962c73"
+  "F-a5385982"
  ],
- "started": "2026-10-22T02:25:27+0530",
- "message": "Holding to stay under 80% of the 5-hour usage window: T-465 stopped at 92%; OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 07:11.",
+ "started": "2026-10-22T14:31:56+0530",
+ "message": "Acting on 1 note(s) for T-463: Spot checks: RSP, challenge, chat edition, Codex",
  "slices": {
   "T-250": 1,
   "T-301": 1,

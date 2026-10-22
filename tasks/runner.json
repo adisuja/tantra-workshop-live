@@ -97,14 +97,14 @@
    "summary": "API Error: 502 [gemini/gemini-3.7-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.7-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 3s). This is a server-side issue, usually temporary — try again in a moment. If it persists, "
   }
  ],
- "state": "paused",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 91% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 07:11.",
- "task_id": null,
+ "state": "working",
+ "message": "Acting on 1 note(s) for T-470: Content task data and prompts, tested with the reviewer",
+ "task_id": "T-470",
  "entries": [
-  "F-b9a27392"
+  "F-401bcf3f"
  ],
  "mode": "feedback",
- "started": "2026-10-22T02:20:56+0530",
+ "started": "2026-10-22T14:32:11+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
