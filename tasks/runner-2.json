@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-23T01:39:08+0530",
+   "task_id": "T-001",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-001 stays in review: everything checked out on the live mirror, so there was nothing to fix, push or republish. It still needs Adi's copy sign-off.\n\n| Item | State | What I saw this run |\n|---|---|---|\n| Share-card fix is in the published mirror | Done | `git merge-base --is-ancestor` confirmed 75"
+  },
+  {
    "ts": "2026-10-23T01:28:40+0530",
    "task_id": "T-463",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "doing",
    "result": "budget",
    "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
-  },
-  {
-   "ts": "2026-10-22T15:25:49+0530",
-   "task_id": "T-461",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "budget",
-   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-001",
+ "task_id": "T-101",
  "entries": [
-  "F-769f5143",
-  "R-9f0e5966"
+  "R-76e7d664"
  ],
- "started": "2026-10-23T01:29:36+0530",
- "message": "Acting on 2 note(s) for T-001: /masterclass landing page",
+ "started": "2026-10-23T01:42:31+0530",
+ "message": "Acting on 1 note(s) for T-101: Key-art system across join, confirmation and onboarding pages",
  "slices": {
   "T-250": 1,
   "T-301": 1,
