@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-23T01:36:19+0530",
-  "version": 2800,
+  "updated": "2026-10-23T01:38:58+0530",
+  "version": 2801,
   "last_id": 501,
   "team": [
    {
@@ -246,7 +246,7 @@
    "evidence": [
     {
      "label": "Landing page (mirror)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792580485023"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792699738"
     },
     {
      "label": "Share metadata",
@@ -258,7 +258,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792580485023 and reply on this task with copy changes, or approve.",
+   "needs_from_owner": "Open https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792699738 and reply on this task with copy changes, or approve.",
    "log": [
     {
      "ts": "2026-09-18T18:00:00-04:00",
@@ -349,6 +349,11 @@
      "ts": "2026-10-23T01:36:19+0530",
      "who": "claude",
      "note": "Rechecked 2026-10-23: 757b2ecd (share card fix) is in 06f00427 (T-477 publish c3c56128e) and in 41b1fcac (live bdbf38751). The live og:title and og:description are the page's own and do not say webinar (the word appears only in hidden site schema and a data attribute). On the mirror, probe-funnels is clean on all 10 pages at 390 and 1440, and probe-workshop has 44 ok; its 3 fails are the checkout and webhook API checks a static mirror cannot answer. Nothing failed, so there was no republish. Refund and guarantee copy is gone (T-477). Adi: copy sign-off at https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792580485023"
+    },
+    {
+     "ts": "2026-10-23T01:38:58+0530",
+     "who": "claude",
+     "note": "Verified again 2026-10-23: the share card fix 757b2ecd is in 06f00427 (T-477 publish c3c56128e) and in 41b1fcac (live publish bdbf38751), and no masterclass file changed on origin/main since. The live og:title and og:description are the page's own (250+ brands, 21+ countries, 47+ industries), with 0 matches for $50M, refund or money-back. probe-funnels on the mirror is clean on all 10 pages at 390 and 1440, and probe-workshop has 44 ok; its 3 fails are the checkout and Dodo webhook API checks a static mirror cannot answer. T-477 removed the refund and guarantee copy. Adi: copy sign-off at https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792699738"
     }
    ],
    "order": 0,
