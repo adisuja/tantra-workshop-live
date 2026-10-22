@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-23T01:04:33+0530",
+   "task_id": "T-475",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "T-475 is back in `doing`: the guide fixes are pushed to main as 8f68656e (export fix 78bbbd67 is already there), and rerun t475-d0c (PID 53636) is waiting about 268 minutes for the usage window.\n\n**Completion check:**\n- **dom_picked and dom_own reach context/answers.json:** this was fixed earlier (7"
+  },
+  {
    "ts": "2026-10-23T00:58:03+0530",
    "task_id": "T-073",
    "mode": "feedback",
@@ -87,19 +95,11 @@
    "status": "review",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-22T14:49:45+0530",
-   "task_id": "T-477",
-   "mode": "feedback",
-   "status": "review",
-   "result": "budget",
-   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
   }
  ],
- "state": "working",
- "message": "Acting on 1 note(s) for T-475: Export start-domains ticks and d1-ga4 values to answers and centre state",
- "task_id": "T-475",
+ "state": "paused",
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 72% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 05:31.",
+ "task_id": null,
  "entries": [
   "F-352bcaad"
  ],
@@ -119,7 +119,8 @@
   "T-466": 1,
   "T-468": 1,
   "T-481": 1,
-  "T-461": 1
+  "T-461": 1,
+  "T-475": 1
  },
  "api_capped": {
   "T-229": "2026-10-12T00:18:33+0530",
