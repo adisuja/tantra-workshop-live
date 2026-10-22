@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-22T19:46:14+0530",
+   "task_id": "T-465",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "## Completion check\n\n**Done in this run**\n- **Round 1 critic:** Fable critics reviewed T-454, T-455, T-456, T-458 and T-460 together and raised 28 findings.\n- **Findings logged:** all 28 are in the T-465 log as R1-F01 to R1-F28, each naming its owning task and fix commit.\n- **T-456 guides (10 findin"
+  },
+  {
    "ts": "2026-10-22T16:07:31+0530",
    "task_id": "T-465",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "budget",
    "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
-  },
-  {
-   "ts": "2026-10-21T17:46:28+0530",
-   "task_id": "T-463",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "budget",
-   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-465",
+ "task_id": "T-471",
  "entries": [
-  "F-6c962c73"
+  "F-39fe160f"
  ],
- "started": "2026-10-22T19:33:29+0530",
- "message": "Acting on 1 note(s) for T-465: Fable critic on the whole RevOps OS build",
+ "started": "2026-10-22T19:46:22+0530",
+ "message": "Acting on 1 note(s) for T-471: UI walk as Tantra (webinar): fix the 8 cards that did not finish and update the walker's expectations",
  "slices": {
   "T-250": 1,
   "T-301": 1,
@@ -123,7 +123,8 @@
   "T-459": 2,
   "T-470": 1,
   "T-471": 1,
-  "T-463": 1
+  "T-463": 1,
+  "T-465": 1
  },
  "api_capped": {
   "T-229": "2026-10-12T00:30:11+0530",
