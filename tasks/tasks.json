@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-23T00:59:44+0530",
-  "version": 2794,
+  "updated": "2026-10-23T01:03:21+0530",
+  "version": 2795,
   "last_id": 501,
   "team": [
    {
@@ -21834,15 +21834,23 @@
    ],
    "evidence": [
     {
-     "label": "main commit",
+     "label": "export fix on main",
      "url": "78bbbd67"
     },
     {
-     "label": "Harness run dir (t475-d0b)",
-     "url": "revops-os/tests/runs/t475-d0b/"
+     "label": "guide fix on main",
+     "url": "8f68656e"
     },
     {
-     "label": "Export excerpt (answers + state block)",
+     "label": "t475-d0b verdicts (0.01 pass, 0.08 fail, 0.22 fail)",
+     "url": "revops-os/tests/runs/t475-d0b/log/"
+    },
+    {
+     "label": "Rerun dir (t475-d0c)",
+     "url": "revops-os/tests/runs/t475-d0c/"
+    },
+    {
+     "label": "Export excerpt",
      "url": "revops-os/tests/runs/t475-d0/export-excerpt.txt"
     }
    ],
@@ -21876,6 +21884,11 @@
      "ts": "2026-10-21T17:16:11+0530",
      "who": "claude",
      "note": "The fix is on origin/main as 78bbbd67 (only the centreAnswers hunk from 65cc063a, cherry-picked from a worktree off origin/main, tsc clean, pushed). The old t475-d0 run had died. A new run, t475-d0b, uses a fresh project, a private sim on port 18975 seeded from the t475 centre state, the fixed-export context prompt, and the current cards 0.01 d0-context, 0.08 start-domains (D0.17) and 0.22 d1-ga4 (D0.37) with the Fable reviewer. It is running detached (PID in revops-os/tests/runs/t475-d0b/harness.pid) but waits about 235 min, because the subscription window is at 65% against the 60% cap. Left for the next pass: read the three review.json verdicts, fix and rerun anything that fails, then set review."
+    },
+    {
+     "ts": "2026-10-23T01:03:21+0530",
+     "who": "claude",
+     "note": "Run t475-d0b finished: d0-context passed, start-domains (D0.17) and d1-ga4 (D0.37) failed on guide gaps, not the export (both sessions read the exported ticks, typed domains and Measurement ID). I fixed both guides in revops-os/tasks/day0.json (series-deck-finish 093f507b, pushed to origin/main as 8f68656e) and started rerun t475-d0c (PID in revops-os/tests/runs/t475-d0c/harness.pid, sim port 18976), which waits about 268 min for the usage window. Left for the next pass: read the three t475-d0c review.json verdicts, fix anything that fails, then set review."
     }
    ]
   },

@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-23T01:04:03+0530",
+   "task_id": "T-481",
+   "mode": "feedback",
+   "status": "queue",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.6 are cooling down"
+  },
+  {
+   "ts": "2026-10-23T00:59:57+0530",
+   "task_id": "T-467",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. I pushed the fix to main as commit 6846ae1a. The mirror publish hasn't happened yet, so T-467 is in `doing` (not review) and note F-b9a27392 is acked.\n\n- **Cherry-pi"
+  },
+  {
    "ts": "2026-10-22T20:05:50+0530",
    "task_id": "T-034",
    "mode": "feedback",
@@ -79,32 +95,16 @@
    "status": "review",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-22T14:49:39+0530",
-   "task_id": "T-001",
-   "mode": "feedback",
-   "status": "review",
-   "result": "budget",
-   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
-  },
-  {
-   "ts": "2026-10-22T14:41:34+0530",
-   "task_id": "T-463",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. The packs are refetched: RSP has 86 prompts and now uses the RSP framing. Next I'm fixing the Day 0 guides that the reviewer flagged."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-467",
+ "task_id": "T-469",
  "entries": [
-  "F-b9a27392"
+  "F-202a8260"
  ],
- "started": "2026-10-23T00:36:08+0530",
- "message": "Acting on 1 note(s) for T-467: Content engine cards on Day 2 and the weekly content loop on Day 3",
+ "started": "2026-10-23T01:04:16+0530",
+ "message": "Acting on 1 note(s) for T-469: Tantra RevOps OS content engine: knowledge, kits, setup and batch prompts",
  "slices": {
   "T-250": 1,
   "T-301": 1,
@@ -124,7 +124,8 @@
   "T-470": 1,
   "T-471": 1,
   "T-463": 1,
-  "T-465": 1
+  "T-465": 1,
+  "T-467": 1
  },
  "api_capped": {
   "T-229": "2026-10-12T00:30:11+0530",
