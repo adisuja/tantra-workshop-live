@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-23T01:11:26+0530",
+   "task_id": "T-469",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "ok",
+   "summary": "I've restarted the T-469 test run from step 2.03 (pid 54524, sim port 18931), but it paused at once: the subscription window is at 71% and no API key is under its cap. It waits about 266 minutes and then resumes by itself. I did not raise the caps. The task stays in doing.\n\n| Item | State |\n|---|---"
+  },
+  {
    "ts": "2026-10-23T01:04:03+0530",
    "task_id": "T-481",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "blocked",
    "result": "provider",
    "summary": "API Error: 502 [gemini/gemini-3-flash-preview] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3-flash-preview — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 3s). This is a server-side issue, usually temporary — try again in a moment. If i"
-  },
-  {
-   "ts": "2026-10-22T14:52:24+0530",
-   "task_id": "T-467",
-   "mode": "feedback",
-   "status": "review",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-469",
+ "task_id": "T-463",
  "entries": [
-  "F-202a8260"
+  "F-d7c014bc"
  ],
- "started": "2026-10-23T01:04:16+0530",
- "message": "Acting on 1 note(s) for T-469: Tantra RevOps OS content engine: knowledge, kits, setup and batch prompts",
+ "started": "2026-10-23T01:12:32+0530",
+ "message": "Acting on 1 note(s) for T-463: Spot checks: RSP, challenge, chat edition, Codex",
  "slices": {
   "T-250": 1,
   "T-301": 1,
