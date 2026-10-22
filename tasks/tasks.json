@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-23T00:48:00+0530",
-  "version": 2782,
+  "updated": "2026-10-23T00:51:12+0530",
+  "version": 2783,
   "last_id": 501,
   "team": [
    {
@@ -21001,16 +21001,20 @@
    ],
    "evidence": [
     {
-     "label": "Tantra API reference (plan check, list delete, soft delete)",
+     "label": "Tantra API reference",
      "url": "revops-os/os/knowledge/channels/tantra-api.md"
     },
     {
-     "label": "Day 3 task source",
+     "label": "Day 3 tasks",
      "url": "revops-os/tasks/day3.json"
     },
     {
-     "label": "Built D3.03 guide",
-     "url": "revops-os/dist/tantra-revops-os/tasks/day3/D3.03-d3-test-run.md"
+     "label": "Campaign kit",
+     "url": "revops-os/os/kits/tantra/campaign.mjs"
+    },
+    {
+     "label": "Leads kit",
+     "url": "revops-os/os/kits/tantra/leads.mjs"
     },
     {
      "label": "Probe",
@@ -21057,6 +21061,11 @@
      "ts": "2026-10-23T00:48:00+0530",
      "who": "claude",
      "note": "The Day 3 guides now act on the T-464 findings (commit 32259432). D3.03 test run, D3.04 connect and D3.09 launch have the owner check Tantra Billing before anything else, and a 402 subscription_inactive counts as a lapsed plan (setup, not a fail; the launch stops there). The Tantra API reference now gives DELETE /contacts/lists/:id for lists and says a deleted campaign is done once it reads deleted:true. I rebuilt the OS and ran probe-day-prompts v2 locally (48 packs pass), and the dash check is clean. The live centre zip picks this up at the next centre deploy, and T-461 can read it now in revops-os/dist/tantra-revops-os/tasks/day3/."
+    },
+    {
+     "ts": "2026-10-23T00:51:12+0530",
+     "who": "claude",
+     "note": "Verify pass: Day 3 guides D3.03, D3.04 and D3.09 now check the Tantra plan in Billing first (a 402 subscription_inactive counts as setup and stops the launch), delete lists at DELETE /contacts/lists/:id and count a campaign delete done on deleted:true (commit 32259432). This run also fixed the Tantra kits so T-461 runs behave the same (commit b9944055): campaign.mjs rebuilds a soft-deleted campaign instead of editing it, and leads.mjs explains a 402 plainly and refuses a deleted campaign before importing a list, proven old vs new against a mock Tantra. probe-day-prompts v2 passes locally (48 packs) and build.py --check finds 0 problems; the live centre gets this at its next deploy, which this run did not do."
     }
    ]
   },
