@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-22T02:21:38+0530",
-  "version": 2749,
+  "updated": "2026-10-22T14:34:31+0530",
+  "version": 2750,
   "last_id": 482,
   "team": [
    {
@@ -11008,6 +11008,11 @@
      "ts": "2026-10-21T16:56:29+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-21: today's logged check ran before the 21 Oct cohort meeting existed, so I re-read Zoom now. The script picks up 83352618490 from the centre and it shows mute control still false and no video field: not granted, so T-226 Live Control stays the cover for mute and video (T-226 is itself waiting on the Zoom sign-in in T-417). A simulated 'fetch failed' run retried after 30s and then read Zoom live, and launchd has the installed job (RunAtLoad, 09:10, --log --apply)."
+    },
+    {
+     "ts": "2026-10-22T14:34:31+0530",
+     "who": "claude",
+     "note": "Zoom check 2026-10-22: not granted yet. disable_participant_video is in no answer and the mute field is still at its default (/users/me/settings 200, /accounts/me/settings 400, /accounts/me/lock_settings 400, /meetings/83352618490 200, /meetings/84762742158 200). Write test 2026-10-22 on 84762742158: not granted (PATCH 204; read back mute false, video undefined). Room restored: request_permission_to_unmute_participants is true again. The centre's Zoom Support locks stay off and Live Control (T-226) covers mute and video. Not granted in time for the 21 Oct cohort; T-226 enforces mute and video. The daily check keeps running."
     }
    ],
    "order": 2250
