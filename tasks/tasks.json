@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-22T20:04:03+0530",
-  "version": 2764,
-  "last_id": 482,
+  "updated": "2026-10-22T23:39:13+0530",
+  "version": 2765,
+  "last_id": 499,
   "team": [
    {
     "name": "Adi",
@@ -1202,6 +1202,11 @@
      "ts": "2026-10-12T03:07:40+0530",
      "who": "claude",
      "note": "Verify pass: nothing needed changing. Checked today: the source playbook and the served copy are identical, the live mirror matches the source exactly, the Day 1 header reads 5 to 6 h, and at 390 px the page is exactly 390 px wide; probe-playbook is clean at 360, 768, 1024 and 1440 on the live mirror. Open https://adisuja.github.io/tantra-workshop-live/playbook.html?v=1012a and reply with approval or changes by section."
+    },
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Session 2026-10-22: the playbook now has 138 task sections (the new cards from T-{cards}) and every task opens on a day-coloured ticket (T-{ticket}). Live: https://revops-centre.growthcluborg.workers.dev/materials/playbook?v=abdf8c59#task-start-os-install"
     }
    ],
    "order": 110,
@@ -1292,6 +1297,11 @@
      "ts": "2026-10-11T00:54:07+0530",
      "who": "claude",
      "note": "Nothing needed rebuilding or pushing: the live deck is byte-identical to workshop-plan/deck.html and app/public/materials/deck.html, and the deck files match origin main. Rechecked today: the Growth Idea figures on slide 2 match the Tantra webinar deck word for word, the ruled-out tool grep and the placeholder search return nothing on the live copy, probe-deck is clean on all 158 slides at 3 widths and probe-deck-nav passes with no errors. The spec now asks only for your review: open https://adisuja.github.io/tantra-workshop-live/deck.html?v=t021-1011#2 and approve the deck."
+    },
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Session 2026-10-22: the combined series deck (T-483, 218 slides, one per centre card) is the three-webinar deck going forward."
     }
    ],
    "order": 120,
@@ -3126,123 +3136,26 @@
   },
   {
    "id": "T-072",
-   "title": "Tantra Enterprise ($9,999): move the booking page to Cal.com and retire 'Chaperone'",
-   "area": "Product",
-   "owner": "Bhaskar",
-   "priority": "P2",
-   "due": "2026-10-16",
    "status": "review",
-   "why": "Enterprise is pitched at the Day 3 close and its booking page runs on Calendly, which is ruled out; the workshop visuals still call it 'Chaperone'.",
-   "spec": "(1) tantra-frontend-v2 /enterprise (src/app/enterprise/page.tsx, calendly-embed.tsx, src/lib/marketing/enterprise-call.ts ENTERPRISE_CALENDLY_URL and applyOwnerCorrections) embeds the Calendly event 'Tantra Enterprise Evaluation Call'. Replace it with a Cal.com event of the same name and the owner's description (1 year of platform access, never 10; 3 months of 1:1, course, community and coaching; no $50MN, no testimonials per the enterprise voice rule), embedded with Cal.com's inline embed. (2) In this repo rename every 'Chaperone' to 'Tantra Enterprise': app/src/components/masterclass/funnel-os-challenge.tsx lines 12, 252, 306, 351, 418, 423, 433, 440 and app/src/components/masterclass/funnel-os-types/system.tsx line 541 (leave the verbatim client example data in app/src/lib/examples/data/real-foundation.ts untouched). Rebuild the playbook funnels (workshop-plan/build/funnels.py) and republish.",
-   "done_when": [
-    "/enterprise Cal.com inline embed (no Calendly script) is delivered as workshop-plan/tantra-product-patches/tantra-frontend-v2/adi-new-ui--5d6eecf642.patch with apply steps in workshop-plan/tantra-product-patches/README.md, for Bharath's team to apply upstream",
-    "git grep -i chaperone -- app/src/components returns nothing",
-    "probe-funnel-boards.mjs passes and the challenge board on the mirror says Tantra Enterprise",
-    "Bhaskar and Bharath approve the Enterprise copy (the Cal.com event itself is Adi's input task T-398)"
-   ],
-   "evidence": [
-    {
-     "label": "Cal.com swap patch",
-     "url": "workshop-plan/tantra-product-patches/tantra-frontend-v2/adi-new-ui--5d6eecf642.patch"
-    },
-    {
-     "label": "Patch apply steps",
-     "url": "workshop-plan/tantra-product-patches/README.md"
-    },
-    {
-     "label": "Event field draft",
-     "url": "workshop-plan/build/T-072-calcom-event-draft.md"
-    },
-    {
-     "label": "Mirror challenge board",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/funnels/challenge/?v=t072v4"
-    }
-   ],
-   "blockers": [],
-   "needs_from_owner": "",
-   "log": [
-    {
-     "ts": "2026-09-18T18:00:00-04:00",
-     "who": "claude",
-     "note": "Inventoried into Launch Control from the hub seed list, both session handoffs, and the memory files."
-    },
-    {
-     "ts": "2026-09-21T22:35:55+0530",
-     "who": "claude",
-     "note": "Day references remapped for the 3-day structure."
-    },
-    {
-     "ts": "2026-10-08T00:21:42+0530",
-     "who": "claude",
-     "note": "Task Command Center review: context updated. 'Chaperone' is now Tantra Enterprise ($9,999, 1 year platform access, never 10; owner 2026-09-30). Calendly was ruled out on 2026-10-07, so the call CTA uses Cal.com. FunnelOS still labels it Chaperone (funnel-os-challenge.tsx lines 252, 306, 351, 418)."
-    },
-    {
-     "ts": "2026-10-08T00:48:49+0530",
-     "who": "claude",
-     "note": "Pass 2 (2026-10-08): pass 2: a Tantra Enterprise booking page already exists in tantra-frontend-v2 at /enterprise with an inline Calendly embed (export copy /Users/adithyamurali/.export-review/fe/src/app/enterprise/calendly-embed.tsx, ENTERPRISE_CALENDLY_URL in src/lib/marketing/enterprise-call.ts). Calendly was ruled out on 2026-10-07, so the task is now the Cal.com swap plus the Chaperone rename (also in funnel-os-types/system.tsx line 541). UNVERIFIED: the tantra-frontend-v2 checkout at /Users/adithyamurali/tantra-frontend-v2 is empty on this machine."
-    },
-    {
-     "ts": "2026-10-10T15:18:09+0530",
-     "who": "claude",
-     "note": "People: reviewers Bhaskar → Bhaskar/Bharath (by claude)."
-    },
-    {
-     "ts": "2026-10-10T15:18:09+0530",
-     "who": "claude",
-     "note": "The /enterprise page in tantra-frontend-v2 now uses a Cal.com inline embed in place of Calendly, pointed at cal.com/adisuja/tantra-enterprise-evaluation-call. The corrected description is now a constant in the repo, and the change is pushed to adi-new-ui as 5d6eecf. Verified: 304 tests pass, the voice probe has no copy failures, no Calendly script loads, the fallback card shows while the event does not exist, and a live Cal.com demo event rendered in the embed. The challenge board on the mirror already says Tantra Enterprise (T-108 did that). The only remaining step is creating the event on Cal.com, using workshop-plan/build/T-072-calcom-event-draft.md."
-    },
-    {
-     "ts": "2026-10-10T15:32:12+0530",
-     "who": "claude",
-     "note": "Verified again: /enterprise on adi-new-ui (5d6eecf) loads Cal.com embed.js and renders the inline calendar in brand purple when pointed at a live event, makes zero Calendly requests, and shows the Request a call card while the adisuja event is still 404. The challenge board on the mirror says Tantra Enterprise 7 times and Chaperone 0, and I retired the last Chaperone and 10 year wording in the review hub (32f8372). Only the Cal.com event itself is left, then Bhaskar signs off the copy."
-    },
-    {
-     "ts": "2026-10-10T16:35:33+0530",
-     "who": "claude",
-     "note": "Board hygiene (T-129): due 2026-09-29 was past; now 2026-10-16 (P2 rule)."
-    },
-    {
-     "ts": "2026-10-11T00:29:06+0530",
-     "who": "claude",
-     "note": "Adi 2026-10-11: agents never touch Usetantra repos (frontend, backend, new UI, decks, MCP). This task's upstream PRs/commits were closed, deleted or reverted; the work is kept as patches in workshop-plan/tantra-product-patches/ (README indexes them). Any further Tantra product change goes there as a patch or spec, never upstream."
-    },
-    {
-     "ts": "2026-10-11T11:18:15+0530",
-     "who": "claude",
-     "note": "Checked again today: git grep for Chaperone in app/src/components finds nothing, probe-funnel-boards.mjs prints ALL BOARDS FIT, and the live mirror challenge board shows Tantra Enterprise 7 times and Chaperone 0 in a headless browser, so this repo needed no change and no republish. I did not clone or push tantra-frontend-v2: your 2026-10-11 rule (no agent touches Usetantra repos) replaces the Orchestrator's push approval. The Cal.com swap stays as patch adi-new-ui--5d6eecf642 in workshop-plan/tantra-product-patches/ for Bharath to apply. cal.com/adisuja returns 404 (a real handle like cal.com/rick returns 200), so the Cal.com account or username does not exist yet."
-    },
-    {
-     "ts": "2026-10-11T22:33:10+0530",
-     "who": "claude",
-     "note": "The Cal.com embed now lives as patch adi-new-ui--5d6eecf642 with apply steps for Bharath in the tantra-product-patches README (pinned to cal.com/adisuja/tantra-enterprise-evaluation-call), and I removed the false 'switches within 10 minutes' line from the event draft. Checked today: the Chaperone grep of app/src/components is empty, probe-funnel-boards.mjs prints ALL BOARDS FIT against the mirror, and the mirror challenge board shows Tantra Enterprise 7 times and Chaperone 0. Creating the Cal.com event is Adi's input task T-398; Bhaskar and Bharath to approve the Enterprise copy."
-    },
-    {
-     "ts": "2026-10-11T22:34:50+0530",
-     "who": "claude",
-     "note": "Verify pass: everything checked out and nothing needed to change. The patch adi-new-ui--5d6eecf642 deletes calendly-embed.tsx, adds the Cal.com inline embed pinned to cal.com/adisuja/tantra-enterprise-evaluation-call, and its copy tests require 1 year with no $50M or testimonials. The README apply steps and the event draft are correct, and the false 10 minute claim is gone. git grep for Chaperone in app/src/components finds 0, probe-funnel-boards.mjs against the mirror prints ALL BOARDS FIT, and the mirror challenge board (https://adisuja.github.io/tantra-workshop-live/site/funnels/challenge/?v=t072v5) shows Tantra Enterprise 7 times and Chaperone 0. Bhaskar and Bharath to approve the copy; Adi's Cal.com event is T-398."
-    },
-    {
-     "ts": "2026-10-11T22:35:09+0530",
-     "who": "claude",
-     "note": "Checked 12 related task(s); updating T-252, T-398."
-    },
-    {
-     "ts": "2026-10-12T07:42:31+0530",
-     "who": "claude",
-     "note": "Ripple from T-398: the patch README's last apply step said the embed goes live once Adi creates the event; it now says creating the event satisfies Adi's input, but /enterprise shows Cal.com only after Bharath's team applies adi-new-ui--5d6eecf642.patch upstream (commit f3dd5579; the event draft already said this). Checked today: cal.com/adisuja/tantra-enterprise-evaluation-call still returns 404 (T-398 open) and the Chaperone grep of app/src/components is empty. Bhaskar and Bharath to approve the copy."
-    },
-    {
-     "ts": "2026-10-12T07:43:40+0530",
-     "who": "claude",
-     "note": "Verify pass for the T-398 ripple: nothing had to change. README step 5 already says creating the Cal.com event covers Adi's input but /enterprise shows the calendar only after Bharath's team applies adi-new-ui--5d6eecf642.patch (the patch deletes calendly-embed.tsx, adds the Cal.com inline embed, and mentions Calendly only in comments). Checked today: Chaperone grep of app/src/components is empty, probe-funnel-boards.mjs against the mirror prints ALL BOARDS FIT, the mirror challenge board (https://adisuja.github.io/tantra-workshop-live/site/funnels/challenge/?v=t072v6) shows Tantra Enterprise 7 times and Chaperone 0, and cal.com/adisuja/tantra-enterprise-evaluation-call still returns 404, so this waits on T-398 plus Bhaskar and Bharath's copy approval."
-    }
-   ],
-   "order": 440,
+   "owner": "Bhaskar",
    "assignee": "Claude",
    "reviewers": [
     "Bhaskar",
     "Bharath"
-   ]
+   ],
+   "priority": "P2",
+   "due": "2026-10-16",
+   "area": "Product",
+   "order": 440,
+   "title": "T-072: held back (private client detail)",
+   "why": "Held back from the public board: it mentions a private client detail. The owner's board has the full text.",
+   "spec": "",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [],
+   "held": true
   },
   {
    "id": "T-073",
@@ -12999,6 +12912,11 @@
      "ts": "2026-10-11T16:03:35+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-11: the code for every Orchestrator item is on disk and in main (WebinarGeek watch_link top level or nested, Cal.com with and without username plus the textarea to text fallback, Dodo always sends redirect_url, Stripe 403 names the permission). CHECKS.md rows say docs + defensive, live check optional (T-387). Re-ran today: probe-connector-guards.mjs all pass, tsc clean, full probe-connectors.mjs ALL PASS (86 checks, launch-card section included this time). Live revops-centre is version ece95c38, deployed after the last cloud commit 9b2b64b: /onboarding/ serves the Onboarding Centre and /admin/api/me answers 401. REVERT_LEDGER row 49 says nothing is outstanding. Live vendor checks still wait only on T-387 keys."
+    },
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Session 2026-10-22: three more unverified vendor screens (WebinarGeek replay, Zoom share-link expiry, Clarity project ID) are T-499."
     }
    ],
    "order": 2530
@@ -14059,6 +13977,11 @@
      "ts": "2026-10-12T00:29:48+0530",
      "who": "claude",
      "note": "Verify pass 2026-10-12: 6d65f80 is on origin/main with no T-268 files left uncommitted; probe-t268 passes 22 of 22 in the simulator (Zoom card, poll scopes, 4 weekly broadcasts for WebinarGeek and Zoom, 11:00 ET across clock change); the live mirror chunk serves 'creates the four polls'; all nine AUDIT ids are marked fixed with commits (X058 cites 6d65f80). Worker b6423609 per LOG.md:918; poll scopes stay UNVERIFIED on a live Zoom account under T-253. Open https://adisuja.github.io/tantra-workshop-live/site/onboarding/?v=t268d"
+    },
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Session 2026-10-22: the almost-buyer follow-up on Approve your close works on WebinarGeek only; Zoom poll answers are T-492."
     }
    ],
    "order": 2680
@@ -14215,6 +14138,11 @@
      "ts": "2026-10-12T04:32:28+0530",
      "who": "claude",
      "note": "Verify pass 12 Oct: probe-t270 on the live centre passed every check with test attendee 'Adi test T-270' (made and revoked by the probe). An empty AI card asks first, 0 drafts went out before an answer, and the no is stored. On local wrangler dev (port 8797, stopped after) the yes is stored and 1 draft fires on open. check-examples passed 641/641. All T-270 code and the probe match origin/main, and AUDIT.md marks N067 to N088 fixed (1ef94a2 beside N070). The centre runs only on the Worker, not on the github.io mirror, which serves the ev_length examples. Open https://revops-centre.growthcluborg.workers.dev/onboarding/?card=start-stack&v=t270f"
+    },
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Session 2026-10-22: the 19 new cards from T-484 teach by default with pinned notes and examples on every field."
     }
    ],
    "order": 2700
@@ -14283,6 +14211,11 @@
      "ts": "2026-10-11T08:34:42+0530",
      "who": "claude",
      "note": "Ready for Adi's review of the card copy. Branch t-271-card-copy (fixes 767e3a6, probe 517cfde, built on main c0c487f, pushed). READY is at LOG.md line 884, and AUDIT.md marks 16 ids fixed. N051 is obsolete (T-251 removed the Sales Navigator text). N089 is obsolete once T-299 merges. Checked today: T-299 is not on origin/main yet (start-dkim is still in workshop-cards.ts there), so no rebase or new READY line was needed. I did not rerun probe-t271-cards, probe-day1 or probe-day2 this run because the run budget ran out. The last recorded result is 38/38 for probe-t271-cards on 2026-10-10."
+    },
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Session 2026-10-22: Group A price sweep (one offer, rung and replay window per sample business) and the replay-window bugs are fixed under T-484."
     }
    ],
    "order": 2710
@@ -16676,6 +16609,11 @@
      "ts": "2026-10-10T16:28:41+0530",
      "who": "claude",
      "note": "Verify pass: the column mapper, 5-row fixture, card text, List Partner Leads tab and the per-order sender (dry run: 0 orders, OFF) all check out, and the live centre (ad06ad65) serves the new card text. I found three more verification promises in the card's walkthrough (card-education.ts), fixed them, added a probe check (10 of 10 pass) and pushed 0da826e. Redeploying the centre failed in the scratch build (Turbopack distDirRoot error), so the next run redeploys 0da826e. Still waiting on Nelbin for the vendors' sample CSV, order method and turnaround."
+    },
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Session 2026-10-22: do-not-contact files now collected on D1.09; the centre's list build must remove them too: T-495."
     }
    ],
    "order": 3010
@@ -20668,6 +20606,11 @@
      "ts": "2026-10-18T06:38:10+0530",
      "who": "claude",
      "note": "Ran the Day 0 setup prompt headless in Claude Code (Sonnet) in a fresh trusted copy of the built OS: no permission prompts, doctor.mjs and api.mjs tools ran, and the five-line answer was correct; with an API key in the shell it correctly stopped on the doctor FAIL. Skeleton ships CLAUDE.md/AGENTS.md, README for four assistants, STATUS.md, .env.example, api.mjs and doctor.mjs; I dropped .mcp.json.example because doctor.mjs lists the optional connections instead. Reviewers: Adi, plus Bharath for the development side."
+    },
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Session 2026-10-22: api.mjs needs a Drive or file tool for the D1.22 proof folder: T-496."
     }
    ]
   },
@@ -20821,6 +20764,11 @@
      "ts": "2026-10-21T17:20:42+0530",
      "who": "claude",
      "note": "Re-ran export, build and checks: check-task-guides.mjs reports '122 cards, 99 guides with a prompt, 23 marked no prompt, 0 problems' and check-refs.mjs reports 1022 citations in 183 files all resolving, so nothing needed fixing (work is commit 0ab050c9; dist is gitignored build output). Not pushed: origin/main lacks 0ab050c9 and this branch is 100 commits ahead and 12 behind, and the guides depend on other branch-only revops-os/os changes, so the approved revops-os-only push cannot be done without a cherry-pick (your rule forbids it) or publishing every lane's work."
+    },
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Session 2026-10-22: task guides regenerated for all 138 cards after T-484; check-task-guides clean."
     }
    ]
   },
@@ -21411,6 +21359,11 @@
      "ts": "2026-10-20T02:40:51+0530",
      "who": "claude",
      "note": "Verify pass: re-checked tasks.json today. T-466 lists T-455 to T-465 as blockers. T-457, T-459, T-461 and T-462 are in doing, T-463 and T-465 are in queue (T-465 has no critic run or findings log yet), and the rest are in review. So the approved review deploy is not run yet. It runs once T-465 has no open findings, then the zip, probes and Day 0 to 3 transcript checks follow, with ?v=t466 links for Adi."
+    },
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Session 2026-10-22: OS kits rebuilt on the merged tree and served by the live centre (75b7168d, then abdf8c59). The branch still needs merging to main: T-486."
     }
    ]
   },
@@ -22057,6 +22010,11 @@
      "ts": "2026-10-21T17:13:20+0530",
      "who": "claude",
      "note": "Verify pass: the Ticket card commits (930c94b9 to b7544479) are on origin/main. A fresh check at origin/main passed tsc, check-rail-pins (119 cards) and probe-day-model. The 24-shot probe (6 kinds at 1440/1024/768/390, with saves blocked) failed 0 of 24 on both live and review, so start-os-assistant opens with Mark done enabled and no 'to finish' line. Open one card per kind on live: https://revops-centre.growthcluborg.workers.dev/preview?v=b7544479 (session start-calendar, decide start-os-assistant, connect start-cloudflare, human start-cf-registrar, approve start-domains, watch d1-check). B, C and D are still on the rig, and switching to one is a CSS swap."
+    },
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Session 2026-10-22: the playbook task heads now use this Ticket language in each day's colour (T-485)."
     }
    ]
   },
@@ -22176,6 +22134,559 @@
     }
    ],
    "order": 4820
+  },
+  {
+   "id": "T-483",
+   "title": "Series deck: one combined Day 0 to 3 deck, one slide per centre card",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "review",
+   "why": "Adi 2026-10-16: one deck for The 3-Day AI RevOps Workshop, a slide for every onboarding centre card plus animated system slides, built to convert at least half the room.",
+   "spec": "Source workshop-plan/series-deck (specs/*.mjs, lib/visuals.mjs, lib/runtime.js, lib/style.css); build.mjs writes index.html and fails if any centre card has no slide; probe.mjs checks clipping, overlap, small text and black fills. 218 slides: 138 card slides for 138 cards plus 80 system and divider slides, folded into three webinars (Day 0 inside Webinar 1). Published with publish.sh to the review site. Successor to the old workshop deck T-021. Every card added under T-484 has its slide.",
+   "done_when": [
+    "build.mjs and probe.mjs clean on all 218 slides (met 2026-10-22)",
+    "Adi approves the deck or lists changes by slide"
+   ],
+   "evidence": [
+    {
+     "label": "Series deck (live)",
+     "url": "https://adisuja.github.io/tantra-review/series-deck/?v=9ac222b"
+    },
+    {
+     "label": "Source",
+     "url": "workshop-plan/series-deck/"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "Open https://adisuja.github.io/tantra-review/series-deck/?v=9ac222b (arrow keys move, O shows the overview, N shows notes) and reply with approval or changes by slide number.",
+   "log": [
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Added from session 2026-10-22: the deck was built on branch series-deck-finish (2026-10-16 to 10-22) and never had a board task. 218 slides, all probes clean, live on the review site."
+    }
+   ],
+   "order": 4830
+  },
+  {
+   "id": "T-484",
+   "title": "Centre: the series deck's missing cards (Section A) and one price per sample business",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "review",
+   "why": "Building the series deck surfaced cards the centre lacked and 14 contradictions between sources (workshop-plan/series-deck/gaps/CONSOLIDATED.md).",
+   "spec": "New cards appended before each day's prompts card (codes are positional): D0.40 See the cash you need this week (fund), D0.41 Change the passwords the partner sends, D1.24 Watch your warm-up days, D2.42 to D2.49 (SMS texts, replay close, moderators, challenge daily output, intake and personal plan, RSP bands, Tantra omni sequence with new job tantra-omni, Microsoft Clarity), D3.16 to D3.20 (paid ads on, attendance pulls, dashboard refresh, weekly channel check without opens, choose your path). New fields on existing cards: Cloudflare account, domain renewal, registrant region, revenue baseline, ceiling and floor client, do-not-contact lists, proof folder, stage owners, challenge seats, almost-buyer follow-up. Group A price sweep: one offer, rung and replay window per sample business (field-examples.ts offer). Every card ships with teaching and pins, a coverage row, a playbook section, a deck slide (T-483) and an OS task. Bugs fixed on the way: replay link never closed, the closes-tonight email always went on day 5, 48 hours read as 48 days, job-less Approve cards could not be approved, the fund kind had no handler, the challenge survey ignored custom questions, RSP cut-offs were hard-coded. Three Fable critic rounds. Open decisions: T-487, T-488, T-489, T-490, T-491. Build gaps: T-492, T-493, T-494, T-495, T-496, T-497, T-498, T-499. Main merge: T-486.",
+   "done_when": [
+    "Full verify green: tsc, rail pins, coverage, examples, playbook, OS guides, day model, deck (met 2026-10-22)",
+    "Deployed live (met: 75b7168d, then abdf8c59)",
+    "Adi reviews the new cards on the live centre"
+   ],
+   "evidence": [
+    {
+     "label": "Card start-fund",
+     "url": "https://revops-centre.growthcluborg.workers.dev/preview?card=start-fund&v=abdf8c59"
+    },
+    {
+     "label": "Card d2-intake",
+     "url": "https://revops-centre.growthcluborg.workers.dev/preview?card=d2-intake&v=abdf8c59"
+    },
+    {
+     "label": "Card d2-omni",
+     "url": "https://revops-centre.growthcluborg.workers.dev/preview?card=d2-omni&v=abdf8c59"
+    },
+    {
+     "label": "Card d2-clarity",
+     "url": "https://revops-centre.growthcluborg.workers.dev/preview?card=d2-clarity&v=abdf8c59"
+    },
+    {
+     "label": "Card d3-path",
+     "url": "https://revops-centre.growthcluborg.workers.dev/preview?card=d3-path&v=abdf8c59"
+    },
+    {
+     "label": "Decisions log",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/series-deck-finish/workshop-plan/series-deck/gaps/DECISIONS_FOR_ADI.md"
+    },
+    {
+     "label": "Handoff",
+     "url": "SESSION_HANDOFF_2026_10_22_SERIES_DECK_CARDS.md"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "Open the five card links in Evidence on the live centre (https://revops-centre.growthcluborg.workers.dev/preview?v=abdf8c59) and reply with approval or changes by card code.",
+   "log": [
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Added from session 2026-10-22: 138 cards live at 75b7168d (re-deployed with abdf8c59). Decisions that are only Adi's are split into their own input tasks; build gaps are their own queue tasks."
+    }
+   ],
+   "order": 4840
+  },
+  {
+   "id": "T-485",
+   "title": "Playbook: every task opens on a day-coloured ticket",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "review",
+   "why": "Adi 2026-10-22: the section break between tasks must be the whole task head in its card colour, Previous and Next included, designed properly rather than a line.",
+   "spec": "app/scripts/build-playbook-tasks.mjs (head() and the CSS constant). Each task head is a ticket in its day colour (Day 0 #FFE27A, Day 1 #FFB59E, Day 2 #AFD3FF, Day 3 #AEE7BD, the centre's card colours, matching the T-478 Ticket card): Bricolage Grotesque title (self-hosted app/public/fonts), code, time, day label, dashed perforation with notches. Previous and Next pills wear the colour of the day they lead to. Light, dark and phone. app/scripts/shoot-task-heads.mjs screenshots one ticket per day at both themes and widths. Part of the playbook T-020.",
+   "done_when": [
+    "check-playbook-tasks, probe-playbook-anchors and the full verify pass (met)",
+    "32 live screenshots with no overflow (met)",
+    "Adi approves the look"
+   ],
+   "evidence": [
+    {
+     "label": "D0.05 (your screenshot's spot)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/materials/playbook?v=abdf8c59#task-start-os-install"
+    },
+    {
+     "label": "Day 0 to Day 1 boundary",
+     "url": "https://revops-centre.growthcluborg.workers.dev/materials/playbook?v=abdf8c59#task-d0-prompts"
+    },
+    {
+     "label": "Day 1 to Day 2 boundary",
+     "url": "https://revops-centre.growthcluborg.workers.dev/materials/playbook?v=abdf8c59#task-d1-prompts"
+    },
+    {
+     "label": "Day 2 to Day 3 boundary",
+     "url": "https://revops-centre.growthcluborg.workers.dev/materials/playbook?v=abdf8c59#task-d2-prompts"
+    },
+    {
+     "label": "Last task (Day 3)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/materials/playbook?v=abdf8c59#task-d3-prompts"
+    }
+   ],
+   "blockers": [],
+   "needs_from_owner": "Open https://revops-centre.growthcluborg.workers.dev/materials/playbook?v=abdf8c59#task-start-os-install, scroll through a few tasks (the moon button top right shows dark mode) and approve or say what to change.",
+   "log": [
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Added from session 2026-10-22: built, verified and live at abdf8c59 (commit abdf8c59)."
+    }
+   ],
+   "order": 4850
+  },
+  {
+   "id": "T-486",
+   "title": "Merge series-deck-finish into main (154 commits; the live centre runs from it)",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P0",
+   "due": "",
+   "status": "queue",
+   "why": "The live centre was deployed from branch series-deck-finish. Main is 154 commits behind it, so a deploy from main would roll the live centre back to before the T-484 cards and the T-485 playbook.",
+   "spec": "Merge series-deck-finish into main in adisuja/3-day-tantra-ai-revops-workshop only (never a Usetantra repo). Merge main into the branch first, rerun the full verify, then fast-forward or merge into main and push. Use git checkout -m and resolve hunks, never --theirs/--ours on a whole file. Stash the runner's WIP first. Rebuild kits with revops-os/build-kits.sh from the merged HEAD.",
+   "done_when": [
+    "git rev-list --count origin/main..origin/series-deck-finish prints 0",
+    "Full verify green on main",
+    "A deploy from main shows the same live centre"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Added from session 2026-10-22: found while updating the board; nothing else waits for Adi on this."
+    }
+   ],
+   "order": 4860
+  },
+  {
+   "id": "T-487",
+   "title": "Input from Adi for T-484: Tantra Pro trial terms and annual prices on the Invitation",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "blocked",
+   "why": "Decision B1 in the decisions log; it gates the four highest-value cards. A default is live, so nothing is stuck.",
+   "spec": "Live default: 14-day free trial, 1 LinkedIn + 1 WhatsApp seat, data kept, converts to paid Pro at $99 a month; the Invitation shows monthly prices only. Source: https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/series-deck-finish/workshop-plan/series-deck/gaps/DECISIONS_FOR_ADI.md (Group B, item 1).",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Reply with: (1) the trial length in days, (2) what happens at the end (seats, data), (3) 1 + 1 seats or 2 seats of one channel, (4) whether the annual prices ($89 and $169) show on the Invitation. Or reply 'defaults' to keep the live default.",
+   "log": [
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Added from session 2026-10-22."
+    }
+   ],
+   "order": 4870
+  },
+  {
+   "id": "T-488",
+   "title": "Input from Adi for T-484: growth KPIs and the tag names for the path card and the re-invite list",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "blocked",
+   "why": "Decisions B2 to B4. The cards are built on defaults; the tags are written into every attendee's CRM, so renaming later means a migration.",
+   "spec": "Defaults live: KPIs are YRR, re-registrations and the referral ask; D3.20 Choose your path tags are path-pro, path-course, path-enterprise, path-not-yet; the re-invite list tag is '52-week nurture'. Source: https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/series-deck-finish/workshop-plan/series-deck/gaps/DECISIONS_FOR_ADI.md (items 2 to 4).",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Reply with: (1) confirm YRR, re-registrations and the referral ask as the KPI set, and whether Stage 6 YRR shows on the dashboard, (2) confirm or rename the four path tags, (3) confirm the tag '52-week nurture'. Or reply 'defaults'.",
+   "log": [
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Added from session 2026-10-22."
+    }
+   ],
+   "order": 4880
+  },
+  {
+   "id": "T-489",
+   "title": "Input from Adi for T-484: confirm the structure and vendor defaults (B5 to B15 and three build-or-not calls)",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "Each item has a default already live; a reply only changes something if Adi wants it different. Three builds wait on these answers: T-493, T-494 and the dashboard sync question.",
+   "spec": "Items 5 to 15 in https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/series-deck-finish/workshop-plan/series-deck/gaps/DECISIONS_FOR_ADI.md: pipeline stages (12, Follow-Up position, Zoho), default webinar platform (Zoom), calendar invites from day 0 at 20 a day, built-in CRM kept beside GoHighLevel, HubSpot and Zoho, domain renewal (auto-renew off after year one; who pays year two), Cloudflare token scope, challenge seats (free, paid or both), Clarity and Fund cards built and Google Ads dropped, dashboard refresh hourly, Day 0 and Day 3 hours re-timed from the card sums, Scale as an upsell inside Pro. Plus: (a) a separate challenge seat price per currency (T-493), (b) an AI reply for the RSP middle band (T-494), (c) moving the dashboard sync into the funnel Worker (needs every tool's key in the Worker), (d) the wording of the Tantra omni option on Pick your channels.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Read Group B items 5 to 15 at https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/series-deck-finish/workshop-plan/series-deck/gaps/DECISIONS_FOR_ADI.md and reply with only the numbers you want changed, plus yes or no to (a) separate seat price per currency, (b) AI reply for the RSP middle band, (c) dashboard sync inside the funnel Worker. Reply 'defaults' to keep everything as live.",
+   "log": [
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Added from session 2026-10-22."
+    }
+   ],
+   "order": 4890
+  },
+  {
+   "id": "T-490",
+   "title": "Input from Adi for T-484: three source conflicts (the /masterclass cinematic, opens in the KPI model, experiment sizing)",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "blocked",
+   "why": "Decisions B20 to B22: the sources disagree and the fix touches locked marketing or Adi's own equations.md, so only Adi can pick.",
+   "spec": "B20: retired infrastructure and '187 automations' sit in the locked /masterclass FunnelOS cinematic (default: fix only the centre's own map, leave /masterclass; automation count is 8, 9 for a challenge, 7 for a reverse squeeze). B21: equations.md multiplies open rates but Tantra reports no opens (default: cards use replies, bookings and registrations; equations.md untouched). B22: equations.md says read after 500 sends but its own sizing gives about 13,600 per half, and /masterclass claims 10, 30 or 100 auto-experiments a month while the cards teach one a week. Source: https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/series-deck-finish/workshop-plan/series-deck/gaps/DECISIONS_FOR_ADI.md. Related: T-108, T-020.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Read items 20 to 22 at https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/series-deck-finish/workshop-plan/series-deck/gaps/DECISIONS_FOR_ADI.md and reply per item: keep my default, or change it (and whether /masterclass may change).",
+   "log": [
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Added from session 2026-10-22."
+    }
+   ],
+   "order": 4900
+  },
+  {
+   "id": "T-491",
+   "title": "Input from Adi for T-484: welcome video and the welcome, announcement and cohort links plus QR",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "blocked",
+   "why": "Decision B19: the Day 0 welcome cards and the deck point at these links; until they exist the cards show placeholders.",
+   "spec": "Needed: welcome_url (published welcome video), announce_url, cohort_url and the QR image. Source: https://github.com/adisuja/3-day-tantra-ai-revops-workshop/blob/series-deck-finish/workshop-plan/series-deck/gaps/DECISIONS_FOR_ADI.md (item 19).",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Publish the welcome video and reply with its link, the announcement link, the cohort link and the QR image (attach it here).",
+   "log": [
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Added from session 2026-10-22."
+    }
+   ],
+   "order": 4910
+  },
+  {
+   "id": "T-492",
+   "title": "Zoom poll answers into the funnel so the almost-buyer follow-up works on Zoom",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "The almost-buyer follow-up on D2.23 Approve your close (attended, said yes in poll 4, not booked two hours on) only works on WebinarGeek: the Zoom attendance pull does not carry Zoom's poll report.",
+   "spec": "cloud/funnel/worker.js and the Zoom attendance job: pull the meeting poll report after each session and record poll 4 answers per registrant the same way the WebinarGeek webhook does. Related: T-268 (live room cards), T-226 (host console runs the polls), T-484.",
+   "done_when": [
+    "A test Zoom meeting's poll 4 yes marks the registrant and the almost-buyer email is queued in the sim",
+    "The D2.23 field no longer says WebinarGeek only"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Added from session 2026-10-22: gap logged in the decisions log."
+    }
+   ],
+   "order": 4920
+  },
+  {
+   "id": "T-493",
+   "title": "Separate challenge seat price per currency (second checkout product)",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P3",
+   "due": "",
+   "status": "blocked",
+   "why": "A challenge's paid seat pays at the one checkout set on Approve your close, so the seat cannot cost less than the close and there is no per-currency price table.",
+   "spec": "Only if Adi says yes in T-489 (a). A second Dodo or Stripe checkout product per challenge with a per-currency table, wired to the D1.15 challenge seats field and the page's paid button.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [
+    "Waits on T-489 (a): does Adi want a separate seat price per currency"
+   ],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Added from session 2026-10-22."
+    }
+   ],
+   "order": 4930
+  },
+  {
+   "id": "T-494",
+   "title": "AI reply for the reverse squeeze middle band (the map's AI SDR)",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P3",
+   "due": "",
+   "status": "blocked",
+   "why": "D2.47 lets the attendee set the qualify-and-route bands, but nothing AI-replies to the middle band; it gets the attendee's message and the enquiry follow-up two hours later, while the funnel map shows an AI SDR.",
+   "spec": "Only if Adi says yes in T-489 (b). Reply to middle-band applicants with the attendee's own Claude key from the funnel Worker, approved template and guardrails, logged to the CRM.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [
+    "Waits on T-489 (b): does Adi want the AI reply built"
+   ],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Added from session 2026-10-22."
+    }
+   ],
+   "order": 4940
+  },
+  {
+   "id": "T-495",
+   "title": "Centre list build removes the attendee's do-not-contact files",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "queue",
+   "why": "D1.09 now collects do-not-contact lists into outputs/D1.09-d1-list/suppress/. The OS list clean reads them, but the centre's own build-list job (D1.11) only removes customer domains, so a centre-built list can still email people the attendee said never to contact.",
+   "spec": "cloud/src build-list job: read the uploaded do-not-contact files (emails and domains) and drop matches before the list is approved; show the removed count on D1.11. Related: T-301 (data partner lists), T-262 (bounce and complaint suppression), T-484.",
+   "done_when": [
+    "A sim list with a suppressed email and a suppressed domain comes out without both",
+    "D1.11 shows how many rows the suppress files removed"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Added from session 2026-10-22."
+    }
+   ],
+   "order": 4950
+  },
+  {
+   "id": "T-496",
+   "title": "RevOps OS: a Drive or file tool in api.mjs so the agent can read a shared proof folder",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "D1.22 asks for proof files in outputs/D1.22-d1-homework/proof/. Attendees who only paste a Google Drive link get nothing read, because api.mjs has no Drive or file tool.",
+   "spec": "revops-os api.mjs: a read-only route that lists and downloads a shared Drive folder (or tells the attendee exactly how to download it) into the proof folder, inside the existing guards and logging. Related: T-454 (api.mjs), T-484.",
+   "done_when": [
+    "A shared Drive folder link fills the proof folder in a test run",
+    "check-task-guides and the OS harness pass"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Added from session 2026-10-22."
+    }
+   ],
+   "order": 4960
+  },
+  {
+   "id": "T-497",
+   "title": "Cold WhatsApp through Tantra: build its copy card and job, or take the option off Pick your channels",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "Pick your channels offers 'Cold WhatsApp (through Tantra)', but no card writes its copy and no job builds it, and a cold list has no phone numbers.",
+   "spec": "Default: take the option off the channels card (old answers still map) and say why in its teaching, unless Adi asks for the build in T-489 (d). If built: a copy card plus a Tantra job that only runs on rows with a consented number. Related: T-484.",
+   "done_when": [
+    "No channel option promises something no card or job delivers",
+    "probe-day-model and check-coverage pass"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Added from session 2026-10-22."
+    }
+   ],
+   "order": 4970
+  },
+  {
+   "id": "T-498",
+   "title": "Funnel sync fills each contact's owner from the D1.16 stage owners",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "D1.16 now collects the setter, closer and coordinator and the OS writes owners.md, but the funnel's sync never fills the CRM contact owner field.",
+   "spec": "cloud/funnel/worker.js sync: set the owner field per pipeline stage from the D1.16 answers on GoHighLevel, HubSpot, Zoho and the built-in CRM. Related: T-484.",
+   "done_when": [
+    "A sim contact moving from booked to closer stage changes owner in each CRM adapter's test"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Added from session 2026-10-22."
+    }
+   ],
+   "order": 4980
+  },
+  {
+   "id": "T-499",
+   "title": "Capture three unverified vendor screens: WebinarGeek replay availability, Zoom share-link expiry, Clarity project ID",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Claude",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P2",
+   "due": "",
+   "status": "queue",
+   "why": "Three new cards (D2.43 replay close, D2.49 Clarity) describe these screens only as far as the docs say; the click paths are unverified.",
+   "spec": "Capture on test accounts only (never change a live client account): WebinarGeek Replay, Settings, Availability; the Zoom cloud recording share link's expiry setting; Clarity's new project and Project ID screens. Put the shots on the cards and the playbook sections, correct the click paths. Related: T-253 (confirm connector assumptions), T-484.",
+   "done_when": [
+    "Each of the three click paths is verified against a real screen and the cards say so"
+   ],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "",
+   "log": [
+    {
+     "ts": "2026-10-22T23:39:13+0530",
+     "who": "claude",
+     "note": "Added from session 2026-10-22."
+    }
+   ],
+   "order": 4990
   }
  ]
 }
