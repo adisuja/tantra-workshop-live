@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-22T14:41:34+0530",
+   "task_id": "T-463",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. The packs are refetched: RSP has 86 prompts and now uses the RSP framing. Next I'm fixing the Day 0 guides that the reviewer flagged."
+  },
+  {
    "ts": "2026-10-22T02:26:33+0530",
    "task_id": "T-465",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "queue",
    "result": "budget",
    "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
-  },
-  {
-   "ts": "2026-10-20T17:52:11+0530",
-   "task_id": "T-463",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "ok",
-   "summary": "T-463 is still in progress (status **doing**). All three runs are live, but only the first of each run's 67 or 73 prompts has finished. The rest are paused until the usage window resets at 22:30 IST: the window was at 75% at 17:50, and Adi's token rule says to wait. I logged the current progress in "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-463",
+ "task_id": "T-001",
  "entries": [
-  "F-a5385982"
+  "F-d8faad8b"
  ],
- "started": "2026-10-22T14:31:56+0530",
- "message": "Acting on 1 note(s) for T-463: Spot checks: RSP, challenge, chat edition, Codex",
+ "started": "2026-10-22T14:42:26+0530",
+ "message": "Acting on 1 note(s) for T-001: /masterclass landing page",
  "slices": {
   "T-250": 1,
   "T-301": 1,
@@ -122,7 +122,8 @@
   "T-478": 1,
   "T-459": 2,
   "T-470": 1,
-  "T-471": 1
+  "T-471": 1,
+  "T-463": 1
  },
  "api_capped": {
   "T-229": "2026-10-12T00:30:11+0530",

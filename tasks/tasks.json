@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-22T14:34:31+0530",
-  "version": 2750,
+  "updated": "2026-10-22T14:41:30+0530",
+  "version": 2752,
   "last_id": 482,
   "team": [
    {
@@ -21178,7 +21178,8 @@
    "owner": "Adi",
    "assignee": "Claude",
    "reviewers": [
-    "Adi"
+    "Adi",
+    "Bharath"
    ],
    "priority": "P1",
    "due": "",
@@ -21190,12 +21191,16 @@
    ],
    "evidence": [
     {
-     "label": "Test log T-463 section",
-     "url": "workshop-plan/research/revops-os-test-log.md"
+     "label": "RSP answer overrides",
+     "url": "revops-os/tests/packs/rsp/answer-overrides.json"
     },
     {
-     "label": "Runs",
-     "url": "revops-os/tests/runs/rsp"
+     "label": "Round 1 runs",
+     "url": "revops-os/tests/runs"
+    },
+    {
+     "label": "Test log",
+     "url": "workshop-plan/research/revops-os-test-log.md"
     }
    ],
    "blockers": [],
@@ -21223,6 +21228,16 @@
      "ts": "2026-10-20T17:50:44+0530",
      "who": "claude",
      "note": "Verified on disk: both test attendees exist on the centre, the RSP (67), challenge (73) and chat (73, chat mode) packs are committed, and all three runs are live (PIDs 11354, 11356, 11358) with the first prompt done in each; the chat edition's first output gives paste-ready files. The other prompts wait for the usage window reset at 22:30 IST (owner token rule), so what is left: score the results, fix failures, rerun, log, then review."
+    },
+    {
+     "ts": "2026-10-22T14:41:30+0530",
+     "who": "claude",
+     "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-22T14:41:30+0530",
+     "who": "claude",
+     "note": "Round 1 found the RSP test answers were webinar-shaped, so I reshaped them for reverse squeeze (recorded videos, scored application, no live session) and refetched all three packs from the local centre (RSP 86, challenge 94, chat 94 prompts; commit b3ca16b4). Still to do: Day 0 guide fixes in revops-os/tasks/day0.json (D0.10 date from a recorded command, D0.11 an empty grep is a pass, D0.12 both stack tables), then round 2 runs, scoring, log rows in the test log, then push and review."
     }
    ]
   },

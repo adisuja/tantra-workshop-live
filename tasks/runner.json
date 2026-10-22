@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-22T14:42:05+0530",
+   "task_id": "T-470",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "ok",
+   "summary": "Round 2 is running in the background. I'll pick it up when the first three reviews land."
+  },
+  {
    "ts": "2026-10-22T02:21:00+0530",
    "task_id": "T-467",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "budget",
    "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
-  },
-  {
-   "ts": "2026-10-21T18:36:26+0530",
-   "task_id": "T-469",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "provider",
-   "summary": "API Error: 502 [gemini/gemini-3.7-flash] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3.7-flash — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 3s). This is a server-side issue, usually temporary — try again in a moment. If it persists, "
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-470: Content task data and prompts, tested with the reviewer",
- "task_id": "T-470",
+ "message": "Acting on 1 note(s) for T-477: Publish the marketing pages so the no-refund and pricing copy can be reviewed",
+ "task_id": "T-477",
  "entries": [
-  "F-401bcf3f"
+  "F-3782808d"
  ],
  "mode": "feedback",
- "started": "2026-10-22T14:32:11+0530",
+ "started": "2026-10-22T14:42:32+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
