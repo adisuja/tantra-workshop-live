@@ -99,12 +99,12 @@
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-477",
+ "task_id": "T-467",
  "entries": [
-  "F-3782808d"
+  "F-b9a27392"
  ],
- "started": "2026-10-22T14:56:32+0530",
- "message": "Acting on 1 note(s) for T-477: Publish the marketing pages so the no-refund and pricing copy can be reviewed",
+ "started": "2026-10-22T14:58:22+0530",
+ "message": "Acting on 1 note(s) for T-467: Content engine cards on Day 2 and the weekly content loop on Day 3",
  "slices": {
   "T-135": 1,
   "T-300": 2,
