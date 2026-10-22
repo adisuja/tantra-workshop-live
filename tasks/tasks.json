@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-22T19:45:20+0530",
-  "version": 2762,
+  "updated": "2026-10-22T19:52:42+0530",
+  "version": 2763,
   "last_id": 482,
   "team": [
    {
@@ -21577,7 +21577,20 @@
    "done_when": [
     "Every content prompt passes the rubric"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "test log T-470 r2 row",
+     "url": "workshop-plan/research/revops-os-test-log.md"
+    },
+    {
+     "label": "r2 run log",
+     "url": "revops-os/tests/runs-t470-r2.log"
+    },
+    {
+     "label": "new live-link check",
+     "url": "revops-os/os/kits/content/check_live.py"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "tags": [
@@ -21599,6 +21612,11 @@
      "ts": "2026-10-21T16:22:47+0530",
      "who": "claude",
      "note": "People: reviewers Adi → Adi/Bharath (by claude)."
+    },
+    {
+     "ts": "2026-10-22T19:52:42+0530",
+     "who": "claude",
+     "note": "Round 2 (run t470-r2) is paused at 2.26 on the usage window and resumes by itself. Reviews so far: 2.21 bucket, 2.22 tools, 2.23 plan and 2.24 batch failed. I fixed their guides in revops-os/tasks/day2b.json and the kit bugs behind them, verified with syntax checks, a slot test and check_live.py 10 of 10 PASS on the r2 studio, and committed it all. Left: the reviews for 2.25, 2.26, D3 and the wrap, then round 3 on the fixed cards until all pass. Push and deploy are held: the checkout is on branch series-deck-finish, not main, and the prompts don't pass yet."
     }
    ]
   },
