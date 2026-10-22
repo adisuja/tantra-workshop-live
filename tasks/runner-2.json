@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-23T01:28:40+0530",
+   "task_id": "T-463",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "ok",
+   "summary": "T-463 stays at doing: the RSP fix is checked and in all three test packs, but no round 2 output exists to score yet, because the test account's 5-hour window is at 75% (the runs only start below 60%).\n\n**Completion check**\n- **Fix the RSP \"live session\" defect:** done. Commit a932e130 is already on "
+  },
+  {
    "ts": "2026-10-23T01:11:26+0530",
    "task_id": "T-469",
    "mode": "feedback",
@@ -87,24 +95,17 @@
    "status": "doing",
    "result": "budget",
    "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
-  },
-  {
-   "ts": "2026-10-22T15:21:18+0530",
-   "task_id": "T-034",
-   "mode": "feedback",
-   "status": "blocked",
-   "result": "provider",
-   "summary": "API Error: 502 [gemini/gemini-3-flash-preview] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3-flash-preview — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 3s). This is a server-side issue, usually temporary — try again in a moment. If i"
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-463",
+ "task_id": "T-001",
  "entries": [
-  "F-d7c014bc"
+  "F-769f5143",
+  "R-9f0e5966"
  ],
- "started": "2026-10-23T01:12:32+0530",
- "message": "Acting on 1 note(s) for T-463: Spot checks: RSP, challenge, chat edition, Codex",
+ "started": "2026-10-23T01:29:36+0530",
+ "message": "Acting on 2 note(s) for T-001: /masterclass landing page",
  "slices": {
   "T-250": 1,
   "T-301": 1,
@@ -123,7 +124,6 @@
   "T-459": 2,
   "T-470": 1,
   "T-471": 1,
-  "T-463": 1,
   "T-465": 1,
   "T-467": 1
  },
