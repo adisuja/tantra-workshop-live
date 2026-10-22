@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-22T23:43:14+0530",
-  "version": 2775,
+  "updated": "2026-10-23T00:41:10+0530",
+  "version": 2777,
   "last_id": 501,
   "team": [
    {
@@ -22121,21 +22121,43 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "queue",
+   "status": "blocked",
    "why": "T-448 Q9: issuer and JWKS are public (https://clerk.usetantra.com, /.well-known/jwks.json, checked 2026-10-21); the session and user events webhook needs a Clerk dashboard login.",
    "spec": "",
    "done_when": [
     "Endpoint exists in Clerk production",
     "CLERK_WEBHOOK_SECRET stored on the centre Worker"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Clerk webhook route",
+     "url": "cloud/src/clerk-hooks.ts"
+    },
+    {
+     "label": "Probe (28/28 PASS)",
+     "url": "cloud/scripts/probe-clerk-hooks.mjs"
+    },
+    {
+     "label": "Migration 0030 (pending remote)",
+     "url": "cloud/migrations/0030_clerk_sessions.sql"
+    },
+    {
+     "label": "Live route (503 until secret set)",
+     "url": "https://revops-centre.growthcluborg.workers.dev/hooks/clerk"
+    }
+   ],
    "blockers": [],
-   "needs_from_owner": "In the Clerk dashboard (production instance clerk.usetantra.com) > Webhooks > Add Endpoint: URL = the centre Worker's Clerk webhook route (spec section 6, row 6), events session.ended, session.revoked, session.removed, user.deleted; store its Signing Secret (whsec_...) as the centre Worker secret CLERK_WEBHOOK_SECRET. Reply here when done; never paste the secret in a note.",
+   "needs_from_owner": "Bharath: in the Clerk dashboard (production instance clerk.usetantra.com) > Webhooks > Add Endpoint, set URL = https://revops-centre.growthcluborg.workers.dev/hooks/clerk and subscribe to exactly session.ended, session.revoked, session.removed, user.deleted. Copy that endpoint's Signing Secret (whsec_...) and from the repo's cloud/ folder run: npx wrangler secret put CLERK_WEBHOOK_SECRET --name revops-centre (paste it at the prompt). Reply here when done; never paste the secret in a note.",
    "log": [
     {
      "ts": "2026-10-21T16:45:24+0530",
      "who": "claude",
      "note": "Opened from T-448 Q9."
+    },
+    {
+     "ts": "2026-10-23T00:39:30+0530",
+     "who": "claude",
+     "note": "The centre now has POST /hooks/clerk (Svix check with CLERK_WEBHOOK_SECRET, 5 minute replay window, session.ended/revoked/removed add the sid to the ended list and end its embed sessions, user.deleted runs the section 5 deletion incl. R2 outputs and sealed connections); local probe cloud/scripts/probe-clerk-hooks.mjs passes 28/28 with a locally generated whsec_. Deployed revops-centre version f2269c5f: unsigned and fake-signed POSTs to the live route get 503 'Clerk webhook secret not set'. Migration 0030_clerk_sessions.sql is still pending on the remote D1 and must be applied (wrangler d1 migrations apply revops-centre --remote) before the secret is stored, or session events will fail; that apply was not in this run's approval."
     }
    ],
    "order": 4820

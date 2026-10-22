@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-23T00:39:47+0530",
+   "task_id": "T-482",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-482 is blocked on Bharath: the `/hooks/clerk` route is built, passes its local probe and is deployed. Migration 0030 is still not applied to the live database, because this run was only approved to deploy the Worker.\n\n**Completion check:**\n1. **POST /hooks/clerk route:** done, committed in `ee2b7b"
+  },
+  {
    "ts": "2026-10-22T20:05:00+0530",
    "task_id": "T-467",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "budget",
    "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
-  },
-  {
-   "ts": "2026-10-22T02:17:47+0530",
-   "task_id": "T-469",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "budget",
-   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-482: Input from Bharath: Clerk production webhook endpoint and signing secret for the centre",
- "task_id": "T-482",
+ "message": "Acting on 1 note(s) for T-034: Full dry run of the Day-1 pipeline",
+ "task_id": "T-034",
  "entries": [
-  "F-443eacc2"
+  "R-6b3f02e9"
  ],
  "mode": "feedback",
- "started": "2026-10-23T00:36:07+0530",
+ "started": "2026-10-23T00:40:34+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
