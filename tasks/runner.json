@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-22T19:41:34+0530",
+   "task_id": "T-477",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "T-477 is back in review: the live /masterclass and /vip pages load and contain no refund promise, so nothing had to be changed or republished.\n\nWhat I checked in this run:\n- **Publish hold:** the only \"publish held\" entry in `tantra-round5-coord/LOG.md` is the one from 10-06 at 03:30 (line 810). It "
+  },
+  {
    "ts": "2026-10-22T19:39:51+0530",
    "task_id": "T-001",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "budget",
    "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
-  },
-  {
-   "ts": "2026-10-21T19:29:56+0530",
-   "task_id": "T-444",
-   "mode": "feedback",
-   "status": "review",
-   "result": "ok",
-   "summary": "T-444 is in review with Bharath as the reviewer. Bhaskar's post still isn't in any session from 10-19 to 10-21, and the research note was already committed and pushed, so nothing new was committed.\n\n1. Cleared \"Asked of Adi\" and the hold, with no input task: done (`needs_from_owner` is empty, status"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-477: Publish the marketing pages so the no-refund and pricing copy can be reviewed",
- "task_id": "T-477",
+ "message": "Acting on 1 note(s) for T-467: Content engine cards on Day 2 and the weekly content loop on Day 3",
+ "task_id": "T-467",
  "entries": [
-  "F-3782808d"
+  "F-b9a27392"
  ],
  "mode": "feedback",
- "started": "2026-10-22T19:40:49+0530",
+ "started": "2026-10-22T19:41:57+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,

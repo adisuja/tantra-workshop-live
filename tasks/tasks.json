@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-22T19:39:57+0530",
-  "version": 2758,
+  "updated": "2026-10-22T19:41:43+0530",
+  "version": 2761,
   "last_id": 482,
   "team": [
    {
@@ -339,6 +339,11 @@
      "ts": "2026-10-22T19:39:57+0530",
      "who": "claude",
      "note": "Checked 12 related task(s); updating T-477."
+    },
+    {
+     "ts": "2026-10-22T19:41:25+0530",
+     "who": "claude",
+     "note": "T-477 recheck 2026-10-22: live /masterclass and /vip return 200 with 0 refund, money-back or risk-free matches; /vip shows 'What you keep'. https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792678256 https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1792678256"
     }
    ],
    "order": 0,
@@ -21875,11 +21880,11 @@
    "evidence": [
     {
      "label": "/masterclass (live)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792580699"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792678256"
     },
     {
      "label": "/vip (live)",
-     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1792580699"
+     "url": "https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1792678256"
     }
    ],
    "blockers": [],
@@ -21917,6 +21922,16 @@
      "ts": "2026-10-22T19:39:41+0530",
      "who": "claude",
      "note": "T-001 verify 2026-10-22: the T-477 publish is live (mirror commit c3c56128e from main 06f00427), superseded by bdbf38751 from main 41b1fcac; live /masterclass and /vip have 0 refund or money-back matches."
+    },
+    {
+     "ts": "2026-10-22T19:41:24+0530",
+     "who": "claude",
+     "note": "Rechecked 2026-10-22: no publish hold is open (the 10-06 hold was lifted at 03:41), and the live mirror pages /masterclass, /masterclass/success, /vip, /vip/success and /workshop all return 200 with 0 matches for refund, money-back or risk-free. The only 'guarantee' text is the footer line saying results are not a guarantee (plus a plain shield image file named key-guarantee.jpg). /vip still shows 'What you keep'. No source change was needed, so nothing was pushed or republished. Open https://adisuja.github.io/tantra-workshop-live/site/masterclass/?v=1792678256 and https://adisuja.github.io/tantra-workshop-live/site/vip/?v=1792678256"
+    },
+    {
+     "ts": "2026-10-22T19:41:43+0530",
+     "who": "claude",
+     "note": "Checked 12 related task(s); updating T-001, T-101."
     }
    ]
   },
