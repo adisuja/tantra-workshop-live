@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-23T00:42:05+0530",
+   "task_id": "T-034",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "ok",
+   "summary": "T-034 is still blocked: the update the related-task note asked for (it now waits on T-480 instead of T-033) is in place, and I changed nothing new this run.\n\n**Completion check (all checked this run):**\n- **Waiting-on names T-480 instead of T-033:** done. The task's blockers are now T-480, T-408 and"
+  },
+  {
    "ts": "2026-10-23T00:39:47+0530",
    "task_id": "T-482",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "review",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.6 are cooling down"
-  },
-  {
-   "ts": "2026-10-22T02:20:55+0530",
-   "task_id": "T-470",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "budget",
-   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-034: Full dry run of the Day-1 pipeline",
- "task_id": "T-034",
+ "message": "Acting on 1 note(s) for T-461: Test harness: fill the centre as Tantra, run every day's prompts in fresh Claude Code sessions",
+ "task_id": "T-461",
  "entries": [
-  "R-6b3f02e9"
+  "F-8fa10e88"
  ],
  "mode": "feedback",
- "started": "2026-10-23T00:40:34+0530",
+ "started": "2026-10-23T00:42:29+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
@@ -115,7 +115,6 @@
   "T-020": 1,
   "T-258": 1,
   "T-268": 1,
-  "T-034": 2,
   "T-351": 1,
   "T-466": 1,
   "T-468": 1,

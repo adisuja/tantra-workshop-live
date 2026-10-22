@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-23T00:41:10+0530",
-  "version": 2777,
+  "updated": "2026-10-23T00:42:57+0530",
+  "version": 2779,
   "last_id": 501,
   "team": [
    {
@@ -21603,12 +21603,12 @@
    ],
    "evidence": [
     {
-     "label": "walker fix",
+     "label": "fix commit",
      "url": "app/scripts/walk-ui.mjs"
     },
     {
-     "label": "rerun log",
-     "url": "/tmp/t471/walk.log"
+     "label": "previous walk log",
+     "url": "/tmp/t471/walk-prev.log"
     }
    ],
    "blockers": [],
@@ -21631,6 +21631,11 @@
      "ts": "2026-10-21T16:39:41+0530",
      "who": "claude",
      "note": "Found the main cause: the 2026-10-15 walk ran on the launchd stack, which runs the Oct 12 copy in ~/tantra-onboarding-v2. Its simulator has no GA4 Data, Twilio balance or GHL workflow routes, and this checkout's simulator has all three. I fixed the walker so it fills the fields a pick opens, which was the d2-close cause (commit d104b76c), and started a fresh walk from this checkout on a private stack (centre 8940, sim 8942, funnel 8944) that writes /tmp/walk/t471. Left to do: read that report, patch any simulator gaps that remain, run both tsc checks, push main, add the LOG line, then review."
+    },
+    {
+     "ts": "2026-10-23T00:42:57+0530",
+     "who": "claude",
+     "note": "The last walk did finish (107 of 112 cards, 19 of 20 jobs, 6 findings, report in /tmp/walk/t471-prev-*/report.json). Commit 14e02723 fixes all 6: Twilio authority defaults to Other outside the US and Canada, there are simulate steps for GHL workflows and the 14-day warm-up (this check has no clock in the simulator), the walker fills https fields for the content cards, and d1-kie only shows on the rail before start-stack is answered. Both tsc checks print no errors. Left: centre 8940, sim 8942 and funnel 8944 are restarted on fresh state, but the admin entry URL (/tmp/rc-local-admin-url) is missing. Rerun the walker, confirm 0 findings, push main, add the LOG.md line, then review."
     }
    ]
   },
