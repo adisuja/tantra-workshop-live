@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-22T23:39:13+0530",
-  "version": 2765,
-  "last_id": 499,
+  "updated": "2026-10-22T23:43:14+0530",
+  "version": 2775,
+  "last_id": 501,
   "team": [
    {
     "name": "Adi",
@@ -1222,7 +1222,7 @@
    "owner": "Adi",
    "priority": "P0",
    "due": "2026-10-14",
-   "status": "review",
+   "status": "dropped",
    "why": "The live presentation for all three days.",
    "spec": "workshop-plan/deck.html (158 slides: Cover 1, Agenda 9, Day 1 46, Day 2 52, Day 3 45, Close 5), generated from workshop-plan/build/*.py (lanes.py, content.py, questions.py) and never hand-edited; served copy app/public/materials/deck.html and the mirror https://adisuja.github.io/tantra-workshop-live/deck.html are byte-identical to it. Finished: #day-N links from the centre open each day's first slide; slide 2 'Who Is Running This Week' ends with the Growth Idea, webinar #4, August 2025 result, figures word for word from https://usetantra.github.io/tantra-webinar-deck; no ruled-out tool is named (prospect lists use data partners, your own CRM, ZoomInfo or Clay and the built-in email check; outreach domains are Cloudflare Registrar only). Only thing left: Adi reviews and approves the deck. Known follow-up owned elsewhere: Day 1 step 8 says mailboxes in Google Workspace, which changes when T-299 (vendor inboxes) merges.",
    "done_when": [
@@ -1302,6 +1302,11 @@
      "ts": "2026-10-22T23:39:13+0530",
      "who": "claude",
      "note": "Session 2026-10-22: the combined series deck (T-483, 218 slides, one per centre card) is the three-webinar deck going forward."
+    },
+    {
+     "ts": "2026-10-22T23:42:48+0530",
+     "who": "claude",
+     "note": "Dropped by the Orchestrator: Adi's 2026-10-16 session and the series-deck-2026-10-16 memory replace the old per-day deck with the combined series deck (T-483). Every T-021 check is met (2026-10-11 log). Under orchestrator-autonomy, Adi should not review a superseded deck."
     }
    ],
    "order": 120,
@@ -22322,7 +22327,7 @@
    "title": "Input from Adi for T-484: Tantra Pro trial terms and annual prices on the Invitation",
    "area": "Product",
    "owner": "Adi",
-   "assignee": "Adi",
+   "assignee": "Claude",
    "reviewers": [
     "Adi"
    ],
@@ -22340,6 +22345,11 @@
      "ts": "2026-10-22T23:39:13+0530",
      "who": "claude",
      "note": "Added from session 2026-10-22."
+    },
+    {
+     "ts": "2026-10-22T23:42:27+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Adi → Claude (by Orchestrator)."
     }
    ],
    "order": 4870
@@ -22349,7 +22359,7 @@
    "title": "Input from Adi for T-484: growth KPIs and the tag names for the path card and the re-invite list",
    "area": "Product",
    "owner": "Adi",
-   "assignee": "Adi",
+   "assignee": "Claude",
    "reviewers": [
     "Adi"
    ],
@@ -22367,6 +22377,11 @@
      "ts": "2026-10-22T23:39:13+0530",
      "who": "claude",
      "note": "Added from session 2026-10-22."
+    },
+    {
+     "ts": "2026-10-22T23:42:28+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Adi → Claude (by Orchestrator)."
     }
    ],
    "order": 4880
@@ -22376,7 +22391,7 @@
    "title": "Input from Adi for T-484: confirm the structure and vendor defaults (B5 to B15 and three build-or-not calls)",
    "area": "Product",
    "owner": "Adi",
-   "assignee": "Adi",
+   "assignee": "Claude",
    "reviewers": [
     "Adi"
    ],
@@ -22394,6 +22409,11 @@
      "ts": "2026-10-22T23:39:13+0530",
      "who": "claude",
      "note": "Added from session 2026-10-22."
+    },
+    {
+     "ts": "2026-10-22T23:42:28+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Adi → Claude (by Orchestrator)."
     }
    ],
    "order": 4890
@@ -22403,7 +22423,7 @@
    "title": "Input from Adi for T-484: three source conflicts (the /masterclass cinematic, opens in the KPI model, experiment sizing)",
    "area": "Product",
    "owner": "Adi",
-   "assignee": "Adi",
+   "assignee": "Claude",
    "reviewers": [
     "Adi"
    ],
@@ -22421,6 +22441,11 @@
      "ts": "2026-10-22T23:39:13+0530",
      "who": "claude",
      "note": "Added from session 2026-10-22."
+    },
+    {
+     "ts": "2026-10-22T23:42:28+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Adi → Claude (by Orchestrator)."
     }
    ],
    "order": 4900
@@ -22430,7 +22455,7 @@
    "title": "Input from Adi for T-484: welcome video and the welcome, announcement and cohort links plus QR",
    "area": "Product",
    "owner": "Adi",
-   "assignee": "Adi",
+   "assignee": "Claude",
    "reviewers": [
     "Adi"
    ],
@@ -22448,6 +22473,11 @@
      "ts": "2026-10-22T23:39:13+0530",
      "who": "claude",
      "note": "Added from session 2026-10-22."
+    },
+    {
+     "ts": "2026-10-22T23:42:28+0530",
+     "who": "Orchestrator",
+     "note": "People: assignee Adi → Claude (by Orchestrator)."
     }
    ],
    "order": 4910
@@ -22687,6 +22717,64 @@
     }
    ],
    "order": 4990
+  },
+  {
+   "id": "T-500",
+   "title": "Input from Adi for T-491: On the workshop WhatsApp phone, create two groups: 'RevOps Workshop Announcement",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (physical): Only Adi's phone can create WhatsApp groups. No invite links exist on this Mac or in any session.. Everything else in T-491 is being built around it. As soon as this is done, T-491 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "On the workshop WhatsApp phone, create two groups: 'RevOps Workshop Announcements' (admins-only messages) and 'RevOps Workshop Cohort'. For each, open Group info, Invite via link, Copy link, and paste both chat.whatsapp.com links as a note on T-491.",
+   "log": [
+    {
+     "ts": "2026-10-22T23:42:28+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-491."
+    }
+   ],
+   "order": 5000,
+   "input_for": "T-491",
+   "kind": "input"
+  },
+  {
+   "id": "T-501",
+   "title": "Input from Adi for T-483: Open https://adisuja.github.io/tantra-review/series-deck/?v=9ac222b (or the new ",
+   "area": "Product",
+   "owner": "Adi",
+   "assignee": "Adi",
+   "reviewers": [
+    "Adi"
+   ],
+   "priority": "P1",
+   "due": "",
+   "status": "blocked",
+   "why": "",
+   "spec": "Only Adi can do this (reserved): Adi is the reviewer of record. Done-when needs his approval of a deck built to convert his own workshop room.. Everything else in T-483 is being built around it. As soon as this is done, T-483 finishes on its own.",
+   "done_when": [],
+   "evidence": [],
+   "blockers": [],
+   "needs_from_owner": "Open https://adisuja.github.io/tantra-review/series-deck/?v=9ac222b (or the new ?v= link if it was republished). Arrow keys move, O shows the overview, N shows the notes. Reply on T-483 with 'approved' or with changes by slide number.",
+   "log": [
+    {
+     "ts": "2026-10-22T23:43:14+0530",
+     "who": "claude",
+     "note": "Opened by the Orchestrator for T-483."
+    }
+   ],
+   "order": 5010,
+   "input_for": "T-483",
+   "kind": "input"
   }
  ]
 }
