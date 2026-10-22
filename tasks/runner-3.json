@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-22T20:05:24+0530",
+   "task_id": "T-457",
+   "mode": "feedback",
+   "status": "review",
+   "result": "ok",
+   "summary": "Both funnel Worker fixes from the T-464 round are built and tested, and T-457 is back in review with Adi and Bharath. Nothing is pushed: commits dc821206 and 24e67421 are on `series-deck-finish` only.\n\n**Completion check:**\n- **Hide the video when there is none:** Done. \"Media not found.\" came from "
+  },
+  {
    "ts": "2026-10-22T19:58:54+0530",
    "task_id": "T-466",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "provider",
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
-  },
-  {
-   "ts": "2026-10-22T14:49:10+0530",
-   "task_id": "T-465",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "budget",
-   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
   }
  ],
- "state": "working",
+ "state": "paused",
  "mode": "feedback",
- "task_id": "T-457",
+ "task_id": null,
  "entries": [
   "F-daf2873a"
  ],
  "started": "2026-10-22T19:58:55+0530",
- "message": "Acting on 1 note(s) for T-457: Tantra RevOps OS kits: funnel Worker and config schema, deck, sequences, CRM scripts",
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 78% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 00:31.",
  "slices": {
   "T-135": 1,
   "T-300": 2,

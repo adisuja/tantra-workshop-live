@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-22T20:05:00+0530",
+   "task_id": "T-467",
+   "mode": "feedback",
+   "status": "review",
+   "result": "budget",
+   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
+  },
+  {
    "ts": "2026-10-22T19:41:34+0530",
    "task_id": "T-477",
    "mode": "feedback",
@@ -87,24 +95,14 @@
    "status": "doing",
    "result": "budget",
    "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
-  },
-  {
-   "ts": "2026-10-21T21:21:31+0530",
-   "task_id": "T-463",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "budget",
-   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
   }
  ],
- "state": "working",
- "message": "Acting on 1 note(s) for T-467: Content engine cards on Day 2 and the weekly content loop on Day 3",
- "task_id": "T-467",
- "entries": [
-  "F-b9a27392"
- ],
+ "state": "paused",
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 78% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 00:31.",
+ "task_id": null,
+ "entries": [],
  "mode": "feedback",
- "started": "2026-10-22T19:41:57+0530",
+ "started": "2026-10-22T20:05:46+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,

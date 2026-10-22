@@ -1,6 +1,22 @@
 {
  "history": [
   {
+   "ts": "2026-10-22T20:05:50+0530",
+   "task_id": "T-034",
+   "mode": "feedback",
+   "status": "blocked",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.6 are cooling down"
+  },
+  {
+   "ts": "2026-10-22T20:05:13+0530",
+   "task_id": "T-471",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "budget",
+   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
+  },
+  {
    "ts": "2026-10-22T19:46:14+0530",
    "task_id": "T-465",
    "mode": "feedback",
@@ -79,32 +95,16 @@
    "status": "doing",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. The packs are refetched: RSP has 86 prompts and now uses the RSP framing. Next I'm fixing the Day 0 guides that the reviewer flagged."
-  },
-  {
-   "ts": "2026-10-22T02:26:33+0530",
-   "task_id": "T-465",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "budget",
-   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
-  },
-  {
-   "ts": "2026-10-21T21:21:43+0530",
-   "task_id": "T-465",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "budget",
-   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
   }
  ],
- "state": "working",
+ "state": "paused",
  "mode": "feedback",
- "task_id": "T-471",
+ "task_id": null,
  "entries": [
-  "F-39fe160f"
+  "R-6b3f02e9"
  ],
- "started": "2026-10-22T19:46:22+0530",
- "message": "Acting on 1 note(s) for T-471: UI walk as Tantra (webinar): fix the 8 cards that did not finish and update the walker's expectations",
+ "started": "2026-10-22T20:05:46+0530",
+ "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 78% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 00:31.",
  "slices": {
   "T-250": 1,
   "T-301": 1,
