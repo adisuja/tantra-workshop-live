@@ -97,12 +97,14 @@
    "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
   }
  ],
- "state": "paused",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 78% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 00:31.",
- "task_id": null,
- "entries": [],
+ "state": "working",
+ "message": "Acting on 1 note(s) for T-482: Input from Bharath: Clerk production webhook endpoint and signing secret for the centre",
+ "task_id": "T-482",
+ "entries": [
+  "F-443eacc2"
+ ],
  "mode": "feedback",
- "started": "2026-10-22T20:05:46+0530",
+ "started": "2026-10-23T00:36:07+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
