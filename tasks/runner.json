@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-23T00:55:26+0530",
+   "task_id": "T-461",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "T-461 stays in doing: Day 0 round 6 and the missing Day 1 r1 reviews are both running, and Days 1 to 3 aren't finished yet.\n\n**Completion check**\n\n| Item | State | Evidence |\n| --- | --- | --- |\n| Leave the 60% window line and the $10 API caps alone | Done | I made no changes to `budget.py` in this "
+  },
+  {
    "ts": "2026-10-23T00:42:05+0530",
    "task_id": "T-034",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "ok",
    "summary": "Round 2 is running in the background. I'll pick it up when the first three reviews land."
-  },
-  {
-   "ts": "2026-10-22T02:21:00+0530",
-   "task_id": "T-467",
-   "mode": "feedback",
-   "status": "review",
-   "result": "provider",
-   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.6 are cooling down"
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-461: Test harness: fill the centre as Tantra, run every day's prompts in fresh Claude Code sessions",
- "task_id": "T-461",
+ "message": "Acting on 1 note(s) for T-073: Cut session recordings into the Tantra Pro course",
+ "task_id": "T-073",
  "entries": [
-  "F-8fa10e88"
+  "F-ecbdbb60"
  ],
  "mode": "feedback",
- "started": "2026-10-23T00:42:29+0530",
+ "started": "2026-10-23T00:55:41+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,
@@ -118,7 +118,8 @@
   "T-351": 1,
   "T-466": 1,
   "T-468": 1,
-  "T-481": 1
+  "T-481": 1,
+  "T-461": 1
  },
  "api_capped": {
   "T-229": "2026-10-12T00:18:33+0530",

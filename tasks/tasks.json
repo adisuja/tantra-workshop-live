@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-23T00:53:03+0530",
-  "version": 2786,
+  "updated": "2026-10-23T00:56:22+0530",
+  "version": 2789,
   "last_id": 501,
   "team": [
    {
@@ -3164,7 +3164,7 @@
   },
   {
    "id": "T-073",
-   "status": "doing",
+   "status": "blocked",
    "owner": "Amal",
    "assignee": "Claude",
    "reviewers": [
@@ -3172,7 +3172,7 @@
     "Bharath"
    ],
    "priority": "P2",
-   "due": "2026-10-24",
+   "due": "2026-10-31",
    "area": "Product",
    "order": 450,
    "title": "T-073: held back (private client detail)",
