@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-23T01:44:47+0530",
-  "version": 2802,
+  "updated": "2026-10-23T01:46:53+0530",
+  "version": 2803,
   "last_id": 501,
   "team": [
    {
@@ -4434,6 +4434,11 @@
      "ts": "2026-10-23T01:44:47+0530",
      "who": "claude",
      "note": "Ripple from T-477: the /vip guarantee seal is now the 'What you keep' shield (the image has no text, and the block promises no refund), so the spec, the review list and the probe label say that now. The key-art probe on live /vip (mirror 0a5a5d57) passes at 1440 and 390 with 0 broken images, and the page text has no refund, money-back or risk-free copy. Open https://adisuja.github.io/tantra-workshop-live/site/vip/?v=0a5a5d57 and scroll to 'What you keep'."
+    },
+    {
+     "ts": "2026-10-23T01:46:53+0530",
+     "who": "claude",
+     "note": "Verify pass on the T-477 ripple: nothing more had to change. The spec and Bhaskar's review list already say the /vip guarantee seal is now the 'What you keep' shield, and the live /vip text has no refund, money-back or risk-free copy. The key-art probe passed again on all five live pages at 1440 and 390 (0 broken images), and all seven ?v=0a5a5d57 review links answer 200. Waiting on Bhaskar's sign-off."
     }
    ],
    "order": 990,
