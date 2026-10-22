@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-23T01:10:05+0530",
-  "version": 2796,
+  "updated": "2026-10-23T01:28:08+0530",
+  "version": 2799,
   "last_id": 501,
   "team": [
    {
@@ -21223,16 +21223,20 @@
    ],
    "evidence": [
     {
-     "label": "RSP answer overrides",
-     "url": "revops-os/tests/packs/rsp/answer-overrides.json"
+     "label": "Fix commit",
+     "url": "app/src/lib/prompt-pack.ts"
     },
     {
-     "label": "Round 1 runs",
-     "url": "revops-os/tests/runs"
+     "label": "rsp-r2 run",
+     "url": "revops-os/tests/runs/rsp-r2"
     },
     {
-     "label": "Test log",
-     "url": "workshop-plan/research/revops-os-test-log.md"
+     "label": "challenge-r2 run",
+     "url": "revops-os/tests/runs/challenge-r2"
+    },
+    {
+     "label": "chat-challenge-r2 run",
+     "url": "revops-os/tests/runs/chat-challenge-r2"
     }
    ],
    "blockers": [],
@@ -21270,6 +21274,16 @@
      "ts": "2026-10-22T14:41:30+0530",
      "who": "claude",
      "note": "Round 1 found the RSP test answers were webinar-shaped, so I reshaped them for reverse squeeze (recorded videos, scored application, no live session) and refetched all three packs from the local centre (RSP 86, challenge 94, chat 94 prompts; commit b3ca16b4). Still to do: Day 0 guide fixes in revops-os/tasks/day0.json (D0.10 date from a recorded command, D0.11 an empty grep is a pass, D0.12 both stack tables), then round 2 runs, scoring, log rows in the test log, then push and review."
+    },
+    {
+     "ts": "2026-10-23T01:26:15+0530",
+     "who": "claude",
+     "note": "Fixed the rsp-r1 0.01 defect in the centre's context prompt: business.md now names the funnel exactly as chosen, with no session description, and save-context skips the state block on Day 0. Refetched all three packs and committed (a932e130). The cut-down runs rsp-r2, challenge-r2 and chat-challenge-r2 are live (PIDs 57525, 57526, 57527) with only d0-context, the 11 shape-only cards and each day's context and wrap. Other lanes have the shared window at 74%, so the runs wait about 255 min (until about 05:30 IST) and then continue on their own. Left: Fable scores, fixes for up to 4 rounds, the three test log rows, deleting the test attendees, and the push (no tantra-redesign branch exists locally, so I will confirm the target before pushing)."
+    },
+    {
+     "ts": "2026-10-23T01:28:08+0530",
+     "who": "claude",
+     "note": "Checked again this run: the RSP fix (commit a932e130, now on origin/main) is in all three refetched packs, so business.md will name the funnel as chosen and will no longer call RSP a live session. The three cut-down round 2 runs (PIDs 57525 to 57527, the 11 shape-only cards plus context and wrap, Fable reviewer) are alive and waiting, because the test account's 5-hour window is at 75%. They start on their own at about 05:30 IST. Still to do: score the outputs, fix and rerun for up to 4 rounds, fill the three test log rows, delete the test attendees, set review."
     }
    ]
   },
@@ -22402,15 +22416,28 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "queue",
+   "status": "done",
    "why": "The live centre was deployed from branch series-deck-finish. Main is 154 commits behind it, so a deploy from main would roll the live centre back to before the T-484 cards and the T-485 playbook.",
    "spec": "Merge series-deck-finish into main in adisuja/3-day-tantra-ai-revops-workshop only (never a Usetantra repo). Merge main into the branch first, rerun the full verify, then fast-forward or merge into main and push. Use git checkout -m and resolve hunks, never --theirs/--ours on a whole file. Stash the runner's WIP first. Rebuild kits with revops-os/build-kits.sh from the merged HEAD.",
    "done_when": [
-    "git rev-list --count origin/main..origin/series-deck-finish prints 0",
-    "Full verify green on main",
-    "A deploy from main shows the same live centre"
+    "git rev-list --count origin/main..origin/series-deck-finish prints 0 (met: both at 840cda5a)",
+    "Full verify green on main (met: 17 of 17 steps)",
+    "A deploy from main shows the same live centre (met: main now carries everything the live centre runs)"
    ],
-   "evidence": [],
+   "evidence": [
+    {
+     "label": "Merge commit on main",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/11105a08"
+    },
+    {
+     "label": "main at 840cda5a",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/840cda5a"
+    },
+    {
+     "label": "Verify chain",
+     "url": "app/scripts/verify-centre.sh"
+    }
+   ],
    "blockers": [],
    "needs_from_owner": "",
    "log": [
@@ -22418,6 +22445,11 @@
      "ts": "2026-10-22T23:39:13+0530",
      "who": "claude",
      "note": "Added from session 2026-10-22: found while updating the board; nothing else waits for Adi on this."
+    },
+    {
+     "ts": "2026-10-23T01:27:25+0530",
+     "who": "claude",
+     "note": "Done 2026-10-23: merged origin/main (10 commits, mostly cherry-picks of this branch) into series-deck-finish in a separate worktree so the runner kept its uncommitted work. Six conflicts resolved hunk by hunk: start-os-setup y2 pin took main (step:3); check-task-guides, build.py and day0.json kept the branch (later T-475, T-461 and playbook-in-guides work); generated playbook rebuilt. Full verify 17 of 17 green, OS kits rebuilt and current. Pushed as a fast-forward: main and series-deck-finish are both 840cda5a. The verify chain is now committed as app/scripts/verify-centre.sh."
     }
    ],
    "order": 4860
