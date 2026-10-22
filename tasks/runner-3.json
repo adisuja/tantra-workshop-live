@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-23T00:45:46+0530",
+   "task_id": "T-462",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "turns",
+   "summary": "T-462 stays in `doing`. Both notes are handled and acked, but Day 0 round 5 has stopped: 11 of its 23 reviews fail and prompt 0.24 was never reviewed.\n\n**Completion check:**\n- **R-23ef2810 (fix the 0.04 start-stack and 0.06 start-cloudflare guides so T-461 can rerun them):** Done. Nothing new had to"
+  },
+  {
    "ts": "2026-10-23T00:43:10+0530",
    "task_id": "T-471",
    "mode": "feedback",
@@ -87,25 +95,16 @@
    "status": "review",
    "result": "budget",
    "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
-  },
-  {
-   "ts": "2026-10-22T14:53:02+0530",
-   "task_id": "T-001",
-   "mode": "feedback",
-   "status": "review",
-   "result": "budget",
-   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-462",
+ "task_id": "T-460",
  "entries": [
-  "R-23ef2810",
-  "F-0ff9c54c"
+  "F-5db57ffd"
  ],
- "started": "2026-10-23T00:43:10+0530",
- "message": "Acting on 2 note(s) for T-462: Reviewer agent and improver loop for every prompt and output",
+ "started": "2026-10-23T00:46:09+0530",
+ "message": "Acting on 1 note(s) for T-460: Prompt packs v2: context prompt, one prompt per build task, wrap prompt, email and WhatsApp link",
  "slices": {
   "T-135": 1,
   "T-300": 2,
@@ -120,7 +119,8 @@
   "T-058": 1,
   "T-475": 2,
   "T-470": 1,
-  "T-471": 1
+  "T-471": 1,
+  "T-462": 1
  },
  "api_capped": {
   "T-229": "2026-10-12T00:59:32+0530",

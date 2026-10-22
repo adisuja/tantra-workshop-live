@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-23T00:42:57+0530",
-  "version": 2779,
+  "updated": "2026-10-23T00:46:09+0530",
+  "version": 2781,
   "last_id": 501,
   "team": [
    {
@@ -21100,6 +21100,10 @@
     {
      "label": "Round 5 reviews",
      "url": "revops-os/tests/runs/d0-r5/log"
+    },
+    {
+     "label": "Rubric",
+     "url": "revops-os/tests/rubric.md"
     }
    ],
    "blockers": [],
@@ -21147,6 +21151,11 @@
      "ts": "2026-10-21T17:21:23+0530",
      "who": "claude",
      "note": "Verify pass: Day 0 round 5 (PID 34586, from start-endy with the fixed D0.19 and D0.20 guides, same as the release) is alive and correctly waiting. A fresh probe of the billed account reads 69% (guard is 60%), resetting about 21:09 IST. The API keys reset daily ($0 today) but are skipped by Adi's $10 per key work cap. Left: Day 0 to 24 of 24 with check-checks clean, then Days 1 to 3 (max 4 rounds per prompt), push after each day, then review. Log: workshop-plan/research/revops-os-test-log.md (9dfc9013)."
+    },
+    {
+     "ts": "2026-10-23T00:44:29+0530",
+     "who": "claude",
+     "note": "Ripple check: the 0.04 start-stack and 0.06 start-cloudflare guide fixes are already in commit 5c3fe359 (I checked both built guides: ready-count grep, Only when grep, inbox partner row, checks.txt everywhere, tools recorded first, check-checks run bare), so T-461 can rerun them; budget.py fix 43b0f460 is in. I added the workers.dev rule to the reviewer rubric so a custom-domain managed challenge is not scored as a fail (c18e653d). Round 5 stopped at 06:17 on 2026-10-22 with 0.24 not reviewed (11 of 23 reviews fail). Left: rerun the failing Day 0 cards until 24 of 24 pass, then Days 1 to 3. Log: workshop-plan/research/revops-os-test-log.md"
     }
    ]
   },
@@ -21369,6 +21378,11 @@
      "ts": "2026-10-22T23:39:13+0530",
      "who": "claude",
      "note": "Session 2026-10-22: OS kits rebuilt on the merged tree and served by the live centre (75b7168d, then abdf8c59). The branch still needs merging to main: T-486."
+    },
+    {
+     "ts": "2026-10-23T00:46:09+0530",
+     "who": "claude",
+     "note": "Already applied, so no agent run was needed: 2026-10-22T23:39 log: OS kits rebuilt and served by live centre; merge planned via T-486 (checked by Haiku against the log and commits)."
     }
    ]
   },
