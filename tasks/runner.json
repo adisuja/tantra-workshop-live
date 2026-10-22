@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-22T14:52:33+0530",
+   "task_id": "T-471",
+   "mode": "feedback",
+   "status": "doing",
+   "result": "budget",
+   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
+  },
+  {
    "ts": "2026-10-22T14:51:38+0530",
    "task_id": "T-467",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "provider",
    "summary": "API Error: 502 [gemini/gemini-3-flash-preview] [502]: Request exceeded queue budget maxWaitMs=30000ms for gemini/gemini-3-flash-preview — queue budget does not bound execution (executionMaxWaitMs=600000ms) (reset after 3s). This is a server-side issue, usually temporary — try again in a moment. If i"
-  },
-  {
-   "ts": "2026-10-21T18:50:35+0530",
-   "task_id": "T-467",
-   "mode": "feedback",
-   "status": "review",
-   "result": "budget",
-   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
   }
  ],
  "state": "working",
- "message": "Acting on 1 note(s) for T-471: UI walk as Tantra (webinar): fix the 8 cards that did not finish and update the walker's expectations",
- "task_id": "T-471",
+ "message": "Acting on 1 note(s) for T-482: Input from Bharath: Clerk production webhook endpoint and signing secret for the centre",
+ "task_id": "T-482",
  "entries": [
-  "F-39fe160f"
+  "F-443eacc2"
  ],
  "mode": "feedback",
- "started": "2026-10-22T14:52:26+0530",
+ "started": "2026-10-22T14:55:47+0530",
  "slices": {
   "T-156": 1,
   "T-276": 1,

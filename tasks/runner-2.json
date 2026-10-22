@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-22T14:52:24+0530",
+   "task_id": "T-467",
+   "mode": "feedback",
+   "status": "review",
+   "result": "provider",
+   "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
+  },
+  {
    "ts": "2026-10-22T14:49:39+0530",
    "task_id": "T-001",
    "mode": "feedback",
@@ -87,24 +95,16 @@
    "status": "doing",
    "result": "turns",
    "summary": "Reached the 60-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-471 is still in progress, not done (status doing). The rerun walk is going, but I haven't seen its report yet, so nothing is pushed and the round5 coord LOG line i"
-  },
-  {
-   "ts": "2026-10-21T16:23:04+0530",
-   "task_id": "T-470",
-   "mode": "feedback",
-   "status": "doing",
-   "result": "turns",
-   "summary": "Reached the 45-turn bound for one run; the work so far is committed and the next run continues from the task log with a fresh context. T-470 isn't finished: no content prompt has a passing review yet, so I set it to `doing` (not `review`), committed the test pack and answers file as `e4bdf3d0`, and "
   }
  ],
  "state": "working",
  "mode": "feedback",
- "task_id": "T-467",
+ "task_id": "T-034",
  "entries": [
-  "F-b9a27392"
+  "R-6b3f02e9"
  ],
- "started": "2026-10-22T14:52:20+0530",
- "message": "Acting on 1 note(s) for T-467: Content engine cards on Day 2 and the weekly content loop on Day 3",
+ "started": "2026-10-22T14:56:40+0530",
+ "message": "Acting on 1 note(s) for T-034: Full dry run of the Day-1 pipeline",
  "slices": {
   "T-250": 1,
   "T-301": 1,
