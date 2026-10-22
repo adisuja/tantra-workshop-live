@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-23T00:57:32+0530",
-  "version": 2793,
+  "updated": "2026-10-23T00:59:44+0530",
+  "version": 2794,
   "last_id": 501,
   "team": [
    {
@@ -21442,7 +21442,7 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "review",
+   "status": "doing",
    "why": "Adi 2026-10-15: content workflows were documented in the playbook but missing from the cards; Day 2 needs content creation and publishing tasks, the dashboard needs content metrics in one view, and the OS must carry the content engine.",
    "spec": "workshop-plan/REVOPS_OS_PLAN_2026_10_15.md, section Content engine; source https://adisuja.github.io/revops-content-engine-playbook/",
    "done_when": [
@@ -21450,16 +21450,8 @@
    ],
    "evidence": [
     {
-     "label": "Context bucket card",
-     "url": "http://localhost:4322/debug/onboarding?v=t467d#task-d2-content-bucket"
-    },
-    {
-     "label": "Schedule card",
-     "url": "http://localhost:4322/debug/onboarding?v=t467d#task-d2-content-schedule"
-    },
-    {
-     "label": "Weekly loop card",
-     "url": "http://localhost:4322/debug/onboarding?v=t467d#task-d3-content-loop"
+     "label": "main commit 6846ae1a",
+     "url": "https://github.com/adisuja/3-day-tantra-ai-revops-workshop/commit/6846ae1a"
     }
    ],
    "blockers": [],
@@ -21493,6 +21485,11 @@
      "ts": "2026-10-21T16:58:35+0530",
      "who": "claude",
      "note": "Verify pass: the six Day 2 content cards (D2.35 to D2.40, no funnel gate, so every attendee sees them) and the Day 3 weekly content loop card (D3.08) are on disk with teaching, coverage rows and playbook sections. No dashes and no banned vendors in them. This run: check-guides, check-coverage, check-rail-pins (122 cards), probe-headings, probe-visual-tools, probe-onboarding-tabs (33 stops, after one cold-compile flake), static probe-details (0 fails) and tsc all pass, and all 7 anchors open in a headless browser. Left over: the s1-social and s1-blog guides still call the approve card 'Approve your posts' and describe the old 12-post flow. Fixing that needs a full playbook rebuild, and check-playbook-tasks already fails on HEAD (stale generated parts from other lanes). Not pushed: this checkout is series-deck-finish, 74 commits ahead of origin/main, all from other lanes."
+    },
+    {
+     "ts": "2026-10-23T00:59:44+0530",
+     "who": "claude",
+     "note": "Pushed main 6846ae1a (fast-forward, only 3 T-467 commits on top of origin/main): the schedule card deep link plus tabs probe fix, a start-os-setup rail pin fix, and playbook aliases repointed at the per-task sections (old step ids opened the welcome page). check-guides, check-rail-pins, check-playbook-tasks (0 fail), probe-onboarding-tabs, probe-headings and probe-visual-tools all pass on that tree. Left: the mirror publish. The export is built at /Users/adithyamurali/t467-fix/.t467-export/.next-export, but probe-details on it still needs the mirror root pages served beside site/ and a look at the guide-page navigation crashes before the rsync into live/site and the anchor check."
     }
    ]
   },
