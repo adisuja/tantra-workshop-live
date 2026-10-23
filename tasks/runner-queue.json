@@ -97,12 +97,12 @@
    "summary": "The four probes are running against the clean private stack. I'll pick up when they finish."
   }
  ],
- "state": "paused",
- "message": "Holding to stay under 80% of the 5-hour usage window: 5-hour window at 73% (new work starts below 70%); OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 05:31.",
- "task_id": null,
+ "state": "working",
+ "message": "Continuing T-459: Centre: three Day 0 RevOps OS cards, retire the Funnel OS pack cards, rename everywhere",
+ "task_id": "T-459",
  "entries": [],
- "mode": null,
- "started": "2026-10-20T17:34:34+0530",
+ "mode": "queue",
+ "started": "2026-10-23T05:34:44+0530",
  "api_capped": {
   "T-073": "2026-10-12T04:30:40+0530",
   "T-299": "2026-10-12T11:15:31+0530"
