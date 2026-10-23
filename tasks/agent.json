@@ -1,4 +1,7 @@
 {
  "enabled": true,
- "queue": true
+ "queue": false,
+ "queue_off_note": "Adi 2026-10-23: queue lane, verify passes and ripple notes off; only build-list sessions build (workshop-plan/BUILD_LIST.md). The feedback lane stays on for notes.",
+ "verify": false,
+ "ripple": false
 }

@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-23T03:32:46+0530",
-  "version": 2817,
+  "updated": "2026-10-23T05:44:47+0530",
+  "version": 2818,
   "last_id": 506,
   "team": [
    {
@@ -17517,7 +17517,7 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Signed in as adisuja, open https://support.github.com/contact and pick topic 'Removing sensitive data'. From workshop-plan/ops/t145_github_support_request.md, put the 'Subject:' line in the subject field, paste everything from 'Hello,' to 'Thank you.' into the message box, and click Send. Leave out the heading and the notes above the divider line: those are for you, not GitHub. (Why not Claude: GitHub Support has no API, only this signed-in web form, and the agent's rules forbid signing in as you or messaging outside parties.)",
+   "needs_from_owner": "Signed in as adisuja, open https://support.github.com/contact, pick topic 'Removing sensitive data', paste the full text of workshop-plan/ops/t145_github_support_request.md into the message box, click Send, then mark T-334 sent.",
    "log": [
     {
      "ts": "2026-10-09T05:04:52+0530",
@@ -17543,6 +17543,11 @@
      "ts": "2026-10-11T16:57:10+0530",
      "who": "claude",
      "note": "The exact blocker: the purge only happens when GitHub Support staff get a request from your signed-in adisuja account, and the agent's hard rules (orchestrator.py lines 74-75) forbid messaging people outside the team and logging in as you, which a board note cannot widen; it is not a missing token or tool. Everything else is done and rechecked today: history rewritten and force-pushed (5b9f57d6 and 0cf43d86 are on neither branch, per the GitHub compare API), and workshop-plan/ops/t145_github_support_request.md is final with no placeholders. There is no self-serve route: deleting and recreating the repo would make Nelbin's fork (nelbinxav/tantra-workshop-live, still live) the network root while it still holds 5b9f57d6; once you mark it sent (also tracked as T-395), the date goes on T-145 and the weekly SHA check runs."
+    },
+    {
+     "ts": "2026-10-23T05:44:47+0530",
+     "who": "claude",
+     "note": "Merged duplicate T-395 into this task (Adi 2026-10-23: no input task for an input task). The ask now uses T-395's newer wording. Previous wording: Signed in as adisuja, open https://support.github.com/contact and pick topic 'Removing sensitive data'. From workshop-plan/ops/t145_github_support_request.md, put the 'Subject:' line in the subject field, paste everything from 'Hello,' to 'Thank you.' into the message box, and click Send. Leave out the heading and the notes above the divider line: those are for you, not GitHub. (Why not Claude: GitHub Support has no API, only this signed-in web form, and the agent's rules forbid signing in as you or messaging outside parties.)"
     }
    ],
    "order": 3340,
@@ -17566,7 +17571,7 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "One Zoom sign-in at https://marketplace.zoom.us covers everything: (1) at https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), or open it if it exists, and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, Save; (2) in the same sign-in, Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, meeting:delete:meeting:admin, Save. Nothing else to change.",
+   "needs_from_owner": "Sign in at https://marketplace.zoom.us once. (1) At https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), then paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card and click Save. (2) In the same sign-in: Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, plus meeting:delete:meeting:admin, Save.",
    "log": [
     {
      "ts": "2026-10-09T05:04:54+0530",
@@ -17602,6 +17607,11 @@
      "ts": "2026-10-12T07:07:52+0530",
      "who": "claude",
      "note": "Checked 10 related task(s); updating T-407, T-226."
+    },
+    {
+     "ts": "2026-10-23T05:44:47+0530",
+     "who": "claude",
+     "note": "Merged duplicate T-417 into this task (Adi 2026-10-23: no input task for an input task). The ask now uses T-417's newer wording. Previous wording: One Zoom sign-in at https://marketplace.zoom.us covers everything: (1) at https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), or open it if it exists, and paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card, Save; (2) in the same sign-in, Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, meeting:delete:meeting:admin, Save. Nothing else to change."
     }
    ],
    "order": 3350,
@@ -17735,7 +17745,7 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "One sitting clears T-339, T-350 and T-115 (tracked as T-383): in Brave profile adi@growthclub.org, open https://console.twilio.com and sign in with the code Twilio emails you. Then open a Claude Code desktop session with Claude in Chrome connected and type: Act on T-133, then Act on T-115. Claude drafts and captures only, and never saves or sends.",
+   "needs_from_owner": "In Brave profile adi@growthclub.org, open https://console.twilio.com and sign in, typing the verification code Twilio emails you. Then open a Claude Code session in the desktop app with Claude in Chrome connected and type: Act on T-133. The same sitting also covers the Twilio part of T-350 and the T-115 captures.",
    "log": [
     {
      "ts": "2026-10-09T05:06:54+0530",
@@ -17756,6 +17766,11 @@
      "ts": "2026-10-11T12:07:58+0530",
      "who": "claude",
      "note": "Orchestrator decision applied: no screenshots exist yet, so the approved commit and mirror publish are left until they do. One desktop session clears T-339, T-350 (same Twilio sign-in) and T-115 (same session), tracked as T-383. Nothing was built because this runner has no browser."
+    },
+    {
+     "ts": "2026-10-23T05:44:47+0530",
+     "who": "claude",
+     "note": "Merged duplicate T-383 into this task (Adi 2026-10-23: no input task for an input task). The ask now uses T-383's newer wording. Previous wording: One sitting clears T-339, T-350 and T-115 (tracked as T-383): in Brave profile adi@growthclub.org, open https://console.twilio.com and sign in with the code Twilio emails you. Then open a Claude Code desktop session with Claude in Chrome connected and type: Act on T-133, then Act on T-115. Claude drafts and captures only, and never saves or sends."
     }
    ],
    "order": 3390,
@@ -17894,7 +17909,7 @@
     }
    ],
    "blockers": [],
-   "needs_from_owner": "Open https://admin.google.com/ac/users in the Brave window Claude in Chrome drives, type your Google password in the 'Enter your password' field, click Next, and reply 'done' here.",
+   "needs_from_owner": "In the Brave window that Claude in Chrome drives, open https://admin.google.com/ac/users and type your Google password in the 'Enter your password' field, then click Next. While there, do the same at https://console.cloud.google.com/ (for T-283). Reply 'done' on T-348.",
    "log": [
     {
      "ts": "2026-10-09T07:56:53+0530",
@@ -17910,6 +17925,11 @@
      "ts": "2026-10-10T20:26:24+0530",
      "who": "claude",
      "note": "Verify pass: still waiting on Adi typing the Google password (T-349). I re-tested the one-pass capture kit on a mock form in headless Chromium: click, Enter and Space could not submit, no real name or email stayed readable, Cancel closed the form, and the finalize script filled step 2 of a copy of the guide with a 1400 by 1248 WebP of 14,206 bytes. One fix: the blur step now reports ok only when the submit guard is on. Selectors are still untested on the real Google Admin console. Runbook: scripts/walkthroughs/journeys/guide-s1-cold-email-02.md"
+    },
+    {
+     "ts": "2026-10-23T05:44:47+0530",
+     "who": "claude",
+     "note": "Merged duplicate T-349 into this task (Adi 2026-10-23: no input task for an input task). The ask now uses T-349's newer wording. Previous wording: Open https://admin.google.com/ac/users in the Brave window Claude in Chrome drives, type your Google password in the 'Enter your password' field, click Next, and reply 'done' here."
     }
    ],
    "order": 3480
@@ -17925,18 +17945,23 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "dropped",
    "why": "",
    "spec": "Only Adi can do this (signin): Only Adi knows the Google account password, and Claude never types passwords.. Everything else in T-348 is being built around it. As soon as this is done, T-348 finishes on its own.",
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "In the Brave window that Claude in Chrome drives, open https://admin.google.com/ac/users and type your Google password in the 'Enter your password' field, then click Next. While there, do the same at https://console.cloud.google.com/ (for T-283). Reply 'done' on T-348.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-09T08:01:38+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-348."
+    },
+    {
+     "ts": "2026-10-23T05:44:47+0530",
+     "who": "claude",
+     "note": "Merged into T-348 (duplicate input task for an input task). Answer it there."
     }
    ],
    "order": 3490,
@@ -18305,18 +18330,23 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "dropped",
    "why": "",
    "spec": "Only Adi can do this (signin): Twilio login needs Adi's password and emailed verification code; Claude never signs in as him or types codes.. Everything else in T-339 is being built around it. As soon as this is done, T-339 finishes on its own.",
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "In Brave profile adi@growthclub.org, open https://console.twilio.com and sign in, typing the verification code Twilio emails you. Then open a Claude Code session in the desktop app with Claude in Chrome connected and type: Act on T-133. The same sitting also covers the Twilio part of T-350 and the T-115 captures.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-10T20:19:35+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-339."
+    },
+    {
+     "ts": "2026-10-23T05:44:47+0530",
+     "who": "claude",
+     "note": "Merged into T-339 (duplicate input task for an input task). Answer it there."
     }
    ],
    "order": 3830,
@@ -18361,6 +18391,11 @@
      "ts": "2026-10-12T07:44:18+0530",
      "who": "claude",
      "note": "Orchestrator decision applied: nothing changed. The ask already reads 'Act on T-115, T-339 and T-140', and no captures were run on the unattended runner. Still waiting on Adi's one desktop sitting with Claude in Chrome (tracked as T-420)."
+    },
+    {
+     "ts": "2026-10-23T05:44:47+0530",
+     "who": "claude",
+     "note": "Merged duplicate T-420 into this task (Adi 2026-10-23: no input task for an input task). The ask now uses T-420's newer wording. Previous wording: Open the Claude Code desktop app, start a session with Claude in Chrome connected to the Brave profile adi@growthclub.org, and type: Act on T-115, T-339 and T-140. Optional in the same sitting: open https://admin.google.com/ac/users and type your Google password in the 'Enter your password' field (T-348)."
     }
    ],
    "order": 3840,
@@ -18508,18 +18543,23 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "blocked",
+   "status": "dropped",
    "why": "",
    "spec": "Only Adi can do this (outside_person): GitHub Support only acts on a request from the repo owner's account; hard rules bar Claude from sending outside messages as Adi.. Everything else in T-334 is being built around it. As soon as this is done, T-334 finishes on its own.",
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Signed in as adisuja, open https://support.github.com/contact, pick topic 'Removing sensitive data', paste the full text of workshop-plan/ops/t145_github_support_request.md into the message box, click Send, then mark T-334 sent.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-11T06:00:03+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-334."
+    },
+    {
+     "ts": "2026-10-23T05:44:47+0530",
+     "who": "claude",
+     "note": "Merged into T-334 (duplicate input task for an input task). Answer it there."
     }
    ],
    "order": 3950,
@@ -18637,7 +18677,7 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Sign in at https://app.cal.com/event-types as adisuja and create the event 'Tantra Enterprise Evaluation Call' with URL slug tantra-enterprise-evaluation-call (so it lives at https://cal.com/adisuja/tantra-enterprise-evaluation-call), copying the fields from workshop-plan/build/T-072-calcom-event-draft.md (30 min, Google Meet, Mon-Fri 10:00-18:00 Asia/Kolkata). That satisfies the T-072 input; the /enterprise embed then needs Bharath's team to apply the adi-new-ui--5d6eecf642.patch upstream.",
+   "needs_from_owner": "Sign in at https://app.cal.com/event-types as adisuja and click New. Title: Tantra Enterprise Evaluation Call. URL slug: tantra-enterprise-evaluation-call. Duration: 30 minutes. Location: Google Meet. Availability: Mon-Fri 10:00-18:00 Asia/Kolkata. Visibility: public. Description: paste the block from workshop-plan/build/T-072-calcom-event-draft.md.",
    "log": [
     {
      "ts": "2026-10-11T11:20:59+0530",
@@ -18663,6 +18703,11 @@
      "ts": "2026-10-12T06:54:52+0530",
      "who": "claude",
      "note": "Checked 9 related task(s); updating T-072."
+    },
+    {
+     "ts": "2026-10-23T05:44:47+0530",
+     "who": "claude",
+     "note": "Merged duplicate T-415 into this task (Adi 2026-10-23: no input task for an input task). The ask now uses T-415's newer wording. Previous wording: Sign in at https://app.cal.com/event-types as adisuja and create the event 'Tantra Enterprise Evaluation Call' with URL slug tantra-enterprise-evaluation-call (so it lives at https://cal.com/adisuja/tantra-enterprise-evaluation-call), copying the fields from workshop-plan/build/T-072-calcom-event-draft.md (30 min, Google Meet, Mon-Fri 10:00-18:00 Asia/Kolkata). That satisfies the T-072 input; the /enterprise embed then needs Bharath's team to apply the adi-new-ui--5d6eecf642.patch upstream."
     }
    ],
    "order": 3980,
@@ -18825,7 +18870,7 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "On this Mac: 1) unlock the screen and leave it unlocked with the Claude app open; 2) open System Settings > Privacy & Security > Accessibility and switch on Python (/Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app), adding it with the + button (Cmd+Shift+G to paste the path) if it is not listed. Nothing else is needed; the agent confirms READY from the runner and captures the screenshots itself.",
+   "needs_from_owner": "At this Mac: 1) unlock the screen and leave it unlocked with the Claude app open. 2) Open x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility (System Settings > Privacy & Security > Accessibility), click +, press Cmd+Shift+G, paste /Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app, add it and switch it on. Nothing else; the agent detects it and takes the screenshots itself.",
    "log": [
     {
      "ts": "2026-10-11T12:49:32+0530",
@@ -18851,6 +18896,11 @@
      "ts": "2026-10-12T07:04:14+0530",
      "who": "claude",
      "note": "Checked 3 related task(s); updating T-351."
+    },
+    {
+     "ts": "2026-10-23T05:44:47+0530",
+     "who": "claude",
+     "note": "Merged duplicate T-416 into this task (Adi 2026-10-23: no input task for an input task). The ask now uses T-416's newer wording. Previous wording: On this Mac: 1) unlock the screen and leave it unlocked with the Claude app open; 2) open System Settings > Privacy & Security > Accessibility and switch on Python (/Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app), adding it with the + button (Cmd+Shift+G to paste the path) if it is not listed. Nothing else is needed; the agent confirms READY from the runner and captures the screenshots itself."
     }
    ],
    "order": 4030,
@@ -19412,18 +19462,23 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "dropped",
    "why": "",
    "spec": "Only Adi can do this (signin): The event must live on Adi's own Cal.com account; agents never sign in as Adi and no Cal.com key exists on this Mac.. Everything else in T-398 is being built around it. As soon as this is done, T-398 finishes on its own.",
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Sign in at https://app.cal.com/event-types as adisuja and click New. Title: Tantra Enterprise Evaluation Call. URL slug: tantra-enterprise-evaluation-call. Duration: 30 minutes. Location: Google Meet. Availability: Mon-Fri 10:00-18:00 Asia/Kolkata. Visibility: public. Description: paste the block from workshop-plan/build/T-072-calcom-event-draft.md.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-12T02:43:35+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-398."
+    },
+    {
+     "ts": "2026-10-23T05:44:47+0530",
+     "who": "claude",
+     "note": "Merged into T-398 (duplicate input task for an input task). Answer it there."
     }
    ],
    "order": 4150,
@@ -19441,18 +19496,23 @@
    ],
    "priority": "P2",
    "due": "",
-   "status": "blocked",
+   "status": "dropped",
    "why": "",
    "spec": "Only Adi can do this (physical): macOS needs the login password and an in-person Accessibility toggle; the agent cannot type his password or grant itself TCC access.. Everything else in T-403 is being built around it. As soon as this is done, T-403 finishes on its own.",
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "At this Mac: 1) unlock the screen and leave it unlocked with the Claude app open. 2) Open x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility (System Settings > Privacy & Security > Accessibility), click +, press Cmd+Shift+G, paste /Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app, add it and switch it on. Nothing else; the agent detects it and takes the screenshots itself.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-12T03:03:30+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-403."
+    },
+    {
+     "ts": "2026-10-23T05:44:47+0530",
+     "who": "claude",
+     "note": "Merged into T-403 (duplicate input task for an input task). Answer it there."
     }
    ],
    "order": 4160,
@@ -19470,13 +19530,13 @@
    ],
    "priority": "P0",
    "due": "",
-   "status": "blocked",
+   "status": "dropped",
    "why": "",
    "spec": "Only Adi can do this (credential): Needs Adi's Zoom login and 2FA and creates a new credential on his account; the keys exist nowhere on this Mac.. Everything else in T-335 is being built around it. As soon as this is done, T-335 finishes on its own.",
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Sign in at https://marketplace.zoom.us once. (1) At https://marketplace.zoom.us/develop/create create General App 'Tantra Live Control' (Features, Embed, Meeting SDK on, do not publish), then paste its Client ID and Client Secret at https://revops-centre.growthcluborg.workers.dev/admin/control in the Seat credentials card and click Save. (2) In the same sign-in: Manage, Tantra Centre, Scopes, add meeting:write:poll:admin, meeting:update:poll:admin, meeting:delete:poll:admin, meeting:read:list_polls:admin, meeting:read:list_poll_results:admin, plus meeting:delete:meeting:admin, Save.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-12T03:10:06+0530",
@@ -19487,6 +19547,11 @@
      "ts": "2026-10-12T07:49:07+0530",
      "who": "claude",
      "note": "Ripple from T-407: added meeting:delete:meeting:admin (found missing by T-245) to this same sign-in so it matches T-335 and T-226; nothing else changed."
+    },
+    {
+     "ts": "2026-10-23T05:44:47+0530",
+     "who": "claude",
+     "note": "Merged into T-335 (duplicate input task for an input task). Answer it there."
     }
    ],
    "order": 4170,
@@ -19561,18 +19626,23 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "blocked",
+   "status": "dropped",
    "why": "",
    "spec": "Only Adi can do this (physical): Only a desktop session Adi opens has Claude in Chrome; the unattended runner has no browser and must not take over his Brave.. Everything else in T-384 is being built around it. As soon as this is done, T-384 finishes on its own.",
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Open the Claude Code desktop app, start a session with Claude in Chrome connected to the Brave profile adi@growthclub.org, and type: Act on T-115, T-339 and T-140. Optional in the same sitting: open https://admin.google.com/ac/users and type your Google password in the 'Enter your password' field (T-348).",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-12T06:54:54+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-384."
+    },
+    {
+     "ts": "2026-10-23T05:44:47+0530",
+     "who": "claude",
+     "note": "Merged into T-384 (duplicate input task for an input task). Answer it there."
     }
    ],
    "order": 4200,
@@ -22820,7 +22890,7 @@
   },
   {
    "id": "T-479",
-   "status": "blocked",
+   "status": "dropped",
    "owner": "Adi",
    "assignee": "Adi",
    "reviewers": [
@@ -23355,7 +23425,7 @@
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "Publish the welcome video and reply with its link, the announcement link, the cohort link and the QR image (attach it here).",
+   "needs_from_owner": "Publish the welcome video and reply with its link and the QR image (attach it here). For the announcement and cohort links: On the workshop WhatsApp phone, create two groups: 'RevOps Workshop Announcements' (admins-only messages) and 'RevOps Workshop Cohort'. For each, open Group info, Invite via link, Copy link, and paste both chat.whatsapp.com links here.",
    "log": [
     {
      "ts": "2026-10-22T23:39:13+0530",
@@ -23371,6 +23441,11 @@
      "ts": "2026-10-23T03:19:27+0530",
      "who": "claude",
      "note": "People: assignee Claude → Adi (by claude)."
+    },
+    {
+     "ts": "2026-10-23T05:44:47+0530",
+     "who": "claude",
+     "note": "Merged duplicate T-500 into this task (Adi 2026-10-23: no input task for an input task). The ask now uses T-500's newer wording. Previous wording: Publish the welcome video and reply with its link, the announcement link, the cohort link and the QR image (attach it here)."
     }
    ],
    "order": 4910
@@ -23622,18 +23697,23 @@
    ],
    "priority": "P1",
    "due": "",
-   "status": "blocked",
+   "status": "dropped",
    "why": "",
    "spec": "Only Adi can do this (physical): Only Adi's phone can create WhatsApp groups. No invite links exist on this Mac or in any session.. Everything else in T-491 is being built around it. As soon as this is done, T-491 finishes on its own.",
    "done_when": [],
    "evidence": [],
    "blockers": [],
-   "needs_from_owner": "On the workshop WhatsApp phone, create two groups: 'RevOps Workshop Announcements' (admins-only messages) and 'RevOps Workshop Cohort'. For each, open Group info, Invite via link, Copy link, and paste both chat.whatsapp.com links as a note on T-491.",
+   "needs_from_owner": "",
    "log": [
     {
      "ts": "2026-10-22T23:42:28+0530",
      "who": "claude",
      "note": "Opened by the Orchestrator for T-491."
+    },
+    {
+     "ts": "2026-10-23T05:44:47+0530",
+     "who": "claude",
+     "note": "Merged into T-491 (duplicate input task for an input task). Answer it there."
     }
    ],
    "order": 5000,
