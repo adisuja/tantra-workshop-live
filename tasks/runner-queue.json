@@ -1,6 +1,14 @@
 {
  "history": [
   {
+   "ts": "2026-10-23T05:48:06+0530",
+   "task_id": "T-459",
+   "mode": "queue",
+   "status": "doing",
+   "result": "budget",
+   "summary": "Stopped at 78% of the 5-hour usage window (Adi's 80% ceiling)."
+  },
+  {
    "ts": "2026-10-20T17:51:41+0530",
    "task_id": "T-465",
    "mode": "queue",
@@ -87,19 +95,11 @@
    "status": "doing",
    "result": "ok",
    "summary": "T-073 is still in progress (`doing`). The lessons can't be cut yet because the 14 to 16 Oct sessions haven't happened, so nothing has been recorded.\n\n**Completion check:**\n- **Three day modules published from meeting 88135386601:** not done yet. Today is 12 Oct, so no recordings exist. The 15-minute"
-  },
-  {
-   "ts": "2026-10-12T11:57:29+0530",
-   "task_id": "T-299",
-   "mode": "queue",
-   "status": "doing",
-   "result": "ok",
-   "summary": "The four probes are running against the clean private stack. I'll pick up when they finish."
   }
  ],
- "state": "working",
- "message": "Continuing T-459: Centre: three Day 0 RevOps OS cards, retire the Funnel OS pack cards, rename everywhere",
- "task_id": "T-459",
+ "state": "paused",
+ "message": "Holding to stay under 80% of the 5-hour usage window: T-459 stopped at 2%; OmniRoute: 0 working model(s) (none passed the tool test). Resumes after 10:31.",
+ "task_id": null,
  "entries": [],
  "mode": "queue",
  "started": "2026-10-23T05:34:44+0530",
