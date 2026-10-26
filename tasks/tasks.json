@@ -1,8 +1,8 @@
 {
  "meta": {
   "project": "The 3-Day AI RevOps Workshop",
-  "updated": "2026-10-23T16:31:29+0530",
-  "version": 2820,
+  "updated": "2026-10-26T19:31:39+0530",
+  "version": 2822,
   "last_id": 506,
   "team": [
    {
@@ -11298,6 +11298,11 @@
      "ts": "2026-10-23T16:31:29+0530",
      "who": "claude",
      "note": "Zoom check 2026-10-23: not granted yet. disable_participant_video is in no answer and the mute field is still at its default (/users/me/settings 200, /accounts/me/settings 400, /accounts/me/lock_settings 400, /meetings/83352618490 200, /meetings/84762742158 200). Write test 2026-10-23 on 84762742158: not granted (PATCH 204; read back mute false, video undefined). Room restored: request_permission_to_unmute_participants is true again. The centre's Zoom Support locks stay off and Live Control (T-226) covers mute and video. Not granted in time for the 21 Oct cohort; T-226 enforces mute and video. The daily check keeps running."
+    },
+    {
+     "ts": "2026-10-26T19:31:39+0530",
+     "who": "claude",
+     "note": "Zoom check 2026-10-26: not granted yet. disable_participant_video is in no answer and the mute field is still at its default (/users/me/settings 200, /accounts/me/settings 400, /accounts/me/lock_settings 400, /meetings/84762742158 200). Write test 2026-10-26 on 84762742158: not granted (PATCH 204; read back mute false, video undefined). Room restored: request_permission_to_unmute_participants is true again. The centre's Zoom Support locks stay off and Live Control (T-226) covers mute and video."
     }
    ],
    "order": 2250
