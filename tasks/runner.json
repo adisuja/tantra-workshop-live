@@ -97,8 +97,8 @@
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
- "state": "paused",
- "message": "Holding to stay under 80% of the 5-hour usage window: could not read the 5-hour usage; OmniRoute: no provider connected yet. Resumes after 16:44.",
+ "state": "idle",
+ "message": "Nothing waiting.",
  "task_id": null,
  "entries": [],
  "mode": null,
