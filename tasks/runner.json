@@ -97,8 +97,8 @@
    "summary": "API Error: Request rejected (429) · All credentials for model grok-4.7 are cooling down"
   }
  ],
- "state": "paused",
- "message": "Working on a task.",
+ "state": "idle",
+ "message": "Nothing waiting.",
  "task_id": null,
  "entries": [],
  "mode": null,
